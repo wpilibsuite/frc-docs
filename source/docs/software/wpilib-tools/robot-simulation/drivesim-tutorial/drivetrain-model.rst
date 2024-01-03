@@ -6,11 +6,11 @@ In order to accurately determine how your physical drivetrain will respond to gi
 Creating a ``DifferentialDrivetrainSim`` from Physical Measurements
 -------------------------------------------------------------------
 
-One way to creating a ``DifferentialDrivetrainSim`` instance is by using physical measurements of the drivetrain and robot -- either obtained through CAD software or real-world measurements (the latter will usually yield better results as it will more closely match reality). This constructor takes the following parameters:
+One way to creating a ``DifferentialDrivetrainSim`` instance is by using physical measurements of the drivetrain and robot -- either obtained through :term:`CAD` software or real-world measurements (the latter will usually yield better results as it will more closely match reality). This constructor takes the following parameters:
 
  - The type and number of motors on one side of the drivetrain.
  - The gear ratio between the motors and the wheels as output  :term:`torque` over input  :term:`torque` (this number is usually greater than 1 for drivetrains).
- - The moment of inertia of the drivetrain (this can be obtained from a CAD model of your drivetrain. Usually, this is between 3 and 8 :math:`kg m^2`).
+ - The moment of inertia of the drivetrain (this can be obtained from a :term:`CAD` model of your drivetrain. Usually, this is between 3 and 8 :math:`kg m^2`).
  - The mass of the drivetrain (it is recommended to use the mass of the entire robot itself, as it will more accurately model the acceleration characteristics of your robot for trajectory tracking).
  - The radius of the drive wheels.
  - The track width (distance between left and right wheels).
@@ -22,8 +22,8 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 .. note:: It is very important to use SI units (i.e. meters and radians) when passing parameters in Java. In C++, the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` can be used to specify any unit type.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       // Create the simulation model of our drivetrain.
       DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
@@ -41,7 +41,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
         // l and r position: 0.005 m
         VecBuilder.fill(0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/simulation/DifferentialDrivetrainSim.h>
 
@@ -85,8 +85,8 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 .. note:: It is very important to use SI units (i.e. meters and radians) when passing parameters in Java. In C++, the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` can be used to specify any unit type.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       // Create our feedforward gain constants (from the identification
       // tool)
@@ -111,7 +111,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
         // l and r position: 0.005 m
         VecBuilder.fill(0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/simulation/DifferentialDrivetrainSim.h>
       #include <frc/system/plant/LinearSystemId.h>
@@ -166,8 +166,8 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 .. note:: It is very important to use SI units (i.e. meters and radians) when passing parameters in Java. In C++, the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` can be used to specify any unit type.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       private DifferentialDrivetrainSim m_driveSim = DifferentialDrivetrainSim.createKitbotSim(
         KitbotMotor.kDualCIMPerSide, // 2 CIMs per side.
@@ -176,7 +176,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
         null                         // No measurement noise.
       );
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/simulation/DifferentialDrivetrainSim.h>
 

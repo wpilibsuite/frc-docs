@@ -8,9 +8,9 @@ Limit switches can have "normally open" or "normally closed" outputs.  This will
 Controlling a Motor with Two Limit Switches
 -------------------------------------------
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
      DigitalInput toplimitSwitch = new DigitalInput(0);
      DigitalInput bottomlimitSwitch = new DigitalInput(1);
@@ -42,7 +42,7 @@ Controlling a Motor with Two Limit Switches
          }
      }
 
-   .. code-tab:: cpp
+   .. code-block:: c++
 
      frc::DigitalInput toplimitSwitch {0};
      frc::DigitalInput bottomlimitSwitch {1};

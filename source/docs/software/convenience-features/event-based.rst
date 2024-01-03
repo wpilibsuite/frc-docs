@@ -10,19 +10,15 @@ EventLoop
 
 The ``EventLoop`` class is a "container" for pairs of conditions and actions, which can be polled using the ``poll()``/``Poll()`` method. When polled, every condition will be queried and if it returns ``true`` the action associated with the condition will be executed.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+      :language: java
+      :lines: 33-33, 87-91
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
-         :language: java
-         :lines: 33-33, 87-91
-
-   .. group-tab:: C++
-
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-         :language: cpp
-         :lines: 94-94, 81-81
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+      :language: c++
+      :lines: 94-94, 81-81
 
 .. warning:: The ``EventLoop``'s ``poll()`` method should be called consistently in a ``*Periodic()`` method. Failure to do this will result in unintended loop behavior.
 
@@ -33,19 +29,15 @@ The ``BooleanEvent`` class represents a boolean condition: a ``BooleanSupplier``
 
 To bind a callback action to the condition, use ``ifHigh()``/``IfHigh()``:
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+      :language: java
+      :lines: 72-78
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
-         :language: java
-         :lines: 72-78
-
-   .. group-tab:: C++
-
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-         :language: cpp
-         :lines: 64-72
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+      :language: c++
+      :lines: 64-72
 
 Remember that button binding is *declarative*: bindings only need to be declared once, ideally some time during robot initialization. The library handles everything else.
 
@@ -59,76 +51,61 @@ and() / &&
 
 The ``and()``/``&&`` composes two ``BooleanEvent`` conditions into a third condition that returns ``true`` only when **both** of the conditions return ``true``.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+      :language: java
+      :lines: 44-49
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
-         :language: java
-         :lines: 44-49
-
-   .. group-tab:: C++
-
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-         :language: cpp
-         :lines: 35-40
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+      :language: c++
+      :lines: 35-40
 
 or() / ||
 ^^^^^^^^^
 
 The ``or()``/``||`` composes two ``BooleanEvent`` conditions into a third condition that returns ``true`` only when **either** of the conditions return ``true``.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+      :language: java
+      :lines: 51-57
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
-         :language: java
-         :lines: 51-57
-
-   .. group-tab:: C++
-
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-         :language: cpp
-         :lines: 42-47
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+      :language: c++
+      :lines: 42-47
 
 negate() / !
 ^^^^^^^^^^^^
 
 The ``negate()``/``!`` composes one ``BooleanEvent`` condition into another condition that returns the opposite of what the original conditional did.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+      :language: java
+      :lines: 46-47
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
-         :language: java
-         :lines: 46-47
-
-   .. group-tab:: C++
-
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-         :language: cpp
-         :lines: 37-38
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+      :language: c++
+      :lines: 37-38
 
 debounce() / Debounce()
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 To avoid rapid repeated activation, conditions (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/software/advanced-controls/filters/debouncer:Debouncer>` using the `debounce` method:
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
-         :language: java
-         :lines: 71-75
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+      :language: java
+      :lines: 71-75
 
-   .. group-tab:: C++
-
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-         :language: cpp
-         :lines: 64-69
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+      :language: c++
+      :lines: 64-69
 
 rising(), falling()
 ^^^^^^^^^^^^^^^^^^^
@@ -137,32 +114,28 @@ Often times it is desired to bind an action not to the *current* state of a cond
 
 .. warning:: Due to the "memory" these conditions have, do not use the same instance in multiple places.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+      :language: java
+      :lines: 79-84
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
-         :language: java
-         :lines: 79-84
-
-   .. group-tab:: C++
-
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
-         :language: cpp
-         :lines: 74-78
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+      :language: c++
+      :lines: 74-78
 
 Downcasting ``BooleanEvent`` Objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To convert ``BooleanEvent`` objects to other types, most commonly the ``Trigger`` subclass used for :ref:`binding commands to conditions <docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers>`, the generic ``castTo()``/``CastTo()`` decorator exists:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     Trigger trigger = booleanEvent.castTo(Trigger::new);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::Trigger trigger = booleanEvent.CastTo<frc2::Trigger>();
 

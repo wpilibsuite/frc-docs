@@ -22,35 +22,37 @@ To schedule a command, users call the ``schedule()`` method (`Java <https://gith
 This method walks through the following steps:
 
 #. Verifies that the command isn't in a composition.
-#. No-op if scheduler is disabled, command is already scheduled, or robot is disabled and command doesn't <commands:runsWhenDisabled>.
+#. :term:`No-op` if scheduler is disabled, command is already scheduled, or robot is disabled and command doesn't <commands:runsWhenDisabled>.
 #. If requirements are in use:
    * If all conflicting commands are interruptible, cancel them.
    * If not, don't schedule the new command.
 #. Call ``initialize()``.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
-      :language: java
-      :lines: 202-245
-      :linenos:
-      :lineno-start: 202
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+         :language: java
+         :lines: 202-245
+         :linenos:
+         :lineno-start: 202
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
-      :language: java
-      :lines: 181-191
-      :linenos:
-      :lineno-start: 181
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+         :language: java
+         :lines: 181-191
+         :linenos:
+         :lineno-start: 181
 
-  .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
-      :language: c++
-      :lines: 114-159
-      :linenos:
-      :lineno-start: 114
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+         :language: c++
+         :lines: 114-159
+         :linenos:
+         :lineno-start: 114
 
 The Scheduler Run Sequence
 --------------------------
@@ -64,23 +66,25 @@ Step 1: Run Subsystem Periodic Methods
 
 First, the scheduler runs the ``periodic()`` method of each registered ``Subsystem``. In simulation, each subsystem's ``simulationPeriodic()`` method is called as well.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
-      :language: java
-      :lines: 278-285
-      :linenos:
-      :lineno-start: 278
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+         :language: java
+         :lines: 278-285
+         :linenos:
+         :lineno-start: 278
 
-  .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
-      :language: c++
-      :lines: 183-190
-      :linenos:
-      :lineno-start: 183
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+         :language: c++
+         :lines: 183-190
+         :linenos:
+         :lineno-start: 183
 
 Step 2: Poll Command Scheduling Triggers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -89,23 +93,25 @@ Step 2: Poll Command Scheduling Triggers
 
 Secondly, the scheduler polls the state of all registered triggers to see if any new commands that have been bound to those triggers should be scheduled.  If the conditions for scheduling a bound command are met, the command is scheduled and its ``Initialize()`` method is run.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
-      :language: java
-      :lines: 290-292
-      :linenos:
-      :lineno-start: 290
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+         :language: java
+         :lines: 290-292
+         :linenos:
+         :lineno-start: 290
 
-  .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
-      :language: c++
-      :lines: 195-197
-      :linenos:
-      :lineno-start: 195
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+         :language: c++
+         :lines: 195-197
+         :linenos:
+         :lineno-start: 195
 
 Step 3: Run/Finish Scheduled Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,48 +120,52 @@ Thirdly, the scheduler calls the ``execute()`` method of each currently-schedule
 
 Note that this sequence of calls is done in order for each command - thus, one command may have its ``end()`` method called before another has its ``execute()`` method called.  Commands are handled in the order they were scheduled.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
-      :language: java
-      :lines: 295-325
-      :linenos:
-      :lineno-start: 295
-      :emphasize-lines: 16,21-22
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+         :language: java
+         :lines: 295-325
+         :linenos:
+         :lineno-start: 295
+         :emphasize-lines: 16,21-22
 
-  .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
-      :language: c++
-      :lines: 201-226
-      :linenos:
-      :lineno-start: 201
-      :emphasize-lines: 7,13-14
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+         :language: c++
+         :lines: 201-226
+         :linenos:
+         :lineno-start: 201
+         :emphasize-lines: 7,13-14
 
 Step 4: Schedule Default Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Finally, any registered ``Subsystem`` has its default command scheduled (if it has one).  Note that the ``initialize()`` method of the default command will be called at this time.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
-      :language: java
-      :lines: 340-346
-      :linenos:
-      :lineno-start: 340
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
+         :language: java
+         :lines: 340-346
+         :linenos:
+         :lineno-start: 340
 
-  .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
-      :language: c++
-      :lines: 240-246
-      :linenos:
-      :lineno-start: 240
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
+         :language: c++
+         :lines: 240-246
+         :linenos:
+         :lineno-start: 240
 
 Disabling the Scheduler
 -----------------------
@@ -179,20 +189,22 @@ Occasionally, it is desirable to have the scheduler execute a custom action when
 
 A typical use-case for these methods is adding markers in an event log whenever a command scheduling event takes place, as demonstrated in the following code from the HatchbotInlined example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
-      :language: java
-      :lines: 73-88
-      :linenos:
-      :lineno-start: 73
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
+         :language: java
+         :lines: 73-88
+         :linenos:
+         :lineno-start: 73
 
-  .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 23-47
-      :linenos:
-      :lineno-start: 23
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
+         :language: c++
+         :lines: 23-47
+         :linenos:
+         :lineno-start: 23

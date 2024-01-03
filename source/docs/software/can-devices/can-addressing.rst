@@ -4,7 +4,7 @@ FRC CAN Device Specifications
 =============================
 
 This document seeks to describe the basic functions of the current FRC\ |reg|
-CAN system and the requirements for any new CAN devices seeking to work
+:term:`CAN` system and the requirements for any new CAN devices seeking to work
 with the system.
 
 Addressing
@@ -66,7 +66,9 @@ Playing With Fusion   11
 Studica               12
 The Thrifty Bot       13
 Redux Robotics        14
-Reserved              15-255
+AndyMark              15
+Vivid Hosting         16
+Reserved              17-255
 ===================== ==========
 
 API/Message Identifier

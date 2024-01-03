@@ -8,9 +8,9 @@ Adding the Necessary Code to your Program
 
 For each sensor or actuator that is created, set the subsystem name and display name by calling ``setName`` (``SetName`` in C++). When the SmartDashboard is put into LiveWindow mode, it will display the sensors and actuators.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         Ultrasonic ultrasonic = new Ultrasonic(1, 2);
         SendableRegistry.setName(ultrasonic, "Arm", "Ultrasonic");
@@ -21,7 +21,7 @@ For each sensor or actuator that is created, set the subsystem name and display 
         Victor wrist = new Victor(2);
         SendableRegistry.setName(wrist, "Arm", "Wrist");
 
-    .. code-tab:: cpp
+    .. code-block:: c++
 
         frc::Ultrasonic ultrasonic{1, 2};
         SendableRegistry::SetName(ultrasonic, "Arm", "Ultrasonic");
@@ -34,9 +34,9 @@ For each sensor or actuator that is created, set the subsystem name and display 
 
 If your objects are in a ``Subsystem``, this can be simplified using the addChild method of ``SubsystemBase``
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         Ultrasonic ultrasonic = new Ultrasonic(1, 2);
         addChild("Ultrasonic", ultrasonic);
@@ -47,7 +47,7 @@ If your objects are in a ``Subsystem``, this can be simplified using the addChil
         Victor wrist = new Victor(2);
         addChild("Wrist", wrist);
 
-    .. code-tab:: cpp
+    .. code-block:: c++
 
         frc::Ultrasonic ultrasonic{1, 2};
         AddChild("Ultrasonic", ultrasonic);

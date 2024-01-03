@@ -39,52 +39,56 @@ In the following example, we simulate an elevator given the mass of the moving c
 
 .. note:: The elevator and arm simulators will prevent the simulated position from exceeding given minimum or maximum heights or angles. If you wish to simulate a mechanism with infinite rotation or motion, :code:`LinearSystemSim` may be a better option.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
          :lines: 47-59
          :linenos:
          :lineno-start: 47
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/include/subsystems/Elevator.h
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/include/subsystems/Elevator.h
+         :language: c++
          :lines: 51-61
          :linenos:
          :lineno-start: 51
 
 Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID control loop to drive our elevator to a setpoint 30 inches off the ground.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
          :language: java
          :lines: 31-40
          :linenos:
          :lineno-start: 31
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
          :lines: 99-106
          :linenos:
          :lineno-start: 99
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+         :language: c++
          :lines: 20-28
          :linenos:
          :lineno-start: 20
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
+         :language: c++
          :lines: 42-50
          :linenos:
          :lineno-start: 42
@@ -95,20 +99,22 @@ Next, :code:`simulationPeriodic`/:code:`SimulationPeriodic` (Java/C++) uses the 
 
 Finally, the simulated encoder's distance reading is set using the simulated elevator's position, and the robot's battery voltage is set using the estimated current drawn by the elevator.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
          :lines: 79-92
          :linenos:
          :lineno-start: 79
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
+         :language: c++
          :lines: 20-35
          :linenos:
          :lineno-start: 20

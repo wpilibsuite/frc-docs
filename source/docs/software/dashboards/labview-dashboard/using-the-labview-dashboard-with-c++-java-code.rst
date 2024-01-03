@@ -10,9 +10,9 @@ Drive Tab
 
 The :guilabel:`Select Autonomous...` dropdown can be used so show the available autonomous routines and choose one to run for the match.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        SmartDashboard.putStringArray("Auto List", {"Drive Forwards", "Drive Backwards", "Shoot"});
 
@@ -27,7 +27,7 @@ The :guilabel:`Select Autonomous...` dropdown can be used so show the available 
             // auto here
        }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        frc::SmartDashboard::PutStringArray("Auto List", {"Drive Forwards", "Drive Backwards", "Shoot"});
 
@@ -44,25 +44,25 @@ The :guilabel:`Select Autonomous...` dropdown can be used so show the available 
 
 Sending to the "Gyro" NetworkTables entry will populate the gyro here.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        SmartDashboard.putNumber("Gyro", drivetrain.getHeading());
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        frc::SmartDashboard::PutNumber("Gyro", Drivetrain.GetHeading());
 
 There are four outputs that show the motor power to the drivetrain.  This is configured for 2 motors per side and a tank style drivetrain.  This is done by setting "RobotDrive Motors" like the example below.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        SmartDashboard.putNumberArray("RobotDrive Motors", {drivetrain.getLeftFront(), drivetrain.getRightFront(), drivetrain.getLeftBack(), drivetrain.getRightBack()});
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        frc::SmartDashboard::PutNumberArray("Gyro", {drivetrain.GetLeftFront(), drivetrain.GetRightFront(), drivetrain.GetLeftBack(), drivetrain.GetRightBack()});
 
@@ -80,25 +80,25 @@ Strings
 
 The strings are labeled top-to-bottom, left-to-right from "DB/String 0" to "DB/String 9". Each String field can display at least 21 characters (exact number depends on what characters). To write to these strings:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        SmartDashboard.putString("DB/String 0", "My 21 Char TestString");
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        frc::SmartDashboard::PutString("DB/String 0", "My 21 Char TestString");
 
 To read string data entered on the Dashboard:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        String dashData = SmartDashboard.getString("DB/String 0", "myDefaultData");
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        std::string dashData = frc::SmartDashboard::GetString("DB/String 0", "myDefaultData");
 
@@ -109,25 +109,25 @@ Buttons and LEDs
 
 The Buttons and LEDs are boolean values and are labeled top-to-bottom from "DB/Button 0" to "DB/Button 3" and "DB/LED 0" to "DB/LED 3". The Buttons are bi-directional, the LEDs are only able to be written from the Robot and read on the Dashboard. To write to the Buttons or LEDs:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        SmartDashboard.putBoolean("DB/Button 0", true);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        frc::SmartDashboard::PutBoolean("DB/Button 0", true);
 
 To read from the Buttons: (default value is false)
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        boolean buttonValue = SmartDashboard.getBoolean("DB/Button 0", false);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        bool buttonValue = frc::SmartDashboard::GetBoolean("DB/Button 0", false);
 
@@ -138,24 +138,24 @@ Sliders
 
 The Sliders are bi-directional analog (double) controls/indicators with a range from 0 to 5. To write to these indicators:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        SmartDashboard.putNumber("DB/Slider 0", 2.58);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        frc::SmartDashboard::PutNumber("DB/Slider 0", 2.58);
 
 To read values from the Dashboard into the robot program: (default value of 0.0)
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        double dashData = SmartDashboard.getNumber("DB/Slider 0", 0.0);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        double dashData = frc::SmartDashboard::GetNumber("DB/Slider 0", 0.0);

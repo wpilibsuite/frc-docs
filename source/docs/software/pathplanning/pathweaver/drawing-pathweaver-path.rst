@@ -40,4 +40,4 @@ Locking tangent lines prevents them from changing when the trajectory is being m
 More Precise control of Waypoints
 ---------------------------------
 
-While PathWeaver makes it simple to draw trajectories that the robot should follow, it is sometimes hard to precisely set where the waypoints should be placed. In this case, setting the waypoint locations can be done by entering the X and Y value which might come from an accurate CAD model of the field. The points can be entered in the X and Y fields when a waypoint is selected.
+While PathWeaver makes it simple to draw trajectories that the robot should follow, it is sometimes hard to precisely set where the waypoints should be placed. In this case, setting the waypoint locations can be done by entering the X and Y value which might come from an accurate :term:`CAD` model of the field. The points can be entered in the X and Y fields when a waypoint is selected.

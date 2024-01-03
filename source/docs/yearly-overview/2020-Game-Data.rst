@@ -28,9 +28,9 @@ C++/Java
 
 In C++ and Java the Game Data is accessed by using the GetGameSpecificMessage method of the DriverStation class. Teams likely want to query the data in a Teleop method such as Teleop Periodic in order to receive the data after it is sent during the match. Make sure to handle the case where the data is an empty string as this is what the data will be until the criteria are reached to enable Position Control for either alliance.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     import edu.wpi.first.wpilibj.DriverStation;
 
@@ -60,7 +60,7 @@ In C++ and Java the Game Data is accessed by using the GetGameSpecificMessage me
       //Code for no data received yet
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     #include <frc/DriverStation.h>
 
@@ -103,7 +103,7 @@ LabVIEW teams will likely want to query the data in the Teleop or PeriodicTasks 
 Testing Game Specific Data
 --------------------------
 
-You can test your Game Specific Data code without FMS by using the Driver Station. Click on the Setup tab of the Driver Station, then enter the desired test string into the Game Data text field. The data will be transmitted to the robot in one of two conditions: Enable the robot in Teleop mode, or when the DS reaches the End Game time in a Practice Match (times are configurable on the Setup tab). It is recommended to run at least one match using the Practice functionality to verify that your code works correctly in a full match flow.
+You can test your Game Specific Data code without :term:`FMS` by using the Driver Station. Click on the Setup tab of the Driver Station, then enter the desired test string into the Game Data text field. The data will be transmitted to the robot in one of two conditions: Enable the robot in Teleop mode, or when the DS reaches the End Game time in a Practice Match (times are configurable on the Setup tab). It is recommended to run at least one match using the Practice functionality to verify that your code works correctly in a full match flow.
 
 .. image:: images/2020-Game-Data/ds-game-data.png
   :alt: Game Data text box on the Driver Station.

@@ -88,7 +88,7 @@ A line-by-line breakdown of the file:
 
 This example expects a KiwiDrive class with the constructor
 
-.. code-block:: cpp
+.. code-block:: c++
 
    KiwiDrive(SpeedController, SpeedController, SpeedController)
 

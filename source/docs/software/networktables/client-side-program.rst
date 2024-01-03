@@ -7,9 +7,10 @@ If all you need to do is have your robot program communicate with a :term:`COTS`
 
 A basic client program looks like the following example.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
 
         .. code-block:: java
 
@@ -60,9 +61,10 @@ A basic client program looks like the following example.
                }
            }
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             #include <chrono>
             #include <thread>
@@ -88,9 +90,10 @@ A basic client program looks like the following example.
               }
             }
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             #include <chrono>
             #include <thread>
@@ -115,7 +118,8 @@ A basic client program looks like the following example.
               }
             }
 
-    .. group-tab:: C
+    .. tab-item:: C
+       :sync: C
 
         .. code-block:: c
 
@@ -141,7 +145,9 @@ A basic client program looks like the following example.
               }
             }
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 
@@ -178,16 +184,18 @@ Building using Gradle
 
 Example build.gradle files are provided in the `StandaloneAppSamples Repository <https://github.com/wpilibsuite/StandaloneAppSamples>`__ Update the GradleRIO version to correspond to the desired WPILib version.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+     :sync: Java
 
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/3b64aadee717c9f0566497a40fd0be7d0eaed96d/Java/build.gradle
           :language: groovy
           :linenos:
           :emphasize-lines: 5
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
        Uncomment the appropriate platform as highlighted.
 

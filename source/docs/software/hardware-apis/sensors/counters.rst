@@ -30,9 +30,9 @@ Two-pulse mode
 
 In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the specified "up channel," and down for every edge/pulse on the specified "down channel."  A counter can be initialized in two-pulse with the following code:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Create a new Counter object in two-pulse mode
         Counter counter = new Counter(Counter.Mode.k2Pulse);
@@ -48,7 +48,7 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
             counter.setDownSourceEdge(true, true);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Create a new Counter object in two-pulse mode
         frc::Counter counter{frc::Counter::Mode::k2Pulse};
@@ -67,9 +67,9 @@ Semi-period mode
 
 In semi-period mode, the :code:`Counter` will count the duration of the pulses on a channel, either from a rising edge to the next falling edge, or from a falling edge to the next rising edge.  A counter can be initialized in semi-period mode with the following code:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Create a new Counter object in two-pulse mode
         Counter counter = new Counter(Counter.Mode.kSemiperiod);
@@ -83,7 +83,7 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
             counter.setSemiPeriodMode(true);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Create a new Counter object in two-pulse mode
         frc::Counter counter{frc::Counter::Mode::kSemiperiod};
@@ -97,14 +97,14 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
 
 To get the pulse width, call the :code:`getPeriod()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Return the measured pulse width in seconds
         counter.getPeriod();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Return the measured pulse width in seconds
         counter.GetPeriod();
@@ -114,9 +114,9 @@ Pulse-length mode
 
 In pulse-length mode, the counter will count either up or down depending on the length of the pulse. A pulse below the specified threshold time will be interpreted as a forward count and a pulse above the threshold is a reverse count. This is useful for some gear tooth sensors which encode direction in this manner.  A counter can be initialized in this mode as follows:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Create a new Counter object in two-pulse mode
         Counter counter = new Counter(Counter.Mode.kPulseLength);
@@ -133,7 +133,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
             counter.setPulseLengthMode(.05)
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Create a new Counter object in two-pulse mode
         frc::Counter counter{frc::Counter::Mode::kPulseLength};
@@ -153,9 +153,9 @@ External direction mode
 
 In external direction mode, the counter counts either up or down depending on the level on the second channel. If the direction source is low, the counter will increase; if the direction source is high, the counter will decrease (to reverse this, see the next section). A counter can be initialized in this mode as follows:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Create a new Counter object in two-pulse mode
         Counter counter = new Counter(Counter.Mode.kExternalDirection);
@@ -170,7 +170,7 @@ In external direction mode, the counter counts either up or down depending on th
             counter.setUpSourceEdge(true, true);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Create a new Counter object in two-pulse mode
         frc::Counter counter{frc::Counter::Mode::kExternalDirection};
@@ -192,9 +192,9 @@ Configuring counter parameters
 
 Apart from the mode-specific configurations, the :code:`Counter` class offers a number of additional configuration methods:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Configures the counter to return a distance of 4 for every 256 pulses
         // Also changes the units of getRate
@@ -213,7 +213,7 @@ Apart from the mode-specific configurations, the :code:`Counter` class offers a 
         // Can be between 1 and 127 samples
         counter.setSamplesToAverage(5);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Configures the counter to return a distance of 4 for every 256 pulses
         // Also changes the units of getRate
@@ -242,14 +242,14 @@ Count
 
 Users can obtain the current count with the :code:`get()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // returns the current count
         counter.get();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // returns the current count
         counter.Get();
@@ -261,14 +261,14 @@ Distance
 
 If the :ref:`distance per pulse <docs/software/hardware-apis/sensors/counters:Configuring counter parameters>` has been configured, users can obtain the total distance traveled by the counted sensor with the :code:`getDistance()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // returns the current distance
         counter.getDistance();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // returns the current distance
         counter.GetDistance();
@@ -280,14 +280,14 @@ Rate
 
 Users can obtain the current rate of change of the counter with the :code:`getRate()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets the current rate of the counter
         counter.getRate();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets the current rate of the counter
         counter.GetRate();
@@ -297,14 +297,14 @@ Stopped
 
 Users can obtain whether the counter is stationary with the :code:`getStopped()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets whether the counter is stopped
         counter.getStopped();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets whether the counter is stopped
         counter.GetStopped();
@@ -314,14 +314,14 @@ Direction
 
 Users can obtain the direction in which the counter last moved with the :code:`getDirection()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Gets the last direction in which the counter moved
         counter.getDirection();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Gets the last direction in which the counter moved
         counter.GetDirection();
@@ -333,14 +333,14 @@ Period
 
 Users can obtain the duration (in seconds) of the most-recent period with the :code:`getPeriod()` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // returns the current period in seconds
         counter.getPeriod();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // returns the current period in seconds
         counter.GetPeriod();
@@ -350,14 +350,14 @@ Resetting a counter
 
 To reset a counter to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Resets the encoder to read a distance of zero
         counter.reset();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Resets the encoder to read a distance of zero
         counter.Reset();

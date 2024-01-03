@@ -8,12 +8,12 @@ Robot Pose Visualization
 ------------------------
 The robot pose can be visualized on the Simulator GUI (during simulation) or on a dashboard such as Glass (on a real robot) by sending the odometry pose over a ``Field2d`` object. A ``Field2d`` can be trivially constructed without any constructor arguments:
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       private Field2d m_field = new Field2d();
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/smartdashboard/Field2d.h>
 
@@ -23,15 +23,15 @@ The robot pose can be visualized on the Simulator GUI (during simulation) or on 
 
 This ``Field2d`` instance must then be sent over NetworkTables. The best place to do this is in the constructor of your subsystem.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       public Drivetrain() {
         ...
         SmartDashboard.putData("Field", m_field);
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/smartdashboard/SmartDashboard.h>
 
@@ -44,8 +44,8 @@ This ``Field2d`` instance must then be sent over NetworkTables. The best place t
 
 Finally, the pose from your odometry must be updated periodically into the ``Field2d`` object. Remember that this should be in a general ``periodic()`` method i.e. one that runs both during simulation and during real robot operation.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       public void periodic() {
         ...
@@ -58,7 +58,7 @@ Finally, the pose from your odometry must be updated periodically into the ``Fie
         m_field.setRobotPose(m_odometry.getPoseMeters());
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       void Periodic() {
         ...

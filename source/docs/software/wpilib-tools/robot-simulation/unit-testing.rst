@@ -14,23 +14,27 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
 
 .. note:: Vendors might not support resource closing identically to the way shown here. See your vendor's documentation for more information as to what they support and how.
 
-.. tabs::
-   .. group-tab:: Java
+.. tab-set::
+   .. tab-item:: Java
+      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
          :language: java
          :lines: 7-
 
-   .. group-tab:: C++ (Header)
+   .. tab-item:: C++ (Header)
+      :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
-         :language: cpp
+
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
+         :language: c++
          :lines: 7-
 
-   .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
-         :language: cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
+         :language: c++
          :lines: 5-
 
 Writing Tests
@@ -46,17 +50,19 @@ Both JUnit and GoogleTest have multiple assertion types; the most common is equa
 
 .. note:: Comparison of floating-point values isn't accurate, so comparing them should be done with an acceptable error parameter (``DELTA``).
 
-.. tabs::
-   .. group-tab:: Java
+.. tab-set::
+   .. tab-item:: Java
+      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibjExamples/src/test/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/IntakeTest.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/test/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/IntakeTest.java
          :language: java
          :lines: 7-
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/test/cpp/examples/UnitTest/cpp/subsystems/IntakeTest.cpp
-         :language: cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/test/cpp/examples/UnitTest/cpp/subsystems/IntakeTest.cpp
+         :language: c++
          :lines: 5-
 
 For more advanced usage of JUnit and Google Test, see the framework docs.
@@ -68,12 +74,12 @@ Running Tests
 
 For Java tests to run, make sure that your ``build.gradle`` file contains the following block:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2023.4.3/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.1.1-beta-4/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
-   :lines: 73-76
+   :lines: 75-78
    :linenos:
-   :lineno-start: 73
+   :lineno-start: 75
 
-Use :guilabel:`Test Robot Code` from the Command Palette to run the tests. Results will be reported in the terminal output, each test will have a ``FAILED`` or ``PASSED``/``OK`` label next to the test name in the output. JUnit (Java only) will generate a HTML document in ``build/reports/tests/test/index.html`` with a more detailed overview of the results; if there are failed test a link to render the document in your browser will be printed in the terminal output.
+Use :guilabel:`Test Robot Code` from the Command Palette to run the tests. Results will be reported in the terminal output, each test will have a ``FAILED`` or ``PASSED``/``OK`` label next to the test name in the output. JUnit (Java only) will generate a HTML document in ``build/reports/tests/test/index.html`` with a more detailed overview of the results; if there are any failed tests a link to render the document in your browser will be printed in the terminal output.
 
 By default, Gradle runs the tests whenever robot code is built, including deploys. This will increase deploy time, and failing tests will cause the build and deploy to fail. To prevent this from happening, you can use :guilabel:`Change Skip Tests On Deploy Setting` from the Command Palette to configure whether to run tests when deploying.

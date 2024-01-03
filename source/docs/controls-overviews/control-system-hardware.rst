@@ -10,23 +10,24 @@ The goal of this document is to provide a brief overview of the hardware compone
 Overview of Control System
 --------------------------
 
-.. tabs::
+.. tab-set::
+    .. tab-item:: REV
+        :sync: rev
 
-   .. group-tab:: REV
-
-      .. figure:: images/frc-control-system-layout-rev.svg
+        .. figure:: images/frc-control-system-layout-rev.svg
          :alt: Layout of all popular components of the control system including REV Control System Components
          :width: 500
 
-      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
-   .. group-tab:: CTRE
+    .. tab-item:: CTRE
+        :sync: ctre
 
-      .. figure:: images/frc-control-system-layout.svg
-        :alt: Layout of all of the core components of the control system and how they are connected.
-        :width: 500
+        .. figure:: images/frc-control-system-layout.svg
+         :alt: Layout of all of the core components of the control system and how they are connected.
+         :width: 500
 
-      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
 NI roboRIO
 ----------
@@ -116,9 +117,9 @@ The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) ba
 Robot Signal Light
 ------------------
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Allen-Bradley
+   .. tab-item:: Allen-Bradley
 
       .. figure:: images/control-system-hardware/rsl-allenbradley.png
          :alt: Orange Robot Signal Light (Allen-Bradley)
@@ -126,7 +127,7 @@ Robot Signal Light
 
          Allen-Bradley 855PB-B12ME522
 
-   .. tab:: AndyMark
+   .. tab-item:: AndyMark
 
       .. figure:: images/control-system-hardware/rsl-andymark.png
          :alt: Orange Robot Signal Light (AndyMark)
@@ -170,7 +171,7 @@ Talon SRX
   :alt: Talon SRX
   :width: 500
 
-The `Talon SRX Motor Controller <https://store.ctr-electronics.com/talon-srx/>`__ is a "smart motor controller" from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or PWM interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <https://store.ctr-electronics.com/content/user-manual/Talon%20SRX%20User's%20Guide.pdf>`__.
+The `Talon SRX Motor Controller <https://store.ctr-electronics.com/talon-srx/>`__ is a "smart motor controller" from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or :term:`PWM` interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <https://store.ctr-electronics.com/content/user-manual/Talon%20SRX%20User's%20Guide.pdf>`__.
 
 Victor SPX
 ^^^^^^^^^^
@@ -273,7 +274,7 @@ Venom Motor Controller
   :alt: Venom Motor Controller
   :width: 500
 
-The `Venom Motor Controller <https://www.playingwithfusion.com/productview.php?pdid=99>`__ from Playing With Fusion is integrated into a motor based on the original CIM.  Speed, current, temperature, and position are all measured onboard, enabling advanced control modes without complicated sensing and wiring schemes.
+The `Venom Motor Controller <https://www.playingwithfusion.com/productview.php?pdid=99>`__ from Playing With Fusion is integrated into a motor based on the original :term:`CIM`.  Speed, current, temperature, and position are all measured onboard, enabling advanced control modes without complicated sensing and wiring schemes.
 
 Nidec Dynamo BLDC Motor with Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

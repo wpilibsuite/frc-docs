@@ -10,8 +10,8 @@ The ``EncoderSim`` class allows users to set encoder positions and velocities on
 
 .. note:: It is not possible to simulate encoders that are directly connected to CAN motor controllers using WPILib classes. For more information about your specific motor controller, please read your vendor's documentation.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       // These represent our regular encoder objects, which we would
       // create to use on a real robot.
@@ -24,7 +24,7 @@ The ``EncoderSim`` class allows users to set encoder positions and velocities on
       private EncoderSim m_leftEncoderSim = new EncoderSim(m_leftEncoder);
       private EncoderSim m_rightEncoderSim = new EncoderSim(m_rightEncoder);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/Encoder.h>
       #include <frc/simulation/EncoderSim.h>
@@ -46,10 +46,10 @@ Simulating Gyroscopes
 ---------------------
 Similar to the ``EncoderSim`` class, simulated gyroscope classes also exist for commonly used WPILib gyros -- ``AnalogGyroSim`` and ``ADXRS450_GyroSim``. These are also constructed in the same manner.
 
-.. note:: It is not possible to simulate certain vendor gyros (i.e. Pigeon IMU and NavX) using WPILib classes. Please read the respective vendors' documentation for information on their simulation support.
+.. note:: It is not possible to simulate certain vendor gyros (i.e. Pigeon :term:`IMU` and NavX) using WPILib classes. Please read the respective vendors' documentation for information on their simulation support.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       // Create our gyro object like we would on a real robot.
       private AnalogGyro m_gyro = new AnalogGyro(1);
@@ -59,7 +59,7 @@ Similar to the ``EncoderSim`` class, simulated gyroscope classes also exist for 
       // when deploying code to the roboRIO.
       private AnalogGyroSim m_gyroSim = new AnalogGyroSim(m_gyro);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/AnalogGyro.h>
       #include <frc/simulation/AnalogGyroSim.h>

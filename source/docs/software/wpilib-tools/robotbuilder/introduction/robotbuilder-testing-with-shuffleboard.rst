@@ -24,15 +24,15 @@ The buttons will be generated automatically and will appear on the dashboard scr
 Adding Commands Manually
 ------------------------
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
       SmartDashboard.putData("Open Claw", new OpenClaw(m_claw);
       SmartDashboard.putData("Close Claw", new CloseClaw(m_claw));
 
-   .. code-tab:: cpp
+   .. code-block:: c++
 
       SmartDashboard::PutData("Autonomous Command", new AutonomousCommand());
       SmartDashboard::PutData("Open Claw", new OpenClaw(&m_claw));

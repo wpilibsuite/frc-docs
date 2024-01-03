@@ -13,9 +13,10 @@ The claw at the end of a robot arm is a subsystem operated by a single VictorSPX
 Adding Subsystem Capabilities
 -----------------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: java
 
       .. code-block:: java
         :linenos:
@@ -102,9 +103,10 @@ Adding Subsystem Capabilities
 
         }
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. code-block:: cpp
+      .. code-block:: c++
          :linenos:
          :lineno-start: 11
          :emphasize-lines: 38-52
@@ -171,11 +173,12 @@ Notice that member variable called ``motor`` and ``limitswitch`` are created by 
 Adding the Method Declarations to the Header File (C++ Only)
 ------------------------------------------------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. code-block:: cpp
+      .. code-block:: c++
          :linenos:
          :lineno-start: 11
          :emphasize-lines: 30-33

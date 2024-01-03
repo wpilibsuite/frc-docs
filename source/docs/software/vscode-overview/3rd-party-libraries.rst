@@ -1,7 +1,7 @@
 3rd Party Libraries
 ===================
 
-Teams that are using non-PWM motor controllers or advanced sensors will most likely need to install external vendor dependencies.
+Teams that are using non-:term:`PWM` motor controllers or advanced sensors will most likely need to install external vendor dependencies.
 
 What Are Vendor Dependencies?
 -----------------------------
@@ -30,7 +30,7 @@ This JSON file allows specification of complex libraries with multiple component
 How Does It Work? - LabVIEW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For LabVIEW teams, there might be a few new :guilabel:`Third Party` items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW 2020\vi.lib\Rock Robotics\WPI\Third Party``
+For LabVIEW teams, there might be a few new :guilabel:`Third Party` items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW 2023\vi.lib\Rock Robotics\WPI\Third Party``
 
 In order to install third party libraries for LabVIEW, download the VIs from the vendor (typically via some sort of installer). Then drag and drop the third party VIs into the respective folder mentioned above just like any other VI.
 
@@ -78,6 +78,33 @@ The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpi
 Libraries
 ---------
 
+WPILib Libraries
+^^^^^^^^^^^^^^^^
+
+Command Library
+~~~~~~~~~~~~~~~
+
+The WPILib :doc:`command library </docs/software/commandbased/index>` has been split into a vendor library. It is installed by the WPILib installer for offline installation. It may also be installed with the following online link:
+
+`New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
+
+Romi Library
+~~~~~~~~~~~~
+
+A Romi Library has been created to contain several helper classes that are used in the ``RomiReference`` example.
+
+`Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/romiVendordep/RomiVendordep.json>`__.
+
+XRP Library
+~~~~~~~~~~~
+
+An XRP Library has been created to contain several helper classes that are used in the ``XRPReference`` example.
+
+`XRP Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/xrpVendordep/XRPVendordep.json>`__.
+
+Vendor Libraries
+^^^^^^^^^^^^^^^^
+
 Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.
 
 `2023 CTRE Phoenix Framework <https://store.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
@@ -112,25 +139,4 @@ Community Libraries
 `PathPlanner <https://github.com/mjansen4857/pathplanner/wiki>`_ - Library for PathPlanner
    ``https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json``
 
-WPILib Command Libraries
-~~~~~~~~~~~~~~~~~~~~~~~~
 
-The WPILib :doc:`new </docs/software/commandbased/index>` command library has been split into a vendor library. It is installed by the WPILib installer for offline installation. It may also be installed with the following online link:
-
-`New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
-
-To remove a library dependency from a project, select **Manage Current Libraries** from the **Manage Vendor Libraries** menu, check the box for any libraries to uninstall and click OK. These libraries will be removed as dependencies from the project.
-
-Romi Library
-~~~~~~~~~~~~
-
-A Romi Library has been created to contain several helper classes that are a part of the ``RomiReference`` example.
-
-`Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/romiVendordep/RomiVendordep.json>`__.
-
-XRP Library
-~~~~~~~~~~~
-
-An XRP Library has been created to contain several helper classes that are a part of the ``XRPReference`` example.
-
-`XRP Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/xrpVendordep/XRPVendordep.json>`__.

@@ -17,9 +17,9 @@ Create a Custom Plugin
 ----------------------
 In order to define a plugin, the plugin class must be a subclass of `edu.wpi.first.shuffleboard.api.Plugin <https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`_ or one of its subclasses. An example of a plugin class would be as following.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       import edu.wpi.first.shuffleboard.api.plugin.Description;
       import edu.wpi.first.shuffleboard.api.plugin.Plugin;

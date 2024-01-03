@@ -23,9 +23,9 @@ AnalogAccelerometer
 
 The :code:`AnalogAccelerometer` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_analog_accelerometer.html>`__) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an analog accelerometer on analog input 0
         AnalogAccelerometer accelerometer = new AnalogAccelerometer(0);
@@ -39,7 +39,7 @@ The :code:`AnalogAccelerometer` class (`Java <https://github.wpilib.org/allwpili
         // Gets the current acceleration
         double accel = accelerometer.getAcceleration();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an analog accelerometer on analog input 0
         frc::AnalogAccelerometer accelerometer{0};
@@ -57,14 +57,14 @@ If users have a 3-axis analog accelerometer, they can use three instances of thi
 
 There are getters for the acceleration along each cardinal direction (x, y, and z), as well as a setter for the range of accelerations the accelerometer will measure.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Sets the accelerometer to measure between -8 and 8 G's
         accelerometer.setRange(BuiltInAccelerometer.Range.k8G);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Sets the accelerometer to measure between -8 and 8 G's
         accelerometer.SetRange(BuiltInAccelerometer::Range::kRange_8G);
@@ -74,15 +74,15 @@ ADXL345_I2C
 
 The :code:`ADXL345_I2C` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/ADXL345_I2C.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_a_d_x_l345___i2_c.html>`__) provides support for the ADXL345 accelerometer over the I2C communications bus.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an ADXL345 accelerometer object on the MXP I2C port
         // with a measurement range from -8 to 8 G's
         ADXL345_I2C accelerometer = new ADXL345_I2C(I2C.Port.kMXP, ADXL345_I2C.Range.k8G);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an ADXL345 accelerometer object on the MXP I2C port
         // with a measurement range from -8 to 8 G's
@@ -93,15 +93,15 @@ ADXL345_SPI
 
 The :code:`ADXL345_SPI` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/ADXL345_SPI.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_a_d_x_l345___s_p_i.html>`__) provides support for the ADXL345 accelerometer over the SPI communications bus.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an ADXL345 accelerometer object on the MXP SPI port
         // with a measurement range from -8 to 8 G's
         ADXL345_SPI accelerometer = new ADXL345_SPI(SPI.Port.kMXP, ADXL345_SPI.Range.k8G);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an ADXL345 accelerometer object on the MXP SPI port
         // with a measurement range from -8 to 8 G's
@@ -112,15 +112,15 @@ ADXL362
 
 The :code:`ADXL362` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/ADXL362.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_a_d_x_l362.html>`__) provides support for the ADXL362 accelerometer over the SPI communications bus.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an ADXL362 accelerometer object on the MXP SPI port
         // with a measurement range from -8 to 8 G's
         ADXL362 accelerometer = new ADXL362(SPI.Port.kMXP, ADXL362.Range.k8G);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an ADXL362 accelerometer object on the MXP SPI port
         // with a measurement range from -8 to 8 G's
@@ -131,15 +131,15 @@ BuiltInAccelerometer
 
 The :code:`BuiltInAccelerometer` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_built_in_accelerometer.html>`__) provides access to the roboRIO's own built-in accelerometer:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an object for the built-in accelerometer
         // Range defaults to +- 8 G's
         BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an object for the built-in accelerometer
         // Range defaults to +- 8 G's
@@ -159,9 +159,9 @@ It is recommended to use accelerometers in FRC\ |reg| for any application which 
 
 For detecting collisions, it is often more robust to measure the jerk than the acceleration.  The jerk is the derivative (or rate of change) of acceleration, and indicates how rapidly the forces on the robot are changing - the sudden impulse from a collision causes a sharp spike in the jerk.  Jerk can be determined by simply taking the difference of subsequent acceleration measurements, and dividing by the time between them:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         double prevXAccel = 0.0;
         double prevYAccel = 0.0;
@@ -183,7 +183,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
             prevYAccel = yAccel;
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         double prevXAccel = 0.0;
         double prevYAccel = 0.0;
@@ -206,9 +206,9 @@ For detecting collisions, it is often more robust to measure the jerk than the a
 
 Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/math/filter/LinearFilter.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_linear_filter.html>`__) to reduce the noise:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
 
@@ -222,7 +222,7 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
             double filteredXAccel = xAccelFilter.calculate(accelerometer.getX());
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         frc::BuiltInAccelerometer accelerometer;
 

@@ -53,12 +53,12 @@ Installation
 Extraction
 ^^^^^^^^^^
 
-.. tabs::
-   .. tab:: Online
+.. tab-set::
+   .. tab-item:: Online
 
       Run the downloaded executable file to start the install process. Click :guilabel:`Yes` if a Windows Security prompt appears.
 
-   .. tab:: Offline (Windows 10+)
+   .. tab-item:: Offline (Windows 10+)
 
       Right click on the downloaded iso file and select :guilabel:`mount`. Run ``install.exe`` from the mounted iso. Click :guilabel:`Yes` if a Windows Security prompt appears.
 
@@ -115,11 +115,6 @@ License Agreements
 
 Select :guilabel:`I accept…` then click :guilabel:`Next`
 
-.. image:: images/labview/labview_license_2.png
-   :alt: Accept the Silverlight license agreements.
-
-Go ahead and press :guilabel:`I accept…` then click :guilabel:`Next`, confirming that you agree to the NI License agreement.
-
 Review Summary
 ^^^^^^^^^^^^^^
 
@@ -135,41 +130,6 @@ Detail Progress
    :alt: Detail Progress
 
 This screen showcases the installation process, go ahead and press :guilabel:`Next` when it's finished.
-
-NI Activation Wizard
-^^^^^^^^^^^^^^^^^^^^
-
-.. image:: images/labview/ni_activation_login.png
-   :alt: The NI user login screen.
-
-Log into your `ni.com <https://ni.com>`__ account. If you don’t have an account, select :guilabel:`Create account` to create a free account.
-
-.. image:: images/update-suite/ni-activation-wizard-2.png
-   :alt: Screen for entering your product key.
-
-Enter the serial number. Click :guilabel:`Activate`.
-
-.. note:: If this is the first time activating this year's software on this account, you will see the message shown above about a valid license not being found. You can ignore this.
-
-.. image:: images/update-suite/ni-activation-wizard-3.png
-   :alt: Screen details the activation success of each package.
-
-If your products activate successfully, an :guilabel:`Activation Successful` message will appear. If the serial number was incorrect, it will give you a text box and you can re-enter the number and select :guilabel:`Try Again`. If everything activated successfully, click :guilabel:`Next`.
-
-.. image:: images/update-suite/ni-activation-wizard-4.png
-   :alt: Close through this screen asking you to register.
-
-Click :guilabel:`Close`.
-
-NI Update Service
-^^^^^^^^^^^^^^^^^
-
-.. image:: images/labview/ni_update_enable.png
-   :alt: The update service is not needed.
-
-You will be prompted whether to enable the NI update service. You can choose to not enable the update service.
-
-.. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (FRC Blog, Team Updates or E-mail Blasts).
 
 Reboot to Complete Installation
 -------------------------------

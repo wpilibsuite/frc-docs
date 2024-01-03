@@ -8,17 +8,10 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-LabVIEW installation of RabbitMQ Fails
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** Some users have reported the following error during LabVIEW installation: ``An error occurred while installing a package: ni-skyline-rabbitmq-support (20.5.0.49152-0+f0)``.
-
-**Workaround:** NI has a `support article <https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z000000kIbbSAE&l=en-US>`_ with several potential workarounds. Alternately, you can de-select :guilabel:`NI Web Server Development Support for LabVIEW 2020 32-bit` from the :guilabel:`Additional items you may wish to install` page to avoid installing the failing package.
-
 roboRIO 2.0 Ethernet Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** On the roboRIO 2.0, the Ethernet port is configured to DHCP only. This will work in normal networking setups where the radio acts as a DHCP server, but will not communicate when tethered directly to the Driver Station via Ethernet.
+**Issue:** On the roboRIO 2.0, the Ethernet port is configured to :term:`DHCP` only. This will work in normal networking setups where the radio acts as a DHCP server, but will not communicate when tethered directly to the Driver Station via Ethernet.
 
 **Workaround:** Use the :doc:`/docs/software/roborio-info/roborio-web-dashboard` to change the Ethernet Adapter eth0 :guilabel:`Configure IPv4 Address` to :guilabel:`DHCP or Link Local`.
 

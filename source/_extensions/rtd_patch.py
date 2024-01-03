@@ -12,8 +12,8 @@ import sphinxext.photofinish as photofinish
 class ReadtheDocsBuilderLocalMedia(StandaloneHTMLBuilder):
     name = "readthedocssinglehtmllocalmedia"
 
-    def __init__(self, app: Sphinx) -> None:
-        super().__init__(app)
+    def __init__(self, app: Sphinx, *args, **kwargs) -> None:
+        super().__init__(app, *args, **kwargs)
 
         for listeners in app.events.listeners.values():
             for listener in listeners[:]:

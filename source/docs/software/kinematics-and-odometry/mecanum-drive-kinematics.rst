@@ -6,9 +6,9 @@ Constructing the Kinematics Object
 ----------------------------------
 The ``MecanumDriveKinematics`` class accepts four constructor arguments, with each argument being the location of a wheel relative to the robot center (as a ``Translation2d``). The order for the arguments is front left, front right, back left, and back right. The locations for the wheels must be relative to the center of the robot. Positive x values represent moving toward the front of the robot whereas positive y values represent moving toward the left of the robot.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Locations of the wheels relative to the robot center.
       Translation2d m_frontLeftLocation = new Translation2d(0.381, 0.381);
@@ -21,8 +21,7 @@ The ``MecanumDriveKinematics`` class accepts four constructor arguments, with ea
         m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation, m_backRightLocation
       );
 
-
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Locations of the wheels relative to the robot center.
       frc::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
@@ -35,13 +34,29 @@ The ``MecanumDriveKinematics`` class accepts four constructor arguments, with ea
         m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation,
         m_backRightLocation};
 
+   .. code-block:: python
+
+      from wpimath.geometry import Translation2d
+      from wpimath.kinematics import MecanumDriveKinematics
+
+      # Locations of the wheels relative to the robot center.
+      frontLeftLocation = Translation2d(0.381, 0.381)
+      frontRightLocation = Translation2d(0.381, -0.381)
+      backLeftLocation = Translation2d(-0.381, 0.381)
+      backRightLocation = Translation2d(-0.381, -0.381)
+
+      # Creating my kinematics object using the wheel locations.
+      self.kinematics = MecanumDriveKinematics(
+        frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
+      )
+
 Converting Chassis Speeds to Wheel Speeds
 -----------------------------------------
-The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a ``MecanumDriveWheelSpeeds`` object. This is useful in situations where you have to convert a forward velocity, sideways velocity, and an angular velocity into individual wheel speeds.
+The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a ``MecanumDriveWheelSpeeds`` object. This is useful in situations where you have to convert a forward velocity, sideways velocity, and an angular velocity into individual wheel speeds.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Example chassis speeds: 1 meter per second forward, 3 meters
       // per second to the left, and rotation at 1.5 radians per second
@@ -57,7 +72,7 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpee
       double backLeft = wheelSpeeds.rearLeftMetersPerSecond
       double backRight = wheelSpeeds.rearRightMetersPerSecond
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Example chassis speeds: 1 meter per second forward, 3 meters
       // per second to the left, and rotation at 1.5 radians per second
@@ -69,13 +84,25 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / ``ToWheelSpeeds(ChassisSpee
       // struct into it's individual components
       auto [fl, fr, bl, br] = kinematics.ToWheelSpeeds(speeds);
 
+   .. code-block:: python
+
+      from wpimath.kinematics import ChassisSpeeds
+
+      # Example chassis speeds: 1 meter per second forward, 3 meters
+      # per second to the left, and rotation at 1.5 radians per second
+      # counterclockwise.
+      speeds = ChassisSpeeds(1.0, 3.0, 1.5)
+
+      # Convert to wheel speeds
+      frontLeft, frontRight, backLeft, backRight = self.kinematics.toWheelSpeeds(speeds)
+
 Field-oriented drive
 ~~~~~~~~~~~~~~~~~~~~
 :ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get wheel speeds from a set of desired field-oriented speeds.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // The desired field relative speed here is 2 meters per second
       // toward the opponent's alliance station wall, and 2 meters per
@@ -88,7 +115,7 @@ Field-oriented drive
       // Now use this in our kinematics
       MecanumDriveWheelSpeeds wheelSpeeds = kinematics.toWheelSpeeds(speeds);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // The desired field relative speed here is 2 meters per second
       // toward the opponent's alliance station wall, and 2 meters per
@@ -101,6 +128,23 @@ Field-oriented drive
       // Now use this in our kinematics
       auto [fl, fr, bl, br] = kinematics.ToWheelSpeeds(speeds);
 
+   .. code-block:: python
+
+      from wpimath.kinematics import ChassisSpeeds
+      import math
+      from wpimath.geometry import Rotation2d
+
+      # The desired field relative speed here is 2 meters per second
+      # toward the opponent's alliance station wall, and 2 meters per
+      # second toward the left field boundary. The desired rotation
+      # is a quarter of a rotation per second counterclockwise. The current
+      # robot angle is 45 degrees.
+      speeds = ChassisSpeeds.fromFieldRelativeSpeeds(
+        2.0, 2.0, math.pi / 2.0, Rotation2d.fromDegrees(45.0))
+
+      # Now use this in our kinematics
+      wheelSpeeds = self.kinematics.toWheelSpeeds(speeds)
+
 Using custom centers of rotation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Sometimes, rotating around one specific corner might be desirable for certain evasive maneuvers. This type of behavior is also supported by the WPILib classes. The same ``ToWheelSpeeds()`` method accepts a second parameter for the center of rotation (as a ``Translation2d``). Just like the wheel locations, the ``Translation2d`` representing the center of rotation should be relative to the robot center.
@@ -111,11 +155,11 @@ For example, one can set the center of rotation on a certain wheel and if the pr
 
 Converting wheel speeds to chassis speeds
 -----------------------------------------
-One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` object to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (Java) / ``ToChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (C++) method can be used to achieve this.
+One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` object to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (Java / Python) / ``ToChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (C++) method can be used to achieve this.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Example wheel speeds
       var wheelSpeeds = new MecanumDriveWheelSpeeds(-17.67, 20.51, -13.44, 16.26);
@@ -128,7 +172,7 @@ One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` 
       double sideways = chassisSpeeds.vyMetersPerSecond;
       double angular = chassisSpeeds.omegaRadiansPerSecond;
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Example wheel speeds
       frc::MecanumDriveWheelSpeeds wheelSpeeds{-17.67_mps, 20.51_mps, -13.44_mps, 16.26_mps};
@@ -137,3 +181,18 @@ One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` 
       // feature to automatically break up the ChassisSpeeds struct into its
       // three components.
       auto [forward, sideways, angular] = kinematics.ToChassisSpeeds(wheelSpeeds);
+
+   .. code-block:: python
+
+      from wpimath.kinematics import MecanumDriveWheelSpeeds
+
+      # Example wheel speeds
+      wheelSpeeds = MecanumDriveWheelSpeeds(-17.67, 20.51, -13.44, 16.26)
+
+      # Convert to chassis speeds
+      chassisSpeeds = self.kinematics.toChassisSpeeds(wheelSpeeds)
+
+      # Getting individual speeds
+      forward = chassisSpeeds.vx
+      sideways = chassisSpeeds.vy
+      angular = chassisSpeeds.omega

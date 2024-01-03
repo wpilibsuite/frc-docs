@@ -17,14 +17,14 @@ Constructing a PIDController
 
 In order to use WPILib's PID control functionality, users must first construct a ``PIDController`` object with the desired gains:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Creates a PIDController with gains kP, kI, and kD
     PIDController pid = new PIDController(kP, kI, kD);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Creates a PIDController with gains kP, kI, and kD
     frc::PIDController pid{kP, kI, kD};
@@ -38,15 +38,15 @@ Using the Feedback Loop Output
 
 Using the constructed ``PIDController`` is simple: simply call the ``calculate()`` method from the robot's main loop (e.g. the robot's ``autonomousPeriodic()`` method):
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
     motor.set(pid.calculate(encoder.getDistance(), setpoint));
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
@@ -72,9 +72,9 @@ Occasionally, it is useful to know if a controller has tracked the setpoint to w
 
 To do this, we first must specify the tolerances with the ``setTolerance()`` method; then, we can check it with the ``atSetpoint()`` method.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
     pid.setTolerance(5, 10);
@@ -83,7 +83,7 @@ To do this, we first must specify the tolerances with the ``setTolerance()`` met
     // error derivative is less than 10 units
     pid.atSetpoint();
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
     pid.SetTolerance(5, 10);
@@ -108,15 +108,15 @@ By default, the total output contribution from the integral gain is limited to b
 
 The range limits may be increased or decreased using the ``setIntegratorRange()`` method.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // The integral gain term will never add or subtract more than 0.5 from
     // the total loop output
     pid.setIntegratorRange(-0.5, 0.5);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // The integral gain term will never add or subtract more than 0.5 from
     // the total loop output
@@ -131,9 +131,9 @@ By default, ``IZone`` is disabled.
 
 ``IZone`` may be set using the ``setIZone()`` method. To disable it, set it to infinity.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Disable IZone
     pid.setIZone(Double.POSITIVE_INFINITY);
@@ -142,7 +142,7 @@ By default, ``IZone`` is disabled.
     // more than 2
     pid.setIZone(2);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Disable IZone
     pid.SetIZone(std::numeric_limits<double>::infinity());
@@ -162,14 +162,14 @@ Some process variables (such as the angle of a turret) are measured on a circula
 
 To configure a ``PIDController`` to automatically do this, use the ``enableContinuousInput()`` method:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Enables continuous input on a range from -180 to 180
     pid.enableContinuousInput(-180, 180);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Enables continuous input on a range from -180 to 180
     pid.EnableContinuousInput(-180, 180);
@@ -177,14 +177,14 @@ To configure a ``PIDController`` to automatically do this, use the ``enableConti
 Clamping Controller Output
 --------------------------
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Clamps the controller output to between -0.5 and 0.5
     MathUtil.clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Clamps the controller output to between -0.5 and 0.5
     std::clamp(pid.Calculate(encoder.GetDistance(), setpoint), -0.5, 0.5);

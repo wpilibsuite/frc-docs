@@ -7,7 +7,7 @@ State-Space Controller Walkthrough
 
 The goal of this tutorial is to provide "end-to-end" instructions on implementing a state-space controller for a flywheel.  By following this tutorial, readers will learn how to:
 
-1. Create an accurate state-space model of a flywheel using :term:`system identification` or CAD software.
+1. Create an accurate state-space model of a flywheel using :term:`system identification` or :term:`CAD` software.
 2. Implement a Kalman Filter to filter encoder velocity measurements without lag.
 3. Implement a :ref:`LQR <docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator>` feedback controller which, when combined with model-based feedforward, will generate voltage :term:`inputs <input>` to drive the flywheel to a :term:`reference`.
 
@@ -65,62 +65,67 @@ The second part of state-space notation relates the system's current :term:`stat
 
 The ``LinearSystem`` class contains methods for easily creating state-space systems identified using :term:`system identification`. This example shows a flywheel model with a kV of 0.023 and a kA of 0.001:
 
-.. tabs::
+.. tab-set::
+   .. tab-item:: Java
+      :sync: java
 
-   .. group-tab:: Java
-
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java
          :language: java
          :lines: 33-47
          :linenos:
          :lineno-start: 33
 
-   .. group-tab:: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
-         :language: cpp
-         :lines: 17-17
+   .. tab-item:: C++
+      :sync: c++
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+         :language: c++
+         :lines: 17
          :linenos:
          :lineno-start: 17
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+         :language: c++
          :lines: 30-46
          :linenos:
-         :lineno-start: 32
+         :lineno-start: 30
+
 
 Modeling Using Flywheel Moment of Inertia and Gearing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A flywheel can also be modeled without access to a physical robot, using information about the motors, gearing and flywheel's :term:`moment of inertia`. A full derivation of this model is presented in Section 8.2.1 of  `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
 
-The ``LinearSystem`` class contains methods to easily create a model of a flywheel from the flywheel's motors, gearing and :term:`moment of inertia`. The moment of inertia can be calculated using CAD software or using physics. The examples used here are detailed in the flywheel example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__).
+The ``LinearSystem`` class contains methods to easily create a model of a flywheel from the flywheel's motors, gearing and :term:`moment of inertia`. The moment of inertia can be calculated using :term:`CAD` software or using physics. The examples used here are detailed in the flywheel example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__).
 
 .. note:: For WPILib's state-space classes, gearing is written as output over input -- that is, if the flywheel spins slower than the motors, this number should be greater than one.
 
 .. note:: The C++ LinearSystem class uses :ref:`the C++ Units Library <docs/software/basic-programming/cpp-units:The C++ Units Library>` to prevent unit mixups and assert dimensionality.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
          :language: java
          :lines: 34-47
          :linenos:
          :lineno-start: 34
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+         :language: c++
          :lines: 17-17
          :linenos:
          :lineno-start: 17
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
-         :language: cpp
-         :lines: 31-46
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+         :language: c++
+         :lines: 17,31-46
          :linenos:
          :lineno-start: 31
 
@@ -138,26 +143,28 @@ The above graph shows two differently tuned Kalman filters, as well as a :ref:`s
 
 Because the feedback controller computes error using the :term:`x-hat` estimated by the Kalman filter, the controller will react to disturbances only as quickly the filter's state estimate changes. In the above chart, the upper left plot (with a state standard deviation of 3.0 and measurement standard deviation of 0.2) produced a filter that reacted quickly to disturbances while rejecting noise, while the upper right plot shows a filter that was barely affected by the velocity dips.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
          :language: java
          :lines: 49-59
          :linenos:
          :lineno-start: 59
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+         :language: c++
          :lines: 13-13
          :linenos:
          :lineno-start: 13
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+         :language: c++
          :lines: 48-53
          :linenos:
          :lineno-start: 48
@@ -173,26 +180,28 @@ Linear-Quadratic Regulators and Plant Inversion Feedforward
 
 Much like ``SimpleMotorFeedforward`` can be used to generate feedforward voltage inputs given kS, kV, and kA constants, the Plant Inversion Feedforward class generate :ref:`feedforward <docs/software/advanced-controls/state-space/state-space-intro:Visualizing Feedforward>` voltage inputs given a state-space system. The voltage commands generated by the ``LinearSystemLoop`` class are the sum of the feedforward and feedback inputs.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
          :language: java
          :lines: 60-71
          :linenos:
          :lineno-start: 60
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+         :language: c++
          :lines: 11
          :linenos:
          :lineno-start: 11
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+         :language: c++
          :lines: 55-75
          :linenos:
          :lineno-start: 54
@@ -202,52 +211,56 @@ Bringing it All Together: LinearSystemLoop
 
 LinearSystemLoop combines our system, controller, and observer that we created earlier. The constructor shown will also instantiate a ``PlantInversionFeedforward``.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
          :language: java
          :lines: 73-75
          :linenos:
          :lineno-start: 73
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+         :language: c++
          :lines: 15-15
          :linenos:
          :lineno-start: 15
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+         :language: c++
          :lines: 71-74
          :linenos:
          :lineno-start: 71
 
 Once we have our ``LinearSystemLoop``, the only thing left to do is actually run it. To do that, we'll periodically update our Kalman filter with our new encoder velocity measurements and apply new voltage commands to it. To do that, we first set the :term:`reference`, then ``correct`` with the current flywheel speed, ``predict`` the Kalman filter into the next timestep, and apply the inputs generated using ``getU``.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java
          :language: java
          :lines: 96-121
          :linenos:
          :lineno-start: 96
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+         :language: c++
          :lines: 5-17
          :linenos:
          :lineno-start: 5
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
-         :language: cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+         :language: c++
          :lines: 92-114
          :linenos:
          :lineno-start: 92
@@ -257,20 +270,16 @@ Angle Wrap with LQR
 
 Mechanisms with a continuous angle can have that angle wrapped by calling the code below instead of ``lqr.Calculate(x, r)``.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
+   .. code-block:: java
 
-      .. code-block:: Java
+      var error = lqr.getR().minus(x);
+      error.set(0, 0, MathUtil.angleModulus(error.get(0, 0)));
+      var u = lqr.getK().times(error);
 
-         var error = lqr.getR().minus(x);
-         error.set(0, 0, MathUtil.angleModulus(error.get(0, 0)));
-         var u = lqr.getK().times(error);
+   .. code-block:: c++
 
-   .. group-tab:: C++
-
-      .. code-block:: C++
-
-         Eigen::Vector<double, 2> error = lqr.R() - x;
-         error(0) = frc::AngleModulus(units::radian_t{error(0)}).value();
-         Eigen::Vector<double, 2> u = lqr.K() * error;
+      Eigen::Vector<double, 2> error = lqr.R() - x;
+      error(0) = frc::AngleModulus(units::radian_t{error(0)}).value();
+      Eigen::Vector<double, 2> u = lqr.K() * error;

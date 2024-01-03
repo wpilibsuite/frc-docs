@@ -19,14 +19,14 @@ Initializing an AnalogInput
 
 An :code:`AnalogInput` may be initialized as follows:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Initializes an AnalogInput on port 0
         AnalogInput analog = new AnalogInput(0);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Initializes an AnalogInput on port 0
         frc::AnalogInput analog{0};
@@ -44,16 +44,16 @@ Oversampling
 
 When oversampling is enabled, the FPGA will add multiple consecutive samples together, and return the accumulated value.  Users may specify the number of *bits* of oversampling - for :math:`n` bits of oversampling, the number of samples added together is :math:`2^{n}`:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Sets the AnalogInput to 4-bit oversampling.  16 samples will be added together.
         // Thus, the reported values will increase by about a factor of 16, and the update
         // rate will decrease by a similar amount.
         analog.setOversampleBits(4);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Sets the AnalogInput to 4-bit oversampling.  16 samples will be added together.
         // Thus, the reported values will increase by about a factor of 16, and the update
@@ -65,15 +65,15 @@ Averaging
 
 Averaging behaves much like oversampling, except the accumulated values are divided by the number of samples so that the scaling of the returned values does not change.  This is often more-convenient, but occasionally the additional roundoff error introduced by the rounding is undesirable.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Sets the AnalogInput to 4-bit averaging.  16 samples will be averaged together.
         // The update rate will decrease by a factor of 16.
         analog.setAverageBits(4);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Sets the AnalogInput to 4-bit averaging.  16 samples will be averaged together.
         // The update rate will decrease by a factor of 16.
@@ -91,13 +91,13 @@ getValue
 
 The :code:`getValue` method returns the raw instantaneous measured value from the analog input, without applying any calibration and ignoring oversampling and averaging settings.  The returned value is an integer.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         analog.getValue();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         analog.GetValue();
 
@@ -106,13 +106,13 @@ getVoltage
 
 The :code:`getVoltage` method returns the instantaneous measured voltage from the analog input.  Oversampling and averaging settings are ignored, but the value is rescaled to represent a voltage.  The returned value is a double.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         analog.getVoltage();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         analog.GetVoltage();
 
@@ -121,13 +121,13 @@ getAverageValue
 
 The :code:`getAverageValue` method returns the averaged value from the analog input.  The value is not rescaled, but oversampling and averaging are both applied.  The returned value is an integer.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         analog.getAverageValue();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         analog.GetAverageValue();
 
@@ -136,13 +136,13 @@ getAverageVoltage
 
 The :code:`getAverageVoltage` method returns the averaged voltage from the analog input.  Rescaling, oversampling, and averaging are all applied.  The returned value is a double.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         analog.getAverageVoltage();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         analog.GetAverageVoltage();
 
@@ -153,9 +153,9 @@ Accumulator
 
 Analog input channels 0 and 1 additionally support an accumulator, which integrates (adds up) the signal indefinitely, so that the returned value is the sum of all past measured values.  Oversampling and averaging are applied prior to accumulation.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Sets the initial value of the accumulator to 0
         // This is the "starting point" from which the value will change over time
@@ -174,7 +174,7 @@ Analog input channels 0 and 1 additionally support an accumulator, which integra
         // Resets the accumulator to the initial value
         analog.resetAccumulator();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Sets the initial value of the accumulator to 0
         // This is the "starting point" from which the value will change over time
@@ -198,9 +198,9 @@ Obtaining synchronized count and value
 
 Sometimes, it is necessarily to obtain matched measurements of the count and the value.  This can be done using the :code:`getAccumulatorOutput` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Instantiate an AccumulatorResult object to hold the matched measurements
         AccumulatorResult result = new AccumulatorResult();
@@ -212,7 +212,7 @@ Sometimes, it is necessarily to obtain matched measurements of the count and the
         long count = result.count;
         long value = result.value;
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // The count and value variables to fill
         int_64t count;

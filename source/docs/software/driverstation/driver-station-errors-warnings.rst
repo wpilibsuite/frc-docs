@@ -1,7 +1,7 @@
 Driver Station Errors/Warnings
 ==============================
 
-In an effort to provide both Teams and Volunteers (FTAs/CSAs/etc.) more information to use when diagnosing robot problems, a number of Warning and Error messages have been added to the Driver Station. These messages are displayed in the DS diagnostics tab when they occur and are also included in the DS Log Files that can be viewed with the Log File Viewer. This document discusses the messages produced by the DS (messages produced by WPILib can also appear in this box and the DS Logs).
+In an effort to provide both Teams and Volunteers (:term:`FTA` / :term:`CSA` / etc.) more information to use when diagnosing robot problems, a number of Warning and Error messages have been added to the Driver Station. These messages are displayed in the DS diagnostics tab when they occur and are also included in the DS Log Files that can be viewed with the Log File Viewer. This document discusses the messages produced by the DS (messages produced by WPILib can also appear in this box and the DS Logs).
 
 Joystick Unplugged
 ------------------
@@ -36,7 +36,7 @@ Ping Status
   <time>2/6/2013 11:07:59 AM<unique#>5
   FRC: Driver Station ping status has changed.
 
-A Ping Status warning is generated each time the Ping Status to a device changes while the DS is not in communication with the roboRIO. As communications is being established when the DS starts up, a few of these warnings will appear as the Ethernet link comes up, then the connection to the robot radio, then the roboRIO (with FMS mixed in if applicable). If communications are later lost, the ping status change may help identify at which component the communication chain broke.
+A Ping Status warning is generated each time the Ping Status to a device changes while the DS is not in communication with the roboRIO. As communications is being established when the DS starts up, a few of these warnings will appear as the Ethernet link comes up, then the connection to the robot radio, then the roboRIO (with :term:`FMS` mixed in if applicable). If communications are later lost, the ping status change may help identify at which component the communication chain broke.
 
 Time Since Robot Boot
 ---------------------

@@ -9,15 +9,15 @@ Creating the Odometry Object
 The ``DifferentialDriveOdometry`` class constructor requires three mandatory arguments and one optional argument. The mandatory arguments are:
 
 * The angle reported by your gyroscope (as a ``Rotation2d``)
-* The initial left and right encoder readings. In Java, these are each a ``double``, and must represent the distance traveled by each side in meters.  In C++, the :doc:`units library </docs/software/basic-programming/cpp-units>` must be used to represent your wheel positions.
+* The initial left and right encoder readings. In Java / Python, these are a number that represents the distance traveled by each side in meters.  In C++, the :doc:`units library </docs/software/basic-programming/cpp-units>` must be used to represent your wheel positions.
 
 The optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
 .. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/advanced-controls/geometry/coordinate-systems:Field Coordinate System>` for more information about the coordinate system.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Creating my odometry object. Here,
       // our starting pose is 5 meters along the long end of the field and in the
@@ -27,7 +27,7 @@ The optional argument is the starting pose of your robot on the field (as a ``Po
         m_leftEncoder.getDistance(), m_rightEncoder.getDistance(),
         new Pose2d(5.0, 13.5, new Rotation2d()));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Creating my odometry object. Here,
       // our starting pose is 5 meters along the long end of the field and in the
@@ -38,6 +38,20 @@ The optional argument is the starting pose of your robot on the field (as a ``Po
         units::meter_t{m_rightEncoder.GetDistance()},
         frc::Pose2d{5_m, 13.5_m, 0_rad}};
 
+   .. code-block:: python
+
+      from wpimath.kinematics import DifferentialDriveOdometry
+      from wpimath.geometry import Pose2d
+      from wpimath.geometry import Rotation2d
+
+      # Creating my odometry object. Here,
+      # our starting pose is 5 meters along the long end of the field and in the
+      # center of the field along the short end, facing forward.
+      m_odometry = DifferentialDriveOdometry(
+        m_gyro.getRotation2d(),
+        m_leftEncoder.getDistance(), m_rightEncoder.getDistance(),
+        Pose2d(5.0, 13.5, Rotation2d()))
+
 
 Updating the Robot Pose
 -----------------------
@@ -45,9 +59,9 @@ The ``update`` method can be used to update the robot's position on the field. T
 
 .. note:: If the robot is moving forward in a straight line, **both** distances (left and right) must be increasing positively -- the rate of change must be positive.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       @Override
       public void periodic() {
@@ -60,7 +74,7 @@ The ``update`` method can be used to update the robot's position on the field. T
           m_rightEncoder.getDistance());
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       void Periodic() override {
         // Get the rotation of the robot from the gyro.
@@ -72,12 +86,23 @@ The ``update`` method can be used to update the robot's position on the field. T
           units::meter_t{m_rightEncoder.GetDistance()});
       }
 
+   .. code-block:: python
+
+      def periodic(self):
+        # Get the rotation of the robot from the gyro.
+        gyroAngle = m_gyro.getRotation2d()
+
+        # Update the pose
+        m_pose = m_odometry.update(gyroAngle,
+          m_leftEncoder.getDistance(),
+          m_rightEncoder.getDistance())
+
 Resetting the Robot Pose
 ------------------------
 The robot pose can be reset via the ``resetPosition`` method. This method accepts four arguments: the current gyro angle, the left and right wheel positions, and the new field-relative pose.
 
 .. important:: If at any time, you decide to reset your gyroscope or encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel distances.
 
-.. note:: A full example of a differential drive robot with odometry is available here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot>`_.
+.. note:: A full example of a differential drive robot with odometry is available here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot>`_ / `Python <https://github.com/robotpy/examples/tree/main/DifferentialDriveBot>`_
 
-In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java) methods can be used to retrieve the current robot pose without an update.
+In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.

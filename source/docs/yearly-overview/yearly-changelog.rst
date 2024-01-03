@@ -19,10 +19,11 @@ These changes contain *some* of the major changes to the library that it's impor
 
 - Added support for :doc:`XRP robots </docs/xrp-robot/index>`
 - Projects now default to supporting Java 17 features
-- Multiple NetworkTables networking improvements for improved reliability and robustness
+- Multiple NetworkTables networking improvements for improved reliability and robustness and structured data support using protobuf
 - Java now uses the Serial GC by default on the roboRIO; this should improve performance and reduce memory usage for most robot programs
 - Performance improvements and reduced worst-case memory usage throughout libraries
 - Added a typesafe unit system for Java (not used by the main part of WPILib yet)
+- Disabled LiveWindow in Test Mode by default. See See :ref:`docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode:Enabling LiveWindow in Test Mode` to enable it.
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit. 32 bit and Arm are not supported
@@ -42,9 +43,14 @@ General Library
     - Added proxy factory to ``Commands``
     - Added ``IdleCommand``
     - Fixed ``RepeatCommand`` calling ``end()`` twice
-    - Added ``onlyWhile()`` and ``onlyIf()``
+    - Added ``onlyWhile()`` and ``onlyIf()`` decorators
     - Implemented ``ConditionalCommand.getInterruptBehavior()``
     - Added interruptor parameter to ``onCommandInterrupt`` callbacks
+    - Added ``DeferredCommand``, ``Commands.defer()``, and ``Subsystem.defer()``
+    - Add requirements parameter to ``Commands.idle()``
+    - Fix Java ``CommandXboxController.leftTrigger()`` parameter order
+    - Make Java ``SelectCommand`` generic
+    - Add finallyDo with zero-arg lambda
 
 - NetworkTables:
 
@@ -69,9 +75,10 @@ General Library
     - Exposed CAN timestamp base clock
     - Fixed and documented addressable LED timings
     - Fixed ``DutyCycleEncoder`` reset behavior
-    - Added function to read the RSL state
-    - Raw PWM now uses microseconds units
+    - Added function to read the :term:`RSL` state
+    - Raw :term:`PWM` now uses microseconds units
     - Fixed REVPH faults bitfield
+    - C++: Fix ``Counter`` default distance per pulse to match Java
 
 - Math:
 
@@ -82,6 +89,10 @@ General Library
     - Improved accuracy of Rotation3d Euler angle calculations (``getX()``, ``getY()``, ``getZ()``, aka roll-pitch-yaw) near gimbal lock
     - Fixed ``CoordinateSystem.convert()`` Transform3d overload
     - Modified ``TrapezoidProfile`` API to not require creating new instances for ``ProfiledPIDController``-like use cases
+    - Added Exponential motion profile support
+    - Add constructor overloads for easier Transform2d and Transform3d creation from X, Y, Z coordinates
+    - Add ``ChassisSpeeds`` ``fromRobotRelativeSpeeds`` to convert from robot relative to field relative
+    - Add method to create a LinearSystem from kA and kV, for example from a characterized mechanism
 
 - Added ``RobotController`` function to get the assigned team number
 - Updated ``GetMatchTime`` docs and units
@@ -89,12 +100,14 @@ General Library
 - Added reflection based cleanup helper
 - Added Java class preloader (no preloading is actually performed yet)
 - Deprecated ``Accelerometer`` and ``Gyro`` interfaces (no replacement is planned)
-- Updated to OpenCV 4.8.0 and EJML 0.42
+- Updated to OpenCV 4.8.0 and EJML 0.43.1 and C++ JSON to 3.11.2
+- Add ``PS5Controller`` class
+- Add accessors for ``AprilTagFieldLayout`` origin and field dimensions
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
 
-- Changed ``DriverStation.getAllianceStation()`` to return optional value
+- Changed ``DriverStation.getAllianceStation()`` to return optional value.  See :doc:`example usage </docs/software/basic-programming/alliancecolor>`
 - Merged CommandBase into Command (Command is now a base class instead of an interface)
 - Potentially breaking: made command scheduling order consistent
 - Removed various deprecated command classes and functions:
@@ -109,7 +122,7 @@ Breaking Changes
         - ``whileTrue()`` (replaces ``whileActiveOnce()``): schedule on rising edge, cancel on falling edge.
         - ``toggleOnTrue()`` (replaces ``toggleWhenActive()``): on rising edge, schedule if unscheduled and cancel if scheduled.
         - ``cancelWhenActive()``: this is a fairly niche use case which is better described as having the trigger's rising edge (``Trigger.rising()``) as an end condition for the command (using ``Command.until()``).
-        - ``whileActiveContinuously()``: however common, this relied on the no-op behavior of scheduling an already-scheduled command. The more correct way to repeat the command if it ends before the falling edge is using ``Command.repeatedly()``/``RepeatCommand`` or a ``RunCommand`` -- the only difference is if the command is interrupted, but that is more likely to result in two commands perpetually canceling each other than achieve the desired behavior. Manually implementing a blindly-scheduling binding like ``whileActiveContinuously()`` is still possible, though might not be intuitive.
+        - ``whileActiveContinuously()``: however common, this relied on the :term:`no-op` behavior of scheduling an already-scheduled command. The more correct way to repeat the command if it ends before the falling edge is using ``Command.repeatedly()``/``RepeatCommand`` or a ``RunCommand`` -- the only difference is if the command is interrupted, but that is more likely to result in two commands perpetually canceling each other than achieve the desired behavior. Manually implementing a blindly-scheduling binding like ``whileActiveContinuously()`` is still possible, though might not be intuitive.
     - ``CommandScheduler.clearButtons()``
     - ``CommandScheduler.addButtons()`` (Java only)
     - Command supplier constructor of ``SelectCommand`` (use ``ProxyCommand`` instead)
@@ -160,20 +173,23 @@ GradleRIO
 - Added support for XRP
 - Enforces that vendor dependencies set correct frcYear (prevents using prior year vendor dependencies)
 - Upgraded to Gradle 8.4
+- Check that project isn't in OneDrive, as that causes issues
 
 WPILib All in One Installer
 ---------------------------
 
-- Update to VS Code 1.83.1
+- Update to VS Code 1.84.0
 - VS Code extension updates: cpptools 1.17.5, javaext 1.23.0
 - Use separate zip files for VS Code download/install
 - Update to use .NET 8
+- AdvantageScope is now bundlled by the installer
 
 Visual Studio Code Extension
 ----------------------------
 
 - Java source code is now bundled into the deployed jar file. This makes it possible to recover source code from a deployed robot program.
 - Added XRP support
+- Check that project isn't created in OneDrive, as that causes issues
 
 RobotBuilder
 ------------

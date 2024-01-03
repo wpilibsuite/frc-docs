@@ -54,12 +54,12 @@ Teams are permitted to install the software on as many team computers as needed,
 Starting Install
 ^^^^^^^^^^^^^^^^
 
-.. tabs::
-  .. tab:: Online Installer
+.. tab-set::
+  .. tab-item:: Online Installer
 
      Run the downloaded exe file to start the install process. Click :guilabel:`Yes` if a Windows Security prompt
 
-  .. tab:: Offline Installer (Windows 10+)
+  .. tab-item:: Offline Installer (Windows 10+)
 
      Right click on the downloaded iso file and select mount. Run install.exe from the mounted iso. Click "Yes" if a Windows Security prompt
 

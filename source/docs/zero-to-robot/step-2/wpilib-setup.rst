@@ -18,7 +18,7 @@ WPILib is designed to install to different folders for different years, so that 
 Downloading
 -----------
 
-.. wpilibrelease:: v2024.1.1-beta-2
+.. wpilibrelease:: v2024.1.1-beta-4
 
 `You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
 
@@ -34,9 +34,10 @@ Extracting the Installer
 
 When you download the WPILib installer, it is distributed as a disk image file ``.iso`` for Windows, ``.tar.gz`` for Linux, and distributed as a ``DMG`` for MacOS.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Windows 10+
+   .. tab-item:: Windows 10+
+      :sync: windows-10
 
       Windows 10+ users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
@@ -54,7 +55,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
       .. note:: After launching the installer, Windows may display a window titled "Windows protected your PC". Click :guilabel:`More info`, then select :guilabel:`Run anyway` to run the installer.
 
-   .. group-tab:: macOS
+   .. tab-item:: macOS
+      :sync: macos
 
       For this release, macOS users will need to have the Xcode Command Line Tools installed before running the installer; we are working on removing this requirement in a future release. This can be done by running ``xcode-select --install`` in the Terminal.
 
@@ -63,7 +65,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
       .. image:: images/wpilib-setup/macos-launch.png
          :alt: Show the macOS screen after double clicking the DMG file.
 
-   .. group-tab:: Linux
+   .. tab-item:: Linux
+      :sync: linux
 
       Linux users should extract the downloaded ``.tar.gz`` and then launch ``WPILibInstaller``. Ubuntu treats executables in the file explorer as shared libraries, so double-clicking won't run them. Run the following commands in a terminal instead with ``<version>`` replaced with the version you're installing.
 
@@ -135,14 +138,16 @@ Post-Installation
 
 Some operating systems require some final action to complete installation.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: macOS
+   .. tab-item:: macOS
+      :sync: macos
 
       After installation, the installer opens the WPILib VS Code folder. Drag the VS Code application to the dock.
       Eject WPILibInstaller image from the desktop.
 
-   .. group-tab:: Linux
+   .. tab-item:: Linux
+      :sync: linux
 
       Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
 
@@ -185,18 +190,18 @@ Uninstalling
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib. However, the following instructions can be used to uninstall WPILib if desired.
 
-.. tabs::
+.. tab-set::
 
-  .. tab:: Windows
+  .. tab-item:: Windows
 
      1. Delete the appropriate wpilib folder (``c:\Users\Public\wpilib\YYYY`` where ``YYYY`` is the year to uninstall)
      2. Delete the desktop icons at ``C:\Users\Public\Public Desktop``
 
-  .. tab:: macOS
+  .. tab-item:: macOS
 
      1. Delete the appropriate wpilib folder (``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall)
 
-  .. tab:: Linux
+  .. tab-item:: Linux
 
      1. Delete the appropriate wpilib folder (``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall). eg ``rm -rf ~/wpilib/YYYY``
 

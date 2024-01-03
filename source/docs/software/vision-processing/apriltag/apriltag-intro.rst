@@ -19,25 +19,22 @@ AprilTags have been in development since 2011, and have been refined over the ye
 
 `Starting in 2023, FIRST is providing a number of tags, <https://www.firstinspires.org/robotics/frc/blog/2022-2023-approved-devices-rules-preview-and-vision-target-update>`__ scattered throughout the field, each at a known :term:`pose`.
 
-All of the tags are from the 16h5 family.
+In 2024, `the tag family was updated to the 36h11 family <https://www.firstinspires.org/robotics/frc/blog/2023-technology-updates-past-present-future-and-beyond>`__.
 
-.. note:: Many of the pictures in this documentation are from the 36h11 family, which are similar (but not identical) to the 16h5 actually in use for FRC. All the underlying concepts are the same.
-
-.. collapse:: What is the 16h5 family?
+.. collapse:: What is the 36h11 family?
 
    The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families `are described here <https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html>`__.
 
-   FIRST has chosen the 16h5 family for 2023. This family of tags is made of a 4x4 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
+   FIRST has chosen the 36h11 family for 2024. This family of tags is made of a 6x6 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
 
-   While there are :math:`2^{16} = 65536` theoretical possible tags, only 30 are actually used. These are chosen to:
+   While there are :math:`2^{36} = 68,719,476,736` theoretical possible tags, only 587 are actually used. These are chosen to:
 
    1. Be robust against some bit flips (IE, issues where a bit has its color incorrectly identified).
    2. Not involve "simple" geometric patterns likely to be found on things which are not tags. (IE, squares, stripes, etc.)
    3. Ensure the geometric pattern is asymmetric enough that you can always figure out which way is up.
 
-|
 
-All tags will be printed such that the tag's main "body" is 6 inches in length.
+All tags will be printed such that the tag's main "body" is 6.5 inches in length.
 
 .. image:: images/tag_size.png
    :alt: Diagram showing the dimensions of an FRC AprilTag fiducial target.
@@ -48,7 +45,7 @@ For home usage, tag files may be printed off and placed around your practice are
 Software Support
 ----------------
 
-The main repository for the source code that detects and decodes AprilTags `is located here <https://github.com/AprilRobotics/apriltag>`__.
+The main repository for the source code that detects and decodes AprilTags `is located here <https://github.com/wpilibsuite/apriltag/tree/main>`__.
 
 WPILib has forked the repository to add new features for FRC. These include:
 
@@ -63,30 +60,30 @@ Processing Technique
 
 While most FRC teams should not have to implement their own code to identify AprilTags in a camera image, it is useful to know the basics of how the underlying libraries function.
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Original Image
+   .. tab-item:: Original Image
 
       .. image:: images/orig_img.png
          :alt: Original, unprocessed image
 
       An image from a camera is simply an array of values, corresponding to the color and brightness of each pixel.
 
-   .. tab:: Remove Colors
+   .. tab-item:: Remove Colors
 
       .. image:: images/bw_img.png
          :alt: Image converted to be grey-scale
 
       The first step is to convert the image to a grey-scale (brightness-only) image. Color information is not needed to detect the black-and-white tags.
 
-   .. tab:: Decimate
+   .. tab-item:: Decimate
 
       .. image:: images/decimate.png
          :alt: Image converted to a lower resolution
 
       The next step is to convert the image to a lower resolution. Working with fewer pixels helps the algorithm work faster. The full-resolution image will be used later to refine early estimates.
 
-   .. tab:: Adaptive Threshold
+   .. tab-item:: Adaptive Threshold
 
       .. image:: images/adaptive_threshold.png
          :alt: Image with adaptive threshold algorithm applied
@@ -96,14 +93,14 @@ While most FRC teams should not have to implement their own code to identify Apr
 
       The threshold is calculated by looking at the pixel's brightness, compared to a small neighborhood of pixels around it.
 
-   .. tab:: Segmentation
+   .. tab-item:: Segmentation
 
       .. image:: images/segmentation.png
          :alt: Adaptive thresholded image, but with clusters of similar pixels grouped together
 
       Next, the known pixels are clumped together. Any clumps which are too small to reasonably be a meaningful part of a tag are discarded.
 
-   .. tab:: Quad Detection
+   .. tab-item:: Quad Detection
 
       .. image:: images/detected_quads.png
          :alt: Image with quadrilateral areas identified and marked
@@ -120,7 +117,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
       If all has gone well so far, we are left with a four-sided region of pixels that is likely a valid tag.
 
-   .. tab:: Decode ID
+   .. tab-item:: Decode ID
 
       .. image:: images/decode_id.png
          :alt: Image with AprilTag data decoded into a target identification number.
@@ -134,7 +131,7 @@ While most FRC teams should not have to implement their own code to identify Apr
 
       It is possible there is no valid tag ID which matches the suspect tag. In this case, the decoding process stops.
 
-   .. tab:: Fit External Quad
+   .. tab-item:: Fit External Quad
 
       .. image:: images/fit_ext_quad.png
          :alt: External quadrilateral fitting process applied to each target

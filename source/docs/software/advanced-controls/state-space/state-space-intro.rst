@@ -170,36 +170,34 @@ Similarly, decreasing the :math:`\mathbf{q}` elements would make the LQR penaliz
 
 For example, we might use the following Q and R for an elevator system with position and velocity states.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
 
-      .. code-block:: Java
+   .. code-block:: Java
 
-         // Example system -- must be changed to match your robot.
-         LinearSystem<N2, N1, N1> elevatorSystem = LinearSystemId.identifyPositionSystem(5, 0.5);
-         LinearQuadraticRegulator<N2, N1, N1> controller = new LinearQuadraticRegulator(elevatorSystem,
-             // q's elements
-             VecBuilder.fill(0.02, 0.4),
-             // r's elements
-             VecBuilder.fill(12.0),
-             // our dt
-             0.020);
+      // Example system -- must be changed to match your robot.
+      LinearSystem<N2, N1, N1> elevatorSystem = LinearSystemId.identifyPositionSystem(5, 0.5);
+      LinearQuadraticRegulator<N2, N1, N1> controller = new LinearQuadraticRegulator(elevatorSystem,
+            // q's elements
+            VecBuilder.fill(0.02, 0.4),
+            // r's elements
+            VecBuilder.fill(12.0),
+            // our dt
+            0.020);
 
-   .. group-tab:: C++
 
-      .. code-block:: C++
+   .. code-block:: C++
 
-         // Example system -- must be changed to match your robot.
-          LinearSystem<2, 1, 1> elevatorSystem = frc::LinearSystemId::IdentifyVelocitySystem(5, 0.5);
-          LinearQuadraticRegulator<2, 1> controller{
-              elevatorSystem,
-              // q's elements
-              {0.02, 0.4},
-              // r's elements
-              {12.0},
-              // our dt
-              0.020_s};
+      // Example system -- must be changed to match your robot.
+         LinearSystem<2, 1, 1> elevatorSystem = frc::LinearSystemId::IdentifyVelocitySystem(5, 0.5);
+         LinearQuadraticRegulator<2, 1> controller{
+            elevatorSystem,
+            // q's elements
+            {0.02, 0.4},
+            // r's elements
+            {12.0},
+            // our dt
+            0.020_s};
 
 LQR: example application
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -241,15 +239,15 @@ Multiplying :math:`\mathbf{K}` by :math:`\mathbf{A} - \mathbf{BK}` essentially a
 
 The code below shows how to adjust the LQR controller's K gain for sensor input delays:
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       // Adjust our LQR's controller for 25 ms of sensor input delay. We
       // provide the linear system, discretization timestep, and the sensor
       // input delay as arguments.
       controller.latencyCompensate(elevatorSystem, 0.02, 0.025);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Adjust our LQR's controller for 25 ms of sensor input delay. We
       // provide the linear system, discretization timestep, and the sensor

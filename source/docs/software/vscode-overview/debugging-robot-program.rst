@@ -37,13 +37,13 @@ Debugging with Print Statements
 
 Another way to debug your program is to use print statements in your code and view them using the RioLog in Visual Studio Code or the Driver Station.  Print statements should be added with care as they are not very efficient especially when used in high quantities.  They should be removed for competition as they can cause loop overruns.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         System.out.print("example");
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         wpi::outs() << "example\n";
 

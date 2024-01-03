@@ -116,7 +116,7 @@ This sounds a lot more complicated than it is to use in practice.  Let's look at
 
 .. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
 
-.. code-block:: cpp
+.. code-block:: c++
 
    CommandPtr RunOnce(
     std::function<void()> action,
@@ -129,7 +129,7 @@ Lambda Expressions in C++
 
 To pass a function to ``runOnce``, we need to write a short inline function expression using a special syntax that resembles ordinary C++ function declarations, but varies in a few important ways:
 
-.. code-block:: cpp
+.. code-block:: c++
 
    // Create an InstantCommand that runs the drive forward at half speed
    CommandPtr driveHalfSpeed = cmd::RunOnce([this] { drivetrain.ArcadeDrive(0.5, 0.0); }, {drivetrain});

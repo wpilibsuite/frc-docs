@@ -5,32 +5,42 @@ Shuffleboard is a tabbed interface. Each tab organizes widgets in a logical grou
 
 Creating a new tab
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
         ShuffleboardTab tab = Shuffleboard.getTab("Tab Title");
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
         ShuffleboardTab& tab = Shuffleboard::GetTab("Tab Title");
 
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+
+      tab = Shuffleboard.getTab("Tab Title")
 
 Creating a new tab is as simple as calling a single method on the Shuffleboard class, which will create a new tab on Shuffleboard and return a handle for adding your data to the tab. Calling getTab multiple times with the same tab title will return the same handle each time.
 
 Selecting a tab
 ---------------
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
         Shuffleboard.selectTab("Tab Title");
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
         Shuffleboard::SelectTab("Tab Title");
 
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+
+      Shuffleboard.selectTab("Tab Title")
 
 This method lets a tab be selected by title. This is case-sensitive (so "Tab Title" and "Tab title" are two individual tabs), and only works if a tab with that title exists at the time the method is called, so calling ``selectTab("Example")``\ will only have an effect if a tab named "Example" has previously been defined.
 

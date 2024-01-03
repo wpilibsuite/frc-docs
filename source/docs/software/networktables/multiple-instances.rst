@@ -11,9 +11,10 @@ The ``NetworkTableInstance`` (`Java <https://github.wpilib.org/allwpilib/docs/be
 
 Destroying a NetworkTableInstance frees all resources related to the instance. All classes or handles that reference the instance (e.g. Topics, Publishers, and Subscribers) are invalidated and may result in unexpected behavior if used after the instance is destroyed--in particular, instance handles are reused so it's possible for a handle "left over" from a previously destroyed instance to refer to an unexpected resource in a newly created instance.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+     :sync: Java
 
         .. code-block:: java
 
@@ -26,9 +27,10 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
             // destroy a NetworkTable instance
             inst.close();
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             // get the default NetworkTable instance
             nt::NetworkTableInstance defaultInst = nt::NetworkTableInstance::GetDefault();
@@ -39,9 +41,10 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
             // destroy a NetworkTable instance; NetworkTableInstance objects are not RAII
             nt::NetworkTableInstance::Destroy(inst);
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             // get the default NetworkTable instance
             NT_Instance defaultInst = nt::GetDefaultInstance();
@@ -52,7 +55,8 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
             // destroy a NetworkTable instance
             nt::DestroyInstance(inst);
 
-    .. group-tab:: C
+    .. tab-item:: C
+       :sync: C
 
         .. code-block:: c
 
@@ -65,7 +69,9 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
             // destroy a NetworkTable instance
             NT_DestroyInstance(inst);
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 
