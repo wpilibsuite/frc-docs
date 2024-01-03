@@ -18,6 +18,8 @@ WPILib is designed to install to different folders for different years, so that 
 Downloading
 -----------
 
+.. important:: As of 1/3/24 the 2024 WPILib installer is not yet available. It will likely be available sometime on 1/4 or 1/5.
+
 .. wpilibrelease:: v2024.1.1-beta-4
 
 `You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
