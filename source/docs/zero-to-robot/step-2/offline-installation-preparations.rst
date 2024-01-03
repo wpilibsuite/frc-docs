@@ -20,18 +20,21 @@ Installers
 All Teams
 ^^^^^^^^^
 
--  `2023 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html#479842>`__ (Note: Click on link for "Individual Offline Installers")
+.. important:: As of 1/3/24 the 2024 Game Tools are not yet available. Game Tools will likely be available sometime on 1/4 or 1/5.
 
--  `2023 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2023/Radio/FRC_Radio_Configuration_23_0_2.zip>`__ or `2023 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2023/Radio/FRC_Radio_Configuration_23_0_2_IL.zip>`__
--  (Optional - Veterans Only!) `Classmate/Acer PC Image <https://frc-events.firstinspires.org/services/DSImages/>`__
+-  `2024 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html#479842>`__ (Note: Click on link for "Individual Offline Installers")
+
+-  `2024 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip>`__ or `2024 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip>`__
 
 LabVIEW Teams
 ^^^^^^^^^^^^^
 
--  LabVIEW USB (from *FIRST*\ |reg| Choice) or `Download <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: Click on link for "Individual Offline Installers")
+-  `LabVIEW Base Installer <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: Click on link for "Individual Offline Installers")
 
 Java/C++ Teams
 ^^^^^^^^^^^^^^
+
+.. important:: As of 1/3/24 the 2024 WPILib installer is not yet available. It will likely be available sometime on 1/4 or 1/5.
 
 -  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases/latest>`__
 

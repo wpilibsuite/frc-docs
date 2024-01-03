@@ -18,6 +18,8 @@ Requirements
 
 - Windows 10 or higher (Windows 10, 11).
 
+.. important:: As of 1/3/24 the 2024 Game Tools are not yet available. Game Tools will likely be available sometime on 1/4 or 1/5.
+
 - Download the `FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html#479842>`__ from NI.
 
 .. image:: images/labview/offline-installer.png
