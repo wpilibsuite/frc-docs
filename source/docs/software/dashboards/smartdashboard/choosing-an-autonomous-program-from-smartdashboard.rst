@@ -103,7 +103,7 @@ Now, in ``autonomousInit`` and ``autonomousPeriodic``, you can use the ``m_autoS
          def autonomousInit(self):
             self.autoSelected = self.chooser.getSelected()
             print("Auto selected: " + self.autoSelected)
-      
+
          def autonomousPeriodic(self):
             match self.autoSelected:
                case self.customAuto:
