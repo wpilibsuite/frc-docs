@@ -107,36 +107,32 @@ Vendor Libraries
 
 Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.
 
-`2023 CTRE Phoenix Framework <https://store.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
-   Phoenix (v5):         ``https://maven.ctr-electronics.com/release/com/ctre/phoenix/Phoenix5-frc2023-latest.json``
+`CTRE Phoenix Framework <https://store.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
+   Phoenix (v6):        Not yet available for 2024
 
-   Phoenix (Pro):        ``https://maven.ctr-electronics.com/release/com/ctre/phoenixpro/PhoenixPro-frc2023-latest.json``
+   Phoenix (v5):        Not yet available for 2024
 
-   Phoenix (Pro and v5): ``https://maven.ctr-electronics.com/release/com/ctre/phoenixpro/PhoenixProAnd5-frc2023-latest.json``
-
-   .. note:: To get the 2023 version of the same Phoenix library as previous years, use the first link above (Phoenix v5).  Use one of the other json links if you're using Phoenix Pro.
-
-   .. warning:: Only use **ONE** of the above Phoenix vendordep links within a project.  If you need both Phoenix v5 and Phoenix Pro in the same project, use the third option.
+   .. note:: All users should use the Phoenix (v6) library.  If you also need need both Phoenix v5 support, additionally install the v5 vendor library.
 
 `Redux Robotics ReduxLib <https://docs.reduxrobotics.com/reduxlib.html>`__ - Library for all Redux devices including the Canandcoder
-   ``https://frcsdk.reduxrobotics.com/ReduxLib_2023.json``
+   Not yet available for 2024
 
 `Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
-   ``https://www.playingwithfusion.com/frc/playingwithfusion2023.json``
+   Not yet available for 2024
 
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
-   ``https://dev.studica.com/releases/2023/NavX.json``
+   Not yet available for 2024
 
 `REV Robotics REVLib <https://docs.revrobotics.com/sparkmax/software-resources/spark-max-api-information>`__ - Library for all REV devices including SPARK MAX and Color Sensor V3
-   ``https://software-metadata.revrobotics.com/REVLib-2023.json``
+   Not yet available for 2024
 
 Community Libraries
 ^^^^^^^^^^^^^^^^^^^
 
 `PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
-   ``https://maven.photonvision.org/repository/internal/org/photonvision/PhotonLib-json/1.0/PhotonLib-json-1.0.json``
+   Not yet available for 2024
 
 `PathPlanner <https://github.com/mjansen4857/pathplanner/wiki>`_ - Library for PathPlanner
-   ``https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json``
+   Not yet available for 2024
 
 
