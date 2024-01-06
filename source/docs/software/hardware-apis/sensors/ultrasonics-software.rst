@@ -20,14 +20,14 @@ The :code:`Ultrasonic` class (`Java <https://github.wpilib.org/allwpilib/docs/be
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
          :language: java
          :lines: 17-18
 
    .. tab-item:: C++
      :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Ultrasonic/include/Robot.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibcExamples/src/main/cpp/examples/Ultrasonic/include/Robot.h
          :language: c++
          :lines: 23-24
 
@@ -38,14 +38,14 @@ The measurement can then be retrieved in either inches or millimeters in Java; i
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
          :language: java
          :lines: 29-32
 
    .. tab-item:: C++
      :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
          :language: c++
          :lines: 18-22
 
@@ -94,13 +94,13 @@ Additionally, ping-response ultrasonics can be sent to :ref:`Shuffleboard <docs/
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic/Robot.java
          :language: java
          :lines: 22-24
 
    .. tab-item:: C++
      :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibcExamples/src/main/cpp/examples/Ultrasonic/cpp/Robot.cpp
          :language: c++
          :lines: 12-14
