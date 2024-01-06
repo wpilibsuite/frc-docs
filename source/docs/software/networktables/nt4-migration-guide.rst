@@ -1,7 +1,7 @@
 Migrating from NetworkTables 3.0 to NetworkTables 4.0
 =====================================================
 
-NetworkTables 4.0 (new for 2023) has a number of significant API breaking changes from NetworkTables 3.0, the version of NetworkTables used from 2016-2022.
+NetworkTables 4.0 has a number of significant API breaking changes from NetworkTables 3.0, the version of NetworkTables used from 2016-2022.
 
 NetworkTableEntry
 -----------------
