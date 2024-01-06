@@ -250,12 +250,6 @@ Defining the variables for our sample robot
                   private final Joystick m_stick = new Joystick(0);
                   private final Timer m_timer = new Timer();
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
-               :language: java
-               :lines: 37-43
-               :linenos:
-               :lineno-start: 37
-
          .. tab-item:: C++
             :sync: c++
 
@@ -307,12 +301,6 @@ Defining the variables for our sample robot
                  private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
                  private final XboxController m_controller = new XboxController(0);
                  private final Timer m_timer = new Timer();
-
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
-               :language: java
-               :lines: 37-43
-               :linenos:
-               :lineno-start: 37
 
          .. tab-item:: C++
             :sync: c++
