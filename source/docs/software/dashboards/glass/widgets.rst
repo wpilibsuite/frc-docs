@@ -40,6 +40,12 @@ The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instanc
 
       frc::SmartDashboard::PutData("Auto Selector", &m_selector);
 
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+
+      SmartDashboard.putData("Auto Selector", selector)
+
 .. note:: For more information on creating a ``SendableChooser``, please see :ref:`this document <docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard:Setting up SendableChooser>`.
 
 The :guilabel:`Sendable Chooser` widget will appear in the :guilabel:`NetworkTables` menu and underneath the main table name that the instance was sent over. From the example above, the main table name would be :guilabel:`SmartDashboard`.
@@ -59,6 +65,12 @@ The :guilabel:`PID Controller` widget allows you to quickly tune PID values for 
    .. code-block:: c++
 
       frc::SmartDashboard::PutData("Elevator PID Controller", &m_elevatorPIDController);
+
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+
+      SmartDashboard.putData("Elevator PID Controller", elevatorPIDController)
 
 This allows you to quickly tune P, I, and D values for various setpoints.
 
