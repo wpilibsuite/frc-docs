@@ -20,7 +20,7 @@ Installers
 All Teams
 ^^^^^^^^^
 
-.. important:: As of 1/3/24 the 2024 Game Tools are not yet available. Game Tools will likely be available sometime on 1/4 or 1/5.
+.. important:: As of 1/5/24 the 2024 Game Tools are not yet available. Game Tools will likely be available by 1/7.
 
 -  `2024 FRC Game Tools <https://www.ni.com/en-us/support/downloads/drivers/download.frc-game-tools.html#479842>`__ (Note: Click on link for "Individual Offline Installers")
 
@@ -34,7 +34,7 @@ LabVIEW Teams
 Java/C++ Teams
 ^^^^^^^^^^^^^^
 
-.. important:: As of 1/3/24 the 2024 WPILib installer is not yet available. It will likely be available sometime on 1/4 or 1/5.
+.. important:: As of 1/5/24 the 2024 WPILib installer is not yet available. It will likely be available by 1/7.
 
 -  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases/latest>`__
 
