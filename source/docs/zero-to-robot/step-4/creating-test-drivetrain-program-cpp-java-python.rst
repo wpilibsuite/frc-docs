@@ -361,7 +361,7 @@ Robot Initialization
 
 .. tab-set::
 
-   .. tab-item: Java
+   .. tab-item:: Java
       :sync: java
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
@@ -370,14 +370,14 @@ Robot Initialization
          :linenos:
          :lineno-start: 37
 
-   .. tab-item: C++
+   .. tab-item:: C++
       :sync: c++
 
       .. code-block:: c++
 
          void RobotInit() {}
 
-   .. tab-item: Python
+   .. tab-item:: Python
       :sync: python
 
       .. code-block:: python
