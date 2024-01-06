@@ -220,7 +220,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       Java, C++, and Python class documentation.
 
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/beta/java/index.html
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/release/java/index.html
          :color: primary
          :shadow:
          :align: center
@@ -229,7 +229,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
          Java
 
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/beta/cpp/index.html
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/release/cpp/index.html
          :color: primary
          :shadow:
          :align: center
@@ -369,8 +369,8 @@ Community translations can be found in a variety of languages in the bottom-left
    :caption: API Docs
    :hidden:
 
-   WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/beta/java/index.html>
-   WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/beta/cpp/index.html>
+   WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/release/java/index.html>
+   WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/release/cpp/index.html>
    WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/latest/>
 
 .. toctree::
