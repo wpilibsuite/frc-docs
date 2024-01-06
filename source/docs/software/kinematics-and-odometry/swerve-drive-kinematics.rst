@@ -312,6 +312,22 @@ By recording a set of swerve module states using :ref:`NetworkTables <docs/softw
         }
       };
 
+   .. code-block:: python
+
+      import ntcore
+      from wpimath.kinematics import SwerveModuleState
+
+      # get the default instance of NetworkTables
+      nt = ntcore.NetworkTableInstance.getDefault()
+
+      # Start publishing an array of module states with the "/SwerveStates" key
+      topic = nt.getStructArrayTopic("/SwerveStates", SwerveModuleState)
+      self.pub = topic.publish()
+
+      def periodic(self):
+        # Periodically send a set of module states
+        self.pub.set([frontLeftState,frontRightState,backLeftState,backRightState])
+
 See the documentation for the `swerve <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/SWERVE.md>`__ tab for more details on visualizing this data using AdvantageScope.
 
 .. image:: images/advantagescope-swerve.png
