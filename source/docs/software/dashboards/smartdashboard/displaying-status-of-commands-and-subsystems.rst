@@ -23,13 +23,20 @@ Displaying the Scheduler Status
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    SmartDashboard.putData(CommandScheduler.getInstance());
+      SmartDashboard.putData(CommandScheduler.getInstance());
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    frc::SmartDashboard::PutData(frc2::CommandScheduler::GetInstance());
+      frc::SmartDashboard::PutData(frc2::CommandScheduler::GetInstance());
+
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+      from commands2 import CommandScheduler
+
+      SmartDashboard.putData(CommandScheduler.getInstance())
 
 You can display the status of the Scheduler (the code that schedules your commands to run). This is easily done by adding a single line to the ``RobotInit`` method in your RobotProgram as shown here. In this example the Scheduler instance is written using the ``putData`` method to SmartDashboard. This line of code produces the display in the previous image.
 
@@ -43,13 +50,19 @@ Displaying Subsystem Status
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    SmartDashboard.putData(exampleSubsystem);
+      SmartDashboard.putData(exampleSubsystem);
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    frc::SmartDashboard::PutData(&exampleSubsystem);
+      frc::SmartDashboard::PutData(&exampleSubsystem);
+
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+
+      SmartDashboard.putData(exampleSubsystem)
 
 In this example we are writing the command instance, ``exampleSubsystem`` and instance of the ``ExampleSubsystem`` class to the SmartDashboard. This causes the display shown in the previous image. The text field will either contain a few dashes, ``---`` indicating that no command is current using this subsystem, or the name of the command currently using this subsystem.
 
@@ -63,13 +76,19 @@ Activating Commands with a Button
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
-    SmartDashboard.putData("Autonomous Command", exampleCommand);
+      SmartDashboard.putData("Autonomous Command", exampleCommand);
 
-  .. code-block:: c++
+   .. code-block:: c++
 
-    frc::SmartDashboard::PutData("Autonomous Command", &exampleCommand);
+      frc::SmartDashboard::PutData("Autonomous Command", &exampleCommand);
+
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+
+      SmartDashboard.putData("Autonomous Command", exampleCommand)
 
 This is the code required to create a button for the command on SmartDashboard. Pressing the button will schedule the command. While the command is running, the button label changes from ``start`` to ``cancel`` and pressing the button will cancel the command.
 
