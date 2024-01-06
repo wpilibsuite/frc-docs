@@ -53,13 +53,13 @@ Visualizing your trajectory is a great debugging step for verifying that your tr
 
 .. tab-set-code::
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
       :language: java
       :lines: 44-61
       :linenos:
       :lineno-start: 44
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
       :language: c++
       :lines: 18-30
       :linenos:
