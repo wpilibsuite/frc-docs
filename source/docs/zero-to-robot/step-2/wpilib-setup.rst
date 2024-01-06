@@ -18,7 +18,7 @@ WPILib is designed to install to different folders for different years, so that 
 Downloading
 -----------
 
-.. important:: As of 1/3/24 the 2024 WPILib installer is not yet available. It will likely be available sometime on 1/4 or 1/5.
+.. important:: As of 1/5/24 the 2024 WPILib installer is not yet available. It will likely be available by 1/7.
 
 ..
   wpilibrelease:: v2024.1.1-beta-4
