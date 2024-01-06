@@ -102,7 +102,7 @@ If you are unable to image your roboRIO, troubleshooting steps include:
 - Try accessing the roboRIO webpage with a web-browser at ``http://172.22.11.2/`` and/or verify that the NI network adapter appears in your list of Network Adapters in the Control Panel. If not, try re-installing the NI FRC Game Tools or try a different PC.
 - :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
 - Make sure your firewall is turned off.
-- Some teams have experienced an issue where imaging fails if the device name of the computer you're using has a dash (``-``) in it. Try renaming the computer (or using a different PC).
+- Some teams have experienced an issue where imaging fails if the device name of the computer you're using has a special character (e.g. dash ``-``), or number in it, or the name is too long. Try renaming the computer (or using a different PC). On Windows 11, to rename the PC, go to  Settings > System > About and click :guilabel:`Rename this PC`
 - Try booting the roboRIO into Safe Mode by pressing and holding the reset button for at least 5 seconds.
 - Try a different USB Cable
 - Try a different PC
