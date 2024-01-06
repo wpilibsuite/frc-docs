@@ -10,6 +10,7 @@ This section covers advanced control features in WPILib, such as various feedbac
    introduction/index
    filters/index
    geometry/index
+   system-identification/index
    controllers/index
    trajectories/index
    state-space/index
