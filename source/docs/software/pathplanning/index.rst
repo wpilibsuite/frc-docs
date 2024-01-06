@@ -19,6 +19,5 @@ We are sorry for the inconvenience.
 .. toctree::
    :maxdepth: 2
 
-   system-identification/index
    trajectory-tutorial/index
    pathweaver/index

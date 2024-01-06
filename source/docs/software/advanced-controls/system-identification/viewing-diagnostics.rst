@@ -37,7 +37,7 @@ The velocity time domain plots contain three sets of data: Raw Data, Filtered Da
 
 A successful quasistatic graph will be very nearly linear, while a successful dynamic graph will be an approximately exponential approach of the steady-speed.
 
-Deviation from this behavior is a sign of an :ref:`error <docs/software/pathplanning/system-identification/viewing-diagnostics:Common Failure Modes>`, either in your robot setup, analysis settings, or your test procedure.
+Deviation from this behavior is a sign of an :ref:`error <docs/software/advanced-controls/system-identification/viewing-diagnostics:Common Failure Modes>`, either in your robot setup, analysis settings, or your test procedure.
 
 Acceleration-Velocity Plot
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

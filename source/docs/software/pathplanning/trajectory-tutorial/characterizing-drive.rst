@@ -1,7 +1,7 @@
 Step 1: Characterizing Your Robot Drive
 =======================================
 
-.. note::  For detailed instructions on using the System Identification tool, see its :ref:`dedicated documentation <docs/software/pathplanning/system-identification/introduction:Introduction to System Identification>`.
+.. note::  For detailed instructions on using the System Identification tool, see its :ref:`dedicated documentation <docs/software/advanced-controls/system-identification/introduction:Introduction to System Identification>`.
 
 .. note:: The drive identification process requires ample space for the robot to drive.  Be sure to have *at least* a 10' stretch (ideally closer to 20') in which the robot can drive during the identification routine.
 
@@ -14,18 +14,18 @@ Gathering the Data
 
 We begin by gathering our drive identification data.
 
-1. :ref:`Configure and Deploy a robot project <docs/software/pathplanning/system-identification/configuring-project:Configuring a Project>`.
-2. :ref:`Run the identification Routine <docs/software/pathplanning/system-identification/identification-routine:Running the Identification Routine>`.
+1. :ref:`Configure and Deploy a robot project <docs/software/advanced-controls/system-identification/configuring-project:Configuring a Project>`.
+2. :ref:`Run the identification Routine <docs/software/advanced-controls/system-identification/identification-routine:Running the Identification Routine>`.
 
 Analyzing the Data
 ------------------
 
-Once the identification routine has been run and the data file has been saved, it is time to :ref:`open it in the analysis pane <docs/software/pathplanning/system-identification/analyzing-data:Analyzing Data>`.
+Once the identification routine has been run and the data file has been saved, it is time to :ref:`open it in the analysis pane <docs/software/advanced-controls/system-identification/analyzing-data:Analyzing Data>`.
 
 Checking Diagnostics
 ^^^^^^^^^^^^^^^^^^^^
 
-Per the :ref:`system identification guide <docs/software/pathplanning/system-identification/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
+Per the :ref:`system identification guide <docs/software/advanced-controls/system-identification/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
 
 .. image:: images/diagnostic-plots.png
    :alt: SysId diagnostics panel.
@@ -55,7 +55,7 @@ Calculate Feedback Gains
 
 .. note:: Feedback gains do *not*, in general, transfer across robots.  Do *not* use the gains from this tutorial for your own robot.
 
-We now :ref:`calculate the feedback gains <docs/software/pathplanning/system-identification/analyzing-feedback:Feedback Analysis>` for the PID control that we will use to follow the path.  Trajectory following with WPILib's RAMSETE controller uses velocity closed-loop control, so we first select ``Velocity`` mode in the identification tool:
+We now :ref:`calculate the feedback gains <docs/software/advanced-controls/system-identification/analyzing-feedback:Feedback Analysis>` for the PID control that we will use to follow the path.  Trajectory following with WPILib's RAMSETE controller uses velocity closed-loop control, so we first select ``Velocity`` mode in the identification tool:
 
 .. image:: images/velocity-mode.png
    :alt: How to specify velocity mode in the "Loop Type" dropdown.

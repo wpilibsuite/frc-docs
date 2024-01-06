@@ -60,7 +60,7 @@ The drivetrain identification tool determines the best-fit parameters for the eq
 
 where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  This is the same modeling equation as is used in the simple motor identification - however, the drivetrain identification tool is specifically set up to run on differential drives, and will characterize each side of the drive independently if desired.
 
-The drivetrain identification tool can also determine the effective trackwidth of your robot using a gyro. More information on how to run the identification is available in the :ref:`track width identification <docs/software/pathplanning/system-identification/identification-routine:Running Tests>` article.
+The drivetrain identification tool can also determine the effective trackwidth of your robot using a gyro. More information on how to run the identification is available in the :ref:`track width identification <docs/software/advanced-controls/system-identification/identification-routine:Running Tests>` article.
 
 Elevator Identification
 ~~~~~~~~~~~~~~~~~~~~~~~
