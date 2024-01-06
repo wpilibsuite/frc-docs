@@ -13,7 +13,7 @@ Build tasks
 CompileCommands tasks
 ---------------------
 
-``./gradlew generateCompileCommands`` - Generate compile_commands.json for C++ programs. This is a configuration file that is supported by many Integrated Development Environments.
+``./gradlew generateCompileCommands`` - Generate compile_commands.json for C++ programs. This is a configuration file that is supported by many Integrated Development Environments and build tools.
 
 DeployUtils tasks
 -------------------
