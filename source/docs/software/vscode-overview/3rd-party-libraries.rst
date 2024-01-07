@@ -123,8 +123,8 @@ Click these links to visit the vendor site to see whether they offer online inst
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
    Not yet available for 2024
 
-`REV Robotics REVLib <https://docs.revrobotics.com/sparkmax/software-resources/spark-max-api-information>`__ - Library for all REV devices including SPARK MAX and Color Sensor V3
-   Not yet available for 2024
+`REV Robotics REVLib <https://docs.revrobotics.com/brushless/spark-flex/revlib>`__ - Library for all REV devices including SPARK FlEX, SPARK MAX, and Color Sensor V3
+   ``https://software-metadata.revrobotics.com/REVLib-2024.json``
 
 Community Libraries
 ^^^^^^^^^^^^^^^^^^^
