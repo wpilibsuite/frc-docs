@@ -126,6 +126,8 @@ Download RobotPy for roboRIO
 
 After installing the ``robotpy`` project on your computer, there are a variety of commands available that can be ran from the command line via the ``robotpy`` module.
 
+.. seealso:: :doc:`Documentation for robotpy subcommands </docs/software/python/subcommands/index>`
+
 If you already have a RobotPy robot project, you can use that to download the pieces needed to run on the roboRIO. If you don't have a project, running this command in an empty directory will initialize a new robot project:
 
 .. tab-set::
@@ -151,41 +153,9 @@ If you already have a RobotPy robot project, you can use that to download the pi
 
          python3 -m robotpy init
 
-This will create a ``robot.py`` and ``pyproject.toml`` file. The ``pyproject.toml`` file will look something like this:
+This will create a ``robot.py`` and ``pyproject.toml`` file. The ``pyproject.toml`` file should be customized and details the requirements needed to run your robot code, among other things.
 
-.. code-block:: toml
-
-    #
-    # Use this configuration file to control what RobotPy packages are installed
-    # on your RoboRIO
-    #
-
-    [tool.robotpy]
-
-    # Version of robotpy this project depends on
-    robotpy_version = "2024.0.0"
-
-    # Which extra RobotPy components should be installed
-    # -> equivalent to `pip install robotpy[extra1, ...]
-    robotpy_extras = [
-        # "all"
-        # "apriltag"
-        # "commands2"
-        # "cscore"
-        # "navx"
-        # "pathplannerlib"
-        # "phoenix5"
-        # "phoenix6"
-        # "playingwithfusion"
-        # "rev"
-        # "romi"
-        # "sim"
-    ]
-
-    # Other pip packages to install
-    requires = []
-
-You should modify this file with the desired ``robotpy_version``, and enable any needed extras (or just enable the ``all`` extra). You can also specify additional python packages that you want installed in the ``requires`` list.
+.. seealso:: The default ``pyproject.toml`` created for you only contains the version of RobotPy installed on your computer. If you want to enable vendor packages or install other python packages from PyPI, see our :doc:`pyproject.toml documentation </docs/software/python/pyproject_toml>`
 
 Next run the ``robotpy sync`` subcommand, which will:
 
@@ -218,4 +188,4 @@ Next run the ``robotpy sync`` subcommand, which will:
 
          python3 -m robotpy sync
 
-When you deploy your code to the roboRIO, ``robotpy deploy`` will automatically install Python (if needed) and your robot project requirements on the roboRIO as part of the deploy process.
+When you deploy your code to the roboRIO, :doc:`the deploy subcommand </docs/software/python/subcommands/deploy>` will automatically install Python (if needed) and your robot project requirements on the roboRIO as part of the deploy process.
