@@ -238,7 +238,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
          C++
 
-      .. button-link:: https://robotpy.readthedocs.io/projects/robotpy/en/latest/
+      .. button-link:: https://robotpy.readthedocs.io/projects/robotpy/en/stable/
          :color: primary
          :shadow:
          :align: center
@@ -371,7 +371,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/release/java/index.html>
    WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/release/cpp/index.html>
-   WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/latest/>
+   WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/stable/>
 
 .. toctree::
    :maxdepth: 1
