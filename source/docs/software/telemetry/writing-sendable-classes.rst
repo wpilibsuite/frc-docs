@@ -7,13 +7,13 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
         :language: java
         :lines: 151-159
         :linenos:
         :lineno-start: 151
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpimath/src/main/native/cpp/controller/BangBangController.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpimath/src/main/native/cpp/controller/BangBangController.cpp
         :language: c++
         :lines: 55-69
         :linenos:
