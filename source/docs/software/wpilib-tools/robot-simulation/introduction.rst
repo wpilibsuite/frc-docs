@@ -3,8 +3,8 @@ Introduction to Robot Simulation
 
 Often a team may want to test their code without having an actual robot available. WPILib provides teams with the ability to simulate various robot features using simple gradle commands.
 
-Enabling Desktop Support
-------------------------
+Enabling Desktop Support (Java/C++)
+-----------------------------------
 
 Use of the Desktop Simulator requires Desktop Support to be enabled. This can be done by checking the "Enable Desktop Support Checkbox" when creating your robot project or by running "WPILib: Change Desktop Support Enabled Setting" from the Visual Studio Code command palette.
 
@@ -30,6 +30,11 @@ Ensure the :guilabel:`Desktop Development with C++` option is checked in the Vis
 
 .. image:: images/vs-build-tools.png
    :alt: Screenshot of the Visual Studio build tools option
+
+Enabling Desktop Support (Python)
+---------------------------------
+
+GUI simulation support is installed when you ``pip install robotpy``.
 
 Running Robot Simulation
 ------------------------
