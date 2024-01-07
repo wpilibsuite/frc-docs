@@ -62,30 +62,30 @@ Other ultrasonic sensors offered by third-parties may use more complicated commu
 Using ultrasonics in code
 -------------------------
 
-Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code from the UltrasonicPID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/UltrasonicPID>`__)will move the robot to 1 meter away from the nearest object the sensor detects:
+Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code from the UltrasonicPID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/UltrasonicPID>`__) will move the robot to 1 meter away from the nearest object the sensor detects:
 
 .. tab-set::
 
    .. tab-item:: Java
      :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid/Robot.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid/Robot.java
          :language: java
-         :lines: 18-61, 71-71
+         :lines: 19-68, 77-77
 
    .. tab-item:: C++ (Header)
      :sync: C++ (Header)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/include/Robot.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/include/Robot.h
          :language: c++
-         :lines: 19-51
+         :lines: 19-52
 
    .. tab-item:: C++ (Source)
      :sync: C++ (Source)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/cpp/Robot.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1/wpilibcExamples/src/main/cpp/examples/UltrasonicPID/cpp/Robot.cpp
          :language: c++
-         :lines: 7-19
+         :lines: 12-24
 
 Additionally, ping-response ultrasonics can be sent to :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`, where they will be displayed with their own widgets:
 
