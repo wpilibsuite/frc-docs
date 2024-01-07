@@ -34,8 +34,6 @@ LabVIEW Teams
 Java/C++ Teams
 ^^^^^^^^^^^^^^
 
-.. important:: As of 1/5/24 the 2024 WPILib installer is not yet available. It will likely be available by 1/7.
-
 -  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases/latest>`__
 
 Once on the GitHub releases page, scroll to the download section in the middle of the page.
