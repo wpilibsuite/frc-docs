@@ -89,9 +89,6 @@ If you're interested in just switching what the driver sees, and are using Smart
                    print("Setting camera 1")
                    self.cameraSelection.setString("USB Camera 0")
 
-       if __name__ == "__main__":
-           wpilib.run(MyRobot)
-
     ``vision.py`` contents:
 
     .. code-block:: python
@@ -255,9 +252,6 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
                elif self.joy1.getTriggerReleased():
                    print("Setting camera 1")
                    self.cameraSelection.setString("USB Camera 0")
-
-       if __name__ == "__main__":
-           wpilib.run(MyRobot)
 
     ``vision.py`` contents:
 

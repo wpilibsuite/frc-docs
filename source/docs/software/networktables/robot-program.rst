@@ -94,8 +94,6 @@ The example robot program below publishes incrementing X and Y values to a table
 
     .. code-block:: python
 
-        #!/usr/bin/env python3
-
         import ntcore
         import wpilib
 
@@ -126,8 +124,3 @@ The example robot program below publishes incrementing X and Y values to a table
                 self.yPub.set(self.y)
                 self.x += 0.05
                 self.y += 1.0
-
-
-        if __name__ == "__main__":
-            wpilib.run(EasyNetworkTableExample)
-
