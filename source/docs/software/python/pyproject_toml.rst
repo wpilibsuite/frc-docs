@@ -19,7 +19,7 @@ The ``pyproject.toml`` file looks something like this:
     [tool.robotpy]
 
     # Version of robotpy this project depends on
-    robotpy_version = "2024.0.0"
+    robotpy_version = "2024.1.1"
 
     # Which extra RobotPy components should be installed
     # -> equivalent to `pip install robotpy[extra1, ...]
