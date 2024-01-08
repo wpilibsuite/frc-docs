@@ -112,7 +112,7 @@ Click these links to visit the vendor site to see whether they offer online inst
 
    Phoenix (v5):        Not yet available for 2024
 
-   .. note:: All users should use the Phoenix (v6) library.  If you also need both Phoenix v5 support, additionally install the v5 vendor library.
+   .. note:: All users should use the Phoenix (v6) library.  If you also need Phoenix v5 support, additionally install the v5 vendor library.
 
 `Redux Robotics ReduxLib <https://docs.reduxrobotics.com/reduxlib.html>`__ - Library for all Redux devices including the Canandcoder
    Not yet available for 2024
