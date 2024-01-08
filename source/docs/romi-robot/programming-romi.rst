@@ -10,7 +10,7 @@ Creating a new program for a Romi is like creating a normal FRC program, similar
 
 WPILib comes with two templates for Romi projects, including one based on TimedRobot, and a Command-Based project template. Additionally, an example project is provided which showcases some of the built-in functionality of the Romi. This article will walk through creating a project from this example.
 
-.. note:: In order to program the Romi using C++, a compatible C++ desktop compiler must be installed. See :ref:`Robot Simulation - Additional C++ Dependency <docs/software/wpilib-tools/robot-simulation/introduction:Additional C++ Dependency>`.
+.. note:: In order to program the Romi using C++, a compatible C++ desktop compiler must be installed. See :ref:`Robot Simulation - Additional C++ Dependency <cpp_sim_additional_dependency>`.
 
 Creating a New WPILib Romi Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

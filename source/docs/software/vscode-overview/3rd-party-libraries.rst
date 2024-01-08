@@ -34,6 +34,14 @@ For LabVIEW teams, there might be a few new :guilabel:`Third Party` items on var
 
 In order to install third party libraries for LabVIEW, download the VIs from the vendor (typically via some sort of installer). Then drag and drop the third party VIs into the respective folder mentioned above just like any other VI.
 
+How Does It Work? - Python
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Third party libraries are packaged into Python wheels and uploaded either to PyPI (if pure python) or WPILib's artifactory. Users can enable them as dependencies either by adding the component name to ``robotpy_extras`` (recommended) or by adding an explicit dependency in ``requires``. The dependencies are downloaded when ``robotpy sync`` is executed, and installed on the roboRIO when ``robotpy deploy`` is executed.
+
+.. seealso:: :doc:`/docs/software/python/pyproject_toml`
+
+
 Installing Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
