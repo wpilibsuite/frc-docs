@@ -120,7 +120,7 @@ Click these links to visit the vendor site to see whether they offer online inst
 
    Phoenix (v5):        Not yet available for 2024
 
-   .. note:: All users should use the Phoenix (v6) library.  If you also need need both Phoenix v5 support, additionally install the v5 vendor library.
+   .. note:: All users should use the Phoenix (v6) library.  If you also need Phoenix v5 support, additionally install the v5 vendor library.
 
 `Redux Robotics ReduxLib <https://docs.reduxrobotics.com/reduxlib.html>`__ - Library for all Redux devices including the Canandcoder
    Not yet available for 2024
@@ -131,7 +131,7 @@ Click these links to visit the vendor site to see whether they offer online inst
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
    Not yet available for 2024
 
-`REV Robotics REVLib <https://docs.revrobotics.com/brushless/spark-flex/revlib>`__ - Library for all REV devices including SPARK FlEX, SPARK MAX, and Color Sensor V3
+`REV Robotics REVLib <https://docs.revrobotics.com/brushless/spark-flex/revlib>`__ - Library for all REV devices including SPARK Flex, SPARK MAX, and Color Sensor V3
    ``https://software-metadata.revrobotics.com/REVLib-2024.json``
 
 Community Libraries
