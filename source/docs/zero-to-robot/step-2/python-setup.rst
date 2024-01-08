@@ -55,19 +55,19 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       .. code-block:: sh
 
-         pip3 install robotpy
+         python3 -m pip install robotpy
 
       To upgrade, you can run this:
 
       .. code-block:: sh
 
-         pip3 install --upgrade robotpy
+         python3 -m pip install --upgrade robotpy
 
       If you don't have administrative rights on your computer, either use `virtualenv/virtualenvwrapper <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_, or you can install to the user site-packages directory:
 
       .. code-block:: sh
 
-         pip3 install --user robotpy
+         python3 -m pip install --user robotpy
 
    .. tab-item:: Linux
       :sync: linux
@@ -76,7 +76,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       .. code-block:: sh
 
-         pip3 --version
+         python3 -m pip --version
 
       If you need to upgrade your version of pip, it is highly recommended to use a `virtual environment <https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/>`_.
 
@@ -84,13 +84,13 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       .. code-block:: sh
 
-         pip3 install robotpy
+         python3 -m pip install robotpy
 
       To upgrade, you can run this:
 
       .. code-block:: sh
 
-         pip3 install --upgrade robotpy
+         python3 -m pip install --upgrade robotpy
 
       If you manage to install the packages and get the following error or something similar, your system is most likely not compatible with RobotPy::
 
@@ -103,7 +103,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       .. code-block:: sh
 
-         pip3 install --extra-index-url=https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2024/simple robotpy
+         python3 -m pip install --extra-index-url=https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2024/simple robotpy
 
       **source install**
 
