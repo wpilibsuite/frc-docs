@@ -140,7 +140,7 @@ Community Libraries
 `PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
    Not yet available for 2024
 
-`PathPlanner <https://github.com/mjansen4857/pathplanner/wiki>`_ - Library for PathPlanner
-   Not yet available for 2024
+`PathPlanner <https://pathplanner.dev/home.html>`_ - Library for PathPlanner
+   ``https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json``
 
 
