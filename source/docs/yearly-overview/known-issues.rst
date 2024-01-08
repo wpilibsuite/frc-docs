@@ -11,7 +11,7 @@ Open Issues
 Visual Studio Code Reports Unresolved Dependency
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** Java programs will report ``Unresolved dependency: org.junit.platform junit-platform-launcherJava(0)`` on build.gradle, but programs will compile and deploy.
+**Issue:** Java programs will report ``Unresolved dependency: org.junit.platform junit-platform-launcherJava(0)`` on build.gradle. Programs that use unit tests will fail to build.
 
 **Workaround:** This can be safetly ignored if you aren't running unit tests. To fix it, do the following:
 
