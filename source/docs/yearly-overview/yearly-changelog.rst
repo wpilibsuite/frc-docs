@@ -186,8 +186,8 @@ GradleRIO
 WPILib All in One Installer
 ---------------------------
 
-- Update to VS Code 1.84.0
-- VS Code extension updates: cpptools 1.17.5, javaext 1.23.0
+- Update to VS Code 1.85.1
+- VS Code extension updates: cpptools 1.19.1, javaext 1.26.0
 - Use separate zip files for VS Code download/install
 - Update to use .NET 8
 - AdvantageScope is now bundlled by the installer
