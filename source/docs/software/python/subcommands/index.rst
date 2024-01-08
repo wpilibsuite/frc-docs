@@ -53,7 +53,7 @@ You can pass the ``--help`` argument to see more information about the subcomman
 
          python3 -m robotpy sim --help
 
-This documentation site has more detailed documentation for some of the subcommands:
+This page has more detailed documentation for some of the subcommands:
 
 .. toctree::
    :maxdepth: 2
