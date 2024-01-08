@@ -8,6 +8,29 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+Visual Studio Code Reports Unresolved Dependency
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** Java programs will report ``Unresolved dependency: org.junit.platform junit-platform-launcherJava(0)`` on build.gradle. Programs that use unit tests will fail to build.
+
+**Workaround:** This can be safetly ignored if you aren't running unit tests. To fix it, do the following:
+
+On Windows execute the following in powershell:
+
+.. code-block:: powershell
+
+   Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.module
+   Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\junit-bom\5.10.1\junit-bom-5.10.1.module
+
+On Linux/macOS execute the following:
+
+.. code-block:: sh
+
+   curl https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -o ~/wpilib/2024/maven/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module
+   curl https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -o ~/wpilib/2024/maven/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module
+
+After running those, you’ll need to refresh Java intellisense in VS Code for it to pick up the new files. You can do so by running the ``Clean Java Language Server Workspace`` command in VS Code.
+
 Driver Station Reporting No Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
