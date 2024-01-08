@@ -141,6 +141,6 @@ Community Libraries
    Not yet available for 2024
 
 `PathPlanner <https://github.com/mjansen4857/pathplanner/wiki>`_ - Library for PathPlanner
-   Not yet available for 2024
+   ``https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json``
 
 
