@@ -34,7 +34,7 @@ Ensure the :guilabel:`Desktop Development with C++` option is checked in the Vis
 Enabling Desktop Support (Python)
 ---------------------------------
 
-GUI simulation support is installed when you ``pip install robotpy``.
+GUI simulation support is installed when you install robotpy.
 
 Running Robot Simulation
 ------------------------
