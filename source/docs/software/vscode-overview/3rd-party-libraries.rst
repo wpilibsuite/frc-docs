@@ -115,10 +115,10 @@ Vendor Libraries
 
 Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.
 
-`CTRE Phoenix Framework <https://store.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
-   Phoenix (v6):        Not yet available for 2024
+`CTRE Phoenix Framework <https://docs.ctr-electronics.com/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
+   Phoenix (v6):        ``https://maven.ctr-electronics.com/release/com/ctre/phoenix6/latest/Phoenix6-frc2024-latest.json``
 
-   Phoenix (v5):        Not yet available for 2024
+   Phoenix (v5):        ``https://maven.ctr-electronics.com/release/com/ctre/phoenix/Phoenix5-frc2024-latest.json``
 
    .. note:: All users should use the Phoenix (v6) library.  If you also need Phoenix v5 support, additionally install the v5 vendor library.
 
