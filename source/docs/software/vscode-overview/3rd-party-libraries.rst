@@ -138,7 +138,7 @@ Community Libraries
 ^^^^^^^^^^^^^^^^^^^
 
 `PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
-   Not yet available for 2024
+   ``https://maven.photonvision.org/repository/internal/org/photonvision/photonlib-json/1.0/photonlib-json-1.0.json``
 
 `PathPlanner <https://pathplanner.dev/home.html>`_ - Library for PathPlanner
    ``https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json``
