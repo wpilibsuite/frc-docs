@@ -3,20 +3,6 @@ Additional Utilities and Tools
 
 This page mainly covers useful information about additional functionality that this tool provides.
 
-
-JSON Converters
----------------
-
-There are a two JSON Utility tools that can be used in the :guilabel:`JSON Converters` tab: FRC-Char Converter and JSON to CSV Converter.
-
-.. image:: images/json-converters.png
-   :alt: Picture of the json converters
-
-The FRC-Char Converter reads in an FRC-Char JSON and converts it into a SysId JSON that the tool can read.
-
-The JSON to CSV Converter takes a SysId JSON and outputs a CSV file. If the JSON had Drivetrain Mechanism data, the columns are: ``Timestamp (s)``, ``Test``, ``Left Volts (V)`` , ``Right Volts (V)``, ``Left Position ({0})``, ``Right Position ({units})``, ``Left Velocity ({units}/s)``, ``Right Velocity ({units}/s)``, ``Gyro Position (deg)``, ``Gyro Rate (deg/s)``.
-If the JSON had General Mechanism data, the CSV has the following columns: ``Timestamp (s)``, ``Test``, ``Volts (V)``, ``Position({units})``, ``Velocity ({units}/s)``.
-
 ImGui Tips
 ----------
 
