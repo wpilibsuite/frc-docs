@@ -1,3 +1,0 @@
-Configuring a Project
-=====================
-
