@@ -26,7 +26,7 @@ Some of the tools in this toolsuite introduce additional terms into the above eq
 The WPILib System Identification Tool (SysId)
 ---------------------------------------------
 
-The WPILib system identification tool consists of an application that runs on the user's PC and matching robot code that runs on the user's robot. The PC application will send control signals to the robot over NetworkTables, while the robot sends data back to the application. The application then processes the data and determines model parameters for the user's robot mechanism, as well as producing diagnostic plots. Data can be saved (in JSON format) for future use, if desired.
+The WPILib system identification tool consists of the SysId application that runs on the user's PC and a routine that lives in the code running on the user's robot. The routine will generate control signals which user-defined callbacks will send to the motors being characterized, while the robot records data into a WPILog file. After the routine completes, the user will retrieve this file from the roboRIO and load it into SysId. SysId then processes the data and determines model parameters for the user's robot mechanism, as well as producing diagnostic plots.
 
 Included Tools
 ^^^^^^^^^^^^^^
@@ -40,7 +40,7 @@ The System Identification toolsuite currently supports:
 - Elevators
 - Arms
 
-Several of these options use identical robot-side code, and differ only in the analysis routine used to interpret the data.
+Several of these options use nearly identical robot-side code, and differ only in the analysis used by SysId to interpret the data.
 
 Simple Motor Identification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,14 +80,14 @@ The arm identification tool determines the best-fit parameters for the equation:
 
 where :math:`V` is the applied voltage, :math:`\theta` is the angular displacement (position) of the arm, :math:`\dot{\theta}` is its angular velocity, and :math:`\ddot{\theta}` is its angular acceleration.  The cosine term (:math:`kG`) is added to correctly account for the effect of gravity.
 
-Installing the System Identification Tool
+Installing SysId
 -----------------------------------------
 
-The system identification tool (also referred to as ``sysid``) is included with the WPILib Installer.
+SysId is included with the WPILib Installer.
 
 .. note:: The old Python characterization tool from previous years is no longer supported.
 
-Launching the System Identification Tool
+Launching SysId Tool
 ----------------------------------------
 
 The system identification tool can be opened from the ``Start Tool`` option in VS Code or by using the shortcut inside the WPILib Tools desktop folder (Windows).
