@@ -1,5 +1,22 @@
 .. include:: <isonum.txt>
 
+Feedforward Analysis
+----------------------------
+
+.. note:: For information on what the calculated feedback gains mean, see :ref:`docs/software/advanced-controls/introduction/introduction-to-feedforward:The Permanent-Magnet DC Motor Feedforward Equation`.  For information on using the calculated feedback gains in code, see :ref:`feedforward control <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>`.
+
+Click the dropdown arrow on the :guilabel:`Feedforward` Section.
+
+.. note:: If you would like to change units, you will have to press the :guilabel:`Override Units` button and fill out the information on the popup.
+
+.. image:: images/feedback-analysis.png
+   :alt: Analyzing data for feedforward
+
+The computed mechanism system parameters will then be displayed.
+
+.. image:: images/feedforward-values.png
+   :alt: Analysis coefficient results
+
 Feedback Analysis
 =================
 
