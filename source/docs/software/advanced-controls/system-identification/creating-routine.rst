@@ -67,6 +67,6 @@ See the SysIdRoutine example project for example callbacks.
 Test Factories
 ^^^^^^^^^^^^^^^^^
 
-After creating the SysIdRoutine object, you can expose the test factories by creating command factory methods that expose the tests [TODO: word this better]
+After creating the SysIdRoutine object, you can expose the test factories by creating command factory methods that expose the tests.
 
-
+Bind the factory methods to either controller buttons or an create an autonomous routine with them. It is recommended to bind them to held down buttons so that the user can stop the routine faster if it exceeds limits.
