@@ -2,7 +2,6 @@ Loading Data
 ============
 
 After downloading the WPILog containing the tests from the roboRIO, go to the ``Log Loader`` pane in SysId and click ``Open data log file...``.
-image^
 
 .. note:: If the log file has many entries, use the ``Filter`` box to search for the needed entries.
 
@@ -14,4 +13,4 @@ Now the ``Data Selector`` pane will present ``Position``, ``Velocity``, and ``Vo
 Ideally, the correct units for the position and velocity entries would have been set in the code before running the tests. If this was not the case, use the Units dropdown in the ``Data Selector`` pane to correct it. Additionally, if you did not account for a gear ratio or some other factor that scales the recorded values up or down uniformly, you can compensate for that by setting position and velocity scaling factors in the provided text boxes.
 ^image
 
-Once everything has been verified to be correct, click the ``Load`` button and move on to checking the fit diagnostics.
+Ensure the correct analysis type has been selected, then click the ``Load`` button and move on to checking the fit diagnostics.
