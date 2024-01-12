@@ -122,8 +122,8 @@ Click these links to visit the vendor site to see whether they offer online inst
 
    .. note:: All users should use the Phoenix (v6) library.  If you also need Phoenix v5 support, additionally install the v5 vendor library.
 
-`Redux Robotics ReduxLib <https://docs.reduxrobotics.com/reduxlib.html>`__ - Library for all Redux devices including the Canandcoder
-   Not yet available for 2024
+`Redux Robotics ReduxLib <https://docs.reduxrobotics.com/reduxlib.html>`__ - Library for all Redux devices including the Canandcoder and Canandcolor
+   ``https://frcsdk.reduxrobotics.com/ReduxLib_2024.json``
 
 `Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
    ``https://www.playingwithfusion.com/frc/playingwithfusion2024.json``
