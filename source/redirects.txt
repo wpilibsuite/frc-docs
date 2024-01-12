@@ -284,3 +284,9 @@
 "docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst" "docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst"
 "docs/software/driverstation/imaging-your-classmate.rst" "docs/software/driverstation/index.rst"
 
+"docs/software/pathplanning/system-identification/analyzing-feedback.rst" "docs/software/advanced-controls/system-identification/analyzing-gains.rst"
+"docs/software/pathplanning/system-identification/analyzing-data.rst" "docs/software/advanced-controls/system-identification/analyzing-gains.rst"
+"docs/software/pathplanning/system-identification/introduction.rst" "docs/software/advanced-controls/system-identification/introduction.rst"
+"docs/software/pathplanning/system-identification/viewing-diagnostics.rst" "docs/software/advanced-controls/system-identification/viewing-diagnostics.rst"
+"docs/software/pathplanning/system-identification/additional-utils.rst" "docs/software/advanced-controls/system-identification/additional-utils.rst"
+"docs/software/pathplanning/system-identification/index.rst" "docs/software/advanced-controls/system-identification/index.rst"

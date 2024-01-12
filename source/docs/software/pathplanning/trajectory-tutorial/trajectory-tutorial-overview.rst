@@ -43,4 +43,4 @@ To follow this tutorial, you will need ready access to the following materials:
 
   * :ref:`FRC Driver Station <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
   * :ref:`WPILib <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
-  * :ref:`The System Identification Toolsuite <docs/software/advanced-controls/system-identification/introduction:Installing the System Identification Tool>`.
+  * :ref:`The System Identification Toolsuite <docs/software/advanced-controls/system-identification/introduction:Installing SysId>`.

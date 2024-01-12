@@ -19,11 +19,11 @@ User Code Setup
 To assist in creating SysId-compatible identification routines, WPILib provides the ``SysIdRoutine`` class. Users should create a ``SysIdRoutine`` object, which take both a ``Config`` object describing the test settings and a ``Mechanism`` object describing how the routine will control the relevant motors and log the measurements needed to perform the fit.
 
 Routine Config
-^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 The ``Config`` object takes in a a voltage ramp rate for use in Quasistatic tests, a steady state step voltage for use in Dynamic tests, a time to use as the maximum test duration for safety reasons, and a callback method that accepts the current test state (such as "dynamic-forward") for use by a 3rd party logging solution. The constructormay be left blank to default the ramp rate to 1 volt per second and the step voltage to 7 volts.
 
-.. note:: Not all 3rd party loggers will interact with SysIdRoutine directly. Follow the directions provided with the logger you are using. 
+.. note:: Not all 3rd party loggers will interact with SysIdRoutine directly. Follow the directions provided with the logger you are using.
 
 The timeout and state callback are optional and defaulted to 10 seconds and null (which will log the data to a normal WPILog file) respectively.
 
@@ -56,11 +56,12 @@ The callbacks can either be created in-place via Lambda expressions or can be th
 
 Mechanism Callbacks
 ^^^^^^^^^^^^^^^^^^^
-The ``Mechanism``callbacks are essentially just plumbing between the routine and your motors and sensors.
 
-The ``drive`` callback exists so that you can pass the requested voltage directly to your motor controller(s). 
+The ``Mechanism`` callbacks are essentially just plumbing between the routine and your motors and sensors.
 
-The ``log`` callback reads sensors so that the routine can log the voltage, position, and velocity at each timestep. 
+The ``drive`` callback exists so that you can pass the requested voltage directly to your motor controller(s).
+
+The ``log`` callback reads sensors so that the routine can log the voltage, position, and velocity at each timestep.
 
 See the SysIdRoutine example project for example callbacks.
 

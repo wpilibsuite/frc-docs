@@ -14,7 +14,6 @@ Now the ``Data Selector`` pane will present ``Position``, ``Velocity``, and ``Vo
 
 .. image:: images/state-selected.png
     :alt: Data Selector pane showing the Position, Velocity, and Voltage slots
-    
 
 .. image:: images/entries-selected.png
     :alt: The Data Selector pane after the Position, Velocity, and Voltage entries have been selected

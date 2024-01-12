@@ -5,10 +5,9 @@ System Identification
    :maxdepth: 1
 
    introduction
-   configuring-project
-   identification-routine
-   analyzing-data
+   creating-routine
+   running-routine
+   loading-data
    viewing-diagnostics
-   analyzing-feedback
+   analyzing-gains
    additional-utils
-

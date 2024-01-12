@@ -1,5 +1,8 @@
 .. include:: <isonum.txt>
 
+Analyzing Data
+===============
+
 Feedforward Analysis
 ----------------------------
 
@@ -18,7 +21,7 @@ The computed mechanism system parameters will then be displayed.
    :alt: Analysis coefficient results
 
 Feedback Analysis
-=================
+-----------------
 
 .. important:: These gains are, in effect, "educated guesses" - they are not guaranteed to be perfect, and should be viewed as a "starting point" for further tuning.
 
