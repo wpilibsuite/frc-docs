@@ -18,9 +18,7 @@ Requirements
 
 - Windows 10 or higher (Windows 10, 11).
 
-.. note:: As of 1/6/24 the 2024 Game Tools are temporarily being hosted external from NI.
-
-- Download the `FRC Game Tools <https://packages.wpilib.workers.dev/game-tools/ni-frc-2024-game-tools_24.0.0_offline.iso>`__ from NI.
+- Download the `FRC Game Tools <https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107>`__ from NI.
 
 .. image:: images/labview/offline-installer.png
    :alt: The Download button for the NI installer with the offline installer link below it.

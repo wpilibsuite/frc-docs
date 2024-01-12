@@ -20,9 +20,7 @@ Installers
 All Teams
 ^^^^^^^^^
 
-.. note:: As of 1/6/24 the 2024 Game Tools are temporarily being hosted external from NI.
-
--  `2024 FRC Game Tools <https://packages.wpilib.workers.dev/game-tools/ni-frc-2024-game-tools_24.0.0_offline.iso>`__ (Note: Click on link for "Individual Offline Installers")
+-  `2024 FRC Game Tools <https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107>`__ (Note: Click on link for "Individual Offline Installers")
 
 -  `2024 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip>`__ or `2024 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip>`__
 
