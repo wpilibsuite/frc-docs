@@ -113,12 +113,17 @@ PWF Sensors
 Redux Robotics
 --------------
 
-Redux Robotics currently offers the Canandcoder :term:`CAN` + :term:`PWM` magnetic encoder.
+Redux Robotics currently offers the Canandcoder :term:`CAN` + :term:`PWM` magnetic encoder and the Canandcolor :term:`CAN`-enabled color sensor.
 
 Redux Sensors
 ^^^^^^^^^^^^^
 
 - **Canandcoder**
 
-    - API Documentation (`Java <https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandcoder/CANandcoder.html>`__, `C++ <https://apidocs.reduxrobotics.com/current/cpp/classredux_1_1sensors_1_1canandcoder_1_1CANandcoder.html>`__)
+    - API Documentation (`Java <https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandcoder/Canandcoder.html>`__, `C++ <https://apidocs.reduxrobotics.com/current/cpp/classredux_1_1sensors_1_1canandcoder_1_1Canandcoder.html>`__)
     - `Technical Manual <https://docs.reduxrobotics.com/canandcoder/index.html>`__
+
+- **Canandcolor**
+
+    - API Documentation (`Java <https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandcolor/Canandcolor.html>`__, `C++ <https://apidocs.reduxrobotics.com/current/cpp/classredux_1_1sensors_1_1canandcolor_1_1Canandcolor.html>`__)
+    - `Technical Manual <https://docs.reduxrobotics.com/canandcolor/index.html>`__
