@@ -43,7 +43,7 @@ The following example demonstrates how to create a button on your dashboard that
   .. code-block:: java
 
     ShuffleboardTab tab = Shuffleboard.getTab("Shooter");
-    NetworkTableEntry shooterEnable = tab.add("Shooter Enable", false).getEntry();
+    GenericEntry shooterEnable = tab.add("Shooter Enable", false).getEntry();
 
     // Command Example assumed to be in a PIDSubsystem
     new NetworkButton(shooterEnable).onTrue(new InstantCommand(m_shooter::enable));
@@ -58,7 +58,7 @@ The following example demonstrates how to create a button on your dashboard that
   .. code-block:: c++
 
     frc::ShuffleboardTab& tab = frc::Shuffleboard::GetTab("Shooter");
-    nt::NetworkTableEntry shooterEnable = tab.Add("Shooter Enable", false).GetEntry();
+    nt::GenericEntry& shooterEnable = *tab.Add("Shooter Enable", false).GetEntry();
 
     // Command-based assumed to be in a PIDSubsystem
     frc2::NetworkButton(shooterEnable).OnTrue(frc2::InstantCommand([&] { m_shooter.Enable(); }));

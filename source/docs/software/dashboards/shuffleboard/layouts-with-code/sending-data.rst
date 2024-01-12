@@ -32,7 +32,7 @@ If data needs to be updated (for example, the output of some calculation done on
 
       class VisionCalculator {
          private ShuffleboardTab tab = Shuffleboard.getTab("Vision");
-         private NetworkTableEntry distanceEntry =
+         private GenericEntry distanceEntry =
             tab.add("Distance to target", 0)
                .getEntry();
 
