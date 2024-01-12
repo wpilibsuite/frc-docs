@@ -126,7 +126,7 @@ Click these links to visit the vendor site to see whether they offer online inst
    Not yet available for 2024
 
 `Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
-   Not yet available for 2024
+   ``https://www.playingwithfusion.com/frc/playingwithfusion2024.json``
 
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
    ``https://dev.studica.com/releases/2024/NavX.json``
