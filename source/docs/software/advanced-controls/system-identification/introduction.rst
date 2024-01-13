@@ -26,7 +26,7 @@ Some of the tools in this toolsuite introduce additional terms into the above eq
 The WPILib System Identification Tool (SysId)
 ---------------------------------------------
 
-The WPILib system identification tool consists of the SysId application that runs on the user's PC and a routine that lives in the code running on the user's robot. The routine will generate control signals which user-defined callbacks will send to the motors being characterized, while the robot records data into a WPILog file. After the routine completes, the user will retrieve this file from the roboRIO and load it into SysId. SysId then processes the data and determines model parameters for the user's robot mechanism, as well as producing diagnostic plots.
+The WPILib system identification tool consists of the SysId application that runs on the user's PC and a routine that lives in the code running on the user's robot. The routine will generate control signals which user-defined callbacks will send to the motors being characterized, while the robot records data into a log file. After the routine completes, the user will retrieve this file from the roboRIO and load it into SysId. SysId then processes the data and determines model parameters for the user's robot mechanism, as well as producing diagnostic plots.
 
 Included Tools
 ^^^^^^^^^^^^^^
@@ -87,7 +87,7 @@ SysId is included with the WPILib Installer.
 
 .. note:: The old Python characterization tool from previous years is no longer supported.
 
-Launching SysId Tool
+Launching the SysId Tool
 ----------------------------------------
 
 The system identification tool can be opened from the ``Start Tool`` option in VS Code or by using the shortcut inside the WPILib Tools desktop folder (Windows).
