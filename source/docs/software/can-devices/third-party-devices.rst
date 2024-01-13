@@ -79,7 +79,7 @@ CTRE Other CAN Devices
 REV Robotics
 ------------
 
-REV Robotics currently offers the SPARK MAX motor controller which can be used for brushed and brushless (Rev NEO and Rev NEO 550) motors as well as the Spark Flex motor controller.
+REV Robotics currently offers the SPARK MAX and SPARK Flex motor controllers which can be used for brushed and REV brushless (NEO, NEO 550, and NEO Vortex) motors.
 
 REV Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^
