@@ -9,7 +9,7 @@ There are three numerical accuracy metrics that are computed with this tool: acc
 .. image:: images/viewing-metrics.png
    :alt: Analysis accuracy metrics
 
-The acceleration r-squared is the fraction of the variance in measured acceleration (used as the independent variable in the SysId regression) explained by the linear model.  This can be quite variable, because acceleration is very susceptible to system noise.  Mechanisms tend to vibrate quite a bit, so this value rarely goes above ``0.5``, even on very good datasets. If the acceleration r-squared goes below around ``0.2``, the kA gain will be of dubious quality and the mechanism vibration should be reduced if possible.
+The acceleration r-squared is the fraction of the variance in measured acceleration (used as the independent variable in the SysId regression) explained by the linear model.  This can be quite variable, because acceleration is very susceptible to system noise.  Mechanisms tend to vibrate quite a bit, so this value rarely goes above ``0.5``, even on very good datasets. If the acceleration r-squared goes below around ``0.2``, the kA gain will be of dubious quality and the mechanism vibration should be reduced if possible. Even if your r-squared is outside this range it may still be valid, but it is recommended to improve the data if practical.
 
 The simulated velocity r-squared is the fraction of the variance in measured velocity explained by a noiseless simulation of the motor movement stepped forward with the constants determined from the regression.  A value north of ``.9`` indicates a good fit.
 

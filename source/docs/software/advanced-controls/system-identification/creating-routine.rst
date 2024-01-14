@@ -9,12 +9,12 @@ A standard motor identification routine consists of two types of tests:
 - **Quasistatic:** In this test, the mechanism is gradually sped-up such that the voltage corresponding to acceleration is negligible (hence, "as if static").
 - **Dynamic:** In this test, a constant 'step voltage' is given to the mechanism, so that the behavior while accelerating can be determined.
 
-Each test type is run both forwards and backwards, for four tests in total. The tests can be run in any order, but running a "backwards" test directly after a "forwards" test is generally advisable (as it will more or less reset the mechanism to its original position). ``SysIdRoutine`` provides command factories that may be used to run the tests, for example as part of an autonomous routine.
+Each test type is run both forwards and backwards, for four tests in total. The tests can be run in any order, but running a "backwards" test directly after a "forwards" test is generally advisable (as it will more or less reset the mechanism to its original position). ``SysIdRoutine`` provides command factories that may be used to run the tests, for example as part of an autonomous routine. Previous versions of SysId used a project generator to create and deploy robot code to run these tests, but it proved to be very fragile and difficult to maintain. The user code-based workflow enables teams to use mechanism code they already know works, including soft and hard limits.
 
 User Code Setup
 ---------------
 
-.. note:: Some familiarity with your language's units library is recommended and knowing how to use Consumers is required. Ths page assumes you are usng the Commands framework.
+.. note:: Some familiarity with your language's units library is recommended and knowing how to use Consumers is required. Ths page assumes you are using the Commands framework.
 
 To assist in creating SysId-compatible identification routines, WPILib provides the ``SysIdRoutine`` class. Users should create a ``SysIdRoutine`` object, which take both a ``Config`` object describing the test settings and a ``Mechanism`` object describing how the routine will control the relevant motors and log the measurements needed to perform the fit.
 
@@ -23,7 +23,7 @@ Routine Config
 
 The ``Config`` object takes in a a voltage ramp rate for use in Quasistatic tests, a steady state step voltage for use in Dynamic tests, a time to use as the maximum test duration for safety reasons, and a callback method that accepts the current test state (such as "dynamic-forward") for use by a 3rd party logging solution. The constructor may be left blank to default the ramp rate to 1 volt per second and the step voltage to 7 volts.
 
-.. note:: Not all 3rd party loggers will interact with SysIdRoutine directly. Follow the directions provided with the logger you are using.
+.. note:: Not all 3rd party loggers will interact with SysIdRoutine directly. CTRE users who do not wish to use SysIdRoutine directly for logging should use the `SignalLogger <https://pro.docs.ctr-electronics.com/en/latest/docs/api-reference/api-usage/signal-logging.html>`__ API and use Tuner X to convert to wpilog. REV users may use Team 6328's `Unofficial REV-Compatible Logger (URCL) <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/REV-LOGGING.md>`__. In both cases tme log callback shoule be set to ``null``. Once the log file is in hand, it may be used with SysId just like any other.
 
 The timeout and state callback are optional and defaulted to 10 seconds and null (which will log the data to a normal WPILog file) respectively.
 
