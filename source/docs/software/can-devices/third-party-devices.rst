@@ -79,15 +79,20 @@ CTRE Other CAN Devices
 REV Robotics
 ------------
 
-REV Robotics currently offers the SPARK MAX motor controller, which has a similar feature-set to the Talon SRX.
+REV Robotics currently offers the SPARK MAX and SPARK Flex motor controllers which can be used for brushed and REV brushless (NEO, NEO 550, and NEO Vortex) motors.
 
 REV Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^
 
 - **SPARK MAX**
 
-    - API Documentation (`Java <https://codedocs.revrobotics.com/java/com/revrobotics/package-summary.html>`__, `C++ <https://codedocs.revrobotics.com/cpp/namespacerev.html>`__)
-    - `Technical Manual <https://docs.revrobotics.com/sparkmax/>`__
+    - API Documentation (`Java <https://codedocs.revrobotics.com/java/com/revrobotics/cansparkmax>`__, `C++ <https://codedocs.revrobotics.com/cpp/classrev_1_1_c_a_n_spark_max>`__)
+    - `Technical Manual <https://docs.revrobotics.com/brushless/spark-max/overview>`__
+
+- **SPARK Flex**
+
+    - API Documentation (`Java <https://codedocs.revrobotics.com/java/com/revrobotics/cansparkflex>`__, `C++ <https://codedocs.revrobotics.com/cpp/classrev_1_1_c_a_n_spark_flex>`__)
+    - `Technical Manual <https://docs.revrobotics.com/brushless/spark-flex/overview>`__
 
 Playing With Fusion
 -------------------
