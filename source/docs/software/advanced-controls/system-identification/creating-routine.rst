@@ -44,8 +44,6 @@ The callbacks can either be created in-place via Lambda expressions or can be th
         new SysIdRoutine.Mechanism(this::voltageDrive, this::logMotors, this)
     );
 
-  .. .. code-block:: c++
-
 Mechanism Callbacks
 ^^^^^^^^^^^^^^^^^^^
 
@@ -62,8 +60,8 @@ Test Factories
 
 To be able to run the tests, SysIdRoutine exposes test "factories", or functions that each return a command that will execute a given test.
 
-.. tab-set-code:: 
-  
+.. tab-set-code::
+
   .. code-block:: java
 
     public Command sysIdQuasistatic(SysIdRoutine.Direction direction) {
