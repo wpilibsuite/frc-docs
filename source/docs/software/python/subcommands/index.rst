@@ -28,6 +28,10 @@ If you execute the command from the command line, it will show the various subco
 
          python3 -m robotpy
 
+.. note:: If you don't see a list of commands but either see a RobotPy logo or an error saying ``No module named robotpy.__main__; 'robotpy' is a package and cannot be directly executed``, you should uninstall the ``robotpy`` module and then reinstall it via pip.
+
+          This only affects users who upgraded from pre-2024 or the 2024 beta.
+
 You can pass the ``--help`` argument to see more information about the subcommand. For example, to see help for the ``sim`` command you can do the following:
 
 .. tab-set::
