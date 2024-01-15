@@ -15,10 +15,10 @@ The field coordinate system (or global coordinate system) is an absolute coordin
 
 .. note:: The axes are shown at the middle of the field for visibility. The origins of the coordinate system for each alliance are shown below.
 
-Below is an example of a field coordinate system overlaid on the 2020 FRC field. The red axes shown are for the red alliance, and the blue axes shown are for the blue alliance.
+Below is an example of a field coordinate system overlaid on the 2024 FRC field [#]_. The red axes shown are for the red alliance, and the blue axes shown are for the blue alliance.
 
-.. image:: images/infinite-recharge.jpg
-   :alt: Image of the Infinite Recharge field.
+.. image:: images/2024-Crescendo.jpg
+   :alt: Image of the 2024 Crescendo field.
 
 Robot Coordinate System
 -----------------------
@@ -29,3 +29,5 @@ The robot coordinate system (or local coordinate system) is a relative coordinat
 
 .. image:: diagrams/robot-system.svg
    :alt: The robot coordinate system is based on the robot's position.
+
+.. [#] Field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2024-crescendo-top-down-field-renders/447764>`__
