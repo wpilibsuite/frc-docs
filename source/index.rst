@@ -396,7 +396,7 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/software/pathplanning/index
    docs/software/roborio-info/index
    docs/software/advanced-gradlerio/index
-   docs/software/advanced-controls/index
+   docs/software/controls/index
    docs/software/convenience-features/index
 
 .. toctree::

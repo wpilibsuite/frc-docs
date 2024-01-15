@@ -5,7 +5,7 @@ Trajectory Tutorial Overview
 
 .. todo:: add pathweaver stuff once it is available
 
-.. note:: Before following this tutorial, it is helpful (but not strictly necessary) to have a baseline familiarity with WPILib's :ref:`PID control <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`, :ref:`feedforward <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>`, and :ref:`trajectory <docs/software/advanced-controls/trajectories/index:Trajectory Generation and Following with WPILib>` features.
+.. note:: Before following this tutorial, it is helpful (but not strictly necessary) to have a baseline familiarity with WPILib's :ref:`PID control <docs/software/controls/controllers/pidcontroller:PID Control in WPILib>`, :ref:`feedforward <docs/software/controls/controllers/feedforward:Feedforward Control in WPILib>`, and :ref:`trajectory <docs/software/controls/trajectories/index:Trajectory Generation and Following with WPILib>` features.
 
 .. note:: The robot code in this tutorial uses the :ref:`command-based <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework.  The command-based framework is strongly recommended for beginning and intermediate teams.
 
@@ -43,4 +43,4 @@ To follow this tutorial, you will need ready access to the following materials:
 
   * :ref:`FRC Driver Station <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
   * :ref:`WPILib <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
-  * :ref:`The System Identification Toolsuite <docs/software/advanced-controls/system-identification/introduction:Installing SysId>`.
+  * :ref:`The System Identification Toolsuite <docs/software/controls/system-identification/introduction:Installing SysId>`.

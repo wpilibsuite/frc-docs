@@ -16,7 +16,7 @@ The mandatory arguments are:
 
 The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
-.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/advanced-controls/geometry/coordinate-systems:Field Coordinate System>` for more information about the coordinate system.
+.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/controls/geometry/coordinate-systems:Field Coordinate System>` for more information about the coordinate system.
 
 .. tab-set-code::
 

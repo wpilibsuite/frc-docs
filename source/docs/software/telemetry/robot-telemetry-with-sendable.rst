@@ -21,7 +21,7 @@ Sending a Sendable to the Dashboard
 
 .. note:: Unlike simple data types, Sendables are automatically kept up-to-date on the dashboard by WPILib, without any further user code - "set it and forget it".  Accordingly, they should usually be sent to the dashboard in an initialization block or constructor, *not* in a periodic function.
 
-To send a ``Sendable`` object to the dashboard, simply use the dashboard's ``putData`` method.  For example, an "arm" class that uses a :ref:`PID Controller <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>` can automatically log telemetry from the controller by calling the following in its constructor:
+To send a ``Sendable`` object to the dashboard, simply use the dashboard's ``putData`` method.  For example, an "arm" class that uses a :ref:`PID Controller <docs/software/controls/controllers/pidcontroller:PID Control in WPILib>` can automatically log telemetry from the controller by calling the following in its constructor:
 
 .. tab-set-code::
 
