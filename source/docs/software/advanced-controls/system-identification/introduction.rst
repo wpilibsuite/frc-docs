@@ -36,7 +36,6 @@ Included Tools
 The System Identification toolsuite currently supports:
 
 - Simple Motor Setups
-- Drivetrains
 - Elevators
 - Arms
 
@@ -50,17 +49,6 @@ The simple motor identification tool determines the best-fit parameters for the 
 .. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
 
 where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  This is the model for a permanent-magnet dc motor with no loading other than friction and inertia, as mentioned above, and is an accurate model for flywheels, turrets, and horizontal linear sliders.
-
-Drivetrain Identification
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The drivetrain identification tool determines the best-fit parameters for the equation:
-
-.. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
-
-where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  This is the same modeling equation as is used in the simple motor identification - however, the drivetrain identification tool is specifically set up to run on differential drives, and will characterize each side of the drive independently if desired.
-
-The drivetrain identification tool can also determine the effective trackwidth of your robot using a gyro. More information on how to run the identification is available in the :ref:`track width identification <docs/software/advanced-controls/system-identification/running-routine:Running Tests>` article.
 
 Elevator Identification
 ~~~~~~~~~~~~~~~~~~~~~~~
