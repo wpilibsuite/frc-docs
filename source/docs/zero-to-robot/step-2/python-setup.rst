@@ -28,6 +28,8 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
    .. tab-item:: Windows
       :sync: windows
 
+      .. note:: If you previously installed a pre-2024 or 2024 beta version of RobotPy, you should first uninstall RobotPy via ``py -m pip uninstall robotpy`` before upgrading.
+
       .. warning:: On Windows, the `Visual Studio 2019 redistributable <https:// support.microsoft.com/en-us/help/2977003/       the-latest-supported-visual-c-downloads>`_ package is required to be installed.
 
       Run the following command from cmd or Powershell to install the core RobotPy packages:
@@ -51,6 +53,8 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
    .. tab-item:: macOS
       :sync: macos
 
+      .. note:: If you previously installed a pre-2024 or 2024 beta version of RobotPy, you should first uninstall RobotPy via ``python3 -m pip uninstall robotpy`` before upgrading.
+
       On a macOS system that has pip installed, just run the following command from the Terminal application (may require admin rights):
 
       .. code-block:: sh
@@ -71,6 +75,8 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
    .. tab-item:: Linux
       :sync: linux
+
+      .. note:: If you previously installed a pre-2024 or 2024 beta version of RobotPy, you should first uninstall RobotPy via ``python3 -m pip uninstall robotpy`` before upgrading.
 
       RobotPy distributes manylinux binary wheels on PyPI. However, installing these requires a distro that has glibc 2.35 or newer, and an installer that implements :pep:`600`, such as pip 20.3 or newer. You can check your version of pip with the following command:
 
