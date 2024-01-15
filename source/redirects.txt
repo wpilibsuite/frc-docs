@@ -323,7 +323,7 @@
 "docs/software/advanced-controls/introduction/tutorial-intro.rst" "docs/software/controls/introduction/tutorial-intro.rst"
 "docs/software/advanced-controls/state-space/index.rst" "docs/software/controls/state-space/index.rst"
 "docs/software/advanced-controls/state-space/state-space-debugging.rst" "docs/software/controls/state-space/state-space-debugging.rst"
-"docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst "docs/software/controls/state-space/state-space-flywheel-walkthrough.rst
+"docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst" "docs/software/controls/state-space/state-space-flywheel-walkthrough.rst"
 "docs/software/advanced-controls/state-space/state-space-intro.rst" "docs/software/controls/state-space/state-space-intro.rst"
 "docs/software/advanced-controls/state-space/state-space-observers.rst" "docs/software/controls/state-space/state-space-observers.rst"
 "docs/software/advanced-controls/state-space/state-space-pose-estimators.rst" "docs/software/controls/state-space/state-space-pose-estimators.rst"
@@ -344,4 +344,3 @@
 "docs/software/advanced-controls/trajectories/transforming-trajectories.rst" "docs/software/controls/trajectories/transforming-trajectories.rst"
 "docs/software/advanced-controls/trajectories/troubleshooting.rst" "docs/software/controls/trajectories/troubleshooting.rst"
 "docs/software/advanced-controls/video-walkthrough.rst" "docs/software/controls/video-walkthrough.rst"
-"docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst" "docs/software/controls/state-space/state-space-flywheel-walkthrough.rst"
