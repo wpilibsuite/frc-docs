@@ -89,7 +89,7 @@ Upon opening the installer, you'll be presented with the below screen. Go ahead 
 
 This showcases a list of options included with the WPILib installation.
 
-- :guilabel:`Tools Only` installs just the WPILib tools (Pathweaver, Shuffleboard, RobotBuilder, SysID, Glass, and OutlineViewer) and JDK.
+- :guilabel:`Tools Only` installs just the WPILib tools (Pathweaver, Shuffleboard, RobotBuilder, SysId, Glass, and OutlineViewer) and JDK.
 - :guilabel:`Everything` installs the full development environment (VS Code, extensions, all dependencies), WPILib tools, and JDK.
 
 You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access. :guilabel:`Install for all Users` is not an option for macOS and Linux.
@@ -179,7 +179,7 @@ The Offline Installer installs the following components:
 
 - **Java JDK/JRE** - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the JAVA_HOME variable
 
-- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, Outline Viewer, Pathweaver, Glass, SysID
+- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, Outline Viewer, Pathweaver, Glass, SysId
 
 - **WPILib Dependencies** - OpenCV, etc.
 
