@@ -24,6 +24,7 @@ These changes contain *some* of the major changes to the library that it's impor
 - Performance improvements and reduced worst-case memory usage throughout libraries
 - Added a typesafe unit system for Java (not used by the main part of WPILib yet)
 - Disabled LiveWindow in Test Mode by default. See See :ref:`docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode:Enabling LiveWindow in Test Mode` to enable it.
+- SysId has been rewritten to remove project generation; Replaced with data logging within team robot program
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit. 32 bit and Arm are not supported
@@ -138,7 +139,6 @@ Breaking Changes
     - ``CommandScheduler.addButtons()`` (Java only)
     - Command supplier constructor of ``SelectCommand`` (use ``ProxyCommand`` instead)
 
-- Removed project generation from SysId
 - Removed ``Compressor.enabled()`` function (use ``isEnabled()`` instead)
 - Removed ``CameraServer.setSize()`` function (use ``setResolution()`` on the camera object instead)
 - Removed deprecated and broken SPI methods
@@ -214,4 +214,4 @@ RobotBuilder
 SysId
 -----
 
-- Removed project generation; will be replaced with data logging within team robot program (work in progress)
+- Removed project generation; Replaced with data logging within team robot program
