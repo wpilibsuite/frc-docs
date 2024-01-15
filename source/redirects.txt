@@ -344,3 +344,4 @@
 "docs/software/advanced-controls/trajectories/transforming-trajectories.rst" "docs/software/controls/trajectories/transforming-trajectories.rst"
 "docs/software/advanced-controls/trajectories/troubleshooting.rst" "docs/software/controls/trajectories/troubleshooting.rst"
 "docs/software/advanced-controls/video-walkthrough.rst" "docs/software/controls/video-walkthrough.rst"
+"docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst" "docs/software/controls/state-space/state-space-flywheel-walkthrough.rst"
