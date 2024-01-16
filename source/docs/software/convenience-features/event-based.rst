@@ -94,7 +94,7 @@ The ``negate()``/``!`` composes one ``BooleanEvent`` condition into another cond
 debounce() / Debounce()
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-To avoid rapid repeated activation, conditions (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/software/advanced-controls/filters/debouncer:Debouncer>` using the `debounce` method:
+To avoid rapid repeated activation, conditions (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/software/controls/filters/debouncer:Debouncer>` using the `debounce` method:
 
 .. tab-set-code::
 

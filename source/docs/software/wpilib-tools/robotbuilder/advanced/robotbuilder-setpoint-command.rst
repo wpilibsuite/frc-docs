@@ -30,7 +30,7 @@ Fill in the name of the new command. The Requires field is the PIDSubsystem that
 
 1. Click on the Parameter Presets to set up the setpoints.
 2. Select :guilabel:`Add Preset`
-3. Enter a preset name (in this case 'bottom'
+3. Enter a preset name (in this case 'bottom')
 4. Click the dropdown next to the setpoint entry box
 5. Select the Elevator.Bottom constant, that was created in the Elevator subsystem previously
 6. Repeat steps 2-5 for the other setpoints.
@@ -40,4 +40,4 @@ There is no need to fill in any code for this command, it is automatically creat
 
 Whenever this command is scheduled, it will automatically drive the subsystem to the specified setpoint. When the setpoint is reached within the tolerance specified in the PIDSubsystem, the command ends and the next command starts. It is important to specify a tolerance in the PIDSubsystem or this command might never end because the tolerance is not achieved.
 
-.. note:: For more information about PID Control, please see the :ref:`Advanced Controls Introduction <docs/software/advanced-controls/introduction/index:Advanced Controls Introduction>`.
+.. note:: For more information about PID Control, please see the :ref:`Controls Introduction <docs/software/controls/introduction/index:Controls Introduction>`.

@@ -460,7 +460,7 @@ Encoders are some of the most useful sensors in FRC\ |reg|; they are very nearly
 Driving to a Distance
 ^^^^^^^^^^^^^^^^^^^^^
 
-Encoders can be used on a robot drive to create a simple "drive to distance" routine.  This is useful in autonomous mode, but has the disadvantage that the robot's momentum will cause it to overshoot the intended distance. Better methods include using a :doc:`PID Controller </docs/software/advanced-controls/introduction/introduction-to-pid>` or using :doc:`Path Planning </docs/software/pathplanning/index>`
+Encoders can be used on a robot drive to create a simple "drive to distance" routine.  This is useful in autonomous mode, but has the disadvantage that the robot's momentum will cause it to overshoot the intended distance. Better methods include using a :doc:`PID Controller </docs/software/controls/introduction/introduction-to-pid>` or using :doc:`Path Planning </docs/software/pathplanning/index>`
 
 .. note:: The following example uses the `Encoder` class, but is similar if other `DutyCycleEncoder` or `AnalogEncoder` is used. However, quadrature encoders are typically better suited for drivetrains since they roll over many times and don't have an absolute position.
 
