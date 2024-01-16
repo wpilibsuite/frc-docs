@@ -99,4 +99,4 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
 
             # get a type-specific topic from a generic Topic
             genericTopic = inst.getTopic("/datatable/X")
-            dblTopic = new DoubleTopic(genericTopic)
+            dblTopic = ntcore.DoubleTopic(genericTopic)
