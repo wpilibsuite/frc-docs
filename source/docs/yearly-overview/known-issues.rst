@@ -21,7 +21,7 @@ Driver Station Reports Less Free RAM then is Available
    MemFree:           46484 kB
    MemAvailable:     126956 kB
 
-The proper value to look is as MemAvailible, rather then MemFree (which is what the driver station is reporting).
+The proper value to look is as MemAvailable, rather then MemFree (which is what the driver station is reporting).
 
 Visual Studio Code Reports Unresolved Dependency
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
