@@ -44,9 +44,7 @@ Joysticks, including the sticks on XBox controllers, don't use the same NWU coor
    :scale: 200
    :alt: NED axes convention
 
-It's important to note that joystick axes values are rotations around the respective axes, not translations. When viewed with each axis pointing toward you, CCW is a positive value and CW is a negative value.
-
-In practical terms, this means:
+It's important to note that joystick axes values are rotations around the respective axes, not translations. In practical terms, this means:
 
  - pushing forward on the joystick (toward the positive X axis) is a CW rotation around the Y axis, so you get a negative Y value.
  - pushing to the right (toward the postivie Y axis) is a CCW rotation around the X axis, so you get a positive X value.
