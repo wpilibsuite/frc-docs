@@ -11,7 +11,7 @@ roboRIO User Accounts
 ---------------------
 The roboRIO image contains a number of user accounts, but there are two of primary interest for FRC.
 
-Admin
+admin
 ^^^^^
 The "admin" account has root access to the system and can be used to manipulate OS files or settings. Teams should take caution when using this account as it allows for the modification of settings and files that may corrupt the operating system of the roboRIO. The credentials for this account are:
 
@@ -21,11 +21,11 @@ The "admin" account has root access to the system and can be used to manipulate 
 
 .. note:: The password is intentionally blank.
 
-Lvuser
+lvuser
 ^^^^^^
 The "lvuser" account is the account used to run user code for all three languages. The credentials for this account should not be changed. Teams may wish to use this account (via ssh or sftp) when working with the roboRIO to ensure that any files or settings changes are being made on the same account as their code will run under.
 
-.. danger:: Changing the default ssh passwords for either "lvuser" or "admin" will prevent C++ and Java teams from uploading code.
+.. danger:: Changing the default ssh passwords for either "lvuser" or "admin" will prevent C++, Java, and Python teams from uploading code.
 
 SSH
 ---
