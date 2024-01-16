@@ -46,4 +46,8 @@ Joysticks, including the sticks on XBox controllers, don't use the same NWU coor
 
 It's important to note that joystick axes values are rotations around the respective axes, not translations. When viewed with each axis pointing toward you, CCW is a positive value and CW is a negative value.
 
-In practical terms, this menas pushing forward on the joystick (toward the positive X axis) is a CW rotation around the Y axis, so you get a negative Y value. Pushing to the right (toward the postivie Y axis) is a CCW rotation around the X axis, so you get a positive X value. Twisting the joystick CW (toward the positive Y axis) is a CCW rotation around the Z axis, so you get a positive Z value.
+In practical terms, this means:
+
+ - pushing forward on the joystick (toward the positive X axis) is a CW rotation around the Y axis, so you get a negative Y value.
+ - pushing to the right (toward the postivie Y axis) is a CCW rotation around the X axis, so you get a positive X value.
+ - twisting the joystick CW (toward the positive Y axis) is a CCW rotation around the Z axis, so you get a positive Z value.
