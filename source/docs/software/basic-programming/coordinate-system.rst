@@ -10,24 +10,30 @@ WPILib coordinate system
 
 In most cases, WPILib uses the NWU axes convention (North-West-Up as external reference in the world frame.) In the NWU axes convention, where the positive X axis points ahead, the positive Y axis points left, and the positive Z axis points up. When viewed with each positive axis pointing toward you, counter-clockwise (CCW) is a positive value and clockwise (CW) is a negative value.
 
-.. image:: images/coordinate-system/robot-3d.svg
+.. figure:: images/coordinate-system/robot-3d.svg
    :scale: 200
    :alt: NWU axes convention in three dimensions
 
+   Robot coordinate system in three dimensions
+
 The figure above shows the coordinate system in relation to an FRC robot. The figure below shows this same coordinate system when viewed from the top (with the Z axis pointing toward you.) This is how you can think of the robot's coordinates in 2D.
 
-.. image:: images/coordinate-system/robot-2d.svg
+.. figure:: images/coordinate-system/robot-2d.svg
    :scale: 200
    :alt: NWU axes convention in two dimensions
+
+   Robot coordinate system in two dimensions
 
 Rotation conventions
 --------------------
 
 In most cases in WPILib programming, 0° is aligned with the positive X axis, and 180° is aligned with the negative X axis. CCW rotation is positive, so 90° is aligned with the positive Y axis, and -90° is aligned with the negative Y axis.
 
-.. image:: images/coordinate-system/rotation.svg
+.. figure:: images/coordinate-system/rotation.svg
    :scale: 200
    :alt: Unit circle
+
+   Unit circle with common angles
 
 The figure above shows the unit circle with common angles labeled in degrees (°) and radians (rad). Notice that rotation to the right is negative, and the range for the whole unit circle is -180° to 180° (-Pi radians to Pi radians).
 
@@ -35,14 +41,18 @@ There are some places you may choose to use a different range, such as 0° to 36
 
 .. note:: The range is (-180, 180], meaning it is exclusive of -180° and inclusive of 180°.
 
-Joystick and XBox Controller coordinate system
+.. warning:: Some gyros/IMUs use CW positive rotation, such as the NavX IMU. Care must be taken to handle rotation properly, sensor values may need to be inverted.
+
+Joystick and controller coordinate system
 ----------------------------------------------
 
-Joysticks, including the sticks on XBox controllers, don't use the same NWU coordinate system. They use the NED (North-East-Down) convention, where the positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. When viewed with each positive axis pointing toward you, counter-clockwise (CCW) is a positive value and clockwise (CW) is a negative value.
+Joysticks, including the sticks on controllers, don't use the same NWU coordinate system. They use the NED (North-East-Down) convention, where the positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. When viewed with each positive axis pointing toward you, counter-clockwise (CCW) is a positive value and clockwise (CW) is a negative value.
 
-.. image:: images/coordinate-system/joystick-3d.svg
+.. figure:: images/coordinate-system/joystick-3d.svg
    :scale: 200
    :alt: NED axes convention
+
+   Joystick coordinate system
 
 It's important to note that joystick axes values are rotations around the respective axes, not translations. In practical terms, this means:
 
@@ -50,10 +60,10 @@ It's important to note that joystick axes values are rotations around the respec
 - pushing to the right (toward the postivie Y axis) is a CCW rotation around the X axis, so you get a positive X value.
 - twisting the joystick CW (toward the positive Y axis) is a CCW rotation around the Z axis, so you get a positive Z value.
 
-Using Joystick and XBox Controller input to drive a robot
+Using Joystick and controller input to drive a robot
 ---------------------------------------------------------
 
-You may have noticed, the coordinate system used by WPILib for the robot is not the same as the coordinate system used for joysticks. Care needs to be taken to understand the difference, and properly pass driver input to the drive subsystem.
+You may have noticed, the coordinate system used by WPILib for the robot is not the same as the coordinate system used for joysticks and controllers. Care needs to be taken to understand the difference, and properly pass driver input to the drive subsystem.
 
 Non-holonomic drivetrain example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -169,3 +179,124 @@ Like mecanum drivetrains, swerve drivetrains are holonomic and have the ability 
       speeds = ChassisSpeeds(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
 
 The three arguments to the ``ChassisSpeeds`` constructor are the same as ``driveCartesian`` in the mecanum section above; ``xSpeed``, ``ySpeed``, and ``zRotation``. See the description of the arguments, and their joystick input in the section above.
+
+Field coordinate systems
+------------------------
+
+The field coordinate system (or global coordinate system) is an absolute coordinate system where a point on the field is designated as the origin. Two common uses of the field coordinate system will be explored in this document:
+
+- Field oriented driving is a drive scheme for holonomic drivetrains, where the driver moves the controls relative to their perspective of the field, and the robot moves in that direction regardless of where the front of the robot is facing. For example, a driver on the red alliance pushes the joystick forward, the robot will move downfield toward the blue alliance wall, even if the robot's front is facing the driver.
+- Pose estimation with odometry and/or AprilTags are used to estimate the robot's pose on the field.
+
+Mirrored field vs. rotated field
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Historically, FRC has used two types of field layouts in relation to the red and blue alliance.
+
+Games such as Rapid React in 2022 used a rotated layout. A rotated layout means that, from your perspective from behind your alliance wall, your field elements and your opponents elements are in the same location. Notice in the Rapid React field layout diagram below, whether you are on the red or blue alliance, your human player station is on your right and your hanger is on your left.
+
+.. figure:: images/coordinate-system/rapid-react-field.png
+   :alt: Rotated Rapid React field from 2022
+
+   Rotated field from RAPID REACT in 2022 [#]_
+
+Games such as CHARGED UP in 2023 and CRESCENDO in 2024 used a mirrored layout. A mirrored layout means that the red and blue alliance layout are mirrored across the centerpoint of the field. Refer to the CHARGED UP field diagram below. When you are standing behind the blue alliance wall, the charge station is on the right side of the field from your perspective. However, standing behind the red alliance wall, the charge station is on the left side of the field from your perspective.
+
+.. figure:: images/coordinate-system/charged-up-field.png
+   :alt: Mirrored CHARGED UP field from 2023
+
+   Mirrored field from Charged Up in 2023 [#]_
+
+.. [#] Rapid React field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2022-top-down-field-renders/399031>`__
+.. [#] CHARGED UP field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2023-top-down-field-renders/421365>`__
+
+Dealing with red or blue alliance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are two primary ways many teams choose to define the field coordinate system. In both methods, positive rotation (theta) is in the counter-clockwise (CCW) direction.
+
+Always blue origin
+~~~~~~~~~~~~~~~~~~
+
+You may choose to define the origin of the field on the blue side, and keep it there regardless of your alliance color. With this solution, positive x-axis points away from the blue alliance wall.
+
+.. figure:: images/coordinate-system/field-blue-alliance.svg
+   :alt: CHARGED UP with blue origin
+   :scale: 200
+
+   CHARGED UP with blue origin
+
+Some advantages to this approach are:
+
+- Pose estimation with AprilTags is simplified. AprilTags throughout the field are unique. If you keep the coordinate system the same regardless of alliance, there is no need for special logic to deal the location of AprilTags on the field relative to your alliance.
+- Many of the tools and libraries used in FRC follow this convention. Some of the tools include: PathPlanner, Choreo, and the ShuffleBoard Field2d widget.
+
+In order to use this approach for field oriented driving, driver input needs to consider the alliance color. When your alliance is red and the driver is standing behind the red alliance wall, they will want the robot to move toward down field toward the blue alliance wall. However, when your alliance is blue, the driver will want the robot to go down field toward the red alliance wall.
+
+A simple way to deal with field oriented driving is to check the alliance color reported by the `DriverStation` class, and invert the drivers controls based on the alliance.
+
+.. tab-set-code::
+
+   .. code-block:: java
+
+      // The origin is always blue. When our alliance is red, X and Y need to be inverted
+      var alliance = DriverStation.getAlliance();
+      var invert = 0;
+      if (alliance.isPresent() && alliance.get() == Alliance.Red) {
+          invert = -1;
+      }
+
+      var chassisSpeeds = ChassisSpeeds
+              .fromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation * invert, imu.getRotation2d());
+
+   .. code-block:: c++
+
+      // The origin is always blue. When our alliance is red, X and Y need to be inverted
+      int invert = 0;
+      if (frc::DriverStation::GetAlliance() == frc::DriverStation::Alliance::kRed) {
+          invert = -1;
+      }
+
+      frc::ChassisSpeeds chassisSpeeds =
+              frc::ChassisSpeeds::FromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation * invert, imu.GetRotation2d());
+
+   .. code-block:: python
+
+       # The origin is always blue. When our alliance is red, X and Y need to be inverted
+       invert = 0
+       if wpilib.DriverStation.GetInstance().GetAlliance() == wpilib.DriverStation.Alliance.kRed:
+           invert = -1
+
+       chassis_speeds = wpilib.ChassisSpeeds.FromFieldRelativeSpeeds(
+           xSpeed * invert, ySpeed * invert, zRotation * invert, self.imu.GetAngle()
+       )
+
+Origin follows your alliance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You may choose to define the origin of the field based on the alliance you are one. With this approach, the positive x-axis always points away from the your alliance wall.
+
+When you are on the blue alliance, your origin looks like this:
+
+.. figure:: images/coordinate-system/field-blue-alliance.svg
+   :alt: CHARGED UP with alliance as origin
+   :scale: 200
+
+   CHARGED UP field with blue alliance as origin
+
+When you are on the red alliance, your origin looks like this:
+
+.. figure:: images/coordinate-system/field-red-alliance.svg
+   :alt: CHARGED UP with alliance as origin
+   :scale: 200
+
+   CHARGED UP field with red alliance as origin
+
+This approach has a few more complications than the previous approach, especially in years when the field layout is mirrored between alliances.
+
+In years when the field layout is rotated, this is a simple approach if you are not using AprilTags for pose estimation or doing other advanced techniques. When the field layout is rotated, the field elements appear at the same coordinates regardless of your alliance.
+
+Some things you need to consider when using this approach are:
+
+- There are cases where your alliance may change (or appear to change) after the code is initialized. When you are not connected to the FMS at a competition, you can change your alliance station in the Driver Station application at any time. Even when you are at a competition, your robot will usually initialize before connecting to the FMS so you will not have alliance information. If you are not using AprilTags, you may not have anything to adjust when the alliance changes. However, if you are using AprilTags and your robot has seen a tag and used it for pose estimation, you will need to adjust your origin and reset your estimated pose.
+- The field image in the ShuffleBoard Field2d widget follows the *Always blue origin* approach. If you want the widget to display the correct pose for your robot, you will need to change the origin for your estimated pose before sending it to the dashboard.

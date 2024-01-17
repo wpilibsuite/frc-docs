@@ -355,7 +355,6 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/software/what-is-wpilib
    docs/yearly-overview/index
    docs/software/vscode-overview/index
-   docs/software/coordinate-system.rst
    docs/software/dashboards/index
    docs/software/telemetry/index
    docs/software/labview/index
