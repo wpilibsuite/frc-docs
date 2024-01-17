@@ -230,9 +230,6 @@ Games such as CHARGED UP in 2023 and CRESCENDO in 2024 used a mirrored layout. A
 
    Mirrored field from Charged Up in 2023 [#]_
 
-.. [#] Rapid React field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2022-top-down-field-renders/399031>`__
-.. [#] CHARGED UP field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2023-top-down-field-renders/421365>`__
-
 Dealing with red or blue alliance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -323,3 +320,6 @@ Some things you need to consider when using this approach are:
 
 - There are cases where your alliance may change (or appear to change) after the code is initialized. When you are not connected to the FMS at a competition, you can change your alliance station in the Driver Station application at any time. Even when you are at a competition, your robot will usually initialize before connecting to the FMS so you will not have alliance information. If you are not using AprilTags, you may not have anything to adjust when the alliance changes. However, if you are using AprilTags and your robot has seen a tag and used it for pose estimation, you will need to adjust your origin and reset your estimated pose.
 - The field image in the ShuffleBoard Field2d widget follows the *Always blue origin* approach. If you want the widget to display the correct pose for your robot, you will need to change the origin for your estimated pose before sending it to the dashboard.
+
+.. [#] Rapid React field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2022-top-down-field-renders/399031>`__
+.. [#] CHARGED UP field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2023-top-down-field-renders/421365>`__
