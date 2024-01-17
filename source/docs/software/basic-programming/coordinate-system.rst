@@ -37,11 +37,13 @@ In most cases in WPILib programming, 0° is aligned with the positive X axis, an
 
 The figure above shows the unit circle with common angles labeled in degrees (°) and radians (rad). Notice that rotation to the right is negative, and the range for the whole unit circle is -180° to 180° (-Pi radians to Pi radians).
 
-There are some places you may choose to use a different range, such as 0° to 360° or 0 to 1 rotation, but be aware that many core WPILib classes and FRC tools are built with the unit circle above.
-
 .. note:: The range is (-180, 180], meaning it is exclusive of -180° and inclusive of 180°.
 
-.. warning:: Some gyros/IMUs use CW positive rotation, such as the NavX IMU. Care must be taken to handle rotation properly, sensor values may need to be inverted.
+There are some places you may choose to use a different range, such as 0° to 360° or 0 to 1 rotation, but be aware that many core WPILib classes and FRC tools are built with the unit circle above.
+
+.. warning:: Some gyros/IMUs use CW positive rotation, such as the NavX IMU. Care must be taken to handle rotation properly, sensor values may need to be inverted. Read the documentation and verify that rotation is CCW positive.
+
+.. warning:: Many sensors that read rotation around an axis, such as encoders and IMU's, read continuously. This means they read more than one rotation, so when rotating past 180° they read 181°, not -179°. Some sensors have configuration settings where you can choose their wrapping behavior and range, while others need to be handled in your code. Careful attention should be paid to make sure sensor readings are consistent and your control loop handles wrapping in the same way as your sensor.
 
 Joystick and controller coordinate system
 ----------------------------------------------
@@ -175,10 +177,31 @@ Like mecanum drivetrains, swerve drivetrains are holonomic and have the ability 
 
    .. code-block:: python
 
-      // Drive using the X, Y, and Z axes of the joystick.
+      # Drive using the X, Y, and Z axes of the joystick.
       speeds = ChassisSpeeds(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
 
 The three arguments to the ``ChassisSpeeds`` constructor are the same as ``driveCartesian`` in the mecanum section above; ``xSpeed``, ``ySpeed``, and ``zRotation``. See the description of the arguments, and their joystick input in the section above.
+
+Robot drive kinematics
+----------------------
+
+:doc:`Kinematics is a topic that is covered in a different section </docs/software/kinematics-and-odometry/intro-and-chassis-speeds>`, but it's worth discussing here in relation to the coordinate system. It is critically important that kinematics is configured using the coordinate system described above. Kinematics is a common starting point for coordinate system errors that then cascade to basic drivetrain control, field oriented driving, pose estimation, and path planning.
+
+When you construct a ``SwerveDriveKinematics`` or ``MecanumDriveKinematics`` object, you specify a translation from the center of your robot to each wheel. These translations use the coordinate system above, with the origin in the center of your robot.
+
+.. figure:: images/coordinate-system/kinematics.svg
+   :alt: Kinematics with translation signs
+
+   Kinematics with translation signs
+
+For the robot in the diagram above, let's assume the distance between the front and rear wheels (wheelbase) is 2'. Let's also assume the distance between the left and right wheels (trackwidth) is also 2'. Our translations (x, y) would be like this:
+
+- Front left: (1', 1')
+- Front right: (1', -1')
+- Rear left: (-1', 1')
+- Rear right: (-1', -1')
+
+.. warning:: A common error is to use an incorrect coordinate system where the positive Y axis points forward on the robot. The correct coordinate system has the positive X axis pointing forward.
 
 Field coordinate systems
 ------------------------
@@ -300,3 +323,9 @@ Some things you need to consider when using this approach are:
 
 - There are cases where your alliance may change (or appear to change) after the code is initialized. When you are not connected to the FMS at a competition, you can change your alliance station in the Driver Station application at any time. Even when you are at a competition, your robot will usually initialize before connecting to the FMS so you will not have alliance information. If you are not using AprilTags, you may not have anything to adjust when the alliance changes. However, if you are using AprilTags and your robot has seen a tag and used it for pose estimation, you will need to adjust your origin and reset your estimated pose.
 - The field image in the ShuffleBoard Field2d widget follows the *Always blue origin* approach. If you want the widget to display the correct pose for your robot, you will need to change the origin for your estimated pose before sending it to the dashboard.
+
+Coordinate system programming tips and troubleshooting
+------------------------------------------------------
+
+In addition to the information and code examples above, here is a list of some common problem and their solutions.
+
