@@ -195,14 +195,14 @@ Historically, FRC has used two types of field layouts in relation to the red and
 
 Games such as Rapid React in 2022 used a rotated layout. A rotated layout means that, from your perspective from behind your alliance wall, your field elements and your opponents elements are in the same location. Notice in the Rapid React field layout diagram below, whether you are on the red or blue alliance, your human player station is on your right and your hanger is on your left.
 
-.. figure:: images/coordinate-system/rapid-react-field.png
+.. figure:: images/coordinate-system/rapid-react-field.jpg
    :alt: Rotated Rapid React field from 2022
 
    Rotated field from RAPID REACT in 2022 [#]_
 
 Games such as CHARGED UP in 2023 and CRESCENDO in 2024 used a mirrored layout. A mirrored layout means that the red and blue alliance layout are mirrored across the centerpoint of the field. Refer to the CHARGED UP field diagram below. When you are standing behind the blue alliance wall, the charge station is on the right side of the field from your perspective. However, standing behind the red alliance wall, the charge station is on the left side of the field from your perspective.
 
-.. figure:: images/coordinate-system/charged-up-field.png
+.. figure:: images/coordinate-system/charged-up-field.jpg
    :alt: Mirrored CHARGED UP field from 2023
 
    Mirrored field from Charged Up in 2023 [#]_
