@@ -65,11 +65,11 @@ To be able to run the tests, SysIdRoutine exposes test "factories", or functions
   .. code-block:: java
 
     public Command sysIdQuasistatic(SysIdRoutine.Direction direction) {
-      return m_sysIdRoutine.quasistatic(direction);
+      return routine.quasistatic(direction);
     }
 
     public Command sysIdDynamic(SysIdRoutine.Direction direction) {
-      return m_sysIdRoutine.dynamic(direction);
+      return routine.dynamic(direction);
     }
 
-Either bind the factory methods to either controller buttons or an create an autonomous routine with them. It is recommended to bind them to buttons that the user must hold down for the duration of the test so that the user can stop the routine quickly if it exceeds safe limits.
+Either bind the factory methods to either controller buttons or create an autonomous routine with them. It is recommended to bind them to buttons that the user must hold down for the duration of the test so that the user can stop the routine quickly if it exceeds safe limits.
