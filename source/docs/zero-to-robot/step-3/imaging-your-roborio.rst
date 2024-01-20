@@ -115,3 +115,9 @@ If you are unable to image your roboRIO, troubleshooting steps include:
 - Try a different USB Cable
 - Try a different PC
 - If the status LED is constantly flashing, and imaging in safe mode failed, follow the `roboRIO recovery instructions <https://knowledge.ni.com/KnowledgeArticleDetails?id=kA03q000000kOHkCAM&l=en-US>`__
+
+If the correct roboRIO image version isn't available:
+
+- Ensure you've selected :guilabel:`Format Target`
+- If an older version is shown, ensure you've installed the latest :doc:`FRC Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`
+- If the wrong version still shown after installing Game Tools, :ref:`Uninstall Game Tools <docs/zero-to-robot/step-2/frc-game-tools:Uninstall Old Versions (Recommended)>` and then re-install.
