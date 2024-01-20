@@ -5,7 +5,7 @@ Imaging your roboRIO 1
 
 .. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
 
-.. note:: The imaging instructions for the NI roboRIO 2.0 are :doc:`here<roborio2-imaging>`.
+.. note:: The roboRIO 2 uses different imaging instructions. The imaging instructions for the NI roboRIO 2.0 are :doc:`here<roborio2-imaging>`.
 
 Configuring the roboRIO
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -52,30 +52,38 @@ After launching, the roboRIO Imaging Tool will scan for available roboRIOs and i
 Updating Firmware
 ~~~~~~~~~~~~~~~~~
 
+.. warning:: It is only necessary to update the firmware on a brand new roboRIO. It is not recommended to update the firmware unless it doesn't meet the conditions below.
+
 .. image:: images/imaging-your-roborio/updating-firmware.png
    :alt: Numbers identifying the different parts of the Imaging Tool main screen for changing firmware.
 
 roboRIO firmware must be at least v5.0 to work with the 2019 or later image. If your roboRIO is at least version 5.0 (as shown in the bottom left of the imaging tool) you do not need to update.
 
+.. note:: roboRIO firmware has had different version numbering schemes over the years. It isn't necessary to update the firmware if it has version 5, 6, 8, 22.5, 23.5 or variations of those version numbers (e.g. 8.8.0f0 is a variation of 8). The firmware is only utilized in :doc:`safe mode </docs/software/roborio-info/recovering-a-roborio-using-safe-mode>`, it is not used in normal operations.
+
 To update roboRIO firmware:
 
 1. Make sure your roboRIO is selected in the top left pane.
-2. Select Update Firmware in the top right pane
-3. Enter a team number in the Team Number box
+2. Select :guilabel:`Update Firmware` in the top right pane
+3. Enter a team number in the :guilabel:`Team Number` box
 4. Select the latest firmware file in the bottom right
-5. Click the **Update** button
+5. Click the :guilabel:`Update` button
 
 Imaging the roboRIO
 ^^^^^^^^^^^^^^^^^^^
 
+.. warning:: The roboRIO image is different then the firmware, and must be updated yearly.
+
 .. image:: images/imaging-your-roborio/imaging-the-roborio.png
    :alt: Numbers identifying the different parts of the Imaging Tool main screen for formatting the target.
 
+.. note:: The available image versions will not show until you select :guilabel:`Format Target` per step 2 below.
+
 1. Make sure the roboRIO is selected in the top left pane
-2. Select Format Target in the right pane
-3. Enter your team number in the box
+2. Select :guilabel:`Format Target` in the right pane
+3. Enter a team number in the :guilabel:`Team Number` box
 4. Select the latest image version in the box.
-5. Click Reformat to begin the imaging process.
+5. Click :guilabel:`Reformat` to begin the imaging process.
 
 Imaging Progress
 ^^^^^^^^^^^^^^^^
@@ -91,7 +99,7 @@ Imaging Complete
 .. image:: images/imaging-your-roborio/imaging-complete.png
    :alt: Dialog that pops up when imaging is complete listing IP address and DNS name.
 
-When the imaging completes you should see the dialog above. Click Ok, then click the Close button at the bottom right to close the imaging tool. Reboot the roboRIO using the Reset button to have the new team number take effect.
+When the imaging completes you should see the dialog above. Click :guilabel:`Ok`, then click the :guilabel`Close` button at the bottom right to close the imaging tool. Reboot the roboRIO using the Reset button to have the new team number take effect.
 
 Troubleshooting
 ^^^^^^^^^^^^^^^
