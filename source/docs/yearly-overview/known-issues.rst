@@ -11,7 +11,7 @@ Open Issues
 Visual Studio Code Reports Unresolved Dependency
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** Java programs will report ``Unresolved dependency: org.junit.platform junit-platform-launcherJava(0)`` on build.gradle. Programs that use unit tests will fail to build.
+**Issue:** Java programs will report ``Unresolved dependency: org.junit.platform junit-platform-launcherJava(0)`` on build.gradle. Programs that use unit tests will fail to build. This causes build.gradle to be highlighted red in the Visual Studio Code explorer, and the ``plugins`` line in build.gradle to have a red squiggle.
 
 **Workaround:** This can be safetly ignored if you aren't running unit tests. To fix it, do the following:
 
