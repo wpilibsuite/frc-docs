@@ -8,6 +8,35 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
+Driver Station randomly disabled
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** The Driver Station contains tighter safety mechanisms in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.
+
+**Workaround:** There are multiple potential causes for tripping the safety mechanisms. The Driver Station software has new tools for control packet delays that could cause this. The control system team requests that teams that experience this issue post screenshots of the :doc:`Driver Station Timing window </docs/software/driverstation/driver-station-timing-viewer>` to `<https://github.com/wpilibsuite/allwpilib/issues/6174>`__
+
+Some teams have seen this happen only when the robot is operated wirelessly, but not when operated via USB or ethernet tether. Some potential mitigations:
+
+1. Try relocating the robot radio to a better location (high in the robot and away from motors or large amounts of metal).
+2. :doc:`Measure your robot's bandwidth </docs/networking/networking-introduction/measuring-bandwidth-usage>` and ensure you have margin to the 4 Mbps bandwidth limit
+3. See if the wifi environment is congested using a tool like `WiFi Analyzer <https://apps.microsoft.com/detail/9NBLGGH33N0N?hl=en-US&gl=US>`__. As the 5 ghz WiFi spectrum has more channels and is less crowded, switching the robot radio to operate at 5 ghz will likely improve WiFi communication.
+4. If you operate multiple robots in close proximity in access point mode, setting up a router and operating the radios in bridge mode will reduce the number of wireless access points and may improve communications
+
+Some teams have seen this happen due to software that is running on the driver station (such as Autodesk updater or Discord). Some potential mitigations:
+
+1. Reboot the driver station computer
+2. Close software that is running in the background
+3. Follow the :doc:`Driver Station Best Practices </docs/software/driverstation/driver-station-best-practices>`
+
+If you identify software that interferes with driver station, please post it to `<https://github.com/wpilibsuite/allwpilib/issues/6174>`__
+
+Driver Station internal issue with print error and tags
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** The Driver Station will occasionally print ``internal issue with print error and tags``. The message is caused when the DS reports a message on its side intermixed with messages from the robot; it is not caused by and does not affect robot code.
+
+**Workaround:** Thie will be fixed in the next Game Tools release. There is no known workaround.
+
 Visual Studio Code Reports Unresolved Dependency
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
