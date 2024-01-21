@@ -1,9 +1,9 @@
 Coordinate System
 =================
 
-Coordinate systems are used in FRC programming in several places. A few of the common places are: robot movement, joystick input, pose estimation, AprilTags, and path planning.
+Coordinate systems are used in FRC programming in several places. A few of the common places are: robot movement, joystick input, :term:`pose` estimation, AprilTags, and path planning.
 
-It is important to understand the basics of the coordinate system used throughout WPILib and other common tools for programming an FRC robot, such as PathPlanner. Many teams intuitively  think of a coordinate system that is different from what is used in WPILib, and this leads to problems that need to be tracked down throughout the season. It is worthwhile to take a few minutes to understand the coordinate system, and come back here as a reference when programming. It's not very difficult to get robot movement with a joystick working without getting the coordinate system right, but it will be much more difficult to build on code using a different coordinate system to add pose estimation with AprilTags and path planning for autonomous.
+It is important to understand the basics of the coordinate system used throughout WPILib and other common tools for programming an FRC robot, such as PathPlanner. Many teams intuitively  think of a coordinate system that is different from what is used in WPILib, and this leads to problems that need to be tracked down throughout the season. It is worthwhile to take a few minutes to understand the coordinate system, and come back here as a reference when programming. It's not very difficult to get robot movement with a joystick working without getting the coordinate system right, but it will be much more difficult to build on code using a different coordinate system to add :term:`pose estimation` with :term:`AprilTags` and path planning for autonomous.
 
 WPILib coordinate system
 ------------------------
@@ -41,7 +41,7 @@ The figure above shows the unit circle with common angles labeled in degrees (°
 
 There are some places you may choose to use a different range, such as 0° to 360° or 0 to 1 rotation, but be aware that many core WPILib classes and FRC tools are built with the unit circle above.
 
-.. warning:: Some gyros/IMUs use CW positive rotation, such as the NavX IMU. Care must be taken to handle rotation properly, sensor values may need to be inverted. Read the documentation and verify that rotation is CCW positive.
+.. warning:: Some :term:`gyroscope` and :term:`IMU` models use CW positive rotation, such as the NavX IMU. Care must be taken to handle rotation properly, sensor values may need to be inverted. Read the documentation and verify that rotation is CCW positive.
 
 .. warning:: Many sensors that read rotation around an axis, such as encoders and IMU's, read continuously. This means they read more than one rotation, so when rotating past 180° they read 181°, not -179°. Some sensors have configuration settings where you can choose their wrapping behavior and range, while others need to be handled in your code. Careful attention should be paid to make sure sensor readings are consistent and your control loop handles wrapping in the same way as your sensor.
 
@@ -67,10 +67,10 @@ Using Joystick and controller input to drive a robot
 
 You may have noticed, the coordinate system used by WPILib for the robot is not the same as the coordinate system used for joysticks and controllers. Care needs to be taken to understand the difference, and properly pass driver input to the drive subsystem.
 
-Non-holonomic drivetrain example
+Differential drivetrain example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Non-holonomic means the robot drivetrain cannot move side-to-side (strafe). This type of drivetrain can move forward and backward along the X axis, and rotate around the Z axis. Consider a common arcade drive scheme using a single joystick where the driver pushes the joystick forward/backwrd for forward/backward robot movement, and push the joystick left/right to rotate the robot left/right.
+Differential drivetrains are non-holonomic, which means the robot drivetrain cannot move side-to-side (strafe). This type of drivetrain can move forward and backward along the X axis, and rotate around the Z axis. Consider a common arcade drive scheme using a single joystick where the driver pushes the joystick forward/backwrd for forward/backward robot movement, and push the joystick left/right to rotate the robot left/right.
 
 The code snippet below uses the ``DifferentialDrive`` and ``Joystick`` classes to drive the robot with the arcade scheme described above. ``DifferentialDrive`` uses the robot coordinate system defined above, and ``Joystick`` uses the joystick coordinate system.
 
@@ -113,7 +113,7 @@ The code calls the ``DifferentialDrive.arcadeDrive(xSpeed, zRotation)`` method, 
 Mecanum drivetrain example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Mecanum drivetrains are holonomic, meaning they have the ability to move side-to-side. This type of drivetrain can move forward/backward and rotate around the Z axis like non-holonomic drivetrains, but it can also move side-to-side along the robot's Y axis. Consider a common arcade drive scheme using a single joystick where the driver pushes the joystick forward/backward for forward/backward robot movement, pushes the joystick left/right to move side-to-side, and twists the joystick to rotate the robot.
+Mecanum drivetrains are holonomic, meaning they have the ability to move side-to-side. This type of drivetrain can move forward/backward and rotate around the Z axis like differential drivetrains, but it can also move side-to-side along the robot's Y axis. Consider a common arcade drive scheme using a single joystick where the driver pushes the joystick forward/backward for forward/backward robot movement, pushes the joystick left/right to move side-to-side, and twists the joystick to rotate the robot.
 
 .. tab-set-code::
 
@@ -235,6 +235,10 @@ Dealing with red or blue alliance
 
 There are two primary ways many teams choose to define the field coordinate system. In both methods, positive rotation (theta) is in the counter-clockwise (CCW) direction.
 
+.. warning:: There are cases where your alliance may change (or appear to change) after the code is initialized. When you are not connected to the :term:`FMS` at a competition, you can change your alliance station in the Driver Station application at any time. Even when you are at a competition, your robot will usually initialize before connecting to the FMS so you will not have alliance information.
+
+.. note:: At competition events, the FMS will automatically report your Team Station and alliance color. When you are not connected to an FMS, you can choose your Team Station and alliance color on the Driver Station :ref:`docs/software/driverstation/driver-station:operation tab`.
+
 Always blue origin
 ~~~~~~~~~~~~~~~~~~
 
@@ -249,11 +253,11 @@ You may choose to define the origin of the field on the blue side, and keep it t
 Some advantages to this approach are:
 
 - Pose estimation with AprilTags is simplified. AprilTags throughout the field are unique. If you keep the coordinate system the same regardless of alliance, there is no need for special logic to deal the location of AprilTags on the field relative to your alliance.
-- Many of the tools and libraries used in FRC follow this convention. Some of the tools include: PathPlanner, Choreo, and the ShuffleBoard Field2d widget.
+- Many of the tools and libraries used in FRC follow this convention. Some of the tools include: PathPlanner, Choreo, and the ShuffleBoard and Glass Field2d widget.
 
 In order to use this approach for field oriented driving, driver input needs to consider the alliance color. When your alliance is red and the driver is standing behind the red alliance wall, they will want the robot to move toward down field toward the blue alliance wall. However, when your alliance is blue, the driver will want the robot to go down field toward the red alliance wall.
 
-A simple way to deal with field oriented driving is to check the alliance color reported by the `DriverStation` class, and invert the drivers controls based on the alliance.
+A simple way to deal with field oriented driving is to check the alliance color reported by the `DriverStation` class, and invert the drivers controls based on the alliance. As noted above, your alliance color can change so it needs to be check on every robot iteration.
 
 .. tab-set-code::
 
@@ -318,8 +322,8 @@ In years when the field layout is rotated, this is a simple approach if you are 
 
 Some things you need to consider when using this approach are:
 
-- There are cases where your alliance may change (or appear to change) after the code is initialized. When you are not connected to the FMS at a competition, you can change your alliance station in the Driver Station application at any time. Even when you are at a competition, your robot will usually initialize before connecting to the FMS so you will not have alliance information. If you are not using AprilTags, you may not have anything to adjust when the alliance changes. However, if you are using AprilTags and your robot has seen a tag and used it for pose estimation, you will need to adjust your origin and reset your estimated pose.
-- The field image in the ShuffleBoard Field2d widget follows the *Always blue origin* approach. If you want the widget to display the correct pose for your robot, you will need to change the origin for your estimated pose before sending it to the dashboard.
+- As warned above, your alliance color can change after initialization. If you are not using AprilTags, you may not have anything to adjust when the alliance changes. However, if you are using AprilTags and your robot has seen a tag and used it for pose estimation, you will need to adjust your origin and reset your estimated pose.
+- The field image in the ShuffleBoard and Glass Field2d widget follows the *Always blue origin* approach. If you want the widget to display the correct pose for your robot, you will need to change the origin for your estimated pose before sending it to the dashboard.
 
 .. [#] Rapid React field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2022-top-down-field-renders/399031>`__
 .. [#] CHARGED UP field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2023-top-down-field-renders/421365>`__
