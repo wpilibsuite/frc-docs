@@ -228,7 +228,7 @@ Games such as CHARGED UP in 2023 and CRESCENDO in 2024 used a mirrored layout. A
 .. figure:: images/coordinate-system/charged-up-field.jpg
    :alt: Mirrored CHARGED UP field from 2023
 
-   Mirrored field from Charged Up in 2023 [#]_
+   Mirrored field from CHARGED UP in 2023 [#]_
 
 Dealing with red or blue alliance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -255,9 +255,9 @@ Some advantages to this approach are:
 - Pose estimation with AprilTags is simplified. AprilTags throughout the field are unique. If you keep the coordinate system the same regardless of alliance, there is no need for special logic to deal the location of AprilTags on the field relative to your alliance.
 - Many of the tools and libraries used in FRC follow this convention. Some of the tools include: PathPlanner, Choreo, and the ShuffleBoard and Glass Field2d widget.
 
-In order to use this approach for field oriented driving, driver input needs to consider the alliance color. When your alliance is red and the driver is standing behind the red alliance wall, they will want the robot to move toward down field toward the blue alliance wall. However, when your alliance is blue, the driver will want the robot to go down field toward the red alliance wall.
+In order to use this approach for field oriented driving, driver input needs to consider the alliance color. When your alliance is red and the driver is standing behind the red alliance wall, they will want the robot to move down field toward the blue alliance wall. However, when your alliance is blue, the driver will want the robot to go down field toward the red alliance wall.
 
-A simple way to deal with field oriented driving is to check the alliance color reported by the `DriverStation` class, and invert the drivers controls based on the alliance. As noted above, your alliance color can change so it needs to be check on every robot iteration.
+A simple way to deal with field oriented driving is to check the alliance color reported by the `DriverStation` class, and invert the drivers controls based on the alliance. As noted above, your alliance color can change so it needs to be checked on every robot iteration.
 
 .. tab-set-code::
 
@@ -270,8 +270,12 @@ A simple way to deal with field oriented driving is to check the alliance color 
           invert = -1;
       }
 
+      // Create field relative ChassisSpeeds for controlling Swerve
       var chassisSpeeds = ChassisSpeeds
-              .fromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation * invert, imu.getRotation2d());
+              .fromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
+
+      // Control a mecanum drivetrain
+      m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
 
    .. code-block:: c++
 
@@ -281,8 +285,12 @@ A simple way to deal with field oriented driving is to check the alliance color 
           invert = -1;
       }
 
+      // Create field relative ChassisSpeeds for controlling Swerve
       frc::ChassisSpeeds chassisSpeeds =
-              frc::ChassisSpeeds::FromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation * invert, imu.GetRotation2d());
+              frc::ChassisSpeeds::FromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
+
+      // Control a mecanum drivetrain
+      m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
 
    .. code-block:: python
 
@@ -291,9 +299,13 @@ A simple way to deal with field oriented driving is to check the alliance color 
        if wpilib.DriverStation.GetInstance().GetAlliance() == wpilib.DriverStation.Alliance.kRed:
            invert = -1
 
+       # Create field relative ChassisSpeeds for controlling Swerve
        chassis_speeds = wpilib.ChassisSpeeds.FromFieldRelativeSpeeds(
-           xSpeed * invert, ySpeed * invert, zRotation * invert, self.imu.GetAngle()
+           xSpeed * invert, ySpeed * invert, zRotation, self.imu.GetAngle()
        )
+
+       # Control a mecanum drivetrain
+       self.robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, self.imu.GetAngle())
 
 Origin follows your alliance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
