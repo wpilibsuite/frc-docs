@@ -75,7 +75,7 @@ Verifying Program using OutlineViewer
 
 You can verify that the robot program is generating SmartDashboard values by using the :doc:`OutlineViewer program </docs/software/wpilib-tools/outlineviewer/index>`.
 
-Expand the SmartDashboard row the value ``Counter`` is the variable written to the SmartDashboard via NetworkTables. As the program runs you should see the value increasing (``1398.0`` in this case). If you don't see this variable in the OutlineViewer, look for something wrong with the robot program or the network configuration.
+Expand the SmartDashboard row. The value ``Counter`` is the variable written to the SmartDashboard via NetworkTables. As the program runs you should see the value increasing (``1398.0`` in this case). If you don't see this variable in the OutlineViewer, look for something wrong with the robot program or the network configuration.
 
 .. image:: /docs/software/wpilib-tools/outlineviewer/images/outlineviewer.png
   :alt: Using OutlineViewer to view the NetworkTables data used by the program.
