@@ -74,11 +74,11 @@ Running Tests
 
 For Java tests to run, make sure that your ``build.gradle`` file contains the following block:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.1.1-beta-4/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.2.1/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
-   :lines: 75-78
+   :lines: 74-77
    :linenos:
-   :lineno-start: 75
+   :lineno-start: 74
 
 Use :guilabel:`Test Robot Code` from the Command Palette to run the tests. Results will be reported in the terminal output, each test will have a ``FAILED`` or ``PASSED``/``OK`` label next to the test name in the output. JUnit (Java only) will generate a HTML document in ``build/reports/tests/test/index.html`` with a more detailed overview of the results; if there are any failed tests a link to render the document in your browser will be printed in the terminal output.
 
