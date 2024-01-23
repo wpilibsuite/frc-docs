@@ -72,6 +72,14 @@ After at least one file is loaded, the "Entries" window displays a tree view of 
 
 The output window is used to specify the output folder (via :guilabel:`Select Output Folder...`) as well as the output style (list or table).  The list output style outputs a CSV file with 3 columns (timestamp, entry name, and value) and a row for every value change (for every exported entry).  The table output style outputs a CSV file with a timestamp column and a column for every exported entry; a row is output for every value change (for every exported entry), but the value is placed in the correct column for that entry.  Clicking :guilabel:`Export CSV` will create a ``.csv`` file in the output folder corresponding to each input file.
 
+Managing Data Logs with the Driver Station
+------------------------------------------
+
+.. image:: images/datalogtool/DS_WPILogs.png
+   :alt: Selecting Upload WPILogs in the Driver Station
+
+The Driver Station software can download WPILogs. Click on the gear icon and select :guilabel:`Upload WPILogs`. The logs in ``/home/lvuser/logs`` or ``/u/logs`` will be downloaded automatically to ``C:\Users\Public\Documents\FRC\Log Files\WPILogs``
+
 Custom Processing of Data Logs
 ------------------------------
 
