@@ -32,7 +32,7 @@ Uninstall Old Versions (Recommended)
 
 Before installing the new version of the FRC Game Tools it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2022 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "NI Software", and select :guilabel:`Uninstall`.
 
-.. note:: It is only necessary to uninstall previous versions when installing a new year's tools. For example, uninstall the 2021 tools before installing the 2022 tools. It is not necessary to uninstall before upgrading to a new update of the 2022 game tools.
+.. note:: It is only necessary to uninstall previous versions when installing a new year's tools (or when a beta is installed). For example, uninstall the 2021 tools before installing the 2022 tools. It is not necessary to uninstall before upgrading to a new update of the 2022 game tools.
 
 .. image:: images/labview/uninstall_control_panel.png
    :alt: Add or Remove -> NI Software

@@ -18,7 +18,7 @@ WPILib is designed to install to different folders for different years, so that 
 Downloading
 -----------
 
-.. wpilibrelease:: v2024.1.1
+.. wpilibrelease:: v2024.2.1
 
 `You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
 
@@ -59,6 +59,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
       :sync: macos
 
       For this release, macOS users will need to have the Xcode Command Line Tools installed before running the installer; we are working on removing this requirement in a future release. This can be done by running ``xcode-select --install`` in the Terminal.
+
+      .. important:: When upgrading from a 2024 beta release or 2024.1.1, it's necessary to manually delete AdvantageScope before running the installer. Navigate to ``~/wpilib/2024/tools`` and delete AdvantageScope.
 
       macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
 
