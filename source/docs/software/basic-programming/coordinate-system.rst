@@ -257,7 +257,7 @@ Some advantages to this approach are:
 
 In order to use this approach for field oriented driving, driver input needs to consider the alliance color. When your alliance is red and the driver is standing behind the red alliance wall, they will want the robot to move down field toward the blue alliance wall. However, when your alliance is blue, the driver will want the robot to go down field toward the red alliance wall.
 
-A simple way to deal with field oriented driving is to check the alliance color reported by the `DriverStation` class, and invert the drivers controls based on the alliance. As noted above, your alliance color can change so it needs to be checked on every robot iteration.
+A simple way to deal with field oriented driving is to check the alliance color reported by the `DriverStation` class, and invert the driver's controls based on the alliance. As noted above, your alliance color can change so it needs to be checked on every robot iteration.
 
 .. tab-set-code::
 
