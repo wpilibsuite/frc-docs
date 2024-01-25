@@ -56,10 +56,10 @@ Joysticks, including the sticks on controllers, don't use the same NWU coordinat
 
    Joystick coordinate system
 
-It's important to note that joystick axes values are rotations around the respective axes, not translations. In practical terms, this means:
+It's important to note that joystick input values are rotations around an axis, not translations. In practical terms, this means:
 
 - pushing forward on the joystick (toward the positive X axis) is a CW rotation around the Y axis, so you get a negative Y value.
-- pushing to the right (toward the postivie Y axis) is a CCW rotation around the X axis, so you get a positive X value.
+- pushing to the right (toward the positive Y axis) is a CCW rotation around the X axis, so you get a positive X value.
 - twisting the joystick CW (toward the positive Y axis) is a CCW rotation around the Z axis, so you get a positive Z value.
 
 Using Joystick and controller input to drive a robot
@@ -102,7 +102,7 @@ The code calls the ``DifferentialDrive.arcadeDrive(xSpeed, zRotation)`` method, 
 
     - Robot: ``xSpeed`` is the speed along the robot's X axis, which is forward/backward.
     - Joystick: The driver sets forward/backward speed by rotating the joystick along its Y axis, which is pushing the joystick forward/backward.
-    - Code: Moving the joystick forward is negative Y rotation, whereas robot forward is along the positive X axis. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
+    - Code: Moving the joystick forward is negative Y rotation, whereas moving the robot forward is along the positive X axis. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
 
 - The second argument is ``zRotation``
 
@@ -208,7 +208,7 @@ Field coordinate systems
 
 The field coordinate system (or global coordinate system) is an absolute coordinate system where a point on the field is designated as the origin. Two common uses of the field coordinate system will be explored in this document:
 
-- Field oriented driving is a drive scheme for holonomic drivetrains, where the driver moves the controls relative to their perspective of the field, and the robot moves in that direction regardless of where the front of the robot is facing. For example, a driver on the red alliance pushes the joystick forward, the robot will move down field toward the blue alliance wall, even if the robot's front is facing the driver.
+- Field oriented driving is a drive scheme for holonomic drivetrains, where the driver moves the controls relative to their perspective of the field, and the robot moves in that direction regardless of where the front of the robot is facing. For example, a driver on the red alliance pushes the joystick forward, the robot will move downfield toward the blue alliance wall, even if the robot's front is facing the driver.
 - Pose estimation with odometry and/or AprilTags are used to estimate the robot's pose on the field.
 
 Mirrored field vs. rotated field
@@ -216,7 +216,7 @@ Mirrored field vs. rotated field
 
 Historically, FRC has used two types of field layouts in relation to the red and blue alliance.
 
-Games such as Rapid React in 2022 used a rotated layout. A rotated layout means that, from your perspective from behind your alliance wall, your field elements and your opponents elements are in the same location. Notice in the Rapid React field layout diagram below, whether you are on the red or blue alliance, your human player station is on your right and your hanger is on your left.
+Games such as Rapid React in 2022 used a rotated layout. A rotated layout means that, from your perspective from behind your alliance wall, your field elements and your opponent's elements are in the same location. Notice in the Rapid React field layout diagram below, whether you are on the red or blue alliance, your human player station is on your right and your hanger is on your left.
 
 .. figure:: images/coordinate-system/rapid-react-field.jpg
    :alt: Rotated Rapid React field from 2022
@@ -252,10 +252,10 @@ You may choose to define the origin of the field on the blue side, and keep it t
 
 Some advantages to this approach are:
 
-- Pose estimation with AprilTags is simplified. AprilTags throughout the field are unique. If you keep the coordinate system the same regardless of alliance, there is no need for special logic to deal the location of AprilTags on the field relative to your alliance.
+- Pose estimation with AprilTags is simplified. AprilTags throughout the field are unique. If you keep the coordinate system the same regardless of alliance, there is no need for special logic to deal with the location of AprilTags on the field relative to your alliance.
 - Many of the tools and libraries used in FRC follow this convention. Some of the tools include: PathPlanner, Choreo, and the ShuffleBoard and Glass Field2d widget.
 
-In order to use this approach for field oriented driving, driver input needs to consider the alliance color. When your alliance is red and the driver is standing behind the red alliance wall, they will want the robot to move down field toward the blue alliance wall. However, when your alliance is blue, the driver will want the robot to go down field toward the red alliance wall.
+In order to use this approach for field oriented driving, driver input needs to consider the alliance color. When your alliance is red and the driver is standing behind the red alliance wall, they will want the robot to move downfield toward the blue alliance wall. However, when your alliance is blue, the driver will want the robot to go downfield toward the red alliance wall.
 
 A simple way to deal with field oriented driving is to check the alliance color reported by the `DriverStation` class, and invert the driver's controls based on the alliance. As noted above, your alliance color can change so it needs to be checked on every robot iteration.
 
@@ -310,7 +310,7 @@ A simple way to deal with field oriented driving is to check the alliance color 
 Origin follows your alliance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You may choose to define the origin of the field based on the alliance you are one. With this approach, the positive x-axis always points away from the your alliance wall.
+You may choose to define the origin of the field based on the alliance you are one. With this approach, the positive x-axis always points away from your alliance wall.
 
 When you are on the blue alliance, your origin looks like this:
 
@@ -335,7 +335,7 @@ In years when the field layout is rotated, this is a simple approach if you are 
 Some things you need to consider when using this approach are:
 
 - As warned above, your alliance color can change after initialization. If you are not using AprilTags, you may not have anything to adjust when the alliance changes. However, if you are using AprilTags and your robot has seen a tag and used it for pose estimation, you will need to adjust your origin and reset your estimated pose.
-- The field image in the ShuffleBoard and Glass Field2d widget follows the *Always blue origin* approach. If you want the widget to display the correct pose for your robot, you will need to change the origin for your estimated pose before sending it to the dashboard.
+- The field image in the ShuffleBoard and Glass Field2d widget follows the *Always blue origin* approach. Special handling is needed to display your robot pose correctly when your alliance is red. You will need to change the origin for your estimated pose to the blue alliance coordinate system before sending it to the dashboard.
 
 .. [#] Rapid React field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2022-top-down-field-renders/399031>`__
 .. [#] CHARGED UP field image from MikLast on Chiefdelphi `<https://www.chiefdelphi.com/t/2023-top-down-field-renders/421365>`__
