@@ -181,11 +181,13 @@ The Offline Installer installs the following components:
 
 - **Java JDK/JRE** - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the JAVA_HOME variable
 
-- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, Outline Viewer, Pathweaver, Glass, SysId
+- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, OutlineViewer, PathWeaver, Glass, SysId, Data Log Tool, roboRIO Team Number Setter, AdvantageScope
 
 - **WPILib Dependencies** - OpenCV, etc.
 
-- **VS Code Extensions** - WPILib extensions for robot code development in VS Code
+- **VS Code Extensions** - WPILib and Java/C++/Python extensions for robot code development in VS Code
+
+- **Documentation** - Offline copies of this frc-docs documentation and Java/C++/Python APIs
 
 Uninstalling
 ------------
