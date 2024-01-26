@@ -95,7 +95,7 @@ The ``LinearSystem`` class contains methods for easily creating state-space syst
 Modeling Using Flywheel Moment of Inertia and Gearing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A flywheel can also be modeled without access to a physical robot, using information about the motors, gearing and flywheel's :term:`moment of inertia`. A full derivation of this model is presented in Section 8.2.1 of  `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
+A flywheel can also be modeled without access to a physical robot, using information about the motors, gearing and flywheel's :term:`moment of inertia`. A full derivation of this model is presented in Section 12.3 of  `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
 
 The ``LinearSystem`` class contains methods to easily create a model of a flywheel from the flywheel's motors, gearing and :term:`moment of inertia`. The moment of inertia can be calculated using :term:`CAD` software or using physics. The examples used here are detailed in the flywheel example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__).
 
