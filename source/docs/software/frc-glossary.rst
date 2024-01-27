@@ -11,6 +11,9 @@ FRC Glossary
    AM
       `AndyMark, Inc <https://www.andymark.com/>`__ - strives to develop innovative products and outstanding service while inspiring our customers and making a positive impact in our community.
 
+   AprilTags
+       Visual tags that provide low overhead, high accuracy localization. AprilTags are useful for helping your robot know where it is at on the field, so it can align itself to some goal position.
+
    auto
       The first phase of each match is called Autonomous (auto) and consists of the robot's running pre-programmed instructions.
 
@@ -176,6 +179,9 @@ FRC Glossary
    no-op
       No-op is a computer instruction which means no operation. When the computer processor encounters a no-op instruction, it simply moves to the next sequential instruction. Read more about no-op on `Wikipedia <https://en.wikipedia.org/wiki/NOP_(code)>`_ .
 
+   odometry
+     Using sensors on the robot to create an estimate of the pose of the robot on the field.
+
    OPR
       `Offensive Power Rating <https://blog.thebluealliance.com/2017/10/05/the-math-behind-opr-an-introduction/>`__ - a system to attempt to deduce the average point contribution of a team to an alliance
 
@@ -205,6 +211,9 @@ FRC Glossary
 
    pose
       The collection of position and rotation information that describes how a rigid body is oriented in space, relative to some fixed reference point.
+
+   pose estimation
+      The process of estimating the robot's pose, commonly with :term:`odometry` and/or :term:`AprilTags`. Also known as *on-field localization*.
 
    PWM
       Pulse-width modulation - a method of controlling the average power or amplitude delivered by an electrical signal.  Used in FRC to control the output of motors not using the :term:`CAN` bus.

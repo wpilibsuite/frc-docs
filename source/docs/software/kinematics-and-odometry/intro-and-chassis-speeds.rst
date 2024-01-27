@@ -1,6 +1,8 @@
 Introduction to Kinematics and The ChassisSpeeds Class
 ======================================================
 
+.. note:: Kinematics and odometry uses a common coordinate system. You may wish to reference the :doc:`/docs/software/basic-programming/coordinate-system` section for details.
+
 What is kinematics?
 -------------------
 The kinematics suite contains classes for differential drive, swerve drive, and mecanum drive kinematics and odometry. The kinematics classes help convert between a universal ``ChassisSpeeds`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/ChassisSpeeds.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/structfrc_1_1_chassis_speeds.html>`__, :external:py:class:`Python <wpimath.kinematics.ChassisSpeeds>`)object, containing linear and angular velocities for a robot to usable speeds for each individual type of drivetrain i.e. left and right wheel speeds for a differential drive, four wheel speeds for a mecanum drive, or individual module states (speed and angle) for a swerve drive.

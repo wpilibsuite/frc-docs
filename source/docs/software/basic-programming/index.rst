@@ -8,6 +8,7 @@ Basic Programming
    cpp-units
    java-units
    joystick
+   coordinate-system
    robot-preferences
    using-test-mode
    reading-stacktraces

@@ -2,6 +2,8 @@ Swerve Drive Kinematics
 =======================
 The ``SwerveDriveKinematics`` class is a useful tool that converts between a ``ChassisSpeeds`` object and several ``SwerveModuleState`` objects, which contains velocities and angles for each swerve module of a swerve drive robot.
 
+.. note:: Swerve drive kinematics uses a common coordinate system. You may wish to reference the :doc:`/docs/software/basic-programming/coordinate-system` section for details.
+
 The swerve module state class
 -----------------------------
 The ``SwerveModuleState`` class contains information about the velocity and angle of a singular module of a swerve drive. The constructor for a ``SwerveModuleState`` takes in two arguments, the velocity of the wheel on the module, and the angle of the module.
