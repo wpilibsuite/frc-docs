@@ -92,3 +92,8 @@ Normally :term:`NetworkTables` data automatically appears on one of the tabs and
 
 .. figure:: images/data-sources-2.png
    :alt:
+
+Stale Data
+----------
+
+Shuffleboard uses :term:`NetworkTables` for communicating values between the robot and the driver station laptop. See :doc:`NetworkTables Stale Data </docs/software/networktables/stale-data>` for why Shuffleboard continues to show data that is no longer in the robot program.

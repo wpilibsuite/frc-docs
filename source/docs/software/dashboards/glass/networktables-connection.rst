@@ -24,3 +24,8 @@ The :guilabel:`NetworkTables` widget can be used to view all entries that are be
 .. image:: images/nt-widget.png
 
 Furthermore, you can view all connected NetworkTables clients under the :guilabel:`Connections` pane of the widget.
+
+Stale Data
+----------
+
+Glass uses :term:`NetworkTables` for communicating values between the robot and the driver station laptop. See :doc:`NetworkTables Stale Data </docs/software/networktables/stale-data>` for why Glass continues to show data that is no longer in the robot program.

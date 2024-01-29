@@ -16,5 +16,6 @@ This section outlines the details of using the NetworkTables (v4) API to communi
    listening-for-change
    robot-program
    client-side-program
+   stale-data
    nt4-migration-guide
    reading-array-values-published-by-networktables
