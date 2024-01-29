@@ -210,13 +210,37 @@ By default, composition members are run through the command composition, and are
 
       // The sequence continues only after the proxied command ends
       Commands.waitSeconds(5.0).asProxy()
-         .andThen(Commands.print("This will only be printed after the 5-second delay elapses!"))
+         .andThen(Commands.print("This will only be printed after the 5-second delay elapses!"));
 
    .. code-block:: c++
 
       // The sequence continues only after the proxied command ends
       frc2::cmd::Wait(5.0_s).AsProxy()
-         .AndThen(frc2::cmd::Print("This will only be printed after the 5-second delay elapses!"))
+         .AndThen(frc2::cmd::Print("This will only be printed after the 5-second delay elapses!"));
+
+.. warning:: Do not use ``ProxyCommand`` unless you are sure of what you are doing and there is no other way to accomplish your need! Proxying is only intended for use as an escape hatch from command group requirement aggregation.
+
+Command groups and compositions inherit the union of their compoments' requirements for the entire duration of the composition, and requirements are immutable. Therefore, a SequentialCommandGroup that intakes a game piece, indexes it, aims a shooter, and shoots it would reserve all three subsystems (the intake, indexer, and shooter) the entire time, precluding any of those subsystems from performing other operations in their "downtime". To solve this, the subsystems that should only be reserved for the composition while they are participating in it should have their commands proxied.
+
+.. note:: Because proxied commands still require their subsystem, despite not leaking that requirement to the group, all of the commands that require a given subsystem must be proxied if one of them is. Otherwise, when the proxied command is scheduled its requirement will conflict with that of the group, cancelling the group.
+
+.. tab-set-code::
+   
+   .. code-block:: java
+      // Group requirements are indexer and shooter, intake still reserved during its command but not afterwards
+      Commands.sequence(
+         intake.intakeGamePiece().asProxy(), // we want to let the intake intake another game piece while we are processing this one
+         indexer.processGamePiece(),
+         shooter.aimAndShoot()
+      );
+   
+   .. code-block:: c++
+      // Group requirements are indexer and shooter, intake still reserved during its command but not afterwards
+      frc2::cmd::Sequence(
+         intake.TntakeGamePiece().asProxy(), // we want to let the intake intake another game piece while we are processing this one
+         indexer.ProcessGamePiece(),
+         shooter.AimAndShoot()
+      );
 
 For cases that don't need to track the proxied command, ``ScheduleCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_schedule_command.html>`__) schedules a specified command and ends instantly.
 
