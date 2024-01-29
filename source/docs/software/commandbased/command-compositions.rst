@@ -204,20 +204,6 @@ By default, composition members are run through the command composition, and are
 
 ``ProxyCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html>`__), also creatable using the ``.asProxy()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#asProxy()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#aa45784053431393e3277e5bc5ae7f751>`__), schedules a command "by proxy": the command is scheduled when the proxy is scheduled, and the proxy finishes when the command finishes. In the case of "forking off" from a command composition, this allows the group to track the command's progress without it being in the composition.
 
-.. tab-set-code::
-
-   .. code-block:: java
-
-      // The sequence continues only after the proxied command ends
-      Commands.waitSeconds(5.0).asProxy()
-         .andThen(Commands.print("This will only be printed after the 5-second delay elapses!"));
-
-   .. code-block:: c++
-
-      // The sequence continues only after the proxied command ends
-      frc2::cmd::Wait(5.0_s).AsProxy()
-         .AndThen(frc2::cmd::Print("This will only be printed after the 5-second delay elapses!"));
-
 .. warning:: Do not use ``ProxyCommand`` unless you are sure of what you are doing and there is no other way to accomplish your need! Proxying is only intended for use as an escape hatch from command group requirement aggregation.
 
 Command groups and compositions inherit the union of their compoments' requirements and requirements are immutable. Therefore, a SequentialCommandGroup that intakes a game piece, indexes it, aims a shooter, and shoots it would reserve all three subsystems (the intake, indexer, and shooter), precluding any of those subsystems from performing other operations in their "downtime". To solve this, the subsystems that should only be reserved for the composition while they are participating in it should have their commands proxied.
