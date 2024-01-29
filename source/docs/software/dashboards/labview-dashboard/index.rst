@@ -8,4 +8,4 @@ The LabVIEW Dashboard is easy to use and provides a lot of features straight out
 
    driver-station-labview-dashboard
    using-the-labview-dashboard-with-c++-java-code
-   troubleshooting-dashboard-connectivity
+   ../troubleshooting-dashboard-connectivity

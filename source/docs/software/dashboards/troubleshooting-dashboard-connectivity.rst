@@ -11,10 +11,15 @@ This section discusses connectivity between the robot and LabVIEW dashboard
 Recognizing LabVIEW Dashboard Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. image:: images/troubleshooting-dashboard-connectivity/labview-dashboard-connection.png
+   :alt: NT Connection LED on LabVIEW Dashboard front panel
+
+The LabVIEW Dashboard has a NetworkTables Connection indicator on the front panel.
+
 .. image:: images/troubleshooting-dashboard-connectivity/black-diamonds.png
    :alt: Highlights black diamonds next to the variables indicating they are not synced to the robot.
 
-If you have an indicator on your dashboard that you expect to be changing it may be fairly trivial to recognize if the Dashboard is connected. If not, there is a way to check without making any changes to your robot code. On the Variables tab of the Dashboard, the variables are shown with a black diamond when they are not synced with the robot. Once the Dashboard connects to the robot and these variables are synced, the diamond will disappear.
+On the Variables tab of the Dashboard, the variables are shown with a black diamond when they are not synced with the robot. Once the Dashboard connects to the robot and these variables are synced, the diamond will disappear.
 
 Troubleshooting LabVIEW Dashboard Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -25,32 +30,46 @@ If the Dashboard does not connect to the Robot (after the Driver Station has con
 
 2. If that doesn't work, restart the Robot Code using the Restart Robot Code button on the Diagnostics tab of the Driver Station
 
-Recognizing Connectivity
-------------------------
+Other Dashboards
+----------------
 
-This section discusses connectivity between the robot and SmartDashboard
+This section discusses connectivity between the robot and WPILib Dashboards.
 
 Recognizing SmartDashboard Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. image:: images/troubleshooting-dashboard-connectivity/smartdashboard-connection.png
+   :alt: The titlebar of SmartDashboard showing a connection to IP 172.22.11.2
+
+SmartDashboard indicates if it connected or not in the title bar. See :ref:`this page <docs/software/dashboards/smartdashboard/smartdashboard-intro:Configuring the Team Number>` for more on configuring the connection.
 
 .. image:: images/troubleshooting-dashboard-connectivity/connection-indicator.png
    :alt: Click "View" then "Add..." then Connection indicator to place one on the SmartDashboard.
 
-The typical way to recognize connectivity with the SmartDashboard is to add a Connection Indicator widget and to make sure your code is writing at least one key during initialization or disabled to trigger the connection indicator. The connection indicator can be moved or re-sized if the Editable checkbox is checked.
+For more visibility, you can also add a Connection Indicator widget. The connection indicator can be moved or re-sized if the Editable checkbox is checked.
 
 Recognizing Shuffleboard Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/troubleshooting-dashboard-connectivity/shuffleboard-connection.png
+   :alt: The bottom bar of Shuffleboard showing no connection
 
-Shuffleboard indicates if it is connected or not in the bottom right corner of the application as shown in the image above.
+Shuffleboard indicates if it is connected or not in the bottom right corner of the application as shown in the image above. See :ref:`page <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-preferences:Setting the Team Number>`
 
 Recognizing Glass Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/troubleshooting-dashboard-connectivity/glass-connection.png
+   :alt: The titlebar of Glass showing a connection to 127.0.0.1
 
 Glass displays if it is connected or not in the bar across the top.  See this :ref:`page <docs/software/dashboards/glass/networktables-connection:Establishing NetworkTables Connections>` for more on configuring the connection.
+
+Recognizing AdvantageScope Connectivity
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: images/troubleshooting-dashboard-connectivity/advantagescope-connection.png
+   :alt: The titlebar of AdvantageScope showing a connection to 172.22.11.2
+
+AdvantageScope indicates if it connected or not in the title bar. It shows the IP address it is connected to, or else the IP address it is attempting to connect to. See the `AdvantageScope Documentation <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/OPEN-LIVE.md>`__ for more information about configuring the connection.
 
 Troubleshooting Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
