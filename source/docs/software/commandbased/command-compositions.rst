@@ -220,7 +220,7 @@ By default, composition members are run through the command composition, and are
 
 .. warning:: Do not use ``ProxyCommand`` unless you are sure of what you are doing and there is no other way to accomplish your need! Proxying is only intended for use as an escape hatch from command group requirement aggregation.
 
-Command groups and compositions inherit the union of their compoments' requirements for the entire duration of the composition, and requirements are immutable. Therefore, a SequentialCommandGroup that intakes a game piece, indexes it, aims a shooter, and shoots it would reserve all three subsystems (the intake, indexer, and shooter) the entire time, precluding any of those subsystems from performing other operations in their "downtime". To solve this, the subsystems that should only be reserved for the composition while they are participating in it should have their commands proxied.
+Command groups and compositions inherit the union of their compoments' requirements and requirements are immutable. Therefore, a SequentialCommandGroup that intakes a game piece, indexes it, aims a shooter, and shoots it would reserve all three subsystems (the intake, indexer, and shooter), precluding any of those subsystems from performing other operations in their "downtime". To solve this, the subsystems that should only be reserved for the composition while they are participating in it should have their commands proxied.
 
 .. note:: Because proxied commands still require their subsystem, despite not leaking that requirement to the group, all of the commands that require a given subsystem must be proxied if one of them is. Otherwise, when the proxied command is scheduled its requirement will conflict with that of the group, cancelling the group.
 
