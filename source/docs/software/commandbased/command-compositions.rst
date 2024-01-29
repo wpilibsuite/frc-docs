@@ -208,10 +208,10 @@ By default, composition members are run through the command composition, and are
 
 Command groups and compositions inherit the union of their compoments' requirements and requirements are immutable. Therefore, a SequentialCommandGroup that intakes a game piece, indexes it, aims a shooter, and shoots it would reserve all three subsystems (the intake, indexer, and shooter), precluding any of those subsystems from performing other operations in their "downtime". To solve this, the subsystems that should only be reserved for the composition while they are participating in it should have their commands proxied.
 
-.. note:: Because proxied commands still require their subsystem, despite not leaking that requirement to the group, all of the commands that require a given subsystem must be proxied if one of them is. Otherwise, when the proxied command is scheduled its requirement will conflict with that of the group, cancelling the group.
+.. note:: Because proxied commands still require their subsystem, despite not leaking that requirement to the group, all of the commands that require a given subsystem must be proxied if one of them is. Otherwise, when the proxied command is scheduled its requirement will conflict with that of the group, canceling the group.
 
 .. tab-set-code::
-   
+
    .. code-block:: java
       // Group requirements are indexer and shooter, intake still reserved during its command but not afterwards
       Commands.sequence(
@@ -219,7 +219,7 @@ Command groups and compositions inherit the union of their compoments' requireme
          indexer.processGamePiece(),
          shooter.aimAndShoot()
       );
-   
+
    .. code-block:: c++
       // Group requirements are indexer and shooter, intake still reserved during its command but not afterwards
       frc2::cmd::Sequence(
