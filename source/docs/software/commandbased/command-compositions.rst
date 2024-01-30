@@ -213,6 +213,7 @@ Command groups and compositions inherit the union of their compoments' requireme
 .. tab-set-code::
 
    .. code-block:: java
+
       // Group requirements are indexer and shooter, intake still reserved during its command but not afterwards
       Commands.sequence(
          intake.intakeGamePiece().asProxy(), // we want to let the intake intake another game piece while we are processing this one
@@ -221,6 +222,7 @@ Command groups and compositions inherit the union of their compoments' requireme
       );
 
    .. code-block:: c++
+
       // Group requirements are indexer and shooter, intake still reserved during its command but not afterwards
       frc2::cmd::Sequence(
          intake.TntakeGamePiece().asProxy(), // we want to let the intake intake another game piece while we are processing this one
