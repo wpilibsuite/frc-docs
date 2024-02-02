@@ -13,9 +13,12 @@ Prior To Departing For The Competition
 1. Dedicate a laptop to be used solely as a driver station. Many teams do. A dedicated machine allows you manage the configuration for one goal – being ready to compete at the field. Dedicated means no other software except the FRC-provided Driver Station software and associated Dashboard installed or running.
 2. Use a business-class laptop for your driver station. Why? They're much more durable than the $300 Black Friday special at Best Buy. They'll survive being banged around at the competition. Business-class laptops have higher quality device drivers, and the drivers are maintained for a longer period than consumer laptops. This makes your investment last longer. Lenovo ThinkPad T series and Dell Latitude are two popular business-class brands you'll commonly see at competitions. There are thousands for sale every day on eBay. The laptop provided in recent rookie kits is a good entry level machine. Teams often graduate from it to bigger displays as they do more with vision and dashboards.
 3. Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboard software uses very few system resources, so you don't need to buy a new laptop -- instead, buy a cheap 4-5 year old used one. You might even get one donated by a used computer store in your area.
+
+.. note:: Before buying a used laptop ensure it is compatible with `Windows 11 <https://support.microsoft.com/en-us/windows/windows-11-system-requirements-86c11283-ea52-4782-9efd-7674389a7ba3>`__. For example, only Intel 8th generation core processors and later are compatible.
+
 4. Laptop recommended features
 
-   a. RAM -- 4GB of RAM
+   a. RAM -- 8GB of RAM or greater
    b. A display size of 13" or greater, with minimum resolution of 1440x1050.
    c. Ports
 
@@ -25,8 +28,9 @@ Prior To Departing For The Competition
       iv. 2 USB ports minimum
 
    d. A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
-   e. A solid-state disk (SSD). If the laptop has a rotating disk, spend $50 and replace it with a SSD.
-   f. Updated to the current release of Windows 10 or 11. Being the most common OS now seen at competitions, bugs are more likely to be found and fixed for Windows 10 and 11 than on older Windows versions.
+   e. A solid-state disk (SSD), 256 GB or larger. If the laptop has a rotating disk, spend $50 and replace it with a SSD.
+   f. Updated to the current release of Windows 10 or 11.
+   g. A laptop that supports Wi-Fi 6E (6 GHz) is recommended for use with the `Wi-Fi 6E radio <https://www.firstinspires.org/robotics/frc/blog/2023-technology-updates-past-present-future-and-beyond>`__ for 2025 and later.
 
 5. Install all Windows updates a week before the competition. This allows you time to ensure the updates will not interfere with driver station functions. To do so, open the Windows Update settings page and see that you're up-to-date. Install pending updates if not. Reboot and check again to make sure you’re up to date.
 6. Change "Active Hours" for Windows Updates to prevent updates from installing during competition hours. Navigate to Start -> Settings -> Update & Security -> Windows Update, then select Change active hours. If you’re traveling to a competition, take time zone differences into account. This will help ensure your driver station does not reboot or fail due to update installing on the field.
