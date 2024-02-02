@@ -20,14 +20,19 @@ Driver Station randomly disabled
 
 **Issue:** The Driver Station contains tighter safety mechanisms in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.
 
-**Workaround:** There are multiple potential causes for tripping the safety mechanisms. The Driver Station software has new tools for control packet delays that could cause this. The control system team requests that teams that experience this issue post screenshots of the :doc:`Driver Station Timing window </docs/software/driverstation/driver-station-timing-viewer>` to `<https://github.com/wpilibsuite/allwpilib/issues/6174>`__
+**Workaround:** There are multiple potential causes for tripping the safety mechanisms.
+
+Driver Station 24.0.1 from Game Tools 2024 Patch 1 contains an update to the safety controls that may resolve the issue in certain circumstances. If the issue is still seen with this version installed, please continue with the troubleshooting steps below.
+
+The Driver Station software has new tools for control packet delays that could cause this. The control system team requests that teams that experience this issue post screenshots of the :doc:`Driver Station Timing window </docs/software/driverstation/driver-station-timing-viewer>` to `<https://github.com/wpilibsuite/allwpilib/issues/6174>`__
 
 Some teams have seen this happen only when the robot is operated wirelessly, but not when operated via USB or ethernet tether. Some potential mitigations:
 
 1. Try relocating the robot radio to a better location (high in the robot and away from motors or large amounts of metal).
 2. :doc:`Measure your robot's bandwidth </docs/networking/networking-introduction/measuring-bandwidth-usage>` and ensure you have margin to the 4 Mbps bandwidth limit
-3. See if the wifi environment is congested using a tool like `WiFi Analyzer <https://apps.microsoft.com/detail/9NBLGGH33N0N?hl=en-US&gl=US>`__. As the 5 ghz WiFi spectrum has more channels and is less crowded, switching the robot radio to operate at 5 ghz will likely improve WiFi communication.
-4. If you operate multiple robots in close proximity in access point mode, setting up a router and operating the radios in bridge mode will reduce the number of wireless access points and may improve communications
+3. See if the Wi-Fi environment is congested using a tool like `WiFi Analyzer <https://apps.microsoft.com/detail/9NBLGGH33N0N?hl=en-US&gl=US>`__. As the 5 ghz WiFi spectrum has more channels and is less crowded, switching the robot radio to operate at 5 ghz will likely improve WiFi communication.
+4. Update the Wi-Fi drivers for the computer.
+5. If you operate multiple robots in close proximity in access point mode, setting up a router and operating the radios in bridge mode will reduce the number of wireless access points and may improve communications
 
 Some teams have seen this happen due to software that is running on the driver station (such as Autodesk updater or Discord). Some potential mitigations:
 
@@ -36,13 +41,6 @@ Some teams have seen this happen due to software that is running on the driver s
 3. Follow the :doc:`Driver Station Best Practices </docs/software/driverstation/driver-station-best-practices>`
 
 If you identify software that interferes with driver station, please post it to `<https://github.com/wpilibsuite/allwpilib/issues/6174>`__
-
-Driver Station internal issue with print error and tags
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** The Driver Station will occasionally print ``internal issue with print error and tags``. The message is caused when the DS reports a message on its side intermixed with messages from the robot; it is not caused by and does not affect robot code.
-
-**Workaround:** This will be fixed in the next Game Tools release. There is no known workaround.
 
 Driver Station Reports Less Free RAM then is Available
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -178,3 +176,13 @@ On Linux/macOS execute the following:
    curl https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -o ~/wpilib/2024/maven/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module
 
 After running those, you’ll need to refresh Java intellisense in VS Code for it to pick up the new files. You can do so by running the ``Clean Java Language Server Workspace`` command in VS Code.
+
+Fixed in Game Tools 2024 Patch 1
+--------------------------------
+
+Driver Station internal issue with print error and tags
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** The Driver Station will occasionally print ``internal issue with print error and tags``. The message is caused when the DS reports a message on its side intermixed with messages from the robot; it is not caused by and does not affect robot code.
+
+**Workaround:** This will be fixed in the next Game Tools release. There is no known workaround.
