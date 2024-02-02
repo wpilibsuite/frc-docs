@@ -25,7 +25,7 @@ Prior To Departing For The Competition
       iv. 2 USB ports minimum
 
    d. A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
-   e. A solid-state disk (SSD), 256 Gb or larger. If the laptop has a rotating disk, spend $50 and replace it with a SSD.
+   e. A solid-state disk (SSD), 256 GB or larger. If the laptop has a rotating disk, spend $50 and replace it with a SSD.
    f. Updated to the current release of Windows 10 or 11.
    g. A laptop that supports Wi-Fi 6E (6 GHz) is recommended for use with the `Wi-Fi 6E radio <https://www.firstinspires.org/robotics/frc/blog/2023-technology-updates-past-present-future-and-beyond>`__ for 2025 and later.
 
