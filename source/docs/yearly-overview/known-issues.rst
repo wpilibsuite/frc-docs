@@ -177,7 +177,7 @@ On Linux/macOS execute the following:
 
 After running those, you’ll need to refresh Java intellisense in VS Code for it to pick up the new files. You can do so by running the ``Clean Java Language Server Workspace`` command in VS Code.
 
-Fixed in Game TGols 2024 Patch 1
+Fixed in Game Tools 2024 Patch 1
 --------------------------------
 
 Driver Station internal issue with print error and tags
