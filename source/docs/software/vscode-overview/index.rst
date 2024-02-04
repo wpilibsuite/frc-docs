@@ -11,4 +11,4 @@ VS Code Overview
    deploying-robot-code
    viewing-console-output
    debugging-robot-program
-   importing-last-years-robot-code-project
+   importing-last-years-robot-code
