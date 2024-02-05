@@ -21,7 +21,7 @@ Recognizing SmartDashboard Connectivity
 .. image:: images/troubleshooting-dashboard-connectivity/smartdashboard-connection.png
    :alt: The titlebar of SmartDashboard showing a connection to IP 172.22.11.2
 
-SmartDashboard indicates if it connected or not in the title bar. It shows the IP address it is connected to. See :ref:`this page <docs/software/dashboards/smartdashboard/smartdashboard-intro:Configuring the Team Number>` for more on configuring the connection.
+SmartDashboard indicates if it is connected or not in the title bar. It shows the IP address it is connected to. See :ref:`this page <docs/software/dashboards/smartdashboard/smartdashboard-intro:Configuring the Team Number>` for more on configuring the connection.
 
 .. image:: images/troubleshooting-dashboard-connectivity/connection-indicator.png
    :alt: Click "View" then "Add..." then Connection indicator to place one on the SmartDashboard.
@@ -42,7 +42,7 @@ Recognizing Glass Connectivity
 .. image:: images/troubleshooting-dashboard-connectivity/glass-connection.png
    :alt: The titlebar of Glass showing a connection to 127.0.0.1
 
-GSmartDashboard indicates if it connected or not in the title bar. It shows the IP address it is connected to. See this :ref:`page <docs/software/dashboards/glass/networktables-connection:Establishing NetworkTables Connections>` for more on configuring the connection.
+Glass indicates if it is connected or not in the title bar. It shows the IP address it is connected to. See this :ref:`page <docs/software/dashboards/glass/networktables-connection:Establishing NetworkTables Connections>` for more on configuring the connection.
 
 Recognizing AdvantageScope Connectivity
 ---------------------------------------
@@ -50,7 +50,7 @@ Recognizing AdvantageScope Connectivity
 .. image:: images/troubleshooting-dashboard-connectivity/advantagescope-connection.png
    :alt: The titlebar of AdvantageScope showing a connection to 172.22.11.2
 
-AdvantageScope indicates if it connected or not in the title bar. It shows the IP address it is connected to, or else the IP address it is attempting to connect to. See the `AdvantageScope Documentation <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/OPEN-LIVE.md>`__ for more on configuring the connection.
+AdvantageScope indicates if it is connected or not in the title bar. It shows the IP address it is connected to, or else the IP address it is attempting to connect to. See the `AdvantageScope Documentation <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/OPEN-LIVE.md>`__ for more on configuring the connection.
 
 Troubleshooting Connectivity
 ----------------------------
