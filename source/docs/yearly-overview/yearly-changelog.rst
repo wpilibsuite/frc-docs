@@ -10,7 +10,7 @@ It's recommended to also review the list of :doc:`known issues <known-issues>`.
 Importing Projects from Previous Years
 --------------------------------------
 
-Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2024 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2023 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
+Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2024 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2023 projects must be :doc:`imported </docs/software/vscode-overview/importing-last-years-robot-code>` to be compatible.
 
 Major Changes (Java/C++)
 ------------------------
