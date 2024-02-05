@@ -21,7 +21,7 @@ Recognizing SmartDashboard Connectivity
 .. image:: images/troubleshooting-dashboard-connectivity/smartdashboard-connection.png
    :alt: The titlebar of SmartDashboard showing a connection to IP 172.22.11.2
 
-SmartDashboard indicates if it connected or not in the title bar. See :ref:`this page <docs/software/dashboards/smartdashboard/smartdashboard-intro:Configuring the Team Number>` for more on configuring the connection.
+SmartDashboard indicates if it connected or not in the title bar. It shows the IP address it is connected to. See :ref:`this page <docs/software/dashboards/smartdashboard/smartdashboard-intro:Configuring the Team Number>` for more on configuring the connection.
 
 .. image:: images/troubleshooting-dashboard-connectivity/connection-indicator.png
    :alt: Click "View" then "Add..." then Connection indicator to place one on the SmartDashboard.
@@ -42,7 +42,7 @@ Recognizing Glass Connectivity
 .. image:: images/troubleshooting-dashboard-connectivity/glass-connection.png
    :alt: The titlebar of Glass showing a connection to 127.0.0.1
 
-Glass displays if it is connected or not in the bar across the top.  See this :ref:`page <docs/software/dashboards/glass/networktables-connection:Establishing NetworkTables Connections>` for more on configuring the connection.
+GSmartDashboard indicates if it connected or not in the title bar. It shows the IP address it is connected to. See this :ref:`page <docs/software/dashboards/glass/networktables-connection:Establishing NetworkTables Connections>` for more on configuring the connection.
 
 Recognizing AdvantageScope Connectivity
 ---------------------------------------
