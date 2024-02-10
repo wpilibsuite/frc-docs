@@ -293,3 +293,4 @@
 "docs/software/pathplanning/system-identification/identification-routine.rst" "docs/software/advanced-controls/system-identification/running-routine.rst"
 "docs/software/advanced-controls/geometry/coordinate-systems.rst" "docs/software/basic-programming/coordinate-system.rst"
 "docs/software/vscode-overview/importing-gradle-project.rst" "docs/software/vscode-overview/importing-last-years-robot-code.rst"
+"docs/software/dashboards/labview-dashboard/troubleshooting-dashboard-connectivity.rst" "docs/software/dashboards/troubleshooting-dashboard-connectivity.rst"

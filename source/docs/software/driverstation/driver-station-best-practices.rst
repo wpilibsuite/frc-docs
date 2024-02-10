@@ -75,3 +75,5 @@ Before Each Match
    a. In the USB tab in the FRC Driver Station software, drag and drop to assign joysticks as needed.
    b. Use the rescan button (F1) if joysticks / controllers do not appear green
    c. Use the rescan button (F1) during competition if joystick or controllers become unplugged and then are plugged back in or otherwise turn gray during competition.
+
+6. Ensure your :doc:`Dashboard is connected to the robot </docs/software/dashboards/troubleshooting-dashboard-connectivity>` after your driver station connects to the robot.
