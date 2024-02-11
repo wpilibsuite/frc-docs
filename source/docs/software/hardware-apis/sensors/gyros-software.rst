@@ -230,20 +230,27 @@ The following example shows how to stabilize heading using a simple P loop close
         double kP = 1;
 
         // Initialize motor controllers and drive
-        Spark left1 = new Spark(0);
-        Spark left2 = new Spark(1);
+        Spark leftLeader = new Spark(0);
+        Spark leftFollower = new Spark(1);
 
-        Spark right1 = new Spark(2);
-        Spark right2 = new Spark(3);
+        Spark rightLeader = new Spark(2);
+        Spark rightFollower = new Spark(3);
 
-        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
-
-        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
+        DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
 
         @Override
         public void robotInit() {
-            rightMotors.setInverted(true);
+            // Configures the encoder's distance-per-pulse
+            // The robot moves forward 1 foot per encoder rotation
+            // There are 256 pulses per encoder rotation
+            encoder.setDistancePerPulse(1./256.);
+
+            // Invert the right side of the drivetrain. You might have to invert the other side
+            rightLeader.setInverted(true);
+
+            // Configure the followers to follow the leaders
+            leftLeader.addFollower(leftFollower);
+            rightLeader.addFollower(rightFollower);
         }
 
         @Override
@@ -263,18 +270,22 @@ The following example shows how to stabilize heading using a simple P loop close
         double kP = 1;
 
         // Initialize motor controllers and drive
-        frc::Spark left1{0};
-        frc::Spark left2{1};
-        frc::Spark right1{2};
-        frc::Spark right2{3};
+        frc::Spark leftLeader{0};
+        frc::Spark leftFollower{1};
 
-        frc::MotorControllerGroup leftMotors{left1, left2};
-        frc::MotorControllerGroup rightMotors{right1, right2};
+        frc::Spark rightLeader{2};
+        frc::Spark rightFollower{3};
 
-        frc::DifferentialDrive drive{leftMotors, rightMotors};
+        frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
+                                     [&](double output) { rightLeader.Set(output); }};
 
         void Robot::RobotInit() {
-          rightMotors.SetInverted(true);
+            // Invert the right side of the drivetrain. You might have to invert the other side
+            rightLeader.SetInverted(true);
+
+            // Configure the followers to follow the leaders
+            leftLeader.AddFollower(leftFollower);
+            rightLeader.AddFollower(rightFollower);
         }
 
         void Robot::AutonomousPeriodic() {
@@ -316,6 +327,8 @@ The following example shows how to stabilize heading using a simple P loop close
 
             # Drives forward continuously at half speed, using the gyro to stabilize the heading
             self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
+
+.. note:: MotorControllerGroup is :term:`deprecated` in 2024. Can you help update the Python example?
 
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the turn rate for heading stabilization, PI loops are particularly effective.
 
