@@ -153,7 +153,7 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
     .. tab-item:: Python
      :sync: Python
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/TankDrive/robot.py
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/TankDrive/robot.py
            :language: python
            :lines: 18-23,27-30
 
@@ -289,7 +289,7 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
         :language: c++
         :lines: 36-40, 43-53, 16, 22-26
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/MecanumDrive/robot.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/MecanumDrive/robot.py
       :language: python
       :lines: 18-22, 26-42
 
