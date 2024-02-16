@@ -90,24 +90,24 @@ The Motor Safety interface of motor controllers can be interacted with by the us
 
     .. code-block:: java
 
-        exampleJaguar.setSafetyEnabled(true);
-        exampleJaguar.setSafetyEnabled(false);
-        exampleJaguar.setExpiration(.1);
-        exampleJaguar.feed()
+        m_motorRight.setSafetyEnabled(true);
+        m_motorRight.setSafetyEnabled(false);
+        m_motorRight.setExpiration(.1);
+        m_motorRight.feed()
 
     .. code-block:: c++
 
-        exampleJaguar->SetSafetyEnabled(true);
-        exampleJaguar->SetSafetyEnabled(false);
-        exampleJaguar->SetExpiration(.1);
-        exampleJaguar->Feed();
+        m_motorRight->SetSafetyEnabled(true);
+        m_motorRight->SetSafetyEnabled(false);
+        m_motorRight->SetExpiration(.1);
+        m_motorRight->Feed();
 
     .. code-block:: python
 
-       exampleJaguar.setSafetyEnabled(True)
-       exampleJaguar.setSafetyEnabled(False)
-       exampleJaguar.setExpiration(.1)
-       exampleJaguar.feed()
+       m_motorRight.setSafetyEnabled(True)
+       m_motorRight.setSafetyEnabled(False)
+       m_motorRight.setExpiration(.1)
+       m_motorRight.feed()
 
 By default all Drive objects enable Motor Safety. Depending on the mechanism and the structure of your program, you may wish to configure the timeout length of the motor safety (in seconds). The timeout length is configured on a per actuator basis and is not a global setting. The default (and minimum useful) value is 100ms.
 
@@ -132,105 +132,74 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
     .. tab-item:: Java
      :sync: Java
 
-        .. code-block:: java
-
-            public class Robot {
-                Spark m_left = new Spark(1);
-                Spark m_right = new Spark(2);
-                DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
-
-                public void robotInit() {
-                    m_left.setInverted(true); // if you want to invert motor outputs, you must do so here
-                }
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/tankdrive/Robot.java
+            :language: java
+            :lines: 17-18,22-23,24-26,30-35,38
 
     .. tab-item:: C++ (Header)
      :sync: C++ (Header)
 
-        .. code-block:: c++
-
-            class Robot {
-                private:
-                    frc::Spark m_left{1};
-                    frc::Spark m_right{2};
-                    frc::DifferentialDrive m_drive{m_left, m_right};
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/TankDrive/cpp/Robot.cpp
+            :language: c++
+            :lines: 15-19
 
     .. tab-item:: C++ (Source)
      :sync: C++ (Source)
 
-        .. code-block:: c++
-
-            void Robot::RobotInit() {
-                m_left.SetInverted(true); // if you want to invert motor outputs, you must do so here
-            }
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/TankDrive/cpp/Robot.cpp
+            :language: c++
+            :lines: 24, 28-32
 
     .. tab-item:: Python
      :sync: Python
 
-
-       .. code-block:: python
-
-          def robotInit(self):
-              left = wpilib.Spark(1)
-              left.setInverted(True) # if you want to invert motor outputs, you can do so here
-              right = wpilib.Spark(2)
-              self.drive = wpilib.drive.DifferentialDrive(left, right)
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/TankDrive/robot.py
+           :language: python
+           :lines: 18-23,27-30
 
 
-Multi-Motor DifferentialDrive with MotorControllerGroups
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Multi-Motor DifferentialDrive
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Many FRC\ |reg| drivetrains have more than 1 motor on each side. In order to use these with DifferentialDrive, the motors on each side have to be collected into a single MotorController, using the MotorControllerGroup class. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and pass them all into the MotorController group constructor (it takes an arbitrary number of inputs).
+Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived from ``PWMMotorController`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_w_m_motor_controller.html>`__ / `Python <https://robotpy.readthedocs.io/projects/robotpy/en/stable/wpilib/PWMMotorController.html>`__) have an ``addFollower`` method so that multiple follower motor controllers can be updated when the leader motor controller is commanded. CAN motor controllers have similar features, review the vendor's documention to see how to use them. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and use additional ``addFollower`` calls.
 
 .. tab-set::
 
     .. tab-item:: Java
      :sync: Java
 
-        .. code-block:: java
+        Class variables (e.g. in Robot.java or Subystem):
 
-            public class Robot {
-                Spark m_frontLeft = new Spark(1);
-                Spark m_rearLeft = new Spark(2);
-                MotorControllerGroup m_left = new MotorControllerGroup(m_frontLeft, m_rearLeft);
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+            :language: java
+            :lines: 19-25
 
-                Spark m_frontRight = new Spark(3);
-                Spark m_rearRight = new Spark(4);
-                MotorControllerGroup m_right = new MotorControllerGroup(m_frontRight, m_rearRight);
-                DifferentialDrive m_drive = new DifferentialDrive(m_left, m_right);
+        In robotInit or Subsystem constructor:
 
-                public void robotInit() {
-                    m_left.setInverted(true); // if you want to invert the entire side you can do so here
-                }
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+            :language: java
+            :lines: 56-62
 
     .. tab-item:: C++ (Header)
      :sync: C++ (Header)
 
-        .. code-block:: c++
-
-            class Robot {
-                public:
-                    frc::Spark m_frontLeft{1};
-                    frc::Spark m_rearLeft{2};
-                    frc::MotorControllerGroup m_left{m_frontLeft, m_rearLeft};
-
-                    frc::Spark m_frontRight{3};
-                    frc::Spark m_rearRight{4};
-                    frc::MotorControllerGroup m_right{m_frontRight, m_rearRight};
-
-                    frc::DifferentialDrive m_drive{m_left, m_right};
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
+            :language: c++
+            :lines: 114, 118-126
 
     .. tab-item:: C++ (Source)
      :sync: C++ (Source)
 
-        .. code-block:: c++
+        In robotInit or Subsystem constructor:
 
-            void Robot::RobotInit() {
-                m_left.SetInverted(true); // if you want to invert the entire side you can do so here
-            }
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+            :language: c++
+            :lines: 23-29
 
     .. tab-item:: Python
      :sync: Python
 
+       .. note:: MotorControllerGroup is :term:`deprecated` in 2024. Can you help update this example?
 
        .. code-block:: python
 
@@ -312,23 +281,17 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumdrive/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumdrive/Robot.java
         :language: java
-        :lines: 24-39
-        :linenos:
-        :lineno-start: 24
+        :lines: 15-18, 24-30, 37-42, 45
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
         :language: c++
-        :lines: 31-44
-        :linenos:
-        :lineno-start: 31
+        :lines: 36-40, 43-53, 16, 22-26
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/MecanumDrive/robot.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/MecanumDrive/robot.py
       :language: python
-      :lines: 27-42
-      :linenos:
-      :lineno-start: 27
+      :lines: 18-22, 26-42
 
 Mecanum Drive Modes
 ^^^^^^^^^^^^^^^^^^^

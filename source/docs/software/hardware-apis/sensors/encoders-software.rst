@@ -468,64 +468,73 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
 
     .. code-block:: java
 
-        // Creates an encoder on DIO ports 0 and 1
-        Encoder encoder = new Encoder(0, 1);
+          // Creates an encoder on DIO ports 0 and 1
+          Encoder encoder = new Encoder(0, 1);
 
-        // Initialize motor controllers and drive
-        Spark left1 = new Spark(0);
-        Spark left2 = new Spark(1);
+          // Initialize motor controllers and drive
+          Spark leftLeader = new Spark(0);
+          Spark leftFollower = new Spark(1);
 
-        Spark right1 = new Spark(2);
-        Spark right2 = new Spark(3);
+          Spark rightLeader = new Spark(2);
+          Spark rightFollower = new Spark(3);
 
-        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
+          DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
 
-        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
+          @Override
+          public void robotInit() {
+              // Configures the encoder's distance-per-pulse
+              // The robot moves forward 1 foot per encoder rotation
+              // There are 256 pulses per encoder rotation
+              encoder.setDistancePerPulse(1./256.);
 
-        @Override
-        public void robotInit() {
-            // Configures the encoder's distance-per-pulse
-            // The robot moves forward 1 foot per encoder rotation
-            // There are 256 pulses per encoder rotation
-            encoder.setDistancePerPulse(1./256.);
-        }
+              // Invert the right side of the drivetrain. You might have to invert the other side
+              rightLeader.setInverted(true);
 
-        @Override
-        public void autonomousPeriodic() {
-            // Drives forward at half speed until the robot has moved 5 feet, then stops:
-            if(encoder.getDistance() < 5) {
-                drive.tankDrive(0.5, 0.5);
-            } else {
-                drive.tankDrive(0, 0);
-            }
-        }
+              // Configure the followers to follow the leaders
+              leftLeader.addFollower(leftFollower);
+              rightLeader.addFollower(rightFollower);
+          }
+
+          @Override
+          public void autonomousPeriodic() {
+              // Drives forward at half speed until the robot has moved 5 feet, then stops:
+              if(encoder.getDistance() < 5) {
+                  drive.tankDrive(0.5, 0.5);
+              } else {
+                  drive.tankDrive(0, 0);
+              }
+          }
 
     .. code-block:: c++
 
-        // Creates an encoder on DIO ports 0 and 1.
+         // Creates an encoder on DIO ports 0 and 1.
         frc::Encoder encoder{0, 1};
 
         // Initialize motor controllers and drive
-        frc::Spark left1{0};
-        frc::Spark left2{1};
+        frc::Spark leftLeader{0};
+        frc::Spark leftFollower{1};
 
-        frc::Spark right1{2};
-        frc::Spark right2{3};
+        frc::Spark rightLeader{2};
+        frc::Spark rightFollower{3};
 
-        frc::MotorControllerGroup leftMotors{left1, left2};
-        frc::MotorControllerGroup rightMotors{right1, right2};
-
-        frc::DifferentialDrive drive{leftMotors, rightMotors};
+        frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
+                                     [&](double output) { rightLeader.Set(output); }};
 
         void Robot::RobotInit() {
             // Configures the encoder's distance-per-pulse
             // The robot moves forward 1 foot per encoder rotation
             // There are 256 pulses per encoder rotation
             encoder.SetDistancePerPulse(1.0/256.0);
+
+            // Invert the right side of the drivetrain. You might have to invert the other side
+            rightLeader.SetInverted(true);
+
+            // Configure the followers to follow the leaders
+            leftLeader.AddFollower(leftFollower);
+            rightLeader.AddFollower(rightFollower);
         }
 
-        void Robot:AutonomousPeriodic() {
+        void Robot::AutonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
             if(encoder.GetDistance() < 5) {
                 drive.TankDrive(0.5, 0.5);
