@@ -42,11 +42,11 @@ Getting your Alliance Color and Doing an Action
 
     from wpilib import DriverStation
 
-    self.ally = DriverStation.getAlliance()
-    if self.ally:
-        if self.ally.value() == DriverStation.Alliance.kRed:
+    ally = DriverStation.getAlliance()
+    if ally is not None:
+        if ally == DriverStation.Alliance.kRed:
             <RED ACTION>
-        if self.ally.value() == DriverStation.Alliance.kBlue:
+        elif ally == DriverStation.Alliance.kBlue:
             <BLUE ACTION>
     else:
         <NO COLOR YET ACTION>

@@ -296,7 +296,7 @@ A simple way to deal with field oriented driving is to check the alliance color 
 
        # The origin is always blue. When our alliance is red, X and Y need to be inverted
        invert = 0
-       if wpilib.DriverStation.GetInstance().GetAlliance() == wpilib.DriverStation.Alliance.kRed:
+       if wpilib.DriverStation.getAlliance() == wpilib.DriverStation.Alliance.kRed:
            invert = -1
 
        # Create field relative ChassisSpeeds for controlling Swerve
