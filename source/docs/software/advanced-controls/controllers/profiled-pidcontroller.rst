@@ -5,7 +5,7 @@ Combining Motion Profiling and PID Control with ProfiledPIDController
 
 In the previous article, we saw how to use the ``TrapezoidProfile`` class to create and use a trapezoidal motion profile.  The example code from that article demonstrates manually composing the ``TrapezoidProfile`` class with the external PID control feature of a "smart" motor controller.
 
-This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ProfiledPIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_profiled_p_i_d_controller.html>`__) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
+This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ProfiledPIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_profiled_p_i_d_controller.html>`__, :external:py:class:`Python <wpimath.controller.ProfiledPIDController>`) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
 
 Using the ProfiledPIDController class
 -------------------------------------
@@ -42,6 +42,18 @@ Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PID
       kP, kI, kD,
       frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq});
 
+  .. code-block:: python
+
+    from wpimath.controller import ProfiledPIDController
+    from wpimath.trajectory import TrapezoidProfile
+
+    # Creates a ProfiledPIDController
+    # Max velocity is 5 meters per second
+    # Max acceleration is 10 meters per second
+    controller = ProfiledPIDController(
+      kP, kI, kD,
+      TrapezoidProfile.Constraints(5, 10))
+
 Goal vs Setpoint
 ^^^^^^^^^^^^^^^^
 
@@ -60,6 +72,12 @@ A major difference between a standard ``PIDController`` and a ``ProfiledPIDContr
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
     motor.Set(controller.Calculate(encoder.GetDistance(), goal));
+
+  .. code-block:: python
+
+    # Calculates the output of the PID algorithm based on the sensor reading
+    # and sends it to a motor
+    motor.set(controller.calculate(encoder.getDistance(), goal))
 
 The specified ``goal`` value (which can be either a position value or a ``TrapezoidProfile.State``, if nonzero velocity is desired) is *not* necessarily the *current* setpoint of the loop - rather, it is the *eventual* setpoint once the generated profile terminates.
 
@@ -107,10 +125,38 @@ The returned setpoint might then be used as in the following example:
       lastTime = frc2::Timer::GetFPGATimestamp();
     }
 
+  .. code-block:: python
+
+    from wpilib import Timer
+    from wpilib.controller import ProfiledPIDController
+    from wpilib.controller import SimpleMotorFeedforward
+
+
+    def __init__(self):
+
+        # Assuming encoder, motor, controller are already defined
+        self.lastSpeed = 0
+        self.lastTime = Timer.getFPGATimestamp()
+
+        # Assuming feedforward is a SimpleMotorFeedforward object
+        self.feedforward = SimpleMotorFeedforward(ks=0.0, kv=0.0, ka=0.0)
+
+    def goToPosition(self, goalPosition: float):
+
+        pidVal = self.controller.calculate(self.encoder.getDistance(), goalPosition)
+        acceleration = (self.controller.getSetpoint().velocity - self.lastSpeed) / (Timer.getFPGATimestamp() - self.lastTime)
+
+        self.motor.setVoltage(
+            pidVal
+            + self.feedforward.calculate(self.controller.getSetpoint().velocity, acceleration))
+
+        self.lastSpeed = controller.getSetpoint().velocity
+        self.lastTime = Timer.getFPGATimestamp()
+
 Complete Usage Example
 ----------------------
 
-A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp>`__):
+A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp>`__, `Python <https://github.com/robotpy/examples/tree/main/ElevatorProfiledPID>`__):
 
 .. tab-set-code::
 
@@ -125,3 +171,9 @@ A more complete example of ``ProfiledPIDController`` usage is provided in the El
     :lines: 5-
     :linenos:
     :lineno-start: 5
+
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/ElevatorProfiledPID/robot.py
+    :language: python
+    :lines: 8-
+    :linenos:
+    :lineno-start: 8

@@ -11,7 +11,7 @@ Trapezoidal Motion Profiles in WPILib
 
 While feedforward and feedback control offer convenient ways to achieve a given setpoint, we are often still faced with the problem of generating setpoints for our mechanisms.  While the naive approach of immediately commanding a mechanism to its desired state may work, it is often suboptimal.  To improve the handling of our mechanisms, we often wish to command mechanisms to a *sequence* of setpoints that smoothly interpolate between its current state, and its desired goal state.
 
-To help users do this, WPILib provides a ``TrapezoidProfile`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile.html>`__).
+To help users do this, WPILib provides a ``TrapezoidProfile`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile.html>`__, :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile>`).
 
 Creating a TrapezoidProfile
 ---------------------------
@@ -23,7 +23,7 @@ Constraints
 
 .. note:: The various :ref:`feedforward helper classes <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>` provide methods for calculating the maximum simultaneously-achievable velocity and acceleration of a mechanism.  These can be very useful for calculating appropriate motion constraints for your ``TrapezoidProfile``.
 
-In order to create a trapezoidal motion profile, we must first impose some constraints on the desired motion.  Namely, we must specify a maximum velocity and acceleration that the mechanism will be expected to achieve during the motion.  To do this, we create an instance of the ``TrapezoidProfile.Constraints`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.Constraints.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile_1_1_constraints.html>`__):
+In order to create a trapezoidal motion profile, we must first impose some constraints on the desired motion.  Namely, we must specify a maximum velocity and acceleration that the mechanism will be expected to achieve during the motion.  To do this, we create an instance of the ``TrapezoidProfile.Constraints`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.Constraints.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile_1_1_constraints.html>`__, :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile.Constraints>`):
 
 .. tab-set-code::
 
@@ -41,10 +41,19 @@ In order to create a trapezoidal motion profile, we must first impose some const
     // Max acceleration of 20 meters per second squared
     frc::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq};
 
+  .. code-block:: python
+
+    from wpimath.trajectory import TrapezoidProfile
+
+    # Creates a new set of trapezoidal motion profile constraints
+    # Max velocity of 10 meters per second
+    # Max acceleration of 20 meters per second squared
+    TrapezoidProfile.Constraints(10, 20)
+
 Start and End States
 ^^^^^^^^^^^^^^^^^^^^
 
-Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.State.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile_1_1_state.html>`__).  Each state has a position and a velocity:
+Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.State.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile_1_1_state.html>`__, :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile.State>`).  Each state has a position and a velocity:
 
 .. tab-set-code::
 
@@ -59,6 +68,14 @@ Next, we must specify the desired starting and ending states for our mechanisms 
     // Creates a new state with a position of 5 meters
     // and a velocity of 0 meters per second
     frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps};
+
+  .. code-block:: python
+
+    from wpimath.trajectory import TrapezoidProfile
+
+    # Creates a new state with a position of 5 meters
+    # and a velocity of 0 meters per second
+    TrapezoidProfile.State(5, 0)
 
 Putting It All Together
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -83,6 +100,15 @@ Now that we know how to create a set of constraints and the desired start/end st
     // Profile will have a max acceleration of 10 meters per second squared
     frc::TrapezoidProfile<units::meters> profile{
       frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq}};
+
+  .. code-block:: python
+
+    from wpimath.trajectory import TrapezoidProfile
+
+    # Creates a new TrapezoidProfile
+    # Profile will have a max vel of 5 meters per second
+    # Profile will have a max acceleration of 10 meters per second squared
+    profile = TrapezoidProfile(TrapezoidProfile.Constraints(5, 10))
 
 Using a ``TrapezoidProfile``
 ----------------------------
@@ -110,6 +136,13 @@ Once we've created a ``TrapezoidProfile``, using it is very simple: to get the p
     frc::TrapezoidProfile<units::meters>::State{0_m, 0_mps},
     frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps});
 
+  .. code-block:: python
+
+    # Profile will start stationary at zero position
+    # Profile will end stationary at 5 meters
+    # Returns the motion profile state after 5 seconds of motion
+    profile.calculate(5, TrapezoidProfile.State(0, 0), TrapezoidProfile.State(5, 0))
+
 Using the State
 ^^^^^^^^^^^^^^^
 
@@ -127,12 +160,17 @@ The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same on
     auto setpoint = profile.Calculate(elapsedTime, initialState, goalState);
     controller.Calculate(encoder.GetDistance(), setpoint.position.value());
 
+  .. code-block:: python
+
+    setpoint = profile.calculate(elapsedTime, initialState, goalState)
+    controller.calculate(encoder.getDistance(), setpoint.position)
+
 Complete Usage Example
 ----------------------
 
 .. note:: In this example, the initial state is re-computed every timestep. This is a somewhat different usage technique than is detailed above, but works according to the same principles - the profile is sampled at a time corresponding to the loop period to get the setpoint for the next loop iteration.
 
-A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp>`__):
+A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp>`__, `Python <https://github.com/robotpy/examples/tree/main/ElevatorTrapezoidProfile>`__):
 
 .. tab-set-code::
 
@@ -147,3 +185,9 @@ A more complete example of ``TrapezoidProfile`` usage is provided in the Elevato
     :lines: 5-
     :linenos:
     :lineno-start: 5
+
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/ElevatorTrapezoidProfile/robot.py
+    :language: python
+    :lines: 8-
+    :linenos:
+    :lineno-start: 8
