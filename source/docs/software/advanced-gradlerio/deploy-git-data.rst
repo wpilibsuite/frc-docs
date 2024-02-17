@@ -3,6 +3,8 @@ Including Git Data in Deploy
 
 This article will explain how to include metadata from Git in robot code using the `gversion <https://github.com/lessthanoptimal/gversion-plugin>`__ Gradle plugin. This generates a file which can be used for accessing Git metadata in robot code. This can be used to track what revision of code is on the robot, such as by printing or logging it.
 
+.. note:: For Python teams, Git metadata is always copied to your robot during the deploy process. You can use :external:py:func:`wpilib.deployinfo.getDeployData` to retrieve the stored information.
+
 Installing gversion
 -------------------
 
