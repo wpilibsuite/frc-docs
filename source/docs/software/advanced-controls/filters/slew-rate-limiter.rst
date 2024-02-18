@@ -7,7 +7,7 @@ A common use for filters in FRC\ |reg| is to soften the behavior of control inpu
 
 A slew rate limiter can be thought of as a sort of primitive motion profile.  In fact, the slew rate limiter is the first-order equivalent of the :ref:`Trapezoidal Motion Profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` supported by WPILib - it is precisely the limiting case of trapezoidal motion when the acceleration constraint is allowed to tend to infinity.  Accordingly, the slew rate limiter is a good choice for applying a de-facto motion profile to a stream of velocity setpoints (or voltages, which are usually approximately proportional to velocity).  For input streams that control positions, it is usually better to use a proper trapezoidal profile.
 
-Slew rate limiting is supported in WPILib through the ``SlewRateLimiter`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/SlewRateLimiter.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_slew_rate_limiter.html>`__).
+Slew rate limiting is supported in WPILib through the ``SlewRateLimiter`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/SlewRateLimiter.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_slew_rate_limiter.html>`__, :external:py:class:`Python <wpimath.filter.SlewRateLimiter>`).
 
 Creating a SlewRateLimiter
 --------------------------
@@ -30,6 +30,13 @@ Creating a SlewRateLimiter is simple:
     // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 volts per second
     frc::SlewRateLimiter<units::volts> filter{0.5_V / 1_s};
 
+  .. code-block:: python
+
+    from wpimath.filter import SlewRateLimiter
+
+    # Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 units per second
+    filter = SlewRateLimiter(0.5)
+
 Using a SlewRateLimiter
 -----------------------
 
@@ -46,6 +53,11 @@ Once your filter has been created, using it is easy - simply call the ``calculat
 
     // Calculates the next value of the output
     filter.Calculate(input);
+
+  .. code-block:: python
+
+    # Calculates the next value of the output
+    filter.calculate(input)
 
 Using a SlewRateLimiter with DifferentialDrive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -71,3 +83,11 @@ A typical use of a SlewRateLimiter is to limit the acceleration of a robot's dri
 
     // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
     drivetrain.ArcadeDrive(filter.Calculate(forward), turn);
+
+  .. code-block:: python
+
+    # Ordinary call with no ramping applied
+    drivetrain.arcadeDrive(forward, turn)
+
+    # Slew-rate limits the forward/backward input, limiting forward/backward acceleration
+    drivetrain.arcadeDrive(filter.calculate(forward), turn)
