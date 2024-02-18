@@ -14,6 +14,8 @@ Memory Concerns
 
 When a large number of objects are created, it increases the overall memory footprint of the application. While the overhead for a single object may be insignificant, it can become substantial when multiplied by a large number of objects.
 
+.. note:: :doc:`VisualVM </docs/software/advanced-gradlerio/profiling-with-visualvm>` can be used to see where memory is allocated.
+
 Performance Concerns
 ^^^^^^^^^^^^^^^^^^^^
 
