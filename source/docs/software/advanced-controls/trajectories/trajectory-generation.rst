@@ -45,18 +45,18 @@ When using clamped cubic splines, the length of the array must be 2 (0th and 1st
 
 Here is an example of generating a trajectory using clamped cubic splines for the 2018 game, FIRST Power Up:
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Java
+   .. tab-item:: Java
 
       .. literalinclude:: examples/trajectory-generation-1/java/ExampleTrajectory.java
          :language: java
          :lines: 10-32
 
-   .. tab:: C++
+   .. tab-item:: C++
 
       .. literalinclude:: examples/trajectory-generation-1/cpp/ExampleTrajectory.cpp
-         :language: cpp
+         :language: c++
          :lines: 8-22
 
 .. note:: The Java code utilizes the `Units <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/util/Units.html>`_ utility, for easy unit conversions.
@@ -70,9 +70,9 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
 
 .. warning:: It is up to the user to ensure that the end of the initial and start of the appended trajectory match. It is also the user's responsibility to ensure that the start and end velocities of their trajectories match.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       var trajectoryOne =
       TrajectoryGenerator.generateTrajectory(
@@ -90,7 +90,7 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
 
       var concatTraj = trajectoryOne.concatenate(trajectoryTwo);
 
-   .. code-tab:: cpp
+   .. code-block:: c++
 
       auto trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
          frc::Pose2d(0_m, 0_m, 0_rad),

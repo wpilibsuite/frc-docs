@@ -16,11 +16,11 @@ The mandatory arguments are:
 
 The fourth optional argument is the starting pose of your robot on the field (as a ``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = 0``.
 
-.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :ref:`Field Coordinate System <docs/software/advanced-controls/geometry/coordinate-systems:Field Coordinate System>` for more information about the coordinate system.
+.. note:: 0 degrees / radians represents the robot angle when the robot is facing directly toward your opponent's alliance station. As your robot turns to the left, your gyroscope angle should increase. The ``Gyro`` interface supplies ``getRotation2d``/``GetRotation2d`` that you can use for this purpose. See :doc:`/docs/software/basic-programming/coordinate-system` for more information about the coordinate system.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       // Locations for the swerve drive modules relative to the robot center.
       Translation2d m_frontLeftLocation = new Translation2d(0.381, 0.381);
@@ -45,7 +45,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
           m_backRightModule.getPosition()
         }, new Pose2d(5.0, 13.5, new Rotation2d()));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Locations for the swerve drive modules relative to the robot center.
       frc::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
@@ -67,6 +67,42 @@ The fourth optional argument is the starting pose of your robot on the field (as
         m_backLeft.GetPosition(), m_backRight.GetPosition()},
         frc::Pose2d{5_m, 13.5_m, 0_rad}};
 
+   .. code-block:: python
+
+      # Python requires using the right class for the number of modules you have
+      # For both the Kinematics and Odometry classes
+
+      from wpimath.geometry import Translation2d
+      from wpimath.kinematics import SwerveDrive4Kinematics
+      from wpimath.kinematics import SwerveDrive4Odometry
+      from wpimath.geometry import Pose2d
+      from wpimath.geometry import Rotation2d
+
+      class MyRobot:
+        def robotInit(self):
+          # Locations for the swerve drive modules relative to the robot center.
+          frontLeftLocation = Translation2d(0.381, 0.381)
+          frontRightLocation = Translation2d(0.381, -0.381)
+          backLeftLocation = Translation2d(-0.381, 0.381)
+          backRightLocation = Translation2d(-0.381, -0.381)
+
+          # Creating my kinematics object using the module locations
+          self.kinematics = SwerveDrive4Kinematics(
+            frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
+          )
+
+          # Creating my odometry object from the kinematics object and the initial wheel positions.
+          # Here, our starting pose is 5 meters along the long end of the field and in the
+          # center of the field along the short end, facing the opposing alliance wall.
+          self.odometry = SwerveDrive4Odometry(
+            self.kinematics, self.gyro.getRotation2d(),
+            (
+              self.frontLeftModule.getPosition(),
+              self.frontRightModule.getPosition(),
+              self.backLeftModule.getPosition(),
+              self.backRightModule.getPosition()
+            ),
+            Pose2d(5.0, 13.5, Rotation2d()))
 
 Updating the robot pose
 -----------------------
@@ -74,9 +110,9 @@ The ``update`` method of the odometry class updates the robot position on the fi
 
 This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       @Override
       public void periodic() {
@@ -91,7 +127,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
           });
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       void Periodic() override {
         // Get the rotation of the robot from the gyro.
@@ -103,7 +139,20 @@ This ``update`` method must be called periodically, preferably in the ``periodic
             m_frontLeftModule.GetPosition(), m_frontRightModule.GetPosition(),
             m_backLeftModule.GetPosition(), m_backRightModule.GetPosition()
           };
+        )
       }
+
+   .. code-block:: python
+
+      def periodic(self):
+        # Get the rotation of the robot from the gyro.
+        self.gyroAngle = self.gyro.getRotation2d()
+
+        # Update the pose
+        self.pose = self.odometry.update(self.gyroAngle,
+            self.frontLeftModule.getPosition(), self.frontRightModule.getPosition(),
+            self.backLeftModule.getPosition(), self.backRightModule.getPosition()
+        )
 
 Resetting the Robot Pose
 ------------------------
@@ -111,6 +160,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important::  If at any time, you decide to reset your gyroscope or wheel encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel encoder positions.
 
-.. note:: The implementation of ``getPosition() / GetPosition()`` above is left to the user. The idea is to get the module position (distance and angle) from each module. For a full example, see here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`_.
+.. note:: The implementation of ``getPosition() / GetPosition()`` above is left to the user. The idea is to get the module position (distance and angle) from each module. For a full example, see here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`_ / `Python <https://github.com/robotpy/examples/tree/main/SwerveBot>`
 
-In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java) methods can be used to retrieve the current robot pose without an update.
+In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.

@@ -8,6 +8,7 @@ Driver Station
    driver-station-best-practices
    driver-station-log-viewer
    driver-station-errors-warnings
+   driver-station-timing-viewer
    programming-radios-for-fms-offseason
-   imaging-your-classmate
    manually-setting-the-driver-station-to-start-custom-dashboard
+

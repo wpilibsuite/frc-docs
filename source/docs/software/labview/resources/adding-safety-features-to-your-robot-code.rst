@@ -8,7 +8,7 @@ There are built-in functions for the motors that allow easy implementation of sa
 - Robot Drive Safety Configuration
 - Motor Drive Safety Configuration
 - Relay Safety Configuration
-- PWM Safety Configuration
+- :term:`PWM` Safety Configuration
 - Solenoid Safety Configuration
 - Robot Drive Delay and Update Safety
 

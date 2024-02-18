@@ -5,23 +5,19 @@ Since the ``Sendable`` interface only has one method, writing your own classes t
 
 For example, here is the implementation of ``initSendable`` from WPILib's ``BangBangController``:
 
-.. tabs::
+.. tab-set-code::
 
-    .. group-tab:: Java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
+        :language: java
+        :lines: 151-159
+        :linenos:
+        :lineno-start: 151
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
-           :language: java
-           :lines: 150-158
-           :linenos:
-           :lineno-start: 150
-
-    .. group-tab:: C++
-
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpimath/src/main/native/cpp/controller/BangBangController.cpp
-           :language: cpp
-           :lines: 58-72
-           :linenos:
-           :lineno-start: 58
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpimath/src/main/native/cpp/controller/BangBangController.cpp
+        :language: c++
+        :lines: 55-69
+        :linenos:
+        :lineno-start: 55
 
 To enable the automatic updating of values by WPILib "in the background", ``Sendable`` data names are bound to getter and setter functions rather than specific data values.  If a field that you wish to log has no defined setters and getters, they can be defined inline with a lambda expression.
 
@@ -50,22 +46,18 @@ Since ``Sendable`` allows users to consume arbitrary values from the dashboard, 
 
 To help users ensure safety when interfacing with dashboard values, ``SendableBuilder`` exposes a ``setSafeState`` method, which is called to place any ``Sendable`` mechanism that actuates based on dashboard input into a safe state.  Any potentially hazardous user-written ``Sendable`` implementation should call ``setSafeState`` with a suitable safe state implementation.  For example, here is the implementation from the WPILib ``PWMMotorController`` class:
 
-.. tabs::
+.. tab-set-code::
 
-    .. group-tab:: Java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
+        :language: java
+        :lines: 120-126
+        :linenos:
+        :lineno-start: 120
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.java
-           :language: java
-           :lines: 118-124
-           :linenos:
-           :lineno-start: 118
-
-    .. group-tab:: C++
-
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
-           :language: cpp
-           :lines: 54-60
-           :linenos:
-           :lineno-start: 54
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibc/src/main/native/cpp/motorcontrol/PWMMotorController.cpp
+        :language: c++
+        :lines: 56-62
+        :linenos:
+        :lineno-start: 56
 
 Additionally, users may call ``builder.setActuator(true)`` to mark any mechanism that might move as a result of ``Sendable`` input as an actuator.  Currently, this is used by :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>` to disable actuator widgets when not in :ref:`LiveWindow <docs/controls-overviews/control-system-software:LiveWindow>` mode.

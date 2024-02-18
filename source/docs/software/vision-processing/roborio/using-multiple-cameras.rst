@@ -6,9 +6,12 @@ Switching the Driver Views
 
 If you're interested in just switching what the driver sees, and are using SmartDashboard, the SmartDashboard CameraServer Stream Viewer has an option ("Selected Camera Path") that reads the given :term:`NetworkTables` key and changes the "Camera Choice" to that value (displaying that camera). The robot code then just needs to set the :term:`NetworkTables` key to the correct camera name. Assuming "Selected Camera Path" is set to "CameraSelection", the following code uses the joystick 1 trigger button state to show camera1 and camera2.
 
-.. tabs::
+.. tab-set::
 
-    .. code-tab:: java
+  .. tab-item:: Java
+    :sync: tabcode-java
+
+    .. code-block:: java
 
        UsbCamera camera1;
        UsbCamera camera2;
@@ -34,7 +37,10 @@ If you're interested in just switching what the driver sees, and are using Smart
            }
        }
 
-    .. code-tab:: c++
+  .. tab-item:: C++
+    :sync: tabcode-c++
+
+    .. code-block:: c++
 
        cs::UsbCamera camera1;
        cs::UsbCamera camera2;
@@ -59,11 +65,49 @@ If you're interested in just switching what the driver sees, and are using Smart
          }
        }
 
+  .. tab-item:: PYTHON
+    :sync: tabcode-python
+
+    ``robot.py`` contents:
+
+    .. code-block:: python
+
+       import wpilib
+       from ntcore import NetworkTableInstance
+
+       class MyRobot(wpilib.TimedRobot):
+           def robotInit(self):
+               self.joy1 = wpilib.Joystick(0)
+               self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
+               wpilib.CameraServer.launch("vision.py:main")
+
+           def teleopPeriodic(self):
+               if self.joy1.getTriggerPressed():
+                   print("Setting camera 2")
+                   self.cameraSelection.setString("USB Camera 1")
+               elif self.joy1.getTriggerReleased():
+                   print("Setting camera 1")
+                   self.cameraSelection.setString("USB Camera 0")
+
+    ``vision.py`` contents:
+
+    .. code-block:: python
+
+       from cscore import CameraServer
+
+       def main():
+           CameraServer.enableLogging()
+
+           camera1 = CameraServer.startAutomaticCapture(0)
+           camera2 = CameraServer.startAutomaticCapture(1)
+
+           CameraServer.waitForever()
+
 If you're using some other dashboard, you can change the camera used by the camera server dynamically. If you open a stream viewer nominally to camera1, the robot code will change the stream contents to either camera1 or camera2 based on the joystick trigger.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
        UsbCamera camera1;
        UsbCamera camera2;
@@ -88,7 +132,7 @@ If you're using some other dashboard, you can change the camera used by the came
            }
        }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
        cs::UsbCamera camera1;
        cs::UsbCamera camera2;
@@ -113,14 +157,22 @@ If you're using some other dashboard, you can change the camera used by the came
          prevTrigger = joy1.GetTrigger();
        }
 
+    .. code-block:: python
+
+       # Setting the source directly via joystick isn't possible in Python, you
+       # should use NetworkTables as shown above instead
+
 Keeping Streams Open
 --------------------
 
 By default, the cscore library is pretty aggressive in turning off cameras not in use. What this means is that when you switch cameras, it may disconnect from the camera not in use, so switching back will have some delay as it reconnects to the camera. To keep both camera connections open, use the ``SetConnectionStrategy()`` method to tell the library to keep the streams open, even if you aren't using them.
 
-.. tabs::
+.. tab-set::
 
-    .. code-tab:: java
+  .. tab-item:: Java
+    :sync: tabcode-java
+
+    .. code-block:: java
 
        UsbCamera camera1;
        UsbCamera camera2;
@@ -148,7 +200,10 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
            }
        }
 
-    .. code-tab:: c++
+  .. tab-item:: C++
+    :sync: tabcode-c++
+
+    .. code-block:: c++
 
        cs::UsbCamera camera1;
        cs::UsbCamera camera2;
@@ -173,6 +228,47 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
          }
          prevTrigger = joy1.GetTrigger();
        }
+
+  .. tab-item:: PYTHON
+    :sync: tabcode-python
+
+    ``robot.py`` contents:
+
+    .. code-block:: python
+
+       import wpilib
+       from ntcore import NetworkTableInstance
+
+       class MyRobot(wpilib.TimedRobot):
+           def robotInit(self):
+               self.joy1 = wpilib.Joystick(0)
+               self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
+               wpilib.CameraServer.launch("vision.py:main")
+
+           def teleopPeriodic(self):
+               if self.joy1.getTriggerPressed():
+                   print("Setting camera 2")
+                   self.cameraSelection.setString("USB Camera 1")
+               elif self.joy1.getTriggerReleased():
+                   print("Setting camera 1")
+                   self.cameraSelection.setString("USB Camera 0")
+
+    ``vision.py`` contents:
+
+    .. code-block:: python
+
+       from cscore import CameraServer, VideoSource
+
+       def main():
+           CameraServer.enableLogging()
+
+           camera1 = CameraServer.startAutomaticCapture(0)
+           camera2 = CameraServer.startAutomaticCapture(1)
+
+           camera1.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
+           camera2.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
+
+           CameraServer.waitForever()
 
 .. note::
     If both cameras are USB, you may run into USB bandwidth limitations with higher resolutions, as in all of these cases the roboRIO is going to be streaming data from both cameras to the roboRIO simultaneously (for a short period in options 1 and 2, and continuously in option 3). It is theoretically possible for the library to avoid this simultaneity in the option 2 case (only), but this is not currently implemented.

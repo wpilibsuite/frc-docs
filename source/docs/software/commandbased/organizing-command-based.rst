@@ -33,21 +33,21 @@ Inline Commands
 
 The easiest and most expressive way to do this is with a ``StartEndCommand``:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     Command runIntake = Commands.startEnd(() -> intake.set(1), () -> intake.set(0), intake);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::CommandPtr runIntake = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake});
 
 This is sufficient for commands that are only used once. However, for a command like this that might get used in many different autonomous routines and button bindings, inline commands everywhere means a lot of repetitive code:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // RobotContainer.java
     intakeButton.whileTrue(Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake));
@@ -61,7 +61,7 @@ This is sufficient for commands that are only used once. However, for a command 
         Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0)
     );
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     intakeButton.WhileTrue(frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}));
 
@@ -85,9 +85,9 @@ For example, a command like the intake-running command is conceptually related t
 
 .. note:: In this document we will name factory methods as ``lowerCamelCaseCommand``, but teams may decide on other conventions.  In general, it is recommended to end the method name with ``Command`` if it might otherwise be confused with an ordinary method (e.g. ``intake.run`` might be the name of a method that simply turns on the intake).
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     public class Intake extends SubsystemBase {
         // [code for motor controllers, configuration, etc.]
@@ -99,7 +99,7 @@ For example, a command like the intake-running command is conceptually related t
         }
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::CommandPtr Intake::RunIntakeCommand() {
       // implicitly requires `this`
@@ -112,9 +112,9 @@ Since we are inside the ``Intake`` class, technically we can access ``private`` 
 
 Using this new factory method in command groups and button bindings is highly expressive:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     intakeButton.whileTrue(intake.runIntakeCommand());
 
@@ -126,7 +126,7 @@ Using this new factory method in command groups and button bindings is highly ex
         intake.runIntakeCommand().withTimeout(5.0)
     );
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     intakeButton.WhileTrue(intake.RunIntakeCommand());
 
@@ -140,15 +140,15 @@ Using this new factory method in command groups and button bindings is highly ex
 
 Adding a parameter to the ``runIntakeCommand`` method to provide the exact percentage to run the intake is easy and allows for even more flexibility.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     public Command runIntakeCommand(double percent) {
         return new StartEndCommand(() -> this.set(percent), () -> this.set(0.0), this);
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::CommandPtr Intake::RunIntakeCommand() {
       // implicitly requires `this`
@@ -157,15 +157,15 @@ Adding a parameter to the ``runIntakeCommand`` method to provide the exact perce
 
 For instance, this code creates a command group that runs the intake forwards for two seconds, waits for two seconds, and then runs the intake backwards for five seconds.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     Command intakeRunSequence = intake.runIntakeCommand(1.0).withTimeout(2.0)
         .andThen(Commands.waitSeconds(2.0))
         .andThen(intake.runIntakeCommand(-1.0).withTimeout(5.0));
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     frc2::CommandPtr intakeRunSequence = intake.RunIntakeCommand(1.0).WithTimeout(2.0_s)
         .AndThen(frc2::cmd::Wait(2.0_s))
@@ -181,9 +181,9 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
 .. note:: The ``sequence`` and ``parallel`` static factories construct sequential and parallel command groups: this is equivalent to the ``andThen`` and ``alongWith`` decorators, but can be more readable. Their use is a matter of personal preference.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     public class AutoRoutines {
 
@@ -201,7 +201,7 @@ Instance factory methods work great for single-subsystem commands.  However, com
         }
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // TODO
 
@@ -209,9 +209,9 @@ Non-Static Command Factories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our ``AutoRoutines`` class and inject our subsystems through the constructor:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     public class AutoRoutines {
 
@@ -247,15 +247,15 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
         }
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // TODO
 
 Then, elsewhere in our code, we can instantiate an single instance of this class and use it to produce several commands:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     AutoRoutines autoRoutines = new AutoRoutines(this.drivetrain, this.intake);
 
@@ -267,7 +267,7 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
       autoRoutines.driveThenIntake()
     );
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // TODO
 
@@ -280,9 +280,9 @@ However, it is still possible to ergonomically write a stateful command composit
 
 .. note:: The ``Subsystem.run`` and ``Subsystem.runOnce`` factory methods sugar the creation of a ``RunCommand`` and an ``InstantCommand`` requiring ``this`` subsystem.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     public Command turnToAngle(double targetDegrees) {
         // Create a controller for the inline command to capture
@@ -296,7 +296,7 @@ However, it is still possible to ergonomically write a stateful command composit
             .andThen(runOnce(() -> arcadeDrive(0, 0)));
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // TODO
 
@@ -305,18 +305,18 @@ This pattern works very well in Java so long as the captured state is "effective
 Writing Command Classes
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Another possible way to define reusable commands is to write a class that represents the command.  This is typically done by subclassing either ``CommandBase`` or one of the ``CommandGroup`` classes.
+Another possible way to define reusable commands is to write a class that represents the command.  This is typically done by subclassing either ``Command`` or one of the ``CommandGroup`` classes.
 
-Subclassing CommandBase
+Subclassing Command
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Returning to our simple intake command from earlier, we could do this by creating a new subclass of ``CommandBase`` that implements the necessary ``initialize`` and ``end`` methods.
+Returning to our simple intake command from earlier, we could do this by creating a new subclass of ``Command`` that implements the necessary ``initialize`` and ``end`` methods.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
-    public class RunIntakeCommand extends CommandBase {
+    public class RunIntakeCommand extends Command {
         private Intake m_intake;
 
         public RunIntakeCommand(Intake intake) {
@@ -338,7 +338,7 @@ Returning to our simple intake command from earlier, we could do this by creatin
         // isFinished() defaults to return false
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // TODO
 
@@ -352,9 +352,9 @@ Subclassing Command Groups
 
 If we wish to write composite commands as their own classes, we may write a constructor-only subclass of the most exterior group type. For example, an intake-then-outtake sequence (with single-subsystem commands defined as instance factory methods) can look like this:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     public class IntakeThenOuttake extends SequentialCommandGroup {
         public IntakeThenOuttake(Intake intake) {
@@ -365,7 +365,7 @@ If we wish to write composite commands as their own classes, we may write a cons
             );
         }
     }
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // TODO
 
@@ -391,7 +391,7 @@ Summary
      - No
      - Yes, but must obey capture rules
      - Yes
-   * - Subclassing CommandBase
+   * - Subclassing Command
      - Stateful commands
      - Very verbose
      - Relatively verbose

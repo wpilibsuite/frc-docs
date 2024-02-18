@@ -3,7 +3,7 @@
 Third-Party CAN Devices
 =======================
 
-A number of FRC\ |reg| vendors offer their own CAN peripherals.  As CAN devices
+A number of FRC\ |reg| vendors offer their own :term:`CAN` peripherals.  As CAN devices
 offer expansive feature-sets, vendor CAN devices require similarly
 expansive code libraries to operate.  As a result, these libraries are
 not maintained as an official part of WPILib, but are instead maintained
@@ -79,15 +79,20 @@ CTRE Other CAN Devices
 REV Robotics
 ------------
 
-REV Robotics currently offers the SPARK MAX motor controller, which has a similar feature-set to the Talon SRX.
+REV Robotics currently offers the SPARK MAX and SPARK Flex motor controllers which can be used for brushed and REV brushless (NEO, NEO 550, and NEO Vortex) motors.
 
 REV Motor Controllers
 ^^^^^^^^^^^^^^^^^^^^^
 
 - **SPARK MAX**
 
-    - API Documentation (`Java <https://codedocs.revrobotics.com/java/com/revrobotics/package-summary.html>`__, `C++ <https://codedocs.revrobotics.com/cpp/namespacerev.html>`__)
-    - `Technical Manual <https://docs.revrobotics.com/sparkmax/>`__
+    - API Documentation (`Java <https://codedocs.revrobotics.com/java/com/revrobotics/cansparkmax>`__, `C++ <https://codedocs.revrobotics.com/cpp/classrev_1_1_c_a_n_spark_max>`__)
+    - `Technical Manual <https://docs.revrobotics.com/brushless/spark-max/overview>`__
+
+- **SPARK Flex**
+
+    - API Documentation (`Java <https://codedocs.revrobotics.com/java/com/revrobotics/cansparkflex>`__, `C++ <https://codedocs.revrobotics.com/cpp/classrev_1_1_c_a_n_spark_flex>`__)
+    - `Technical Manual <https://docs.revrobotics.com/brushless/spark-flex/overview>`__
 
 Playing With Fusion
 -------------------
@@ -109,3 +114,21 @@ PWF Sensors
 
     - API Documentation (`Java <https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html>`__, `C++ <https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html>`__)
     - `Technical Manual <https://www.playingwithfusion.com/include/getfile.php?fileid=7091>`__
+
+Redux Robotics
+--------------
+
+Redux Robotics currently offers the Canandcoder :term:`CAN` + :term:`PWM` magnetic encoder and the Canandcolor :term:`CAN`-enabled color sensor.
+
+Redux Sensors
+^^^^^^^^^^^^^
+
+- **Canandcoder**
+
+    - API Documentation (`Java <https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandcoder/Canandcoder.html>`__, `C++ <https://apidocs.reduxrobotics.com/current/cpp/classredux_1_1sensors_1_1canandcoder_1_1Canandcoder.html>`__)
+    - `Technical Manual <https://docs.reduxrobotics.com/canandcoder/index.html>`__
+
+- **Canandcolor**
+
+    - API Documentation (`Java <https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandcolor/Canandcolor.html>`__, `C++ <https://apidocs.reduxrobotics.com/current/cpp/classredux_1_1sensors_1_1canandcolor_1_1Canandcolor.html>`__)
+    - `Technical Manual <https://docs.reduxrobotics.com/canandcolor/index.html>`__

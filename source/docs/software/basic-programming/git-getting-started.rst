@@ -100,13 +100,13 @@ Now you'll want to open a PowerShell window and navigate to your project directo
 .. image:: images/git-getting-started/powershell.png
    :alt: An empty powershell window.
 
-If a directory is empty, a file needs to be created in order for git to have something to track. In the below Empty Directory example, we created a file called ``README.md`` with the contents of ``# Example Repo``. For FRC\ |reg| Robot projects, the below Existing Project commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java:Creating a New WPILib Project>`. More details on the various commands can be found in the subsequent sections.
+If a directory is empty, a file needs to be created in order for git to have something to track. In the below Empty Directory example, we created a file called ``README.md`` with the contents of ``# Example Repo``. For FRC\ |reg| Robot projects, the below Existing Project commands should be run in the root of a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python:Creating a New WPILib Project (Java/C++)>`. More details on the various commands can be found in the subsequent sections.
 
 .. note:: Replace the filepath ``"C:\Users\ExampleUser9007\Documents\Example Folder"`` with the one you want to create the repo in, and replace the remote URL ``https://github.com/ExampleUser9007/ExampleRepo.git`` with the URL for the repo you created in the previous steps.
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Empty Directory
+   .. tab-item:: Empty Directory
 
       .. code-block:: console
 
@@ -122,7 +122,7 @@ If a directory is empty, a file needs to be created in order for git to have som
          > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
          > git push -u origin main
 
-   .. tab:: Existing Project
+   .. tab-item:: Existing Project
 
       .. code-block:: console
 

@@ -6,35 +6,53 @@ Sending simple data
 -------------------
 Sending simple data (numbers, strings, booleans, and arrays of these) is done by calling ``add`` on a tab. This method will set the value if not already present, but will not overwrite an existing value.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
        Shuffleboard.getTab("Numbers")
             .add("Pi", 3.14);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
-       Shuffleboard::GetTab("Numbers")
+       frc::Shuffleboard::GetTab("Numbers")
             .Add("Pi", 3.14);
+
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+
+      Shuffleboard.getTab("Tab Title").add("Pi", 3.14)
 
 If data needs to be updated (for example, the output of some calculation done on the robot), call ``getEntry()`` after defining the value, then update it when needed or in a ``periodic`` function
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
-       class VisionCalculator {
-          private ShuffleboardTab tab = Shuffleboard.getTab("Vision");
-          private NetworkTableEntry distanceEntry =
-              tab.add("Distance to target", 0)
-                 .getEntry();
+      class VisionCalculator {
+         private ShuffleboardTab tab = Shuffleboard.getTab("Vision");
+         private GenericEntry distanceEntry =
+            tab.add("Distance to target", 0)
+               .getEntry();
 
-          public void calculate() {
-            double distance = ...;
-            distanceEntry.setDouble(distance);
-          }
-        }
+         public void calculate() {
+         double distance = ...;
+         distanceEntry.setDouble(distance);
+         }
+      }
+
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+
+      def robotInit(self):
+         tab = Shuffleboard.getTab("Vision")
+         self.distanceEntry = tab.add("Distance to target", 0).getEntry()
+
+      def teleopPeriodic(self):
+         distance = self.encoder.getDistance()
+         self.distanceEntry.setDouble(distance)
 
 Making choices persist between reboots
 --------------------------------------
@@ -45,21 +63,45 @@ Simply using `addPersistent` instead of `add` will make the value saved on the r
 
 .. note:: This does not apply to sendable data such as choosers or motor controllers.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
        Shuffleboard.getTab("Drive")
             .addPersistent("Max Speed", 1.0);
+
+   .. code-block:: c++
+
+       frc::Shuffleboard::GetTab("Drive")
+            .AddPersistent("Max Speed", 1.0);
+
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+
+      (Shuffleboard.getTab("Drive")
+            .addPersistent("Max Speed", 1.0))
 
 Sending sensors, motors, etc
 ----------------------------
 
 Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most sensors, motor controllers, and SendableChoosers) can be added to any tab
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
        Shuffleboard.getTab("Tab Title")
             .add("Sendable Title", mySendable);
+
+   .. code-block:: c++
+
+       frc::Shuffleboard::GetTab("Tab Title")
+            .Add("Sendable Title", mySendable);
+
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+
+      (Shuffleboard.getTab("Tab Title")
+            .add("Sendable Title", mySendable))

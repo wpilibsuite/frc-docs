@@ -13,9 +13,10 @@ A ``Topic`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wp
 
 Having a Topic object or handle does not mean the topic exists or is of the correct type. For convenience when creating publishers and subscribers, there are type-specific Topic classes (e.g. ``BooleanTopic``: `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/BooleanTopic.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_boolean_topic.html>`__, `Python <https://robotpy.readthedocs.io/projects/pyntcore/en/stable/ntcore/BooleanTopic.html>`__), but there is no check at the Topic level to ensure that the topic's type actually matches. The preferred method to get a type-specific topic to call the appropriate type-specific getter, but it's also possible to directly convert a generic Topic into a type-specific Topic class. Note: the handle-based API does not have a concept of type-specific classes.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+       :sync: Java
 
         .. code-block:: java
 
@@ -35,9 +36,10 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
             Topic genericTopic = inst.getTopic("/datatable/X");
             DoubleTopic dblTopic = new DoubleTopic(genericTopic);
 
-    .. group-tab:: C++
+    .. tab-item:: C++
+     :sync: C++
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
             std::shared_ptr<nt::NetworkTable> table = inst.GetTable("datatable");
@@ -55,16 +57,18 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
             nt::Topic genericTopic = inst.GetTopic("/datatable/X");
             nt::DoubleTopic dblTopic{genericTopic};
 
-    .. group-tab:: C++ (handle-based)
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             NT_Instance inst = nt::GetDefaultInstance();
 
             // get a topic from a NetworkTableInstance
             NT_Topic topic = nt::GetTopic(inst, "/datatable/X");
 
-    .. group-tab:: C
+    .. tab-item:: C
+        :sync: C
 
         .. code-block:: c
 
@@ -73,7 +77,9 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
             // get a topic from a NetworkTableInstance
             NT_Topic topic = NT_GetTopic(inst, "/datatable/X");
 
-    .. group-tab:: Python
+    .. tab-item:: Python
+     :sync: Python
+
 
         .. code-block:: python
 
@@ -93,4 +99,4 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
 
             # get a type-specific topic from a generic Topic
             genericTopic = inst.getTopic("/datatable/X")
-            dblTopic = new DoubleTopic(genericTopic)
+            dblTopic = ntcore.DoubleTopic(genericTopic)

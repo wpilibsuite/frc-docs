@@ -12,21 +12,21 @@ Feedforward and feedback controllers can each be used in isolation, but are most
 Using Feedforward with a PIDController
 --------------------------------------
 
-Users familiar with the old ``PIDController`` class may notice the lack of any feedforward gain in the new controller.  As users are expected to use the controller output themselves, there is no longer any need for the ``PIDController`` to implement feedforward - users may simply add any feedforward they like to the output of the controller before sending it to their motors:
+Users may add any feedforward they like to the output of the controller before sending it to their motors:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Adds a feedforward to the loop output before sending it to the motor
     motor.setVoltage(pid.calculate(encoder.getDistance(), setpoint) + feedforward);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Adds a feedforward to the loop output before sending it to the motor
     motor.SetVoltage(pid.Calculate(encoder.GetDistance(), setpoint) + feedforward);
 
-  .. code-tab:: python
+  .. code-block:: python
 
      // Adds a feedforward to the loop output before sending it to the motor
      motor.setVoltage(pid.calculate(encoder.getDistance(), setpoint) + feedforward)
@@ -40,9 +40,9 @@ Using Feedforward Components with PID
 
 What might a more complete example of combined feedforward/PID control look like?  Consider the :ref:`drive example <docs/software/advanced-controls/controllers/feedforward:Using Feedforward to Control Mechanisms>` from the feedforward page.  We can easily modify this to include feedback control (with a ``SimpleMotorFeedforward`` component):
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     public void tankDriveWithFeedforwardPID(double leftVelocitySetpoint, double rightVelocitySetpoint) {
       leftMotor.setVoltage(feedforward.calculate(leftVelocitySetpoint)
@@ -51,7 +51,7 @@ What might a more complete example of combined feedforward/PID control look like
           + rightPID.calculate(rightEncoder.getRate(), rightVelocitySetpoint));
     }
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     void TankDriveWithFeedforwardPID(units::meters_per_second_t leftVelocitySetpoint,
                                      units::meters_per_second_t rightVelocitySetpoint) {
@@ -61,7 +61,7 @@ What might a more complete example of combined feedforward/PID control look like
           + rightPID.Calculate(rightEncoder.getRate(), rightVelocitySetpoint.value()));
     }
 
-  .. code-tab:: python
+  .. code-block:: python
 
     def tank_drive_with_feedforward_PID(
         left_velocity_setpoint: float,

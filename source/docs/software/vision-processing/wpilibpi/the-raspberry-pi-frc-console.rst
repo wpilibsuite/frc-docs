@@ -39,10 +39,10 @@ System status
 The system status shows what the CPU on the rPI is doing at any time. There are two columns of status values, on being a 1 second
 average and the other a 5 second average. Shown is:
 
--   free and available RAM on the PI
--   CPU usage for user processes and system processes as well as idle time.
--   And network bandwidth - which allows one to determine if the used camera bandwidth is exceeding the maximum bandwidth allowed
-    in the robot rules for any year.
+-   Free and available RAM on the PI
+-   CPU usage for user processes and system processes as well as idle time
+-   Network bandwidth - which allows one to determine if the used camera bandwidth is exceeding the maximum bandwidth allowed
+    in the robot rules for any year
 
 Vision Status
 -------------
@@ -59,7 +59,7 @@ Network Settings
 
 The rPI network settings have options to connect to the PI:
 
--   DHCP - the default name resolution usually used by the roboRIO. The default name is wpilibpi.local.
+-   :term:`DHCP` - the default name resolution usually used by the roboRIO. The default name is wpilibpi.local.
 -   Static - where a fixed IP address, network mask, and router settings are filled in explicitly
 -   DHCP with Static Fallback - DHCP with Static Fallback - the PI will try to get an IP address via DHCP, but if it can't find a
     DHCP server, it will use the provided static IP address and parameters

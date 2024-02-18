@@ -1,7 +1,7 @@
 3rd Party Libraries
 ===================
 
-Teams that are using non-PWM motor controllers or advanced sensors will most likely need to install external vendor dependencies.
+Teams that are using non-:term:`PWM` motor controllers or advanced sensors will most likely need to install external vendor dependencies.
 
 What Are Vendor Dependencies?
 -----------------------------
@@ -30,97 +30,264 @@ This JSON file allows specification of complex libraries with multiple component
 How Does It Work? - LabVIEW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For LabVIEW teams, there might be a few new :guilabel:`Third Party` items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW 2020\vi.lib\Rock Robotics\WPI\Third Party``
+For LabVIEW teams, there might be a few new :guilabel:`Third Party` items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW 2023\vi.lib\Rock Robotics\WPI\Third Party``
 
 In order to install third party libraries for LabVIEW, download the VIs from the vendor (typically via some sort of installer). Then drag and drop the third party VIs into the respective folder mentioned above just like any other VI.
+
+How Does It Work? - Python
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Third party libraries are packaged into Python wheels and uploaded to PyPI (if pure python) and/or WPILib's artifactory. Users can enable them as dependencies either by adding the component name to ``robotpy_extras`` (recommended) or by adding an explicit dependency for the PyPI package in ``requires``. The dependencies are downloaded when ``robotpy sync`` is executed, and installed on the roboRIO when ``robotpy deploy`` is executed.
 
 Installing Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-VS Code
-~~~~~~~
+.. tab-set::
 
-.. image:: images/3rd-party-libraries/adding-offline-library.png
-   :alt: Using the Manage Vendor Libraries option of the WPILib Command Palette.
+   .. tab-item:: Java/C++
+      :sync: javacpp
 
-To add a vendor library that has been installed by an offline installer, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries`, then select it from the menu. Select the option to :guilabel:`Install new libraries (offline)`.
+      **VS Code**
 
-.. image:: images/3rd-party-libraries/library-installer-steptwo.png
-   :alt: Select the libraries to add.
+      .. image:: images/3rd-party-libraries/adding-offline-library.png
+         :alt: Using the Manage Vendor Libraries option of the WPILib Command Palette.
 
-Select the desired libraries to add to the project by checking the box next to each, then click :guilabel:`OK`. The JSON file will be copied to the ``vendordeps`` folder in the project, adding the library as a dependency to the project.
+      To add a vendor library that has been installed by an offline installer, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries`, then select it from the menu. Select the option to :guilabel:`Install new libraries (offline)`.
 
-In order to install a vendor library in online mode, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries` and select it in the menu, and then click on :guilabel:`Install new libraries (online)` instead and copy + paste the vendor JSON URL.
+      .. image:: images/3rd-party-libraries/library-installer-steptwo.png
+         :alt: Select the libraries to add.
+
+      Select the desired libraries to add to the project by checking the box next to each, then click :guilabel:`OK`. The JSON file will be copied to the ``vendordeps`` folder in the project, adding the library as a dependency to the project.
+
+      In order to install a vendor library in online mode, press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the top right to open the WPILib Command Palette and begin typing :guilabel:`Manage Vendor Libraries` and select it in the menu, and then click on :guilabel:`Install new libraries (online)` instead and copy + paste the vendor JSON URL.
 
 
-Checking for Updates (Offline)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      **Checking for Updates (Offline)**
 
-Since dependencies are version managed on a per-project basis, even when installed offline, you will need to :guilabel:`Manage Vendor Libraries` and select :guilabel:`Check for updates (offline)` for each project you wish to update.
+      Since dependencies are version managed on a per-project basis, even when installed offline, you will need to :guilabel:`Manage Vendor Libraries` and select :guilabel:`Check for updates (offline)` for each project you wish to update.
 
-Checking for Updates (Online)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      **Checking for Updates (Online)**
 
-Part of the JSON file that vendors may optionally populate is an online update location. If a library has an appropriate location specified, running :guilabel:`Check for updates (online)` will check if a newer version of the library is available from the remote location.
+      Part of the JSON file that vendors may optionally populate is an online update location. If a library has an appropriate location specified, running :guilabel:`Check for updates (online)` will check if a newer version of the library is available from the remote location.
 
-Removing a Library Dependency
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      **Removing a Library Dependency**
 
-To remove a library dependency from a project, select :guilabel:`Manage Current Libraries` from the :guilabel:`Manage Vendor Libraries` menu, check the box for any libraries to uninstall and click :guilabel:`OK`. These libraries will be removed as dependencies from the project.
+      To remove a library dependency from a project, select :guilabel:`Manage Current Libraries` from the :guilabel:`Manage Vendor Libraries` menu, check the box for any libraries to uninstall and click :guilabel:`OK`. These libraries will be removed as dependencies from the project.
 
-Command-Line
-~~~~~~~~~~~~
+      **Command-Line**
 
-Adding a vendor library dependency from the vendor URL can also be done through the command-line via a gradle task. Open a command-line instance at the project root, and enter ``gradlew vendordep --url=<url>`` where ``<url>`` is the vendor JSON URL. This will add the vendor library dependency JSON file to the ``vendordeps`` folder of the project. Vendor libraries can be updated the same way.
+      Adding a vendor library dependency from the vendor URL can also be done through the command-line via a gradle task. Open a command-line instance at the project root, and enter ``gradlew vendordep --url=<url>`` where ``<url>`` is the vendor JSON URL. This will add the vendor library dependency JSON file to the ``vendordeps`` folder of the project. Vendor libraries can be updated the same way.
 
-The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpilib`` folder. To do so, pass ``FRCLOCAL/Filename.json`` as the file URL. For example, ``gradlew vendordep --url=FRCLOCAL/WPILibNewCommands.json`` will fetch the JSON for the command-based framework.
+      The ``vendordep`` gradle task can also fetch vendordep JSONs from the user ``wpilib`` folder. To do so, pass ``FRCLOCAL/Filename.json`` as the file URL. For example, ``gradlew vendordep --url=FRCLOCAL/WPILibNewCommands.json`` will fetch the JSON for the command-based framework.
+
+   .. tab-item:: Python
+      :sync: python
+
+      All RobotPy project dependencies are specified in ``pyproject.toml``. You can add additional vendor-specific dependencies either by:
+
+      * Adding the component name to ``robotpy_extras``
+      * Adding the PyPI package name to ``requires``
+
+      .. seealso:: :doc:`/docs/software/python/pyproject_toml`
 
 Libraries
 ---------
 
+WPILib Libraries
+^^^^^^^^^^^^^^^^
+
+Command Library
+~~~~~~~~~~~~~~~
+
+The WPILib :doc:`command library </docs/software/commandbased/index>` has been split into a vendor library. It is installed by the WPILib installer for offline installation.
+
+.. tab-set::
+
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      `New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
+
+   .. tab-item:: Python
+      :sync: python
+
+      * PyPI package: ``robotpy[commands2]`` or ``robotpy-commands-v2``
+      * In ``pyproject.toml``: ``robotpy_extras = ["commands2"]``
+
+Romi Library
+~~~~~~~~~~~~
+
+A Romi Library has been created to contain several helper classes that are used in the ``RomiReference`` example.
+
+.. tab-set::
+
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      `Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/romiVendordep/RomiVendordep.json>`__.
+
+   .. tab-item:: Python
+      :sync: python
+
+      * PyPI package: ``robotpy[romi]`` or ``robotpy-romi``
+      * In ``pyproject.toml``: ``robotpy_extras = ["romi"]``
+
+XRP Library
+~~~~~~~~~~~
+
+An XRP Library has been created to contain several helper classes that are used in the ``XRPReference`` example.
+
+.. tab-set::
+
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      `XRP Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/xrpVendordep/XRPVendordep.json>`__.
+
+   .. tab-item:: Python
+      :sync: python
+
+      * PyPI package: ``robotpy[xrp]`` or ``robotpy-xrp``
+      * In ``pyproject.toml``: ``robotpy_extras = ["xrp"]``
+
+Vendor Libraries
+^^^^^^^^^^^^^^^^
+
 Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.
 
-`2023 CTRE Phoenix Framework <https://store.ctr-electronics.com/software/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
-   Phoenix (v5):         ``https://maven.ctr-electronics.com/release/com/ctre/phoenix/Phoenix5-frc2023-latest.json``
+`CTRE Phoenix Framework <https://docs.ctr-electronics.com/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
 
-   Phoenix (Pro):        ``https://maven.ctr-electronics.com/release/com/ctre/phoenixpro/PhoenixPro-frc2023-latest.json``
+.. tab-set::
+   .. tab-item:: Java/C++
+      :sync: javacpp
 
-   Phoenix (Pro and v5): ``https://maven.ctr-electronics.com/release/com/ctre/phoenixpro/PhoenixProAnd5-frc2023-latest.json``
+      Phoenix (v6):        ``https://maven.ctr-electronics.com/release/com/ctre/phoenix6/latest/Phoenix6-frc2024-latest.json``
 
-   .. note:: To get the 2023 version of the same Phoenix library as previous years, use the first link above (Phoenix v5).  Use one of the other json links if you're using Phoenix Pro.
+      Phoenix (v5):        ``https://maven.ctr-electronics.com/release/com/ctre/phoenix/Phoenix5-frc2024-latest.json``
 
-   .. warning:: Only use **ONE** of the above Phoenix vendordep links within a project.  If you need both Phoenix v5 and Phoenix Pro in the same project, use the third option.
+      .. note:: All users should use the Phoenix (v6) library.  If you also need Phoenix v5 support, additionally install the v5 vendor library.
+
+   .. tab-item:: Python
+      :sync: python
+
+      Vendor's package:
+
+      * PyPI package: ``robotpy[phoenix6]`` or ``phoenix6``
+      * In ``pyproject.toml``: ``robotpy_extras = ["phoenix6"]``
+
+      Community packages:
+
+      * PyPI package: ``robotpy[phoenix5]`` or ``robotpy-ctre``
+      * In ``pyproject.toml``: ``robotpy_extras = ["phoenix5"]``
+
+`Redux Robotics ReduxLib <https://docs.reduxrobotics.com/reduxlib.html>`__ - Library for all Redux devices including the Canandcoder and Canandcolor
+
+.. tab-set::
+
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      ``https://frcsdk.reduxrobotics.com/ReduxLib_2024.json``
+
+   .. tab-item:: Python
+      :sync: python
+
+      Not yet available
 
 `Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
-   ``https://www.playingwithfusion.com/frc/playingwithfusion2023.json``
+
+.. tab-set::
+
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      ``https://www.playingwithfusion.com/frc/playingwithfusion2024.json``
+
+   .. tab-item:: Python
+      :sync: python
+
+      Community-supported packages:
+
+      * PyPI package: ``robotpy[playingwithfusion]`` or ``robotpy-playingwithfusion``
+      * In ``pyproject.toml``: ``robotpy_extras = ["playingwithfusion"]``
 
 `Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
-   ``https://dev.studica.com/releases/2023/NavX.json``
 
-`REV Robotics REVLib <https://docs.revrobotics.com/sparkmax/software-resources/spark-max-api-information>`__ - Library for all REV devices including SPARK MAX and Color Sensor V3
-   ``https://software-metadata.revrobotics.com/REVLib-2023.json``
+.. tab-set::
+
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      ``https://dev.studica.com/releases/2024/NavX.json``
+
+   .. tab-item:: Python
+      :sync: python
+
+      Community-supported packages:
+
+      * PyPI package: ``robotpy[navx]`` or ``robotpy-navx``
+      * In ``pyproject.toml``: ``robotpy_extras = ["navx"]``
+
+`REV Robotics REVLib <https://docs.revrobotics.com/brushless/spark-flex/revlib>`__ - Library for all REV devices including SPARK Flex, SPARK MAX, and Color Sensor V3
+
+.. tab-set::
+
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      ``https://software-metadata.revrobotics.com/REVLib-2024.json``
+
+   .. tab-item:: Python
+      :sync: python
+
+      Community-supported packages:
+
+      * PyPI package: ``robotpy[rev]`` or ``robotpy-rev``
+      * In ``pyproject.toml``: ``robotpy_extras = ["rev"]``
 
 Community Libraries
 ^^^^^^^^^^^^^^^^^^^
 
 `PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
-   ``https://maven.photonvision.org/repository/internal/org/photonvision/PhotonLib-json/1.0/PhotonLib-json-1.0.json``
 
-`PathPlanner <https://github.com/mjansen4857/pathplanner/wiki>`_ - Library for PathPlanner
-   ``https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json``
+.. tab-set::
 
-WPILib Command Libraries
-~~~~~~~~~~~~~~~~~~~~~~~~
+   .. tab-item:: Java/C++
+      :sync: javacpp
 
-The WPILib :doc:`new </docs/software/commandbased/index>` command library has been split into a vendor library. It is installed by the WPILib installer for offline installation. It may also be installed with the following online link:
+      ``https://maven.photonvision.org/repository/internal/org/photonvision/photonlib-json/1.0/photonlib-json-1.0.json``
 
-`New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
+   .. tab-item:: Python
+      :sync: python
 
-To remove a library dependency from a project, select **Manage Current Libraries** from the **Manage Vendor Libraries** menu, check the box for any libraries to uninstall and click OK. These libraries will be removed as dependencies from the project.
+      * PyPI package: ``photonlibpy``
+      * In ``pyproject.toml``: ``requires = ["photonlibpy"]``
 
-Romi Library
-~~~~~~~~~~~~
+`PathPlanner <https://pathplanner.dev/home.html>`_ - Library for PathPlanner
 
-A Romi Library has been created to contain several helper classes that are a part of the ``RomiReference`` example.
+.. tab-set::
 
-`Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/main/RomiVendordep.json>`__.
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      ``https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json``
+
+   .. tab-item:: Python
+      :sync: python
+
+      * PyPI package: ``pathplannerlib``
+      * In ``pyproject.toml``: ``requires = ["pathplannerlib"]``
+
+`ChoreoLib <https://sleipnirgroup.github.io/Choreo/choreolib/installation/>`_ - Library for reading and following trajectories generated by `Choreo <https://sleipnirgroup.github.io/Choreo/>`_
+
+.. tab-set::
+
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      ``https://sleipnirgroup.github.io/ChoreoLib/dep/ChoreoLib.json``
+
+   .. tab-item:: Python
+      :sync: python
+
+      Not available

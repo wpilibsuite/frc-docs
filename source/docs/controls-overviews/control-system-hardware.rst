@@ -10,23 +10,24 @@ The goal of this document is to provide a brief overview of the hardware compone
 Overview of Control System
 --------------------------
 
-.. tabs::
+.. tab-set::
+    .. tab-item:: REV
+        :sync: rev
 
-   .. group-tab:: REV
-
-      .. figure:: images/frc-control-system-layout-rev.svg
+        .. figure:: images/frc-control-system-layout-rev.svg
          :alt: Layout of all popular components of the control system including REV Control System Components
          :width: 500
 
-      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
-   .. group-tab:: CTRE
+    .. tab-item:: CTRE
+        :sync: ctre
 
-      .. figure:: images/frc-control-system-layout.svg
-        :alt: Layout of all of the core components of the control system and how they are connected.
-        :width: 500
+        .. figure:: images/frc-control-system-layout.svg
+         :alt: Layout of all of the core components of the control system and how they are connected.
+         :width: 500
 
-      Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
 NI roboRIO
 ----------
@@ -100,7 +101,7 @@ Snap Action Circuit Breakers
   :alt: Snap Action Circuit Breakers to be inserted in the PDP.
   :width: 500
 
-The Snap Action circuit breakers, `MX5 series <http://www.snapaction.net/pdf/MX5%20Spec%20Sheet.pdf>`__ and `VB3 Series <http://www.snapaction.net/pdf/vb3.pdf>`__, are used with the Power Distribution Panel to limit current to branch circuits. The ratings on these circuit breakers are for continuous current, temporary peak values can be considerably higher.
+The Snap Action circuit breakers, `MX5 series <https://www.snapaction.net/assets/img/MX5-Spec-Sheet-Revision-2023.pdf>`__ and `VB3 Series <https://www.snapaction.net/assets/img/VB3-Spec-Sheet-Revision-2023.pdf>`__, are used with the Power Distribution Panel to limit current to branch circuits. The ratings on these circuit breakers are for continuous current, temporary peak values can be considerably higher.
 
 Robot Battery
 -------------
@@ -116,11 +117,25 @@ The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) ba
 Robot Signal Light
 ------------------
 
-.. image:: images/control-system-hardware/robot-signal-light.png
-  :alt: Orange Robot Signal Light
-  :width: 500
+.. tab-set::
 
-The Robot Signal Light (RSL) is required to be the Allen-Bradley 855PB-B12ME522.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
+   .. tab-item:: Allen-Bradley
+
+      .. figure:: images/control-system-hardware/rsl-allenbradley.png
+         :alt: Orange Robot Signal Light (Allen-Bradley)
+         :width: 500
+
+         Allen-Bradley 855PB-B12ME522
+
+   .. tab-item:: AndyMark
+
+      .. figure:: images/control-system-hardware/rsl-andymark.png
+         :alt: Orange Robot Signal Light (AndyMark)
+         :width: 500
+
+         AndyMark am-3583
+
+The Robot Signal Light (RSL) is required to be either Allen-Bradley 855PB-B12ME522 or AndyMark am-3583.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
 
 CTRE Pneumatics Control Module
 ------------------------------
@@ -156,7 +171,7 @@ Talon SRX
   :alt: Talon SRX
   :width: 500
 
-The `Talon SRX Motor Controller <https://store.ctr-electronics.com/talon-srx/>`__ is a "smart motor controller" from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or PWM interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <https://store.ctr-electronics.com/content/user-manual/Talon%20SRX%20User's%20Guide.pdf>`__.
+The `Talon SRX Motor Controller <https://store.ctr-electronics.com/talon-srx/>`__ is a "smart motor controller" from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or :term:`PWM` interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the `Talon SRX User's Guide <https://store.ctr-electronics.com/content/user-manual/Talon%20SRX%20User's%20Guide.pdf>`__.
 
 Victor SPX
 ^^^^^^^^^^
@@ -259,7 +274,7 @@ Venom Motor Controller
   :alt: Venom Motor Controller
   :width: 500
 
-The `Venom Motor Controller <https://www.playingwithfusion.com/productview.php?pdid=99>`__ from Playing With Fusion is integrated into a motor based on the original CIM.  Speed, current, temperature, and position are all measured onboard, enabling advanced control modes without complicated sensing and wiring schemes.
+The `Venom Motor Controller <https://www.playingwithfusion.com/productview.php?pdid=99>`__ from Playing With Fusion is integrated into a motor based on the original :term:`CIM`.  Speed, current, temperature, and position are all measured onboard, enabling advanced control modes without complicated sensing and wiring schemes.
 
 Nidec Dynamo BLDC Motor with Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

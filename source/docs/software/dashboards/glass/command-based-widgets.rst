@@ -8,13 +8,13 @@ Command Selector Widget
 
 The :guilabel:`Command Selector`  widget allows you to start and cancel a specific instance of a command (sent over NetworkTables) from Glass. For example, you can create an instance of ``MyCommand`` and send it to SmartDashboard:
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       MyCommand command = new MyCommand(...);
       SmartDashboard.putData("My Command", command);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/smartdashboard/SmartDashboard.h>
 
@@ -22,6 +22,13 @@ The :guilabel:`Command Selector`  widget allows you to start and cancel a specif
 
       MyCommand command{...};
       frc::SmartDashboard::PutData("My Command", &command);
+
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+
+      command = MyCommand(...)
+      SmartDashboard.putData("My Command", command)
 
 .. note:: The ``MyCommand`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`. In this case, the ``SmartDashboard`` API was used, meaning that the :guilabel:`Command Selector` widget will appear under the ``SmartDashboard`` table name.
 

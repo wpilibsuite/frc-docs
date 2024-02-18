@@ -70,21 +70,21 @@ An object that generates images is a source and an object that accepts/consumes 
 
 User code (such as that used in a FRC robot program) can act as either a source (providing processed frames as if it were a camera) or as a sink (receiving a frame for processing) via OpenCV source and sink objects. Thus an image processing pipeline that gets images from a camera and serves the processed images out looks like the below graph:
 
-.. image:: diagrams/sink.drawio.svg
+.. image:: diagrams/sources.drawio.svg
     :alt: Block diagram showing that a program can either sink or source from OpenCV.
 
 Because sources can have multiple sinks connected, the pipeline may branch. For example, the original camera image can also be served by connecting the UsbCamera source to a second MjpegServer sink in addition to the CvSink, resulting in the below graph:
 
-.. image:: diagrams/sources.drawio.svg
+.. image:: diagrams/sink.drawio.svg
     :alt: Block diagram of multiple sinks.
 
 When a new image is captured by the camera, both the CvSink and the MjpegServer [1] receive it.
 
 The above graph is what the following CameraServer snippet creates:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         import edu.wpi.first.cameraserver.CameraServer;
         import edu.wpi.cscore.CvSink;
@@ -99,7 +99,7 @@ The above graph is what the following CameraServer snippet creates:
         // Creates the CvSource and MjpegServer [2] and connects them
         CvSource outputStream = CameraServer.putVideo("Blur", 640, 480);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         #include "cameraserver/CameraServer.h"
 
@@ -114,9 +114,9 @@ The above graph is what the following CameraServer snippet creates:
 
 The CameraServer implementation effectively does the following at the cscore level (for explanation purposes). CameraServer takes care of many of the details such as creating unique names for all cscore objects and automatically selecting port numbers. CameraServer also keeps a singleton registry of created objects so they aren't destroyed if they go out of scope.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         import edu.wpi.cscore.CvSink;
         import edu.wpi.cscore.CvSource;
@@ -137,7 +137,7 @@ The CameraServer implementation effectively does the following at the cscore lev
         MjpegServer mjpegServer2 = new MjpegServer("serve_Blur", 1182);
         mjpegServer2.setSource(outputStream);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         #include "cscore_oo.h"
 

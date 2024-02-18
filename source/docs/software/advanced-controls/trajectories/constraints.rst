@@ -23,9 +23,9 @@ Creating a Custom Constraint
 ----------------------------
 Users can create their own constraint by implementing the ``TrajectoryConstraint`` interface.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       @Override
       public double getMaxVelocityMetersPerSecond(Pose2d poseMeters, double curvatureRadPerMeter,
@@ -40,7 +40,7 @@ Users can create their own constraint by implementing the ``TrajectoryConstraint
         // code here
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       units::meters_per_second_t MaxVelocity(
       const Pose2d& pose, units::curvature_t curvature,

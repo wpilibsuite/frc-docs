@@ -14,19 +14,19 @@ Constructing a BangBangController
 
 Since a bang-bang controller does not have any gains, it does not need any constructor arguments (one can optionally specify the controller tolerance used by ``atSetpoint``, but it is not required).
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Creates a BangBangController
     BangBangController controller = new BangBangController();
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Creates a BangBangController
     frc::BangBangController controller;
 
-  .. code-tab:: python
+  .. code-block:: python
 
      # Creates a BangBangController
      controller = wpimath.BangBangController()
@@ -38,19 +38,19 @@ Using a BangBangController
 
 Using a bang-bang controller is easy:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Controls a motor with the output of the BangBang controller
     motor.set(controller.calculate(encoder.getRate(), setpoint));
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Controls a motor with the output of the BangBang controller
     motor.Set(controller.Calculate(encoder.GetRate(), setpoint));
 
-  .. code-tab:: python
+  .. code-block:: python
 
     # Controls a motor with the output of the BangBang controller
     motor.set(controller.calculate(encoder.getRate(), setpoint))
@@ -60,21 +60,21 @@ Combining Bang Bang Control with Feedforward
 
 Like a PID controller, best results are obtained in conjunction with a :ref:`feedforward <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>` controller that provides the necessary voltage to sustain the system output at the desired speed, so that the bang-bang controller is only responsible for rejecting disturbances.  Since the bang-bang controller can *only* correct in the forward direction, however, it may be preferable to use a slightly conservative feedforward estimate to ensure that the shooter does not over-speed.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Controls a motor with the output of the BangBang controller and a feedforward
     // Shrinks the feedforward slightly to avoid overspeeding the shooter
     motor.setVoltage(controller.calculate(encoder.getRate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint));
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Controls a motor with the output of the BangBang controller and a feedforward
     // Shrinks the feedforward slightly to avoid overspeeding the shooter
     motor.SetVoltage(controller.Calculate(encoder.GetRate(), setpoint) * 12.0 + 0.9 * feedforward.Calculate(setpoint));
 
-  .. code-tab:: python
+  .. code-block:: python
 
     # Controls a motor with the output of the BangBang controller and a feedforward
     motor.setVoltage(controller.calculate(encoder.getRate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint))

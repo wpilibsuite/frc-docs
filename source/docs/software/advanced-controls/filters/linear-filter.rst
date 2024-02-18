@@ -30,16 +30,16 @@ singlePoleIIR
 
 The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse response filter which performs :term:`exponential smoothing`. This is the "go-to," "first-try" low-pass filter in most applications; it is computationally trivial and works in most cases.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Creates a new Single-Pole IIR filter
     // Time constant is 0.1 seconds
     // Period is 0.02 seconds - this is the standard FRC main loop period
     LinearFilter filter = LinearFilter.singlePoleIIR(0.1, 0.02);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Creates a new Single-Pole IIR filter
     // Time constant is 0.1 seconds
@@ -58,15 +58,15 @@ movingAverage
 
 The ``movingAverage`` factory method creates a simple flat moving average filter.  This is the simplest possible low-pass FIR filter, and is useful in many of the same contexts as the single-pole IIR filter.  It is somewhat more costly to compute, but generally behaves in a somewhat nicer manner.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Creates a new flat moving average filter
     // Average will be taken over the last 5 samples
     LinearFilter filter = LinearFilter.movingAverage(5);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Creates a new flat moving average filter
     // Average will be taken over the last 5 samples
@@ -82,16 +82,16 @@ highPass
 
 The ``highPass`` factory method creates a simple first-order infinite impulse response high-pass filter.  This is the "counterpart" to the `singlePoleIIR`_.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Creates a new high-pass IIR filter
     // Time constant is 0.1 seconds
     // Period is 0.02 seconds - this is the standard FRC main loop period
     LinearFilter filter = LinearFilter.highPass(0.1, 0.02);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Creates a new high-pass IIR filter
     // Time constant is 0.1 seconds
@@ -109,14 +109,14 @@ Using a LinearFilter
 
 Once your filter has been created, using it is easy - simply call the ``calculate()`` method with the most recent input to obtain the filtered output:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Calculates the next value of the output
     filter.calculate(input);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Calculates the next value of the output
     filter.Calculate(input);

@@ -9,9 +9,9 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
 
 .. note:: PathWeaver places JSON files in ``src/main/deploy/paths`` which will automatically be placed on the roboRIO file system in ``/home/lvuser/deploy/paths`` and can be accessed using getDeployDirectory as shown below.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       String trajectoryJSON = "paths/YourPath.wpilib.json";
       Trajectory trajectory = new Trajectory();
@@ -26,7 +26,7 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
          }
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       #include <frc/Filesystem.h>
       #include <frc/trajectory/TrajectoryUtil.h>

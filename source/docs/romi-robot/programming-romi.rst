@@ -10,7 +10,7 @@ Creating a new program for a Romi is like creating a normal FRC program, similar
 
 WPILib comes with two templates for Romi projects, including one based on TimedRobot, and a Command-Based project template. Additionally, an example project is provided which showcases some of the built-in functionality of the Romi. This article will walk through creating a project from this example.
 
-.. note:: In order to program the Romi using C++, a compatible C++ desktop compiler must be installed. See :ref:`Robot Simulation - Additional C++ Dependency <docs/software/wpilib-tools/robot-simulation/introduction:Additional C++ Dependency>`.
+.. note:: In order to program the Romi using C++, a compatible C++ desktop compiler must be installed. See :ref:`Robot Simulation - Additional C++ Dependency <cpp_sim_additional_dependency>`.
 
 Creating a New WPILib Romi Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -38,11 +38,11 @@ One aspect where a Romi project differs from a regular FRC robot project is that
 
 To run a Romi program, first, ensure that your Romi is powered on. Next, connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If you changed the Romi network settings (for example, to connect it to your own WiFi network) you may change the IP address that your program uses to connect to the Romi. To do this, open the ``build.gradle`` file and update the ``wpi.sim.envVar`` line to the appropriate IP address.
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2023.4.3/vscode-wpilib/resources/gradle/javaromi/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.2.1/vscode-wpilib/resources/gradle/javaromi/build.gradle
    :language: groovy
-   :lines: 42-45
+   :lines: 43-46
    :linenos:
-   :lineno-start: 42
+   :lineno-start: 43
    :emphasize-lines: 2
 
 Now to start your Romi robot code, open the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) and select "Simulate Robot Code", or press :kbd:`F5`.

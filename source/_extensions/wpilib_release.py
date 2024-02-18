@@ -3,6 +3,7 @@ from datetime import datetime
 from typing import Any, Dict, Iterable, List
 
 import markdown2
+from bs4 import BeautifulSoup
 from docutils import nodes
 from docutils.parsers.rst import directives
 from docutils.statemachine import StringList
@@ -25,25 +26,20 @@ class WpilibRelease(SphinxDirective):
         release_json = requests.get(release_url)
         release: Dict = release_json.json()
 
-        win = next(
-            (a for a in release["assets"] if "windows" in a["name"].lower()), None
-        )
-        mac_intel = next(
-            (
-                a
-                for a in release["assets"]
-                if "mac" in a["name"].lower() and "intel" in a["name"].lower()
-            ),
-            None,
-        )
-        mac_arm = next(
-            (
-                a
-                for a in release["assets"]
-                if "mac" in a["name"].lower() and "arm" in a["name"].lower()
-            ),
-            None,
-        )
+        cf_folder = f"https://packages.wpilib.workers.dev/installer/{version}"
+
+        def get_url_size(osname):
+            soup = BeautifulSoup(
+                requests.get(f"{cf_folder}/{osname}/").text, "html.parser"
+            )
+            file = str(soup.find_all("tr")[-1].contents[0].string)
+            size = str(soup.find_all("tr")[-1].contents[2].string)
+            url = f"{cf_folder}/{osname}/{file}"
+            return url, size
+
+        win_download_url, win_size = get_url_size("Win64")
+        mac_intel_download_url, mac_intel_size = get_url_size("macOS")
+        mac_arm_download_url, mac_arm_size = get_url_size("macOSArm")
 
         # There's something weird going where the hashes are all printed on one line.
         # This works aroung that.
@@ -85,15 +81,15 @@ class WpilibRelease(SphinxDirective):
             let dlbutton = document.getElementsByClassName("wpilibrelease-dl-button")[0];
             let ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'mobile', 'platform', 'platformVersion']);
             if (ua['platform'] == 'Windows') {{
-                dlbutton.href = '{win["browser_download_url"]}';
-                dlbutton.text = 'Download for Windows - {win["size"] / 1e9 : .2f} GB';
+                dlbutton.href = '{win_download_url}';
+                dlbutton.text = 'Download for Windows - {win_size}';
             }} else if (ua['platform'] == 'macOS') {{
                 if (ua['architecture'] == 'x86') {{
-                    dlbutton.href = '{mac_intel["browser_download_url"]}';
-                    dlbutton.text = 'Download for macOS Intel - {mac_intel["size"] / 1e9 : .2f} GB';
+                    dlbutton.href = '{mac_intel_download_url}';
+                    dlbutton.text = 'Download for macOS Intel - {mac_intel_size}';
                 }} else if (ua['architecture'].includes('arm')) {{
-                    dlbutton.href = '{mac_arm["browser_download_url"]}';
-                    dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm["size"] / 1e9 : .2f} GB';
+                    dlbutton.href = '{mac_arm_download_url}';
+                    dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size}';
                 }}
             }}
         }});

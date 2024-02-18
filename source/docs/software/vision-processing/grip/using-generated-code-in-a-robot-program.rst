@@ -23,9 +23,9 @@ writing your robot program. When writing your own program be aware of the follow
 
 Iterative program definitions
 -----------------------------
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         package org.usfirst.frc.team190.robot;
 
@@ -65,9 +65,9 @@ In this first part of the program you can see all the import statements for the 
 -   **imgLock** is a variable to synchronize access to the data being simultaneously updated with each image acquisition pass
     and the code that's processing the coordinates and steering the robot.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         @Override
         public void robotInit() {
@@ -103,9 +103,9 @@ in order to find its center, then saves that value in the variable centerX. Note
 this makes sure the main robot thread will always have the most up-to-date value of the variable, as long as it also uses
 **synchronized** blocks to read the variable.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         @Override
         public void autonomousPeriodic() {

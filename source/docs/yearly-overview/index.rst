@@ -1,4 +1,4 @@
-2023 Overview
+2024 Overview
 =============
 
 .. toctree::
@@ -6,3 +6,4 @@
 
    known-issues
    yearly-changelog
+   returning-quickstart

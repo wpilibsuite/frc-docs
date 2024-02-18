@@ -17,8 +17,8 @@ Necessary ``build.gradle`` changes are required to get Spotless functional. In t
 
    plugins {
       id "java"
-      id "edu.wpi.first.GradleRIO" version "2022.1.1"
-      id 'com.diffplug.spotless' version '6.12.0'
+      id "edu.wpi.first.GradleRIO" version "2024.1.1"
+      id 'com.diffplug.spotless' version '6.20.0'
    }
 
 Then ensure you add a required ``spotless {}`` block to correctly configure spotless. This can just get placed at the end of your ``build.gradle``.
@@ -86,10 +86,10 @@ In addition to formatting code, Spotless can also ensure the code is correctly f
        # Steps represent a sequence of tasks that will be executed as part of the job
        steps:
          # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-         - uses: actions/checkout@v2
+         - uses: actions/checkout@v4
            with:
              fetch-depth: 0
-         - uses: actions/setup-java@v3
+         - uses: actions/setup-java@v4
            with:
              distribution: 'zulu'
              java-version: 17
@@ -176,9 +176,6 @@ Requirements
 ^^^^^^^^^^^^
 
 - `Python 3.6 or higher <https://www.python.org/>`__
-- clang-format (included with `LLVM <https://releases.llvm.org/download.html>`__)
-
-.. important:: Windows is not currently supported at this time! Installing LLVM with Clang **will** break normal robot builds if installed on Windows.
 
 You can install `wpiformat <https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__ by typing ``pip3 install wpiformat`` into a terminal or command prompt.
 
@@ -213,6 +210,6 @@ An example styleguide is shown below:
 
 You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``, as shown in the example GitHub Actions workflow below:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/.github/workflows/lint-format.yml
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/.github/workflows/lint-format.yml
    :language: yaml
-   :lines: 1-5, 12-40
+   :lines: 1-5, 12-34

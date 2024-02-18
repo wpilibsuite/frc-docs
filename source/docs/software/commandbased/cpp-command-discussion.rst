@@ -4,7 +4,7 @@ A Technical Discussion on C++ Commands
 
 This article will help you understand the reasoning behind some of the decisions made in the 2020 command-based framework (such as the use of ``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, etc.).  You do not need to understand the information within this article to use the command-based framework in your robot code.
 
-.. note:: The model was further changed in 2023, as described `below <#2023 Updates>`_.
+.. note:: The model was further changed in 2023, as described :ref:`below <docs/software/commandbased/cpp-command-discussion:2023 Updates>`.
 
 Ownership Model
 ---------------
@@ -62,7 +62,7 @@ With ``std::shared_ptr``, there is no clear ownership model because there can be
 
 Use of CRTP
 -----------
-You may have noticed that in order to create a new command, you must extend ``CommandHelper``, providing the base class (usually ``frc2::CommandBase``) and the class that you just created. Let's take a look at the reasoning behind this:
+You may have noticed that in order to create a new command, you must extend ``CommandHelper``, providing the base class (usually ``frc2::Command``) and the class that you just created. Let's take a look at the reasoning behind this:
 
 Command Decorators
 ^^^^^^^^^^^^^^^^^^
@@ -88,7 +88,7 @@ Here ``temp`` is storing the vector of commands that we need to pass into the ``
 
    temp.emplace_back(std::make_unique<MyCommand>(std::move(*this));
 
-You might think it would be this straightforward, but that is not the case. Because this decorator code is in the ``Command`` interface, ``*this`` refers to the ``Command`` in the subclass that you are calling the decorator from and has the type of ``Command``. Effectively, you will be trying to move a ``Command`` instead of ``MyCommand``. We could cast the ``this`` pointer to a ``MyCommand*`` and then dereference it but we have no information about the subclass to cast to at compile-time.
+You might think it would be this straightforward, but that is not the case. Because this decorator code is in the ``Command`` class, ``*this`` refers to the ``Command`` in the subclass that you are calling the decorator from and has the type of ``Command``. Effectively, you will be trying to move a ``Command`` instead of ``MyCommand``. We could cast the ``this`` pointer to a ``MyCommand*`` and then dereference it but we have no information about the subclass to cast to at compile-time.
 
 Solutions to the Problem
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -187,7 +187,7 @@ After a few years in the new command-based framework, the recommended way to cre
 
 A significant root cause of most pain points was commands being passed by value in a non-polymorphic way. This made object slicing mistakes rather easy, and changes in composition structure could propagate type changes throughout the codebase: for example, if a ``ParallelRaceGroup`` were changed to a ``ParallelDeadlineGroup``, those type changes would propagate through the codebase. Passing around the object as a ``Command`` (as done in Java) would result in object slicing.
 
-Additionally, various decorators weren't supported in C++ due to reasons described `above <#Templating Decorators>`_. As long as decorators were rarely used and were mainly to reduce verbosity (where Java was more verbose than C++), this was less of a problem. Once heavy usage of decorators was recommended, this became more of an issue.
+Additionally, various decorators weren't supported in C++ due to reasons described :ref:`above <docs/software/commandbased/cpp-command-discussion:Templating Decorators>`. As long as decorators were rarely used and were mainly to reduce verbosity (where Java was more verbose than C++), this was less of a problem. Once heavy usage of decorators was recommended, this became more of an issue.
 
 ``CommandPtr``
 ^^^^^^^^^^^^^^
@@ -212,7 +212,7 @@ There are multiple ways to get a ``CommandPtr`` instance:
 
 For instance, consider the following from the `HatchbotInlined example project <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/>`:
 
-.. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/commands/Autos.cpp
+.. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/commands/Autos.cpp
    :language: c++
    :lines: 33-73
    :linenos:

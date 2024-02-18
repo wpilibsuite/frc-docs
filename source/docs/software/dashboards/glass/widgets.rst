@@ -31,14 +31,20 @@ Sendable Chooser Widget
 
 The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instance from robot code. It is often used to select autonomous modes. Like other dashboards, your ``SendableChooser`` instance simply needs to be sent using a NetworkTables API. The simplest is to use something like ``SmartDashboard``:
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       SmartDashboard.putData("Auto Selector", m_selector);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::SmartDashboard::PutData("Auto Selector", &m_selector);
+
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+
+      SmartDashboard.putData("Auto Selector", selector)
 
 .. note:: For more information on creating a ``SendableChooser``, please see :ref:`this document <docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard:Setting up SendableChooser>`.
 
@@ -51,14 +57,20 @@ PID Controller Widget
 
 The :guilabel:`PID Controller` widget allows you to quickly tune PID values for a certain controller. A ``PIDController`` instance must be sent using a NetworkTables API. The simplest is to use something like ``SmartDashboard``:
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       SmartDashboard.putData("Elevator PID Controller", m_elevatorPIDController);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::SmartDashboard::PutData("Elevator PID Controller", &m_elevatorPIDController);
+
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+
+      SmartDashboard.putData("Elevator PID Controller", elevatorPIDController)
 
 This allows you to quickly tune P, I, and D values for various setpoints.
 
@@ -68,6 +80,6 @@ This allows you to quickly tune P, I, and D values for various setpoints.
 FMSInfo Widget
 --------------
 
-The :guilabel:`FMSInfo` widget is created by default when Glass connects to a robot. This widget displays basic information about the robot's enabled state, whether a Driver Station is connected, whether an FMS is connected, the game-specific data, etc. It can be viewed by selecting the :guilabel:`NetworkTables` menu item and clicking on :guilabel:`FMSInfo`.
+The :guilabel:`FMSInfo` widget is created by default when Glass connects to a robot. This widget displays basic information about the robot's enabled state, whether a Driver Station is connected, whether an :term:`FMS` is connected, the game-specific data, etc. It can be viewed by selecting the :guilabel:`NetworkTables` menu item and clicking on :guilabel:`FMSInfo`.
 
 .. image:: images/fms-info.png

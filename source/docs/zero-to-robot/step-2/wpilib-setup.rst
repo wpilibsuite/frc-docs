@@ -1,7 +1,7 @@
 WPILib Installation Guide
 =========================
 
-This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Additionally, the below tutorial shows Windows 10, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
+This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can skip to :doc:`python-setup`. Additionally, the below tutorial shows Windows 10, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
 
 Prerequisites
 -------------
@@ -9,7 +9,7 @@ Prerequisites
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
  * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
- * macOS 11 or higher, both Intel and Arm.
+ * macOS 11 or higher, both Intel and Arm for Java. C++ requires macOS 12 or higher with Xcode 14.
 
 .. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
@@ -18,28 +18,26 @@ WPILib is designed to install to different folders for different years, so that 
 Downloading
 -----------
 
-.. wpilibrelease:: v2023.4.3
+.. wpilibrelease:: v2024.2.1
 
 `You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
 
-Once on the GitHub releases page, scroll to the assets section at the bottom of the page.
+Once on the GitHub releases page, scroll to the Downloads section.
 
 .. image:: images/installer-download/github-release.jpg
    :alt: Latest WPILib release page on GitHub
 
 Then click on the correct binary for your OS and architecture to begin the download.
 
-.. image:: images/installer-download/github-assets.jpg
-   :alt: Assets at bottom of latest WPILib release page on GitHub
-
 Extracting the Installer
 ------------------------
 
 When you download the WPILib installer, it is distributed as a disk image file ``.iso`` for Windows, ``.tar.gz`` for Linux, and distributed as a ``DMG`` for MacOS.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Windows 10+
+   .. tab-item:: Windows 10+
+      :sync: windows-10
 
       Windows 10+ users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
@@ -57,16 +55,20 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
       .. note:: After launching the installer, Windows may display a window titled "Windows protected your PC". Click :guilabel:`More info`, then select :guilabel:`Run anyway` to run the installer.
 
-   .. group-tab:: macOS
+   .. tab-item:: macOS
+      :sync: macos
 
       For this release, macOS users will need to have the Xcode Command Line Tools installed before running the installer; we are working on removing this requirement in a future release. This can be done by running ``xcode-select --install`` in the Terminal.
+
+      .. important:: When upgrading from a 2024 beta release or 2024.1.1, it's necessary to manually delete AdvantageScope before running the installer. Navigate to ``~/wpilib/2024/tools`` and delete AdvantageScope.
 
       macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
 
       .. image:: images/wpilib-setup/macos-launch.png
          :alt: Show the macOS screen after double clicking the DMG file.
 
-   .. group-tab:: Linux
+   .. tab-item:: Linux
+      :sync: linux
 
       Linux users should extract the downloaded ``.tar.gz`` and then launch ``WPILibInstaller``. Ubuntu treats executables in the file explorer as shared libraries, so double-clicking won't run them. Run the following commands in a terminal instead with ``<version>`` replaced with the version you're installing.
 
@@ -89,7 +91,7 @@ Upon opening the installer, you'll be presented with the below screen. Go ahead 
 
 This showcases a list of options included with the WPILib installation.
 
-- :guilabel:`Tools Only` installs just the WPILib tools (Pathweaver, Shuffleboard, RobotBuilder, SysID, Glass, and OutlineViewer) and JDK.
+- :guilabel:`Tools Only` installs just the WPILib tools (Pathweaver, Shuffleboard, RobotBuilder, SysId, Glass, and OutlineViewer) and JDK.
 - :guilabel:`Everything` installs the full development environment (VS Code, extensions, all dependencies), WPILib tools, and JDK.
 
 You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access. :guilabel:`Install for all Users` is not an option for macOS and Linux.
@@ -111,11 +113,11 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - Skips installing VS Code. Useful for advanced installations or configurations. Generally not recommended.
 
-- Select existing VS Code zip for offline install on this computer
+- Select existing VS Code archive for offline install on this computer
 
   - Selecting this option will bring up a prompt allowing you to select a pre-existing zip file of VS Code that has been downloaded by the installer previously. This option does **not** let you select an already installed copy of VS Code on your machine.
 
-- Create VS Code zip to share with other computers/OSes for offline install
+- Create VS Code archives to share with other computers/OSes for offline install
 
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
@@ -138,14 +140,16 @@ Post-Installation
 
 Some operating systems require some final action to complete installation.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: macOS
+   .. tab-item:: macOS
+      :sync: macos
 
       After installation, the installer opens the WPILib VS Code folder. Drag the VS Code application to the dock.
       Eject WPILibInstaller image from the desktop.
 
-   .. group-tab:: Linux
+   .. tab-item:: Linux
+      :sync: linux
 
       Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
 
@@ -157,7 +161,7 @@ Some operating systems require some final action to complete installation.
 Additional C++ Installation for Simulation
 ------------------------------------------
 
-C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode 13 or later <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
+C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode 14 or later <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
 
 Ensure the :guilabel:`Desktop Development with C++` option is checked in the Visual Studio installer for simulation support.
 
@@ -177,40 +181,31 @@ The Offline Installer installs the following components:
 
 - **Java JDK/JRE** - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the JAVA_HOME variable
 
-- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, Outline Viewer, Pathweaver, Glass, SysID
+- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, OutlineViewer, PathWeaver, Glass, SysId, Data Log Tool, roboRIO Team Number Setter, AdvantageScope
 
 - **WPILib Dependencies** - OpenCV, etc.
 
-- **VS Code Extensions** - WPILib extensions for robot code development in VS Code
+- **VS Code Extensions** - WPILib and Java/C++/Python extensions for robot code development in VS Code
+
+- **Documentation** - Offline copies of this frc-docs documentation and Java/C++/Python APIs
 
 Uninstalling
 ------------
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib. However, the following instructions can be used to uninstall WPILib if desired.
 
-.. tabs::
+.. tab-set::
 
-  .. tab:: Windows
+  .. tab-item:: Windows
 
      1. Delete the appropriate wpilib folder (``c:\Users\Public\wpilib\YYYY`` where ``YYYY`` is the year to uninstall)
      2. Delete the desktop icons at ``C:\Users\Public\Public Desktop``
-     3. Delete the path environment variables.
 
-        1. In the start menu, type environment and select "edit the system environment variables"
-        2. Click on the environment variables button (1).
-        3. In the user variables, select path (2) and then click on edit (3).
-        4. Select the path with ``roborio\bin`` (4) and click on delete (5).
-        5. Select the path with ``frccode`` and click on delete (5).
-        6. Repeat steps 3-6 in the Systems Variable pane.
-
-     .. image:: images/wpilib-setup/EnvironmentVariables.png
-      :alt: The "System Properties", "Environment Variables", and "Edit Environment Variables" screens.
-
-  .. tab:: macOS
+  .. tab-item:: macOS
 
      1. Delete the appropriate wpilib folder (``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall)
 
-  .. tab:: Linux
+  .. tab-item:: Linux
 
      1. Delete the appropriate wpilib folder (``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall). eg ``rm -rf ~/wpilib/YYYY``
 

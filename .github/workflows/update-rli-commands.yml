@@ -11,7 +11,7 @@ jobs:
       # ---- Find Trigger States ----
       # Run Inspector autofix on everything
       - name: Trigger-Check
-        uses: khan/pull-request-comment-trigger@master
+        uses: shanegenschaw/pull-request-comment-trigger@v2
         id: trigger-check-all
         with:
           trigger: '\inspector check all'
@@ -22,7 +22,7 @@ jobs:
 
       # Run Inspector autofix only on files changed by the PR
       - name: Trigger-Diff
-        uses: khan/pull-request-comment-trigger@master
+        uses: shanegenschaw/pull-request-comment-trigger@v2
         id: trigger-diff
         with:
           trigger: '\inspector fix diff'
@@ -33,7 +33,7 @@ jobs:
 
       # Run Inspector autofix on everything
       - name: Trigger-All
-        uses: khan/pull-request-comment-trigger@master
+        uses: shanegenschaw/pull-request-comment-trigger@v2
         id: trigger-all
         with:
           trigger: '\inspector fix all'
@@ -72,7 +72,7 @@ jobs:
 
       # Run Inspector
       - name: Inspect RLIs
-        uses: Starlight220/Inspector@v1.8
+        uses: docker://ghcr.io/starlight220/inspector:v1.9
         id: inspector
         with:
           root: ${{ github.workspace }}

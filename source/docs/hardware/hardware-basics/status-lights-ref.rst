@@ -113,7 +113,7 @@ PDP Status/Comm LEDs
 
 .. tip:: If a PDP LED is showing more than one color, see the PDP LED special states table below. For more information on resolving PDP faults see the PDP User Manual.
 
-.. note:: Note that the No CAN Comm fault will occur if the PDP cannot communicate with the roboRIO via CAN Bus.
+.. note:: Note that the No :term:`CAN` Comm fault will occur if the PDP cannot communicate with the roboRIO via CAN Bus.
 
 PDP Special States
 ^^^^^^^^^^^^^^^^^^
@@ -610,7 +610,7 @@ REV Robotics Servo Power Module
 Status LEDs
 ^^^^^^^^^^^
 
-Each channel has a corresponding status LED that will indicate the sensed state of the connected PWM signal. The table below describes each state’s corresponding LED pattern.
+Each channel has a corresponding status LED that will indicate the sensed state of the connected :term:`PWM` signal. The table below describes each state’s corresponding LED pattern.
 
 +-----------------------+----------------+
 | State                 | Pattern        |

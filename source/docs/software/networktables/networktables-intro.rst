@@ -5,7 +5,7 @@ What is NetworkTables
 
 NetworkTables can be used by programs on the robot in Java, C++, or LabVIEW, and is built into each version of WPILib.
 
-.. note: NetworkTables has changed substantially in 2023. For more information on migrating pre-2023 code to use the new features, see :ref:`docs/software/networktables/nt4-migration-guide:migrating from networktables 3.0 to networktables 4.0`.
+.. note:: NetworkTables has changed substantially in 2023. For more information on migrating pre-2023 code to use the new features, see :ref:`docs/software/networktables/nt4-migration-guide:migrating from networktables 3.0 to networktables 4.0`.
 
 NetworkTables Concepts
 ----------------------

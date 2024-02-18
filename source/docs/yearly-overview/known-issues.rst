@@ -8,12 +8,54 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 Open Issues
 -----------
 
-roboRIO 2.0 Ethernet Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AdvantageScope isn't updated by WPILib Installer on macOS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** On the roboRIO 2.0, the Ethernet port is configured to DHCP only. This will work in normal networking setups where the radio acts as a DHCP server, but will not communicate when tethered directly to the Driver Station via Ethernet.
+**Issue:** When running the WPILib Installer, a pop-up saying ``"WPILibInstaller" was prevented from modifying apps on your Mac.`` and AdvantageScope remains version 3.0.1. This issue occurs when upgrading WPILib, when a beta version of WPIlib or WPILib 2024.1.1 was installed on macOS.
 
-**Workaround:** Use the :doc:`/docs/software/roborio-info/roborio-web-dashboard` to change the Ethernet Adapter eth0 :guilabel:`Configure IPv4 Address` to :guilabel:`DHCP or Link Local`.
+**Workaround:** Delete AdvantageScope from ``~/wpilib/tools`` and re-run the WPILib Installer.
+
+Driver Station randomly disabled
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** The Driver Station contains tighter safety mechanisms in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.
+
+**Workaround:** There are multiple potential causes for tripping the safety mechanisms.
+
+Driver Station 24.0.1 from Game Tools 2024 Patch 1 contains an update to the safety controls that may resolve the issue in certain circumstances. If the issue is still seen with this version installed, please continue with the troubleshooting steps below.
+
+The Driver Station software has new tools for control packet delays that could cause this. The control system team requests that teams that experience this issue post screenshots of the :doc:`Driver Station Timing window </docs/software/driverstation/driver-station-timing-viewer>` to `<https://github.com/wpilibsuite/allwpilib/issues/6174>`__
+
+Some teams have seen this happen only when the robot is operated wirelessly, but not when operated via USB or ethernet tether. Some potential mitigations:
+
+1. Try relocating the robot radio to a better location (high in the robot and away from motors or large amounts of metal).
+2. :doc:`Measure your robot's bandwidth </docs/networking/networking-introduction/measuring-bandwidth-usage>` and ensure you have margin to the 4 Mbps bandwidth limit
+3. See if the Wi-Fi environment is congested using a tool like `WiFi Analyzer <https://apps.microsoft.com/detail/9NBLGGH33N0N?hl=en-US&gl=US>`__. As the 5 ghz WiFi spectrum has more channels and is less crowded, switching the robot radio to operate at 5 ghz will likely improve WiFi communication.
+4. Update the Wi-Fi drivers for the computer.
+5. If you operate multiple robots in close proximity in access point mode, setting up a router and operating the radios in bridge mode will reduce the number of wireless access points and may improve communications
+
+Some teams have seen this happen due to software that is running on the driver station (such as Autodesk updater or Discord). Some potential mitigations:
+
+1. Reboot the driver station computer
+2. Close software that is running in the background
+3. Follow the :doc:`Driver Station Best Practices </docs/software/driverstation/driver-station-best-practices>`
+
+If you identify software that interferes with driver station, please post it to `<https://github.com/wpilibsuite/allwpilib/issues/6174>`__
+
+Driver Station Reports Less Free RAM then is Available
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** The Driver Station diagnostic screen reports free RAM that is misleadingly low. This is due to Linux's use of memory caches. Linux will cache data in memory, but then relinquish when the robot programs requests more memory. The Driver Station only reports memory that isn't used by caches.
+
+**Workaround:** The true memory available to the robot program is available in the file ``/proc/meminfo``. :doc:`Use ssh to connect to the robot </docs/software/roborio-info/roborio-ssh>`, and run ``cat /proc/meminfo``.
+
+.. code-block:: text
+
+   MemTotal:         250152 kB
+   MemFree:           46484 kB
+   MemAvailable:     126956 kB
+
+The proper value to look is as MemAvailable, rather then MemFree (which is what the driver station is reporting).
 
 Driver Station Reporting No Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -29,12 +71,12 @@ Radio Second Port Sometimes Fails to Communicate
 
 **Issue:** There is a rare occurrence in the OM5P Radios that causes the second Ethernet port (the one farthest from the power plug) to not communicate.
 
-**Workaround:** Generally, power cycling the radio will restablish communication with the second port. Alternately, utilize a network switch such as the tp-link switch available from `FIRST Choice <https://firstchoicebyandymark.com/fc-cn-9024>`__ or the `brainboxes SW-005 <https://www.brainboxes.com/product/industrial-ethernet-switches/fast-ethernet/sw-005>`__ and plug all ethernet devices into the network switch and then plug the switch into the radio's first Ethernet port. This also allows easier tethering while at competition.
+**Workaround:** Generally, power cycling the radio will restablish communication with the second port. Alternately, utilize a network switch such as the tp-link switch formerly available from `FIRST Choice <https://www.amazon.com/gp/product/B000FNFSPY>`__ or the `brainboxes SW-005 <https://www.brainboxes.com/product/industrial-ethernet-switches/fast-ethernet/sw-005>`__ and plug all ethernet devices into the network switch and then plug the switch into the radio's first Ethernet port. This also allows easier tethering while at competition.
 
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** Use of the onboard I2C port, in any language, can result in system lockups. The frequency of these lockups appears to be dependent on the specific hardware (i.e. different roboRIOs will behave differently) as well as how the bus is being used.
+**Issue:** Use of the onboard I2C port on the roboRIO 1 or 2, in any language, can result in system lockups. The frequency of these lockups appears to be dependent on the specific hardware (i.e. different roboRIOs will behave differently) as well as how the bus is being used.
 
 **Workaround:** The only surefire mitigation is to use the MXP I2C port or another device to read the I2C data. Accessing the device less frequently and/or using a different roboRIO may significantly reduce the likelihood/frequency of lockups, it will be up to each team to assess their tolerance of the risk of lockup. This lockup can not be definitively identified on the field and a field fault will not be called for a match where this behavior is believed to occur. This lockup is a CPU/kernel hang, the roboRIO will completely stop responding and will not be accessible via the DS, webpage or SSH. If you can access your roboRIO via any of these methods, you are experiencing a different issue.
 
@@ -109,41 +151,38 @@ Issues with WPILib Dashboards and Simulation on Windows N Editions
 
 **Solution:** Install the `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__
 
-Fixed in Game Tools 2023.1.0
-----------------------------
-
-Driver Station does not detect joysticks at startup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Issue:** The Driver Station application does not detect already connected joysticks when it starts up. Connecting joysticks after it is already running works.
-
-**Workaround:** Connect joysticks after starting the DS, or use the joystick rescan button or the F1 shortcut to rescan for joysticks.
-
-Fixed in WPILib 2023.2.1
+Fixed in WPILib 2024.2.1
 ------------------------
 
-SysId - Robot program crash on startup when using CAN Spark Maxes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Visual Studio Code Reports Unresolved Dependency
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Issue:** SysId 2023.1.1's deployed robot program crashes on startup if it was configured to use CAN Spark Maxes.
+**Issue:** Java programs will report ``Unresolved dependency: org.junit.platform junit-platform-launcherJava(0)`` on build.gradle. Programs that use unit tests will fail to build. This causes build.gradle to be highlighted red in the Visual Studio Code explorer, and the ``plugins`` line in build.gradle to have a red squiggle.
 
-**Solution:** Install WPILib 2023.2.1 or newer.
+**Workaround:** This can be safetly ignored if you aren't running unit tests. To fix it, do the following:
 
-Manually flushing a client NetworkTableInstance does not work
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+On Windows execute the following in powershell:
 
-**Issue:** Calling ``flush()`` on a ``NetworkTableInstance`` does not cause the data to be flushed to remote subscribers immediately. This issue will be fixed in an upcoming WPILib release.
+.. code-block:: powershell
 
-**Workaround:** Set the ``periodic`` option on the NetworkTable publishers that need a faster update rate:
+   Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.module
+   Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\junit-bom\5.10.1\junit-bom-5.10.1.module
 
-.. tabs::
+On Linux/macOS execute the following:
 
-   .. code-tab:: java
+.. code-block:: sh
 
-      // Get a DoubleEntry for myTopic and update it with a 10ms period.
-      DoubleEntry myEntry = table.getDoubleTopic("myTopic").getEntry(0, PubSubOption.periodic(0.01));
+   curl https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -o ~/wpilib/2024/maven/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module
+   curl https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -o ~/wpilib/2024/maven/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module
 
-   .. code-tab:: cpp
+After running those, you’ll need to refresh Java intellisense in VS Code for it to pick up the new files. You can do so by running the ``Clean Java Language Server Workspace`` command in VS Code.
 
-      // Get a DoubleEntry for myTopic and update it with a 10ms period.
-      nt::DoubleEntry entry = table.GetDoubleTopic("myTopic").GetEntry(0, { .periodic = 0.01 });
+Fixed in Game Tools 2024 Patch 1
+--------------------------------
+
+Driver Station internal issue with print error and tags
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** The Driver Station will occasionally print ``internal issue with print error and tags``. The message is caused when the DS reports a message on its side intermixed with messages from the robot; it is not caused by and does not affect robot code.
+
+**Workaround:** This will be fixed in the next Game Tools release. There is no known workaround.

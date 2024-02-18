@@ -10,7 +10,7 @@ When tuning PID controllers, we focus on fiddling with controller parameters rel
 
 Model-based control focuses on developing an accurate model of the :term:`system` (mechanism) we are trying to control. These models help inform :term:`gains <gain>` picked for feedback controllers based on the physical responses of the system, rather than an arbitrary proportional :term:`gain` derived through testing. This allows us not only to predict ahead of time how a system will react, but also test our controllers without a physical robot and save time debugging simple bugs.
 
-.. note:: State-space control makes extensive use of linear algebra. More on linear algebra in modern control theory, including an introduction to linear algebra and resources, can be found in Chapter 4 of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
+.. note:: State-space control makes extensive use of linear algebra. More on linear algebra in modern control theory, including an introduction to linear algebra and resources, can be found in Chapter 5 of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
 
 If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or its sister classes, or used SysId to pick PID :term:`gains <gain>` for you, you're already familiar with model-based control! The ``kv`` and ``ka`` :term:`gains <gain>` can be used to describe how a motor (or arm, or drivetrain) will react to voltage. We can put these constants into standard state-space notation using WPILib's ``LinearSystem``, something we will do in a later article.
 
@@ -170,36 +170,34 @@ Similarly, decreasing the :math:`\mathbf{q}` elements would make the LQR penaliz
 
 For example, we might use the following Q and R for an elevator system with position and velocity states.
 
-.. tabs::
+.. tab-set-code::
 
-   .. group-tab:: Java
 
-      .. code-block:: Java
+   .. code-block:: Java
 
-         // Example system -- must be changed to match your robot.
-         LinearSystem<N2, N1, N1> elevatorSystem = LinearSystemId.identifyPositionSystem(5, 0.5);
-         LinearQuadraticRegulator<N2, N1, N1> controller = new LinearQuadraticRegulator(elevatorSystem,
-             // q's elements
-             VecBuilder.fill(0.02, 0.4),
-             // r's elements
-             VecBuilder.fill(12.0),
-             // our dt
-             0.020);
+      // Example system -- must be changed to match your robot.
+      LinearSystem<N2, N1, N1> elevatorSystem = LinearSystemId.identifyPositionSystem(5, 0.5);
+      LinearQuadraticRegulator<N2, N1, N1> controller = new LinearQuadraticRegulator(elevatorSystem,
+            // q's elements
+            VecBuilder.fill(0.02, 0.4),
+            // r's elements
+            VecBuilder.fill(12.0),
+            // our dt
+            0.020);
 
-   .. group-tab:: C++
 
-      .. code-block:: C++
+   .. code-block:: C++
 
-         // Example system -- must be changed to match your robot.
-          LinearSystem<2, 1, 1> elevatorSystem = frc::LinearSystemId::IdentifyVelocitySystem(5, 0.5);
-          LinearQuadraticRegulator<2, 1> controller{
-              elevatorSystem,
-              // q's elements
-              {0.02, 0.4},
-              // r's elements
-              {12.0},
-              // our dt
-              0.020_s};
+      // Example system -- must be changed to match your robot.
+         LinearSystem<2, 1, 1> elevatorSystem = frc::LinearSystemId::IdentifyVelocitySystem(5, 0.5);
+         LinearQuadraticRegulator<2, 1> controller{
+            elevatorSystem,
+            // q's elements
+            {0.02, 0.4},
+            // r's elements
+            {12.0},
+            // our dt
+            0.020_s};
 
 LQR: example application
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -241,15 +239,15 @@ Multiplying :math:`\mathbf{K}` by :math:`\mathbf{A} - \mathbf{BK}` essentially a
 
 The code below shows how to adjust the LQR controller's K gain for sensor input delays:
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       // Adjust our LQR's controller for 25 ms of sensor input delay. We
       // provide the linear system, discretization timestep, and the sensor
       // input delay as arguments.
       controller.latencyCompensate(elevatorSystem, 0.02, 0.025);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Adjust our LQR's controller for 25 ms of sensor input delay. We
       // provide the linear system, discretization timestep, and the sensor

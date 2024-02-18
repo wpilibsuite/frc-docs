@@ -57,7 +57,7 @@ Dynamically assigning IP addresses means that we are letting a device on the net
 What is a DHCP server?
 ~~~~~~~~~~~~~~~~~~~~~~
 
-A DHCP server is a device that runs the DHCP service to monitor the network for new devices to configure. In larger businesses, this could be a dedicated computer running the DHCP service and that computer would be the DHCP server. For home networks, FRC networks, and other smaller networks, the DHCP service is usually running on the router; in this case, the router is the DHCP server.
+A :term:`DHCP` server is a device that runs the DHCP service to monitor the network for new devices to configure. In larger businesses, this could be a dedicated computer running the DHCP service and that computer would be the DHCP server. For home networks, FRC networks, and other smaller networks, the DHCP service is usually running on the router; in this case, the router is the DHCP server.
 
 This means that if you ever run into a situation where you need to have a DHCP server assigning IP addresses to your network devices, it’s as simple as finding the closest home router, and plugging it in.
 
@@ -93,7 +93,7 @@ In the pits, a team may encounter issues with mixing Static and DHCP devices for
 Available Network Ports
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Please see R704 of the 2023 Game Manual for information regarding available network ports.
+Please see R704 of the 2024 Game Manual for information regarding available network ports.
 
 mDNS
 ----
@@ -175,7 +175,7 @@ If using the USB interface, no network setup is required (you do need the :ref:`
 Ethernet/Wireless
 -----------------
 
-The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team-based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, FMS will also hand out addresses in the same IP range.
+The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team-based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, :term:`FMS` will also hand out addresses in the same IP range.
 
 Summary
 -------

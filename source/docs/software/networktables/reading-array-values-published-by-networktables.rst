@@ -1,6 +1,6 @@
 Reading Array Values Published by NetworkTables
 ===============================================
-This article describes how to read values published by :term:`NetworkTables` using a program running on the robot. This is useful when using computer vision where the images are processed on your driver station laptop and the results stored into NetworkTables possibly using a separate vision processor like a raspberry pi, or a tool on the robot like GRIP, or a python program to do the image processing.
+This article describes how to read values published by :term:`NetworkTables` using a program running on the robot. This is useful when using computer vision where the images are processed on your driver station laptop and the results stored into NetworkTables possibly using a separate vision processor like a raspberry pi, or a tool on the robot like a python program to do the image processing.
 
 Very often the values are for one or more areas of interest such as goals or game pieces and multiple instances are returned. In the example below, several x, y, width, height, and areas are returned by the image processor and the robot program can sort out which of the returned values are interesting through further processing.
 
@@ -19,9 +19,9 @@ Both of the following examples are extremely simplified programs that just illus
 Writing a Program to Access the Topics
 --------------------------------------
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       DoubleArraySubscriber areasSub;
 
@@ -44,7 +44,7 @@ Writing a Program to Access the Topics
           System.out.println();
       }
 
-   .. code-tab:: cpp
+   .. code-block:: c++
 
       nt::DoubleArraySubscriber areasSub;
 
@@ -65,7 +65,7 @@ Writing a Program to Access the Topics
         std::cout << std::endl;
       }
 
-  .. code-tab:: python
+   .. code-block:: python
 
         def robotInit(self):
             table = ntcore.NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport")

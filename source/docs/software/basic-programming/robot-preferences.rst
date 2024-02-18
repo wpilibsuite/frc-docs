@@ -9,27 +9,40 @@ This example shows how to utilize Preferences to change the setpoint of a PID co
 Initializing Preferences
 ------------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
          :language: java
          :lines: 15-20
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
-         :lines: 28-30, 71-72, 79-82
+         :lines: 28-30, 73-74, 80-83
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
-         :language: cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
+         :language: c++
          :lines: 30-34
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
-         :language: cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+         :language: c++
          :lines: 12, 18-22
+
+   .. tab-item:: Python
+      :sync: Python
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/ArmSimulation/constants.py
+         :language: python
+         :lines: 18-23
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/ArmSimulation/subsytems/arm.py
+         :language: python
+         :lines: 20-23,37-41
 
 Preferences are stored using a name, the key. It's helpful to store the key in a constant, like ``kArmPositionKey`` and ``kArmPKey`` in the code above to avoid typing it multiple times and avoid typos. We also declare variables, ``kArmKp`` and ``armPositionDeg`` to hold the data retrieved from preferences.
 
@@ -40,43 +53,64 @@ If using the Command Framework, this type of code could be placed in the constru
 Reading Preferences
 -------------------
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
-         :lines: 104-111
+         :lines: 105-112
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
-         :language: cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+         :language: c++
          :lines: 44-52
+
+   .. tab-item:: Python
+      :sync: Python
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/ArmSimulation/subsytems/arm.py
+         :language: python
+         :lines: 43-50
 
 Reading a preference is easy. The ``getDouble`` method takes two parameters, the key to read, and a default value to use in case the preference doesn't exist. There are similar methods for other data types like booleans, ints, and strings.
 
 Depending on the data that is stored in preferences, you can use it when you read it, such as the proportional constant above. Or you can store it in a variable and use it later, such as the setpoint, which is used in ``telopPeriodic`` below.
 
-.. tabs::
+.. tab-set::
 
-   .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
          :language: java
          :lines: 29-38
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
-         :lines: 113-119
+         :lines: 114-120
 
-   .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
-         :language: cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+         :language: c++
          :lines: 15-24
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
-         :language: cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+         :language: c++
          :lines: 54-60
+
+   .. tab-item:: Python
+      :sync: Python
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/ArmSimulation/robot.py
+         :language: python
+         :lines: 22-28
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/ArmSimulation/subsytems/arm.py
+         :language: python
+         :lines: 52-57
 
 Using Preferences in SmartDashboard
 -----------------------------------

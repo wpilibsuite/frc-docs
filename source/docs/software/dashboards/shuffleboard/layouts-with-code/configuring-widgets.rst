@@ -8,21 +8,31 @@ Specifying a widget
 
 Call ``withWidget`` after ``add`` in the call chain:
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
-       Shuffleboard.getTab("Drive")
-        .add("Max Speed", 1)
-        .withWidget(BuiltInWidgets.kNumberSlider) // specify the widget here
-        .getEntry();
+      Shuffleboard.getTab("Drive")
+         .add("Max Speed", 1)
+         .withWidget(BuiltInWidgets.kNumberSlider) // specify the widget here
+         .getEntry();
 
-   .. code-tab:: cpp
+   .. code-block:: c++
 
-       frc::Shuffleboard::GetTab("Drive")
-        .Add("Max Speed", 1)
-        .WithWidget(frc::BuiltInWidgets::kNumberSlider) // specify the widget here
-        .GetEntry();
+      frc::Shuffleboard::GetTab("Drive")
+         .Add("Max Speed", 1)
+         .WithWidget(frc::BuiltInWidgets::kNumberSlider) // specify the widget here
+         .GetEntry();
+
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+      from wpilib.shuffleboard import BuiltInWidgets
+
+      (Shuffleboard.getTab("Drive")
+         .add("Max Speed", 1)
+         .withWidget(BuiltInWidgets.kNumberSlider) # specify the widget here
+         .getEntry())
 
 In this example, we configure the "Max Speed" widget to use a slider to modify the values instead of a basic text field.
 
@@ -33,26 +43,37 @@ Setting widget properties
 -------------------------
 Since the maximum speed only makes sense to be a value from 0 to 1 (full stop to full speed), a slider from -1 to 1 can cause problems if the value drops below zero. Fortunately, we can modify that using the ``withProperties`` method
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
-    Shuffleboard.getTab("Drive")
-        .add("Max Speed", 1)
-        .withWidget(BuiltInWidgets.kNumberSlider)
-        .withProperties(Map.of("min", 0, "max", 1)) // specify widget properties here
-        .getEntry();
+      Shuffleboard.getTab("Drive")
+         .add("Max Speed", 1)
+         .withWidget(BuiltInWidgets.kNumberSlider)
+         .withProperties(Map.of("min", 0, "max", 1)) // specify widget properties here
+         .getEntry();
 
-   .. code-tab:: cpp
+   .. code-block:: c++
 
-    frc::Shuffleboard::GetTab("Drive")
-        .Add("Max Speed", 1)
-        .WithWidget(frc::BuiltInWidgets::kNumberSlider)
-        .WithProperties({ // specify widget properties here
-          {"min", nt::Value::MakeDouble(0)},
-          {"max", nt::Value::MakeDouble(1)}
-        })
-        .GetEntry();
+      frc::Shuffleboard::GetTab("Drive")
+         .Add("Max Speed", 1)
+         .WithWidget(frc::BuiltInWidgets::kNumberSlider)
+         .WithProperties({ // specify widget properties here
+            {"min", nt::Value::MakeDouble(0)},
+            {"max", nt::Value::MakeDouble(1)}
+         })
+         .GetEntry();
+
+   .. code-block:: python
+
+      from wpilib.shuffleboard import Shuffleboard
+      from wpilib.shuffleboard import BuiltInWidgets
+
+      (Shuffleboard.getTab("Drive")
+         .add("Max Speed", 1)
+         .withWidget(BuiltInWidgets.kNumberSlider)
+         .withProperties(map("min", 0, "max", 1)) # specify widget properties here
+         .getEntry())
 
 .. image:: images/configuring-widgets/maxspeed.png
     :alt: The max speed widget limited from 0 to 1.

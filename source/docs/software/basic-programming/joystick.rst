@@ -33,21 +33,23 @@ When the robot is connected to the Field Management System at competition, the D
    :alt: A Logitech flight stick with an explanation of the axis values and buttons.
 
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       Joystick exampleJoystick = new Joystick(0); // 0 is the USB Port to be used as indicated on the Driver Station
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       Joystick exampleJoystick{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
-   .. code-tab:: python
+   .. code-block:: python
 
       exampleJoystick = wpilib.Joystick(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
 The ``Joystick`` class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the flight joystick, the user may need to set the specific X, Y, Z, and Throttle channels that your flight joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight joystick.
+
+.. important:: Due to differences in coordinate systems, teams usually negate the values when reading joystick axes. See the :ref:`docs/software/basic-programming/coordinate-system:Joystick and controller coordinate system` section for more detail.
 
 ``XboxController`` Class
 ------------------------
@@ -55,21 +57,23 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
 .. image:: images/joystick/xbox.jpg
    :alt: Original Xbox Controller.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       XboxController exampleXbox = new XboxController(0); // 0 is the USB Port to be used as indicated on the Driver Station
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       XboxController exampleXbox{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
-   .. code-tab:: python
+   .. code-block:: python
 
       exampleXbox = wpilib.XboxController(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
 The ``XboxController`` class provides named methods (e.g. ``getXButton``, ``getXButtonPressed``, ``getXButtonReleased``) for each of the buttons, and the indices can be accessed with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
+
+.. important:: Due to differences in coordinate systems, teams usually negate the values when reading joystick axes. See the :ref:`docs/software/basic-programming/coordinate-system:Joystick and controller coordinate system` section for more detail.
 
 ``PS4Controller`` Class
 -----------------------
@@ -78,21 +82,23 @@ The ``XboxController`` class provides named methods (e.g. ``getXButton``, ``getX
    :alt: PlayStation 4 controller.
 
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       PS4Controller examplePS4 = new PS4Controller(0); // 0 is the USB Port to be used as indicated on the Driver Station
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       PS4Controller examplePS4{0}; // 0 is the USB Port to be used as indicated on the Driver Station
 
-   .. code-tab:: python
+   .. code-block:: python
 
       examplePS4 = wpilib.PS4Controller(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
 The ``PS4Controller`` class provides named methods (e.g. ``getSquareButton``, ``getSquareButtonPressed``, ``getSquareButtonReleased``) for each of the buttons, and the indices can be accessed with  ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
+
+.. important:: Due to differences in coordinate systems, teams usually negate the values when reading joystick axes. See the :ref:`docs/software/basic-programming/coordinate-system:Joystick and controller coordinate system` section for more detail.
 
 POV
 ---
@@ -108,27 +114,28 @@ On joysticks, the POV is a directional hat that can select one of 8 different an
 
 An axis can be used with ``.getRawAxis(int index)`` (if not using any of the classes above) that returns the current value.  Zero and one in this example are each the index of an axis as found in the Driver Station mentioned above.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       private final PWMSparkMax m_leftMotor = new PWMSparkMax(Constants.kLeftMotorPort);
       private final PWMSparkMax m_rightMotor = new PWMSparkMax(Constants.kRightMotorPort);
-      private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
+      private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
       private final GenericHID m_stick = new GenericHID(Constants.kJoystickPort);
 
       m_robotDrive.arcadeDrive(-m_stick.getRawAxis(0), m_stick.getRawAxis(1));
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       frc::PWMVictorSPX m_leftMotor{Constants::kLeftMotorPort};
       frc::PWMVictorSPX m_rightMotor{Constants::kRightMotorPort};
-      frc::DifferentialDrive m_robotDrive{m_leftMotor, m_rightMotor};
+      frc::DifferentialDrive m_robotDrive{[&](double output) { m_leftMotor.Set(output); },
+                                          [&](double output) { m_rightMotor.Set(output); }};
       frc::GenericHID m_stick{Constants::kJoystickPort};
 
       m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
 
-   .. code-tab:: python
+   .. code-block:: python
 
       leftMotor = wpilib.PWMVictorSPX(LEFT_MOTOR_PORT)
       rightMotor = wpilib.PWMVictorSPX(RIGHT_MOTOR_PORT)
@@ -145,9 +152,9 @@ Button Usage
 
 Unlike an axis, you will usually want to use the ``pressed`` and ``released`` methods to respond to button input.  These will return true if the button has been activated since the last check.  This is helpful for taking an action once when the event occurs but not having to continuously do it while the button is held down.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       if (joystick.getRawButtonPressed(0)) {
          turnIntakeOn(); // When pressed the intake turns on
@@ -164,7 +171,7 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
          turnIntakeOff();
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       if (joystick.GetRawButtonPressed(0)) {
          turnIntakeOn(); // When pressed the intake turns on
@@ -181,7 +188,7 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
          turnIntakeOff();
       }
 
-   .. code-tab:: python
+   .. code-block:: python
 
       if joystick.getRawButtonPressed(0):
          turnIntakeOn() # When pressed the intake turns on
@@ -198,9 +205,9 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
 
 A common request is to toggle something on and off with the press of a button.  Toggles should be used with caution, as they require the user to keep track of the robot state.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       boolean toggle = false;
 
@@ -216,7 +223,7 @@ A common request is to toggle something on and off with the press of a button.  
          }
       }
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       bool toggle{false};
 
@@ -232,7 +239,7 @@ A common request is to toggle something on and off with the press of a button.  
          }
       }
 
-   .. code-tab:: python
+   .. code-block:: python
 
       toggle = False
 

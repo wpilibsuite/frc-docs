@@ -81,7 +81,7 @@ Modeling: How do you expect your system to behave?
 
 It's easiest to control a system if we have some prior knowledge of how the system responds to inputs.  Even the "pure feedback" strategy described above implicitly assumes things about the system response (e.g. that it is approximately linear), and consequently won't work in cases where the system does not respond in the expected way.  To control our system *optimally*, we need some way to reliably predict how it will respond to inputs.
 
-This can be done by combining several concepts you may be familiar with from physics: drawing free body diagrams of the forces that act on the mechanism, taking measurements of mass and moment of inertia from your CAD models, applying standard equations of how DC motors or pneumatic cylinders convert energy into mechanical force and motion, etc.
+This can be done by combining several concepts you may be familiar with from physics: drawing free body diagrams of the forces that act on the mechanism, taking measurements of mass and moment of inertia from your :term:`CAD` models, applying standard equations of how DC motors or pneumatic cylinders convert energy into mechanical force and motion, etc.
 
 The act of creating a consistent mathematical description of your system is called *modeling* your system's behavior. The resulting set of equations are called a *model* of how you expect the system to behave.  Not every system requires an explicit model to be controlled (we will see in the turret tutorial that a pure, manually-tuned feedback controller is satisfactory *in some cases*), but an explicit model is *always* helpful.
 
@@ -99,7 +99,7 @@ Theoretical Modeling
 
 `ReCalc is an online calculator <https://www.reca.lc/>`__ which estimates physical parameters for a number of common FRC mechanisms.  Importantly, it can generate estimate the ``kV``, ``kA``, and ``kG`` gains for the WPILib feedforward classes.
 
-The :doc:`WPILib system identification tool </docs/software/pathplanning/system-identification/introduction>` supports a "theoretical mode" that can be used to determine PID gains for feedback control from the ``kV`` and ``kA`` gains from ReCalc, enabling (in theory) full tuning of a control loop without running any test routines.
+The :doc:`WPILib system identification tool </docs/software/advanced-controls/system-identification/introduction>` supports a "theoretical mode" that can be used to determine PID gains for feedback control from the ``kV`` and ``kA`` gains from ReCalc, enabling (in theory) full tuning of a control loop without running any test routines.
 
 Remember, however, that theory is not reality and purely theoretical gains are not guaranteed to work well.  There is *never* a substitute for testing.
 
@@ -108,7 +108,7 @@ System Identification
 
 A good way to improve the accuracy of a simple physics model is to perform experiments on the real mechanism, record data, and use the data to *derive* the constants associated with different parts of the model. This is very useful for physical quantities which are difficult or impossible to predict, but easy to measure (ex: friction in a gearbox).
 
-:doc:`WPILib's system identification tool </docs/software/pathplanning/system-identification/introduction>` supports some common FRC mechanisms, including drivetrain. It deploys its own code to the robot to exercise the mechanism, record data, and derive gains for both feedforward and feedback control schemes.
+:doc:`WPILib's system identification tool </docs/software/advanced-controls/system-identification/introduction>` supports some common FRC mechanisms, including drivetrain. It deploys its own code to the robot to exercise the mechanism, record data, and derive gains for both feedforward and feedback control schemes.
 
 Manual Tuning: What to Do with No Explicit Model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

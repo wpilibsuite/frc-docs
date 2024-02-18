@@ -34,4 +34,4 @@ WPILib provides 2 classes, ``Transform2d`` (`Java <https://github.wpilib.org/all
 
 .. note:: For nonholonomic drivetrains, the y component of a ``Twist2d`` should always be 0.
 
-Both classes can be used to estimate robot location. Twist2d is used in WPILib's odometry classes to update the robot's pose based on movement, while Transform2d can be used to estimate the robot's global position from vision data.
+Both classes can be used to estimate robot location. Twist2d is used in WPILib's :term:`odometry` classes to update the robot's :term:`pose` based on movement, while Transform2d can be used to estimate the robot's global position from vision data.

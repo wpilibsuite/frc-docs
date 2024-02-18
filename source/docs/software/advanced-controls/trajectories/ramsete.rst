@@ -8,8 +8,8 @@ The Ramsete controller should be initialized with two gains, namely ``b`` and ``
 
 .. note:: Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results when all units were in meters. As such, a zero-argument constructor for ``RamseteController`` exists with gains defaulted to these values.
 
-.. tabs::
-   .. code-tab:: java
+.. tab-set-code::
+   .. code-block:: java
 
       // Using the default constructor of RamseteController. Here
       // the gains are initialized to 2.0 and 0.7.
@@ -19,7 +19,7 @@ The Ramsete controller should be initialized with two gains, namely ``b`` and ``
       // the user can choose any other gains.
       RamseteController controller2 = new RamseteController(2.1, 0.8);
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       // Using the default constructor of RamseteController. Here
       // the gains are initialized to 2.0 and 0.7.
@@ -37,15 +37,15 @@ The Ramsete controller returns "adjusted velocities" so that the when the robot 
 
 The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter. For the other parameters, one of these overloads takes in the goal as three separate parameters (pose, linear velocity, and angular velocity) whereas the other overload accepts a ``Trajectory.State`` object, which contains information about the goal pose. For its ease, users should use the latter method when tracking trajectories.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       Trajectory.State goal = trajectory.sample(3.4); // sample the trajectory at 3.4 seconds from the beginning
       ChassisSpeeds adjustedSpeeds = controller.calculate(currentRobotPose, goal);
 
 
-   .. code-tab:: c++
+   .. code-block:: c++
 
       const Trajectory::State goal = trajectory.Sample(3.4_s); // sample the trajectory at 3.4 seconds from the beginning
       ChassisSpeeds adjustedSpeeds = controller.Calculate(currentRobotPose, goal);
@@ -58,22 +58,22 @@ The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (
 
 The returned adjusted speeds can be converted to usable speeds using the kinematics classes for your drivetrain type. For example, the adjusted velocities can be converted to left and right velocities for a differential drive using a ``DifferentialDriveKinematics`` object.
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   .. code-block:: java
 
       ChassisSpeeds adjustedSpeeds = controller.calculate(currentRobotPose, goal);
       DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.toWheelSpeeds(adjustedSpeeds);
       double left = wheelSpeeds.leftMetersPerSecond;
       double right = wheelSpeeds.rightMetersPerSecond;
 
-   .. code-tab:: cpp
+   .. code-block:: c++
 
       ChassisSpeeds adjustedSpeeds = controller.Calculate(currentRobotPose, goal);
       DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.ToWheelSpeeds(adjustedSpeeds);
       auto [left, right] = kinematics.ToWheelSpeeds(adjustedSpeeds);
 
-Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController (`C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`_, `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`_) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX can be used.
+Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController (`C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_i_d_controller.html>`_, `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`_) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX can be used.
 
 Ramsete in the Command-Based Framework
 --------------------------------------

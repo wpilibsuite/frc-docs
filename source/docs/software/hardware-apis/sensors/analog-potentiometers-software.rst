@@ -16,9 +16,9 @@ The AnalogPotentiometer class
 
 An AnalogPotentiometer can be initialized as follows:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Initializes an AnalogPotentiometer on analog port 0
         // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
@@ -26,7 +26,7 @@ An AnalogPotentiometer can be initialized as follows:
 
         AnalogPotentiometer pot = new AnalogPotentiometer(0, 180, 30);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Initializes an AnalogPotentiometer on analog port 0
         // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
@@ -41,9 +41,9 @@ Customizing the underlying AnalogInput
 
 If the user would like to apply custom settings to the underlying :code:`AnalogInput` used by the :code:`AnalogPotentiometer`, an alternative constructor may be used in which the :code:`AnalogInput` is injected:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Initializes an AnalogInput on port 0, and enables 2-bit averaging
         AnalogInput input = new AnalogInput(0);
@@ -55,7 +55,7 @@ If the user would like to apply custom settings to the underlying :code:`AnalogI
 
         AnalogPotentiometer pot = new AnalogPotentiometer(input, 180, 30);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Initializes an AnalogInput on port 0, and enables 2-bit averaging
         frc::AnalogInput input{0};
@@ -72,13 +72,13 @@ Reading values from the AnalogPotentiometer
 
 The scaled value can be read by simply calling the :code:`get` method:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         pot.get();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         pot.Get();
 

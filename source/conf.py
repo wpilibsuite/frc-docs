@@ -24,9 +24,9 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 # -- Project information -----------------------------------------------------
 
 project = "FIRST Robotics Competition"
-copyright = "2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
+copyright = "2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
-version = "2023"
+version = "2024"
 
 
 # -- General configuration ---------------------------------------------------
@@ -35,11 +35,11 @@ version = "2023"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    "sphinx_tabs.tabs",
     "sphinx_design",
     "sphinx.ext.mathjax",
     "sphinx.ext.todo",
     "sphinx.ext.autosectionlabel",
+    "sphinx.ext.intersphinx",
     "sphinxcontrib.rsvgconverter",
     "sphinxext.delta",
     "sphinxext.opengraph",
@@ -54,9 +54,9 @@ extensions = [
     "notfound.extension",
     "versionwarning.extension",
     "sphinx.ext.viewcode",
-    "sphinx_tabs.tabs",
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
+    "sphinx_copybutton",
 ]
 
 local_extensions = [
@@ -65,6 +65,7 @@ local_extensions = [
     "_extensions.localization",
     "_extensions.controls_js_sim",
     "_extensions.wpilib_release",
+    "_extensions.default_latex_image_settings",
 ]
 
 extensions += local_extensions
@@ -141,15 +142,18 @@ linkcheck_anchors = False
 
 # Linkcheck Exclusions
 linkcheck_ignore = [
-    r".*kauailabs.com.*",
+    #    r".*kauailabs.com.*",
     r".*wpilibpi.local.*",
-    r".*andymark.com.*",
-    r".*ti.com/lit/an/spma033a/spma033a.pdf.*",
-    r".*wpilibpi.local.*",
-    r".*java.com/en/download/help/locale.xml.*",
+    #    r".*andymark.com.*",
+    #    r".*ti.com/lit/an/spma033a/spma033a.pdf.*",
+    r".*java.com.*",
     r".*playingwithfusion.com/contactus.php.*",
-    r".*github.com/wpilibsuite/BetaTest.*",
-    r".*vexrobotics.com/docs/.*",
+    #    r".*vexrobotics.com/docs/.*",
+    r".*forums.firstinspires.org.*",
+    r".*digikey.com.*",
+    r".*chiefdelphi.com.*",
+    r".*raspberrypi.com.*",
+    r".*stackoverflow.com.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -158,7 +162,7 @@ linkcheck_retries = 3
 linkcheck_workers = 1
 
 # Specify a standard user agent, as Sphinx default is blocked on some sites
-user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
@@ -172,6 +176,7 @@ templates_path = ["_templates"]
 exclude_patterns = [
     "docs/yearly-overview/2020-Game-Data.rst",
     "docs/software/wpilib-tools/axon/**",
+    "docs/software/vision-processing/grip/**",
     "docs/beta/*",
 ]
 
@@ -275,8 +280,6 @@ latex_elements = {
 
 suppress_warnings = ["epub.unknown_project_files"]
 
-sphinx_tabs_valid_builders = ["epub", "linkcheck"]
-
 
 # Options for translation support -------------------------------------------
 
@@ -325,3 +328,15 @@ def new_send(self, data):
 
 
 http.client.HTTPConnection.send = new_send
+
+intersphinx_mapping = {
+    "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/stable/", None),
+}
+
+# We recommend adding the following config value.
+# Sphinx defaults to automatically resolve *unresolved* labels using all your Intersphinx mappings.
+# This behavior has unintended side-effects, namely that documentations local references can
+# suddenly resolve to an external location.
+# See also:
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#confval-intersphinx_disabled_reftypes
+intersphinx_disabled_reftypes = ["*"]

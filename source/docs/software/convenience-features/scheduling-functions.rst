@@ -6,9 +6,10 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
 
 .. note:: The units for the period and offset are seconds in Java. In C++, the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` can be used to specify a period and offset in any time unit.
 
-.. tabs::
+.. tab-set::
 
-    .. group-tab:: Java
+    .. tab-item:: Java
+      :sync: Java
 
         .. code-block:: java
 
@@ -36,25 +37,27 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
                 }
               }
 
-    .. group-tab:: C++ (Header)
+    .. tab-item:: C++ (Header)
+       :sync: C++ (Header)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             class Robot : public frc::TimedRobot {
              private:
               frc::Joystick m_joystick{0};
               frc::Encoder m_encoder{1, 2};
               frc::Spark m_motor{1};
-              frc2::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
+              frc::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
 
               Robot();
 
               void TeleopPeriodic() override;
             };
 
-    .. group-tab:: C++ (Source)
+    .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-        .. code-block:: cpp
+        .. code-block:: c++
 
             void Robot::Robot() {
               AddPeriodic([&] {

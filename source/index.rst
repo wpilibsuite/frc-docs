@@ -25,7 +25,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       ^^^
 
-      If you are a returning team, please check out the overview of changes from 2022 to 2023 and the known issues.
+      If you are a returning team, please check out the overview of changes from 2023 to 2024, known issues, and quick start guide for updating.
 
       +++
 
@@ -47,6 +47,15 @@ Community translations can be found in a variety of languages in the bottom-left
          :outline:
 
          Known Issues
+
+      .. button-ref:: /docs/yearly-overview/returning-quickstart
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
+
+         Quick Start
 
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
@@ -176,11 +185,11 @@ Community translations can be found in a variety of languages in the bottom-left
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
 
-      **Romi Robot**
+      **Romi and XRP Robots**
 
       ^^^
 
-      The Romi Robot is a low-cost Raspberry Pi based platform for practicing WPILib programming.
+      The Romi and XRP robots are low-cost platforms for practicing WPILib programming.
 
       +++
 
@@ -191,7 +200,16 @@ Community translations can be found in a variety of languages in the bottom-left
          :expand:
          :outline:
 
-         View articles
+         View Romi articles
+
+      .. button-ref:: docs/xrp-robot/index
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
+
+         View XRP articles
 
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
@@ -200,7 +218,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       ^^^
 
-      Java and C++ class documentation.
+      Java, C++, and Python class documentation.
 
       .. button-link:: https://github.wpilib.org/allwpilib/docs/release/java/index.html
          :color: primary
@@ -219,6 +237,15 @@ Community translations can be found in a variety of languages in the bottom-left
          :outline:
 
          C++
+
+      .. button-link:: https://robotpy.readthedocs.io/projects/robotpy/en/stable/
+         :color: primary
+         :shadow:
+         :align: center
+         :expand:
+         :outline:
+
+         Python
 
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
@@ -331,6 +358,7 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/software/dashboards/index
    docs/software/telemetry/index
    docs/software/labview/index
+   docs/software/python/index
    docs/software/hardware-apis/index
    docs/software/can-devices/index
    docs/software/basic-programming/index
@@ -344,6 +372,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
    WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/release/java/index.html>
    WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/release/cpp/index.html>
+   WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/stable/>
 
 .. toctree::
    :maxdepth: 1
@@ -354,6 +383,7 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/outlineviewer/index
+   docs/software/wpilib-tools/roborio-team-number-setter/index
 
 .. toctree::
    :maxdepth: 1
@@ -389,10 +419,11 @@ Community translations can be found in a variety of languages in the bottom-left
 
 .. toctree::
    :maxdepth: 1
-   :caption: Romi Robot
+   :caption: Romi and XRP Support
    :hidden:
 
    docs/romi-robot/index
+   docs/xrp-robot/index
 
 .. toctree::
    :maxdepth: 1

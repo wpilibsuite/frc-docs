@@ -30,7 +30,7 @@ This might sound complicated, but in the context of WPILib we don't really need 
 .. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
 .. code-block:: java
 
-   public static CommandBase runOnce(Runnable action, Subsystem... requirements)
+   public static Command runOnce(Runnable action, Subsystem... requirements)
 
 ``runOnce`` expects us to give it a ``Runnable`` parameter (named ``action``).  A ``Runnable`` is the Java term for a function that takes no parameters and returns no value.  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  There are two ways to do this: we can refer to some existing function using a "method reference", or we can define the function we want inline using a "lambda expression".
 
@@ -116,11 +116,11 @@ This sounds a lot more complicated than it is to use in practice.  Let's look at
 
 .. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
 
-.. code-block:: cpp
+.. code-block:: c++
 
    CommandPtr RunOnce(
     std::function<void()> action,
-    std::initializer_list<Subsystem*> requirements);
+    Requirements requirements);
 
 ``runOnce`` expects us to give it a ``std::function<void()>`` parameter (named ``action``).  A ``std::function<void()>`` is the C++ type for a ``std::function`` that takes no parameters and returns no value (the template parameter, ``void()``, is a function type with no parameters and no return value).  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  C++ lacks a clean way to refer to existing class methods in a way that can automatically be converted to a ``std::function``, so the typical way to do this is to define a new function inline with a "lambda expression".
 
@@ -129,7 +129,7 @@ Lambda Expressions in C++
 
 To pass a function to ``runOnce``, we need to write a short inline function expression using a special syntax that resembles ordinary C++ function declarations, but varies in a few important ways:
 
-.. code-block:: cpp
+.. code-block:: c++
 
    // Create an InstantCommand that runs the drive forward at half speed
    CommandPtr driveHalfSpeed = cmd::RunOnce([this] { drivetrain.ArcadeDrive(0.5, 0.0); }, {drivetrain});

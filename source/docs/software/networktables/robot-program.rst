@@ -5,9 +5,9 @@ In a robot program, a NetworkTables server is automatically started on the defau
 
 The example robot program below publishes incrementing X and Y values to a table named ``datatable``. The values for X and Y can be easily viewed using the OutlineViewer program that shows the NetworkTables hierarchy and all the values associated with each topic.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         package edu.wpi.first.wpilibj.templates;
 
@@ -49,7 +49,7 @@ The example robot program below publishes incrementing X and Y values to a table
           }
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         #include <frc/TimedRobot.h>
         #include <networktables/DoubleTopic.h>
@@ -92,9 +92,7 @@ The example robot program below publishes incrementing X and Y values to a table
 
         START_ROBOT_CLASS(EasyNetworkExample)
 
-    .. code-tab:: python
-
-        #!/usr/bin/env python3
+    .. code-block:: python
 
         import ntcore
         import wpilib
@@ -126,8 +124,3 @@ The example robot program below publishes incrementing X and Y values to a table
                 self.yPub.set(self.y)
                 self.x += 0.05
                 self.y += 1.0
-
-
-        if __name__ == "__main__":
-            wpilib.run(EasyNetworkTableExample)
-

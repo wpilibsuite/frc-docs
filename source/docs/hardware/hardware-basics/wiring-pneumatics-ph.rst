@@ -1,14 +1,22 @@
 Wiring Pneumatics - REV Pneumatic Hub
 =====================================
 
-This page describes wiring pneumatics with the REV Pneumatic Hub (PH). For instructions on wiring pneumatics with the CTRE Pneumatic Control Module (PCM) see :doc:`this page <wiring-pneumatics-pcm>`.
+This page describes wiring pneumatics with the REV Pneumatic Hub (:term:`PH`). For instructions on wiring pneumatics with the CTRE Pneumatic Control Module (:term:`PCM`) see :doc:`this page <wiring-pneumatics-pcm>`.
 
 .. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located `here <https://www.firstinspires.org/sites/default/files/uploads/resource_library/frc/technical-resources/frc_pneumatics_manual.pdf>`__
+
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube-nocookie.com/embed/uQEiNiHT9fs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
+----
 
 Wiring Overview
 ---------------
 
-A single PH will support most pneumatics applications, providing an output for the compressor, input for a pressure switch, and outputs for up to 16 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the CAN bus and powered via 12V from the PDP/PDH.
+A single PH will support most pneumatics applications, providing an output for the compressor, input for a pressure switch, and outputs for up to 16 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the :term:`CAN` bus and powered via 12V from the PDP/PDH.
 
 For complicated robot designs requiring more channels or multiple solenoid voltages, additional PHs or PCMs can be added to the control system.
 
@@ -42,7 +50,7 @@ Analog
 
 An analog pressure switch (`REV-11-1107 <https://www.revrobotics.com/rev-11-1107/>`__ can be connected directly to the analog pressure sensor port 0 input terminals. Using an analog pressure sensor allows reading the pressure in the pneumatic system through code and setting custom trigger thresholds for turning on and off the compressor.
 
-..warning:: The Analog Pressure Sensor port is a very tight fit and requires special attention. See `REV Wiring an Analog Pressure Sensor <https://docs.revrobotics.com/rev-11-1852/pneumatic-hub-getting-started/wiring-the-pneumatic-hub#wiring-an-analog-pressure-sensor>`__ for more tips
+.. warning:: The Analog Pressure Sensor port is a very tight fit and requires special attention. See `REV Wiring an Analog Pressure Sensor <https://docs.revrobotics.com/rev-11-1852/pneumatic-hub-getting-started/wiring-the-pneumatic-hub#wiring-an-analog-pressure-sensor>`__ for more tips
 
 Solenoids
 ---------

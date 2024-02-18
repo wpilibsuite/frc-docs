@@ -10,25 +10,27 @@ Subsystems can be associated with "default commands" that will be automatically 
 Creating a Subsystem
 --------------------
 
-The recommended method to create a subsystem for most users is to subclass the abstract ``SubsystemBase`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SubsystemBase.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem_base.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h>`__):
+The recommended method to create a subsystem for most users is to subclass the abstract ``SubsystemBase`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SubsystemBase.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem_base.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java
-      :language: java
-      :lines: 7-
-      :linenos:
-      :lineno-start: 7
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java
+         :language: java
+         :lines: 7-
+         :linenos:
+         :lineno-start: 7
 
-  .. group-tab:: C++
+   .. tab-item:: C++
+      :sync: C++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
 This class contains a few convenience features on top of the basic ``Subsystem`` interface: it automatically calls the ``register()`` method in its constructor to register the subsystem with the scheduler (this is necessary for the ``periodic()`` method to be called when the scheduler runs), and also implements the ``Sendable`` interface so that it can be sent to the dashboard to display/log relevant status information.
 
@@ -39,63 +41,69 @@ Simple Subsystem Example
 
 What might a functional subsystem look like in practice? Below is a simple pneumatically-actuated hatch mechanism from the HatchBotTraditional example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/subsystems/HatchSubsystem.java
-      :language: java
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/subsystems/HatchSubsystem.java
+         :language: java
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+   .. tab-item:: C++ (Header)
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/subsystems/HatchSubsystem.h
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/subsystems/HatchSubsystem.h
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/subsystems/HatchSubsystem.cpp
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/subsystems/HatchSubsystem.cpp
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
 Notice that the subsystem hides the presence of the DoubleSolenoid from outside code (it is declared ``private``), and instead publicly exposes two higher-level, descriptive robot actions: ``grabHatch()`` and ``releaseHatch()``. It is extremely important that "implementation details" such as the double solenoid be "hidden" in this manner; this ensures that code outside the subsystem will never cause the solenoid to be in an unexpected state. It also allows the user to change the implementation (for instance, a motor could be used instead of a pneumatic) without any of the code outside of the subsystem having to change with it.
 
 Alternatively, instead of writing ``void`` public methods that are called from commands, we can define the public methods as factories that return a command. Consider the following from the HatchBotInlined example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__):
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
-      :language: java
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
+         :language: java
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. group-tab:: C++ (Header)
+   .. tab-item:: C++ (Header)
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.h
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-  .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
-      :language: c++
-      :lines: 5-
-      :linenos:
-      :lineno-start: 5
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
+         :language: c++
+         :lines: 5-
+         :linenos:
+         :lineno-start: 5
 
-Note the qualification of the ``RunOnce`` factory used here: this isn't the static factory in ``Commands``! Subsystems have similar instance factories that return commands requiring ``this`` subsystem. Here, the ``Subsystem.runOnce(Runnable)`` factory (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Subsystem.html#runOnce(java.lang.Runnable)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_subsystem.html#a6b8b3b7dab6f54fb8635e335dad448fe>`__) is used.
+Note the qualification of the ``RunOnce`` factory used here: this isn't the static factory in ``Commands``! Subsystems have similar instance factories that return commands requiring ``this`` subsystem. Here, the ``Subsystem.runOnce(Runnable)`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html#runOnce(java.lang.Runnable)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html#a6b8b3b7dab6f54fb8635e335dad448fe>`__) is used.
 
 For a comparison between these options, see :ref:`docs/software/commandbased/organizing-command-based:Instance Command Factory Methods`.
 
@@ -104,31 +112,34 @@ Periodic
 
 Subsystems have a ``periodic`` method that is called once every scheduler iteration (usually, once every 20 ms). This method is typically used for telemetry and other periodic actions that do not interfere with whatever command is requiring the subsystem.
 
-.. tabs::
+.. tab-set::
 
-  .. group-tab:: Java
+   .. tab-item:: Java
+      :sync: Java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespacedifferentialdrivesimulation/subsystems/DriveSubsystem.java
-      :language: java
-      :lines: 117-125
-      :linenos:
-      :lineno-start: 117
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespacedifferentialdrivesimulation/subsystems/DriveSubsystem.java
+         :language: java
+         :lines: 117-125
+         :linenos:
+         :lineno-start: 117
 
-  .. group-tab:: C++ (Header)
+   .. tab-item:: C++ (Header)
+      :sync: C++ (Header)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/include/subsystems/DriveSubsystem.h
-      :language: c++
-      :lines: 30-30
-      :linenos:
-      :lineno-start: 30
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/include/subsystems/DriveSubsystem.h
+         :language: c++
+         :lines: 30-30
+         :linenos:
+         :lineno-start: 30
 
-  .. group-tab:: C++ (Source)
+   .. tab-item:: C++ (Source)
+      :sync: C++ (Source)
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/cpp/subsystems/DriveSubsystem.cpp
-      :language: c++
-      :lines: 30-36
-      :linenos:
-      :lineno-start: 30
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/cpp/subsystems/DriveSubsystem.cpp
+         :language: c++
+         :lines: 30-36
+         :linenos:
+         :lineno-start: 30
 
 There is also a ``simulationPeriodic()`` method that is similar to ``periodic()`` except that it is only run during :doc:`Simulation </docs/software/wpilib-tools/robot-simulation/introduction>` and can be used to update the state of the robot.
 
@@ -141,24 +152,24 @@ Default Commands
 
 Setting a default command for a subsystem is very easy; one simply calls ``CommandScheduler.getInstance().setDefaultCommand()``, or, more simply, the ``setDefaultCommand()`` method of the ``Subsystem`` interface:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+   .. code-block:: java
 
-    CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand);
+      CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand);
 
-  .. code-tab:: c++
+   .. code-block:: c++
 
-    CommandScheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
+      CommandScheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+   .. code-block:: java
 
-    exampleSubsystem.setDefaultCommand(exampleCommand);
+      exampleSubsystem.setDefaultCommand(exampleCommand);
 
-  .. code-tab:: c++
+   .. code-block:: c++
 
-    exampleSubsystem.SetDefaultCommand(std::move(exampleCommand));
+      exampleSubsystem.SetDefaultCommand(std::move(exampleCommand));
 
 .. note:: A command that is assigned as the default command for a subsystem must require that subsystem.

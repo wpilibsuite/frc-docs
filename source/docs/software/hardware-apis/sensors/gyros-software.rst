@@ -5,128 +5,164 @@ Gyroscopes - Software
 
 .. note:: This section covers gyros in software.  For a hardware guide to gyros, see :ref:`docs/hardware/sensors/gyros-hardware:Gyroscopes - Hardware`.
 
-A gyroscope, or "gyro," is an angular rate sensor typically used in robotics to measure and/or stabilize robot headings.  WPILib natively provides specific support for the ADXRS450 gyro available in the kit of parts, as well as more general support for a wider variety of analog gyros through the `AnalogGyro`_ class. Most common 3rd party gyros inherit from the :code:`Gyro` interface making them easily usable too!
+A gyroscope, or "gyro," is an angular rate sensor typically used in robotics to measure and/or stabilize robot headings.  WPILib natively provides specific support for the ADXRS450 gyro available in the kit of parts, as well as more general support for a wider variety of analog gyros through the `AnalogGyro`_ class.
 
-The Gyro interface
-------------------
-
-All natively-supported gyro objects in WPILib implement the :code:`Gyro` interface (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_gyro.html>`__).  This interface provides methods for getting the current angular rate and heading, zeroing the current heading, and calibrating the gyro.
+There are getters the current angular rate and heading and functions for zeroing the current heading and calibrating the gyro.
 
 .. note:: It is crucial that the robot remain stationary while calibrating a gyro.
 
 ADIS16448
-^^^^^^^^^
+---------
 
-The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html>`__).  See the `Analog Devices ADIS16448 documentation <https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional information and examples.
+The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html>`__, :external:py:class:`Python <wpilib.ADIS16448_IMU>`).  See the `Analog Devices ADIS16448 documentation <https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16448 is now built into WPILib.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // ADIS16448 plugged into the MXP port
         ADIS16448_IMU gyro = new ADIS16448_IMU();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // ADIS16448 plugged into the MXP port
         ADIS16448_IMU gyro;
 
-ADIS16470
-^^^^^^^^^
+    .. code-block:: python
 
-The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html>`__).  See the `Analog Devices ADIS16470 documentation <https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional information and examples.
+        from wpilib import ADIS16448_IMU
+
+        # ADIS16448 plugged into the MXP port
+        self.gyro = ADIS16448_IMU()
+
+ADIS16470
+---------
+
+The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html>`__, :external:py:class:`Python <wpilib.ADIS16470_IMU>`).  See the `Analog Devices ADIS16470 documentation <https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16470 is now built into WPILib.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
-        // ADIS16470 plugged into the MXP port
+        // ADIS16470 plugged into the SPI port
         ADIS16470_IMU gyro = new ADIS16470_IMU();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
-        // ADIS16470 plugged into the MXP port
+        // ADIS16470 plugged into the SPI port
         ADIS16470_IMU gyro;
 
-ADXRS450_Gyro
-^^^^^^^^^^^^^
+    .. code-block:: python
 
-The :code:`ADXRS450_Gyro` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html>`__) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
+        # ADIS16470 plugged into the SPI port
+        self.gyro = ADIS16470_IMU()
+
+ADXRS450_Gyro
+-------------
+
+The :code:`ADXRS450_Gyro` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html>`__, :external:py:class:`Python <wpilib.ADXRS450_Gyro>`) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
 
 .. note:: ADXRS450 Gyro accumulation is handled through special circuitry in the FPGA; accordingly only a single instance of :code:`ADXRS450_Gyro` may be used.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an ADXRS450_Gyro object on the onboard SPI port
         ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an ADXRS450_Gyro object on the onboard SPI port
         frc::ADXRS450_Gyro gyro;
 
-AnalogGyro
-^^^^^^^^^^
+    .. code-block:: python
 
-The :code:`AnalogGyro` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_gyro.html>`__) provides support for any single-axis gyro with an analog output.
+        # Creates an ADXRS450_Gyro object on the onboard SPI port
+        self.gyro = ADXRS450_Gyro()
+
+AnalogGyro
+----------
+
+The :code:`AnalogGyro` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_gyro.html>`__, :external:py:class:`Python <wpilib.AnalogGyro>`) provides support for any single-axis gyro with an analog output.
 
 .. note:: Gyro accumulation is handled through special circuitry in the FPGA; accordingly, :code:`AnalogGyro`\`s may only be used on analog ports 0 and 1.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Creates an AnalogGyro object on port 0
         AnalogGyro gyro = new AnalogGyro(0);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Creates an AnalogGyro object on port 0
         frc::AnalogGyro gyro{0};
 
+    .. code-block:: python
+
+        # Creates an AnalogGyro object on port 0
+        self.gyro = AnalogGyro(0)
+
 navX
-^^^^
+----
 
-The navX uses the :code:`AHRS` class and implements the :code:`Gyro` interface.  See the `navX documentation <https://pdocs.kauailabs.com/navx-mxp/guidance/selecting-an-interface/>`__ for additional connection types.
+The navX uses the :code:`AHRS` class.  See the `navX documentation <https://pdocs.kauailabs.com/navx-mxp/guidance/selecting-an-interface/>`__ for additional connection types.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // navX MXP using SPI
         AHRS gyro = new AHRS(SPI.Port.kMXP);
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // navX MXP using SPI
         AHRS gyro{SPI::Port::kMXP};
 
+    .. code-block:: python
+
+        import navx
+
+        # navX MXP using SPI
+        self.gyro = navx.AHRS(SPI.Port.kMXP)
+
 Pigeon
-^^^^^^
+------
 
-The Pigeon should use the :code:`WPI_PigeonIMU` class that implements :code:`Gyro`.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf>`__ contains full details on using the Pigeon.
+The Pigeon should use the :code:`WPI_PigeonIMU` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf>`__ contains full details on using the Pigeon.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         WPI_PigeonIMU gyro = new WPI_PigeonIMU(0); // Pigeon is on CAN Bus with device ID 0
         // OR (choose one or the other based on your connection)
         TalonSRX talon = new TalonSRX(0); // TalonSRX is on CAN Bus with device ID 0
         WPI_PigeonIMU gyro = new WPI_PigeonIMU(talon); // Pigeon uses the talon created above
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         WPI_PigeonIMU gyro{0}; // Pigeon is on CAN Bus with device ID 0
         // OR (choose one or the other based on your connection)
         TalonSRX talon{0}; // TalonSRX is on CAN Bus with device ID 0
         WPI_PigeonIMU gyro{talon}; // Pigeon uses the talon created above
+
+    .. code-block:: python
+
+        import phoenix5
+        import ctre.sensors
+
+        self.gyro = ctre.WPI_PigeonIMU(0); # Pigeon is on CAN Bus with device ID 0
+        # OR (choose one or the other based on your connection)
+        talon = ctre.TalonSRX(0); # TalonSRX is on CAN Bus with device ID 0
+        self.gyro = ctre.WPI_PigeonIMU(talon) # Pigeon uses the talon created above
 
 Using gyros in code
 -------------------
@@ -138,11 +174,11 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 Displaying the robot heading on the dashboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for displaying heading data from a :code:`Gyro` in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
+:ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for displaying heading data from a gyro in the form of a compass.  This can be helpful for viewing the robot heading when sight lines to the robot are obscured:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Use gyro declaration from above here
 
@@ -151,7 +187,7 @@ Displaying the robot heading on the dashboard
             Shuffleboard.getTab("Example tab").add(gyro);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Use gyro declaration from above here
 
@@ -159,6 +195,16 @@ Displaying the robot heading on the dashboard
             // Places a compass indicator for the gyro heading on the dashboard
             frc::Shuffleboard.GetTab("Example tab").Add(gyro);
         }
+
+    .. code-block:: python
+
+        from wpilib.shuffleboard import Shuffleboard
+
+        def robotInit(self):
+            # Use gyro declaration from above here
+
+            # Places a compass indicator for the gyro heading on the dashboard
+            Shuffleboard.getTab("Example tab").add(self.gyro)
 
 Stabilizing heading while driving
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -174,9 +220,9 @@ Example: Tank drive stabilization using turn rate
 
 The following example shows how to stabilize heading using a simple P loop closed on the turn rate.  Since a robot that is not turning should have a turn rate of zero, the setpoint for the loop is implicitly zero, making this method very simple.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Use gyro declaration from above here
 
@@ -184,20 +230,27 @@ The following example shows how to stabilize heading using a simple P loop close
         double kP = 1;
 
         // Initialize motor controllers and drive
-        Spark left1 = new Spark(0);
-        Spark left2 = new Spark(1);
+        Spark leftLeader = new Spark(0);
+        Spark leftFollower = new Spark(1);
 
-        Spark right1 = new Spark(2);
-        Spark right2 = new Spark(3);
+        Spark rightLeader = new Spark(2);
+        Spark rightFollower = new Spark(3);
 
-        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
-
-        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
+        DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
 
         @Override
         public void robotInit() {
-            rightMotors.setInverted(true);
+            // Configures the encoder's distance-per-pulse
+            // The robot moves forward 1 foot per encoder rotation
+            // There are 256 pulses per encoder rotation
+            encoder.setDistancePerPulse(1./256.);
+
+            // Invert the right side of the drivetrain. You might have to invert the other side
+            rightLeader.setInverted(true);
+
+            // Configure the followers to follow the leaders
+            leftLeader.addFollower(leftFollower);
+            rightLeader.addFollower(rightFollower);
         }
 
         @Override
@@ -209,7 +262,7 @@ The following example shows how to stabilize heading using a simple P loop close
             drive.tankDrive(.5 + kP * error, .5 - kP * error);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Use gyro declaration from above here
 
@@ -217,18 +270,22 @@ The following example shows how to stabilize heading using a simple P loop close
         double kP = 1;
 
         // Initialize motor controllers and drive
-        frc::Spark left1{0};
-        frc::Spark left2{1};
-        frc::Spark right1{2};
-        frc::Spark right2{3};
+        frc::Spark leftLeader{0};
+        frc::Spark leftFollower{1};
 
-        frc::MotorControllerGroup leftMotors{left1, left2};
-        frc::MotorControllerGroup rightMotors{right1, right2};
+        frc::Spark rightLeader{2};
+        frc::Spark rightFollower{3};
 
-        frc::DifferentialDrive drive{leftMotors, rightMotors};
+        frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
+                                     [&](double output) { rightLeader.Set(output); }};
 
         void Robot::RobotInit() {
-          rightMotors.SetInverted(true);
+            // Invert the right side of the drivetrain. You might have to invert the other side
+            rightLeader.SetInverted(true);
+
+            // Configure the followers to follow the leaders
+            leftLeader.AddFollower(leftFollower);
+            rightLeader.AddFollower(rightFollower);
         }
 
         void Robot::AutonomousPeriodic() {
@@ -239,6 +296,40 @@ The following example shows how to stabilize heading using a simple P loop close
             drive.TankDrive(.5 + kP * error, .5 - kP * error);
         }
 
+    .. code-block:: python
+
+        from wpilib import Spark
+        from wpilib import MotorControllerGroup
+        from wpilib.drive import DifferentialDrive
+
+        def robotInit(self):
+            # Use gyro declaration from above here
+
+            # The gain for a simple P loop
+            self.kP = 1
+
+            # Initialize motor controllers and drive
+            left1 = Spark(0)
+            left2 = Spark(1)
+            right1 = Spark(2)
+            right2 = Spark(3)
+
+            leftMotors = MotorControllerGroup(left1, left2)
+            rightMotors = MotorControllerGroup(right1, right2)
+
+            self.drive = DifferentialDrive(leftMotors, rightMotors)
+
+            rightMotors.setInverted(true)
+
+        def autonomousPeriodic(self):
+            # Setpoint is implicitly 0, since we don't want the heading to change
+            error = -self.gyro.getRate()
+
+            # Drives forward continuously at half speed, using the gyro to stabilize the heading
+            self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
+
+.. note:: MotorControllerGroup is :term:`deprecated` in 2024. Can you help update the Python example?
+
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the turn rate for heading stabilization, PI loops are particularly effective.
 
 Example: Tank drive stabilization using heading
@@ -246,9 +337,9 @@ Example: Tank drive stabilization using heading
 
 The following example shows how to stabilize heading using a simple P loop closed on the heading.  Unlike in the turn rate example, we will need to set the setpoint to the current heading before starting motion, making this method slightly more-complicated.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Use gyro declaration from above here
 
@@ -289,7 +380,7 @@ The following example shows how to stabilize heading using a simple P loop close
             drive.tankDrive(.5 + kP * error, .5 - kP * error);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Use gyro declaration from above here
 
@@ -326,6 +417,41 @@ The following example shows how to stabilize heading using a simple P loop close
             drive.TankDrive(.5 + kP * error, .5 - kP * error);
         }
 
+    .. code-block:: python
+
+        from wpilib import Spark
+        from wpilib import MotorControllerGroup
+        from wpilib.drive import DifferentialDrive
+
+        def robotInit(self):
+            # Use gyro declaration from above here
+
+            # The gain for a simple P loop
+            self.kP = 1
+
+            # Initialize motor controllers and drive
+            left1 = Spark(0)
+            left2 = Spark(1)
+            right1 = Spark(2)
+            right2 = Spark(3)
+
+            leftMotors = MotorControllerGroup(left1, left2)
+            rightMotors = MotorControllerGroup(right1, right2)
+
+            self.drive = DifferentialDrive(leftMotors, rightMotors)
+
+            rightMotors.setInverted(true)
+
+        def autonomousInit(self):
+            # Set setpoint to current heading at start of auto
+            self.heading = self.gyro.getAngle()
+
+        def autonomousPeriodic(self):
+            error = self.heading - self.gyro.getAngle()
+
+            # Drives forward continuously at half speed, using the gyro to stabilize the heading
+            self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
+
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the heading for heading stabilization, PD loops are particularly effective.
 
 Turning to a set heading
@@ -335,9 +461,9 @@ Another common and highly-useful application for a gyro is turning a robot to fa
 
 Much like with heading stabilization, this is often accomplished with a PID loop - unlike with stabilization, however, the loop can only be closed on the heading.  The following example code will turn the robot to face 90 degrees with a simple P loop:
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+    .. code-block:: java
 
         // Use gyro declaration from above here
 
@@ -370,7 +496,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
             drive.tankDrive(kP * error, -kP * error);
         }
 
-    .. code-tab:: c++
+    .. code-block:: c++
 
         // Use gyro declaration from above here
 
@@ -399,6 +525,38 @@ Much like with heading stabilization, this is often accomplished with a PID loop
             // Turns the robot to face the desired direction
             drive.TankDrive(kP * error, -kP * error);
         }
+
+    .. code-block:: python
+
+        from wpilib import Spark
+        from wpilib import MotorControllerGroup
+        from wpilib.drive import DifferentialDrive
+
+        def robotInit(self):
+            # Use gyro declaration from above here
+
+            # The gain for a simple P loop
+            self.kP = 0.05
+
+            # Initialize motor controllers and drive
+            left1 = Spark(0)
+            left2 = Spark(1)
+            right1 = Spark(2)
+            right2 = Spark(3)
+
+            leftMotors = MotorControllerGroup(left1, left2)
+            rightMotors = MotorControllerGroup(right1, right2)
+
+            self.drive = DifferentialDrive(leftMotors, rightMotors)
+
+            rightMotors.setInverted(true)
+
+        def autonomousPeriodic(self):
+            # Find the heading error; setpoint is 90
+            error = 90 - self.gyro.getAngle()
+
+            # Drives forward continuously at half speed, using the gyro to stabilize the heading
+            self.drive.tankDrive(self.kP * error, -self.kP * error)
 
 As before, more-advanced implementations can use more-complicated control loops.
 

@@ -5,12 +5,10 @@ PID Control in WPILib
 
 .. note:: For a guide on implementing PID control through the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>`, see :ref:`docs/software/commandbased/pid-subsystems-commands:PID Control through PIDSubsystems and PIDCommands`.
 
-WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
+WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_i_d_controller.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 
 Using the PIDController Class
 -----------------------------
-
-.. note:: The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java teams should use the class in the ``edu.wpi.first.math.controller`` package.
 
 Constructing a PIDController
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -19,17 +17,17 @@ Constructing a PIDController
 
 In order to use WPILib's PID control functionality, users must first construct a ``PIDController`` object with the desired gains:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Creates a PIDController with gains kP, kI, and kD
     PIDController pid = new PIDController(kP, kI, kD);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Creates a PIDController with gains kP, kI, and kD
-    frc2::PIDController pid{kP, kI, kD};
+    frc::PIDController pid{kP, kI, kD};
 
 An optional fourth parameter can be provided to the constructor, specifying the period at which the controller will be run.  The ``PIDController`` object is intended primarily for synchronous use from the main robot loop, and so this value is defaulted to 20ms.
 
@@ -38,19 +36,17 @@ Using the Feedback Loop Output
 
 .. note:: The ``PIDController`` assumes that the ``calculate()`` method is being called regularly at an interval consistent with the configured period.  Failure to do this will result in unintended loop behavior.
 
-.. warning:: Unlike the old ``PIDController``, the new PIDController does not automatically control an output from its own thread - users are required to call ``calculate()`` and use the resulting output in their own code.
-
 Using the constructed ``PIDController`` is simple: simply call the ``calculate()`` method from the robot's main loop (e.g. the robot's ``autonomousPeriodic()`` method):
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
     motor.set(pid.calculate(encoder.getDistance(), setpoint));
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
@@ -76,9 +72,9 @@ Occasionally, it is useful to know if a controller has tracked the setpoint to w
 
 To do this, we first must specify the tolerances with the ``setTolerance()`` method; then, we can check it with the ``atSetpoint()`` method.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
     pid.setTolerance(5, 10);
@@ -87,7 +83,7 @@ To do this, we first must specify the tolerances with the ``setTolerance()`` met
     // error derivative is less than 10 units
     pid.atSetpoint();
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
     pid.SetTolerance(5, 10);
@@ -112,19 +108,48 @@ By default, the total output contribution from the integral gain is limited to b
 
 The range limits may be increased or decreased using the ``setIntegratorRange()`` method.
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // The integral gain term will never add or subtract more than 0.5 from
     // the total loop output
     pid.setIntegratorRange(-0.5, 0.5);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // The integral gain term will never add or subtract more than 0.5 from
     // the total loop output
     pid.SetIntegratorRange(-0.5, 0.5);
+
+Disabling Integral Gain if the Error is Too High
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Another way integral "wind-up" can be alleviated is by limiting the error range where integral gain is active. This can be achieved by setting ``IZone``. If the error is more than ``IZone``, the total accumulated error is reset, disabling integral gain. When the error is equal to or less than IZone, integral gain is enabled.
+
+By default, ``IZone`` is disabled.
+
+``IZone`` may be set using the ``setIZone()`` method. To disable it, set it to infinity.
+
+.. tab-set-code::
+
+  .. code-block:: java
+
+    // Disable IZone
+    pid.setIZone(Double.POSITIVE_INFINITY);
+
+    // Integral gain will not be applied if the absolute value of the error is
+    // more than 2
+    pid.setIZone(2);
+
+  .. code-block:: c++
+
+    // Disable IZone
+    pid.SetIZone(std::numeric_limits<double>::infinity());
+
+    // Integral gain will not be applied if the absolute value of the error is
+    // more than 2
+    pid.SetIZone(2);
 
 Setting Continuous Input
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -137,14 +162,14 @@ Some process variables (such as the angle of a turret) are measured on a circula
 
 To configure a ``PIDController`` to automatically do this, use the ``enableContinuousInput()`` method:
 
-.. tabs::
+.. tab-set-code::
 
-  .. code-tab:: java
+  .. code-block:: java
 
     // Enables continuous input on a range from -180 to 180
     pid.enableContinuousInput(-180, 180);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Enables continuous input on a range from -180 to 180
     pid.EnableContinuousInput(-180, 180);
@@ -152,16 +177,14 @@ To configure a ``PIDController`` to automatically do this, use the ``enableConti
 Clamping Controller Output
 --------------------------
 
-Unlike the old ``PIDController``, the new controller does not offer any output clamping features, as the user is expected to use the loop output themselves.  Output clamping can be easily achieved by composing the controller with WPI's ``clamp()`` function (or ``std::clamp`` in c++):
+.. tab-set-code::
 
-.. tabs::
-
-  .. code-tab:: java
+  .. code-block:: java
 
     // Clamps the controller output to between -0.5 and 0.5
     MathUtil.clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5);
 
-  .. code-tab:: c++
+  .. code-block:: c++
 
     // Clamps the controller output to between -0.5 and 0.5
     std::clamp(pid.Calculate(encoder.GetDistance(), setpoint), -0.5, 0.5);
