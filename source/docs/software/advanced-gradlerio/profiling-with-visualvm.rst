@@ -13,43 +13,15 @@ Setting up Gradle
 
 GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a roboRIO). To begin, locate the ``frcJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
 
-.. code-block:: groovy
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.2.1/vscode-wpilib/resources/gradle/java/build.gradle
+   :language: groovy
+   :lines: 15-40
+   :linenos:
+   :lineno-start: 15
+   :emphasize-lines: 15-16
 
-   deploy {
-      targets {
-         roborio(getTargetTypeClass('RoboRIO')) {
-               // Team number is loaded either from the .wpilib/wpilib_preferences.json
-               // or from command line. If not found an exception will be thrown.
-               // You can use getTeamOrDefault(team) instead of getTeamNumber if you
-               // want to store a team number in this file.
-               team = project.frc.getTeamNumber()
-               debug = project.frc.getDebugOrDefault(false)
 
-               artifacts {
-                  // First part is artifact name, 2nd is artifact type
-                  // getTargetTypeClass is a shortcut to get the class type using a string
-
-                  frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
-                  }
-
-                  // Static files artifact
-                  frcStaticFileDeploy(getArtifactTypeClass('FileTreeArtifact')) {
-                     files = project.fileTree('src/main/deploy')
-                     directory = '/home/lvuser/deploy'
-                  }
-               }
-         }
-      }
-   }
-
-We will be replacing
-
-.. code-block:: groovy
-
-               frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
-               }
-
-with
+We will be replacing the highlighted lines with:
 
 .. code-block:: groovy
 
