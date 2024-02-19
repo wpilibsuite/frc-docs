@@ -32,14 +32,14 @@ Reading the Bus Voltage
 .. tab-set-code::
 
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
          :language: java
          :lines: 32-35
          :linenos:
          :lineno-start: 32
 
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
          :language: c++
          :lines: 28-31
          :linenos:
@@ -52,13 +52,13 @@ Reading the Temperature
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
       :language: java
       :lines: 37-39
       :linenos:
       :lineno-start: 37
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
       :language: c++
       :lines: 33-35
       :linenos:
@@ -71,13 +71,13 @@ Reading the Total Current, Power, and Energy
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
       :language: java
       :lines: 41-53
       :linenos:
       :lineno-start: 41
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
       :language: c++
       :lines: 37-49
       :linenos:
@@ -92,13 +92,13 @@ The PDP/PDH also allows users to monitor the current drawn by the individual dev
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
       :language: java
       :lines: 26-30
       :linenos:
       :lineno-start: 26
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
       :language: c++
       :lines: 22-26
       :linenos:
