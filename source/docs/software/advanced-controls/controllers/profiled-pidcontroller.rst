@@ -172,7 +172,7 @@ A more complete example of ``ProfiledPIDController`` usage is provided in the El
     :linenos:
     :lineno-start: 5
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/ElevatorProfiledPID/robot.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/ElevatorProfiledPID/robot.py
     :language: python
     :lines: 8-
     :linenos:

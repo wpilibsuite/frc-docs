@@ -186,7 +186,7 @@ A more complete example of ``TrapezoidProfile`` usage is provided in the Elevato
     :linenos:
     :lineno-start: 5
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/ElevatorTrapezoidProfile/robot.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/ElevatorTrapezoidProfile/robot.py
     :language: python
     :lines: 8-
     :linenos:
