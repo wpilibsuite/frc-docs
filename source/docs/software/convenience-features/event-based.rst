@@ -12,11 +12,11 @@ The ``EventLoop`` class is a "container" for pairs of conditions and actions, wh
 
 .. tab-set-code::
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
       :language: java
       :lines: 32-33, 86-90
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 94-94, 81-81
 
@@ -31,11 +31,11 @@ To bind a callback action to the condition, use ``ifHigh()``/``IfHigh()``:
 
 .. tab-set-code::
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
       :language: java
       :lines: 71-77
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 64-72
 
@@ -53,11 +53,11 @@ The ``and()``/``&&`` composes two ``BooleanEvent`` conditions into a third condi
 
 .. tab-set-code::
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
       :language: java
       :lines: 43-48
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 35-40
 
@@ -68,11 +68,11 @@ The ``or()``/``||`` composes two ``BooleanEvent`` conditions into a third condit
 
 .. tab-set-code::
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
       :language: java
       :lines: 50-56
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 42-47
 
@@ -83,11 +83,11 @@ The ``negate()``/``!`` composes one ``BooleanEvent`` condition into another cond
 
 .. tab-set-code::
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
       :language: java
       :lines: 45-46
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 37-38
 
@@ -99,11 +99,11 @@ To avoid rapid repeated activation, conditions (especially those originating fro
 .. tab-set-code::
 
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
       :language: java
       :lines: 70-74
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 64-69
 
@@ -116,11 +116,11 @@ Often times it is desired to bind an action not to the *current* state of a cond
 
 .. tab-set-code::
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/eventloop/Robot.java
       :language: java
       :lines: 78-83
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.2.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 74-78
 

@@ -11,17 +11,17 @@ The following program starts automatic capture of a USB camera like the Microsof
 
 .. tab-set-code::
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
       :language: java
       :lines: 7-20
       :linenos:
       :lineno-start: 7
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
       :language: c++
       :lines: 7-8, 16-18, 20, 25-31
 
-   .. rli:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/QuickVision/robot.py
+   .. rli:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/QuickVision/robot.py
       :language: python
       :lines: 8-17
       :linenos:
@@ -37,7 +37,7 @@ In the following example a thread created in robotInit() gets the Camera Server 
    .. tab-item:: Java
       :sync: tabcode-java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
          :language: java
          :lines: 7-65
          :linenos:
@@ -46,7 +46,7 @@ In the following example a thread created in robotInit() gets the Camera Server 
    .. tab-item:: c++
       :sync: tabcode-c++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.2.1/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
          :language: c++
          :lines: 5-20, 23-56, 58-61, 63-64, 69-76
 
@@ -73,14 +73,14 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
       Here's what your ``robot.py`` needs to contain to launch the image processing process:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/IntermediateVision/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/IntermediateVision/robot.py
          :language: python
          :lines: 8-17
          :linenos:
 
       The ``launch("vision.py")`` function says to launch ``vision.py`` and call the ``run`` function in that file. Here's what is in ``vision.py``:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/86d7ba698fbb1489960690af4ee25d6c119dd463/IntermediateVision/vision.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/IntermediateVision/vision.py
          :language: python
          :lines: 12-55
          :linenos:
