@@ -265,7 +265,7 @@ A simple way to deal with field oriented driving is to check the alliance color 
 
       // The origin is always blue. When our alliance is red, X and Y need to be inverted
       var alliance = DriverStation.getAlliance();
-      var invert = 0;
+      var invert = 1;
       if (alliance.isPresent() && alliance.get() == Alliance.Red) {
           invert = -1;
       }
@@ -280,7 +280,7 @@ A simple way to deal with field oriented driving is to check the alliance color 
    .. code-block:: c++
 
       // The origin is always blue. When our alliance is red, X and Y need to be inverted
-      int invert = 0;
+      int invert = 1;
       if (frc::DriverStation::GetAlliance() == frc::DriverStation::Alliance::kRed) {
           invert = -1;
       }
@@ -295,7 +295,7 @@ A simple way to deal with field oriented driving is to check the alliance color 
    .. code-block:: python
 
        # The origin is always blue. When our alliance is red, X and Y need to be inverted
-       invert = 0
+       invert = 1
        if wpilib.DriverStation.getAlliance() == wpilib.DriverStation.Alliance.kRed:
            invert = -1
 
