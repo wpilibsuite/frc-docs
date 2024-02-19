@@ -40,6 +40,8 @@ Some teams have seen this happen due to software that is running on the driver s
 2. Close software that is running in the background
 3. Follow the :doc:`Driver Station Best Practices </docs/software/driverstation/driver-station-best-practices>`
 
+While rare, this can be caused by robot code that oversaturates the roboRIO processor or network connection. If all other troubleshooting steps fail, you can try running with one of the WPILib example programs to see if the problem still occurs.
+
 If you identify software that interferes with driver station, please post it to `<https://github.com/wpilibsuite/allwpilib/issues/6174>`__
 
 Driver Station Reports Less Free RAM then is Available
