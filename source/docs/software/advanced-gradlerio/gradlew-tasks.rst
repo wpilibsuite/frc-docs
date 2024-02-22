@@ -14,6 +14,10 @@ CompileCommands tasks
 ---------------------
 
 ``./gradlew generateCompileCommands`` - Generate compile_commands.json for C++ programs. This is a configuration file that is supported by many Integrated Development Environments and build tools.
+.. warning::
+    Using compile commands isn't recommended for most users and has a variety of pitfalls compared to in built intellisense.
+.. note::
+    This file will be outputted under ``build/TargetedCompileCommands/targetplatformandbuildtype`` but needs to be moved to the root of your project. Make sure you have gitignored this file.
 
 DeployUtils tasks
 -------------------
