@@ -13,7 +13,7 @@ Build tasks
 CompileCommands tasks
 ---------------------
 
-``./gradlew generateCompileCommands`` - Generate compile_commands.json for C++ programs. This is a configuration file that is supported by many Integrated Development Environments and build tools.
+``./gradlew generateCompileCommands`` - Generate compile_commands.json for C++ programs. This is a configuration file that is used by clangd, which is supported by many Integrated Development Environments and build tools.
 .. warning::
     Using compile commands isn't recommended for most users and has a variety of pitfalls compared to in built intellisense.
 .. note::
