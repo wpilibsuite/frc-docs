@@ -83,7 +83,7 @@ class WpilibRelease(SphinxDirective):
             let ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'mobile', 'platform', 'platformVersion']);
             let shouldUseAltLink;
             try {{
-                await fetch("https://packages.wpilib.workers.dev/", { mode: "no-cors" });
+                await fetch("https://packages.wpilib.workers.dev/", {{ mode: "no-cors" }});
                 shouldUseAltLink = false;
             }} catch (e) {{
                 shouldUseAltLink = true;
