@@ -27,7 +27,9 @@ class WpilibRelease(SphinxDirective):
         release: Dict = release_json.json()
 
         cf_folder = f"https://packages.wpilib.workers.dev/installer/{version}"
-        artifactory_folder = f"https://frcmaven.wpi.edu/api/download/installer/{version}"
+        artifactory_folder = (
+            f"https://frcmaven.wpi.edu/api/download/installer/{version}"
+        )
 
         def get_url_size(osname):
             soup = BeautifulSoup(
@@ -90,24 +92,24 @@ class WpilibRelease(SphinxDirective):
             }}
             if (ua['platform'] == 'Windows') {{
                 if (shouldUseAltLink) {{
-                    dlbutton.href = '{artifactory_folder + win_download_url_part}';
+                    dlbutton.href = '{artifactory_folder}{win_download_url_part}';
                 }} else {{
-                    dlbutton.href = '{cf_folder + win_download_url_part}';
+                    dlbutton.href = '{cf_folder}{win_download_url_part}';
                 }}
                 dlbutton.text = 'Download for Windows - {win_size}';
             }} else if (ua['platform'] == 'macOS') {{
                 if (ua['architecture'] == 'x86') {{
                     if (shouldUseAltLink) {{
-                        dlbutton.href = '{artifactory_folder + mac_intel_download_url_part}';
+                        dlbutton.href = '{artifactory_folder}{mac_intel_download_url_part}';
                     }} else {{
-                        dlbutton.href = '{cf_folder + mac_intel_download_url_part}';
+                        dlbutton.href = '{cf_folder}{mac_intel_download_url_part}';
                     }}
                     dlbutton.text = 'Download for macOS Intel - {mac_intel_size}';
                 }} else if (ua['architecture'].includes('arm')) {{
                     if (shouldUseAltLink) {{
-                        dlbutton.href = '{artifactory_folder + mac_arm_download_url_part}';
+                        dlbutton.href = '{artifactory_folder}{mac_arm_download_url_part}';
                     }} else {{
-                        dlbutton.href = '{cf_folder + mac_arm_download_url_part}';
+                        dlbutton.href = '{cf_folder}{mac_arm_download_url_part}';
                     }}
                     dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size}';
                 }}
