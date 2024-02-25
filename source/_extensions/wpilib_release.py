@@ -86,9 +86,9 @@ class WpilibRelease(SphinxDirective):
             let baseUrl;
             try {{
                 await fetch("https://packages.wpilib.workers.dev/", {{ mode: "no-cors" }});
-                baseUrl = {cf_folder};
+                baseUrl = "{cf_folder}";
             }} catch (e) {{
-                baseUrl = {artifactory_folder};
+                baseUrl = "{artifactory_folder}";
             }}
             if (ua['platform'] == 'Windows') {{
                 dlbutton.href = `${{baseUrl}}{win_download_url_part}`;
