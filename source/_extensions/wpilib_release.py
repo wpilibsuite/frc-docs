@@ -83,34 +83,22 @@ class WpilibRelease(SphinxDirective):
         addEventListener('DOMContentLoaded', async (event) => {{
             let dlbutton = document.getElementsByClassName("wpilibrelease-dl-button")[0];
             let ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'mobile', 'platform', 'platformVersion']);
-            let shouldUseAltLink;
+            let baseUrl;
             try {{
                 await fetch("https://packages.wpilib.workers.dev/", {{ mode: "no-cors" }});
-                shouldUseAltLink = false;
+                baseUrl = {cf_folder};
             }} catch (e) {{
-                shouldUseAltLink = true;
+                baseUrl = {artifactory_folder};
             }}
             if (ua['platform'] == 'Windows') {{
-                if (shouldUseAltLink) {{
-                    dlbutton.href = '{artifactory_folder}{win_download_url_part}';
-                }} else {{
-                    dlbutton.href = '{cf_folder}{win_download_url_part}';
-                }}
+                dlbutton.href = `${{baseUrl}}{win_download_url_part}`;
                 dlbutton.text = 'Download for Windows - {win_size}';
             }} else if (ua['platform'] == 'macOS') {{
                 if (ua['architecture'] == 'x86') {{
-                    if (shouldUseAltLink) {{
-                        dlbutton.href = '{artifactory_folder}{mac_intel_download_url_part}';
-                    }} else {{
-                        dlbutton.href = '{cf_folder}{mac_intel_download_url_part}';
-                    }}
+                    dlbutton.href = `${{baseUrl}}{mac_intel_download_url_part}`;
                     dlbutton.text = 'Download for macOS Intel - {mac_intel_size}';
                 }} else if (ua['architecture'].includes('arm')) {{
-                    if (shouldUseAltLink) {{
-                        dlbutton.href = '{artifactory_folder}{mac_arm_download_url_part}';
-                    }} else {{
-                        dlbutton.href = '{cf_folder}{mac_arm_download_url_part}';
-                    }}
+                    dlbutton.href = `${{baseUrl}}{mac_arm_download_url_part}`;
                     dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size}';
                 }}
             }}
