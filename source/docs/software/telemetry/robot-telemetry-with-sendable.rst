@@ -10,7 +10,7 @@ WPILib provides this functionality with the ``Sendable`` interface.  Classes tha
 What is Sendable?
 -----------------
 
-``Sendable`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/sendable/Sendable.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_sendable.html>`__) is an interface provided by WPILib to facilitate robot telemetry.  Classes that implement ``Sendable`` can declaratively send their state to the dashboard - once declared, WPILib will automatically send the telemetry values every robot loop.  This removes the need for teams to handle the iteration-to-iteration logic of sending and receiving values from the dashboard, and also allows teams to separate their telemetry code from their robot logic.
+``Sendable`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/sendable/Sendable.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_sendable.html>`__, :external:py:class:`Python <wpiutil.Sendable>`) is an interface provided by WPILib to facilitate robot telemetry.  Classes that implement ``Sendable`` can declaratively send their state to the dashboard - once declared, WPILib will automatically send the telemetry values every robot loop.  This removes the need for teams to handle the iteration-to-iteration logic of sending and receiving values from the dashboard, and also allows teams to separate their telemetry code from their robot logic.
 
 Many WPILib classes (such as :ref:`Commands <docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-commands-subsystems:Commands and Subsystems>`) already implement ``Sendable``, and so can be sent to the dashboard without any user modification.  Users are also able to easily extend their own classes to implement ``Sendable``.
 
@@ -32,5 +32,11 @@ To send a ``Sendable`` object to the dashboard, simply use the dashboard's ``put
     .. code-block:: c++
 
         frc::SmartDashboard::PutData("Arm PID", &armPIDController);
+
+    .. code-block:: python
+
+        from wpilib import SmartDashboard
+
+        SmartDashboard.putData("Arm PID", armPIDController)
 
 Additionally, some ``Sendable`` classes bind setters to the data values sent *from the dashboard to the robot*, allowing remote tuning of robot parameters.
