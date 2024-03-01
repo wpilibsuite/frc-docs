@@ -106,15 +106,22 @@ Interact with the simulation below to examine how the elevator system responds w
 
 To tune the feedforward controller, perform the following:
 
-1. Set :math:`K_g`, :math:`K_s` :math:`K_v`, and :math:`K_a` to zero.
-2. Increase :math:`K_g` until the elevator can hold its position with as little movement as possible. If the elevator moves in the opposite direction, decrease :math:`K_g` until it remains stationary.  You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
-3. Increase the velocity feedforward gain :math:`K_v` until the elevator tracks the setpoint during smooth, slow motion.  If the elevator overshoots, reduce the gain.  Note that the elevator may "lag" the commanded motion - this is normal, and is fine so long as it moves the correct amount in total.
+1. Start with fairly slow maximum velocity and maximum acceleration (TBD pick some numbers)
+2. Set :math:`K_g`, :math:`K_v`, and :math:`K_a` to zero.
+3. Increase :math:`K_g` until the elevator can hold its position with as little movement as possible. If the elevator moves in the opposite direction, decrease :math:`K_g` until it remains stationary.  You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
+4. Increase the velocity feedforward gain :math:`K_v` until the straight segments of the elevator actual motion have the same *slope* as the desired motion (TBD word this better)
+5. Increase the acceleration feedforward gain :math:`K_a` until the curved segments of the elevator actual motion have the same *curvature* as the desired motion (TBD word this better)
 
-.. note:: Feedforward-only control is not a viable control scheme for vertical elevators!  Do not be surprised if/when the simulation below does not behave well, even when the "correct" constants are used.
+At this point, note how with *no sensors involved*, the elevator motion is fairly consistent. With the exception of a small amount of error, we are almost controling the mechanism without issue.
+
+Finally, and only as a last step, add in a bit of feedback gain.
+
+6. Increase :math:`K_p` until the actual position starts to oscillate around the setpoint, then back it off by 20%.
+
 
 .. collapse:: Tuning solution
 
-   The exact gains used by the simulation are :math:`K_g = 1.75` and :math:`K_v = 1.95`.
+   The exact gains used by the simulation are TODO
 
 
 
