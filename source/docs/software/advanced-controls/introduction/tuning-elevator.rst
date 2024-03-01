@@ -51,17 +51,17 @@ Interact with the simulation below to examine how the vertical elevator system r
 .. raw:: html
 
    <h1> TODO </h1>
-    <!-- <div class="viz-div" id="arm_feedforward_container">
+    <div class="viz-div" id="elevator_feedback_container">
       <div >
-         <div class="col" id="arm_feedforward_plotVals"></div>
-         <div class="col" id="arm_feedforward_plotVolts"></div>
+         <div class="col" id="elevator_feedback_plotVals"></div>
+         <div class="col" id="elevator_feedback_plotVolts"></div>
       </div>
       <div class="flex-grid">
-         <div class="col" id="arm_feedforward_viz"></div>
-         <div id="arm_feedforward_ctrls"></div>
+         <div class="col" id="elevator_feedback_viz"></div>
+         <div id="elevator_feedback_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_feedforward", "feedforward");
+         arm_pidf = new VerticalElevatorPIDF("elevator_feedback", "feedback");
       </script>
     </div>
 
