@@ -68,7 +68,7 @@ Other measures can also be created using their ``Unit.of`` method:
   Measure<Distance> kArmLength = Inches.of(32.25);
   Measure<Angle> kMinArmAngle = Degrees.of(5);
   Measure<Angle> kArmMaxTravel = Rotations.of(0.45);
-  Measure<Velocity<Distance> kMaxSpeed = MetersPerSecond.of(2.5);
+  Measure<Velocity<Distance>> kMaxSpeed = MetersPerSecond.of(2.5);
 
 Performing Calculations
 ^^^^^^^^^^^^^^^^^^^^^^^
