@@ -54,7 +54,7 @@ The first and easiest is to use the :doc:`RoboRIO Team Number Setter <docs/softw
 1. Run ``/etc/init.d/systemWebServer stop; update-rc.d -f systemWebServer remove; sync``
 2. Run ``chmod a-x /usr/local/natinst/etc/init.d/systemWebServer; sync``
 
-To revert the alternate ways and re-enable the web server:
+To revert the alternate ways and re-enable the web server, take the corresponding step:
 
 1. Run ``update-rc.d -f systemWebServer defaults; /etc/init.d/systemWebServer start; sync``
 2. Run ``chmod a+x /usr/local/natinst/etc/init.d/systemWebServer; sync``
