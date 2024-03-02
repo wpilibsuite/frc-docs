@@ -35,11 +35,13 @@ If you anticipate your application creating a large number of short-lived object
 Fixing Out of Memory Errors
 ---------------------------
 
-If the JVM cannot allocate memory, the program will be terminated. As an embedded system with only a small amount of memory available (256 MB on the roboRIO 1, 512 MB on the roboRIO 2), the roboRIO is particularly susceptible to running out of memory. If you continue to run out of memory even after investigating with :doc:`VisualVM </docs/software/advanced-gradlerio/profiling-with-visualvm>` and taking steps to minimize the number of allocated objects, a few different options are available to make additional memory available to the robot program.
+If the JVM cannot allocate memory, the program will be terminated. As an embedded system with only a small amount of memory available (256 MB on the roboRIO 1, 512 MB on the roboRIO 2), the roboRIO is particularly susceptible to running out of memory.
 
 .. admonition :: No amount of system tuning can fix out of memory errors caused by out-of-control allocations.
 
-    If you are running out of memory, always investigate allocations with VisualVM first.
+    If you are running out of memory, always investigate allocations with :doc:`VisualVM </docs/software/advanced-gradlerio/profiling-with-visualvm>` first.
+
+If you continue to run out of memory even after investigating with VisualVM and taking steps to minimize the number of allocated objects, a few different options are available to make additional memory available to the robot program.
 
 - Disabling the system web server
 - Setting sysctls (Linux kernel options)
