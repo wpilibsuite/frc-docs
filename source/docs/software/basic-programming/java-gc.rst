@@ -52,11 +52,13 @@ The built-in NI system web server provides the webpage (the :doc:`roboRIO Web Da
 The first and easiest is to use the :doc:`RoboRIO Team Number Setter <docs/software/wpilib-tools/roborio-team-number-setter>` tool. Versions 2024.2.1 and later of the tool have a button to disable or enable the web server. However, a few teams have reported that this does not work or does not persist between reboots. There are two alternate ways to disable the web server; both require connecting to the roboRIO with SSH and logging in as the ``admin`` user.
 
 1. Run ``/etc/init.d/systemWebServer stop; update-rc.d -f systemWebServer remove; sync``
+
 2. Run ``chmod a-x /usr/local/natinst/etc/init.d/systemWebServer; sync``
 
 To revert the alternate ways and re-enable the web server, take the corresponding step:
 
 1. Run ``update-rc.d -f systemWebServer defaults; /etc/init.d/systemWebServer start; sync``
+
 2. Run ``chmod a+x /usr/local/natinst/etc/init.d/systemWebServer; sync``
 
 Setting sysctls
@@ -110,21 +112,25 @@ Sometimes the garbage collector won't run frequently enough to keep up with the 
 Setting Up Swap on a USB Flash Drive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A swap file on a Linux system provides disk-backed space that can be used by the system as additional virtual memory to put infrequently used data and programs when they aren't being used, freeing up physical RAM for active use such as the robot program. It is strongly recommended to not use the built-in non-replaceable flash storage on the roboRIO 1 for a swap file, as it has very limited write cycles and may wear out quickly. Instead, however, a FAT32-formatted USB flash drive may be used for this purpose. This does require the USB flash drive to always be plugged into the roboRIO before boot. A swap file can be set up by plugging the USB flash drive into the roboRIO USB port, connecting to the roboRIO with SSH and logging in as the ``admin`` user, and running the following commands:
+A swap file on a Linux system provides disk-backed space that can be used by the system as additional virtual memory to put infrequently used data and programs when they aren't being used, freeing up physical RAM for active use such as the robot program. It is strongly recommended to not use the built-in non-replaceable flash storage on the roboRIO 1 for a swap file, as it has very limited write cycles and may wear out quickly. Instead, however, a FAT32-formatted USB flash drive may be used for this purpose. This does require the USB flash drive to always be plugged into the roboRIO before boot.
+
+.. caution:: Having a swap file on a USB stick means it's critical the USB stick stay connected to the roboRIO at all times it is powered.
+
+    This should be used as a last resort if none of the other steps above help. Generally needing swap is indicative of some other allocation issue, so use VisualVM first to optimize allocations.
+
+A swap file can be set up by plugging the USB flash drive into the roboRIO USB port, connecting to the roboRIO with SSH and logging in as the ``admin`` user, and running the following commands. Note the vi step requires knowledge of how to edit and save a file in vi.
 
 .. code-block:: text
 
     fallocate -l 100M /u/swapfile
     mkswap /u/swapfile
     swapon /u/swapfile
-    echo "#!/bin/sh" > /etc/init.d/addswap.sh
-    echo "[ -x /sbin/swapon ] && swapon -e /u/swapfile" >> /etc/init.d/addswap.sh
-    echo ": exit 0" >> /etc/init.d/addswap.sh
+    vi /etc/init.d/addswap.h
     chmod a+x /etc/init.d/addswap.sh
     update-rc.d -v addswap.sh defaults
     sync
 
-The resulting ``/etc/init.d/addswap.sh`` file should look like this:
+The ``/etc/init.d/addswap.sh`` file contents should look like this:
 
 .. code-block:: text
 
