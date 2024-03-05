@@ -22,7 +22,7 @@ Driver Station randomly disabled
 
 **Workaround:** There are multiple potential causes for tripping the safety mechanisms.
 
-.. note:: The new safety mechanisms will *not* disable the robot when connected to the FMS.
+.. note:: The new safety mechanisms will *not* disable the robot when connected to the :term:`FMS`.
 
 Driver Station 24.0.1 from Game Tools 2024 Patch 1 contains an update to the safety controls that may resolve the issue in certain circumstances. If the issue is still seen with this version installed, please continue with the troubleshooting steps below.
 
