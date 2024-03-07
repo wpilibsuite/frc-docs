@@ -86,7 +86,7 @@ Select the interface and Start capture
 In the Wireshark program on the left side, double click the interface you are using to connect to the robot.
 
 Open Capture File Properties
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/measuring-bandwidth-usage/capture-file-properties.png
    :alt: In the menu bar at the top choosing "Statistics" then "Capture File Properties"
