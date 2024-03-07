@@ -13,7 +13,7 @@ class VerticalElevatorSim extends BaseSim {
 
     this.plant = new VerticalArmPlant(this.simulationTimestepS);
 
-    this.visualization = new VerticalArmVisualization(
+    this.visualization = new VerticalElevatorVisualization(
       this.visualizationDrawDiv,
       this.simulationTimestepS,
       () => this.iterationCount - 1,
