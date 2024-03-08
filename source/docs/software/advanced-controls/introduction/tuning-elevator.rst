@@ -39,7 +39,7 @@ Additionally, the operator will command a position that changes in "steps" - in 
 1. Motion is constrained to be realistic
 2. Desired velocity and acceleration signals are produced.
 
-Realistic motion is just a generally good principle for robust controls: don't ask the physical system to do something it physically can't. Having desired velocity and acceleration signals are also useful for supporting a more complex feedforward model.
+Realistic motion is just a generally good principle for robust controls: don't ask the physical system to do something it physically can't. Having desired velocity and acceleration signals are also useful for supporting a more complex feedforward model. 
 
 The tutorials below will demonstrate the behavior of the system under pure feedforward, pure feedback (PID), and combined feedforward-feedback control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.  Even though WPILib tooling can provide you with optimal gains, it is worth going through the manual tuning process to see how the different control strategies interact with the mechanism.
 
@@ -97,18 +97,18 @@ Interact with the simulation below to examine how the elevator system responds w
          <div id="elevator_feedforward_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalElevatorPIDF("elevator_feedforward", "feedforward");
+         arm_pidf = new VerticalElevatorPIDF("elevator_feedforward", "both");
       </script>
     </div>
 
 
 To tune the feedforward controller, perform the following:  
 
-1. Start with fairly slow maximum velocity and maximum acceleration. 0.5 for both is a good guess.
+1. Start with fairly slow maximum velocity and maximum acceleration. 0.3 for both is a good guess.
 2. Set :math:`K_g`, :math:`K_v`, :math:`K_a`, :math:`K_p`, :math:`K_i`, and :math:`K_d` to zero.
 3. Increase :math:`K_g` as much as you can without the elevator moving upward. You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
-4. Increase the velocity feedforward gain :math:`K_v` until the straight segments of the elevator actual motion have the same *slope* as the desired motion (TBD word this better)
-5. Increase the acceleration feedforward gain :math:`K_a` until the curved segments of the elevator actual motion have the same *curvature* as the desired motion (TBD word this better)
+4. Increase the velocity feedforward gain :math:`K_v` until the straight segments of the elevator actual motion have the same *slope* as the desired motion.
+5. Increase the acceleration feedforward gain :math:`K_a` until the curved segments of the elevator actual motion have the same *curvature* as the desired motion.
 
 At this point, note how with *no sensors involved*, the elevator motion is fairly consistent. With the exception of a small amount of error, we are almost controling the mechanism without issue.
 
@@ -120,7 +120,7 @@ Finally, start to increase the maximum velocity and acceleration. Tweak your fee
 
 .. collapse:: Tuning solution
 
-   :math:`K_g = 0.9104`, :math:`K_v = TBD`, :math:`K_a = TBD`,  :math:`K_p = TBD` will behave quite well for a range of maximum acceleration and velocities. 
+   :math:`K_g = 0.9104`, :math:`K_v = 1.5`, :math:`K_a = 0.09`,  :math:`K_p = 0.2` will behave quite well for a range of acceleration, velocities, and setpoints
   
 
 

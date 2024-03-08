@@ -30,6 +30,7 @@ class VerticalElevatorPlant {
     const gravityAcceleration = -this.kGVolts / this.kAVoltSecondSquaredPerM;
     const EMFAcceleration = -this.kVVoltSecondPerM * velMPerS / this.kAVoltSecondSquaredPerM;
     const controlEffortAcceleration = inputVolts / this.kAVoltSecondSquaredPerM;
+    const airResistanceAccel = -1.0 * Math.sign(velMPerS) * Math.pow(velMPerS, 2) * 0.2;
 
     var springAccel = 0.0;
     var dashpotAccel = 0.0;
@@ -45,7 +46,7 @@ class VerticalElevatorPlant {
       dashpotAccel = -100.0 * velMPerS;
     }
 
-    const accelMPerSSquared = gravityAcceleration + EMFAcceleration + controlEffortAcceleration + springAccel + dashpotAccel;  
+    const accelMPerSSquared = gravityAcceleration + EMFAcceleration + controlEffortAcceleration + airResistanceAccel + springAccel + dashpotAccel;  
 
 
     return [velMPerS, accelMPerSSquared]

@@ -84,7 +84,8 @@ class VerticalElevatorSim extends BaseSim {
   makeProfile(){
     var constraints = new TrapezoidProfile.Constraints(this.maxVelMps, this.maxAccelMps2);
     this.profile = new TrapezoidProfile(constraints)
-    this.setpoint = new TrapezoidProfile.State(0,0);
+    this.start = new TrapezoidProfile.State(0,0);
+    this.setpoint = this.start;
   }
 
   iterateCustom() {
@@ -93,13 +94,11 @@ class VerticalElevatorSim extends BaseSim {
 
     let measuredPositionM = this.positionDelayLine.getSample();
 
-
-
     // Update controller at controller freq
     if (this.timeSinceLastControllerIteration >= this.controllerTimestepS) {
-      this.setpoint = this.profile.calculate(this.curSimTimeS, this.setpoint, this.goal)
+      this.setpoint = this.profile.calculate(this.curSimTimeS, this.start, this.goal)
       this.inputVolts = this.updateController(this.setpoint, measuredPositionM);
-      this.timeSinceLastControllerIteration = 0;
+      this.timeSinceLastControllerIteration = this.controllerTimestepS;
     } else {
       this.timeSinceLastControllerIteration = this.timeSinceLastControllerIteration + this.simulationTimestepS;
     }
@@ -125,8 +124,6 @@ class VerticalElevatorSim extends BaseSim {
   }
 
   updateController(setpoint, measurement) {
-
-    //todo profiler here
 
     // Calculate error, error derivative, and error integral
     let positionError = setpoint.position - measurement;
