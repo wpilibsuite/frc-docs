@@ -50,7 +50,6 @@ Interact with the simulation below to examine how the vertical elevator system r
 
 .. raw:: html
 
-   <h1> TODO </h1>
     <div class="viz-div" id="elevator_feedback_container">
       <div >
          <div class="col" id="elevator_feedback_plotVals"></div>
@@ -67,7 +66,7 @@ Interact with the simulation below to examine how the vertical elevator system r
 
 Perform the following:
 
-1. Set :math:`K_p`, :math:`K_i`, :math:`K_d`, and :math:`K_g` to zero.
+1. Set :math:`K_p`, :math:`K_i`, and :math:`K_d` to zero.
 2. Increase :math:`K_p` until the mechanism responds to a sudden change in setpoint by moving sharply to the new position.  If the controller oscillates too much around the setpoint, reduce `K_p` until it stops.
 3. Increase :math:`K_i` when the :term:`output` gets "stuck" before converging to the :term:`setpoint`.
 4. Increase :math:`K_d` to help the system track smoothly-moving setpoints and further reduce oscillation.
@@ -76,7 +75,7 @@ Perform the following:
 
 .. collapse:: Tuning solution
 
-   There is no good tuning solution for this control strategy.  Values of :math:`K_p = ??` and :math:`K_d = ??` yield a possible solution, but with a lot of oscillation and large settling times.
+   There is no good tuning solution for this control strategy.  Values of :math:`K_p = 5.0`,  :math:`K_i = 5.0` and and :math:`K_d` = 0.2 yield a possible solution, but with a lot of oscillation and large settling times. Additionally, it will act very differently depending on the setpoint - overshooting at the top and undershooting at the bottom.
 
 
 Motion Profiled, Feedforward, and Feedback Control
@@ -88,40 +87,40 @@ Interact with the simulation below to examine how the elevator system responds w
 
 .. raw:: html
 
-   <h1> TODO </h1>
-    <!-- <div class="viz-div" id="arm_feedforward_container">
+    <div class="viz-div" id="elevator_feedforward_container">
       <div >
-         <div class="col" id="arm_feedforward_plotVals"></div>
-         <div class="col" id="arm_feedforward_plotVolts"></div>
+         <div class="col" id="elevator_feedforward_plotVals"></div>
+         <div class="col" id="elevator_feedforward_plotVolts"></div>
       </div>
       <div class="flex-grid">
-         <div class="col" id="arm_feedforward_viz"></div>
-         <div id="arm_feedforward_ctrls"></div>
+         <div class="col" id="elevator_feedforward_viz"></div>
+         <div id="elevator_feedforward_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_feedforward", "feedforward");
+         arm_pidf = new VerticalElevatorPIDF("elevator_feedforward", "feedforward");
       </script>
     </div>
 
 
-To tune the feedforward controller, perform the following:
+To tune the feedforward controller, perform the following:  
 
-1. Start with fairly slow maximum velocity and maximum acceleration (TBD pick some numbers)
-2. Set :math:`K_g`, :math:`K_v`, and :math:`K_a` to zero.
-3. Increase :math:`K_g` until the elevator can hold its position with as little movement as possible. If the elevator moves in the opposite direction, decrease :math:`K_g` until it remains stationary.  You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
+1. Start with fairly slow maximum velocity and maximum acceleration. 0.5 for both is a good guess.
+2. Set :math:`K_g`, :math:`K_v`, :math:`K_a`, :math:`K_p`, :math:`K_i`, and :math:`K_d` to zero.
+3. Increase :math:`K_g` as much as you can without the elevator moving upward. You will have to zero in on :math:`K_g` fairly precisely (at least four decimal places).
 4. Increase the velocity feedforward gain :math:`K_v` until the straight segments of the elevator actual motion have the same *slope* as the desired motion (TBD word this better)
 5. Increase the acceleration feedforward gain :math:`K_a` until the curved segments of the elevator actual motion have the same *curvature* as the desired motion (TBD word this better)
 
 At this point, note how with *no sensors involved*, the elevator motion is fairly consistent. With the exception of a small amount of error, we are almost controling the mechanism without issue.
 
-Finally, and only as a last step, add in a bit of feedback gain.
+Only as a last step, add in a bit of feedback gain.
 
 6. Increase :math:`K_p` until the actual position starts to oscillate around the setpoint, then back it off by 20%.
 
+Finally, start to increase the maximum velocity and acceleration. Tweak your feed forwad gains if needed.
 
 .. collapse:: Tuning solution
 
-   The exact gains used by the simulation are TODO
+   :math:`K_g = 0.9104`, :math:`K_v = TBD`, :math:`K_a = TBD`,  :math:`K_p = TBD` will behave quite well for a range of maximum acceleration and velocities. 
 
 
 

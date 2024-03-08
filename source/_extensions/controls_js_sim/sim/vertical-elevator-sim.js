@@ -74,7 +74,7 @@ class VerticalElevatorSim extends BaseSim {
     this.inputvolts = 0.0;
     this.iterationCount = 0;
 
-    this.positionDelayLine = new DelayLine(25); //models sensor lag
+    this.positionDelayLine = new DelayLine(47); //models sensor lag
 
   }
   
