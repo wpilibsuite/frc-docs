@@ -1,5 +1,5 @@
 class VerticalElevatorPlant {
-  constructor(TimestepS) {
+  constructor(TimestepS, heightM) {
     this.TimestepS = TimestepS;
 
     // Gains estimated by ReCalc (http://reca.lc) with the specs below
@@ -11,6 +11,9 @@ class VerticalElevatorPlant {
     this.kGVolts = 1.75;
     this.kVVoltSecondPerM = 1.95;
     this.kAVoltSecondSquaredPerM = 0.18;
+    
+    //Maximum height the elevator travels to
+    this.heightM = heightM;
 
     this.state = [0, 0];
 
@@ -27,7 +30,23 @@ class VerticalElevatorPlant {
     const gravityAcceleration = -this.kGVolts / this.kAVoltSecondSquaredPerM;
     const EMFAcceleration = -this.kVVoltSecondPerM * velMPerS / this.kAVoltSecondSquaredPerM;
     const controlEffortAcceleration = inputVolts / this.kAVoltSecondSquaredPerM;
-    const accelMPerSSquared = gravityAcceleration + EMFAcceleration + controlEffortAcceleration;
+
+    var springAccel = 0.0;
+    var dashpotAccel = 0.0;
+
+    //Apply hard-stops as a combo spring + dashpot
+    if(posM > this.heightM){
+      //Top limit
+      springAccel = (posM - this.heightM) * -100000.0;
+      dashpotAccel = -100.0 * velMPerS;
+    } else if(posM < 0.0){
+      //Bottom limit
+      springAccel = (posM) * -100000.0;
+      dashpotAccel = -100.0 * velMPerS;
+    }
+
+    const accelMPerSSquared = gravityAcceleration + EMFAcceleration + controlEffortAcceleration + springAccel + dashpotAccel;  
+
 
     return [velMPerS, accelMPerSSquared]
   }

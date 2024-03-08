@@ -46,7 +46,7 @@ The tutorials below will demonstrate the behavior of the system under pure feedf
 Pure Feedback Control
 ~~~~~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to examine how the vertical elevator system responds when controlled only by a feedback (PID) controller.
+Interact with the simulation below to examine how the vertical elevator system responds when controlled only by a feedback (PID) controller.         
 
 .. raw:: html
 

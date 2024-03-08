@@ -1,6 +1,6 @@
 class VerticalElevatorSim extends BaseSim {
   constructor(divIdPrefix) {
-    super(divIdPrefix, "Rad", -Math.PI * 1.25, Math.PI * 1.25);
+    super(divIdPrefix, "M", -0.5, 2.5);
 
     this.positionDelayLine = new DelayLine(49); //models sensor lag
     
@@ -9,15 +9,18 @@ class VerticalElevatorSim extends BaseSim {
     this.controllerTimestepS = 0.02;
 
     // User-configured setpoints
-    this.currentSetpointRad = 0.0;
+    this.currentSetpointM = 0.0;
 
-    this.plant = new VerticalArmPlant(this.simulationTimestepS);
+    this.elevHeightM = 1.0;
+
+    this.plant = new VerticalElevatorPlant(this.simulationTimestepS, this.elevHeightM);
 
     this.visualization = new VerticalElevatorVisualization(
       this.visualizationDrawDiv,
       this.simulationTimestepS,
+      this.elevHeightM,
       () => this.iterationCount - 1,
-      setpoint => this.setSetpointRad(setpoint),
+      setpoint => this.setSetpointM(setpoint),
       () => this.begin()
     );
     this.visualization.drawStatic();
@@ -36,14 +39,19 @@ class VerticalElevatorSim extends BaseSim {
     //User-configured Feed-Forward
     this.kG = 0.0;
     this.kV = 0.0;
+    this.kA = 0.0;
+
+    //User-configured Profiling
+    this.maxVelMps = 0.0;
+    this.maxAccelMps2 = 0.0;
 
     this.inputVolts = 0.0;
 
     this.resetCustom();
   }
 
-  setSetpointRad(setpoint) {
-    this.currentSetpointRad = setpoint;
+  setSetpointM(setpoint) {
+    this.currentSetpointM = setpoint;
     document.getElementById(this.divIdPrefix + "_setpoint").value = setpoint;
   }
 
@@ -66,7 +74,7 @@ class VerticalElevatorSim extends BaseSim {
     this.inputvolts = 0.0;
     this.iterationCount = 0;
 
-    this.positionDelayLine = new DelayLine(50); //models sensor lag
+    this.positionDelayLine = new DelayLine(25); //models sensor lag
 
   }
   
@@ -75,11 +83,11 @@ class VerticalElevatorSim extends BaseSim {
 
     this.curSimTimeS = this.timeS[this.iterationCount];
 
-    let measuredPositionRad = this.positionDelayLine.getSample();
+    let measuredPositionM = this.positionDelayLine.getSample();
 
     // Update controller at controller freq
     if (this.timeSinceLastControllerIteration >= this.controllerTimestepS) {
-      this.inputVolts = this.updateController(this.currentSetpointRad, measuredPositionRad);
+      this.inputVolts = this.updateController(this.currentSetpointM, measuredPositionM);
       this.timeSinceLastControllerIteration = 0;
     } else {
       this.timeSinceLastControllerIteration = this.timeSinceLastControllerIteration + this.simulationTimestepS;
@@ -87,15 +95,15 @@ class VerticalElevatorSim extends BaseSim {
 
     this.plant.update(this.inputVolts);
 
-    this.positionDelayLine.addSample(this.plant.getPositionRad());
+    this.positionDelayLine.addSample(this.plant.getPositionM());
 
-    this.visualization.setCurPos(this.plant.getPositionRad());
+    this.visualization.setCurPos(this.plant.getPositionM());
     this.visualization.setCurTime(this.curSimTimeS);
-    this.visualization.setCurSetpoint(this.currentSetpointRad);
+    this.visualization.setCurSetpoint(this.currentSetpointM);
     this.visualization.setCurControlEffort(this.inputVolts);
 
-    this.procVarActualSignal.addSample(new Sample(this.curSimTimeS, this.plant.getPositionRad()));
-    this.procVarDesiredSignal.addSample(new Sample(this.curSimTimeS, this.currentSetpointRad));
+    this.procVarActualSignal.addSample(new Sample(this.curSimTimeS, this.plant.getPositionM()));
+    this.procVarDesiredSignal.addSample(new Sample(this.curSimTimeS, this.currentSetpointM));
     this.voltsSignal.addSample(new Sample(this.curSimTimeS, this.inputVolts));
 
     this.iterationCount++;
@@ -106,6 +114,8 @@ class VerticalElevatorSim extends BaseSim {
   }
 
   updateController(setpoint, measurement) {
+
+    //todo profiler here
 
     // Calculate error, error derivative, and error integral
     let error = setpoint - measurement;
@@ -119,7 +129,7 @@ class VerticalElevatorSim extends BaseSim {
 
     // PID + cosine feed-forward control law
     let controlEffortVolts =
-      this.kG * Math.cos(setpoint) +
+      this.kG  +
       this.kV * derivativeSetpoint +
       this.kP * error +
       this.kI * this.accumulatedError +

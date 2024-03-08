@@ -43,8 +43,8 @@ class BaseVisualization {
     this.timeS = timeS;
   }
 
-  setCurPos(positionRad) {
-    this.positionRad = positionRad;
+  setCurPos(position) {
+    this.position = position;
   }
 
   setCurSetpoint(setpoint) {

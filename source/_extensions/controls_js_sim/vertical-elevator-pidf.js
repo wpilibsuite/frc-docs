@@ -54,10 +54,46 @@ class VerticalElevatorPIDF extends VerticalElevatorSim {
     curRow.appendChild(label);
     curRow.appendChild(control);
 
+
     if (
       this.controlStrategy == "feedforward" ||
       this.controlStrategy == "both"
     ) {
+
+      curRow = document.createElement("tr");
+      label = document.createElement("td");
+      label.innerHTML = "Profiler Max Velocity";
+      control = document.createElement("td");
+      controlTable.appendChild(curRow);
+      input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("value", "0.0");
+      input.setAttribute("id", divIdPrefix + "_maxvel");
+      input.onchange = function (event) {
+        this.maxVelMps = parseFloat(event.target.value);
+        this.begin();
+      }.bind(this);
+      control.append(input);
+      curRow.appendChild(label);
+      curRow.appendChild(control);
+  
+      curRow = document.createElement("tr");
+      label = document.createElement("td");
+      label.innerHTML = "Profiler Max Acceleration";
+      control = document.createElement("td");
+      controlTable.appendChild(curRow);
+      input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("value", "0.0");
+      input.setAttribute("id", divIdPrefix + "_maxaccel");
+      input.onchange = function (event) {
+        this.maxAccelMps2 = parseFloat(event.target.value);
+        this.begin();
+      }.bind(this);
+      control.append(input);
+      curRow.appendChild(label);
+      curRow.appendChild(control);
+
       curRow = document.createElement("tr");
       label = document.createElement("td");
       label.innerHTML = "kG";
@@ -91,6 +127,24 @@ class VerticalElevatorPIDF extends VerticalElevatorSim {
       control.append(input);
       curRow.appendChild(label);
       curRow.appendChild(control);
+
+      curRow = document.createElement("tr");
+      label = document.createElement("td");
+      label.innerHTML = "kA";
+      control = document.createElement("td");
+      controlTable.appendChild(curRow);
+      input = document.createElement("INPUT");
+      input.setAttribute("type", "text");
+      input.setAttribute("value", "0.0");
+      //input.setAttribute("step", "0.0000001");
+      input.onchange = function (event) {
+        this.kA = parseFloat(event.target.value);
+        this.begin();
+      }.bind(this);
+      control.append(input);
+      curRow.appendChild(label);
+      curRow.appendChild(control);
+
     }
 
     if (this.controlStrategy == "feedback" || this.controlStrategy == "both") {

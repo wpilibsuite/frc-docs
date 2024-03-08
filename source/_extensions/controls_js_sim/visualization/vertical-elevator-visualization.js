@@ -1,10 +1,6 @@
 class VerticalElevatorVisualization extends BaseVisualization {
-  constructor(div_in, simulationTimestepS, getSimulationIndex, setSimulationSetpoint, beginSimulation) {
+  constructor(div_in, simulationTimestepS, elevHeightM, getSimulationIndex, setSimulationSetpoint, beginSimulation) {
     super(div_in);
-
-    // These kept as members for click-drag detection
-    this.setpointX = 0.0;
-    this.setpointY = 0.0;
 
     this.getSimulationIndex = getSimulationIndex;
 
@@ -16,6 +12,10 @@ class VerticalElevatorVisualization extends BaseVisualization {
     this.animatedCanvas.addEventListener("mousedown", event => this.handleMouseDown(event));
     this.animatedCanvas.addEventListener("mousemove", event => this.handleMouseMove(event));
     this.animatedCanvas.addEventListener("mouseup", event => this.handleMouseUp(event));
+
+    this.elevBottom = this.height * 0.9;
+    this.elevTop = this.height * 0.1;
+    this.elevMaxHeightM = elevHeightM;
   }
 
   getCursorPosition(event) {
@@ -25,16 +25,8 @@ class VerticalElevatorVisualization extends BaseVisualization {
     return [x, y];
   }
 
-  isNearSetpoint(mouseLocation) {
-    return isNear(
-      mouseLocation,
-      [this.setpointX, this.setpointY],
-      0.035 * this.height
-    );
-  }
-
-  angleFromArmCenter([x, y]) {
-    return -Math.atan2(y - this.armStartY, x - this.armStartX);
+  setpointFromClick([x, y]) {
+    return this.canvasToPos(y);
   }
 
   handleMouseDown(event) {
@@ -47,7 +39,7 @@ class VerticalElevatorVisualization extends BaseVisualization {
 
     this.draggingSetpoint = true;
 
-    this.setSimulationSetpoint(this.angleFromArmCenter(clickLocation));
+    this.setSimulationSetpoint(this.setpointFromClick(clickLocation));
   }
 
   handleMouseMove(event) {
@@ -57,7 +49,7 @@ class VerticalElevatorVisualization extends BaseVisualization {
     const mouseLocation = this.getCursorPosition(event);
 
     if (this.draggingSetpoint) {
-        this.setSimulationSetpoint(this.angleFromArmCenter(mouseLocation));
+        this.setSimulationSetpoint(this.setpointFromClick(mouseLocation));
     }
   }
 
@@ -68,17 +60,21 @@ class VerticalElevatorVisualization extends BaseVisualization {
     this.draggingSetpoint = false;
   }
 
+  posToCanvas(posIn){
+    return posIn / this.elevMaxHeightM * (this.elevTop - this.elevBottom) + this.elevBottom;
+  }
+
+  canvasToPos(canvasYIn){
+    return (canvasYIn - this.elevBottom) * this.elevMaxHeightM / (this.elevTop - this.elevBottom);
+  }
+
   drawStaticCustom() {
     //Supports
     this.staticCanvasContext.lineWidth = 5;
     this.staticCanvasContext.strokeStyle = "#000000";
     this.staticCanvasContext.beginPath();
-    this.staticCanvasContext.moveTo(this.width / 2, this.height / 2);
-    this.staticCanvasContext.lineTo(0.3 * this.width, 0.9 * this.height);
-    this.staticCanvasContext.stroke();
-    this.staticCanvasContext.beginPath();
-    this.staticCanvasContext.moveTo(this.width / 2, this.height / 2);
-    this.staticCanvasContext.lineTo(0.7 * this.width, 0.9 * this.height);
+    this.staticCanvasContext.moveTo(this.width / 2, 0.9 * this.height);
+    this.staticCanvasContext.lineTo(this.width / 2, 0.1 * this.height);
     this.staticCanvasContext.stroke();
 
     //Wheels
@@ -151,79 +147,31 @@ class VerticalElevatorVisualization extends BaseVisualization {
 
     this.armStartX = 0.5 * this.width;
     this.armStartY = 0.5 * this.height;
-    const armLenPx = Math.min(this.width, this.height) * 0.4;
 
     this.clickTolerance = 0.5 * this.height;
-    this.setpointIndicatorRadius = 0.035 * this.height;
-    this.endEffectorIndicatorRadius = 0.03 * this.height;
 
-    const setpointRad = this.setpoint;
-    const positionRad = this.positionRad;
-    const controlEffortPlotScale = this.controlEffortVolts * 1.5/12 * armLenPx;
+    const setpointDraw = this.posToCanvas(this.setpoint);
+    const positionDraw = this.posToCanvas(this.position);
 
-    const armEndX =
-      this.armStartX + armLenPx * Math.cos(positionRad);
-    const armEndY =
-      this.armStartY - armLenPx * Math.sin(positionRad);
 
-    const controlEffortEndX = armEndX - controlEffortPlotScale * Math.sin(positionRad);
-    const controlEffortEndY = armEndY - controlEffortPlotScale * Math.cos(positionRad);
-
-    this.setpointX =
-      this.armStartX + armLenPx * Math.cos(setpointRad);
-    this.setpointY =
-      this.armStartY - armLenPx * Math.sin(setpointRad);
-
-    // Arm
+    // Elevator
     this.animatedCanvasContext.lineWidth = 6;
     this.animatedCanvasContext.strokeStyle = "grey";
     this.animatedCanvasContext.beginPath();
-    this.animatedCanvasContext.moveTo(this.armStartX, this.armStartY);
-    this.animatedCanvasContext.lineTo(armEndX, armEndY);
+    this.animatedCanvasContext.moveTo(this.width * 0.4, positionDraw);
+    this.animatedCanvasContext.lineTo(this.width * 0.6, positionDraw);
     this.animatedCanvasContext.stroke();
 
-    // Shoulder Joint
+    // Setpoint
+    this.animatedCanvasContext.lineWidth = 3;
+    this.animatedCanvasContext.strokeStyle = "grey";
     this.animatedCanvasContext.beginPath();
-    this.animatedCanvasContext.arc(
-      0.5 * this.width,
-      0.5 * this.height,
-      0.02 * this.height,
-      0,
-      2 * Math.PI,
-      false
-    );
-    this.animatedCanvasContext.fillStyle = "black";
-    this.animatedCanvasContext.fill();
+    this.animatedCanvasContext.moveTo(this.width * 0.4, setpointDraw);
+    this.animatedCanvasContext.lineTo(this.width * 0.6, setpointDraw);
+    this.animatedCanvasContext.stroke();
 
-    // Setpoint indicator
-    this.animatedCanvasContext.beginPath();
-    this.animatedCanvasContext.arc(
-      this.setpointX,
-      this.setpointY,
-      0.035 * this.height,
-      0,
-      2 * Math.PI,
-      false
-    );
-    this.animatedCanvasContext.fillStyle = "red";
-    this.animatedCanvasContext.fill();
-
-    // Control effort indicator
-    if (controlEffortPlotScale * controlEffortPlotScale > 0) {
-      drawArrow(this.animatedCanvasContext, armEndX, armEndY, controlEffortEndX, controlEffortEndY, 4, "green")
-    }
-
-    // End Effector
-    this.animatedCanvasContext.beginPath();
-    this.animatedCanvasContext.arc(
-      armEndX,
-      armEndY,
-      0.03 * this.height,
-      0,
-      2 * Math.PI,
-      false
-    );
-    this.animatedCanvasContext.fillStyle = "purple";
-    this.animatedCanvasContext.fill();
   }
+
+
+
 }
