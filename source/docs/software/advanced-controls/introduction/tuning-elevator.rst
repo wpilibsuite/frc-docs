@@ -121,7 +121,7 @@ Finally, start to increase the maximum velocity and acceleration. Tweak your fee
 .. collapse:: Tuning solution
 
    :math:`K_g = 0.9104`, :math:`K_v = TBD`, :math:`K_a = TBD`,  :math:`K_p = TBD` will behave quite well for a range of maximum acceleration and velocities. 
-
+  
 
 
 A Note on Feedforward and Static Friction
