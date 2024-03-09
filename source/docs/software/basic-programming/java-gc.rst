@@ -64,7 +64,7 @@ This will cause the JVM to write heap dumps to a file named ``frc-usercode.hprof
    - If the file specified by the path in the ``-XX:HeapDumpPath`` option already exists, the JVM will **not** overwrite it if the program runs out of memory again, nor will it write the heap dump to a file with a different name.
    - Heap dumps intrinsically consume space equal to the amount of memory the program had allocated when it ran out of memory. This can lead to (relatively) large files consuming most of the roboRIO's available persistent storage, which may interfere with the ability to deploy code, among other things. **Always** delete heap dumps from the roboRIO once you have copied them to your computer.
 
-     - Alternatively, you can insert a USB flash drive into to roboRIO and alter the ``-XX:HeapDumpPath`` argument to point to a location on the flash drive, which can typically be found at ``/media/sda1``. If you do this, **the flash drive MUST remain connected to the roboRIO while your code is running.** Once you have collected the heap dump, redeploy your code with the heap dump options removed.
+     - Alternatively, you can insert a USB flash drive into to roboRIO and alter the ``-XX:HeapDumpPath`` argument to point to a location on the flash drive, which can typically be found at ``/u``. If you do this, **the flash drive MUST remain connected to the roboRIO while your code is running.** Once you have collected the heap dump, redeploy your code with the heap dump options removed.
 
    Considering these limitations, it is not recommended to use these options during competitive play.
 
