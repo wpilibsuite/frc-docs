@@ -32,14 +32,50 @@ If you anticipate your application creating a large number of short-lived object
 
 - Efficient data structures: Use data structures that are well-suited for the type of data you are working with. For example, if you are dealing with a large number of primitive values, consider using arrays or collections specifically designed for primitives.
 
-Fixing Out of Memory Errors
----------------------------
+Diagnosing Out of Memory Errors with Heap Dumps
+-----------------------------------------------
+
+All objects in Java are retained in a section of memory called the *heap*. As objects typically consume the greatest amount of memory in a Java program, it is often useful to take a snapshot of the state of the heap---a heap dump---to analyze memory issues. Heap dumps only capture the state of a program's heap at a single point in time, so they are unlikely to be useful if not captured exactly at the time the program is experiencing memory issues.
+
+Since ``OutOfMemoryError``\ s both crash the program and are a common reason to want a heap dump, the JVM can be configured to automatically take a heap dump the moment an ``OutOfMemoryError`` is caught by the JVM. To configure these options, locate the ``frcJava`` code block in your project's ``build.gradle``:
+
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.3.1/vscode-wpilib/resources/gradle/java/build.gradle
+   :language: groovy
+   :lines: 15-40
+   :linenos:
+   :lineno-start: 15
+   :emphasize-lines: 15-16
+
+Add to the code block so that it contains two ``jvmArgs`` commands, as shown below:
+
+.. code-block:: groovy
+
+   frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
+       // If you have other configuration here, you do not need to remove it.
+       // Enable automatic heap dumps on OutOfMemoryError
+       jvmArgs.add("-XX:+HeapDumpOnOutOfMemoryError")
+       jvmArgs.add("-XX:HeapDumpPath=/home/lvuser/frc-usercode.hprof")
+   }
+
+This will cause the JVM to write heap dumps to a file named ``frc-usercode.hprof`` in ``/home/lvuser`` on the roboRIO when the code runs out of memory. :doc:`Copy the file from the roboRIO to a computer using FTP/SFTP </docs/software/roborio-info/roborio-ftp>` and delete it from the roboRIO. You can then open this file in a memory profiler such as :ref:`VisualVM <docs/software/advanced-gradlerio/profiling-with-visualvm:Analyzing a Heap Dump>`.
+
+.. warning:: There are several things to consider when using these options:
+
+   - If the file specified by the path in the ``-XX:HeapDumpPath`` option already exists, the JVM will **not** overwrite it if the program runs out of memory again, nor will it write the heap dump to a file with a different name.
+   - Heap dumps intrinsically consume space equal to the amount of memory the program had allocated when it ran out of memory. This can lead to (relatively) large files consuming most of the roboRIO's available persistent storage, which may interfere with the ability to deploy code, among other things. **Always** delete heap dumps from the roboRIO once you have copied them to your computer.
+
+     - Alternatively, you can insert a USB flash drive into to roboRIO and alter the ``-XX:HeapDumpPath`` argument to point to a location on the flash drive, which can typically be found at ``/media/sda1``. If you do this, **the flash drive MUST remain connected to the roboRIO while your code is running.** Once you have collected the heap dump, redeploy your code with the heap dump options removed.
+
+   Considering these limitations, it is not recommended to use these options during competitive play.
+
+System Memory Tuning
+--------------------
 
 If the JVM cannot allocate memory, the program will be terminated. As an embedded system with only a small amount of memory available (256 MB on the roboRIO 1, 512 MB on the roboRIO 2), the roboRIO is particularly susceptible to running out of memory.
 
 .. admonition :: No amount of system tuning can fix out of memory errors caused by out-of-control allocations.
 
-    If you are running out of memory, always investigate allocations with :doc:`VisualVM </docs/software/advanced-gradlerio/profiling-with-visualvm>` first.
+    If you are running out of memory, always investigate allocations with :ref:`heap dumps <docs/software/basic-programming/java-gc:diagnosing out of memory errors with heap dumps>` and/or :doc:`VisualVM </docs/software/advanced-gradlerio/profiling-with-visualvm>` first.
 
 If you continue to run out of memory even after investigating with VisualVM and taking steps to minimize the number of allocated objects, a few different options are available to make additional memory available to the robot program.
 
