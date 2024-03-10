@@ -52,7 +52,7 @@ Once your filter has been created, using it is easy - simply call the ``calculat
   .. code-block:: c++
 
     // Calculates the next value of the output
-    filter.Calculate(input);
+    filter.Calculate(units::voltage::volt_t{input}).value();
 
   .. code-block:: python
 
@@ -82,7 +82,7 @@ A typical use of a SlewRateLimiter is to limit the acceleration of a robot's dri
     drivetrain.ArcadeDrive(forward, turn);
 
     // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
-    drivetrain.ArcadeDrive(filter.Calculate(forward), turn);
+    drivetrain.ArcadeDrive(filter.Calculate(units::voltage::volt_t{forward}).value(), turn);
 
   .. code-block:: python
 
