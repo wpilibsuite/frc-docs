@@ -4,13 +4,13 @@ class VerticalElevatorPlant {
 
     // Gains estimated by ReCalc (http://reca.lc) with the specs below
     // motor: 1x REV Neo
-    // gearing: 5:1
-    // Pulley Diameter: 2 in
-    // efficiency: 100
-    // moving mass: 5 kg
-    this.kGVolts = 0.91;
-    this.kVVoltSecondPerM = 1.53;
-    this.kAVoltSecondSquaredPerM = 0.09;
+    // gearing: 3:1
+    // Pulley Diameter: 1 in
+    // efficiency: 75
+    // moving mass: 20 kg
+    this.kGVolts = 2.28;
+    this.kVVoltSecondPerM = 3.07;
+    this.kAVoltSecondSquaredPerM = 0.41;
     
     //Maximum height the elevator travels to
     this.heightM = heightM;

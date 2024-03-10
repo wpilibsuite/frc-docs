@@ -1,8 +1,6 @@
 class VerticalElevatorSim extends BaseSim {
   constructor(divIdPrefix) {
     super(divIdPrefix, "M", -0.5, 2.5);
-
-    this.positionDelayLine = new DelayLine(49); //models sensor lag
     
     this.simDurationS = 5.0;
     this.simulationTimestepS = 0.005;
@@ -77,7 +75,7 @@ class VerticalElevatorSim extends BaseSim {
 
     this.makeProfile()
 
-    this.positionDelayLine = new DelayLine(47); //models sensor lag
+    this.positionDelayLine = new DelayLine(13); //models sensor lag
 
   }
   

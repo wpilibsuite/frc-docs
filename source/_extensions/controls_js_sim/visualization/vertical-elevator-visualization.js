@@ -155,19 +155,35 @@ class VerticalElevatorVisualization extends BaseVisualization {
 
 
     // Elevator
+    const elevDrawWidth = this.width * 0.2;
+    const elevDrawHeight = this.height * 0.1;
     this.animatedCanvasContext.lineWidth = 6;
-    this.animatedCanvasContext.strokeStyle = "grey";
-    this.animatedCanvasContext.beginPath();
-    this.animatedCanvasContext.moveTo(this.width * 0.4, positionDraw);
-    this.animatedCanvasContext.lineTo(this.width * 0.6, positionDraw);
-    this.animatedCanvasContext.stroke();
+    this.animatedCanvasContext.fillStyle = "purple";
+    this.animatedCanvasContext.fillRect(
+      this.width * 0.5 - elevDrawWidth/2, 
+      positionDraw - elevDrawHeight/2,
+      elevDrawWidth, 
+      elevDrawHeight
+    );
+
+    // Control Effort
+    const controlEffortPlotScale = this.controlEffortVolts / 12.0 * this.height * 0.75;
+    // Control effort indicator
+    if (Math.abs(this.controlEffortVolts) > 0.01) {
+      drawArrow(this.animatedCanvasContext, 
+        this.width * 0.5, 
+        positionDraw, 
+        this.width * 0.5, 
+        positionDraw-controlEffortPlotScale, 
+        4, "green")
+    }
 
     // Setpoint
     this.animatedCanvasContext.lineWidth = 3;
-    this.animatedCanvasContext.strokeStyle = "grey";
+    this.animatedCanvasContext.strokeStyle = "red";
     this.animatedCanvasContext.beginPath();
-    this.animatedCanvasContext.moveTo(this.width * 0.4, setpointDraw);
-    this.animatedCanvasContext.lineTo(this.width * 0.6, setpointDraw);
+    this.animatedCanvasContext.moveTo(this.width * 0.3, setpointDraw);
+    this.animatedCanvasContext.lineTo(this.width * 0.7, setpointDraw);
     this.animatedCanvasContext.stroke();
 
   }
