@@ -47,7 +47,7 @@ class VerticalElevatorPIDF extends VerticalElevatorSim {
     input.setAttribute("value", "0.0");
     input.setAttribute("id", divIdPrefix + "_setpoint");
     input.onchange = function (event) {
-      this.currentSetpointRad = parseFloat(event.target.value);
+      this.setSetpointM(parseFloat(event.target.value));
       this.begin();
     }.bind(this);
     control.append(input);
