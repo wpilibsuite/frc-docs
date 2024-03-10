@@ -10,8 +10,6 @@ class VerticalElevatorVisualization extends BaseVisualization {
     this.beginSimulation = beginSimulation;
 
     this.animatedCanvas.addEventListener("mousedown", event => this.handleMouseDown(event));
-    this.animatedCanvas.addEventListener("mousemove", event => this.handleMouseMove(event));
-    this.animatedCanvas.addEventListener("mouseup", event => this.handleMouseUp(event));
 
     this.elevBottom = this.height * 0.9;
     this.elevTop = this.height * 0.1;
@@ -40,24 +38,6 @@ class VerticalElevatorVisualization extends BaseVisualization {
     this.draggingSetpoint = true;
 
     this.setSimulationSetpoint(this.setpointFromClick(clickLocation));
-  }
-
-  handleMouseMove(event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    const mouseLocation = this.getCursorPosition(event);
-
-    if (this.draggingSetpoint) {
-        this.setSimulationSetpoint(this.setpointFromClick(mouseLocation));
-    }
-  }
-
-  handleMouseUp(event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    this.draggingSetpoint = false;
   }
 
   posToCanvas(posIn){

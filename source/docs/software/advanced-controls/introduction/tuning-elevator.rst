@@ -52,6 +52,8 @@ Pure Feedback Control
 
 Interact with the simulation below to examine how the vertical elevator system responds when controlled only by a feedback (PID) controller.
 
+.. note:: To change the elevator setpoint, click on the desired height along the vertical support.
+
 .. raw:: html
 
     <div class="viz-div" id="elevator_feedback_container">
@@ -87,7 +89,7 @@ Motion Profiled, Feedforward, and Feedback Control
 
 Interact with the simulation below to examine how the elevator system responds when controlled only by a feedforward controller.
 
-.. note:: To change the elevator setpoint, click on the desired angle along the vertical height.
+.. note:: To change the elevator setpoint, click on the desired height along the vertical support.
 
 .. raw:: html
 
