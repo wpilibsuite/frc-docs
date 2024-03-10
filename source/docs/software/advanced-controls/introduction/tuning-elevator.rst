@@ -33,10 +33,10 @@ Our "vertical elevator" consists of:
 Where:
 
 * The plant's :term:`output` :math:`y(t)` is the elevator's height
-* The controller's :term:`setpoint` :math:`r(t)` is the unprofiled desired height of the elevator
-* The Motion Profiler's :term:`setpoint` :math:`p(t)` is the profiled desired position of the elevator
-* The Motion Profiler's :term:`setpoint` :math:`p'(t)` is the profiled desired velocity of the elevator
-* The Motion Profiler's :term:`setpoint` :math:`p''(t)` is the profiled desired accelerator of the elevator
+* The controller's :term:`setpoint` :math:`r(t)` is the unprofiled, final desired height of the elevator
+* The Motion Profiler's position :term:`setpoint` :math:`p(t)` is where the elevator should currently be positioned
+* The Motion Profiler's velocity :term:`setpoint` :math:`p'(t)` is how fast the elevator should currently be moving
+* The Motion Profiler's accelerator :term:`setpoint` :math:`p''(t)` is how fast the elevator should currently be accelerating
 * The controller's :term:`control effort`, :math:`u(t)` is the voltage applied to the motor driving the elevator
 
 
