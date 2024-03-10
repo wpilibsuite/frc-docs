@@ -21,7 +21,7 @@ Most importantly, however, command compositions are themselves commands - they e
 
 As a rule, command compositions require all subsystems their components require, may run when disabled if all their component set ``runsWhenDisabled`` as ``true``, and are ``kCancelIncoming`` if all their components are ``kCancelIncoming`` as well.
 
-Command instances that have been passed to a command composition cannot be independently scheduled or passed to a second command composition. Attempting to do so will throw an exception and crash the user program. This is because composition members are run through their encapsulating command composition, and errors could occur if those same command instances were independently scheduled at the same time as the group - the command would be being run from multiple places at once, and thus could end up with inconsistent internal state, causing unexpected and hard-to-diagnose behavior. The C++ command-based library uses ``CommandPtr``, a class with move-only semantics, so this type of mistake is easier to avoid.
+Command instances that have been passed to a command composition cannot be independently scheduled or passed to a second command composition. Attempting to do so will throw an exception and crash the user program. This is because composition members are run through their encapsulating command composition, and errors could occur if those same command instances were independently scheduled at the same time as the composition - the command would be being run from multiple places at once, and thus could end up with inconsistent internal state, causing unexpected and hard-to-diagnose behavior. The C++ command-based library uses ``CommandPtr``, a class with move-only semantics, so this type of mistake is easier to avoid.
 
 Composition Types
 -----------------
@@ -82,24 +82,24 @@ There are three types of parallel compositions, differing based on when the comp
 
    .. code-block:: java
 
-      // Will be a parallel command group that ends after three seconds with all three commands running their full duration.
+      // Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
       button.onTrue(Commands.parallel(twoSecCommand, oneSecCommand, threeSecCommand));
 
-      // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
+      // Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
       button.onTrue(Commands.race(twoSecCommand, oneSecCommand, threeSecCommand));
 
-      // Will be a parallel deadline group that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+      // Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
       button.onTrue(Commands.deadline(twoSecCommand, oneSecCommand, threeSecCommand));
 
    .. code-block:: c++
 
-      // Will be a parallel command group that ends after three seconds with all three commands running their full duration.
+      // Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
       button.OnTrue(frc2::cmd::Parallel(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
 
-      // Will be a parallel race group that ends after one second with the two and three second commands getting interrupted.
+      // Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
       button.OnTrue(frc2::cmd::Race(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
 
-      // Will be a parallel deadline group that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+      // Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
       button.OnTrue(frc2::cmd::Deadline(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
 
 Adding Command End Conditions
@@ -200,22 +200,22 @@ The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/rele
 Scheduling Other Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By default, composition members are run through the command composition, and are never themselves seen by the scheduler. Accordingly, their requirements are added to the group's requirements. While this is usually fine, sometimes it is undesirable for the entire command group to gain the requirements of a single command. A good solution is to "fork off" from the command group and schedule that command separately. However, this requires synchronization between the composition and the individually-scheduled command.
+By default, composition members are run through the command composition, and are never themselves seen by the scheduler. Accordingly, their requirements are added to the composition's requirements. While this is usually fine, sometimes it is undesirable for the entire command composition to gain the requirements of a single command. A good solution is to "fork off" from the command composition and schedule that command separately. However, this requires synchronization between the composition and the individually-scheduled command.
 
-``ProxyCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html>`__), also creatable using the ``.asProxy()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#asProxy()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#aa45784053431393e3277e5bc5ae7f751>`__), schedules a command "by proxy": the command is scheduled when the proxy is scheduled, and the proxy finishes when the command finishes. In the case of "forking off" from a command composition, this allows the group to track the command's progress without it being in the composition.
+``ProxyCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html>`__), also creatable using the ``.asProxy()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#asProxy()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#aa45784053431393e3277e5bc5ae7f751>`__), schedules a command "by proxy": the command is scheduled when the proxy is scheduled, and the proxy finishes when the command finishes. In the case of "forking off" from a command composition, this allows the composition to track the command's progress without it being in the composition.
 
 
-Command groups and compositions inherit the union of their compoments' requirements and requirements are immutable. Therefore, a ``SequentialCommandGroup`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_sequential_command_group.html>`__) that intakes a game piece, indexes it, aims a shooter, and shoots it would reserve all three subsystems (the intake, indexer, and shooter), precluding any of those subsystems from performing other operations in their "downtime". If this is not desired, the subsystems that should only be reserved for the composition while they are actively being used by it should have their commands proxied.
+Command compositions inherit the union of their compoments' requirements and requirements are immutable. Therefore, a ``SequentialCommandGroup`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_sequential_command_group.html>`__) that intakes a game piece, indexes it, aims a shooter, and shoots it would reserve all three subsystems (the intake, indexer, and shooter), precluding any of those subsystems from performing other operations in their "downtime". If this is not desired, the subsystems that should only be reserved for the composition while they are actively being used by it should have their commands proxied.
 
-.. warning:: Do not use ``ProxyCommand`` unless you are sure of what you are doing and there is no other way to accomplish your need! Proxying is only intended for use as an escape hatch from command group requirement unions.
+.. warning:: Do not use ``ProxyCommand`` unless you are sure of what you are doing and there is no other way to accomplish your need! Proxying is only intended for use as an escape hatch from command composition requirement unions.
 
-.. note:: Because proxied commands still require their subsystem, despite not leaking that requirement to the group, all of the commands that require a given subsystem must be proxied if one of them is. Otherwise, when the proxied command is scheduled its requirement will conflict with that of the group, canceling the group.
+.. note:: Because proxied commands still require their subsystem, despite not leaking that requirement to the composition, all of the commands that require a given subsystem must be proxied if one of them is. Otherwise, when the proxied command is scheduled its requirement will conflict with that of the composition, canceling the composition.
 
 .. tab-set-code::
 
    .. code-block:: java
 
-      // Group requirements are indexer and shooter, intake still reserved during its command but not afterwards
+      // composition requirements are indexer and shooter, intake still reserved during its command but not afterwards
       Commands.sequence(
          intake.intakeGamePiece().asProxy(), // we want to let the intake intake another game piece while we are processing this one
          indexer.processGamePiece(),
@@ -224,9 +224,9 @@ Command groups and compositions inherit the union of their compoments' requireme
 
    .. code-block:: c++
 
-      // Group requirements are indexer and shooter, intake still reserved during its command but not afterwards
+      // composition requirements are indexer and shooter, intake still reserved during its command but not afterwards
       frc2::cmd::Sequence(
-         intake.IntakeGamePiece().asProxy(), // we want to let the intake intake another game piece while we are processing this one
+         intake.IntakeGamePiece().AsProxy(), // we want to let the intake intake another game piece while we are processing this one
          indexer.ProcessGamePiece(),
          shooter.AimAndShoot()
       );
