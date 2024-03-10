@@ -114,7 +114,7 @@ To tune the feedforward controller, perform the following:
 4. Increase the velocity feedforward gain :math:`K_v` until the straight segments of the elevator actual motion have the same *slope* as the desired motion.
 5. Increase the acceleration feedforward gain :math:`K_a` until the curved segments of the elevator actual motion have the same *curvature* as the desired motion.
 
-At this point, note how with *no sensors involved*, the elevator motion is fairly consistent. With the exception of a small amount of error, we are almost controling the mechanism without issue.
+At this point, note how with *no sensors involved*, the elevator motion is fairly consistent. With the exception of a small amount of error, we are almost controlling the mechanism without issue.
 
 Only as a last step, add in a bit of feedback gain.
 
