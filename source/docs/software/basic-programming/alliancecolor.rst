@@ -3,6 +3,8 @@ Get Alliance Color
 
 The ``DriverStation`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DriverStation.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_driver_station.html>`__, :py:class:`Python <robotpy:wpilib.DriverStation>`) has many useful features for getting data from the Driver Station computer.  One of the most important features is ``getAlliance`` (Java & Python) / ``GetAlliance`` (C++).
 
+Note that there are three cases: red, blue, and no color yet.  It is important that code handles the third case correctly.  When not connected to FMS, the alliance color can be set from the Driver Station (see :ref:`"Team Station" on the Operation Tab <docs/software/driverstation/driver-station.html#operation-tab>`).  When connected to FMS, the alliance color may not be available during constructor methods or `robotInit`, but will normally be available by the time `autoInit` is called.  
+
 Getting your Alliance Color and Doing an Action
 -----------------------------------------------
 
