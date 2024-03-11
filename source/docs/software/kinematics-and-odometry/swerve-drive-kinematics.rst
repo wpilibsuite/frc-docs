@@ -303,14 +303,12 @@ By recording a set of swerve module states using :ref:`NetworkTables <docs/softw
 
         void Periodic() {
           // Periodically send a set of module states
-          swervePublisher.Set(
-            std::vector{
-              frontLeftState,
-              frontRightState,
-              backLeftState,
-              backRightState
-            }
-          );
+          std::vector states_vec = {m_frontLeft.GetState(), m_frontRight.GetState(),
+                            m_rearLeft.GetState(), m_rearRight.GetState()};
+         std::span<frc::SwerveModuleState, 4> states(states_vec.begin(),
+                                              states_vec.end());
+
+         publisher.Set(states);
         }
       };
 
