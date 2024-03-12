@@ -52,7 +52,7 @@ Once your filter has been created, using it is easy - simply call the ``calculat
   .. code-block:: c++
 
     // Calculates the next value of the output
-    filter.Calculate(units::voltage::volt_t{input});
+    filter.Calculate(input);
 
   .. code-block:: python
 
