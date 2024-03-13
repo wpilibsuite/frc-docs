@@ -291,3 +291,17 @@ Community Libraries
       :sync: python
 
       Not available
+
+`YAGSL <https://yagsl.gitbook.io/yagsl>`_ - Library for Swerve Drives of any configuration
+
+.. tab-set::
+
+   .. tab-item:: Java/C++
+      :sync: javacpp
+
+      ``https://broncbotz3481.github.io/YAGSL-Lib/yagsl/yagsl.json``
+
+   .. tab-item:: Python
+      :sync: python
+
+      Not available
