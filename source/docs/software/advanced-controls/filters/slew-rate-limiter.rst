@@ -27,8 +27,8 @@ Creating a SlewRateLimiter is simple:
 
   .. code-block:: c++
 
-    // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 volts per second
-    frc::SlewRateLimiter<units::volts> filter{0.5_V / 1_s};
+    // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.1 every cycle
+    frc::SlewRateLimiter<units::scalar> filter {units::scalar_t{0.1}};
 
   .. code-block:: python
 
