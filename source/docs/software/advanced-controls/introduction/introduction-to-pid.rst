@@ -23,7 +23,7 @@ The :term:`error` :math:`e(t)` is the difference between the :term:`reference` a
 
 For those already familiar with PID control, this interpretation may not be consistent with the classical explanation of the P, I, and D terms corresponding to response to "past", "present", and "future" errors. While that model has merit, we will instead be approaching PID control from the viewpoint of modern control theory, as proportional controllers applied to different physical quantities we care about. This will provide a more complete explanation of the derivative term's behavior for constant and moving :term:`setpoints <setpoint>`.
 
-Roughly speaking: the proportional term drives the position error to zero, the derivative term drives the velocity error to zero, and the integral term drives the total accumulated error-over-time to zero.  All three terms are added together to produce the :term:`control signal` We'll go into more detail on each of these below.
+Roughly speaking: the proportional term drives the position error to zero, the derivative term drives the velocity error to zero, and the integral term drives the total accumulated error-over-time to zero.  All three terms are added together to produce the :term:`control signal`. We'll go into more detail on each of these below.
 
 .. note::
    Throughout the WPILib documentation, you'll see two ways of writing the tunable constants of the PID controller.
