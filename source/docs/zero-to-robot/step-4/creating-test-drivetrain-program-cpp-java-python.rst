@@ -175,7 +175,7 @@ Imports/Includes
             import edu.wpi.first.wpilibj.TimedRobot;
             import edu.wpi.first.wpilibj.Timer;
             import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-            import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+            import com.ctre.phoenix6.hardware.TalonFX;
 
 
          .. code-block:: c++
@@ -184,14 +184,14 @@ Imports/Includes
             #include <frc/TimedRobot.h>
             #include <frc/Timer.h>
             #include <frc/drive/DifferentialDrive.h>
-            #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+            #include <ctre/phoenix6/TalonFX.hpp>
 
 
          .. code-block:: python
 
-            import wpilib           # Used to get the joysticks
-            import wpilib.drive     # Used for the DifferentialDrive class
-            import ctre             # CTRE library
+            import wpilib               # Used to get the joysticks
+            import wpilib.drive         # Used for the DifferentialDrive class
+            import phoenix6             # CTRE library
 
    .. tab-item:: REV
 
@@ -287,8 +287,8 @@ Defining the variables for our sample robot
             .. code-block:: java
 
                public class Robot extends TimedRobot {
-                  private final WPI_TalonFX m_leftDrive = new WPI_TalonFX(1);
-                  private final WPI_TalonFX m_rightDrive = new WPI_TalonFX(2);
+                  private final TalonFX m_leftDrive = new TalonFX(1);
+                  private final TalonFX m_rightDrive = new TalonFX(2);
                   private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
                   private final Joystick m_stick = new Joystick(0);
                   private final Timer m_timer = new Timer();
@@ -312,8 +312,8 @@ Defining the variables for our sample robot
 
                private:
                 // Robot drive system
-                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_left{1};
-                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_right{2};
+                ctre::phoenix6::hardware::TalonFX m_left{1};
+                ctre::phoenix6::hardware::TalonFX m_right{2};
                 frc::DifferentialDrive m_robotDrive{m_left, m_right};
 
                 frc::Joystick m_stick{0};
@@ -322,11 +322,26 @@ Defining the variables for our sample robot
          .. tab-item:: Python
             :sync: python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/5b8d33f/examples/getting-started/robot.py
-               :language: python
-               :linenos:
-               :lines: 13-30
-               :lineno-start: 13
+            .. code-block:: python
+
+               class MyRobot(wpilib.TimedRobot):
+                 def robotInit(self):
+                    """
+                    This function is called upon program startup and
+                    should be used for any initialization code.
+                    """
+                    self.leftDrive = phoenix6.hardware.TalonFX(1)
+                    self.rightDrive = phoenix6.hardware.TalonFX(2)
+                    self.robotDrive = wpilib.drive.DifferentialDrive(
+                        self.leftDrive, self.rightDrive
+                    )
+                    self.controller = wpilib.XboxController(0)
+                    self.timer = wpilib.Timer()
+
+                    # We need to invert one side of the drivetrain so that positive voltages
+                    # result in both sides moving forward. Depending on how your robot's
+                    # gearbox is constructed, you might have to invert the left side instead.
+                    self.rightDrive.setInverted(True)
 
    .. tab-item:: REV
       :sync: rev
