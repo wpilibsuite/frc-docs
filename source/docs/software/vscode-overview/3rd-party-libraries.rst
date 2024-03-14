@@ -296,7 +296,7 @@ Community Libraries
 
 .. tab-set::
 
-   .. tab-item:: Java/C++
+   .. tab-item:: Java
       :sync: javacpp
 
       ``https://broncbotz3481.github.io/YAGSL-Lib/yagsl/yagsl.json``
