@@ -27,6 +27,8 @@ roboRIO
   :alt: roboRIO status lights highlighted.
   :width: 400
 
+`Imaging the RoboRIO 2 Video <http://www.youtube.com/watch?v=v=jvd-Pxaqy9I>`_
+
 +------------+----------------+-----------------------------------------------------------------------------------+
 | **Power**  | Green          | Power is good                                                                     |
 |            +----------------+-----------------------------------------------------------------------------------+
