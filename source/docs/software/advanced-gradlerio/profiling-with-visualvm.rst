@@ -111,7 +111,7 @@ This heap dump will be stored on the target system (roboRIO) and must be retriev
 
 Once downloaded, the dump can be analyzed with VisualVM.
 
-.. tip:: You can also :ref:`configure the JVM to take a heap dump automatically when your robot code runs out of memory <docs/software/basic-programming/java-gc:Diagnosing Out of Memory Errors with Heap Dumps>`. 
+.. tip:: You can also :ref:`configure the JVM to take a heap dump automatically when your robot code runs out of memory <docs/software/basic-programming/java-gc:Diagnosing Out of Memory Errors with Heap Dumps>`.
 
 Analyzing a Heap Dump
 ---------------------
