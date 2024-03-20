@@ -32,14 +32,52 @@ If you anticipate your application creating a large number of short-lived object
 
 - Efficient data structures: Use data structures that are well-suited for the type of data you are working with. For example, if you are dealing with a large number of primitive values, consider using arrays or collections specifically designed for primitives.
 
-Fixing Out of Memory Errors
----------------------------
+Diagnosing Out of Memory Errors with Heap Dumps
+-----------------------------------------------
+
+All objects in Java are retained in a section of memory called the *heap*. As objects typically consume the greatest amount of memory in a Java program, it is often useful to take a snapshot of the state of the heap---a heap dump---to analyze memory issues. Heap dumps only capture the state of a program's heap at a single point in time, so they are unlikely to be useful if not captured exactly at the time the program is experiencing memory issues.
+
+Since ``OutOfMemoryError``\ s both crash the program and are a common reason to want a heap dump, the JVM can be configured to automatically take a heap dump the moment an ``OutOfMemoryError`` is caught by the JVM. To configure these options, locate the ``frcJava`` code block in your project's ``build.gradle``:
+
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.3.1/vscode-wpilib/resources/gradle/java/build.gradle
+   :language: groovy
+   :lines: 15-40
+   :linenos:
+   :lineno-start: 15
+   :emphasize-lines: 15-16
+
+Add to the code block so that it contains two ``jvmArgs`` commands, as shown below:
+
+.. code-block:: groovy
+
+   frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
+       // If you have other configuration here, you do not need to remove it.
+       // Enable automatic heap dumps on OutOfMemoryError
+       // Note: the heap dump path here is a path on a USB flash drive, see below
+       jvmArgs.add("-XX:+HeapDumpOnOutOfMemoryError")
+       jvmArgs.add("-XX:HeapDumpPath=/u/frc-usercode.hprof")
+   }
+
+This will cause the JVM to write heap dumps to a file named ``frc-usercode.hprof`` at the root of a USB flash drive attached to the roboRIO when the code runs out of memory. It is recommended to save these heap dumps to a USB flash drive because heap dumps intrinsically consume the same amount of space on disk as the program heap did in memory when the program crashed, and are likely to be larger than the roboRIO's internal storage has capacity for. Once you have reproduced the ``OutOfMemoryError``, redeploy your code without these options enabled, and use the USB flash drive to transfer the heap dump to a computer for analysis in a memory profiler such as :ref:`VisualVM <docs/software/advanced-gradlerio/profiling-with-visualvm:Analyzing a Heap Dump>`.
+
+.. warning:: Configuring the JVM this way requires that the flash drive remain connected to the roboRIO while your code is running.
+
+Larger SD cards may provide enough onboard storage to allow the use of these options on the roboRIO 2 without a USB flash drive. To do this, set the ``-XX:HeapDumpPath`` option to reference a path on the SD card, and use :doc:`FTP/SFTP to transfer the heap dump to a computer </docs/software/roborio-info/roborio-ftp>` before deleting it from the SD card.
+
+Note that the JVM will **not** overwrite heap dumps with the exact path and filename specified by ``-XX:HeapDumpPath`` if they already exist, nor will it dump the process heap to a file with a different name. If a path to a directory is supplied instead of a path to a file, the JVM will instead write out heap dumps with unique filenames within the specified directory, with the name ``java_pidNNNN.hprof``, where ``NNNN`` is the process ID of the JVM that ran out of memory. Note that this can cause large files to build up on disk if they are not cleaned out, so if you configure the JVM this way, be sure to frequently copy heap dumps to a computer and delete them from the flash drive/SD card afterward.
+
+.. caution:: Always be vigilant about the amount of available space on the underlying storage medium while you use this feature.
+
+   Use of this feature is not recommended during competitive play.
+
+System Memory Tuning
+--------------------
 
 If the JVM cannot allocate memory, the program will be terminated. As an embedded system with only a small amount of memory available (256 MB on the roboRIO 1, 512 MB on the roboRIO 2), the roboRIO is particularly susceptible to running out of memory.
 
 .. admonition :: No amount of system tuning can fix out of memory errors caused by out-of-control allocations.
 
-    If you are running out of memory, always investigate allocations with :doc:`VisualVM </docs/software/advanced-gradlerio/profiling-with-visualvm>` first.
+    If you are running out of memory, always investigate allocations with heap dumps and/or :doc:`VisualVM </docs/software/advanced-gradlerio/profiling-with-visualvm>` first.
 
 If you continue to run out of memory even after investigating with VisualVM and taking steps to minimize the number of allocated objects, a few different options are available to make additional memory available to the robot program.
 
