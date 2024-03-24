@@ -15,7 +15,7 @@ In general, C++ offers better high-end performance, at the cost of increased use
 Source code and documentation
 -----------------------------
 
-WPILib is an open-source library - the C++ and Java source code is in the `allwpilib <https://github.com/wpilibsuite/allwpilib/>`__ mono-repo and python source code is in the `mostrobotpy https://github.com/robotpy/mostrobotpy`__ mono-repo.  The Java and C++ source code can be found in the WPILibJ and WPILibC source directories:
+WPILib is an open-source library - the C++ and Java source code is in the `allwpilib <https://github.com/wpilibsuite/allwpilib>`__ mono-repo and python source code is in the `mostrobotpy <https://github.com/robotpy/mostrobotpy>`__ mono-repo.  The Java and C++ source code can be found in the WPILibJ and WPILibC source directories:
 
 The Java and C++ source code can be found in the WPILibJ and WPILibC source directories:
 
