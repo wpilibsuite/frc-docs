@@ -52,10 +52,10 @@ Launching VisualVM is done via the commandline with a few parameters. First, we 
 
 .. code-block:: bash
 
-   cd "C:\Users\Public\wpilib\visualvm_216\bin"
-   ./visualvm --jdkhome "C:\Users\Public\wpilib\2023\jdk"
+   cd "C:\Users\Public\wpilib\visualvm_217\bin"
+   ./visualvm --jdkhome "C:\Users\Public\wpilib\2024\jdk"
 
-.. important:: The exact path ``visualvm_216`` may vary and depends on the version of VisualVM downloaded.
+.. important:: The exact path ``visualvm_217`` may vary and depends on the version of VisualVM downloaded.
 
 This should launch VisualVM. Once launched, open the :guilabel:`Add JMX Connection` dialog.
 
