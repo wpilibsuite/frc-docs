@@ -7,6 +7,9 @@ Imaging your roboRIO 1
 
 .. note:: The roboRIO 2 uses different imaging instructions. The imaging instructions for the NI roboRIO 2.0 are :doc:`here<roborio2-imaging>`.
 
+`Imaging the RoboRIO 2 Video <http://www.youtube.com/watch?v=v=jvd-Pxaqy9I>`_
+
+
 Configuring the roboRIO
 ^^^^^^^^^^^^^^^^^^^^^^^
 
