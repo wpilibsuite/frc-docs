@@ -169,7 +169,7 @@ A swap file can be set up by plugging the USB flash drive into the roboRIO USB p
     fallocate -l 100M /u/swapfile
     mkswap /u/swapfile
     swapon /u/swapfile
-    vi /etc/init.d/addswap.h
+    vi /etc/init.d/addswap.sh
     chmod a+x /etc/init.d/addswap.sh
     update-rc.d -v addswap.sh defaults
     sync
