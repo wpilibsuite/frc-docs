@@ -13,7 +13,7 @@ The goal of this tutorial is to provide "end-to-end" instructions on implementin
 
 This tutorial is intended to be approachable for teams without a great deal of programming expertise.  While the WPILib library offers significant flexibility in the manner in which its state-space control features are implemented, closely following the implementation outlined in this tutorial should provide teams with a basic structure which can be reused for a variety of state-space systems.
 
-The full example is available in the state-space flywheel (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__) and state-space flywheel system identification (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>`__) example projects.
+The full example is available in the state-space flywheel (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__/`Python <https://github.com/robotpy/examples/blob/main/StateSpaceFlywheel/robot.py>`__) and state-space flywheel system identification (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>`__/`Python <https://github.com/robotpy/examples/blob/main/StateSpaceFlywheelSysId/robot.py>`__) example projects.
 
 Why Use State-Space Control?
 ----------------------------
@@ -91,13 +91,27 @@ The ``LinearSystem`` class contains methods for easily creating state-space syst
          :linenos:
          :lineno-start: 30
 
+   .. tab-item:: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/StateSpaceFlywheelSysId/robot.py
+         :language: python
+         :lines: 23-27
+         :linenos:
+         :lineno-start: 23
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/StateSpaceFlywheelSysId/robot.py
+         :language: python
+         :lines: 37-48
+         :linenos:
+         :lineno-start: 37
+
 
 Modeling Using Flywheel Moment of Inertia and Gearing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A flywheel can also be modeled without access to a physical robot, using information about the motors, gearing and flywheel's :term:`moment of inertia`. A full derivation of this model is presented in Section 12.3 of  `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
 
-The ``LinearSystem`` class contains methods to easily create a model of a flywheel from the flywheel's motors, gearing and :term:`moment of inertia`. The moment of inertia can be calculated using :term:`CAD` software or using physics. The examples used here are detailed in the flywheel example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__).
+The ``LinearSystem`` class contains methods to easily create a model of a flywheel from the flywheel's motors, gearing and :term:`moment of inertia`. The moment of inertia can be calculated using :term:`CAD` software or using physics. The examples used here are detailed in the flywheel example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2023.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel>`__/`C++ <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__/`Python <https://github.com/robotpy/examples/blob/main/StateSpaceFlywheel/robot.py>`__).
 
 .. note:: For WPILib's state-space classes, gearing is written as output over input -- that is, if the flywheel spins slower than the motors, this number should be greater than one.
 
@@ -128,6 +142,21 @@ The ``LinearSystem`` class contains methods to easily create a model of a flywhe
          :lines: 17,31-46
          :linenos:
          :lineno-start: 31
+
+   .. tab-item:: Python
+      :sync: python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/StateSpaceFlywheel/robot.py
+         :language: python
+         :lines: 21-25
+         :linenos:
+         :lineno-start: 21
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/StateSpaceFlywheel/robot.py
+         :language: python
+         :lines: 37-46
+         :linenos:
+         :lineno-start: 37
 
 Kalman Filters: Observing Flywheel State
 ----------------------------------------
@@ -169,6 +198,15 @@ Because the feedback controller computes error using the :term:`x-hat` estimated
          :linenos:
          :lineno-start: 48
 
+   .. tab-item:: Python
+      :sync: python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/StateSpaceFlywheel/robot.py
+         :language: python
+         :lines: 48-54
+         :linenos:
+         :lineno-start: 48
+
 Because Kalman filters use our state-space model in the :ref:`docs/software/advanced-controls/state-space/state-space-observers:Predict step`, it is important that our model is as accurate as possible. One way to verify this is to record a flywheel's input voltage and velocity over time, and replay this data by calling only ``predict`` on the Kalman filter. Then, the kV and kA gains (or moment of inertia and other constants) can be adjusted until the model closely matches the recorded data.
 
 .. todo:: do we need to elaborate on this^ more?
@@ -206,6 +244,15 @@ Much like ``SimpleMotorFeedforward`` can be used to generate feedforward voltage
          :linenos:
          :lineno-start: 54
 
+   .. tab-item:: Python
+      :sync: python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/StateSpaceFlywheel/robot.py
+         :language: python
+         :lines: 56-66
+         :linenos:
+         :lineno-start: 56
+
 Bringing it All Together: LinearSystemLoop
 ------------------------------------------
 
@@ -237,6 +284,15 @@ LinearSystemLoop combines our system, controller, and observer that we created e
          :linenos:
          :lineno-start: 71
 
+   .. tab-item:: Python
+      :sync: python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/StateSpaceFlywheel/robot.py
+         :language: python
+         :lines: 68-71
+         :linenos:
+         :lineno-start: 68
+
 Once we have our ``LinearSystemLoop``, the only thing left to do is actually run it. To do that, we'll periodically update our Kalman filter with our new encoder velocity measurements and apply new voltage commands to it. To do that, we first set the :term:`reference`, then ``correct`` with the current flywheel speed, ``predict`` the Kalman filter into the next timestep, and apply the inputs generated using ``getU``.
 
 .. tab-set::
@@ -265,6 +321,15 @@ Once we have our ``LinearSystemLoop``, the only thing left to do is actually run
          :linenos:
          :lineno-start: 92
 
+   .. tab-item:: Python
+      :sync: python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/StateSpaceFlywheel/robot.py
+         :language: python
+         :lines: 87-109
+         :linenos:
+         :lineno-start: 87
+
 Angle Wrap with LQR
 -------------------
 
@@ -283,3 +348,9 @@ Mechanisms with a continuous angle can have that angle wrapped by calling the co
       Eigen::Vector<double, 2> error = lqr.R() - x;
       error(0) = frc::AngleModulus(units::radian_t{error(0)}).value();
       Eigen::Vector<double, 2> u = lqr.K() * error;
+
+   .. code-block:: python
+
+      error = lqr.R() - x
+      error[0] = wpimath.angleModulus(error[0])
+      u = lqr.K() * error
