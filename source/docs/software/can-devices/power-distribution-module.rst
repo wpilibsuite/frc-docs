@@ -6,7 +6,7 @@ The CTRE Power Distribution Panel (:term:`PDP`) and Rev Power Distribution Hub (
 Creating a Power Distribution Object
 ------------------------------------
 
-To use the either Power Distribution module, create an instance of the :code:`PowerDistribution` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/PowerDistribution.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_power_distribution.html>`__). With no arguments, the Power Distribution object will be detected, and must use CAN ID of 0 for CTRE or 1 for REV. If the CAN ID is non-default, additional constructors are available to specify the CAN ID and type.
+To use the either Power Distribution module, create an instance of the :code:`PowerDistribution` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/PowerDistribution.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_power_distribution.html>`__, :external:py:class:`Python <wpilib.PowerDistribution>`). With no arguments, the Power Distribution object will be detected, and must use CAN ID of 0 for CTRE or 1 for REV. If the CAN ID is non-default, additional constructors are available to specify the CAN ID and type.
 
 .. tab-set-code::
 
@@ -21,6 +21,14 @@ To use the either Power Distribution module, create an instance of the :code:`Po
         PowerDistribution examplePD{};
         PowerDistribution examplePD{0, frc::PowerDistribution::ModuleType::kCTRE};
         PowerDistribution examplePD{1, frc::PowerDistribution::ModuleType::kRev};
+
+    .. code-block:: python
+
+        from wpilib import PowerDistribution
+
+        examplePD = PowerDistribution()
+        examplePD = PowerDistribution(0, PowerDistribution.ModuleType.kCTRE)
+        examplePD = PowerDistribution(1, PowerDistribution.ModuleType.kRev)
 
 Note: it is not necessary to create a PowerDistribution object unless you need to read values from it. The board will work and supply power on all the channels even if the object is never created.
 
@@ -45,6 +53,14 @@ Reading the Bus Voltage
          :linenos:
          :lineno-start: 28
 
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/CANPDP/robot.py
+         :language: python
+         :lines: 34-37
+         :linenos:
+         :lineno-start: 34
+
+
 Monitoring the bus voltage can be useful for (among other things) detecting when the robot is near a brownout, so that action can be taken to avoid brownout in a controlled manner. See the :doc:`roboRIO Brownouts document</docs/software/roborio-info/roborio-brownouts>` for more information.
 
 Reading the Temperature
@@ -64,6 +80,12 @@ Reading the Temperature
       :linenos:
       :lineno-start: 33
 
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/CANPDP/robot.py
+      :language: python
+      :lines: 39-41
+      :linenos:
+      :lineno-start: 39
+
 Monitoring the temperature can be useful for detecting if the robot has been drawing too much power and needs to be shut down for a while, or if there is a short or other wiring problem.
 
 Reading the Total Current, Power, and Energy
@@ -82,6 +104,12 @@ Reading the Total Current, Power, and Energy
       :lines: 37-49
       :linenos:
       :lineno-start: 37
+
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/CANPDP/robot.py
+         :language: python
+         :lines: 43-55
+         :linenos:
+         :lineno-start: 43
 
 Monitoring the total current, power and energy can be useful for controlling how much power is being drawn from the battery, both for preventing brownouts and ensuring that mechanisms have sufficient power available to perform the actions required. Power is the bus voltage multiplied by the current with the units Watts. Energy is the power summed over time with units Joules.
 
@@ -104,6 +132,12 @@ The PDP/PDH also allows users to monitor the current drawn by the individual dev
       :linenos:
       :lineno-start: 22
 
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/CANPDP/robot.py
+      :language: python
+      :lines: 28-32
+      :linenos:
+      :lineno-start: 28
+
 Monitoring individual device current draws can be useful for detecting shorts or stalled motors.
 
 Using the Switchable Channel (PDH)
@@ -122,3 +156,8 @@ The REV PDH has one channel that can be switched on or off to control custom cir
 
         examplePD.SetSwitchableChannel(true);
         examplePD.SetSwitchableChannel(false);
+
+    .. code-block:: python
+
+        examplePD.setSwitchableChannel(True)
+        examplePD.setSwitchableChannel(False)
