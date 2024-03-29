@@ -23,10 +23,10 @@ Creating the trajectory config
 ------------------------------
 A configuration must be created in order to generate a trajectory. The config contains information about special constraints, the max velocity, the max acceleration in addition to the start velocity and end velocity. The config also contains information about whether the trajectory should be reversed (robot travels backward along the waypoints). The ``TrajectoryConfig`` class should be used to construct a config. The constructor for this class takes two arguments, the max velocity and max acceleration. The other fields (``startVelocity``, ``endVelocity``, ``reversed``, ``constraints``) are defaulted to reasonable values (``0``, ``0``, ``false``, ``{}``) when the object is created. If you wish to modify the values of any of these fields, you can call the following methods:
 
-* ``setStartVelocity(double startVelocityMetersPerSecond)`` (Java) / ``SetStartVelocity(units::meters_per_second_t startVelocity)`` (C++)
-* ``setEndVelocity(double endVelocityMetersPerSecond)`` (Java) / ``SetEndVelocity(units::meters_per_second_t endVelocity)`` (C++)
-* ``setReversed(boolean reversed)`` (Java) / ``SetReversed(bool reversed)`` (C++)
-* ``addConstraint(TrajectoryConstraint constraint)`` (Java) / ``AddConstraint(TrajectoryConstraint constraint)`` (C++)
+* ``setStartVelocity(double startVelocityMetersPerSecond)`` (Java/Python) / ``SetStartVelocity(units::meters_per_second_t startVelocity)`` (C++)
+* ``setEndVelocity(double endVelocityMetersPerSecond)`` (Java/Python) / ``SetEndVelocity(units::meters_per_second_t endVelocity)`` (C++)
+* ``setReversed(boolean reversed)`` (Java/Python) / ``SetReversed(bool reversed)`` (C++)
+* ``addConstraint(TrajectoryConstraint constraint)`` (Java/Python) / ``AddConstraint(TrajectoryConstraint constraint)`` (C++)
 
 
 .. note:: The ``reversed`` property simply represents whether the robot is traveling backward. If you specify four waypoints, a, b, c, and d, the robot will still travel in the same order through the waypoints when the ``reversed`` flag is set to ``true``. This also means that you must account for the direction of the robot when providing the waypoints. For example, if your robot is facing your alliance station wall and travels backwards to some field element, the starting waypoint should have a rotation of 180 degrees.
@@ -59,6 +59,12 @@ Here is an example of generating a trajectory using clamped cubic splines for th
          :language: c++
          :lines: 8-22
 
+   .. tab-item:: Python
+
+      .. literalinclude:: examples/trajectory-generation-1/py/ExampleTrajectory.py
+         :language: python
+         :lines: 5-20
+
 .. note:: The Java code utilizes the `Units <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/util/Units.html>`_ utility, for easy unit conversions.
 
 .. note:: Generating a typical trajectory takes about 10 ms to 25 ms. This isn't long, but it's still highly recommended to generate all trajectories on startup (``robotInit``).
@@ -66,7 +72,7 @@ Here is an example of generating a trajectory using clamped cubic splines for th
 Concatenating Trajectories
 --------------------------
 
-Trajectories in Java can be combined into a single trajectory using the ``concatenate(trajectory)`` function. C++ users can simply add (``+``) the two trajectories together.
+Trajectories in Java can be combined into a single trajectory using the ``concatenate(trajectory)`` function. C++/Python users can simply add (``+``) the two trajectories together.
 
 .. warning:: It is up to the user to ensure that the end of the initial and start of the appended trajectory match. It is also the user's responsibility to ensure that the start and end velocities of their trajectories match.
 
@@ -103,3 +109,26 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
          frc::Pose2d(6_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
 
       auto concatTraj = m_trajectoryOne + m_trajectoryTwo;
+
+   .. code-block:: python
+
+      from wpimath.geometry import Pose2d, Rotation2d, Translation2d
+      from wpimath.trajectory import TrajectoryGenerator, TrajectoryConfig
+
+
+      trajectoryOne = TrajectoryGenerator.generateTrajectory(
+         Pose2d(0, 0, Rotation2d.fromDegrees(0)),
+         [Translation2d(1, 1), Translation2d(2, -1)],
+         Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+         TrajectoryConfig.fromFps(3.0, 3.0),
+      )
+
+      trajectoryTwo = TrajectoryGenerator.generateTrajectory(
+         Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+         [Translation2d(4, 4), Translation2d(6, 3)],
+         Pose2d(6, 0, Rotation2d.fromDegrees(0)),
+         TrajectoryConfig.fromFps(3.0, 3.0),
+      )
+
+      concatTraj = trajectoryOne + trajectoryTwo
+
