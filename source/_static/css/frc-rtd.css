@@ -159,3 +159,16 @@ summary {
 code.py-class {
     all: unset!important;
 }
+/* top color bar */
+.page::before {
+    background: linear-gradient(90deg, #ed1c24 0%,#ed1c24 33%, #f57e25 33%, #f57e25 67%,#009cd7 67%);
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top:0;
+    content: '';
+}
+
+body {
+    margin-top: 10px;
+}

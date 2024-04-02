@@ -204,7 +204,7 @@ mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "furo"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -225,6 +225,7 @@ html_theme_options = {
     "collapse_navigation": True,
     "sticky_navigation": False,
     "titles_only": True,
+    "light_css_variables": {"color-sidebar-background": "#003974", "color-sidebar-brand-text": "#ffffffcc", "color-sidebar-link-text--top-level": "#d9d9d9"}
 }
 
 user_options = [
