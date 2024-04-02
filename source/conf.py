@@ -225,7 +225,7 @@ html_theme_options = {
    # "collapse_navigation": True,
   #  "sticky_navigation": False,
    # "titles_only": True,
-    "light_css_variables": {"color-sidebar-background": "#003974", "color-sidebar-brand-text": "#ffffffcc", "color-sidebar-link-text--top-level": "#d9d9d9","color-background-hover": "#023160"}
+    "light_css_variables": {"color-sidebar-background": "#003974", "color-sidebar-brand-text": "#ffffffcc", "color-sidebar-link-text--top-level": "#d9d9d9","color-background-hover": "#023160","color-sidebar-link-text":"#acb1b9"}
 }
 
 user_options = [
