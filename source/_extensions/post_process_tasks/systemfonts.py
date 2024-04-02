@@ -21,7 +21,7 @@ def switch_to_system_fonts(app: Sphinx) -> None:
     RE_FONT = re.compile(r"(@font-face\{)|(font-family:.*?(?:;|\}))")
 
     css_path = outdir / "_static" / "css"
-    theme_css_file = css_path / "theme.css"
+    theme_css_file = css_path / "furo.css"
 
     theme_text = theme_css_file.read_text(encoding="utf-8")
 
