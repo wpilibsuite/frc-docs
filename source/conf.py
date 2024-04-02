@@ -222,9 +222,9 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
-    "collapse_navigation": True,
-    "sticky_navigation": False,
-    "titles_only": True,
+   # "collapse_navigation": True,
+  #  "sticky_navigation": False,
+   # "titles_only": True,
     "light_css_variables": {"color-sidebar-background": "#003974", "color-sidebar-brand-text": "#ffffffcc", "color-sidebar-link-text--top-level": "#d9d9d9"}
 }
 
