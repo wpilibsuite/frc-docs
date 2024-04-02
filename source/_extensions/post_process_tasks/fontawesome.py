@@ -84,7 +84,7 @@ def cleanup_fontawesome_font_files(app: Sphinx):
     outdir = Path(app.outdir)
     fonts_folder = outdir / "_static" / "css" / "fonts"
 
-    theme_css_file = outdir / "_static" / "css" / "furo.css"
+    theme_css_file = outdir / "_static" / "css" / "badge_only.css"
 
     theme_text = theme_css_file.read_text(encoding="utf-8")
 
