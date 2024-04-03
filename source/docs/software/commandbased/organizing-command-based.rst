@@ -203,17 +203,16 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
   .. code-block:: c++
 
-    class AutoRoutines {
-      public:
-        static frc2::CommandPtr DriveAndIntake(Drivetrain *drivetrain, Intake *intake) {
+    namespace AutoRoutines {
+        frc2::CommandPtr DriveAndIntake(Drivetrain *drivetrain, Intake *intake) {
             return frc2::cmd::Sequence(
                 frc2::cmd::Parallel(
-                    drivetrain.DriveCommand(0.5, 0.5),
-                    intake.RunIntakeCommand(1.0)
+                    drivetrain->DriveCommand(0.5, 0.5),
+                    intake->RunIntakeCommand(1.0)
                 ).WithTimeout(5.0),
                 frc2::cmd::Parallel(
-                  drivetrain.StopCommand();
-                  intake.StopCommand();
+                  drivetrain->StopCommand();
+                  intake->StopCommand();
                 )
             );
         }
@@ -264,28 +263,29 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
   .. code-block:: c++
 
     class AutoRoutines {
-        public AutoRoutines(Drivetrain *drivetrain, Intake *intake)
+      public:
+        AutoRoutines(Drivetrain *drivetrain, Intake *intake)
           : drivetrain{drivetrain}, intake{intake} {}
 
         frc2::CommandPtr DriveAndIntake() {
             return frc2::cmd::Sequence(
                 frc2::cmd::Parallel(
-                    drivetrain.DriveCommand(0.5, 0.5),
-                    intake.RunIntakeCommand(1.0)
+                    drivetrain->DriveCommand(0.5, 0.5),
+                    intake->RunIntakeCommand(1.0)
                 ).WithTimeout(5.0),
                 frc2::cmd::Parallel(
-                  drivetrain.StopCommand();
-                  intake.StopCommand();
+                  drivetrain->StopCommand();
+                  intake->StopCommand();
                 )
             );
         }
 
         frc2::CommandPtr DriveThenIntake() {
             return frc2::cmd::Sequence(
-                drivetrain.DriveCommand(0.5, 0.5).WithTimeout(5.0),
-                drivetrain.StopCommand(),
-                intake.RunIntakeCommand(1.0).WithTimeout(5.0),
-                intake.StopCommand()
+                drivetrain->DriveCommand(0.5, 0.5).WithTimeout(5.0),
+                drivetrain->StopCommand(),
+                intake->RunIntakeCommand(1.0).WithTimeout(5.0),
+                intake->StopCommand()
             );
         }
 
@@ -312,7 +312,7 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
 
   .. code-block:: c++
 
-    AutoRoutines autoRoutines{drivetrain, intake};
+    AutoRoutines autoRoutines{&drivetrain, &intake};
 
     frc2::CommandPtr driveAndIntake = autoRoutines.DriveAndIntake();
     frc2::CommandPtr driveThenIntake = autoRoutines.DriveThenIntake();
@@ -356,7 +356,7 @@ However, it is still possible to ergonomically write a stateful command composit
         controller.SetPositionTolerance(Constants.kTurnToAngleTolerance);
 
         // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
-        return Run([this] { arcadeDrive(0,-controller.calculate(gyro.getHeading(), targetDegrees)); })
+        return Run([this, controller] { arcadeDrive(0,-controller.calculate(gyro.getHeading(), targetDegrees)); })
             .until(controller::AtSetpoint)
             .andThen(RunOnce([this] { arcadeDrive(0, 0); }));
     }
@@ -408,11 +408,11 @@ Returning to our simple intake command from earlier, we could do this by creatin
         }
 
         void Initialize() override {
-            m_intake.set(1.0);
+            m_intake->set(1.0);
         }
 
         void End(boolean interrupted) override {
-            m_intake.set(0.0);
+            m_intake->set(0.0);
         }
 
         // execute() defaults to do nothing
@@ -451,9 +451,9 @@ If we wish to write composite commands as their own classes, we may write a cons
     class IntakeThenOuttake : public frc2::SequentialCommandGroup {
       public:
         IntakeThenOuttake(Intake *intake) : frc2::SequentialCommandGroup(
-          intake.RunIntakeCommand(1.0).WithTimeout(2.0),
+          intake->RunIntakeCommand(1.0).WithTimeout(2.0),
           new WaitCommand(2.0),
-          intake.RunIntakeCommand(-1).WithTimeout(5.0)
+          intake->RunIntakeCommand(-1).WithTimeout(5.0)
         ) {}
     }
 
