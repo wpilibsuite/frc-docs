@@ -448,7 +448,7 @@ If we wish to write composite commands as their own classes, we may write a cons
 
   .. code-block:: c++
 
-    class IntakeThenOuttake : public frc2::SequentialCommandGroup {
+    class IntakeThenOuttake : public frc2::CommandHelper<frc2::SequentialCommandGroup, IntakeThenOuttake> {
       public:
         IntakeThenOuttake(Intake *intake) : frc2::SequentialCommandGroup(
           intake->RunIntakeCommand(1.0).WithTimeout(2.0),
