@@ -292,7 +292,7 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
       private:
         Drivetrain *drivetrain;
         Intake *intake;
-    }
+    };
 
 Then, elsewhere in our code, we can instantiate an single instance of this class and use it to produce several commands:
 
@@ -349,7 +349,7 @@ However, it is still possible to ergonomically write a stateful command composit
 
   .. code-block:: c++
 
-    frc2::CommandPtr TurnToAngle(double targetDegrees) {
+    frc2::CommandPtr TurnToAngle(units::degrees_t target) {
         // Create a controller for the inline command to capture
         frc::PIDController controller{Constants.kTurnToAngleP, 0, 0};
         // We can do whatever configuration we want on the created state before returning from the factory
@@ -401,7 +401,7 @@ Returning to our simple intake command from earlier, we could do this by creatin
 
   .. code-block:: c++
 
-    class RunIntakeCommand : public frc2::Command {
+    class RunIntakeCommand : public frc2::CommandHelper<frc2::Command, RunIntakeCommand> {
       public:
         RunIntakeCommand(Intake *intake) : m_intake{intake} {
             AddRequirements(intake);
@@ -420,7 +420,7 @@ Returning to our simple intake command from earlier, we could do this by creatin
 
       private:
         Intake *m_intake;
-    }
+    };
 
 This, however, is just as cumbersome as the original repetitive code, if not more verbose. The only two lines that really matter in this entire file are the two calls to ``intake.set()``, yet there are over 20 lines of boilerplate code! Not to mention, doing this for a lot of robot actions quickly clutters up a robot project with dozens of small files. Nevertheless, this might feel more "natural," particularly for programmers who prefer to stick closely to an object-oriented model.
 
