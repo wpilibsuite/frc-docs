@@ -203,7 +203,21 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
   .. code-block:: c++
 
-    // TODO
+    class AutoRoutines {
+      public:
+        static frc2::CommandPtr DriveAndIntake(Drivetrain *drivetrain, Intake *intake) {
+            return frc2::cmd::Sequence(
+                frc2::cmd::Parallel(
+                    drivetrain.DriveCommand(0.5, 0.5),
+                    intake.RunIntakeCommand(1.0)
+                ).WithTimeout(5.0),
+                frc2::cmd::Parallel(
+                  drivetrain.StopCommand();
+                  intake.StopCommand();
+                )
+            );
+        }
+    }
 
 Non-Static Command Factories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -249,7 +263,36 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
 
   .. code-block:: c++
 
-    // TODO
+    class AutoRoutines {
+        public AutoRoutines(Drivetrain *drivetrain, Intake *intake)
+          : drivetrain{drivetrain}, intake{intake} {}
+
+        frc2::CommandPtr DriveAndIntake() {
+            return frc2::cmd::Sequence(
+                frc2::cmd::Parallel(
+                    drivetrain.DriveCommand(0.5, 0.5),
+                    intake.RunIntakeCommand(1.0)
+                ).WithTimeout(5.0),
+                frc2::cmd::Parallel(
+                  drivetrain.StopCommand();
+                  intake.StopCommand();
+                )
+            );
+        }
+
+        frc2::CommandPtr DriveThenIntake() {
+            return frc2::cmd::Sequence(
+                drivetrain.DriveCommand(0.5, 0.5).WithTimeout(5.0),
+                drivetrain.StopCommand(),
+                intake.RunIntakeCommand(1.0).WithTimeout(5.0),
+                intake.StopCommand()
+            );
+        }
+
+      private:
+        Drivetrain *drivetrain;
+        Intake *intake;
+    }
 
 Then, elsewhere in our code, we can instantiate an single instance of this class and use it to produce several commands:
 
@@ -269,7 +312,15 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
 
   .. code-block:: c++
 
-    // TODO
+    AutoRoutines autoRoutines{drivetrain, intake};
+
+    frc2::CommandPtr driveAndIntake = autoRoutines.DriveAndIntake();
+    frc2::CommandPtr driveThenIntake = autoRoutines.DriveThenIntake();
+
+    frc2::CommandPtr drivingAndIntakingSequence = frc2::cmd::Sequence(
+      autoRoutines.DriveAndIntake(),
+      autoRoutines.DriveThenIntake()
+    );
 
 Capturing State in Inline Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -298,7 +349,17 @@ However, it is still possible to ergonomically write a stateful command composit
 
   .. code-block:: c++
 
-    // TODO
+    frc2::CommandPtr TurnToAngle(double targetDegrees) {
+        // Create a controller for the inline command to capture
+        frc::PIDController controller{Constants.kTurnToAngleP, 0, 0};
+        // We can do whatever configuration we want on the created state before returning from the factory
+        controller.SetPositionTolerance(Constants.kTurnToAngleTolerance);
+
+        // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
+        return Run([this] { arcadeDrive(0,-controller.calculate(gyro.getHeading(), targetDegrees)); })
+            .until(controller::AtSetpoint)
+            .andThen(RunOnce([this] { arcadeDrive(0, 0); }));
+    }
 
 This pattern works very well in Java so long as the captured state is "effectively final" - i.e., it is never reassigned.  This means that we cannot directly define and capture primitive types (e.g. `int`, `double`, `boolean`) - to circumvent this, we need to wrap any state primitives in a mutable container type (the same way `PIDController` wraps its internal `kP`, `kI`, and `kD` values).
 
@@ -340,7 +401,26 @@ Returning to our simple intake command from earlier, we could do this by creatin
 
   .. code-block:: c++
 
-    // TODO
+    class RunIntakeCommand : public frc2::Command {
+      public:
+        RunIntakeCommand(Intake *intake) : m_intake{intake} {
+            AddRequirements(intake);
+        }
+
+        void Initialize() override {
+            m_intake.set(1.0);
+        }
+
+        void End(boolean interrupted) override {
+            m_intake.set(0.0);
+        }
+
+        // execute() defaults to do nothing
+        // isFinished() defaults to return false
+
+      private:
+        Intake *m_intake;
+    }
 
 This, however, is just as cumbersome as the original repetitive code, if not more verbose. The only two lines that really matter in this entire file are the two calls to ``intake.set()``, yet there are over 20 lines of boilerplate code! Not to mention, doing this for a lot of robot actions quickly clutters up a robot project with dozens of small files. Nevertheless, this might feel more "natural," particularly for programmers who prefer to stick closely to an object-oriented model.
 
@@ -365,9 +445,17 @@ If we wish to write composite commands as their own classes, we may write a cons
             );
         }
     }
+
   .. code-block:: c++
 
-    // TODO
+    class IntakeThenOuttake : public frc2::SequentialCommandGroup {
+      public:
+        IntakeThenOuttake(Intake *intake) : frc2::SequentialCommandGroup(
+          intake.RunIntakeCommand(1.0).WithTimeout(2.0),
+          new WaitCommand(2.0),
+          intake.RunIntakeCommand(-1).WithTimeout(5.0)
+        ) {}
+    }
 
 This is relatively short and minimizes boilerplate. It is also comfortable to use in a purely object-oriented paradigm and may be more acceptable to novice programmers. However, it has some downsides. For one, it is not immediately clear exactly what type of command group this is from the constructor definition: it is better to define this in a more inline and expressive way, particularly when nested command groups start showing up. Additionally, it requires a new file for every single command group, even when the groups are conceptually related.
 
