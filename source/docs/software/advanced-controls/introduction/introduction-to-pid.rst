@@ -5,8 +5,6 @@ Introduction to PID
 
 .. note:: For a guide on implementing PID control with WPILib, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 
-`What is a PID Controller? VIDEO | DigiKey <https://www.youtube.com/watch?v=tFVAaUcOm4I>`_
-
 This page explains the conceptual and mathematical workings of a PID controller. :ref:`A video explanation from WPI is also available <docs/software/advanced-controls/introduction/pid-video:PID Introduction Video by WPI>`.
 
 What is a PID Controller?
@@ -159,3 +157,9 @@ An *underdamped* response oscillates around the :term:`reference` before settlin
    :align: center
 
 is slow to rise and does not overshoot the :term:`reference`. A *critically damped* response has the fastest :term:`rise time` without overshooting the :term:`reference`.
+
+Other Information
+------------------
+
+* https://file.tavsys.net/control/controls-engineering-in-frc.pdf - See section 2 and section 6.
+* `VIDEO: What Is Feedforward Control? | Control Systems in Practice <https://www.youtube.com/watch?v=FW_ay7K4jPE>`_ 
