@@ -162,4 +162,4 @@ Other Information
 ------------------
 
 * https://file.tavsys.net/control/controls-engineering-in-frc.pdf - See section 2 and section 6.
-* `VIDEO: What Is Feedforward Control? | Control Systems in Practice <https://www.youtube.com/watch?v=FW_ay7K4jPE>`_ 
+* `VIDEO: What Is Feedforward Control? | Control Systems in Practice <https://www.youtube.com/watch?v=FW_ay7K4jPE>`_
