@@ -5,7 +5,7 @@ What is NetworkTables
 
 NetworkTables can be used by programs on the robot in Java, C++, or LabVIEW, and is built into each version of WPILib.
 
-.. note:: NetworkTables has changed substantially in 2023. For more information on migrating pre-2023 code to use the new features, see :ref:`docs/software/networktables/nt4-migration-guide:migrating from networktables 3.0 to networktables 4.0`.
+.. note:: NetworkTables has changed substantially in 2023. For more information on migrating pre-2023 code to use the new features, see :ref:`docs/software/networktables/nt4-migration-guide:migrating from networktables 3.0 to networktables 4.0`. 
 
 NetworkTables Concepts
 ----------------------
@@ -25,6 +25,8 @@ Topics are created when the first publisher announces the topic and are removed 
 Topics have properties. Properties are initially set by the first publisher, but may be changed at any time. Similarly to values, property changes to a topic are propagated to all subscribers to that topic. Properties are structured data (JSON), but at the top level are simply a key/value store (a JSON map). Some properties have defined behavior, but arbitrary ones can be set by the application.
 
 Publishers specify the topic's data type; while there can be multiple publishers to a single topic, they must all be publishing the same data type. This is enforced by the NetworkTables server (the first publisher "wins"). Typically single-topic subscribers also specify what data type they're expecting to receive on a topic and thus won't receive value updates of other types.
+
+The `Network Tables Protocol Specification, Version 4.1<https://github.com/wpilibsuite/allwpilib/blob/main/ntcore/doc/networktables4.adoc>`_ contains detailed documentation on the current wire protocol.
 
 Retained and Persistent Topics
 ------------------------------
@@ -90,7 +92,7 @@ There are some default tables that are created automatically when a robot progra
 NetworkTables API Variants
 --------------------------
 
-There are two major variants of the NetworkTables API. The object-oriented API (C++ and Java) is recommended for robot code and general team use, and provides classes that help ensure correct use of the API. For advanced use cases such as writing object-oriented wrappers for other programming languages, there's also a C/C++ handle-based API.
+There are two major variants of the NetworkTables API. The object-oriented API (C++ and Java) is recommended for robot code and general team use, and provides classes that help ensure correct use of the API. For advanced use cases such as writing object-oriented wrappers for other programming languages, there's also a C/C++ handle-based API.  
 
 Lifetime Management
 -------------------
@@ -102,3 +104,5 @@ In Java, a common bug is to create a subscriber or publisher and not properly re
 In C++, publishers, subscribers, and entries are :term:`RAII`, which means they are automatically destroyed when they go out of scope. ``NetworkTableInstance`` is an exception to this; it is designed to be explicitly destroyed, so it's not necessary to maintain a global instance of it.
 
 Python is similar to Java, except that subscribers or publishers are released when they are garbage collected.
+
+
