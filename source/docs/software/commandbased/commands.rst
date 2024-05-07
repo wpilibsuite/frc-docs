@@ -109,14 +109,14 @@ As a rule, command compositions are ``kCancelIncoming`` if all their components 
 Included Command Types
 ----------------------
 
-The command-based library includes many pre-written command types. Through the use of :ref:`lambdas <docs/software/commandbased/index:Lambda Expressions (Java)>`, these commands can cover almost all use cases and teams should rarely need to write custom command classes. Many of these commands are provided via static factory functions in the ``Commands`` utility class (Java) or in the ``frc2::cmd`` namespace defined in the ``Commands.h`` header (C++). Classes inheriting from ``Subsystem`` also have instance methods that implicitly require ``this``.
+The command-based library includes many pre-written command types. Through the use of :ref:`lambdas <docs/software/commandbased/index:Lambda Expressions (Java)>`, these commands can cover almost all use cases and teams should rarely need to write custom command classes. Many of these commands are provided via static factory functions in the ``Commands`` utility class (Java), in the ``frc2::cmd`` namespace defined in the ``Commands.h`` header (C++), or in the ``commands2.cmd`` namespace (Python). In Java and C++, classes inheriting from ``Subsystem`` also have instance methods that implicitly require ``this``.
 
 Running Actions
 ^^^^^^^^^^^^^^^
 
 The most basic commands are actions the robot takes: setting voltage to a motor, changing a solenoid's direction, etc. For these commands, which typically consist of a method call or two, the command-based library offers several factories to be construct commands inline with one or more lambdas to be executed.
 
-The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_instant_command.html>`__) class, creates a command that calls a lambda once, and then finishes.
+The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_instant_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/InstantCommand.html>`__) class, creates a command that calls a lambda once, and then finishes.
 
 .. tab-set::
 
@@ -147,7 +147,16 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` (`Java <https://github
         :linenos:
         :lineno-start: 15
 
-The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__) class, creates a command that calls a lambda repeatedly, until interrupted.
+  .. tab-item:: Python
+      :sync: tabcode-python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotInlined/subsystems/hatchsubsystem.py
+        :language: python
+        :lines: 24-34
+        :linenos:
+        :lineno-start: 24
+
+The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_run_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/RunCommand.html>`__) class, creates a command that calls a lambda repeatedly, until interrupted.
 
 .. tab-set-code::
 
@@ -172,7 +181,18 @@ The ``run`` factory, backed by the ``RunCommand`` (`Java <https://github.wpilib.
       },
       {&m_drive}))
 
-The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_start_end_command.html>`__) class, calls one lambda when scheduled, and then a second lambda when interrupted.
+  .. code-block:: python
+
+    # A split-stick arcade command, with forward/backward controlled by the left
+    # hand, and turning controlled by the right.
+    commands2.cmd.run(lambda: robot_drive.arcade_drive(
+        -driver_controller.get_left_y(),
+        driver_controller.get_right_x()),
+        robot_drive)
+
+
+
+The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_start_end_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/StartEndCommand.html>`__) class, calls one lambda when scheduled, and then a second lambda when interrupted.
 
 .. tab-set-code::
 
@@ -198,7 +218,17 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://gith
       {&m_shooter}
     )
 
-``FunctionalCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_functional_command.html>`__) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>`` for ``isFinished()``.
+  .. code-block:: python
+
+     commands2.cmd.start_end(
+        # Start a flywheel spinning at 50% power
+        lambda: shooter.shooter_speed(0.5),
+        # Stop the flywheel at the end of the command
+        lambda: shooter.shooter_speed(0.0),
+        # Requires the shooter subsystem
+        shooter)
+
+``FunctionalCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_functional_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/FunctionalCommand.html>`__) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>/Callable`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>/Callable[bool,[]]`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>/Callable[[],bool]`` for ``isFinished()``.
 
 .. tab-set-code::
 
@@ -232,14 +262,28 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` (`Java <https://gith
       {&m_drive}
     )
 
-To print a string and ending immediately, the library offers the ``Commands.print(String)``/``frc2::cmd::Print(std::string_view)`` factory, backed by the ``PrintCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_print_command.html>`__) subclass of ``InstantCommand``.
+    .. code-block:: python
+
+    commands2.cmd.functional_command(
+        # Reset encoders on command start
+        lambda: robot_drive.reset_encoders(),
+        # Start driving forward at the start of the command
+        lambda: robot_drive.arcade_drive(ac.kAutoDriveSpeed, 0),
+        # Stop driving at the end of the command
+        lambda interrupted: robot_drive.arcade_drive(0, 0),
+        # End the command when the robot's driven distance exceeds the desired value
+        lambda: robot_drive.get_average_encoder_distance() >= ac.kAutoDriveDistanceInches,
+        # Require the drive subsystem
+        robot_drive)
+
+To print a string and ending immediately, the library offers the ``Commands.print(String)``/``frc2::cmd::Print(std::string_view)``/``commands2.cmd.print(String)`` factory, backed by the ``PrintCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_print_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/PrintCommand.html>`__) subclass of ``InstantCommand``.
 
 Waiting
 ^^^^^^^
 
 Waiting for a certain condition to happen or adding a delay can be useful to synchronize between different commands in a command composition or between other robot actions.
 
-To wait and end after a specified period of time elapses, the library offers the ``Commands.waitSeconds(double)``/``frc2::cmd::Wait(units::second_t)`` factory, backed by the ``WaitCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_wait_command.html>`__) class.
+To wait and end after a specified period of time elapses, the library offers the ``Commands.waitSeconds(double)``/``frc2::cmd::Wait(units::second_t)``/``commands2.cmd.wait(float)`` factory, backed by the ``WaitCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_wait_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/WaitCommand.html>`__) class.
 
 .. tab-set-code::
 
