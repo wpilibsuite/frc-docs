@@ -297,6 +297,11 @@ To wait and end after a specified period of time elapses, the library offers the
     // Ends 5 seconds after being scheduled
     frc2::WaitCommand(5.0_s)
 
+  .. code-block:: python
+
+    # Ends 5 seconds after being scheduled
+    commands2.cmd.wait(5.0)
+
 To wait until a certain condition becomes ``true``, the library offers the ``Commands.waitUntil(BooleanSupplier)``/``frc2::cmd::WaitUntil(std::function<bool()>)`` factory, backed by the ``WaitUntilCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_wait_until_command.html>`__).
 
 .. tab-set-code::
