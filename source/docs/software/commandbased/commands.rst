@@ -302,7 +302,7 @@ To wait and end after a specified period of time elapses, the library offers the
     # Ends 5 seconds after being scheduled
     commands2.cmd.wait(5.0)
 
-To wait until a certain condition becomes ``true``, the library offers the ``Commands.waitUntil(BooleanSupplier)``/``frc2::cmd::WaitUntil(std::function<bool()>)`` factory, backed by the ``WaitUntilCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_wait_until_command.html>`__).
+To wait until a certain condition becomes ``true``, the library offers the ``Commands.waitUntil(BooleanSupplier)``/``frc2::cmd::WaitUntil(std::function<bool()>)`` factory, backed by the ``WaitUntilCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_wait_until_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/WaitUntilCommand.html>`__).
 
 .. tab-set-code::
 
@@ -315,6 +315,11 @@ To wait until a certain condition becomes ``true``, the library offers the ``Com
 
     // Ends after m_limitSwitch.Get() returns true
     frc2::WaitUntilCommand([&m_limitSwitch] { return m_limitSwitch.Get(); })
+
+  .. code-block:: python
+
+    # Ends after limit_switch.get() returns True
+    commands2.cmd.wait_until(limit_switch.get)
 
 Control Algorithm Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -390,6 +395,15 @@ What might a functional command look like in practice? As before, below is a sim
         :linenos:
         :lineno-start: 5
 
+  .. tab-item:: Python
+     :sync: tabcode-python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/grabhatch.py
+        :language: python
+        :lines: 7-
+        :linenos:
+        :lineno-start: 7
+
 Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called :term:`dependency injection`, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :doc:`later section <structuring-command-based-project>`.
 
 Notice also that the above command calls the subsystem method once from initialize, and then immediately ends (as ``isFinished()`` simply returns true). This is typical for commands that toggle the states of subsystems, and as such it would be more succinct to write this command using the factories described above.
@@ -425,6 +439,15 @@ What about a more complicated case? Below is a drive command, from the same exam
         :linenos:
         :lineno-start: 5
 
+  .. tab-item:: Python
+     :sync: tabcode-python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/defaultdrive.py
+        :language: python
+        :lines: 7-
+        :linenos:
+        :lineno-start: 7
+
 And then usage:
 
 .. tab-set-code::
@@ -441,6 +464,12 @@ And then usage:
     :linenos:
     :lineno-start: 57
 
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/robotcontainer.py
+    :language: python
+    :lines: 65-72
+    :linenos:
+    :lineno-start: 65
+
 Notice that this command does not override ``isFinished()``, and thus will never end; this is the norm for commands that are intended to be used as default commands. Once more, this command is rather simple and calls the subsystem method only from one place, and as such, could be more concisely written using factories:
 
 .. tab-set-code::
@@ -456,3 +485,9 @@ Notice that this command does not override ``isFinished()``, and thus will never
       :lines: 52-58
       :linenos:
       :lineno-start: 52
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotInlined/robotcontainer.py
+      :language: python
+      :lines: 53-65
+      :linenos:
+      :lineno-start: 53
