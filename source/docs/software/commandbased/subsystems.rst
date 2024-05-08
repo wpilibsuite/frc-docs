@@ -5,12 +5,12 @@ Subsystems are the basic unit of robot organization in the command-based paradig
 
 Subsystems also serve as the backbone of the ``CommandScheduler``\ ’s resource management system. Commands may declare resource requirements by specifying which subsystems they interact with; the scheduler will never concurrently schedule more than one command that requires a given subsystem. An attempt to schedule a command that requires a subsystem that is already-in-use will either interrupt the currently-running command or be ignored, based on the running command's :ref:`Interruption Behavior <docs/software/commandbased/commands:getInterruptionBehavior>`.
 
-Subsystems can be associated with "default commands" that will be automatically scheduled when no other command is currently using the subsystem. This is useful for "background" actions such as controlling the robot drive, keeping an arm held at a setpoint, or stopping motors when the subsystem isn't used. Similar functionality can be achieved in the subsystem’s ``periodic()`` method, which is run once per run of the scheduler; teams should try to be consistent within their codebase about which functionality is achieved through either of these methods. Subsystems are represented in the command-based library by the ``Subsystem`` interface (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html>`__).
+Subsystems can be associated with "default commands" that will be automatically scheduled when no other command is currently using the subsystem. This is useful for "background" actions such as controlling the robot drive, keeping an arm held at a setpoint, or stopping motors when the subsystem isn't used. Similar functionality can be achieved in the subsystem’s ``periodic()`` method, which is run once per run of the scheduler; teams should try to be consistent within their codebase about which functionality is achieved through either of these methods. Subsystems are represented in the command-based library by the ``Subsystem`` interface (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Subsystem.html>`__).
 
 Creating a Subsystem
 --------------------
 
-The recommended method to create a subsystem for most users is to subclass the abstract ``SubsystemBase`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SubsystemBase.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem_base.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h>`__):
+The recommended method to create a subsystem for most users is to subclass the abstract ``SubsystemBase`` class in (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SubsystemBase.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem_base.html>`__), as seen in the command-based template (`Java <https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h>`__). In Python, because Python does not have interfaces, the ``Subsystem`` class is a concrete class that can be subclassed directly (`Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Subsystem.html>`__). The following example demonstrates how to create a simple subsystem in each of the supported languages:
 
 .. tab-set::
 
@@ -32,6 +32,50 @@ The recommended method to create a subsystem for most users is to subclass the a
          :linenos:
          :lineno-start: 5
 
+   .. tab-item:: Python
+      :sync: Python
+
+      .. code-block:: python
+
+            from commands2 import Command
+            from commands2 import Subsystem
+
+
+            class ExampleSubsystem(Subsystem):
+
+                def __init__(self):
+                    """Creates a new ExampleSubsystem."""
+                    super().__init__()
+
+
+                def exampleMethodCommand()->Command:
+                    """
+                    Example command factory method.
+
+                     @return a command
+                    """
+
+                    return self.runOnce(
+                        lambda: # one-time action goes here #
+                    )
+
+                def exampleCondition(self)->bool:
+                    """
+                    An example method querying a boolean state of the subsystem (for example, a digital sensor).
+
+                    @return value of some boolean subsystem state, such as a digital sensor."""
+
+                    #Query some boolean state, such as a digital sensor.
+                    return False
+
+                def periodic(self):
+                    # This method will be called once per scheduler run
+                    pass
+
+                def simulationPeriodic(self):
+                    # This method will be called once per scheduler run during simulation
+                    pass
+
 This class contains a few convenience features on top of the basic ``Subsystem`` interface: it automatically calls the ``register()`` method in its constructor to register the subsystem with the scheduler (this is necessary for the ``periodic()`` method to be called when the scheduler runs), and also implements the ``Sendable`` interface so that it can be sent to the dashboard to display/log relevant status information.
 
 Advanced users seeking more flexibility may simply create a class that implements the ``Subsystem`` interface.
@@ -39,7 +83,7 @@ Advanced users seeking more flexibility may simply create a class that implement
 Simple Subsystem Example
 ------------------------
 
-What might a functional subsystem look like in practice? Below is a simple pneumatically-actuated hatch mechanism from the HatchBotTraditional example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):
+What might a functional subsystem look like in practice? Below is a simple pneumatically-actuated hatch mechanism from the HatchBotTraditional example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__, `Python <https://github.com/robotpy/examples/tree/main/HatchbotTraditional>`__):
 
 .. tab-set::
 
@@ -70,9 +114,18 @@ What might a functional subsystem look like in practice? Below is a simple pneum
          :linenos:
          :lineno-start: 5
 
+   .. tab-item:: Python
+      :sync: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/subsystems/hatchsubsystem.py
+         :language: python
+         :lines: 7-
+         :linenos:
+         :lineno-start: 7
+
 Notice that the subsystem hides the presence of the DoubleSolenoid from outside code (it is declared ``private``), and instead publicly exposes two higher-level, descriptive robot actions: ``grabHatch()`` and ``releaseHatch()``. It is extremely important that "implementation details" such as the double solenoid be "hidden" in this manner; this ensures that code outside the subsystem will never cause the solenoid to be in an unexpected state. It also allows the user to change the implementation (for instance, a motor could be used instead of a pneumatic) without any of the code outside of the subsystem having to change with it.
 
-Alternatively, instead of writing ``void`` public methods that are called from commands, we can define the public methods as factories that return a command. Consider the following from the HatchBotInlined example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__):
+Alternatively, instead of writing ``void`` public methods that are called from commands, we can define the public methods as factories that return a command. Consider the following from the HatchBotInlined example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__, `Python <https://github.com/robotpy/examples/tree/main/HatchbotInlined>`__):
 
 .. tab-set::
 
@@ -103,7 +156,17 @@ Alternatively, instead of writing ``void`` public methods that are called from c
          :linenos:
          :lineno-start: 5
 
-Note the qualification of the ``RunOnce`` factory used here: this isn't the static factory in ``Commands``! Subsystems have similar instance factories that return commands requiring ``this`` subsystem. Here, the ``Subsystem.runOnce(Runnable)`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html#runOnce(java.lang.Runnable)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html#a6b8b3b7dab6f54fb8635e335dad448fe>`__) is used.
+   .. tab-item:: Python
+      :sync: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotInlined/subsystems/hatchsubsystem.py
+         :language: python
+         :lines: 7-
+         :linenos:
+         :lineno-start: 7
+
+
+Note the qualification of the ``RunOnce`` factory used here: this isn't the static factory in ``Commands``! Subsystems have similar instance factories that return commands requiring ``this`` (Java/C++) or ``self`` (Python) subsystem. Here, the ``Subsystem.runOnce(Runnable)`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html#runOnce(java.lang.Runnable)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html#a6b8b3b7dab6f54fb8635e335dad448fe>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/latest/commands2/Subsystem.html#commands2.Subsystem.runOnce>`__) is used.
 
 For a comparison between these options, see :ref:`docs/software/commandbased/organizing-command-based:Instance Command Factory Methods`.
 
@@ -141,6 +204,19 @@ Subsystems have a ``periodic`` method that is called once every scheduler iterat
          :linenos:
          :lineno-start: 30
 
+   .. tab-item:: Python
+      :sync: Python
+
+      .. code-block:: python
+
+        def periodic(self):
+            #Update the odometry in the periodic block
+            self.odometry.update(
+                Rotation2d.fromDegrees(getHeading()),
+                self.leftEncoder.getDistance(),
+                self.rightEncoder.getDistance())
+            self.fieldSim.setRobotPose(getPose())
+
 There is also a ``simulationPeriodic()`` method that is similar to ``periodic()`` except that it is only run during :doc:`Simulation </docs/software/wpilib-tools/robot-simulation/introduction>` and can be used to update the state of the robot.
 
 Default Commands
@@ -162,6 +238,10 @@ Setting a default command for a subsystem is very easy; one simply calls ``Comma
 
       CommandScheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
 
+   .. code-block:: python
+
+      CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand)
+
 .. tab-set-code::
 
    .. code-block:: java
@@ -171,5 +251,9 @@ Setting a default command for a subsystem is very easy; one simply calls ``Comma
    .. code-block:: c++
 
       exampleSubsystem.SetDefaultCommand(std::move(exampleCommand));
+
+   .. code-block:: python
+
+      exampleSubsystem.setDefaultCommand(exampleCommand)
 
 .. note:: A command that is assigned as the default command for a subsystem must require that subsystem.
