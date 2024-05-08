@@ -19,6 +19,11 @@ Most importantly, however, command compositions are themselves commands - they e
       // Will run fooCommand, and then a race between barCommand and bazCommand
       button.OnTrue(std::move(fooCommand).AndThen(std::move(barCommand).RaceWith(std::move(bazCommand))));
 
+   .. code-block:: python
+
+      # Will run fooCommand, and then a race between barCommand and bazCommand
+      button.OnTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)))
+
 As a rule, command compositions require all subsystems their components require, may run when disabled if all their component set ``runsWhenDisabled`` as ``true``, and are ``kCancelIncoming`` if all their components are ``kCancelIncoming`` as well.
 
 Command instances that have been passed to a command composition cannot be independently scheduled or passed to a second command composition. Attempting to do so will throw an exception and crash the user program. This is because composition members are run through their encapsulating command composition, and errors could occur if those same command instances were independently scheduled at the same time as the composition - the command would be being run from multiple places at once, and thus could end up with inconsistent internal state, causing unexpected and hard-to-diagnose behavior. The C++ command-based library uses ``CommandPtr``, a class with move-only semantics, so this type of mistake is easier to avoid.
@@ -33,7 +38,7 @@ The command-based library includes various composition types. All of them can be
 Repeating
 ^^^^^^^^^
 
-The ``repeatedly()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#repeatedly()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#acc156a5299699110729918c3aa2b2694>`__), backed by the ``RepeatCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RepeatCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_repeat_command.html>`__) restarts the command each time it ends, so that it runs until interrupted.
+The ``repeatedly()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#repeatedly()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#acc156a5299699110729918c3aa2b2694>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.repeatedly>`__), backed by the ``RepeatCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RepeatCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_repeat_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/RepeatCommand.html>`__) restarts the command each time it ends, so that it runs until interrupted.
 
 .. tab-set-code::
 
@@ -47,12 +52,17 @@ The ``repeatedly()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/
       // Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
       frc2::CommandPtr repeats = std::move(command).Repeatedly();
 
+   .. code-block:: python
+
+      # Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
+      repeats = commands2.cmd.repeatedly()
+
 Sequence
 ^^^^^^^^
 
-The ``Sequence`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#sequence(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a2818c000b0b989bc66032847ecb3fed2>`__), backed by the ``SequentialCommandGroup`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_sequential_command_group.html>`__), runs a list of commands in sequence: the first command will be executed, then the second, then the third, and so on until the list finishes. The sequential group finishes after the last command in the sequence finishes. It is therefore usually important to ensure that each command in the sequence does actually finish (if a given command does not finish, the next command will never start!).
+The ``Sequence`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#sequence(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a2818c000b0b989bc66032847ecb3fed2>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2.cmd/functions.html#commands2.cmd.sequence>`__), backed by the ``SequentialCommandGroup`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_sequential_command_group.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/SequentialCommandGroup.html#commands2.SequentialCommandGroup>`__), runs a list of commands in sequence: the first command will be executed, then the second, then the third, and so on until the list finishes. The sequential group finishes after the last command in the sequence finishes. It is therefore usually important to ensure that each command in the sequence does actually finish (if a given command does not finish, the next command will never start!).
 
-The ``andThen()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a4ea952f52baf9fb157bb42801be602c0>`__) and ``beforeStarting()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(edu.wpi.first.wpilibj2.command.Command)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a61e9a735d7b48dafd4b7499af8ff0c23>`__) decorators can be used to construct a sequence composition with infix syntax.
+The ``andThen()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a4ea952f52baf9fb157bb42801be602c0>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.andThen>`__) and ``beforeStarting()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(edu.wpi.first.wpilibj2.command.Command)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a61e9a735d7b48dafd4b7499af8ff0c23>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.beforeStarting>`__) decorators can be used to construct a sequence composition with infix syntax.
 
 .. tab-set-code::
 
@@ -64,19 +74,24 @@ The ``andThen()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/
 
       std::move(fooCommand).AndThen(std::move(barCommand))
 
+   .. code-block:: python
+
+      fooCommand.andThen(barCommand)
+
+
 Repeating Sequence
 ^^^^^^^^^^^^^^^^^^
 
-As it's a fairly common combination, the ``RepeatingSequence`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#repeatingSequence(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#ae363301748047f753dcbe3eca0a10ced>`__) creates a `Repeating`_ `Sequence`_ that runs until interrupted, restarting from the first command each time the last command finishes.
+As it's a fairly common combination, the ``RepeatingSequence`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#repeatingSequence(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#ae363301748047f753dcbe3eca0a10ced>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2.cmd/functions.html#commands2.cmd.repeatingSequence>`__) creates a `Repeating`_ `Sequence`_ that runs until interrupted, restarting from the first command each time the last command finishes.
 
 Parallel
 ^^^^^^^^
 
 There are three types of parallel compositions, differing based on when the composition finishes:
 
-- The ``Parallel`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#parallel(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a0ea0faa5d66fbe942917844936687172>`__), backed by the ``ParallelCommandGroup`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelCommandGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_command_group.html>`__), constructs a parallel composition that finishes when all members finish. The ``alongWith`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a6b9700cd25277a3ac558d63301985f40>`__) does the same in infix notation.
-- The ``Race`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#race(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a3455ac77f921f355edae8baeb911ef40>`__), backed by the ``ParallelRaceGroup`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelRaceGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_race_group.html>`__), constructs a parallel composition that finishes as soon as any member finishes; all other members are interrupted at that point.  The ``raceWith`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a4d6c1761cef10bb79a727e43e89643d0>`__) does the same in infix notation.
-- The ``Deadline`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#deadline(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#aad22f6f92f4dbbe7b5736e0e39e00184>`__), ``ParallelDeadlineGroup`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_deadline_group.html>`__) finishes when a specific command (the "deadline") ends; all other members still running at that point are interrupted.  The ``deadlineWith`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#afafe81bf1624eb0ef78b30232087b4bf>`__) does the same in infix notation; the comand the decorator was called on is the deadline.
+- The ``Parallel`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#parallel(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a0ea0faa5d66fbe942917844936687172>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2.cmd/functions.html#commands2.cmd.parallel>`__), backed by the ``ParallelCommandGroup`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelCommandGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_command_group.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/ParallelCommandGroup.html>`__), constructs a parallel composition that finishes when all members finish. The ``alongWith`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a6b9700cd25277a3ac558d63301985f40>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.alongWith>`__) does the same in infix notation.
+- The ``Race`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#race(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a3455ac77f921f355edae8baeb911ef40>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2.cmd/functions.html#commands2.cmd.race>`__), backed by the ``ParallelRaceGroup`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelRaceGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_race_group.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/ParallelRaceGroup.html>`__), constructs a parallel composition that finishes as soon as any member finishes; all other members are interrupted at that point.  The ``raceWith`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a4d6c1761cef10bb79a727e43e89643d0>`__) does the same in infix notation.
+- The ``Deadline`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#deadline(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#aad22f6f92f4dbbe7b5736e0e39e00184>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2.cmd/functions.html#commands2.cmd.deadline>`__), ``ParallelDeadlineGroup`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ParallelDeadlineGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_parallel_deadline_group.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/ParallelDeadlineGroup.html>`__) finishes when a specific command (the "deadline") ends; all other members still running at that point are interrupted.  The ``deadlineWith`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#afafe81bf1624eb0ef78b30232087b4bf>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.deadlineWith>`__) does the same in infix notation; the comand the decorator was called on is the deadline.
 
 .. tab-set-code::
 
@@ -102,10 +117,21 @@ There are three types of parallel compositions, differing based on when the comp
       // Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
       button.OnTrue(frc2::cmd::Deadline(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
 
+   .. code-block:: python
+
+      # Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
+      button.onTrue(commands2.cmd.parallel(twoSecCommand, oneSecCommand, threeSecCommand))
+
+      # Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
+      button.onTrue(commands2.cmd.race(twoSecCommand, oneSecCommand, threeSecCommand))
+
+      # Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+      button.onTrue(commands2.cmd.deadline(twoSecCommand, oneSecCommand, threeSecCommand))
+
 Adding Command End Conditions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``until()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a4ffddf195a71e71d80e62df95fffdfcf>`__) decorator composes the command with an additional end condition. Note that the command the decorator was called on will see this end condition as an interruption.
+The ``until()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a4ffddf195a71e71d80e62df95fffdfcf>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.until>`__) decorator composes the command with an additional end condition. Note that the command the decorator was called on will see this end condition as an interruption.
 
 .. tab-set-code::
 
@@ -119,7 +145,12 @@ The ``until()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/ed
       // Will be interrupted if m_limitSwitch.get() returns true
       button.OnTrue(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
 
-The ``withTimeout()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#ac6b2e1e4f55ed905ec7d189b9288e3d0>`__) is a specialization of ``until`` that uses a timeout as the additional end condition.
+   .. code-block:: python
+
+      # Will be interrupted if limitSwitch.get() returns true
+      button.onTrue(commands2.cmd.until(limitSwitch.get))
+
+The ``withTimeout()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#ac6b2e1e4f55ed905ec7d189b9288e3d0>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.withTimeout>`__) is a specialization of ``until`` that uses a timeout as the additional end condition.
 
 .. tab-set-code::
 
@@ -133,19 +164,24 @@ The ``withTimeout()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs
       // Will time out 5 seconds after being scheduled, and be interrupted
       button.OnTrue(command.WithTimeout(5.0_s));
 
+   .. code-block:: python
+
+      # Will time out 5 seconds after being scheduled, and be interrupted
+      button.OnTrue(commands2.cmd.withTimeout(5.0))
+
 Adding End Behavior
 ^^^^^^^^^^^^^^^^^^^
 
-The ``finallyDo()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#finallyDo(edu.wpi.first.util.function.BooleanConsumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#abd0ae6c855d7cf1f1a33cda5575a7b8f>`__) decorator composes the command with an a lambda that will be called after the command's ``end()`` method, with the same boolean parameter indicating whether the command finished or was interrupted.
+The ``finallyDo()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#finallyDo(edu.wpi.first.util.function.BooleanConsumer)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#abd0ae6c855d7cf1f1a33cda5575a7b8f>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.finallyDo>`__) decorator composes the command with an a lambda that will be called after the command's ``end()`` method, with the same boolean parameter indicating whether the command finished or was interrupted.
 
-The ``handleInterrupt()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#handleInterrupt(java.lang.Runnable)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a2a5580e71dfe356d2b261efe213f7c67>`__) decorator composes the command with an a lambda that will be called only when the command is interrupted.
+The ``handleInterrupt()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#handleInterrupt(java.lang.Runnable)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a2a5580e71dfe356d2b261efe213f7c67>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.handleInterrupt>`__) decorator composes the command with an a lambda that will be called only when the command is interrupted.
 
 Selecting Compositions
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Sometimes it's desired to run a command out of a few options based on sensor feedback or other data known only at runtime. This can be useful for determining an auto routine, or running a different command based on whether a game piece is present or not, and so on.
 
-The ``Select`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#select(java.util.Map,java.util.function.Supplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a56f9a9c571bd9da0a0b4612706d8db1c>`__), backed by the ``SelectCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_select_command.html>`__), executes one command from a map, based on a selector function called when scheduled.
+The ``Select`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#select(java.util.Map,java.util.function.Supplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a56f9a9c571bd9da0a0b4612706d8db1c>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.handleInterrupt>`__), backed by the ``SelectCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_select_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/SelectCommand.html>`__), executes one command from a map, based on a selector function called when scheduled.
 
 .. tab-set::
 
@@ -167,7 +203,7 @@ The ``Select`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/
          :linenos:
          :lineno-start: 26
 
-The ``Either`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#either(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command,java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a389d1d0055c3be03a852bfc88aaa2ee5>`__), backed by the ``ConditionalCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_conditional_command.html>`__), is a specialization accepting two commands and a boolean selector function.
+The ``Either`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#either(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command,java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a389d1d0055c3be03a852bfc88aaa2ee5>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2.cmd/functions.html#commands2.cmd.either>`__), backed by the ``ConditionalCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_conditional_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/ConditionalCommand.html>`__), is a specialization accepting two commands and a boolean selector function.
 
 .. tab-set-code::
 
@@ -181,7 +217,12 @@ The ``Either`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/
       // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
       frc2::ConditionalCommand(commandOnTrue, commandOnFalse, [&m_limitSwitch] { return m_limitSwitch.Get(); })
 
-The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#unless(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a2be7f65d40f68581104ab1f6a1ba5e93>`__) composes a command with a condition that will prevent it from running.
+   .. code-block:: python
+
+      # Runs either commandOnTrue or commandOnFalse depending on the value of limitSwitch.get()
+      ConditionalCommand(commandOnTrue, commandOnFalse, limitSwitch.get)
+
+The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#unless(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a2be7f65d40f68581104ab1f6a1ba5e93>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.unless>`__) composes a command with a condition that will prevent it from running.
 
 .. tab-set-code::
 
@@ -195,17 +236,22 @@ The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/rele
       // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
       button.OnTrue(command.Unless([&intake] { return !intake.IsDeployed(); }));
 
-``ProxyCommand`` described below also has a constructor overload (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html>`__) that calls a command-returning lambda at schedule-time and runs the returned command by proxy.
+   .. code-block:: python
+
+      # Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
+      button.OnTrue(command.unless(lambda: not intake.isDeployed()))
+
+``ProxyCommand`` described below also has a constructor overload (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/ProxyCommand.html>`__) that calls a command-returning lambda at schedule-time and runs the returned command by proxy.
 
 Scheduling Other Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default, composition members are run through the command composition, and are never themselves seen by the scheduler. Accordingly, their requirements are added to the composition's requirements. While this is usually fine, sometimes it is undesirable for the entire command composition to gain the requirements of a single command. A good solution is to "fork off" from the command composition and schedule that command separately. However, this requires synchronization between the composition and the individually-scheduled command.
 
-``ProxyCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html>`__), also creatable using the ``.asProxy()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#asProxy()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#aa45784053431393e3277e5bc5ae7f751>`__), schedules a command "by proxy": the command is scheduled when the proxy is scheduled, and the proxy finishes when the command finishes. In the case of "forking off" from a command composition, this allows the composition to track the command's progress without it being in the composition.
+``ProxyCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/ProxyCommand.html>`__), also creatable using the ``.asProxy()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#asProxy()>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#aa45784053431393e3277e5bc5ae7f751>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/Command.html#commands2.Command.asProxy>`__), schedules a command "by proxy": the command is scheduled when the proxy is scheduled, and the proxy finishes when the command finishes. In the case of "forking off" from a command composition, this allows the composition to track the command's progress without it being in the composition.
 
 
-Command compositions inherit the union of their compoments' requirements and requirements are immutable. Therefore, a ``SequentialCommandGroup`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_sequential_command_group.html>`__) that intakes a game piece, indexes it, aims a shooter, and shoots it would reserve all three subsystems (the intake, indexer, and shooter), precluding any of those subsystems from performing other operations in their "downtime". If this is not desired, the subsystems that should only be reserved for the composition while they are actively being used by it should have their commands proxied.
+Command compositions inherit the union of their compoments' requirements and requirements are immutable. Therefore, a ``SequentialCommandGroup`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_sequential_command_group.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/SequentialCommandGroup.html>`__) that intakes a game piece, indexes it, aims a shooter, and shoots it would reserve all three subsystems (the intake, indexer, and shooter), precluding any of those subsystems from performing other operations in their "downtime". If this is not desired, the subsystems that should only be reserved for the composition while they are actively being used by it should have their commands proxied.
 
 .. warning:: Do not use ``ProxyCommand`` unless you are sure of what you are doing and there is no other way to accomplish your need! Proxying is only intended for use as an escape hatch from command composition requirement unions.
 
@@ -231,7 +277,16 @@ Command compositions inherit the union of their compoments' requirements and req
          shooter.AimAndShoot()
       );
 
-For cases that don't need to track the proxied command, ``ScheduleCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_schedule_command.html>`__) schedules a specified command and ends instantly.
+   .. code-block:: python
+
+      # composition requirements are indexer and shooter, intake still reserved during its command but not afterwards
+      commands2.cmd.sequence(
+         intake.intakeGamePiece().asProxy(), # we want to let the intake intake another game piece while we are processing this one
+         indexer.processGamePiece(),
+         shooter.aimAndShoot()
+      )
+
+For cases that don't need to track the proxied command, ``ScheduleCommand`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_schedule_command.html>`__, `Python <https://robotpy.readthedocs.io/projects/commands-v2/en/stable/commands2/ScheduleCommand.html>`__) schedules a specified command and ends instantly.
 
 .. tab-set-code::
 
@@ -246,6 +301,12 @@ For cases that don't need to track the proxied command, ``ScheduleCommand`` (`Ja
       // ScheduleCommand ends immediately, so the sequence continues
       frc2::ScheduleCommand(frc2::cmd::Wait(5.0_s))
          .AndThen(frc2::cmd::Print("This will be printed immediately!"))
+
+   .. code-block:: python
+
+      # ScheduleCommand ends immediately, so the sequence continues
+      ScheduleCommand(commands2.cmd.waitSeconds(5.0))
+         .andThen(commands2.cmd.print("This will be printed immediately!"))
 
 Subclassing Compositions
 ------------------------
@@ -278,6 +339,15 @@ Command compositions can also be written as a constructor-only subclass of the m
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
          :language: c++
          :lines: 5-
+         :linenos:
+         :lineno-start: 5
+
+   .. tab-item:: Python
+      :sync: Python
+
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/complexauto.py
+         :language: python
+         :lines: 7-
          :linenos:
          :lineno-start: 5
 
