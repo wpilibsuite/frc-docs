@@ -106,8 +106,7 @@ Status of GRIP
 --------------
 As you can see from this example, it is very easy and fast to be able to do simple object recognition using GRIP. While this is
 a very simple example, it illustrates the basic principles of using GRIP and feature extraction in general. Over the coming
-weeks the project team will be posting updates to GRIP as more features are added. Currently it supports cameras (Axis ethernet
-camera and web cameras) and image inputs. There is no provision for output yet although NetworkTables and ROS (Robot Operating
+weeks the project team will be posting updates to GRIP as more features are added. Currently it supports cameras (like web cameras) and image inputs. There is no provision for output yet although NetworkTables and ROS (Robot Operating
 System) are planned.
 
 You can either download a pre-built release of the code from the GitHub page "Releases" section
