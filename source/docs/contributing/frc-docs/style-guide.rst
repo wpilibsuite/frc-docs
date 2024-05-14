@@ -217,6 +217,21 @@ However, in some cases where the same link must be referenced multiple times, th
 
    ..  _this is a link: https://example.com
 
+Python API Links
+^^^^^^^^^^^^^^^^
+
+Links to the RobotPY API documentation should use the following intersphinx syntax (example linking to the DriverStation API docs).
+
+.. code-block:: ReST
+
+   :external:py:class:`Python <robotpy:wpilib.DriverStation>`
+
+This expands to be equivalent to:
+
+.. code-block:: ReST
+
+   `Python <https://robotpy.readthedocs.io/projects/robotpy/en/stable/wpilib/DriverStation.html#wpilib.DriverStation>`__
+
 Images
 ------
 
