@@ -32,7 +32,7 @@ We will be replacing the highlighted lines with:
       jvmArgs.add("-Dcom.sun.management.jmxremote.local.only=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.ssl=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.authenticate=false")
-      jvmArgs.add("-Djava.rmi.server.hostname=10.XX.XX.2") // Replace XX.XX with team number
+      jvmArgs.add("-Djava.rmi.server.hostname=10.TE.AM.2") // Replace TE.AM with team number 
    }
 
 We are adding a few arguments here. In order:
@@ -41,7 +41,7 @@ We are adding a few arguments here. In order:
 * Set the remote debugging port to 1198
 * Allow listening from remote targets
 * Disable SSL authentication being required
-* Set the hostname to the roboRIOs team number. Be sure to replace this.
+* Set the hostname to the roboRIOs team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`)
 
 .. important:: The hostname when connected via USB-B should be ``172.22.11.2``.
 
