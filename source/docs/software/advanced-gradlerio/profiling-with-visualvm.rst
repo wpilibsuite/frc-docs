@@ -32,7 +32,7 @@ We will be replacing the highlighted lines with:
       jvmArgs.add("-Dcom.sun.management.jmxremote.local.only=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.ssl=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.authenticate=false")
-      jvmArgs.add("-Djava.rmi.server.hostname=10.TE.AM.2") // Replace TE.AM with team number 
+      jvmArgs.add("-Djava.rmi.server.hostname=10.TE.AM.2") // Replace TE.AM with team number
    }
 
 We are adding a few arguments here. In order:

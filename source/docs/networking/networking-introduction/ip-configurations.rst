@@ -6,7 +6,7 @@ IP Configurations
 TE.AM IP Notation
 -----------------
 
-The notation TE.AM is used as part of IPs in numerous places in this document. This notation refers to splitting your five digit team number into digits for the IP address octets. This scheme supports team numbers up to 25599.
+The notation TE.AM is used as part of IPs in numerous places in this document. This notation refers to splitting your five digit team number into digits for the IP address octets. where AM is the last two digits of the team number, and TE is the first three digits. Leading zeros are optional. This scheme supports team numbers up to 25599.
 
 Example: ``10.TE.AM.2``
 
@@ -26,7 +26,7 @@ Team 1220 - ``10.12.20.2``
 
 Team 3456 - ``10.34.56.2``
 
-Team 10000 - ``10.100.00.2``
+Team 10000 - ``10.100.0.2``
 
 Team 12345 - ``10.123.45.2``
 
