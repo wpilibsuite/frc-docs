@@ -12,7 +12,7 @@ Opening the WebDash
 
 To open the web dashboard, open a web browser and enter the address of
 the roboRIO into the address bar (172.22.11.2 for USB, or
-"roboRIO-####-FRC.local where #### is your team number, with no leading
+"roboRIO-#####-FRC.local where ##### is your team number, with no leading
 zeroes, for either interface). See this document for more details about
 mDNS and roboRIO networking: :ref:`docs/networking/networking-introduction/ip-configurations:IP Configurations`
 
