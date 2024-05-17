@@ -331,7 +331,10 @@ http.client.HTTPConnection.send = new_send
 
 intersphinx_mapping = {
     "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/stable/", None),
-    "commands2": ("https://robotpy.readthedocs.io/projects/commands-v2/en/stable/", None),
+    "commands2": (
+        "https://robotpy.readthedocs.io/projects/commands-v2/en/stable/",
+        None,
+    ),
 }
 
 # We recommend adding the following config value.
