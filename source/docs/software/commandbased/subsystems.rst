@@ -167,7 +167,7 @@ Alternatively, instead of writing ``void`` public methods that are called from c
          :lineno-start: 7
 
 
-Note the qualification of the ``RunOnce`` factory used here: this isn't the static factory in ``Commands``! Subsystems have similar instance factories that return commands requiring ``this`` (Java/C++) or ``self`` (Python) subsystem. Here, the ``Subsystem.runOnce(Runnable)`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html#runOnce(java.lang.Runnable)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html#a6b8b3b7dab6f54fb8635e335dad448fe>`__, :external:py:class:meth:`Python <commands2.Subsystem.runOnce>`) is used.
+Note the qualification of the ``RunOnce`` factory used here: this isn't the static factory in ``Commands``! Subsystems have similar instance factories that return commands requiring ``this`` (Java/C++) or ``self`` (Python) subsystem. Here, the ``Subsystem.runOnce(Runnable)`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html#runOnce(java.lang.Runnable)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html#a6b8b3b7dab6f54fb8635e335dad448fe>`__, :external:py:meth:`Python <commands2.Subsystem.runOnce>`) is used.
 
 For a comparison between these options, see :ref:`docs/software/commandbased/organizing-command-based:Instance Command Factory Methods`.
 
