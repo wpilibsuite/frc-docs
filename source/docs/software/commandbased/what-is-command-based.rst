@@ -50,11 +50,11 @@ In contrast, without using command-based, the user would need to check the butto
   .. code-block:: python
 
         if condition.get():
-        if not pressed:
-            piston.set(DoubleSolenoid.Value.kForward)
-            pressed = True
-        else:
-            pressed = False
+            if not pressed:
+                piston.set(DoubleSolenoid.Value.kForward)
+                pressed = True
+            else:
+                pressed = False
 
 Subsystems and Commands
 -----------------------

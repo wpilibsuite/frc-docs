@@ -52,7 +52,7 @@ The recommended method to create a subsystem for most users is to subclass the a
                     """
                     Example command factory method.
 
-                     @return a command
+                     :return a command
                     """
 
                     return self.runOnce(
@@ -63,7 +63,8 @@ The recommended method to create a subsystem for most users is to subclass the a
                     """
                     An example method querying a boolean state of the subsystem (for example, a digital sensor).
 
-                    @return value of some boolean subsystem state, such as a digital sensor."""
+                    :return value of some boolean subsystem state, such as a digital sensor.
+                    """
 
                     #Query some boolean state, such as a digital sensor.
                     return False
