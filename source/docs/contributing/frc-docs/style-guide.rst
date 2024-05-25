@@ -14,7 +14,7 @@ For documents that will have an identical software/hardware name, append "Hardwa
 
 Suffix filenames with the ``.rst`` extension.
 
-.. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is VS Code with the rST extension.
+.. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is VS Code with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_.
 
 Text
 ----

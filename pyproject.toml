@@ -5,7 +5,7 @@ description = ""
 authors = []
 
 [tool.poetry.dependencies]
-black = "==23.1.0"
+black = "==24.4.2"
 python = ">=3.9,<3.12"
 doc8 = "==0.11.2"
 docutils = "==0.18.1"
@@ -31,7 +31,7 @@ sphinxext-delta = "==0.2.0"
 sphinxext-linkcheckdiff = "==0.1.0"
 sphinxext-mimic = "==0.1.1"
 sphinxext-opengraph = "==0.9.0"
-sphinxext-photofinish = "==0.1.10"
+sphinxext-photofinish = "==0.1.11"
 sphinxext-presentations = "==0.2.2"
 sphinxext-rediraffe = "==0.2.7"
 sphinxext-remoteliteralinclude = "==0.4.0"

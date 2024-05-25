@@ -5,6 +5,8 @@ Status Light Quick Reference
 
 Many of the components of the FRC\ |reg| Control System have indicator lights that can be used to quickly diagnose problems with your robot. This guide shows each of the hardware components and describes the meaning of the indicators. Photos and information from Innovation FIRST and Cross the Road Electronics.
 
+A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Status-Light-Reference.pdf>`_ is available.
+
 Robot Signal Light (RSL)
 ------------------------
 

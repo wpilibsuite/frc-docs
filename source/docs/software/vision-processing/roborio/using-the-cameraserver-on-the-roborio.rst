@@ -64,10 +64,11 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
       This introduces a number of rules that your image processing code must follow to efficiently and safely run on the RoboRIO:
 
-      * Your image processing code must be in its own file
+      * Your image processing code must be in its own file. It's easiest to just place it next to your ``robot.py``
       * Never import the ``cscore`` package from your robot code, it will just waste memory
       * Never import the ``wpilib`` or ``hal`` packages from your image processing file
       * The camera code will be killed when the ``robot.py`` program exits. If you wish to perform cleanup, you should register an atexit handler.
+      * ``robotpy-cscore`` is not installed on the roboRIO by default, you need to update your ``pyproject.toml`` file to install it
 
       .. warning:: ``wpilib`` may not be imported from two programs on the RoboRIO. If this happens, the second program will attempt to kill the first program.
 
@@ -84,5 +85,16 @@ In the following example a thread created in robotInit() gets the Camera Server 
          :language: python
          :lines: 12-55
          :linenos:
+
+      You need to update ``pyproject.toml`` contents to include cscore in the robotpy-extras key (this only shows the portions you need to update):
+
+      .. code-block:: toml
+
+         [tool.robotpy]
+
+         ...
+
+         # Add cscore to the robotpy-extras list
+         robotpy_extras = ["cscore"]
 
 Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on SmartDashboard or Shuffleboard, select that named stream. In this case that is "Rectangle".
