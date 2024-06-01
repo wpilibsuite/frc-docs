@@ -118,5 +118,4 @@ No configuration is required to connect to a NetworkTables instance running on t
 
 .. image:: images/advantagescope-sim.png
    :alt: AdvantageScope file menu with the "Connect to Simulator" option highlighted.
-   :height: 750
-   :width: 500
+   :height: 300

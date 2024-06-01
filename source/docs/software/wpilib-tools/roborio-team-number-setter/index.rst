@@ -13,7 +13,7 @@ Connect to the roboRIO over USB to use the tool, as this is the simplest method 
 Setting Team Number
 -------------------
 
-Enter your team number in the :guilabel:`Team Number` field and select :guilabel:`Set team to xxxx`. This will take about a second, then press the :guilabel:`Reboot` button to reboot the roboRIO so the new team number takes effect.
+Enter your team number in the :guilabel:`Team Number` field and select :guilabel:`Set team to xxxxx`. This will take about a second, then press the :guilabel:`Reboot` button to reboot the roboRIO so the new team number takes effect.
 
 Enabling/Disabling Webserver
 ----------------------------

@@ -155,6 +155,19 @@ Issues with WPILib Dashboards and Simulation on Windows N Editions
 
 **Solution:** Install the `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__
 
+Python - CameraServer/cscore runs out of memory on roboRIO 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Issue:** When using CameraServer on a roboRIO 1, the image processing program will sometimes exit with a ``SIGABRT`` or "Error code 6" or a ``MemoryError``.
+
+**Solution:** You may be able to workaround this issue by disabling the NI webserver using the following robotpy-installer command:
+
+.. code-block:: shell
+
+    python -m robotpy installer niweb disable
+
+.. seealso:: `Github issue <https://github.com/robotpy/mostrobotpy/issues/61>`__
+
 Fixed in WPILib 2024.2.1
 ------------------------
 

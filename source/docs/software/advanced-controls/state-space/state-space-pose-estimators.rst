@@ -44,7 +44,7 @@ Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
 
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
     :language: java
-    :lines: 236-241
+    :lines: 236-245
     :linenos:
     :lineno-start: 236
 

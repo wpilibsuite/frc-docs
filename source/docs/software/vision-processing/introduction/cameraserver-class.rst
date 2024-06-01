@@ -6,14 +6,14 @@ Read and Process Video: CameraServer Class
 Concepts
 --------
 
-The cameras typically used in FRC\ |reg| (commodity USB and Ethernet cameras such as the Axis camera) offer relatively limited modes of operation. In general, they provide only a single image output (typically in an RGB compressed format such as JPG) at a single resolution and frame rate. USB cameras are particularly limited as only one application may access the camera at a time.
+The cameras typically used in FRC\ |reg| (commodity USB and Ethernet cameras) offer relatively limited modes of operation. In general, they provide only a single image output (typically in an RGB compressed format such as JPG) at a single resolution and frame rate. USB cameras are particularly limited as only one application may access the camera at a time.
 
 CameraServer supports multiple cameras. It handles details such as automatically reconnecting when a camera is disconnected, and also makes images from the camera available to multiple "clients" (e.g. both your robot code and the dashboard can connect to the camera simultaneously).
 
 Camera Names
 ^^^^^^^^^^^^
 
-Each camera in CameraServer must be uniquely named. This is also the name that appears for the camera in the Dashboard. Some variants of the CameraServer ``startAutomaticCapture()`` and ``addAxisCamera()`` functions will automatically name the camera (e.g. "USB Camera 0" or "Axis Camera"), or you can give the camera a more descriptive name (e.g. "Intake Cam"). The only requirement is that each camera have a unique name.
+Each camera in CameraServer must be uniquely named. This is also the name that appears for the camera in the Dashboard. Some variants of the CameraServer ``startAutomaticCapture()`` functions will automatically name the camera (e.g. "USB Camera 0"), or you can give the camera a more descriptive name (e.g. "Intake Cam"). The only requirement is that each camera have a unique name.
 
 USB Camera Notes
 ----------------
@@ -43,7 +43,6 @@ The CameraServer class (part of WPILib) provides a high level interface for addi
 Some key functions in CameraServer are:
 
 - ``startAutomaticCapture()``: Add a USB camera (e.g. Microsoft LifeCam) and starts a server for it so it can be viewed from the dashboard.
-- ``addAxisCamera()``: Add an Axis camera. Even if you aren't processing images from the Axis camera in your robot code, you may want to use this function so that the Axis camera appears in the Dashboard's drop down list of cameras. It also starts a server so the Axis stream can still be viewed when your driver station is connected to the roboRIO via USB (useful at competition if you have both the Axis camera and roboRIO connected to the two robot radio Ethernet ports).
 - ``getVideo()``: Get OpenCV access to a camera. This allows you to get images from the camera for image processing on the roboRIO (in your robot code).
 - ``putVideo()``: Start a server that you can feed OpenCV images to. This allows you to pass custom processed and/or annotated images to the dashboard.
 
@@ -52,7 +51,7 @@ cscore Library
 
 The cscore library provides the lower level implementation to:
 
-- Get images from USB and HTTP (e.g. Axis) cameras
+- Get images from USB and HTTP cameras
 - Change camera settings (e.g. contrast and brightness)
 - Change camera video modes (pixel format, resolution and frame rate)
 - Act as a web server and serve images as a standard MJPEG stream
