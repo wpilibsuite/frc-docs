@@ -22,7 +22,7 @@ Most importantly, however, command compositions are themselves commands - they e
    .. code-block:: python
 
       # Will run fooCommand, and then a race between barCommand and bazCommand
-      button.OnTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)))
+      button.onTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)))
 
 As a rule, command compositions require all subsystems their components require, may run when disabled if all their component set ``runsWhenDisabled`` as ``true``, and are ``kCancelIncoming`` if all their components are ``kCancelIncoming`` as well.
 
@@ -167,7 +167,7 @@ The ``withTimeout()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs
    .. code-block:: python
 
       # Will time out 5 seconds after being scheduled, and be interrupted
-      button.OnTrue(commands2.cmd.withTimeout(5.0))
+      button.onTrue(commands2.cmd.withTimeout(5.0))
 
 Adding End Behavior
 ^^^^^^^^^^^^^^^^^^^
@@ -239,7 +239,7 @@ The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/rele
    .. code-block:: python
 
       # Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
-      button.OnTrue(command.unless(lambda: not intake.isDeployed()))
+      button.onTrue(command.unless(lambda: not intake.isDeployed()))
 
 ``ProxyCommand`` described below also has a constructor overload (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html>`__, :external:py:class:`Python <commands2.ProxyCommand>`) that calls a command-returning lambda at schedule-time and runs the returned command by proxy.
 
