@@ -250,7 +250,7 @@ user_options = [
 
 
 def setup(app):
-    app.add_css_file("css/frc-rtd.css")
+    app.add_css_file("css/frc-furo.css")
 
     # Local Api Docs support
     app.add_js_file("js/api-docs-redirect.js")
