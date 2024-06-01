@@ -220,7 +220,7 @@ However, in some cases where the same link must be referenced multiple times, th
 Python API Links
 ^^^^^^^^^^^^^^^^
 
-Links to the RobotPY API documentation should use the following intersphinx syntax (example linking to the DriverStation API docs).
+Links to the RobotPY API documentation should use the following sphinx `python syntax <https://www.sphinx-doc.org/en/master/usage/domains/python.html>`__ (example linking to the DriverStation API docs).
 
 .. code-block:: ReST
 
