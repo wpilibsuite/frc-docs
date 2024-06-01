@@ -222,9 +222,7 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
-    # "collapse_navigation": True,
-    #  "sticky_navigation": False,
-    # "titles_only": True,
+    "announcement": "<em>Important</em> announcement!",
     "light_css_variables": {
         "color-sidebar-background": "#003974",
         "color-sidebar-brand-text": "#ffffffcc",
@@ -240,9 +238,9 @@ html_sidebars = {
         "sidebar/brand.html",
         "sidebar/search.html",
         "sidebar/navigation.html",
-        "sidebar/rtd-versions.html",
         "sidebar/ethical-ads.html",
         "sidebar/scroll-end.html",
+        "sidebar/variant-selector.html"
     ]
 }
 
