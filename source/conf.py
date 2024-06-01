@@ -240,10 +240,9 @@ html_sidebars = {
         "sidebar/brand.html",
         "sidebar/search.html",
         "sidebar/navigation.html",
-        "sidebar/ethical-ads.html",
         "sidebar/rtd-versions.html",
-        "sidebar/scroll-end.html"
-
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
     ]
 }
 
