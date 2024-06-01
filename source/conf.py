@@ -240,7 +240,7 @@ html_sidebars = {
         "sidebar/navigation.html",
         "sidebar/ethical-ads.html",
         "sidebar/scroll-end.html",
-        "sidebar/variant-selector.html"
+        "sidebar/variant-selector.html",
     ]
 }
 
