@@ -9,9 +9,9 @@ from sphinx.application import Sphinx
 def switch_to_system_fonts(app: Sphinx) -> None:
     """
     Removes custom fonts and replaces their usage with system fonts.
-    This can't be done in frc-rtd.css. frc-rtd.css is loaded in after the
+    This can't be done in frc-furo.css. frc-furo.css is loaded in after the
     rtd theme's css is loaded. The custom fonts seems to start downloading
-    before frc-rtd.css is parsed.
+    before frc-furo.css is parsed.
     """
 
     _name = inspect.stack()[0][3]
@@ -21,7 +21,7 @@ def switch_to_system_fonts(app: Sphinx) -> None:
     RE_FONT = re.compile(r"(@font-face\{)|(font-family:.*?(?:;|\}))")
 
     css_path = outdir / "_static" / "css"
-    theme_css_file = css_path / "theme.css"
+    theme_css_file = css_path / "furo.css"
 
     theme_text = theme_css_file.read_text(encoding="utf-8")
 

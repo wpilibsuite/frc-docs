@@ -31,9 +31,10 @@ def do(app: Sphinx, exception: Union[Exception, None]) -> None:
     print("Running custom post processing")
 
     # The two fontawesome functions must run in order
-    cleanup_fontawesome_css(app)
-    cleanup_fontawesome_font_files(app)
-    switch_to_system_fonts(app)
+
+
+# cleanup_fontawesome_font_files(app)
+# switch_to_system_fonts(app)
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
