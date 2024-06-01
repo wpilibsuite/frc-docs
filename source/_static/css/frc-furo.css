@@ -82,3 +82,6 @@ body {
 .sidebar-brand-text {
 	font-size: .85rem;
 }
+aside.sidebar-drawer  {
+    width: revert;
+}
