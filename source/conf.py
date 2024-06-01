@@ -222,7 +222,6 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
-    "announcement": "<em>Important</em> announcement!",
     "light_css_variables": {
         "color-sidebar-background": "#003974",
         "color-sidebar-brand-text": "#ffffffcc",
@@ -230,7 +229,7 @@ html_theme_options = {
         "color-background-hover": "#023160",
         "color-sidebar-link-text": "#acb1b9",
         "color-sidebar-caption-text": "#81868d",
-    }
+    },
 }
 html_sidebars = {
     "**": [
