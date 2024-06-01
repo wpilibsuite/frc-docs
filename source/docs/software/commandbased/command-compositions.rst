@@ -82,7 +82,7 @@ The ``andThen()`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/
 Repeating Sequence
 ^^^^^^^^^^^^^^^^^^
 
-As it's a fairly common combination, the ``RepeatingSequence`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#repeatingSequence(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#ae363301748047f753dcbe3eca0a10ced>`__, :external:py:meth:`Python <commands2.Command.repeatingSequence>`) creates a `Repeating`_ `Sequence`_ that runs until interrupted, restarting from the first command each time the last command finishes.
+As it's a fairly common combination, the ``RepeatingSequence`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#repeatingSequence(edu.wpi.first.wpilibj2.command.Command...)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#ae363301748047f753dcbe3eca0a10ced>`__, :external:py:func:`Python <commands2.cmd.repeatingSequence>`) creates a `Repeating`_ `Sequence`_ that runs until interrupted, restarting from the first command each time the last command finishes.
 
 Parallel
 ^^^^^^^^
@@ -222,7 +222,7 @@ The ``Either`` factory (`Java <https://github.wpilib.org/allwpilib/docs/release/
       # Runs either commandOnTrue or commandOnFalse depending on the value of limitSwitch.get()
       ConditionalCommand(commandOnTrue, commandOnFalse, limitSwitch.get)
 
-The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#unless(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a2be7f65d40f68581104ab1f6a1ba5e93>`__, :external:py:meth:`Python <commands2.cmd.unless>`) composes a command with a condition that will prevent it from running.
+The ``unless()`` decorator (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#unless(java.util.function.BooleanSupplier)>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a2be7f65d40f68581104ab1f6a1ba5e93>`__, :external:py:meth:`Python <commands2.Command.unless>`) composes a command with a condition that will prevent it from running.
 
 .. tab-set-code::
 
