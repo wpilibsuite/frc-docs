@@ -148,7 +148,7 @@ This method takes two parameters: the desired state (usually from the ``toSwerve
 
 Cosine compensation
 ^^^^^^^^^^^^^^^^^^^
-Cosine compensation is a technique that reduces the speed of a module when it is not pointing in the desired direction. This is done by multiplying the desired speed of the module by the cosine of the angle error. 
+Cosine compensation is a technique that reduces the speed of a module when it is not pointing in the desired direction. This is done by multiplying the desired speed of the module by the cosine of the angle error.
 
 - If the wheel is pointing straight in the desired direction, then the speed remains unchanged as :math:`\cos(0^\circ) = 1`.
 - If the wheel is perpendicular to the desired direction of motion, then the speed is reduced to 0 as :math:`\cos(90^\circ) = 0`.
