@@ -162,7 +162,7 @@ Cosine compensation has been shown to reduce the amount of "skew" a swerve drive
       var currentAngle = new Rotation2d.fromRadians(m_turningEncoder.getDistance());
 
       var frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle);
-      frontLeftOptimized.speedMetersPerSecond *= frontLeftOptimized.angle.minus(currentAngle).cos();
+      frontLeftOptimized.speedMetersPerSecond *= frontLeftOptimized.angle.minus(currentAngle).getCos();
 
    .. code-block:: c++
 
