@@ -146,6 +146,40 @@ This method takes two parameters: the desired state (usually from the ``toSwerve
       frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
          Rotation2d(self.m_turningEncoder.getDistance()))
 
+Cosine compensation
+^^^^^^^^^^^^^^^^^^^
+Cosine compensation is a technique that reduces the speed of a module when it is not pointing in the desired direction. This is done by multiplying the desired speed of the module by the cosine of the angle error. 
+
+- If the wheel is pointing straight in the desired direction, then the speed remains unchanged as :math:`\cos(0^\circ) = 1`.
+- If the wheel is perpendicular to the desired direction of motion, then the speed is reduced to 0 as :math:`\cos(90^\circ) = 0`.
+- Everything in between follows the cosine curve.
+
+Cosine compensation has been shown to reduce the amount of "skew" a swerve drive experiences when changing direction.
+
+.. tab-set-code::
+   .. code-block:: java
+
+      var currentAngle = new Rotation2d.fromRadians(m_turningEncoder.getDistance());
+
+      var frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle);
+      frontLeftOptimized.speedMetersPerSecond *= frontLeftOptimized.angle.minus(currentAngle).cos();
+
+   .. code-block:: c++
+
+      Rotation2d currentAngle(m_turningEncoder.GetDistance());
+
+      auto flOptimized = frc::SwerveModuleState::Optimize(fl, currentAngle);
+      flOptimized.speed *= (flOptimized.angle - currentAngle).Cos();
+
+   .. code-block:: python
+
+      from wpimath.kinematics import SwerveModuleState
+      from wpimath.geometry import Rotation2d
+
+      currentAngle = Rotation2d(self.m_turningEncoder.getDistance())
+
+      frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle)
+      frontLeftOptimized.speed *= (frontLeftOptimized.angle - currentAngle).cos()
 
 Field-oriented drive
 ^^^^^^^^^^^^^^^^^^^^
