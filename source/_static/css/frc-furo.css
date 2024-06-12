@@ -27,14 +27,18 @@
 }
 
 
-/* Hide color bar on mobile */
 @media screen and (max-width: 768px) {
-
 	/* Fix sidebar adjust */
 	.rst-versions {
 		width: 85%;
 		max-width: 320px;
 	}
+}
+@media (max-width: 67em) {
+    .nav-overlay-icon .icon, .theme-toggle svg {
+        height: 1rem!important;
+        width: 1rem!important;
+    }
 }
 
 
