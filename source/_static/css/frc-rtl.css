@@ -45,7 +45,7 @@ aside.sidebar-drawer,
   margin-right: 320px;
   margin-left: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 67em) {
   aside.sidebar-drawer,
   .rst-versions {
     right: -300px;
@@ -54,6 +54,11 @@ aside.sidebar-drawer,
   .rst-versions.shift {
     right: 0;
     left: unset;
+  }
+  #__navigation:checked ~ .page aside.sidebar-drawer {
+    right: 0;
+    top: 0;
+    left: unset !important;
   }
 }
 
