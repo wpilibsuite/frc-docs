@@ -91,6 +91,8 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_js_file("pid-tune.js")
     app.add_css_file("pid-tune.css")
 
+    print("Done.")
+
     return {
         "parallel_read_safe": True,
         "parallel_write_safe": True,
