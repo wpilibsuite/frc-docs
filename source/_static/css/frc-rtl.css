@@ -49,16 +49,22 @@ aside.sidebar-drawer,
   aside.sidebar-drawer,
   .rst-versions {
     right: -300px;
+    transition: right .25s ease-in-out;
   }
-  aside.sidebar-drawer.shift,
-  .rst-versions.shift {
-    right: 0;
-    left: unset;
-  }
+
   #__navigation:checked ~ .page aside.sidebar-drawer {
     right: 0;
     top: 0;
     left: unset !important;
+  }
+  #__toc:checked~.page aside.toc-drawer {
+    left: 0;
+    right: unset;
+    top: 0;
+  }
+  aside.toc-drawer {
+    left: -300px;
+    transition: left .25s ease-in-out;
   }
 }
 
