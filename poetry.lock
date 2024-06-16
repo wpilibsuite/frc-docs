@@ -1936,25 +1936,6 @@ pygments = "*"
 Sphinx = ">=7.0.0,<8.0.0"
 
 [[package]]
-name = "sphinx-rtd-theme"
-version = "2.0.0"
-description = "Read the Docs theme for Sphinx"
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "sphinx_rtd_theme-2.0.0-py2.py3-none-any.whl", hash = "sha256:ec93d0856dc280cf3aee9a4c9807c60e027c7f7b461b77aeffed682e68f0e586"},
-    {file = "sphinx_rtd_theme-2.0.0.tar.gz", hash = "sha256:bd5d7b80622406762073a04ef8fadc5f9151261563d47027de09910ce03afe6b"},
-]
-
-[package.dependencies]
-docutils = "<0.21"
-sphinx = ">=5,<8"
-sphinxcontrib-jquery = ">=4,<5"
-
-[package.extras]
-dev = ["bump2version", "sphinxcontrib-httpdomain", "transifex-client", "wheel"]
-
-[[package]]
 name = "sphinx-tabs"
 version = "3.4.4"
 description = "Tabbed views for Sphinx"
@@ -2472,4 +2453,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "b120fe6e3e2cc1c533f6b0c15f4fbebe58ed8113e41c53d50f6be0f54a861c76"
+content-hash = "373559caa085d988d0aa7225b753b9cff22c725b39bb5750fc004a00badc6bb9"
