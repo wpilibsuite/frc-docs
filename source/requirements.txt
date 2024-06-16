@@ -92,7 +92,7 @@ sphinxext-linkcheckdiff==0.1.0 ; python_version >= "3.9" and python_version < "3
 sphinxext-mimic==0.1.1 ; python_version >= "3.9" and python_version < "3.12"
 sphinxext-opengraph==0.9.0 ; python_version >= "3.9" and python_version < "3.12"
 sphinxext-photofinish==0.1.11 ; python_version >= "3.9" and python_version < "3.12"
-sphinxext-presentations==0.2.2 ; python_version >= "3.9" and python_version < "3.12"
+sphinxext-presentations==0.3.1 ; python_version >= "3.9" and python_version < "3.12"
 sphinxext-rediraffe==0.2.7 ; python_version >= "3.9" and python_version < "3.12"
 sphinxext-remoteliteralinclude==0.4.0 ; python_version >= "3.9" and python_version < "3.12"
 sphinxext-toptranslators==0.1.3 ; python_version >= "3.9" and python_version < "3.12"

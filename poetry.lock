@@ -2220,13 +2220,13 @@ tinycss2 = ">=1.1.1"
 
 [[package]]
 name = "sphinxext-presentations"
-version = "0.2.2"
+version = "0.3.1"
 description = "Sphinx Extension that turns documentation into presentations."
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "sphinxext-presentations-0.2.2.tar.gz", hash = "sha256:fb9c86fb3790fc0f5eb8a3f5824cfa75b13a6481079de95ceef95ab36db3a018"},
-    {file = "sphinxext_presentations-0.2.2-py3-none-any.whl", hash = "sha256:11d285286224c631893dcce1659b925dcdb9e52757a41a3e78796c4b21a87489"},
+    {file = "sphinxext_presentations-0.3.1-py3-none-any.whl", hash = "sha256:978c9dd6dd54f5a5f0c85f6f2ab0a43c4d96fadca93288102323ff84a353de6d"},
+    {file = "sphinxext_presentations-0.3.1.tar.gz", hash = "sha256:0698f7fdf30b484ec7d37e4f3e752c004481c21e9ce9e6144265217bfb742e00"},
 ]
 
 [package.dependencies]
@@ -2472,4 +2472,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "6ba81a286b28a25f85f4bed40138592b8a1a183477cbba93261ea319ae810f21"
+content-hash = "b120fe6e3e2cc1c533f6b0c15f4fbebe58ed8113e41c53d50f6be0f54a861c76"
