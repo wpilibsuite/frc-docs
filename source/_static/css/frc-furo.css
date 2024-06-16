@@ -7,10 +7,6 @@
 	padding: 15px;
 }
 
-.rst-versions {
-	width: 320px;
-}
-
 .document img {
 	margin-bottom: 10px;
 }
@@ -21,19 +17,12 @@
 
 /* Tweaks for sphinx panels */
 
-/* Reduces the added margin to card footers due to a conflict in RTD CSS styles */
+/* Reduces the added margin to card footers due to a conflict in theme CSS styles */
 .sd-card-footer > p.sd-card-text {
 	margin-bottom: 5px;
 }
 
 
-@media screen and (max-width: 768px) {
-	/* Fix sidebar adjust */
-	.rst-versions {
-		width: 85%;
-		max-width: 320px;
-	}
-}
 @media (max-width: 67em) {
     .nav-overlay-icon .icon, .theme-toggle svg {
         height: 1rem!important;

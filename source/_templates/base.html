@@ -1,7 +1,6 @@
-{% extends '!base.html' %} {% block extrabody %}
-
+{% extends '!base.html' %} 
+{% block extrabody %}
 <div class="header-bar">
-  <!-- Color Strip -->
   <div class="link-bar-container">
     <div id="link-bar" class="collapse">
       <ul>
@@ -28,8 +27,13 @@
     </div>
   </div>
 </div>
-{% endblock %} {%- block regular_scripts -%} {% for path in script_files -%} {{
-js_tag(path) }} {% endfor -%} {%- if READTHEDOCS %}
+{% endblock %} 
+
+{%- block regular_scripts -%} 
+{% for path in script_files -%} 
+  {{ js_tag(path) }} 
+{% endfor -%} 
+{%- if READTHEDOCS %}
 <script>
   if (typeof READTHEDOCS_DATA !== "undefined") {
     if (!READTHEDOCS_DATA.features) {
@@ -39,6 +43,7 @@ js_tag(path) }} {% endfor -%} {%- if READTHEDOCS %}
   }
 </script>
 {%- endif %}
+
 <script defer>
   const button = Object.assign(document.createElement("a"), {
     href: "?present",

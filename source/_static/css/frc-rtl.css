@@ -102,7 +102,7 @@ div.content-icon-container {
   text-align: right;
 }
 
-/* Furo uses padding-left by default, which looks wrong on RTL */
+/* Furo uses padding-left in the heading TOC by default, which looks wrong on RTL */
 .toc-tree > ul > li:first-child > ul {
   padding-inline-start: 0;
   padding-left: initial;
