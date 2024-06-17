@@ -1,7 +1,7 @@
 Introduction to DC Motor Feedforward
 ====================================
 
-.. note:: For a guide on implementing PID control in code with WPILib, see :ref:`docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib`.
+.. note:: For a guide on implementing feedforward control in code with WPILib, see :ref:`docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib`.
 
 This page explains the conceptual and mathematical workings of WPILib's SimpleMotorFeedforward (and the other related classes).
 
