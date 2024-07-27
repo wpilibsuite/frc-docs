@@ -197,7 +197,7 @@ If your main robot class inherits from ``TimedRobot``, the generated ``Epilogue`
     :header-rows: 1
 
     * - Configuration
-      - Description 
+      - Description
       - Default Value
     * - Data Logger
       - The data logging implementation to use to save logged data.
