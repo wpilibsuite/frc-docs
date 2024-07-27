@@ -1,0 +1,295 @@
+Robot Telemetry with Annotations (Java Only)
+============================================
+
+At its most basic, telemetry with annotations can be accomplished with only a few lines of code:
+
+#. Add the ``@Logged`` annotation to your main robot class and to the classes it references, like subsystems
+#. Bind the logger to the robot in ``robotInit()`` to start logging
+
+This is enough to start logging data to NetworkTables for display and capture on a desktop application like a dashboard or AdvantageScope. Optionally, you can start the data log manager to capture the NetworkTables-logged data and save it to a log file on the roboRIO.
+
+.. tab-set-code::
+
+    .. code-block:: java
+
+        @Logged
+        public class Robot extends TimedRobot {
+          private final Arm arm;
+          private final Drivetrain drivetrain;
+
+          public Robot() {
+            arm = new Arm();
+            drivetrain = new Drivetrain();
+
+            DataLogManager.start(); // Optional to mirror the NetworkTables-logged data to a file on disk
+            Epilogue.bind(this);
+          }
+        }
+
+        @Logged
+        public class Arm {
+          // ...
+        }
+
+        @Logged
+        public class Drivetrain {
+          // ...
+        }
+
+The ``@Logged`` annotation, when placed on a class, tells the Java compiler to run WPILib's code generator to write custom logging code that will log everything it can in your class. The generated code will exist in the ``build/generated/sources/annotationProcessor`` folder in your robot project, and your code can reference and use that generated code. The ``Epilogue`` class is, in fact, one of those generated files - it is responsible for tracking all of the custom class-specific loggers created by the code generator and is the entry point for configuring and starting automatic logging. Placing the ``@Logged`` annotation on individual fields and methods will let you control how they appear in log files or networktables; placing ``@NotLogged`` on a field or method will explicitly exclude it from being logged, regardless of how its enclosing class is configured.
+
+Annotation logging will detect all public and private fields and all public methods in an annotated class, as long as those fields and methods return a known loggable type. Placing an ``@Logged`` annotation on any non-loggable field or method will result in a compilation error. Static fields and methods cannot be logged, nor can non-public methods or methods that accept arguments.
+
+Currently, annotation logging supports the following data types:
+
+* Any type (class, interface, or enum) tagged with the ``@Logged`` annotation
+* Any type (class, interface, or enum) with a custom logger defined with a ``@CustomLoggerFor`` annotation (intended to be used for logging of third-party classes)
+* All primitive types (``byte``, ``char``, ``short``, ``int``, ``long``, ``float``, ``double``, and ``boolean``) (note: this excludes wrapper types like ``Byte``, ``Integer``, and ``Boolean``)
+* Strings
+* Any type that inherits from ``StructSerializable``, such as WPILib math types or custom user-defined types
+* Any ``edu.wpi.first.units.Measure`` (logged as a double in terms of the base unit)
+* ``byte[]``, ``int[]``, ``long[]``, ``float[]``, ``double[]``, and ``boolean[]`` primitive arrays
+* ``String[]`` arrays
+* Arrays of anything that inherits from ``StructSerializable``, such as ``Rotation2d[]`` or ``SwerveModuleState[]``
+* Java collections, like ``List`` and ``Set``, of ``String`` or ``StructSerializable`` objects, such as ``Set<String>`` or ``List<SwerveModuleState>``
+* Any ``Sendable`` object, like a ``DigitalInput`` (note: commands and subsystems are excluded and wil not be logged using their sendable implementation)
+* Any ``BooleanSupplier``, ``IntSupplier``, ``LongSupplier``, or ``DoubleSupplier`` (note: this includes command triggers!)
+
+
+.. list-table:: ``@Logged`` Configurations
+    :header-rows: 1
+
+    * - Attribute
+      - Description
+    * - Name
+      -  Sets a specific name to use for the annotated element. If placed on a class, this controls the name of the generated logger class for avoiding name conflicts.
+    * - Importance
+      - Sets the specific importance level for the annotated element, which can be used by the runtime ``minimumImportance`` configuration to control what data to log. If placed on a class, this sets the *default* importance level for all contained elements, which can be overridden on an element-by-element basis. Defaults to ``DEBUG``.
+    * - Strategy (class only)
+      - Sets the opt-in/opt-out strategy to use for logging elements in the annotated class. Defaults to opt-out, which means every loggable element in the class will be logged unless opted out using the ``@NotLogged`` annotation. Setting this to opt-in gives finer control over what gets logged, but takes more work to set up by manually annotating all the opted-in elements. Setting this option on a field or method has no effect.
+
+.. tab-set::
+
+   .. tab-item:: Original code without logging
+
+        .. code-block:: java
+
+            public class Robot extends RobotBase {
+              private final Arm arm;
+
+              public Robot() {
+                arm = new Arm();
+              }
+            }
+
+            class Arm {
+              public final Trigger atLowStop = new Trigger(...);
+              public final Trigger atHighStop = new Trigger(...);
+              private Rotation2d lastPosition = getPosition();
+
+              public Rotation2d getPosition() {
+                // ...
+              }
+
+              public Measure<Velocity<Angle>> getSpeed() {
+                // ...
+              }
+            }
+
+
+   .. tab-item:: Code with logging (minimal)
+
+        .. code-block:: java
+
+            @Logged
+            public class Robot extends RobotBase {
+              private final Arm arm; // Anything loggable within the arm object will be logged under an "arm" entry
+
+              public Robot() {
+                arm = new Arm();
+
+                Epilogue.bind(this);
+              }
+            }
+
+            @Logged
+            class Arm {
+              public final Trigger atLowStop = new Trigger(...);  // Logged as a boolean in an "atLowStop" entry
+              public final Trigger atHighStop = new Trigger(...); // Logged as a boolean in an "atHighStop" entry
+              private Rotation2d lastPosition = getPosition();    // Logged as a Rotation2d struct in a "lastPosition" entry
+
+              // Logged as a Rotation2d struct object in a "getPosition" entry
+              public Rotation2d getPosition() {
+                // ...
+              }
+
+              // Logged as a double in terms of radians per second in a "getSpeed" entry
+              public Measure<Velocity<Angle>> getSpeed() {
+                // ...
+              }
+            }
+
+        Data will be logged as:
+
+        .. code-block::
+
+            /Robot/arm/atLowStop
+            /Robot/arm/atHighStop
+            /Robot/arm/lastPosition
+            /Robot/arm/getPosition
+            /Robot/arm/getSpeed
+
+   .. tab-item:: Code with logging (configured)
+
+        .. code-block:: java
+
+            @Logged
+            public class Robot extends RobotBase {
+              @Logged(name = "Arm")
+              private Arm arm;
+
+              public Robot() {
+                arm = new Arm();
+
+                DataLogManager.start();
+                Epilogue.bind(this);
+              }
+            }
+
+            @Logged(strategy = OPT_IN)
+            class Arm {
+              @Logged(name = "At Low Stop", importance = DEBUG)
+              public final Trigger atLowStop = new Trigger(...);
+
+              @Logged(name = "At High Stop", importance = DEBUG)
+              public final Trigger atHighStop = new Trigger(...);
+
+              private Rotation2d lastPosition = getPosition(); // No @Logged annotation, not logged
+
+              @Logged(name = "Position", importance = CRITICAL)
+              public Rotation2d getPosition() {
+                // ...
+              }
+
+              @Logged(name = "Speed", importance = CRITICAL)
+              public Measure<Velocity<Angle>> getSpeed() {
+                  // ...
+              }
+            }
+
+        Data will be logged as:
+
+        .. code-block::
+
+            /Robot/Arm/At Low Stop
+            /Robot/Arm/At High Stop
+            /Robot/Arm/Position
+            /Robot/Arm/Speed
+
+The Epilogue Class
+------------------
+
+``Epilogue`` is a special class that is created by the code generator. Its responsibility is to keep track of all the custom logger files and as the main entry point for configuring and starting automatic data logging.
+
+If your main robot class inherits from ``TimedRobot``, the generated ``Epilogue`` class will have an additional ``bind()`` method that can be used to add a periodic logging call to the robot. The logging call will run at the same frequency as the main robot loop (typically 50Hz), but offset by half a phase to avoid extra CPU overhead while control loops are running. Keep in mind that, depending on your code structure, this means that logged data may be slightly out of sync with the data that the control loops operate on.
+
+.. list-table:: Logging Configurations
+    :header-rows: 1
+
+    * - Configuration
+      - Description 
+      - Default Value
+    * - Data Logger
+      - The data logging implementation to use to save logged data.
+      - NetworkTables-based logging, which the DataLogManager can read and save to a file on disk
+    * - Root Data Entry
+      - The root entry that logged data will appear under. Used for both NetworkTables-based and DataLog-based logging. Can be set to any string.
+      - ``"Robot"``
+    * - Minimum Importance Level
+      - The minimum importance level of data for it to be logged. Any logged data marked with a lower priority will be excluded from telemetry.
+      - ``DEBUG`` (logs everything)
+    * - Error handler
+      - Catches and responds to errors encountered while logging data. Error handlers are used to prevent any errors encountered during logging from crashing the entire robot program.
+      - Errors are caught and printed to the console
+
+.. tab-set-code::
+
+    .. code-block:: java
+
+        @Logged
+        public class Robot extends TimedRobot {
+          public Robot() {
+            Epilogue.configure(config -> {
+              // Log only to disk, instead of the default NetworkTables logging
+              // Note that this means data cannot be analyzed in realtime by a dashboard
+              config.dataLogger = new FileLogger(DataLogManager.getLog());
+
+              if (isSimulation()) {
+                // If running in simulation, then we'd want to re-throw any errors that
+                // occur so we can debug and fix them!
+                config.errorHandler = ErrorHandler.crashOnError();
+              }
+
+              // Change the root data path
+              config.root = "Telemetry";
+
+              // Only log critical information instead of the default DEBUG level.
+              // This can be helpful in a pinch to reduce network bandwidth or log file size
+              // while still logging important information.
+              config.minimumImportance = Logged.Importance.CRITICAL;
+            });
+
+            Epilogue.bind(this);
+          }
+        }
+
+
+Logging Third-Party Data
+------------------------
+
+A large part of the Java ecosystem is its access to third-party libraries that provide extra functionality, such as vendor libraries for interacting with custom hardware like motor controllers and sensors. If those vendors do not use logging annotations in their libraries, then you can still log them by writing a custom logger class! These classes are actually what the WPILib annotations will generate; you just write a custom one because third-party code cannot be annotated.
+
+Custom loggers can be declared in any package, and only need to have the ``@CustomLoggerFor`` annotation present to be able to be detected and used. The class must have a public no-argument construtor - failing to declare one will result in a compilation error - and must pass the type they log to the superclass constructor.
+
+.. note:: Only one custom logger may be defined for a single type. Custom loggers will only be detected and used if they are defined in the robot project; custom loggers defined in third-party libraries cannot be detected.
+
+.. tab-set-code::
+    .. code-block:: java
+
+        class VendorMotor {
+          public int getFaults();
+          public void set(double speed);
+          public double get();
+          public double getAppliedVoltage();
+          public double getInputCurrent();
+        }
+
+        @CustomLoggerFor(VendorMotor.class)
+        public class YourCustomVendorMotorLogger extends ClassSpecificLogger<VendorMotor> {
+          public YourCustomVendorMotorLogger() {
+            super(VendorMotor.class);
+          }
+
+          @Override
+          public void update(DataLogger dataLogger, VendorMotor motor) {
+            if (Epilogue.shouldLog(Logged.Importance.DEBUG)) {
+              dataLogger.log("Faults", motor.getFaults());
+            }
+
+            dataLogger.log("Requested Speed (Duty Cycle)", motor.get());
+            dataLogger.log("Motor Voltage (V)", motor.getAppliedVoltage());
+            dataLogger.log("Input Current (A)", motor.getInputCurrent());
+          }
+        }
+
+
+Caveats and Limitations
+-----------------------
+
+Because the logging code generation runs at compile time, information only available at runtime cannot be used. If a field is declared to be of some type ``T``, then it will be logged using whatever configuration is defined for ``T``, even if at runtime it is set to a concrete subtype ``S`` that has its own distinct logging configuration. You may encounter this if your code uses IO interfaces; consider annotating the interface with ``@Logged`` and provide methods for reading data you want to be logged regardless of implementation, such as motor voltages and sensor readings.
+
+Null values are unrepresentable in log data and therefore cannot be logged. If a logged field is set to ``null`` or is uninitialized, or if a logged method returns ``null``, then the logging code will throw a ``NullPointerException`` to be handled by the configured error handler.
+
+Data logging increases CPU load on the roboRIO and can lead to loop overruns. The CPU load is not caused by the logging itself, but from calling expensive methods to read data. This is most often seen when querying information from devices on a CAN bus. If your code frequently sees loop overruns caused by logging, consider reducing the number of logged fields or restructure your code to periodically read and cache data from connected devices and log the cached data instead of logging methods that needlessly re-query it.
+
+.. note:: Time spent on logging in each loop will be logged to ``/Epilogue/Stats/Last Run`` in NetworkTables and can be analyzed in a tool like AdvantageScope.
