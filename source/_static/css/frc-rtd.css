@@ -156,6 +156,6 @@ summary {
     padding: .5em;
 }
 
-code.py-class {
+code.py-class, code.py-func, code.py-meth {
     all: unset!important;
 }

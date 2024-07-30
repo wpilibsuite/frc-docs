@@ -154,6 +154,7 @@ linkcheck_ignore = [
     r".*chiefdelphi.com.*",
     r".*raspberrypi.com.*",
     r".*stackoverflow.com.*",
+    r".*allaboutcircuits.com.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -331,6 +332,10 @@ http.client.HTTPConnection.send = new_send
 
 intersphinx_mapping = {
     "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/stable/", None),
+    "commands2": (
+        "https://robotpy.readthedocs.io/projects/commands-v2/en/stable/",
+        None,
+    ),
 }
 
 # We recommend adding the following config value.

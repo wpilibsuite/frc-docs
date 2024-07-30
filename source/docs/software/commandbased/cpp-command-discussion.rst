@@ -210,9 +210,9 @@ There are multiple ways to get a ``CommandPtr`` instance:
 
 - A ``ToPtr()`` method has been added to the CRTP, akin to ``TransferOwnership``. This is useful especially for user-defined command classes, as well as other command classes that don't have factories.
 
-For instance, consider the following from the `HatchbotInlined example project <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/>`:
+For instance, consider the following from the `HatchbotInlined example project <https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/>`__:
 
-.. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/commands/Autos.cpp
+.. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/commands/Autos.cpp
    :language: c++
    :lines: 33-73
    :linenos:

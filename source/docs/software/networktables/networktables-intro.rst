@@ -26,6 +26,8 @@ Topics have properties. Properties are initially set by the first publisher, but
 
 Publishers specify the topic's data type; while there can be multiple publishers to a single topic, they must all be publishing the same data type. This is enforced by the NetworkTables server (the first publisher "wins"). Typically single-topic subscribers also specify what data type they're expecting to receive on a topic and thus won't receive value updates of other types.
 
+The `Network Tables Protocol Specification <https://github.com/wpilibsuite/allwpilib/blob/main/ntcore/doc/networktables4.adoc>`_ contains detailed documentation on the current wire protocol.
+
 Retained and Persistent Topics
 ------------------------------
 

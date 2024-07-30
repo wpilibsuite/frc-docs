@@ -29,7 +29,7 @@ In order to provide a concise inline syntax, the command-based library often acc
 Method References (Java)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Java, a reference to a function that can be passed as a parameter is called a method reference. The general syntax for a method reference is ``object::method``. Note that no method parameters are included, since the method *itself* is passed. The method is not being called - it is being passed to another piece of code (in this case, a command) so that *that* code can call it when needed. For further information on method references, see :ref:`docs/software/basic-programming/functions-as-data:Method References`.
+In Java, a reference to a function that can be passed as a parameter is called a method reference. The general syntax for a method reference is ``object::method`` or ``Class::staticMethod``. Note that no method parameters are included, since the method *itself* is passed. The method is not being called - it is being passed to another piece of code (in this case, a command) so that *that* code can call it when needed. For further information on method references, see :ref:`docs/software/basic-programming/functions-as-data:Method References`.
 
 Lambda Expressions (Java)
 ^^^^^^^^^^^^^^^^^^^^^^^^^

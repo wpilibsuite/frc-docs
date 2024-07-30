@@ -193,8 +193,6 @@ Setting Continuous Input
 
 .. warning:: If your mechanism is not capable of fully continuous rotational motion (e.g. a turret without a slip ring, whose wires twist as it rotates), *do not* enable continuous input unless you have implemented an additional safety feature to prevent the mechanism from moving past its limit!
 
-.. warning:: The continuous input function does *not* automatically wrap your input values - be sure that your input values, when using this feature, are never outside of the specified range!
-
 Some process variables (such as the angle of a turret) are measured on a circular scale, rather than a linear one - that is, each "end" of the process variable range corresponds to the same point in reality (e.g. 360 degrees and 0 degrees).  In such a configuration, there are two possible values for any given error, corresponding to which way around the circle the error is measured.  It is usually best to use the smaller of these errors.
 
 To configure a ``PIDController`` to automatically do this, use the ``enableContinuousInput()`` method:

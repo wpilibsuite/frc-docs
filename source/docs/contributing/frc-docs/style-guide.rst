@@ -14,7 +14,7 @@ For documents that will have an identical software/hardware name, append "Hardwa
 
 Suffix filenames with the ``.rst`` extension.
 
-.. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is VS Code with the rST extension.
+.. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is VS Code with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_.
 
 Text
 ----
@@ -107,13 +107,13 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
 
 .. code-block:: ReST
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
       :language: java
       :lines: 44-61
       :linenos:
       :lineno-start: 44
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
       :language: c++
       :lines: 18-30
       :linenos:
@@ -129,7 +129,7 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
 
    .. tab-set-code::
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
          :language: java
          :lines: 44-61
          :linenos:
@@ -216,6 +216,21 @@ However, in some cases where the same link must be referenced multiple times, th
    Hi there, `this is a link`_ and it's pretty cool!
 
    ..  _this is a link: https://example.com
+
+Python API Links
+^^^^^^^^^^^^^^^^
+
+Links to the RobotPY API documentation should use the following sphinx `python syntax <https://www.sphinx-doc.org/en/master/usage/domains/python.html>`__ (example linking to the DriverStation API docs).
+
+.. code-block:: ReST
+
+   :external:py:class:`Python <robotpy:wpilib.DriverStation>`
+
+This expands to be equivalent to:
+
+.. code-block:: ReST
+
+   `Python <https://robotpy.readthedocs.io/projects/robotpy/en/stable/wpilib/DriverStation.html#wpilib.DriverStation>`__
 
 Images
 ------

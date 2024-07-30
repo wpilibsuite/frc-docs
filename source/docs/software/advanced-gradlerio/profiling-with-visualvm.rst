@@ -13,7 +13,7 @@ Setting up Gradle
 
 GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a roboRIO). To begin, locate the ``frcJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.3.1/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.3.2/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
    :lines: 15-40
    :linenos:
@@ -32,7 +32,7 @@ We will be replacing the highlighted lines with:
       jvmArgs.add("-Dcom.sun.management.jmxremote.local.only=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.ssl=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.authenticate=false")
-      jvmArgs.add("-Djava.rmi.server.hostname=10.XX.XX.2") // Replace XX.XX with team number
+      jvmArgs.add("-Djava.rmi.server.hostname=10.TE.AM.2") // Replace TE.AM with team number
    }
 
 We are adding a few arguments here. In order:
@@ -41,7 +41,7 @@ We are adding a few arguments here. In order:
 * Set the remote debugging port to 1198
 * Allow listening from remote targets
 * Disable SSL authentication being required
-* Set the hostname to the roboRIOs team number. Be sure to replace this.
+* Set the hostname to the roboRIOs team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`)
 
 .. important:: The hostname when connected via USB-B should be ``172.22.11.2``.
 
@@ -52,10 +52,10 @@ Launching VisualVM is done via the commandline with a few parameters. First, we 
 
 .. code-block:: bash
 
-   cd "C:\Users\Public\wpilib\visualvm_216\bin"
-   ./visualvm --jdkhome "C:\Users\Public\wpilib\2023\jdk"
+   cd "C:\Users\Public\wpilib\visualvm_217\bin"
+   ./visualvm --jdkhome "C:\Users\Public\wpilib\2024\jdk"
 
-.. important:: The exact path ``visualvm_216`` may vary and depends on the version of VisualVM downloaded.
+.. important:: The exact path ``visualvm_217`` may vary and depends on the version of VisualVM downloaded.
 
 This should launch VisualVM. Once launched, open the :guilabel:`Add JMX Connection` dialog.
 
@@ -110,6 +110,8 @@ To begin, ensure you are on the :guilabel:`Monitor` tab and click :guilabel:`Hea
 This heap dump will be stored on the target system (roboRIO) and must be retrieved using SFTP. See :doc:`this article </docs/software/roborio-info/roborio-ftp>` for information on retrieving the dump from the roboRIO.
 
 Once downloaded, the dump can be analyzed with VisualVM.
+
+.. tip:: You can also :ref:`configure the JVM to take a heap dump automatically when your robot code runs out of memory <docs/software/basic-programming/java-gc:Diagnosing Out of Memory Errors with Heap Dumps>`.
 
 Analyzing a Heap Dump
 ---------------------
