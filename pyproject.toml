@@ -6,7 +6,7 @@ authors = []
 
 [tool.poetry.dependencies]
 black = "==24.4.2"
-python = ">=3.9,<3.12"
+python = ">=3.9,<3.13"
 doc8 = "==0.11.2"
 docutils = "==0.18.1"
 fonttools = {version = "==4.43.0", extras = ["woff"]}
