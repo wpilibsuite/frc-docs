@@ -162,8 +162,8 @@ Imports/Includes
                :linenos:
                :lineno-start: 8
 
-   .. tab-item:: CTRE
-      :sync: ctre
+   .. tab-item:: CTRE-Phoenix6
+      :sync: ctre6
 
 
       .. tab-set-code::
@@ -225,7 +225,38 @@ Imports/Includes
                import wpilib.drive     # Used for the DifferentialDrive class
                import rev              # REV library
 
-Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the joystick control to the motors).
+   .. tab-item:: CTRE-Phoenix5
+      :sync: ctre5
+
+
+      .. tab-set-code::
+
+
+         .. code-block:: java
+
+            import edu.wpi.first.wpilibj.Joystick;
+            import edu.wpi.first.wpilibj.TimedRobot;
+            import edu.wpi.first.wpilibj.Timer;
+            import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+            import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+
+         .. code-block:: c++
+
+            #include <frc/Joystick.h>
+            #include <frc/TimedRobot.h>
+            #include <frc/Timer.h>
+            #include <frc/drive/DifferentialDrive.h>
+            #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
+
+
+         .. code-block:: python
+
+            import wpilib           # Used to get the joysticks
+            import wpilib.drive     # Used for the DifferentialDrive class
+            import ctre             # CTRE library
+
+Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax / ``TalonSRX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the joystick control to the motors).
 
 Defining the variables for our sample robot
 -------------------------------------------
@@ -276,8 +307,8 @@ Defining the variables for our sample robot
                :lines: 12-29
                :lineno-start: 12
 
-   .. tab-item:: CTRE
-      :sync: ctre
+   .. tab-item:: CTRE-Phoenix6
+      :sync: ctre6
 
       .. tab-set::
 
@@ -390,6 +421,58 @@ Defining the variables for our sample robot
             :sync: python
 
             .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-rev/bc3ebc4/examples/getting-started/robot.py
+               :language: python
+               :linenos:
+               :lines: 13-30
+               :lineno-start: 13
+
+   .. tab-item:: CTRE-Phoenix5
+      :sync: ctre5
+
+      .. tab-set::
+
+         .. tab-item:: Java
+            :sync: java
+
+            .. code-block:: java
+
+               public class Robot extends TimedRobot {
+                  private final WPI_TalonSRX m_leftDrive = new WPI_TalonSRX(1);
+                  private final WPI_TalonSRX m_rightDrive = new WPI_TalonSRX(2);
+                  private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
+                  private final Joystick m_stick = new Joystick(0);
+                  private final Timer m_timer = new Timer();
+
+         .. tab-item:: C++
+            :sync: c++
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+               :language: c++
+               :lines: 12-13
+               :linenos:
+               :lineno-start: 12
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+               :language: c++
+               :lines: 17-23
+               :linenos:
+               :lineno-start: 17
+
+            .. code-block:: c++
+
+               private:
+                // Robot drive system
+                ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_left{1};
+                ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_right{2};
+                frc::DifferentialDrive m_robotDrive{m_left, m_right};
+
+                frc::Joystick m_stick{0};
+                frc::Timer m_timer;
+
+         .. tab-item:: Python
+            :sync: python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/5b8d33f/examples/getting-started/robot.py
                :language: python
                :linenos:
                :lines: 13-30
