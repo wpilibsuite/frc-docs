@@ -180,9 +180,9 @@ Imports/Includes
 
          .. code-block:: c++
 
-            #include <frc/XboxController.h>
             #include <frc/TimedRobot.h>
             #include <frc/Timer.h>
+            #include <frc/XboxController.h>
             #include <frc/drive/DifferentialDrive.h>
             #include <ctre/phoenix6/TalonFX.hpp>
 
@@ -200,7 +200,7 @@ Imports/Includes
             .. code-block:: java
 
                import com.revrobotics.CANSparkMax;
-               import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+               import com.revrobotics.CANSparkLowLevel.MotorType;
 
                import edu.wpi.first.wpilibj.TimedRobot;
                import edu.wpi.first.wpilibj.Timer;
@@ -243,9 +243,9 @@ Imports/Includes
 
          .. code-block:: c++
 
-            #include <frc/XboxController.h>
             #include <frc/TimedRobot.h>
             #include <frc/Timer.h>
+            #include <frc/XboxController.h>
             #include <frc/drive/DifferentialDrive.h>
             #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
 
@@ -320,7 +320,8 @@ Defining the variables for our sample robot
                public class Robot extends TimedRobot {
                   private final TalonFX m_leftDrive = new TalonFX(1);
                   private final TalonFX m_rightDrive = new TalonFX(2);
-                  private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
+                  private final DifferentialDrive m_robotDrive =
+                    new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
                   private final XboxController m_controller = new XboxController(0);
                   private final Timer m_timer = new Timer();
 
@@ -345,7 +346,9 @@ Defining the variables for our sample robot
                 // Robot drive system
                 ctre::phoenix6::hardware::TalonFX m_left{1};
                 ctre::phoenix6::hardware::TalonFX m_right{2};
-                frc::DifferentialDrive m_robotDrive{m_left, m_right};
+                frc::DifferentialDrive m_robotDrive{
+                  [&](double output) { m_left.Set(output); },
+                  [&](double output) { m_right.Set(output); }};
 
                 frc::XboxController m_controller{0};
                 frc::Timer m_timer;
@@ -387,7 +390,8 @@ Defining the variables for our sample robot
                public class Robot extends TimedRobot {
                  private final CANSparkMax m_leftDrive = new CANSparkMax(1, MotorType.kBrushless);
                  private final CANSparkMax m_rightDrive = new CANSparkMax(2, MotorType.kBrushless);
-                 private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
+                 private final DifferentialDrive m_robotDrive =
+                   new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
                  private final XboxController m_controller = new XboxController(0);
                  private final Timer m_timer = new Timer();
 
@@ -412,7 +416,9 @@ Defining the variables for our sample robot
                 // Robot drive system
                 rev::CANSparkMax m_left{1, rev::CANSparkMax::MotorType::kBrushless};
                 rev::CANSparkMax m_right{2, rev::CANSparkMax::MotorType::kBrushless};
-                frc::DifferentialDrive m_robotDrive{m_left, m_right};
+                frc::DifferentialDrive m_robotDrive{
+                  [&](double output) { m_left.Set(output); },
+                  [&](double output) { m_right.Set(output); }};
 
                 frc::XboxController m_controller{0};
                 frc::Timer m_timer;
@@ -439,7 +445,7 @@ Defining the variables for our sample robot
                public class Robot extends TimedRobot {
                   private final WPI_TalonSRX m_leftDrive = new WPI_TalonSRX(1);
                   private final WPI_TalonSRX m_rightDrive = new WPI_TalonSRX(2);
-                  private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
+                  private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive1::set, m_rightDrive2::set);
                   private final XboxController m_controller = new XboxController(0);
                   private final Timer m_timer = new Timer();
 
@@ -464,7 +470,9 @@ Defining the variables for our sample robot
                 // Robot drive system
                 ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_left{1};
                 ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_right{2};
-                frc::DifferentialDrive m_robotDrive{m_left, m_right};
+                frc::DifferentialDrive m_robotDrive{
+                  [&](double output) { m_left.Set(output); },
+                  [&](double output) { m_right.Set(output); }};
 
                 frc::XboxController m_controller{0};
                 frc::Timer m_timer;
