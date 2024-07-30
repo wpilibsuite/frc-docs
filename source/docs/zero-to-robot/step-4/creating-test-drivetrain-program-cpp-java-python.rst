@@ -171,16 +171,16 @@ Imports/Includes
 
          .. code-block:: java
 
-            import edu.wpi.first.wpilibj.Joystick;
             import edu.wpi.first.wpilibj.TimedRobot;
             import edu.wpi.first.wpilibj.Timer;
+            import edu.wpi.first.wpilibj.XboxController;
             import edu.wpi.first.wpilibj.drive.DifferentialDrive;
             import com.ctre.phoenix6.hardware.TalonFX;
 
 
          .. code-block:: c++
 
-            #include <frc/Joystick.h>
+            #include <frc/XboxController.h>
             #include <frc/TimedRobot.h>
             #include <frc/Timer.h>
             #include <frc/drive/DifferentialDrive.h>
@@ -234,16 +234,16 @@ Imports/Includes
 
          .. code-block:: java
 
-            import edu.wpi.first.wpilibj.Joystick;
             import edu.wpi.first.wpilibj.TimedRobot;
             import edu.wpi.first.wpilibj.Timer;
+            import edu.wpi.first.wpilibj.XboxController;
             import edu.wpi.first.wpilibj.drive.DifferentialDrive;
             import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 
          .. code-block:: c++
 
-            #include <frc/Joystick.h>
+            #include <frc/XboxController.h>
             #include <frc/TimedRobot.h>
             #include <frc/Timer.h>
             #include <frc/drive/DifferentialDrive.h>
@@ -256,7 +256,7 @@ Imports/Includes
             import wpilib.drive     # Used for the DifferentialDrive class
             import ctre             # CTRE library
 
-Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax / ``TalonSRX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the joystick control to the motors).
+Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``XBoxController`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax / ``WPI_TalonSRX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the Xbox  controller to the motors).
 
 Defining the variables for our sample robot
 -------------------------------------------
@@ -321,7 +321,7 @@ Defining the variables for our sample robot
                   private final TalonFX m_leftDrive = new TalonFX(1);
                   private final TalonFX m_rightDrive = new TalonFX(2);
                   private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
-                  private final Joystick m_stick = new Joystick(0);
+                  private final XboxController m_controller = new XboxController(0);
                   private final Timer m_timer = new Timer();
 
          .. tab-item:: C++
@@ -347,7 +347,7 @@ Defining the variables for our sample robot
                 ctre::phoenix6::hardware::TalonFX m_right{2};
                 frc::DifferentialDrive m_robotDrive{m_left, m_right};
 
-                frc::Joystick m_stick{0};
+                frc::XboxController m_controller{0};
                 frc::Timer m_timer;
 
          .. tab-item:: Python
@@ -440,7 +440,7 @@ Defining the variables for our sample robot
                   private final WPI_TalonSRX m_leftDrive = new WPI_TalonSRX(1);
                   private final WPI_TalonSRX m_rightDrive = new WPI_TalonSRX(2);
                   private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
-                  private final Joystick m_stick = new Joystick(0);
+                  private final XboxController m_controller = new XboxController(0);
                   private final Timer m_timer = new Timer();
 
          .. tab-item:: C++
@@ -466,7 +466,7 @@ Defining the variables for our sample robot
                 ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_right{2};
                 frc::DifferentialDrive m_robotDrive{m_left, m_right};
 
-                frc::Joystick m_stick{0};
+                frc::XboxController m_controller{0};
                 frc::Timer m_timer;
 
          .. tab-item:: Python
@@ -478,7 +478,7 @@ Defining the variables for our sample robot
                :lines: 13-30
                :lineno-start: 13
 
-The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the code does three things:
+The sample robot in our examples will have an Xbox Controller on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type ``DifferentialDrive`` (m_robotDrive), ``XboxController`` (m_controller) and ``Timer`` (m_timer). This section of the code does three things:
 
 1. Defines the variables as members of our Robot class.
 2. Initializes the variables.
@@ -567,7 +567,7 @@ Joystick Control for Teleoperation
       :linenos:
       :lineno-start: 45
 
-Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the ``Joystick`` to forward/back motion of the drive motors and the X-axis to turning motion.
+Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the left thumbstick of the ``XBoxController`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
 Test Mode
 ---------
