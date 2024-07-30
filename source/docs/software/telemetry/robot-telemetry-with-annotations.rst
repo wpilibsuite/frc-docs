@@ -52,7 +52,7 @@ Currently, annotation logging supports the following data types:
 * ``String[]`` arrays
 * Arrays of anything that inherits from ``StructSerializable``, such as ``Rotation2d[]`` or ``SwerveModuleState[]``
 * Java collections, like ``List`` and ``Set``, of ``String`` or ``StructSerializable`` objects, such as ``Set<String>`` or ``List<SwerveModuleState>``
-* Any ``Sendable`` object, like a ``DigitalInput`` (note: commands and subsystems are excluded and wil not be logged using their sendable implementation)
+* Any ``Sendable`` object, like a ``DigitalInput`` (note: commands and subsystems are excluded and will not be logged using their sendable implementation)
 * Any ``BooleanSupplier``, ``IntSupplier``, ``LongSupplier``, or ``DoubleSupplier`` (note: this includes command triggers!)
 
 
