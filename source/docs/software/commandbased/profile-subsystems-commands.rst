@@ -1,4 +1,4 @@
-Motion Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands
+Motion Profiling through TrapezoidProfileCommands
 ================================================================================
 
 .. note:: For a description of the WPILib motion profiling features used by these command-based wrappers, see :ref:`docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib`.
@@ -7,138 +7,7 @@ Motion Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands
 
 When controlling a mechanism, is often desirable to move it smoothly between two positions, rather than to abruptly change its setpoint.  This is called "motion-profiling," and is supported in WPILib through the ``TrapezoidProfile`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile.html>`__).
 
-To further help teams integrate motion profiling into their command-based robot projects, WPILib includes two convenience wrappers for the ``TrapezoidProfile`` class: ``TrapezoidProfileSubsystem``, which automatically generates and executes motion profiles in its ``periodic()`` method, and the ``TrapezoidProfileCommand``, which executes a single user-provided ``TrapezoidProfile``.
-
-TrapezoidProfileSubsystem
--------------------------
-
-.. note:: In C++, the ``TrapezoidProfileSubsystem`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
-
-The ``TrapezoidProfileSubsystem`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_trapezoid_profile_subsystem.html>`__) will automatically create and execute trapezoidal motion profiles to reach the user-provided goal state.  To use the ``TrapezoidProfileSubsystem`` class, users must create a subclass of it.
-
-Creating a TrapezoidProfileSubsystem
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note:: If ``periodic`` is overridden when inheriting from ``TrapezoidProfileSubsystem``, make sure to call ``super.periodic()``! Otherwise, motion profiling functionality will not work properly.
-
-When subclassing ``TrapezoidProfileSubsystem``, users must override a single abstract method to provide functionality that the class will use in its ordinary operation:
-
-useState()
-~~~~~~~~~~
-
-.. tab-set::
-
-   .. tab-item:: Java
-      :sync: Java
-
-         .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.java
-            :language: java
-            :lines: 105-105
-
-   .. tab-item:: C++
-      :sync: C++
-
-         .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.2/wpilibNewCommands/src/main/native/include/frc2/command/TrapezoidProfileSubsystem.h
-            :language: c++
-            :lines: 75-75
-
-The ``useState()`` method consumes the current state of the motion profile.  The ``TrapezoidProfileSubsystem`` will automatically call this method from its ``periodic()`` block, and pass it the motion profile state corresponding to the subsystem's current progress through the motion profile.
-
-Users may do whatever they want with this state; a typical use case (as shown in the `Full TrapezoidProfileSubsystem Example`_) is to use the state to obtain a setpoint and a feedforward for an external "smart" motor controller.
-
-Constructor Parameters
-~~~~~~~~~~~~~~~~~~~~~~
-
-Users must pass in a set of ``TrapezoidProfile.Constraints`` to the ``TrapezoidProfileSubsystem`` base class through the superclass constructor call of their subclass.  This serves to constrain the automatically-generated profiles to a given maximum velocity and acceleration.
-
-Users must also pass in an initial position for the mechanism.
-
-Advanced users may pass in an alternate value for the loop period, if a non-standard main loop period is being used.
-
-Using a TrapezoidProfileSubsystem
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Once an instance of a ``TrapezoidProfileSubsystem`` subclass has been created, it can be used by commands through the following methods:
-
-setGoal()
-~~~~~~~~~
-
-.. note:: If you wish to set the goal to a simple distance with an implicit target velocity of zero, an overload of ``setGoal()`` exists that takes a single distance value, rather than a full motion profile state.
-
-The ``setGoal()`` method can be used to set the goal state of the ``TrapezoidProfileSubsystem``.  The subsystem will automatically execute a profile to the goal, passing the current state at each iteration to the provided `useState()`_ method.
-
-.. tab-set-code::
-
-   .. code-block:: java
-
-      // The subsystem will execute a profile to a position of 5 and a velocity of 3.
-      examplePIDSubsystem.setGoal(new TrapezoidProfile.State(5, 3);
-
-   .. code-block:: c++
-
-      // The subsystem will execute a profile to a position of 5 meters and a velocity of 3 mps.
-      examplePIDSubsyste.SetGoal({5_m, 3_mps});
-
-enable() and disable()
-~~~~~~~~~~~~~~~~~~~~~~
-
-The ``enable()`` and ``disable()`` methods enable and disable the motion profiling control of the ``TrapezoidProfileSubsystem``.  When the subsystem is enabled, it will automatically run the control loop and call ``useState()`` periodically.  When it is disabled, no control is performed.
-
-Full TrapezoidProfileSubsystem Example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The following examples are taking from the ArmbotOffobard example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard>`__):
-
-.. tab-set::
-
-   .. tab-item:: Java
-      :sync: Java
-
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/subsystems/ArmSubsystem.java
-         :language: java
-         :lines: 5-
-         :linenos:
-         :lineno-start: 5
-
-   .. tab-item:: C++ (Header)
-      :sync: C++ (Header)
-
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/include/subsystems/ArmSubsystem.h
-         :language: c++
-         :lines: 5-
-         :linenos:
-         :lineno-start: 5
-
-   .. tab-item:: C++ (Source)
-      :sync: C++ (Source)
-
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/subsystems/ArmSubsystem.cpp
-         :language: c++
-         :lines: 5-
-         :linenos:
-         :lineno-start: 5
-
-Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
-
-.. tab-set::
-
-   .. tab-item:: Java
-      :sync: Java
-
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/RobotContainer.java
-         :language: java
-         :lines: 52-58
-         :linenos:
-         :lineno-start: 52
-
-   .. tab-item:: C++
-      :sync: C++
-
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
-         :language: c++
-         :lines: 25-30
-         :linenos:
-         :lineno-start: 25
+To further help teams integrate motion profiling into their command-based robot projects, WPILib includes a convenience wrapper for the ``TrapezoidProfile`` class: ``TrapezoidProfileCommand``, which executes a single user-provided ``TrapezoidProfile``.
 
 TrapezoidProfileCommand
 -----------------------
@@ -184,7 +53,7 @@ The ``profile`` parameter is the ``TrapezoidProfile`` object that will be execut
 output
 ~~~~~~
 
-The ``output`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that consumes the output and setpoint of the control loop.  Passing in the ``useOutput`` function in ``PIDCommand`` is functionally analogous to overriding the `useState()`_ function in ``PIDSubsystem``.
+The ``output`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that consumes the output and setpoint of the control loop.
 
 goal
 ~~~~
@@ -204,7 +73,7 @@ Like all inlineable commands, ``TrapezoidProfileCommand`` allows the user to spe
 Full TrapezoidProfileCommand Example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-What does a ``TrapezoidProfileSubsystem`` look like when used in practice?  The following examples are taking from the DriveDistanceOffboard example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard>`__):
+What does a ``TrapezoidProfileCommand`` look like when used in practice?  The following examples are taking from the DriveDistanceOffboard example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard>`__):
 
 .. tab-set::
 
