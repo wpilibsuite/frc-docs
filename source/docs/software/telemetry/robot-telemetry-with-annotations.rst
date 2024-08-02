@@ -1,5 +1,5 @@
-Robot Telemetry with Annotations (Java Only)
-============================================
+New for 2025: Robot Telemetry with Annotations (Java Only)
+==========================================================
 
 At its most basic, telemetry with annotations can be accomplished with only a few lines of code:
 
