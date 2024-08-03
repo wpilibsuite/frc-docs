@@ -34,13 +34,33 @@ The final parameter is a ``ProfiledPIDController`` for the rotation of the robot
       // of 1 rotation per second and a max acceleration of 180 degrees
       // per second squared.
 
+   .. code-block:: python
+
+      from wpimath.controller import (
+         HolonomicDriveController,
+         PIDController,
+         ProfiledPIDControllerRadians,
+      )
+      from wpimath.trajectory import TrapezoidProfileRadians
+
+      controller = HolonomicDriveController(
+         PIDController(1, 0, 0),
+         PIDController(1, 0, 0),
+         ProfiledPIDControllerRadians(
+            1, 0, 0, TrapezoidProfileRadians.Constraints(6.28, 3.14)
+         ),
+      )
+      # Here, our rotation profile constraints were a max velocity
+      # of 1 rotation per second and a max acceleration of 180 degrees
+      # per second squared.
+
 Getting Adjusted Velocities
 ---------------------------
 The holonomic drive controller returns "adjusted velocities" such that when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal is comprised of a desired pose, linear velocity, and heading.
 
 .. note:: The "goal pose" represents the position that the robot should be at a particular timestamp when tracking the trajectory. It does NOT represent the trajectory's endpoint.
 
-The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter and the desired heading as the last parameter. For the middle parameters, one overload accepts the desired pose and the linear velocity reference while the other accepts a ``Trajectory.State`` object, which contains information about the goal pose. The latter method is preferred for tracking trajectories.
+The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java/Python) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter and the desired heading as the last parameter. For the middle parameters, one overload accepts the desired pose and the linear velocity reference while the other accepts a ``Trajectory.State`` object, which contains information about the goal pose. The latter method is preferred for tracking trajectories.
 
 .. tab-set-code::
    .. code-block:: java
@@ -63,6 +83,19 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
       const auto adjustedSpeeds = controller.Calculate(
         currentRobotPose, goal, 70_deg);
 
+   .. code-block:: python
+
+      from wpimath.geometry import Rotation2d
+
+      # Sample the trajectory at 3.4 seconds from the beginning.
+      goal = trajectory.sample(3.4)
+
+      # Get the adjusted speeds. Here, we want the robot to be facing
+      # 70 degrees (in the field-relative coordinate system).
+      adjustedSpeeds = controller.calculate(
+         currentRobotPose, goal, Rotation2d.fromDegrees(70.0)
+      )
+
 Using the Adjusted Velocities
 -----------------------------
 The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity in the sideways direction), and an ``omega`` (angular velocity around the center of the robot frame).
@@ -82,5 +115,9 @@ The returned adjusted speeds can be converted into usable speeds using the kinem
    .. code-block:: c++
 
       auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(adjustedSpeeds);
+
+   .. code-block:: python
+
+      fl, fr, bl, br = kinematics.toSwerveModuleStates(adjustedSpeeds)
 
 Because these swerve module states are still speeds and angles, you will need to use PID controllers to set these speeds and angles.

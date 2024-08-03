@@ -32,6 +32,20 @@ For each sensor or actuator that is created, set the subsystem name and display 
         frc::Victor wrist{2};
         SendableRegistry::SetName(wrist, "Arm", "Wrist");
 
+    .. code-block:: python
+
+        from wpilib import Jaguar, Ultrasonic, Victor
+        from wpiutil import SendableRegistry
+
+        ultrasonic = Ultrasonic(1, 2)
+        SendableRegistry.setName(ultrasonic, "Arm", "Ultrasonic")
+
+        elbow = Jaguar(1)
+        SendableRegistry.setName(elbow, "Arm", "Elbow")
+
+        wrist = Victor(2)
+        SendableRegistry.setName(wrist, "Arm", "Wrist")
+
 If your objects are in a ``Subsystem``, this can be simplified using the addChild method of ``SubsystemBase``
 
 .. tab-set-code::
@@ -57,6 +71,20 @@ If your objects are in a ``Subsystem``, this can be simplified using the addChil
 
         frc::Victor wrist{2};
         AddChild("Wrist", wrist);
+
+    .. code-block:: python
+
+        from wpilib import Jaguar, Ultrasonic, Victor
+        from commands2 import SubsystemBase
+
+        ultrasonic = Ultrasonic(1, 2)
+        SubsystemBase.addChild("Ultrasonic", ultrasonic)
+
+        elbow = Jaguar(1)
+        SubsystemBase.addChild("Elbow", elbow)
+
+        wrist = Victor(2)
+        SubsystemBase.addChild("Wrist", wrist)
 
 Viewing the Display in SmartDashboard
 -----------------------------------------

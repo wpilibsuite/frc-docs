@@ -138,10 +138,10 @@ PathWeaver allows teams to quickly generate and configure paths for advanced aut
 System Identification
 ----------------------
 
-.. image:: /docs/software/pathplanning/system-identification/images/analysis-type.png
-   :alt: System Identification new project screen.
+.. image:: images/control-system-software/sysid.png
+   :alt: SysId UI showing diagnostics and analysis for a flywheel.
 
-This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`System Identification section <docs/software/pathplanning/system-identification/introduction:Introduction to System Identification>`.
+This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`System Identification section <docs/software/advanced-controls/system-identification/introduction:Introduction to System Identification>`.
 
 OutlineViewer
 -------------
@@ -150,3 +150,11 @@ OutlineViewer
    :alt: OutlineViewer with the preferences dialog box.
 
 OutlineViewer is a utility used to view, modify and add to all of the contents of the NetworkTables for debugging purposes. LabVIEW teams can use the Variables tab of the LabVIEW Dashboard to accomplish this functionality.  For more information see the :ref:`Outline Viewer section <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>`.
+
+roboRIO Team Number Setter
+--------------------------
+
+.. image:: /docs/software/wpilib-tools/roborio-team-number-setter/images/roborioteamnumbersetter.png
+   :alt: roboRIO Team Number Setter tool.
+
+The roboRIO Team Number Setter is a cross-platform utility that can be used to set the team number on the roboRIO. It is an alternative to the roboRIO imaging tool for setting the team number.  For more information see the :ref:`roboRIO Team Number Setter section <docs/software/wpilib-tools/roborio-team-number-setter/index:roboRIO Team Number Setter>`.

@@ -2,6 +2,8 @@ Mecanum Drive Kinematics
 ========================
 The ``MecanumDriveKinematics`` class is a useful tool that converts between a ``ChassisSpeeds`` object and a ``MecanumDriveWheelSpeeds`` object, which contains velocities for each of the four wheels on a mecanum drive.
 
+.. note:: Mecanum kinematics uses a common coordinate system. You may wish to reference the :doc:`/docs/software/basic-programming/coordinate-system` section for details.
+
 Constructing the Kinematics Object
 ----------------------------------
 The ``MecanumDriveKinematics`` class accepts four constructor arguments, with each argument being the location of a wheel relative to the robot center (as a ``Translation2d``). The order for the arguments is front left, front right, back left, and back right. The locations for the wheels must be relative to the center of the robot. Positive x values represent moving toward the front of the robot whereas positive y values represent moving toward the left of the robot.

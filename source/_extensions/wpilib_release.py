@@ -27,6 +27,9 @@ class WpilibRelease(SphinxDirective):
         release: Dict = release_json.json()
 
         cf_folder = f"https://packages.wpilib.workers.dev/installer/{version}"
+        artifactory_folder = (
+            f"https://frcmaven.wpi.edu/api/download/installer/{version}"
+        )
 
         def get_url_size(osname):
             soup = BeautifulSoup(
@@ -34,12 +37,12 @@ class WpilibRelease(SphinxDirective):
             )
             file = str(soup.find_all("tr")[-1].contents[0].string)
             size = str(soup.find_all("tr")[-1].contents[2].string)
-            url = f"{cf_folder}/{osname}/{file}"
-            return url, size
+            url_part = f"/{osname}/{file}"
+            return url_part, size
 
-        win_download_url, win_size = get_url_size("Win64")
-        mac_intel_download_url, mac_intel_size = get_url_size("macOS")
-        mac_arm_download_url, mac_arm_size = get_url_size("macOSArm")
+        win_download_url_part, win_size = get_url_size("Win64")
+        mac_intel_download_url_part, mac_intel_size = get_url_size("macOS")
+        mac_arm_download_url_part, mac_arm_size = get_url_size("macOSArm")
 
         # There's something weird going where the hashes are all printed on one line.
         # This works aroung that.
@@ -80,15 +83,22 @@ class WpilibRelease(SphinxDirective):
         addEventListener('DOMContentLoaded', async (event) => {{
             let dlbutton = document.getElementsByClassName("wpilibrelease-dl-button")[0];
             let ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'mobile', 'platform', 'platformVersion']);
+            let baseUrl;
+            try {{
+                await fetch("https://packages.wpilib.workers.dev/", {{ mode: "no-cors" }});
+                baseUrl = "{cf_folder}";
+            }} catch (e) {{
+                baseUrl = "{artifactory_folder}";
+            }}
             if (ua['platform'] == 'Windows') {{
-                dlbutton.href = '{win_download_url}';
+                dlbutton.href = `${{baseUrl}}{win_download_url_part}`;
                 dlbutton.text = 'Download for Windows - {win_size}';
             }} else if (ua['platform'] == 'macOS') {{
                 if (ua['architecture'] == 'x86') {{
-                    dlbutton.href = '{mac_intel_download_url}';
+                    dlbutton.href = `${{baseUrl}}{mac_intel_download_url_part}`;
                     dlbutton.text = 'Download for macOS Intel - {mac_intel_size}';
                 }} else if (ua['architecture'].includes('arm')) {{
-                    dlbutton.href = '{mac_arm_download_url}';
+                    dlbutton.href = `${{baseUrl}}{mac_arm_download_url_part}`;
                     dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size}';
                 }}
             }}

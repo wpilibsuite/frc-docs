@@ -18,7 +18,7 @@ The goal of this tutorial is to provide "end-to-end" instruction on implementing
 
 This tutorial is intended to be approachable for teams without a great deal of programming expertise.  While the WPILib library offers significant flexibility in the manner in which its trajectory-following features are implemented, closely following the implementation outlined in this tutorial should provide teams with a relatively-simple, clean, and repeatable solution for autonomous movement.
 
-The full robot code for this tutorial can be found in the RamseteCommand Example Project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__).
+The full robot code for this tutorial can be found in the RamseteCommand Example Project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__).
 
 Why Trajectory Following?
 -------------------------
@@ -43,4 +43,4 @@ To follow this tutorial, you will need ready access to the following materials:
 
   * :ref:`FRC Driver Station <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
   * :ref:`WPILib <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
-  * :ref:`The System Identification Toolsuite <docs/software/pathplanning/system-identification/introduction:Installing the System Identification Tool>`.
+  * :ref:`The System Identification Toolsuite <docs/software/advanced-controls/system-identification/introduction:Installing SysId>`.

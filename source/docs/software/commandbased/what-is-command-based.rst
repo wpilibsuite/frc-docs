@@ -17,6 +17,10 @@ The command-based paradigm is also an example of :term:`declarative programming`
 
     Trigger([&condition] { return condition.Get()).OnTrue(frc2::cmd::RunOnce([&piston] { piston.Set(frc::DoubleSolenoid::kForward)));
 
+  .. code-block:: python
+
+    Trigger(condition.get).onTrue(Commands.runOnce(lambda: piston.set(DoubleSolenoid.Value.kForward)))
+
 In contrast, without using command-based, the user would need to check the button state every iteration, and perform the appropriate action based on the state of the button.
 
 .. tab-set-code::
@@ -43,6 +47,15 @@ In contrast, without using command-based, the user would need to check the butto
       pressed = false;
     }
 
+  .. code-block:: python
+
+        if condition.get():
+            if not pressed:
+                piston.set(DoubleSolenoid.Value.kForward)
+                pressed = True
+            else:
+                pressed = False
+
 Subsystems and Commands
 -----------------------
 
@@ -60,7 +73,7 @@ How Commands Are Run
 
 .. note:: For a more detailed explanation, see :doc:`command-scheduler`.
 
-Commands are run by the ``CommandScheduler`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc2_1_1_command_scheduler.html>`__) singleton, which polls triggers (such as buttons) for commands to schedule, preventing resource conflicts, and executing scheduled commands. The scheduler's ``run()`` method must be called; it is generally recommended to call it from the ``robotPeriodic()`` method of the ``Robot`` class, which is run at a default frequency of 50Hz (once every 20ms).
+Commands are run by the ``CommandScheduler`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html>`__, :external:py:class:`Python <commands2.CommandScheduler>`) singleton, which polls triggers (such as buttons) for commands to schedule, preventing resource conflicts, and executing scheduled commands. The scheduler's ``run()`` method must be called; it is generally recommended to call it from the ``robotPeriodic()`` method of the ``Robot`` class, which is run at a default frequency of 50Hz (once every 20ms).
 
 Multiple commands can run concurrently, as long as they do not require the same resources on the robot. Resource management is handled on a per-subsystem basis: commands specify which subsystems they interact with, and the scheduler will ensure that no more more than one command requiring a given subsystem is scheduled at a time. This ensures that, for example, users will not end up with two different pieces of code attempting to set the same motor controller to different output values.
 

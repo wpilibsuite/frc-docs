@@ -96,6 +96,10 @@
 	background: #003974;
 }
 
+.wy-menu-vertical li button.toctree-expand {
+	color: #d9d9d9
+}
+
 /* Hide color bar on mobile */
 @media screen and (max-width: 768px) {
 	.header-bar {
@@ -156,6 +160,6 @@ summary {
     padding: .5em;
 }
 
-code.py-class {
+code.py-class, code.py-func, code.py-meth {
     all: unset!important;
 }

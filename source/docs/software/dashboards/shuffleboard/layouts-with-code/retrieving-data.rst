@@ -8,7 +8,7 @@ Unlike ``SmartDashboard.getNumber`` and friends, retrieving data from Shuffleboa
 
       class DriveBase extends Subsystem {
          private ShuffleboardTab tab = Shuffleboard.getTab("Drive");
-         private NetworkTableEntry maxSpeed =
+         private GenericEntry maxSpeed =
             tab.add("Max Speed", 1)
                .getEntry();
 

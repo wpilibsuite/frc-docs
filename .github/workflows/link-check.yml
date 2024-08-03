@@ -10,13 +10,13 @@ env:
 
 jobs:
   check-links:
-    if: github.repository_owner	== 'wpilibsuite'
+    if: github.repository_owner == 'wpilibsuite'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
       with:
-        python-version: 3.9
+        python-version: 3.11
     - name: Install Dependencies
       run: pip install -r source/requirements.txt
     - name: Check Links

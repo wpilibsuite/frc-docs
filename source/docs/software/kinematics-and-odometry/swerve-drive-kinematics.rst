@@ -2,6 +2,8 @@ Swerve Drive Kinematics
 =======================
 The ``SwerveDriveKinematics`` class is a useful tool that converts between a ``ChassisSpeeds`` object and several ``SwerveModuleState`` objects, which contains velocities and angles for each swerve module of a swerve drive robot.
 
+.. note:: Swerve drive kinematics uses a common coordinate system. You may wish to reference the :doc:`/docs/software/basic-programming/coordinate-system` section for details.
+
 The swerve module state class
 -----------------------------
 The ``SwerveModuleState`` class contains information about the velocity and angle of a singular module of a swerve drive. The constructor for a ``SwerveModuleState`` takes in two arguments, the velocity of the wheel on the module, and the angle of the module.
@@ -144,6 +146,40 @@ This method takes two parameters: the desired state (usually from the ``toSwerve
       frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
          Rotation2d(self.m_turningEncoder.getDistance()))
 
+Cosine compensation
+^^^^^^^^^^^^^^^^^^^
+Cosine compensation is a technique that reduces the speed of a module when it is not pointing in the desired direction. This is done by multiplying the desired speed of the module by the cosine of the angle error.
+
+- If the wheel is pointing straight in the desired direction, then the speed remains unchanged as :math:`\cos(0^\circ) = 1`.
+- If the wheel is perpendicular to the desired direction of motion, then the speed is reduced to 0 as :math:`\cos(90^\circ) = 0`.
+- Everything in between follows the cosine curve.
+
+Cosine compensation has been shown to reduce the amount of "skew" a swerve drive experiences when changing direction.
+
+.. tab-set-code::
+   .. code-block:: java
+
+      var currentAngle = new Rotation2d.fromRadians(m_turningEncoder.getDistance());
+
+      var frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle);
+      frontLeftOptimized.speedMetersPerSecond *= frontLeftOptimized.angle.minus(currentAngle).getCos();
+
+   .. code-block:: c++
+
+      Rotation2d currentAngle(m_turningEncoder.GetDistance());
+
+      auto flOptimized = frc::SwerveModuleState::Optimize(fl, currentAngle);
+      flOptimized.speed *= (flOptimized.angle - currentAngle).Cos();
+
+   .. code-block:: python
+
+      from wpimath.kinematics import SwerveModuleState
+      from wpimath.geometry import Rotation2d
+
+      currentAngle = Rotation2d(self.m_turningEncoder.getDistance())
+
+      frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle)
+      frontLeftOptimized.speed *= (frontLeftOptimized.angle - currentAngle).cos()
 
 Field-oriented drive
 ^^^^^^^^^^^^^^^^^^^^

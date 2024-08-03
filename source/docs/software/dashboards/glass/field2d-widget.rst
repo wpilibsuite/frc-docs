@@ -13,17 +13,11 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
 
       private final Field2d m_field = new Field2d();
 
-      public Drivetrain() {
-        ...
-        SmartDashboard.putData("Field", m_field);
-      }
+      // Do this in either robot or subsystem init
+      SmartDashboard.putData("Field", m_field);
 
-      ...
-
-      public void periodic() {
-        ...
-        m_field.setRobotPose(m_odometry.getPoseMeters());
-      }
+      // Do this in either robot periodic or subsystem periodic
+      m_field.setRobotPose(m_odometry.getPoseMeters());
 
    .. code-block:: c++
 
@@ -32,17 +26,23 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
 
       frc::Field2d m_field;
 
-      Drivetrain() {
-        ...
-        frc::SmartDashboard::PutData("Field", &m_field);
-      }
+      // Do this in either robot or subsystem init
+      frc::SmartDashboard::PutData("Field", &m_field);
 
-      ...
+      // Do this in either robot periodic or subsystem periodic
+      m_field.SetRobotPose(m_odometry.GetPose());
 
-      void Periodic() {
-        ...
-        m_field.SetRobotPose(m_odometry.GetPose());
-      }
+   .. code-block:: python
+
+      from wpilib import SmartDashboard, Field2d
+
+      self.field = Field2d()
+
+      # Do this in either robot or subsystem init
+      SmartDashboard.putData("Field", self.field)
+
+      # Do this in either robot periodic or subsystem periodic
+      self.field.setRobotPose(self.odometry.getPose())
 
 .. note:: The ``Field2d`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`. In this case, the ``SmartDashboard`` API was used, meaning that the :guilabel:`Field2d` widget will appear under the ``SmartDashboard`` table name.
 
@@ -53,17 +53,21 @@ Visualizing your trajectory is a great debugging step for verifying that your tr
 
 .. tab-set-code::
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
       :language: java
       :lines: 44-61
       :linenos:
       :lineno-start: 44
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
       :language: c++
       :lines: 18-30
       :linenos:
       :lineno-start: 18
+
+   .. rli:: https://raw.githubusercontent.com/robotpy/examples/2024.0.0b4/RamseteController/robot.py
+      :language: python
+      :lines: 19,26-39,46-53
 
 Viewing Trajectories with Glass
 -------------------------------
@@ -73,7 +77,7 @@ The sent trajectory can be viewed with :ref:`Glass <docs/software/dashboards/gla
 .. image:: images/sent-trajectory.png
    :alt: Picture containing Field2d and the generated trajectory
 
-.. note:: The above example which uses the `RamseteController (Java) <https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java>`__/`RamseteController (C++) <https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp>`__ will not show the sent trajectory until autonomous is enabled at least once.
+.. note:: The above example which uses the RamseteController (`Java <https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java>`__ / `C++ <https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp>`__ / `Python <https://github.com/robotpy/examples/tree/2024.0.0b4/RamseteController>`__) will not show the sent trajectory until autonomous is enabled at least once.
 
 Viewing the Robot Pose in Glass
 -------------------------------

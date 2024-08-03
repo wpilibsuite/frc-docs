@@ -14,7 +14,7 @@ There are getters the current angular rate and heading and functions for zeroing
 ADIS16448
 ---------
 
-The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html>`__, :external:py:class:`Python <wpilib.ADIS16448_IMU>`).  See the `Analog Devices ADIS16448 documentation <https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional information and examples.
+The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html>`__, :external:py:class:`Python <wpilib.ADIS16448_IMU>`).  See the `Analog Devices ADIS16448 documentation <https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16448 is now built into WPILib.
 
@@ -40,7 +40,7 @@ The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib
 ADIS16470
 ---------
 
-The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html>`__, :external:py:class:`Python <wpilib.ADIS16470_IMU>`).  See the `Analog Devices ADIS16470 documentation <https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional information and examples.
+The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html>`__, :external:py:class:`Python <wpilib.ADIS16470_IMU>`).  See the `Analog Devices ADIS16470 documentation <https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16470 is now built into WPILib.
 
@@ -64,7 +64,7 @@ The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib
 ADXRS450_Gyro
 -------------
 
-The :code:`ADXRS450_Gyro` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html>`__, :external:py:class:`Python <wpilib.ADXRS450_Gyro>`) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
+The :code:`ADXRS450_Gyro` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html>`__, :external:py:class:`Python <wpilib.ADXRS450_Gyro>`) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
 
 .. note:: ADXRS450 Gyro accumulation is handled through special circuitry in the FPGA; accordingly only a single instance of :code:`ADXRS450_Gyro` may be used.
 
@@ -88,7 +88,7 @@ The :code:`ADXRS450_Gyro` class (`Java <https://github.wpilib.org/allwpilib/docs
 AnalogGyro
 ----------
 
-The :code:`AnalogGyro` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_analog_gyro.html>`__, :external:py:class:`Python <wpilib.AnalogGyro>`) provides support for any single-axis gyro with an analog output.
+The :code:`AnalogGyro` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_gyro.html>`__, :external:py:class:`Python <wpilib.AnalogGyro>`) provides support for any single-axis gyro with an analog output.
 
 .. note:: Gyro accumulation is handled through special circuitry in the FPGA; accordingly, :code:`AnalogGyro`\`s may only be used on analog ports 0 and 1.
 
@@ -230,20 +230,27 @@ The following example shows how to stabilize heading using a simple P loop close
         double kP = 1;
 
         // Initialize motor controllers and drive
-        Spark left1 = new Spark(0);
-        Spark left2 = new Spark(1);
+        Spark leftLeader = new Spark(0);
+        Spark leftFollower = new Spark(1);
 
-        Spark right1 = new Spark(2);
-        Spark right2 = new Spark(3);
+        Spark rightLeader = new Spark(2);
+        Spark rightFollower = new Spark(3);
 
-        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
-
-        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
+        DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
 
         @Override
         public void robotInit() {
-            rightMotors.setInverted(true);
+            // Configures the encoder's distance-per-pulse
+            // The robot moves forward 1 foot per encoder rotation
+            // There are 256 pulses per encoder rotation
+            encoder.setDistancePerPulse(1./256.);
+
+            // Invert the right side of the drivetrain. You might have to invert the other side
+            rightLeader.setInverted(true);
+
+            // Configure the followers to follow the leaders
+            leftLeader.addFollower(leftFollower);
+            rightLeader.addFollower(rightFollower);
         }
 
         @Override
@@ -263,18 +270,22 @@ The following example shows how to stabilize heading using a simple P loop close
         double kP = 1;
 
         // Initialize motor controllers and drive
-        frc::Spark left1{0};
-        frc::Spark left2{1};
-        frc::Spark right1{2};
-        frc::Spark right2{3};
+        frc::Spark leftLeader{0};
+        frc::Spark leftFollower{1};
 
-        frc::MotorControllerGroup leftMotors{left1, left2};
-        frc::MotorControllerGroup rightMotors{right1, right2};
+        frc::Spark rightLeader{2};
+        frc::Spark rightFollower{3};
 
-        frc::DifferentialDrive drive{leftMotors, rightMotors};
+        frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
+                                     [&](double output) { rightLeader.Set(output); }};
 
         void Robot::RobotInit() {
-          rightMotors.SetInverted(true);
+            // Invert the right side of the drivetrain. You might have to invert the other side
+            rightLeader.SetInverted(true);
+
+            // Configure the followers to follow the leaders
+            leftLeader.AddFollower(leftFollower);
+            rightLeader.AddFollower(rightFollower);
         }
 
         void Robot::AutonomousPeriodic() {
@@ -316,6 +327,8 @@ The following example shows how to stabilize heading using a simple P loop close
 
             # Drives forward continuously at half speed, using the gyro to stabilize the heading
             self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
+
+.. note:: MotorControllerGroup is :term:`deprecated` in 2024. Can you help update the Python example?
 
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the turn rate for heading stabilization, PI loops are particularly effective.
 

@@ -6,7 +6,7 @@ This class provides an easy way to forward local ports to another host/port. Thi
 Forwarding a Remote Port
 ------------------------
 
-Often teams may wish to connect directly to the roboRIO for controlling their robot. The PortForwarding class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/net/PortForwarder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_port_forwarder.html>`__) can be used to forward the Raspberry Pi connection for usage during these times. The PortForwarding class establishes a bridge between the remote and the client. To forward a port in Java, simply do ``PortForwarder.add(int port, String remoteName, int remotePort)``.
+Often teams may wish to connect directly to the roboRIO for controlling their robot. The PortForwarding class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/net/PortForwarder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_port_forwarder.html>`__) can be used to forward the Raspberry Pi connection for usage during these times. The PortForwarding class establishes a bridge between the remote and the client. To forward a port in Java, simply do ``PortForwarder.add(int port, String remoteName, int remotePort)``.
 
 .. tab-set-code::
 
@@ -25,7 +25,7 @@ Often teams may wish to connect directly to the roboRIO for controlling their ro
 
    .. code-block:: python
 
-      wpiutil.PortForwarder.getInstance().add(8888, "wpilibpi.local", 80)
+      wpinet.PortForwarder.getInstance().add(8888, "wpilibpi.local", 80)
 
 .. important:: You **can not** use a port less than 1024 as your local forwarded port. It is also important to note that you **can not** use full URLs (``http://wpilibpi.local``) and should only use IP Addresses or DNS names.
 
@@ -51,4 +51,4 @@ To stop forwarding on a specified port, simply call ``remove(int port)`` with po
 
    .. code-block:: python
 
-      wpiutil.PortForwarder.getInstance().remove(8888)
+      wpinet.PortForwarder.getInstance().remove(8888)

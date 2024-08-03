@@ -15,7 +15,7 @@ Data logs consist of a series of timestamped records.  Control records allow sta
 Standard Data Logging using DataLogManager
 ------------------------------------------
 
-The ``DataLogManager`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/DataLogManager.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_data_log_manager.html>`__) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The data file will be saved to a USB flash drive in a folder called ``logs`` if one is attached, or to ``/home/lvuser/logs`` otherwise.
+The ``DataLogManager`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DataLogManager.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_data_log_manager.html>`__, :external:py:class:`Python <wpilib.DataLogManager>`) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The data file will be saved to a USB flash drive in a folder called ``logs`` if one is attached, or to ``/home/lvuser/logs`` otherwise.
 
 .. note:: USB flash drives need to be formatted as FAT32 to work with the roboRIO.  NTFS or exFAT formatted drives will not work.
 
@@ -40,6 +40,12 @@ The most basic usage of DataLogManager only requires a single line of code (typi
 
         // Starts recording to data log
         frc::DataLogManager::Start();
+
+    .. code-block:: python
+
+        from wpilib import DataLogManager
+
+        DataLogManager.start()
 
 DataLogManager provides a convenience function (``DataLogManager.log()``) for logging of text messages to the ``messages`` entry in the data log. The message is also printed to standard output, so this can be a replacement for ``System.out.println()``.
 
@@ -82,10 +88,23 @@ DataLogManager by default does not record joystick data.  The ``DriverStation`` 
         // (alternatively) Record only DS control data
         DriverStation::StartDataLog(DataLogManager::GetLog(), false);
 
+    .. code-block:: python
+
+        from wpilib import DataLogManager, DriverStation
+
+        # Starts recording to data log
+        DataLogManager.start()
+
+        # Record both DS control and joystick data
+        DriverStation.startDataLog(DataLogManager.getLog())
+
+        # (alternatively) Record only DS control data
+        DriverStation.startDataLog(DataLogManager.getLog(), False)
+
 Custom Data Logging using DataLog
 ---------------------------------
 
-The ``DataLog`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/util/datalog/DataLog.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1log_1_1_data_log.html>`__) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
+The ``DataLog`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/datalog/DataLog.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log.html>`__, :external:py:class:`Python <wpiutil.log.DataLog>`) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
 
 .. note:: Unlike NetworkTables, there is no change checking performed.  **Every** call to a ``LogEntry.append()`` function will result in a record being written to the data log.  Checking for changes and only appending to the log when necessary is the responsibility of the caller.
 
@@ -153,3 +172,31 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
             myStringLog.Append("wow!");
           }
         }
+
+    .. code-block:: python
+
+        from wpilib import DataLogManager, TimedRobot
+        from wpiutil.log import (
+            DataLog,
+            BooleanLogEntry,
+            DoubleLogEntry,
+            StringLogEntry,
+        )
+
+        class MyRobot(TimedRobot):
+            def robotInit(self):
+                # Starts recording to data log
+                DataLogManager.start()
+
+                # Set up custom log entries
+                log = DataLogManager.getLog()
+                self.myBooleanLog = BooleanLogEntry(log, "/my/boolean")
+                self.myDoubleLog = DoubleLogEntry(log, "/my/double")
+                self.myStringLog = StringLogEntry(log, "/my/string")
+
+            def teleopPeriodic(self):
+                if ...:
+                    # Only log when necessary
+                    self.myBooleanLog.append(True)
+                    self.myDoubleLog.append(3.5)
+                    self.myStringLog.append("wow!")

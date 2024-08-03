@@ -24,7 +24,7 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 # -- Project information -----------------------------------------------------
 
 project = "FIRST Robotics Competition"
-copyright = "2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
+copyright = "2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
 version = "2024"
 
@@ -142,17 +142,19 @@ linkcheck_anchors = False
 
 # Linkcheck Exclusions
 linkcheck_ignore = [
-    r".*kauailabs.com.*",
+    #    r".*kauailabs.com.*",
     r".*wpilibpi.local.*",
-    r".*andymark.com.*",
-    r".*ti.com/lit/an/spma033a/spma033a.pdf.*",
-    r".*java.com/en/download/help/locale.xml.*",
+    #    r".*andymark.com.*",
+    #    r".*ti.com/lit/an/spma033a/spma033a.pdf.*",
+    r".*java.com.*",
     r".*playingwithfusion.com/contactus.php.*",
-    r".*github.com/wpilibsuite/BetaTest.*",
-    r".*vexrobotics.com/docs/.*",
+    #    r".*vexrobotics.com/docs/.*",
     r".*forums.firstinspires.org.*",
     r".*digikey.com.*",
     r".*chiefdelphi.com.*",
+    r".*raspberrypi.com.*",
+    r".*stackoverflow.com.*",
+    r".*allaboutcircuits.com.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -161,7 +163,7 @@ linkcheck_retries = 3
 linkcheck_workers = 1
 
 # Specify a standard user agent, as Sphinx default is blocked on some sites
-user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
 
 # Autosection labels prefix document path and filename
 autosectionlabel_prefix_document = True
@@ -221,7 +223,7 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
-    "collapse_navigation": True,
+    "collapse_navigation": False,
     "sticky_navigation": False,
     "titles_only": True,
 }
@@ -329,7 +331,11 @@ def new_send(self, data):
 http.client.HTTPConnection.send = new_send
 
 intersphinx_mapping = {
-    "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/latest/", None),
+    "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/stable/", None),
+    "commands2": (
+        "https://robotpy.readthedocs.io/projects/commands-v2/en/stable/",
+        None,
+    ),
 }
 
 # We recommend adding the following config value.

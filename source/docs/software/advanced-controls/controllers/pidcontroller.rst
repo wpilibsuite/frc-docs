@@ -5,7 +5,7 @@ PID Control in WPILib
 
 .. note:: For a guide on implementing PID control through the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>`, see :ref:`docs/software/commandbased/pid-subsystems-commands:PID Control through PIDSubsystems and PIDCommands`.
 
-WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_p_i_d_controller.html>`__).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
+WPILib supports PID control of mechanisms through the ``PIDController`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_i_d_controller.html>`__, :external:py:class:`Python <wpimath.controller.PIDController>`).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 
 Using the PIDController Class
 -----------------------------
@@ -29,6 +29,13 @@ In order to use WPILib's PID control functionality, users must first construct a
     // Creates a PIDController with gains kP, kI, and kD
     frc::PIDController pid{kP, kI, kD};
 
+  .. code-block:: python
+
+    from wpimath.controller import PIDController
+
+    # Creates a PIDController with gains kP, kI, and kD
+    pid = PIDController(kP, kI, kD)
+
 An optional fourth parameter can be provided to the constructor, specifying the period at which the controller will be run.  The ``PIDController`` object is intended primarily for synchronous use from the main robot loop, and so this value is defaulted to 20ms.
 
 Using the Feedback Loop Output
@@ -51,6 +58,12 @@ Using the constructed ``PIDController`` is simple: simply call the ``calculate()
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
     motor.Set(pid.Calculate(encoder.GetDistance(), setpoint));
+
+  .. code-block:: python
+
+    # Calculates the output of the PID algorithm based on the sensor reading
+    # and sends it to a motor
+    motor.set(pid.calculate(encoder.getDistance(), setpoint))
 
 Checking Errors
 ^^^^^^^^^^^^^^^
@@ -92,6 +105,15 @@ To do this, we first must specify the tolerances with the ``setTolerance()`` met
     // error derivative is less than 10 units
     pid.AtSetpoint();
 
+  .. code-block:: python
+
+    # Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
+    pid.setTolerance(5, 10)
+
+    # Returns true if the error is less than 5 units, and the
+    # error derivative is less than 10 units
+    pid.atSetpoint()
+
 Resetting the Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -122,6 +144,12 @@ The range limits may be increased or decreased using the ``setIntegratorRange()`
     // the total loop output
     pid.SetIntegratorRange(-0.5, 0.5);
 
+  .. code-block:: python
+
+    # The integral gain term will never add or subtract more than 0.5 from
+    # the total loop output
+    pid.setIntegratorRange(-0.5, 0.5)
+
 Disabling Integral Gain if the Error is Too High
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -151,12 +179,19 @@ By default, ``IZone`` is disabled.
     // more than 2
     pid.SetIZone(2);
 
+  .. code-block:: python
+
+    # Disable IZone
+    pid.setIZone(math.inf)
+
+    # Integral gain will not be applied if the absolute value of the error is
+    # more than 2
+    pid.setIZone(2)
+
 Setting Continuous Input
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. warning:: If your mechanism is not capable of fully continuous rotational motion (e.g. a turret without a slip ring, whose wires twist as it rotates), *do not* enable continuous input unless you have implemented an additional safety feature to prevent the mechanism from moving past its limit!
-
-.. warning:: The continuous input function does *not* automatically wrap your input values - be sure that your input values, when using this feature, are never outside of the specified range!
 
 Some process variables (such as the angle of a turret) are measured on a circular scale, rather than a linear one - that is, each "end" of the process variable range corresponds to the same point in reality (e.g. 360 degrees and 0 degrees).  In such a configuration, there are two possible values for any given error, corresponding to which way around the circle the error is measured.  It is usually best to use the smaller of these errors.
 
@@ -174,6 +209,11 @@ To configure a ``PIDController`` to automatically do this, use the ``enableConti
     // Enables continuous input on a range from -180 to 180
     pid.EnableContinuousInput(-180, 180);
 
+  .. code-block:: python
+
+    # Enables continuous input on a range from -180 to 180
+    pid.enableContinuousInput(-180, 180)
+
 Clamping Controller Output
 --------------------------
 
@@ -188,3 +228,12 @@ Clamping Controller Output
 
     // Clamps the controller output to between -0.5 and 0.5
     std::clamp(pid.Calculate(encoder.GetDistance(), setpoint), -0.5, 0.5);
+
+  .. code-block:: python
+
+    # Python doesn't have a builtin clamp function
+    def clamp(v, minval, maxval):
+        return max(min(v, maxval), minval)
+
+    # Clamps the controller output to between -0.5 and 0.5
+    clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5)

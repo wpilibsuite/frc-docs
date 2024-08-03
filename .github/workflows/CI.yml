@@ -9,8 +9,8 @@ jobs:
   build-pdf:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
       with:
         python-version: 3.9
         cache: 'pip'
@@ -25,7 +25,7 @@ jobs:
       run: |
         make latexpdf
     - name: Archive PDF
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: frc-docs-pdf
         path: build/latex/firstroboticscompetition.pdf
@@ -34,8 +34,8 @@ jobs:
   build-html:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
       with:
         python-version: 3.9
         cache: 'pip'
@@ -50,7 +50,7 @@ jobs:
       run: |
         make html
     - name: Archive HTML
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: frc-docs-html
         path: build/html/
@@ -59,16 +59,16 @@ jobs:
   build-html-translation:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         repository: wpilibsuite/frc-docs-translations
     - name: Delete old submodule
       run: |
         rm -rf ./frc-docs
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         path: frc-docs
-    - uses: actions/setup-python@v4
+    - uses: actions/setup-python@v5
       with:
         python-version: 3.9
         cache: 'pip'
@@ -89,13 +89,13 @@ jobs:
     # Changes have been made.
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v41
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.9
       - name: Install Dependencies
@@ -118,8 +118,8 @@ jobs:
   check-linting:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
       with:
         python-version: 3.9
     - name: Install Dependencies
@@ -132,8 +132,8 @@ jobs:
   check-image-size:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
       with:
         python-version: 3.9
     - name: Install Dependencies
@@ -146,7 +146,7 @@ jobs:
   check-spelling:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: misspell
         uses: reviewdog/action-misspell@v1
         with:
@@ -156,11 +156,11 @@ jobs:
   check-redirects:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Checkout main
       run: |
         git fetch origin main --depth=1
-    - uses: actions/setup-python@v4
+    - uses: actions/setup-python@v5
       with:
         python-version: 3.9
     - name: Install Dependencies
@@ -176,8 +176,8 @@ jobs:
   check-formatting:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
       with:
         python-version: 3.9
     - name: Install Python Dependencies

@@ -31,7 +31,7 @@ This is the test mode picture of a wrist subsystem that has a potentiometer as t
 
 Try various PID gains to get the desired motor performance. You can look at the video linked to at the beginning of this article or other sources on the internet to get the desired performance.
 
-.. important:: The enable option does not affect the `PIDController <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/math/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. See the example below on how to retain this functionality.
+.. important:: The enable option does not affect the `PIDController <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__ introduced in 2020, as the controller is updated every robot loop. See the example below on how to retain this functionality.
 
 Enable Functionality in the New PIDController
 ---------------------------------------------
@@ -43,7 +43,7 @@ The following example demonstrates how to create a button on your dashboard that
   .. code-block:: java
 
     ShuffleboardTab tab = Shuffleboard.getTab("Shooter");
-    NetworkTableEntry shooterEnable = tab.add("Shooter Enable", false).getEntry();
+    GenericEntry shooterEnable = tab.add("Shooter Enable", false).getEntry();
 
     // Command Example assumed to be in a PIDSubsystem
     new NetworkButton(shooterEnable).onTrue(new InstantCommand(m_shooter::enable));
@@ -58,7 +58,7 @@ The following example demonstrates how to create a button on your dashboard that
   .. code-block:: c++
 
     frc::ShuffleboardTab& tab = frc::Shuffleboard::GetTab("Shooter");
-    nt::NetworkTableEntry shooterEnable = tab.Add("Shooter Enable", false).GetEntry();
+    nt::GenericEntry& shooterEnable = *tab.Add("Shooter Enable", false).GetEntry();
 
     // Command-based assumed to be in a PIDSubsystem
     frc2::NetworkButton(shooterEnable).OnTrue(frc2::InstantCommand([&] { m_shooter.Enable(); }));

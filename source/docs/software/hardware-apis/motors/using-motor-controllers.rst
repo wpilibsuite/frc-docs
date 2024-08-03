@@ -46,14 +46,4 @@ PWM motor controllers can be controlled in the same way as a CAN motor controlle
 CAN Motor Controllers
 ---------------------
 
-A handful of CAN motor controllers are available through vendors such as CTR Electronics and REV Robotics.
-
-SPARK MAX
-^^^^^^^^^
-
-For information regarding the SPARK MAX CAN Motor Controller, which can be used in either CAN or PWM mode, please refer to the SPARK MAX `software resources <https://www.revrobotics.com/sparkmax-software/>`_ and `example code. <https://github.com/REVrobotics/SPARK-MAX-Examples>`_
-
-CTRE CAN Motor Controllers
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Please refer to the third party CTRE documentation on the Phoenix software for more detailed information. The documentation is available `here. <https://docs.ctr-electronics.com/>`_
+A handful of CAN motor controllers are available through vendors such as CTR Electronics, REV Robotics, and Playing with Fusion. See :doc:`/docs/software/can-devices/third-party-devices`, :doc:`/docs/software/vscode-overview/3rd-party-libraries`, and :doc:`/docs/software/examples-tutorials/third-party-examples` for more information.

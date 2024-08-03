@@ -49,7 +49,7 @@ When the robot is connected to the Field Management System at competition, the D
 
 The ``Joystick`` class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the flight joystick, the user may need to set the specific X, Y, Z, and Throttle channels that your flight joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight joystick.
 
-.. important:: Forward on joysticks is the negative direction. Teams often negate the values when reading joystick axes to account for this.
+.. important:: Due to differences in coordinate systems, teams usually negate the values when reading joystick axes. See the :ref:`docs/software/basic-programming/coordinate-system:Joystick and controller coordinate system` section for more detail.
 
 ``XboxController`` Class
 ------------------------
@@ -72,6 +72,8 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
       exampleXbox = wpilib.XboxController(0) # 0 is the USB Port to be used as indicated on the Driver Station
 
 The ``XboxController`` class provides named methods (e.g. ``getXButton``, ``getXButtonPressed``, ``getXButtonReleased``) for each of the buttons, and the indices can be accessed with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
+
+.. important:: Due to differences in coordinate systems, teams usually negate the values when reading joystick axes. See the :ref:`docs/software/basic-programming/coordinate-system:Joystick and controller coordinate system` section for more detail.
 
 ``PS4Controller`` Class
 -----------------------
@@ -96,6 +98,8 @@ The ``XboxController`` class provides named methods (e.g. ``getXButton``, ``getX
 
 The ``PS4Controller`` class provides named methods (e.g. ``getSquareButton``, ``getSquareButtonPressed``, ``getSquareButtonReleased``) for each of the buttons, and the indices can be accessed with  ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
 
+.. important:: Due to differences in coordinate systems, teams usually negate the values when reading joystick axes. See the :ref:`docs/software/basic-programming/coordinate-system:Joystick and controller coordinate system` section for more detail.
+
 POV
 ---
 
@@ -116,7 +120,7 @@ An axis can be used with ``.getRawAxis(int index)`` (if not using any of the cla
 
       private final PWMSparkMax m_leftMotor = new PWMSparkMax(Constants.kLeftMotorPort);
       private final PWMSparkMax m_rightMotor = new PWMSparkMax(Constants.kRightMotorPort);
-      private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
+      private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
       private final GenericHID m_stick = new GenericHID(Constants.kJoystickPort);
 
       m_robotDrive.arcadeDrive(-m_stick.getRawAxis(0), m_stick.getRawAxis(1));
@@ -125,7 +129,8 @@ An axis can be used with ``.getRawAxis(int index)`` (if not using any of the cla
 
       frc::PWMVictorSPX m_leftMotor{Constants::kLeftMotorPort};
       frc::PWMVictorSPX m_rightMotor{Constants::kRightMotorPort};
-      frc::DifferentialDrive m_robotDrive{m_leftMotor, m_rightMotor};
+      frc::DifferentialDrive m_robotDrive{[&](double output) { m_leftMotor.Set(output); },
+                                          [&](double output) { m_rightMotor.Set(output); }};
       frc::GenericHID m_stick{Constants::kJoystickPort};
 
       m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));

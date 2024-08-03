@@ -11,17 +11,17 @@ The following program starts automatic capture of a USB camera like the Microsof
 
 .. tab-set-code::
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
       :language: java
       :lines: 7-20
       :linenos:
       :lineno-start: 7
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
       :language: c++
       :lines: 7-8, 16-18, 20, 25-31
 
-   .. rli:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/QuickVision/robot.py
+   .. rli:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/QuickVision/robot.py
       :language: python
       :lines: 8-17
       :linenos:
@@ -37,7 +37,7 @@ In the following example a thread created in robotInit() gets the Camera Server 
    .. tab-item:: Java
       :sync: tabcode-java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
          :language: java
          :lines: 7-65
          :linenos:
@@ -46,7 +46,7 @@ In the following example a thread created in robotInit() gets the Camera Server 
    .. tab-item:: c++
       :sync: tabcode-c++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
          :language: c++
          :lines: 5-20, 23-56, 58-61, 63-64, 69-76
 
@@ -64,25 +64,37 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
       This introduces a number of rules that your image processing code must follow to efficiently and safely run on the RoboRIO:
 
-      * Your image processing code must be in its own file
+      * Your image processing code must be in its own file. It's easiest to just place it next to your ``robot.py``
       * Never import the ``cscore`` package from your robot code, it will just waste memory
       * Never import the ``wpilib`` or ``hal`` packages from your image processing file
       * The camera code will be killed when the ``robot.py`` program exits. If you wish to perform cleanup, you should register an atexit handler.
+      * ``robotpy-cscore`` is not installed on the roboRIO by default, you need to update your ``pyproject.toml`` file to install it
 
       .. warning:: ``wpilib`` may not be imported from two programs on the RoboRIO. If this happens, the second program will attempt to kill the first program.
 
       Here's what your ``robot.py`` needs to contain to launch the image processing process:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/IntermediateVision/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/IntermediateVision/robot.py
          :language: python
          :lines: 8-17
          :linenos:
 
       The ``launch("vision.py")`` function says to launch ``vision.py`` and call the ``run`` function in that file. Here's what is in ``vision.py``:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/IntermediateVision/vision.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/IntermediateVision/vision.py
          :language: python
          :lines: 12-55
          :linenos:
+
+      You need to update ``pyproject.toml`` contents to include cscore in the robotpy-extras key (this only shows the portions you need to update):
+
+      .. code-block:: toml
+
+         [tool.robotpy]
+
+         ...
+
+         # Add cscore to the robotpy-extras list
+         robotpy_extras = ["cscore"]
 
 Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on SmartDashboard or Shuffleboard, select that named stream. In this case that is "Rectangle".

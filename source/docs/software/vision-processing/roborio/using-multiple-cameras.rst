@@ -68,6 +68,8 @@ If you're interested in just switching what the driver sees, and are using Smart
   .. tab-item:: PYTHON
     :sync: tabcode-python
 
+    .. note:: Python requires you to place your image processing code in a separate file from your robot code. You can create ``robot.py`` and ``vision.py`` in the same directory.
+
     ``robot.py`` contents:
 
     .. code-block:: python
@@ -89,9 +91,6 @@ If you're interested in just switching what the driver sees, and are using Smart
                    print("Setting camera 1")
                    self.cameraSelection.setString("USB Camera 0")
 
-       if __name__ == "__main__":
-           wpilib.run(MyRobot)
-
     ``vision.py`` contents:
 
     .. code-block:: python
@@ -105,6 +104,17 @@ If you're interested in just switching what the driver sees, and are using Smart
            camera2 = CameraServer.startAutomaticCapture(1)
 
            CameraServer.waitForever()
+
+    ``pyproject.toml`` contents (this only shows the portions you need to update):
+
+    .. code-block:: toml
+
+       [tool.robotpy]
+
+       ...
+
+       # Add cscore to the robotpy-extras list
+       robotpy_extras = ["cscore"]
 
 If you're using some other dashboard, you can change the camera used by the camera server dynamically. If you open a stream viewer nominally to camera1, the robot code will change the stream contents to either camera1 or camera2 based on the joystick trigger.
 
@@ -235,6 +245,8 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
   .. tab-item:: PYTHON
     :sync: tabcode-python
 
+    .. note:: Python requires you to place your image processing code in a separate file from your robot code. You can create ``robot.py`` and ``vision.py`` in the same directory.
+
     ``robot.py`` contents:
 
     .. code-block:: python
@@ -256,9 +268,6 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
                    print("Setting camera 1")
                    self.cameraSelection.setString("USB Camera 0")
 
-       if __name__ == "__main__":
-           wpilib.run(MyRobot)
-
     ``vision.py`` contents:
 
     .. code-block:: python
@@ -275,6 +284,17 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
            camera2.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
 
            CameraServer.waitForever()
+
+    ``pyproject.toml`` contents (this only shows the portions you need to update):
+
+    .. code-block:: toml
+
+       [tool.robotpy]
+
+       ...
+
+       # Add cscore to the robotpy-extras list
+       robotpy_extras = ["cscore"]
 
 .. note::
     If both cameras are USB, you may run into USB bandwidth limitations with higher resolutions, as in all of these cases the roboRIO is going to be streaming data from both cameras to the roboRIO simultaneously (for a short period in options 1 and 2, and continuously in option 3). It is theoretically possible for the library to avoid this simultaneity in the option 2 case (only), but this is not currently implemented.

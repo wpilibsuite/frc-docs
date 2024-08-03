@@ -12,7 +12,7 @@ Encoders are devices used to measure motion (usually, the rotation of a shaft).
 Quadrature Encoders - The :code:`Encoder` Class
 -----------------------------------------------
 
-WPILib provides support for quadrature encoders through the :code:`Encoder` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
+WPILib provides support for quadrature encoders through the :code:`Encoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
 
 .. image:: images/encoders-software/encoding-direction.png
     :alt: Quadrature Encoders determine direction by observing which pulse channel (A or B) receives a pulse first.
@@ -240,7 +240,7 @@ To reset a quadrature encoder to a distance reading of zero, call the :code:`res
 Duty Cycle Encoders - The :code:`DutyCycleEncoder` class
 --------------------------------------------------------
 
-WPILib provides support for duty cycle (also marketed as :term:`PWM`) encoders through the :code:`DutyCycleEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_duty_cycle_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+WPILib provides support for duty cycle (also marketed as :term:`PWM`) encoders through the :code:`DutyCycleEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_duty_cycle_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
 
 The roboRIO's FPGA handles duty cycle encoders automatically.
 
@@ -358,7 +358,7 @@ To reset an encoder so the current distance is 0, call the :code:`reset()` metho
 Analog Encoders - The :code:`AnalogEncoder` Class
 -------------------------------------------------
 
-WPILib provides support for analog absolute encoders through the :code:`AnalogEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/AnalogEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_analog_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+WPILib provides support for analog absolute encoders through the :code:`AnalogEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
 
 Examples of analog encoders:
 
@@ -468,64 +468,73 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
 
     .. code-block:: java
 
-        // Creates an encoder on DIO ports 0 and 1
-        Encoder encoder = new Encoder(0, 1);
+          // Creates an encoder on DIO ports 0 and 1
+          Encoder encoder = new Encoder(0, 1);
 
-        // Initialize motor controllers and drive
-        Spark left1 = new Spark(0);
-        Spark left2 = new Spark(1);
+          // Initialize motor controllers and drive
+          Spark leftLeader = new Spark(0);
+          Spark leftFollower = new Spark(1);
 
-        Spark right1 = new Spark(2);
-        Spark right2 = new Spark(3);
+          Spark rightLeader = new Spark(2);
+          Spark rightFollower = new Spark(3);
 
-        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
+          DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
 
-        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
+          @Override
+          public void robotInit() {
+              // Configures the encoder's distance-per-pulse
+              // The robot moves forward 1 foot per encoder rotation
+              // There are 256 pulses per encoder rotation
+              encoder.setDistancePerPulse(1./256.);
 
-        @Override
-        public void robotInit() {
-            // Configures the encoder's distance-per-pulse
-            // The robot moves forward 1 foot per encoder rotation
-            // There are 256 pulses per encoder rotation
-            encoder.setDistancePerPulse(1./256.);
-        }
+              // Invert the right side of the drivetrain. You might have to invert the other side
+              rightLeader.setInverted(true);
 
-        @Override
-        public void autonomousPeriodic() {
-            // Drives forward at half speed until the robot has moved 5 feet, then stops:
-            if(encoder.getDistance() < 5) {
-                drive.tankDrive(0.5, 0.5);
-            } else {
-                drive.tankDrive(0, 0);
-            }
-        }
+              // Configure the followers to follow the leaders
+              leftLeader.addFollower(leftFollower);
+              rightLeader.addFollower(rightFollower);
+          }
+
+          @Override
+          public void autonomousPeriodic() {
+              // Drives forward at half speed until the robot has moved 5 feet, then stops:
+              if(encoder.getDistance() < 5) {
+                  drive.tankDrive(0.5, 0.5);
+              } else {
+                  drive.tankDrive(0, 0);
+              }
+          }
 
     .. code-block:: c++
 
-        // Creates an encoder on DIO ports 0 and 1.
+         // Creates an encoder on DIO ports 0 and 1.
         frc::Encoder encoder{0, 1};
 
         // Initialize motor controllers and drive
-        frc::Spark left1{0};
-        frc::Spark left2{1};
+        frc::Spark leftLeader{0};
+        frc::Spark leftFollower{1};
 
-        frc::Spark right1{2};
-        frc::Spark right2{3};
+        frc::Spark rightLeader{2};
+        frc::Spark rightFollower{3};
 
-        frc::MotorControllerGroup leftMotors{left1, left2};
-        frc::MotorControllerGroup rightMotors{right1, right2};
-
-        frc::DifferentialDrive drive{leftMotors, rightMotors};
+        frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
+                                     [&](double output) { rightLeader.Set(output); }};
 
         void Robot::RobotInit() {
             // Configures the encoder's distance-per-pulse
             // The robot moves forward 1 foot per encoder rotation
             // There are 256 pulses per encoder rotation
             encoder.SetDistancePerPulse(1.0/256.0);
+
+            // Invert the right side of the drivetrain. You might have to invert the other side
+            rightLeader.SetInverted(true);
+
+            // Configure the followers to follow the leaders
+            leftLeader.AddFollower(leftFollower);
+            rightLeader.AddFollower(rightFollower);
         }
 
-        void Robot:AutonomousPeriodic() {
+        void Robot::AutonomousPeriodic() {
             // Drives forward at half speed until the robot has moved 5 feet, then stops:
             if(encoder.GetDistance() < 5) {
                 drive.TankDrive(0.5, 0.5);

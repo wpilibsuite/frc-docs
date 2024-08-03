@@ -7,13 +7,13 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpimath/src/main/java/edu/wpi/first/math/controller/BangBangController.java
         :language: java
         :lines: 151-159
         :linenos:
         :lineno-start: 151
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpimath/src/main/native/cpp/controller/BangBangController.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1/wpimath/src/main/native/cpp/controller/BangBangController.cpp
         :language: c++
         :lines: 55-69
         :linenos:
@@ -24,7 +24,7 @@ To enable the automatic updating of values by WPILib "in the background", ``Send
 The SendableBuilder Class
 -------------------------
 
-As seen above, the ``initSendable`` method takes a single parameter, ``builder``, of type ``SendableBuilder`` (`Java <https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/util/sendable/SendableBuilder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_sendable_builder.html>`__).  This builder exposes methods that allow binding of getters and setters to dashboard names, as well as methods for safely ensuring that values consumed *from* the dashboard do not cause unsafe robot behavior.
+As seen above, the ``initSendable`` method takes a single parameter, ``builder``, of type ``SendableBuilder`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/sendable/SendableBuilder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_sendable_builder.html>`__, :external:py:class:`Python <wpiutil.SendableBuilder>`).  This builder exposes methods that allow binding of getters and setters to dashboard names, as well as methods for safely ensuring that values consumed *from* the dashboard do not cause unsafe robot behavior.
 
 Databinding with addProperty Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

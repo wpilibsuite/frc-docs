@@ -24,24 +24,33 @@ Robot Program Example
 
 .. tab-set-code::
 
-  .. code-block:: java
+   .. code-block:: java
 
       public class Robot extends TimedRobot {
-        double counter = 0.0;
+         double counter = 0.0;
 
-        public void teleopPeriodic() {
-          SmartDashboard.putNumber("Counter", counter++);
-        }
+         public void teleopPeriodic() {
+            SmartDashboard.putNumber("Counter", counter++);
+         }
       }
 
-  .. code-block:: c++
+   .. code-block:: c++
 
       #include "Robot.h"
       float counter = 0.0;
 
       void Robot::TeleopPeriodic() {
-          frc::SmartDashboard::PutNumber("Counter", counter++);
+         frc::SmartDashboard::PutNumber("Counter", counter++);
       }
+
+   .. code-block:: python
+
+      from wpilib import SmartDashboard
+
+      self.counter = 0.0
+
+      def teleopPeriodic(self) -> None:
+         SmartDashboard.putNumber("Counter", self.counter += 1)
 
 This is a minimal robot program that writes a value to the SmartDashboard. It simply increments a counter 50 times per second to verify that the connection is working. However, to minimize bandwidth usage, NetworkTables by default will throttle the updates to 10 times per second.
 
@@ -64,13 +73,9 @@ If the display of the value is not appearing, verify that the team number is cor
 Verifying Program using OutlineViewer
 -------------------------------------
 
-You can verify that the robot program is generating SmartDashboard values by using the OutlineViewer program. This is a Java program, ``OutlineViewer.jar``, that is located in ``~/wpilib/YYYY/tools`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows).
+You can verify that the robot program is generating SmartDashboard values by using the :doc:`OutlineViewer program </docs/software/wpilib-tools/outlineviewer/index>`.
 
-OutlineViewer is downloaded as part of the WPILib Offline Installer. For more information, see the :ref:`Windows/macOS/Linux installation guides <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`. In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib logo in the top right to launch the WPILib Command Palette.  Select :guilabel:`Start Tool`, and then select :guilabel:`OutlineViewer`.
-
-In the "Server Location" box, enter your team number with no leading zeroes. Then, click ``Start``.
-
-Look at the second row in the table, the value ``SmartDashboard/Counter`` is the variable written to the SmartDashboard via NetworkTables. As the program runs you should see the value increasing (``41.0`` in this case). If you don't see this variable in the OutlineViewer, look for something wrong with the robot program or the network configuration.
+Expand the SmartDashboard row. The value ``Counter`` is the variable written to the SmartDashboard via NetworkTables. As the program runs you should see the value increasing (``1398.0`` in this case). If you don't see this variable in the OutlineViewer, look for something wrong with the robot program or the network configuration.
 
 .. image:: /docs/software/wpilib-tools/outlineviewer/images/outlineviewer.png
   :alt: Using OutlineViewer to view the NetworkTables data used by the program.

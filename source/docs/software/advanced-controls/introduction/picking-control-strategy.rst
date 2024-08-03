@@ -99,7 +99,7 @@ Theoretical Modeling
 
 `ReCalc is an online calculator <https://www.reca.lc/>`__ which estimates physical parameters for a number of common FRC mechanisms.  Importantly, it can generate estimate the ``kV``, ``kA``, and ``kG`` gains for the WPILib feedforward classes.
 
-The :doc:`WPILib system identification tool </docs/software/pathplanning/system-identification/introduction>` supports a "theoretical mode" that can be used to determine PID gains for feedback control from the ``kV`` and ``kA`` gains from ReCalc, enabling (in theory) full tuning of a control loop without running any test routines.
+The :doc:`WPILib system identification tool </docs/software/advanced-controls/system-identification/introduction>` supports a "theoretical mode" that can be used to determine PID gains for feedback control from the ``kV`` and ``kA`` gains from ReCalc, enabling (in theory) full tuning of a control loop without running any test routines.
 
 Remember, however, that theory is not reality and purely theoretical gains are not guaranteed to work well.  There is *never* a substitute for testing.
 
@@ -108,7 +108,7 @@ System Identification
 
 A good way to improve the accuracy of a simple physics model is to perform experiments on the real mechanism, record data, and use the data to *derive* the constants associated with different parts of the model. This is very useful for physical quantities which are difficult or impossible to predict, but easy to measure (ex: friction in a gearbox).
 
-:doc:`WPILib's system identification tool </docs/software/pathplanning/system-identification/introduction>` supports some common FRC mechanisms, including drivetrain. It deploys its own code to the robot to exercise the mechanism, record data, and derive gains for both feedforward and feedback control schemes.
+:doc:`WPILib's system identification tool </docs/software/advanced-controls/system-identification/introduction>` supports some common FRC mechanisms, including drivetrain. It deploys its own code to the robot to exercise the mechanism, record data, and derive gains for both feedforward and feedback control schemes.
 
 Manual Tuning: What to Do with No Explicit Model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

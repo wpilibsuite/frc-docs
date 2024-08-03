@@ -10,7 +10,7 @@ It's recommended to also review the list of :doc:`known issues <known-issues>`.
 Importing Projects from Previous Years
 --------------------------------------
 
-Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2024 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2023 projects must be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>` to be compatible.
+Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2024 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2023 projects must be :doc:`imported </docs/software/vscode-overview/importing-last-years-robot-code>` to be compatible.
 
 Major Changes (Java/C++)
 ------------------------
@@ -24,6 +24,7 @@ These changes contain *some* of the major changes to the library that it's impor
 - Performance improvements and reduced worst-case memory usage throughout libraries
 - Added a typesafe unit system for Java (not used by the main part of WPILib yet)
 - Disabled LiveWindow in Test Mode by default. See See :ref:`docs/software/dashboards/smartdashboard/test-mode-and-live-window/enabling-test-mode:Enabling LiveWindow in Test Mode` to enable it.
+- SysId has been rewritten to remove project generation; Replaced with data logging within team robot program
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit. 32 bit and Arm are not supported
@@ -109,6 +110,11 @@ General Library
 - ArcadeDrive: Fix max output handling
 - Add ``PWMSparkFlex`` Motor Controller
 - ADIS16470: allow accessing all three axes
+- Deprecated ``MotorControllerGroup``. Use ``PWMMotorController`` ``addFollower()`` method or if using CAN motor controllers use their method of following.
+- Added functional inteface to ``DifferentialDrive`` and ``MecanumDrive``. The ``MotorController`` interface may be removed in the future to reduce coupling with vendor libraries. Instead of passing ``MotorController`` objects, the following method references or lambda expressions can be used:
+
+    - Java: ``DifferentialDrive drive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);``
+    - C++: ``frc::DifferentialDrive m_drive{[&](double output) { m_leftMotor.Set(output); }, [&](double output) { m_rightMotor.Set(output); }};``
 
 Breaking Changes
 ^^^^^^^^^^^^^^^^
@@ -133,7 +139,6 @@ Breaking Changes
     - ``CommandScheduler.addButtons()`` (Java only)
     - Command supplier constructor of ``SelectCommand`` (use ``ProxyCommand`` instead)
 
-- Removed project generation from SysId
 - Removed ``Compressor.enabled()`` function (use ``isEnabled()`` instead)
 - Removed ``CameraServer.setSize()`` function (use ``setResolution()`` on the camera object instead)
 - Removed deprecated and broken SPI methods
@@ -186,8 +191,8 @@ GradleRIO
 WPILib All in One Installer
 ---------------------------
 
-- Update to VS Code 1.84.0
-- VS Code extension updates: cpptools 1.17.5, javaext 1.23.0
+- Update to VS Code 1.85.1
+- VS Code extension updates: cpptools 1.19.1, javaext 1.26.0
 - Use separate zip files for VS Code download/install
 - Update to use .NET 8
 - AdvantageScope is now bundlled by the installer
@@ -206,7 +211,7 @@ RobotBuilder
 - Fixed constants aliasing
 - Updated PCM references and wiring export for addition of REV PH
 
-SysID
+SysId
 -----
 
-- Removed project generation; will be replaced with data logging within team robot program (work in progress)
+- Removed project generation; Replaced with data logging within team robot program

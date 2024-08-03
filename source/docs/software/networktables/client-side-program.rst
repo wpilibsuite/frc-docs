@@ -189,7 +189,7 @@ Example build.gradle files are provided in the `StandaloneAppSamples Repository 
     .. tab-item:: Java
      :sync: Java
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/3b64aadee717c9f0566497a40fd0be7d0eaed96d/Java/build.gradle
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/6a5b6352807a8759bd0f012e57695c47f7ef7324/Java/build.gradle
           :language: groovy
           :linenos:
           :emphasize-lines: 5
@@ -199,12 +199,12 @@ Example build.gradle files are provided in the `StandaloneAppSamples Repository 
 
        Uncomment the appropriate platform as highlighted.
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/3b64aadee717c9f0566497a40fd0be7d0eaed96d/Cpp/build.gradle
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/6a5b6352807a8759bd0f012e57695c47f7ef7324/Cpp/build.gradle
           :language: groovy
           :linenos:
-          :emphasize-lines: 3, 20-22
+          :emphasize-lines: 3, 14-15, 20-22
 
 Building Python
 ^^^^^^^^^^^^^^^
 
-For Python, refer to the `RobotPy pyntcore install documentation <https://robotpy.readthedocs.io/en/stable/install/pynetworktables.html>`__.
+For Python, refer to the :doc:`RobotPy install documentation </docs/zero-to-robot/step-2/python-setup>`.

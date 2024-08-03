@@ -10,3 +10,4 @@ Dashboards
    glass/index
    advantagescope.rst
    labview-dashboard/index
+   troubleshooting-dashboard-connectivity.rst

@@ -170,7 +170,7 @@ This method does not require calibrating the camera or performing the homography
 
 .. todo:: Code examples coming soon!
 
-A more advanced usage of AprilTags is to use their corner locations to help perform on-field localization.
+A more advanced usage of AprilTags is to use their corner locations to help perform :term:`pose estimation`.
 
 Each image is searched for AprilTags using the algorithm described on this page. Using assumptions about how the camera's lense distorts the 3d world onto the 2d array of pixels in the camera, an estimate of the camera's position relative to the tag is calculated. A good camera calibration is required for the assumptions about its lens behavior to be accurate.
 
@@ -207,7 +207,7 @@ Humans can often use lighting or background clues to understand how objects are 
 
 Resolving which position is "correct" can be done in a few different ways:
 
-1. Use your odometry history from all sensors to pick the pose closest to where you expect the robot to be.
+1. Use your :term:`odometry` history from all sensors to pick the pose closest to where you expect the robot to be.
 2. Reject poses which are very unlikely (ex: outside the field perimeter, or up in the air)
 3. Ignore pose estimates which are very close together (and hard to differentiate)
 4. Use multiple cameras to look at the same target, such that at least one camera can generate a good pose estimate
