@@ -71,11 +71,11 @@ Before Each Match
 2. Close programs that aren’t needed during the match – e.g., Visual Studio Code or LabView – when you are competing.
 3. Bring your laptop charger to the field. Power is provided for you in each player station.
 4. Fasten your laptop with hook-and-loop tape to the player station shelf. You never know when your alliance partner will have an autonomous programming issue and blast the wall.
-5. Ensure driver station is visible during the match for best performance, and to ease troubleshooting.
-6. Ensure joysticks and controllers are assigned to the correct USB ports.
+5. Ensure joysticks and controllers are assigned to the correct USB ports.
 
    a. In the USB tab in the FRC Driver Station software, drag and drop to assign joysticks as needed.
    b. Use the rescan button (F1) if joysticks / controllers do not appear green.
    c. Use the rescan button (F1) during competition if joystick or controllers become unplugged and then are plugged back in or otherwise turn gray during competition.
 
-7. Ensure your :doc:`Dashboard is connected to the robot </docs/software/dashboards/troubleshooting-dashboard-connectivity>` after your driver station connects to the robot.
+6. Ensure your :doc:`Dashboard is connected to the robot </docs/software/dashboards/troubleshooting-dashboard-connectivity>` after your driver station connects to the robot.
+7. Ensure driver station is fully visible and in focus during the match to avoid Windows de-priortizing it, and to ease troubleshooting.
