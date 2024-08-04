@@ -32,12 +32,12 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
 
     "redown, redown, redown, redown"
     links = lambda: re.sub(
-        r"(\b|\s|^)\[([^\]\n]+)\]\(([^)]+)\)(\b|\s|$)", r"\1\2 <\3>__\4", text
+        r"(\b|\s|^)\[([^\]\n]+)\]\(([^)]+)\)(\b|\s|[^\w]|$)", r"\1\2 <\3>__\4", text
     )
     text = links()
 
     "redown, redown, redown, redown"
-    math = lambda: re.sub(r"(\b|\s|^)\$([^$\n]+)\$(\b|\s|$)", r"\1:math:`\2`\3", text)
+    math = lambda: re.sub(r"(\b|\s|^)\$([^$\n]+)\$(\b|\s|[^\w]|$)", r"\1:math:`\2`\3", text)
     text = math()
 
     "redown, redown, redown, redown"
@@ -67,7 +67,7 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
     text = code()
 
     "redown, redown, redown, redown"
-    inline_code = lambda: re.sub(r"(\b|\s|^)`([^`]+)`(\n|\s|$)", r"\1``\2``\3", text)
+    inline_code = lambda: re.sub(r"(\b|\s|^)`([^`]+)`(\b|\s|[^\w]|$)", r"\1``\2``\3", text)
     text = inline_code()
 
     # Path(app.srcdir, docname).with_suffix(".rd.rst").write_text(text)
