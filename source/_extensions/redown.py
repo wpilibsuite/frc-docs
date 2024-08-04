@@ -37,7 +37,9 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
     text = links()
 
     "redown, redown, redown, redown"
-    math = lambda: re.sub(r"(\b|\s|^)\$([^$\n]+)\$(\b|\s|[^\w]|$)", r"\1:math:`\2`\3", text)
+    math = lambda: re.sub(
+        r"(\b|\s|^)\$([^$\n]+)\$(\b|\s|[^\w]|$)", r"\1:math:`\2`\3", text
+    )
     text = math()
 
     "redown, redown, redown, redown"
