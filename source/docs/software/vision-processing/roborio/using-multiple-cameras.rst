@@ -19,7 +19,7 @@ If you're interested in just switching what the driver sees, and are using Smart
        NetworkTableEntry cameraSelection;
 
        @Override
-       public void robotInit() {
+       public Robot() {
            camera1 = CameraServer.startAutomaticCapture(0);
            camera2 = CameraServer.startAutomaticCapture(1);
 
@@ -48,7 +48,7 @@ If you're interested in just switching what the driver sees, and are using Smart
 
        nt::NetworkTableEntry cameraSelection;
 
-       void RobotInit() override {
+       void Robot() override {
          camera1 = frc::CameraServer::StartAutomaticCapture(0);
          camera2 = frc::CameraServer::StartAutomaticCapture(1);
 
@@ -78,7 +78,7 @@ If you're interested in just switching what the driver sees, and are using Smart
        from ntcore import NetworkTableInstance
 
        class MyRobot(wpilib.TimedRobot):
-           def robotInit(self):
+           def Robot(self):
                self.joy1 = wpilib.Joystick(0)
                self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
                wpilib.CameraServer.launch("vision.py:main")
@@ -128,7 +128,7 @@ If you're using some other dashboard, you can change the camera used by the came
        Joystick joy1 = new Joystick(0);
 
        @Override
-       public void robotInit() {
+       public Robot() {
            camera1 = CameraServer.startAutomaticCapture(0);
            camera2 = CameraServer.startAutomaticCapture(1);
            server = CameraServer.getServer();
@@ -153,7 +153,7 @@ If you're using some other dashboard, you can change the camera used by the came
        frc::Joystick joy1{0};
        bool prevTrigger = false;
 
-       void RobotInit() override {
+       void Robot() override {
          camera1 = frc::CameraServer::StartAutomaticCapture(0);
          camera2 = frc::CameraServer::StartAutomaticCapture(1);
          server = frc::CameraServer::GetServer();
@@ -193,7 +193,7 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
        Joystick joy1 = new Joystick(0);
 
        @Override
-       public void robotInit() {
+       public Robot() {
            camera1 = CameraServer.startAutomaticCapture(0);
            camera2 = CameraServer.startAutomaticCapture(1);
            server = CameraServer.getServer();
@@ -223,7 +223,7 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
        cs::VideoSink server;
        frc::Joystick joy1{0};
        bool prevTrigger = false;
-       void RobotInit() override {
+       void Robot() override {
          camera1 = frc::CameraServer::StartAutomaticCapture(0);
          camera2 = frc::CameraServer::StartAutomaticCapture(1);
          server = frc::CameraServer::GetServer();
@@ -255,7 +255,7 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
        from ntcore import NetworkTableInstance
 
        class MyRobot(wpilib.TimedRobot):
-           def robotInit(self):
+           def Robot(self):
                self.joy1 = wpilib.Joystick(0)
                self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
                wpilib.CameraServer.launch("vision.py:main")
@@ -307,4 +307,4 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
         try a lower resolution or a different pixel format
         (VIDIOC_STREAMON: No space left on device)
 
-    If you're using Option 3 it will give you this error during ``RobotInit()``. Thus you should just try your desired resolution and adjusting as necessary until you both don't get that error and don't exceed the radio bandwidth limitations.
+    If you're using Option 3 it will give you this error during ``Robot()``. Thus you should just try your desired resolution and adjusting as necessary until you both don't get that error and don't exceed the radio bandwidth limitations.

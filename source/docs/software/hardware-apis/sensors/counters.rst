@@ -38,7 +38,7 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
         Counter counter = new Counter(Counter.Mode.k2Pulse);
 
         @Override
-        public void robotInit() {
+        public Robot() {
             // Set up the input channels for the counter
             counter.setUpSource(1);
             counter.setDownSource(2);
@@ -53,7 +53,7 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
         // Create a new Counter object in two-pulse mode
         frc::Counter counter{frc::Counter::Mode::k2Pulse};
 
-        void Robot::RobotInit() {
+        void Robot::Robot() {
             // Set up the input channels for the counter
             counter.SetUpSource(1);
             counter.SetDownSource(2);
@@ -75,7 +75,7 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
         Counter counter = new Counter(Counter.Mode.kSemiperiod);
 
         @Override
-        public void robotInit() {
+        public Robot() {
             // Set up the input channel for the counter
             counter.setUpSource(1);
 
@@ -122,7 +122,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
         Counter counter = new Counter(Counter.Mode.kPulseLength);
 
         @Override
-        public void robotInit() {
+        public Robot() {
             // Set up the input channel for the counter
             counter.setUpSource(1);
 
@@ -138,7 +138,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
         // Create a new Counter object in two-pulse mode
         frc::Counter counter{frc::Counter::Mode::kPulseLength};
 
-        void Robot::RobotInit() {
+        void Robot::Robot() {
             // Set up the input channel for the counter
             counter.SetUpSource(1);
 
@@ -161,7 +161,7 @@ In external direction mode, the counter counts either up or down depending on th
         Counter counter = new Counter(Counter.Mode.kExternalDirection);
 
         @Override
-        public void robotInit() {
+        public Robot() {
             // Set up the input channels for the counter
             counter.setUpSource(1);
             counter.setDownSource(2);
@@ -175,7 +175,7 @@ In external direction mode, the counter counts either up or down depending on th
         // Create a new Counter object in two-pulse mode
         frc::Counter counter{frc::Counter::Mode::kExternalDirection};
 
-        void RobotInit() {
+        void Robot() {
             // Set up the input channels for the counter
             counter.SetUpSource(1);
             counter.SetDownSource(2);

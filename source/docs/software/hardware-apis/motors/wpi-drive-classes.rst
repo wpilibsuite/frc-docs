@@ -41,7 +41,7 @@ As of 2022, the right side of the drivetrain is **no longer** inverted by defaul
       PWMSparkMax m_motorRight = new PWMSparkMax(0);
 
       @Override
-      public void robotInit() {
+      public Robot() {
          m_motorRight.setInverted(true);
       }
 
@@ -50,13 +50,13 @@ As of 2022, the right side of the drivetrain is **no longer** inverted by defaul
       frc::PWMSparkMax m_motorLeft{0};
 
       public:
-       void RobotInit() override {
+       void Robot() override {
          m_motorRight.SetInverted(true);
        }
 
    .. code-block:: python
 
-      def robotInit(self):
+      def Robot(self):
           self.motorRight = wpilib.PWMSparkMax(0)
           self.motorRight.setInverted(True)
 
@@ -174,7 +174,7 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
             :language: java
             :lines: 19-25
 
-        In robotInit or Subsystem constructor:
+        In Robot or Subsystem constructor:
 
         .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
             :language: java
@@ -190,7 +190,7 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
     .. tab-item:: C++ (Source)
      :sync: C++ (Source)
 
-        In robotInit or Subsystem constructor:
+        In Robot or Subsystem constructor:
 
         .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
             :language: c++
@@ -203,7 +203,7 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
 
        .. code-block:: python
 
-          def robotInit(self):
+          def Robot(self):
               frontLeft = wpilib.Spark(1)
               rearLeft = wpilib.Spark(2)
               left = wpilib.MotorControllerGroup(frontLeft, rearLeft)

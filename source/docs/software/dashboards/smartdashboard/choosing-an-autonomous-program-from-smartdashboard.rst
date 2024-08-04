@@ -45,7 +45,7 @@ In ``Robot.java`` / ``Robot.h``, create a variable to hold a reference to a ``Se
 Setting Up Options
 ^^^^^^^^^^^^^^^^^^
 
-The chooser allows you to pick from a list of defined elements, in this case the strings we defined above. In ``robotInit``, add your options created as strings above using ``setDefaultOption`` or ``addOption``. ``setDefaultOption`` will be the one selected by default when the dashboard starts. The ``putData`` function will push it to the dashboard on your driver station computer.
+The chooser allows you to pick from a list of defined elements, in this case the strings we defined above. In ``Robot``, add your options created as strings above using ``setDefaultOption`` or ``addOption``. ``setDefaultOption`` will be the one selected by default when the dashboard starts. The ``putData`` function will push it to the dashboard on your driver station computer.
 
 .. tab-set::
 
