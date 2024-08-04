@@ -24,7 +24,7 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
         lambda m: f"{m.group(1)}{m.group(2)}\n{underfix * len(m.group(2))}\n",
         text,
     )
-    # breakpoint()
+
     text = heading("#", "=")
     text = heading("##", "-")
     text = heading("###", "^")
@@ -65,10 +65,6 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
 
     code = lambda: re.sub(find, replace, text, flags=re.DOTALL)
     text = code()
-
-    "redown, redown, redown, redown"
-    inline_code = lambda: re.sub(r"(\b|\s|^)`([^`]+)`(\b|\s|[^\w]|$)", r"\1``\2``\3", text)
-    text = inline_code()
 
     # Path(app.srcdir, docname).with_suffix(".rd.rst").write_text(text)
     return text
