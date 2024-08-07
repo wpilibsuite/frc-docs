@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
 Using the WPILib Classes to Drive your Robot
-======================================================
+============================================
 
 WPILib includes many classes to help make your robot get driving faster.
 
@@ -32,7 +32,7 @@ Drive Class Conventions
 Motor Inversion
 ^^^^^^^^^^^^^^^
 
-As of 2022, the right side of the drivetrain is **no longer** inverted by default. It is the responsibility of the user to manage proper inversions for their drivetrain. Users can invert motors by calling ``setInverted()``/``SetInverted()`` on their motor objects.
+It is the responsibility of the user to manage proper inversions for their drivetrain. Users can invert motors by calling ``setInverted()``/``SetInverted()`` on their motor objects. Typically for differential drive trains, one side must be inverted to avoid spinning in circles, since the forward direction of each side of the tank drive is opposite of each other.
 
 .. tab-set-code::
 
