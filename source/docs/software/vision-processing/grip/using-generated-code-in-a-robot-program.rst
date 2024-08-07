@@ -70,7 +70,7 @@ In this first part of the program you can see all the import statements for the 
     .. code-block:: java
 
         @Override
-        public void robotInit() {
+        public Robot() {
             UsbCamera camera = CameraServer.startAutomaticCapture();
             camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
 
@@ -89,7 +89,7 @@ In this first part of the program you can see all the import statements for the 
             drive = new DifferentialDrive(left, right);
         }
 
-The **robotInit()** method is called once when the program starts up. It creates a **CameraServer** instance that begins
+The **Robot()** method is called once when the program starts up. It creates a **CameraServer** instance that begins
 capturing images at the requested resolution (IMG_WIDTH by IMG_HEIGHT).
 
 Next an instance of the class **VisionThread** is created. VisionThread begins capturing images from the camera asynchronously

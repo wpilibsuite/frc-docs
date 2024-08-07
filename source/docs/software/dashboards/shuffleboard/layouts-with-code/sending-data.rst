@@ -46,7 +46,7 @@ If data needs to be updated (for example, the output of some calculation done on
 
       from wpilib.shuffleboard import Shuffleboard
 
-      def robotInit(self):
+      def Robot(self):
          tab = Shuffleboard.getTab("Vision")
          self.distanceEntry = tab.add("Distance to target", 0).getEntry()
 

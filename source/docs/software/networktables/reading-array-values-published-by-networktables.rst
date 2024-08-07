@@ -14,7 +14,7 @@ You can verify the names of the NetworkTables topics used for publishing the val
 
 In this case the values are stored in a table called GRIP and a sub-table called myContoursReport. You can see that the values are in brackets and there are 2 values in this case for each topic. The NetworkTables topic names are centerX, centerY, area, height and width.
 
-Both of the following examples are extremely simplified programs that just illustrate the use of NetworkTables. All the code is in the robotInit() method so it's only run when the program starts up. In your programs, you would more likely get the values in code that is evaluating which direction to aim the robot in a command or a control loop during the autonomous or teleop periods.
+Both of the following examples are extremely simplified programs that just illustrate the use of NetworkTables. All the code is in the Robot() method so it's only run when the program starts up. In your programs, you would more likely get the values in code that is evaluating which direction to aim the robot in a command or a control loop during the autonomous or teleop periods.
 
 Writing a Program to Access the Topics
 --------------------------------------
@@ -26,7 +26,7 @@ Writing a Program to Access the Topics
       DoubleArraySubscriber areasSub;
 
       @Override
-      public void robotInit() {
+      public Robot() {
         NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport");
         areasSub = table.getDoubleArrayTopic("area").subscribe(new double[] {});
       }
@@ -48,7 +48,7 @@ Writing a Program to Access the Topics
 
       nt::DoubleArraySubscriber areasSub;
 
-      void Robot::RobotInit() override {
+      void Robot::Robot() override {
         auto table = nt::NetworkTableInstance::GetDefault().GetTable("GRIP/myContoursReport");
         areasSub = table->GetDoubleArrayTopic("area").Subscribe({});
       }
@@ -67,7 +67,7 @@ Writing a Program to Access the Topics
 
    .. code-block:: python
 
-        def robotInit(self):
+        def Robot(self):
             table = ntcore.NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport")
             self.areasSub = table.getDoubleArrayTopic("area").subscribe([])
 

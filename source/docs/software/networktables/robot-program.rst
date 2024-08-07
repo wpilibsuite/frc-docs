@@ -20,7 +20,7 @@ The example robot program below publishes incrementing X and Y values to a table
           DoublePublisher xPub;
           DoublePublisher yPub;
 
-          public void robotInit() {
+          public Robot() {
             // Get the default instance of NetworkTables that was created automatically
             // when the robot program starts
             NetworkTableInstance inst = NetworkTableInstance.getDefault();
@@ -61,7 +61,7 @@ The example robot program below publishes incrementing X and Y values to a table
           nt::DoublePublisher xPub;
           nt::DoublePublisher yPub;
 
-          void RobotInit() {
+          void Robot() {
             // Get the default instance of NetworkTables that was created automatically
             // when the robot program starts
             auto inst = nt::NetworkTableInstance::GetDefault();
@@ -99,7 +99,7 @@ The example robot program below publishes incrementing X and Y values to a table
 
 
         class EasyNetworkTableExample(wpilib.TimedRobot):
-            def robotInit(self) -> None:
+            def Robot(self) -> None:
                 # Get the default instance of NetworkTables that was created automatically
                 # when the robot program starts
                 inst = ntcore.NetworkTableInstance.getDefault()

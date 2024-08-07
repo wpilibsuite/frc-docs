@@ -182,7 +182,7 @@ Displaying the robot heading on the dashboard
 
         // Use gyro declaration from above here
 
-        public void robotInit() {
+        public Robot() {
             // Places a compass indicator for the gyro heading on the dashboard
             Shuffleboard.getTab("Example tab").add(gyro);
         }
@@ -191,7 +191,7 @@ Displaying the robot heading on the dashboard
 
         // Use gyro declaration from above here
 
-        void Robot::RobotInit() {
+        void Robot::Robot() {
             // Places a compass indicator for the gyro heading on the dashboard
             frc::Shuffleboard.GetTab("Example tab").Add(gyro);
         }
@@ -200,7 +200,7 @@ Displaying the robot heading on the dashboard
 
         from wpilib.shuffleboard import Shuffleboard
 
-        def robotInit(self):
+        def Robot(self):
             # Use gyro declaration from above here
 
             # Places a compass indicator for the gyro heading on the dashboard
@@ -239,7 +239,7 @@ The following example shows how to stabilize heading using a simple P loop close
         DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
 
         @Override
-        public void robotInit() {
+        public Robot() {
             // Configures the encoder's distance-per-pulse
             // The robot moves forward 1 foot per encoder rotation
             // There are 256 pulses per encoder rotation
@@ -279,7 +279,7 @@ The following example shows how to stabilize heading using a simple P loop close
         frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
                                      [&](double output) { rightLeader.Set(output); }};
 
-        void Robot::RobotInit() {
+        void Robot::Robot() {
             // Invert the right side of the drivetrain. You might have to invert the other side
             rightLeader.SetInverted(true);
 
@@ -302,7 +302,7 @@ The following example shows how to stabilize heading using a simple P loop close
         from wpilib import MotorControllerGroup
         from wpilib.drive import DifferentialDrive
 
-        def robotInit(self):
+        def Robot(self):
             # Use gyro declaration from above here
 
             # The gain for a simple P loop
@@ -362,7 +362,7 @@ The following example shows how to stabilize heading using a simple P loop close
         DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
         @Override
-        public void robotInit() {
+        public Robot() {
             rightMotors.setInverted(true);
         }
 
@@ -401,7 +401,7 @@ The following example shows how to stabilize heading using a simple P loop close
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
-        void Robot::RobotInit() {
+        void Robot::Robot() {
           rightMotors.SetInverted(true);
         }
 
@@ -423,7 +423,7 @@ The following example shows how to stabilize heading using a simple P loop close
         from wpilib import MotorControllerGroup
         from wpilib.drive import DifferentialDrive
 
-        def robotInit(self):
+        def Robot(self):
             # Use gyro declaration from above here
 
             # The gain for a simple P loop
@@ -483,7 +483,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
         DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
         @Override
-        public void robotInit() {
+        public Robot() {
             rightMotors.setInverted(true);
         }
 
@@ -514,7 +514,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
         frc::DifferentialDrive drive{leftMotors, rightMotors};
 
-        void Robot::RobotInit() {
+        void Robot::Robot() {
           rightMotors.SetInverted(true);
         }
 
@@ -532,7 +532,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
         from wpilib import MotorControllerGroup
         from wpilib.drive import DifferentialDrive
 
-        def robotInit(self):
+        def Robot(self):
             # Use gyro declaration from above here
 
             # The gain for a simple P loop

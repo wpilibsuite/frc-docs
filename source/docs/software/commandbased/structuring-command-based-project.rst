@@ -27,9 +27,7 @@ As ``Robot`` (`Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjE
          :linenos:
          :lineno-start: 22
 
-In Java, an instance of ``RobotContainer`` should be constructed during the ``robotInit()`` method - this is important, as most of the declarative robot setup will be called from the ``RobotContainer`` constructor.
-
-In C++, this is not needed as RobotContainer is a value member and will be constructed during the construction of ``Robot``.
+In Java and C++, an instance of ``RobotContainer`` should be constructed during the ``Robot()`` method - this is important, as most of the declarative robot setup will be called from the ``RobotContainer`` constructor.
 
 .. tab-set::
 

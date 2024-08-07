@@ -79,7 +79,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
       from wpimath.geometry import Rotation2d
 
       class MyRobot:
-        def robotInit(self):
+        def Robot(self):
           # Locations for the swerve drive modules relative to the robot center.
           frontLeftLocation = Translation2d(0.381, 0.381)
           frontRightLocation = Translation2d(0.381, -0.381)
