@@ -11,6 +11,22 @@ Visual Studio Code provides many settings to speed up programming. The Java exte
 
 The end result should look something like this.
 
-.. image:: images/organize-imports/settings.png
+.. code-block:: json
+
+    {
+        "java.jdt.ls.java.home": "C:\\Users\\Public\\wpilib\\2024\\jdk",
+        "extensions.autoUpdate": false,
+        "extensions.ignoreRecommendations": true,
+        "update.mode": "none",
+        "update.showReleaseNotes": false,
+        "http.systemCertificates": false,
+        "terminal.integrated.env.windows": {
+            "JAVA_HOME": "C:\\Users\\Public\\wpilib\\2024\\jdk",
+            "PATH": "C:\\Users\\Public\\wpilib\\2024\\jdk\\bin;C:\\Users\\Public\\wpilib\\2024\\jdk\\bin;C:\\Users\\Public\\wpilib\\2024\\jdk\\bin;C:\\Users\\Public\\wpilib\\2024\\jdk\\bin;${env:PATH}"
+        },
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+    }
 
 Now whenever you save your files with :kbd:`Ctrl+S` or by clicking Save under the File dropdown, the necessary imports will be automatically inserted into your Java code for any classes you're using. If there is an ambiguous import, a dropdown will be provided for the user to select the correct one.
