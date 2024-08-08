@@ -160,7 +160,7 @@ Digital and analog pressure sensor ports are built into the device, increasing t
 Motor Controllers
 -----------------
 
-There are a variety of different :ref:[motor controllers](docs/software/hardware-apis/index:Hardware APIs] which work with the FRC Control System and are approved for use. These devices are used to provide variable voltage control of the brushed and brushless DC motors used in FRC. They are listed here in order of [usage](https://www.firstinspires.org/robotics/frc/blog/2021-beta-testing-usage-report).
+There are a variety of different :ref:[motor controllers](docs/software/hardware-apis/index:Hardware APIs) which work with the FRC Control System and are approved for use. These devices are used to provide variable voltage control of the brushed and brushless DC motors used in FRC. They are listed here in order of [usage](https://www.firstinspires.org/robotics/frc/blog/2021-beta-testing-usage-report).
 
 .. note:: 3rd Party CAN control is not supported from WPILib. See this section on :ref:`docs/software/can-devices/third-party-devices:Third-Party CAN Devices` for more information.
 

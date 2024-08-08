@@ -96,9 +96,17 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
         text = heading("####", "~")
 
         "redown, redown, redown, redown"
+        role_links = lambda: re.sub(
+            r"(:.\w+?:)\[([^\]\n]+?)\]\(([^)]+?)\)",
+            r"\1`\2 <\3>` ",
+            text,
+        )
+        text = role_links()
+
+        "redown, redown, redown, redown"
         links = lambda: re.sub(
-            r"(\b|\s|^)\[([^\]\n]+)\]\(([^)]+)\)(\b|\s|[^\w]|$)",
-            r"\1`\2 <\3>`__\4",
+            r"(?<!:)\[([^\]\n]+?)\]\(([^)]+?)\)",
+            r"`\1 <\2>`__ ",
             text,
         )
         text = links()
@@ -113,7 +121,7 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
 
     text = "".join(chunk.text for chunk in chunks)
 
-    # Path(app.srcdir, docname).with_suffix(".rd").write_text(text)
+    Path(app.srcdir, docname).with_suffix(".rd").write_text(text)
     return text
 
 
