@@ -958,7 +958,7 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
 Subscribing to Multiple Topics
 ------------------------------
 
-While in most cases it's only necessary to subscribe to individual topics, it is sometimes useful (e.g. in dashboard applications) to subscribe and get value updates for changes to multiple topics. Listeners (see :ref:[docs/software/networktables/listening-for-change:listening for changes`) can be used directly, but creating a ``MultiSubscriber`` (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/MultiSubscriber.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_multi_subscriber.html)) allows specifying subscription options and reusing the same subscriber for multiple listeners.
+While in most cases it's only necessary to subscribe to individual topics, it is sometimes useful (e.g. in dashboard applications) to subscribe and get value updates for changes to multiple topics. Listeners (see :ref:`docs/software/networktables/listening-for-change:listening for changes`) can be used directly, but creating a ``MultiSubscriber`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/MultiSubscriber.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_multi_subscriber.html)) allows specifying subscription options and reusing the same subscriber for multiple listeners.
 
 .. tab-set::
 
