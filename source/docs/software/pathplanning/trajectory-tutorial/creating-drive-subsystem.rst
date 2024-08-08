@@ -3,7 +3,7 @@ Step 3: Creating a Drive Subsystem
 
 Now that our drive is characterized, it is time to start writing our robot code *proper*.  As mentioned before, we will use the :ref:`command-based <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework for our robot code.  Accordingly, our first step is to write a suitable drive :ref:`subsystem <docs/software/commandbased/subsystems:Subsystems>` class.
 
-The full drive class from the RamseteCommand Example Project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__) can be seen below.  The rest of the article will describe the steps involved in writing this class.
+The full drive class from the RamseteCommand Example Project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand)) can be seen below.  The rest of the article will describe the steps involved in writing this class.
 
 .. tab-set::
 
@@ -121,7 +121,7 @@ We wrap the measured encoder values in a ``DifferentialDriveWheelSpeeds`` object
 Configuring the Gyroscope
 -------------------------
 
-The gyroscope measures the rate of change of the robot's heading (which can then be integrated to provide a measurement of the robot's heading relative to when it first turned on).  In our example, we use the `Analog Devices ADXRS450 FRC Gyro Board <https://www.analog.com/en/landing-pages/001/first.html>`__, which was included in the kit of parts for several years:
+The gyroscope measures the rate of change of the robot's heading (which can then be integrated to provide a measurement of the robot's heading relative to when it first turned on).  In our example, we use the [Analog Devices ADXRS450 FRC Gyro Board](https://www.analog.com/en/landing-pages/001/first.html), which was included in the kit of parts for several years:
 
 .. tab-set::
 

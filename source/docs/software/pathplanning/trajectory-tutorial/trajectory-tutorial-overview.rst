@@ -18,7 +18,7 @@ The goal of this tutorial is to provide "end-to-end" instruction on implementing
 
 This tutorial is intended to be approachable for teams without a great deal of programming expertise.  While the WPILib library offers significant flexibility in the manner in which its trajectory-following features are implemented, closely following the implementation outlined in this tutorial should provide teams with a relatively-simple, clean, and repeatable solution for autonomous movement.
 
-The full robot code for this tutorial can be found in the RamseteCommand Example Project (`Java <https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__).
+The full robot code for this tutorial can be found in the RamseteCommand Example Project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand)).
 
 Why Trajectory Following?
 -------------------------
@@ -34,7 +34,7 @@ Required Equipment
 
 To follow this tutorial, you will need ready access to the following materials:
 
-1. A differential-drive robot (such as the `AndyMark AM14U5 <https://www.andymark.com/products/am14u5-6-wheel-drop-center-robot-drive-base-first-kit-of-parts-chassis>`__), equipped with:
+1. A differential-drive robot (such as the [AndyMark AM14U5](https://www.andymark.com/products/am14u5-6-wheel-drop-center-robot-drive-base-first-kit-of-parts-chassis)), equipped with:
 
   * Quadrature encoders for measuring the wheel rotation of each side of the drive.
   * A gyroscope for measuring robot heading.

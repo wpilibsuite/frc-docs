@@ -12,7 +12,7 @@ Encoders are devices used to measure motion (usually, the rotation of a shaft).
 Quadrature Encoders - The :code:`Encoder` Class
 -----------------------------------------------
 
-WPILib provides support for quadrature encoders through the :code:`Encoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_encoder.html>`__).  This class provides a simple API for configuring and reading data from encoders.
+WPILib provides support for quadrature encoders through the :code:[Encoder` class (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_encoder.html)).  This class provides a simple API for configuring and reading data from encoders.
 
 .. image:: images/encoders-software/encoding-direction.png
     :alt: Quadrature Encoders determine direction by observing which pulse channel (A or B) receives a pulse first.
@@ -26,12 +26,12 @@ The FPGA handles quadrature encoders either through a counter module or an encod
 
 Examples of quadrature encoders:
 
-- `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice
-- `CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution>`__
+- [AMT103-V](https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v) available through FIRST Choice
+- [CIMcoder](https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution)
 - `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_
-- `Grayhill 63r <https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf>`__
-- `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
-- `US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__
+- [Grayhill 63r](https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf)
+- [REV Through Bore Encoder](https://www.revrobotics.com/rev-11-1271/)
+- [US Digital E4T](https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit)
 
 Initializing a Quadrature Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -240,17 +240,17 @@ To reset a quadrature encoder to a distance reading of zero, call the :code:`res
 Duty Cycle Encoders - The :code:`DutyCycleEncoder` class
 --------------------------------------------------------
 
-WPILib provides support for duty cycle (also marketed as :term:`PWM`) encoders through the :code:`DutyCycleEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_duty_cycle_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+WPILib provides support for duty cycle (also marketed as :term:[PWM`) encoders through the :code:`DutyCycleEncoder` class (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_duty_cycle_encoder.html)).  This class provides a simple API for configuring and reading data from duty cycle encoders.
 
 The roboRIO's FPGA handles duty cycle encoders automatically.
 
 Examples of duty cycle encoders:
 
-- `AndyMark Mag Encoder <https://www.andymark.com/products/am-mag-encoder>`__
-- `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`__
-- `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
-- `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
-- `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
+- [AndyMark Mag Encoder](https://www.andymark.com/products/am-mag-encoder)
+- [CTRE Mag Encoder](https://store.ctr-electronics.com/srx-mag-encoder/)
+- [REV Through Bore Encoder](https://www.revrobotics.com/rev-11-1271/)
+- [Team 221 Lamprey2](https://www.andymark.com/products/lamprey-absolute-encoder)
+- [US Digital MA3](https://www.usdigital.com/products/encoders/absolute/shaft/ma3/)
 
 Initializing a Duty Cycle Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -358,13 +358,13 @@ To reset an encoder so the current distance is 0, call the :code:`reset()` metho
 Analog Encoders - The :code:`AnalogEncoder` Class
 -------------------------------------------------
 
-WPILib provides support for analog absolute encoders through the :code:`AnalogEncoder` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html>`__).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+WPILib provides support for analog absolute encoders through the :code:[AnalogEncoder` class (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html)).  This class provides a simple API for configuring and reading data from duty cycle encoders.
 
 Examples of analog encoders:
 
-- `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
-- `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/products/thrifty-absolute-magnetic-encoder>`__
-- `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
+- [Team 221 Lamprey2](https://www.andymark.com/products/lamprey-absolute-encoder)
+- [Thrifty Absolute Magnetic Encoder](https://www.thethriftybot.com/products/thrifty-absolute-magnetic-encoder)
+- [US Digital MA3](https://www.usdigital.com/products/encoders/absolute/shaft/ma3/)
 
 Initializing an Analog Encoder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

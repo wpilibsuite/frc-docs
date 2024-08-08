@@ -77,7 +77,7 @@ The sent trajectory can be viewed with :ref:`Glass <docs/software/dashboards/gla
 .. image:: images/sent-trajectory.png
    :alt: Picture containing Field2d and the generated trajectory
 
-.. note:: The above example which uses the RamseteController (`Java <https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java>`__ / `C++ <https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp>`__ / `Python <https://github.com/robotpy/examples/tree/2024.0.0b4/RamseteController>`__) will not show the sent trajectory until autonomous is enabled at least once.
+.. note:: The above example which uses the RamseteController ([Java](https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java) / [C++](https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp) / [Python](https://github.com/robotpy/examples/tree/2024.0.0b4/RamseteController)) will not show the sent trajectory until autonomous is enabled at least once.
 
 Viewing the Robot Pose in Glass
 -------------------------------
@@ -90,7 +90,7 @@ Once the widget appears, you can resize and place it on the Glass workspace as y
 
 You can choose from an existing field layout using the :guilabel:`Image` drop-down. Or you can select a custom file by setting the :guilabel:`Image` to ``Custom`` and selecting :guilabel:`Choose image...`. You can choose to either select an image file or a PathWeaver JSON file as long as the image file is in the same directory.  Choosing the JSON file will automatically import the correct location of the field in the image and the correct size of the field.
 
-.. note:: You can retrieve the latest field image and JSON files from `here <https://github.com/wpilibsuite/allwpilib/tree/main/fieldImages/src/main/native/resources/edu/wpi/first/fields>`__. This is the same image and JSON that are used when generating paths using :ref:`PathWeaver <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
+.. note:: You can retrieve the latest field image and JSON files from [here](https://github.com/wpilibsuite/allwpilib/tree/main/fieldImages/src/main/native/resources/edu/wpi/first/fields). This is the same image and JSON that are used when generating paths using :ref:`PathWeaver <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
 
 .. image:: images/field2d-options.png
 
@@ -115,7 +115,7 @@ Now, uncheck the :guilabel:`Arrows` checkbox. This will cause our trajectory to 
 Viewing Pose Data with AdvantageScope
 -------------------------------------
 
-:ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an alternative option for viewing pose data from a ``Field2d`` object, including data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. Both 2D and 3D visualizations are supported. See the documentation for the `odometry <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/ODOMETRY.md>`__ and `3D field <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/3D-FIELD.md>`__ tabs for more details.
+:ref:[AdvantageScope](docs/software/dashboards/advantagescope:AdvantageScope>` is an alternative option for viewing pose data from a ``Field2d`` object, including data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. Both 2D and 3D visualizations are supported. See the documentation for the `odometry <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/ODOMETRY.md) and [3D field](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/3D-FIELD.md) tabs for more details.
 
 .. image:: images/advantagescope-field2d.png
    :alt: Screenshot of an AdvantageScope window displaying a robot and trajectory on a 3D field.

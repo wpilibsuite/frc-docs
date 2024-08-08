@@ -26,13 +26,13 @@ Driver Station randomly disabled
 
 Driver Station 24.0.1 from Game Tools 2024 Patch 1 contains an update to the safety controls that may resolve the issue in certain circumstances. If the issue is still seen with this version installed, please continue with the troubleshooting steps below.
 
-The Driver Station software has new tools for control packet delays that could cause this. The control system team requests that teams that experience this issue post screenshots of the :doc:`Driver Station Timing window </docs/software/driverstation/driver-station-timing-viewer>` to `<https://github.com/wpilibsuite/allwpilib/issues/6174>`__
+The Driver Station software has new tools for control packet delays that could cause this. The control system team requests that teams that experience this issue post screenshots of the :doc:[Driver Station Timing window](/docs/software/driverstation/driver-station-timing-viewer) to https://github.com/wpilibsuite/allwpilib/issues/6174
 
 Some teams have seen this happen only when the robot is operated wirelessly, but not when operated via USB or ethernet tether. Some potential mitigations:
 
 1. Try relocating the robot radio to a better location (high in the robot and away from motors or large amounts of metal).
 2. :doc:`Measure your robot's bandwidth </docs/networking/networking-introduction/measuring-bandwidth-usage>` and ensure you have margin to the 4 Mbps bandwidth limit
-3. See if the Wi-Fi environment is congested using a tool like `WiFi Analyzer <https://apps.microsoft.com/detail/9NBLGGH33N0N?hl=en-US&gl=US>`__. As the 5 ghz WiFi spectrum has more channels and is less crowded, switching the robot radio to operate at 5 ghz will likely improve WiFi communication.
+3. See if the Wi-Fi environment is congested using a tool like [WiFi Analyzer](https://apps.microsoft.com/detail/9NBLGGH33N0N?hl=en-US&gl=US). As the 5 ghz WiFi spectrum has more channels and is less crowded, switching the robot radio to operate at 5 ghz will likely improve WiFi communication.
 4. Update the Wi-Fi drivers for the computer.
 5. If you operate multiple robots in close proximity in access point mode, setting up a router and operating the radios in bridge mode will reduce the number of wireless access points and may improve communications
 
@@ -75,7 +75,7 @@ Radio Second Port Sometimes Fails to Communicate
 
 **Issue:** There is a rare occurrence in the OM5P Radios that causes the second Ethernet port (the one farthest from the power plug) to not communicate.
 
-**Workaround:** Generally, power cycling the radio will restablish communication with the second port. Alternately, utilize a network switch such as the tp-link switch formerly available from `FIRST Choice <https://www.amazon.com/gp/product/B000FNFSPY>`__ or the `brainboxes SW-005 <https://www.brainboxes.com/product/industrial-ethernet-switches/fast-ethernet/sw-005>`__ and plug all ethernet devices into the network switch and then plug the switch into the radio's first Ethernet port. This also allows easier tethering while at competition.
+**Workaround:** Generally, power cycling the radio will restablish communication with the second port. Alternately, utilize a network switch such as the tp-link switch formerly available from [FIRST Choice](https://www.amazon.com/gp/product/B000FNFSPY) or the [brainboxes SW-005](https://www.brainboxes.com/product/industrial-ethernet-switches/fast-ethernet/sw-005) and plug all ethernet devices into the network switch and then plug the switch into the radio's first Ethernet port. This also allows easier tethering while at competition.
 
 Onboard I2C Causing System Lockups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,8 +86,8 @@ Onboard I2C Causing System Lockups
 
 Several alternatives exist for accessing the REV color sensor without using the roboRIO I2C port. A similar approach could be used for other I2C sensors.
 
-- Use a `Raspberry Pi Pico <https://github.com/ThadHouse/picocolorsensor/>`__. Supports up to 2 REV color sensors, sends data to the roboRIO via serial. The Pi Pico is low cost (less than $10) and readily available.
-- Use a `Raspberry Pi <https://github.com/PeterJohnson/rpi-colorsensor/>`__. Supports 1-4 color sensors, sends data to the roboRIO via NetworkTables. Primarily useful for teams already using a Raspberry Pi as a coprocessor.
+- Use a [Raspberry Pi Pico](https://github.com/ThadHouse/picocolorsensor/). Supports up to 2 REV color sensors, sends data to the roboRIO via serial. The Pi Pico is low cost (less than $10) and readily available.
+- Use a [Raspberry Pi](https://github.com/PeterJohnson/rpi-colorsensor/). Supports 1-4 color sensors, sends data to the roboRIO via NetworkTables. Primarily useful for teams already using a Raspberry Pi as a coprocessor.
 
 Updating Properties on roboRIO 2.0 may be slow or hang
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,7 +114,7 @@ Invalid build due to missing GradleRIO
 
 **Workaround:**
 
-Delete your Gradle cache located under ``~$USER_HOME/.gradle``. Windows machines may need to enable the ability to `view hidden files <https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5>`__. This issue has only shown up on Windows so far. Please `report <https://github.com/wpilibsuite/frc-docs/issues/new>`__ this issue if you get it on an alternative OS.
+Delete your Gradle cache located under ``~$USER_HOME/.gradle``. Windows machines may need to enable the ability to [view hidden files](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5). This issue has only shown up on Windows so far. Please [report](https://github.com/wpilibsuite/frc-docs/issues/new) this issue if you get it on an alternative OS.
 
 Chinese characters in Driver Station Log
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -153,7 +153,7 @@ Issues with WPILib Dashboards and Simulation on Windows N Editions
 - Smartdashbard will crash on start-up
 - Robot Simulation will crash on start-up
 
-**Solution:** Install the `Media Feature Pack <https://www.microsoft.com/en-us/software-download/mediafeaturepack>`__
+**Solution:** Install the [Media Feature Pack](https://www.microsoft.com/en-us/software-download/mediafeaturepack)
 
 Python - CameraServer/cscore runs out of memory on roboRIO 1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -166,7 +166,7 @@ Python - CameraServer/cscore runs out of memory on roboRIO 1
 
     python -m robotpy installer niweb disable
 
-.. seealso:: `Github issue <https://github.com/robotpy/mostrobotpy/issues/61>`__
+.. seealso:: [Github issue](https://github.com/robotpy/mostrobotpy/issues/61)
 
 Fixed in WPILib 2024.2.1
 ------------------------

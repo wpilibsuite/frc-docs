@@ -160,6 +160,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important::  If at any time, you decide to reset your gyroscope or wheel encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel encoder positions.
 
-.. note:: The implementation of ``getPosition() / GetPosition()`` above is left to the user. The idea is to get the module position (distance and angle) from each module. For a full example, see here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`_ / `Python <https://github.com/robotpy/examples/tree/main/SwerveBot>`__
+.. note:: The implementation of ``getPosition() / GetPosition()`` above is left to the user. The idea is to get the module position (distance and angle) from each module. For a full example, see here: [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`_ / `Python <https://github.com/robotpy/examples/tree/main/SwerveBot)
 
 In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.
