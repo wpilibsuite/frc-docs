@@ -250,7 +250,7 @@ FRC Glossary
       A way for teams to test their code without having an actual robot available.
 
    software library
-      A collection of code that can be imported into and used by other software. See [software library](https://en.wikipedia.org/wiki/Library_(computing)) on Wikipedia for more info.
+      A collection of code that can be imported into and used by other software. See [software library](https://en.wikipedia.org/wiki/Library_%28computing%29) on Wikipedia for more info.
 
    solenoid valve
       A airflow-controlling valve which is actuated by a small electromagnet. Strictly speaking, the *solenoid* is the coil of wire which forms the electromagnet, and the *valve* is the mechanism which actually redirects airflow. However, the set of solenoid and valve together is often simply called "a solenoid". See [solenoid valve](https://en.wikipedia.org/wiki/Solenoid_valve). on Wikipedia for more info.

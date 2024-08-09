@@ -121,7 +121,7 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
 
     text = "".join(chunk.text for chunk in chunks)
 
-    Path(app.srcdir, docname).with_suffix(".rd").write_text(text)
+    # Path(app.srcdir, docname).with_suffix(".rd").write_text(text)
     return text
 
 
