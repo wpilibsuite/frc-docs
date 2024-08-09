@@ -39,14 +39,14 @@ If using a non Windows OS you will need to copy this image file to that computer
 .. figure:: images/roborio2-imaging/sd_button.png
    :alt: Click the SD folder icon will bring up the location of the images in windows explorer.
 
-A `microSD to USB dongle <https://www.amazon.com/gp/product/B0779V61XB>`__ works well for writing to microSD cards.
+A [microSD to USB dongle](https://www.amazon.com/gp/product/B0779V61XB) works well for writing to microSD cards.
 
 .. note:: Raspberry Pi images will not boot on a roboRIO because the OS and drivers are incompatible. Similarly, a roboRIO image is not compatible with Raspberry Pi controller boards.
 
 Writing the image with balenaEtcher
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Download and install `balenaEtcher <https://www.balena.io/etcher/>`__.
+- Download and install [balenaEtcher](https://www.balena.io/etcher/).
 - Launch
 - :guilabel:`Flash from file` -> locate the image file you want to copy to the microSD card
 - :guilabel:`Select target` -> select the destination microSD device
@@ -55,7 +55,7 @@ Writing the image with balenaEtcher
 Writing the image with Raspberry Pi Imager
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Download and install from `Raspberry Pi Imager <https://www.raspberrypi.com/software/>`__.
+- Download and install from [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
 - Launch
 - :guilabel:`Choose OS` -> :guilabel:`Use Custom` -> select the image file you want to copy to the microSD card
 - :guilabel:`Choose Storage` -> select the destination microSD device

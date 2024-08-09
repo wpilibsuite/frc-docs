@@ -3,14 +3,14 @@
 Git Version Control Introduction
 ================================
 
-.. important:: A more in-depth guide on Git is available on the `Git website <https://git-scm.com/book/en/v2>`__.
+.. important:: A more in-depth guide on Git is available on the [Git website](https://git-scm.com/book/en/v2).
 
 `Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the Linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
 
 - Separation of testing environments into *branches*
 - Ability to navigate to a particular *commit* without removing history
 - Ability to manage *commits* in various ways, including combining them
-- Various other features, see `here <https://git-scm.com/about>`__
+- Various other features, see [here](https://git-scm.com/about)
 
 Prerequisites
 -------------
@@ -23,7 +23,7 @@ You have to download and install Git from the following links:
 - `macOS <https://git-scm.com/download/mac>`_
 - `Linux <https://git-scm.com/download/linux>`_
 
-.. note:: You may need to add Git to your `path <https://www.google.com/search?q=adding+git+to+path>`__
+.. note:: You may need to add Git to your [path](https://www.google.com/search?q=adding+git+to+path)
 
 Git Vocabulary
 --------------
@@ -95,7 +95,7 @@ You should see a screen similar to this
 
 .. note:: The keyboard shortcut :kbd:`Ctrl+~` can be used to open a terminal in Visual Studio Code for Windows.
 
-Now you'll want to open a PowerShell window and navigate to your project directory. An excellent tutorial on PowerShell can be found `here <https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please consult your search engine on how to open a terminal on alternative operating systems.
+Now you'll want to open a PowerShell window and navigate to your project directory. An excellent tutorial on PowerShell can be found [here](https://programminghistorian.org/en/lessons/intro-to-powershell). Please consult your search engine on how to open a terminal on alternative operating systems.
 
 .. image:: images/git-getting-started/powershell.png
    :alt: An empty powershell window.
@@ -272,7 +272,7 @@ Gitignore
 
 A ``.gitignore`` file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be committed. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
 
-Additional Information can be found `here <https://www.atlassian.com/git/tutorials/saving-changes/gitignore>`__.
+Additional Information can be found [here](https://www.atlassian.com/git/tutorials/saving-changes/gitignore).
 
 Hiding a Folder
 ^^^^^^^^^^^^^^^
@@ -293,6 +293,6 @@ EX: ``file-to-hide2.txt``
 Additional Information
 ----------------------
 
-A much more in-depth tutorial can be found at the official `git <https://git-scm.com/docs/gittutorial>`__ website.
+A much more in-depth tutorial can be found at the official [git](https://git-scm.com/docs/gittutorial) website.
 
 A guide for correcting common mistakes can be found at the git `flight rules <https://github.com/k88hudson/git-flight-rules/blob/master/README.md>`_ repository.

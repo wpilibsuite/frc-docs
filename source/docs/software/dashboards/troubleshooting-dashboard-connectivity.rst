@@ -50,7 +50,7 @@ Recognizing AdvantageScope Connectivity
 .. image:: images/troubleshooting-dashboard-connectivity/advantagescope-connection.png
    :alt: The titlebar of AdvantageScope showing a connection to 172.22.11.2
 
-AdvantageScope indicates if it is connected or not in the title bar. It shows the IP address it is connected to, or else the IP address it is attempting to connect to. See the `AdvantageScope Documentation <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/OPEN-LIVE.md>`__ for more on configuring the connection.
+AdvantageScope indicates if it is connected or not in the title bar. It shows the IP address it is connected to, or else the IP address it is attempting to connect to. See the [AdvantageScope Documentation](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/OPEN-LIVE.md) for more on configuring the connection.
 
 Troubleshooting Connectivity
 ----------------------------

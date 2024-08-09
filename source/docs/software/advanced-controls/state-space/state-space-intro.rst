@@ -1,7 +1,7 @@
 Introduction to State-Space Control
 ===================================
 
-.. note:: This article is from `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
+.. note:: This article is from [Controls Engineering in FRC](https://file.tavsys.net/control/controls-engineering-in-frc.pdf) by Tyler Veness with permission.
 
 From PID to Model-Based Control
 -------------------------------
@@ -10,7 +10,7 @@ When tuning PID controllers, we focus on fiddling with controller parameters rel
 
 Model-based control focuses on developing an accurate model of the :term:`system` (mechanism) we are trying to control. These models help inform :term:`gains <gain>` picked for feedback controllers based on the physical responses of the system, rather than an arbitrary proportional :term:`gain` derived through testing. This allows us not only to predict ahead of time how a system will react, but also test our controllers without a physical robot and save time debugging simple bugs.
 
-.. note:: State-space control makes extensive use of linear algebra. More on linear algebra in modern control theory, including an introduction to linear algebra and resources, can be found in Chapter 5 of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__.
+.. note:: State-space control makes extensive use of linear algebra. More on linear algebra in modern control theory, including an introduction to linear algebra and resources, can be found in Chapter 5 of [Controls Engineering in FRC](https://file.tavsys.net/control/controls-engineering-in-frc.pdf).
 
 If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or its sister classes, or used SysId to pick PID :term:`gains <gain>` for you, you're already familiar with model-based control! The ``kv`` and ``ka`` :term:`gains <gain>` can be used to describe how a motor (or arm, or drivetrain) will react to voltage. We can put these constants into standard state-space notation using WPILib's ``LinearSystem``, something we will do in a later article.
 
@@ -22,7 +22,7 @@ For the background vocabulary that will be used throughout this article, see the
 Introduction to Linear Algebra
 ------------------------------
 
-For a short and intuitive introduction to the core concepts of Linear Algebra, we recommend chapters 1 through 4 of `3Blue1Brown's Essence of linear algebra series <https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__ (Vectors, what even are they?, Linear combinations, span, and basis vectors, Linear transformations and matrices, and Matrix multiplication as composition).
+For a short and intuitive introduction to the core concepts of Linear Algebra, we recommend chapters 1 through 4 of [3Blue1Brown's Essence of linear algebra series](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) (Vectors, what even are they?, Linear combinations, span, and basis vectors, Linear transformations and matrices, and Matrix multiplication as composition).
 
 What is State-Space?
 --------------------
@@ -105,7 +105,7 @@ To trace a potential trajectory that a system could take through state-space, ch
 
 Note that near the edges of the phase portrait, the X axis wraps around as a rotation of :math:`\pi` radians counter clockwise and a rotation of :math:`\pi` radians clockwise will end at the same point.
 
-For more on differential equations and phase portraits, see `3Blue1Brown's Differential Equations video <https://www.youtube.com/watch?v=p_di4Zn4wz4>`__ -- they do a great job of animating the pendulum phase space at around 15:30.
+For more on differential equations and phase portraits, see [3Blue1Brown's Differential Equations video](https://www.youtube.com/watch?v=p_di4Zn4wz4) -- they do a great job of animating the pendulum phase space at around 15:30.
 
 Visualizing Feedforward
 ^^^^^^^^^^^^^^^^^^^^^^^

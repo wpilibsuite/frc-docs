@@ -1,12 +1,12 @@
 Profiling with VisualVM
 =======================
 
-This document is intended to familiarize the reader with the diagnostic tool that is `VisualVM <https://visualvm.github.io/>`__ for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot ``build.gradle``. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
+This document is intended to familiarize the reader with the diagnostic tool that is [VisualVM](https://visualvm.github.io/) for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot ``build.gradle``. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
 
 Unpacking VisualVM
 ------------------
 
-To begin, `download VisualVM <https://visualvm.github.io/download.html>`__ and unpack it to the WPILib installation folder. The folder is located at ``~/wpilib/`` where ``~`` indicates the users home directory. On Windows, this is ``C:\Users\Public\wpilib``.
+To begin, [download VisualVM](https://visualvm.github.io/download.html) and unpack it to the WPILib installation folder. The folder is located at ``~/wpilib/`` where ``~`` indicates the users home directory. On Windows, this is ``C:\Users\Public\wpilib``.
 
 Setting up Gradle
 -----------------
@@ -99,7 +99,7 @@ In this code snippet, we can identify 2 major causes of concern. A long running 
 Creating a Heap Dump
 --------------------
 
-Besides viewing the remote systems CPU and memory usage, VisualVM is most useful by creating a **Heap Dump**. When a Java object is created, it resides in an area of memory called the heap. When the heap is full, a process called `garbage collection <https://www.geeksforgeeks.org/garbage-collection-java/>`__ begins. Garbage collection can be a common cause of loop overruns in a traditional Java robot program.
+Besides viewing the remote systems CPU and memory usage, VisualVM is most useful by creating a **Heap Dump**. When a Java object is created, it resides in an area of memory called the heap. When the heap is full, a process called [garbage collection](https://www.geeksforgeeks.org/garbage-collection-java/) begins. Garbage collection can be a common cause of loop overruns in a traditional Java robot program.
 
 To begin, ensure you are on the :guilabel:`Monitor` tab and click :guilabel:`Heap Dump`.
 
@@ -139,4 +139,4 @@ with an ``ArrayList`` of ~10000 integers.
 Additional Info
 ---------------
 
-For more information on VisualVM, check out the `VisualVM documentation pages <https://visualvm.github.io/documentation.html>`__.
+For more information on VisualVM, check out the [VisualVM documentation pages](https://visualvm.github.io/documentation.html).

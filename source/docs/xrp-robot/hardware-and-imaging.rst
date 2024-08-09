@@ -3,9 +3,9 @@ XRP Hardware, Assembly and Imaging
 
 To get started with the XRP, you will need to have the necessary hardware.
 
-1. XRP Kit `from SparkFun <https://www.sparkfun.com/products/22230>`__ or `from DigiKey <https://www.digikey.com/en/products/detail/sparkfun-electronics/KIT-22296/19117674>`__ - Available at a discount for educational institutions or FIRST teams. See individual vendors for details.
-2. `Micro-USB cable <https://www.amazon.com/dp/B0711PVX6Z>`__ - Ensure that this is a data cable
-3. `4 AA batteries <https://www.amazon.com/gp/product/B07TW9T8JW/>`__ - Rechargeable (`example <https://www.amazon.com/AmazonBasics-AA-High-Capacity-Rechargeable-4-Pack/dp/B081FF82RK>`__) is best (don't forget the charger)
+1. XRP Kit [from SparkFun](https://www.sparkfun.com/products/22230) or [from DigiKey](https://www.digikey.com/en/products/detail/sparkfun-electronics/KIT-22296/19117674) - Available at a discount for educational institutions or FIRST teams. See individual vendors for details.
+2. [Micro-USB cable](https://www.amazon.com/dp/B0711PVX6Z) - Ensure that this is a data cable
+3. [4 AA batteries](https://www.amazon.com/gp/product/B07TW9T8JW/) - Rechargeable ([example](https://www.amazon.com/AmazonBasics-AA-High-Capacity-Rechargeable-4-Pack/dp/B081FF82RK)) is best (don't forget the charger)
 
 Assembly
 --------
@@ -26,7 +26,7 @@ Download
 
 The XRP firmware must be downloaded and written to the Pico W. Click on ``Assets`` at the bottom of the description to see the available image files:
 
-`XRP-WPILib Firmware <https://github.com/wpilibsuite/xrp-wpilib-firmware/releases>`__
+[XRP-WPILib Firmware](https://github.com/wpilibsuite/xrp-wpilib-firmware/releases)
 
 Imaging
 ^^^^^^^

@@ -14,7 +14,7 @@ There are getters the current angular rate and heading and functions for zeroing
 ADIS16448
 ---------
 
-The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html>`__, :external:py:class:`Python <wpilib.ADIS16448_IMU>`).  See the `Analog Devices ADIS16448 documentation <https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional information and examples.
+The ADIS16448 uses the :code:`ADIS16448_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html), :external:py:class:[Python](wpilib.ADIS16448_IMU)).  See the [Analog Devices ADIS16448 documentation](https://wiki.analog.com/first/adis16448_imu_frc) for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16448 is now built into WPILib.
 
@@ -40,7 +40,7 @@ The ADIS16448 uses the :code:`ADIS16448_IMU` class (`Java <https://github.wpilib
 ADIS16470
 ---------
 
-The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html>`__, :external:py:class:`Python <wpilib.ADIS16470_IMU>`).  See the `Analog Devices ADIS16470 documentation <https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional information and examples.
+The ADIS16470 uses the :code:`ADIS16470_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html), :external:py:class:[Python](wpilib.ADIS16470_IMU)).  See the [Analog Devices ADIS16470 documentation](https://wiki.analog.com/first/adis16470_imu_frc) for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16470 is now built into WPILib.
 
@@ -64,7 +64,7 @@ The ADIS16470 uses the :code:`ADIS16470_IMU` class (`Java <https://github.wpilib
 ADXRS450_Gyro
 -------------
 
-The :code:`ADXRS450_Gyro` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html>`__, :external:py:class:`Python <wpilib.ADXRS450_Gyro>`) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
+The :code:[ADXRS450_Gyro` class (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html), :external:py:class:`Python <wpilib.ADXRS450_Gyro>`) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
 
 .. note:: ADXRS450 Gyro accumulation is handled through special circuitry in the FPGA; accordingly only a single instance of :code:`ADXRS450_Gyro` may be used.
 
@@ -88,7 +88,7 @@ The :code:`ADXRS450_Gyro` class (`Java <https://github.wpilib.org/allwpilib/docs
 AnalogGyro
 ----------
 
-The :code:`AnalogGyro` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_gyro.html>`__, :external:py:class:`Python <wpilib.AnalogGyro>`) provides support for any single-axis gyro with an analog output.
+The :code:[AnalogGyro` class (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_gyro.html), :external:py:class:`Python <wpilib.AnalogGyro>`) provides support for any single-axis gyro with an analog output.
 
 .. note:: Gyro accumulation is handled through special circuitry in the FPGA; accordingly, :code:`AnalogGyro`\`s may only be used on analog ports 0 and 1.
 
@@ -112,7 +112,7 @@ The :code:`AnalogGyro` class (`Java <https://github.wpilib.org/allwpilib/docs/re
 navX
 ----
 
-The navX uses the :code:`AHRS` class.  See the `navX documentation <https://pdocs.kauailabs.com/navx-mxp/guidance/selecting-an-interface/>`__ for additional connection types.
+The navX uses the :code:`AHRS` class.  See the [navX documentation](https://pdocs.kauailabs.com/navx-mxp/guidance/selecting-an-interface/) for additional connection types.
 
 .. tab-set-code::
 
@@ -136,7 +136,7 @@ The navX uses the :code:`AHRS` class.  See the `navX documentation <https://pdoc
 Pigeon
 ------
 
-The Pigeon should use the :code:`WPI_PigeonIMU` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The `Pigeon IMU User's Guide <https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf>`__ contains full details on using the Pigeon.
+The Pigeon should use the :code:`WPI_PigeonIMU` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The [Pigeon IMU User's Guide](https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf) contains full details on using the Pigeon.
 
 .. tab-set-code::
 

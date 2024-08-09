@@ -114,7 +114,7 @@ If you are unable to image your roboRIO, troubleshooting steps include:
 - Try booting the roboRIO into Safe Mode by pressing and holding the reset button for at least 5 seconds.
 - Try a different USB Cable
 - Try a different PC
-- If the status LED is constantly flashing, and imaging in safe mode failed, follow the `roboRIO recovery instructions <https://knowledge.ni.com/KnowledgeArticleDetails?id=kA03q000000kOHkCAM&l=en-US>`__
+- If the status LED is constantly flashing, and imaging in safe mode failed, follow the [roboRIO recovery instructions](https://knowledge.ni.com/KnowledgeArticleDetails?id=kA03q000000kOHkCAM&l=en-US)
 
 If the correct roboRIO image version isn't available:
 

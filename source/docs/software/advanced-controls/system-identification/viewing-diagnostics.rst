@@ -94,7 +94,7 @@ Noisy Velocity Signals
 
 .. image:: images/velo-noise.png
 
-Many FRC setups suffer from poorly-installed encoders - errors in shaft concentricity (for optical encoders) and magnet location (For magnetic encoders) can both contribute to noisy velocity signals, as can inappropriate filtering settings.  Encoder noise will be immediately visible in your diagnostic plots, as can be seen above.  Encoder noise is especially common on the `toughbox mini <https://www.andymark.com/products/toughbox-mini-options>`__ gearboxes provided in the kit of parts.
+Many FRC setups suffer from poorly-installed encoders - errors in shaft concentricity (for optical encoders) and magnet location (For magnetic encoders) can both contribute to noisy velocity signals, as can inappropriate filtering settings.  Encoder noise will be immediately visible in your diagnostic plots, as can be seen above.  Encoder noise is especially common on the [toughbox mini](https://www.andymark.com/products/toughbox-mini-options) gearboxes provided in the kit of parts.
 
 System parameters can sometimes be accurately determined even from data polluted by encoder noise by increasing the window size setting.  However, this sort of encoder noise is problematic for robot code much the same way it is problematic for the system identification tool.  As the root cause of the noise is not known, it is recommended to try a different encoder setup if this is observed, either by moving the encoders to a different shaft, replacing them with a different type of encoder, or increasing the sample per average in project generation (adds an additional layer of filtering).
 

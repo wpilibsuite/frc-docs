@@ -16,7 +16,7 @@ Download
 
 The Raspberry Pi firmware is based on WPILibPi (formerly FRCVision) and must be downloaded and written to the Raspberry Pi micro SD card. Click on ``Assets`` at the bottom of the description to see the available image files:
 
-`Romi WPILibPi <https://github.com/wpilibsuite/WPILibPi/releases>`__
+[Romi WPILibPi](https://github.com/wpilibsuite/WPILibPi/releases)
 
 Be sure to download the Romi version and not the standard release of WPILibPi. The Romi version is suffixed with ``-Romi``. See the below image for an example.
 

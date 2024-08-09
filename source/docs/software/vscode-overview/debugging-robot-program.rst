@@ -55,7 +55,7 @@ Debugging with NetworkTables
 Learn More
 ----------
 
-- To learn more about debugging with VS Code see this `link <https://code.visualstudio.com/docs/editor/debugging>`__.
-- Some of the features mentioned in this VS Code `article <https://code.visualstudio.com/docs/editor/editingevolved>`__ will help you understand and diagnose problems with your code.  The Quick Fix (yellow light bulb) feature can be very helpful with a variety of problems including what to import.
+- To learn more about debugging with VS Code see this [link](https://code.visualstudio.com/docs/editor/debugging).
+- Some of the features mentioned in this VS Code [article](https://code.visualstudio.com/docs/editor/editingevolved) will help you understand and diagnose problems with your code.  The Quick Fix (yellow light bulb) feature can be very helpful with a variety of problems including what to import.
 - One of the best ways to prevent having to debug so many issues is to do Unit Testing.
 - Verifying that your robot works in :doc:`Simulation </docs/software/wpilib-tools/robot-simulation/introduction>` is also a great way to prevent having to do complex debugging on the actual robot.

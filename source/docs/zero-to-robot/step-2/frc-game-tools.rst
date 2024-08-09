@@ -18,7 +18,7 @@ Requirements
 
 - Windows 10 or higher (Windows 10, 11).
 
-- Download the `FRC Game Tools <https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107>`__ from NI.
+- Download the [FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107) from NI.
 
 .. image:: images/labview/offline-installer.png
    :alt: The Download button for the NI installer with the offline installer link below it.

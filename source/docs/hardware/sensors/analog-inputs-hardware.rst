@@ -3,7 +3,7 @@ Analog Inputs - Hardware
 
 .. note:: This section covers analog input hardware.  For a software guide to analog inputs, see :ref:`docs/software/hardware-apis/sensors/analog-inputs-software:Analog Inputs - Software`.
 
-An `analog signal <https://en.wikipedia.org/wiki/Analog_signal>`__ is a signal whose value can lie anywhere in a continuous interval.  This lies in stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, which can take only one of several discrete values.  The roboRIO's analog input ports allow the measurement of analog signals with values from 0V to 5V.
+An [analog signal](https://en.wikipedia.org/wiki/Analog_signal) is a signal whose value can lie anywhere in a continuous interval.  This lies in stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, which can take only one of several discrete values.  The roboRIO's analog input ports allow the measurement of analog signals with values from 0V to 5V.
 
 In practice, there is no way to measure a "true" analog signal with a digital device such as a computer (like the roboRIO).  Accordingly, the analog inputs are actually measured as a 12-bit digital signal - however, this is quite a high resolution [1]_.
 
@@ -46,5 +46,5 @@ Some sensors may need to connect to multiple analog input ports in order to func
 Footnotes
 ---------
 
-.. [1] A 12-bit resolution yields :math:`2^{12}`, or 4096 different values.  For a 5V range, that's an effective resolution of approximately 1.2 mV, or .0012V.  The actual accuracy specification is plus-or-minus 50mV, so the discretization is not the limiting factor in the measurement accuracy.
+.. [1] A 12-bit resolution yields $2^{12}$, or 4096 different values.  For a 5V range, that's an effective resolution of approximately 1.2 mV, or .0012V.  The actual accuracy specification is plus-or-minus 50mV, so the discretization is not the limiting factor in the measurement accuracy.
 .. [2] All power pins are actually connected to a single rail, as are all ground pins - there is no need to use the power/ground pins corresponding to a given signal pin.

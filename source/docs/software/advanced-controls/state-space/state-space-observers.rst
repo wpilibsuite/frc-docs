@@ -31,7 +31,7 @@ Covariance matrices are written in the following form:
 Kalman Filters
 --------------
 
-.. important:: It is important to develop an intuition for what a Kalman filter is actually doing. The book `Kalman and Bayesian Filters in Python by Roger Labbe <https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python>`__ provides a great visual and interactive introduction to Bayesian filters. The Kalman filters in WPILib use linear algebra to gentrify the math, but the ideas are similar to the single-dimensional case. We suggest reading through Chapter 4 to gain an intuition for what these filters are doing.
+.. important:: It is important to develop an intuition for what a Kalman filter is actually doing. The book [Kalman and Bayesian Filters in Python by Roger Labbe](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python) provides a great visual and interactive introduction to Bayesian filters. The Kalman filters in WPILib use linear algebra to gentrify the math, but the ideas are similar to the single-dimensional case. We suggest reading through Chapter 4 to gain an intuition for what these filters are doing.
 
 To summarize, Kalman filters (and all Bayesian filters) have two parts: prediction and correction. Prediction projects our state estimate forward in time according to our system's dynamics, and correct steers the estimated state towards the measured state. While filters often perform both in the same timestep, it's not strictly necessary -- For example, WPILib's pose estimators call predict frequently, and correct only when new measurement data is available (for example, from a low-framerate vision system).
 

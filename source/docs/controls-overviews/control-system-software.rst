@@ -125,7 +125,7 @@ FRC LabVIEW Robot Simulator (Windows Only)
 .. image:: images/control-system-software/robot-simulator.png
    :alt: FRC LabVIEW Robot Simulator
 
-The FRC Robot Simulator is a component of the LabVIEW programming environment that allows you to operate a predefined robot in a simulated environment to test code and/or Driver Station functions.  Information on using the FRC Robot Simulator can be found `here <https://forums.ni.com/t5/FIRST-Robotics-Competition/LabVIEW-Tutorial-10-Robot-Simulation/ta-p/3739702?profile.language=en>`__ or by opening the Robot Simulation Readme.html file in the LabVIEW Project Explorer.
+The FRC Robot Simulator is a component of the LabVIEW programming environment that allows you to operate a predefined robot in a simulated environment to test code and/or Driver Station functions.  Information on using the FRC Robot Simulator can be found [here](https://forums.ni.com/t5/FIRST-Robotics-Competition/LabVIEW-Tutorial-10-Robot-Simulation/ta-p/3739702?profile.language=en) or by opening the Robot Simulation Readme.html file in the LabVIEW Project Explorer.
 
 PathWeaver
 ----------

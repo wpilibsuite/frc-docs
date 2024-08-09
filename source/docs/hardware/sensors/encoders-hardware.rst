@@ -37,8 +37,8 @@ Shafted encoders have a sealed body with a shaft protruding out of it that must 
 
 Examples of shafted encoders:
 
-- `Grayhill 63r <https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf>`__
-- `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
+- [Grayhill 63r](https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf)
+- [US Digital MA3](https://www.usdigital.com/products/encoders/absolute/shaft/ma3/)
 
 On-shaft Encoders
 ^^^^^^^^^^^^^^^^^
@@ -51,10 +51,10 @@ On-shaft encoders couple to a shaft by fitting *around* it, forming a friction c
 
 Examples of On-shaft encoders:
 
-- `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice
-- `CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution>`__
-- `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
-- `US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__
+- [AMT103-V](https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v) available through FIRST Choice
+- [CIMcoder](https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution)
+- [REV Through Bore Encoder](https://www.revrobotics.com/rev-11-1271/)
+- [US Digital E4T](https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit)
 
 Magnetic Encoders
 ^^^^^^^^^^^^^^^^^
@@ -67,9 +67,9 @@ Magnetic encoders require no mechanical coupling to the shaft at all; rather, th
 
 Examples of magnetic encoders:
 
-- `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`__
-- `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/products/thrifty-absolute-magnetic-encoder>`__
-- `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
+- [CTRE Mag Encoder](https://store.ctr-electronics.com/srx-mag-encoder/)
+- [Thrifty Absolute Magnetic Encoder](https://www.thethriftybot.com/products/thrifty-absolute-magnetic-encoder)
+- [Team 221 Lamprey2](https://www.andymark.com/products/lamprey-absolute-encoder)
 
 
 Quadrature Encoders
@@ -86,12 +86,12 @@ As each square wave pulse is a digital signal, quadrature encoders connect to th
 
 Examples of quadrature encoders:
 
-- `AMT103-V <https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through FIRST Choice
-- `CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution>`__
+- [AMT103-V](https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v) available through FIRST Choice
+- [CIMcoder](https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution)
 - `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_
-- `Grayhill 63r <https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf>`__
-- `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
-- `US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__
+- [Grayhill 63r](https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf)
+- [REV Through Bore Encoder](https://www.revrobotics.com/rev-11-1271/)
+- [US Digital E4T](https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit)
 
 Quadrature Encoder Wiring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,7 +100,7 @@ Quadrature Encoder Wiring
   :alt: Wiring the E4T Optical Encoder to two DIO ports.
   :width: 400
 
-Quadrature Encoders, such as the `E4T OEM Miniature Optical Encoder <https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit>`__, can be wired to two digital input ports as shown above.
+Quadrature Encoders, such as the [E4T OEM Miniature Optical Encoder](https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit), can be wired to two digital input ports as shown above.
 
 Index
 ~~~~~
@@ -132,11 +132,11 @@ Duty cycle encoders connect to a single digital input on the roboRIO. They outpu
 
 Examples of duty cycle encoders:
 
-- `AndyMark Mag Encoder <https://www.andymark.com/products/am-mag-encoder>`__
-- `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`__
-- `REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__
-- `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
-- `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
+- [AndyMark Mag Encoder](https://www.andymark.com/products/am-mag-encoder)
+- [CTRE Mag Encoder](https://store.ctr-electronics.com/srx-mag-encoder/)
+- [REV Through Bore Encoder](https://www.revrobotics.com/rev-11-1271/)
+- [Team 221 Lamprey2](https://www.andymark.com/products/lamprey-absolute-encoder)
+- [US Digital MA3](https://www.usdigital.com/products/encoders/absolute/shaft/ma3/)
 
 Analog Encoders
 ^^^^^^^^^^^^^^^
@@ -148,6 +148,6 @@ Analog encoders connect to a analog input on the roboRIO. They output a voltage 
 
 Examples of analog encoders:
 
-- `Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-encoder>`__
-- `Thrifty Absolute Magnetic Encoder <https://www.thethriftybot.com/products/thrifty-absolute-magnetic-encoder>`__
-- `US Digital MA3 <https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__
+- [Team 221 Lamprey2](https://www.andymark.com/products/lamprey-absolute-encoder)
+- [Thrifty Absolute Magnetic Encoder](https://www.thethriftybot.com/products/thrifty-absolute-magnetic-encoder)
+- [US Digital MA3](https://www.usdigital.com/products/encoders/absolute/shaft/ma3/)

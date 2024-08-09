@@ -1,7 +1,7 @@
 Labeling a Dataset with Supervisely
 ===================================
 
-The quality of a neural network is fully dependent on the quality of the dataset used to train it. To create a custom dataset, perhaps to train a neural network to recognize the new game piece, Axon supports datasets created using `Supervisely <https://supervise.ly>`__. This page describes how to create label, and export a dataset made with Supervisely.
+The quality of a neural network is fully dependent on the quality of the dataset used to train it. To create a custom dataset, perhaps to train a neural network to recognize the new game piece, Axon supports datasets created using [Supervisely](https://supervise.ly). This page describes how to create label, and export a dataset made with Supervisely.
 
 Record a Video
 --------------
@@ -18,7 +18,7 @@ The first step to creating a dataset is getting images. A dataset should have se
 Import Video to Supervisely
 ---------------------------
 
-Now that the images for the dataset are gathered, they can be labeled. To do this, Axon supports the use of `https://supervise.ly <https://supervise.ly>`__ . An account is required to use the site.
+Now that the images for the dataset are gathered, they can be labeled. To do this, Axon supports the use of [https://supervise.ly](https://supervise.ly) . An account is required to use the site.
 
 The workflow is organized in Workspaces, and Projects. A Workspace can have multiple users, so one FRC team can share a workspace. A Workspace also can contain multiple projects.
 

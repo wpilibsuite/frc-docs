@@ -1,7 +1,7 @@
 Control System Basics
 =====================
 
-.. note:: This article includes sections of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
+.. note:: This article includes sections of [Controls Engineering in FRC](https://file.tavsys.net/control/controls-engineering-in-frc.pdf) by Tyler Veness with permission.
 
 The Need for Control Systems
 ----------------------------

@@ -8,7 +8,7 @@ With the SmartDashboard you can simply display a widget on the screen to choose 
 TimedRobot
 ----------
 
-.. note:: The code snippets shown below are part of the TimedRobot template (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/templates/timed>`__):
+.. note:: The code snippets shown below are part of the TimedRobot template ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/templates/timed)):
 
 Creating SendableChooser Object
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -114,7 +114,7 @@ Now, in ``autonomousInit`` and ``autonomousPeriodic``, you can use the ``m_autoS
 Command-Based
 -------------
 
-.. note:: The code snippets shown below are part of the HatchbotTraditional example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__, `Python <https://github.com/robotpy/examples/tree/main/HatchbotTraditional>`__):
+.. note:: The code snippets shown below are part of the HatchbotTraditional example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional), [Python](https://github.com/robotpy/examples/tree/main/HatchbotTraditional)):
 
 Creating the SendableChooser Object
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

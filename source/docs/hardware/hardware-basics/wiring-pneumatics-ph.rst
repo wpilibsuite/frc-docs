@@ -3,7 +3,7 @@ Wiring Pneumatics - REV Pneumatic Hub
 
 This page describes wiring pneumatics with the REV Pneumatic Hub (:term:`PH`). For instructions on wiring pneumatics with the CTRE Pneumatic Control Module (:term:`PCM`) see :doc:`this page <wiring-pneumatics-pcm>`.
 
-.. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located `here <https://www.firstinspires.org/sites/default/files/uploads/resource_library/frc/technical-resources/frc_pneumatics_manual.pdf>`__
+.. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located [here](https://www.firstinspires.org/sites/default/files/uploads/resource_library/frc/technical-resources/frc_pneumatics_manual.pdf)
 
 .. raw:: html
 
@@ -48,9 +48,9 @@ A digital pressure switch should be connected directly to the digital pressure s
 Analog
 ~~~~~~
 
-An analog pressure switch (`REV-11-1107 <https://www.revrobotics.com/rev-11-1107/>`__ can be connected directly to the analog pressure sensor port 0 input terminals. Using an analog pressure sensor allows reading the pressure in the pneumatic system through code and setting custom trigger thresholds for turning on and off the compressor.
+An analog pressure switch ([REV-11-1107](https://www.revrobotics.com/rev-11-1107/) can be connected directly to the analog pressure sensor port 0 input terminals. Using an analog pressure sensor allows reading the pressure in the pneumatic system through code and setting custom trigger thresholds for turning on and off the compressor.
 
-.. warning:: The Analog Pressure Sensor port is a very tight fit and requires special attention. See `REV Wiring an Analog Pressure Sensor <https://docs.revrobotics.com/rev-11-1852/pneumatic-hub-getting-started/wiring-the-pneumatic-hub#wiring-an-analog-pressure-sensor>`__ for more tips
+.. warning:: The Analog Pressure Sensor port is a very tight fit and requires special attention. See [REV Wiring an Analog Pressure Sensor](https://docs.revrobotics.com/rev-11-1852/pneumatic-hub-getting-started/wiring-the-pneumatic-hub#wiring-an-analog-pressure-sensor) for more tips
 
 Solenoids
 ---------

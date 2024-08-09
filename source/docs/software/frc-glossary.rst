@@ -9,7 +9,7 @@ FRC Glossary
       A common sensor used to measure acceleration in one or more axis.
 
    AM
-      `AndyMark, Inc <https://www.andymark.com/>`__ - strives to develop innovative products and outstanding service while inspiring our customers and making a positive impact in our community.
+      [AndyMark, Inc](https://www.andymark.com/) - strives to develop innovative products and outstanding service while inspiring our customers and making a positive impact in our community.
 
    AprilTags
        Visual tags that provide low overhead, high accuracy localization. AprilTags are useful for helping your robot know where it is at on the field, so it can align itself to some goal position.
@@ -24,7 +24,7 @@ FRC Glossary
       A form of data with only two possible values (true or false), intended to represent the two truth values of logic and Boolean algebra.
 
    call stack
-      A specially-organized region of memory which helps the program keep track of what function it is in. As each function calls another, the call point is recorded and added to the top of the structure, forming a "stack" of references. Additionally, local variables will also be stored in this stack. See `call stack <https://en.wikipedia.org/wiki/Call_stack>`__ on Wikipedia for more info.
+      A specially-organized region of memory which helps the program keep track of what function it is in. As each function calls another, the call point is recorded and added to the top of the structure, forming a "stack" of references. Additionally, local variables will also be stored in this stack. See [call stack](https://en.wikipedia.org/wiki/Call_stack) on Wikipedia for more info.
 
    CAD
       Computer-Aided Design - software used to design an accurate model of an object.  For FRC this is often used to design the robot to get accurate measurements and aid construction.
@@ -36,52 +36,52 @@ FRC Glossary
       Controller Area Network -  message-based protocol designed to allow microcontrollers and devices to communicate with each other's applications without a host computer.
 
    CD
-      Chief Delphi - `FRC team 47 <https://www.thebluealliance.com/team/47>`__ inspired a popular community driven `forum <https://www.chiefdelphi.com/>`__ that today serves as an unofficial discussion hub for all things FRC.
+      Chief Delphi - [FRC team 47](https://www.thebluealliance.com/team/47) inspired a popular community driven [forum](https://www.chiefdelphi.com/) that today serves as an unofficial discussion hub for all things FRC.
 
    central limit theorem
-      A core concept in probability which states that when many independent variables are added up, the result tends to look like a "normal" (or Gaussian) distribution, regardless of whether the independent variables themselves are normally distributed. See `Central Limit Theorem <https://en.wikipedia.org/wiki/Central_limit_theorem>`__ on Wikipedia for more info.
+      A core concept in probability which states that when many independent variables are added up, the result tends to look like a "normal" (or Gaussian) distribution, regardless of whether the independent variables themselves are normally distributed. See [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) on Wikipedia for more info.
 
    CIM
-      CCL Industrial Motor, Limited - `Chiaphua Components Limited <https://www.cclmotors.com/website/eng/home>`__ is the company that made the commonly used, relatively powerful, brushed motor.
+      CCL Industrial Motor, Limited - [Chiaphua Components Limited](https://www.cclmotors.com/website/eng/home) is the company that made the commonly used, relatively powerful, brushed motor.
 
    Classical Mechanics
-      The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See `Classical Mechanics <https://en.wikipedia.org/wiki/Classical_mechanics>`__ on Wikipedia for more info.
+      The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See [Classical Mechanics](https://en.wikipedia.org/wiki/Classical_mechanics) on Wikipedia for more info.
 
    COTS
       Commercial off the shelf - a standard (i.e. not custom order) part commonly available from a vendor to all teams for purchase.
 
    composition
-      A formal software term for building (or "composing") software entities out of smaller component entities. See `object composition <https://en.wikipedia.org/wiki/Object_composition>`__ on Wikipedia for more info.
+      A formal software term for building (or "composing") software entities out of smaller component entities. See [object composition](https://en.wikipedia.org/wiki/Object_composition) on Wikipedia for more info.
 
    CRTP
-      Continuously Recurring Template Pattern - A software idiom in which a class `X`` derives from a class template instantiation using `X`` itself as a template argument. See `CRTP <https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ on Wikipedia for more info.
+      Continuously Recurring Template Pattern - A software idiom in which a class [X`` derives from a class template instantiation using `X`` itself as a template argument. See `CRTP](https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern) on Wikipedia for more info.
 
    CSA
       Control Systems Advisor - FRC volunteer position that assists teams with Robot Control System-related issues.
 
    CTRE
-      `Cross the Road Electronics LLC <https://store.ctr-electronics.com/>`__ - is an engineering design, software development and electronics manufacturer based outside of Detroit in Macomb, MI. They primarily focus on high-performing, high-quality electronics communication,  motor control, and control system products for FIRST teams and the EV industry. CTR Electronics was founded in 2006 by two FRC mentors who met through their robotics team: Mike Copioli and Omar Zrien and is staffed largely by FRC alumni, and active volunteers & mentors.
+      [Cross the Road Electronics LLC](https://store.ctr-electronics.com/) - is an engineering design, software development and electronics manufacturer based outside of Detroit in Macomb, MI. They primarily focus on high-performing, high-quality electronics communication,  motor control, and control system products for FIRST teams and the EV industry. CTR Electronics was founded in 2006 by two FRC mentors who met through their robotics team: Mike Copioli and Omar Zrien and is staffed largely by FRC alumni, and active volunteers & mentors.
 
    C++
       One of the four officially supported programming languages.
 
    declarative programming
-      A style of software which focuses on describing *what* a program should do, rather than *how* it gets done. See `declarative programming <https://en.wikipedia.org/wiki/Declarative_programming>`__ on Wikipedia for more info.
+      A style of software which focuses on describing *what* a program should do, rather than *how* it gets done. See [declarative programming](https://en.wikipedia.org/wiki/Declarative_programming) on Wikipedia for more info.
 
    dependency injection
-      A software design pattern where each class receives all objects it depends upon. Sometimes these are passed through the constructor, but not always. See `dependency injection <https://en.wikipedia.org/wiki/Dependency_injection>`__ on Wikipedia for more info.
+      A software design pattern where each class receives all objects it depends upon. Sometimes these are passed through the constructor, but not always. See [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) on Wikipedia for more info.
 
    deprecated
       Software that has been replaced and will no longer receive new features. Deprecated software will be maintained for at least 1 year, but may be removed after that. For example, if a method is deprecated prior to the 2022 season, it will be usable in the 2022 season, but may be removed prior to the 2023 season. Teams are encouraged to not use deprecated methods in new code. WPILib always deprecates features at least one year prior to removing them from the codebase.
 
    design pattern
-      A particular, intentionally-chosen style of organizing code. A design pattern intentionally excludes using certain features of a programming language to constrain developers into solutions that are well-suited to a particular problem-space. See `design pattern. <https://en.wikipedia.org/wiki/Design_pattern>`__ on Wikipedia for more info.
+      A particular, intentionally-chosen style of organizing code. A design pattern intentionally excludes using certain features of a programming language to constrain developers into solutions that are well-suited to a particular problem-space. See [design pattern.](https://en.wikipedia.org/wiki/Design_pattern) on Wikipedia for more info.
 
    DHCP
       Dynamic Host Configuration Protocol - the protocol that allows a central device to assign unique IP addresses to all other devices.
 
    encapsulation
-      A software design pattern which uses a class to hide the implementation details of other classes. See `encapsulation <https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`__ on Wikipedia for more info.
+      A software design pattern which uses a class to hide the implementation details of other classes. See [encapsulation](https://en.wikipedia.org/wiki/Encapsulation_%28computer_programming%29) on Wikipedia for more info.
 
    entry
       In :term:`NetworkTables`, a combined :term:`publisher` and :term:`subscriber`. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber.
@@ -90,10 +90,10 @@ FRC Glossary
       A list of all elements of a set, typically used to refer to a set of pre-defined values.
 
    EPA
-      `Expected Points Added <https://www.statbotics.io/blog/epa>`__ - builds upon the Elo rating system, but transforms ratings to point units and makes several modifications.
+      [Expected Points Added](https://www.statbotics.io/blog/epa) - builds upon the Elo rating system, but transforms ratings to point units and makes several modifications.
 
    event-driven programming
-      A style of programming where certain parts of code generate "events" as a result of some input (sensors, user interaction, etc). Then, other parts of code listen for and respond to "handle" these events. See `event-based <https://en.wikipedia.org/wiki/Event-driven_programming>`__ on Wikipedia for more info.
+      A style of programming where certain parts of code generate "events" as a result of some input (sensors, user interaction, etc). Then, other parts of code listen for and respond to "handle" these events. See [event-based](https://en.wikipedia.org/wiki/Event-driven_programming) on Wikipedia for more info.
 
    FIRST
       For Inspiration and Recognition of Science and Technology - a global nonprofit organization that prepares young people for the future through a suite of life-changing youth robotics programs that build skills, confidence, and resilience.
@@ -108,7 +108,7 @@ FRC Glossary
       Field Management System - the electronics core responsible for sensing and controlling the FIRST Robotics Competition field.
 
    FPGA
-       Field-programmable gate array - a specialized integrated circuit consisting of many digital logic elements, which can be configured to act in different patterns. This allows its behavior to be changed after manufacturing. In the context of FRC, National Instruments provides a specific configuration for the RIO's FPGA which allows it to process the electrical inputs and outputs at a very high rate. See `FPGA <https://en.wikipedia.org/wiki/Field-programmable_gate_array>`__ on Wikipedia for more info.
+       Field-programmable gate array - a specialized integrated circuit consisting of many digital logic elements, which can be configured to act in different patterns. This allows its behavior to be changed after manufacturing. In the context of FRC, National Instruments provides a specific configuration for the RIO's FPGA which allows it to process the electrical inputs and outputs at a very high rate. See [FPGA](https://en.wikipedia.org/wiki/Field-programmable_gate_array) on Wikipedia for more info.
 
    FRC
       FIRST Robotics Competition - Combining the excitement of sport with the rigors of science and technology.  The ultimate Sport for the Mind inspiring High-school students.
@@ -135,7 +135,7 @@ FRC Glossary
       The direction the robot is pointed, usually expressed as an angle in degrees.
 
    imperative programming
-      A style of programming that focuses on *what* the code should be doing, step by step, every loop. See `imperative programming <https://en.wikipedia.org/wiki/Imperative_programming>`__ on Wikipedia for more info.
+      A style of programming that focuses on *what* the code should be doing, step by step, every loop. See [imperative programming](https://en.wikipedia.org/wiki/Imperative_programming) on Wikipedia for more info.
 
    IMU
       Inertial Measurement Unit - a sensor that combines both an :term:`accelerometer` and a :term:`gyroscope` into a single sensor.
@@ -147,13 +147,13 @@ FRC Glossary
       One of the four officially supported programming languages.
 
    JSON
-      JavaScript Object Notation - A standardized way of organizing data into named values. The organized data can be easily :term:`serialized`. While the original usage was in Javascript, it can be used and interested by most modern programming languages. See `JSON <https://en.wikipedia.org/wiki/JSON>`__ on Wikipedia for more info.
+      JavaScript Object Notation - A standardized way of organizing data into named values. The organized data can be easily :term:`serialized`. While the original usage was in Javascript, it can be used and interested by most modern programming languages. See [JSON](https://en.wikipedia.org/wiki/JSON) on Wikipedia for more info.
 
    KOP
       Kit of Parts - the collection of items listed on the Kickoff Kit checklists, distributed to the team via FIRST Choice, or paid for completely (except shipping) with a Product Donation Voucher (PDV).
 
    KOP chassis
-      The KOP contains a drive base (chassis) distributed to every team (that did not opt out) as part of the :term:`KOP`. For the 2024 season, the KOP chassis is the `AM14U5 <https://www.andymark.com/products/am14u5-6-wheel-drop-center-robot-drive-base-first-kit-of-parts-chassis>`__.
+      The KOP contains a drive base (chassis) distributed to every team (that did not opt out) as part of the :term:`KOP`. For the 2024 season, the KOP chassis is the [AM14U5](https://www.andymark.com/products/am14u5-6-wheel-drop-center-robot-drive-base-first-kit-of-parts-chassis).
 
    LabVIEW
       One of the four officially supported programming languages.
@@ -183,7 +183,7 @@ FRC Glossary
      Using sensors on the robot to create an estimate of the pose of the robot on the field.
 
    OPR
-      `Offensive Power Rating <https://blog.thebluealliance.com/2017/10/05/the-math-behind-opr-an-introduction/>`__ - a system to attempt to deduce the average point contribution of a team to an alliance
+      [Offensive Power Rating](https://blog.thebluealliance.com/2017/10/05/the-math-behind-opr-an-introduction/) - a system to attempt to deduce the average point contribution of a team to an alliance
 
    PCM
       Pneumatic Control Module - provides an easy all-in-one interface for pneumatic components.
@@ -195,7 +195,7 @@ FRC Glossary
       CTRE Power Distribution Panel - power distribution module with 8 high-current (40A max), 8 lower current (20A / 30A), 1 20A protected channel (for :term:`PCM` and :term:`VRM`), and 1 10A protected channel (for the roboRIO).
 
    permanent-magnet DC motor
-      The classification of all legal motors for the FIRST robotics competition. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See `permanent-magnet motor <https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors>`__ on Wikipedia for more info.
+      The classification of all legal motors for the FIRST robotics competition. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See [permanent-magnet motor](https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors) on Wikipedia for more info.
 
    persistent
       In :term:`NetworkTables`, a :term:`topic` that is saved to a file by the server and restored at startup.
@@ -228,13 +228,13 @@ FRC Glossary
       The property of reflecting incoming light back at the same angle it came in at, rather than an incident angle (like a mirror), absorbing it, or scattering it. Most FRC vision processing targets are retro-reflective. See `retroreflector <https://en.wikipedia.org/wiki/Retroreflector>`_ on Wikipedia for more information.
 
    recursive composition
-      A type of :term:`composition` in which the composite object may contain components of the same type as itself. For example, a command group may contain one or more command groups. See `recursive composition <https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ on Wikipedia for more info. See also :term:`recursive composition`.
+      A type of :term:`composition` in which the composite object may contain components of the same type as itself. For example, a command group may contain one or more command groups. See [recursive composition](https://en.wikipedia.org/wiki/Object_composition#Recursive_composition) on Wikipedia for more info. See also :term:`recursive composition`.
 
    retained
       In :term:`NetworkTables`, a :term:`topic` that is kept alive by the server even after all publishers stop publishing.
 
    REV
-      `REV Robotics <https://www.revrobotics.com/>`__ - inspires innovation and creativity within the educational robotics community by offering comprehensive product lines, extensive educational resources, world-class customer service, and specialized sponsorship programs. With a global presence spanning over 190 countries, we empower the next generation of STEM professionals by providing cutting-edge solutions and essential tools for success. Founded in 2014 by robotics enthusiasts Greg Needel and David Yanoshak, REV Robotics is driven by the mission to inspire and support students as they explore the exciting world of robotics and unlock their full robotic design potential. A majority of our employees are FIRST Alumni who remain actively involved, serving as volunteers and mentors for the local FIRST Community. This deep engagement reflects our commitment to supporting and inspiring the next generation of STEM enthusiasts.
+      [REV Robotics](https://www.revrobotics.com/) - inspires innovation and creativity within the educational robotics community by offering comprehensive product lines, extensive educational resources, world-class customer service, and specialized sponsorship programs. With a global presence spanning over 190 countries, we empower the next generation of STEM professionals by providing cutting-edge solutions and essential tools for success. Founded in 2014 by robotics enthusiasts Greg Needel and David Yanoshak, REV Robotics is driven by the mission to inspire and support students as they explore the exciting world of robotics and unlock their full robotic design potential. A majority of our employees are FIRST Alumni who remain actively involved, serving as volunteers and mentors for the local FIRST Community. This deep engagement reflects our commitment to supporting and inspiring the next generation of STEM enthusiasts.
 
    RPM
       Radio Power Module - is designed to keep one of the most critical system components, the OpenMesh OM5P-AC WiFi radio, powered in the toughest moments of the competition.
@@ -250,25 +250,25 @@ FRC Glossary
       A way for teams to test their code without having an actual robot available.
 
    software library
-      A collection of code that can be imported into and used by other software. See `software library <https://en.wikipedia.org/wiki/Library_(computing)>`__ on Wikipedia for more info.
+      A collection of code that can be imported into and used by other software. See [software library](https://en.wikipedia.org/wiki/Library_%28computing%29) on Wikipedia for more info.
 
    solenoid valve
-      A airflow-controlling valve which is actuated by a small electromagnet. Strictly speaking, the *solenoid* is the coil of wire which forms the electromagnet, and the *valve* is the mechanism which actually redirects airflow. However, the set of solenoid and valve together is often simply called "a solenoid". See `solenoid valve <https://en.wikipedia.org/wiki/Solenoid_valve>`__. on Wikipedia for more info.
+      A airflow-controlling valve which is actuated by a small electromagnet. Strictly speaking, the *solenoid* is the coil of wire which forms the electromagnet, and the *valve* is the mechanism which actually redirects airflow. However, the set of solenoid and valve together is often simply called "a solenoid". See [solenoid valve](https://en.wikipedia.org/wiki/Solenoid_valve). on Wikipedia for more info.
 
    SPI
       Serial Peripheral Interface - protocol for synchronous serial communication, used primarily in embedded systems for short-distance wired communication between integrated circuits.
 
    state machine
-      A programming construct that divides a problem into many discrete, well-defined, mutually-exclusive "states", then defines how the problem is solved by moving between different states. See `state machine <https://en.wikipedia.org/wiki/Finite-state_machine>`__ on Wikipedia for more more info.
+      A programming construct that divides a problem into many discrete, well-defined, mutually-exclusive "states", then defines how the problem is solved by moving between different states. See [state machine](https://en.wikipedia.org/wiki/Finite-state_machine) on Wikipedia for more more info.
 
    subscriber
       In :term:`NetworkTables`, an object that receives timestamped data value updates to one or more :term:`topic`\s.
 
    TBA
-      The Blue Alliance - `Website <https://www.thebluealliance.com/>`__ for looking up :term:`FRC` team statistics and event information.
+      The Blue Alliance - [Website](https://www.thebluealliance.com/) for looking up :term:`FRC` team statistics and event information.
 
    telemetry
-      The process of recording and sending real-time data about the performance of your robot to a real-time readout or log file. For the linguists among us, the word's roots are "tele" (remote) and "metry" (measurement). See `telemetry <https://en.wikipedia.org/wiki/Telemetry>`__ on Wikipedia for more info.
+      The process of recording and sending real-time data about the performance of your robot to a real-time readout or log file. For the linguists among us, the word's roots are "tele" (remote) and "metry" (measurement). See [telemetry](https://en.wikipedia.org/wiki/Telemetry) on Wikipedia for more info.
 
    teleop
       The second phase of each match is called the Teleoperated Period (teleop) and consists of drivers controlling their robots.
@@ -289,7 +289,7 @@ FRC Glossary
       Voltage Regulator Module - provides access to different constant voltages for custom sensors, cameras, or other unique applications. 12V DC Input Directly fed power from the Power Distribution Panel Designed to work with the roboRIO FRC control system.
 
    WCP
-      `WestCoast Products & Design LLC <https://wcproducts.com/>`__ - was founded in Fall of 2011 by Ranjit Chahal (R.C.) and Harvey Rico. WCP aims to provide FIRST Teams, Hobbyists, and educators top notch quality products and designs for their projects.
+      [WestCoast Products & Design LLC](https://wcproducts.com/) - was founded in Fall of 2011 by Ranjit Chahal (R.C.) and Harvey Rico. WCP aims to provide FIRST Teams, Hobbyists, and educators top notch quality products and designs for their projects.
 
    WFA
       Woodie Flowers Award - This award recognizes an individual who has done an outstanding job of motivation through communication while also challenging the students to be clear and succinct in their communications.

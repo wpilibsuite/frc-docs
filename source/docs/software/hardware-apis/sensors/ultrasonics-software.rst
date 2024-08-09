@@ -13,7 +13,7 @@ There are two primary types of ultrasonics supported natively by WPILib:
 Ping-response ultrasonics
 -------------------------
 
-The :code:`Ultrasonic` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Ultrasonic.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_ultrasonic.html>`__) provides support for ping-response ultrasonics.  As ping-response ultrasonics (per the name) require separate pins for both sending the ping and measuring the response, users must specify DIO pin numbers for both output and input when constructing an :code:`Ultrasonic` instance:
+The :code:[Ultrasonic` class (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Ultrasonic.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_ultrasonic.html)) provides support for ping-response ultrasonics.  As ping-response ultrasonics (per the name) require separate pins for both sending the ping and measuring the response, users must specify DIO pin numbers for both output and input when constructing an :code:`Ultrasonic` instance:
 
 .. tab-set::
 
@@ -62,7 +62,7 @@ Other ultrasonic sensors offered by third-parties may use more complicated commu
 Using ultrasonics in code
 -------------------------
 
-Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code from the UltrasonicPID example project (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid>`__, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/UltrasonicPID>`__) will move the robot to 1 meter away from the nearest object the sensor detects:
+Ultrasonic sensors are very useful for determining spacing during autonomous routines.  For example, the following code from the UltrasonicPID example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/UltrasonicPID)) will move the robot to 1 meter away from the nearest object the sensor detects:
 
 .. tab-set::
 

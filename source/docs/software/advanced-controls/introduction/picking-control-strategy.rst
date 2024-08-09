@@ -1,7 +1,7 @@
 Picking a Control Strategy
 ==========================
 
-.. note:: This article includes sections of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
+.. note:: This article includes sections of [Controls Engineering in FRC](https://file.tavsys.net/control/controls-engineering-in-frc.pdf) by Tyler Veness with permission.
 
 When designing a control algorithm for a robot mechanism, there are a number of different approaches to take. These range from very simple approaches, to advanced and complex ones. Each has *tradeoffs*. Some will work better than others in different situations, some require more mathematical analysis than others.
 
@@ -97,7 +97,7 @@ When in doubt, ask a mentor or :ref:`support resource <docs/software/support/sup
 Theoretical Modeling
 ^^^^^^^^^^^^^^^^^^^^
 
-`ReCalc is an online calculator <https://www.reca.lc/>`__ which estimates physical parameters for a number of common FRC mechanisms.  Importantly, it can generate estimate the ``kV``, ``kA``, and ``kG`` gains for the WPILib feedforward classes.
+[ReCalc is an online calculator](https://www.reca.lc/) which estimates physical parameters for a number of common FRC mechanisms.  Importantly, it can generate estimate the ``kV``, ``kA``, and ``kG`` gains for the WPILib feedforward classes.
 
 The :doc:`WPILib system identification tool </docs/software/advanced-controls/system-identification/introduction>` supports a "theoretical mode" that can be used to determine PID gains for feedback control from the ``kV`` and ``kA`` gains from ReCalc, enabling (in theory) full tuning of a control loop without running any test routines.
 

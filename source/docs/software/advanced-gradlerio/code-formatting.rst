@@ -3,7 +3,7 @@ Using a Code Formatter
 
 Code formatters exist to ensure that the style of code written is consistent throughout the entire codebase. This is used in many major projects; from Android to OpenCV. Teams may wish to add a formatter throughout their robot code to ensure that the codebase maintains readability and consistency throughout.
 
-For this article, we will highlight using `Spotless <https://github.com/diffplug/spotless>`__ for Java teams and `wpiformat <https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__ for C++ teams.
+For this article, we will highlight using [Spotless](https://github.com/diffplug/spotless) for Java teams and [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst) for C++ teams.
 
 Spotless
 --------
@@ -146,7 +146,7 @@ The above example tells spotless where our Java classes are and to exclude the `
 
    // format:on
 
-- ``googleJavaFormat()`` tells spotless to format according to the `Google Style Guide <https://google.github.io/styleguide/javaguide.html>`__
+- ``googleJavaFormat()`` tells spotless to format according to the [Google Style Guide](https://google.github.io/styleguide/javaguide.html)
 - ``removeUnusedImports()`` will remove any unused imports from any of your Java classes
 - ``trimTrailingWhitespace()`` will remove any extra whitespace at the end of your lines
 - ``endWithNewline()`` will add a newline character to the end of your classes
@@ -155,7 +155,7 @@ In the ``groovyGradle`` block, there is a ``greclipse`` option. This is the form
 
 Additionally, there is a ``eclipseWtp`` option in the ``xml`` block. This stands for "Gradle Web Tools Platform" and is the formatter to format ``xml`` files. Teams not using any XML files may wish to not include this configuration.
 
-.. note:: A full list of configurations is available on the `Spotless README <https://github.com/diffplug/spotless>`__
+.. note:: A full list of configurations is available on the [Spotless README](https://github.com/diffplug/spotless)
 
 Issues with Line Endings
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -175,9 +175,9 @@ wpiformat
 Requirements
 ^^^^^^^^^^^^
 
-- `Python 3.6 or higher <https://www.python.org/>`__
+- [Python 3.6 or higher](https://www.python.org/)
 
-You can install `wpiformat <https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__ by typing ``pip3 install wpiformat`` into a terminal or command prompt.
+You can install [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst) by typing ``pip3 install wpiformat`` into a terminal or command prompt.
 
 Usage
 ^^^^^

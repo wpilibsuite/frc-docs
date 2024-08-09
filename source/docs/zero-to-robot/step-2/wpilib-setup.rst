@@ -20,7 +20,7 @@ Downloading
 
 .. wpilibrelease:: v2024.3.2
 
-`You can download the latest release of the installer from GitHub <https://github.com/wpilibsuite/allwpilib/releases/latest/>`__.
+[You can download the latest release of the installer from GitHub](https://github.com/wpilibsuite/allwpilib/releases/latest/).
 
 Once on the GitHub releases page, scroll to the Downloads section.
 
@@ -46,7 +46,7 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
       .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions below.
 
-      You can use `7-zip <https://www.7-zip.org/>`__ to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Windows 11 users may need to select :guilabel:`Show more options` at the bottom of the context menu.
+      You can use [7-zip](https://www.7-zip.org/) to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Windows 11 users may need to select :guilabel:`Show more options` at the bottom of the context menu.
 
       .. image:: images/wpilib-setup/extract-windows-7.png
          :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
@@ -161,7 +161,7 @@ Some operating systems require some final action to complete installation.
 Additional C++ Installation for Simulation
 ------------------------------------------
 
-C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 version 17.9 or later <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode 14 or later <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
+C++ robot simulation requires that a native compiler to be installed. For Windows, this would be [Visual Studio 2022 version 17.9 or later](https://visualstudio.microsoft.com/vs/) (**not** VS Code), macOS requires [Xcode 14 or later](https://apps.apple.com/us/app/xcode/id497799835), and Linux (Ubuntu) requires the ``build-essential`` package.
 
 Ensure the :guilabel:`Desktop Development with C++` option is checked in the Visual Studio installer for simulation support.
 
@@ -212,4 +212,4 @@ WPILib is designed to install to different folders for different years, so that 
 Troubleshooting
 ---------------
 
-In case the installer fails, please open an issue on the installer repository. A link is available `here <https://github.com/wpilibsuite/wpilibinstaller-avalonia>`__. The installer should give a message on the cause of the error, please include this in the description of your issue.
+In case the installer fails, please open an issue on the installer repository. A link is available [here](https://github.com/wpilibsuite/wpilibinstaller-avalonia). The installer should give a message on the cause of the error, please include this in the description of your issue.
