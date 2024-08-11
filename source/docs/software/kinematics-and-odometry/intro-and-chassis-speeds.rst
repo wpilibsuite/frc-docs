@@ -1,18 +1,14 @@
-Introduction to Kinematics and The ChassisSpeeds Class
-======================================================
+# Introduction to Kinematics and The ChassisSpeeds Class
 
 .. note:: Kinematics and odometry uses a common coordinate system. You may wish to reference the :doc:`/docs/software/basic-programming/coordinate-system` section for details.
 
-What is kinematics?
--------------------
+## What is kinematics?
 The kinematics suite contains classes for differential drive, swerve drive, and mecanum drive kinematics and odometry. The kinematics classes help convert between a universal ``ChassisSpeeds`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/ChassisSpeeds.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/structfrc_1_1_chassis_speeds.html), :external:py:class:`Python <wpimath.kinematics.ChassisSpeeds>`)object, containing linear and angular velocities for a robot to usable speeds for each individual type of drivetrain i.e. left and right wheel speeds for a differential drive, four wheel speeds for a mecanum drive, or individual module states (speed and angle) for a swerve drive.
 
-What is odometry?
------------------
+## What is odometry?
 Odometry involves using sensors on the robot to create an estimate of the position of the robot on the field. In FRC, these sensors are typically several encoders (the exact number depends on the drive type) and a gyroscope to measure robot angle. The odometry classes utilize the kinematics classes along with periodic user inputs about speeds (and angles in the case of swerve) to create an estimate of the robot's location on the field.
 
-The ChassisSpeeds Class
------------------------
+## The ChassisSpeeds Class
 The ``ChassisSpeeds`` object is essential to the new WPILib kinematics and odometry suite. The ``ChassisSpeeds`` object represents the speeds of a robot chassis. This struct has three components:
 
 * ``vx``: The velocity of the robot in the x (forward) direction.
@@ -21,8 +17,7 @@ The ``ChassisSpeeds`` object is essential to the new WPILib kinematics and odome
 
 .. note:: A non-holonomic drivetrain (i.e. a drivetrain that cannot move sideways, ex: a differential drive) will have a ``vy`` component of zero because of its inability to move sideways.
 
-Constructing a ChassisSpeeds object
------------------------------------
+## Constructing a ChassisSpeeds object
 The constructor for the ``ChassisSpeeds`` object is very straightforward, accepting three arguments for ``vx``, ``vy``, and ``omega``. In Java and Python, ``vx`` and ``vy`` must be in meters per second. In C++, the units library may be used to provide a linear velocity using any linear velocity unit.
 
 .. tab-set-code::
@@ -53,8 +48,7 @@ The constructor for the ``ChassisSpeeds`` object is very straightforward, accept
       speeds = ChassisSpeeds(3.0, -2.0, math.pi)
 
 
-Creating a ChassisSpeeds Object from Field-Relative Speeds
-----------------------------------------------------------
+## Creating a ChassisSpeeds Object from Field-Relative Speeds
 A ``ChassisSpeeds`` object can also be created from a set of field-relative speeds when the robot angle is given. This converts a set of desired velocities relative to the field (for example, toward the opposite alliance station and toward the right field boundary) to a ``ChassisSpeeds`` object which represents speeds that are relative to the robot frame. This is useful for implementing field-oriented controls for a swerve or mecanum drive robot.
 
 The static ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java / Python) / ``ChassisSpeeds::FromFieldRelativeSpeeds`` (C++) method can be used to generate the ``ChassisSpeeds`` object from field-relative speeds. This method accepts the ``vx`` (relative to the field), ``vy`` (relative to the field), ``omega``, and the robot angle.

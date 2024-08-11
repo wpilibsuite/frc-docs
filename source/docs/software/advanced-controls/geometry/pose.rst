@@ -1,8 +1,6 @@
-Translation, Rotation, and Pose
-===============================
+# Translation, Rotation, and Pose
 
-Translation
------------
+## Translation
 
 Translation in 2 dimensions is represented by WPILib's ``Translation2d`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Translation2d.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_translation2d.html), :external:py:class:`Python <wpimath.geometry.Translation2d>`). This class has an x and y component, representing the point :math:`(x, y)` or the vector :math:`\begin{bmatrix}x \\ y \end{bmatrix}` on a 2-dimensional coordinate system.
 
@@ -10,8 +8,7 @@ You can get the distance to another ``Translation2d`` object by using the ``getD
 
 .. note:: ``Translation2d`` uses the C++ Units library. If you're planning on using other WPILib classes that use ``Translation2d`` in Java/Python, such as the trajectory generator, make sure to use meters.
 
-Rotation
---------
+## Rotation
 
 Rotation in 2 dimensions is represented by WPILib's ``Rotation2d`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Rotation2d.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_rotation2d.html), :external:py:class:`Python <wpimath.geometry.Rotation2d>`). This class has an angle component, which represents the robot's rotation relative to an axis on a 2-dimensional coordinate system. Positive rotations are counterclockwise.
 
@@ -19,7 +16,6 @@ Rotation in 2 dimensions is represented by WPILib's ``Rotation2d`` class ([Java]
 
 .. note:: ``Rotation2d`` does not wrap the value of the angle, so if a value of 400 degrees is passed into the constructor, then 400 degrees will be returned in subsequent value calls.
 
-Pose
-----
+## Pose
 
 Pose is a combination of both translation and rotation and is represented by the ``Pose2d`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/geometry/Pose2d.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_pose2d.html), :external:py:class:`Python <wpimath.geometry.Pose2d>`). It can be used to describe the pose of your robot in the field coordinate system, or the pose of objects, such as vision targets, relative to your robot in the robot coordinate system. ``Pose2d`` can also represent the vector :math:`\begin{bmatrix}x \\ y \\ \theta\end{bmatrix}`.

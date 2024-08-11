@@ -1,5 +1,4 @@
-pyproject.toml usage
-====================
+# pyproject.toml usage
 
 .. note:: RobotPy projects are not required to have a ``pyproject.toml``, but when you run ``robotpy sync`` one will automatically be created for you.
 

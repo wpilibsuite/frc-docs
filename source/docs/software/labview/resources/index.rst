@@ -1,5 +1,4 @@
-LabVIEW Resources
-=================
+# LabVIEW Resources
 
 .. toctree::
    :maxdepth: 1

@@ -1,12 +1,10 @@
-Driving the Robot with Tank Drive and Joysticks
-===============================================
+# Driving the Robot with Tank Drive and Joysticks
 
 A common use case is to have a joystick that should drive some actuators that are part of a subsystem. The problem is that the joystick is created in the RobotContainer class and the motors to be controlled are in the subsystem. The idea is to create a command that, when scheduled, reads input from the joystick and calls a method that is created on the subsystem that drives the motors.
 
 In this example a drive base subsystem is shown that is operated in tank drive using a pair of joysticks.
 
-Create a Drive Train Subsystem
-------------------------------
+## Create a Drive Train Subsystem
 
 .. image:: images/driving-with-joysticks-subsystem.png
    :alt: Dragging subsystem from palette to tree
@@ -28,8 +26,7 @@ Since we want to use more then two motors to drive the robot, inside the Differe
 
 Finally, create two Motor Controllers in each Motor Controller Group.
 
-Add the Joysticks to the Operator Interface
--------------------------------------------
+## Add the Joysticks to the Operator Interface
 
 .. image:: images/driving-with-joysticks-joysticks.png
    :alt: dragging joystick from palette to tree
@@ -38,8 +35,7 @@ Add two joysticks to the Operator Interface, one is the left stick and the other
 
 .. note:: Be sure to export your program to C++ or Java before continuing to the next step.
 
-Create a Method to Write the Motors on the Subsystem
-----------------------------------------------------
+## Create a Method to Write the Motors on the Subsystem
 
 .. tab-set::
 
@@ -324,8 +320,7 @@ Create a method that takes the joystick inputs, in this case the left and right 
 
 .. note:: Some RobotBuilder output has been removed for this example for clarity
 
-Read Joystick Values and Call the Subsystem Methods
----------------------------------------------------
+## Read Joystick Values and Call the Subsystem Methods
 
 .. image:: images/driving-with-joysticks-command.png
    :alt: dragging a command from palette to the tree
@@ -344,8 +339,7 @@ Create a parameter preset to retrieve joystick values. Java: For the left parame
 
 .. note:: Be sure to export your program to C++ or Java before continuing to the next step.
 
-Add the Code to do the Driving
-------------------------------
+## Add the Code to do the Driving
 
 .. tab-set::
 
@@ -538,8 +532,7 @@ Add code to the execute method to do the actual driving. All that is needed is p
 
 We also filled in the ``end()`` method so that when this command is interrupted or stopped, the motors will be stopped as a safety precaution.
 
-Make Default Command
---------------------
+## Make Default Command
 
 .. image:: images/driving-with-joysticks-default-command.png
    :alt: setting default command for subsystem

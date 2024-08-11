@@ -1,5 +1,4 @@
-Step 4: Creating and Following a Trajectory
-===========================================
+# Step 4: Creating and Following a Trajectory
 
 With our drive subsystem written, it is now time to generate a trajectory and write an autonomous command to follow it.
 
@@ -26,13 +25,11 @@ As per the :ref:[standard command-based project structure](docs/software/command
       :linenos:
       :lineno-start: 45
 
-Configuring the Trajectory Constraints
---------------------------------------
+## Configuring the Trajectory Constraints
 
 First, we must set some configuration parameters for the trajectory which will ensure that the generated trajectory is followable.
 
-Creating a Voltage Constraint
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Creating a Voltage Constraint
 
 The first piece of configuration we will need is a voltage constraint.  This will ensure that the generated trajectory never commands the robot to go faster than it is capable of achieving with the given voltage supply:
 
@@ -59,8 +56,7 @@ The first piece of configuration we will need is a voltage constraint.  This wil
 
 Notice that we set the maximum voltage to 10V, rather than the nominal battery voltage of 12V.  This gives us some "headroom" to deal with "voltage sag" during operation.
 
-Creating the Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Creating the Configuration
 
 Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` instance, which wraps together all of our path constraints:
 
@@ -86,8 +82,7 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
       :linenos:
       :lineno-start: 52
 
-Generating the Trajectory
--------------------------
+## Generating the Trajectory
 
 With our trajectory configuration in hand, we are now ready to generate our trajectory.  For this example, we will be generating a "clamped cubic" trajectory - this means we will specify full robot poses at the endpoints, and positions only for interior waypoints (also known as "knot points").  As elsewhere, all distances are in meters.
 
@@ -115,8 +110,7 @@ With our trajectory configuration in hand, we are now ready to generate our traj
 
 .. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can also :ref:`import a PathWeaver JSON <docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`.
 
-Creating the RamseteCommand
----------------------------
+## Creating the RamseteCommand
 
 We will first reset our robot's pose to the starting pose of the trajectory. This ensures that the robot's location on the coordinate system and the trajectory's starting position are the same.
 
@@ -184,8 +178,7 @@ This declaration is fairly substantial, so we'll go through it argument-by-argum
 
 Finally, note that we append a final "stop" command in sequence after the path-following command, to ensure that the robot stops moving at the end of the trajectory.
 
-Video
------
+## Video
 
 If all has gone well, your robot's autonomous routine should look something like this:
 

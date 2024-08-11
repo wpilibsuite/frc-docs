@@ -1,10 +1,8 @@
-Migrating from NetworkTables 3.0 to NetworkTables 4.0
-=====================================================
+# Migrating from NetworkTables 3.0 to NetworkTables 4.0
 
 NetworkTables 4.0 (new for 2023) has a number of significant API breaking changes from NetworkTables 3.0, the version of NetworkTables used from 2016-2022.
 
-NetworkTableEntry
------------------
+## NetworkTableEntry
 
 While ``NetworkTableEntry`` can still be used (for backwards compatibility), users are encouraged to migrate to use of type-specific Publisher/Subscriber/Entry classes as appropriate, or if necessary, ``GenericEntry`` (see :ref:`docs/software/networktables/publish-and-subscribe:publishing and subscribing to a topic`. It's important to note that unlike ``NetworkTableEntry``, these classes need to have appropriate lifetime management. Some functionality (e.g. persistent settings) has also moved to ``Topic`` properties (see :ref:`docs/software/networktables/tables-and-topics:networktables tables and topics`).
 
@@ -185,29 +183,24 @@ Recommended NT4 equivalent (should be):
                   self.ySub.close()
                   self.outPub.close()
 
-Shuffleboard
-------------
+## Shuffleboard
 
 In WPILib's Shuffleboard classes, usage of ``NetworkTableEntry`` has been replaced with use of ``GenericEntry``. In C++, since ``GenericEntry`` is non-copyable, return values now return a reference rather than a value.
 
-Force Set Operations
---------------------
+## Force Set Operations
 
 Force set operations have been removed, as it's no longer possible to change a topic's type once it's been published. In most cases calls to ``forceSet`` can simply be replaced with ``set``, but more complex scenarios may require a different design approach (e.g. splitting into different topics).
 
-Listeners
----------
+## Listeners
 
 The separate connection, value, and log listeners/events have been unified into a single listener/event. The NetworkTable-level listeners have also been removed. Listeners in many cases can be replaced with subscriber ``readQueue()`` calls, but if listeners are still required, they can be used via ``NetworkTableInstance`` (see :ref:`docs/software/networktables/listening-for-change:listening for changes` for more information).
 
-Client/Server Operations
-------------------------
+## Client/Server Operations
 
 Starting a NetworkTable server now requires specifying both the NT3 port and the NT4 port. For a NT4-only server, the NT3 port can be specified as 0.
 
 A NetworkTable client can only operate in NT3 mode or NT4 mode, not both (there is no provision for automatic fallback). As such, the ``startClient()`` call has been replaced by ``startClient3()`` and ``startClient4()``. The client must also specify a unique name for itself--the server will reject connection attempts with duplicate names.
 
-C++ Changes
------------
+## C++ Changes
 
 C++ values are now returned/used as value objects (plain ``nt::Value``) instead of shared pointers to them (``std::shared_ptr<nt::Value>``).

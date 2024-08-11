@@ -1,5 +1,4 @@
-Using the Compressor in LabVIEW
-===============================
+# Using the Compressor in LabVIEW
 
 This snippet shows how to set up your roboRIO project to use the Pneumatic Control Module (PCM).  The PCM automatically starts and stops the compressor when specific pressures are measured in the tank. In your roboRIO program, you will need to add the following VIs.
 
@@ -11,22 +10,19 @@ For more information, check out the following links:
 
 [Pneumatics Step by Step for the roboRIO](http://team358.org/files/pneumatic/Pneumatics-StepByStep-roboRIO.pdf)
 
-Begin VI
---------
+## Begin VI
 
 Place this snippet in the Begin.vi.
 
 .. image:: images/using-the-compressor-in-labview/begin.png
 
-Teleop VI
----------
+## Teleop VI
 
 Place this snippet in the Teleop.vi. This portion is only required if you are using the outputs for other processes.
 
 .. image:: images/using-the-compressor-in-labview/teleop.png
 
-Finish VI
----------
+## Finish VI
 
 Place this snippet in Close Refs, save data, etc. frame of the Finish.vi.
 

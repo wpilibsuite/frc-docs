@@ -1,5 +1,4 @@
-Importing a PathWeaver JSON
-===========================
+# Importing a PathWeaver JSON
 
 The ``TrajectoryUtil`` class can be used to import a PathWeaver JSON into robot code to follow it. This article will go over importing the trajectory. Please visit the :ref:`end-to-end trajectory tutorial <docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial>` for more information on following the trajectory.
 

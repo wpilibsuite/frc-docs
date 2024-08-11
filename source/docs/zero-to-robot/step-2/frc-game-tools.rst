@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Installing the FRC Game Tools
-=============================
+# Installing the FRC Game Tools
 
 The FRC\ |reg| Game Tools contains the following software components:
 
@@ -13,8 +12,7 @@ The LabVIEW runtime components required for the Driver Station and Imaging Tool 
 
 .. note:: No components from the LabVIEW Software for FRC package are required for running either the Driver Station or Imaging Tool.
 
-Requirements
-------------
+## Requirements
 
 - Windows 10 or higher (Windows 10, 11).
 
@@ -25,8 +23,7 @@ Requirements
 
 If you wish to install on other machines offline, click :guilabel:`Individual Offline Installers` before clicking :guilabel:`Download` to download the full installer.
 
-Uninstall Old Versions (Recommended)
-------------------------------------
+## Uninstall Old Versions (Recommended)
 
 .. important:: LabVIEW teams have already completed this step, do not repeat it. LabVIEW teams should skip to the :ref:`docs/zero-to-robot/step-2/frc-game-tools:installation` section.
 
@@ -37,21 +34,18 @@ Before installing the new version of the FRC Game Tools it is recommended to rem
 .. image:: images/labview/uninstall_control_panel.png
    :alt: Add or Remove -> NI Software
 
-Select Components to Uninstall
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Select Components to Uninstall
 
 In the dialog box that appears, select all entries. The easiest way to do this is to de-select the :guilabel:`Products Only` check-box and select the check-box to the left of "Name". Click :guilabel:`Remove`. Wait for the uninstaller to complete and reboot if prompted.
 
 .. image:: images/labview/uninstall_select_components.png
    :alt: Using the checkbox in the upper left to select all.
 
-Installation
-------------
+## Installation
 
 .. important:: The Game Tools installer may prompt that .NET Framework 4.6.2 needs to be updated or installed. Follow prompts on-screen to complete the installation, including rebooting if requested. Then resume the installation of the FRC Game Tools, restarting the installer if necessary.
 
-Extraction
-^^^^^^^^^^
+### Extraction
 
 .. tab-set::
    .. tab-item:: Online
@@ -67,72 +61,63 @@ Extraction
 
       .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then install 7-Zip and use that to extract the iso.
 
-NI Package Manager License
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### NI Package Manager License
 
 .. image:: images/update-suite/ni-package-license.png
    :alt: Accepting the License Agreement for NI Package Manager.
 
 If you see this screen, click :guilabel:`Next`. This screen confirms that you agree to NI Package Manager License agreement.
 
-Disable Windows Fast Startup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Disable Windows Fast Startup
 
 .. image:: images/update-suite/labview_fast_startup.png
    :alt: Screen for disabling Windows fast startup.
 
 It is recommended to leave this screen as-is, as Windows Fast Startup can cause issues with the NI drivers required to image the roboRIO. Go ahead and click :guilabel:`Next`.
 
-NI Package Manager Review
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### NI Package Manager Review
 
 .. image:: images/update-suite/labview_package_manager_review.png
    :alt: Review screen that shows what is about to be installed.
 
 If you see this screen, click :guilabel:`Next`.
 
-NI Package Manager Installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### NI Package Manager Installation
 
 .. image:: images/update-suite/ni-package-install.png
    :alt: Screen with progress bars indicating the amount of completion.
 
 Installation progress of the NI Package Manager will be tracked in this window.
 
-Additional Software
-^^^^^^^^^^^^^^^^^^^
+### Additional Software
 
 .. image:: images/update-suite/additional-software.png
    :alt: Leave all of the additional packages selected.
 
 If you see this screen, click :guilabel:`Next`.
 
-License Agreements
-^^^^^^^^^^^^^^^^^^
+### License Agreements
 
 .. image:: images/update-suite/license-agreements.png
    :alt: Accept the NI software license agreement.
 
 Select :guilabel:`I accept…` then click :guilabel:`Next`
 
-Review Summary
-^^^^^^^^^^^^^^
+### Review Summary
 
 .. image:: images/update-suite/review-summary.png
    :alt: Review Summary
 
 Click :guilabel:`Next`.
 
-Detail Progress
-^^^^^^^^^^^^^^^
+### Detail Progress
 
 .. image:: images/update-suite/detail-progress.png
    :alt: Detail Progress
 
 This screen showcases the installation process, go ahead and press :guilabel:`Next` when it's finished.
 
-Reboot to Complete Installation
--------------------------------
+## Reboot to Complete Installation
 
 .. image:: images/update-suite/install-complete-reboot.png
    :alt: Choose reboot to complete the installation.

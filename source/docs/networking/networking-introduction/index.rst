@@ -1,5 +1,4 @@
-Networking Introduction
-=======================
+# Networking Introduction
 
 This section outlines basic robot configuration and usage relating to communication between the driver station and roboRIO.
 

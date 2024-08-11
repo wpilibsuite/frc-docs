@@ -1,5 +1,4 @@
-SmartDashboard Namespace
-========================
+# SmartDashboard Namespace
 
 SmartDashboard uses NetworkTables to send data between the robot and the Dashboard (Driver Station) computer. NetworkTables sends data as name, value pairs, like a distributed hashtable between the robot and the computer. When a value is changed in one place, its value is automatically updated in the other place. This mechanism and a standard set of name (keys) is how data is displayed on the SmartDashboard.
 
@@ -7,8 +6,7 @@ There is a hierarchical structure in the name space creating a set of tables and
 
 For informational purposes, the names and values can be displayed using the OutlineViewer application that is installed in the same location as the SmartDashboard. It will display all the NetworkTables keys and values as they are updated.
 
-SmartDashboard Data Values
---------------------------
+## SmartDashboard Data Values
 
 .. image:: images/smartdashboard-namespace/data-values.png
   :alt: The SmartDashboard keys in NetworkTables always begin with "/SmartDashboard/*"
@@ -27,16 +25,14 @@ SmartDashboard values are created with key names that begin with ``SmartDashboar
 
 The ``Arm position`` is created with the ``putNumber()`` call. The ``AutonomousCommand`` is written with a ``putData("Autonomous Command", command)`` that is not shown in the above code fragment. The chooser is created as a ``SendableChooser`` object and the string value, ``Program Version`` is created with the ``putString()`` call.
 
-View of SmartDashboard
-----------------------
+## View of SmartDashboard
 
 .. image:: images/smartdashboard-namespace/view-smartdashboard.png
   :alt: SmartDashboard display of the values generated in the code above.
 
 The code from the previous step generates the table values as shown and the SmartDashboard display as shown here. The numbers correspond to the NetworkTables variables shown in the previous step.
 
-LiveWindow Data Values
-----------------------
+## LiveWindow Data Values
 
 .. image:: images/smartdashboard-namespace/livewindow-data-values.png
   :alt: Viewing all of the LiveWindow data in SmartDashboard when in Test mode.

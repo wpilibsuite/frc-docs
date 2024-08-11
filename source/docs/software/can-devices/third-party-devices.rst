@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Third-Party CAN Devices
-=======================
+# Third-Party CAN Devices
 
 A number of FRC\ |reg| vendors offer their own :term:`CAN` peripherals.  As CAN devices
 offer expansive feature-sets, vendor CAN devices require similarly
@@ -12,15 +11,13 @@ libraries, see :ref:`3rd Party Libraries <docs/software/vscode-overview/3rd-part
 
 A list of common third-party CAN devices from various vendors, along with links to corresponding external documentation, is provided below:
 
-CTR Electronics
---------------------------
+## CTR Electronics
 
 CTR Electronics (CTRE) offers several CAN peripherals with external libraries. General resources for all CTRE devices include:
 
   [Phoenix Device Software Documentation](https://docs.ctr-electronics.com/)
 
-CTRE Motor Controllers
-^^^^^^^^^^^^^^^^^^^^^^
+### CTRE Motor Controllers
 
 - **Talon FX (with Falcon 500 Motor)**
 
@@ -40,8 +37,7 @@ CTRE Motor Controllers
     - [Hardware User's Manual](https://store.ctr-electronics.com/content/user-manual/Victor%20SPX%20User's%20Guide.pdf)
     - [Software Documentation](https://v5.docs.ctr-electronics.com/en/stable/ch13_MC.html)
 
-CTRE Sensors
-^^^^^^^^^^^^
+### CTRE Sensors
 
 - **CANcoder**
 
@@ -67,8 +63,7 @@ CTRE Sensors
     - [Hardware User's Manual](https://store.ctr-electronics.com/content/user-manual/CANifier%20User%27s%20Guide.pdf)
     - [Software Documentation](https://v5.docs.ctr-electronics.com/en/stable/ch12_BringUpCANifier.html)
 
-CTRE Other CAN Devices
-^^^^^^^^^^^^^^^^^^^^^^
+### CTRE Other CAN Devices
 
 - **CANdle LED Controller**
 
@@ -76,13 +71,11 @@ CTRE Other CAN Devices
     - [Hardware User's Manual](https://store.ctr-electronics.com/content/user-manual/CANdle%20User's%20Guide.pdf)
     - [Software Documentation](https://v5.docs.ctr-electronics.com/en/stable/ch12b_BringUpCANdle.html)
 
-REV Robotics
-------------
+## REV Robotics
 
 REV Robotics currently offers the SPARK MAX and SPARK Flex motor controllers which can be used for brushed and REV brushless (NEO, NEO 550, and NEO Vortex) motors.
 
-REV Motor Controllers
-^^^^^^^^^^^^^^^^^^^^^
+### REV Motor Controllers
 
 - **SPARK MAX**
 
@@ -94,34 +87,29 @@ REV Motor Controllers
     - API Documentation ([Java](https://codedocs.revrobotics.com/java/com/revrobotics/cansparkflex), [C++](https://codedocs.revrobotics.com/cpp/classrev_1_1_c_a_n_spark_flex))
     - [Technical Manual](https://docs.revrobotics.com/brushless/spark-flex/overview)
 
-Playing With Fusion
--------------------
+## Playing With Fusion
 
 Playing With Fusion (PWF) offers the Venom integrated motor/controller as well as a Time-of-Flight distance sensor:
 
-PWF Motor Controllers
-^^^^^^^^^^^^^^^^^^^^^
+### PWF Motor Controllers
 
 - **Venom**
 
     - API Documentation ([Java](https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html), [C++](https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html))
     - [Technical Manual](https://www.playingwithfusion.com/include/getfile.php?fileid=7086)
 
-PWF Sensors
-^^^^^^^^^^^
+### PWF Sensors
 
 - **Time of Flight Sensor**
 
     - API Documentation ([Java](https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html), [C++](https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html))
     - [Technical Manual](https://www.playingwithfusion.com/include/getfile.php?fileid=7091)
 
-Redux Robotics
---------------
+## Redux Robotics
 
 Redux Robotics currently offers the Canandcoder :term:`CAN` + :term:`PWM` magnetic encoder and the Canandcolor :term:`CAN`-enabled color sensor.
 
-Redux Sensors
-^^^^^^^^^^^^^
+### Redux Sensors
 
 - **Canandcoder**
 

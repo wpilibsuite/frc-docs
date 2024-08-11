@@ -1,5 +1,4 @@
-Driver Station
-==============
+# Driver Station
 
 .. toctree::
    :maxdepth: 1

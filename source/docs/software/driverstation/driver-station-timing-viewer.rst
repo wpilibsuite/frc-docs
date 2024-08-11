@@ -1,18 +1,15 @@
-Driver Station Timing Viewer
-============================
+# Driver Station Timing Viewer
 
 The 2024 Driver Station has a a new window to help diagnose robot control issues.
 
-Opening the Timing Viewer
--------------------------
+## Opening the Timing Viewer
 
 To start the Driver Station Timing Viewer, select the gear icon and then select :guilabel:`View Timing`.
 
 .. image:: images/view-timing/view-timing-menu.png
    :alt: Driver Station gear menu with View Timing selected
 
-Viewing Timing
---------------
+## Viewing Timing
 
 The Timing viewer shows the timing of the driver station loops measuring the joysick, keyboard, and control and status network packets. When timing is good, all values should be close to 0 ms. This can help diagnose what is causing robot control issues.
 

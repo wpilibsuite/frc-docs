@@ -1,5 +1,4 @@
-Pneumatics Control Module
-=========================
+# Pneumatics Control Module
 
 .. image:: /docs/controls-overviews/images/control-system-hardware/pneumatics-control-module.png
     :alt: The Pneumatics Control Module (PCM)

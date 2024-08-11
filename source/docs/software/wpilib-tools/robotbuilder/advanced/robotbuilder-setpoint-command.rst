@@ -1,10 +1,8 @@
-Setpoint Command
-================
+# Setpoint Command
 
 A Setpoint Command works in conjunction with a PIDSubsystem to drive an actuator to a particular angle or position that is measured using a potentiometer or encoder. This happens so often that there is a shortcut in RobotBuilder to do this task.
 
-Start with a PIDSubsystem
--------------------------
+## Start with a PIDSubsystem
 
 .. image:: images/setpoint-command-1.png
 
@@ -12,15 +10,13 @@ Suppose in a robot there is a wrist joint with a potentiometer that measures the
 
 It is important to set the **Tolerance** parameter. This controls how far off the current value can be from the setpoint and be considered on target. This is the criteria that the SetpointCommand uses to move onto the next command.
 
-Creating the Setpoint Command
------------------------------
+## Creating the Setpoint Command
 
 .. image:: images/setpoint-command-2.png
 
 Right-click on the Commands folder in the palette and select "Add Setpoint command".
 
-Setpoint Command Parameters
----------------------------
+## Setpoint Command Parameters
 
 .. image:: images/setpoint-command-3.png
 

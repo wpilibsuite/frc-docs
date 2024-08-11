@@ -1,5 +1,4 @@
-Generating and Storing Pressure
-===============================
+# Generating and Storing Pressure
 
 Pressure is created using a pneumatic compressor and stored in pneumatic tanks. The compressor must be on the robot and powered by the robot's pneumatics module. The "Closed Loop" mode on the Compressor is enabled by default, and it is *not* recommended that teams change this setting. When closed loop control is enabled the pneumatic module will automatically turn the compressor on when the digital pressure switch is closed (below the pressure threshold) and turn it off when the pressure switch is open (~120PSI). When closed loop control is disabled the compressor will not be turned on. Using the ``Compressor`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Compressor.html) / [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_compressor.html)) class, users can query the status of the compressor. The state (currently on or off), pressure switch state, and compressor current can all be queried from the Compressor object, as shown by the following code from the Solenoid example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/Solenoid)):
 
@@ -98,13 +97,11 @@ The Pneumatic Hub also has methods for enabling compressor control using the REV
           :lines: 76-81, 84-90
 
 
-Pressure Transducers
---------------------
+## Pressure Transducers
 
 A pressure transducer is a sensor where analog voltage is proportial to the measured pressure.
 
-Pneumatic Hub
-^^^^^^^^^^^^^
+### Pneumatic Hub
 
 The Pneumatic Hub has analog inputs that may be used to read a pressure transducer using the Compressor class.
 
@@ -133,8 +130,7 @@ The Pneumatic Hub has analog inputs that may be used to read a pressure transduc
           :language: c++
           :lines: 19-23
 
-roboRIO
-^^^^^^^
+### roboRIO
 
 A pressure transducer can be connected to the Analog Input ports on the roboRIO, and can be read by the ``AnalogInput`` or ``AnalogPotentiometer`` classes in WPILib.
 

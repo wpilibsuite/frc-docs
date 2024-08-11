@@ -1,8 +1,6 @@
-Organizing Widgets
-==================
+# Organizing Widgets
 
-Setting Widget Size and Position
---------------------------------
+## Setting Widget Size and Position
 
 Call ``withSize`` and ``withPosition`` to set the size and position of the widget in the tab.
 
@@ -35,8 +33,7 @@ Call ``withSize`` and ``withPosition`` to set the size and position of the widge
         .withSize(2, 1) # make the widget 2x1
         .withPosition(0, 0)) # place it in the top-left corner
 
-Adding Widgets to Layouts
--------------------------
+## Adding Widgets to Layouts
 
 If there are many widgets in a tab with related data, it can be useful to place them into smaller subgroups instead of loose in the tab. Much like how the handle to a tab is retrieved with ``Shuffleboard.getTab``, a layout inside a tab (or even in another layout) can be retrieved with ``ShuffleboardTab.getLayout``.
 

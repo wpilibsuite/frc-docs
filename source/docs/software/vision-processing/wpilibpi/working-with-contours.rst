@@ -1,10 +1,8 @@
-Working with Contours
-=====================
+# Working with Contours
 
 After thresholding and removing noise with morphological operations, you are now ready to use OpenCV's ``findContours`` method. This method allows you to generate contours based on your binary image.
 
-Finding and Filtering Contours
-------------------------------
+## Finding and Filtering Contours
 
 .. tab-set-code::
 
@@ -33,13 +31,11 @@ If you draw the contour you just found, it should look something like this:
 .. image:: images/using-cameraserver/red-outline.jpg
    :alt: Retroreflective tape outlined in red by the image processing algorithm.
 
-Extracting Information from Contours
-------------------------------------
+## Extracting Information from Contours
 
 Now that you've found the contour(s) that you want, you now want to get information about it, such as the center, corners, and rotation.
 
-Center
-^^^^^^
+### Center
 
 .. tab-set-code::
 
@@ -49,8 +45,7 @@ Center
       center, _, _ = rect
       center_x, center_y = center
 
-Corners
-^^^^^^^
+### Corners
 
 .. tab-set-code::
 
@@ -59,8 +54,7 @@ Corners
       corners = cv2.convexHull(contour)
       corners = cv2.approxPolyDP(corners, 0.1 * cv2.arcLength(contour), True)
 
-Rotation
-^^^^^^^^
+### Rotation
 
 .. tab-set-code::
 
@@ -70,8 +64,7 @@ Rotation
 
 For more information on how you can use these values, see :ref:`docs/software/vision-processing/introduction/identifying-and-processing-the-targets:Measurements`
 
-Publishing to NetworkTables
----------------------------
+## Publishing to NetworkTables
 
 You can use NetworkTables to send these properties to the Driver Station and the RoboRIO. Additional processing could be done on the Raspberry Pi, or the RoboRIO itself.
 

@@ -1,5 +1,4 @@
-Pneumatic Hub
-=============
+# Pneumatic Hub
 
 .. image:: /docs/controls-overviews/images/control-system-hardware/pneumatic-hub.png
     :alt: The Pneumatic Hub (PH)

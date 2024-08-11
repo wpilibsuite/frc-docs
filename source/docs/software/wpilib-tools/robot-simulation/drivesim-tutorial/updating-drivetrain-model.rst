@@ -1,5 +1,4 @@
-Step 3: Updating the Drivetrain Model
-=====================================
+# Step 3: Updating the Drivetrain Model
 Now that the drivetrain model has been made, it needs to be updated periodically with the latest motor voltage commands. It is recommended to do this step in a separate ``simulationPeriodic()`` / ``SimulationPeriodic()`` method inside your subsystem and only call this method in simulation.
 
 .. note:: If you are using the command-based framework, every subsystem that extends ``SubsystemBase`` has a ``simulationPeriodic()`` / ``SimulationPeriodic()`` which can be overridden. This method is automatically run only during simulation. If you are not using the command-based library, make sure you call your simulation method inside the overridden ``simulationPeriodic()`` / ``SimulationPeriodic()`` of the main ``Robot`` class. These periodic methods are also automatically called only during simulation.

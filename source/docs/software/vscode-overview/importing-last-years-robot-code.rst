@@ -1,17 +1,14 @@
-Importing Last Year's Robot Code
-================================
+# Importing Last Year's Robot Code
 
 Due to changes in the project, it is necessary to update the build files for a previous years Gradle project. It is also necessary to import vendor libraries again, since last year's vendor libraries must be updated to be compatible with this year's projects.
 
-Automatic Import
-----------------
+## Automatic Import
 
 To make it easy for teams to import previous years gradle projects into the current year's framework, WPILib includes a wizard for importing previous years projects into VS Code. This will generate the necessary gradle components and load the project into VS Code. In place upgrades are not supported.
 
 .. important:: The import process copies your project source files from the current directory to a new directory and completely regenerates the gradle files. Additionally, it updates the code for the package changes made in 2023. If you made non-standard updates to the ``build.gradle``, you will need to make those changes again. For this reason, in place upgrades are not supported. It is also necessary to import vendor libraries again, since last year's vendor libraries must be updated to be compatible with this year's projects.
 
-Launching the Import Wizard
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Launching the Import Wizard
 
 .. image:: images/importing-previous-project/ImportPopup.png
 
@@ -47,14 +44,12 @@ The gradle project will be upgraded and copied into the new project directory. Y
 
 Click :guilabel:`Yes I trust the authors`.
 
-C++ Configurations (C++ Only)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### C++ Configurations (C++ Only)
 
 For C++ projects, there is one more step to set up IntelliSense. Whenever you open a project, you should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click :guilabel:`Yes` to set up IntelliSense.
 
 .. image:: images/importing-previous-project/cpp-configurations.png
 
-3rd Party Libraries
-^^^^^^^^^^^^^^^^^^^
+### 3rd Party Libraries
 
 It is necessary to update and re-import 3rd party libraries. See :doc:`3rd Party Libraries <3rd-party-libraries>` for details.

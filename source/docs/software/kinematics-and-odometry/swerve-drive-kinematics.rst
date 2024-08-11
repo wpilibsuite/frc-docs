@@ -1,18 +1,15 @@
-Swerve Drive Kinematics
-=======================
+# Swerve Drive Kinematics
 The ``SwerveDriveKinematics`` class is a useful tool that converts between a ``ChassisSpeeds`` object and several ``SwerveModuleState`` objects, which contains velocities and angles for each swerve module of a swerve drive robot.
 
 .. note:: Swerve drive kinematics uses a common coordinate system. You may wish to reference the :doc:`/docs/software/basic-programming/coordinate-system` section for details.
 
-The swerve module state class
------------------------------
+## The swerve module state class
 The ``SwerveModuleState`` class contains information about the velocity and angle of a singular module of a swerve drive. The constructor for a ``SwerveModuleState`` takes in two arguments, the velocity of the wheel on the module, and the angle of the module.
 
 .. note:: In Java / Python, the velocity of the wheel must be in meters per second. In C++, the units library can be used to provide the velocity using any linear velocity unit.
 .. note:: An angle of 0 corresponds to the modules facing forward.
 
-Constructing the kinematics object
-----------------------------------
+## Constructing the kinematics object
 The ``SwerveDriveKinematics`` class accepts a variable number of constructor arguments, with each argument being the location of a swerve module relative to the robot center (as a ``Translation2d``. The number of constructor arguments corresponds to the number of swerve modules.
 
 .. note:: A swerve drive must have 2 or more modules.
@@ -67,8 +64,7 @@ The locations for the modules must be relative to the center of the robot. Posit
         frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
       )
 
-Converting chassis speeds to module states
-------------------------------------------
+## Converting chassis speeds to module states
 The ``toSwerveModuleStates(ChassisSpeeds speeds)`` (Java / Python) / ``ToSwerveModuleStates(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a an array of ``SwerveModuleState`` objects. This is useful in situations where you have to convert a forward velocity, sideways velocity, and an angular velocity into individual module states.
 
 The elements in the array that is returned by this method are the same order in which the kinematics object was constructed. For example, if the kinematics object was constructed with the front left module location, front right module location, back left module location, and the back right module location in that order, the elements in the array would be the front left module state, front right module state, back left module state, and back right module state in that order.
@@ -121,8 +117,7 @@ The elements in the array that is returned by this method are the same order in 
       # Convert to module states
       frontLeft, frontRight, backLeft, backRight = self.kinematics.toSwerveModuleStates(speeds)
 
-Module angle optimization
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### Module angle optimization
 The ``SwerveModuleState`` class contains a static ``optimize()`` (Java) / ``Optimize()`` (C++) method that is used to "optimize" the speed and angle setpoint of a given ``SwerveModuleState`` to minimize the change in heading. For example, if the angular setpoint of a certain module from inverse kinematics is 90 degrees, but your current angle is -89 degrees, this method will automatically negate the speed of the module setpoint and make the angular setpoint -90 degrees to reduce the distance the module has to travel.
 
 This method takes two parameters: the desired state (usually from the ``toSwerveModuleStates`` method) and the current angle. It will return the new optimized state which you can use as the setpoint in your feedback control loop.
@@ -146,8 +141,7 @@ This method takes two parameters: the desired state (usually from the ``toSwerve
       frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
          Rotation2d(self.m_turningEncoder.getDistance()))
 
-Cosine compensation
-^^^^^^^^^^^^^^^^^^^
+### Cosine compensation
 Cosine compensation is a technique that reduces the speed of a module when it is not pointing in the desired direction. This is done by multiplying the desired speed of the module by the cosine of the angle error.
 
 - If the wheel is pointing straight in the desired direction, then the speed remains unchanged as :math:`\cos(0^\circ) = 1`.
@@ -181,8 +175,7 @@ Cosine compensation has been shown to reduce the amount of "skew" a swerve drive
       frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle)
       frontLeftOptimized.speed *= (frontLeftOptimized.angle - currentAngle).cos()
 
-Field-oriented drive
-^^^^^^^^^^^^^^^^^^^^
+### Field-oriented drive
 :ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get module states from a set of desired field-oriented speeds.
 
 .. tab-set-code::
@@ -230,16 +223,14 @@ Field-oriented drive
       # Now use this in our kinematics
       self.moduleStates = self.kinematics.toSwerveModuleStates(speeds)
 
-Using custom centers of rotation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Using custom centers of rotation
 Sometimes, rotating around one specific corner might be desirable for certain evasive maneuvers. This type of behavior is also supported by the WPILib classes. The same ``ToSwerveModuleStates()`` method accepts a second parameter for the center of rotation (as a ``Translation2d``). Just like the wheel locations, the ``Translation2d`` representing the center of rotation should be relative to the robot center.
 
 .. note:: Because all robots are a rigid frame, the provided ``vx`` and ``vy`` velocities from the ``ChassisSpeeds`` object will still apply for the entirety of the robot. However, the ``omega`` from the ``ChassisSpeeds`` object will be measured from the center of rotation.
 
 For example, one can set the center of rotation on a certain module and if the provided ``ChassisSpeeds`` object has a ``vx`` and ``vy`` of zero and a non-zero ``omega``, the robot will appear to rotate around that particular swerve module.
 
-Converting module states to chassis speeds
-------------------------------------------
+## Converting module states to chassis speeds
 One can also use the kinematics object to convert an array of ``SwerveModuleState`` objects to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(SwerveModuleState... states)`` (Java / Python) / ``ToChassisSpeeds(SwerveModuleState... states)`` (C++) method can be used to achieve this.
 
 .. tab-set-code::
@@ -295,8 +286,7 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
       sideways = chassisSpeeds.vy
       angular = chassisSpeeds.omega
 
-Module state visualization with AdvantageScope
-----------------------------------------------
+## Module state visualization with AdvantageScope
 By recording a set of swerve module states using :ref:`NetworkTables <docs/software/networktables/networktables-intro:What is NetworkTables>` or :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`, :ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` can be used to visualize the state of a swerve drive. The code below shows how a set of ``SwerveModuleState`` objects can be published to NetworkTables.
 
 .. tab-set-code::

@@ -1,5 +1,4 @@
-Controls Glossary
-=================
+# Controls Glossary
 
 .. glossary::
 

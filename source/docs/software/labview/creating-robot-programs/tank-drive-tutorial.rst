@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Tank Drive Tutorial
-===================
+# Tank Drive Tutorial
 
 **Question:** How do I get my robot to drive with two joysticks using tank drive?
 

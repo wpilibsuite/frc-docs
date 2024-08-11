@@ -1,5 +1,4 @@
-Physics Simulation with WPILib
-==============================
+# Physics Simulation with WPILib
 
 Because :ref:`state-space notation <docs/software/advanced-controls/state-space/state-space-intro:What is State-Space Notation?>` allows us to compactly represent the :term:`dynamics <dynamics>` of :term:`systems <system>`, we can leverage it to provide a backend for simulating physical systems on robots. The goal of these simulators is to simulate the motion of robot mechanisms without modifying existing non-simulation user code. The basic flow of such simulators is as follows:
 
@@ -12,8 +11,7 @@ Because :ref:`state-space notation <docs/software/advanced-controls/state-space/
    - The simulation's :term:`state` is updated using :term:`inputs <input>`, usually voltages from motors set from a PID loop
    - Simulated encoder (or other sensor) readings are set for user code to use in the next timestep
 
-WPILib's Simulation Classes
----------------------------
+## WPILib's Simulation Classes
 
 The following physics simulation classes are available in WPILib:
 
@@ -28,8 +26,7 @@ All simulation classes (with the exception of the differential drive simulator) 
 
 .. note:: Swerve support for simulation is in the works, but we cannot provide an ETA. For updates on progress, please follow this [pull request](https://github.com/wpilibsuite/allwpilib/pull/3374).
 
-Usage in User Code
-------------------
+## Usage in User Code
 
 The following is available from the WPILib :code:`elevatorsimulation` [example project](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation).
 

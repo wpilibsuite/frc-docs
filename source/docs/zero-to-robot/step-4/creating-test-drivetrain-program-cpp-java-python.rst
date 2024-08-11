@@ -1,5 +1,4 @@
-Creating your Test Drivetrain Program (Java/C++/Python)
-=======================================================
+# Creating your Test Drivetrain Program (Java/C++/Python)
 
 Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch. This article walks through creating a project from one of the provided examples which has some code already written to drive a basic robot.
 
@@ -10,8 +9,7 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 
 .. _create_java_cpp_project:
 
-Creating a New WPILib Project (Java/C++)
-----------------------------------------
+## Creating a New WPILib Project (Java/C++)
 
 Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib", this will bring up the list of WPILib-specific VS Code commands. Now, select the "Create a new project" command:
 
@@ -40,8 +38,7 @@ Once all the above have been configured, click "Generate Project" and the robot 
 
 .. warning:: Creating projects on OneDrive is not supported as OneDrive's caching interferes with the build system. Some Windows installations put the Documents and Desktop folders on OneDrive by default.
 
-Opening The New Project
------------------------
+## Opening The New Project
 
 .. image:: /docs/software/vscode-overview/images/importing-previous-project/opening-project.png
    :alt: Open Project Dialog in VS Code
@@ -58,8 +55,7 @@ Once opened we will see the project hierarchy on the left. Double clicking on th
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
     :alt: The robot.java code shown after opening a new project.
 
-C++ Configurations (C++ Only)
------------------------------
+## C++ Configurations (C++ Only)
 
 For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
 
@@ -68,8 +64,7 @@ For C++ projects, there is one more step to set up IntelliSense.  Whenever we op
 
 .. _create_python_project:
 
-Creating a New WPILib Project (Python)
---------------------------------------
+## Creating a New WPILib Project (Python)
 
 Running the ``robotpy init`` command will initialize a new robot project:
 
@@ -104,8 +99,7 @@ This will create a ``robot.py`` and ``pyproject.toml`` file, but will not overwr
 .. seealso:: :ref:`docs/zero-to-robot/step-2/python-setup:Download RobotPy for roboRIO`
 
 
-Basic Drivetrain example
-------------------------
+## Basic Drivetrain example
 
 First, here is what a simple code can look like for a Drivetrain with PWM controlled motors (such as SparkMax).
 
@@ -127,8 +121,7 @@ First, here is what a simple code can look like for a Drivetrain with PWM contro
 
 Now let's look at various parts of the code.
 
-Imports/Includes
-----------------
+## Imports/Includes
 
 .. tab-set::
 
@@ -258,8 +251,7 @@ Imports/Includes
 
 Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``XBoxController`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax`` / ``WPI_TalonSRX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the Xbox  controller to the motors).
 
-Defining the variables for our sample robot
--------------------------------------------
+## Defining the variables for our sample robot
 
 .. tab-set::
 
@@ -493,8 +485,7 @@ The sample robot in our examples will have an Xbox Controller on USB port 0 for 
 
 .. note:: The variable initializations for C++ are in the ``private`` section at the bottom of the program. This means they are private to the class (``Robot``). The C++ code also sets the Motor Safety expiration to 0.1 seconds (the drive will shut off if we don't give it a command every .1 seconds) and starts the ``Timer`` used for autonomous.
 
-Robot Initialization
---------------------
+## Robot Initialization
 
 .. tab-set::
 
@@ -525,8 +516,7 @@ The ``RobotInit`` method is run when the robot program is starting up, but after
 
 .. note:: In C++, the drive inversion is handled in the ``Robot()`` constructor above.
 
-Simple Autonomous Example
--------------------------
+## Simple Autonomous Example
 
 .. tab-set-code::
 
@@ -552,8 +542,7 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
 
 ``AutonomousPeriodic`` is run once every period while the robot is in autonomous mode. In the ``TimedRobot`` class the period is a fixed time, which defaults to 20ms. In this example, the periodic code checks if the timer is less than 2 seconds and if so, drives forward at half speed using the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. If more than 2 seconds has elapsed, the code stops the robot drive.
 
-Joystick Control for Teleoperation
-----------------------------------
+## Joystick Control for Teleoperation
 
 .. tab-set-code::
 
@@ -577,8 +566,7 @@ Joystick Control for Teleoperation
 
 Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the left thumbstick of the ``XBoxController`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
-Test Mode
----------
+## Test Mode
 
 .. tab-set-code::
 
@@ -602,8 +590,7 @@ Test Mode
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.
 
-Deploying the Project to a Robot
---------------------------------
+## Deploying the Project to a Robot
 
 * :ref:`Deploy Java/C++ code <docs/software/vscode-overview/deploying-robot-code:Building and Deploying Robot Code>`
 * :doc:`Deploy Python code </docs/software/python/subcommands/deploy>`

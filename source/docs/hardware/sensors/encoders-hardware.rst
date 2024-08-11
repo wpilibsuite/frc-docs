@@ -1,14 +1,12 @@
 .. include:: <isonum.txt>
 
-Encoders - Hardware
-===================
+# Encoders - Hardware
 
 .. note:: This section covers encoder hardware.  For a software guide to encoders, see :ref:`docs/software/hardware-apis/sensors/encoders-software:Encoders - Software`.
 
 Encoders are by far the most common method for measuring rotational motion in FRC\ |reg|, and for good reason - they are cheap, easy-to-use, and reliable.  As they produce digital signals, they are less-prone to noise and interference than analog devices (such as :doc:`potentiometers <analog-potentiometers-hardware>`).
 
-Types of Encoders
------------------
+## Types of Encoders
 
 There are three main ways encoders connect physically that are typically used in FRC:
 
@@ -26,8 +24,7 @@ There are also three main ways the encoder data is communicated that are typical
 
 .. note:: Some encoders may support more then one communication method
 
-Shafted Encoders
-^^^^^^^^^^^^^^^^
+### Shafted Encoders
 
 .. image:: images/encoders-hardware/greyhill-63r-encoder.svg
   :alt: Diagram of the Greyhill 63R Optical Encoder.
@@ -40,8 +37,7 @@ Examples of shafted encoders:
 - [Grayhill 63r](https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf)
 - [US Digital MA3](https://www.usdigital.com/products/encoders/absolute/shaft/ma3/)
 
-On-shaft Encoders
-^^^^^^^^^^^^^^^^^
+### On-shaft Encoders
 
 .. image:: images/encoders-hardware/amt10x-encoders.svg
   :alt: Diagram of the AMT103 and the AMT102 shaft encoders.
@@ -56,8 +52,7 @@ Examples of On-shaft encoders:
 - [REV Through Bore Encoder](https://www.revrobotics.com/rev-11-1271/)
 - [US Digital E4T](https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit)
 
-Magnetic Encoders
-^^^^^^^^^^^^^^^^^
+### Magnetic Encoders
 
 .. image:: images/encoders-hardware/ctre-magnetic-encoder.png
   :alt: Picture of the CTRE Mag Encoder.
@@ -72,8 +67,7 @@ Examples of magnetic encoders:
 - [Team 221 Lamprey2](https://www.andymark.com/products/lamprey-absolute-encoder)
 
 
-Quadrature Encoders
-^^^^^^^^^^^^^^^^^^^
+### Quadrature Encoders
 
 The term "quadrature" refers to the method by which the motion is measured/encoded.  A quadrature encoder produces two square-wave pulses that are 90-degrees out-of-phase from each other, as seen in the picture below:
 
@@ -93,8 +87,7 @@ Examples of quadrature encoders:
 - [REV Through Bore Encoder](https://www.revrobotics.com/rev-11-1271/)
 - [US Digital E4T](https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit)
 
-Quadrature Encoder Wiring
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Quadrature Encoder Wiring
 
 .. image:: images/digital-inputs-hardware/e4t-oem-miniature-optical-encoder-to-roborio.svg
   :alt: Wiring the E4T Optical Encoder to two DIO ports.
@@ -102,13 +95,11 @@ Quadrature Encoder Wiring
 
 Quadrature Encoders, such as the [E4T OEM Miniature Optical Encoder](https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit), can be wired to two digital input ports as shown above.
 
-Index
-~~~~~
+#### Index
 
 Some quadrature encoders have a third index pin which pulses when the encoder completes a revolution.
 
-Quaderature Encoder Resolution
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Quaderature Encoder Resolution
 
 .. warning:: The acronyms "CPR" and "PPR" are *both* used by varying sources to denote both edges per revolution *and* cycles per revolution, so the acronym alone is not enough to tell which is of the two is meant when by a given value.  When in doubt, consult the technical manual of your specific encoder.
 
@@ -122,8 +113,7 @@ Thus, a resolution stated in edges per revolution has a value four times that of
 
 In general, the resolution of your encoder in edges-per-revolution should be somewhat finer than your smallest acceptable error in positioning.  Thus, if you want to know the mechanism plus-or-minus one degree, you should have an encoder with a resolution somewhat higher than 360 edges per revolution.
 
-Duty Cycle Encoders
-^^^^^^^^^^^^^^^^^^^
+### Duty Cycle Encoders
 
 .. image:: /docs/software/hardware-apis/sensors/images/encoders-software/encoding-direction.png
   :alt: The PWM signal pattern for minimum and maximum angles.
@@ -138,8 +128,7 @@ Examples of duty cycle encoders:
 - [Team 221 Lamprey2](https://www.andymark.com/products/lamprey-absolute-encoder)
 - [US Digital MA3](https://www.usdigital.com/products/encoders/absolute/shaft/ma3/)
 
-Analog Encoders
-^^^^^^^^^^^^^^^
+### Analog Encoders
 
 .. image:: images/encoders-hardware/absolute-encoder-to-roborio.svg
   :alt: The connection of a US Digital MA3 Analog encoder to the roboRIO analog input.

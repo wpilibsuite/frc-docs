@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-State-Space Controller Walkthrough
-==================================
+# State-Space Controller Walkthrough
 
 .. note:: Before following this tutorial, readers are recommended to have read an :ref:`docs/software/advanced-controls/state-space/state-space-intro:Introduction to state-space control`.
 
@@ -15,13 +14,11 @@ This tutorial is intended to be approachable for teams without a great deal of p
 
 The full example is available in the state-space flywheel ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java)/[C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp)/[Python](https://github.com/robotpy/examples/blob/main/StateSpaceFlywheel/robot.py)) and state-space flywheel system identification ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java)/[C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp)/[Python](https://github.com/robotpy/examples/blob/main/StateSpaceFlywheelSysId/robot.py)) example projects.
 
-Why Use State-Space Control?
-----------------------------
+## Why Use State-Space Control?
 
 Because state-space control focuses on creating an accurate model of our system, we can accurately predict how our :term:`model` will respond to control :term:`inputs <input>`. This allows us to simulate our mechanisms without access to a physical robot, as well as easily choose :term:`gains <gain>` that we know will work well. Having a model also allows us to create lagless filters, such as Kalman Filters, to optimally filter sensor readings.
 
-Modeling Our Flywheel
----------------------
+## Modeling Our Flywheel
 
 :ref:`Recall <docs/software/advanced-controls/state-space/state-space-intro:What is State-Space Notation?>` that continuous state-space systems are modeled using the following system of equations:
 
@@ -43,8 +40,7 @@ A continuous-time state-space system writes :term:`x-dot`, or the instantaneous 
 
 Next, we will model our flywheel as a continuous-time state-space system. WPILib's ``LinearSystem`` will convert this to discrete-time internally. Review :ref:`state-space notation <docs/software/advanced-controls/state-space/state-space-intro:What is State-Space Notation?>` for more on continuous-time and discrete-time systems.
 
-Modeling with System Identification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Modeling with System Identification
 
 To rewrite this in state-space notation using :term:`system identification`, we recall from the flywheel :ref:`state-space notation example <docs/software/advanced-controls/state-space/state-space-intro:State-space Notation Example: Flywheel from Kv and Ka>`, where we rewrote the following equation in terms of :math:`\mathbf{a}`.
 
@@ -106,8 +102,7 @@ The ``LinearSystem`` class contains methods for easily creating state-space syst
          :lineno-start: 37
 
 
-Modeling Using Flywheel Moment of Inertia and Gearing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Modeling Using Flywheel Moment of Inertia and Gearing
 
 A flywheel can also be modeled without access to a physical robot, using information about the motors, gearing and flywheel's :term:`moment of inertia`. A full derivation of this model is presented in Section 12.3 of  [Controls Engineering in FRC](https://file.tavsys.net/control/controls-engineering-in-frc.pdf).
 
@@ -158,8 +153,7 @@ The ``LinearSystem`` class contains methods to easily create a model of a flywhe
          :linenos:
          :lineno-start: 37
 
-Kalman Filters: Observing Flywheel State
-----------------------------------------
+## Kalman Filters: Observing Flywheel State
 
 Kalman filters are used to filter our velocity measurements using our state-space model to generate a state estimate :math:`\mathbf{\hat{x}}`. As our flywheel model is linear, we can use a Kalman filter to estimate the flywheel's velocity. WPILib's Kalman filter takes a ``LinearSystem`` (which we found above), along with standard deviations of model and sensor measurements. We can adjust how "smooth" our state estimate is by adjusting these weights. Larger state standard deviations will cause the filter to "distrust" our state estimate and favor new measurements more highly, while larger measurement standard deviations will do the opposite.
 
@@ -211,8 +205,7 @@ Because Kalman filters use our state-space model in the :ref:`docs/software/adva
 
 .. todo:: do we need to elaborate on this^ more?
 
-Linear-Quadratic Regulators and Plant Inversion Feedforward
------------------------------------------------------------
+## Linear-Quadratic Regulators and Plant Inversion Feedforward
 
 :ref:`docs/software/advanced-controls/state-space/state-space-intro:The Linear-Quadratic Regulator` finds a feedback controller to drive our flywheel :term:`system` to its :term:`reference`. Because our flywheel has just one state, the control law picked by our LQR will be in the form :math:`\mathbf{u = K (r - x)}` where :math:`\mathbf{K}` is a 1x1 matrix; in other words, the control law picked by LQR is simply a proportional controller, or a PID controller with only a P gain. This gain is chosen by our LQR based on the state excursion and control efforts we pass it. More on tuning LQR controllers can be found in the :ref:`LQR application example <docs/software/advanced-controls/state-space/state-space-intro:LQR: example application>`.
 
@@ -253,8 +246,7 @@ Much like ``SimpleMotorFeedforward`` can be used to generate feedforward voltage
          :linenos:
          :lineno-start: 56
 
-Bringing it All Together: LinearSystemLoop
-------------------------------------------
+## Bringing it All Together: LinearSystemLoop
 
 LinearSystemLoop combines our system, controller, and observer that we created earlier. The constructor shown will also instantiate a ``PlantInversionFeedforward``.
 
@@ -330,8 +322,7 @@ Once we have our ``LinearSystemLoop``, the only thing left to do is actually run
          :linenos:
          :lineno-start: 87
 
-Angle Wrap with LQR
--------------------
+## Angle Wrap with LQR
 
 Mechanisms with a continuous angle can have that angle wrapped by calling the code below instead of ``lqr.Calculate(x, r)``.
 

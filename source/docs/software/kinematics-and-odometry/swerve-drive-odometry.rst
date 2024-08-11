@@ -1,11 +1,9 @@
-Swerve Drive Odometry
-===========================
+# Swerve Drive Odometry
 A user can use the swerve drive kinematics classes in order to perform :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>`. WPILib contains a ``SwerveDriveOdometry`` class that can be used to track the position of a swerve drive robot on the field.
 
 .. note:: Because this method only uses encoders and a gyro, the estimate of the robot's position on the field will drift over time, especially as your robot comes into contact with other robots during gameplay. However, odometry is usually very accurate during the autonomous period.
 
-Creating the odometry object
-----------------------------
+## Creating the odometry object
 The ``SwerveDriveOdometry<int NumModules>`` class constructor requires one template argument (only C++), three mandatory arguments, and one optional argument. The template argument (only C++) is an integer representing the number of swerve modules.
 
 The mandatory arguments are:
@@ -104,8 +102,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
             ),
             Pose2d(5.0, 13.5, Rotation2d()))
 
-Updating the robot pose
------------------------
+## Updating the robot pose
 The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the gyro angle of the robot, along with an array of ``SwerveModulePosition`` objects. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
 
 This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
@@ -154,8 +151,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
             self.backLeftModule.getPosition(), self.backRightModule.getPosition()
         )
 
-Resetting the Robot Pose
-------------------------
+## Resetting the Robot Pose
 The robot pose can be reset via the ``resetPosition`` method. This method accepts three arguments: the current gyro angle, an array of the current module positions (as in the constructor and update method), and the new field-relative pose.
 
 .. important::  If at any time, you decide to reset your gyroscope or wheel encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel encoder positions.

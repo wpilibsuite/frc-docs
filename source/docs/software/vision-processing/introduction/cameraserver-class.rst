@@ -1,42 +1,34 @@
 .. include:: <isonum.txt>
 
-Read and Process Video: CameraServer Class
-==========================================
+# Read and Process Video: CameraServer Class
 
-Concepts
---------
+## Concepts
 
 The cameras typically used in FRC\ |reg| (commodity USB and Ethernet cameras) offer relatively limited modes of operation. In general, they provide only a single image output (typically in an RGB compressed format such as JPG) at a single resolution and frame rate. USB cameras are particularly limited as only one application may access the camera at a time.
 
 CameraServer supports multiple cameras. It handles details such as automatically reconnecting when a camera is disconnected, and also makes images from the camera available to multiple "clients" (e.g. both your robot code and the dashboard can connect to the camera simultaneously).
 
-Camera Names
-^^^^^^^^^^^^
+### Camera Names
 
 Each camera in CameraServer must be uniquely named. This is also the name that appears for the camera in the Dashboard. Some variants of the CameraServer ``startAutomaticCapture()`` functions will automatically name the camera (e.g. "USB Camera 0"), or you can give the camera a more descriptive name (e.g. "Intake Cam"). The only requirement is that each camera have a unique name.
 
-USB Camera Notes
-----------------
+## USB Camera Notes
 
-CPU Usage
-^^^^^^^^^
+### CPU Usage
 
 The CameraServer is designed to minimize CPU usage by only performing compression and decompression operations when required and automatically disabling streaming when no clients are connected.
 
 To minimize CPU usage, the dashboard resolution should be set to the same resolution as the camera; this allows the CameraServer to not decompress and recompress the image, instead, it can simply forward the JPEG image received from the camera directly to the dashboard. It's important to note that changing the resolution on the dashboard does *not* change the camera resolution; changing the camera resolution may be done by calling ``setResolution()`` on the camera object.
 
-USB Bandwidth
-^^^^^^^^^^^^^
+### USB Bandwidth
 
 The roboRIO can only transmit and receive so much data at a time over its USB interfaces. Camera images can require a lot of data, and so it is relatively easy to run into this limit. The most common cause of a USB bandwidth error is selecting a non-JPEG video mode or running too high of a resolution, particularly when multiple cameras are connected.
 
-Architecture
-------------
+## Architecture
 
 The CameraServer consists of two layers, the high level WPILib **CameraServer class** and the low level **cscore library**.
 
-CameraServer Class
-------------------
+## CameraServer Class
 
 The CameraServer class (part of WPILib) provides a high level interface for adding cameras to your robot code. It also is responsible for publishing information about the cameras and camera servers to NetworkTables so that Driver Station dashboards such as the LabVIEW Dashboard and Shuffleboard can list the cameras and determine where their streams are located. It uses a singleton pattern to maintain a database of all created cameras and servers.
 
@@ -46,8 +38,7 @@ Some key functions in CameraServer are:
 - ``getVideo()``: Get OpenCV access to a camera. This allows you to get images from the camera for image processing on the roboRIO (in your robot code).
 - ``putVideo()``: Start a server that you can feed OpenCV images to. This allows you to pass custom processed and/or annotated images to the dashboard.
 
-cscore Library
---------------
+## cscore Library
 
 The cscore library provides the lower level implementation to:
 
@@ -57,8 +48,7 @@ The cscore library provides the lower level implementation to:
 - Act as a web server and serve images as a standard MJPEG stream
 - Convert images to/from OpenCV ``Mat`` objects for image processing
 
-Sources and Sinks
-^^^^^^^^^^^^^^^^^
+### Sources and Sinks
 
 The basic architecture of the cscore library is similar to that of MJPGStreamer, with functionality split between sources and sinks. There can be multiple sources and multiple sinks created and operating simultaneously.
 
@@ -154,7 +144,6 @@ The CameraServer implementation effectively does the following at the cscore lev
         cs::MjpegServer mjpegServer2("serve_Blur", 1182);
         mjpegServer2.SetSource(outputStream);
 
-Reference Counting
-^^^^^^^^^^^^^^^^^^
+### Reference Counting
 
 All cscore objects are internally reference counted. Connecting a sink to a source increments the source's reference count, so it's only strictly necessary to keep the sink in scope. The CameraServer class keeps a registry of all objects created with CameraServer functions, so sources and sinks created in that way effectively never go out of scope (unless explicitly removed).

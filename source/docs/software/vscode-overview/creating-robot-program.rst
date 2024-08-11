@@ -1,15 +1,12 @@
-Creating a Robot Program
-========================
+# Creating a Robot Program
 
 Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch.
 
-Choosing a Base Class
----------------------
+## Choosing a Base Class
 
 To start a project using one of the WPILib robot program templates, users must first choose a base class for their robot.  Users subclass these base classes to create their primary :code:`Robot` class, which controls the main flow of the robot program.  There are three choices available for the base class:
 
-TimedRobot
-^^^^^^^^^^
+### TimedRobot
 
 Documentation:
 [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/TimedRobot.html)
@@ -53,8 +50,7 @@ Periodic methods are called every 20 ms by default. This can be changed by calli
 
       Robot() : frc::TimedRobot(30_ms) {}
 
-RobotBase
-^^^^^^^^^
+### RobotBase
 
 Documentation:
 [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/RobotBase.html)
@@ -68,41 +64,35 @@ The :code:`RobotBase` class is the most minimal base-class offered, and is gener
 
 .. note:: A ``RobotBase Skeleton`` template is available that offers a blank ``startCompetition()`` method.
 
-Command Robot
-^^^^^^^^^^^^^
+### Command Robot
 
 The ``Command Robot`` framework adds to the basic functionality of a ``Timed Robot`` by automatically polling inputs and converting the raw input data into events.  These events are tied to user code, which is executed when the event is triggered.  For instance, when a button is pressed, code tied to the pressing of that button is automatically called and it is not necessary to poll or keep track of the state of that button directly.  The ``Command Robot`` framework makes it easier to write compact easy-to-read code with complex behavior, but requires an additional up-front time investment from a programmer in order to understand how the Command Robot framework works.
 
 Teams using ``Command Robot`` should see the :ref:`Command-Based Programming Tutorial <docs/software/commandbased/index:Command-Based Programming>`.
 
-Romi
-^^^^
+### Romi
 
 Teams using a :ref:`Romi <docs/romi-robot/index:Getting Started with Romi>` should use the ``Romi - Timed`` or ``Romi - Command Bot`` template.
 
-Romi - Timed
-~~~~~~~~~~~~
+#### Romi - Timed
 
 The ``Romi - Timed`` template provides a ``RomiDrivetrain`` class that exposes an ``arcadeDrive(double xaxisSpeed, double zaxisRotate)`` method. It's up to the user to feed this arcadeDrive function.
 
 This class also provides functions for retrieving and resetting the Romi's onboard encoders.
 
-Romi - Command Bot
-~~~~~~~~~~~~~~~~~~
+#### Romi - Command Bot
 
 The ``Romi - Command Bot`` template provides a ``RomiDrivetrain`` subsystem that exposes an ``arcadeDrive(double xaxisSpeed, double zaxisRotate)`` method. It's up to the user to feed this arcadeDrive function.
 
 This subsystem also provides functions for retrieving and resetting the Romi's onboard encoders.
 
-Not Using a Base Class
-^^^^^^^^^^^^^^^^^^^^^^
+### Not Using a Base Class
 
 If desired, users can omit a base class entirely and simply write their program in a :code:`main()` method, as they would for any other program.  This is *highly* discouraged - users should not "reinvent the wheel" when writing their robot code - but it is supported for those who wish to have absolute control over their program flow.
 
 .. warning:: Users should *not* modify the :code:`main()` method of a robot program unless they are absolutely sure of what they are doing.
 
-Creating a New WPILib Project
------------------------------
+## Creating a New WPILib Project
 
 Once we've decided on a base class, we can create our new robot project.  Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib", this will bring up the list of WPILib-specific VS Code commands. Now, select the :guilabel:`Create a new project` command:
 
@@ -136,8 +126,7 @@ An example after all options are selected is shown below.
 .. image:: images/creating-robot-program/new-project-creator-configured.png
    :alt: The new project creator screen filled out.
 
-Opening The New Project
------------------------
+## Opening The New Project
 
 After successfully creating your project, VS Code will give the option of opening the project as shown below. We can choose to do that now or later by typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
 
@@ -149,8 +138,7 @@ Once opened we will see the project hierarchy on the left. Double clicking on th
 .. image:: images/creating-robot-program/opened-robot-project.png
    :alt: Opening a file in the VS Code editor.
 
-C++ Configurations (C++ Only)
------------------------------
+## C++ Configurations (C++ Only)
 
 For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
 

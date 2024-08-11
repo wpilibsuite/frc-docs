@@ -1,5 +1,4 @@
-Bang-Bang Control with BangBangController
-=========================================
+# Bang-Bang Control with BangBangController
 
 The :term:`bang-bang control` algorithm is a control strategy that employs only two states: on (when the measurement is below the setpoint) and off (otherwise).  This is roughly equivalent to a proportional loop with infinite gain.
 
@@ -9,8 +8,7 @@ However, when controlling the velocity of high-inertia mechanisms under varying 
 
 Asymmetric bang-bang control is provided in WPILib by the BangBangController class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/BangBangController.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_bang_bang_controller.html), :external:py:class:`Python <wpimath.controller.BangBangController>`).
 
-Constructing a BangBangController
----------------------------------
+## Constructing a BangBangController
 
 Since a bang-bang controller does not have any gains, it does not need any constructor arguments (one can optionally specify the controller tolerance used by ``atSetpoint``, but it is not required).
 
@@ -33,8 +31,7 @@ Since a bang-bang controller does not have any gains, it does not need any const
     # Creates a BangBangController
     controller = BangBangController()
 
-Using a BangBangController
---------------------------
+## Using a BangBangController
 
 .. warning:: Bang-bang control is an extremely aggressive algorithm that relies on response asymmetry to remain stable.  Be *absolutely certain* that your motor controllers have been set to "coast mode" before attempting to control them with a bang-bang controller, or else the braking action will fight the controller and cause potentially destructive oscillation.
 
@@ -57,8 +54,7 @@ Using a bang-bang controller is easy:
     # Controls a motor with the output of the BangBang controller
     motor.set(controller.calculate(encoder.getRate(), setpoint))
 
-Combining Bang Bang Control with Feedforward
---------------------------------------------
+## Combining Bang Bang Control with Feedforward
 
 Like a PID controller, best results are obtained in conjunction with a :ref:`feedforward <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>` controller that provides the necessary voltage to sustain the system output at the desired speed, so that the bang-bang controller is only responsible for rejecting disturbances.  Since the bang-bang controller can *only* correct in the forward direction, however, it may be preferable to use a slightly conservative feedforward estimate to ensure that the shooter does not over-speed.
 

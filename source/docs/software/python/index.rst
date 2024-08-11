@@ -1,5 +1,4 @@
-FRC Python Programming
-======================
+# FRC Python Programming
 
 .. toctree::
    :maxdepth: 2

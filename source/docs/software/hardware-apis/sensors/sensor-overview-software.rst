@@ -1,5 +1,4 @@
-Sensor Overview - Software
-==========================
+# Sensor Overview - Software
 
 .. note:: This section covers using sensors in software.  For a guide to sensor hardware, see :ref:`docs/hardware/sensors/sensor-overview-hardware:Sensor Overview - Hardware`.
 
@@ -7,8 +6,7 @@ Sensor Overview - Software
 
 In order to be effective, it is often vital for robots to be able to gather information about their surroundings.  Devices that provide feedback to the robot on the state of its environment are called "sensors."  WPILib innately supports a large variety of sensors through classes included in the library.  This section will provide a guide to both using common sensor types through WPILib, as well as writing code for sensors without official support.
 
-What sensors does WPILIB support?
----------------------------------
+## What sensors does WPILIB support?
 
 The roboRIO includes an :term:`FPGA` which allows accurate real-time measuring of a variety of sensor input.  WPILib, in turn, provides a number of classes for accessing this functionality.
 

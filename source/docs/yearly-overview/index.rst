@@ -1,5 +1,4 @@
-2024 Overview
-=============
+# 2024 Overview
 
 .. toctree::
    :maxdepth: 1

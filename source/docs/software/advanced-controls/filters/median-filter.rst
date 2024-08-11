@@ -1,5 +1,4 @@
-Median Filter
-=============
+# Median Filter
 
 .. image:: images/medianfilter.png
   :alt: A graph with two peaks with the input closely following the target signal.
@@ -10,8 +9,7 @@ The median filter is most-useful for removing occasional outliers from an input 
 
 The median filter is supported in WPILib through the ``MedianFilter`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/MedianFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_median_filter.html), , :external:py:class:`Python <wpimath.filter.MedianFilter>`).
 
-Creating a MedianFilter
------------------------
+## Creating a MedianFilter
 
 .. note:: The C++ ``MedianFilter`` class is templated on the data type used for the input.
 
@@ -38,8 +36,7 @@ Creating a ``MedianFilter`` is simple:
     # Creates a MedianFilter with a window size of 5 samples
     filter = MedianFilter(5)
 
-Using a MedianFilter
---------------------
+## Using a MedianFilter
 
 Once your filter has been created, using it is easy - simply call the ``calculate()`` method with the most recent input to obtain the filtered output:
 

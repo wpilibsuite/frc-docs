@@ -1,10 +1,8 @@
-The Field2d Widget
-==================
+# The Field2d Widget
 
 Glass supports displaying your robot's position on the field using the :guilabel:`Field2d` widget. An instance of the ``Field2d`` class should be created, sent over NetworkTables, and updated periodically with the latest robot pose in your robot code.
 
-Sending Robot Pose from User Code
----------------------------------
+## Sending Robot Pose from User Code
 
 To send your robot's position (usually obtained by :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>` or a pose estimator), a ``Field2d`` instance must be created in robot code and sent over NetworkTables. The instance must then be updated periodically with the latest robot pose.
 
@@ -46,8 +44,7 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
 
 .. note:: The ``Field2d`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`. In this case, the ``SmartDashboard`` API was used, meaning that the :guilabel:`Field2d` widget will appear under the ``SmartDashboard`` table name.
 
-Sending Trajectories to Field2d
--------------------------------
+## Sending Trajectories to Field2d
 
 Visualizing your trajectory is a great debugging step for verifying that your trajectories are created as intended. Trajectories can be easily visualized in :ref:`Field2d <docs/software/dashboards/glass/field2d-widget:The Field2d Widget>` using the ``setTrajectory()``/``SetTrajectory()`` functions.
 
@@ -69,8 +66,7 @@ Visualizing your trajectory is a great debugging step for verifying that your tr
       :language: python
       :lines: 19,26-39,46-53
 
-Viewing Trajectories with Glass
--------------------------------
+## Viewing Trajectories with Glass
 
 The sent trajectory can be viewed with :ref:`Glass <docs/software/dashboards/glass/index:Glass>` through the dropdown :guilabel:`NetworkTables` -> :guilabel:`SmartDashboard` -> :guilabel:`Field2d`.
 
@@ -79,8 +75,7 @@ The sent trajectory can be viewed with :ref:`Glass <docs/software/dashboards/gla
 
 .. note:: The above example which uses the RamseteController ([Java](https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java) / [C++](https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp) / [Python](https://github.com/robotpy/examples/tree/2024.0.0b4/RamseteController)) will not show the sent trajectory until autonomous is enabled at least once.
 
-Viewing the Robot Pose in Glass
--------------------------------
+## Viewing the Robot Pose in Glass
 
 After sending the ``Field2d`` instance over NetworkTables, the :guilabel:`Field2d` widget can be added to Glass by selecting :guilabel:`NetworkTables` in the menu bar, choosing the table name that the instance was sent over, and then clicking on the :guilabel:`Field` button.
 
@@ -94,8 +89,7 @@ You can choose from an existing field layout using the :guilabel:`Image` drop-do
 
 .. image:: images/field2d-options.png
 
-Modifying Pose Style
---------------------
+## Modifying Pose Style
 
 Poses can be customized in a plethora of ways by right clicking on the Field2d menu bar. Examples of customization are: line width, line weight, style, arrow width, arrow weight, color, etc.
 
@@ -112,8 +106,7 @@ Now, uncheck the :guilabel:`Arrows` checkbox. This will cause our trajectory to 
 .. image:: images/unchecked-arrow-trajectory.png
    :alt: Unchecked arrows checkbox to showcase fluid line.
 
-Viewing Pose Data with AdvantageScope
--------------------------------------
+## Viewing Pose Data with AdvantageScope
 
 :ref:[AdvantageScope](docs/software/dashboards/advantagescope:AdvantageScope) is an alternative option for viewing pose data from a ``Field2d`` object, including data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. Both 2D and 3D visualizations are supported. See the documentation for the [odometry](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/ODOMETRY.md) and [3D field](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/3D-FIELD.md) tabs for more details.
 

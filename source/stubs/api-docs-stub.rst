@@ -1,7 +1,6 @@
 :orphan:
 
-API Documentation
-=================
+# API Documentation
 
 Java and CSS class documentation.
 

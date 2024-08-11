@@ -1,5 +1,4 @@
-Step 3: Preparing Your Robot
-============================
+# Step 3: Preparing Your Robot
 
 .. toctree::
    :maxdepth: 1

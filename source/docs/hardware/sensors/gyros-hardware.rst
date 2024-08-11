@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Gyroscopes - Hardware
-=====================
+# Gyroscopes - Hardware
 
 .. note:: This section covers gyro hardware.  For a software guide to gyros, see :ref:`docs/software/hardware-apis/sensors/gyros-software:Gyroscopes - Software`.
 
@@ -13,13 +12,11 @@ Several popular FRC\ |reg| devices known as :ref:`IMUs <docs/hardware/sensors/ac
   - [CTRE Pigeon IMU](https://store.ctr-electronics.com/gadgeteer-pigeon-imu/)
   - [Kauai Labs NavX](https://pdocs.kauailabs.com/navx-mxp/)
 
-Types of Gyros
---------------
+## Types of Gyros
 
 There are two types of Gyros commonly-used in FRC: single-axis gyros, three-axis gyros and IMUs, which often include a 3-axis gyro.
 
-Single-axis Gyros
-^^^^^^^^^^^^^^^^^
+### Single-axis Gyros
 
 .. image:: images/gyros-hardware/analog-devices-frc-gyro-to-roborio.svg
   :alt: The Analog Devices 1-axis Gyro plugged into the SPI port of the roboRIO.
@@ -29,8 +26,7 @@ As per their name, single-axis gyros measure rotation rate around a single axis.
 
 The [Analog Devices ADXRS450 FRC Gyro Board](https://www.analog.com/en/landing-pages/001/first.html) that has been in FIRST Choice in recent years is a commonly used single axis gyro.
 
-Three-axis Gyros
-^^^^^^^^^^^^^^^^
+### Three-axis Gyros
 
 .. image:: images/gyros-hardware/adis16470-gyro-to-roborio.jpeg
   :alt: This is the ADIS16470 :term:`IMU` plugged in to the SPI port.

@@ -1,19 +1,16 @@
 .. include:: <isonum.txt>
 
-Imaging your roboRIO 1
-======================
+# Imaging your roboRIO 1
 
 .. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the Power Distribution Panel. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
 
 .. note:: The roboRIO 2 uses different imaging instructions. The imaging instructions for the NI roboRIO 2.0 are :doc:`here<roborio2-imaging>`.
 
-Configuring the roboRIO
-^^^^^^^^^^^^^^^^^^^^^^^
+### Configuring the roboRIO
 
 The roboRIO Imaging Tool will be used to image your roboRIO with the latest software.
 
-USB Connection
-~~~~~~~~~~~~~~
+#### USB Connection
 
 .. image:: images/imaging-your-roborio/roborio-usb-client.svg
    :alt: Highlights the USB Type B input at the top of the roboRIO.
@@ -22,13 +19,11 @@ Connect a USB cable from the roboRIO USB Device port to the PC. This requires a 
 
 .. note:: The roboRIO should only be imaged via the USB connection. It is not recommended to attempt imaging using the Ethernet connection.
 
-Driver Installation
-~~~~~~~~~~~~~~~~~~~
+#### Driver Installation
 
 The device driver should install automatically. If you see a "New Device" pop-up in the bottom right of the screen, wait for the driver install to complete before continuing.
 
-Launching the Imaging Tool
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Launching the Imaging Tool
 
 .. image:: images/imaging-your-roborio/launching-the-imaging-tool.png
    :alt: The roboRIO Imaging Tool desktop shortcut.
@@ -37,8 +32,7 @@ The roboRIO imaging tool and latest image are installed with the NI FRC\ |reg| G
 
 .. note:: The roboRIO imaging tool is also located at ``C:\Program Files (x86)\National Instruments\LabVIEW 2023\project\roboRIO Tool``
 
-roboRIO Imaging Tool
-^^^^^^^^^^^^^^^^^^^^
+### roboRIO Imaging Tool
 
 .. image:: images/imaging-your-roborio/roborio-imaging-tool.png
    :alt: The roboRIO Imaging Tool main screen.
@@ -49,8 +43,7 @@ After launching, the roboRIO Imaging Tool will scan for available roboRIOs and i
 - **Format Target** - This option is used when you want to load a new image on the roboRIO (or reflash the existing image). This is the most common option.
 - **Update Firmware** - This option is used to update the roboRIO firmware. For this season, the imaging tool will require roboRIO firmware to be version 5.0 or greater.
 
-Updating Firmware
-~~~~~~~~~~~~~~~~~
+#### Updating Firmware
 
 .. warning:: It is only necessary to update the firmware on a brand new roboRIO. It is not recommended to update the firmware unless it doesn't meet the conditions below.
 
@@ -69,8 +62,7 @@ To update roboRIO firmware:
 4. Select the latest firmware file in the bottom right
 5. Click the :guilabel:`Update` button
 
-Imaging the roboRIO
-^^^^^^^^^^^^^^^^^^^
+### Imaging the roboRIO
 
 .. warning:: The roboRIO image is different then the firmware, and must be updated yearly.
 
@@ -85,24 +77,21 @@ Imaging the roboRIO
 4. Select the latest image version in the box.
 5. Click :guilabel:`Reformat` to begin the imaging process.
 
-Imaging Progress
-^^^^^^^^^^^^^^^^
+### Imaging Progress
 
 .. image:: images/imaging-your-roborio/imaging-progress.png
    :alt: Progress Bar along the bottom shows how long till completion.
 
 The imaging process will take approximately 3-10 minutes. A progress bar in the bottom left of the window will indicate progress.
 
-Imaging Complete
-^^^^^^^^^^^^^^^^
+### Imaging Complete
 
 .. image:: images/imaging-your-roborio/imaging-complete.png
    :alt: Dialog that pops up when imaging is complete listing IP address and DNS name.
 
 When the imaging completes you should see the dialog above. Click :guilabel:`Ok`, then click the :guilabel`Close` button at the bottom right to close the imaging tool. Reboot the roboRIO using the Reset button to have the new team number take effect.
 
-Troubleshooting
-^^^^^^^^^^^^^^^
+### Troubleshooting
 
 If you are unable to image your roboRIO, troubleshooting steps include:
 

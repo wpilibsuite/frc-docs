@@ -1,10 +1,8 @@
-Unit Testing
-============
+# Unit Testing
 
 Unit testing is a method of testing code by dividing the code into the smallest "units" possible and testing each unit. In robot code, this can mean testing the code for each subsystem individually. There are many unit testing frameworks for most languages. Java robot projects have [JUnit 5](https://junit.org/junit5/) available by default, and C++ robot projects have [Google Test](https://github.com/google/googletest/blob/main/docs/primer.md).
 
-Writing Testable Code
-^^^^^^^^^^^^^^^^^^^^^
+### Writing Testable Code
 
 .. note:: This example can be easily adapted to the command-based paradigm by having ``Intake`` inherit from ``SubsystemBase``.
 
@@ -37,8 +35,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
          :language: c++
          :lines: 5-
 
-Writing Tests
-^^^^^^^^^^^^^
+### Writing Tests
 
 .. important:: Tests are placed inside the ``test`` source set: ``/src/test/java/`` and ``/src/test/cpp/`` for Java and C++ tests, respectively. Files outside that source root do not have access to the test framework - this will fail compilation due to unresolved references.
 
@@ -67,8 +64,7 @@ Both JUnit and GoogleTest have multiple assertion types; the most common is equa
 
 For more advanced usage of JUnit and Google Test, see the framework docs.
 
-Running Tests
-^^^^^^^^^^^^^
+### Running Tests
 
 .. note:: Tests will always be run in simulation on your desktop. For prerequisites and more info, see :doc:`the simulation introduction <introduction>`.
 

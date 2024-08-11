@@ -1,24 +1,20 @@
 .. include:: <isonum.txt>
 
-roboRIO Brownout and Understanding Current Draw
-===============================================
+# roboRIO Brownout and Understanding Current Draw
 
 In order to help maintain battery voltage to preserve itself and other control system components such as the radio during high current draw events, the roboRIO contains a staged brownout protection scheme. This article describes this scheme, provides information about proactively planning for system current draw, and describes how to use the new functionality of the PDP as well as the DS Log File Viewer to understand brownout events if they do happen on your robot.
 
-roboRIO Brownout Protection
----------------------------
+## roboRIO Brownout Protection
 
 The roboRIO uses a staged brownout protection scheme to attempt to preserve the input voltage to itself and other control system components in order to prevent device resets in the event of large current draws pulling the battery voltage dangerously low.
 
-Stage 1 - 6v output drop
-~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Stage 1 - 6v output drop
 
 **Voltage Trigger - 6.8V**
 
 When the voltage drops below 6.8V, the 6V output on the :term:`PWM` pins will start to drop.
 
-Stage 2 - Output Disable
-~~~~~~~~~~~~~~~~~~~~~~~~
+#### Stage 2 - Output Disable
 
 **Voltage Trigger - 6.3V**
 
@@ -41,8 +37,7 @@ The controller will take the following steps to attempt to preserve the battery 
 
 **The controller will remain in this state until the voltage rises to greater than 7.5V or drops below the trigger for the next stage of the brownout**
 
-Stage 3 - Device Blackout
-~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Stage 3 - Device Blackout
 
 **Voltage Trigger - 4.5V**
 
@@ -50,8 +45,7 @@ Below 4.5V the device may blackout. The exact voltage may be lower than this and
 
 **The controller will remain in this state until the voltage rises above 4.65V when the device will begin the normal boot sequence.**
 
-Avoiding Brownout - Proactive Current Draw Planning
----------------------------------------------------
+## Avoiding Brownout - Proactive Current Draw Planning
 
 .. figure:: images/brownout-diagram.png
    :alt:
@@ -64,8 +58,7 @@ The key to avoiding a brownout condition is to proactively plan for the current 
 
 4. If you have determined mutually exclusive functions in your analysis, consider enforcing the exclusion in software. You may also use the current monitoring of the PDP (covered in more detail below) in your robot program to provide output limits or exclusions dynamically (such as don't run a mechanism motor when the drivetrain current is over X or only let the motor run up to half output when the drivetrain current is over Y).
 
-Settable Brownout
------------------
+## Settable Brownout
 
 The NI roboRIO 1.0 does not support custom brownout voltages. It is fixed at 6.3V as mentioned in Stage 2 above.
 
@@ -81,15 +74,13 @@ The NI roboRIO 2.0 adds the option for a software settable brownout level.  The 
 
     frc::RobotController::SetBrownoutVoltage(7_V);
 
-Measuring Current Draw using the PDP/PDH
-----------------------------------------
+## Measuring Current Draw using the PDP/PDH
 
 The FRC\ |reg| Driver Station works in conjunction with the roboRIO and PDP/PDH to extract logged data from the PDP/PDH and log it on your DS PC. A viewer for this data is still under development.
 
 In the meantime, teams can use their robot code and manual logging, a LabVIEW front panel or the SmartDashboard to visualize current draw on their robot as mechanisms are developed. In LabVIEW, you can read the current on a PDP/PDH channel using the Get PD Currents VI found on the Power pallet. For C++ and Java teams, use the PowerDistribution class as described in the :doc:`Power Distribution </docs/software/can-devices/power-distribution-module>` article. Plotting this information over time (easiest with a LV Front Panel or with the SmartDashboard by using a Graph indicator can provide information to compare against and update your power budget or can locate mechanisms which do not seem to be performing as expected (due to incorrect load calculation, incorrect efficiency assumptions, or mechanism issues such as binding).
 
-Identifying Brownouts
----------------------
+## Identifying Brownouts
 
 .. figure:: images/identifying-brownouts.png
    :alt:

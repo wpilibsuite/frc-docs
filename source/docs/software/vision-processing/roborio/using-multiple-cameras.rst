@@ -1,8 +1,6 @@
-Using Multiple Cameras
-======================
+# Using Multiple Cameras
 
-Switching the Driver Views
---------------------------
+## Switching the Driver Views
 
 If you're interested in just switching what the driver sees, and are using SmartDashboard, the SmartDashboard CameraServer Stream Viewer has an option ("Selected Camera Path") that reads the given :term:`NetworkTables` key and changes the "Camera Choice" to that value (displaying that camera). The robot code then just needs to set the :term:`NetworkTables` key to the correct camera name. Assuming "Selected Camera Path" is set to "CameraSelection", the following code uses the joystick 1 trigger button state to show camera1 and camera2.
 
@@ -175,8 +173,7 @@ If you're using some other dashboard, you can change the camera used by the came
        # Setting the source directly via joystick isn't possible in Python, you
        # should use NetworkTables as shown above instead
 
-Keeping Streams Open
---------------------
+## Keeping Streams Open
 
 By default, the cscore library is pretty aggressive in turning off cameras not in use. What this means is that when you switch cameras, it may disconnect from the camera not in use, so switching back will have some delay as it reconnects to the camera. To keep both camera connections open, use the ``SetConnectionStrategy()`` method to tell the library to keep the streams open, even if you aren't using them.
 

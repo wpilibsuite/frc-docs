@@ -1,9 +1,7 @@
-Holonomic Drive Controller
-==========================
+# Holonomic Drive Controller
 The holonomic drive controller is a trajectory tracker for robots with holonomic drivetrains (e.g. swerve, mecanum, etc.). This can be used to accurately track trajectories with correction for minor disturbances.
 
-Constructing a Holonomic Drive Controller
------------------------------------------
+## Constructing a Holonomic Drive Controller
 The holonomic drive controller should be instantiated with 2 PID controllers and 1 profiled PID controller.
 
 .. note:: For more information on PID control, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
@@ -54,8 +52,7 @@ The final parameter is a ``ProfiledPIDController`` for the rotation of the robot
       # of 1 rotation per second and a max acceleration of 180 degrees
       # per second squared.
 
-Getting Adjusted Velocities
----------------------------
+## Getting Adjusted Velocities
 The holonomic drive controller returns "adjusted velocities" such that when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal is comprised of a desired pose, linear velocity, and heading.
 
 .. note:: The "goal pose" represents the position that the robot should be at a particular timestamp when tracking the trajectory. It does NOT represent the trajectory's endpoint.
@@ -96,8 +93,7 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
          currentRobotPose, goal, Rotation2d.fromDegrees(70.0)
       )
 
-Using the Adjusted Velocities
------------------------------
+## Using the Adjusted Velocities
 The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity in the sideways direction), and an ``omega`` (angular velocity around the center of the robot frame).
 
 The returned adjusted speeds can be converted into usable speeds using the kinematics classes for your drivetrain type. In the example code below, we will assume a swerve drive robot; however, the kinematics code is exactly the same for a mecanum drive robot except using ``MecanumDriveKinematics``.

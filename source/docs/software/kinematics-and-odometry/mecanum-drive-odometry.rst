@@ -1,11 +1,9 @@
-Mecanum Drive Odometry
-===========================
+# Mecanum Drive Odometry
 A user can use the mecanum drive kinematics classes in order to perform :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>`. WPILib contains a ``MecanumDriveOdometry`` class that can be used to track the position of a mecanum drive robot on the field.
 
 .. note:: Because this method only uses encoders and a gyro, the estimate of the robot's position on the field will drift over time, especially as your robot comes into contact with other robots during gameplay. However, odometry is usually very accurate during the autonomous period.
 
-Creating the odometry object
-----------------------------
+## Creating the odometry object
 The ``MecanumDriveOdometry`` class constructor requires three mandatory arguments and one optional argument.
 
 The mandatory arguments are:
@@ -107,8 +105,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
         Pose2d(5.0, 13.5, Rotation2d())
       )
 
-Updating the robot pose
------------------------
+## Updating the robot pose
 The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the gyro angle of the robot, along with a ``MecanumDriveWheelPositions`` object representing the position of each of the 4 wheels on the robot. This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 
 .. tab-set-code::
@@ -162,8 +159,7 @@ The ``update`` method of the odometry class updates the robot position on the fi
         # Update the pose
         self.pose = odometry.update(gyroAngle, wheelPositions)
 
-Resetting the Robot Pose
-------------------------
+## Resetting the Robot Pose
 The robot pose can be reset via the ``resetPosition`` method. This method accepts three arguments: the current gyro angle, the current wheel positions, and the new field-relative pose.
 
 .. important:: If at any time, you decide to reset your gyroscope or encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel positions.

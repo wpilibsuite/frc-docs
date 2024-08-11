@@ -1,5 +1,4 @@
-Using CAN Devices
-=================
+# Using CAN Devices
 
 :term:`CAN` has many advantages over other methods of connection between the robot controller and peripheral devices.
 

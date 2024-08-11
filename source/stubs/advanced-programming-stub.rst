@@ -1,7 +1,6 @@
 :orphan:
 
-Advanced Programming
-====================
+# Advanced Programming
 
 Documentation that is suited toward veteran teams. This includes content such as Path Planning and Kinematics.
 

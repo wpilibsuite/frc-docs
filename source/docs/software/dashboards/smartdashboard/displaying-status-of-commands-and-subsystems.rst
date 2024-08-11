@@ -1,10 +1,8 @@
-Displaying the Status of Commands and Subsystems
-================================================
+# Displaying the Status of Commands and Subsystems
 
 If you are using the command-based programming features of WPILib, you will find that they are very well integrated with SmartDashboard. It can help diagnose what the robot is doing at any time and it gives you control and a view of what's currently running.
 
-Overview of Command and Subsystem Displays
-------------------------------------------
+## Overview of Command and Subsystem Displays
 
 .. image:: images/displaying-status-of-commands-and-subsystems/command-system-displays.png
    :alt: An exmample SmartDashboard screen showing the Scheduler and what commands are running.
@@ -18,8 +16,7 @@ With SmartDashboard you can display the status of the commands and subsystems in
 
 In the following examples, you'll see what the screen would look like when there are commands running, and the code that produces this display.
 
-Displaying the Scheduler Status
--------------------------------
+## Displaying the Scheduler Status
 
 .. tab-set-code::
 
@@ -45,8 +42,7 @@ You can display the status of the Scheduler (the code that schedules your comman
 
 This is the scheduler status when there are two commands running, ``ExampleCommand`` and ``newCommand``. This replaces the ``No commands running.`` message from the previous screen image. You can see commands displayed on the dashboard as the program runs and various commands are triggered.
 
-Displaying Subsystem Status
----------------------------
+## Displaying Subsystem Status
 
 .. tab-set-code::
 
@@ -71,8 +67,7 @@ In this example we are writing the command instance, ``exampleSubsystem`` and in
 
 Running commands will "require" subsystems. That is the command is reserving the subsystem for its exclusive use. If you display a subsystem on SmartDashboard, it will display which command is currently using it. In this example, ``ExampleSubsystem`` is in use by ``ExampleCommand``.
 
-Activating Commands with a Button
----------------------------------
+## Activating Commands with a Button
 
 .. tab-set-code::
 

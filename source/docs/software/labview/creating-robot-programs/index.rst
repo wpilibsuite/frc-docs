@@ -1,5 +1,4 @@
-Creating Robot Programs
-=======================
+# Creating Robot Programs
 
 .. toctree::
    :maxdepth: 1

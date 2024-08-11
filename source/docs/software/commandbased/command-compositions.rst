@@ -1,5 +1,4 @@
-Command Compositions
-====================
+# Command Compositions
 
 Individual commands are capable of accomplishing a large variety of robot tasks, but the simple three-state format can quickly become cumbersome when more advanced functionality requiring extended sequences of robot tasks or coordination of multiple robot subsystems is required. In order to accomplish this, users are encouraged to use the powerful command composition functionality included in the command-based library.
 
@@ -28,15 +27,13 @@ As a rule, command compositions require all subsystems their components require,
 
 Command instances that have been passed to a command composition cannot be independently scheduled or passed to a second command composition. Attempting to do so will throw an exception and crash the user program. This is because composition members are run through their encapsulating command composition, and errors could occur if those same command instances were independently scheduled at the same time as the composition - the command would be being run from multiple places at once, and thus could end up with inconsistent internal state, causing unexpected and hard-to-diagnose behavior. The C++ command-based library uses ``CommandPtr``, a class with move-only semantics, so this type of mistake is easier to avoid.
 
-Composition Types
------------------
+## Composition Types
 
 The command-based library includes various composition types. All of them can be constructed using factories that accept the member commands, and some can also be constructed using decorators: methods that can be called on a command object, which is transformed into a new object that is returned.
 
 .. important:: After calling a decorator or being passed to a composition, the command object cannot be reused! Use only the command object returned from the decorator.
 
-Repeating
-^^^^^^^^^
+### Repeating
 
 The ``repeatedly()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#repeatedly()), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#acc156a5299699110729918c3aa2b2694), :external:py:meth:[Python](commands2.Command.repeatedly>`), backed by the ``RepeatCommand`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RepeatCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_repeat_command.html), :external:py:class:`Python <commands2.RepeatCommand>`) restarts the command each time it ends, so that it runs until interrupted.
 
@@ -57,8 +54,7 @@ The ``repeatedly()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/
       # Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
       repeats = commands2.cmd.repeatedly()
 
-Sequence
-^^^^^^^^
+### Sequence
 
 The ``Sequence`` factory ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#sequence(edu.wpi.first.wpilibj2.command.Command...)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#a2818c000b0b989bc66032847ecb3fed2), :external:py:func:[Python](commands2.cmd.sequence>`), backed by the ``SequentialCommandGroup`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SequentialCommandGroup.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_sequential_command_group.html), :external:py:class:`Python <commands2.SequentialCommandGroup>`), runs a list of commands in sequence: the first command will be executed, then the second, then the third, and so on until the list finishes. The sequential group finishes after the last command in the sequence finishes. It is therefore usually important to ensure that each command in the sequence does actually finish (if a given command does not finish, the next command will never start!).
 
@@ -79,13 +75,11 @@ The ``andThen()`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/
       fooCommand.andThen(barCommand)
 
 
-Repeating Sequence
-^^^^^^^^^^^^^^^^^^
+### Repeating Sequence
 
 As it's a fairly common combination, the ``RepeatingSequence`` factory ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#repeatingSequence(edu.wpi.first.wpilibj2.command.Command...)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#ae363301748047f753dcbe3eca0a10ced), :external:py:func:`Python <commands2.cmd.repeatingSequence>`) creates a `Repeating`_ `Sequence`_ that runs until interrupted, restarting from the first command each time the last command finishes.
 
-Parallel
-^^^^^^^^
+### Parallel
 
 There are three types of parallel compositions, differing based on when the composition finishes:
 
@@ -128,8 +122,7 @@ There are three types of parallel compositions, differing based on when the comp
       # Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
       button.onTrue(commands2.cmd.deadline(twoSecCommand, oneSecCommand, threeSecCommand))
 
-Adding Command End Conditions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Adding Command End Conditions
 
 The ``until()`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#until(java.util.function.BooleanSupplier)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a4ffddf195a71e71d80e62df95fffdfcf), :external:py:meth:`Python <commands2.Command.until>`) decorator composes the command with an additional end condition. Note that the command the decorator was called on will see this end condition as an interruption.
 
@@ -169,15 +162,13 @@ The ``withTimeout()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs
       # Will time out 5 seconds after being scheduled, and be interrupted
       button.onTrue(commands2.cmd.withTimeout(5.0))
 
-Adding End Behavior
-^^^^^^^^^^^^^^^^^^^
+### Adding End Behavior
 
 The ``finallyDo()`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#finallyDo(edu.wpi.first.util.function.BooleanConsumer)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#abd0ae6c855d7cf1f1a33cda5575a7b8f), :external:py:meth:`Python <commands2.Command.finallyDo>`) decorator composes the command with an a lambda that will be called after the command's ``end()`` method, with the same boolean parameter indicating whether the command finished or was interrupted.
 
 The ``handleInterrupt()`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#handleInterrupt(java.lang.Runnable)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a2a5580e71dfe356d2b261efe213f7c67), :external:py:meth:`Python <commands2.Command.handleInterrupt>`) decorator composes the command with an a lambda that will be called only when the command is interrupted.
 
-Selecting Compositions
-^^^^^^^^^^^^^^^^^^^^^^
+### Selecting Compositions
 
 Sometimes it's desired to run a command out of a few options based on sensor feedback or other data known only at runtime. This can be useful for determining an auto routine, or running a different command based on whether a game piece is present or not, and so on.
 
@@ -243,8 +234,7 @@ The ``unless()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/rele
 
 ``ProxyCommand`` described below also has a constructor overload ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html), :external:py:class:`Python <commands2.ProxyCommand>`) that calls a command-returning lambda at schedule-time and runs the returned command by proxy.
 
-Scheduling Other Commands
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### Scheduling Other Commands
 
 By default, composition members are run through the command composition, and are never themselves seen by the scheduler. Accordingly, their requirements are added to the composition's requirements. While this is usually fine, sometimes it is undesirable for the entire command composition to gain the requirements of a single command. A good solution is to "fork off" from the command composition and schedule that command separately. However, this requires synchronization between the composition and the individually-scheduled command.
 
@@ -308,8 +298,7 @@ For cases that don't need to track the proxied command, ``ScheduleCommand`` ([Ja
       ScheduleCommand(commands2.cmd.waitSeconds(5.0))
          .andThen(commands2.cmd.print("This will be printed immediately!"))
 
-Subclassing Compositions
-------------------------
+## Subclassing Compositions
 
 Command compositions can also be written as a constructor-only subclass of the most exterior composition type, passing the composition members to the superclass constructor. Consider the following from the Hatch Bot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)):
 

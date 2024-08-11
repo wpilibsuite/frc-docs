@@ -1,26 +1,22 @@
 .. include:: <isonum.txt>
 
-PID Control through PIDSubsystems and PIDCommands
-=================================================
+# PID Control through PIDSubsystems and PIDCommands
 
 .. note:: For a description of the WPILib PID control features used by these command-based wrappers, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 
 One of the most common control algorithms used in FRC\ |reg| is the :term:`PID` controller. WPILib offers its own :ref:`PIDController <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>` class to help teams implement this functionality on their robots. To further help teams integrate PID control into a command-based robot project, the command-based library includes two convenience wrappers for the ``PIDController`` class: ``PIDSubsystem``, which integrates the PID controller into a subsystem, and ``PIDCommand``, which integrates the PID controller into a command.
 
-PIDSubsystems
--------------
+## PIDSubsystems
 
 The ``PIDSubsystem`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_subsystem.html)) allows users to conveniently create a subsystem with a built-in ``PIDController``.  In order to use the ``PIDSubsystem`` class, users must create a subclass of it.
 
-Creating a PIDSubsystem
-^^^^^^^^^^^^^^^^^^^^^^^
+### Creating a PIDSubsystem
 
 .. note:: If ``periodic`` is overridden when inheriting from ``PIDSubsystem``, make sure to call ``super.periodic()``! Otherwise, PID functionality will not work properly.
 
 When subclassing ``PIDSubsystem``, users must override two abstract methods to provide functionality that the class will use in its ordinary operation:
 
-getMeasurement()
-~~~~~~~~~~~~~~~~
+#### getMeasurement()
 
 .. tab-set::
 
@@ -42,8 +38,7 @@ The ``getMeasurement`` method returns the current measurement of the process var
 
 Users should override this method to return whatever sensor reading they wish to use as their process variable measurement.
 
-useOutput()
-~~~~~~~~~~~
+#### useOutput()
 
 .. tab-set::
 
@@ -66,20 +61,17 @@ The ``useOutput()`` method consumes the output of the PID controller, and the cu
 
 Users should override this method to pass the final computed control output to their subsystem's motors.
 
-Passing In the Controller
-~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Passing In the Controller
 
 Users must also pass in a ``PIDController`` to the ``PIDSubsystem`` base class through the superclass constructor call of their subclass.  This serves to specify the PID gains, as well as the period (if the user is using a non-standard main robot loop period).
 
 Additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
-Using a PIDSubsystem
-^^^^^^^^^^^^^^^^^^^^
+### Using a PIDSubsystem
 
 Once an instance of a ``PIDSubsystem`` subclass has been created, it can be used by commands through the following methods:
 
-setSetpoint()
-~~~~~~~~~~~~~
+#### setSetpoint()
 
 The ``setSetpoint()`` method can be used to set the setpoint of the ``PIDSubsystem``.  The subsystem will automatically track to the setpoint using the defined output:
 
@@ -95,15 +87,13 @@ The ``setSetpoint()`` method can be used to set the setpoint of the ``PIDSubsyst
       // The subsystem will track to a setpoint of 5.
       examplePIDSubsystem.SetSetpoint(5);
 
-enable() and disable()
-~~~~~~~~~~~~~~~~~~~~~~
+#### enable() and disable()
 
 The ``enable()`` and ``disable()`` methods enable and disable the PID control of the ``PIDSubsystem``.  When the subsystem is enabled, it will automatically run the control loop and track the setpoint.  When it is disabled, no control is performed.
 
 Additionally, the ``enable()`` method resets the internal ``PIDController``, and the ``disable()`` method calls the user-defined `useOutput()`_ method with both output and setpoint set to ``0``.
 
-Full PIDSubsystem Example
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### Full PIDSubsystem Example
 
 What does a ``PIDSubsystem`` look like when used in practice? The following examples are taken from the FrisbeeBot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/Frisbeebot)):
 
@@ -165,13 +155,11 @@ Using a ``PIDSubsystem`` with commands can be very simple:
          :linenos:
          :lineno-start: 25
 
-PIDCommand
-----------
+## PIDCommand
 
 The ``PIDCommand`` class allows users to easily create commands with a built-in PIDController.
 
-Creating a PIDCommand
-^^^^^^^^^^^^^^^^^^^^^
+### Creating a PIDCommand
 
 A ``PIDCommand`` can be created two ways - by subclassing the ``PIDCommand`` class, or by defining the command :ref:`inline <docs/software/commandbased/organizing-command-based:Inline Commands>`. Both methods ultimately extremely similar, and ultimately the choice of which to use comes down to where the user desires that the relevant code be located.
 
@@ -199,41 +187,35 @@ In either case, a ``PIDCommand`` is created by passing the necessary parameters 
          :linenos:
          :lineno-start: 28
 
-controller
-~~~~~~~~~~
+#### controller
 
 The ``controller`` parameter is the ``PIDController`` object that will be used by the command.  By passing this in, users can specify the PID gains and the period for the controller (if the user is using a nonstandard main robot loop period).
 
 When subclassing ``PIDCommand``, additional modifications (e.g. enabling continuous input) can be made to the controller in the constructor body by calling ``getController()``.
 
-measurementSource
-~~~~~~~~~~~~~~~~~
+#### measurementSource
 
 The ``measurementSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that returns the measurement of the process variable.  Passing in the ``measurementSource`` function in ``PIDCommand`` is functionally analogous to overriding the `getMeasurement()`_ function in ``PIDSubsystem``.
 
 When subclassing ``PIDCommand``, advanced users may further modify the measurement supplier by modifying the class's ``m_measurement`` field.
 
-setpointSource
-~~~~~~~~~~~~~~
+#### setpointSource
 
 The ``setpointSource`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that returns the current setpoint for the control loop.  If only a constant setpoint is needed, an overload exists that takes a constant setpoint rather than a supplier.
 
 When subclassing ``PIDCommand``, advanced users may further modify the setpoint supplier by modifying the class's ``m_setpoint`` field.
 
-useOutput
-~~~~~~~~~
+#### useOutput
 
 The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`) that consumes the output and setpoint of the control loop.  Passing in the ``useOutput`` function in ``PIDCommand`` is functionally analogous to overriding the `useOutput()`_ function in ``PIDSubsystem``.
 
 When subclassing ``PIDCommand``, advanced users may further modify the output consumer by modifying the class's ``m_useOutput`` field.
 
-requirements
-~~~~~~~~~~~~
+#### requirements
 
 Like all inlineable commands, ``PIDCommand`` allows the user to specify its subsystem requirements as a constructor parameter.
 
-Full PIDCommand Example
-^^^^^^^^^^^^^^^^^^^^^^^
+### Full PIDCommand Example
 
 What does a ``PIDCommand`` look like when used in practice? The following examples are from the GyroDriveCommands example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands)):
 

@@ -1,10 +1,8 @@
-Using Inference Output on a Robot
-=================================
+# Using Inference Output on a Robot
 
 The provided script for running inference on a coprocessor outputs all inference data over NetworkTables for ease of access.
 
-Output Format
--------------
+## Output Format
 
 Because there can be any number of detected objects in a given image, the inference data is sent in a JSON string to the ``ML/detections`` NetworkTables entry. By compiling all data into a single entry, it is certain that the labels match with the bounding boxes, which may not be true if these items were separate entries.
 
@@ -39,8 +37,7 @@ The example above shows the value of the ``ML/detections`` entry if two objects 
 
 There are three more NetworkTables entries that the provided script uses to help the programmer. The first is ``ML/fps``, which tells the programmer how many frames their model is processing per second. Another is ``ML/coral``, which tells the programmer is a Google Coral USB accelerator is currently being used. This is included in case someone removes the Coral from the robot and forgets to put it back, or a similar scenario. The final NetworkTables entry is ``ML/resolution``, which is the string ``WIDTH, HEIGHT``, telling the programmer the size of the processed image, for use with calculations.
 
-Applications of Inference
--------------------------
+## Applications of Inference
 
 Machine learning is applicable to the FIRST Robotics Competition when non-uniform objects need to be detected, i.e. a hatch panel from the 2019 game.
 

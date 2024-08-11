@@ -1,10 +1,8 @@
-Tuning a Flywheel Velocity Controller
-=====================================
+# Tuning a Flywheel Velocity Controller
 
 In this section, we will tune a simple velocity controller for a flywheel.  The tuning principles explained here will also work for almost any velocity control scenario.
 
-Flywheel Model Description
---------------------------
+## Flywheel Model Description
 
 Our "Flywheel" consists of:
 
@@ -24,8 +22,7 @@ Where:
 
 .. note:: A more detailed description of the mathematics of the system :ref:`can be found here<docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough:Modeling Our Flywheel>`.
 
-Picking the Control Strategy for a Flywheel Velocity Controller
----------------------------------------------------------------
+## Picking the Control Strategy for a Flywheel Velocity Controller
 
 In general: the more voltage that is applied to the motor, the faster the flywheel will spin. Once voltage is removed, friction and :term:`back-EMF` oppose the motion and bring the flywheel to a stop.
 
@@ -37,8 +34,7 @@ To consistently launch a gamepiece, a good first step is to make sure it is spin
 
 The tutorials below will demonstrate the behavior of the system under bang-bang, pure feedforward, pure feedback (PID), and combined feedforward-feedback control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.
 
-Bang-Bang Control
-~~~~~~~~~~~~~~~~~
+#### Bang-Bang Control
 
 Interact with the simulation below to see how the flywheel system responds when controlled by a bang-bang controller.
 
@@ -64,8 +60,7 @@ There are no tuneable controller parameters for a bang-bang controller - you can
 
 Try adjusting the setpoint up and down. You should see that for almost all values, the output converges to be somewhat near the setpoint.
 
-Common Issues with Bang-Bang Controllers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Common Issues with Bang-Bang Controllers
 
 Note that the system behavior is not perfect, because of delays in the control loop.  These can result from the nature of the sensors, measurement filters, loop iteration timers, or even delays in the control hardware itself.  Collectively, these cause a cycle of "overshoot" and "undershoot", as the output repeatedly goes above and below the setpoint.  This oscillation is unavoidable with a bang-bang controller.
 
@@ -77,8 +72,7 @@ Finally, this technique only works for mechanisms that accelerate relatively slo
 
 Bang-bang control sacrifices a lot for simplicity and high performance (in the sense of fast convergence to the setpoint).  To achieve "smoother" control, we need to consider a different control strategy.
 
-Pure Feedforward Control
-~~~~~~~~~~~~~~~~~~~~~~~~
+#### Pure Feedforward Control
 
 Interact with the simulation below to see how the flywheel system responds when controlled only by a feedforward controller.
 
@@ -106,8 +100,7 @@ To tune the feedforward controller, increase the velocity feedforward gain :math
 
 We can see that a pure feedforward control strategy works reasonably well for flywheel velocity control.  As we mentioned earlier, this is why it's possible to control most motors "directly" with joysticks, without any explicit "control loop" at all.  However, we can still do better - the pure feedforward strategy cannot reject disturbances, and so takes a while to recover after the ball is introduced.  Additionally, the motor may not perfectly obey the feedforward equation (even after accounting for vibration/noise).  To account for these, we need a feedback controller.
 
-Pure Feedback Control
-~~~~~~~~~~~~~~~~~~~~~
+#### Pure Feedback Control
 
 Interact with the simulation below to see how the flywheel system responds when controlled by only a feedback (PID) controller.
 
@@ -139,13 +132,11 @@ Perform the following:
 
    In this particular example, for a setpoint of 300, values of :math:`K_p = 0.1`, :math:`K_i = 0.0`, and :math:`K_d = 0.0` will produce somewhat reasonable results.  Since this control strategy is not very good, it will not work well for all setpoints.  You can attempt to improve this behavior by incorporating some :math:`K_i`, but it is very difficult to achieve good behavior across a wide range of setpoints.
 
-Issues with Feedback Control Alone
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Issues with Feedback Control Alone
 
 Because a non-zero amount of :term:`control effort` is required to keep the flywheel spinning, even when the :term:`output` and :term:`setpoint` are equal, this feedback-only strategy is flawed.  In order to optimally control a flywheel, a combined feedforward-feedback strategy is needed.
 
-Combined Feedforward and Feedback Control
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Combined Feedforward and Feedback Control
 
 Interact with the simulation below to see how the flywheel system responds under simultaneous feedforward and feedback (PID) control.
 
@@ -173,16 +164,13 @@ Tuning the combined flywheel controller is simple - we first tune the feedforwar
 
 Note that the combined feedforward-feedback controller works well across all setpoints, and recovers very quickly after the external disturbance of the ball contacting the flywheel.
 
-Tuning Conclusions
-------------------
+## Tuning Conclusions
 
-Applicability of Velocity Control
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Applicability of Velocity Control
 
 A gamepiece-launching flywheel is one of the most visible applications of velocity control. It is also applicable to drivetrain control - following a pre-defined path in autonomous involves controlling the velocity of the wheels with precision, under a variety of different loads.
 
-Choice of Control Strategies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Choice of Control Strategies
 
 Because we are controlling velocity, we can achieve fairly good performance with a :ref:`pure feedforward controller <docs/software/advanced-controls/introduction/tuning-flywheel:Pure Feedforward Control>`.  This is because a permanent-magnet DC motor's steady-state velocity is roughly proportional to the voltage applied, and is the reason that you can drive your robot around with joysticks without appearing to use any control loop at all - in that case, you are implicitly using a proportional feedforward model.
 
@@ -196,13 +184,11 @@ Tuning with only feedback can produce reasonable results in cases where no :term
 
 Adding an integral gain to the :term:`controller` is often a sub-optimal way to eliminate :term:`steady-state error` - you can see how sloppy and "laggy" it is in the simulation above! As we will see soon, a better approach is to combine the PID controller with a feedforward controller.
 
-Velocity and Position Control
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Velocity and Position Control
 
 Velocity control also differs from position control in the effect of inertia - in a position controller, inertia tends to cause the mechanism to swing past the setpoint even if the control voltage drops to zero near the setpoint.  This makes aggressive control strategies infeasible, as they end up wasting lots of energy fighting self-induced oscillations.  In a velocity controller, however, the effect is different - the rotor shaft stops accelerating as soon as you stop applying a control voltage (in fact, it will slow down due to friction and back-EMF), so such overshoots are rare (in fact, overshoot typically occurs in velocity controllers only as a result of loop delay).  This enables the use of an extremely simple, extremely aggressive control strategy called :ref:`bang-bang control <docs/software/advanced-controls/introduction/tuning-flywheel:Bang-Bang Control>`.
 
-Feedforward Simplifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Feedforward Simplifications
 
 For the sake of simplicity, the simulations above omit the :math:`K_s` term from the WPILib SimpleMotorFeedforward equation.  On actual mechanisms, however, this can be important - especially if there's a lot of friction in the mechanism gearing.  A flywheel with a lot of static friction will not have a linear control voltage-velocity relationship unless the feedforward controller includes a :math:`K_s` term to cancel it out.
 
@@ -211,7 +197,6 @@ To measure :math:`K_s` manually, slowly increase the voltage to the mechanism un
 Additionally, there is no need for a :math:`K_a` term in the feedforward for velocity control unless the setpoint is changing - for a flywheel, this is not a concern, and so the gain is omitted here.
 
 
-Footnotes
----------
+## Footnotes
 
 .. [1] For this simulation, we model a ball being injected to the flywheel as a velocity-dependant (frictional) torque fighting the spinning of the wheel for one quarter of a wheel rotation, right around the 5 second mark. This is a very simplistic way to model the ball, but is sufficient to illustrate the controller's behavior under a sudden load. It would not be sufficient to predict the ball's trajectory, or the actual "pulldown" in :term:`output` for the system.

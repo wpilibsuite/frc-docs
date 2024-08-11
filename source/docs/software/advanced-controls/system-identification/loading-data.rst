@@ -1,5 +1,4 @@
-Loading Data
-============
+# Loading Data
 
 After downloading the WPILog containing the tests from the roboRIO, go to the ``Log Loader`` pane in SysId and click ``Open data log file...``.
 

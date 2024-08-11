@@ -1,5 +1,4 @@
-Custom Themes
-=============
+# Custom Themes
 
 Since shuffleboard is a JavaFX application, it has support for custom themes via Cascading Stylesheets (**CSS** for short). These are commonly used on webpages for making HTML look nice, but JavaFX also has support, albeit for a different language subset (see `here <https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/doc-files/cssref.html>`_ for documentation on how to use it).
 
@@ -14,8 +13,7 @@ There are two ways to define a custom theme: place the stylesheets in a director
 All the stylesheets in the directory will be treated as part of the
 theme.
 
-Loading Themes via Plugins
---------------------------
+## Loading Themes via Plugins
 
 Custom themes can also be defined by plugins. This makes them easier to share and bundle with custom widgets, but are slightly more difficult to define. The theme object will need a reference to a class defined in the plugin so that the plugin loader can determine where the stylesheets are located. If a class is passed that is *not* present in the JAR that the plugin is in, the theme will not be able to be used.
 
@@ -33,8 +31,7 @@ Custom themes can also be defined by plugins. This makes them easier to share an
 
    }
 
-Modifying or Extending Shuffleboard’s Default Themes
-----------------------------------------------------
+## Modifying or Extending Shuffleboard’s Default Themes
 
 Shuffleboard’s Material Light and Material Dark themes provide a lot of the framework for light and dark themes, respectively, as well as many styles specific to shuffleboard, ControlsFX, and Medusa UI components to fit with the material-style design.
 
@@ -50,8 +47,7 @@ Themes that want to modify these themes need to add ``import`` statements for th
 
 Note that ``base.css`` internally imports ``material.css``, and ``light.css``, ``dark.css``, and ``midnight.css`` all import ``base.css``, so importing ``light.css`` will implicitly import both ``base.css`` and ``material.css`` as well.
 
-Source Code for the CSS Files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Source Code for the CSS Files
 
 -  _material.css: https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/resources/edu/wpi/first/shuffleboard/api/material.css
 -  _base.css: https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/resources/edu/wpi/first/shuffleboard/api/base.css
@@ -59,18 +55,15 @@ Source Code for the CSS Files
 -  _dark.css: https://github.com/wpilibsuite/shuffleboard/blob/main/app/src/main/resources/edu/wpi/first/shuffleboard/app/dark.css
 -  _midnight.css: https://github.com/wpilibsuite/shuffleboard/blob/main/app/src/main/resources/edu/wpi/first/shuffleboard/app/midnight.css
 
-Material Design Color Swatches
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Material Design Color Swatches
 
 The material design CSS uses color swatch variables for almost everything. These variables can be set from custom CSS files, reducing the amount of custom code needed.
 
 The ``-swatch-<100|200|300|400|500>`` variables define progressively darker shades of the same primary color. The light theme uses the default shades of blue set in ``material.css``, but the dark theme overrides these with shades of red. ``-swatch-<|light|dark>-gray`` defines three levels of gray to use for various background or text colors.
 
-Overriding the Swatch Colors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Overriding the Swatch Colors
 
-Replacing blue with red (light)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Replacing blue with red (light)
 
 ::
 
@@ -84,8 +77,7 @@ Replacing blue with red (light)
        -swatch-500: hsb(0, 80%, 58%);
    }
 
-Replacing red with blue (dark)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Replacing red with blue (dark)
 
 ::
 

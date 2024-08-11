@@ -1,30 +1,25 @@
-Java Garbage Collection
-=======================
+# Java Garbage Collection
 Java garbage collection is the process of automatically managing memory for Java objects. The Java Virtual Machine (JVM) is responsible for creating and destroying objects, and the garbage collector is responsible for identifying and reclaiming unused objects.
 
 Java garbage collection is an automatic process, which means that the programmer does not need to explicitly deallocate memory. The garbage collector keeps track of which objects are in use and which are not, and it periodically reclaims unused objects.
 
-Object Creation
----------------
+## Object Creation
 
 Creating a large number of objects in Java can lead to memory and performance issues. While the Java Garbage Collector (GC) is designed to handle memory management efficiently, creating too many objects can overwhelm the GC and cause performance degradation.
 
-Memory Concerns
-^^^^^^^^^^^^^^^
+### Memory Concerns
 
 When a large number of objects are created, it increases the overall memory footprint of the application. While the overhead for a single object may be insignificant, it can become substantial when multiplied by a large number of objects.
 
 .. note:: :doc:`VisualVM </docs/software/advanced-gradlerio/profiling-with-visualvm>` can be used to see where memory is allocated.
 
-Performance Concerns
-^^^^^^^^^^^^^^^^^^^^
+### Performance Concerns
 
 The GC's job is to periodically identify and reclaim unused objects in memory. While garbage collection is running on an FRC robot coded in Java, execution of the robot program is paused. When the GC has to collect a large number of objects, it has to pause the application to run more frequently or for longer periods of time. This is because the GC has to perform more work to collect and process each object.
 
 GC-related performance degradation in robot programs can manifest as occasional pauses, freezes, or loop overruns as the GC works to reclaim memory.
 
-Design Considerations
-^^^^^^^^^^^^^^^^^^^^^
+### Design Considerations
 
 If you anticipate your application creating a large number of short-lived objects, it is important to consider design strategies to mitigate the potential memory and performance issues. Here are some strategies to consider:
 
@@ -32,8 +27,7 @@ If you anticipate your application creating a large number of short-lived object
 
 - Efficient data structures: Use data structures that are well-suited for the type of data you are working with. For example, if you are dealing with a large number of primitive values, consider using arrays or collections specifically designed for primitives.
 
-Diagnosing Out of Memory Errors with Heap Dumps
------------------------------------------------
+## Diagnosing Out of Memory Errors with Heap Dumps
 
 All objects in Java are retained in a section of memory called the *heap*. As objects typically consume the greatest amount of memory in a Java program, it is often useful to take a snapshot of the state of the heap---a heap dump---to analyze memory issues. Heap dumps only capture the state of a program's heap at a single point in time, so they are unlikely to be useful if not captured exactly at the time the program is experiencing memory issues.
 
@@ -70,8 +64,7 @@ Note that the JVM will **not** overwrite heap dumps with the exact path and file
 
    Use of this feature is not recommended during competitive play.
 
-System Memory Tuning
---------------------
+## System Memory Tuning
 
 If the JVM cannot allocate memory, the program will be terminated. As an embedded system with only a small amount of memory available (256 MB on the roboRIO 1, 512 MB on the roboRIO 2), the roboRIO is particularly susceptible to running out of memory.
 
@@ -88,8 +81,7 @@ If you continue to run out of memory even after investigating with VisualVM and 
 
 Implementing most of these options require :doc:`connecting with SSH </docs/software/roborio-info/roborio-ssh>` to the roboRIO and running commands. If run incorrectly, it may require a reimage to recover, so be careful when following the instructions.
 
-Disabling the System Web Server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Disabling the System Web Server
 
 The built-in NI system web server provides the webpage (the :doc:`roboRIO Web Dashboard </docs/software/roborio-info/roborio-web-dashboard>`) seen when using a web browser to connect to the roboRIO, e.g. to change IP address settings. It also is used by the Driver Station's data log download functionality. However, it consumes several MB of RAM, so disabling it will free up that memory for the robot program to use. There are several ways to disable the web server:
 
@@ -105,8 +97,7 @@ To revert the alternate ways and re-enable the web server, take the correspondin
 
 2. Run ``chmod a+x /usr/local/natinst/etc/init.d/systemWebServer; sync``
 
-Setting sysctls
-^^^^^^^^^^^^^^^
+### Setting sysctls
 
 Several Linux kernel options (called sysctls) can be set to tweak how the kernel allocates memory. Several options have been found to reduce out-of-memory errors:
 
@@ -133,8 +124,7 @@ The ``/etc/sysctl.conf`` file should contain the following lines at the end when
 
 To revert the change, edit ``/etc/sysctl.conf`` (this will require the use of the vi editor) and remove these 3 lines.
 
-Periodically Calling the Garbage Collector
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Periodically Calling the Garbage Collector
 
 Sometimes the garbage collector won't run frequently enough to keep up with the quantity of allocations. As Java provides a way to trigger a garbage collection to occur, running it on a periodic basis may reduce peak memory usage. This can be done by adding a ``Timer`` and a periodic check:
 
@@ -153,8 +143,7 @@ Sometimes the garbage collector won't run frequently enough to keep up with the 
       }
     }
 
-Setting Up Swap on a USB Flash Drive
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Setting Up Swap on a USB Flash Drive
 
 A swap file on a Linux system provides disk-backed space that can be used by the system as additional virtual memory to put infrequently used data and programs when they aren't being used, freeing up physical RAM for active use such as the robot program. It is strongly recommended to not use the built-in non-replaceable flash storage on the roboRIO 1 for a swap file, as it has very limited write cycles and may wear out quickly. Instead, however, a FAT32-formatted USB flash drive may be used for this purpose. This does require the USB flash drive to always be plugged into the roboRIO before boot.
 

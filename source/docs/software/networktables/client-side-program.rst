@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Creating a Client-side Program
-==============================
+# Creating a Client-side Program
 
 If all you need to do is have your robot program communicate with a :term:`COTS` coprocessor or a dashboard running on the Driver Station laptop, then the previous examples of writing robot programs are sufficient. But if you would like to write some custom client code that would run on the drivers station or on a coprocessor then you need to know how to build :term:`NetworkTables` programs for those (non-roboRIO) platforms.
 
@@ -179,8 +178,7 @@ Then this instance is started as a NetworkTables client with the team number (th
 
 Then this sample program simply loops once a second and gets the values for x and y and prints them on the console. In a more realistic program, the client might be processing or generating values for the robot to consume.
 
-Building using Gradle
-^^^^^^^^^^^^^^^^^^^^^
+### Building using Gradle
 
 Example build.gradle files are provided in the [StandaloneAppSamples Repository](https://github.com/wpilibsuite/StandaloneAppSamples) Update the GradleRIO version to correspond to the desired WPILib version.
 
@@ -204,7 +202,6 @@ Example build.gradle files are provided in the [StandaloneAppSamples Repository]
           :linenos:
           :emphasize-lines: 3, 14-15, 20-22
 
-Building Python
-^^^^^^^^^^^^^^^
+### Building Python
 
 For Python, refer to the :doc:`RobotPy install documentation </docs/zero-to-robot/step-2/python-setup>`.

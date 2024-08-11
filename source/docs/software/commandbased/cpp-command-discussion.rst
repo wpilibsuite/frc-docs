@@ -1,13 +1,11 @@
-A Technical Discussion on C++ Commands
-======================================
+# A Technical Discussion on C++ Commands
 .. note:: This article assumes that you have a fair understanding of advanced C++ concepts, including templates, smart pointers, inheritance, rvalue references, copy semantics, move semantics, and CRTP.  You do not need to understand the information within this article to use the command-based framework in your robot code.
 
 This article will help you understand the reasoning behind some of the decisions made in the 2020 command-based framework (such as the use of ``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, etc.).  You do not need to understand the information within this article to use the command-based framework in your robot code.
 
 .. note:: The model was further changed in 2023, as described :ref:`below <docs/software/commandbased/cpp-command-discussion:2023 Updates>`.
 
-Ownership Model
----------------
+## Ownership Model
 The old command-based framework employed the use of raw pointers, meaning that users had to use ``new`` (resulting in manual heap allocations) in their robot code. Since there was no clear indication on who owned the commands (the scheduler, the command groups, or the user themselves), it was not apparent who was supposed to take care of freeing the memory.
 
 Several examples in the old command-based framework involved code like this:
@@ -30,8 +28,7 @@ This glaring problem was one of the reasons for the rewrite of the framework. A 
 
 Default commands are owned by the command scheduler whereas component commands of command compositions are owned by the command composition. Other commands are owned by whatever the user decides they should be owned by (e.g. a subsystem instance or a ``RobotContainer`` instance). This means that the ownership of the memory allocated by any commands or command compositions is clearly defined.
 
-``std::unique_ptr`` vs. ``std::shared_ptr``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### ``std::unique_ptr`` vs. ``std::shared_ptr``
 Using ``std::unique_ptr`` allows us to clearly determine who owns the object. Because an ``std::unique_ptr`` cannot be copied, there will never be more than one instance of a ``std::unique_ptr`` that points to the same block of memory on the heap. For example, a constructor for ``SequentialCommandGroup`` takes in a ``std::vector<std::unique_ptr<Command>>&&``. This means that it requires an rvalue reference to a vector of ``std::unique_ptr<Command>``. Let's go through some example code step-by-step to understand this better:
 
 .. code-block:: c++
@@ -60,12 +57,10 @@ Using ``std::unique_ptr`` allows us to clearly determine who owns the object. Be
 
 With ``std::shared_ptr``, there is no clear ownership model because there can be multiple instances of a ``std::shared_ptr`` that point to the same block of memory. If commands were in ``std::shared_ptr`` instances, a command group or the command scheduler cannot take ownership and free the memory once the command has finished executing because the user might still unknowingly still have a ``std::shared_ptr`` instance pointing to that block of memory somewhere in scope.
 
-Use of CRTP
------------
+## Use of CRTP
 You may have noticed that in order to create a new command, you must extend ``CommandHelper``, providing the base class (usually ``frc2::Command``) and the class that you just created. Let's take a look at the reasoning behind this:
 
-Command Decorators
-^^^^^^^^^^^^^^^^^^
+### Command Decorators
 The new command-based framework includes a feature known as "command decorators", which allows the user to something like this:
 
 .. code-block:: c++
@@ -90,8 +85,7 @@ Here ``temp`` is storing the vector of commands that we need to pass into the ``
 
 You might think it would be this straightforward, but that is not the case. Because this decorator code is in the ``Command`` class, ``*this`` refers to the ``Command`` in the subclass that you are calling the decorator from and has the type of ``Command``. Effectively, you will be trying to move a ``Command`` instead of ``MyCommand``. We could cast the ``this`` pointer to a ``MyCommand*`` and then dereference it but we have no information about the subclass to cast to at compile-time.
 
-Solutions to the Problem
-^^^^^^^^^^^^^^^^^^^^^^^^
+### Solutions to the Problem
 
 Our initial solution to this was to create a virtual method in ``Command`` called ``TransferOwnership()`` that every subclass of ``Command`` had to override. Such an override would have looked like this:
 
@@ -134,12 +128,10 @@ Going back to our ``AndThen()`` example, we can now do the following:
    // be called on rvalue references.
    temp.emplace_back(std::move(*this).TransferOwnership());
 
-Lack of Advanced Decorators
----------------------------
+## Lack of Advanced Decorators
 Most of the C++ decorators take in ``std::function<void()>`` instead of actual commands themselves. The idea of taking in actual commands in decorators such as ``AndThen()``, ``BeforeStarting()``, etc. was considered but then abandoned due to a variety of reasons.
 
-Templating Decorators
-^^^^^^^^^^^^^^^^^^^^^
+### Templating Decorators
 Because we need to know the types of the commands that we are adding to a command group at compile-time, we will need to use templates (variadic for multiple commands). However, this might not seem like a big deal. The constructors for command groups do this anyway:
 
 .. code-block:: c++
@@ -176,12 +168,10 @@ We use a forward declaration at the top of ``Command.h``:
 
 And then we include ``SequentialCommandGroup.h`` in ``Command.cpp``. If these decorator functions were templated however, we cannot write definitions in the ``.cpp`` files, resulting in a circular dependency.
 
-Java vs C++ Syntax
-^^^^^^^^^^^^^^^^^^
+### Java vs C++ Syntax
 These decorators usually save more verbosity in Java (because Java requires raw ``new`` calls) than in C++, so in general, it does not make much of a syntanctic difference in C++ if you create the command group manually in user code.
 
-2023 Updates
-------------
+## 2023 Updates
 
 After a few years in the new command-based framework, the recommended way to create commands increasingly shifted towards inline commands, decorators, and factory methods. With this paradigm shift, it became evident that the C++ commands model introduced in 2020 and described above has some pain points when used according to the new recommendations.
 
@@ -189,8 +179,7 @@ A significant root cause of most pain points was commands being passed by value 
 
 Additionally, various decorators weren't supported in C++ due to reasons described :ref:`above <docs/software/commandbased/cpp-command-discussion:Templating Decorators>`. As long as decorators were rarely used and were mainly to reduce verbosity (where Java was more verbose than C++), this was less of a problem. Once heavy usage of decorators was recommended, this became more of an issue.
 
-``CommandPtr``
-^^^^^^^^^^^^^^
+### ``CommandPtr``
 
 Let's recall the mention of ``std::unique_ptr`` far above: a value type with only move semantics. This is the ownership model we want!
 

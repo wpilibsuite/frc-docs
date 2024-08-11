@@ -1,17 +1,14 @@
-Writing the Code for a Subsystem
-================================
+# Writing the Code for a Subsystem
 
 Adding code to create an actual working subsystem is very straightforward. For simple subsystems that don't use feedback it turns out to be extremely simple. In this section we will look at an example of a `Claw` subsystem. The `Claw` subsystem also has a limit switch to determine if an object is in the grip.
 
-RobotBuilder Representation of the Claw Subsystem
--------------------------------------------------
+## RobotBuilder Representation of the Claw Subsystem
 
 .. image:: images/writing-subsystem-code-1.png
 
 The claw at the end of a robot arm is a subsystem operated by a single VictorSPX Motor Controller. There are three things we want the motor to do, start opening, start closing, and stop moving. This is the responsibility of the subsystem. The timing for opening and closing will be handled by a command later in this tutorial. We will also define a method to get if the claw is gripping an object.
 
-Adding Subsystem Capabilities
------------------------------
+## Adding Subsystem Capabilities
 
 .. tab-set::
 
@@ -170,8 +167,7 @@ Add methods to the ``claw.java`` or ``claw.cpp`` that will open, close, and stop
 
 Notice that member variable called ``motor`` and ``limitswitch`` are created by RobotBuilder so it can be used throughout the subsystem. Each of your dragged-in palette items will have a member variable with the name given in RobotBuilder.
 
-Adding the Method Declarations to the Header File (C++ Only)
-------------------------------------------------------------
+## Adding the Method Declarations to the Header File (C++ Only)
 
 .. tab-set::
 

@@ -1,15 +1,12 @@
-Using a Code Formatter
-======================
+# Using a Code Formatter
 
 Code formatters exist to ensure that the style of code written is consistent throughout the entire codebase. This is used in many major projects; from Android to OpenCV. Teams may wish to add a formatter throughout their robot code to ensure that the codebase maintains readability and consistency throughout.
 
 For this article, we will highlight using [Spotless](https://github.com/diffplug/spotless) for Java teams and [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst) for C++ teams.
 
-Spotless
---------
+## Spotless
 
-Configuration
-^^^^^^^^^^^^^
+### Configuration
 
 Necessary ``build.gradle`` changes are required to get Spotless functional. In the ``plugins {}`` block of your ``build.gradle``, add the Spotless plugin so it appears similar to the below.
 
@@ -68,8 +65,7 @@ Then ensure you add a required ``spotless {}`` block to correctly configure spot
       }
    }
 
-Running Spotless
-^^^^^^^^^^^^^^^^
+### Running Spotless
 
 Spotless can be ran using ``./gradlew spotlessApply`` which will apply all formatting options. You can also specify a specific task by just adding the name of formatter. An example is ``./gradlew spotlessmiscApply``.
 
@@ -95,8 +91,7 @@ In addition to formatting code, Spotless can also ensure the code is correctly f
              java-version: 17
          - run: ./gradlew spotlessCheck
 
-Explanation of Options
-^^^^^^^^^^^^^^^^^^^^^^
+### Explanation of Options
 
 Each ``format`` section highlights formatting of custom files in the project. The ``java`` and ``groovyGradle`` are natively supported by spotless, so they are defined differently.
 
@@ -157,8 +152,7 @@ Additionally, there is a ``eclipseWtp`` option in the ``xml`` block. This stands
 
 .. note:: A full list of configurations is available on the [Spotless README](https://github.com/diffplug/spotless)
 
-Issues with Line Endings
-^^^^^^^^^^^^^^^^^^^^^^^^
+### Issues with Line Endings
 
 Spotless will attempt to apply line endings per-OS, which means Git diffs will be constantly changing if two users are on different OSes (Unix vs Windows). It's recommended that teams who contribute to the same repository from multiple OSes utilize a ``.gitattributes`` file. The following should suffice for handling line endings.
 
@@ -169,18 +163,15 @@ Spotless will attempt to apply line endings per-OS, which means Git diffs will b
    *.md text eol=lf
    *.xml text eol=lf
 
-wpiformat
----------
+## wpiformat
 
-Requirements
-^^^^^^^^^^^^
+### Requirements
 
 - [Python 3.6 or higher](https://www.python.org/)
 
 You can install [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst) by typing ``pip3 install wpiformat`` into a terminal or command prompt.
 
-Usage
-^^^^^
+### Usage
 
 wpiformat can be ran by typing ``wpiformat`` in a console. This will format with ``clang-format``. Three configuration files are required (``.clang-format``, ``.styleguide``, ``.styleguide-license``). These must exist in the project root.
 

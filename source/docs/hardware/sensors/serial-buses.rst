@@ -1,14 +1,12 @@
 .. include:: <isonum.txt>
 
-Serial Buses
-============
+# Serial Buses
 
 In addition to the :doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-hardware>` inputs, the roboRIO also offers several methods of serial communication with peripheral devices.
 
 Both the digital and analog inputs are highly limited in the amount of data that can be sent over them.  Serial buses allow users to make use of far more-robust and higher-bandwidth communications protocols with sensors that collect large amounts of data, such as inertial measurement units (IMUs) or 2D LIDAR sensors.
 
-Types of supported serial buses
--------------------------------
+## Types of supported serial buses
 
 The roboRIO supports many basic types of serial communications:
 
@@ -20,8 +18,7 @@ The roboRIO supports many basic types of serial communications:
 
 Additionally, the roboRIO supports communications with peripheral devices over the :term:`CAN` bus.  However, as the FRC\ |reg| CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
 
-I2C
----
+## I2C
 
 .. image:: images/roborio/roborio-i2c.svg
    :alt: The I2C port on the roboRIO.
@@ -35,8 +32,7 @@ The I2C bus can also be used through the `MXP expansion port`_. The I2C bus on t
 
 .. warning:: Be sure to familiarize yourself on the following known issue before using the onboard I2C port: :ref:`docs/yearly-overview/known-issues:Onboard I2C Causing System Lockups`
 
-SPI
----
+## SPI
 
 .. image:: images/roborio/roborio-spi.svg
    :alt: Show the SPI port on the roboRIO.
@@ -48,8 +44,7 @@ To communicate to peripheral devices over :term:`SPI`, each pin should be wired 
 
 The SPI bus can also be used through the `MXP expansion port`_. The MXP port provides independent clock, and input/output lines and an additional CS.
 
-RS-232
-------
+## RS-232
 
 .. image:: images/roborio/roborio-rs-232.svg
    :alt: Location of the RS-232 port on the roboRIO.
@@ -65,13 +60,11 @@ The roboRIO RS-232 serial port uses RS-232 signaling levels (+/- 15v). The MXP s
 
 .. note:: By default, the onboard RS-232 port is utilized by the roboRIO's serial console. In order to use it for an external device, the serial console must be disabled using the :ref:`Imaging Tool <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO 1>` or :ref:`docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard`.
 
-USB Client
-----------
+## USB Client
 
 One of the USB ports on the roboRIO is a USB-B, or USB client port.  This can be connected to devices, such as a Driver Station computer, with a standard USB cable.
 
-USB Host
---------
+## USB Host
 
 .. image:: images/roborio/roborio-usb-host.svg
    :alt: Location of the two USB ports on the roboRIO at top center.
@@ -79,8 +72,7 @@ USB Host
 Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can be connected to devices, such as cameras or sensors, with a standard USB cable.
 
 
-MXP Expansion Port
-------------------
+## MXP Expansion Port
 
 .. image:: images/roborio/roborio-mxp.svg
    :alt: Location of the MXP port on the roboRIO directly above the NI logo.
@@ -92,8 +84,7 @@ Several of the serial buses are also available for use through the roboRIO's :te
 
 Many peripheral devices attach directly to the MXP port for convenience, requiring no wiring on the part of the user.
 
-CAN Bus
--------
+## CAN Bus
 
 .. image:: images/roborio/roborio-can.svg
    :alt: Show the location of the CAN bus terminals in the top left corner of the roboRIO.

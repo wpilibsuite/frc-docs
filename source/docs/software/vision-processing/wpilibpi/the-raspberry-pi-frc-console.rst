@@ -1,10 +1,8 @@
 .. include:: <isonum.txt>
 
-The Raspberry PI
-================
+# The Raspberry PI
 
-FRC Console
------------
+## FRC Console
 
 The FRC\ |reg| image for the Raspberry PI includes a console that can be viewed in any web browser that makes it easy to:
 
@@ -14,8 +12,7 @@ The FRC\ |reg| image for the Raspberry PI includes a console that can be viewed 
 -   Look at each camera plugged into the rPI and add additional cameras
 -   Load a new vision program onto the rPI
 
-Setting the rPI to be Read-Only vs. Writable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Setting the rPI to be Read-Only vs. Writable
 
 The rPI is normally set to Read-Only which means that the file system cannot be changed. This ensures that if power is removed
 without first shutting down the rPi the file system isn't corrupted. When settings are changed (following sections), the new
@@ -23,16 +20,14 @@ settings cannot be saved while the rPI file system is  set as Read-Only. Buttons
 changed from Read-Only to Writable and back whenever changes are made. If the other buttons that change information stored on the
 rPI cannot be press, check the Read-Only status of the system.
 
-Status of the network connection to the rPI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Status of the network connection to the rPI
 
 There is a label in the top right corner of the console that indicates if the rPi is currently connected. It will change from
 Connected to Disconnected if there is no longer a network connection to the rPi.
 
 .. figure:: images/the-raspberry-pi-frc-console/the-raspberry-pi-frc-console.png
 
-System status
--------------
+## System status
 
 .. figure:: images/the-raspberry-pi-frc-console/system-status.png
 
@@ -44,8 +39,7 @@ average and the other a 5 second average. Shown is:
 -   Network bandwidth - which allows one to determine if the used camera bandwidth is exceeding the maximum bandwidth allowed
     in the robot rules for any year
 
-Vision Status
--------------
+## Vision Status
 
 .. figure:: images/the-raspberry-pi-frc-console/vision-status.png
 
@@ -54,8 +48,7 @@ program in Java, C++, or Python. You can also enable and view the console output
 camera service. In this case there are number of messages about being unable to connect to :term:`NetworkTables` (NT: connect())
 because in this example the rPI is simply connected to a laptop with no NetworkTables server running (usually the roboRIO.)
 
-Network Settings
-----------------
+## Network Settings
 
 The rPI network settings have options to connect to the PI:
 
@@ -69,8 +62,7 @@ The rPI network settings have options to connect to the PI:
 The picture above is showing the settings for both DHCP and Static IP Addressing. The mDNS name for the rPi should always work
 regardless of the options selected above.
 
-Vision Settings
----------------
+## Vision Settings
 
 .. figure:: images/the-raspberry-pi-frc-console/vision-settings-1.png
 
@@ -89,8 +81,7 @@ modes (combinations of Width, Height, and frame rates) that are supported by thi
 
 .. note:: If the camera image is not visible on the :guilabel:`Open Stream` screen then check the supported video modes at the bottom of the page.  Then go back to 'Vision Settings' and click on the camera in question and verify that the pixel format, width, height, and FPS are listed in the supported video modes.
 
-Getting the current settings to persist over reboots
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Getting the current settings to persist over reboots
 
 The rPi will load all the camera settings on startup. Editing the camera configuration in the above screen is temporary. To make
 the values persist click on the "Load Source Config From Camera" button and the current settings will be filled in on the camera
@@ -103,13 +94,11 @@ There are some commonly used camera settings values shown in the camera settings
 and Exposure are loaded into the camera before the user JSON file is applied. So if a user JSON file contains those settings they
 will overwrite the ones from the text field.
 
-Application
-------------
+## Application
 
 The Application tab shows the application that is currently running on the rPi.
 
-Vision workflows
-^^^^^^^^^^^^^^^^
+### Vision workflows
 
 There is a sample vision program using OpenCV in each of the supported languages, C++, Java, or Python. Each sample program can
 capture and stream video from the rPi. In addition, the samples have some minimal OpenCV. They are all set up to be extended to

@@ -1,5 +1,4 @@
-Networking Utilities
-====================
+# Networking Utilities
 
 .. toctree::
    :maxdepth: 1

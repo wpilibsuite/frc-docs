@@ -1,5 +1,4 @@
-RobotBuilder - Advanced
-=======================
+# RobotBuilder - Advanced
 
 .. toctree::
    :maxdepth: 1

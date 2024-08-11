@@ -1,9 +1,7 @@
-Creating Custom Data Types
-==========================
+# Creating Custom Data Types
 Widgets allow us to control and visualize different types of data. This data could be integers and doubles or even Java Objects. In order to display these types of data using widgets, it is helpful to create a container class for them. It is not necessary to create your own Data Class if the widget will handle single fielded data types such as doubles, arrays, or strings.
 
-Creating The Data Class
------------------------
+## Creating The Data Class
 In this example, we will create a custom data type for a 2D Point and its x and y coordinates. In order to create a custom data type class, it must extend the abstract class `ComplexData <https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_.
 Your custom data class must also implement the ``asMap()`` method that returns the represented data as a simple map as noted below with the ``@Override`` annotation:
 
@@ -66,8 +64,7 @@ Other methods can be added to retrieve or edit fields and instance variables, ho
 
 This creates a new ``MyPoint2D`` object and returns it with the new y-coordinate. Same can be done for changing the x coordinate.
 
-Creating a Data Type
----------------------
+## Creating a Data Type
 There are two different data types that can be made: Simple data types that have only one field (ie. a single number or string), and Complex data types that have multiple data fields (ie. multiple strings, multiple numbers).
 
 In order to define a simple data type, the class must extend the ``SimpleDataType<DataType>`` class with the data type needed and implement the ``getDefaultValue()`` method. In this example, we will use a double as our simple data type.
@@ -125,8 +122,7 @@ The following code above works as noted:
 The ``fromMap()`` method creates a new MyPoint2D using the values in the NetworkTables entry it is bound to.
 The ``getOrDefault`` method will return 0.0 if it cannot get the entry values. The ``getDefaultValue`` will return a new ``MyPoint2D`` object if no source is present.
 
-Exporting Data Type To Plugin
------------------------------
+## Exporting Data Type To Plugin
 In order to have the data type be recognized by Shuffleboard, the plugin must export them by overriding the ``getDataTypes`` method.
 For example,
 
