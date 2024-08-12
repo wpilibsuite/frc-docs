@@ -3,7 +3,7 @@
 Style Guide
 ===========
 
-This document contains the various RST/Sphinx specific guidelines for the frc-docs project. For guidelines related to the various WPILib code projects, see [the WPILib GitHub](https://github.com/wpilibsuite/styleguide)
+This document contains the various MD and RST/Sphinx specific guidelines for the frc-docs project. For guidelines related to the various WPILib code projects, see [the WPILib GitHub](https://github.com/wpilibsuite/styleguide)
 
 Filenames
 ---------
@@ -203,9 +203,9 @@ When using ``:ref:`` or ``:doc:`` you may customize the displayed text by surrou
 External Links
 ^^^^^^^^^^^^^^
 
-It is preferred to format external links as anonymous hyperlinks. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
+It is preferred to format external links as md style hyperlinks.
 
-.. code-block:: ReST
+.. code-block:: md
 
    Hi there, [this is a link](https://example.com) and it's pretty cool!
 
