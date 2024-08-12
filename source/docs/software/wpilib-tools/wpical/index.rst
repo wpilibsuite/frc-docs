@@ -131,7 +131,7 @@ Example:
     }
 
 
-The best method for external camera calibration is `CalibDB.net <https://calibdb.net/>`_. WPIcal allows you to directly upload the generated CalibDB JSON without any modification. Make sure to download the OpenCV format JSON:
+One common method for external camera calibration is `CalibDB.net <https://calibdb.net/>`_. WPIcal allows you to directly upload the generated CalibDB JSON without any modification. Make sure to download the OpenCV format JSON:
 
 
 .. image:: images/CalibdbDownload.png
@@ -143,6 +143,8 @@ Then:
     :alt: CalibdbOpenCVFormat
 
 .. important:: When uploading a CalibDB JSON, ensure that you download the calibration with the proper resolution selected.
+
+.. warning:: CalibDB calibrations have been known to fail when bad snapshots are taken. If your calibration data looks suspect, repeat calibration process again.
 
 Field Calibration
 -----------------
