@@ -156,6 +156,7 @@ linkcheck_ignore = [
     r".*raspberrypi.com.*",
     r".*stackoverflow.com.*",
     r".*allaboutcircuits.com.*",
+    r".*knowledge.ni.com.*",
 ]
 
 # Sets linkcheck timeout in seconds
