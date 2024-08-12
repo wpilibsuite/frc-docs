@@ -39,14 +39,15 @@ Prior To Departing For The Competition
 9. Laptop battery / power
 
    a. Turn off Put the computer to sleep in your power plan for both battery and powered operation.
-   b. Turn off USB Selective Suspend:
+   b. Turn off Battery Saver and set Power Mode to Best Performance.
+   c. Turn off USB Selective Suspend:
 
       i. Right click on the battery/charging icon in the tray, then select Power Options.
       ii. Edit the plan settings of your power plan.
       iii. Click the Change advanced power settings link.
       iv. Scroll down in the advanced settings and disable the USB selective suspend setting for both Battery and Plugged in.
 
-   c. Ensure the laptop battery can hold a charge for at least an hour after making the changes above. This allows plenty of time for the robot and drive team to go through the queue and reach the alliance station without mains power.
+   d. Ensure the laptop battery can hold a charge for at least an hour after making the changes above. This allows plenty of time for the robot and drive team to go through the queue and reach the alliance station without mains power.
 
 10. Bring a trusted USB and Ethernet cable for use connecting to the roboRIO.
 11. Add retention/strain relief to prevent your joystick/gamepad controllers from falling on the floor and/or yanking on the USB ports. This helps prevent issues with intermittent controller connections.
@@ -73,7 +74,8 @@ Before Each Match
 5. Ensure joysticks and controllers are assigned to the correct USB ports.
 
    a. In the USB tab in the FRC Driver Station software, drag and drop to assign joysticks as needed.
-   b. Use the rescan button (F1) if joysticks / controllers do not appear green
+   b. Use the rescan button (F1) if joysticks / controllers do not appear green.
    c. Use the rescan button (F1) during competition if joystick or controllers become unplugged and then are plugged back in or otherwise turn gray during competition.
 
 6. Ensure your :doc:`Dashboard is connected to the robot </docs/software/dashboards/troubleshooting-dashboard-connectivity>` after your driver station connects to the robot.
+7. Ensure driver station is fully visible and in focus during the match to avoid Windows de-priortizing it, and to ease troubleshooting.
