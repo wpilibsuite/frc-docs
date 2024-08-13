@@ -25,7 +25,7 @@ Controls Glossary
       Used in position or negative feedback with a :term:`plant` to bring about a desired :term:`system state <state>` by driving the difference between a :term:`reference` signal and the :term:`output` to zero.
 
    convolution
-      A mathematical operation that calculates a weighted moving average of one function, with the weights assigned by a second function. A common way to "filter" sensor input is to apply a *convolution* to it, using a carefully-chosen filtering function. See `convolution <https://en.wikipedia.org/wiki/Convolution>`__. on Wikipedia for more info.
+      A mathematical operation that calculates a weighted moving average of one function, with the weights assigned by a second function. A common way to "filter" sensor input is to apply a *convolution* to it, using a carefully-chosen filtering function. See `convolution <https://en.wikipedia.org/wiki/Convolution>`__ on Wikipedia for more info.
 
    counter-electromotive force
       A :term:`voltage` generated in a spinning motor. The voltage is a result of the fact that has a coil of wire rotating near a magnet. See `Counter-electromotive_force <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ on Wikipedia for more info.
@@ -69,7 +69,7 @@ Controls Glossary
       Inputs are often represented by the variable :math:`\mathbf{u}`, a column vector with one entry per :term:`input` to the :term:`system`.
 
    least-squares regression
-      A curve-fitting technique which picks a curve to minimizes the *square* of the error between the fitted curve, and the actual measured data. See `ordinary least-squares regression <https://en.wikipedia.org/wiki/Linear_regression>`__ on Wikipedia for more info.
+      A curve-fitting technique which picks a curve to minimize the *square* of the error between the fitted curve and the actual measured data. See `ordinary least-squares regression <https://en.wikipedia.org/wiki/Linear_regression>`__ on Wikipedia for more info.
 
    LQR
      Linear-Quadratic Regulator - A feedback control scheme which seeks to operate a system in a "most optimal" or "lowest cost" manner, in the sense of minimizing the square of some "cost function" that represents a combination of system error and control effort. This requires an accurate mathematical model of the system being controlled, and function describing the "cost" of any given system state. See `LQR <https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__ on Wikipedia for more info.
@@ -78,7 +78,7 @@ Controls Glossary
       Measurements are :term:`outputs <output>` that are measured from a :term:`plant`, or physical system, using sensors.
 
    model
-      A set of mathematical equations that reflects some aspect of a physical :term:`system's <system>` behavior.
+      A set of mathematical equations that reflects some aspect of a physical :term:`system <system>`\'s behavior.
 
    observer
       In control theory, a system that provides an estimate of the internal :term:`state` of a given real :term:`system` from measurements of the :term:`input` and :term:`output` of the real :term:`system`. WPILib includes a Kalman Filter class for observing linear systems, and ExtendedKalmanFilter and UnscentedKalmanFilter classes for nonlinear systems.
@@ -87,18 +87,18 @@ Controls Glossary
       Having the property of being independent, or lacking mutual influence. For example, two lines are orthogonal if moving any number of units along one line causes zero displacement along the other line. In a :term:`cartesian coordinate system`, orthogonal lines are often said to have 90-degree angles between each other.
 
    output
-      Measurements from sensors. There can be more measurements then states. These outputs are used in the "correct" step of Kalman Filters.
+      Measurements from sensors. There can be more measurements than states. These outputs are used in the "correct" step of Kalman Filters.
 
          - Ex. A flywheel might have 1 :term:`output` from a encoder that measures it's velocity.
          - Ex. A drivetrain might use solvePNP and V-SLAM to find it's x/y/heading position on the field. It's fine that there are 6 measurements (solvePNP x/y/heading and V-SLAM x/y/heading) and 3 states (robot x/y/heading).
 
-      Outputs of a :term:`system` are often represented using the variable :math:`\mathbf{y}`, a column vector with one entry per :term:`output` (or thing we can measure). For example, if our :term:`system` had states for velocity and acceleration but our sensor could only measure velocity, our, our :term:`output` vector would only include the :term:`system`\'s velocity.
+      Outputs of a :term:`system` are often represented using the variable :math:`\mathbf{y}`, a column vector with one entry per :term:`output` (or thing we can measure). For example, if our :term:`system` had states for velocity and acceleration but our sensor could only measure velocity, our :term:`output` vector would only include the :term:`system`\'s velocity.
 
    phase portrait
       A graph of a function's value and its :term:`derivative` as they change in time, given some initial starting conditions. They are useful for analyzing system behavior (stable/unstable operating points, limit cycles, etc.) given a certain set of parameters or starting conditions. See `phase portrait <https://en.wikipedia.org/wiki/Phase_portrait>`__ on Wikipedia for more info.
 
    PID
-      Proportional-Integral-Derivative - A feedback controller which calculates a :term:`control signal` from a weighted sum of the :term:`error`, the rate of change of the error, and an accumulated sum of previous errors. See `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__. on Wikipedia for more info.
+      Proportional-Integral-Derivative - A feedback controller which calculates a :term:`control signal` from a weighted sum of the :term:`error`, the rate of change of the error, and an accumulated sum of previous errors. See `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__ on Wikipedia for more info.
 
    plant
       The :term:`system` or collection of actuators being controlled.
@@ -126,15 +126,15 @@ Controls Glossary
       The time a :term:`system` takes to settle at the :term:`reference` after a :term:`step input` is applied.
 
    signum function
-      A non-continuous function that expresses the "sign" of its input. It is equal to -1 for all negative input numbers, 0 for an input of 0, and 1 for all positive input numbers. See `signum function <https://en.wikipedia.org/wiki/Sign_function>`__, on Wikipedia for more info.
+      A non-continuous function that expresses the "sign" of its input. It is equal to -1 for all negative input numbers, 0 for an input of 0, and 1 for all positive input numbers. See `signum function <https://en.wikipedia.org/wiki/Sign_function>`__ on Wikipedia for more info.
 
    state
-      A characteristic of a :term:`system` (e.g., velocity) that can be used to determine the :term:`system's <system>` future behavior. In state-space notation, the state of a system is written as a column vector describing it's position in state-space.
+      A characteristic of a :term:`system` (e.g., velocity) that can be used to determine the :term:`system <system>`\'s future behavior. In state-space notation, the state of a system is written as a column vector describing its position in state-space.
 
-         - Ex. A drivetrain system might have the states :math:`\begin{bmatrix}x \\ y \\ \theta \end{bmatrix}` to describe it's position on the field.
+         - Ex. A drivetrain system might have the states :math:`\begin{bmatrix}x \\ y \\ \theta \end{bmatrix}` to describe its position on the field.
          - Ex. An elevator system might have the states :math:`\begin{bmatrix} \text{position} \\ \text{velocity} \end{bmatrix}` to describe its current height and velocity.
 
-      A :term:`system's <system>` state is often represented by the variable :math:`\mathbf{x}`, a column vector with one entry per :term:`state`.
+      A :term:`system <system>`\'s state is often represented by the variable :math:`\mathbf{x}`, a column vector with one entry per :term:`state`.
 
    statistically robust
       The property of a data processing algorithm which makes it resilient to a noisy or outlier-prone data set. Designing statistically robust algorithms on robots is important because real-world sensor data can often be unpredictable, but unexpected robot behavior is never desirable. See `Robust Statistics <https://en.wikipedia.org/wiki/Robust_statistics>`__ on Wikipedia for more info.
@@ -149,10 +149,10 @@ Controls Glossary
       The response of a :term:`system` to a :term:`step input`.
 
    system
-      A term encompassing a :term:`plant` and it's interaction with a :term:`controller` and :term:`observer`, which is treated as a single entity. Mathematically speaking, a :term:`system` maps :term:`inputs <input>` to :term:`outputs <output>` through a linear combination of :term:`states <state>`.
+      A term encompassing a :term:`plant` and its interaction with a :term:`controller` and :term:`observer`, which are treated as a single entity. Mathematically speaking, a :term:`system` maps :term:`inputs <input>` to :term:`outputs <output>` through a linear combination of :term:`states <state>`.
 
    system identification
-        The process of capturing a :term:`systems <system>` :term:`dynamics` in a mathematical model using measured data. The SysId toolsuite uses system identification to find kS, kV and kA terms.
+        The process of capturing a :term:`system <system>`\'s :term:`dynamics` in a mathematical model using measured data. The SysId toolsuite uses system identification to find kS, kV and kA terms.
 
    system response
       The behavior of a :term:`system` over time for a given :term:`input`.
