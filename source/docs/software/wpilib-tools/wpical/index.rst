@@ -53,7 +53,7 @@ To calibrate your camera from a video file, click on :guilabel:`Calibrate Camera
 .. image:: images/Calibrate.png
     :alt: Calibrate
 
-There are two options for calibrating your camera, :guilabel:`OpenCV` and :guilabel:`MRcal`. It is generally recommended to calibrate with :guilabel:`MRcal`, as it has slightly better accuracy and is more robust against bad calibration data. The calibration option you use will dictate the type of board you calibrate with. :guilabel:`OpenCV` calibration uses a ChArUco board with the 5x5 dictionary. :guilabel:`MRcal` uses a Checkerboard pattern.
+There are two options for calibrating your camera, :guilabel:`OpenCV` and :guilabel:`MRcal`. It is generally recommended to calibrate with :guilabel:`MRcal`, as it has slightly better accuracy and is more robust against bad calibration data. WPIcal uses a ChArUco board for camera calibration. You can generate a ChArUco board here: `calib.io <https://calib.io/pages/camera-calibration-pattern-generator>`_
 
 .. note:: Regardless of which calibration option you use, make sure your calibration board has not been bent or creased, and is lying on a flat surface.
 .. note:: It does not matter if you use the exact same board as shown in the images, as there are fields in each calibration option to customize the calibration for your specific board.
@@ -64,18 +64,13 @@ There are a couple of common fields that both :guilabel:`OpenCV` and :guilabel:`
 
 * :guilabel:`Square Width` is the width of the squares (in inches) of the board.
 
+* :guilabel:`Marker Width` is the width of the ChArUco markers (in inches) on the board
+
 * :guilabel:`Board Width` is the width (in squares) of the board
 
 * :guilabel:`Board Height` is the height (in squares) of the board
 
-For :guilabel:`OpenCV`, there is one more option to fill in:
-
-* :guilabel:`Marker Width` is the width of the ChArUco markers (in inches) on the board
-
-.. image:: images/OpenCV.png
-    :alt: OpenCV
-
-For :guilabel:`MRcal`, there are three more options to fill in:
+For :guilabel:`MRcal`, there are two more options to fill in:
 
 * :guilabel:`Image Width` is the width (in pixels) of the video's resolution
 * :guilabel:`Image Height` is the height (in pixels) of the video's resolution
