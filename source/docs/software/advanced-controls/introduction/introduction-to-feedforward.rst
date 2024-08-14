@@ -26,7 +26,7 @@ We can interpret the coefficients in the above equation as follows:
 
 :math:`K_a` describes the voltage needed to induce a given acceleration in the motor shaft. As with ``kV``, the relationship between voltage and acceleration (at constant velocity) is almost perfectly linear for FRC components.
 
-For more information, see `this paper <https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf>`__.
+For more information, see [this paper](https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf).
 
 
 Variants of the Feedforward Equation
@@ -55,7 +55,7 @@ where :math:`V` is the applied voltage, :math:`\theta` is the angular displaceme
 Using the Feedforward
 ---------------------
 
-In order to use the feedforward, we need to plug in values for each unknown in the above voltage-balance equation *other than the voltage*.  As mentioned :ref:`earlier <docs/software/advanced-controls/introduction/picking-control-strategy:Obtaining Models for Your Mechanisms>`, the values of the gains :math:`K_g`, :math:`K_v`, :math:`K_a` can be obtained through theoretical modeling with `ReCalc <https://www.reca.lc/>`__. Explicit measurement with :doc:`SysId </docs/software/advanced-controls/system-identification/introduction>` will yield the aforementioned gains in addition to :math:`K_s`. That leaves us needing values for velocity, acceleration, and (in the case of the arm feedforward) position.
+In order to use the feedforward, we need to plug in values for each unknown in the above voltage-balance equation *other than the voltage*.  As mentioned :ref:[earlier](docs/software/advanced-controls/introduction/picking-control-strategy:Obtaining Models for Your Mechanisms>`, the values of the gains :math:`K_g`, :math:`K_v`, :math:`K_a` can be obtained through theoretical modeling with `ReCalc <https://www.reca.lc/). Explicit measurement with :doc:`SysId </docs/software/advanced-controls/system-identification/introduction>` will yield the aforementioned gains in addition to :math:`K_s`. That leaves us needing values for velocity, acceleration, and (in the case of the arm feedforward) position.
 
 Typically, these come from our setpoints - remember that with feedforward we are making a "guess" as to the output we need based on where we want the system to be.
 

@@ -106,7 +106,7 @@ The WPILib :doc:`command library </docs/software/commandbased/index>` has been s
    .. tab-item:: Java/C++
       :sync: javacpp
 
-      `New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
+      [New Command Library](https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json)
 
    .. tab-item:: Python
       :sync: python
@@ -124,7 +124,7 @@ A Romi Library has been created to contain several helper classes that are used 
    .. tab-item:: Java/C++
       :sync: javacpp
 
-      `Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/romiVendordep/RomiVendordep.json>`__.
+      [Romi Vendordep](https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/romiVendordep/RomiVendordep.json).
 
    .. tab-item:: Python
       :sync: python
@@ -142,7 +142,7 @@ An XRP Library has been created to contain several helper classes that are used 
    .. tab-item:: Java/C++
       :sync: javacpp
 
-      `XRP Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/xrpVendordep/XRPVendordep.json>`__.
+      [XRP Vendordep](https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/xrpVendordep/XRPVendordep.json).
 
    .. tab-item:: Python
       :sync: python
@@ -155,7 +155,7 @@ Vendor Libraries
 
 Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.
 
-`CTRE Phoenix Framework <https://docs.ctr-electronics.com/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
+[CTRE Phoenix Framework](https://docs.ctr-electronics.com/) - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
 
 .. tab-set::
    .. tab-item:: Java/C++
@@ -180,7 +180,7 @@ Click these links to visit the vendor site to see whether they offer online inst
       * PyPI package: ``robotpy[phoenix5]`` or ``robotpy-ctre``
       * In ``pyproject.toml``: ``robotpy_extras = ["phoenix5"]``
 
-`Redux Robotics ReduxLib <https://docs.reduxrobotics.com/reduxlib.html>`__ - Library for all Redux devices including the Canandcoder and Canandcolor
+[Redux Robotics ReduxLib](https://docs.reduxrobotics.com/reduxlib.html) - Library for all Redux devices including the Canandcoder and Canandcolor
 
 .. tab-set::
 
@@ -194,7 +194,7 @@ Click these links to visit the vendor site to see whether they offer online inst
 
       Not yet available
 
-`Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
+[Playing With Fusion Driver](https://www.playingwithfusion.com/docview.php?docid=1205) - Library for all PWF devices including the Venom motor/controller
 
 .. tab-set::
 
@@ -211,7 +211,7 @@ Click these links to visit the vendor site to see whether they offer online inst
       * PyPI package: ``robotpy[playingwithfusion]`` or ``robotpy-playingwithfusion``
       * In ``pyproject.toml``: ``robotpy_extras = ["playingwithfusion"]``
 
-`Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
+[Kauai Labs](https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/) - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
 
 .. tab-set::
 
@@ -228,7 +228,7 @@ Click these links to visit the vendor site to see whether they offer online inst
       * PyPI package: ``robotpy[navx]`` or ``robotpy-navx``
       * In ``pyproject.toml``: ``robotpy_extras = ["navx"]``
 
-`REV Robotics REVLib <https://docs.revrobotics.com/brushless/spark-flex/revlib>`__ - Library for all REV devices including SPARK Flex, SPARK MAX, and Color Sensor V3
+[REV Robotics REVLib](https://docs.revrobotics.com/brushless/spark-flex/revlib) - Library for all REV devices including SPARK Flex, SPARK MAX, and Color Sensor V3
 
 .. tab-set::
 

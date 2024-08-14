@@ -3,7 +3,7 @@
 New for 2024
 ============
 
-A number of improvements have been made to FRC\ |reg| Control System software for 2024. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
+A number of improvements have been made to FRC\ |reg| Control System software for 2024. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories.
 
 It's recommended to also review the list of :doc:`known issues <known-issues>`.
 

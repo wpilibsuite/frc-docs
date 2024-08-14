@@ -1,7 +1,7 @@
 Creating a Dataset with Open Images
 ===================================
 
-For the detection of more generic objects, Axon's dataset creator can be used to make a dataset from `Google's Open Images dataset <https://storage.googleapis.com/openimages/web/index.html>`__ .
+For the detection of more generic objects, Axon's dataset creator can be used to make a dataset from [Google's Open Images dataset](https://storage.googleapis.com/openimages/web/index.html) .
 
 Creating a Dataset
 ------------------
@@ -14,7 +14,7 @@ Click the :guilabel:`Create Dataset` button to begin.
 Choosing the Class Names
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Next, you need to pick the classes that you would like to detect. They must be selected from the classes available at the `Open Images dataset website <https://storage.googleapis.com/openimages/web/index.html>`__ . Change the :guilabel:`category` in the top bar to see available classes. In the below picture, :guilabel:`Cat` is selected, but other class names like :guilabel:`Caterpillar` are shown to be valid.
+Next, you need to pick the classes that you would like to detect. They must be selected from the classes available at the [Open Images dataset website](https://storage.googleapis.com/openimages/web/index.html) . Change the :guilabel:`category` in the top bar to see available classes. In the below picture, :guilabel:`Cat` is selected, but other class names like :guilabel:`Caterpillar` are shown to be valid.
 
 .. image:: images/open-images/website.png
   :alt: The Open Images website

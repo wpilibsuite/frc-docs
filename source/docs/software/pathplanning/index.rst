@@ -8,7 +8,7 @@ Notice on Swerve Support
 
 Swerve support in path following has a couple of limitations that teams need to be aware of:
 
-- WPILib currently does not support swerve in simulation, please see `this <https://github.com/wpilibsuite/allwpilib/pull/3374>`__ pull request.
+- WPILib currently does not support swerve in simulation, please see [this](https://github.com/wpilibsuite/allwpilib/pull/3374) pull request.
 
 - SysId only supports tuning the swerve heading using a General Mechanism project and does not regularly support module velocity data. A workaround is to lock the module's heading into place. This can be done via blocking module rotation using something like a block of wood.
 

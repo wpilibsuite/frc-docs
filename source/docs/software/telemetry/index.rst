@@ -5,6 +5,7 @@ Telemetry
    :maxdepth: 1
 
    telemetry.rst
+   robot-telemetry-with-annotations.rst
    robot-telemetry-with-sendable.rst
    datalog.rst
    datalog-download.rst
