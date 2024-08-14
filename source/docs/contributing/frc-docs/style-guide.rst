@@ -57,12 +57,12 @@ Use one space between sentences.
 
 ## Headings
 
-Headings should be in the following structure. Heading underlines should match the same number of characters as the heading itself.
+Headings should be in the following structure.
 
-1. ``=`` for document titles. *Do not* use this more than *once* per article.
-2. ``-`` for document sections
-3. ``^`` for document sub-sections
-4. ``~`` for document sub-sub-sections
+1. ``#`` for document titles. *Do not* use this more than *once* per article.
+2. ``##`` for document sections
+3. ``###`` for document sub-sections
+4. ``####`` for document sub-sub-sections
 5. If you need to use any lower levels of structure, you're doing things wrong.
 
 Use title case for headings.
@@ -299,16 +299,16 @@ The category ``index.rst`` file can then be added to the root index file located
 
 .. code-block:: ReST
 
-   Title
-   =====
+   # Title
+
    This is an example article
 
    .. code-block:: java
 
       System.out.println("Hello World");
 
-   Section
-   -------
+   ## Section
+
    This is a section!
 
 ## Important Note!
