@@ -15,25 +15,25 @@ These pages cover the specifics of the WPILib libraries and the FRC Control Syst
 Java
 ^^^^
 
-- `Code Academy <https://www.codecademy.com/learn/learn-java>`__
-- `Head First Java 2nd Edition <https://www.amazon.com/dp/0596009208/>`__ is a very beginner friendly introduction to programming in Java (ISBN-10: 0596009208).
+- [Code Academy](https://www.codecademy.com/learn/learn-java)
+- [Head First Java 2nd Edition](https://www.amazon.com/dp/0596009208/) is a very beginner friendly introduction to programming in Java (ISBN-10: 0596009208).
 
 C++
 ^^^
 
-- `LearnCPP <https://www.learncpp.com/>`__
-- `Programming: Principles and Practice Using C++ 2nd Edition <https://www.amazon.com/dp/B00KPTEH8C>`__ is an introduction to C++ by the creator of the language himself (ISBN-10: 0321992784).
-- `C++ Primer Plus 6th Edition <https://www.amazon.com/dp/0321928423/>`__ (ISBN-10: 0321776402).
+- [LearnCPP](https://www.learncpp.com/)
+- [Programming: Principles and Practice Using C++ 2nd Edition](https://www.amazon.com/dp/B00KPTEH8C) is an introduction to C++ by the creator of the language himself (ISBN-10: 0321992784).
+- [C++ Primer Plus 6th Edition](https://www.amazon.com/dp/0321928423/) (ISBN-10: 0321776402).
 
 LabVIEW
 ^^^^^^^
 
-- `NI Learn LabVIEW <https://www.ni.com/getting-started/labview-basics/>`__
+- [NI Learn LabVIEW](https://www.ni.com/getting-started/labview-basics/)
 
 Python
 ^^^^^^
 
--  `List of various guides to learn Python <http://docs.python-guide.org/en/latest/intro/learning/>`__
+-  [List of various guides to learn Python](http://docs.python-guide.org/en/latest/intro/learning/)
 
 Zero to Robot
 -------------

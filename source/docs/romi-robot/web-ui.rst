@@ -36,7 +36,7 @@ Web Service Update
 
 .. note:: The Raspberry Pi must be in **Writable** mode for this section to work.
 
-The Romi WPILibPi image ships with the latest (at publication time) version of the Romi web service. To support upgrading to newer versions of the Romi web service, this section allows users to upload a pre-built bundle that can be obtained via the Romi web service `GitHub releases page <https://github.com/wpilibsuite/wpilib-ws-robot-romi/releases>`__.
+The Romi WPILibPi image ships with the latest (at publication time) version of the Romi web service. To support upgrading to newer versions of the Romi web service, this section allows users to upload a pre-built bundle that can be obtained via the Romi web service [GitHub releases page](https://github.com/wpilibsuite/wpilib-ws-robot-romi/releases).
 
 To perform an upgrade, download the appropriate .tgz file from the GitHub Releases page. Next, select the downloaded .tgz file and click :guilabel:`Save`. The updated web service bundle will be uploaded to the Raspberry Pi, and be installed. After a short moment, the Romi Status section should update itself with the latest version information.
 
@@ -119,6 +119,6 @@ If the Romi has the correct bridge settings and you are unable to access it, we 
 - Ethernet into the Romi
 - Reimage the Romi
 
-Some restricted networks can interfere with the hostname of the Romi resolving, you can workaround this by using `Angry IP Scanner <https://angryip.org/>`__ to find the IP address.
+Some restricted networks can interfere with the hostname of the Romi resolving, you can workaround this by using [Angry IP Scanner](https://angryip.org/) to find the IP address.
 
 .. warning:: Angry IP Scanner is flagged by some antivirus as spyware as it pings devices on your network! It is a safe application!

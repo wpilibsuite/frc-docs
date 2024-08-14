@@ -29,7 +29,7 @@ Once this is checked, you can upload the zip that you downloaded from Axon onto 
 Inferencing
 -----------
 
-Once the model has been uploaded, now the Pi needs python code to utilize it. Here is a link to the provided inference script through the release page: `Github <https://github.com/wpilibsuite/Axon/releases/>`__
+Once the model has been uploaded, now the Pi needs python code to utilize it. Here is a link to the provided inference script through the release page: [Github](https://github.com/wpilibsuite/Axon/releases/)
 
 Once this is downloaded, utilize the :guilabel:`Vision Application Configuration` section to upload the python file.
 

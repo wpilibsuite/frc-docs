@@ -3,7 +3,7 @@
 Style Guide
 ===========
 
-This document contains the various RST/Sphinx specific guidelines for the frc-docs project. For guidelines related to the various WPILib code projects, see `the WPILib GitHub <https://github.com/wpilibsuite/styleguide>`__
+This document contains the various MD and RST/Sphinx specific guidelines for the frc-docs project. For guidelines related to the various WPILib code projects, see [the WPILib GitHub](https://github.com/wpilibsuite/styleguide)
 
 Filenames
 ---------
@@ -38,7 +38,7 @@ Use ``.. math::`` for standalone equations and ``:math:`` for inline equations. 
 
 Use literals for filenames, function, and variable names.
 
-Use of the registered trademarks *FIRST*\ |reg| and FRC\ |reg| should follow the Policy from `this page <https://www.firstinspires.org/brand>`__. Specifically, where possible (i.e. not nested inside other markup or in a document title), the first use of the trademarks should have the |reg| symbol and all instances of *FIRST* should be italicized. The |reg| symbol can be added by using ``.. include:: <isonum.txt>`` at the top of the document and then using ``*FIRST*\ |reg|`` or ``FRC\ |reg|``.
+Use of the registered trademarks *FIRST*\ |reg| and FRC\ |reg| should follow the Policy from [this page](https://www.firstinspires.org/brand). Specifically, where possible (i.e. not nested inside other markup or in a document title), the first use of the trademarks should have the |reg| symbol and all instances of *FIRST* should be italicized. The |reg| symbol can be added by using ``.. include:: <isonum.txt>`` at the top of the document and then using ``*FIRST*\ |reg|`` or ``FRC\ |reg|``.
 
 Commonly used terms should be added to the :ref:`docs/software/frc-glossary:FRC Glossary`.  You can reference items in the glossary by using ``:term:`deprecated```.
 
@@ -167,7 +167,7 @@ If you have a mix of ``tab-set`` and ``tab-set-code`` directives on a page, you 
 Admonitions
 -----------
 
-Admonitions (list `here <https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions>`__) should have their text on the same line as the admonition itself. There are exceptions to this rule, however, when having multiple sections of content inside of an admonition. Generally having multiple sections of content inside of an admonition is not recommended.
+Admonitions (list [here](https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions)) should have their text on the same line as the admonition itself. There are exceptions to this rule, however, when having multiple sections of content inside of an admonition. Generally having multiple sections of content inside of an admonition is not recommended.
 
 Use
 
@@ -203,11 +203,11 @@ When using ``:ref:`` or ``:doc:`` you may customize the displayed text by surrou
 External Links
 ^^^^^^^^^^^^^^
 
-It is preferred to format external links as anonymous hyperlinks. The important thing to note is the **two** underscores appending the text. In the situation that only one underscore is used, issues may arise when compiling the document.
+It is preferred to format external links as md style hyperlinks.
 
-.. code-block:: ReST
+.. code-block:: md
 
-   Hi there, `this is a link <https://example.com>`__ and it's pretty cool!
+   Hi there, [this is a link](https://example.com) and it's pretty cool!
 
 However, in some cases where the same link must be referenced multiple times, the syntax below is accepted.
 
@@ -220,7 +220,7 @@ However, in some cases where the same link must be referenced multiple times, th
 Python API Links
 ^^^^^^^^^^^^^^^^
 
-Links to the RobotPY API documentation should use the following sphinx `python syntax <https://www.sphinx-doc.org/en/master/usage/domains/python.html>`__ (example linking to the DriverStation API docs).
+Links to the RobotPY API documentation should use the following sphinx [python syntax](https://www.sphinx-doc.org/en/master/usage/domains/python.html) (example linking to the DriverStation API docs).
 
 .. code-block:: ReST
 
@@ -230,7 +230,7 @@ This expands to be equivalent to:
 
 .. code-block:: ReST
 
-   `Python <https://robotpy.readthedocs.io/projects/robotpy/en/stable/wpilib/DriverStation.html#wpilib.DriverStation>`__
+   [Python](https://robotpy.readthedocs.io/projects/robotpy/en/stable/wpilib/DriverStation.html#wpilib.DriverStation)
 
 Images
 ------
@@ -277,7 +277,7 @@ Simply use them as you would with any other image.
 Draw.io Diagrams
 ^^^^^^^^^^^^^^^^
 
-Draw.io (also known as `diagrams.net <https://app.diagrams.net/>`__) diagrams are supported through ``svg`` files with embedded ``.drawio`` metadata, allowing the ``svg`` file to act as a source file of the diagrams, and to be rendered like a normal vector graphics file.
+Draw.io (also known as [diagrams.net](https://app.diagrams.net/)) diagrams are supported through ``svg`` files with embedded ``.drawio`` metadata, allowing the ``svg`` file to act as a source file of the diagrams, and to be rendered like a normal vector graphics file.
 
 Simply use them like you would any other vector image, or any other image.
 

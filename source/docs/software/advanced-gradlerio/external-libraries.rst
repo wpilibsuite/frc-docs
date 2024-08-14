@@ -38,7 +38,7 @@ C++
 Adding C++ dependencies to your robot project is non-trivial due to needing to compile for the roboRIO. You have a couple of options.
 
 1. Copy the source code of the wanted library into your robot project.
-2. Use the `vendordep template <https://github.com/wpilibsuite/vendor-template>`__ as an example and create a vendordep.
+2. Use the [vendordep template](https://github.com/wpilibsuite/vendor-template) as an example and create a vendordep.
 
 Copying Source Code
 ^^^^^^^^^^^^^^^^^^^
@@ -54,4 +54,4 @@ Simply copy the necessary source and/or headers into your robot project. You can
 Creating a Vendordep
 ^^^^^^^^^^^^^^^^^^^^
 
-Please follow the instructions in the `vendordep repository <https://github.com/wpilibsuite/vendor-template>`__.
+Please follow the instructions in the [vendordep repository](https://github.com/wpilibsuite/vendor-template).

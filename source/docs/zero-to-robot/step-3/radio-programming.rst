@@ -18,7 +18,7 @@ Download the latest FRC Radio Configuration Utility Installer from the following
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
-.. note::. Teams planning on using the radio tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptium.net/temurin/releases/?version=17>`__.
+.. note::. Teams planning on using the radio tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded [here](https://adoptium.net/temurin/releases/?version=17).
 
 Before you begin using the software:
 
@@ -212,5 +212,5 @@ Troubleshooting
 - Ensure the ethernet is plugged into the port closest to the power jack on the wireless bridge.
 - If using an Operating System configured for languages other than US English, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.html>`_.
 - Due to Unicode incompatibles, non-US Teams may face a configuration failure because of incorrect network interface reading. In that case, change the network adapter name to another name in English and retry.
-- Some users have reported success after installing `npcap 1.60 <https://npcap.com/>`__. If this doesn't resolve the issue, it's recommended to uninstall npcap and the radio tool and then reinstall the radio tool in order to get back to a known configuration.
+- Some users have reported success after installing [npcap 1.60](https://npcap.com/). If this doesn't resolve the issue, it's recommended to uninstall npcap and the radio tool and then reinstall the radio tool in order to get back to a known configuration.
 - If all else fails, try a different computer.

@@ -2,7 +2,7 @@ Step 1: Creating Simulated Instances of Hardware
 ================================================
 The WPILib simulation framework contains several ``XXXSim`` classes, where ``XXX`` represents physical hardware such as encoders or gyroscopes. These simulation classes can be used to set positions and velocities (for encoders) and angles (for gyroscopes) from a model of your drivetrain. See :ref:`the Device Simulation article<docs/software/wpilib-tools/robot-simulation/device-sim:Device Simulation>` for more info about these simulation hardware classes and simulation of vendor devices.
 
-.. note:: Simulation objects associated with a particular subsystem should live in that subsystem. An example of this is in the ``StateSpaceDriveSimulation`` (`Java <https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespacedifferentialdrivesimulation/subsystems/DriveSubsystem.java>`__, `C++ <https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/cpp/subsystems/DriveSubsystem.cpp>`__) example.
+.. note:: Simulation objects associated with a particular subsystem should live in that subsystem. An example of this is in the ``StateSpaceDriveSimulation`` ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespacedifferentialdrivesimulation/subsystems/DriveSubsystem.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/cpp/subsystems/DriveSubsystem.cpp)) example.
 
 Simulating Encoders
 -------------------

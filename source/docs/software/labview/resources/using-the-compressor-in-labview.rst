@@ -7,9 +7,9 @@ For more information, check out the following links:
 
 :download:`FRC Pneumatics Manual <files/2015-frc-pneumatics-manual.pdf>`
 
-`PCM User's Guide <https://store.ctr-electronics.com/content/user-manual/PCM%20User%27s%20Guide.pdf>`__
+[PCM User's Guide](https://store.ctr-electronics.com/content/user-manual/PCM%20User%27s%20Guide.pdf)
 
-`Pneumatics Step by Step for the roboRIO <http://team358.org/files/pneumatic/Pneumatics-StepByStep-roboRIO.pdf>`__
+[Pneumatics Step by Step for the roboRIO](http://team358.org/files/pneumatic/Pneumatics-StepByStep-roboRIO.pdf)
 
 Begin VI
 --------

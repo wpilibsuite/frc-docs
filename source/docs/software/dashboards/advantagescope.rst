@@ -5,13 +5,13 @@ AdvantageScope is a data visualization tool for :ref:`NetworkTables <docs/softwa
 
 In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Start Tool`, then select :guilabel:`AdvantageScope`. You can also open any supported log file in AdvantageScope using a standard file browser.
 
-.. note:: Detailed documentation for AdvantageScope can be found `here <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/INDEX.md>`__. It is also available offline by clicking the book icon in the tab bar.
+.. note:: Detailed documentation for AdvantageScope can be found [here](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/INDEX.md). It is also available offline by clicking the book icon in the tab bar.
 
 The capabilities of AdvantageScope include:
 
 - Display of numeric, textual, and boolean data in graphs and tables
 - Visualization of pose and mechanism data in 2D and 3D, including custom 3D robot models
-- Automatic synchronization of data sources, including log files, match videos, and `Zebra MotionWorks <https://www.firstinspires.org/robotics/frc/blog/2023-zebra-motionworks-for-first-robotics-competition-at-the-first-championship>`__ tracking
+- Automatic synchronization of data sources, including log files, match videos, and [Zebra MotionWorks](https://www.firstinspires.org/robotics/frc/blog/2023-zebra-motionworks-for-first-robotics-competition-at-the-first-championship) tracking
 - Specialized displays for joysticks, swerve module states, and console text
 - Analysis of numeric fields using histograms and statistical measures
 - Multiple export options, including CSV and WPILib data logs

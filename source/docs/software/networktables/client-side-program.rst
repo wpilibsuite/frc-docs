@@ -182,7 +182,7 @@ Then this sample program simply loops once a second and gets the values for x an
 Building using Gradle
 ^^^^^^^^^^^^^^^^^^^^^
 
-Example build.gradle files are provided in the `StandaloneAppSamples Repository <https://github.com/wpilibsuite/StandaloneAppSamples>`__ Update the GradleRIO version to correspond to the desired WPILib version.
+Example build.gradle files are provided in the [StandaloneAppSamples Repository](https://github.com/wpilibsuite/StandaloneAppSamples) Update the GradleRIO version to correspond to the desired WPILib version.
 
 .. tab-set::
 
