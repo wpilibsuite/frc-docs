@@ -163,7 +163,7 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
          :language: java
-         :lines: 28-43
+         :lines: 28-44
          :linenos:
          :lineno-start: 28
 
@@ -253,6 +253,6 @@ And, for an :ref:`inlined <docs/software/commandbased/organizing-command-based:I
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/RobotContainer.cpp
          :language: c++
-         :lines: 37-60
+         :lines: 39-62
          :linenos:
-         :lineno-start: 37
+         :lineno-start: 39
