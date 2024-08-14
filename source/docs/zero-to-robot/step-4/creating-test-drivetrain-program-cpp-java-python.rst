@@ -162,8 +162,8 @@ Imports/Includes
                :linenos:
                :lineno-start: 8
 
-   .. tab-item:: CTRE
-      :sync: ctre
+   .. tab-item:: CTRE-Phoenix6
+      :sync: ctre6
 
 
       .. tab-set-code::
@@ -171,27 +171,27 @@ Imports/Includes
 
          .. code-block:: java
 
-            import edu.wpi.first.wpilibj.Joystick;
             import edu.wpi.first.wpilibj.TimedRobot;
             import edu.wpi.first.wpilibj.Timer;
+            import edu.wpi.first.wpilibj.XboxController;
             import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-            import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+            import com.ctre.phoenix6.hardware.TalonFX;
 
 
          .. code-block:: c++
 
-            #include <frc/Joystick.h>
             #include <frc/TimedRobot.h>
             #include <frc/Timer.h>
+            #include <frc/XboxController.h>
             #include <frc/drive/DifferentialDrive.h>
-            #include <ctre/phoenix/motorcontrol/can/WPI_TalonFX.h>
+            #include <ctre/phoenix6/TalonFX.hpp>
 
 
          .. code-block:: python
 
-            import wpilib           # Used to get the joysticks
-            import wpilib.drive     # Used for the DifferentialDrive class
-            import ctre             # CTRE library
+            import wpilib               # Used to get the joysticks
+            import wpilib.drive         # Used for the DifferentialDrive class
+            import phoenix6             # CTRE library
 
    .. tab-item:: REV
 
@@ -200,7 +200,7 @@ Imports/Includes
             .. code-block:: java
 
                import com.revrobotics.CANSparkMax;
-               import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+               import com.revrobotics.CANSparkLowLevel.MotorType;
 
                import edu.wpi.first.wpilibj.TimedRobot;
                import edu.wpi.first.wpilibj.Timer;
@@ -225,7 +225,38 @@ Imports/Includes
                import wpilib.drive     # Used for the DifferentialDrive class
                import rev              # REV library
 
-Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java it is done with ``import`` statements. The program references classes for ``Joystick`` (for driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the joystick control to the motors).
+   .. tab-item:: CTRE-Phoenix5
+      :sync: ctre5
+
+
+      .. tab-set-code::
+
+
+         .. code-block:: java
+
+            import edu.wpi.first.wpilibj.TimedRobot;
+            import edu.wpi.first.wpilibj.Timer;
+            import edu.wpi.first.wpilibj.XboxController;
+            import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+            import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+
+         .. code-block:: c++
+
+            #include <frc/TimedRobot.h>
+            #include <frc/Timer.h>
+            #include <frc/XboxController.h>
+            #include <frc/drive/DifferentialDrive.h>
+            #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
+
+
+         .. code-block:: python
+
+            import wpilib           # Used to get the joysticks
+            import wpilib.drive     # Used for the DifferentialDrive class
+            import ctre             # CTRE library
+
+Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``XBoxController`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax`` / ``WPI_TalonSRX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the Xbox  controller to the motors).
 
 Defining the variables for our sample robot
 -------------------------------------------
@@ -276,8 +307,8 @@ Defining the variables for our sample robot
                :lines: 12-29
                :lineno-start: 12
 
-   .. tab-item:: CTRE
-      :sync: ctre
+   .. tab-item:: CTRE-Phoenix6
+      :sync: ctre6
 
       .. tab-set::
 
@@ -287,10 +318,11 @@ Defining the variables for our sample robot
             .. code-block:: java
 
                public class Robot extends TimedRobot {
-                  private final WPI_TalonFX m_leftDrive = new WPI_TalonFX(1);
-                  private final WPI_TalonFX m_rightDrive = new WPI_TalonFX(2);
-                  private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
-                  private final Joystick m_stick = new Joystick(0);
+                  private final TalonFX m_leftDrive = new TalonFX(1);
+                  private final TalonFX m_rightDrive = new TalonFX(2);
+                  private final DifferentialDrive m_robotDrive =
+                    new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
+                  private final XboxController m_controller = new XboxController(0);
                   private final Timer m_timer = new Timer();
 
          .. tab-item:: C++
@@ -312,21 +344,38 @@ Defining the variables for our sample robot
 
                private:
                 // Robot drive system
-                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_left{1};
-                ctre::phoenix::motorcontrol::can::WPI_TalonFX m_right{2};
-                frc::DifferentialDrive m_robotDrive{m_left, m_right};
+                ctre::phoenix6::hardware::TalonFX m_left{1};
+                ctre::phoenix6::hardware::TalonFX m_right{2};
+                frc::DifferentialDrive m_robotDrive{
+                  [&](double output) { m_left.Set(output); },
+                  [&](double output) { m_right.Set(output); }};
 
-                frc::Joystick m_stick{0};
+                frc::XboxController m_controller{0};
                 frc::Timer m_timer;
 
          .. tab-item:: Python
             :sync: python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/5b8d33f/examples/getting-started/robot.py
-               :language: python
-               :linenos:
-               :lines: 13-30
-               :lineno-start: 13
+            .. code-block:: python
+
+               class MyRobot(wpilib.TimedRobot):
+                 def robotInit(self):
+                    """
+                    This function is called upon program startup and
+                    should be used for any initialization code.
+                    """
+                    self.leftDrive = phoenix6.hardware.TalonFX(1)
+                    self.rightDrive = phoenix6.hardware.TalonFX(2)
+                    self.robotDrive = wpilib.drive.DifferentialDrive(
+                        self.leftDrive, self.rightDrive
+                    )
+                    self.controller = wpilib.XboxController(0)
+                    self.timer = wpilib.Timer()
+
+                    # We need to invert one side of the drivetrain so that positive voltages
+                    # result in both sides moving forward. Depending on how your robot's
+                    # gearbox is constructed, you might have to invert the left side instead.
+                    self.rightDrive.setInverted(True)
 
    .. tab-item:: REV
       :sync: rev
@@ -341,7 +390,8 @@ Defining the variables for our sample robot
                public class Robot extends TimedRobot {
                  private final CANSparkMax m_leftDrive = new CANSparkMax(1, MotorType.kBrushless);
                  private final CANSparkMax m_rightDrive = new CANSparkMax(2, MotorType.kBrushless);
-                 private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive, m_rightDrive);
+                 private final DifferentialDrive m_robotDrive =
+                   new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
                  private final XboxController m_controller = new XboxController(0);
                  private final Timer m_timer = new Timer();
 
@@ -366,7 +416,9 @@ Defining the variables for our sample robot
                 // Robot drive system
                 rev::CANSparkMax m_left{1, rev::CANSparkMax::MotorType::kBrushless};
                 rev::CANSparkMax m_right{2, rev::CANSparkMax::MotorType::kBrushless};
-                frc::DifferentialDrive m_robotDrive{m_left, m_right};
+                frc::DifferentialDrive m_robotDrive{
+                  [&](double output) { m_left.Set(output); },
+                  [&](double output) { m_right.Set(output); }};
 
                 frc::XboxController m_controller{0};
                 frc::Timer m_timer;
@@ -380,7 +432,61 @@ Defining the variables for our sample robot
                :lines: 13-30
                :lineno-start: 13
 
-The sample robot in our examples will have a joystick on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type DifferentialDrive (m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the code does three things:
+   .. tab-item:: CTRE-Phoenix5
+      :sync: ctre5
+
+      .. tab-set::
+
+         .. tab-item:: Java
+            :sync: java
+
+            .. code-block:: java
+
+               public class Robot extends TimedRobot {
+                  private final WPI_TalonSRX m_leftDrive = new WPI_TalonSRX(1);
+                  private final WPI_TalonSRX m_rightDrive = new WPI_TalonSRX(2);
+                  private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive1::set, m_rightDrive2::set);
+                  private final XboxController m_controller = new XboxController(0);
+                  private final Timer m_timer = new Timer();
+
+         .. tab-item:: C++
+            :sync: c++
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+               :language: c++
+               :lines: 12-13
+               :linenos:
+               :lineno-start: 12
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+               :language: c++
+               :lines: 17-23
+               :linenos:
+               :lineno-start: 17
+
+            .. code-block:: c++
+
+               private:
+                // Robot drive system
+                ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_left{1};
+                ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_right{2};
+                frc::DifferentialDrive m_robotDrive{
+                  [&](double output) { m_left.Set(output); },
+                  [&](double output) { m_right.Set(output); }};
+
+                frc::XboxController m_controller{0};
+                frc::Timer m_timer;
+
+         .. tab-item:: Python
+            :sync: python
+
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/5b8d33f/examples/getting-started/robot.py
+               :language: python
+               :linenos:
+               :lines: 13-30
+               :lineno-start: 13
+
+The sample robot in our examples will have an Xbox Controller on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type ``DifferentialDrive`` (m_robotDrive), ``XboxController`` (m_controller) and ``Timer`` (m_timer). This section of the code does three things:
 
 1. Defines the variables as members of our Robot class.
 2. Initializes the variables.
@@ -469,7 +575,7 @@ Joystick Control for Teleoperation
       :linenos:
       :lineno-start: 45
 
-Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the ``Joystick`` to forward/back motion of the drive motors and the X-axis to turning motion.
+Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the left thumbstick of the ``XBoxController`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
 Test Mode
 ---------
