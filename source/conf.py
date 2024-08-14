@@ -131,6 +131,7 @@ delta_doc_path = "source"
 
 # Enable hover content on glossary term
 hoverxref_roles = ["term"]
+hoverxref_role_types = {"term": "tooltip"}
 
 # TODO Directives omit a warning
 todo_emit_warnings = False
