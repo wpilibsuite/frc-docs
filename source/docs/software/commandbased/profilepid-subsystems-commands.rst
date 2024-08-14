@@ -12,7 +12,7 @@ ProfiledPIDSubsystem
 
 .. note:: In C++, the ``ProfiledPIDSubsystem`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``ProfiledPIDSubsystem`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_profiled_p_i_d_subsystem.html)) allows users to conveniently create a subsystem with a built-in PIDController.  In order to use the ``ProfiledPIDSubsystem`` class, users must create a subclass of it.
+The ``ProfiledPIDSubsystem`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_profiled_p_i_d_subsystem.html)) allows users to conveniently create a subsystem with a built-in PIDController.  In order to use the ``ProfiledPIDSubsystem`` class, users must create a subclass of it.
 
 Creating a ProfiledPIDSubsystem
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -167,7 +167,7 @@ ProfiledPIDCommand
 
 .. note:: In C++, the ``ProfiledPIDCommand`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``ProfiledPIDCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_profiled_p_i_d_command.html)) allows users to easily create commands with a built-in ProfiledPIDController.
+The ``ProfiledPIDCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_profiled_p_i_d_command.html)) allows users to easily create commands with a built-in ProfiledPIDController.
 
 Creating a PIDCommand
 ^^^^^^^^^^^^^^^^^^^^^
