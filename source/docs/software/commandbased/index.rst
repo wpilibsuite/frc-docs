@@ -29,7 +29,7 @@ In order to provide a concise inline syntax, the command-based library often acc
 Method References (Java)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Java, a reference to a function that can be passed as a parameter is called a method reference. The general syntax for a method reference is ``object::method``. Note that no method parameters are included, since the method *itself* is passed. The method is not being called - it is being passed to another piece of code (in this case, a command) so that *that* code can call it when needed. For further information on method references, see :ref:`docs/software/basic-programming/functions-as-data:Method References`.
+In Java, a reference to a function that can be passed as a parameter is called a method reference. The general syntax for a method reference is ``object::method`` or ``Class::staticMethod``. Note that no method parameters are included, since the method *itself* is passed. The method is not being called - it is being passed to another piece of code (in this case, a command) so that *that* code can call it when needed. For further information on method references, see :ref:`docs/software/basic-programming/functions-as-data:Method References`.
 
 Lambda Expressions (Java)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,6 +39,6 @@ While method references work well for passing a function that has already been w
 Lambda Expressions (C++)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. warning:: Due to complications in C++ semantics, capturing ``this`` in a C++ lambda can cause a null pointer exception if done from a component command of a command composition.  Whenever possible, C++ users should capture relevant command members explicitly and by value.  For more details, see `here <https://github.com/wpilibsuite/allwpilib/issues/3109>`__.
+.. warning:: Due to complications in C++ semantics, capturing ``this`` in a C++ lambda can cause a null pointer exception if done from a component command of a command composition.  Whenever possible, C++ users should capture relevant command members explicitly and by value.  For more details, see [here](https://github.com/wpilibsuite/allwpilib/issues/3109).
 
 C++ lacks a close equivalent to Java method references - pointers to member functions are generally not directly usable as parameters due to the presence of the implicit ``this`` parameter.  However, C++ does offer lambda expressions - in addition, the lambda expressions offered by C++ are in many ways more powerful than those in Java.  For specifics on how to write C++ lambda expressions, see :ref:`docs/software/basic-programming/functions-as-data:Lambda Expressions in C++`.

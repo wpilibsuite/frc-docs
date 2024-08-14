@@ -26,12 +26,12 @@ The following physics simulation classes are available in WPILib:
 
 All simulation classes (with the exception of the differential drive simulator) inherit from the :code:`LinearSystemSim` class. By default, the dynamics are the linear system dynamics :math:`\mathbf{x}_{k+1} = \mathbf{A}\mathbf{x}_k + \mathbf{B}\mathbf{u}_k`. Subclasses override the :code:`UpdateX(x, u, dt)` method to provide custom, nonlinear dynamics, such as modeling gravity.
 
-.. note:: Swerve support for simulation is in the works, but we cannot provide an ETA. For updates on progress, please follow this `pull request <https://github.com/wpilibsuite/allwpilib/pull/3374>`__.
+.. note:: Swerve support for simulation is in the works, but we cannot provide an ETA. For updates on progress, please follow this [pull request](https://github.com/wpilibsuite/allwpilib/pull/3374).
 
 Usage in User Code
 ------------------
 
-The following is available from the WPILib :code:`elevatorsimulation` `example project <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation>`__.
+The following is available from the WPILib :code:`elevatorsimulation` [example project](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation).
 
 In addition to standard objects such as motors and encoders, we instantiate our elevator simulator using known constants such as carriage mass and gearing reduction. We also instantiate an :code:`EncoderSim`, which sets the distance and rate read by our :code:`Encoder`.
 

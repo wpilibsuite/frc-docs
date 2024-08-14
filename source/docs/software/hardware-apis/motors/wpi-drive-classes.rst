@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
 Using the WPILib Classes to Drive your Robot
-======================================================
+============================================
 
 WPILib includes many classes to help make your robot get driving faster.
 
@@ -32,7 +32,7 @@ Drive Class Conventions
 Motor Inversion
 ^^^^^^^^^^^^^^^
 
-As of 2022, the right side of the drivetrain is **no longer** inverted by default. It is the responsibility of the user to manage proper inversions for their drivetrain. Users can invert motors by calling ``setInverted()``/``SetInverted()`` on their motor objects.
+It is the responsibility of the user to manage proper inversions for their drivetrain. Users can invert motors by calling ``setInverted()``/``SetInverted()`` on their motor objects. Typically for differential drive trains, one side must be inverted to avoid spinning in circles, since the forward direction of each side of the tank drive is opposite of each other.
 
 .. tab-set-code::
 
@@ -161,7 +161,7 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
 Multi-Motor DifferentialDrive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived from ``PWMMotorController`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.html>`__ / `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_w_m_motor_controller.html>`__ / :external:py:class:`Python <wpilib.PWMMotorController>`) have an ``addFollower`` method so that multiple follower motor controllers can be updated when the leader motor controller is commanded. CAN motor controllers have similar features, review the vendor's documention to see how to use them. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and use additional ``addFollower`` calls.
+Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived from ``PWMMotorController`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.html) / [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_w_m_motor_controller.html) / :external:py:class:`Python <wpilib.PWMMotorController>`) have an ``addFollower`` method so that multiple follower motor controllers can be updated when the leader motor controller is commanded. CAN motor controllers have similar features, review the vendor's documention to see how to use them. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and use additional ``addFollower`` calls.
 
 .. tab-set::
 

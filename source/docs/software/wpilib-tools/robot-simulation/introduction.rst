@@ -24,7 +24,7 @@ Often a team may want to test their code without having an actual robot availabl
 
       .. _cpp_sim_additional_dependency:
 
-      .. note:: C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 version 17.9 or later <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode 14 or later <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
+      .. note:: C++ robot simulation requires that a native compiler to be installed. For Windows, this would be [Visual Studio 2022 version 17.9 or later](https://visualstudio.microsoft.com/vs/) (**not** VS Code), macOS requires [Xcode 14 or later](https://apps.apple.com/us/app/xcode/id497799835), and Linux (Ubuntu) requires the ``build-essential`` package.
 
                 Ensure the :guilabel:`Desktop Development with C++` option is checked in the Visual Studio installer for simulation support.
 

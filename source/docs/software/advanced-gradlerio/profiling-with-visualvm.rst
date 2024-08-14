@@ -1,12 +1,12 @@
 Profiling with VisualVM
 =======================
 
-This document is intended to familiarize the reader with the diagnostic tool that is `VisualVM <https://visualvm.github.io/>`__ for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot ``build.gradle``. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
+This document is intended to familiarize the reader with the diagnostic tool that is [VisualVM](https://visualvm.github.io/) for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot ``build.gradle``. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
 
 Unpacking VisualVM
 ------------------
 
-To begin, `download VisualVM <https://visualvm.github.io/download.html>`__ and unpack it to the WPILib installation folder. The folder is located at ``~/wpilib/`` where ``~`` indicates the users home directory. On Windows, this is ``C:\Users\Public\wpilib``.
+To begin, [download VisualVM](https://visualvm.github.io/download.html) and unpack it to the WPILib installation folder. The folder is located at ``~/wpilib/`` where ``~`` indicates the users home directory. On Windows, this is ``C:\Users\Public\wpilib``.
 
 Setting up Gradle
 -----------------
@@ -32,7 +32,7 @@ We will be replacing the highlighted lines with:
       jvmArgs.add("-Dcom.sun.management.jmxremote.local.only=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.ssl=false")
       jvmArgs.add("-Dcom.sun.management.jmxremote.authenticate=false")
-      jvmArgs.add("-Djava.rmi.server.hostname=10.XX.XX.2") // Replace XX.XX with team number
+      jvmArgs.add("-Djava.rmi.server.hostname=10.TE.AM.2") // Replace TE.AM with team number
    }
 
 We are adding a few arguments here. In order:
@@ -41,7 +41,7 @@ We are adding a few arguments here. In order:
 * Set the remote debugging port to 1198
 * Allow listening from remote targets
 * Disable SSL authentication being required
-* Set the hostname to the roboRIOs team number. Be sure to replace this.
+* Set the hostname to the roboRIOs team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`)
 
 .. important:: The hostname when connected via USB-B should be ``172.22.11.2``.
 
@@ -99,7 +99,7 @@ In this code snippet, we can identify 2 major causes of concern. A long running 
 Creating a Heap Dump
 --------------------
 
-Besides viewing the remote systems CPU and memory usage, VisualVM is most useful by creating a **Heap Dump**. When a Java object is created, it resides in an area of memory called the heap. When the heap is full, a process called `garbage collection <https://www.geeksforgeeks.org/garbage-collection-java/>`__ begins. Garbage collection can be a common cause of loop overruns in a traditional Java robot program.
+Besides viewing the remote systems CPU and memory usage, VisualVM is most useful by creating a **Heap Dump**. When a Java object is created, it resides in an area of memory called the heap. When the heap is full, a process called [garbage collection](https://www.geeksforgeeks.org/garbage-collection-java/) begins. Garbage collection can be a common cause of loop overruns in a traditional Java robot program.
 
 To begin, ensure you are on the :guilabel:`Monitor` tab and click :guilabel:`Heap Dump`.
 
@@ -139,4 +139,4 @@ with an ``ArrayList`` of ~10000 integers.
 Additional Info
 ---------------
 
-For more information on VisualVM, check out the `VisualVM documentation pages <https://visualvm.github.io/documentation.html>`__.
+For more information on VisualVM, check out the [VisualVM documentation pages](https://visualvm.github.io/documentation.html).

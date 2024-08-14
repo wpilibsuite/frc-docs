@@ -41,7 +41,7 @@ then passing the returned data back to the private IP that requested it. This al
    :alt: Devices on the private network send their traffic through the NAT device to communicate to the outside network and vice versa.
 
 .. note::
-   For the FRC\ |reg| networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
+   For the FRC\ |reg| networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`).
 
 
 How are these addresses assigned?
@@ -180,7 +180,7 @@ The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` wi
 Summary
 -------
 
-IP Addresses are what allow us to communicate with devices on a network. For FRC, these addresses are going to be in the 10.TE.AM.xx range if we are connected to a DHCP server or if they are assigned statically, or in the link-local ``169.254.xx.yy`` range if the devices are set to DHCP, but there is no server present. For more information on how IP Addresses work, see `this <https://support.microsoft.com/en-us/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics>`__ article by Microsoft.
+IP Addresses are what allow us to communicate with devices on a network. For FRC, these addresses are going to be in the 10.TE.AM.xx range if we are connected to a DHCP server or if they are assigned statically, or in the link-local ``169.254.xx.yy`` range if the devices are set to DHCP, but there is no server present. For more information on how IP Addresses work, see [this](https://support.microsoft.com/en-us/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics) article by Microsoft.
 
 If all devices on the network support mDNS, then all devices can be set to DHCP and referred to using their friendly names (ex. ``roboRIO-TEAM-FRC.local``). If some devices do not support mDNS, they will need to be set to use static addresses.
 

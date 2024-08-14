@@ -49,17 +49,17 @@ Docker
 
 Docker is a system that allows for virtual machines to be run in containers. Machine Learning utilizes many difficult to install dependencies, so we have provided docker containers to make this installation painless.
 
-To install docker visit the link and installation instructions provided here: `Docker Desktop <https://www.docker.com/products/docker-desktop>`__
+To install docker visit the link and installation instructions provided here: [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-For Windows users an installation of Windows Subsystem for Linux (WSL) is required and can be found `here <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`__
+For Windows users an installation of Windows Subsystem for Linux (WSL) is required and can be found [here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
-For Mac users, follow these instructions to increase Memory allowance to at least 6GBs of RAM. Instructions can be found `here <https://docs.docker.com/docker-for-mac/#resources>`__
+For Mac users, follow these instructions to increase Memory allowance to at least 6GBs of RAM. Instructions can be found [here](https://docs.docker.com/docker-for-mac/#resources)
 
-For Linux users, follow `these <https://docs.docker.com/engine/install/ubuntu/>`__ instructions to complete the installation.
+For Linux users, follow [these](https://docs.docker.com/engine/install/ubuntu/) instructions to complete the installation.
 
 Axon Launcher
 ^^^^^^^^^^^^^
 
-You can download the latest release of the installer from `Github <https://github.com/wpilibsuite/Axon/releases/>`__. Ensure that you download the correct binary for your OS and architecture.
+You can download the latest release of the installer from [Github](https://github.com/wpilibsuite/Axon/releases/). Ensure that you download the correct binary for your OS and architecture.
 
 Extract the installer and click the setup executable file to get started.

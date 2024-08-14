@@ -8,7 +8,7 @@ What Are AprilTags?
 
 AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications.
 
-Additional information about the tag system and its creators `can be found on their website <https://april.eecs.umich.edu/software/apriltag>`__. This document attempts to summarize the content for FIRST robotics related purposes.
+Additional information about the tag system and its creators [can be found on their website](https://april.eecs.umich.edu/software/apriltag). This document attempts to summarize the content for FIRST robotics related purposes.
 
 Application to FRC
 ------------------
@@ -17,13 +17,13 @@ In the context of FRC, AprilTags are useful for helping your robot know where it
 
 AprilTags have been in development since 2011, and have been refined over the years to increase the robustness and speed of detection.
 
-`Starting in 2023, FIRST is providing a number of tags, <https://www.firstinspires.org/robotics/frc/blog/2022-2023-approved-devices-rules-preview-and-vision-target-update>`__ scattered throughout the field, each at a known :term:`pose`.
+[Starting in 2023, FIRST is providing a number of tags,](https://www.firstinspires.org/robotics/frc/blog/2022-2023-approved-devices-rules-preview-and-vision-target-update) scattered throughout the field, each at a known :term:`pose`.
 
-In 2024, `the tag family was updated to the 36h11 family <https://www.firstinspires.org/robotics/frc/blog/2023-technology-updates-past-present-future-and-beyond>`__.
+In 2024, [the tag family was updated to the 36h11 family](https://www.firstinspires.org/robotics/frc/blog/2023-technology-updates-past-present-future-and-beyond).
 
 .. collapse:: What is the 36h11 family?
 
-   The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families `are described here <https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html>`__.
+   The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families [are described here](https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html).
 
    FIRST has chosen the 36h11 family for 2024. This family of tags is made of a 6x6 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
 
@@ -45,7 +45,7 @@ For home usage, tag files may be printed off and placed around your practice are
 Software Support
 ----------------
 
-The main repository for the source code that detects and decodes AprilTags `is located here <https://github.com/wpilibsuite/apriltag/tree/main>`__.
+The main repository for the source code that detects and decodes AprilTags [is located here](https://github.com/wpilibsuite/apriltag/tree/main).
 
 WPILib has forked the repository to add new features for FRC. These include:
 
@@ -222,7 +222,7 @@ Adjustable Parameters
 
 ``Threads`` changes the number of parallel threads which the algorithm uses to process the image. Certain steps may be sped up by allowing multithreading. In general, you want this to be approximately equal to the number of physical cores in your CPU, minus the number of cores which will be used for other processing tasks.
 
-Detailed information about the tunable parameters `can be found here <https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#tuning-the-detector-parameters>`__.
+Detailed information about the tunable parameters [can be found here](https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#tuning-the-detector-parameters).
 
 Further Learning
 ----------------

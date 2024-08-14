@@ -20,7 +20,7 @@ Programmed Configuration
 
 The Radio Configuration Utility programs a number of configuration settings into the radio when run. These settings apply to the radio in all modes (including at events). These include:
 
-- Set a static IP of ``10.TE.AM.1``
+- Set a static IP of ``10.TE.AM.1`` (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`)
 - Set an alternate IP on the wired side of ``192.168.1.1`` for future programming
 - Bridge the wired ports so they may be used interchangeably
 - The LED configuration noted in the status light referenced below.

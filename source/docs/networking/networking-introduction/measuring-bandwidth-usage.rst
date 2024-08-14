@@ -3,7 +3,7 @@
 Measuring Bandwidth Usage
 =========================
 
-On the FRC\ |reg| Field each team is allocated limited network bandwidth (see R704 in the 2024 manual). The `FMS Whitepaper <https://fms-manual.readthedocs.io/en/latest/fms-whitepaper/fms-whitepaper.html>`__ provides more information on determining the bandwidth usage of the Axis camera, but some teams may wish to measure their overall bandwidth consumption. This document details how to make that measurement.
+On the FRC\ |reg| Field each team is allocated limited network bandwidth (see R704 in the 2024 manual). Some teams may wish to measure their overall bandwidth consumption. This document details how to make that measurement.
 
 .. note:: Teams can simulate the bandwidth throttling at home using the FRC Bridge Configuration Utility with the bandwidth checkbox checked.
 
@@ -75,7 +75,7 @@ You may now connect to your robot as normal over the selected interface (if you 
 Measuring Bandwidth Usage using Wireshark
 -----------------------------------------
 
-If you can not use performance monitor, you will need to install a 3rd party program to monitor bandwidth usage. One program that can be used for this purpose is Wireshark. Download and install the latest version of Wireshark for your version of Windows from `this page <https://www.wireshark.org/download.html>`__. After installation is complete, locate and open Wireshark. Connect your computer to your robot, open the Driver Station and any Dashboard or custom programs you may be using.
+If you can not use performance monitor, you will need to install a 3rd party program to monitor bandwidth usage. One program that can be used for this purpose is Wireshark. Download and install the latest version of Wireshark for your version of Windows from [this page](https://www.wireshark.org/download.html). After installation is complete, locate and open Wireshark. Connect your computer to your robot, open the Driver Station and any Dashboard or custom programs you may be using.
 
 Select the interface and Start capture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

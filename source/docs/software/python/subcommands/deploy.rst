@@ -39,7 +39,7 @@ When you execute the ``robotpy deploy`` subcommand, it will do the following:
 
 When successful, you will see a ``SUCCESS: Deploy was successful!`` message.
 
-You can watch your robot code's output (and see any problems) with netconsole by using the Driver Station Log Viewer or `pynetconsole <https://github.com/robotpy/pynetconsole>`__. You can use netconsole and the normal FRC tools to interact with the running robot code.
+You can watch your robot code's output (and see any problems) with netconsole by using the Driver Station Log Viewer or [pynetconsole](https://github.com/robotpy/pynetconsole). You can use netconsole and the normal FRC tools to interact with the running robot code.
 
 .. seealso:: :doc:`/docs/software/vscode-overview/viewing-console-output`
 

@@ -66,6 +66,7 @@ local_extensions = [
     "_extensions.controls_js_sim",
     "_extensions.wpilib_release",
     "_extensions.default_latex_image_settings",
+    "_extensions.redown",
 ]
 
 extensions += local_extensions
@@ -154,6 +155,8 @@ linkcheck_ignore = [
     r".*chiefdelphi.com.*",
     r".*raspberrypi.com.*",
     r".*stackoverflow.com.*",
+    r".*allaboutcircuits.com.*",
+    r".*knowledge.ni.com.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -222,7 +225,7 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
-    "collapse_navigation": True,
+    "collapse_navigation": False,
     "sticky_navigation": False,
     "titles_only": True,
 }
@@ -331,6 +334,10 @@ http.client.HTTPConnection.send = new_send
 
 intersphinx_mapping = {
     "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/stable/", None),
+    "commands2": (
+        "https://robotpy.readthedocs.io/projects/commands-v2/en/stable/",
+        None,
+    ),
 }
 
 # We recommend adding the following config value.

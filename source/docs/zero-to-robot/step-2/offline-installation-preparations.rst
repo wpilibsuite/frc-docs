@@ -12,7 +12,7 @@ This article contains instructions/links to components you will want to gather i
 Documentation
 -------------
 
-This documentation can be downloaded for offline viewing. The link to download the PDF can be found `here <https://buildmedia.readthedocs.org/media/pdf/frc-docs/stable/frc-docs.pdf>`__.
+This documentation can be downloaded for offline viewing. The link to download the PDF can be found [here](https://buildmedia.readthedocs.org/media/pdf/frc-docs/stable/frc-docs.pdf).
 
 Installers
 ----------
@@ -20,19 +20,19 @@ Installers
 All Teams
 ^^^^^^^^^
 
--  `2024 FRC Game Tools <https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107>`__ (Note: Click on link for "Individual Offline Installers")
+-  [2024 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107) (Note: Click on link for "Individual Offline Installers")
 
--  `2024 FRC Radio Configuration Utility <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip>`__ or `2024 FRC Radio Configuration Utility Israel Version <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip>`__
+-  [2024 FRC Radio Configuration Utility](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip) or [2024 FRC Radio Configuration Utility Israel Version](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip)
 
 LabVIEW Teams
 ^^^^^^^^^^^^^
 
--  `LabVIEW Base Installer <https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html>`__ (Note: Click on link for "Individual Offline Installers")
+-  [LabVIEW Base Installer](https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html) (Note: Click on link for "Individual Offline Installers")
 
 Java/C++ Teams
 ^^^^^^^^^^^^^^
 
--  `Java/C++ WPILib Installer <https://github.com/wpilibsuite/allwpilib/releases/latest>`__
+-  [Java/C++ WPILib Installer](https://github.com/wpilibsuite/allwpilib/releases/latest)
 
 Once on the GitHub releases page, scroll to the download section in the middle of the page.
 
