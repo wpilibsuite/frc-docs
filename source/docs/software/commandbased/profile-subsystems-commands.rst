@@ -4,7 +4,7 @@
 
 .. note:: The ``TrapezoidProfile`` command wrappers are generally intended for composition with custom or external controllers.  For combining trapezoidal motion profiling with WPILib's ``PIDController``, see :doc:`profilepid-subsystems-commands`.
 
-When controlling a mechanism, is often desirable to move it smoothly between two positions, rather than to abruptly change its setpoint.  This is called "motion-profiling," and is supported in WPILib through the ``TrapezoidProfile`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile.html)).
+When controlling a mechanism, is often desirable to move it smoothly between two positions, rather than to abruptly change its setpoint.  This is called "motion-profiling," and is supported in WPILib through the ``TrapezoidProfile`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_trapezoid_profile.html)).
 
 To further help teams integrate motion profiling into their command-based robot projects, WPILib includes two convenience wrappers for the ``TrapezoidProfile`` class: ``TrapezoidProfileSubsystem``, which automatically generates and executes motion profiles in its ``periodic()`` method, and the ``TrapezoidProfileCommand``, which executes a single user-provided ``TrapezoidProfile``.
 
@@ -12,7 +12,7 @@ To further help teams integrate motion profiling into their command-based robot 
 
 .. note:: In C++, the ``TrapezoidProfileSubsystem`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``TrapezoidProfileSubsystem`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_trapezoid_profile_subsystem.html)) will automatically create and execute trapezoidal motion profiles to reach the user-provided goal state.  To use the ``TrapezoidProfileSubsystem`` class, users must create a subclass of it.
+The ``TrapezoidProfileSubsystem`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_trapezoid_profile_subsystem.html)) will automatically create and execute trapezoidal motion profiles to reach the user-provided goal state.  To use the ``TrapezoidProfileSubsystem`` class, users must create a subclass of it.
 
 ### Creating a TrapezoidProfileSubsystem
 
@@ -135,7 +135,7 @@ Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:
 
 .. note:: In C++, the ``TrapezoidProfileCommand`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The ``TrapezoidProfileCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_trapezoid_profile_command.html)) allows users to create a command that will execute a single ``TrapezoidProfile``, passing its current state at each iteration to a user-defined function.
+The ``TrapezoidProfileCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_trapezoid_profile_command.html)) allows users to create a command that will execute a single ``TrapezoidProfile``, passing its current state at each iteration to a user-defined function.
 
 ### Creating a TrapezoidProfileCommand
 
@@ -152,7 +152,7 @@ In either case, a ``TrapezoidProfileCommand`` is created by passing the necessar
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.java
          :language: java
-         :lines: 28-43
+         :lines: 28-44
          :linenos:
          :lineno-start: 28
 
@@ -236,6 +236,6 @@ And, for an :ref:`inlined <docs/software/commandbased/organizing-command-based:I
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/RobotContainer.cpp
          :language: c++
-         :lines: 37-60
+         :lines: 39-62
          :linenos:
-         :lineno-start: 37
+         :lineno-start: 39
