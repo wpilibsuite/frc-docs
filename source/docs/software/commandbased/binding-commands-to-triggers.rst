@@ -84,18 +84,18 @@ This binding schedules a command when a trigger changes from ``false`` to ``true
 .. tab-set-code::
 
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/RapidReactCommandBot.java
       :language: java
-      :lines: 52-53
+      :lines: 63-64
       :linenos:
-      :lineno-start: 52
+      :lineno-start: 63
 
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/RapidReactCommandBot.cpp
       :language: c++
-      :lines: 25-26
+      :lines: 28-29
       :linenos:
-      :lineno-start: 25
+      :lineno-start: 28
 
 The ``onFalse`` binding is identical, only that it schedules on ``false`` instead of on ``true``.
 
@@ -106,17 +106,17 @@ This binding schedules a command when a trigger changes from ``false`` to ``true
 
 .. tab-set-code::
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
     :language: java
-    :lines: 114-116
+    :lines: 49-51
     :linenos:
-    :lineno-start: 114
+    :lineno-start: 49
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
     :language: c++
-    :lines: 75-78
+    :lines: 27-29
     :linenos:
-    :lineno-start: 75
+    :lineno-start: 27
 
 The ``whileFalse`` binding is identical, only that it schedules on ``false`` and cancels on ``true``.
 
@@ -127,17 +127,17 @@ This binding toggles a command, scheduling it when a trigger changes from ``fals
 
 .. tab-set-code::
 
-  .. code-block:: java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/RapidReactCommandBot.java
+      :language: java
+      :lines: 76-77
+      :linenos:
+      :lineno-start: 76
 
-    myButton.toggleOnTrue(Commands.startEnd(mySubsystem::onMethod,
-        mySubsystem::offMethod,
-        mySubsystem));
-
-  .. code-block:: c++
-
-    myButton.ToggleOnTrue(frc2::cmd::StartEnd([&] { mySubsystem.OnMethod(); },
-        [&] { mySubsystem.OffMethod(); },
-        {&mySubsystem}));
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/RapidReactCommandBot.cpp
+      :language: c++
+      :lines: 41-43
+      :linenos:
+      :lineno-start: 41
 
 The ``toggleOnFalse`` binding is identical, only that it toggles on ``false`` instead of on ``true``.
 
