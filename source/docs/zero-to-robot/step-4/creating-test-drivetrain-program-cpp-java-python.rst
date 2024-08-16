@@ -6,7 +6,7 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 * :ref:`create_java_cpp_project`
 * :ref:`create_python_project`
 
-.. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, :term:`PWM` refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless motor, but it's similar for brushed motor. There is an assumption that the user has already installed the required :doc:[vendordeps](/docs/software/vscode-overview/3rd-party-libraries)  and configured the device(s) (update firmware, assign CAN IDs, etc) according to the manufacturer documentation ([CTRE](https://docs.ctr-electronics.com/) [REV](https://docs.revrobotics.com/sparkmax/gs-sm)).
+.. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, :term:`PWM` refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless motor, but it's similar for brushed motor. There is an assumption that the user has already installed the required :doc:`vendordeps </docs/software/vscode-overview/3rd-party-libraries>` and configured the device(s) (update firmware, assign CAN IDs, etc) according to the manufacturer documentation ([CTRE](https://docs.ctr-electronics.com/) [REV](https://docs.revrobotics.com/sparkmax/gs-sm)).
 
 .. _create_java_cpp_project:
 

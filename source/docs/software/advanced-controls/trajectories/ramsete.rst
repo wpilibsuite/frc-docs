@@ -98,7 +98,7 @@ The returned adjusted speeds can be converted to usable speeds using the kinemat
       left = wheelSpeeds.left
       right = wheelSpeeds.right
 
-Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController (`C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_p_i_d_controller.html>`_, `Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/PIDController.html>`_, :external:py:class:`Python <wpimath.controller.PIDController>`) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX can be used.
+Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController ([C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_p_i_d_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/PIDController.html), :external:py:class:`Python <wpimath.controller.PIDController>`) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX can be used.
 
 Ramsete in the Command-Based Framework
 --------------------------------------

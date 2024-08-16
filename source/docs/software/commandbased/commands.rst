@@ -88,7 +88,7 @@ The ``getInterruptionBehavior()`` method ([Java](https://github.wpilib.org/allwp
 
 .. note:: This was previously controlled by the ``interruptible`` parameter passed when scheduling a command, and is now a property of the command object.
 
-This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the [withInterruptBehavior()` decorator (`Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#withInterruptBehavior(edu.wpi.first.wpilibj2.command.Command.InterruptionBehavior)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a6583f966509478a29e7764a72c4bf177), :external:py:meth:`Python <commands2.Command.withInterruptBehavior>`)
+This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the `withInterruptBehavior()` decorator ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#withInterruptBehavior(edu.wpi.first.wpilibj2.command.Command.InterruptionBehavior)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command.html#a6583f966509478a29e7764a72c4bf177), :external:py:meth:`Python <commands2.Command.withInterruptBehavior>`)
 
 .. tab-set-code::
 

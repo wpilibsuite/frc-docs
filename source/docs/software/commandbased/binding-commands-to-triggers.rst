@@ -32,7 +32,7 @@ The command-based HID classes contain factory methods returning a ``Trigger`` fo
 JoystickButton
 ^^^^^^^^^^^^^^
 
-Alternatively, the :ref:[regular HID classes](docs/software/basic-programming/joystick:Joysticks>` can be used and passed to create an instance of ``JoystickButton`` (`Java <https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_joystick_button.html)), a constructor-only subclass of ``Trigger``:
+Alternatively, the :ref:`regular HID classes <docs/software/basic-programming/joystick:Joysticks>` can be used and passed to create an instance of ``JoystickButton`` [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_joystick_button.html)), a constructor-only subclass of ``Trigger``:
 
 .. tab-set-code::
 

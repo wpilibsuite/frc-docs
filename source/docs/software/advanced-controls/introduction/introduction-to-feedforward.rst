@@ -55,7 +55,7 @@ where :math:`V` is the applied voltage, :math:`\theta` is the angular displaceme
 Using the Feedforward
 ---------------------
 
-In order to use the feedforward, we need to plug in values for each unknown in the above voltage-balance equation *other than the voltage*.  As mentioned :ref:[earlier](docs/software/advanced-controls/introduction/picking-control-strategy:Obtaining Models for Your Mechanisms>`, the values of the gains :math:`K_g`, :math:`K_v`, :math:`K_a` can be obtained through theoretical modeling with `ReCalc <https://www.reca.lc/). Explicit measurement with :doc:`SysId </docs/software/advanced-controls/system-identification/introduction>` will yield the aforementioned gains in addition to :math:`K_s`. That leaves us needing values for velocity, acceleration, and (in the case of the arm feedforward) position.
+In order to use the feedforward, we need to plug in values for each unknown in the above voltage-balance equation *other than the voltage*.  As mentioned :ref:`earlier <docs/software/advanced-controls/introduction/picking-control-strategy:Obtaining Models for Your Mechanisms>`, the values of the gains :math:`K_g`, :math:`K_v`, :math:`K_a` can be obtained through theoretical modeling with [ReCalc] (https://www.reca.lc/). Explicit measurement with :doc:`SysId </docs/software/advanced-controls/system-identification/introduction>` will yield the aforementioned gains in addition to :math:`K_s`. That leaves us needing values for velocity, acceleration, and (in the case of the arm feedforward) position.
 
 Typically, these come from our setpoints - remember that with feedforward we are making a "guess" as to the output we need based on where we want the system to be.
 

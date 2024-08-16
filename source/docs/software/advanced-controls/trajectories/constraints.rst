@@ -80,4 +80,4 @@ Users can create their own constraint by implementing the ``TrajectoryConstraint
 
 The ``MaxVelocity`` method should return the maximum allowed velocity for the given pose, curvature, and original velocity of the trajectory without any constraints. The ``MinMaxAcceleration`` method should return the minimum and maximum allowed acceleration for the given pose, curvature, and constrained velocity.
 
-See the source code (`Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpimath/src/main/java/edu/wpi/first/math/trajectory/constraint>`_, `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpimath/src/main/native/cpp/trajectory/constraint>`_) for the WPILib-provided constraints for more examples on how to write your own custom trajectory constraints.
+See the source code ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpimath/src/main/java/edu/wpi/first/math/trajectory/constraint), [C++] (https://github.com/wpilibsuite/allwpilib/tree/main/wpimath/src/main/native/cpp/trajectory/constraint)) for the WPILib-provided constraints for more examples on how to write your own custom trajectory constraints.
