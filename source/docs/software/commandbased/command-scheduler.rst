@@ -17,7 +17,7 @@ However, there is one exception: users *must* call ``CommandScheduler.getInstanc
 The ``schedule()`` Method
 -------------------------
 
-To schedule a command, users call the ``schedule()`` method ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#a26c120054ec626806d740f2c42d9dc4f)).  This method takes a command, and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called.
+To schedule a command, users call the ``schedule()`` method ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#a9f3f7bb5c1a3cf57592fe5cfadb6a57d)).  This method takes a command, and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called.
 
 This method walks through the following steps:
 
@@ -59,7 +59,7 @@ The Scheduler Run Sequence
 
 .. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
 
-What does a single iteration of the scheduler's ``run()`` method ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#aa5000fa52e320da7ba72c196f34aa0f5)) actually do?  The following section walks through the logic of a scheduler iteration. For the full implementation, see the source code ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java#L275-L356), [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp#L177-L253)).
+What does a single iteration of the scheduler's ``run()`` method ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#aa5000fa52e320da7ba72c196f34aa0f5)) actually do?  The following section walks through the logic of a scheduler iteration. For the full implementation, see the source code ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java#L252-L331), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp#L173-L253)).
 
 Step 1: Run Subsystem Periodic Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
