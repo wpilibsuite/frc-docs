@@ -6,7 +6,7 @@ This guide is intended for Python teams. Java and C++ teams can skip to :doc:`wp
 Prerequisites
 -------------
 
-You must install a supported version of Python on a supported operating system. We currently support Python 3.8/3.9/3.10/3.11/3.12, but only 3.12 is available for the roboRIO.
+You must install a supported version of Python on a supported operating system. We currently support Python 3.8/3.9/3.10/3.11/3.12.
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
