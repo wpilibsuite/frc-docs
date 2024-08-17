@@ -1,12 +1,10 @@
 .. include:: <isonum.txt>
 
-Windows Firewall Configuration
-==============================
+# Windows Firewall Configuration
 
 Many of the programming tools used in FRC\ |reg| need network access for various reasons. Depending on the exact configuration, the Windows Firewall may potentially interfere with this access for one or more of these programs.
 
-Disabling Windows Firewall
---------------------------
+## Disabling Windows Firewall
 
 .. important:: Disabling your firewall requires administrator privileges to the PC. Additionally note that disabling the firewall is not recommended for computers that connect to the internet.
 
@@ -42,8 +40,7 @@ Then click on the **On** toggle to turn it off.
 .. image:: images/windows-firewall/disable-firewall-toggle.png
    :alt: The toggle button in the center for each option.
 
-Whitelisting Apps
------------------
+## Whitelisting Apps
 
 Alternatively, you can add exceptions to the Firewall for any FRC programs you are having issues with.
 

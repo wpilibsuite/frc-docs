@@ -1,5 +1,4 @@
-Axon
-====
+# Axon
 
 .. toctree::
    :maxdepth: 1

@@ -1,10 +1,8 @@
-Introduction to State-Space Control
-===================================
+# Introduction to State-Space Control
 
 .. note:: This article is from [Controls Engineering in FRC](https://file.tavsys.net/control/controls-engineering-in-frc.pdf) by Tyler Veness with permission.
 
-From PID to Model-Based Control
--------------------------------
+## From PID to Model-Based Control
 
 When tuning PID controllers, we focus on fiddling with controller parameters relating to the current, past, and future :term:`error` (P, I and D terms) rather than the underlying system states. While this approach works in a lot of situations, it is an incomplete view of the world.
 
@@ -14,18 +12,15 @@ Model-based control focuses on developing an accurate model of the :term:`system
 
 If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` or its sister classes, or used SysId to pick PID :term:`gains <gain>` for you, you're already familiar with model-based control! The ``kv`` and ``ka`` :term:`gains <gain>` can be used to describe how a motor (or arm, or drivetrain) will react to voltage. We can put these constants into standard state-space notation using WPILib's ``LinearSystem``, something we will do in a later article.
 
-Vocabulary
-----------
+## Vocabulary
 
 For the background vocabulary that will be used throughout this article, see the :ref:`Glossary <docs/software/advanced-controls/controls-glossary:Controls Glossary>`.
 
-Introduction to Linear Algebra
-------------------------------
+## Introduction to Linear Algebra
 
 For a short and intuitive introduction to the core concepts of Linear Algebra, we recommend chapters 1 through 4 of [3Blue1Brown's Essence of linear algebra series](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) (Vectors, what even are they?, Linear combinations, span, and basis vectors, Linear transformations and matrices, and Matrix multiplication as composition).
 
-What is State-Space?
---------------------
+## What is State-Space?
 
 Recall that 2D space has two axes: x and y. We represent locations within this space as a pair of numbers packaged in a vector, and each coordinate is a measure of how far to move along the corresponding axis. State-space is a :term:`Cartesian coordinate system` with an axis for each state variable, and we represent locations within it the same way we do for 2D space: with a list of numbers in a vector. Each element in the vector corresponds to a state of the system. This example shows two example state vectors in the state-space of an elevator model with the states :math:`[\text{position}, \text{velocity}]`:
 
@@ -36,8 +31,7 @@ In this image, the vectors representing states in state-space are arrows. From n
 
 In addition to the :term:`state`, :term:`inputs <input>` and :term:`outputs <output>` are represented as vectors. Since the mapping from the current states and inputs to the change in state is a system of equations, it’s natural to write it in matrix form. This matrix equation can be written in state-space notation.
 
-What is State-Space Notation?
------------------------------
+## What is State-Space Notation?
 
 State-space notation is a set of matrix equations which describe how a system will evolve over time. These equations relate the change in state :math:`\dot{\mathbf{x}}`, and the :term:`output` :math:`\mathbf{y}`, to linear combinations of the current state vector :math:`\mathbf{x}` and :term:`input` vector :math:`\mathbf{u}`.
 
@@ -76,8 +70,7 @@ A continuous-time state-space system can be converted into a discrete-time syste
 
 .. important:: WPILib's LinearSystem takes continuous-time system matrices, and converts them internally to the discrete-time form where necessary.
 
-State-space Notation Example: Flywheel from Kv and Ka
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### State-space Notation Example: Flywheel from Kv and Ka
 
 :ref:`Recall <docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward>` that we can model the motion of a flywheel connected to a brushed DC motor with the equation :math:`V = K_v \cdot v + K_a \cdot a`, where V is voltage output, v is the flywheel's angular velocity and a is its angular acceleration. This equation can be rewritten as :math:`a = \frac{V - K_v \cdot v}{K_a}`, or :math:`a = \frac{-K_v}{K_a} \cdot v + \frac{1}{K_a} \cdot V`. Notice anything familiar? This equation relates the angular acceleration of the flywheel to its angular velocity and the voltage applied.
 
@@ -93,8 +86,7 @@ The output and state are the same, so the output equation is the following:
 
 That's it! That's the state-space model of a system for which we have the :math:`K_v` and :math:`K_a` constants. This same math is used in system identification to model flywheels and drivetrain velocity systems.
 
-Visualizing State-Space Responses: Phase Portrait
--------------------------------------------------
+## Visualizing State-Space Responses: Phase Portrait
 
 A :term:`phase portrait` can help give a visual intuition for the response of a system in state-space. The vectors on the graph have their roots at some point :math:`\mathbf{x}` in state-space, and point in the direction of :math:`\mathbf{\dot{x}}`, the direction that the system will evolve over time. This example shows a model of a pendulum with the states of angle and angular velocity.
 
@@ -107,8 +99,7 @@ Note that near the edges of the phase portrait, the X axis wraps around as a rot
 
 For more on differential equations and phase portraits, see [3Blue1Brown's Differential Equations video](https://www.youtube.com/watch?v=p_di4Zn4wz4) -- they do a great job of animating the pendulum phase space at around 15:30.
 
-Visualizing Feedforward
-^^^^^^^^^^^^^^^^^^^^^^^
+### Visualizing Feedforward
 
 This phase portrait shows the "open loop" responses of the system -- that is, how it will react if we were to let the state evolve naturally. If we want to, say, balance the pendulum horizontal (at :math:`(\frac{\pi}{2}, 0)` in state space), we would need to somehow apply a control :term:`input` to counteract the open loop tendency of the pendulum to swing downward. This is what feedforward is trying to do -- make it so that our phase portrait will have an equilibrium at the :term:`reference` position (or setpoint) in state-space.
 
@@ -117,8 +108,7 @@ Looking at our phase portrait from before, we can see that at :math:`(\frac{\pi}
 .. image:: images/pendulum-balance.png
    :alt: Pendulum phase plot with equilibrium at (pi/2, 0).
 
-Feedback Control
-~~~~~~~~~~~~~~~~
+#### Feedback Control
 
 In the case of a DC motor, with just a mathematical model and knowledge of all current states of the system (i.e., angular velocity), we can predict all future states given the future voltage inputs. But if the system is disturbed in any way that isn’t modeled by our equations, like a load or unexpected friction, the angular velocity of the motor will deviate from the model over time. To combat this, we can give the motor corrective commands using a feedback controller.
 
@@ -138,13 +128,11 @@ To add some feedback, we arbitrarily pick a :math:`\mathbf{K}` of [2, 2], where 
 
 But how can we choose an optimal :term:`gain` matrix K for our system? While we can manually choose :term:`gains <gain>` and simulate the system response or tune it on-robot like a PID controller, modern control theory has a better answer: the Linear-Quadratic Regulator (LQR).
 
-The Linear-Quadratic Regulator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### The Linear-Quadratic Regulator
 
 Because model-based control means that we can predict the future states of a system given an initial condition and future control inputs, we can pick a mathematically optimal :term:`gain` matrix :math:`\mathbf{K}`. To do this, we first have to define what a "good" or "bad" :math:`\mathbf{K}` would look like. We do this by summing the square of error and control input over time, which gives us a number representing how "bad" our control law will be. If we minimize this sum, we will have arrived at the optimal control law.
 
-LQR: Definition
-~~~~~~~~~~~~~~~
+#### LQR: Definition
 
 Linear-Quadratic Regulators work by finding a :term:`control law` that minimizes the following cost function, which weights the sum of :term:`error` and :term:`control effort` over time, subject to the linear :term:`system` dynamics :math:`\mathbf{x_{k+1} = Ax_k + Bu_k}`.
 
@@ -155,8 +143,7 @@ The :term:`control law` that minimizes :math:`\mathbf{J}` can be written as :mat
 
 .. note:: LQR design's :math:`\mathbf{Q}` and :math:`\mathbf{R}` matrices don't need discretization, but the :math:`\mathbf{K}` calculated for continuous-time and discrete time :term:`systems <system>` will be different.
 
-LQR: tuning
-~~~~~~~~~~~
+#### LQR: tuning
 
 Like PID controllers can be tuned by adjusting their gains, we also want to change how our control law balances our error and input. For example, a spaceship might want to minimize the fuel it expends to reach a given reference, while a high-speed robotic arm might need to react quickly to disturbances.
 
@@ -218,8 +205,7 @@ For example, we might use the following Q and R for an elevator system with posi
       )
 
 
-LQR: example application
-^^^^^^^^^^^^^^^^^^^^^^^^
+### LQR: example application
 
 Let's apply a Linear-Quadratic Regulator to a real-world example. Say we have a flywheel velocity system determined through system identification to have :math:`K_v = 1 \frac{\text{volts}}{\text{radian per second}}` and :math:`K_a = 1.5 \frac{\text{volts}}{\text{radian per second squared}}`. Using the flywheel example above, we have the following linear :term:`system`:
 
@@ -235,8 +221,7 @@ The following graph shows the flywheel's angular velocity and applied voltage ov
 .. image:: images/flywheel-lqr-ex.jpg
    :alt: Flywheel velocity and voltage over time.
 
-LQR and Measurement Latency Compensation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### LQR and Measurement Latency Compensation
 
 Oftentimes, our sensors have a delay associated with their measurements. For example the SPARK MAX motor controller over CAN can have up to 30ms of delay associated with velocity measurements.
 
@@ -280,8 +265,7 @@ The code below shows how to adjust the LQR controller's K gain for sensor input 
       # input delay as arguments.
       controller.latencyCompensate(elevatorSystem, 0.020, 0.025)
 
-Linearization
--------------
+## Linearization
 
 Linearization is a tool used to approximate nonlinear functions and state-space systems using linear ones. In two-dimensional space, linear functions are straight lines while nonlinear functions curve. A common example of a nonlinear function and its corresponding linear approximation is :math:`y=\sin{x}`. This function can be approximated by :math:`y=x` near zero. This approximation is accurate while near :math:`x=0`, but looses accuracy as we stray further from the linearization point. For example, the approximation :math:`\sin{x} \approx x` is accurate to within 0.02 within 0.5 radians of :math:`y = 0`, but quickly loses accuracy past that. In the following picture, we see :math:`y =\sin{x}`, :math:`y=x` and the difference between the approximation and the true value of :math:`\sin{x}` at :math:`x`.
 

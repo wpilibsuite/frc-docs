@@ -1,10 +1,8 @@
-Introduction to Machine Learning
-================================
+# Introduction to Machine Learning
 
 Machine learning is a giant optimization problem. A neural network is a series of matrices, where the number contained within the matrices need to be tuned as precisely as possible to make the best predictions possible. To understand what this means better, let's look at a classic machine learning problem: MNIST.
 
-MNIST
------
+## MNIST
 
 .. image:: images/machine-learning/mnist.png
   :alt: Example MNIST images
@@ -29,8 +27,7 @@ With this understanding of a basic neural network, let's look at a simple neural
 
 This neural network has an input layer, one hidden layer, and an output layer. The input layer is made of 784 nodes, as the MNIST dataset is made out of pictures that are 28x28 pixels. Each pixel is either 0 or 1. This input layer is multiplied by a weights matrix and a bias matrix is added, resulting in the hidden layer. The hidden layer is multiplied by another weight matrix and another bias matrix is added, resulting in the output layer. The output layer is made of exactly 10 nodes, representing 0 through 9. The actual value of each node represents the confidence of that node being correct. For example, if node 0 has a value of .91, and node 1 has a value of .23, then the input image is more likely a 0 than a 1.
 
-MobileNet V2
-------------
+## MobileNet V2
 
 The neural network that Axon uses is much more complex than the one described for the MNIST problem. It is a convolutional neural network (CNN), distinctly different than the fully-connected neural network used for MNIST.
 

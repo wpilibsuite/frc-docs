@@ -1,5 +1,4 @@
-Vision Introduction
-===================
+# Vision Introduction
 
 .. toctree::
    :maxdepth: 1

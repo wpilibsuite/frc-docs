@@ -1,13 +1,11 @@
-Setting Robot Preferences
-=========================
+# Setting Robot Preferences
 
 The Robot Preferences ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Preferences.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_preferences.html)) class is used to store values in the flash memory on the roboRIO. The values might be for remembering preferences on the robot such as calibration settings for potentiometers, PID values, setpoints, etc. that you would like to change without having to rebuild the program. The values can be viewed on SmartDashboard or Shuffleboard and read and written by the robot program.
 
 This example shows how to utilize Preferences to change the setpoint of a PID controller and the P constant. The code examples are adapted from the Arm Simulation example ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp)). You can run the Arm Simulation example in the Robot Simulator to see how to use the preference class and interact with it using the dashboards without needing a robot.
 
 
-Initializing Preferences
-------------------------
+## Initializing Preferences
 
 .. tab-set::
 
@@ -50,8 +48,7 @@ In ``robotInit``, each key is checked to see if it already exists in the Prefere
 
 If using the Command Framework, this type of code could be placed in the constructor of a Subsystem or Command.
 
-Reading Preferences
--------------------
+## Reading Preferences
 
 .. tab-set::
 
@@ -112,38 +109,32 @@ Depending on the data that is stored in preferences, you can use it when you rea
          :language: python
          :lines: 52-57
 
-Using Preferences in SmartDashboard
------------------------------------
+## Using Preferences in SmartDashboard
 
-Displaying Preferences in SmartDashboard
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Displaying Preferences in SmartDashboard
 
 .. image:: images/robot-preferences/preferences-widget-smartdashboard.png
   :alt: Adding preferences from the Smartdashboard menu
 
 In the SmartDashboard, the Preferences display can be added to the display by selecting :guilabel:`View` then :guilabel:`Add...` then :guilabel:`Robot Preferences`. This reveals the contents of the preferences file stored in the roboRIO flash memory.
 
-Editing Preferences in SmartDashboard
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Editing Preferences in SmartDashboard
 
 .. image:: images/robot-preferences/view-edit-preferences-values-smartdashboard.png
   :alt: Editing the robot preferences via the SmartDashboard widget.
 
 The values are shown here with the default values from the code. If the values need to be adjusted they can be edited here and saved.
 
-Using Preferences in Shuffleboard
----------------------------------
+## Using Preferences in Shuffleboard
 
-Displaying Preferences in Shuffleboard
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Displaying Preferences in Shuffleboard
 
 .. image:: images/robot-preferences/preferences-widget-shuffleboard.png
   :alt: Adding preferences from the sources window in Shuffleboard
 
 In Shuffleboard, the Preferences display can be added to the display by dragging the preferences field from the sources window. This reveals the contents of the preferences file stored in the roboRIO flash memory.
 
-Editing Preferences in Shuffleboard
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Editing Preferences in Shuffleboard
 
 .. image:: images/robot-preferences/view-edit-preferences-values-shuffleboard.png
   :alt: Editing the robot preferences via the Shuffleboard widget.

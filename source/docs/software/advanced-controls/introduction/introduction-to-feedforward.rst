@@ -1,12 +1,10 @@
-Introduction to DC Motor Feedforward
-====================================
+# Introduction to DC Motor Feedforward
 
 .. note:: For a guide on implementing feedforward control in code with WPILib, see :ref:`docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib`.
 
 This page explains the conceptual and mathematical workings of WPILib's SimpleMotorFeedforward (and the other related classes).
 
-The Permanent-Magnet DC Motor Feedforward Equation
---------------------------------------------------
+## The Permanent-Magnet DC Motor Feedforward Equation
 
 Recall from earlier that the point of a feedforward controller is to use the known dynamics of a mechanism to make a best guess at the :term:`control effort` required to put the mechanism in the state you want.  In order to do this, we need to have some idea of what kind of mechanism we are controlling - that will determine the relationship between :term:`control effort` and :term:`output`, and let us guess at what value of the former will give us the desired value of the latter.
 
@@ -29,13 +27,11 @@ We can interpret the coefficients in the above equation as follows:
 For more information, see [this paper](https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf).
 
 
-Variants of the Feedforward Equation
-------------------------------------
+## Variants of the Feedforward Equation
 
 Some of WPILib's other feedforward classes introduce additional terms into the above equation to account for known differences from the simple case described above - details for each tool can be found below:
 
-Elevator Feedforward
-~~~~~~~~~~~~~~~~~~~~
+#### Elevator Feedforward
 
 An elevator consists of a permanent-magnet DC motor attached to a mass under the force of gravity.  Compared to the feedforward equation for an unloaded motor, it differs only in the inclusion of a constant :math:`K_g` term that accounts for the action of gravity:
 
@@ -43,8 +39,7 @@ An elevator consists of a permanent-magnet DC motor attached to a mass under the
 
 where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.
 
-Arm Feedforward
-~~~~~~~~~~~~~~~
+#### Arm Feedforward
 
 An arm consists of a permanent-magnet DC motor attached to a mass on a stick held under the force of gravity.  Like the elevator feedforward, it includes a :math:`K_g` term to account for the effect of gravity - unlike the elevator feedforward, however, this term is multiplied by the cosine of the arm angle (since the gravitational force does not act directly on the motor):
 
@@ -52,8 +47,7 @@ An arm consists of a permanent-magnet DC motor attached to a mass on a stick hel
 
 where :math:`V` is the applied voltage, :math:`\theta` is the angular displacement (position) of the arm, :math:`\dot{\theta}` is its angular velocity, and :math:`\ddot{\theta}` is its angular acceleration.
 
-Using the Feedforward
----------------------
+## Using the Feedforward
 
 In order to use the feedforward, we need to plug in values for each unknown in the above voltage-balance equation *other than the voltage*.  As mentioned :ref:`earlier <docs/software/advanced-controls/introduction/picking-control-strategy:Obtaining Models for Your Mechanisms>`, the values of the gains :math:`K_g`, :math:`K_v`, :math:`K_a` can be obtained through theoretical modeling with [ReCalc] (https://www.reca.lc/). Explicit measurement with :doc:`SysId </docs/software/advanced-controls/system-identification/introduction>` will yield the aforementioned gains in addition to :math:`K_s`. That leaves us needing values for velocity, acceleration, and (in the case of the arm feedforward) position.
 

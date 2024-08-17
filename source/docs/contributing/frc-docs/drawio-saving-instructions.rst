@@ -1,5 +1,4 @@
-Draw.io Saving Instructions
-===========================
+# Draw.io Saving Instructions
 
 .. warning:: Make sure you don't modify any file that is in a ``diagrams`` folder, or ends in ``.drawio.svg`` in any program other than draw.io; otherwise you might risk breaking the metadata of the file, making it uneditable.
 

@@ -1,12 +1,10 @@
-Treating Functions as Data
-==========================
+# Treating Functions as Data
 
 Regardless of programming language, one of the first things anyone learns to do when programming a computer is to write a function (also known as a "method" or a "subroutine").  Functions are a fundamental part of organized code - writing functions lets us avoid duplicating the same piece of code over and over again.  Instead of writing duplicated sections of code, we call a single function that contains the code we want to execute from multiple places (provided we named the function well, the function name is also easier to read than the code itself!).  If the section of code needs some additional information about its surrounding context to run, we pass those to the function as "parameters", and if it needs to yield something back to the rest of the code once it finishes, we call that a "return value" (together, the parameters and return value are called the function's "signature");
 
 Sometimes, we need to pass functions from one part of the code to another part of the code.  This might seem like a strange concept, if we're used to thinking of functions as part of a class definition rather than objects in their own right.  But at a basic level, functions are just data - in the same way we can store an ``integer`` or a ``double`` as a variable and pass it around our program, we can do the same thing with a function.  A variable whose value is a function is called a "functional interface" in Java, and a "function pointer" or "functor" in C++.
 
-Why Would We Want to Treat Functions as Data?
----------------------------------------------
+## Why Would We Want to Treat Functions as Data?
 
 Typically, code that calls a function is coupled to (depends on) the definition of the function. While this occurs all the time, it becomes problematic when the code *calling* the function (for example, WPILib) is developed independently and without direct knowledge of the code that *defines* the function (for example, code from an FRC team). Sometimes we solve this challenge through the use of class interfaces, which define collections of data and functions that are meant to be used together.  However, often we really only have a dependency on a *single function*, rather than on an *entire class*.
 
@@ -20,8 +18,7 @@ It's important that *passing* a function is not the same as *calling* a function
 
 Inside of code that passes a function, we will see some syntax that either refers to the name of an existing function in a special way, or else defines a new function to be passed inside of the call expression.  The specific syntax needed (and the rules around it) depends on which programming language we are using.
 
-Treating Functions as Data in Java
-----------------------------------
+## Treating Functions as Data in Java
 
 Java represents functions-as-data as instances of [functional interfaces](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html).  A "functional interface" is a special kind of class that has only a single method - since Java was originally designed strictly for object-oriented programming, it has no way of representing a single function detached from a class.  Instead, it defines a particular group of classes that *only* represent single functions.  Each type of function signature has its own functional interface, which is an interface with a single function definition of that signature.
 
@@ -34,8 +31,7 @@ This might sound complicated, but in the context of WPILib we don't really need 
 
 ``runOnce`` expects us to give it a ``Runnable`` parameter (named ``action``).  A ``Runnable`` is the Java term for a function that takes no parameters and returns no value.  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  There are two ways to do this: we can refer to some existing function using a "method reference", or we can define the function we want inline using a "lambda expression".
 
-Method References
-^^^^^^^^^^^^^^^^^
+### Method References
 
 A method reference lets us pass an already-existing function as our ``Runnable``:
 
@@ -55,8 +51,7 @@ Remember that in order for this to work, ``resetEncoders`` must be a ``Runnable`
 
 If the function signature does not match this, Java will not be able to interpret the method reference as a ``Runnable`` and the code will not compile.  Note that all we need to do is make sure that the signature matches the signature of the single method in the ``Runnable`` functional interface - we don't need to *explicitly* name it as a ``Runnable``.
 
-Lambda Expressions in Java
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Lambda Expressions in Java
 
 If we do not already have a named function that does what we want, we can define a function "inline" - that means, right inside of the call to ``runOnce``!  We do this by writing our function with a special syntax that uses an "arrow" symbol to link the argument list to the function body:
 
@@ -69,8 +64,7 @@ Java calls ``() -> { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression"
 
 As with method references, we do not need to *explicitly* name the lambda expression as a ``Runnable`` - Java can infer that our lambda expression is a ``Runnable`` so long as its signature matches that of the single method in the ``Runnable`` interface.  Accordingly, our lambda takes no arguments and has no return statement - if it did not match the ``Runnable`` contract, our code would fail to compile.
 
-Capturing State in Java Lambda Expressions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Capturing State in Java Lambda Expressions
 
 In the above example, our function body references an object that lives outside of the function itself (namely, the ``drivetrain`` object).  This is called a "capture" of a variable from the surrounding code (which is sometimes called the "outer scope" or "enclosing scope").  Usually the captured variables are either local variables from the enclosing method body in which the lambda expression is defined, or else fields of an enclosing class definition in which that method is defined.
 
@@ -78,13 +72,11 @@ In Java capturing state is a fairly safe thing to do in general, with one major 
 
 This means we can only capture primitive types (like ``int``, ``double``, and ``boolean``) if they're constants.  If we want to capture a state variable that can change, it *must be wrapped in a mutable object*.
 
-Syntactic Sugar for Java Lambda Expressions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Syntactic Sugar for Java Lambda Expressions
 
 The full lambda expression syntax can be needlessly verbose in some cases.  To help with this, Java lets us take some shortcuts (called "syntactic sugar") in cases where some of the notation is redundant.
 
-Omitting Function Body Brackets for One-Line Lambdas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Omitting Function Body Brackets for One-Line Lambdas
 
 If the function body of our lambda expression is only one line, Java lets us omit the brackets around the function body.  When omitting function brackets, we also omit trailing semicolons And the `return` keyword.
 
@@ -95,8 +87,7 @@ So, our ``Runnable`` lambda above could instead be written:
    // Create an InstantCommand that runs the drive forward at half speed
    Command driveHalfSpeed = runOnce(() -> drivetrain.arcadeDrive(0.5, 0.0), drivetrain);
 
-Omitting Parentheses around Single Lambda Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Omitting Parentheses around Single Lambda Parameters
 
 If the lambda expression is for a functional interface that takes only a single argument, we can omit the parenthesis around the parameter list:
 
@@ -105,8 +96,7 @@ If the lambda expression is for a functional interface that takes only a single 
    // We can write this lambda with no parenthesis around its single argument
    IntConsumer exampleLambda = (a -> System.out.println(a));
 
-Treating Functions as Data in C++
----------------------------------
+## Treating Functions as Data in C++
 
 C++ has a number of ways to treat functions as data.  For the sake of this article, we'll only talk about the parts that are relevant to using WPILibC.
 
@@ -124,8 +114,7 @@ This sounds a lot more complicated than it is to use in practice.  Let's look at
 
 ``runOnce`` expects us to give it a ``std::function<void()>`` parameter (named ``action``).  A ``std::function<void()>`` is the C++ type for a ``std::function`` that takes no parameters and returns no value (the template parameter, ``void()``, is a function type with no parameters and no return value).  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  C++ lacks a clean way to refer to existing class methods in a way that can automatically be converted to a ``std::function``, so the typical way to do this is to define a new function inline with a "lambda expression".
 
-Lambda Expressions in C++
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### Lambda Expressions in C++
 
 To pass a function to ``runOnce``, we need to write a short inline function expression using a special syntax that resembles ordinary C++ function declarations, but varies in a few important ways:
 
@@ -138,8 +127,7 @@ C++ calls ``[captures] (params) { body; }`` a "lambda expression".  It has three
 
 Since ``RunOnce`` wants a function with no parameters and no return value, our lambda expression has no parameter list and no return statement.  The "lambda expression" here represents a function that calls ``drivetrain.ArcadeDrive`` with a specific set of parameters - note again that the above code does not *call* the function, but merely defines it and passes it to the ``Command`` to be run later when the ``Command`` is scheduled.
 
-Capturing State in C++ Lambda Expressions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Capturing State in C++ Lambda Expressions
 
 In the above example, our function body references an object that lives outside of the function itself (namely, the ``drivetrain`` object).  This is called a "capture" of a variable from the surrounding code (which is sometimes called the "outer scope" or "enclosing scope").  Usually the captured variables are either local variables from the enclosing method body in which the lambda expression is defined, or else fields of an enclosing class definition in which that method is defined.
 

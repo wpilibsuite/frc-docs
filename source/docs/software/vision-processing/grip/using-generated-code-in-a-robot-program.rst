@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Using Generated Code in a Robot Program
-=======================================
+# Using Generated Code in a Robot Program
 
 GRIP generates a class that can be added to an FRC\ |reg| program that runs on a roboRIO and without a lot of additional code, drive
 the robot based on the output.
@@ -21,8 +20,7 @@ writing your robot program. When writing your own program be aware of the follow
     example, the robot code extracts the direction to drive by manipulating the resultant OpenCV contours. By having the OpenCV
     code exposed throughout the robot program it makes it difficult to change the vision algorithm should you have a better one.
 
-Iterative program definitions
------------------------------
+## Iterative program definitions
 .. tab-set-code::
 
     .. code-block:: java

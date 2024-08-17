@@ -1,10 +1,8 @@
-Programming the Romi
-====================
+# Programming the Romi
 
 Writing a program for the Romi is very similar to writing a program for a regular FRC robot. In fact, all the same tools (Visual Studio Code, Driver Station, SmartDashboard, etc) can be used with the Romi.
 
-Creating a Romi Program
------------------------
+## Creating a Romi Program
 
 Creating a new program for a Romi is like creating a normal FRC program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps.
 
@@ -12,8 +10,7 @@ WPILib comes with two templates for Romi projects, including one based on TimedR
 
 .. note:: In order to program the Romi using C++, a compatible C++ desktop compiler must be installed. See :ref:`Robot Simulation - Additional C++ Dependency <cpp_sim_additional_dependency>`.
 
-Creating a New WPILib Romi Project
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Creating a New WPILib Romi Project
 
 Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`, and type "New project" into the prompt. Select the "Create a new project" command:
 
@@ -29,8 +26,7 @@ Next, a list of examples will appear. Scroll through the list to find the "RomiR
 
 Fill out the rest of the fields in the "New Project Creator" and click "Generate Project" to create the new robot project.
 
-Running a Romi Program
-^^^^^^^^^^^^^^^^^^^^^^
+### Running a Romi Program
 
 Once the robot project is generated, it is essentially ready to run. The project has a pre-built ``Drivetrain`` class and associated default command that lets you drive the Romi around using a joystick.
 

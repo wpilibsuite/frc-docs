@@ -1,5 +1,4 @@
-Telemetry
-=========
+# Telemetry
 
 .. toctree::
    :maxdepth: 1

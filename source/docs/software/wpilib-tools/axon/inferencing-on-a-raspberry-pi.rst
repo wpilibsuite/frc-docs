@@ -1,8 +1,6 @@
-Inferencing on a Raspberry Pi
-=============================
+# Inferencing on a Raspberry Pi
 
-Hardware Requirements
----------------------
+## Hardware Requirements
 
 This section requires a Romi or a Raspberry Pi that is running the WPILibPi Image.
 
@@ -16,8 +14,7 @@ Other hardware that is required is:
 .. note:: A Coral Edge TPU is a USB Accelerator that the Raspberry Pi uses as a co-processor to improve its performance while inferencing. In our experience it has shown to improve performance by around 9 times.
 
 
-Uploading the Model to the Pi
------------------------------
+## Uploading the Model to the Pi
 
 To upload your tflite model to the Raspberry Pi, you must connect to it and open the Web-interface. Select the :guilabel:`Application` tab, go to the :guilabel:`File Upload` section and turn the :guilabel:`Extract` slider on.
 
@@ -26,8 +23,7 @@ To upload your tflite model to the Raspberry Pi, you must connect to it and open
 
 Once this is checked, you can upload the zip that you downloaded from Axon onto the Pi.
 
-Inferencing
------------
+## Inferencing
 
 Once the model has been uploaded, now the Pi needs python code to utilize it. Here is a link to the provided inference script through the release page: [Github](https://github.com/wpilibsuite/Axon/releases/)
 
@@ -56,8 +52,7 @@ Then you can see the output stream from the Machine Learning Model. You should b
 .. image:: images/inferencing/inference.png
   :alt: Coffee Inference
 
-Network Tables
---------------
+## Network Tables
 
 .. note:: When using a Romi, robot code must be running on the simulator to receive network tables data.
 

@@ -1,5 +1,4 @@
-Third-Party Telemetry Libraries
-===============================
+# Third-Party Telemetry Libraries
 
 .. tip:: Is your library not listed here when it should be?  Open a pull request to add it!
 

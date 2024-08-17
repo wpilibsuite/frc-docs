@@ -1,5 +1,4 @@
-Using the Raspberry Pi for FRC
-==============================
+# Using the Raspberry Pi for FRC
 One of the most popular coprocessor choices is the Raspberry Pi because:
 
 -   Low cost - around $35
@@ -19,8 +18,7 @@ One of the most popular coprocessor choices is the Raspberry Pi because:
 
 .. figure:: images/using-the-raspberry-pi-for-frc/raspberry-pi.png
 
-Pre-built Raspberry Pi image
-----------------------------
+## Pre-built Raspberry Pi image
 To make using the Raspberry Pi as easy as possible for teams, there is a provided Raspberry Pi image. The image can be copied to
 a micro SD card, inserted into the Pi, and booted. By default it supports:
 

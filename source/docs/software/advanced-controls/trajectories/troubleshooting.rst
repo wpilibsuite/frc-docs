@@ -1,8 +1,6 @@
-Troubleshooting
-===============
+# Troubleshooting
 
-Troubleshooting Complete Failures
----------------------------------
+## Troubleshooting Complete Failures
 There are a number of things that can cause your robot to do completely the wrong thing. The below checklist covers some common mistakes.
 
 * My robot doesn't move.
@@ -39,8 +37,7 @@ There are a number of things that can cause your robot to do completely the wron
 
   - Go to the next section.
 
-Troubleshooting Poor Performance
---------------------------------
+## Troubleshooting Poor Performance
 
 .. note:: This section is mostly concerned with troubleshooting poor trajectory tracking performance like a meter of error, not catastrophic failures like compilation errors, robots turning around and going in the wrong direction, or ``MalformedSplineException``\s.
 
@@ -52,8 +49,7 @@ Because it can be so hard to locate the layer of the trajectory generator and fo
 
 .. note:: The below examples put diagnostic values onto :term:`NetworkTables`. The easiest way to graph these values is to :ref:`use Shuffleboard's graphing capabilities <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-graphs:Working With Graphs>`.
 
-Verify Odometry
-^^^^^^^^^^^^^^^
+### Verify Odometry
 If your odometry is bad, then your Ramsete controller may misbehave, because it modifies your robot's target velocities based on where your odometry thinks the robot is.
 
 .. note:: :doc:`Sending your robot pose and trajectory to field2d </docs/software/dashboards/glass/field2d-widget>` can help verify that your robot is driving correctly relative to the robot trajectory.
@@ -97,8 +93,7 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
 2. Lay out a tape measure parallel to your robot and push your robot out about one meter along the tape measure. Lay out a tape measure along the Y axis and start over, pushing your robot one meter along the X axis and one meter along the Y axis in a rough arc.
 3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width, so try increasing the track width number or measuring it programmatically.
 
-Verify Feedforward
-^^^^^^^^^^^^^^^^^^
+### Verify Feedforward
 If your feedforwards are bad then the P controllers for each side of the robot will not track as well, and your ``DifferentialDriveVoltageConstraint`` will not limit your robot's acceleration accurately. We mostly want to turn off the wheel P controllers so that we can isolate and test the feedforwards.
 
 1. First, we must set disable the P controller for each wheel. Set the ``P`` gain to 0 for every controller. In the ``RamseteCommand`` example, you would set ``kPDriveVel`` to 0:
@@ -222,16 +217,14 @@ If your feedforwards are bad then the P controllers for each side of the robot w
 4. Run the robot on a variety of trajectories (curved and straight line), and check to see if the actual velocity tracks the desired velocity by looking at graphs from NetworkTables.
 5. If the desired and actual are off by *a lot* then you should check if the wheel diameter and ``encoderEPR`` you used for system identification were correct. If you've verified that your units and conversions are correct, then you should try recharacterizing on the same floor that you're testing on to see if you can get better data.
 
-Verify P Gain
-^^^^^^^^^^^^^
+### Verify P Gain
 If you completed the previous step and the problem went away then your problem can probably be found in one of the next steps. In this step we're going to verify that your wheel P controllers are well-tuned. If you're using Java then we want to turn off Ramsete so that we can just view our PF controllers on their own.
 
 1. You must re-use all the code from the previous step that logs actual vs. desired velocity (and the code that disables Ramsete, if you're using Java), except that **the P gain must be set back to its previous nonzero value.**
 2. Run the robot again on a variety of trajectories, and check that your actual vs. desired graphs look good.
 3. If the graphs do not look good (i.e. the actual velocity is very different from the desired) then you should try tuning your P gain and rerunning your test trajectories.
 
-Check Constraints
-^^^^^^^^^^^^^^^^^
+### Check Constraints
 .. note:: Make sure that your P gain is nonzero for this step and that you still have the logging code added in the previous steps. If you're using Java then you should remove the code to disable Ramsete.
 
 If your accuracy issue persisted through all of the previous steps then you might have an issue with your constraints. Below are a list of symptoms that the different available constraints will exhibit when poorly tuned.
@@ -251,6 +244,5 @@ Test one constraint at a time! Remove the other constraints, tune your one remai
 
   - If your robot ends up at the wrong heading then this could be the culprit. If your robot doesn't seem to turn enough then you should increase the max centripetal acceleration, but if it seems to go around tight turns to quickly then you should decrease the maximum centripetal acceleration.
 
-Check Trajectory Waypoints
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Check Trajectory Waypoints
 It is possible that your trajectory itself is not very driveable. Try moving waypoints (and headings at the waypoints, if applicable) to reduce sharp turns.

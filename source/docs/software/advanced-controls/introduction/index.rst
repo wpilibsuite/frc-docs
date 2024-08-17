@@ -1,5 +1,4 @@
-Advanced Controls Introduction
-==============================
+# Advanced Controls Introduction
 
 .. toctree::
    :maxdepth: 1

@@ -1,5 +1,4 @@
-Robot Telemetry with Sendable
-=============================
+# Robot Telemetry with Sendable
 
 While the WPILib dashboard APIs allow users to easily send small pieces of data from their robot code to the dashboard, it is often tedious to manually write code for publishing telemetry values from the robot code's operational logic.
 
@@ -7,8 +6,7 @@ A cleaner approach is to leverage the existing object-oriented structure of user
 
 WPILib provides this functionality with the ``Sendable`` interface.  Classes that implement ``Sendable`` are able to register value listeners that automatically send data to the dashboard - and, in some cases, receive values back.  These classes can be declaratively sent to any of the WPILib dashboards (as one would an ordinary data field), removing the need for teams to write their own code to send/poll for updates.
 
-What is Sendable?
------------------
+## What is Sendable?
 
 ``Sendable`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/util/sendable/Sendable.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classwpi_1_1_sendable.html), :external:py:class:`Python <wpiutil.Sendable>`) is an interface provided by WPILib to facilitate robot telemetry.  Classes that implement ``Sendable`` can declaratively send their state to the dashboard - once declared, WPILib will automatically send the telemetry values every robot loop.  This removes the need for teams to handle the iteration-to-iteration logic of sending and receiving values from the dashboard, and also allows teams to separate their telemetry code from their robot logic.
 
@@ -16,8 +14,7 @@ Many WPILib classes (such as :ref:`Commands <docs/software/dashboards/shuffleboa
 
 The ``Sendable`` interface contains only one method: ``initSendable``.  Implementing classes override this method to perform the binding of in-code data values to structured :term:`JSON` data, which is then automatically sent to the robot dashboard via NetworkTables.  Implementation of the ``Sendable`` interface is discussed in the :ref:`next article<docs/software/telemetry/writing-sendable-classes:Writing Your Own Sendable Classes>`.
 
-Sending a Sendable to the Dashboard
------------------------------------
+## Sending a Sendable to the Dashboard
 
 .. note:: Unlike simple data types, Sendables are automatically kept up-to-date on the dashboard by WPILib, without any further user code - "set it and forget it".  Accordingly, they should usually be sent to the dashboard in an initialization block or constructor, *not* in a periodic function.
 

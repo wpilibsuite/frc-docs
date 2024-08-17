@@ -1,5 +1,4 @@
-WPILib Commands in Visual Studio Code
-=====================================
+# WPILib Commands in Visual Studio Code
 This document contains a complete list of the commands provided by the WPILib VS Code Extension and what they do.
 
 To access these commands, press Ctrl+Shift+P to open the Command Palette, then begin typing the command name as shown here to filter the list of commands. Click on the command name to execute it.

@@ -1,19 +1,16 @@
-Wiring Pneumatics - CTRE Pneumatic Control Module
-=================================================
+# Wiring Pneumatics - CTRE Pneumatic Control Module
 
 This page describes wiring pneumatics with the CTRE Pneumatic Control Module (PCM). For instructions on wiring pneumatics with the REV Pneumatic Hub (PH) see :doc:`this page <wiring-pneumatics-ph>`.
 
 .. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located [here](https://www.firstinspires.org/sites/default/files/uploads/resource_library/frc/technical-resources/frc_pneumatics_manual.pdf)
 
-Wiring Overview
----------------
+## Wiring Overview
 
 A single PCM will support most pneumatics applications, providing an output for the compressor, input for the pressure switch, and outputs for up to 8 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the :term:`CAN` bus and powered via 12V from the PDP or PDH.
 
 For complicated robot designs requiring more channels or multiple solenoid voltages, additional PCMs or PHs can be added to the control system.
 
-PCM Power and Control Wiring
-----------------------------
+## PCM Power and Control Wiring
 
 .. image:: images/wiring-pneumatics-pcm/pcm-subsystem.svg
    :alt: Pneumatics wiring diagram showing all of the connections to the PCM.
@@ -22,23 +19,19 @@ The first PCM on your robot can be wired from the PDP VRM/PCM connectors on the 
 
 Additional PCMs can be wired to a standard WAGO connector on the side of the PDP and protected with a 20A or smaller circuit breaker. Additional PCMs should also be placed anywhere in the middle of the CAN chain.
 
-The Compressor
---------------
+## The Compressor
 
 The compressor can be wired directly to the Compressor Out connectors on the PCM. If additional length is required, make sure to use 18 AWG wire or larger for the extension.
 
-The Pressure Switch
--------------------
+## The Pressure Switch
 
 The pressure switch should be connected directly to the pressure switch input terminals on the PCM. There is no polarity on the input terminals or on the pressure switch itself, either terminal on the PCM can be connected to either terminal on the switch. Ring or spade terminals are recommended for the connection to the switch screws (note that the screws are slightly larger than #6, but can be threaded through a ring terminal with a hole for a #6 screw such as the terminals shown in the image).
 
-Solenoids
----------
+## Solenoids
 
 Each solenoid channel should be wired directly to a numbered pair of terminals on the PCM. A single acting solenoid will use one numbered terminal pair. A double acting solenoid will use two pairs. If your solenoid does not come with color coded wiring, check the datasheet to make sure to wire with the proper polarity.
 
-Solenoid Voltage Jumper
------------------------
+## Solenoid Voltage Jumper
 
 .. image:: images/wiring-pneumatics-pcm/pcm-jumper.svg
    :alt: The "VSOL" jumper in the center of the PCM with the 12V and 24V showing the left and right positions of the jumper respectively.

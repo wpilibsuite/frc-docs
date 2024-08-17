@@ -1,5 +1,4 @@
-What Is "Command-Based" Programming?
-====================================
+# What Is "Command-Based" Programming?
 
 WPILib supports a robot programming methodology called "command-based" programming. In general, "command-based" can refer both the general programming paradigm, and to the set of WPILib library resources included to facilitate it.
 
@@ -56,8 +55,7 @@ In contrast, without using command-based, the user would need to check the butto
             else:
                 pressed = False
 
-Subsystems and Commands
------------------------
+## Subsystems and Commands
 
 .. image:: diagrams/subsystems-and-commands.drawio.svg
    :alt: image of subsystems and commands
@@ -68,8 +66,7 @@ The command-based pattern is based around two core abstractions: **commands**, a
 
 **Subsystems** represent independently-controlled collections of robot hardware (such as motor controllers, sensors, pneumatic actuators, etc.) that operate together. Subsystems back the resource-management system of command-based: only one command can use a given subsystem at the same time. Subsystems allow users to "hide" the internal complexity of their actual hardware from the rest of their code - this both simplifies the rest of the robot code, and allows changes to the internal details of a subsystem's hardware without also changing the rest of the robot code.
 
-How Commands Are Run
---------------------
+## How Commands Are Run
 
 .. note:: For a more detailed explanation, see :doc:`command-scheduler`.
 
@@ -77,7 +74,6 @@ Commands are run by the ``CommandScheduler`` ([Java](https://github.wpilib.org/a
 
 Multiple commands can run concurrently, as long as they do not require the same resources on the robot. Resource management is handled on a per-subsystem basis: commands specify which subsystems they interact with, and the scheduler will ensure that no more more than one command requiring a given subsystem is scheduled at a time. This ensures that, for example, users will not end up with two different pieces of code attempting to set the same motor controller to different output values.
 
-Command Compositions
---------------------
+## Command Compositions
 
 It is often desirable to build complex commands from simple pieces. This is achievable by creating a :term:`composition` of commands. The command-based library provides several types of :doc:`command compositions <command-compositions>` for teams to use, and users may write their own. As command compositions are commands themselves, they may be used in a :term:`recursive composition`. That is to say - one can create a command compositions from multiple command compositions. This provides an extremely powerful way of building complex robot actions from simple components.

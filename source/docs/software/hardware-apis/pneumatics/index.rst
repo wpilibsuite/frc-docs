@@ -1,5 +1,4 @@
-Pneumatics APIs
-===============
+# Pneumatics APIs
 
 .. toctree::
    :maxdepth: 1
@@ -7,8 +6,7 @@ Pneumatics APIs
    solenoids
    pressure
 
-Using the FRC Control System to Control Pneumatics
---------------------------------------------------
+## Using the FRC Control System to Control Pneumatics
 
 There are two options for operating solenoids to control pneumatic cylinders, the CTRE Pneumatics Control Module and the REV Robotics Pneumatics Hub.
 
@@ -28,7 +26,6 @@ These devices are integrated into WPILib through a series of classes that make t
 
 These modules are responsible for regulating the robot's pressure using a pressure switch and a compressor and switching solenoids on and off. They communicate with the roboRIO over CAN. For more information, see :doc:`/docs/controls-overviews/control-system-hardware`.
 
-Module Numbers
---------------
+## Module Numbers
 
 CAN Devices are identified by their CAN ID. The default CAN ID for PCMs is 0. The default CAN ID for PHs is 1. If using a single module on the bus it is recommended to leave it at the default CAN ID. Additional modules can be used where the modules corresponding solenoids are differentiated by the module number in the constructors of the ``Solenoid``, ``DoubleSolenoid`` and ``Compressor`` classes.

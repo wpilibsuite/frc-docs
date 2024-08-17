@@ -1,5 +1,4 @@
-Trapezoidal Motion Profiles in WPILib
-=====================================
+# Trapezoidal Motion Profiles in WPILib
 
 .. todo:: link to conceptual motion profiling article
 
@@ -13,13 +12,11 @@ While feedforward and feedback control offer convenient ways to achieve a given 
 
 To help users do this, WPILib provides a ``TrapezoidProfile`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_trapezoid_profile.html), :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile>`).
 
-Creating a TrapezoidProfile
----------------------------
+## Creating a TrapezoidProfile
 
 .. note:: In C++, the ``TrapezoidProfile`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-Constraints
-^^^^^^^^^^^
+### Constraints
 
 .. note:: The various :ref:`feedforward helper classes <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>` provide methods for calculating the maximum simultaneously-achievable velocity and acceleration of a mechanism.  These can be very useful for calculating appropriate motion constraints for your ``TrapezoidProfile``.
 
@@ -50,8 +47,7 @@ In order to create a trapezoidal motion profile, we must first impose some const
     # Max acceleration of 20 meters per second squared
     TrapezoidProfile.Constraints(10, 20)
 
-Start and End States
-^^^^^^^^^^^^^^^^^^^^
+### Start and End States
 
 Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/trajectory/TrapezoidProfile.State.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_trapezoid_profile_1_1_state.html), :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile.State>`).  Each state has a position and a velocity:
 
@@ -77,8 +73,7 @@ Next, we must specify the desired starting and ending states for our mechanisms 
     # and a velocity of 0 meters per second
     TrapezoidProfile.State(5, 0)
 
-Putting It All Together
-^^^^^^^^^^^^^^^^^^^^^^^
+### Putting It All Together
 
 .. note:: C++ is often able to infer the type of the inner classes, and thus a simple initializer list (without the class name) can be sent as a parameter.  The full class names are included in the example below for clarity.
 
@@ -110,11 +105,9 @@ Now that we know how to create a set of constraints and the desired start/end st
     # Profile will have a max acceleration of 10 meters per second squared
     profile = TrapezoidProfile(TrapezoidProfile.Constraints(5, 10))
 
-Using a ``TrapezoidProfile``
-----------------------------
+## Using a ``TrapezoidProfile``
 
-Sampling the Profile
-^^^^^^^^^^^^^^^^^^^^
+### Sampling the Profile
 
 Once we've created a ``TrapezoidProfile``, using it is very simple: to get the profile state at the given time after the profile has started, call the ``calculate()`` method with the goal state and initial state:
 
@@ -143,8 +136,7 @@ Once we've created a ``TrapezoidProfile``, using it is very simple: to get the p
     # Returns the motion profile state after 5 seconds of motion
     profile.calculate(5, TrapezoidProfile.State(0, 0), TrapezoidProfile.State(5, 0))
 
-Using the State
-^^^^^^^^^^^^^^^
+### Using the State
 
 The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same one that was used to specify the initial/end states when calculating the profile state).  To use this for actual control, simply pass the contained position and velocity values to whatever controller you wish (for example, a PIDController):
 
@@ -165,8 +157,7 @@ The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same on
     setpoint = profile.calculate(elapsedTime, initialState, goalState)
     controller.calculate(encoder.getDistance(), setpoint.position)
 
-Complete Usage Example
-----------------------
+## Complete Usage Example
 
 .. note:: In this example, the initial state is re-computed every timestep. This is a somewhat different usage technique than is detailed above, but works according to the same principles - the profile is sampled at a time corresponding to the loop period to get the setpoint for the next loop iteration.
 

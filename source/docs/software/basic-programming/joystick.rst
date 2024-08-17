@@ -1,14 +1,12 @@
 .. include:: <isonum.txt>
 
-Joysticks
-=========
+# Joysticks
 
 A joystick can be used with the Driver Station program to control the robot.  Almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has three relevant subclasses for preconfigured joysticks.  You may also implement your own for other controllers by extending ``GenericHID``.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Finally, the ``PS4Controller`` class is ideal for using that controller.  Each axis of the controller ranges from -1 to 1.
 
 The command based way to use the these classes is detailed in the section: :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`.
 
-Driver Station Joysticks
-------------------------
+## Driver Station Joysticks
 
 .. image:: /docs/software/driverstation/images/driver-station/ds-usb-tab.png
    :alt: The 4th tab down on the left hand side is the USB devices tab.
@@ -26,8 +24,7 @@ When the Driver Station is in disabled mode, it is routinely looking for status 
 
 When the robot is connected to the Field Management System at competition, the Driver Station mode is dictated by the :term:`FMS`. This means that you cannot disable your robot and the DS cannot disable itself in order to detect joystick changes. A manual complete refresh of the joysticks can be initiated by pressing the F1 key on the keyboard. Note that this will close and re-open all devices, so all devices should be in their center position as noted above.
 
-``Joystick`` Class
-------------------
+## ``Joystick`` Class
 
 .. image:: images/joystick/joystick.png
    :alt: A Logitech flight stick with an explanation of the axis values and buttons.
@@ -51,8 +48,7 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
 
 .. important:: Due to differences in coordinate systems, teams usually negate the values when reading joystick axes. See the :ref:`docs/software/basic-programming/coordinate-system:Joystick and controller coordinate system` section for more detail.
 
-``XboxController`` Class
-------------------------
+## ``XboxController`` Class
 
 .. image:: images/joystick/xbox.jpg
    :alt: Original Xbox Controller.
@@ -75,8 +71,7 @@ The ``XboxController`` class provides named methods (e.g. ``getXButton``, ``getX
 
 .. important:: Due to differences in coordinate systems, teams usually negate the values when reading joystick axes. See the :ref:`docs/software/basic-programming/coordinate-system:Joystick and controller coordinate system` section for more detail.
 
-``PS4Controller`` Class
------------------------
+## ``PS4Controller`` Class
 
 .. image:: images/joystick/ps4.jpg
    :alt: PlayStation 4 controller.
@@ -100,8 +95,7 @@ The ``PS4Controller`` class provides named methods (e.g. ``getSquareButton``, ``
 
 .. important:: Due to differences in coordinate systems, teams usually negate the values when reading joystick axes. See the :ref:`docs/software/basic-programming/coordinate-system:Joystick and controller coordinate system` section for more detail.
 
-POV
----
+## POV
 
 .. image:: images/joystick/dpadangles.png
    :alt: The angles used by the code of the POV/D-pad with 0 at the top and continuing clockwise.
@@ -109,8 +103,7 @@ POV
 
 On joysticks, the POV is a directional hat that can select one of 8 different angles or read -1 for unpressed.  The XboxController/PS4Controller D-pad works the same as a POV.  Be careful when using a POV with exact angle requirements as it is hard for the user to ensure they select exactly the angle desired.
 
-``GenericHID`` Usage
---------------------
+## ``GenericHID`` Usage
 
 An axis can be used with ``.getRawAxis(int index)`` (if not using any of the classes above) that returns the current value.  Zero and one in this example are each the index of an axis as found in the Driver Station mentioned above.
 
@@ -145,8 +138,7 @@ An axis can be used with ``.getRawAxis(int index)`` (if not using any of the cla
       self.robotDrive.arcadeDrive(-self.stick.getRawAxis(0), self.stick.getRawAxis(1))
 
 
-Button Usage
-------------
+## Button Usage
 
 .. note:: Usage such as the following is for code not using the command-based framework. For button usage in the command-based framework, see :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`.
 

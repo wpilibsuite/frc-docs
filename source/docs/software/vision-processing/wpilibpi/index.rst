@@ -1,5 +1,4 @@
-Vision with WPILibPi
-====================
+# Vision with WPILibPi
 
 .. toctree::
    :maxdepth: 1

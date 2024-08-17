@@ -1,13 +1,10 @@
-NetworkTables Tables and Topics
-===============================
+# NetworkTables Tables and Topics
 
-Using the NetworkTable Class
-----------------------------
+## Using the NetworkTable Class
 
 The ``NetworkTable`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/NetworkTable.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_network_table.html), :external:py:class:`Python <ntcore.NetworkTable>`) class is an API abstraction that represents a single "folder" (or "table") of topics as described in :ref:`docs/software/networktables/networktables-intro:networktables organization`. The NetworkTable class stores the base path to the table and provides functions to get topics within the table, automatically prepending the table path.
 
-Getting a Topic
----------------
+## Getting a Topic
 
 A ``Topic`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/Topic.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_topic.html), :external:py:class:`Python <ntcore.Topic>`) object (or ``NT_Topic`` handle) represents a :term:`topic`. This has a 1:1 correspondence with the topic's name, and will not change as long as the instance exists. Unlike publishers and subscribers, it is not necessary to store a Topic object.
 

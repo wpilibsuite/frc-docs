@@ -1,7 +1,6 @@
 :orphan:
 
-Hardware
-========
+# Hardware
 
 Hardware tutorials and content available for teams.
 

@@ -1,5 +1,4 @@
-Setting the Autonomous Commands
-===============================
+# Setting the Autonomous Commands
 
 Since a command is simply one or more actions (behaviors) that the robot performs, it makes sense to describe the autonomous operation of a robot as a command. While it could be a single command, it is more likely going to be a command group (a group of commands that happen together).
 

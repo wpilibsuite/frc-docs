@@ -1,11 +1,9 @@
-Trajectory Constraints
-======================
+# Trajectory Constraints
 In the :ref:`previous article <docs/software/advanced-controls/trajectories/trajectory-generation:Generating the trajectory>`, you might have noticed that no custom constraints were added when generating the trajectories. Custom constraints allow users to impose more restrictions on the velocity and acceleration at points along the trajectory based on location and curvature.
 
 For example, a custom constraint can keep the velocity of the trajectory under a certain threshold in a certain region or slow down the robot near turns for stability purposes.
 
-WPILib-Provided Constraints
----------------------------
+## WPILib-Provided Constraints
 WPILib includes a set of predefined constraints that users can utilize when generating trajectories. The list of WPILib-provided constraints is as follows:
 
  - ``CentripetalAccelerationConstraint``: Limits the centripetal acceleration of the robot as it traverses along the trajectory. This can help slow down the robot around tight turns.
@@ -19,8 +17,7 @@ WPILib includes a set of predefined constraints that users can utilize when gene
 
 .. note:: The ``DifferentialDriveVoltageConstraint`` only ensures that theoretical voltage commands do not go over the specified maximum using a :ref:`feedforward model <docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward>`. If the robot were to deviate from the reference while tracking, the commanded voltage may be higher than the specified maximum.
 
-Creating a Custom Constraint
-----------------------------
+## Creating a Custom Constraint
 Users can create their own constraint by implementing the ``TrajectoryConstraint`` interface.
 
 .. tab-set-code::

@@ -1,10 +1,8 @@
-Python Installation Guide
-=========================
+# Python Installation Guide
 
 This guide is intended for Python teams. Java and C++ teams can skip to :doc:`wpilib-setup`. LabVIEW teams can skip to :doc:`labview-setup`.
 
-Prerequisites
--------------
+## Prerequisites
 
 You must install a supported version of Python on a supported operating system. We currently support Python 3.8/3.9/3.10/3.11/3.12, but only 3.12 is available for the roboRIO.
 
@@ -18,8 +16,7 @@ On Windows and macOS, we recommend using the official Python installers distribu
 * [Python for Windows](https://www.python.org/downloads/windows/)
 * [Python for macOS](https://www.python.org/downloads/mac-osx/)
 
-Install RobotPy
----------------
+## Install RobotPy
 
 Once you have installed Python, you can use pip to install RobotPy on your development computer.
 
@@ -127,8 +124,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
          export CC=gcc-12 CXX=g++-12
 
-Download RobotPy for roboRIO
-----------------------------
+## Download RobotPy for roboRIO
 
 After installing the ``robotpy`` project on your computer, there are a variety of commands available that can be ran from the command line via the ``robotpy`` module.
 

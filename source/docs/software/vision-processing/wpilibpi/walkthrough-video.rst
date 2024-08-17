@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-A Video Walkthrough of using WPILibPi with the Raspberry Pi
-===========================================================
+# A Video Walkthrough of using WPILibPi with the Raspberry Pi
 
 .. note:: The video mentions FRCVision which is the old name of WPILibPi.
 

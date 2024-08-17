@@ -1,10 +1,8 @@
-Displaying LiveWindow Values
-============================
+# Displaying LiveWindow Values
 
 LiveWindow will automatically add your sensors and actuators for you. There is no need to do it manually. LiveWindow values may also be displayed by writing the code yourself and adding it to your robot program. This allows you to customize the names and group them in subsystems. This is a convenient method of displaying whether they are actual command based program subsystems or just a grouping that you decide to use in your program.
 
-Adding the Necessary Code to your Program
------------------------------------------
+## Adding the Necessary Code to your Program
 
 For each sensor or actuator that is created, set the subsystem name and display name by calling ``setName`` (``SetName`` in C++). When the SmartDashboard is put into LiveWindow mode, it will display the sensors and actuators.
 
@@ -86,8 +84,7 @@ If your objects are in a ``Subsystem``, this can be simplified using the addChil
         wrist = Victor(2)
         SubsystemBase.addChild("Wrist", wrist)
 
-Viewing the Display in SmartDashboard
------------------------------------------
+## Viewing the Display in SmartDashboard
 
 .. image:: images/displaying-LiveWindow-values/view-display.png
     :alt: Modifying the components of a subsystem in SmartDashboard.

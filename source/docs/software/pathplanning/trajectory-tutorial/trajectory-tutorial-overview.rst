@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Trajectory Tutorial Overview
-============================
+# Trajectory Tutorial Overview
 
 .. todo:: add pathweaver stuff once it is available
 
@@ -20,8 +19,7 @@ This tutorial is intended to be approachable for teams without a great deal of p
 
 The full robot code for this tutorial can be found in the RamseteCommand Example Project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand)).
 
-Why Trajectory Following?
--------------------------
+## Why Trajectory Following?
 
 FRC\ |reg| games often feature autonomous tasks that require a robot to effectively and accurately move from a known starting location to a known scoring location.  Historically, the most common solution for this sort of task in FRC has been a "drive-turn-drive" approach - that is, drive forward by a known distance, turn by a known angle, and drive forward by another known distance.
 
@@ -29,8 +27,7 @@ While the "drive-turn-drive" approach is certainly functional, in recent years t
 
 Beginning in 2020, WPILib now supplies teams with working, advanced code solutions for trajectory generation and tracking, significantly lowering the "barrier-to-entry" for this kind of advanced and effective autonomous motion.
 
-Required Equipment
-------------------
+## Required Equipment
 
 To follow this tutorial, you will need ready access to the following materials:
 

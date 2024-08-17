@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Hardware APIs
-=============
+# Hardware APIs
 
 This section discusses the control of motors and pneumatics through motor controllers, solenoids and pneumatics, and their interface with Java and C++ WPILib.
 
@@ -13,8 +12,7 @@ This section discusses the control of motors and pneumatics through motor contro
    sensors/index
    misc/index
 
-Motor Controllers
------------------
+## Motor Controllers
 
 A motor controller is responsible on your robot for making motors move. For brushed DC motors such as the :term:`CIM` or 775, the motor controller regulates the voltage that the motor receives, much like a light bulb. For brushless motor controllers such as the Spark MAX, the controller regulates the power delivered to each "phase" of the motor.
 
@@ -24,8 +22,7 @@ A motor controller is responsible on your robot for making motors move. For brus
 
 .. warning:: Connecting a BRUSHLESS motor controller straight to power, such as to a conventional brushed motor controller, will destroy the motor!
 
-FRC Legal Motor Controllers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### FRC Legal Motor Controllers
 
 Motor controllers come in lots of shapes, sizes and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of 2024:
 
@@ -46,24 +43,20 @@ Motor controllers come in lots of shapes, sizes and feature sets. This is the fu
 - Victor SPX Motor Controller (P/N: 217-9191, 17-868388, am-3748)
 
 
-Pneumatics
-----------
+## Pneumatics
 
 Pneumatics are a quick and easy way to make something that's in one state or another using compressed air. For information on operating pneumatics, see :doc:`pneumatics/index`.
 
-FRC Legal Pneumatics controllers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### FRC Legal Pneumatics controllers
 
 - Pneumatics Control Module (P/N: am-2858, 217-4243)
 - Pneumatic Hub (P/N REV-11-1852)
 
-Relays
-------
+## Relays
 
 A relay controls power to a motor or custom electronics in an On/Off fashion.
 
-FRC Legal Relay Modules
-^^^^^^^^^^^^^^^^^^^^^^^
+### FRC Legal Relay Modules
 - Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)
 - Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-SSR6M40-DC200D)
 - Power Distribution Hub (PDH) switched channel (P/N REV-11-1850)

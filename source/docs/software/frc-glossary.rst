@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-FRC Glossary
-============
+# FRC Glossary
 
 .. glossary::
 

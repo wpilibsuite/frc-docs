@@ -1,5 +1,4 @@
-RobotPy subcommands
-===================
+# RobotPy subcommands
 
 When you install RobotPy in your Python installation, it installs a package called ``robotpy-cli``, which provides a ``robotpy`` command that can be used to perform tasks related to your robot and related code.
 

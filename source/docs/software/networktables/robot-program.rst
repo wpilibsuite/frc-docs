@@ -1,5 +1,4 @@
-Writing a Simple NetworkTables Robot Program
-============================================
+# Writing a Simple NetworkTables Robot Program
 
 In a robot program, a NetworkTables server is automatically started on the default instance. So it's only necessary to get the default instance to start publishing or subscribing and have it visible over the network.
 

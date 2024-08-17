@@ -1,9 +1,7 @@
-Manipulating Trajectories
-=========================
+# Manipulating Trajectories
 Once a trajectory has been generated, you can retrieve information from it using certain methods. These methods will be useful when writing code to follow these trajectories.
 
-Getting the total duration of the trajectory
---------------------------------------------
+## Getting the total duration of the trajectory
 Because all trajectories have timestamps at each point, the amount of time it should take for a robot to traverse the entire trajectory is pre-determined. The ``TotalTime()`` (C++) / ``getTotalTimeSeconds()`` (Java) / ``totalTime`` (Python) method can be used to determine the time it takes to traverse the trajectory.
 
 
@@ -24,8 +22,7 @@ Because all trajectories have timestamps at each point, the amount of time it sh
       # Get the total time of the trajectory
       duration = trajectory.totalTime()
 
-Sampling the trajectory
------------------------
+## Sampling the trajectory
 The trajectory can be sampled at various timesteps to get the pose, velocity, and acceleration at that point. The ``Sample(units::second_t time)`` (C++) / ``sample(double timeSeconds)`` (Java/Python) method can be used to sample the trajectory at any timestep. The parameter refers to the amount of time passed since 0 seconds (the starting point of the trajectory). This method returns a ``Trajectory::Sample`` with information about that sample point.
 
 .. tab-set-code::
@@ -58,6 +55,5 @@ The ``Trajectory::Sample`` struct has several pieces of information about the sa
 
 Note: The angular velocity at the sample point can be calculated by multiplying the velocity by the curvature.
 
-Getting all states of the trajectory (advanced)
------------------------------------------------
+## Getting all states of the trajectory (advanced)
 A more advanced user can get a list of all states of the trajectory by calling the ``States()`` (C++) / ``getStates()`` (Java) / ``states`` (Python) method. Each state represents a point on the trajectory. :ref:`When the trajectory is created <docs/software/advanced-controls/trajectories/trajectory-generation:Generating the trajectory>` using the ``TrajectoryGenerator::GenerateTrajectory(...)`` method, a list of trajectory points / states are created. When the user samples the trajectory at a particular timestep, a new sample point is interpolated between two existing points / states in the list.

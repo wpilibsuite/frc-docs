@@ -1,10 +1,8 @@
-Commands and Subsystems
-=======================
+# Commands and Subsystems
 
 When using the command-based framework Shuffleboard makes it easier to understand what the robot is doing by displaying the state of various commands and subsystems in real-time.
 
-Displaying Subsystems
----------------------
+## Displaying Subsystems
 
 To see the status of a subsystem while the robot is operating in either autonomous or teleoperated modes, that is what its default command is and what command is currently using that subsystem, send a subsystem instance to Shuffleboard:
 
@@ -28,8 +26,7 @@ Shuffleboard will display the subsystem name, the default command associated wit
 
 .. image:: images/commands-subsystems-1.png
 
-Subsystems in Test Mode
------------------------
+## Subsystems in Test Mode
 
 In Test mode (Test/Enabled in the driver station) subsystems may be displayed in the LiveWindow tab with the sensors and actuators of the subsystem. This is ideal for verifying of sensors are working by seeing the values that they are returning. In addition, actuators can be operated. For example, motors can be operated using sliders to set their commanded speed and direction. For PIDSubsystems the P, I, D, and F constants are displayed along with the setpoint and an enable control. This is useful for tuning PIDSubsystems by adjusting the constants, putting in a setpoint, and enabling the embedded PIDController. Then the mechanism's response can be observed. This cycle (change parameters, enable, and observe) can be repeated until a reasonable set of parameters is found.
 
@@ -43,8 +40,7 @@ More information on tuning PIDSubsystems can be found :doc:`here <shuffleboard-t
 
    setName(subsystem-name);
 
-Displaying Commands
--------------------
+## Displaying Commands
 
 Using commands and subsystems makes very modular robot programs that can easily be tested and modified. Part of this is because commands can be written completely independently of other commands and can therefore be easily run from Shuffleboard. To write a command to Shuffleboard use the ``SmartDashboard.putData`` method as shown here:
 

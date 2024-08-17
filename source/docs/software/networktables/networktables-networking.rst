@@ -1,10 +1,8 @@
-NetworkTables Networking
-========================
+# NetworkTables Networking
 
 The advantage of the robot program being the server is that it's at a known network name (and typically at a known address) that is based on the team number. This is why it's possible in both the NetworkTables client API and in most dashboards to simply provide the team number, rather than a server address. As the robot program is the server, note this means the NetworkTables server is running on the local computer when running in simulation.
 
-Starting a NetworkTables Server
--------------------------------
+## Starting a NetworkTables Server
 
 .. tab-set::
 
@@ -52,8 +50,7 @@ Starting a NetworkTables Server
             inst.startServer()
 
 
-Starting a NetworkTables Client
--------------------------------
+## Starting a NetworkTables Client
 
 .. tab-set::
 

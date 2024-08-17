@@ -1,5 +1,4 @@
-Miscellaneous Hardware APIs
-===========================
+# Miscellaneous Hardware APIs
 
 This section highlights miscellaneous hardware APIs that are standalone.
 

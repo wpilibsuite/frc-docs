@@ -16,7 +16,7 @@ from sphinx.application import Sphinx
 from dataclasses import dataclass
 
 
-def redown(app: Sphinx, docname: str, text: str) -> str:
+def redown(text: str) -> str:
     """21"""
 
     # replace md code blocks with reST code blocks
@@ -106,7 +106,7 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
         "redown, redown, redown, redown"
         links = lambda: re.sub(
             r"(?<!:)\[([^\]\n]+?)\]\(([^)]+?)\)",
-            r"`\1 <\2>`__ ",
+            r"`\1 <\2>`__",
             text,
         )
         text = links()
@@ -121,14 +121,14 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
 
     text = "".join(chunk.text for chunk in chunks)
 
-    # Path(app.srcdir, docname).with_suffix(".rd").write_text(text)
     return text
 
 
 def setup(app: Sphinx):
     @(lambda breadcrumb: app.connect("source-read", breadcrumb))
-    def _(a, d, c):
-        c[0] = redown(a, d, c[0])
+    def _(app, docname, content):
+        content[0] = redown(content[0])
+        # Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0])
 
     return {
         "version": "builtin",

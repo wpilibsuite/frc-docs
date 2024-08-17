@@ -1,5 +1,4 @@
-PID Control in WPILib
-=====================
+# PID Control in WPILib
 
 .. note:: This article focuses on in-code implementation of PID control in WPILib. For a conceptual explanation of the working of a PIDController, see :ref:`docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID`
 
@@ -7,11 +6,9 @@ PID Control in WPILib
 
 WPILib supports PID control of mechanisms through the ``PIDController`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/PIDController.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_p_i_d_controller.html), :external:py:class:`Python <wpimath.controller.PIDController>`).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 
-Using the PIDController Class
------------------------------
+## Using the PIDController Class
 
-Constructing a PIDController
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Constructing a PIDController
 
 .. note:: While ``PIDController`` may be used asynchronously, it does *not* provide any thread safety features - ensuring threadsafe operation is left entirely to the user, and thus asynchronous usage is recommended only for advanced teams.
 
@@ -38,8 +35,7 @@ In order to use WPILib's PID control functionality, users must first construct a
 
 An optional fourth parameter can be provided to the constructor, specifying the period at which the controller will be run.  The ``PIDController`` object is intended primarily for synchronous use from the main robot loop, and so this value is defaulted to 20ms.
 
-Using the Feedback Loop Output
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Using the Feedback Loop Output
 
 .. note:: The ``PIDController`` assumes that the ``calculate()`` method is being called regularly at an interval consistent with the configured period.  Failure to do this will result in unintended loop behavior.
 
@@ -65,15 +61,13 @@ Using the constructed ``PIDController`` is simple: simply call the ``calculate()
     # and sends it to a motor
     motor.set(pid.calculate(encoder.getDistance(), setpoint))
 
-Checking Errors
-^^^^^^^^^^^^^^^
+### Checking Errors
 
 .. note:: ``getPositionError()`` and ``getVelocityError()`` are named assuming that the loop is controlling a position - for a loop that is controlling a velocity, these return the velocity error and the acceleration error, respectively.
 
 The current error of the measured process variable is returned by the ``getPositionError()`` function, while its derivative is returned by the ``getVelocityError()`` function:
 
-Specifying and Checking Tolerances
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Specifying and Checking Tolerances
 
 .. note:: If only a position tolerance is specified, the velocity tolerance defaults to infinity.
 
@@ -114,13 +108,11 @@ To do this, we first must specify the tolerances with the ``setTolerance()`` met
     # error derivative is less than 10 units
     pid.atSetpoint()
 
-Resetting the Controller
-^^^^^^^^^^^^^^^^^^^^^^^^
+### Resetting the Controller
 
 It is sometimes desirable to clear the internal state (most importantly, the integral accumulator) of a ``PIDController``, as it may be no longer valid (e.g. when the ``PIDController`` has been disabled and then re-enabled).  This can be accomplished by calling the ``reset()`` method.
 
-Setting a Max Integrator Value
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Setting a Max Integrator Value
 
 .. note:: Integrators introduce instability and hysteresis into feedback loop systems.  It is strongly recommended that teams avoid using integral gain unless absolutely no other solution will do - very often, problems that can be solved with an integrator can be better solved through use of a more-accurate :ref:`feedforward <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>`.
 
@@ -150,8 +142,7 @@ The range limits may be increased or decreased using the ``setIntegratorRange()`
     # the total loop output
     pid.setIntegratorRange(-0.5, 0.5)
 
-Disabling Integral Gain if the Error is Too High
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Disabling Integral Gain if the Error is Too High
 
 Another way integral "wind-up" can be alleviated is by limiting the error range where integral gain is active. This can be achieved by setting ``IZone``. If the error is more than ``IZone``, the total accumulated error is reset, disabling integral gain. When the error is equal to or less than IZone, integral gain is enabled.
 
@@ -188,8 +179,7 @@ By default, ``IZone`` is disabled.
     # more than 2
     pid.setIZone(2)
 
-Setting Continuous Input
-^^^^^^^^^^^^^^^^^^^^^^^^
+### Setting Continuous Input
 
 .. warning:: If your mechanism is not capable of fully continuous rotational motion (e.g. a turret without a slip ring, whose wires twist as it rotates), *do not* enable continuous input unless you have implemented an additional safety feature to prevent the mechanism from moving past its limit!
 
@@ -214,8 +204,7 @@ To configure a ``PIDController`` to automatically do this, use the ``enableConti
     # Enables continuous input on a range from -180 to 180
     pid.enableContinuousInput(-180, 180)
 
-Clamping Controller Output
---------------------------
+## Clamping Controller Output
 
 .. tab-set-code::
 

@@ -1,14 +1,12 @@
 .. include:: <isonum.txt>
 
-Driver Station Best Practices
-=============================
+# Driver Station Best Practices
 
 This document was created by Steve Peterson, with contributions from Juan Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and follow-up posts can be found [here](https://www.chiefdelphi.com/t/paper-driver-station-best-practices/164429).
 
 Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop is an easy project for the time between stop build day and your competition. Read on to find lessons learned by many teams over thousands of matches.
 
-Prior To Departing For The Competition
---------------------------------------
+## Prior To Departing For The Competition
 
 1. Dedicate a laptop to be used solely as a driver station. Many teams do. A dedicated machine allows you manage the configuration for one goal – being ready to compete at the field. Dedicated means no other software except the FRC-provided Driver Station software and associated Dashboard installed or running.
 2. Use a business-class laptop for your driver station. Why? They're much more durable than the $300 Black Friday special at Best Buy. They'll survive being banged around at the competition. Business-class laptops have higher quality device drivers, and the drivers are maintained for a longer period than consumer laptops. This makes your investment last longer. Lenovo ThinkPad T series and Dell Latitude are two popular business-class brands you'll commonly see at competitions. There are thousands for sale every day on eBay. The laptop provided in recent rookie kits is a good entry level machine. Teams often graduate from it to bigger displays as they do more with vision and dashboards.
@@ -53,8 +51,7 @@ Prior To Departing For The Competition
 11. Add retention/strain relief to prevent your joystick/gamepad controllers from falling on the floor and/or yanking on the USB ports. This helps prevent issues with intermittent controller connections.
 12. The Windows user account you use to drive must be a member of the Administrator group.
 
-At The Competition
-------------------
+## At The Competition
 
 1. Turn off Windows firewall using :ref:`these instructions <docs/networking/networking-introduction/windows-firewall-configuration:Disabling Windows Firewall>`.
 2. Turn off the Wi-Fi adapter, either using the dedicated hardware Wi-Fi switch or by disabling it in the Adapter Settings control panel.
@@ -64,8 +61,7 @@ At The Competition
 6. Limit web browsing to FRC related web sites. This minimizes the chance of getting malware during the competition.
 7. Don't plan on using internet access to do software updates. There likely won't be any in the venue, and hotel Wi-Fi varies widely in quality. If you do need updates, contact a Control System Advisor in the pit.
 
-Before Each Match
------------------
+## Before Each Match
 
 1. Make sure the laptop is on and logged in prior to the end of the match before yours.
 2. Close programs that aren’t needed during the match – e.g., Visual Studio Code or LabView – when you are competing.

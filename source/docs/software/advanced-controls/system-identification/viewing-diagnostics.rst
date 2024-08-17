@@ -1,8 +1,6 @@
-Viewing Diagnostics
-===================
+# Viewing Diagnostics
 
-Goodness-of-Fit Metrics
------------------------
+## Goodness-of-Fit Metrics
 
 There are three numerical accuracy metrics that are computed with this tool: acceleration :term:`r-squared`, simulated velocity r-squared, and the simulated velocity :term:`RMSE`.
 
@@ -15,16 +13,14 @@ The simulated velocity r-squared is the fraction of the variance in measured vel
 
 The simulated velocity RMSE is the standard deviation of the velocity error from the simulated model.  This is a good estimation of the amount of process noise present during the test routine, and can be used as a low-end estimate for the model noise term in :ref:`state-space control <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>`.
 
-Diagnostic Plots
-----------------
+## Diagnostic Plots
 
 SysId also produces several diagnostic plots to help users evaluate the quality of their model fit.
 
 .. image:: images/plot-view.png
    :alt: Diagnostic plot location
 
-Time-Domain Plots
-^^^^^^^^^^^^^^^^^
+### Time-Domain Plots
 
 .. note:: To improve plot quality, the diagnostic plots are separated by direction.  Be sure to view both the forward *and* backward plots when troubleshooting!
 
@@ -39,8 +35,7 @@ A successful quasistatic graph will be very nearly linear, while a successful dy
 
 Deviation from this behavior is a sign of an :ref:`error <docs/software/advanced-controls/system-identification/viewing-diagnostics:Common Failure Modes>`, either in your robot setup, analysis settings, or your test procedure.
 
-Acceleration-Velocity Plot
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Acceleration-Velocity Plot
 
 The acceleration-versus-velocity plot displays the mechanism velocity versus the portion of acceleration corresponding to factors other than friction (ideally, this would leave only back-EMF) and applied voltage across *all* of the tests.
 
@@ -54,21 +49,18 @@ This plot should be quite linear, with patches of relatively noiseless quasistat
 
 However, if your robot or mechanism has low mass compared to the motor power, this may "eat" what little meaningful acceleration data you have.  In these cases ``kA`` will tend towards zero and can be ignored for feedforward purposes.  However, if ``kA`` cannot be accurately measured, the calculated feedback gains are likely to be inaccurate, and manual tuning may be required.
 
-Common Failure Modes
---------------------
+## Common Failure Modes
 
 When something has gone wrong with the identification, diagnostic plots and console output provide crucial clues as to *what* has gone wrong.  This section describes some common failures encountered while running the system identification tool, the identifying features of their diagnostic plots, and the steps that can be taken to fix them.
 
-Improperly Set Motion Threshold
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Improperly Set Motion Threshold
 
 One of the most-common errors is an inappropriate value for the motion threshold.
 
 .. image:: images/motionthreshold-selector.png
    :alt: Motion threshold selector
 
-Velocity Threshold Too Low
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Velocity Threshold Too Low
 
 .. image:: images/low-threshold.png
    :alt: Quasistatic time-domain plot with velocity threshold too low
@@ -77,8 +69,7 @@ The presence of a "leading tail" (emphasized by added red circle) in the quasist
 
 To solve this, increase the velocity threshold and re-analyze the data.
 
-Motion Threshold Too High
-~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Motion Threshold Too High
 
 .. image:: images/high-threshold.png
    :alt: Quasistatic time-domain plot with velocity threshold too high
@@ -87,8 +78,7 @@ While not nearly as problematic as a too-low threshold, a velocity threshold tha
 
 To solve this, decrease the velocity threshold and re-analyze the data.
 
-Noisy Velocity Signals
-^^^^^^^^^^^^^^^^^^^^^^
+### Noisy Velocity Signals
 
 .. note:: There are two types of noise that affect mechanical systems - signal noise and system noise.  Signal noise corresponds to measurement error, while system noise corresponds to actual physical motion that is unaccounted-for by your model (e.g. vibration).  If SysId suggests that your system is noisy, you must figure out which of the two types of noise is at play - signal noise is often easier to eliminate than system noise.
 

@@ -1,22 +1,18 @@
-Choosing a Dashboard
-====================
+# Choosing a Dashboard
 
 A dashboard is a program used to retrieve and display information about the operation of your robot.  There are two main types of dashboards that teams may need: driver and programmer dashboards.  Some dashboards will try to accommodate both purposes.
 
-Driver Dashboard
-----------------
+## Driver Dashboard
 
 During competition the drive team will use this dashboard to get information from the robot.  It should focus on conveying key information instantly.  This is often best accomplished by using large, colorful, and easy to understand visual elements.  Most teams will also use this dashboard to select their autonomous routine.
 
 Take caution to carefully consider what *needs* to be on this dashboard and if there is another better way of communicating that information.  Any members of the drive team (especially the driver) looking at the dashboard takes their focus away from the match.  Using :ref:`LEDs <docs/software/hardware-apis/misc/addressable-leds:Addressable LEDs>` to indicate the state of your robot is a good example of a way to communicate useful information to the driver without having to take their eyes off the robot.
 
-Programming Dashboard
----------------------
+## Programming Dashboard
 
 This dashboard is designed for debugging code and analyzing data from the robot. It supports the monitoring of a wide variety of information simultaneously, prioritizing function and utility over simplicity or ease of use. This functionality often includes complex data visualization and graphing across extended periods. In scenarios where there is an overwhelming amount of data to review, real-time analysis becomes challenging. The capability to examine past data and replay it proves to be extremely beneficial. While some dashboards may log data transmitted to them, :ref:`on-robot telemetry <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>` using the ``DataLog`` class simplifies the process.
 
-Specific Dashboards (oldest to newest)
---------------------------------------
+## Specific Dashboards (oldest to newest)
 
 .. note:: SmartDashboard and Shuffleboard have a long history of aiding FRC teams. However, they do not have a person to maintain them so are not receiving bug fixes or improvements. Notably, Shuffleboard may experience performance issues on some machines under certain scenarios.  PRs from external contributors will be reviewed.
 
@@ -30,8 +26,7 @@ Specific Dashboards (oldest to newest)
 
 :ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` (Programming) - robot diagnostics, log review/analysis, and data visualization application.  It reads the WPILib Data Log (``.wpilog``) and Driver Station Log (``.dslog`` / ``.dsevents``) file formats, plus live robot data viewing.
 
-Third Party Dashboards
-----------------------
+## Third Party Dashboards
 
 [FRC Web Components](https://github.com/frc-web-components/frc-web-components) (Driver) - A web-based dashboard that can be installed as a standalone application, or as a JavaScript package for custom dashboard solutions.
 

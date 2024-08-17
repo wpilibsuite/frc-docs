@@ -1,14 +1,12 @@
 .. include:: <isonum.txt>
 
-Developing with allwpilib
-=========================
+# Developing with allwpilib
 
 .. important:: This document contains information for developers *of* WPILib. This is not for programming FRC\ |reg| robots.
 
 This is a list of links to the various documentation for the [allwpilib](https://github.com/wpilibsuite/allwpilib) repository.
 
-Quick Start
------------
+## Quick Start
 
 Below is a list of instructions that guide you through cloning, building, publishing and using local allwpilib binaries in a robot project. This quick start is not intended as a replacement for the information that is further listed in this document.
 
@@ -17,8 +15,7 @@ Below is a list of instructions that guide you through cloning, building, publis
 * Publish the artifacts locally by running ``./gradlew publish``
 * [Update your robot project's](https://github.com/wpilibsuite/allwpilib/blob/main/DevelopmentBuilds.md) ``build.gradle`` [to use the artifacts](https://github.com/wpilibsuite/allwpilib/blob/main/DevelopmentBuilds.md)
 
-Core Repository
----------------
+## Core Repository
 .. toctree::
    :maxdepth: 1
 
@@ -29,8 +26,7 @@ Core Repository
    Maven Artifacts <https://github.com/wpilibsuite/allwpilib/blob/main/MavenArtifacts.md>
    Contributor Guidelines <https://github.com/wpilibsuite/allwpilib/blob/main/CONTRIBUTING.md>
 
-NetworkTables
--------------
+## NetworkTables
 
 .. toctree::
    :maxdepth: 1

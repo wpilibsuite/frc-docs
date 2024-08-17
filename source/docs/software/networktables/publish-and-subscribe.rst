@@ -1,8 +1,6 @@
-Publishing and Subscribing to a Topic
-=====================================
+# Publishing and Subscribing to a Topic
 
-Publishing to a Topic
----------------------
+## Publishing to a Topic
 
 In order to create a :term:`topic` and publish values to it, it's necessary to create a :term:`publisher`.
 
@@ -233,8 +231,7 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
                     self.dblPub.close()
 
 
-Subscribing to a Topic
-----------------------
+## Subscribing to a Topic
 
 A :term:`subscriber` receives value updates made to a topic. Similar to publishers, NetworkTable subscribers are represented as type-specific Subscriber classes (e.g. ``BooleanSubscriber``: [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/BooleanSubscriber.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_boolean_subscriber.html), :external:py:class:`Python <ntcore.BooleanSubscriber>`) that must be stored somewhere to continue subscribing.
 
@@ -467,8 +464,7 @@ Subscribers have a range of different ways to read received values. It's possibl
                     # stop subscribing
                     self.dblSub.close()
 
-Using Entry to Both Subscribe and Publish
------------------------------------------
+## Using Entry to Both Subscribe and Publish
 
 An :term:`entry` is a combined publisher and subscriber. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber. Similar to publishers and subscribers, NetworkTable entries are represented as type-specific Entry classes (e.g. ``BooleanEntry``: [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/BooleanEntry.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_boolean_entry.html), :external:py:class:`Python <ntcore.BooleanEntry>`) that must be retained to continue subscribing (and publishing).
 
@@ -727,8 +723,7 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
                     self.dblEntry.close()
 
 
-Using GenericEntry, GenericPublisher, and GenericSubscriber
------------------------------------------------------------
+## Using GenericEntry, GenericPublisher, and GenericSubscriber
 
 For the most robust code, using the type-specific Publisher, Subscriber, and Entry classes is recommended, but in some cases it may be easier to write code that uses type-specific get and set function calls instead of having the NetworkTables type be exposed via the class (object) type. The ``GenericPublisher`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/GenericPublisher.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_generic_publisher.html), :external:py:class:[Python](ntcore.GenericPublisher>`), ``GenericSubscriber`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/GenericSubscriber.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_generic_subscriber.html), :external:py:class:[Python](ntcore.GenericSubscriber>`), and ``GenericEntry`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/GenericEntry.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_generic_entry.html), :external:py:class:`Python <ntcore.GenericEntry>`) classes enable this approach.
 
@@ -955,8 +950,7 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
                     self.sub.close()
                     self.entry.close()
 
-Subscribing to Multiple Topics
-------------------------------
+## Subscribing to Multiple Topics
 
 While in most cases it's only necessary to subscribe to individual topics, it is sometimes useful (e.g. in dashboard applications) to subscribe and get value updates for changes to multiple topics. Listeners (see :ref:`docs/software/networktables/listening-for-change:listening for changes`) can be used directly, but creating a ``MultiSubscriber`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/MultiSubscriber.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_multi_subscriber.html)) allows specifying subscription options and reusing the same subscriber for multiple listeners.
 
@@ -1169,8 +1163,7 @@ While in most cases it's only necessary to subscribe to individual topics, it is
                     # stop subscribing
                     self.multiSub.close()
 
-Publish/Subscribe Options
--------------------------
+## Publish/Subscribe Options
 
 Publishers and subscribers have various options that affect their behavior. Options can only be set at the creation of the publisher, subscriber, or entry. Options set on an entry affect both the publisher and subscriber portions of the entry. The above examples show how options can be set when creating a publisher or subscriber.
 
@@ -1198,8 +1191,7 @@ Entry options:
 
 - ``excludeSelf``: Provides the same behavior as ``excludePublisher`` for the entry's internal publisher. Defaults to false.
 
-NetworkTableEntry
------------------
+## NetworkTableEntry
 
 ``NetworkTableEntry`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/NetworkTableEntry.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_network_table_entry.html), :external:py:class:`Python <ntcore.NetworkTableEntry>`) is a class that exists for backwards compatibility. New code should prefer using type-specific Publisher and Subscriber classes, or GenericEntry if non-type-specific access is needed.
 

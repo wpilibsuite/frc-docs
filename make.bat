@@ -10,7 +10,7 @@ if "%SPHINXBUILD%" == "" (
 set SOURCEDIR=source
 set BUILDDIR=build
 set SPHINXOPTS=-W --keep-going -q -T
-set LINTER=doc8
+set LINTER=python scripts/doc8_redown.py
 set LINTEROPTS=--ignore D001 --ignore D004
 set SIZECHECKER=python -m scripts.imagesizechecker
 set CONFEXCLUDE=--exclude-file source/conf.py

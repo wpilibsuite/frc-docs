@@ -1,12 +1,10 @@
 .. include:: <isonum.txt>
 
-Support Resources
-=================
+# Support Resources
 
 In addition to the documentation here, there are a variety of other resources available to FRC\ |reg| teams to help understand the Control System and software.
 
-Other Documentation
--------------------
+## Other Documentation
 
 In addition to this site there are a few other places teams may check for documentation:
 
@@ -15,8 +13,7 @@ In addition to this site there are a few other places teams may check for docume
 -  [CTRE Software & Resources Page](https://store.ctr-electronics.com/software/)
 -  [REV Robotics Documentation](https://docs.revrobotics.com/docs/)
 
-Forums
-------
+## Forums
 
 Stuck? Have a question not answered by the documentation? Official Support is provided on these forums:
 
@@ -24,18 +21,15 @@ Stuck? Have a question not answered by the documentation? Official Support is pr
 -  [FIRST Inspires Control System Forum](https://forums.firstinspires.org/forum/general-discussions/first-programs/first-robotics-competition/competition-discussion/control-system?f=1338) (wiring, hardware and Driver Station questions)
 -  [FIRST Inspires Programming Forum](https://forums.firstinspires.org/forum/general-discussions/first-programs/first-robotics-competition/competition-discussion/programming-aa) (programming questions for C++, Java, or LabVIEW)
 
-CTRE Support
-------------
+## CTRE Support
 
 Support for Cross The Road Electronics components (Pneumatics Control Module, Power Distribution Panel, Talon SRX, and Voltage Regulator Module) is provided via the email address [support@crosstheroadelectronics.com](mailto:support@crosstheroadelectronics.com).
 
-REV Robotics Support
---------------------
+## REV Robotics Support
 
 Support for REV Robotics components (SPARK MAX, Sensors, Pneumatic Hub, Power Distribution Hub, Radio Power Module) is provided via phone at [844-255-2267](tel:844-255-2267) or via the email address [support@revrobotics.com](support@revrobotics.com).
 
-Other Vendors
--------------
+## Other Vendors
 
 Support for vendors outside of the KOP can be found below.
 
@@ -45,15 +39,13 @@ Support for vendors outside of the KOP can be found below.
 - [PhotonVision (Discord)](https://discord.com/invite/wYxTwym)
 - [Playing with Fusion](https://www.playingwithfusion.com/contactus.php)
 
-Unofficial Support
-------------------
+## Unofficial Support
 
 There are useful forms of support provided by the community through various forums and services. The below links and websites are not endorsed by FIRST\ |reg| and may be used at your own risk.
 
 - [Chief Delphi](https://www.chiefdelphi.com/)
 - [FRC Discord](https://discord.com/invite/frc)
 
-Bug Reporting
--------------
+## Bug Reporting
 
 Found a bug? Let us know by reporting it in the Issues section of the appropriate WPILibSuite project on GitHub: https://github.com/wpilibsuite

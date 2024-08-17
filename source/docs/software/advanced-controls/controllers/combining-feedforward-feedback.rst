@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Combining Feedforward and PID Control
-=====================================
+# Combining Feedforward and PID Control
 
 .. todo:: link to conceptual article when available
 
@@ -9,8 +8,7 @@ Combining Feedforward and PID Control
 
 Feedforward and feedback controllers can each be used in isolation, but are most effective when combined together.  Thankfully, combining these two control methods is *exceedingly* straightforward - one simply adds their outputs together.
 
-Using Feedforward with a PIDController
---------------------------------------
+## Using Feedforward with a PIDController
 
 Users may add any feedforward they like to the output of the controller before sending it to their motors:
 
@@ -33,8 +31,7 @@ Users may add any feedforward they like to the output of the controller before s
 
 Moreover, feedforward is a separate feature entirely from feedback, and thus has no reason to be handled in the same controller object, as this violates separation of concerns.  WPILib comes with several helper classes to compute accurate feedforward voltages for common FRC\ |reg| mechanisms - for more information, see :ref:`docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib`.
 
-Using Feedforward Components with PID
--------------------------------------
+## Using Feedforward Components with PID
 
 .. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/motorcontrol/MotorController.html#setVoltage(double)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_motor_controller.html#a613c23a3336e103876e433bcb8b5ad3e), :external:py:meth:`Python <wpilib.interfaces.MotorController.setVoltage>`) method when applying them to motors to compensate for "voltage sag" from the battery.
 

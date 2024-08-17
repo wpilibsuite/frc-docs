@@ -1,5 +1,4 @@
-Telemetry: Recording and Sending Real-Time Data
-===============================================
+# Telemetry: Recording and Sending Real-Time Data
 
 Recording and viewing :term:`telemetry` data is a crucial part of the engineering process - accurate telemetry data helps you tune your robot to perform optimally, and is indispensable for debugging your robot when it fails to perform as expected.
 
@@ -7,8 +6,7 @@ By default, no telemetry data is recorded (saved) on the robot.  However, record
 
 .. note:: In addition to on-robot recording of telemetry data, teams can record their telemetry data on their driver station computer with :ref:`Shuffleboard recordings <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording:Recording and Playback>`.
 
-Adding Telemetry to Robot Code
-------------------------------
+## Adding Telemetry to Robot Code
 
 WPILib supports several different ways to record and send telemetry data from robot code.
 

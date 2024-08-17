@@ -1,5 +1,4 @@
-Introduction to Robot Simulation
-================================
+# Introduction to Robot Simulation
 
 Often a team may want to test their code without having an actual robot available. WPILib provides teams with the ability to simulate various robot features using simple gradle commands.
 
@@ -81,29 +80,25 @@ Often a team may want to test their code without having an actual robot availabl
 
                python3 -m robotpy sim
 
-Running Robot Dashboards
-------------------------
+## Running Robot Dashboards
 
 Shuffleboard, SmartDashboard, Glass, and AdvantageScope can be used with WPILib simulation when they are configured to connect to the local computer (i.e. ``localhost``).
 
-Shuffleboard
-^^^^^^^^^^^^
+### Shuffleboard
 
 Shuffleboard is automatically configured to look for a NetworkTables instance from the robotRIO but **not from other sources**. To connect to a simulation, open Shuffleboard preferences from the :guilabel:`File` menu and select :guilabel:`NetworkTables` under :guilabel:`Plugins` on the left navigation bar. In the :guilabel:`Server` field, type in the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
 .. image:: images/shuffleboard-networktables.png
    :alt: Shuffleboard connection settings set to localhost.
 
-SmartDashboard
-^^^^^^^^^^^^^^
+### SmartDashboard
 
 SmartDashboard is automatically configured to look for a NetworkTables instance from the roboRIO, but **not from other sources**. To connect to a simulation, open SmartDashboard preferences under the :guilabel:`File` menu and in the :guilabel:`Team Number` field, enter the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
 .. image:: /docs/software/dashboards/smartdashboard/images/smartdashboard-intro/smartdashboard-networktables.png
    :alt: SmartDashboard team number set to localhost.
 
-Glass
-^^^^^
+### Glass
 
 Glass is automatically configured to look for a NetworkTables instance from the roboRIO, but **not from other sources**. To connect to a simulation, open :guilabel:`NetworkTables Settings` under the :guilabel:`NetworkTables` menu and in the :guilabel:`Team/IP` field, enter the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
@@ -111,8 +106,7 @@ Glass is automatically configured to look for a NetworkTables instance from the 
    :alt: Glass NetworkTables Preferences showing Team/IP set to localhost.
 
 
-AdvantageScope
-^^^^^^^^^^^^^^
+### AdvantageScope
 
 No configuration is required to connect to a NetworkTables instance running on the local computer. To connect to a simulation, click :guilabel:`Connect to Simulator` under the :guilabel:`File` menu or press :kbd:`Ctrl+Shift+K`.
 

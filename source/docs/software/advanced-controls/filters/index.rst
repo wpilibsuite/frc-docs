@@ -1,5 +1,4 @@
-Filters
-=======
+# Filters
 
 .. note:: The data used to generate the various demonstration plots in this section can be found :download:`here <resources/filterdemo.csv>`.
 

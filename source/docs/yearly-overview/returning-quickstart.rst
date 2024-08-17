@@ -1,5 +1,4 @@
-Quick Start for Returning Teams
-===============================
+# Quick Start for Returning Teams
 
 This section serves as a launching point for veteran teams that need to update to the current year's software.
 

@@ -1,5 +1,4 @@
-Next Steps
-==========
+# Next Steps
 
 Congratulations! You have completed step 2 and should now have a working software development environment! Step 3 of this tutorial covers updating the hardware so that you can program it, while Step 4 showcases programming a robot in the VS Code Integrated Development Environment (IDE). For further information you can read through the :ref:`VS Code section <docs/software/vscode-overview/index:VS Code Overview>` to familiarize yourself with the IDE.
 

@@ -1,5 +1,4 @@
-Step 4: Programming your Robot
-==============================
+# Step 4: Programming your Robot
 
 .. toctree::
     :maxdepth: 1

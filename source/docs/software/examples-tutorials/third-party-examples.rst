@@ -1,5 +1,4 @@
-Third Party Example Projects
-============================
+# Third Party Example Projects
 
 This list helps you find example programs for use with third party devices.  You can find support for many of these third parties on the :ref:`docs/software/support/support-resources:Support Resources` page.
 

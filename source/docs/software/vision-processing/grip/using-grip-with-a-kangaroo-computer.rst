@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Using GRIP with a Kangaroo Computer
-===================================
+# Using GRIP with a Kangaroo Computer
 
 A recently available computer called the Kangaroo looks like a great platform for running GRIP on FRC\ |reg| robots. Some of the specs
 for this processor include:
@@ -27,8 +26,7 @@ on boot and many other details.
 
     `Grip Plus Kangaroo <grip-plus-kangaroo.pdf>`_
 
-Setup
------
+## Setup
 
 .. figure:: images/using-grip-with-a-kangaroo-computer/setup.png
 
@@ -40,8 +38,7 @@ ethernet dongle to the extra ethernet port on the robot radio.
 In this example you can see the Kangaroo computer (1) connected to a USB hub (3), keyboard, and an HDMI monitor for programming.
 The USB hub is connected to the camera and mouse.
 
-Sample GRIP program
--------------------
+## Sample GRIP program
 
 .. figure:: images/using-grip-with-a-kangaroo-computer/sample-grip-program.png
 
@@ -49,8 +46,7 @@ Attached is the sample program running on the Kangaroo detecting the red heart o
 It is doing a HSV threshold to only get that red color then finding contours, and then filtering the contours using the size and
 solidity. At the end of the pipeline, the values are being published to NetworkTables.
 
-Viewing Contours Report in NetworkTables
-----------------------------------------
+## Viewing Contours Report in NetworkTables
 
 .. figure:: images/using-grip-with-a-kangaroo-computer/viewing-contours-report-in-networktables.png
 
@@ -58,8 +54,7 @@ This is the output from the OutlineViewer (<username>/WPILib/tools/OutlineViewer
 (since there is no roboRIO on the network in this example) and the values being reported back for the single contour that the
 program detected that met the requirements of the Filter Contours operation.
 
-Considerations
---------------
+## Considerations
 
 The Kangaroo runs Windows 10, so care must to be taken to make sure GRIP will keep running on the robot during a match or testing.
 For example, it should not try to do a Windows Update, Virus scan refresh, go to sleep, etc. Once configured, it has the advantage

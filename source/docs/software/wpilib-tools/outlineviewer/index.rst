@@ -1,5 +1,4 @@
-OutlineViewer
-=============
+# OutlineViewer
 
 .. image:: /docs/controls-overviews/images/control-system-software/outline-viewer.png
 

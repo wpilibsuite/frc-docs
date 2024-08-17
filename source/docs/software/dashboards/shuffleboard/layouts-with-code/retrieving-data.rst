@@ -1,5 +1,4 @@
-Retrieving data
-===============
+# Retrieving data
 Unlike ``SmartDashboard.getNumber`` and friends, retrieving data from Shuffleboard is also done through the NetworkTableEntries, which we covered in the previous article.
 
 .. tab-set-code::

@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Digital Inputs - Software
-=========================
+# Digital Inputs - Software
 
 .. note:: This section covers digital inputs in software.  For a hardware guide to digital inputs, see :ref:`docs/hardware/sensors/digital-inputs-hardware:Digital Inputs - Hardware`.
 
@@ -9,8 +8,7 @@ The roboRIO's FPGA supports up to 26 digital inputs.  10 of these are made avail
 
 Digital inputs read one of two states - "high" or "low."  By default, the built-in ports on the RIO will read "high" due to internal pull-up resistors (for more information, see :ref:`docs/hardware/sensors/digital-inputs-hardware:Digital Inputs - Hardware`).  Accordingly, digital inputs are most-commonly used with switches of some sort.  Support for this usage is provided through the :code:`DigitalInput` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/DigitalInput.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_digital_input.html)).
 
-The DigitalInput class
-----------------------
+## The DigitalInput class
 
 A :code:`DigitalInput` can be initialized as follows:
 
@@ -26,8 +24,7 @@ A :code:`DigitalInput` can be initialized as follows:
         // Initializes a DigitalInput on DIO 0
         frc::DigitalInput input{0};
 
-Reading the value of the DigitalInput
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Reading the value of the DigitalInput
 
 The state of the :code:`DigitalInput` can be polled with the :code:`get` method:
 
@@ -43,8 +40,7 @@ The state of the :code:`DigitalInput` can be polled with the :code:`get` method:
         // Gets the value of the digital input.  Returns true if the circuit is open.
         input.Get();
 
-Creating a DigitalInput from an AnalogInput
--------------------------------------------
+## Creating a DigitalInput from an AnalogInput
 
 .. note:: An :code:`AnalogTrigger` constructed with a port number argument can share that analog port with a separate :code:`AnalogInput`, but two `AnalogInput` objects may not share the same port.
 
@@ -78,8 +74,7 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
         // Initializes an AnalogTrigger using the above input
         frc::AnalogTrigger trigger1{input};
 
-Setting the trigger points
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Setting the trigger points
 
 .. note:: For details on the scaling of "raw" :code:`AnalogInput` values, see :doc:`analog-inputs-software`.
 
@@ -103,13 +98,11 @@ To convert the analog signal to a digital one, it is necessary to specify at wha
         // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
         trigger.SetLimitsVoltage(1.5, 4);
 
-Using DigitalInputs in code
----------------------------
+## Using DigitalInputs in code
 
 As almost all switches on the robot will be used through a :code:`DigitalInput`. This class is extremely important for effective robot control.
 
-Limiting the motion of a mechanism
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Limiting the motion of a mechanism
 
 Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| should be given some form of "limit switch" to prevent them from damaging themselves at the end of their range of motions.  A short example is given below:
 
@@ -148,7 +141,6 @@ Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| shoul
             }
         }
 
-Homing a mechanism
-^^^^^^^^^^^^^^^^^^
+### Homing a mechanism
 
 Limit switches are very important for being able to "home" a mechanism with an encoder.  For an example of this, see :ref:`docs/software/hardware-apis/sensors/encoders-software:Homing a mechanism`.

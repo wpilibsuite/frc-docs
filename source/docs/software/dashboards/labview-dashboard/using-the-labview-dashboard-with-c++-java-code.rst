@@ -1,10 +1,8 @@
-Using the LabVIEW Dashboard with C++, Java, or Python Code
-==========================================================
+# Using the LabVIEW Dashboard with C++, Java, or Python Code
 
 The default LabVIEW Dashboard utilizes :term:`NetworkTables` to pass values and is therefore compatible with C++, Java, and Python robot programs. This article covers the keys and value ranges to use to work with the Dashboard.
 
-Drive Tab
----------
+## Drive Tab
 
 .. image:: images/using-the-labview-dashboard-with-c++-java-code/drive-tab.png
 
@@ -94,15 +92,13 @@ There are four outputs that show the motor power to the drivetrain.  This is con
 
       SmartDashboard.putNumberArray("RobotDrive Motors", [self.drivetrain.getLeftFront(), self.drivetrain.getRightFront(), self.drivetrain.getLeftBack(), self.drivetrain.getRightBack()])
 
-Basic Tab
----------
+## Basic Tab
 
 .. image:: images/using-the-labview-dashboard-with-c++-java-code/basic-tab.png
 
 The Basic tab uses a number of keys in the a "DB" sub-table to send/receive Dashboard data. The LED's are output only, the other fields are all bi-directional (send or receive).
 
-Strings
-^^^^^^^
+### Strings
 
 .. image:: images/using-the-labview-dashboard-with-c++-java-code/strings.png
 
@@ -142,8 +138,7 @@ To read string data entered on the Dashboard:
 
       dashData = SmartDashboard.getString("DB/String 0", "myDefaultData")
 
-Buttons and LEDs
-^^^^^^^^^^^^^^^^
+### Buttons and LEDs
 
 .. image:: images/using-the-labview-dashboard-with-c++-java-code/buttons-and-leds.png
 
@@ -183,8 +178,7 @@ To read from the Buttons: (default value is false)
 
       buttonValue = SmartDashboard.getBoolean("DB/Button 0", false)
 
-Sliders
-^^^^^^^
+### Sliders
 
 .. image:: images/using-the-labview-dashboard-with-c++-java-code/sliders.png
 

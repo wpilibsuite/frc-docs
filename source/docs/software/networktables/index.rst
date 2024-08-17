@@ -1,5 +1,4 @@
-NetworkTables
-=============
+# NetworkTables
 
 This section outlines the details of using the NetworkTables (v4) API to communicate information across the robot network.
 
