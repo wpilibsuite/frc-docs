@@ -24,6 +24,7 @@ This method walks through the following steps:
 #. Verifies that the command isn't in a composition.
 #. :term:`No-op` if scheduler is disabled, command is already scheduled, or robot is disabled and command doesn't <commands:runsWhenDisabled>.
 #. If requirements are in use:
+
    * If all conflicting commands are interruptible, cancel them.
    * If not, don't schedule the new command.
 #. Call ``initialize()``.
