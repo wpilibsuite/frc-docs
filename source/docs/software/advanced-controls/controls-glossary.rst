@@ -161,7 +161,7 @@ Controls Glossary
       The measurement of how much an electric field is "pushing" electrons through a circuit. It is sometimes called "Electromotive Force", or "EMF". It is measured in units of "Volts". It always is defined between *two* points in a circuit. If one electron travels between two points that have one volt of EMF between them, it will have been accelerated to the point of having :math:`\frac{1}{6241509074000000000}` joules of energy.
 
    viscous drag
-      The force generated from an object moving *relatively* slowly through non-turbulent fluid. In this region, the force is roughly proportional to the *velocity* of the object. It describes the most common type of "air resistance" an FRC robot would encounter, as well as losses in a gearbox from displacing grease. See [Drag (physics)](https://en.wikipedia.org/wiki/Drag_%28physics%29#Very_low_Reynolds_numbers:_Stokes'_drag) on Wikipedia for more info.
+      The force generated from an object moving *relatively* slowly through non-turbulent fluid. In this region, the force is roughly proportional to the *velocity* of the object. It describes the most common type of "air resistance" an FRC robot would encounter, as well as losses in a gearbox from displacing grease. See [Drag (physics)](https://en.wikipedia.org/wiki/Drag_%28physics%29#Low_Reynolds_numbers:_Stokes'_drag) on Wikipedia for more info.
 
    x-dot
       :math:`\dot{\mathbf{x}}`, or x-dot: the derivative of the :term:`state` vector :math:`\mathbf{x}`. If the :term:`system` had just a velocity :term:`state`, then :math:`\dot{\mathbf{x}}` would represent the :term:`system`\'s acceleration.
