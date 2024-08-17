@@ -168,6 +168,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important:: If at any time, you decide to reset your gyroscope or encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel positions.
 
-.. note:: A full example of a mecanum drive robot with odometry is available here: `C++ <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/MecanumBot>`_ / `Java <https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumbot>`_ / `Python <https://github.com/robotpy/examples/tree/main/MecanumBot>`_
+.. note:: A full example of a mecanum drive robot with odometry is available here: [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/MecanumBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumbot) / [Python](https://github.com/robotpy/examples/tree/main/MecanumBot)
 
 In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.

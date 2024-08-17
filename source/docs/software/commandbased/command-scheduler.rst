@@ -22,7 +22,7 @@ To schedule a command, users call the ``schedule()`` method ([Java](https://gith
 This method walks through the following steps:
 
 #. Verifies that the command isn't in a composition.
-#. :term:`No-op` if scheduler is disabled, command is already scheduled, or robot is disabled and command doesn't <commands:runsWhenDisabled>.
+#. :term:`No-op` if scheduler is disabled, command is already scheduled, or robot is disabled and command doesn't :ref:`docs/software/commandbased/commands:runsWhenDisabled`.
 #. If requirements are in use:
 
    * If all conflicting commands are interruptible, cancel them.

@@ -36,7 +36,7 @@ The WPILib extension provides the FRC\ |reg| specific functionality related to c
 - By typing "WPILib" into the Command Palette
 - By clicking on the WPILib icon in the top right of most windows. This will open the Command Palette with "WPILib" pre-entered
 
-.. note:: It is **not** recommended to install the `Visual Studio IntelliCode <https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode>`_ plugin with the FRC installation of VS Code as it is known to break IntelliSense in odd ways.
+.. note:: It is **not** recommended to install the [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode) plugin with the FRC installation of VS Code as it is known to break IntelliSense in odd ways.
 
 For more information about specific WPILib extension commands, see the other articles in this chapter.
 

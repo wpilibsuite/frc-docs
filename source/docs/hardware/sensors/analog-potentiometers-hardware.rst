@@ -7,7 +7,7 @@ Analog Potentiometers - Hardware
 
 .. warning:: Potentiometers generally have a mechanically-limited travel range.  Users should be careful that their mechanisms do not turn their potentiometers past their maximum travel, as this will damage or destroy the potentiometer.
 
-Apart from :doc:[quadrature encoders](encoders-hardware), another common way of measuring rotation on FRC\ |reg| robots is with analog potentiometers.  A potentiometer is simply a variable resistor - as the shaft of the potentiometer turns, the resistance changes (usually linearly).  Placing this resistor in a [voltage divider](https://en.wikipedia.org/wiki/Voltage_divider) allows the user to easily measure the resistance by measuring the voltage across the potentiometer, which can then be used to calculate the rotational position of the shaft.
+Apart from :doc:`quadrature encoders <encoders-hardware>`, another common way of measuring rotation on FRC\ |reg| robots is with analog potentiometers.  A potentiometer is simply a variable resistor - as the shaft of the potentiometer turns, the resistance changes (usually linearly).  Placing this resistor in a [voltage divider](https://en.wikipedia.org/wiki/Voltage_divider) allows the user to easily measure the resistance by measuring the voltage across the potentiometer, which can then be used to calculate the rotational position of the shaft.
 
 Wiring an analog potentiometer
 ------------------------------

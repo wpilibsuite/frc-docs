@@ -6,7 +6,7 @@ The CTRE Power Distribution Panel (:term:`PDP`) and Rev Power Distribution Hub (
 Creating a Power Distribution Object
 ------------------------------------
 
-To use the either Power Distribution module, create an instance of the :code:[PowerDistribution` class (`Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/PowerDistribution.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_power_distribution.html), :external:py:class:`Python <wpilib.PowerDistribution>`). With no arguments, the Power Distribution object will be detected, and must use CAN ID of 0 for CTRE or 1 for REV. If the CAN ID is non-default, additional constructors are available to specify the CAN ID and type.
+To use the either Power Distribution module, create an instance of the :code:`PowerDistribution` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/PowerDistribution.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_power_distribution.html), :external:py:class:`Python <wpilib.PowerDistribution>`). With no arguments, the Power Distribution object will be detected, and must use CAN ID of 0 for CTRE or 1 for REV. If the CAN ID is non-default, additional constructors are available to specify the CAN ID and type.
 
 .. tab-set-code::
 

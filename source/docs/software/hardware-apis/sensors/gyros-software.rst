@@ -64,7 +64,7 @@ The ADIS16470 uses the :code:`ADIS16470_IMU` class ([Java](https://github.wpilib
 ADXRS450_Gyro
 -------------
 
-The :code:[ADXRS450_Gyro` class (`Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html), :external:py:class:`Python <wpilib.ADXRS450_Gyro>`) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
+The :code:`ADXRS450_Gyro` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html), :external:py:class:`Python <wpilib.ADXRS450_Gyro>`) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
 
 .. note:: ADXRS450 Gyro accumulation is handled through special circuitry in the FPGA; accordingly only a single instance of :code:`ADXRS450_Gyro` may be used.
 
@@ -88,7 +88,7 @@ The :code:[ADXRS450_Gyro` class (`Java](https://github.wpilib.org/allwpilib/docs
 AnalogGyro
 ----------
 
-The :code:[AnalogGyro` class (`Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/AnalogGyro.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_analog_gyro.html), :external:py:class:`Python <wpilib.AnalogGyro>`) provides support for any single-axis gyro with an analog output.
+The :code:`AnalogGyro` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/AnalogGyro.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_analog_gyro.html), :external:py:class:`Python <wpilib.AnalogGyro>`) provides support for any single-axis gyro with an analog output.
 
 .. note:: Gyro accumulation is handled through special circuitry in the FPGA; accordingly, :code:`AnalogGyro`\`s may only be used on analog ports 0 and 1.
 

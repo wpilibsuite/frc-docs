@@ -3,7 +3,7 @@ Setting up CI for Robot Code using GitHub Actions
 
 An important aspect of working in a team environment is being able to test code that is pushed to a central repository such as GitHub. For example, a project manager or lead developer might want to run a set of unit tests before merging a pull request or might want to ensure that all code on the main branch of a repository is in working order.
 
-`GitHub Actions <https://github.com/features/actions>`_ is a service that allows for teams and individuals to build and run unit tests on code on various branches and on pull requests. These types of services are more commonly known as "Continuous Integration" services. This tutorial will show you how to setup GitHub Actions on robot code projects.
+[GitHub Actions](https://github.com/features/actions) is a service that allows for teams and individuals to build and run unit tests on code on various branches and on pull requests. These types of services are more commonly known as "Continuous Integration" services. This tutorial will show you how to setup GitHub Actions on robot code projects.
 
 .. note:: This tutorial assumes that your team's robot code is being hosted on GitHub. For an introduction to Git and GitHub, please see this :doc:`introduction guide </docs/software/basic-programming/git-getting-started>`.
 
@@ -98,7 +98,7 @@ This block of code dictates when the Action will run. Currently, the action will
 
 Each Action workflow is made of a one or more jobs that run either sequentially (one after another) or in parallel (at the same time). In our workflow, there is only one "build" job.
 
-We specify that we want the job to run on an Ubuntu virtual machine and in a virtualized `Docker container <https://www.docker.com/resources/what-container>`_ that contains the JDK, C++ compiler and roboRIO toolchains.
+We specify that we want the job to run on an Ubuntu virtual machine and in a virtualized [Docker container ](https://www.docker.com/resources/what-container) that contains the JDK, C++ compiler and roboRIO toolchains.
 
 .. code-block:: yaml
 
