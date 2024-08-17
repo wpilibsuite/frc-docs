@@ -177,7 +177,7 @@ FRC Glossary
       A publish-subscribe messaging system to communicate data between programs.
 
    no-op
-      No-op is a computer instruction which means no operation. When the computer processor encounters a no-op instruction, it simply moves to the next sequential instruction. Read more about no-op on [Wikipedia](https://en.wikipedia.org/wiki/NOP_(code)) .
+      No-op is a computer instruction which means no operation. When the computer processor encounters a no-op instruction, it simply moves to the next sequential instruction. Read more about no-op on [Wikipedia](https://en.wikipedia.org/wiki/NOP_%28code%29) .
 
    odometry
      Using sensors on the robot to create an estimate of the pose of the robot on the field.

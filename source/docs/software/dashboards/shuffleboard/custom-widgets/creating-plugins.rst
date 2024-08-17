@@ -15,7 +15,7 @@ Plugins provide the ability to create custom widgets, layouts, data sources/type
 
 Create a Custom Plugin
 ----------------------
-In order to define a plugin, the plugin class must be a subclass of [edu.wpi.first.shuffleboard.api.Plugin]( https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java) or one of its subclasses. An example of a plugin class would be as following.
+In order to define a plugin, the plugin class must be a subclass of [edu.wpi.first.shuffleboard.api.Plugin](https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java) or one of its subclasses. An example of a plugin class would be as following.
 
 .. tab-set-code::
 
