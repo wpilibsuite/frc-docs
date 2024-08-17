@@ -5,7 +5,7 @@ Git Version Control Introduction
 
 .. important:: A more in-depth guide on Git is available on the [Git website](https://git-scm.com/book/en/v2).
 
-`Git <https://git-scm.com/about>`_ is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the Linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
+[Git](https://git-scm.com/about) is a Distributed Version Control System (VCS) created by Linus Torvalds, also known for creating and maintaining the Linux kernel. Version Control is a system for tracking changes of code for developers. The advantages of Git Version Control are:
 
 - Separation of testing environments into *branches*
 - Ability to navigate to a particular *commit* without removing history
@@ -19,9 +19,9 @@ Prerequisites
 
 You have to download and install Git from the following links:
 
-- `Windows <https://git-scm.com/download/win>`_
-- `macOS <https://git-scm.com/download/mac>`_
-- `Linux <https://git-scm.com/download/linux>`_
+- [Windows](https://git-scm.com/download/win)
+- [macOS](https://git-scm.com/download/mac)
+- [Linux](https://git-scm.com/download/linux)
 
 .. note:: You may need to add Git to your [path](https://www.google.com/search?q=adding+git+to+path)
 
@@ -53,9 +53,9 @@ Git repositories usually consist of:
 Creating the repository
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-You can store the repository locally, or through a remote -- a remote being the cloud, or possibly another storage medium or server that hosts your repository. `GitHub <https://github.com/>`_ is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
+You can store the repository locally, or through a remote -- a remote being the cloud, or possibly another storage medium or server that hosts your repository. [GitHub](https://github.com/) is a popular free hosting service. Numerous developers use it, and that's what this tutorial will use.
 
-.. note:: There are various providers that can host repositories. `Gitlab <https://about.gitlab.com>`_ and `Bitbucket <https://bitbucket.org/>`_ are a few alternatives to Github.
+.. note:: There are various providers that can host repositories. [Gitlab](https://about.gitlab.com) and [Bitbucket](https://bitbucket.org/) are a few alternatives to Github.
 
 Creating a GitHub Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -152,7 +152,7 @@ In the previous example, we created a file called README.md. Open that file in y
      1 file changed, 2 insertions(+), 0 deletions(-)
     > git push
 
-.. note:: Writing good commit messages is a key part of a maintainable project. A guide on writing commit messages can be found `here <https://cbea.ms/git-commit/>`_.
+.. note:: Writing good commit messages is a key part of a maintainable project. A guide on writing commit messages can be found [here](https://cbea.ms/git-commit/).
 
 Git Pull
 ^^^^^^^^
@@ -270,7 +270,7 @@ Gitignore
 
 .. important:: It is extremely important that teams **do not** modify the ``.gitignore`` file that is included with their robot project. This can lead to offline deployment not working.
 
-A ``.gitignore`` file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be committed. They will also not show up with `git status <https://git-scm.com/docs/git-status>`_.
+A ``.gitignore`` file is commonly used as a list of files to not automatically commit with ``git add``. Any files or directory listed in this file will **not** be committed. They will also not show up with [git status](https://git-scm.com/docs/git-status).
 
 Additional Information can be found [here](https://www.atlassian.com/git/tutorials/saving-changes/gitignore).
 
@@ -295,4 +295,4 @@ Additional Information
 
 A much more in-depth tutorial can be found at the official [git](https://git-scm.com/docs/gittutorial) website.
 
-A guide for correcting common mistakes can be found at the git `flight rules <https://github.com/k88hudson/git-flight-rules/blob/master/README.md>`_ repository.
+A guide for correcting common mistakes can be found at the git [flight rules](https://github.com/k88hudson/git-flight-rules/blob/master/README.md) repository.

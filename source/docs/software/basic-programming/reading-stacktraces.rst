@@ -142,7 +142,7 @@ Sometimes, just looking at code isn't enough to spot the issue. The :ref:`single
 Search for More Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-`Google <https://www.google.com/>`_ is a phenomenal resource for understanding the root cause of errors. Searches involving the programming language and the name of the exception will often yield good results on more explanations for what the error means, how it comes about, and potential fixes.
+[Google](https://www.google.com/) is a phenomenal resource for understanding the root cause of errors. Searches involving the programming language and the name of the exception will often yield good results on more explanations for what the error means, how it comes about, and potential fixes.
 
 Seeking Outside Help
 ^^^^^^^^^^^^^^^^^^^^

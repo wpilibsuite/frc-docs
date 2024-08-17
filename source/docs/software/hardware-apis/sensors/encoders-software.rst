@@ -28,7 +28,7 @@ Examples of quadrature encoders:
 
 - [AMT103-V](https://www.cuidevices.com/product/motion/rotary-encoders/incremental/modular/amt10-v-kit/amt103-v) available through FIRST Choice
 - [CIMcoder](https://www.andymark.com/products/cimcoder-encoder-cim-motor-high-resolution)
-- `CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_
+- [CTRE Mag Encoder](https://store.ctr-electronics.com/srx-mag-encoder/)
 - [Grayhill 63r](https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf)
 - [REV Through Bore Encoder](https://www.revrobotics.com/rev-11-1271/)
 - [US Digital E4T](https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-kit)

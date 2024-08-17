@@ -14,7 +14,7 @@ For documents that will have an identical software/hardware name, append "Hardwa
 
 Suffix filenames with the ``.rst`` extension.
 
-.. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is VS Code with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_.
+.. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is VS Code with the [reStructuredText extension](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>).
 
 Text
 ----
@@ -32,9 +32,9 @@ Use the following case for these terms:
 - Linux (not linux)
 - Java (not java)
 
-Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <https://docutils.sourceforge.io/docs/ref/rst/definitions.html#character-entity-sets>`_.
+Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the [standard character entity sets](https://docutils.sourceforge.io/docs/ref/rst/definitions.html#character-entity-sets).
 
-Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found `here <https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf>`_.
+Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found [here](https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf).
 
 Use literals for filenames, function, and variable names.
 
@@ -98,7 +98,7 @@ All code blocks should have a language specified.
 
 1. Exception: Content where formatting must be preserved and has no language. Instead use ``text``.
 
-Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
+Follow the [WPILib style guide](https://github.com/wpilibsuite/styleguide/) for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
 
 RLI (Remote Literal Include)
 ----------------------------

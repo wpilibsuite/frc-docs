@@ -6,7 +6,7 @@ The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` i
 
 A good widget allows the end-user to customize the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that is useful for defining the static layout of the widget (Panes, Labels and Controls).
 
-More about FXML can be found `here <https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html>`_.
+More about FXML can be found [here](https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html).
 
 Defining a Widget's FXML
 ------------------------
@@ -31,7 +31,7 @@ There are many different types of Pane, they are as noted:
 
    - Anchor Panes allow child elements to be placed in the top, bottom, left side, right side, or center of the pane.
 
-Layout panes are also extremely useful for placing child nodes in one horizontal row using a `HBox <https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html>`_ or one vertical column using a `VBox <https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html>`_.
+Layout panes are also extremely useful for placing child nodes in one horizontal row using a [HBox](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html) or one vertical column using a [VBox](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html).
 
 The basic syntax for defining a Pane using FXML would be as the following:
 

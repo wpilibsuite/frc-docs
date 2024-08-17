@@ -59,8 +59,8 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
                    For more information on the GIL and its effects, you may wish to read the following resources:
 
-                   * `Python Wiki: Global Interpreter Lock <https://wiki.python.org/moin/ GlobalInterpreterLock>`_
-                   * `Efficiently Exploiting Multiple Cores with Python <http://python-notes.curiousefficiency.org/en/latest/python3/multicore_python.html>`_
+                   * [Python Wiki: Global Interpreter Lock](https://wiki.python.org/moin/GlobalInterpreterLock>)
+                   * [Efficiently Exploiting Multiple Cores with Python](http://python-notes.curiousefficiency.org/en/latest/python3/multicore_python.html)
 
       This introduces a number of rules that your image processing code must follow to efficiently and safely run on the RoboRIO:
 

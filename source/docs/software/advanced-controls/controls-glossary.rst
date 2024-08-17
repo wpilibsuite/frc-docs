@@ -25,7 +25,7 @@ Controls Glossary
       Used in position or negative feedback with a :term:`plant` to bring about a desired :term:`system state <state>` by driving the difference between a :term:`reference` signal and the :term:`output` to zero.
 
    convolution
-      A mathematical operation that calculates a weighted moving average of one function, with the weights assigned by a second function. A common way to "filter" sensor input is to apply a *convolution* to it, using a carefully-chosen filtering function. See `convolution <https://en.wikipedia.org/wiki/Convolution>`__ on Wikipedia for more info.
+      A mathematical operation that calculates a weighted moving average of one function, with the weights assigned by a second function. A common way to "filter" sensor input is to apply a *convolution* to it, using a carefully-chosen filtering function. See [convolution](https://en.wikipedia.org/wiki/Convolution>) on Wikipedia for more info.
 
    counter-electromotive force
       A :term:`voltage` generated in a spinning motor. The voltage is a result of the fact that has a coil of wire rotating near a magnet. See [Counter-electromotive_force](https://en.wikipedia.org/wiki/Counter-electromotive_force) on Wikipedia for more info.
@@ -69,7 +69,7 @@ Controls Glossary
       Inputs are often represented by the variable :math:`\mathbf{u}`, a column vector with one entry per :term:`input` to the :term:`system`.
 
    least-squares regression
-      A curve-fitting technique which picks a curve to minimize the *square* of the error between the fitted curve and the actual measured data. See `ordinary least-squares regression <https://en.wikipedia.org/wiki/Linear_regression>`__ on Wikipedia for more info.
+      A curve-fitting technique which picks a curve to minimize the *square* of the error between the fitted curve and the actual measured data. See [ordinary least-squares regression](https://en.wikipedia.org/wiki/Linear_regression) on Wikipedia for more info.
 
    LQR
      Linear-Quadratic Regulator - A feedback control scheme which seeks to operate a system in a "most optimal" or "lowest cost" manner, in the sense of minimizing the square of some "cost function" that represents a combination of system error and control effort. This requires an accurate mathematical model of the system being controlled, and function describing the "cost" of any given system state. See [LQR](https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator) on Wikipedia for more info.
@@ -98,7 +98,7 @@ Controls Glossary
       A graph of a function's value and its :term:`derivative` as they change in time, given some initial starting conditions. They are useful for analyzing system behavior (stable/unstable operating points, limit cycles, etc.) given a certain set of parameters or starting conditions. See [phase portrait](https://en.wikipedia.org/wiki/Phase_portrait) on Wikipedia for more info.
 
    PID
-      Proportional-Integral-Derivative - A feedback controller which calculates a :term:`control signal` from a weighted sum of the :term:`error`, the rate of change of the error, and an accumulated sum of previous errors. See `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__ on Wikipedia for more info.
+      Proportional-Integral-Derivative - A feedback controller which calculates a :term:`control signal` from a weighted sum of the :term:`error`, the rate of change of the error, and an accumulated sum of previous errors. See [PID controller](https://en.wikipedia.org/wiki/PID_controller> on Wikipedia for more info.
 
    plant
       The :term:`system` or collection of actuators being controlled.
@@ -126,7 +126,7 @@ Controls Glossary
       The time a :term:`system` takes to settle at the :term:`reference` after a :term:`step input` is applied.
 
    signum function
-      A non-continuous function that expresses the "sign" of its input. It is equal to -1 for all negative input numbers, 0 for an input of 0, and 1 for all positive input numbers. See `signum function <https://en.wikipedia.org/wiki/Sign_function>`__ on Wikipedia for more info.
+      A non-continuous function that expresses the "sign" of its input. It is equal to -1 for all negative input numbers, 0 for an input of 0, and 1 for all positive input numbers. See [signum function](https://en.wikipedia.org/wiki/Sign_function) on Wikipedia for more info.
 
    state
       A characteristic of a :term:`system` (e.g., velocity) that can be used to determine the :term:`system <system>`\'s future behavior. In state-space notation, the state of a system is written as a column vector describing its position in state-space.
