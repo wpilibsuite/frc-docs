@@ -50,7 +50,7 @@ Analog
 
 An analog pressure switch ([REV-11-1107](https://www.revrobotics.com/rev-11-1107/) can be connected directly to the analog pressure sensor port 0 input terminals. Using an analog pressure sensor allows reading the pressure in the pneumatic system through code and setting custom trigger thresholds for turning on and off the compressor.
 
-.. warning:: The Analog Pressure Sensor port is a very tight fit and requires special attention. See [REV Wiring an Analog Pressure Sensor](https://docs.revrobotics.com/rev-11-1852/pneumatic-hub-getting-started/wiring-the-pneumatic-hub#wiring-an-analog-pressure-sensor) for more tips
+.. warning:: The Analog Pressure Sensor port is a very tight fit and requires special attention. See [REV Wiring an Analog Pressure Sensor](https://docs.revrobotics.com/ion-control-system/ph/gs/wiring#wiring-an-analog-pressure-sensor) for more tips
 
 Solenoids
 ---------

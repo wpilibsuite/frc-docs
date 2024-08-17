@@ -82,7 +82,7 @@ The ``andThen()`` ([Java](https://github.wpilib.org/allwpilib/docs/development/j
 Repeating Sequence
 ^^^^^^^^^^^^^^^^^^
 
-As it's a fairly common combination, the ``RepeatingSequence`` factory ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Commands.html#repeatingSequence(edu.wpi.first.wpilibj2.command.Command...)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/namespacefrc2_1_1cmd.html#ae363301748047f753dcbe3eca0a10ced), :external:py:func:`Python <commands2.cmd.repeatingSequence>`) creates a `Repeating`_ `Sequence`_ that runs until interrupted, restarting from the first command each time the last command finishes.
+As it's a fairly common combination, the ``RepeatingSequence`` factory ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Commands.html#repeatingSequence(edu.wpi.first.wpilibj2.command.Command...)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/namespacefrc2_1_1cmd.html#ac6b82e1b867c16264aa4e4bd79724d8c), :external:py:func:`Python <commands2.cmd.repeatingSequence>`) creates a `Repeating`_ `Sequence`_ that runs until interrupted, restarting from the first command each time the last command finishes.
 
 Parallel
 ^^^^^^^^
