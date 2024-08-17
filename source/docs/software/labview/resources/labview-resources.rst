@@ -6,13 +6,13 @@
 
 ## LabVIEW Basics
 
-NI provides `tutorials on the basics of LabVIEW <https://www.ni.com/getting-started/labview-basics/>`_. These tutorials can help you get acquainted with the LabVIEW environment and the basics of the graphical, dataflow programming model used in LabVIEW.
+NI provides [tutorials on the basics of LabVIEW](https://www.ni.com/getting-started/labview-basics/). These tutorials can help you get acquainted with the LabVIEW environment and the basics of the graphical, dataflow programming model used in LabVIEW.
 
 .. todo:: Add academic videos when link fixed www.ni.com/academic/students/learn-labview/
 
 ## NI FRC Tutorials
 
-NI also hosts many `FRC specific tutorials and presentations ranging from basic to advanced <https://forums.ni.com/t5/FIRST-Robotics-Competition/Archived-2015-FRC-LabVIEW-Additional-Resources/ta-p/3528790?profile.language=en>`_. For an in-depth single resource check out the FRC Basic and Advanced Training Classes linked near the bottom of the page.
+NI also hosts many [FRC specific tutorials and presentations ranging from basic to advanced](https://forums.ni.com/t5/FIRST-Robotics-Competition/Archived-2015-FRC-LabVIEW-Additional-Resources/ta-p/3528790?profile.language=en). For an in-depth single resource check out the FRC Basic and Advanced Training Classes linked near the bottom of the page.
 
 ## Installed Tutorials and Examples
 

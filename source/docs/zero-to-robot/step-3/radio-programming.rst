@@ -10,9 +10,9 @@ The FRC Radio Configuration Utility requires administrator privileges to configu
 
 Download the latest FRC Radio Configuration Utility Installer from the following links:
 
-`FRC Radio Configuration 24.0.1 <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip>`_
+[FRC Radio Configuration 24.0.1](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip)
 
-`FRC Radio Configuration 24.0.1 Israel Version <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip>`_
+[FRC Radio Configuration 24.0.1 Israel Version](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip)
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
@@ -125,7 +125,7 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 
 .. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`Disabling Network Adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>` for more info.
 
-   Teams may also see this error with Operating Systems configured for languages other than US English. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.html>`_.
+   Teams may also see this error with Operating Systems configured for languages other than US English. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on [this page](https://www.java.com/en/download/help/locale.html).
 
 ## Select Radio and Operating Mode
 
@@ -193,7 +193,7 @@ If an error occurs during the configuration process, follow the instructions in 
 - Make sure your firewall is turned off.
 - Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
 - Ensure the ethernet is plugged into the port closest to the power jack on the wireless bridge.
-- If using an Operating System configured for languages other than US English, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.html>`_.
+- If using an Operating System configured for languages other than US English, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on [this page](https://www.java.com/en/download/help/locale.html).
 - Due to Unicode incompatibles, non-US Teams may face a configuration failure because of incorrect network interface reading. In that case, change the network adapter name to another name in English and retry.
 - Some users have reported success after installing [npcap 1.60](https://npcap.com/). If this doesn't resolve the issue, it's recommended to uninstall npcap and the radio tool and then reinstall the radio tool in order to get back to a known configuration.
 - If all else fails, try a different computer.

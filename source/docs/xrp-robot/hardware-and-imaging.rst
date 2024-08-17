@@ -10,7 +10,7 @@ To get started with the XRP, you will need to have the necessary hardware.
 
 .. note::
 
-   See the assembly instructions on the `XRP User Guide <https://xrpusersguide.readthedocs.io/en/latest/course/building.html>`_.
+   See the assembly instructions on the [XRP User Guide](https://xrpusersguide.readthedocs.io/en/latest/course/building.html).
 
    You should follow the instructions up to and including the point where the XRP arm is mounted to the servo.
 

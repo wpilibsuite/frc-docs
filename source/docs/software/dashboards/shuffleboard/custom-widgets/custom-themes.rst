@@ -1,6 +1,6 @@
 # Custom Themes
 
-Since shuffleboard is a JavaFX application, it has support for custom themes via Cascading Stylesheets (**CSS** for short). These are commonly used on webpages for making HTML look nice, but JavaFX also has support, albeit for a different language subset (see `here <https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/doc-files/cssref.html>`_ for documentation on how to use it).
+Since shuffleboard is a JavaFX application, it has support for custom themes via Cascading Stylesheets (**CSS** for short). These are commonly used on webpages for making HTML look nice, but JavaFX also has support, albeit for a different language subset (see [here](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/doc-files/cssref.html) for documentation on how to use it).
 
 Shuffleboard comes with three themes by default: Material Light, Material Dark, and Midnight. These are color variations on the same material design stylesheet. In addition, they inherit from a ``base.css`` stylesheet that defines styles for the custom components ,defined in shuffleboard or libraries that it uses; the base material design stylesheet only applies to the UI components built into JavaFX.
 

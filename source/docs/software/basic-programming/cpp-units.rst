@@ -175,4 +175,4 @@ Some WPILib classes represent objects that could naturally work with multiple ch
    // Max acceleration of 20 radians per second squared
    frc::TrapezoidProfile<units::radians>::Constraints{10_rad_per_s, 20__rad_per_s / 1_s};
 
-For more detailed documentation, please visit the official `GitHub page <https://github.com/nholthaus/units>`_ for the units library.
+For more detailed documentation, please visit the official [GitHub page](https://github.com/nholthaus/units) for the units library.

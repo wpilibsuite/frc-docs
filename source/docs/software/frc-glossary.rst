@@ -161,10 +161,10 @@
       Light-Emitting Diode - a semiconductor device that emits light when current flows through it.  Used on multiple robot parts to convey the status of the device.
 
    mass
-      the amount of matter in a physical object. Objects with more mass will resist changes in motion more than objects with less mass. See `mass <https://en.wikipedia.org/wiki/Mass>`_ on Wikipedia for more info.
+      the amount of matter in a physical object. Objects with more mass will resist changes in motion more than objects with less mass. See [mass](https://en.wikipedia.org/wiki/Mass) on Wikipedia for more info.
 
    moment of inertia
-      The property of an object that describes both how much mass it has, and how that mass is distributed relative to a certain axis of rotation. Objects with higher moments of inertia resist changes in rotational motion more than objects with lower moments of inertia. Increasing the moment of inertia is accomplished by adding more mass, or moving the mass further away from the axis of rotation. See `moment of inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`_ on Wikipedia for more info.
+      The property of an object that describes both how much mass it has, and how that mass is distributed relative to a certain axis of rotation. Objects with higher moments of inertia resist changes in rotational motion more than objects with lower moments of inertia. Increasing the moment of inertia is accomplished by adding more mass, or moving the mass further away from the axis of rotation. See [moment of inertia](https://en.wikipedia.org/wiki/Moment_of_inertia) on Wikipedia for more info.
 
    mutable
       An object that can be modified after it is created.
@@ -176,7 +176,7 @@
       A publish-subscribe messaging system to communicate data between programs.
 
    no-op
-      No-op is a computer instruction which means no operation. When the computer processor encounters a no-op instruction, it simply moves to the next sequential instruction. Read more about no-op on `Wikipedia <https://en.wikipedia.org/wiki/NOP_(code)>`_ .
+      No-op is a computer instruction which means no operation. When the computer processor encounters a no-op instruction, it simply moves to the next sequential instruction. Read more about no-op on [Wikipedia](https://en.wikipedia.org/wiki/NOP_%28code%29) .
 
    odometry
      Using sensors on the robot to create an estimate of the pose of the robot on the field.
@@ -224,7 +224,7 @@
       Resource Acquisition Is Initialization - a language behavior (in C++, but not in Java) where holding a resource is tied to object lifetime.
 
    retro-reflection
-      The property of reflecting incoming light back at the same angle it came in at, rather than an incident angle (like a mirror), absorbing it, or scattering it. Most FRC vision processing targets are retro-reflective. See `retroreflector <https://en.wikipedia.org/wiki/Retroreflector>`_ on Wikipedia for more information.
+      The property of reflecting incoming light back at the same angle it came in at, rather than an incident angle (like a mirror), absorbing it, or scattering it. Most FRC vision processing targets are retro-reflective. See [retroreflector](https://en.wikipedia.org/wiki/Retroreflector) on Wikipedia for more information.
 
    recursive composition
       A type of :term:`composition` in which the composite object may contain components of the same type as itself. For example, a command group may contain one or more command groups. See [recursive composition](https://en.wikipedia.org/wiki/Object_composition#Recursive_composition) on Wikipedia for more info. See also :term:`recursive composition`.

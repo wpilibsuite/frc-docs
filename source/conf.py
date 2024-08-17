@@ -140,7 +140,7 @@ todo_emit_warnings = False
 todo_include_todos = False
 
 # Disable following anchors in URLS for linkcheck
-linkcheck_anchors = False
+linkcheck_anchors = True
 
 # Linkcheck Exclusions
 linkcheck_ignore = [
@@ -158,6 +158,12 @@ linkcheck_ignore = [
     r".*stackoverflow.com.*",
     r".*allaboutcircuits.com.*",
     r".*knowledge.ni.com.*",
+]
+
+linkcheck_anchors_ignore_for_url = [
+    r".*github.com.*",
+    r".*github.wpilib.org/allwpilib/docs/development/java/.*",  # until #2695 is fixed
+    r".*ni.com/en/support/downloads/drivers/download.frc-game-tools.html.*",
 ]
 
 # Sets linkcheck timeout in seconds

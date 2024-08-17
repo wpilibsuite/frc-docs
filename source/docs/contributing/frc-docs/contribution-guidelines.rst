@@ -4,7 +4,7 @@
 
 Welcome to the contribution guidelines for the frc-docs project. If you are unfamiliar to writing in the reStructuredText format, please read up on it [here](https://sphinx-tutorial.readthedocs.io/cheatsheet/).
 
-.. important:: *FIRST*\ |reg| retains all rights to documentation and images provided. Credit for articles/updates will be in the `GitHub commit history. <https://github.com/wpilibsuite/frc-docs/graphs/commit-activity>`_
+.. important:: *FIRST*\ |reg| retains all rights to documentation and images provided. Credit for articles/updates will be in the [GitHub commit history.](https://github.com/wpilibsuite/frc-docs/graphs/commit-activity)
 
 ## Mission Statement
 

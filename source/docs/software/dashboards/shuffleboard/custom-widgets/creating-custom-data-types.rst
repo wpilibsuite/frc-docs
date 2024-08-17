@@ -2,7 +2,7 @@
 Widgets allow us to control and visualize different types of data. This data could be integers and doubles or even Java Objects. In order to display these types of data using widgets, it is helpful to create a container class for them. It is not necessary to create your own Data Class if the widget will handle single fielded data types such as doubles, arrays, or strings.
 
 ## Creating The Data Class
-In this example, we will create a custom data type for a 2D Point and its x and y coordinates. In order to create a custom data type class, it must extend the abstract class `ComplexData <https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_.
+In this example, we will create a custom data type for a 2D Point and its x and y coordinates. In order to create a custom data type class, it must extend the abstract class [ComplexData](https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java).
 Your custom data class must also implement the ``asMap()`` method that returns the represented data as a simple map as noted below with the ``@Override`` annotation:
 
 .. code-block:: java
