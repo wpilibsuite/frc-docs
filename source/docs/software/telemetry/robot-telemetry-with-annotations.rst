@@ -4,7 +4,7 @@ New for 2025: Robot Telemetry with Annotations (Java Only)
 At its most basic, telemetry with annotations can be accomplished with only a few lines of code:
 
 #. Add the ``@Logged`` annotation to your main robot class and to the classes it references, like subsystems
-#. Bind the logger to the robot in ``robotInit()`` to start logging
+#. Bind the logger to the robot in ``Robot()`` to start logging
 
 This is enough to start logging data to NetworkTables for display and capture on a desktop application like a dashboard or AdvantageScope. Optionally, you can start the data log manager to capture the NetworkTables-logged data and save it to a log file on the roboRIO.
 
