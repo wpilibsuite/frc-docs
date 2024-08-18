@@ -12,5 +12,4 @@ This section describes WPILib support for generating parameterized spline trajec
    manipulating-trajectories
    transforming-trajectories
    ltv
-   holonomic
    troubleshooting
