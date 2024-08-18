@@ -308,7 +308,7 @@ To wait until a certain condition becomes ``true``, the library offers the ``Com
 
 There are commands for various control setups:
 
-- ``TrapezoidProfileCommand`` tracks a trapezoid motion profile. For more info, see :ref:`docs/software/commandbased/profile-subsystems-commands:TrapezoidProfileCommand`.
+- ``TrapezoidProfile`` tracks a trapezoid motion profile. For more info, see :doc:`/docs/software/commandbased/profile-subsystems-commands`.
 
 - ``ProfiledPIDCommand`` combines PID control with trapezoid motion profiles. For more info, see :ref:`docs/software/commandbased/profilepid-subsystems-commands:ProfiledPIDCommand`.
 
