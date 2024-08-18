@@ -110,6 +110,8 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
 
 Make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
 
+.. note:: RLIs should use a tag instead of main to ensure the documentation isn't broken the next time there is a change to the RLIed code. If a tag hasn't been created, use the full (40 character) commit hash.
+
 ## Tabs
 To create code tabs in an article, you can use the ``.. tab-set-code::`` directive.  You can use ``code-block`` and ``rli`` directives inside. The format is:
 
