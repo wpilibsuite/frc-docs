@@ -106,7 +106,7 @@ Supported Operating Systems and Architectures:
 - Add ``PWMSparkFlex`` Motor Controller
 - ADIS16470: allow accessing all three axes
 - Deprecated ``MotorControllerGroup``. Use ``PWMMotorController`` ``addFollower()`` method or if using CAN motor controllers use their method of following.
-- Added functional inteface to ``DifferentialDrive`` and ``MecanumDrive``. The ``MotorController`` interface may be removed in the future to reduce coupling with vendor libraries. Instead of passing ``MotorController`` objects, the following method references or lambda expressions can be used:
+- Added functional interface to ``DifferentialDrive`` and ``MecanumDrive``. The ``MotorController`` interface may be removed in the future to reduce coupling with vendor libraries. Instead of passing ``MotorController`` objects, the following method references or lambda expressions can be used:
 
     - Java: ``DifferentialDrive drive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);``
     - C++: ``frc::DifferentialDrive m_drive{[&](double output) { m_leftMotor.Set(output); }, [&](double output) { m_rightMotor.Set(output); }};``

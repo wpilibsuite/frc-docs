@@ -2,7 +2,7 @@
 
 WPILib supports a robot programming methodology called "command-based" programming. In general, "command-based" can refer both the general programming paradigm, and to the set of WPILib library resources included to facilitate it.
 
-"Command-based" programming is one possible :term:`design pattern` for robot software. It is not the only way to write a robot program, but it is a very effective one. Command-based robot code tends to be clean, extensible, and (with some tricks) easy to re-use from year to year.
+"Command-based" programming is one possible :term:`design pattern` for robot software. It is not the only way to write a robot program, but it is a very effective one. Command-based robot code tends to be clean, extensible, and (with some tricks) easy to reuse from year to year.
 
 The command-based paradigm is also an example of :term:`declarative programming`. The command-based library allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in the command-based program, a user can specify that "the robot should perform an action when a condition is true" (note the use of a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`):
 

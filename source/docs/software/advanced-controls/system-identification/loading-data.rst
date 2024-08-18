@@ -4,7 +4,7 @@ After downloading the WPILog containing the tests from the roboRIO, go to the ``
 
 After the file loads, look for a ``string`` type entry with a name containing "state". Drag this entry into the Data Selector pane's Test State slot.
 
-.. note:: SysIdRoutine will name the entry "sysid-test-state-mechanism", where "mechanism" is the name passed to the ``Mechanism`` contructor or the subsystem name.
+.. note:: SysIdRoutine will name the entry "sysid-test-state-mechanism", where "mechanism" is the name passed to the ``Mechanism`` constructor or the subsystem name.
 
 .. image:: images/log-loaded.png
     :alt: Log Loader and Data Selector panes showing the test state entry and where to move it
