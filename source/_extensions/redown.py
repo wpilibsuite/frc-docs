@@ -35,48 +35,20 @@ ROLE_LINK_RE = re.compile(
     (?P<role>
         :(?:.\w+?:)+?            # role(s) - matches :py:func: or :mod: or :class:
     )
-    """ + LINK_CORE,
+    """
+    + LINK_CORE,
     re.VERBOSE,                  # whitespace and comments are ignored
 )
 
 LINK_RE = re.compile(
-    r"""
-    (?<!:)                       # not alphanum - prevents matching inline code ``initialize[0](0)``
-    (?<!:)                       # no colon before - prevents matching roles
-    """ + LINK_CORE,
-    re.VERBOSE,
-)
-
-LINK_CORE = r"""
-    \[ (?P<text>[^\[\]]*?) \]    # link brackets + text w/o brackets - allows spaces in text
-    \(
-    (?P<link>
-        \S+?                     # link start
-        (?:
-            \( [^()\s]*? \)      # nested parens + text w/o parens - matches `initialize(boolean)`
-                [^()\s]*?        # more text - matches `initialize(boolean)abc`
-        )*?                      # allow none (or multiple?)
-    )
-    \)
-    """
-
-ROLE_LINK_RE = re.compile(
     r"""
     (?<!\w)                      # not alphanum - prevents matching inline code ``initialize[0](0)``
-    (?P<role>
-        :(?:.\w+?:)+?            # role(s) - matches :py:func: or :mod: or :class:
-    )
-    """ + LINK_CORE,
+    (?<!:)                       # no colon before - prevents matching roles
+    """
+    + LINK_CORE,
     re.VERBOSE,                  # whitespace and comments are ignored
 )
 
-LINK_RE = re.compile(
-    r"""
-    (?<!:)                       # not alphanum - prevents matching inline code ``initialize[0](0)``
-    (?<!:)                       # no colon before - prevents matching roles
-    """ + LINK_CORE,
-    re.VERBOSE,
-)
 
 def redown(text: str) -> str:
     """21"""
@@ -157,7 +129,6 @@ def redown(text: str) -> str:
         text = heading("###", "^")
         text = heading("####", "~")
 
-
         "redown, redown, redown, redown"
         role_links = lambda: ROLE_LINK_RE.sub(
             lambda m: f"{m.group('role')}`{(t:=m.group('text'))}{' ' if len(t) else ''}<{m.group('link')}>`__",
@@ -189,7 +160,7 @@ def setup(app: Sphinx):
     @(lambda breadcrumb: app.connect("source-read", breadcrumb))
     def _(app, docname, content):
         content[0] = redown(content[0])
-        # Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0])
+        Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0])
 
     return {
         "version": "builtin",
