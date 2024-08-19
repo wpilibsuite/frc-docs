@@ -131,7 +131,7 @@ def redown(text: str) -> str:
 
         "redown, redown, redown, redown"
         role_links = lambda: ROLE_LINK_RE.sub(
-            lambda m: f"{m.group('role')}`{(t:=m.group('text'))}{' ' if len(t) else ''}<{m.group('link')}>`__",
+            lambda m: f"{m.group('role')}`{(t:=m.group('text'))}{' ' if len(t) else ''}<{m.group('link')}>`",
             text,
         )
         text = role_links()
