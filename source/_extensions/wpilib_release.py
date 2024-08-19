@@ -45,7 +45,7 @@ class WpilibRelease(SphinxDirective):
         mac_arm_download_url_part, mac_arm_size = get_url_size("macOSArm")
 
         # There's something weird going where the hashes are all printed on one line.
-        # This works aroung that.
+        # This works around that.
         release_notes = release["body"].replace("\r", "")
 
         r2 = release_notes.split("```")

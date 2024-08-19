@@ -6,7 +6,7 @@ from jsmin import jsmin
 from sphinx.application import Sphinx
 
 # Handle custom javascript
-# Groups, sorts, merges, and minifies the JS files assocated with
+# Groups, sorts, merges, and minifies the JS files associated with
 # the controls documentation
 
 debugJS = False  # flip to true to make the output js more readable

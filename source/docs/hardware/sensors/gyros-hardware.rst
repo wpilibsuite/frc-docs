@@ -32,7 +32,7 @@ The [Analog Devices ADXRS450 FRC Gyro Board](https://www.analog.com/en/landing-p
   :alt: This is the ADIS16470 :term:`IMU` plugged in to the SPI port.
   :width: 400
 
-Three-axis gyros measure rotation rate around all three spacial axes (typically labeled x, y, and z). The motion around these axis is called pitch, yaw, and roll.
+Three-axis gyros measure rotation rate around all three spatial axes (typically labeled x, y, and z). The motion around these axis is called pitch, yaw, and roll.
 
 The [Analog Devices ADIS16470 IMU Board for FIRST Robotics](https://www.analog.com/en/landing-pages/001/first.html) that has been in FIRST Choice in recent years is a commonly used three-axis gyro.
 

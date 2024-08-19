@@ -78,7 +78,7 @@ The ``Measure`` class also supports arithmetic operations, such as addition, sub
 
 In this code, the units library will automatically convert the measures to the same unit before adding the two distances. The resulting ``totalDistance`` object will be a new ``Measure<Distance>`` object that has a value of 0.508 meters, or 20 inches.
 
-This example combines the wheel diameter and gear ratio to calcualate the distance per rotation of the wheel:
+This example combines the wheel diameter and gear ratio to calculate the distance per rotation of the wheel:
 
 .. code-block:: java
 

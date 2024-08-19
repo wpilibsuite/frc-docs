@@ -11,7 +11,7 @@ Each test type is run both forwards and backwards, for four tests in total. The 
 
 ## User Code Setup
 
-.. note:: Some familiarity with your language's units library is recommended and knowing how to use Consumers is required. Ths page assumes you are using the Commands framework.
+.. note:: Some familiarity with your language's units library is recommended and knowing how to use Consumers is required. This page assumes you are using the Commands framework.
 
 To assist in creating SysId-compatible identification routines, WPILib provides the ``SysIdRoutine`` class. Users should create a ``SysIdRoutine`` object, which take both a ``Config`` object describing the test settings and a ``Mechanism`` object describing how the routine will control the relevant motors and log the measurements needed to perform the fit.
 
