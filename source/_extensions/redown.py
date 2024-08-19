@@ -37,7 +37,7 @@ ROLE_LINK_RE = re.compile(
     )
     """
     + LINK_CORE,
-    re.VERBOSE,                  # whitespace and comments are ignored
+    re.VERBOSE,  # whitespace and comments are ignored
 )
 
 LINK_RE = re.compile(
@@ -46,7 +46,7 @@ LINK_RE = re.compile(
     (?<!:)                       # no colon before - prevents matching roles
     """
     + LINK_CORE,
-    re.VERBOSE,                  # whitespace and comments are ignored
+    re.VERBOSE,  # whitespace and comments are ignored
 )
 
 
@@ -160,7 +160,7 @@ def setup(app: Sphinx):
     @(lambda breadcrumb: app.connect("source-read", breadcrumb))
     def _(app, docname, content):
         content[0] = redown(content[0])
-        Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0])
+        # Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0])
 
     return {
         "version": "builtin",
