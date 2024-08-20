@@ -1,5 +1,4 @@
-Imaging your roboRIO 2
-======================
+# Imaging your roboRIO 2
 
 .. note:: The imaging instructions for the NI roboRIO 1.0 are :ref:`here <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO 1>`.
 
@@ -11,13 +10,11 @@ The NI roboRIO 2.0 boots from a microSD card configured with an appropriate boot
 
  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;"> <iframe src="https://www.youtube-nocookie.com/embed/jvd-Pxaqy9I" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe> </div>
 
-microSD Requirements
---------------------
+## microSD Requirements
 
 The NI roboRIO 2.0 supports all microSD cards.  It is recommended to use a card with 2GB or more of capacity.
 
-Operation Tips
---------------
+## Operation Tips
 
 The NI roboRIO 2.0 requires a fully inserted microSD card containing a valid image in order to boot and operate as intended.
 
@@ -27,8 +24,7 @@ No damage will result from microSD card removal or insertion while powered, but 
 
 .. warning:: Before imaging your roboRIO, you must have completed installation of the :doc:`FRC Game Tools</docs/zero-to-robot/step-2/frc-game-tools>`. You also must have the roboRIO power properly wired to the CTRE Power Distribution Panel or REV Power Distribution Hub. Make sure the power wires to the roboRIO are secure and that the connector is secure firmly to the roboRIO (4 total screws to check).
 
-Imaging Directly to the microSD Card
-------------------------------------
+## Imaging Directly to the microSD Card
 
 The image will be transferred to the microSD card using a specialized writing utility, sometimes called a burner. Several utilities are listed below, but most tools that can write arbitrary images for booting a Raspberry Pi or similar dev boards will also produce a bootable SD card for roboRIO 2.0.
 
@@ -43,8 +39,7 @@ A [microSD to USB dongle](https://www.amazon.com/gp/product/B0779V61XB) works we
 
 .. note:: Raspberry Pi images will not boot on a roboRIO because the OS and drivers are incompatible. Similarly, a roboRIO image is not compatible with Raspberry Pi controller boards.
 
-Writing the image with balenaEtcher
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Writing the image with balenaEtcher
 
 - Download and install [balenaEtcher](https://www.balena.io/etcher/).
 - Launch
@@ -52,8 +47,7 @@ Writing the image with balenaEtcher
 - :guilabel:`Select target` -> select the destination microSD device
 - Press :guilabel:`Flash`
 
-Writing the image with Raspberry Pi Imager
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Writing the image with Raspberry Pi Imager
 
 - Download and install from [Raspberry Pi Imager](https://www.raspberrypi.com/software/).
 - Launch
@@ -63,8 +57,7 @@ Writing the image with Raspberry Pi Imager
 
 .. warning:: After writing the image, Windows may prompt to format the drive. Do not reformat, or else you will need to write the image again.
 
-Setting the roboRIO Team Number
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Setting the roboRIO Team Number
 
 The image writing process above does not set a team number.  To fix this teams will need to insert the microSD card  in the robRIO and connect to the robot.  With the roboRIO Imaging Tool go to :guilabel:`Edit Startup Settings`.  Next, fill out the :guilabel:`Team Number` box and hit :guilabel:`Apply`.
 

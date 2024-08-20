@@ -1,5 +1,4 @@
-Dashboards
-==========
+# Dashboards
 
 .. toctree::
    :maxdepth: 1

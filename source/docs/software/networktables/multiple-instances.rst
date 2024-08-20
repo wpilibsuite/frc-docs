@@ -1,5 +1,4 @@
-NetworkTables Instances
-=======================
+# NetworkTables Instances
 
 The NetworkTables implementation supports simultaneous operation of multiple "instances." Each instance has a completely independent set of topics, publishers, subscribers, and client/server state. This feature is mainly useful for unit testing. It allows a single program to be a member of two :term:`NetworkTables` "networks" that contain different (and unrelated) sets of topics, or running both client and server instances in a single program.
 
@@ -7,7 +6,7 @@ For most general usage, you should use the "default" instance, as all current da
 
 However, if you wanted to do unit testing of your robot program's NetworkTables communications, you could set up your unit tests such that they create a separate client instance (still within the same program) and have it connect to the server instance that the main robot code is running.
 
-The ``NetworkTableInstance`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/networktables/NetworkTableInstance.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classnt_1_1_network_table_instance.html), :external:py:class:`Python <ntcore.NetworkTableInstance>`) class provides the API abstraction for instances. The number of instances that can be simultaneously created is limited to 16 (including the default instance), so when using multiple instances in cases such as unit testing code, it's important to destroy instances that are no longer needed.
+The ``NetworkTableInstance`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/NetworkTableInstance.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_network_table_instance.html), :external:py:class:`Python <ntcore.NetworkTableInstance>`) class provides the API abstraction for instances. The number of instances that can be simultaneously created is limited to 16 (including the default instance), so when using multiple instances in cases such as unit testing code, it's important to destroy instances that are no longer needed.
 
 Destroying a NetworkTableInstance frees all resources related to the instance. All classes or handles that reference the instance (e.g. Topics, Publishers, and Subscribers) are invalidated and may result in unexpected behavior if used after the instance is destroyed--in particular, instance handles are reused so it's possible for a handle "left over" from a previously destroyed instance to refer to an unexpected resource in a newly created instance.
 

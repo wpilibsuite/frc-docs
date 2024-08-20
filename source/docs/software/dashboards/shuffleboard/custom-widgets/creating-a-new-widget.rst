@@ -1,15 +1,13 @@
-Creating A Widget
-=================
+# Creating A Widget
 Widgets allow us to view, change, and interact with data published through different data sources. The CameraServer, NetworkTables, and Base plugins provide the widgets to control basic data types (including FRC-specific data types). However, custom widgets allow us to control our custom data types we made in the previous sections or Java Objects.
 
 The basic ``Widget`` interface inherits from the ``Component`` and ``Sourced`` interfaces. ``Component`` is the most basic building block of components that be displayed in Shuffleboard. ``Sourced`` is an interface for things that can handle and interface with data sources to display or modify data. Widgets that don't support data bindings but simply have child nodes would not use the ``Sourced`` interface but simply the ``Component`` interface. Both are basic building blocks towards making widgets and allows us to modify and display data.
 
 A good widget allows the end-user to customize the widget to suit their needs. An example could be to allow the user to control the range of the number slider, that is, its maximum and minimum or the orientation of the slider itself. The view of the widget or how it looks is defined using FXML. ``FXML`` is an XML based language that is useful for defining the static layout of the widget (Panes, Labels and Controls).
 
-More about FXML can be found `here <https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html>`_.
+More about FXML can be found [here](https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html).
 
-Defining a Widget's FXML
-------------------------
+## Defining a Widget's FXML
 In this example, we will create two sliders to help us control the X and Y coordinates of our Point2D data type we created in previous sections. It is helpful to place the FXML file in the same package as the Java class.
 
 In order to create an empty, blank window for our widget, we need to create a ``Pane``. A Pane is a parent node that contains other child nodes, in this case, 2 sliders.
@@ -31,7 +29,7 @@ There are many different types of Pane, they are as noted:
 
    - Anchor Panes allow child elements to be placed in the top, bottom, left side, right side, or center of the pane.
 
-Layout panes are also extremely useful for placing child nodes in one horizontal row using a `HBox <https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html>`_ or one vertical column using a `VBox <https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html>`_.
+Layout panes are also extremely useful for placing child nodes in one horizontal row using a [HBox](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html) or one vertical column using a [VBox](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html).
 
 The basic syntax for defining a Pane using FXML would be as the following:
 
@@ -44,8 +42,7 @@ The basic syntax for defining a Pane using FXML would be as the following:
 
 The ``fx:controller`` attribute contains the name of the widget class. An instance of this class is created when the FXML file is loaded. For this to work, the controller class must have a no-argument constructor.
 
-Creating A Widget Class
------------------------
+## Creating A Widget Class
 
 Now that we have a Pane, we can now add child elements to that pane. In this example, we can add two slider objects. Remember to add an ``fx:id`` to each element so they can be referenced in our Java class we will make later on. We will use a ``VBox`` to position our slider on top of each other.
 
@@ -137,8 +134,7 @@ In order to display our pane on our custom widget we need to override the ``getV
 
    }
 
-Binding Elements and Adding Listeners
--------------------------------------
+## Binding Elements and Adding Listeners
 Binding is a mechanism that allows JavaFX widgets to express direct relationships with the data source. For example, changing a widget will change its related NetworkTableEntry and vice versa.
 
 An example, in this case, would be changing the X and Y coordinate of our 2D point by changing the values of xSlider and ySlider respectively.
@@ -189,8 +185,7 @@ Using a listener is another way to change values when the slider or data source 
 
 In this case, the ``setData()`` method sets the value in the data source of the widget to the ``newValue``.
 
-Exploring Custom Components
----------------------------
+## Exploring Custom Components
 Widgets are not automatically discovered when loading plugins; the defining plugin must explicitly export it for it to be usable. This approach is taken to allow multiple plugins to be defined in the same JAR.
 
 .. code-block:: java
@@ -200,8 +195,7 @@ Widgets are not automatically discovered when loading plugins; the defining plug
      return List.of(WidgetType.forAnnotatedWidget(Point2DWidget.class));
    }
 
-Set Default Widget For Data type
---------------------------------
+## Set Default Widget For Data type
 In order to set your widget as default for your custom data type, you can override the ``getDefaultComponents()`` in your plugin class that stores a Map for all default widgets as noted below:
 
 .. code-block:: java

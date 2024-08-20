@@ -1,8 +1,6 @@
-Using the CameraServer on the roboRIO
-=====================================
+# Using the CameraServer on the roboRIO
 
-Simple CameraServer Program
----------------------------
+## Simple CameraServer Program
 
 The following program starts automatic capture of a USB camera like the Microsoft LifeCam that is connected to the roboRIO. In this mode, the camera will capture frames and send them to the dashboard. To view the images, create a CameraServer Stream Viewer widget using the "View", then "Add" menu in the dashboard. The images are unprocessed and just forwarded from the camera to the dashboard.
 
@@ -27,8 +25,7 @@ The following program starts automatic capture of a USB camera like the Microsof
       :linenos:
 
 
-Advanced Camera Server Program
-------------------------------
+## Advanced Camera Server Program
 
 In the following example a thread created in robotInit() gets the Camera Server instance. Each frame of the video is individually processed, in this case drawing a rectangle on the image using the OpenCV ``rectangle()`` method. The resultant images are then passed to the output stream and sent to the dashboard. You can replace the ``rectangle`` operation with any image processing code that is necessary for your application. You can even annotate the image using OpenCV methods to write targeting information onto the image being sent to the dashboard.
 
@@ -59,8 +56,8 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
                    For more information on the GIL and its effects, you may wish to read the following resources:
 
-                   * `Python Wiki: Global Interpreter Lock <https://wiki.python.org/moin/ GlobalInterpreterLock>`_
-                   * `Efficiently Exploiting Multiple Cores with Python <http://python-notes.curiousefficiency.org/en/latest/python3/multicore_python.html>`_
+                   * [Python Wiki: Global Interpreter Lock](https://wiki.python.org/moin/GlobalInterpreterLock)
+                   * [Efficiently Exploiting Multiple Cores with Python](http://python-notes.curiousefficiency.org/en/latest/python3/multicore_python.html)
 
       This introduces a number of rules that your image processing code must follow to efficiently and safely run on the RoboRIO:
 

@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Accelerometers - Software
-=========================
+# Accelerometers - Software
 
 .. note:: This section covers accelerometers in software.  For a hardware guide to accelerometers, see :ref:`docs/hardware/sensors/accelerometers-hardware:Accelerometers - Hardware`.
 
@@ -18,10 +17,9 @@ Three-axis accelerometers often require more complicated communications protocol
 - `ADXL362`_
 - `BuiltInAccelerometer`_
 
-AnalogAccelerometer
--------------------
+## AnalogAccelerometer
 
-The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_accelerometer.html)) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
+The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_analog_accelerometer.html)) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
 
 .. tab-set-code::
 
@@ -69,10 +67,9 @@ There are getters for the acceleration along each cardinal direction (x, y, and 
         // Sets the accelerometer to measure between -8 and 8 G's
         accelerometer.SetRange(BuiltInAccelerometer::Range::kRange_8G);
 
-ADXL345_I2C
-^^^^^^^^^^^
+### ADXL345_I2C
 
-The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL345_I2C.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l345___i2_c.html)) provides support for the ADXL345 accelerometer over the I2C communications bus.
+The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADXL345_I2C.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_x_l345___i2_c.html)) provides support for the ADXL345 accelerometer over the I2C communications bus.
 
 .. tab-set-code::
 
@@ -88,10 +85,9 @@ The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/r
         // with a measurement range from -8 to 8 G's
         frc::ADXL345_I2C accelerometer{I2C::Port::kMXP, frc::ADXL345_I2C::Range::kRange_8G};
 
-ADXL345_SPI
-^^^^^^^^^^^
+### ADXL345_SPI
 
-The :code:`ADXL345_SPI` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL345_SPI.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l345___s_p_i.html)) provides support for the ADXL345 accelerometer over the SPI communications bus.
+The :code:`ADXL345_SPI` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADXL345_SPI.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_x_l345___s_p_i.html)) provides support for the ADXL345 accelerometer over the SPI communications bus.
 
 .. tab-set-code::
 
@@ -107,10 +103,9 @@ The :code:`ADXL345_SPI` class ([Java](https://github.wpilib.org/allwpilib/docs/r
         // with a measurement range from -8 to 8 G's
         frc::ADXL345_SPI accelerometer{SPI::Port::kMXP, frc::ADXL345_SPI::Range::kRange_8G};
 
-ADXL362
-^^^^^^^
+### ADXL362
 
-The :code:`ADXL362` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL362.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l362.html)) provides support for the ADXL362 accelerometer over the SPI communications bus.
+The :code:`ADXL362` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADXL362.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_x_l362.html)) provides support for the ADXL362 accelerometer over the SPI communications bus.
 
 .. tab-set-code::
 
@@ -126,10 +121,9 @@ The :code:`ADXL362` class ([Java](https://github.wpilib.org/allwpilib/docs/relea
         // with a measurement range from -8 to 8 G's
         frc::ADXL362 accelerometer{SPI::Port::kMXP, frc::ADXL362::Range::kRange_8G};
 
-BuiltInAccelerometer
-^^^^^^^^^^^^^^^^^^^^
+### BuiltInAccelerometer
 
-The :code:`BuiltInAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_built_in_accelerometer.html)) provides access to the roboRIO's own built-in accelerometer:
+The :code:`BuiltInAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_built_in_accelerometer.html)) provides access to the roboRIO's own built-in accelerometer:
 
 .. tab-set-code::
 
@@ -145,13 +139,11 @@ The :code:`BuiltInAccelerometer` class ([Java](https://github.wpilib.org/allwpil
         // Range defaults to +- 8 G's
         frc::BuiltInAccelerometer accelerometer;
 
-Third-party accelerometers
---------------------------
+## Third-party accelerometers
 
 While WPILib provides native support for a number of accelerometers that are available in the kit of parts or through FIRST Choice, there are a few popular AHRS (Attitude and Heading Reference System) devices commonly used in FRC that include accelerometers.  These are generally controlled through vendor libraries, though if they have a simple analog output they can be used with the `AnalogAccelerometer`_ class.
 
-Using accelerometers in code
-----------------------------
+## Using accelerometers in code
 
 .. note:: Accelerometers, as their name suggests, measure acceleration.  Precise accelerometers can be used to determine position through double-integration (since acceleration is the second derivative of position), much in the way that gyroscopes are used to determine heading.  However, the accelerometers available for use in FRC are not nearly high-enough quality to be used this way.
 
@@ -204,7 +196,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
             prevYAccel = yAccel;
         }
 
-Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html)) to reduce the noise:
+Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_linear_filter.html)) to reduce the noise:
 
 .. tab-set-code::
 

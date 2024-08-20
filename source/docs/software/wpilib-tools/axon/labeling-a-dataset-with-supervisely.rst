@@ -1,10 +1,8 @@
-Labeling a Dataset with Supervisely
-===================================
+# Labeling a Dataset with Supervisely
 
 The quality of a neural network is fully dependent on the quality of the dataset used to train it. To create a custom dataset, perhaps to train a neural network to recognize the new game piece, Axon supports datasets created using [Supervisely](https://supervise.ly). This page describes how to create label, and export a dataset made with Supervisely.
 
-Record a Video
---------------
+## Record a Video
 
 The first step to creating a dataset is getting images. A dataset should have several thousand images. To get this many images, the easiest way is to record a short video, roughly 1 to 5 minutes long. The video should clearly display the object(s) you wish to detect in several angles. Below is an example clip of a video used to teach a neural network to recognize a video game controller.
 
@@ -15,8 +13,7 @@ The first step to creating a dataset is getting images. A dataset should have se
       <source src="https://first.wpi.edu/wpilib/frc-docs/videos/ml/dataset_video_example.mp4" type="video/mp4">
     </video>
 
-Import Video to Supervisely
----------------------------
+## Import Video to Supervisely
 
 Now that the images for the dataset are gathered, they can be labeled. To do this, Axon supports the use of [https://supervise.ly](https://supervise.ly) . An account is required to use the site.
 
@@ -40,8 +37,7 @@ With the correct plugin selected, the video can be dragged in to the upload box.
 .. image:: images/dataset/name_import.png
   :alt: Naming the Project.
 
-Labeling the Images
--------------------
+## Labeling the Images
 
 With the project now set up, the data can be labeled. Labeling data means drawing boxes around the objects a neural network would want to detect, so the neural network knows when it is right and when it is wrong when it tries to detect where an object is. The boxes drawn should tightly wrap the entire visible object within each image.
 
@@ -52,8 +48,7 @@ Within the Project, select the :guilabel:`Rectangle` tool. Supervisely will prom
 
 Click the :guilabel:`Rectangle` tool to label another object within the same image, if there is one. If there is a misclick, the corners of the rectangle can be dragged to better label the object. Otherwise, move on to the next image. It is important to label every single visible object that one wishes to detect, else the neural network will pick up bad habits. The job of labeling data can be tedious, but it can also be shared between members of an FRC team through the Workspace.
 
-Downloading the Dataset
------------------------
+## Downloading the Dataset
 
 With all the images labeled, the dataset can be downloaded off of Supervisely for use in Axon. Within the Workspace, click on the triple-dot icon of the project you wish to download. Select the :guilabel:`.json and images` download option.
 

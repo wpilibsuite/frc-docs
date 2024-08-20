@@ -1,5 +1,4 @@
-Structuring a Command-Based Robot Project
-=========================================
+# Structuring a Command-Based Robot Project
 
 While users are free to use the command-based libraries however they like (and advanced users are encouraged to do so), new users may want some guidance on how to structure a basic command-based robot project.
 
@@ -11,8 +10,7 @@ The root package/directory generally will contain four classes:
 
 The root directory will also contain two sub-packages/sub-directories: ``Subsystems`` contains all user-defined subsystem classes. ``Commands`` contains all user-defined command classes.
 
-Robot
------
+## Robot
 
 As ``Robot`` ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java), [C++ (Header)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/Robot.h), [C++ (Source)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp)) is responsible for the program’s control flow, and command-based is an declarative paradigm designed to minimize the amount of attention the user has to pay to explicit program control flow, the ``Robot`` class of a command-based project should be mostly empty. However, there are a few important things that must be included
 
@@ -99,8 +97,7 @@ The ``teleopInit()`` method cancels any still-running autonomous commands. This 
 
 Advanced users are free to add additional code to the various init and periodic methods as they see fit; however, it should be noted that including large amounts of imperative robot code in ``Robot.java`` is contrary to the declarative design philosophy of the command-based paradigm, and can result in confusingly-structured/disorganized code.
 
-RobotContainer
---------------
+## RobotContainer
 
 This class ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java), [C++ (Header)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h), [C++ (Source)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp)) is where most of the setup for your command-based robot will take place. In this class, you will define your robot’s subsystems and commands, bind those commands to triggering events (such as buttons), and specify which command you will run in your autonomous routine. There are a few aspects of this class new users may want explanations for:
 
@@ -192,8 +189,7 @@ As mentioned before, the ``RobotContainer()`` constructor is where most of the d
 
 Finally, the ``getAutonomousCommand()`` method provides a convenient way for users to send their selected autonomous command to the main ``Robot`` class (which needs access to it to schedule it when autonomous starts).
 
-Constants
----------
+## Constants
 
 The ``Constants`` class ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Constants.java), [C++ (Header)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/Constants.h)) (in C++ this is not a class, but simply a header file in which several namespaces are defined) is where globally-accessible robot constants (such as speeds, unit conversion factors, PID gains, and sensor/motor ports) can be stored. It is recommended that users separate these constants into individual inner classes corresponding to subsystems or robot modes, to keep variable names shorter.
 
@@ -218,12 +214,10 @@ In Java, it is recommended that the constants be used from other classes by stat
 
       using namespace OIConstants;
 
-Subsystems
-----------
+## Subsystems
 
 User-defined subsystems should go in this package/directory.
 
-Commands
---------
+## Commands
 
 User-defined commands should go in this package/directory.

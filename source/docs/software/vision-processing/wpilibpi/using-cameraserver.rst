@@ -1,8 +1,6 @@
-Using CameraServer
-==================
+# Using CameraServer
 
-Grabbing Frames from CameraServer
----------------------------------
+## Grabbing Frames from CameraServer
 
 The WPILibPi image comes with all the necessary libraries to make your own vision processing system. In order to get the current frame from the camera, you can use the CameraServer library. For information about CameraServer, the :ref:`docs/software/vision-processing/introduction/cameraserver-class:Read and Process Video: CameraServer Class`.
 
@@ -34,8 +32,7 @@ Below is an example of an image that might be grabbed from CameraServer.
 .. image:: images/image-thresholding/target.jpg
    :alt: 2020 game target with the retroreflective tape illuminated green.
 
-Sending frames to CameraServer
-------------------------------
+## Sending frames to CameraServer
 
 Sometimes, you may want to send processed video frames back to the CameraServer instance for debugging purposes, or viewing in a dashboard application like Shuffleboard.
 

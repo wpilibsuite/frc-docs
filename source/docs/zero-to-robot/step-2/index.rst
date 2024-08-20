@@ -1,5 +1,4 @@
-Step 2: Installing Software
-===========================
+# Step 2: Installing Software
 
 An overview of the available control system software can be found :doc:`here </docs/controls-overviews/control-system-software>`.
 

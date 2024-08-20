@@ -1,10 +1,8 @@
 .. include:: <isonum.txt>
 
-Analyzing Data
-===============
+# Analyzing Data
 
-Feedforward Analysis
-----------------------------
+## Feedforward Analysis
 
 .. note:: For information on what the calculated feedback gains mean, see :ref:`docs/software/advanced-controls/introduction/introduction-to-feedforward:The Permanent-Magnet DC Motor Feedforward Equation`.  For information on using the calculated feedback gains in code, see :ref:`feedforward control <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>`.
 
@@ -20,8 +18,7 @@ The computed mechanism system parameters will then be displayed.
 .. image:: images/feedforward-values.png
    :alt: Analysis coefficient results
 
-Feedback Analysis
------------------
+## Feedback Analysis
 
 .. important:: These gains are, in effect, "educated guesses" - they are not guaranteed to be perfect, and should be viewed as a "starting point" for further tuning.
 
@@ -32,8 +29,7 @@ To view the feedback constants, click on the dropdown arrow on the :guilabel:`Fe
 
 This view can be used to calculate optimal feedback gains for a PD or P controller for your mechanism (via :term:`LQR`).
 
-Enter Controller Parameters
----------------------------
+## Enter Controller Parameters
 
 .. note:: The "Spark Max" preset assumes that the user has configured the controller to operate in the units of analysis with the SPARK MAX API's position/velocity scaling factor feature.
 
@@ -56,8 +52,7 @@ To specify the correct settings for your PID controller, use the following optio
 
 .. note:: If you select a smart motor controller as the preset (e.g. TalonSRX, SPARK MAX, etc.) the :guilabel:`Convert Gains` checkbox will be automatically checked. This means the tool will convert your gains so that they can be used through the smart motor controller's PID methods. Therefore, if you would like to use WPILib's PID Loops, you must uncheck that box.
 
-Measurement Delays
-^^^^^^^^^^^^^^^^^^
+### Measurement Delays
 
 .. note:: If you are using default smart motor controller settings or WPILib PID Control without additional filtering, SysId handles this for you.
 
@@ -71,8 +66,7 @@ The following only applies if the user decides to implement their own custom fil
 
 Where ``T`` is the period at which measurements are sampled (RIO default is 20 ms) and ``n`` is the size of the moving window used.
 
-Specify Optimality Criteria
----------------------------
+## Specify Optimality Criteria
 
 Finally, the user must specify what will be considered an "optimal" controller.  This takes the form of desired tolerances for the system error and control effort - note that it is *not* guaranteed that the system will obey these tolerances at all times.
 
@@ -83,8 +77,7 @@ As a rule, smaller values for the :guilabel:`Max Acceptable Error` and larger va
 
 The :guilabel:`Max Acceptable Control Effort` should never exceed 12V, as that corresponds to full battery voltage, and ideally should be somewhat lower than this.
 
-Select Loop Type
-----------------
+## Select Loop Type
 
 It is typical to control mechanisms with both position and velocity PIDs, depending on application. Either can be selected using the drop-down :guilabel:`Loop Type` menu.
 

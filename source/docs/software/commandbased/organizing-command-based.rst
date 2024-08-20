@@ -1,5 +1,4 @@
-Organizing Command-Based Robot Projects
-=======================================
+# Organizing Command-Based Robot Projects
 
 As robot code becomes more complicated, navigating, understanding, and maintaining the code takes up more and more time and energy. Making changes to the code often becomes more difficult, sometimes for reasons that have very little to do with the actual complexity of the underlying logic. For a simplified example: putting the logic for many unrelated robot functions into a single 1000-line file makes it difficult to find a specific piece of code within that file, particularly under stress at a competition. But spreading out closely related logic across dozens of tiny files is often just as difficult to navigate.
 
@@ -7,29 +6,24 @@ This is not a problem unique to FRC, and in fact, good organization only becomes
 
 This article discusses various facets of command-based robot program design that advanced FRC programmers may want to be aware of when writing code. It is not a prescriptive tutorial, though it presents some recommended best practices. If this level of choice seems daunting, however, many teams have been highly successful while sticking closely to WPILib's example code and guidelines. However, this discussion may be of interest to intermediate and advanced programmers who want to make their code not only effective, but flexible, easily changeable, and sometimes even beautiful.
 
-Why Care About Organization?
-----------------------------
+## Why Care About Organization?
 Good code organization will rarely make or break a team's competitive ability—but it does mean easier debugging, faster modifications, nicer-looking code, and happier programmers. While it's impossible to define "good" organization by way of what the code looks like from the inside, it's easier to define in terms of what the robot's software looks like from the outside.
 
-What Good Organization Looks Like
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### What Good Organization Looks Like
 
 When code is well-designed and well-organized, the code's internal structure is intuitive and easily comprehensible. Cumbersome boilerplate is minimized, meaning that new robot functionality can often be added with just a few lines of code. When a constant value (such as the speed of the robot's intake) needs to be changed, it only needs to change in one place. If multiple programmers are working together, they can easily understand each others' work. Bugs are rare, since it is difficult to accidentally introduce unintended behavior (such as creating a command that does not require necessary subsystems). Implementing more advanced functions like unit tests is easier, since the code is abstracted away from the physical hardware. Programmers are happy (most of the time).
 
-What Bad Organization Looks Like
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### What Bad Organization Looks Like
 
 Poorly organized code often has internal structure that makes little to no sense, even to whoever wrote it. When functionality has to be added or changed, it often breaks unrelated parts of the robot: adding automatic shooter control might introduce a bug in the climbing sequence for unclear reasons. Alternatively, the organizational framework might be so strict that it's impossible to implement necessary behavior, requiring nasty hacks or workarounds. Many lines of boilerplate code are needed for simple robot logic. Constants are scattered across the codebase, and changing basic behavior often requires making the same change to many different files. Collaboration among multiple programmers is difficult or impossible.
 
-Defining Commands
------------------
+## Defining Commands
 
 In larger robot codebases, multiple copies of the same command need to be used in many different places. For instance, a command that runs a robot's intake might be used in teleop, bound to a certain button; as part of a complicated command group for an autonomous routine; and as part of a self-test sequence.
 
 As an example, let's look at some ways to define a simple command that simply runs the robot's intake forward at full power until canceled.
 
-Inline Commands
-^^^^^^^^^^^^^^^
+### Inline Commands
 
 The easiest and most expressive way to do this is with a ``StartEndCommand``:
 
@@ -76,8 +70,7 @@ This is sufficient for commands that are only used once. However, for a command 
 
 Creating one ``StartEndCommand`` instance and putting it in a variable won't work here, since once an instance of a command is added to a command group it is effectively "owned" by that command group and cannot be used in any other context.
 
-Instance Command Factory Methods
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Instance Command Factory Methods
 
 One way to solve this quandary is using the "factory method" design pattern: a function that returns a new object every invocation, according to some specification. Using :ref:`command composition <docs/software/commandbased/command-compositions:Command Compositions>`, a factory method can construct a complex command object with merely a few lines of code.
 
@@ -174,8 +167,7 @@ For instance, this code creates a command group that runs the intake forwards fo
 
 This approach is recommended for commands that are conceptually related to only a single subsystem, and is very concise. However, it doesn't fare well with commands related to more than one subsystem: passing in other subsystem objects is unintuitive and can cause race conditions and circular dependencies, and thus should be avoided. Therefore, this approach is best suited for single-subsystem commands, and should be used only for those cases.
 
-Static Command Factories
-~~~~~~~~~~~~~~~~~~~~~~~~
+#### Static Command Factories
 
 Instance factory methods work great for single-subsystem commands.  However, complicated robot actions (like the ones often required during the autonomous period) typically need to coordinate multiple subsystems at once.  When we want to define an inline command that uses multiple subsystems, it doesn't make sense for the command factory to live in any single one of those subsystems.  Instead, it can be cleaner to define the command factory methods statically in some external class:
 
@@ -205,8 +197,7 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
     // TODO
 
-Non-Static Command Factories
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Non-Static Command Factories
 If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our ``AutoRoutines`` class and inject our subsystems through the constructor:
 
 .. tab-set-code::
@@ -271,8 +262,7 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
 
     // TODO
 
-Capturing State in Inline Commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Capturing State in Inline Commands
 
 Inline commands are extremely concise and expressive, but do not offer explicit support for commands that have their own internal state (such as a drivetrain trajectory following command, which may encapsulate an entire controller).  This is often accomplished by instead writing a Command class, which will be covered later in this article.
 
@@ -302,13 +292,11 @@ However, it is still possible to ergonomically write a stateful command composit
 
 This pattern works very well in Java so long as the captured state is "effectively final" - i.e., it is never reassigned.  This means that we cannot directly define and capture primitive types (e.g. `int`, `double`, `boolean`) - to circumvent this, we need to wrap any state primitives in a mutable container type (the same way `PIDController` wraps its internal `kP`, `kI`, and `kD` values).
 
-Writing Command Classes
-^^^^^^^^^^^^^^^^^^^^^^^
+### Writing Command Classes
 
 Another possible way to define reusable commands is to write a class that represents the command.  This is typically done by subclassing either ``Command`` or one of the ``CommandGroup`` classes.
 
-Subclassing Command
-~~~~~~~~~~~~~~~~~~~~~~~
+#### Subclassing Command
 
 Returning to our simple intake command from earlier, we could do this by creating a new subclass of ``Command`` that implements the necessary ``initialize`` and ``end`` methods.
 
@@ -347,8 +335,7 @@ This, however, is just as cumbersome as the original repetitive code, if not mor
 This approach should be used for commands with internal state (not subsystem state!), as the class can have fields to manage said state. It may also be more intuitive to write commands with complex logic as classes, especially for those less experienced with command composition. As the command is detached from any specific subsystem class and the required subsystem objects are injected through the constructor, this approach deals well with commands involving multiple subsystems.
 
 
-Subclassing Command Groups
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Subclassing Command Groups
 
 If we wish to write composite commands as their own classes, we may write a constructor-only subclass of the most exterior group type. For example, an intake-then-outtake sequence (with single-subsystem commands defined as instance factory methods) can look like this:
 
@@ -373,8 +360,7 @@ This is relatively short and minimizes boilerplate. It is also comfortable to us
 
 As with factory methods, state can be defined and captured within the command group subclass constructor, if necessary.
 
-Summary
-^^^^^^^
+### Summary
 
 .. list-table::
    :header-rows: 1

@@ -1,21 +1,18 @@
-Binding Commands to Triggers
-============================
+# Binding Commands to Triggers
 
 Apart from autonomous commands, which are scheduled at the start of the autonomous period, and default commands, which are automatically scheduled whenever their subsystem is not currently in-use, the most common way to run a command is by binding it to a triggering event, such as a button being pressed by a human operator. The command-based paradigm makes this extremely easy to do.
 
 As mentioned earlier, command-based is a :term:`declarative programming` paradigm. Accordingly, binding buttons to commands is done declaratively; the association of a button and a command is "declared" once, during robot initialization. The library then does all the hard work of checking the button state and scheduling (or canceling) the command as needed, behind-the-scenes. Users only need to worry about designing their desired UI setup - not about implementing it!
 
-Command binding is done through the ``Trigger`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Trigger.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_trigger.html)).
+Command binding is done through the ``Trigger`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/Trigger.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_trigger.html)).
 
-Getting a Trigger Instance
---------------------------
+## Getting a Trigger Instance
 
 To bind commands to conditions, we need a ``Trigger`` object. There are three ways to get a Trigger object:
 
-HID Factories
-^^^^^^^^^^^^^
+### HID Factories
 
-The command-based HID classes contain factory methods returning a ``Trigger`` for a given button. ``CommandGenericHID`` has an index-based ``button(int)`` factory ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/CommandGenericHID.html#button(int)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_generic_h_i_d.html#a661f49794a913615c94fba927e1072a8)), and its subclasses ``CommandXboxController`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/CommandXboxController.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_xbox_controller.html)), ``CommandPS4Controller`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/CommandPS4Controller.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_p_s4_controller.html)), and ``CommandJoystick`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/CommandJoystick.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_joystick.html)) have named factory methods for each button.
+The command-based HID classes contain factory methods returning a ``Trigger`` for a given button. ``CommandGenericHID`` has an index-based ``button(int)`` factory ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/CommandGenericHID.html#button(int)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_generic_h_i_d.html#a661f49794a913615c94fba927e1072a8)), and its subclasses ``CommandXboxController`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/CommandXboxController.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_xbox_controller.html)), ``CommandPS4Controller`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/CommandPS4Controller.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_p_s4_controller.html)), and ``CommandJoystick`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/CommandJoystick.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_joystick.html)) have named factory methods for each button.
 
 .. tab-set-code::
 
@@ -29,10 +26,9 @@ The command-based HID classes contain factory methods returning a ``Trigger`` fo
     frc2::CommandXboxController exampleCommandController{1} // Creates a CommandXboxController on port 1
     frc2::Trigger xButton = exampleCommandController.X() // Creates a new Trigger object for the `X` button on exampleCommandController
 
-JoystickButton
-^^^^^^^^^^^^^^
+### JoystickButton
 
-Alternatively, the :ref:[regular HID classes](docs/software/basic-programming/joystick:Joysticks>` can be used and passed to create an instance of ``JoystickButton`` (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_joystick_button.html)), a constructor-only subclass of ``Trigger``:
+Alternatively, the :ref:`regular HID classes <docs/software/basic-programming/joystick:Joysticks>` can be used and passed to create an instance of ``JoystickButton`` [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_joystick_button.html)), a constructor-only subclass of ``Trigger``:
 
 .. tab-set-code::
 
@@ -46,8 +42,7 @@ Alternatively, the :ref:[regular HID classes](docs/software/basic-programming/jo
     frc::XboxController exampleController{2} // Creates an XboxController on port 2
     frc2::JoystickButton yButton(&exampleStick, frc::XboxController::Button::kY); // Creates a new JoystickButton object for the `Y` button on exampleController
 
-Arbitrary Triggers
-^^^^^^^^^^^^^^^^^^
+### Arbitrary Triggers
 
 While binding to HID buttons is by far the most common use case, users may want to bind commands to arbitrary triggering events. This can be done inline by passing a lambda to the constructor of ``Trigger``:
 
@@ -65,8 +60,7 @@ While binding to HID buttons is by far the most common use case, users may want 
 
     frc2::Trigger exampleTrigger([&limitSwitch] { return limitSwitch.Get(); });
 
-Trigger Bindings
-----------------
+## Trigger Bindings
 
 .. note:: The C++ command-based library offers two overloads of each button binding method - one that takes an [rvalue reference](http://thbecker.net/articles/rvalue_references/section_01.html) (``CommandPtr&&``), and one that takes a raw pointer (``Command*``).  The rvalue overload moves ownership to the scheduler, while the raw pointer overload leaves the user responsible for the lifespan of the command object.  It is recommended that users preferentially use the rvalue reference overload unless there is a specific need to retain a handle to the command in the calling code.
 
@@ -76,73 +70,69 @@ There are a number of bindings available for the ``Trigger`` class. All of these
 
 .. note:: The ``Button`` subclass is deprecated, and usage of its binding methods should be replaced according to the respective deprecation messages in the API docs.
 
-onTrue
-^^^^^^
+### onTrue
 
 This binding schedules a command when a trigger changes from ``false`` to ``true`` (or, accordingly, when a button changes is initially pressed). The command will be scheduled on the iteration when the state changes, and will not be scheduled again unless the trigger becomes ``false`` and then ``true`` again (or the button is released and then re-pressed).
 
 .. tab-set-code::
 
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbotoffboard/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/RapidReactCommandBot.java
       :language: java
-      :lines: 52-53
+      :lines: 63-64
       :linenos:
-      :lineno-start: 52
+      :lineno-start: 63
 
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ArmBotOffboard/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/RapidReactCommandBot.cpp
       :language: c++
-      :lines: 25-26
+      :lines: 28-29
       :linenos:
-      :lineno-start: 25
+      :lineno-start: 28
 
 The ``onFalse`` binding is identical, only that it schedules on ``false`` instead of on ``true``.
 
-whileTrue
-^^^^^^^^^
+### whileTrue
 
 This binding schedules a command when a trigger changes from ``false`` to ``true`` (or, accordingly, when a button is initially pressed) and cancels it when the trigger becomes ``false`` again (or the button is released). The command will *not* be re-scheduled if it finishes while the trigger is still ``true``. For the command to restart if it finishes while the trigger is ``true``, wrap the command in a ``RepeatCommand``, or use a ``RunCommand`` instead of an ``InstantCommand``.
 
 .. tab-set-code::
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
     :language: java
-    :lines: 114-116
+    :lines: 49-51
     :linenos:
-    :lineno-start: 114
+    :lineno-start: 49
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
     :language: c++
-    :lines: 75-78
+    :lines: 27-29
     :linenos:
-    :lineno-start: 75
+    :lineno-start: 27
 
 The ``whileFalse`` binding is identical, only that it schedules on ``false`` and cancels on ``true``.
 
-toggleOnTrue
-^^^^^^^^^^^^
+### toggleOnTrue
 
-This binding toggles a command, scheduling it when a trigger changes from ``false`` to ``true`` (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are not a highly-recommended option for user control, as they require the driver to keep track of the robot state.  The preferred method is to use two buttons; one to turn on and another to turn off.  Using a [StartEndCommand](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html) or a [ConditionalCommand](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html) is a good way to specify the commands that you want to be want to be toggled between.
+This binding toggles a command, scheduling it when a trigger changes from ``false`` to ``true`` (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are not a highly-recommended option for user control, as they require the driver to keep track of the robot state.  The preferred method is to use two buttons; one to turn on and another to turn off.  Using a [StartEndCommand](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html) or a [ConditionalCommand](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html) is a good way to specify the commands that you want to be want to be toggled between.
 
 .. tab-set-code::
 
-  .. code-block:: java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/RapidReactCommandBot.java
+      :language: java
+      :lines: 76-77
+      :linenos:
+      :lineno-start: 76
 
-    myButton.toggleOnTrue(Commands.startEnd(mySubsystem::onMethod,
-        mySubsystem::offMethod,
-        mySubsystem));
-
-  .. code-block:: c++
-
-    myButton.ToggleOnTrue(frc2::cmd::StartEnd([&] { mySubsystem.OnMethod(); },
-        [&] { mySubsystem.OffMethod(); },
-        {&mySubsystem}));
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/RapidReactCommandBot.cpp
+      :language: c++
+      :lines: 41-43
+      :linenos:
+      :lineno-start: 41
 
 The ``toggleOnFalse`` binding is identical, only that it toggles on ``false`` instead of on ``true``.
 
-Chaining Calls
---------------
+## Chaining Calls
 
 It is useful to note that the command binding methods all return the trigger that they were called on, and thus can be chained to bind multiple commands to different states of the same trigger. For example:
 
@@ -164,8 +154,7 @@ It is useful to note that the command binding methods all return the trigger tha
         // Binds a BarCommand to be scheduled when that same button is released
         .OnFalse(BarCommand().ToPtr());
 
-Composing Triggers
-------------------
+## Composing Triggers
 
 The ``Trigger`` class can be composed to create composite triggers through the ``and()``, ``or()``, and ``negate()`` methods (or, in C++, the ``&&``, ``||``, and ``!`` operators). For example:
 
@@ -185,8 +174,7 @@ The ``Trigger`` class can be composed to create composite triggers through the `
         && exampleCommandController.Y())
         .OnTrue(ExampleCommand().ToPtr());
 
-Debouncing Triggers
--------------------
+## Debouncing Triggers
 
 To avoid rapid repeated activation, triggers (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/software/advanced-controls/filters/debouncer:Debouncer>` using the `debounce` method:
 

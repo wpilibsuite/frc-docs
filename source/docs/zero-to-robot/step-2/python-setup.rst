@@ -1,10 +1,8 @@
-Python Installation Guide
-=========================
+# Python Installation Guide
 
 This guide is intended for Python teams. Java and C++ teams can skip to :doc:`wpilib-setup`. LabVIEW teams can skip to :doc:`labview-setup`.
 
-Prerequisites
--------------
+## Prerequisites
 
 You must install a supported version of Python on a supported operating system. We currently support Python 3.8/3.9/3.10/3.11/3.12, but only 3.12 is available for the roboRIO.
 
@@ -15,11 +13,10 @@ Supported Operating Systems and Architectures:
 
 On Windows and macOS, we recommend using the official Python installers distributed by python.org.
 
-* `Python for Windows <https://www.python.org/downloads/windows/>`_
-* `Python for macOS <https://www.python.org/downloads/mac-osx/>`_
+* [Python for Windows](https://www.python.org/downloads/windows/)
+* [Python for macOS](https://www.python.org/downloads/mac-osx/)
 
-Install RobotPy
----------------
+## Install RobotPy
 
 Once you have installed Python, you can use pip to install RobotPy on your development computer.
 
@@ -30,7 +27,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       .. note:: If you previously installed a pre-2024 or 2024 beta version of RobotPy, you should first uninstall RobotPy via ``py -m pip uninstall robotpy`` before upgrading.
 
-      .. warning:: On Windows, the `Visual Studio 2019 redistributable <https:// support.microsoft.com/en-us/help/2977003/       the-latest-supported-visual-c-downloads>`_ package is required to be installed.
+      .. warning:: On Windows, the [Visual Studio 2019 redistributable](https:// support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) package is required to be installed.
 
       Run the following command from cmd or Powershell to install the core RobotPy packages:
 
@@ -44,7 +41,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
          py -3 -m pip install --upgrade robotpy
 
-      If you don't have administrative rights on your computer, either use `virtualenv/virtualenvwrapper-win <https://docs.python-guide.org/en/latest/dev/virtualenvs/>`_, or or you can install to the user site-packages directory:
+      If you don't have administrative rights on your computer, either use [virtualenv/virtualenvwrapper-win](https://docs.python-guide.org/en/latest/dev/virtualenvs/), or or you can install to the user site-packages directory:
 
       .. code-block:: sh
 
@@ -84,7 +81,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
          python3 -m pip --version
 
-      If you need to upgrade your version of pip, it is highly recommended to use a `virtual environment <https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/>`_.
+      If you need to upgrade your version of pip, it is highly recommended to use a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
       If you have a compatible version of pip, you can simply run:
 
@@ -127,8 +124,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
          export CC=gcc-12 CXX=g++-12
 
-Download RobotPy for roboRIO
-----------------------------
+## Download RobotPy for roboRIO
 
 After installing the ``robotpy`` project on your computer, there are a variety of commands available that can be ran from the command line via the ``robotpy`` module.
 

@@ -1,11 +1,9 @@
-Step 4: Updating Odometry and Visualizing Robot Position
-========================================================
+# Step 4: Updating Odometry and Visualizing Robot Position
 Now that the simulated encoder positions, velocities, and gyro angles are being updated with accurate information periodically, this data can be used to update the pose of the robot in a periodic loop (such as the ``periodic()`` method in a ``Subsystem``). In simulation, the periodic loop will use simulated encoder and gyro readings to update odometry whereas on the real robot, the same code will use real readings from physical hardware.
 
 .. note:: For more information on using odometry, see :ref:`this document <docs/software/kinematics-and-odometry/differential-drive-odometry:Differential Drive Odometry>`.
 
-Robot Pose Visualization
-------------------------
+## Robot Pose Visualization
 The robot pose can be visualized on the Simulator GUI (during simulation) or on a dashboard such as Glass (on a real robot) by sending the odometry pose over a ``Field2d`` object. A ``Field2d`` can be trivially constructed without any constructor arguments:
 
 .. tab-set-code::

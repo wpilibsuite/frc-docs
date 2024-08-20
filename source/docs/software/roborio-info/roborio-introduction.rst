@@ -1,5 +1,4 @@
-roboRIO Introduction
-====================
+# roboRIO Introduction
 
 .. image:: /docs/controls-overviews/images/control-system-hardware/roborio.png
   :width: 500

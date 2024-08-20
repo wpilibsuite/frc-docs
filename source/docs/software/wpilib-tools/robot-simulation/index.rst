@@ -1,5 +1,4 @@
-Robot Simulation
-================
+# Robot Simulation
 
 .. toctree::
    :maxdepth: 1

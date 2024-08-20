@@ -1,12 +1,10 @@
 .. include:: <isonum.txt>
 
-Style Guide
-===========
+# Style Guide
 
 This document contains the various MD and RST/Sphinx specific guidelines for the frc-docs project. For guidelines related to the various WPILib code projects, see [the WPILib GitHub](https://github.com/wpilibsuite/styleguide)
 
-Filenames
----------
+## Filenames
 
 Use only lowercase alphanumeric characters and ``-`` (minus) symbol.
 
@@ -14,10 +12,9 @@ For documents that will have an identical software/hardware name, append "Hardwa
 
 Suffix filenames with the ``.rst`` extension.
 
-.. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is VS Code with the `reStructuredText extension <https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_.
+.. note:: If you are having issues editing files with the ``.rst`` extension, the recommended text editor is VS Code with the [reStructuredText extension](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext).
 
-Text
-----
+## Text
 
 All text content should be on the same line. If you need readability, use the word-wrap function of your editor.
 
@@ -32,9 +29,9 @@ Use the following case for these terms:
 - Linux (not linux)
 - Java (not java)
 
-Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the `standard character entity sets <https://docutils.sourceforge.io/docs/ref/rst/definitions.html#character-entity-sets>`_.
+Use the ASCII character set for English text. For special characters (e.g. Greek symbols) use the [standard character entity sets](https://docutils.sourceforge.io/docs/ref/rst/definitions.html#character-entity-sets).
 
-Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found `here <https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf>`_.
+Use ``.. math::`` for standalone equations and ``:math:`` for inline equations.  A useful LaTeX equation cheat sheet can be found [here](https://www.reed.edu/academic_support/pdfs/qskills/latexcheatsheet.pdf).
 
 Use literals for filenames, function, and variable names.
 
@@ -42,41 +39,35 @@ Use of the registered trademarks *FIRST*\ |reg| and FRC\ |reg| should follow the
 
 Commonly used terms should be added to the :ref:`docs/software/frc-glossary:FRC Glossary`.  You can reference items in the glossary by using ``:term:`deprecated```.
 
-Whitespace
-----------
+## Whitespace
 
-Indentation
-^^^^^^^^^^^
+### Indentation
 
 Indentation should *always* match the previous level of indentation *unless* you are creating a new content block.
 
 Indentation of content directives as new line ``.. toctree::``  should be `3` spaces.
 
-Blank Lines
-^^^^^^^^^^^
+### Blank Lines
 
 There should be ``1`` blank line separating basic text blocks and section titles. There *should* be ``1`` blank line separating text blocks *and* content directives.
 
-Interior Whitespace
-^^^^^^^^^^^^^^^^^^^
+### Interior Whitespace
 
 Use one space between sentences.
 
-Headings
---------
+## Headings
 
-Headings should be in the following structure. Heading underlines should match the same number of characters as the heading itself.
+Headings should be in the following structure.
 
-1. ``=`` for document titles. *Do not* use this more than *once* per article.
-2. ``-`` for document sections
-3. ``^`` for document sub-sections
-4. ``~`` for document sub-sub-sections
+1. ``#`` for document titles. *Do not* use this more than *once* per article.
+2. ``##`` for document sections
+3. ``###`` for document sub-sections
+4. ``####`` for document sub-sub-sections
 5. If you need to use any lower levels of structure, you're doing things wrong.
 
 Use title case for headings.
 
-Lists
------
+## Lists
 
 Lists should have a new line in between each indent level. The highest indent should have ``0`` indentation, and subsequent sublists should have an indentation starting at the first character of the previous indentation.
 
@@ -91,17 +82,15 @@ Lists should have a new line in between each indent level. The highest indent sh
 
    - Block four
 
-Code blocks
------------
+## Code blocks
 
 All code blocks should have a language specified.
 
 1. Exception: Content where formatting must be preserved and has no language. Instead use ``text``.
 
-Follow the `WPILib style guide <https://github.com/wpilibsuite/styleguide/>`_ for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
+Follow the [WPILib style guide](https://github.com/wpilibsuite/styleguide/) for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
 
-RLI (Remote Literal Include)
-----------------------------
+## RLI (Remote Literal Include)
 
 When possible, instead of using code blocks, an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
 
@@ -121,8 +110,9 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
 
 Make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
 
-Tabs
-----
+.. note:: RLIs should use a tag instead of main to ensure the documentation isn't broken the next time there is a change to the RLIed code. If a tag hasn't been created, use the full (40 character) commit hash.
+
+## Tabs
 To create code tabs in an article, you can use the ``.. tab-set-code::`` directive.  You can use ``code-block`` and ``rli`` directives inside. The format is:
 
 .. code-block:: ReST
@@ -164,8 +154,7 @@ This example uses the sync argument to allow all of the tabs with the same key t
 
 If you have a mix of ``tab-set`` and ``tab-set-code`` directives on a page, you can sync them by setting the sync id on the ``tab-item`` directives to ``tabcode-LANGUAGE``. For example, a java tab would have a sync id of ``tabcode-java``.
 
-Admonitions
------------
+## Admonitions
 
 Admonitions (list [here](https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions)) should have their text on the same line as the admonition itself. There are exceptions to this rule, however, when having multiple sections of content inside of an admonition. Generally having multiple sections of content inside of an admonition is not recommended.
 
@@ -182,11 +171,9 @@ NOT
    .. warning::
       This is a warning!
 
-Links
------
+## Links
 
-Internal Links
-^^^^^^^^^^^^^^
+### Internal Links
 
 Internal Links will be auto-generated based on the ReStructuredText filename and section title.
 
@@ -200,8 +187,7 @@ Use this format to reference the top-level of a document. You can use relative p
 
 When using ``:ref:`` or ``:doc:`` you may customize the displayed text by surrounding the actual link with angle brackets ``<>`` and adding the custom text between the first backtick ````` and the first angle bracket ``<``. For example ``:ref:`custom text <docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics>``` renders to :ref:`custom text <docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics>`.
 
-External Links
-^^^^^^^^^^^^^^
+### External Links
 
 It is preferred to format external links as md style hyperlinks.
 
@@ -217,8 +203,7 @@ However, in some cases where the same link must be referenced multiple times, th
 
    ..  _this is a link: https://example.com
 
-Python API Links
-^^^^^^^^^^^^^^^^
+### Python API Links
 
 Links to the RobotPY API documentation should use the following sphinx [python syntax](https://www.sphinx-doc.org/en/master/usage/domains/python.html) (example linking to the DriverStation API docs).
 
@@ -232,8 +217,7 @@ This expands to be equivalent to:
 
    [Python](https://robotpy.readthedocs.io/projects/robotpy/en/stable/wpilib/DriverStation.html#wpilib.DriverStation)
 
-Images
-------
+## Images
 
 Images should be created with ``1`` new line separating content and directive.
 
@@ -244,8 +228,7 @@ All images (including vectors) should be less than ``500`` kilobytes in size. Pl
    .. image:: images/my-article/my-image.png
       :alt: Always add alt text here describing the image.
 
-Image Files
-^^^^^^^^^^^
+### Image Files
 
 Image files should be stored in the document directory, sub-directory of ``document-name/images``.
 
@@ -260,8 +243,7 @@ They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unaccept
       .. image:: images/my-document/my-image.png
          :alt: An example image
 
-Vector Images
-^^^^^^^^^^^^^
+### Vector Images
 
 SVG files are supported through the ``svg2pdfconverter`` Sphinx extension.
 
@@ -274,8 +256,7 @@ Simply use them as you would with any other image.
    .. image:: images/my-document/my-image.svg
       :alt: Always add alt text here describing the image.
 
-Draw.io Diagrams
-^^^^^^^^^^^^^^^^
+### Draw.io Diagrams
 
 Draw.io (also known as [diagrams.net](https://app.diagrams.net/)) diagrams are supported through ``svg`` files with embedded ``.drawio`` metadata, allowing the ``svg`` file to act as a source file of the diagrams, and to be rendered like a normal vector graphics file.
 
@@ -286,8 +267,7 @@ Simply use them like you would any other vector image, or any other image.
    .. image:: diagrams/my-document/diagram-1.drawio.svg
       :alt: Always add alt text here describing the image.
 
-Draw.io Files
-~~~~~~~~~~~~~
+#### Draw.io Files
 
 Draw.io files follow almost the same naming scheme as normal images. To keep track of files that have the embedded ``.drawio`` metadata, append a ``.drawio`` to the end of the file name, before the extension, meaning the name of the file should be ``document-title-1.drawio.svg`` and so on. Additionally, diagrams should be stored in the document directory in a sub-folder named ``diagrams``.
 
@@ -295,8 +275,7 @@ For the specifics of saving a diagram as a ``.svg`` with metadata, take a look a
 
 .. warning:: Make sure you don't modify any file that is in a ``diagrams`` folder, or ends in ``.drawio.svg`` in any program other than draw.io, otherwise you might risk breaking the metadata of the file, making it uneditable.
 
-File Extensions
----------------
+## File Extensions
 
 File extensions should use code formatting. For example, use:
 
@@ -312,31 +291,28 @@ instead of:
    ".png"
    "``.png``"
 
-Table of Contents (TOC)
------------------------
+## Table of Contents (TOC)
 
 Each category should contain an ``index.rst``. This index file should contain a ``maxdepth`` of ``1``. Sub-categories are acceptable, with a ``maxdepth`` of 1.
 
 The category ``index.rst`` file can then be added to the root index file located at ``source/index.rst``.
 
-Examples
---------
+## Examples
 
 .. code-block:: ReST
 
-   Title
-   =====
+   # Title
+
    This is an example article
 
    .. code-block:: java
 
       System.out.println("Hello World");
 
-   Section
-   -------
+   ## Section
+
    This is a section!
 
-Important Note!
----------------
+## Important Note!
 
 This list is not exhaustive and administrators reserve the right to make changes. Changes will be reflected in this document.

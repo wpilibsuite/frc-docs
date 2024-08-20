@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Gyroscopes - Hardware
-=====================
+# Gyroscopes - Hardware
 
 .. note:: This section covers gyro hardware.  For a software guide to gyros, see :ref:`docs/software/hardware-apis/sensors/gyros-software:Gyroscopes - Software`.
 
@@ -13,30 +12,27 @@ Several popular FRC\ |reg| devices known as :ref:`IMUs <docs/hardware/sensors/ac
   - [CTRE Pigeon IMU](https://store.ctr-electronics.com/gadgeteer-pigeon-imu/)
   - [Kauai Labs NavX](https://pdocs.kauailabs.com/navx-mxp/)
 
-Types of Gyros
---------------
+## Types of Gyros
 
 There are two types of Gyros commonly-used in FRC: single-axis gyros, three-axis gyros and IMUs, which often include a 3-axis gyro.
 
-Single-axis Gyros
-^^^^^^^^^^^^^^^^^
+### Single-axis Gyros
 
 .. image:: images/gyros-hardware/analog-devices-frc-gyro-to-roborio.svg
   :alt: The Analog Devices 1-axis Gyro plugged into the SPI port of the roboRIO.
   :width: 400
 
-As per their name, single-axis gyros measure rotation rate around a single axis.  This axis is generally specified on the physical device, and mounting the device in the proper orientation so that the desired axis is measured is highly important.  Some single-axis gyros can output an analog voltage corresponding to the measured rate of rotation, and so connect to the roboRIO's :doc:[analog input](analog-inputs-hardware>` ports. Other single-axis gyros, such as the `ADXRS450 <https://wiki.analog.com/first) pictured above, use the :ref:`SPI port <docs/hardware/sensors/serial-buses:SPI>` on the roboRIO instead.
+As per their name, single-axis gyros measure rotation rate around a single axis.  This axis is generally specified on the physical device, and mounting the device in the proper orientation so that the desired axis is measured is highly important.  Some single-axis gyros can output an analog voltage corresponding to the measured rate of rotation, and so connect to the roboRIO's :doc:`analog input <analog-inputs-hardware>` ports. Other single-axis gyros, such as the [ADXRS450](https://wiki.analog.com/first) pictured above, use the :ref:`SPI port <docs/hardware/sensors/serial-buses:SPI>` on the roboRIO instead.
 
 The [Analog Devices ADXRS450 FRC Gyro Board](https://www.analog.com/en/landing-pages/001/first.html) that has been in FIRST Choice in recent years is a commonly used single axis gyro.
 
-Three-axis Gyros
-^^^^^^^^^^^^^^^^
+### Three-axis Gyros
 
 .. image:: images/gyros-hardware/adis16470-gyro-to-roborio.jpeg
   :alt: This is the ADIS16470 :term:`IMU` plugged in to the SPI port.
   :width: 400
 
-Three-axis gyros measure rotation rate around all three spacial axes (typically labeled x, y, and z). The motion around these axis is called pitch, yaw, and roll.
+Three-axis gyros measure rotation rate around all three spatial axes (typically labeled x, y, and z). The motion around these axis is called pitch, yaw, and roll.
 
 The [Analog Devices ADIS16470 IMU Board for FIRST Robotics](https://www.analog.com/en/landing-pages/001/first.html) that has been in FIRST Choice in recent years is a commonly used three-axis gyro.
 

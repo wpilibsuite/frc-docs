@@ -1,5 +1,4 @@
-Shuffleboard - Advanced Usage
-=============================
+# Shuffleboard - Advanced Usage
 
 .. toctree::
    :maxdepth: 1

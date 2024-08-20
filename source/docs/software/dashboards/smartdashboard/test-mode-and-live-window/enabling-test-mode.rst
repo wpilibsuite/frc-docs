@@ -1,13 +1,11 @@
-Enabling Test mode (LiveWindow)
-===============================
+# Enabling Test mode (LiveWindow)
 
 You may add code to your program to display values for your sensors and actuators while the robot is in Test mode. This can be selected from the Driver Station whenever the robot is not on the field (see :ref:`docs/software/basic-programming/using-test-mode:Enabling Test Mode` for details on how to do this). Test mode is designed to verify the correct operation of the sensors and actuators on a robot. In addition it can be used for obtaining setpoints from sensors such as potentiometers and for tuning PID loops in your code.  When the robot is enabled in Test mode, the SmartDashboard display will switch to test mode (LiveWindow) and will display the status of any actuators and sensors used by your program.
 
 
 .. important:: Since 2024, LiveWindow is not enabled by default in Test mode!
 
-Enabling LiveWindow in Test Mode
---------------------------------
+## Enabling LiveWindow in Test Mode
 
 To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` class:
 
@@ -31,8 +29,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
       def robotInit(self) -> None:
          enableLiveWindowInTest(true)
 
-Explicitly vs. implicit test mode display
------------------------------------------
+## Explicitly vs. implicit test mode display
 
 .. tab-set-code::
 
@@ -80,8 +77,7 @@ Explicitly vs. implicit test mode display
 
 All sensors and actuators will automatically be displayed on the SmartDashboard in test mode and will be named using the object type (such as PWMSparkMax, PWMVictorSPX, BuiltInAccelerometer, etc.) with channel number with which the object was created. In addition, the program can explicitly add sensors and actuators to the test mode display, in which case programmer-defined subsystem and object names can be specified making the program clearer. This example illustrates explicitly defining those sensors and actuators.
 
-Understanding what is displayed in Test mode
---------------------------------------------
+## Understanding what is displayed in Test mode
 
 .. image:: images/enabling-test-mode/test-mode-display.png
    :alt: Highlights both ungrouped and subsystem motors displayed in test mode.

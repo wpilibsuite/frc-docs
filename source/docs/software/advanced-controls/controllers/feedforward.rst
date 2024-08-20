@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Feedforward Control in WPILib
-=============================
+# Feedforward Control in WPILib
 
 .. note:: This article focuses on in-code implementation of feedforward control in WPILib. For a conceptual explanation of the feedforward equations used by WPILib, see :ref:`docs/software/advanced-controls/introduction/introduction-to-feedforward:Introduction to DC Motor Feedforward`
 
@@ -9,21 +8,19 @@ You may have used feedback control (such as PID) for reference tracking (making 
 
 A feedforward controller injects information about the system's dynamics (like a mathematical model does) or the intended movement. Feedforward handles parts of the control actions we already know must be applied to make a system track a reference, then feedback compensates for what we do not or cannot know about the system's behavior at runtime.
 
-The WPILib Feedforward Classes
-------------------------------
+## The WPILib Feedforward Classes
 
 WPILib provides a number of classes to help users implement accurate feedforward control for their mechanisms.  In many ways, an accurate feedforward is more important than feedback to effective control of a mechanism.  Since most FRC\ |reg| mechanisms closely obey well-understood system equations, starting with an accurate feedforward is both easy and hugely beneficial to accurate and robust mechanism control.
 
-The WPILib feedforward classes closely match the available mechanism characterization tools available in the :ref:[SysId toolsuite](docs/software/advanced-controls/system-identification/introduction:Introduction to System Identification>`.  The system identification toolsuite can be used to quickly and effectively determine the correct gains for each type of feedforward.  If you are unable to empirically characterize your mechanism (due to space and/or time constraints), reasonable estimates of ``kG``, ``kV``, and ``kA`` can be obtained by fairly simple computation, and are also available from `ReCalc <https://www.reca.lc/).  ``kS`` is nearly impossible to model, and must be measured empirically.
+The WPILib feedforward classes closely match the available mechanism characterization tools available in the :ref:`SysId toolsuite <docs/software/advanced-controls/system-identification/introduction:Introduction to System Identification>`.  The system identification toolsuite can be used to quickly and effectively determine the correct gains for each type of feedforward.  If you are unable to empirically characterize your mechanism (due to space and/or time constraints), reasonable estimates of ``kG``, ``kV``, and ``kA`` can be obtained by fairly simple computation, and are also available from [ReCalc](https://www.reca.lc/).  ``kS`` is nearly impossible to model, and must be measured empirically.
 
 WPILib currently provides the following three helper classes for feedforward control:
 
-* [SimpleMotorFeedforward`_ (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html), :external:py:class:`Python <wpimath.controller.SimpleMotorFeedforwardMeters>`)
-* [ArmFeedforward`_ (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ArmFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_arm_feedforward.html), :external:py:class:`Python <wpimath.controller.ArmFeedforward>`)
-* [ElevatorFeedforward`_ (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ElevatorFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_elevator_feedforward.html), :external:py:class:`Python <wpimath.controller.ElevatorFeedforward>`)
+* `SimpleMotorFeedforward`_ (Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_simple_motor_feedforward.html), :external:py:class:`Python <wpimath.controller.SimpleMotorFeedforwardMeters>`)
+* `ArmFeedforward`_ (Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/ArmFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_arm_feedforward.html), :external:py:class:`Python <wpimath.controller.ArmFeedforward>`)
+* `ElevatorFeedforward`_ (Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/ElevatorFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_elevator_feedforward.html), :external:py:class:`Python <wpimath.controller.ElevatorFeedforward>`)
 
-SimpleMotorFeedforward
-----------------------
+## SimpleMotorFeedforward
 
 .. note:: In C++, the ``SimpleMotorFeedforward`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in gains *must* have units consistent with the distance units, or a compile-time error will be thrown.  ``kS`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / distance``, and ``kA`` should have units of ``volts * seconds^2 / distance``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
@@ -82,8 +79,7 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
     # Output is in volts
     feedforward.calculate(10, 20)
 
-ArmFeedforward
---------------
+## ArmFeedforward
 
 .. note:: In C++, the ``ArmFeedforward`` class assumes distances are angular, not linear.  The passed-in gains *must* have units consistent with the angular unit, or a compile-time error will be thrown.  ``kS`` and ``kG`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / radians``, and ``kA`` should have units of ``volts * seconds^2 / radians``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
@@ -143,8 +139,7 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
     # Output is in volts
     feedforward.calculate(1, 2, 3)
 
-ElevatorFeedforward
--------------------
+## ElevatorFeedforward
 
 .. note:: In C++, the passed-in gains *must* have units consistent with the distance units, or a compile-time error will be thrown.  ``kS`` and ``kG`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / distance``, and ``kA`` should have units of ``volts * seconds^2 / distance``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
@@ -206,10 +201,9 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
     # Output is in volts
     feedforward.calculate(20, 30)
 
-Using Feedforward to Control Mechanisms
----------------------------------------
+## Using Feedforward to Control Mechanisms
 
-.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/MotorController.html#setVoltage(double)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_motor_controller.html#a613c23a3336e103876e433bcb8b5ad3e), :external:py:meth:`Python <wpilib.interfaces.MotorController.setVoltage>`) method when applying them to motors to compensate for "voltage sag" from the battery.
+.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/motorcontrol/MotorController.html#setVoltage(double)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_motor_controller.html#a613c23a3336e103876e433bcb8b5ad3e), :external:py:meth:`Python <wpilib.interfaces.MotorController.setVoltage>`) method when applying them to motors to compensate for "voltage sag" from the battery.
 
 Feedforward control can be used entirely on its own, without a feedback controller.  This is known as "open-loop" control, and for many mechanisms (especially robot drives) can be perfectly satisfactory.  A ``SimpleMotorFeedforward`` might be employed to control a robot drive as follows:
 

@@ -1,11 +1,9 @@
-Mecanum Drive Kinematics
-========================
+# Mecanum Drive Kinematics
 The ``MecanumDriveKinematics`` class is a useful tool that converts between a ``ChassisSpeeds`` object and a ``MecanumDriveWheelSpeeds`` object, which contains velocities for each of the four wheels on a mecanum drive.
 
 .. note:: Mecanum kinematics uses a common coordinate system. You may wish to reference the :doc:`/docs/software/basic-programming/coordinate-system` section for details.
 
-Constructing the Kinematics Object
-----------------------------------
+## Constructing the Kinematics Object
 The ``MecanumDriveKinematics`` class accepts four constructor arguments, with each argument being the location of a wheel relative to the robot center (as a ``Translation2d``). The order for the arguments is front left, front right, back left, and back right. The locations for the wheels must be relative to the center of the robot. Positive x values represent moving toward the front of the robot whereas positive y values represent moving toward the left of the robot.
 
 .. tab-set-code::
@@ -52,8 +50,7 @@ The ``MecanumDriveKinematics`` class accepts four constructor arguments, with ea
         frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
       )
 
-Converting Chassis Speeds to Wheel Speeds
------------------------------------------
+## Converting Chassis Speeds to Wheel Speeds
 The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to convert a ``ChassisSpeeds`` object to a ``MecanumDriveWheelSpeeds`` object. This is useful in situations where you have to convert a forward velocity, sideways velocity, and an angular velocity into individual wheel speeds.
 
 .. tab-set-code::
@@ -98,8 +95,7 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(Ch
       # Convert to wheel speeds
       frontLeft, frontRight, backLeft, backRight = self.kinematics.toWheelSpeeds(speeds)
 
-Field-oriented drive
-~~~~~~~~~~~~~~~~~~~~
+#### Field-oriented drive
 :ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get wheel speeds from a set of desired field-oriented speeds.
 
 .. tab-set-code::
@@ -147,16 +143,14 @@ Field-oriented drive
       # Now use this in our kinematics
       wheelSpeeds = self.kinematics.toWheelSpeeds(speeds)
 
-Using custom centers of rotation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Using custom centers of rotation
 Sometimes, rotating around one specific corner might be desirable for certain evasive maneuvers. This type of behavior is also supported by the WPILib classes. The same ``ToWheelSpeeds()`` method accepts a second parameter for the center of rotation (as a ``Translation2d``). Just like the wheel locations, the ``Translation2d`` representing the center of rotation should be relative to the robot center.
 
 .. note:: Because all robots are a rigid frame, the provided ``vx`` and ``vy`` velocities from the ``ChassisSpeeds`` object will still apply for the entirety of the robot. However, the ``omega`` from the ``ChassisSpeeds`` object will be measured from the center of rotation.
 
 For example, one can set the center of rotation on a certain wheel and if the provided ``ChassisSpeeds`` object has a ``vx`` and ``vy`` of zero and a non-zero ``omega``, the robot will appear to rotate around that particular wheel.
 
-Converting wheel speeds to chassis speeds
------------------------------------------
+## Converting wheel speeds to chassis speeds
 One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` object to a singular ``ChassisSpeeds`` object. The ``toChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (Java / Python) / ``ToChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (C++) method can be used to achieve this.
 
 .. tab-set-code::

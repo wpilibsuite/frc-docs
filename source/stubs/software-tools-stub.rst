@@ -1,7 +1,6 @@
 :orphan:
 
-Software Tools
-==============
+# Software Tools
 
 Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
 

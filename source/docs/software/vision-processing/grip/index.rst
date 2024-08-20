@@ -1,5 +1,4 @@
-Vision with GRIP
-================
+# Vision with GRIP
 
 .. toctree::
    :maxdepth: 1

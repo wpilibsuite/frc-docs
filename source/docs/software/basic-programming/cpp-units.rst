@@ -1,10 +1,8 @@
-The C++ Units Library
-=====================
+# The C++ Units Library
 
 WPILib is coupled with a [Units](https://github.com/nholthaus/units) library for C++ teams.  This library leverages the C++ [type system](https://docs.microsoft.com/en-us/cpp/cpp/cpp-type-system-modern-cpp?view=msvc-170&viewFallbackFrom=vs-2019) to enforce proper dimensionality for method parameters, automatically perform unit conversions, and even allow users to define arbitrary defined unit types.  Since the C++ type system is enforced at compile-time, the library has essentially no runtime cost.
 
-Using the Units Library
------------------------
+## Using the Units Library
 
 The units library is a header-only library. You must include the relevant header in your source files for the units you want to use. Here's a list of available units.
 
@@ -52,20 +50,17 @@ The units library is a header-only library. You must include the relevant header
 
 The ``units/math.h`` header provides unit-aware functions like ``units::math::abs()``.
 
-Unit Types and Container Types
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Unit Types and Container Types
 
 The C++ units library is based around two sorts of type definitions: unit types and container types.
 
-Unit Types
-~~~~~~~~~~
+#### Unit Types
 
 Unit types correspond to the abstract concept of a unit, without any actual stored value.  Unit types are the fundamental "building block" of the units library - all unit types are defined constructively (using the ``compound_unit`` template) from a small number of "basic" unit types (such as ``meters``, ``seconds``, etc).
 
 While unit types cannot contain numerical values, their use in building other unit types means that when a type or method uses a [template parameter](https://cplusplus.com/doc/oldtutorial/templates/) to specify its dimensionality, that parameter will be a unit type.
 
-Container Types
-~~~~~~~~~~~~~~~
+#### Container Types
 
 Container types correspond to an actual quantity dimensioned according to some unit - that is, they are what actually hold the numerical value. Container types are constructed from unit types with the ``unit_t`` template.  Most unit types have a corresponding container type that has the same name suffixed by ``_t`` - for example, the unit type ``units::meter`` corresponds to the container type ``units::meter_t``.
 
@@ -73,8 +68,7 @@ Whenever a specific quantity of a unit is used (as a variable or a method parame
 
 A full list of unit and container types can be found in the [documentation](https://github.com/nholthaus/units#namespaces).
 
-Creating Instances of Units
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Creating Instances of Units
 
 To create an instance of a specific unit, we create an instance of its container type:
 
@@ -105,8 +99,7 @@ In fact, all container types representing convertible unit types are *implicitly
 
 In short, we can use *any* unit of length in place of *any other* unit of length, anywhere in our code; the units library will automatically perform the correct conversion for us.
 
-Performing Arithmetic with Units
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Performing Arithmetic with Units
 
 Container types support all of the ordinary arithmetic operations of their underlying data type, with the added condition that the operation must be *dimensionally* sound.  Thus, addition must always be performed on two compatible container types:
 
@@ -135,8 +128,7 @@ Multiplication may be performed on any pair of container types, and yields the c
    // Divide a meter_t value by a second_t, result is a meter_per_second_t
    units::meter_per_second_t speed = 6_m / 0.5_s; // speed is 12_mps
 
-``<cmath>`` Functions
-^^^^^^^^^^^^^^^^^^^^^
+### ``<cmath>`` Functions
 
 Some ``std`` functions (such as ``clamp``) are templated to accept any type on which the arithmetic operations can be performed.  Quantities stored as container types will work with these functions without issue.
 
@@ -147,8 +139,7 @@ However, other ``std`` functions work only on ordinary numerical types (e.g. ``d
    auto area = 36_sq_m;
    units::meter_t sideLength = units::math::sqrt(area);
 
-Removing the Unit Wrapper
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### Removing the Unit Wrapper
 
 To convert a container type to its underlying value, use the ``value()`` method. This serves as an escape hatch from the units type system, which should be used only when necessary.
 
@@ -158,8 +149,7 @@ To convert a container type to its underlying value, use the ``value()`` method.
    double distanceMeters = distance.value();
 
 
-Example of the Units Library in WPILib Code
--------------------------------------------
+## Example of the Units Library in WPILib Code
 Several arguments for methods in new features of WPILib (ex. :ref:`kinematics <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is kinematics?>`) use the units library. Here is an example of :ref:`sampling a trajectory <docs/software/advanced-controls/trajectories/manipulating-trajectories:Sampling the trajectory>`.
 
 .. code-block:: c++
@@ -185,4 +175,4 @@ Some WPILib classes represent objects that could naturally work with multiple ch
    // Max acceleration of 20 radians per second squared
    frc::TrapezoidProfile<units::radians>::Constraints{10_rad_per_s, 20__rad_per_s / 1_s};
 
-For more detailed documentation, please visit the official `GitHub page <https://github.com/nholthaus/units>`_ for the units library.
+For more detailed documentation, please visit the official [GitHub page](https://github.com/nholthaus/units) for the units library.

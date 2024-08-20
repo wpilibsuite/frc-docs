@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Sensor Overview - Hardware
-==========================
+# Sensor Overview - Hardware
 
 .. note:: This section covers sensor hardware, not the use of sensors in code. For a software sensor guide, see :ref:`docs/software/hardware-apis/sensors/sensor-overview-software:Sensor Overview - Software`.
 
@@ -9,13 +8,11 @@ In order to be effective, it is often vital for robots to be able to gather info
 
 Additionally, sensors can be extremely important for robot safety - many robot mechanisms are capable of breaking themselves if used incorrectly.  Sensors provide a safeguard against this, allowing robots to, for example, disable a motor if a mechanism is against a hard-stop.
 
-Types of Sensors
-----------------
+## Types of Sensors
 
 Sensors used in FRC can be generally categorized in two different ways: by function, and by communication protocol.  The former categorization is relevant for robot design; the latter for wiring and programming.
 
-Sensors by Function
-^^^^^^^^^^^^^^^^^^^
+### Sensors by Function
 
 Sensors can provide feedback on a variety of different aspects of the robot's state.  Sensor functions common to FRC include:
 
@@ -41,8 +38,7 @@ Sensors can provide feedback on a variety of different aspects of the robot's st
 
 - :doc:`Gyroscopes <gyros-hardware>`
 
-Sensors by Communication Protocol
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Sensors by Communication Protocol
 
 In order for a sensor to be useful, it must be able to "talk" to the roboRIO.  There are several main methods by which sensors can communicate their readings to the roboRIO:
 

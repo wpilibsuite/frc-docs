@@ -1,9 +1,7 @@
-Sending data
-============
+# Sending data
 Unlike SmartDashboard, data cannot be sent directly to Shuffleboard without first specifying what tab the data should be placed in.
 
-Sending simple data
--------------------
+## Sending simple data
 Sending simple data (numbers, strings, booleans, and arrays of these) is done by calling ``add`` on a tab. This method will set the value if not already present, but will not overwrite an existing value.
 
 .. tab-set-code::
@@ -54,8 +52,7 @@ If data needs to be updated (for example, the output of some calculation done on
          distance = self.encoder.getDistance()
          self.distanceEntry.setDouble(distance)
 
-Making choices persist between reboots
---------------------------------------
+## Making choices persist between reboots
 
 When configuring a robot from the dashboard, some settings may want to persist between robot or driverstation reboots instead of having drivers remember (or forget) to configure the settings before each match.
 
@@ -82,8 +79,7 @@ Simply using `addPersistent` instead of `add` will make the value saved on the r
       (Shuffleboard.getTab("Drive")
             .addPersistent("Max Speed", 1.0))
 
-Sending sensors, motors, etc
-----------------------------
+## Sending sensors, motors, etc
 
 Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most sensors, motor controllers, and SendableChoosers) can be added to any tab
 

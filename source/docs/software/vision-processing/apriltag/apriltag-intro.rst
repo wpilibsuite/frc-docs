@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-What Are AprilTags?
-===================
+# What Are AprilTags?
 
 .. image:: images/apriltagrobots_overlay.png
    :alt: A demonstration of AprilTag fiducial targets attached to generic robots.
@@ -10,8 +9,7 @@ AprilTags are a system of visual tags developed by researchers at the University
 
 Additional information about the tag system and its creators [can be found on their website](https://april.eecs.umich.edu/software/apriltag). This document attempts to summarize the content for FIRST robotics related purposes.
 
-Application to FRC
-------------------
+## Application to FRC
 
 In the context of FRC, AprilTags are useful for helping your robot know where it is at on the field, so it can align itself to some goal position.
 
@@ -42,8 +40,7 @@ All tags will be printed such that the tag's main "body" is 6.5 inches in length
 
 For home usage, tag files may be printed off and placed around your practice area. Mount them to a rigid backing material to ensure the tag stays flat, as the processing algorithm assumes the tags are flat.
 
-Software Support
-----------------
+## Software Support
 
 The main repository for the source code that detects and decodes AprilTags [is located here](https://github.com/wpilibsuite/apriltag/tree/main).
 
@@ -55,8 +52,7 @@ WPILib has forked the repository to add new features for FRC. These include:
 
 .. todo:: Work in this library is still ongoing, this list may change in the future.
 
-Processing Technique
---------------------
+## Processing Technique
 
 While most FRC teams should not have to implement their own code to identify AprilTags in a camera image, it is useful to know the basics of how the underlying libraries function.
 
@@ -150,11 +146,9 @@ While most FRC teams should not have to implement their own code to identify Apr
       Note that this step is optional, and can be skipped for faster image processing. However, skipping it can induce significant errors into your robot's behavior, depending on how you are using the tag outputs.
 
 
-Usage
------
+## Usage
 
-2D Alignment
-^^^^^^^^^^^^
+### 2D Alignment
 
 A simple strategy for using targets is to move the robot until the target is centered in the image. Assuming the field and robot are constructed such that the gamepiece, scoring location, vision target, and camera are all aligned, this method should proved a straightforward method to automatically align the robot to the scoring position.
 
@@ -163,8 +157,7 @@ Using a camera, identify the *centroid* of the AprilTags in view. If the tag's I
 This method does not require calibrating the camera or performing the homography step.
 
 
-3D Alignment
-^^^^^^^^^^^^
+### 3D Alignment
 
 .. image:: images/homography.png
 
@@ -182,8 +175,7 @@ If the camera's position on the robot is known, the robot's position on the fiel
 
 These estimates can be incorporated into the WPILib pose estimation classes.
 
-2D to 3D Ambiguity
-------------------
+## 2D to 3D Ambiguity
 
 The process of translating the four known corners of the target in the image (two-dimensional) into a real-world position relative to the camera (three-dimensional) is inherently ambiguous. That is to say, there are multiple real-world positions that result in the target corners ending up in the same spot in the camera image.
 
@@ -213,8 +205,7 @@ Resolving which position is "correct" can be done in a few different ways:
 4. Use multiple cameras to look at the same target, such that at least one camera can generate a good pose estimate
 5. Look at many targets at once, using each to generate multiple pose estimates. Discard the outlying estimates, use the ones which are tightly clustered together.
 
-Adjustable Parameters
----------------------
+## Adjustable Parameters
 
 ``Decimation factor`` impacts how much the image is down-sampled before processing. Increasing it will increase detection speed, at the cost of not being able to see tags which are far away.
 
@@ -224,8 +215,7 @@ Adjustable Parameters
 
 Detailed information about the tunable parameters [can be found here](https://github.com/AprilRobotics/apriltag/wiki/AprilTag-User-Guide#tuning-the-detector-parameters).
 
-Further Learning
-----------------
+## Further Learning
 
 The three major versions of AprilTags are described in three academic papers. It's recommended to read them in order, as each builds upon the previous:
 

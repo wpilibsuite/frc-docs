@@ -1,7 +1,6 @@
 :orphan:
 
-Programming Basics
-==================
+# Programming Basics
 
 Documentation that is useful throughout a team’s programming process.
 

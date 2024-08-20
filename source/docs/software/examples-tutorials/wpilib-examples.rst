@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-WPILib Example Projects
-=======================
+# WPILib Example Projects
 
 .. warning:: While every attempt is made to keep WPILib examples functional, they are *not* intended to be used "as-is."  At the very least, robot-specific constants will need to be changed for the code to work on a user robot.  Many empirical constants have their values "faked" for demonstration purposes.  Users are strongly encouraged to write their own code (from scratch or from an existing template) rather than copy example code.
 
@@ -9,8 +8,7 @@ WPILib example projects demonstrate a large number of library features and use p
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
 
-Basic Examples
---------------
+## Basic Examples
 
 These examples demonstrate basic/minimal robot functionality.  They are useful for beginning teams who are gaining initial familiarity with robot programming, but are highly limited in functionality.
 
@@ -25,8 +23,7 @@ These examples demonstrate basic/minimal robot functionality.  They are useful f
 * **TankDrive** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/tankdrive), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/TankDrive), [Python](https://github.com/robotpy/examples/tree/main/TankDrive)): Demonstrates a simple differential drive implementation using "tank"-style controls through the ``DifferentialDrive`` class.
 * **Tank Drive Xbox Controller** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/tankdrivexboxcontroller), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/TankDriveXboxController), [Python](https://github.com/robotpy/examples/tree/main/TankDriveXboxController)): Demonstrates the same functionality seen in the previous example, except using an ``XboxController`` instead of an ordinary joystick.
 
-Control Examples
-----------------
+## Control Examples
 
 These examples demonstrate WPILib implementations of common robot controls.  Sensors may be present, but are not the emphasized concept of these examples.
 
@@ -39,8 +36,7 @@ These examples demonstrate WPILib implementations of common robot controls.  Sen
 * **SwerveBot** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot), [Python](https://github.com/robotpy/examples/tree/main/SwerveBot)): Demonstrates an advanced swerve drive implementation, including encoder-and-gyro odometry through the ``SwerveDriveOdometry`` class, and composition with PID position and velocity control through the ``SwerveDriveKinematics`` and ``PIDController`` classes.
 * **UltrasonicPID** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonicpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/UltrasonicPID), [Python](https://github.com/robotpy/examples/tree/main/UltrasonicPID)): Demonstrates the use of the ``PIDController`` class in conjunction with an ultrasonic sensor to drive to a set distance from an object.
 
-Sensor Examples
----------------
+## Sensor Examples
 
 These examples demonstrate sensor reading and data processing using WPILib.  Mechanisms control may be present, but is not the emphasized concept of these examples.
 
@@ -55,8 +51,7 @@ These examples demonstrate sensor reading and data processing using WPILib.  Mec
 * **Ultrasonic** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ultrasonic), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/Ultrasonic), [Python](https://github.com/robotpy/examples/tree/main/Ultrasonic)): Demonstrates the use of the ``Ultrasonic`` class to read data from an ultrasonic sensor in conjunction with the ``MedianFilter`` class to reduce signal noise.
 * **SysIdRoutine** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/sysid), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SysId), [Python](https://github.com/robotpy/examples/tree/main/SysId)): Demonstrates the use of the SysIdRoutine API to gather characterization data for a differential drivetrain.
 
-Command-Based Examples
-----------------------
+## Command-Based Examples
 
 These examples demonstrate the use of the :ref:`Command-Based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>`.
 
@@ -72,8 +67,7 @@ These examples demonstrate the use of the :ref:`Command-Based framework <docs/so
 * **Select Command Example** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SelectCommand), [Python](https://github.com/robotpy/examples/tree/main/SelectCommand)): Demonstrates the use of the ``SelectCommand`` class to run one of a selection of commands depending on a runtime-evaluated condition.
 * **SwerveControllerCommand** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervecontrollercommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveControllerCommand)): Demonstrates trajectory generation and following with a swerve drive using the ``TrajectoryGenerator`` and ``SwerveControllerCommand`` classes.
 
-State-Space Examples
---------------------
+## State-Space Examples
 
 These examples demonstrate the use of the :ref:`State-Space Control <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>`.
 
@@ -82,8 +76,7 @@ These examples demonstrate the use of the :ref:`State-Space Control <docs/softwa
 * **StateSpaceElevator** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceelevator), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/StateSpaceElevator)): Demonstrates state-space control of an elevator.
 * **StateSpaceArm** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespacearm), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/StateSpaceArm)): Demonstrates state-space control of an Arm.
 
-Simulation Physics Examples
----------------------------
+## Simulation Physics Examples
 
 These examples demonstrate the use of the physics simulation.
 
@@ -91,8 +84,7 @@ These examples demonstrate the use of the physics simulation.
 * **ArmSimulation** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation), [Python](https://github.com/robotpy/examples/tree/main/ArmSimulation)): Demonstrates the use of physics simulation with a simple single-jointed arm.
 * **SimpleDifferentialDriveSimulation** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/simpledifferentialdrivesimulation), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SimpleDifferentialDriveSimulation)): A barebones example of a basic drivetrain that can be used in simulation.
 
-Miscellaneous Examples
-----------------------
+## Miscellaneous Examples
 
 These examples demonstrate miscellaneous WPILib functionality that does not fit into any of the above categories.
 

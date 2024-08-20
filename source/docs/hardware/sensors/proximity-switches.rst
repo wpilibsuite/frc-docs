@@ -1,14 +1,12 @@
 .. include:: <isonum.txt>
 
-Proximity Switches - Hardware
-=============================
+# Proximity Switches - Hardware
 
 .. note:: This section covers proximity switch hardware.  For a guide to using proximity switches in software, see :ref:`docs/software/hardware-apis/sensors/digital-inputs-software:Digital Inputs - Software`.
 
 One of the most common sensing tasks on a robot is detecting when an object (be it a mechanism, game piece, or field element) is within a certain distance of a known point on the robot.  This type of sensing is accomplished by a "proximity switch."
 
-Proximity switch operation
---------------------------
+## Proximity switch operation
 
 Proximity switches are switches - they operate a circuit between an "open" state (in which there *is not* connectivity across the circuit) and a "closed" one (in which there *is*).  Thus, proximity switches generate a digital signal, and accordingly, they are almost always connected to the roboRIO's :doc:`digital input <digital-inputs-hardware>` ports.
 
@@ -16,8 +14,7 @@ Proximity switches can be either "normally-open," in which activating the switch
 
 The digital inputs on the roboRIO have pull-up resistors that will make the input be high (1 value) when the switch is open, but when the switch closes the value goes to 0 since the input is now connected to ground.
 
-Types of Proximity Switches
----------------------------
+## Types of Proximity Switches
 
 There are several types of proximity switches that are commonly used in FRC\ |reg|:
 
@@ -27,8 +24,7 @@ There are several types of proximity switches that are commonly used in FRC\ |re
  - `Photoelectric Proximity Switches`_
  - `Time-of-flight Proximity Switches`_
 
-Mechanical Proximity Switches ("limit switches")
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Mechanical Proximity Switches ("limit switches")
 
 .. image:: images/digital-inputs-hardware/limit-switch-to-roborio.svg
    :alt: A normally open limit switch connected to a channel of the roboRIO DIO.
@@ -39,8 +35,7 @@ Limit switches vary in size, the geometry of the switch-arm, and in the amount o
 
 See this :ref:`article <docs/software/hardware-apis/sensors/limit-switch:Programming Limit Switches>` for writing the software for Limit Switches.
 
-Magnetic Proximity Switches
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Magnetic Proximity Switches
 
 .. image:: images/digital-inputs-hardware/hall-effect-sensor-to-roborio.svg
    :alt: A magnetic proximity switch hooked up to a DIO channel of the roboRIO.
@@ -53,8 +48,7 @@ Magnetic proximity switches may be either "unipolar," "bipolar," or "omnipolar."
 
 While magnetic proximity switches are often more reliable than their mechanical counterparts, they require the user to mount a magnet on the object to be sensed - thus, they are mostly used for sensing mechanism location.
 
-Inductive Proximity Switches
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Inductive Proximity Switches
 
 .. image:: images/proximity-switches-hardware/inductive-proximity-switch.png
    :alt: Example industrial inductive proximity switch.
@@ -63,8 +57,7 @@ Inductive proximity switches are activated when a conductor of any sort comes wi
 
 Inductive proximity switches are used for many of the same purposes as magnetic proximity switches.  Their more-general nature (activating in the presence of any conductor, rather than just a magnet) can be either a help or a hindrance, depending on the nature of the application.
 
-Photoelectric Proximity Switches
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Photoelectric Proximity Switches
 
 .. image:: images/proximity-switches-hardware/ir-digital-obstacle-sensor-to-roborio.svg
    :alt: Connecting a photoelectric proximity switch to a DIO port.
@@ -78,8 +71,7 @@ Photoelectric sensors are also often used in a "beam break" configuration, in wh
 .. image:: images/proximity-switches-hardware/ir-beam-break-sensor-to-roborio.svg
    :alt: Connecting a beam break receiver and transmitter each to one DIO channel on the roboRIO.
 
-Time-of-flight Proximity Switches
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Time-of-flight Proximity Switches
 
 .. image:: images/proximity-switches-hardware/time-of-flight-i2c-distance-sensor-to-roborio.svg
    :alt: VL53L0X time of flight sensor hooked up to the I2C port.

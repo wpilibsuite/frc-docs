@@ -1,5 +1,4 @@
-Using tabs
-==========
+# Using tabs
 
 Shuffleboard is a tabbed interface. Each tab organizes widgets in a logical grouping. By default, Shuffleboard has tabs for the legacy SmartDashboard and LiveWindow - but new tabs can now be created in Shuffleboard directly from a robot program for better organization.
 
@@ -23,8 +22,7 @@ Creating a new tab
 
 Creating a new tab is as simple as calling a single method on the Shuffleboard class, which will create a new tab on Shuffleboard and return a handle for adding your data to the tab. Calling getTab multiple times with the same tab title will return the same handle each time.
 
-Selecting a tab
----------------
+## Selecting a tab
 
 .. tab-set-code::
 
@@ -46,8 +44,7 @@ This method lets a tab be selected by title. This is case-sensitive (so "Tab Tit
 
 This method can be used to select any tab in Shuffleboard, not just ones created by the robot program.
 
-Caveats
--------
+## Caveats
 
 Tabs created from a robot program differ in a few important ways from normal tabs created from the dashboard:
 

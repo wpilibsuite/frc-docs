@@ -1,5 +1,4 @@
-Deploy Python program to roboRIO
-================================
+# Deploy Python program to roboRIO
 
 .. note:: Before deploying the code to your robot, you must start by :doc:`installing RobotPy on your computer </docs/zero-to-robot/step-2/python-setup>`
 

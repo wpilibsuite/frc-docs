@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Introduction to FRC Robot Wiring
-================================
+# Introduction to FRC Robot Wiring
 
 .. note::
 
@@ -9,8 +8,7 @@ Introduction to FRC Robot Wiring
 
    Some images shown in this section reflect the setup for a Robot Control System using SPARK or SPARK MAX Motor Controllers. Wiring diagram and layout should be similar for other motor controllers. Where appropriate, two sets of images are provided to show connections using controllers with and without integrated wires.
 
-Overview
---------
+## Overview
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
@@ -40,8 +38,7 @@ Overview
         Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
 
-Gather Materials
-----------------
+## Gather Materials
 
 Locate the following control system components and tools
 
@@ -81,13 +78,11 @@ Locate the following control system components and tools
       - For CTR PDP only: 5 mm Hex key (3/16" may work if metric is unavailable)
       - For CTR PDP only: 1/16" Hex key
 
-Create the Base for the Control System
---------------------------------------
+## Create the Base for the Control System
 
 For a test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or plastic) approximately 24" x 16" (60 x 40 cm). For a Robot Quick Build control board see the supporting documentation for the proper size board for the chosen chassis configuration.
 
-Layout the Core Control System Components
------------------------------------------
+## Layout the Core Control System Components
 .. tab-set::
 
    .. tab-item:: REV
@@ -104,16 +99,14 @@ Layout the Core Control System Components
 
 Lay out the components on the board. An example layout is shown in the image above.
 
-Fasten Components
------------------
+## Fasten Components
 
 .. image:: images/how-to-wire-a-simple-robot/ziptie.png
   :alt: Using zipties to secure components down.
 
 Using the Dual Lock or hardware, fasten all components to the board. Note that in many FRC games robot-to-robot contact may be substantial and Dual Lock alone is unlikely to stand up as a fastener for many electronic components. Teams may wish to use nut and bolt fasteners or (as shown in the image above) cable ties, with or without Dual Lock to secure devices to the board.
 
-Attach Robot Side Battery Connector
-----------------------------------------------
+## Attach Robot Side Battery Connector
 
 .. tab-set::
 
@@ -155,8 +148,7 @@ Attach Robot Side Battery Connector
       3. Using a 7/16" (11 mm) box end wrench, remove the nut on the "Batt" side of the main breaker and secure the positive terminal of the battery connector
 
 
-Wire Breaker to Power Distribution
-----------------------------------
+## Wire Breaker to Power Distribution
 
 .. tab-set::
 
@@ -191,8 +183,7 @@ Wire Breaker to Power Distribution
       3. Using the 5 mm Allen wrench, secure the other end to the PDP positive terminal.
 
 
-Insulate power connections
---------------------------
+## Insulate power connections
 
 .. tab-set::
 
@@ -218,8 +209,7 @@ Insulate power connections
       2. Using the 1/16" Allen wrench, replace the PDP terminal cover
 
 
-Motor Controller Power
-----------------------
+## Motor Controller Power
 
 .. tab-set::
 
@@ -283,8 +273,7 @@ Motor Controller Power
       4. Attach the terminal to the motor controller input terminals (red to +, black to -)
 
 
-Weidmuller Connectors
----------------------
+## Weidmuller Connectors
 
 .. raw:: html
 
@@ -304,8 +293,7 @@ After making the connection check to be sure that it is clean and secure:
 - Verify that there are no "whiskers" outside the connector that may cause a short circuit
 - Tug on the wire to verify that it is seated fully. If the wire comes out and is the correct gauge it needs to be inserted further and/or stripped back further. Occasionally the terminal may remain stuck open with the wire inserted and the button released even if the wire is stripped and inserted properly; in these cases wiggling the wire in and out a small amount will often allow the connector to latch shut and grip the wire.
 
-roboRIO Power
--------------
+## roboRIO Power
 .. tab-set::
 
    .. tab-item:: REV
@@ -340,8 +328,7 @@ roboRIO Power
       5. Using a very small flat screwdriver connect the wires to the power input connector of the roboRIO (red to V, black to C). Also make sure that the power connector is screwed down securely to the roboRIO.
 
 
-Radio Power
------------
+## Radio Power
 .. tab-set::
 
    .. tab-item:: REV
@@ -386,8 +373,7 @@ Radio Power
       2. Connect the RJ45 (Ethernet) plug end of the cable into the Ethernet port on the radio closest to the barrel connector (labeled 18-24v POE)
 
 
-Pneumatics Power (Optional)
----------------------------
+## Pneumatics Power (Optional)
 
 .. tab-set::
 
@@ -428,8 +414,7 @@ Pneumatics Power (Optional)
       4. Cut and strip ~5/16" (~8 mm) from the end of the wire.
       5. Connect the wire to the PCM 12Vin terminals.
 
-Ethernet Cables
----------------
+## Ethernet Cables
 
 .. tab-set::
 
@@ -457,11 +442,9 @@ Ethernet Cables
 
       Connect an Ethernet cable from the RJ45 (Ethernet) socket of the Rev Passive POE cable to the RJ45 (Ethernet) port on the roboRIO.
 
-CAN Devices
------------
+## CAN Devices
 
-roboRIO to Pneumatics CAN
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### roboRIO to Pneumatics CAN
 
 .. tab-set::
 
@@ -498,8 +481,7 @@ roboRIO to Pneumatics CAN
       3. Measure the length required to reach the CAN terminals of the PCM (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
       4. Insert the wires into the appropriate color coded CAN terminals on the PCM. You may use either of the Yellow/Green terminal pairs on the PCM, there is no defined in or out.
 
-Pneumatics to PD CAN
-^^^^^^^^^^^^^^^^^^^^^
+### Pneumatics to PD CAN
 
 .. tab-set::
 
@@ -541,8 +523,7 @@ Pneumatics to PD CAN
       .. note:: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
 
 
-Motor Controller Signal Wires
------------------------------
+## Motor Controller Signal Wires
 
 .. tab-set ::
 
@@ -578,8 +559,7 @@ Motor Controller Signal Wires
 
       When chaining controllers together using the provided connectors, make sure to use the provided retaining clip. If unavailable, secure the connection with a small ziptie, electrical tape, or other similar method.
 
-Robot Signal Light
-------------------
+## Robot Signal Light
 
 .. image:: images/how-to-wire-a-simple-robot/rsl.jpg
   :alt: Robot Signal Light (rsl) wiring from roboRIO to RSL
@@ -595,8 +575,7 @@ Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`
 
 .. tip:: You may wish to temporarily secure the RSL to the control board using cable ties or Dual Lock (it is recommended to move the RSL to a more visible location as the robot is being constructed)
 
-Circuit Breakers
-----------------
+## Circuit Breakers
 
 .. tab-set ::
 
@@ -624,8 +603,7 @@ Circuit Breakers
 
       If working on a Robot Quick Build, stop here and insert the board into the robot chassis before continuing.
 
-Motor Power
------------
+## Motor Power
 
 .. image:: images/how-to-wire-a-simple-robot/motor-power.jpg
   :alt: Connecting power from the motor to the motor controller.
@@ -646,8 +624,7 @@ For the SPARK or other non-integrated-wire controllers (bottom image):
 1. Crimp a ring/fork terminal on each of the motor wires.
 2. Attach the wires to the output side of the motor controller (red to +, black to -)
 
-STOP
-----
+## STOP
 
 .. image:: images/how-to-wire-a-simple-robot/stop.png
   :alt: Giant red stop sign.
@@ -662,15 +639,13 @@ STOP
 
 .. tip:: It is also recommended to put the robot on blocks so the wheels are off the ground before proceeding. This will prevent any unexpected movement from becoming dangerous.
 
-Manage Wires
-------------
+## Manage Wires
 
 Requires: Zip ties
 
 .. tip:: Now may be a good time to add a few zip ties to manage some of the wires before proceeding. This will help keep the robot wiring neat.
 
-Connect Battery
----------------
+## Connect Battery
 
 Connect the battery to the robot side of the Anderson connector. Power on the robot by moving the lever on the top of the 120A main breaker into the ridge on the top of the housing.
 

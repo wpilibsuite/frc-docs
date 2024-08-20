@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-What you need to get the Pi image running
-=========================================
+# What you need to get the Pi image running
 
 To start using the Raspberry Pi as a video or image coprocessor you need the following:
 

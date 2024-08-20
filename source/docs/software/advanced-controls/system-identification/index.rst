@@ -1,5 +1,4 @@
-System Identification
-======================
+# System Identification
 
 .. toctree::
    :maxdepth: 1

@@ -8,8 +8,7 @@
 .. meta::
    :google-site-verification: POR_nG8b56eXGxmUIutST7jcA_Vl58ypSdJTzJ1g0zg
 
-FIRST Robotics Competition Control System
-=========================================
+# FIRST Robotics Competition Control System
 
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This site contains everything you need to know for programming a competition robot!
 
@@ -220,7 +219,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       Java, C++, and Python class documentation.
 
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/release/java/index.html
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/development/java/index.html
          :color: primary
          :shadow:
          :align: center
@@ -229,7 +228,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
          Java
 
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/release/cpp/index.html
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/development/cpp/index.html
          :color: primary
          :shadow:
          :align: center
@@ -370,8 +369,8 @@ Community translations can be found in a variety of languages in the bottom-left
    :caption: API Docs
    :hidden:
 
-   WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/release/java/index.html>
-   WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/release/cpp/index.html>
+   WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/development/java/index.html>
+   WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/development/cpp/index.html>
    WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/stable/>
 
 .. toctree::

@@ -1,27 +1,22 @@
-Starting RobotBuilder
-=====================
+# Starting RobotBuilder
 
 .. note:: RobotBuilder is a Java program and as such should be able to run on any platform that is supported by Java. We have been running RobotBuilder on macOS, Windows, and various versions of Linux successfully.
 
-Getting RobotBuilder
---------------------
+## Getting RobotBuilder
 
 RobotBuilder is downloaded as part of the WPILib Offline Installer. For more information, see the :ref:`Windows/macOS/Linux installation guides <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`
 
-Option 1 - Starting from Visual Studio Code
--------------------------------------------
+## Option 1 - Starting from Visual Studio Code
 
 .. image:: images/starting-robotbuilder-1.png
 
 Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib logo in the top right to launch the WPILib Command Palette.  Select :guilabel:`Start Tool`, then select :guilabel:`Robot Builder`.
 
-Option 2 - Shortcuts
---------------------
+## Option 2 - Shortcuts
 
 Shortcuts are installed to the Windows Start Menu and the ``2024 WPILib Tools`` folder on the desktop.
 
-Option 3 - Running from the Script
-----------------------------------
+## Option 3 - Running from the Script
 
 .. image:: images/starting-robotbuilder-2.png
 

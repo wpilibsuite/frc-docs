@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Strategies for Vision Programming
-=================================
+# Strategies for Vision Programming
 
 Using computer vision is a great way of making your robot be responsive to the elements on the field and make it much more autonomous. Often in FRC\ |reg| games there are bonus points for autonomously shooting balls or other game pieces into goals or navigating to locations on the field. Computer vision is a great way of solving many of these problems. And if you have autonomous code that can do the challenge, then it can be used during the teleop period as well to help the human drivers.
 
@@ -10,13 +9,11 @@ There are many options for choosing the components for vision processing and whe
 .. image:: diagrams/vision-workflows.drawio.svg
    :alt: Different vision workflows in FRC.
 
-OpenCV Computer Vision Library
-------------------------------
+## OpenCV Computer Vision Library
 
 **OpenCV** is an open source computer vision library that is widely used throughout academia and industry. It has support from hardware manufactures providing GPU accelerated processing, it has bindings for a number of languages including C++, Java, and Python. It is also well documented with many web sites, books, videos, and training courses so there are lots of resources available to help learn how to use it. The C++ and Java versions of WPILib include the OpenCV libraries, there is support in the library for capturing, processing and viewing video, and tools to help you create your vision algorithms. For more information about OpenCV see https://opencv.org.
 
-Vision Code on roboRIO
-----------------------
+## Vision Code on roboRIO
 
 .. image:: diagrams/vision-code-on-roborio.drawio.svg
    :alt: The chain from a USB Webcam to roboRIO to Ethernet Switch over a video stream to the driver station computer.
@@ -27,8 +24,7 @@ In this approach, the vision code simply produces results that the robot code di
 
 Using functions provided by the CameraServer class, the video stream can be sent to dashboards such as Shuffleboard so operators can see what the camera sees. In addition, annotations can be added to the images using OpenCV commands so targets or other interesting objects can be identified in the dashboard view.
 
-Vision Code on DS Computer
---------------------------
+## Vision Code on DS Computer
 
 .. image:: diagrams/vision-code-on-ds-computer.drawio.svg
    :alt: Same as the above diagram but the Driver Station computer must process that video and send NetworkTables updates back to the roboRIO.
@@ -39,8 +35,7 @@ After the images are processed, the key values such as the target position, dist
 
 The video stream can be displayed on Shuffleboard or SmartDashboard.
 
-Vision Code on Coprocessor
---------------------------
+## Vision Code on Coprocessor
 
 .. image:: diagrams/vision-code-on-a-coprocessor.drawio.svg
    :alt: Coprocessor is on same network as the roboRIO so it off loads the compute without having the latency of going to the Driver Station and back.
@@ -51,8 +46,7 @@ This approach takes a bit more programming expertise as well as a small amount o
 
 Data can be sent from the vision program on the coprocessor to the robot using NetworkTables or a private protocol over a network or serial connection.
 
-Camera Options
---------------
+## Camera Options
 
 There are a number of camera options supported by WPILib. Cameras have a number of parameters that affect operation; for example, frame rate and image resolution affect the quality of the received images, but when set too high impact processing time and, if sent to the driver station, may exceed the available bandwidth on the field.
 

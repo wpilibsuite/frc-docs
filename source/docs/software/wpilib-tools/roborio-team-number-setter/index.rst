@@ -1,5 +1,4 @@
-roboRIO Team Number Setter
-==========================
+# roboRIO Team Number Setter
 
 .. image:: images/roborioteamnumbersetter.png
    :alt: roboRIO Team Number Setter tool.
@@ -10,17 +9,14 @@ In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click th
 
 Connect to the roboRIO over USB to use the tool, as this is the simplest method when the team number hasn't been set.
 
-Setting Team Number
--------------------
+## Setting Team Number
 
 Enter your team number in the :guilabel:`Team Number` field and select :guilabel:`Set team to xxxxx`. This will take about a second, then press the :guilabel:`Reboot` button to reboot the roboRIO so the new team number takes effect.
 
-Enabling/Disabling Webserver
-----------------------------
+## Enabling/Disabling Webserver
 
-The :doc:`roboRIO's webserver </docs/software/roborio-info/roborio-web-dashboard>` provides some debuging and enables some configuration. However, it also takes memory away from the robot program. You can disable it by clicking on the :guilabel:`Disable Web Server` button. If you'd like to enable it again, you can click :guilabel:`Enable Web Server`.
+The :doc:`roboRIO's webserver </docs/software/roborio-info/roborio-web-dashboard>` provides some debugging and enables some configuration. However, it also takes memory away from the robot program. You can disable it by clicking on the :guilabel:`Disable Web Server` button. If you'd like to enable it again, you can click :guilabel:`Enable Web Server`.
 
-roboRIO Identification
-----------------------
+## roboRIO Identification
 
 Clicking the :guilabel:`Blink` button will cause the roboRIO's Radio LED to blink a few times to help identify the roboRIO.

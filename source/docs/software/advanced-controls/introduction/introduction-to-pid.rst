@@ -1,14 +1,12 @@
 .. include:: <isonum.txt>
 
-Introduction to PID
-===================
+# Introduction to PID
 
 .. note:: For a guide on implementing PID control with WPILib, see :ref:`docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib`.
 
 This page explains the conceptual and mathematical workings of a PID controller. :ref:`A video explanation from WPI is also available <docs/software/advanced-controls/introduction/pid-video:PID Introduction Video by WPI>`.
 
-What is a PID Controller?
--------------------------
+## What is a PID Controller?
 
 The PID controller is a common :ref:`feedback controller<docs/software/advanced-controls/introduction/picking-control-strategy:Feedback Control: Correcting for Errors and Disturbances>` consisting of proportional, integral, and derivative terms, hence the name. This article will build up the definition of a PID controller term by term while trying to provide some intuition for how each term behaves.
 
@@ -35,8 +33,7 @@ Roughly speaking: the proportional term drives the position error to zero, the d
 
    Despite the differences in capitalization, the two formats refer to the same concept.
 
-Proportional Term
------------------
+## Proportional Term
 
 The *Proportional* term attempts to drive the position error to zero by contributing to the control signal proportionally to the current position error.  Intuitively, this tries to move the :term:`output` towards the :term:`reference`.
 
@@ -58,8 +55,7 @@ Proportional gains act like a "software-defined springs" that pull the :term:`sy
 
 so the "force" with which the proportional controller pulls the :term:`system's <system>` :term:`output` toward the :term:`setpoint` is proportional to the :term:`error`, just like a spring.
 
-Derivative Term
----------------
+## Derivative Term
 
 The *Derivative* term attempts to drive the derivative of the error to zero by contributing to the control signal proportionally to the derivative of the error.  Intuitively, this tries to make the :term:`output` move at the same rate as the :term:`reference`.
 
@@ -93,8 +89,7 @@ Notice how :math:`\frac{r_k - r_{k-1}}{dt}` is the velocity of the :term:`setpoi
 
 If the :term:`setpoint` is constant, the implicit velocity :term:`setpoint` is zero, so the :math:`K_d` term slows the :term:`system` down if it's moving. This acts like a "software-defined damper". These are commonly seen on door closers, and their damping force increases linearly with velocity.
 
-Integral Term
--------------
+## Integral Term
 
 .. important:: Integral gain is generally not recommended for FRC\ |reg| use. It is almost always better to use a feedforward controller to eliminate steady-state error.  If you do employ integral gain, it is crucial to provide some protection against :ref:`integral windup <docs/software/advanced-controls/introduction/common-control-issues:Integral Term Windup>`.
 
@@ -125,8 +120,7 @@ A common way of eliminating :term:`steady-state error` is to integrate the :term
    :alt: Figure 2.6 and 2.6 graphs
    :align: center
 
-Putting It All Together
------------------------
+## Putting It All Together
 
 .. note:: For information on using the WPILib provided PIDController, see the :ref:`relevant article <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`.
 
@@ -143,8 +137,7 @@ The below figure shows a block diagram for a PID controller.
    :alt: Block diagram of a PID controller
    :align: center
 
-Response Types
---------------
+## Response Types
 
 A :term:`system` driven by a PID controller generally has three types of responses: underdamped, over-damped, and critically damped. These are shown in figure 2.8.
 

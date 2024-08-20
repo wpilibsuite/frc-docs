@@ -1,20 +1,17 @@
-Counters
-========
+# Counters
 
 .. image:: images/counters/counters.png
     :alt: IO Diagram showing the up/down pulses the counter is counting.
 
-The :code:[Counter` class (`Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_counter.html)) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <docs/software/hardware-apis/sensors/encoders-software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/hardware-apis/sensors/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on its own.
+The :code:`Counter` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Counter.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_counter.html)) is a versatile class that allows the counting of pulse edges on a digital input.  :code:`Counter` is used as a component in several more-complicated WPILib classes (such as :ref:`Encoder <docs/software/hardware-apis/sensors/encoders-software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/hardware-apis/sensors/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on its own.
 
 .. note:: There are a total of 8 counter units in the roboRIO FPGA, meaning no more than 8 :code:`Counter` objects may be instantiated at any one time, including those contained as resources in other WPILib objects.  For detailed information on when a :code:`Counter` may be used by another object, refer to the official API documentation.
 
-Configuring a counter
----------------------
+## Configuring a counter
 
 The :code:`Counter` class can be configured in a number of ways to provide differing functionalities.
 
-Counter Modes
-^^^^^^^^^^^^^
+### Counter Modes
 
 The :code:`Counter` object may be configured to operate in one of four different modes:
 
@@ -25,8 +22,7 @@ The :code:`Counter` object may be configured to operate in one of four different
 
 .. note:: In all modes except semi-period mode, the counter can be configured to increment either once per edge (2X decoding), or once per pulse (1X decoding).  By default, counters are set to two-pulse mode, though if only one channel is specified the counter will only count up.
 
-Two-pulse mode
-~~~~~~~~~~~~~~
+#### Two-pulse mode
 
 In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the specified "up channel," and down for every edge/pulse on the specified "down channel."  A counter can be initialized in two-pulse with the following code:
 
@@ -62,8 +58,7 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
             counter.SetUpSourceEdge(true, true);
             counter.SetDownSourceEdge(true, true);
 
-Semi-period mode
-~~~~~~~~~~~~~~~~
+#### Semi-period mode
 
 In semi-period mode, the :code:`Counter` will count the duration of the pulses on a channel, either from a rising edge to the next falling edge, or from a falling edge to the next rising edge.  A counter can be initialized in semi-period mode with the following code:
 
@@ -109,8 +104,7 @@ To get the pulse width, call the :code:`getPeriod()` method:
         // Return the measured pulse width in seconds
         counter.GetPeriod();
 
-Pulse-length mode
-~~~~~~~~~~~~~~~~~
+#### Pulse-length mode
 
 In pulse-length mode, the counter will count either up or down depending on the length of the pulse. A pulse below the specified threshold time will be interpreted as a forward count and a pulse above the threshold is a reverse count. This is useful for some gear tooth sensors which encode direction in this manner.  A counter can be initialized in this mode as follows:
 
@@ -148,8 +142,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
             // Set the counter to count down if the pulses are longer than .05 seconds
             counter.SetPulseLengthMode(.05)
 
-External direction mode
-~~~~~~~~~~~~~~~~~~~~~~~
+#### External direction mode
 
 In external direction mode, the counter counts either up or down depending on the level on the second channel. If the direction source is low, the counter will increase; if the direction source is high, the counter will decrease (to reverse this, see the next section). A counter can be initialized in this mode as follows:
 
@@ -183,8 +176,7 @@ In external direction mode, the counter counts either up or down depending on th
             // Set the decoding type to 2X
             counter.SetUpSourceEdge(true, true);
 
-Configuring counter parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Configuring counter parameters
 
 .. note:: The :code:`Counter` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-pulse value.  Users thus have complete control over the distance units used.  However, units of time are *always* in seconds.
 
@@ -232,13 +224,11 @@ Apart from the mode-specific configurations, the :code:`Counter` class offers a 
         // Can be between 1 and 127 samples
         counter.SetSamplesToAverage(5);
 
-Reading information from counters
----------------------------------
+## Reading information from counters
 
 Regardless of mode, there is some information that the :code:`Counter` class always exposes to users:
 
-Count
-^^^^^
+### Count
 
 Users can obtain the current count with the :code:`get()` method:
 
@@ -254,8 +244,7 @@ Users can obtain the current count with the :code:`get()` method:
         // returns the current count
         counter.Get();
 
-Distance
-^^^^^^^^
+### Distance
 
 .. note:: Counters measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/hardware-apis/sensors/counters:Resetting a Counter>`.
 
@@ -273,8 +262,7 @@ If the :ref:`distance per pulse <docs/software/hardware-apis/sensors/counters:Co
         // returns the current distance
         counter.GetDistance();
 
-Rate
-~~~~
+#### Rate
 
 .. note:: Units of time for the :code:`Counter` class are *always* in seconds.
 
@@ -292,8 +280,7 @@ Users can obtain the current rate of change of the counter with the :code:`getRa
         // Gets the current rate of the counter
         counter.GetRate();
 
-Stopped
-^^^^^^^
+### Stopped
 
 Users can obtain whether the counter is stationary with the :code:`getStopped()` method:
 
@@ -309,8 +296,7 @@ Users can obtain whether the counter is stationary with the :code:`getStopped()`
         // Gets whether the counter is stopped
         counter.GetStopped();
 
-Direction
-~~~~~~~~~
+#### Direction
 
 Users can obtain the direction in which the counter last moved with the :code:`getDirection()` method:
 
@@ -326,8 +312,7 @@ Users can obtain the direction in which the counter last moved with the :code:`g
         // Gets the last direction in which the counter moved
         counter.GetDirection();
 
-Period
-^^^^^^
+### Period
 
 .. note:: In :ref:`semi-period mode <docs/software/hardware-apis/sensors/counters:Semi-period mode>`, this method returns the duration of the pulse, not of the period.
 
@@ -345,8 +330,7 @@ Users can obtain the duration (in seconds) of the most-recent period with the :c
         // returns the current period in seconds
         counter.GetPeriod();
 
-Resetting a counter
--------------------
+## Resetting a counter
 
 To reset a counter to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement.
 
@@ -362,7 +346,6 @@ To reset a counter to a distance reading of zero, call the :code:`reset()` metho
         // Resets the encoder to read a distance of zero
         counter.Reset();
 
-Using counters in code
-----------------------
+## Using counters in code
 
 Counters are useful for a wide variety of robot applications - but since the :code:`Counter` class is so varied, it is difficult to provide a good summary of them here.  Many of these applications overlap with the :code:`Encoder` class - a simple counter is often a cheaper alternative to a quadrature encoder.  For a summary of potential uses for encoders in code, see :ref:`docs/software/hardware-apis/sensors/encoders-software:Encoders - Software`.

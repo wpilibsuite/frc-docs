@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Using a Coprocessor for vision processing
-=========================================
+# Using a Coprocessor for vision processing
 Vision processing using libraries like OpenCV for recognizing field targets or game pieces can often be a CPU intensive process.
 Often the load isn't too significant and the processing can easily be handled by the roboRIO. In cases where there are more camera
 streams or the image processing is complex, it is desirable to off-load the roboRIO by putting the code and the camera connection
@@ -9,8 +8,7 @@ on a different processor. There are a number of choices of processors that are p
 intel-based Kangaroo, the LimeLight for the ultimate in simplicity, or for more complex vision code a graphics accelerator such as
 one of the nVidia Jetson models.
 
-Strategy
---------
+## Strategy
 Generally the idea is to set up the coprocessor with the required software that generally includes:
 
 -   OpenCV - the open source computer vision library
@@ -27,8 +25,7 @@ by the robot program for steering and aiming.
 .. image:: diagrams/vision-code-on-a-coprocessor.drawio.svg
    :alt: Network diagram with the coprocessor and roboRIO on the same network.
 
-Streaming camera data to the dashboard
---------------------------------------
+## Streaming camera data to the dashboard
 It is often desirable to simply stream the camera data to the dashboard over the robot network. In this case one or more camera
 connections can be sent to the network and viewed on a dashboard such as Shuffleboard or a web browser. Using Shuffleboard has
 the advantage of having easy controls to set the camera resolution and bit rate as well as integrating the camera streams with

@@ -1,15 +1,12 @@
-Profiling with VisualVM
-=======================
+# Profiling with VisualVM
 
 This document is intended to familiarize the reader with the diagnostic tool that is [VisualVM](https://visualvm.github.io/) for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot ``build.gradle``. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
 
-Unpacking VisualVM
-------------------
+## Unpacking VisualVM
 
 To begin, [download VisualVM](https://visualvm.github.io/download.html) and unpack it to the WPILib installation folder. The folder is located at ``~/wpilib/`` where ``~`` indicates the users home directory. On Windows, this is ``C:\Users\Public\wpilib``.
 
-Setting up Gradle
------------------
+## Setting up Gradle
 
 GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a roboRIO). To begin, locate the ``frcJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
 
@@ -45,8 +42,7 @@ We are adding a few arguments here. In order:
 
 .. important:: The hostname when connected via USB-B should be ``172.22.11.2``.
 
-Running VisualVM
-----------------
+## Running VisualVM
 
 Launching VisualVM is done via the commandline with a few parameters. First, we navigate to the directory containing VisualVM. Then, launch it with parameters, passing it the WPILib JDK path. On a Windows machine, it looks like the following:
 
@@ -75,8 +71,7 @@ If correctly done, a new menu option in the left-hand sidebar will appear. Click
    :alt: VisualVM diagnostics dashboard
    :width: 700
 
-Analyzing Function Timings
---------------------------
+## Analyzing Function Timings
 
 An important feature of VisualVM is the ability to view how much time a specific function is taking up. This is *without* having a code debugger attached. To begin, click on the :guilabel:`Sampler` tab and then click on :guilabel:`CPU`. This will immediately give a breakdown of what functions are taking CPU time.
 
@@ -96,8 +91,7 @@ The above screenshot shows a breakdown of the total time a specific function tak
 
 In this code snippet, we can identify 2 major causes of concern. A long running ``for`` loop blocks the rest of the robot program from running. Additionally, ``System.out.println()`` calls on the roboRIO are typically quite expensive. We found this information by profiling the Java application on the roboRIO!
 
-Creating a Heap Dump
---------------------
+## Creating a Heap Dump
 
 Besides viewing the remote systems CPU and memory usage, VisualVM is most useful by creating a **Heap Dump**. When a Java object is created, it resides in an area of memory called the heap. When the heap is full, a process called [garbage collection](https://www.geeksforgeeks.org/garbage-collection-java/) begins. Garbage collection can be a common cause of loop overruns in a traditional Java robot program.
 
@@ -113,8 +107,7 @@ Once downloaded, the dump can be analyzed with VisualVM.
 
 .. tip:: You can also :ref:`configure the JVM to take a heap dump automatically when your robot code runs out of memory <docs/software/basic-programming/java-gc:Diagnosing Out of Memory Errors with Heap Dumps>`.
 
-Analyzing a Heap Dump
----------------------
+## Analyzing a Heap Dump
 
 Reopen VisualVM if closed using the previous instructions. Then click on :guilabel:`File` and :guilabel:`Load`. Navigate to the retrieved dump file and load it.
 
@@ -136,7 +129,6 @@ with an ``ArrayList`` of ~10000 integers.
    :alt: List of objects in a modified robot program
    :width: 700
 
-Additional Info
----------------
+## Additional Info
 
 For more information on VisualVM, check out the [VisualVM documentation pages](https://visualvm.github.io/documentation.html).

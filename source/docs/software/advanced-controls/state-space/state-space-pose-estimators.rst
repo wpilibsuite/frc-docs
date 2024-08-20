@@ -1,5 +1,4 @@
-Pose Estimators
-===============
+# Pose Estimators
 
 WPILib includes pose estimators for differential, swerve and mecanum drivetrains. These estimators are designed to be drop-in replacements for the existing :ref:`odometry <docs/software/kinematics-and-odometry/index:Kinematics and Odometry>` classes that also support fusing latency-compensated robot pose estimates with encoder and gyro measurements. These estimators can account for encoder drift and noisy vision data. These estimators can behave identically to their corresponding odometry classes if only ``update`` is called on these estimators.
 
@@ -54,8 +53,7 @@ Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
     :linenos:
     :lineno-start: 93
 
-Tuning Pose Estimators
-----------------------
+## Tuning Pose Estimators
 
 All pose estimators offer user-customizable standard deviations for model and measurements (defaults are used if you don't provide them). Standard deviation is a measure of how spread out the noise is for a random signal. Giving a state a smaller standard deviation means it will be trusted more during data fusion.
 

@@ -1,5 +1,4 @@
-Vision on the RoboRIO
-=====================
+# Vision on the RoboRIO
 
 .. toctree::
    :maxdepth: 1

@@ -1,5 +1,4 @@
-SmartDashboard
-==============
+# SmartDashboard
 
 SmartDashboard is a simple and efficient dashboard that uses relatively few computer resources.  It does not have the fancy look or some of the features Shuffleboard has, but it displays network tables data with a variety of widgets without bogging down the driver station computer.
 

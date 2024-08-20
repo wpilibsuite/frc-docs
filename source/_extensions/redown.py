@@ -16,7 +16,41 @@ from sphinx.application import Sphinx
 from dataclasses import dataclass
 
 
-def redown(app: Sphinx, docname: str, text: str) -> str:
+LINK_CORE = r"""
+    \[ (?P<text>[^\[\]]*?) \]    # link brackets + text w/o brackets - allows spaces in text
+    \(
+    (?P<link>
+        \S+?                     # link start
+        (?:
+            \( [^()\s]*? \)      # nested parens + text w/o parens - matches `initialize(boolean)`
+                [^()\s]*?        # more text - matches `initialize(boolean)abc`
+        )*?                      # allow none (or multiple?)
+    )
+    \)
+    """
+
+ROLE_LINK_RE = re.compile(
+    r"""
+    (?<!\w)                      # not alphanum - prevents matching inline code ``initialize[0](0)``
+    (?P<role>
+        :(?:.\w+?:)+?            # role(s) - matches :py:func: or :mod: or :class:
+    )
+    """
+    + LINK_CORE,
+    re.VERBOSE,  # whitespace and comments are ignored
+)
+
+LINK_RE = re.compile(
+    r"""
+    (?<!\w)                      # not alphanum - prevents matching inline code ``initialize[0](0)``
+    (?<!:)                       # no colon before - prevents matching roles
+    """
+    + LINK_CORE,
+    re.VERBOSE,  # whitespace and comments are ignored
+)
+
+
+def redown(text: str) -> str:
     """21"""
 
     # replace md code blocks with reST code blocks
@@ -96,17 +130,15 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
         text = heading("####", "~")
 
         "redown, redown, redown, redown"
-        role_links = lambda: re.sub(
-            r"(:.\w+?:)\[([^\]\n]+?)\]\(([^)]+?)\)",
-            r"\1`\2 <\3>` ",
+        role_links = lambda: ROLE_LINK_RE.sub(
+            lambda m: f"{m.group('role')}`{(t:=m.group('text'))}{' ' if len(t) else ''}<{m.group('link')}>`",
             text,
         )
         text = role_links()
 
         "redown, redown, redown, redown"
-        links = lambda: re.sub(
-            r"(?<!:)\[([^\]\n]+?)\]\(([^)]+?)\)",
-            r"`\1 <\2>`__ ",
+        links = lambda: LINK_RE.sub(
+            lambda m: f"`{(t:=m.group('text'))}{' ' if len(t) else ''}<{m.group('link')}>`__",
             text,
         )
         text = links()
@@ -121,14 +153,14 @@ def redown(app: Sphinx, docname: str, text: str) -> str:
 
     text = "".join(chunk.text for chunk in chunks)
 
-    # Path(app.srcdir, docname).with_suffix(".rd").write_text(text)
     return text
 
 
 def setup(app: Sphinx):
     @(lambda breadcrumb: app.connect("source-read", breadcrumb))
-    def _(a, d, c):
-        c[0] = redown(a, d, c[0])
+    def _(app, docname, content):
+        content[0] = redown(content[0])
+        # Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0])
 
     return {
         "version": "builtin",

@@ -1,7 +1,5 @@
-Generating Code from GRIP
-=========================
-GRIP Code Generation
---------------------
+# Generating Code from GRIP
+## GRIP Code Generation
 When running your vision algorithm on a small processor such as a roboRIO or Raspberry PI it is encouraged to run OpenCV directly
 on the processor without the overhead of GRIP. To facilitate this, GRIP can generate code in C++, Java, and Python for the pipeline
 that you have created. This generated code can be added to your robot project and called directly from your existing robot code.
@@ -10,8 +8,7 @@ Input sources such as cameras or image directories and output steps such as Netw
 images as OpenCV mats. On the roboRIO, the CameraServer class supplies images in that format. For getting results you can just use
 generated getter methods for retrieving the resultant values such as contour x and y values.
 
-Generating Code
----------------
+## Generating Code
 To generate code, go to ``Tools > Generate Code``. This will bring up a save dialog that lets you create a C++, Java, or Python
 class that performs the steps in the GRIP pipeline.
 
@@ -25,8 +22,7 @@ If generating code to be used in a pre-existing project, choose a relevant direc
 -   **Python Users**: the module name will be identical to the class, so the import statement will be something like ``from Pipeline
     import Pipeline``
 
-Structure of the Generated Code
--------------------------------
+## Structure of the Generated Code
 ::
 
     Pipeline:
@@ -39,13 +35,11 @@ Structure of the Generated Code
       getBar1Output()
       ...
 
-Running the Pipeline
-^^^^^^^^^^^^^^^^^^^^
+### Running the Pipeline
 To run the Pipeline, call the process method with the sources (webcams, IP camera, image file, etc) as arguments. This will
 expose the outputs of every operation in the pipeline with the ``getFooOutput`` methods.
 
-Getting the Results
-^^^^^^^^^^^^^^^^^^^
+### Getting the Results
 Users are able to the outputs of every step in the pipeline. The outputs of these operations would be accessible through
 their respective accessors.  For example:
 

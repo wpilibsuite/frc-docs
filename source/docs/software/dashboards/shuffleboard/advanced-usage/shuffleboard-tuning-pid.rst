@@ -1,5 +1,4 @@
-Testing and Tuning PID Loops
-============================
+# Testing and Tuning PID Loops
 
 One challenge in using sensors to control mechanisms is to have a good algorithm to drive the motors to the proper position or speed. The most commonly used control algorithm is called PID control.  There is a [good set of videos](https://wp.wpi.edu/wpilib/robotics-videos/) (look for the robot controls playlist) that explain the control algorithms described here. The PID algorithm converts sensor values into motor speeds by:
 
@@ -13,8 +12,7 @@ WPILib has a PIDController class that implements the PID algorithm and accepts c
 2. I (integral) - this term is the sum of successive errors. The longer the error exists the larger the integral contribution will be. It is simply a sum of all the errors over time. If the wrist isn't quite getting to the setpoint because of a large load it is trying to move, the integral term will continue to increase (sum of the errors) until it contributes enough to the motor speed to get it to move to the setpoint. The sum of the errors is multiplied by a constant (Ki) to scale the integral term for the system.
 3. D (differential) - this value is the rate of change of the errors. It is used to slow down the motor speed if it's moving too fast. It's computed by taking the difference between the current error value and the previous error value. It is also multiplied by a constant (kd) to scale it to match the rest of the system.
 
-Tuning the PID Controller
--------------------------
+## Tuning the PID Controller
 
 Tuning the PID controller consists of adjusting constants for accurate results. Shuffleboard helps this process by displaying the details of a PID subsystem with a user interface for setting constant values and testing how well it operates. This is displayed while the robot is operating in test mode (done by setting "Test" in the driver station).
 
@@ -31,10 +29,9 @@ This is the test mode picture of a wrist subsystem that has a potentiometer as t
 
 Try various PID gains to get the desired motor performance. You can look at the video linked to at the beginning of this article or other sources on the internet to get the desired performance.
 
-.. important:: The enable option does not affect the [PIDController](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html) introduced in 2020, as the controller is updated every robot loop. See the example below on how to retain this functionality.
+.. important:: The enable option does not affect the [PIDController](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/PIDController.html) introduced in 2020, as the controller is updated every robot loop. See the example below on how to retain this functionality.
 
-Enable Functionality in the New PIDController
----------------------------------------------
+## Enable Functionality in the New PIDController
 
 The following example demonstrates how to create a button on your dashboard that will enable/disable the PIDController.
 

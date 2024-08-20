@@ -1,10 +1,8 @@
-Tuning a Vertical Arm Position Controller
-=========================================
+# Tuning a Vertical Arm Position Controller
 
 In this section, we will tune a simple position controller for a vertical arm.  The same tuning principles explained below will work also for almost all position-control scenarios under the load of gravity.
 
-Arm Model Description
----------------------
+## Arm Model Description
 
 Vertical arms are commonly used to lift gamepieces from the ground up to a scoring position. Other similar examples include shooter hoods and elevators.
 
@@ -24,15 +22,13 @@ Where:
 * The controller's :term:`setpoint` :math:`r(t)` is the desired angle of the arm
 * The controller's :term:`control effort`, :math:`u(t)` is the voltage applied to the motor driving the arm
 
-Picking the Control Strategy for a Vertical Arm
------------------------------------------------
+## Picking the Control Strategy for a Vertical Arm
 
 Applying voltage to the motor causes a force on the mechanism that drives the arm up or down. If there is no voltage, gravity still acts on the arm to pull it downward.  Generally, it is desirable to fight this effect, and keep the arm at a specific angle.
 
 The tutorials below will demonstrate the behavior of the system under pure feedforward, pure feedback (PID), and combined feedforward-feedback control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.  Even though WPILib tooling can provide you with optimal gains, it is worth going through the manual tuning process to see how the different control strategies interact with the mechanism.
 
-Pure Feedforward Control
-~~~~~~~~~~~~~~~~~~~~~~~~
+#### Pure Feedforward Control
 
 Interact with the simulation below to examine how the turret system responds when controlled only by a feedforward controller.
 
@@ -67,8 +63,7 @@ To tune the feedforward controller, perform the following:
 
    The exact gains used by the simulation are :math:`K_g = 1.75` and :math:`K_v = 1.95`.
 
-Issues with Feed-Forward Control Alone
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Issues with Feed-Forward Control Alone
 
 As mentioned above, our simulated mechanism almost-perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:ArmFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
 
@@ -78,8 +73,7 @@ The resulting behavior from the feedforward controller is to output a single "vo
 
 You will notice that, once properly tuned, the mechanism can track slow/smooth movement with a surprising amount of accuracy - however, there are some obvious problems with this approach.  Our feedforward equation corrects for the force of gravity *at the setpoint* - this results in poor behavior if our arm is far from the setpoint.  With the "system noise" option enabled, we can also see that even smooth, slow motion eventually results in compounding position errors when only feedforward control is used.  To accurately converge to and remain at the setpoint, we need to use a feedback (PID) controller.
 
-Pure Feedback Control
-~~~~~~~~~~~~~~~~~~~~~
+#### Pure Feedback Control
 
 Interact with the simulation below to examine how the vertical arm system responds when controlled only by a feedback (PID) controller.
 
@@ -112,8 +106,7 @@ Perform the following:
 
    There is no good tuning solution for this control strategy.  Values of :math:`K_p = 5` and :math:`K_d = 1` yield a reasonable approach to a stable equilibrium, but that equilibrium is not actually at the setpoint!
 
-Issues with Feedback Control Alone
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Issues with Feedback Control Alone
 
 A set of gains that works well for one setpoint will act poorly for a different setpoint.
 
@@ -121,8 +114,7 @@ Adding some integral gain can push us to the setpoint over time, but it's unstab
 
 Because a non-zero amount of :term:`control effort` is required to keep the arm at a constant height, even when the :term:`output` and :term:`setpoint` are equal, this feedback-only strategy is flawed.  In order to optimally control a vertical arm, a combined feedforward-feedback strategy is needed.
 
-Combined Feedforward and Feedback Control
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Combined Feedforward and Feedback Control
 
 Interact with the simulation below to examine how the vertical arm system responds under simultaneous feedforward and feedback control.
 
@@ -150,11 +142,9 @@ Tuning the combined arm controller is simple - we first tune the feedforward con
 
 Once tuned properly, the combined controller accurately tracks a smoothly moving setpoint, and also accurately converge to the setpoint over time after a "jump" command.
 
-Tuning Conclusions
-------------------
+## Tuning Conclusions
 
-Choice of Control Strategies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Choice of Control Strategies
 
 Like in the case of the :ref:`turret <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>`, and unlike the case of the :ref:`flywheel <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, we are trying to control the *position* rather than the *velocity* of our mechanism.
 
@@ -167,15 +157,13 @@ The core reason the feedback-only control strategy fails for the vertical arm is
 We saw in the feedforward-only example above that an accurate feedforward can track slow, smooth velocity setpoints quite well.  Combining a feedforward controller with the feedback controller gives the smooth velocity-following of a feedforward controller with the stable long-term error elimination of a feedback controller.
 
 
-Reasons for Non-Ideal Performance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Reasons for Non-Ideal Performance
 
 This simulation does not include any motion profile generation, so acceleration setpoints are not very well-defined.  Accordingly, the `kA` term of the feedforward equation is not used by the controller.  This means there will be some amount of delay/lag inherent to the feedforward-only response.
 
 The control law is good, but not perfect.  There is usually some overshoot even for smoothly-moving setpoints - this is combination of the lack of :math:`K_a` in the feedforward (see the note above for why it is omitted here), and some discretization error in the simulation.  Attempting to move the setpoint too quickly can also cause the setpoint and mechanism to diverge, which (as mentioned earlier) will result in poor behavior due to the :math:'K_g' term correcting for the wrong force, as it is calculated from the setpoint, not the measurement.  Using the measurement to correct for gravity is called "feedback linearization" (as opposed to "feedforward linearization" when the setpoint is used), and can be a better control strategy if your measurements are sufficiently fast and accurate.
 
-A Note on Feedforward and Static Friction
------------------------------------------
+## A Note on Feedforward and Static Friction
 
 For the sake of simplicity, the simulations above omit the :math:`K_s` term from the WPILib SimpleMotorFeedforward equation.  On actual mechanisms, however, this can be important - especially if there's a lot of friction in the mechanism gearing.
 

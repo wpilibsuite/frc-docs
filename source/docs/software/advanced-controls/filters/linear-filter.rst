@@ -1,5 +1,4 @@
-Linear Filters
-==============
+# Linear Filters
 
 The first (and most commonly-employed) sort of filter that WPILib supports is a *linear filter* - or, more specifically, a linear time-invariant (LTI) filter.
 
@@ -11,10 +10,9 @@ Infinite impulse responses have infinite "support" - that is, they are nonzero o
 
 Finite impulse responses have finite "support" - that is, they are nonzero on a bounded region.  The "archetypical" FIR filter is a flat moving average - that is, simply setting the output equal to the average of the past n inputs.  FIR filters tend to have more-desirable properties than IIR filters, but are more costly to compute.
 
-Linear filters are supported in WPILib through the ``LinearFilter`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html), , :external:py:class:`Python <wpimath.filter.LinearFilter>`).
+Linear filters are supported in WPILib through the ``LinearFilter`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_linear_filter.html), , :external:py:class:`Python <wpimath.filter.LinearFilter>`).
 
-Creating a LinearFilter
------------------------
+## Creating a LinearFilter
 
 .. note:: The C++ ``LinearFilter`` class is templated on the data type used for the input.
 
@@ -22,8 +20,7 @@ Creating a LinearFilter
 
 While it is possible to directly instantiate ``LinearFilter`` class to build a custom filter, it is far more convenient (and common) to use one of the supplied factory methods, instead:
 
-singlePoleIIR
-^^^^^^^^^^^^^
+### singlePoleIIR
 
 .. image:: images/singlepolefilter.png
   :alt: A graph with two peaks with the input closely following the target signal.
@@ -59,8 +56,7 @@ The "time constant" parameter determines the "characteristic timescale" of the f
 
 The "period" parameter is the period at which the filter's ``calculate()`` method will be called.  For the vast majority of implementations, this will be the standard main robot loop period of 0.02 seconds.
 
-movingAverage
-^^^^^^^^^^^^^
+### movingAverage
 
 .. image:: images/firfilter.png
   :alt: A graph with two peaks with the input closely following the target signal.
@@ -91,8 +87,7 @@ The ``movingAverage`` factory method creates a simple flat moving average filter
 
 The "taps" parameter is the number of samples that will be included in the flat moving average.  This behaves similarly to the "time constant" above - the effective time constant is the number of taps times the period at which ``calculate()`` is called.
 
-highPass
-^^^^^^^^
+### highPass
 
 .. image:: images/highpassfilter.png
    :alt: A graph with two peaks except the highpass only shows the rate of change centered around 0.
@@ -128,8 +123,7 @@ The "time constant" parameter determines the "characteristic timescale" of the f
 
 The "period" parameter is the period at which the filter's ``calculate()`` method will be called.  For the vast majority of implementations, this will be the standard main robot loop period of 0.02 seconds.
 
-Using a LinearFilter
---------------------
+## Using a LinearFilter
 
 .. note:: In order for the created filter to obey the specified timescale parameter, its ``calculate()`` function *must* be called regularly at the specified period.  If, for some reason, a significant lapse in ``calculate()`` calls must occur, the filter's ``reset()`` method should be called before further use.
 

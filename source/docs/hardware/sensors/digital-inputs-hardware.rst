@@ -1,5 +1,4 @@
-Digital Inputs - Hardware
-=========================
+# Digital Inputs - Hardware
 
 .. note:: This section covers digital input hardware.  For a software guide to digital inputs, see :ref:`docs/software/hardware-apis/sensors/digital-inputs-software:Digital Inputs - Software`.
 
@@ -7,8 +6,7 @@ A [digital signal](https://en.wikipedia.org/wiki/Digital_signal) is a signal tha
 
 The roboRIO's built-in digital input-output ports (or "DIO") ports function on 5V, so "high" corresponds to a signal of 5V, and "low" to a signal of 0V [1]_ [2]_.
 
-Connecting to the roboRIO DIO ports
------------------------------------
+## Connecting to the roboRIO DIO ports
 
 .. note:: Additional DIO ports are available through the "MXP" expansion port.  To use these, a breakout board of some sort that connects to the MXP is needed.
 
@@ -23,8 +21,7 @@ The roboRIO has 10 built-in DIO ports (numbered 0-9), as seen in the image above
 
 All DIO ports have built-in "pull-up" resistors between the power pins and the signal pins - these ensure that when the signal pin is "floating" (i.e. is not connected to any circuit), they consistently remain in a "high" state.
 
-Connecting a simple switch to a DIO port
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Connecting a simple switch to a DIO port
 
 The simplest device that can be connected to a DIO port is a switch (such as a :ref:`limit switch <docs/hardware/sensors/proximity-switches:Mechanical proximity switches ("limit switches")>`).  When a switch is connected correctly to a DIO port, the port will read "high" when the circuit is open, and "low" when the circuit is closed.
 
@@ -33,16 +30,14 @@ A simple switch does not need to be powered, and thus only has two wires.  Switc
 .. image:: images/digital-inputs-hardware/limit-switch-to-roborio.svg
    :alt: Connecting a normally open limit switch to a DIO channel of the roboRIO.
 
-Connecting a powered sensor to a DIO port
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Connecting a powered sensor to a DIO port
 
 Many digital sensors (such as most no-contact proximity switches) require power in order to work.  A powered sensor will generally have three wires - signal, power, and ground.  These should be connected to the corresponding pins of the DIO port.
 
 .. image:: images/digital-inputs-hardware/hall-effect-sensor-to-roborio.svg
    :alt: Connecting a Hall Effect sensor to a roboRIO DIO channel.
 
-Connecting a sensor that uses multiple DIO ports
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Connecting a sensor that uses multiple DIO ports
 
 Some sensors (such as :doc:`quadrature encoders <encoders-hardware>`) may need to connect to multiple DIO ports in order to function.  In general, these sensors will only ever require a single power and a single ground pin - only the signal pin of the additional port(s) will be needed.
 
@@ -51,8 +46,7 @@ Some sensors (such as :doc:`quadrature encoders <encoders-hardware>`) may need t
 
 .. |ground| unicode:: 0x23DA
 
-Footnotes
----------
+## Footnotes
 
 .. [1] More precisely, the signal reads "high" when it rises above 2.0V, and reads "low" when it falls back below 0.8V - behavior between these two thresholds is not guaranteed to be consistent.
 .. [2] The roboRIO also offers 3.3V logic via the "MXP" expansion port; however, the use of this is far less common than the 5V.

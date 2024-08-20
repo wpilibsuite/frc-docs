@@ -1,20 +1,17 @@
 .. include:: <isonum.txt>
 
-Creating your Test Drivetrain Program (LabVIEW)
-===============================================
+# Creating your Test Drivetrain Program (LabVIEW)
 
 .. note:: This document covers how to create, build and load a basic FRC\ |reg| LabVIEW program for a drivetrain onto a roboRIO. Before beginning, make sure that you have installed LabVIEW for FRC and the FRC Game Tools and that you have configured and imaged your roboRIO as described in the :ref:`Zero-to-Robot tutorial <docs/zero-to-robot/introduction:Introduction>`.
 
-Creating a Project
-------------------
+## Creating a Project
 
 .. image:: images/creating-test-program-labview/creating-a-project.png
    :alt: Creating a new roboRIO project from the LabVIEW home screen.
 
 Launch LabVIEW and click the FRC roboRIO Robot Project link to display the Create New FRC Robot Project dialog box.
 
-Configuring Project
--------------------
+## Configuring Project
 
 .. image:: images/creating-test-program-labview/configuring-project.png
    :alt: The different sections of the dialog for configuring a new LabVIEW project.
@@ -27,8 +24,7 @@ Fill in the Create New FRC Project Dialog:
 4. Select a project type. If unsure, select :guilabel:`Arcade Drive`.
 5. Click :guilabel:`Finish`
 
-Running the Program
--------------------
+## Running the Program
 
 .. image:: images/creating-test-program-labview/running-the-program.png
    :alt: Robot Main in the project window with its corresponding front panel open.
@@ -42,8 +38,7 @@ Running the Program
 5. Move the joysticks and observe how the robot responds.
 6. Click the Abort button of the Robot Main VI. Notice that the VI stops. When you deploy a program with the Run button, the program runs on the roboRIO, but you can manipulate the front panel objects of the program from the host computer.
 
-Deploying the Program
----------------------
+## Deploying the Program
 
 .. image:: images/creating-test-program-labview/deploying-the-program.png
    :alt: Right clicking on the robot build specification and choosing "build".  Then right clicking again and choosing "Run as startup".

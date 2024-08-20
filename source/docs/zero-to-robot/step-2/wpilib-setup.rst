@@ -1,10 +1,8 @@
-WPILib Installation Guide
-=========================
+# WPILib Installation Guide
 
 This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can skip to :doc:`python-setup`. Additionally, the below tutorial shows Windows 10, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
 
-Prerequisites
--------------
+## Prerequisites
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
@@ -15,8 +13,7 @@ Supported Operating Systems and Architectures:
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
-Downloading
------------
+## Downloading
 
 .. wpilibrelease:: v2024.3.2
 
@@ -29,8 +26,7 @@ Once on the GitHub releases page, scroll to the Downloads section.
 
 Then click on the correct binary for your OS and architecture to begin the download.
 
-Extracting the Installer
-------------------------
+## Extracting the Installer
 
 When you download the WPILib installer, it is distributed as a disk image file ``.iso`` for Windows, ``.tar.gz`` for Linux, and distributed as a ``DMG`` for MacOS.
 
@@ -78,8 +74,7 @@ When you download the WPILib installer, it is distributed as a disk image file `
           $ cd WPILib_Linux-<version>/
           $ ./WPILibInstaller
 
-Running the Installer
----------------------
+## Running the Installer
 
 Upon opening the installer, you'll be presented with the below screen. Go ahead and press :guilabel:`Start`.
 
@@ -135,8 +130,7 @@ After installation is complete, you will be presented with the finished screen.
 
 Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
 
-Post-Installation
------------------
+## Post-Installation
 
 Some operating systems require some final action to complete installation.
 
@@ -158,8 +152,7 @@ Some operating systems require some final action to complete installation.
 
 .. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and macOS.
 
-Additional C++ Installation for Simulation
-------------------------------------------
+## Additional C++ Installation for Simulation
 
 C++ robot simulation requires that a native compiler to be installed. For Windows, this would be [Visual Studio 2022 version 17.9 or later](https://visualstudio.microsoft.com/vs/) (**not** VS Code), macOS requires [Xcode 14 or later](https://apps.apple.com/us/app/xcode/id497799835), and Linux (Ubuntu) requires the ``build-essential`` package.
 
@@ -168,8 +161,7 @@ Ensure the :guilabel:`Desktop Development with C++` option is checked in the Vis
 .. image:: /docs/software/wpilib-tools/robot-simulation/images/vs-build-tools.png
    :alt: Screenshot of the Visual Studio build tools option
 
-What is Installed?
-------------------
+## What is Installed?
 
 The Offline Installer installs the following components:
 
@@ -189,8 +181,7 @@ The Offline Installer installs the following components:
 
 - **Documentation** - Offline copies of this frc-docs documentation and Java/C++/Python APIs
 
-Uninstalling
-------------
+## Uninstalling
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib. However, the following instructions can be used to uninstall WPILib if desired.
 
@@ -209,7 +200,6 @@ WPILib is designed to install to different folders for different years, so that 
 
      1. Delete the appropriate wpilib folder (``~/wpilib/YYYY`` where ``YYYY`` is the year to uninstall). eg ``rm -rf ~/wpilib/YYYY``
 
-Troubleshooting
----------------
+## Troubleshooting
 
 In case the installer fails, please open an issue on the installer repository. A link is available [here](https://github.com/wpilibsuite/wpilibinstaller-avalonia). The installer should give a message on the cause of the error, please include this in the description of your issue.

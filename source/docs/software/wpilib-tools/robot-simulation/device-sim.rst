@@ -1,17 +1,14 @@
-Device Simulation
-=================
+# Device Simulation
 
 WPILib provides a way to manage simulation device data in the form of the SimDevice API.
 
-Simulating Core WPILib Device Classes
--------------------------------------
+## Simulating Core WPILib Device Classes
 
 Core WPILib device classes (i.e ``Encoder``, ``Ultrasonic``, etc.) have simulation classes named ``EncoderSim``, ``UltrasonicSim``, and so on. These classes allow interactions with the device data that wouldn't be possible or valid outside of simulation. Constructing them outside of simulation likely won't interfere with your code, but calling their functions and the like is undefined behavior - in the best case they will do nothing, worse cases might crash your code! Place functional simulation code in simulation-only functions (such as ``simulationPeriodic()``) or wrap them with ``RobotBase.isReal()``/ ``RobotBase::IsReal()`` checks (which are ``constexpr`` in C++).
 
 .. note:: This example will use the ``EncoderSim`` class as an example. Use of other simulation classes will be almost identical.
 
-Creating Simulation Device objects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Creating Simulation Device objects
 
 Simulation device object can be constructed in two ways:
 
@@ -33,8 +30,7 @@ Simulation device object can be constructed in two ways:
        // create a sim controller for the encoder
        frc::sim::EncoderSim simEncoder{encoder};
 
-Reading and Writing Device Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Reading and Writing Device Data
 
 Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXxx(value)``/``SetXxx(value)``) functions for each field ``Xxx``. The getter functions will return the same as the getter of the regular device class.
 
@@ -51,8 +47,7 @@ Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter (``setXx
       encoder.GetCount(); // 100
       simEncoder.GetCount(); // 100
 
-Registering Callbacks
-^^^^^^^^^^^^^^^^^^^^^
+### Registering Callbacks
 
 In addition to the getters and setters, each field also has a ``registerXxxCallback()`` function that registers a callback to be run whenever the field value changes and returns a ``CallbackStore`` object. The callbacks accept a string parameter of the name of the field and a ``HALValue`` object containing the new value. Before retrieving values from a ``HALValue``, check the type of value contained. Possible types are ``HALValue.kBoolean``/``HAL_BOOL``, ``HALValue.kDouble``/``HAL_DOUBLE``, ``HALValue.kEnum``/``HAL_ENUM``, ``HALValue.kInt``/``HAL_INT``, ``HALValue.kLong``/``HAL_LONG``.
 
@@ -84,8 +79,7 @@ In C++, save the ``CallbackStore`` object in the right scope - the callback will
       frc::sim::CallbackStore store = simEncoder.RegisterCountCallback(callback);
       // the callback will be canceled when ``store`` goes out of scope
 
-Simulating Other Devices - The SimDeviceSim Class
--------------------------------------------------
+## Simulating Other Devices - The SimDeviceSim Class
 
 .. note:: Vendors might implement their connection to the SimDevice API slightly different than described here. They might also provide a simulation class specific for their device class. See your vendor's documentation for more information as to what they support and how.
 

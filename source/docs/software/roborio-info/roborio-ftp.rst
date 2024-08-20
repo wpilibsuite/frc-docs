@@ -1,18 +1,14 @@
-roboRIO FTP
-===========
+# roboRIO FTP
 
 .. note:: The roboRIO has both SFTP and anonymous FTP enabled. This article describes how to use each to access the roboRIO file system.
 
-SFTP
-----
+## SFTP
 SFTP is the recommended way to access the roboRIO file system. Because you will be using the same account that your program will run under, files copied over should always have permissions compatible with your code.
 
-Software
-^^^^^^^^
+### Software
 There are a number of freely available programs for SFTP. This article will discuss using FileZilla. You can either download and install [FileZilla](https://filezilla-project.org/download.php?type=client) before proceeding or extrapolate the directions below to your SFTP client of choice.
 
-Connecting to the roboRIO
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### Connecting to the roboRIO
 
 .. image:: images/roborio-connect.png
    :alt: Each part of the connection information at the top of FileZilla.
@@ -25,16 +21,14 @@ To connect to your roboRIO:
 4. Enter "22" in the port box (the SFTP default port)
 5. Click Quickconnect
 
-Browsing the roboRIO filesystem
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Browsing the roboRIO filesystem
 
 .. image:: images/roborio-filesystem.png
    :alt: User will use the right pane to browse the Linux file system.
 
 After connecting to the roboRIO, Filezilla will open to the \\home\\lvuser directory. The right pane is the remote system (the roboRIO), the left pane is the local system (your computer). The top section of each pane shows you the hierarchy to the current directory you are browsing, the bottom pane shows contents of the directory. To transfer files, simply click and drag from one side to the other. To create directories on the roboRIO, right click and select "Create Directory".
 
-FTP
----
+## FTP
 
 .. image:: images/roborio-ftp.png
    :alt: Anonymous FTP being used via Windows Explorer.

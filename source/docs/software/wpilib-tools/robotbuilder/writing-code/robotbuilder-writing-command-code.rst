@@ -1,17 +1,14 @@
-Writing the Code for a Command
-==============================
+# Writing the Code for a Command
 
 Subsystem classes get the mechanisms on your robot moving, but to get it to stop at the right time and sequence through more complex operations you write Commands. Previously in :doc:`writing the code for a subsystem <robotbuilder-writing-subsystem-code>` we developed the code for the `Claw` subsystem on a robot to start the claw opening, closing, or to stop moving. Now we will write the code for a command that will actually run the claw motor for the right time to get the claw to open and close. Our claw example is a very simple mechanism where we run the motor for 1 second to open it or until the limit switch is tripped to close it.
 
-Close Claw Command in RobotBuilder
-----------------------------------
+## Close Claw Command in RobotBuilder
 
 .. image:: images/writing-command-code-1.png
 
 This is the definition of the `CloseClaw` command in RobotBuilder. Notice that it requires the `Claw` subsystem. This is explained in the next step.
 
-Generated CloseClaw Class
--------------------------
+## Generated CloseClaw Class
 
 .. tab-set-code::
 

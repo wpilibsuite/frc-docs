@@ -1,5 +1,4 @@
-Writing Your Own Sendable Classes
-=================================
+# Writing Your Own Sendable Classes
 
 Since the ``Sendable`` interface only has one method, writing your own classes that implement ``Sendable`` (and thus automatically log values to and/or consume values from the dashboard) is extremely easy: just provide an implementation for the overridable ``initSendable`` method, in which setters and getters for your class's fields are declaratively bound to key values (their display names on the dashboard).
 
@@ -21,13 +20,11 @@ For example, here is the implementation of ``initSendable`` from WPILib's ``Bang
 
 To enable the automatic updating of values by WPILib "in the background", ``Sendable`` data names are bound to getter and setter functions rather than specific data values.  If a field that you wish to log has no defined setters and getters, they can be defined inline with a lambda expression.
 
-The SendableBuilder Class
--------------------------
+## The SendableBuilder Class
 
-As seen above, the ``initSendable`` method takes a single parameter, ``builder``, of type ``SendableBuilder`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/sendable/SendableBuilder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_sendable_builder.html), :external:py:class:`Python <wpiutil.SendableBuilder>`).  This builder exposes methods that allow binding of getters and setters to dashboard names, as well as methods for safely ensuring that values consumed *from* the dashboard do not cause unsafe robot behavior.
+As seen above, the ``initSendable`` method takes a single parameter, ``builder``, of type ``SendableBuilder`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/util/sendable/SendableBuilder.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classwpi_1_1_sendable_builder.html), :external:py:class:`Python <wpiutil.SendableBuilder>`).  This builder exposes methods that allow binding of getters and setters to dashboard names, as well as methods for safely ensuring that values consumed *from* the dashboard do not cause unsafe robot behavior.
 
-Databinding with addProperty Methods
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Databinding with addProperty Methods
 
 Like all WPILib dashboard code, ``Sendable`` fields are ultimately transmitted over :ref:`NetworkTables <docs/software/networktables/networktables-intro:What is NetworkTables>`, and thus the databinding methods provided by ``SendableBuilder`` match the supported NetworkTables data types:
 
@@ -39,8 +36,7 @@ Like all WPILib dashboard code, ``Sendable`` fields are ultimately transmitted o
 * ``string[]``: ``addStringArrayProperty``
 * ``byte[]``: ``addRawProperty``
 
-Ensuring Safety with setSafeState and setActuator
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Ensuring Safety with setSafeState and setActuator
 
 Since ``Sendable`` allows users to consume arbitrary values from the dashboard, it is possible for users to pipe dashboard controls directly to robot actuations.  This is extremely unsafe if not done with care; dashboards are not a particularly good interface for controlling robot movement, and users generally do not expect the robot to move in response to a change on the dashboard.
 
