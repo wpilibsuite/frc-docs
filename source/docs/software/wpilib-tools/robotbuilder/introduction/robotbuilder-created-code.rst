@@ -86,7 +86,7 @@ Additionally, each file has a comment defining the type of file. If this is modi
                  * used for any initialization code.
                  */
                 @Override
-                public void robotInit() {
+                public Robot() {
                     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
                     // autonomous chooser on the dashboard.
                     m_robotContainer = RobotContainer.getInstance();
@@ -192,7 +192,7 @@ Additionally, each file has a comment defining the type of file. If this is modi
 
             class Robot : public frc::TimedRobot { // {1}
              public:
-              void RobotInit() override;
+              void Robot() override;
               void RobotPeriodic() override;
               void DisabledInit() override;
               void DisabledPeriodic() override;
@@ -225,7 +225,7 @@ Additionally, each file has a comment defining the type of file. If this is modi
             #include <frc/smartdashboard/SmartDashboard.h>
             #include <frc2/command/CommandScheduler.h>
 
-            void Robot::RobotInit() {}
+            void Robot::Robot() {}
 
             /**
              * This function is called every robot packet, no matter the mode. Use

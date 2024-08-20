@@ -14,19 +14,19 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
    .. code-block:: java
 
       @Override
-      public void robotInit() {
+      public Robot() {
          enableLiveWindowInTest(true);
       }
 
    .. code-block:: c++
 
-      void Robot::RobotInit() {
+      void Robot::Robot() {
          EnableLiveWindowInTest(true);
       }
 
    .. code-block:: python
 
-      def robotInit(self) -> None:
+      def Robot(self) -> None:
          enableLiveWindowInTest(true)
 
 ## Explicitly vs. implicit test mode display
@@ -41,7 +41,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
       BuiltInAccelerometer accel;
 
       @Override
-      public void robotInit() {
+      public Robot() {
          leftDrive = new PWMSparkMax(0);
          rightDrive = new PWMSparkMax(1);
          arm = new PWMVictorSPX(2);
@@ -57,7 +57,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
       frc::BuiltInAccelerometer accel{};
       frc::PWMVictorSPX arm{3};
 
-      void Robot::RobotInit() {
+      void Robot::Robot() {
          wpi::SendableRegistry::SetName(&arm, "SomeSubsystem", "Arm");
          wpi::SendableRegistry::SetName(&accel, "SomeSubsystem", "Accelerometer");
       }
@@ -67,7 +67,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
       from wpilib import BuiltInAccelerometer, PWMSparkMax, PWMVictorSPX
       from wpiutil import SendableRegistry
 
-      def robotInit(self) -> None:
+      def Robot(self) -> None:
          leftDrive = PWMSparkMax(0)
          rightDrive = PWMSparkMax(1)
          arm = PWMVictorSPX(2)

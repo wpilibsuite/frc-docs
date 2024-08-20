@@ -37,8 +37,8 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
       .. code-block:: text
 
-         Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.NullPointerException
-                  at frc.robot.Robot.robotInit(Robot.java:24)
+         Error at frc.robot.Robot.Robot(Robot.java:24): Unhandled exception: java.lang.NullPointerException
+                  at frc.robot.Robot.Robot(Robot.java:24)
                   at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
                   at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
                   at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
@@ -54,11 +54,11 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
       * The error happened while running line ``24`` inside of ``Robot.java``
 
-         * ``robotInit`` was the name of the method executing when the error happened.
+         * ``Robot`` was the name of the method executing when the error happened.
 
-      * ``robotInit`` is a function in the ``frc.robot.Robot`` package (AKA, your team's code)
+      * ``Robot`` is a function in the ``frc.robot.Robot`` package (AKA, your team's code)
 
-      * ``robotInit`` was called from a number of functions from the ``edu.wpi.first.wpilibj`` package (AKA, the WPILib libraries)
+      * ``Robot`` was called from a number of functions from the ``edu.wpi.first.wpilibj`` package (AKA, the WPILib libraries)
 
       The list of indented lines starting with the word ``at`` represent the state of the *stack* at the time the error happened. Each line represents one method, which was *called by* the method right below it.
 
@@ -70,13 +70,13 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
                   at frc.robot.Robot.buggyMethod(TooManyBugs.java:1138)
                   at frc.robot.Robot.barInit(Bar.java:21)
                   at frc.robot.Robot.fooInit(Foo.java:34)
-                  at frc.robot.Robot.robotInit(Robot.java:24)
+                  at frc.robot.Robot.Robot(Robot.java:24)
                   at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
                   at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
                   at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
                   at java.base/java.lang.Thread.run(Thread.java:834)
 
-      In this case: ``robotInit`` called ``fooInit``, which in turn called ``barInit``, which in turn called ``buggyMethod``. Then, during the execution of ``buggyMethod``, the ``NullPointerException`` occurred.
+      In this case: ``Robot`` called ``fooInit``, which in turn called ``barInit``, which in turn called ``buggyMethod``. Then, during the execution of ``buggyMethod``, the ``NullPointerException`` occurred.
 
    .. tab-item:: C++
 
@@ -101,11 +101,11 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
       * The error happened while running line ``20`` inside of ``Robot.cpp``
 
-         * ``RobotInit`` was the name of the method executing when the error happened.
+         * ``Robot`` was the name of the method executing when the error happened.
 
-      * ``RobotInit`` is a function in the ``Robot::`` namespace (AKA, your team's code)
+      * ``Robot`` is a function in the ``Robot::`` namespace (AKA, your team's code)
 
-      * ``RobotInit`` was called from a number of functions from the ``frc::`` namespace (AKA, the WPILib libraries)
+      * ``Robot`` was called from a number of functions from the ``frc::`` namespace (AKA, the WPILib libraries)
 
 
       This "call stack" window represents the state of the *stack* at the time the error happened. Each line represents one method, which was *called by* the method right below it.
@@ -164,7 +164,7 @@ For example, consider the following code:
          PWMSparkMax armMotorCtrl;
 
          @Override
-         public void robotInit() {
+         public Robot() {
                armMotorCtrl.setInverted(true);
          }
 
@@ -174,7 +174,7 @@ For example, consider the following code:
 
       class Robot : public frc::TimedRobot {
          public:
-            void RobotInit() override {
+            void Robot() override {
                motorRef->SetInverted(false);
             }
 
@@ -194,8 +194,8 @@ When run, you'll see output that looks like this:
       .. code-block:: text
 
          ********** Robot program starting **********
-         Error at frc.robot.Robot.robotInit(Robot.java:23): Unhandled exception: java.lang.NullPointerException
-                 at frc.robot.Robot.robotInit(Robot.java:23)
+         Error at frc.robot.Robot.Robot(Robot.java:23): Unhandled exception: java.lang.NullPointerException
+                 at frc.robot.Robot.Robot(Robot.java:23)
                  at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
                  at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
                  at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
@@ -207,7 +207,7 @@ When run, you'll see output that looks like this:
          Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
 
 
-      Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 23, and the exception involved "Null Pointer".
+      Reading the stack trace, you can see that the issue happened inside of the ``Robot()`` function, on line 23, and the exception involved "Null Pointer".
 
       By going to line 23, you can see there is only one thing which could be null - ``armMotorCtrl``. Looking further up, you can see that the ``armMotorCtrl`` object is declared, but never instantiated.
 
@@ -248,7 +248,7 @@ A functional implementation could look like this:
          PWMSparkMax armMotorCtrl;
 
          @Override
-         public void robotInit() {
+         public void Robot() {
                armMotorCtrl = new PWMSparkMax(0);
                armMotorCtrl.setInverted(true);
          }
@@ -259,7 +259,7 @@ A functional implementation could look like this:
 
       class Robot : public frc::TimedRobot {
          public:
-            void RobotInit() override {
+            void Robot() override {
                motorRef = &m_armMotor;
                motorRef->SetInverted(false);
             }
@@ -288,7 +288,7 @@ For example, consider the following code:
          int shoulderToElbow_in = 0; //TODO
 
          @Override
-         public void robotInit() {
+         public void Robot() {
             armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
          }
 
@@ -298,7 +298,7 @@ For example, consider the following code:
 
          class Robot : public frc::TimedRobot {
             public:
-            void RobotInit() override {
+            void Robot() override {
                armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
             }
 
@@ -320,8 +320,8 @@ When run, you'll see output that looks like this:
 
 
          ********** Robot program starting **********
-         Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.ArithmeticException: / by zero
-                 at frc.robot.Robot.robotInit(Robot.java:24)
+         Error at frc.robot.Robot.Robot(Robot.java:24): Unhandled exception: java.lang.ArithmeticException: / by zero
+                 at frc.robot.Robot.Robot(Robot.java:24)
                  at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
                  at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
                  at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
@@ -375,7 +375,7 @@ A functional implementation could look like this:
          int shoulderToElbow_in = 3;
 
          @Override
-         public void robotInit() {
+         public Robot() {
 
             armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
 
@@ -388,7 +388,7 @@ A functional implementation could look like this:
 
          class Robot : public frc::TimedRobot {
             public:
-            void RobotInit() override {
+            void Robot() override {
                armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
             }
 
@@ -420,7 +420,7 @@ For example, consider the following code:
          PWMSparkMax leftRearMotor;
 
          @Override
-         public void robotInit() {
+         public Robot() {
             leftFrontMotor = new PWMSparkMax(0);
             leftRearMotor = new PWMSparkMax(0);
          }
@@ -431,7 +431,7 @@ For example, consider the following code:
 
       class Robot : public frc::TimedRobot {
          public:
-            void RobotInit() override {
+            void Robot() override {
                m_frontLeftMotor.Set(0.5);
                m_rearLeftMotor.Set(0.25);
             }
@@ -453,10 +453,10 @@ When run, you'll see output that looks like this:
       .. code-block:: text
 
          ********** Robot program starting **********
-         Error at frc.robot.Robot.robotInit(Robot.java:25): Unhandled exception: edu.wpi.first.hal.util.AllocationException: Code: -1029
+         Error at frc.robot.Robot.RobotBase(Robot.java:25): Unhandled exception: edu.wpi.first.hal.util.AllocationException: Code: -1029
          PWM or DIO 0 previously allocated.
          Location of the previous allocation:
-                 at frc.robot.Robot.robotInit(Robot.java:24)
+                 at frc.robot.Robot.Robot(Robot.java:24)
                  at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
                  at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
                  at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
@@ -467,7 +467,7 @@ When run, you'll see output that looks like this:
                  at edu.wpi.first.wpilibj.PWM.<init>(PWM.java:66)
                  at edu.wpi.first.wpilibj.motorcontrol.PWMMotorController.<init>(PWMMotorController.java:27)
                  at edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax.<init>(PWMSparkMax.java:35)
-                 at frc.robot.Robot.robotInit(Robot.java:25)
+                 at frc.robot.Robot.Robot(Robot.java:25)
                  at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
                  at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
                  at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
@@ -550,7 +550,7 @@ In the example, the left motor controllers are plugged into :term:`PWM` ports ``
          PWMSparkMax leftRearMotor;
 
          @Override
-         public void robotInit() {
+         public Robot() {
 
             leftFrontMotor = new PWMSparkMax(0);
             leftRearMotor = new PWMSparkMax(1);
@@ -564,7 +564,7 @@ In the example, the left motor controllers are plugged into :term:`PWM` ports ``
 
       class Robot : public frc::TimedRobot {
          public:
-            void RobotInit() override {
+            void Robot() override {
                m_frontLeftMotor.Set(0.5);
                m_rearLeftMotor.Set(0.25);
             }

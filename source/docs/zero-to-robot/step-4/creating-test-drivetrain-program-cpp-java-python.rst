@@ -503,16 +503,16 @@ The sample robot in our examples will have an Xbox Controller on USB port 0 for 
 
       .. code-block:: c++
 
-         void RobotInit() {}
+         void Robot() {}
 
    .. tab-item:: Python
       :sync: python
 
       .. code-block:: python
 
-         def robotInit(self):
+         def Robot(self):
 
-The ``RobotInit`` method is run when the robot program is starting up, but after the constructor. The ``RobotInit`` for our sample program inverts the right side of the drivetrain. Depending on your drive setup, you might need to invert the left side instead.
+The ``Robot`` method is run when the robot program is starting up, but after the constructor. The ``Robot`` for our sample program inverts the right side of the drivetrain. Depending on your drive setup, you might need to invert the left side instead.
 
 .. note:: In C++, the drive inversion is handled in the ``Robot()`` constructor above.
 

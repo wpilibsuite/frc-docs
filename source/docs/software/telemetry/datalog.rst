@@ -20,7 +20,7 @@ Log files are initially named ``FRC_TBD_{random}.wpilog`` until the DS connects.
 
 On startup, all existing log files where a DS has not been connected will be deleted.  If there is less than 50 MB of free space on the target storage, ``FRC_`` log files are deleted (oldest to newest) until there is 50 MB free OR there are 10 files remaining.
 
-The most basic usage of DataLogManager only requires a single line of code (typically this would be called from ``robotInit``). This will record all NetworkTables changes to the data log.
+The most basic usage of DataLogManager only requires a single line of code (typically this would be called from ``Robot``). This will record all NetworkTables changes to the data log.
 
 .. tab-set-code::
 
@@ -119,7 +119,7 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
         DoubleLogEntry myDoubleLog;
         StringLogEntry myStringLog;
 
-        public void robotInit() {
+        public Robot() {
           // Starts recording to data log
           DataLogManager.start();
 
@@ -148,7 +148,7 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
         wpi::log::DoubleLogEntry myDoubleLog;
         wpi::log::StringLogEntry myStringLog;
 
-        void RobotInit() {
+        void Robot() {
           // Starts recording to data log
           frc::DataLogManager::Start();
 
@@ -179,7 +179,7 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
         )
 
         class MyRobot(TimedRobot):
-            def robotInit(self):
+            def Robot(self):
                 # Starts recording to data log
                 DataLogManager.start()
 
