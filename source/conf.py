@@ -162,7 +162,6 @@ linkcheck_ignore = [
 
 linkcheck_anchors_ignore_for_url = [
     r".*github.com.*",
-    r".*github.wpilib.org/allwpilib/docs/development/java/.*",  # until #2695 is fixed
     r".*ni.com/en/support/downloads/drivers/download.frc-game-tools.html.*",
 ]
 
