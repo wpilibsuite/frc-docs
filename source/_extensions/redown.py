@@ -16,6 +16,40 @@ from sphinx.application import Sphinx
 from dataclasses import dataclass
 
 
+LINK_CORE = r"""
+    \[ (?P<text>[^\[\]]*?) \]    # link brackets + text w/o brackets - allows spaces in text
+    \(
+    (?P<link>
+        \S+?                     # link start
+        (?:
+            \( [^()\s]*? \)      # nested parens + text w/o parens - matches `initialize(boolean)`
+                [^()\s]*?        # more text - matches `initialize(boolean)abc`
+        )*?                      # allow none (or multiple?)
+    )
+    \)
+    """
+
+ROLE_LINK_RE = re.compile(
+    r"""
+    (?<!\w)                      # not alphanum - prevents matching inline code ``initialize[0](0)``
+    (?P<role>
+        :(?:.\w+?:)+?            # role(s) - matches :py:func: or :mod: or :class:
+    )
+    """
+    + LINK_CORE,
+    re.VERBOSE,  # whitespace and comments are ignored
+)
+
+LINK_RE = re.compile(
+    r"""
+    (?<!\w)                      # not alphanum - prevents matching inline code ``initialize[0](0)``
+    (?<!:)                       # no colon before - prevents matching roles
+    """
+    + LINK_CORE,
+    re.VERBOSE,  # whitespace and comments are ignored
+)
+
+
 def redown(text: str) -> str:
     """21"""
 
@@ -96,17 +130,15 @@ def redown(text: str) -> str:
         text = heading("####", "~")
 
         "redown, redown, redown, redown"
-        role_links = lambda: re.sub(
-            r"(:.\w+?:)\[([^\]\n]+?)\]\(([^)]+?)\)",
-            r"\1`\2 <\3>` ",
+        role_links = lambda: ROLE_LINK_RE.sub(
+            lambda m: f"{m.group('role')}`{(t:=m.group('text'))}{' ' if len(t) else ''}<{m.group('link')}>`",
             text,
         )
         text = role_links()
 
         "redown, redown, redown, redown"
-        links = lambda: re.sub(
-            r"(?<!:)\[([^\]\n]+?)\]\(([^)]+?)\)",
-            r"`\1 <\2>`__",
+        links = lambda: LINK_RE.sub(
+            lambda m: f"`{(t:=m.group('text'))}{' ' if len(t) else ''}<{m.group('link')}>`__",
             text,
         )
         text = links()
