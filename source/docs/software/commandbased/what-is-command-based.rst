@@ -8,52 +8,52 @@ The command-based paradigm is also an example of :term:`declarative programming`
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  new Trigger(condition::get).onTrue(Commands.runOnce(() -> piston.set(DoubleSolenoid.Value.kForward)));
+  ```
 
-    new Trigger(condition::get).onTrue(Commands.runOnce(() -> piston.set(DoubleSolenoid.Value.kForward)));
+  ```c++
+  Trigger([&condition] { return condition.Get()).OnTrue(frc2::cmd::RunOnce([&piston] { piston.Set(frc::DoubleSolenoid::kForward)));
+  ```
 
-  .. code-block:: c++
-
-    Trigger([&condition] { return condition.Get()).OnTrue(frc2::cmd::RunOnce([&piston] { piston.Set(frc::DoubleSolenoid::kForward)));
-
-  .. code-block:: python
-
-    Trigger(condition.get).onTrue(Commands.runOnce(lambda: piston.set(DoubleSolenoid.Value.kForward)))
+  ```python
+  Trigger(condition.get).onTrue(Commands.runOnce(lambda: piston.set(DoubleSolenoid.Value.kForward)))
+  ```
 
 In contrast, without using command-based, the user would need to check the button state every iteration, and perform the appropriate action based on the state of the button.
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    if(condition.get()) {
-      if(!pressed) {
-        piston.set(DoubleSolenoid.Value.kForward);
-        pressed = true;
-      }
-    } else {
-      pressed = false;
+  ```java
+  if(condition.get()) {
+    if(!pressed) {
+      piston.set(DoubleSolenoid.Value.kForward);
+      pressed = true;
     }
+  } else {
+    pressed = false;
+  }
+  ```
 
-  .. code-block:: c++
-
-    if(condition.Get()) {
-      if(!pressed) {
-        piston.Set(frc::DoubleSolenoid::kForward);
-        pressed = true;
-      }
-    } else {
-      pressed = false;
+  ```c++
+  if(condition.Get()) {
+    if(!pressed) {
+      piston.Set(frc::DoubleSolenoid::kForward);
+      pressed = true;
     }
+  } else {
+    pressed = false;
+  }
+  ```
 
-  .. code-block:: python
-
-        if condition.get():
-            if not pressed:
-                piston.set(DoubleSolenoid.Value.kForward)
-                pressed = True
-            else:
-                pressed = False
+  ```python
+  if condition.get():
+      if not pressed:
+          piston.set(DoubleSolenoid.Value.kForward)
+          pressed = True
+      else:
+          pressed = False
+  ```
 
 ## Subsystems and Commands
 

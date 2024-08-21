@@ -23,35 +23,28 @@ writing your robot program. When writing your own program be aware of the follow
 ## Iterative program definitions
 .. tab-set-code::
 
-    .. code-block:: java
-
-        package org.usfirst.frc.team190.robot;
-
+    ```java
+    package org.usfirst.frc.team190.robot;
         import org.usfirst.frc.team190.grip.MyVisionPipeline;
-
         import org.opencv.core.Rect;
-        import org.opencv.imgproc.Imgproc;
-
+    import org.opencv.imgproc.Imgproc;
         import edu.wpi.cscore.UsbCamera;
-        import edu.wpi.first.cameraserver.CameraServer;
-        import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-        import edu.wpi.first.wpilibj.PWMSparkMax;
-        import edu.wpi.first.wpilibj.TimedRobot;
-        import edu.wpi.first.vision.VisionRunner;
-        import edu.wpi.first.vision.VisionThread;
-
+    import edu.wpi.first.cameraserver.CameraServer;
+    import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+    import edu.wpi.first.wpilibj.PWMSparkMax;
+    import edu.wpi.first.wpilibj.TimedRobot;
+    import edu.wpi.first.vision.VisionRunner;
+    import edu.wpi.first.vision.VisionThread;
         public class Robot extends TimedRobot {
-
             private static final int IMG_WIDTH = 320;
-            private static final int IMG_HEIGHT = 240;
-
+        private static final int IMG_HEIGHT = 240;
             private VisionThread visionThread;
-            private double centerX = 0.0;
-            private DifferentialDrive drive;
-            private PWMSparkMax left;
-            private PWMSparkMax right;
-
+        private double centerX = 0.0;
+        private DifferentialDrive drive;
+        private PWMSparkMax left;
+        private PWMSparkMax right;
             private final Object imgLock = new Object();
+    ```
 
 In this first part of the program you can see all the import statements for the WPILib classes used for this program.
 
@@ -65,27 +58,25 @@ In this first part of the program you can see all the import statements for the 
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        @Override
-        public void robotInit() {
-            UsbCamera camera = CameraServer.startAutomaticCapture();
-            camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
-
+    ```java
+    @Override
+    public void robotInit() {
+        UsbCamera camera = CameraServer.startAutomaticCapture();
+        camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
             visionThread = new VisionThread(camera, new MyVisionPipeline(), pipeline -> {
-                if (!pipeline.filterContoursOutput().isEmpty()) {
-                    Rect r = Imgproc.boundingRect(pipeline.filterContoursOutput().get(0));
-                    synchronized (imgLock) {
-                        centerX = r.x + (r.width / 2);
-                    }
+            if (!pipeline.filterContoursOutput().isEmpty()) {
+                Rect r = Imgproc.boundingRect(pipeline.filterContoursOutput().get(0));
+                synchronized (imgLock) {
+                    centerX = r.x + (r.width / 2);
                 }
-            });
-            visionThread.start();
-
+            }
+        });
+        visionThread.start();
             left = new PWMSparkMax(0);
-            right = new PWMSparkMax(1);
-            drive = new DifferentialDrive(left, right);
-        }
+        right = new PWMSparkMax(1);
+        drive = new DifferentialDrive(left, right);
+    }
+    ```
 
 The **robotInit()** method is called once when the program starts up. It creates a **CameraServer** instance that begins
 capturing images at the requested resolution (IMG_WIDTH by IMG_HEIGHT).
@@ -103,17 +94,17 @@ this makes sure the main robot thread will always have the most up-to-date value
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        @Override
-        public void autonomousPeriodic() {
-            double centerX;
-            synchronized (imgLock) {
-                centerX = this.centerX;
-            }
-            double turn = centerX - (IMG_WIDTH / 2);
-            drive.arcadeDrive(-0.6, turn * 0.005);
+    ```java
+    @Override
+    public void autonomousPeriodic() {
+        double centerX;
+        synchronized (imgLock) {
+            centerX = this.centerX;
         }
+        double turn = centerX - (IMG_WIDTH / 2);
+        drive.arcadeDrive(-0.6, turn * 0.005);
+    }
+    ```
 
 This, the final part of the program, is called repeatedly during the **autonomous period** of the match. It gets the **centerX**
 pixel value of the target and **subtracts half the image width** to change it to a value that is **zero when the rectangle is

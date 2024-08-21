@@ -12,11 +12,11 @@ Different compilers and different platforms use a variety of different flags. Th
 
 ### Configuring for a Platform
 
-.. code-block:: groovy
-
-  nativeUtils.platformConfigs.named('windowsx86-64').configure {
-    it.cppCompiler.args.add("/utf-8")
-  }
+```groovy
+nativeUtils.platformConfigs.named('windowsx86-64').configure {
+  it.cppCompiler.args.add("/utf-8")
+}
+```
 
 native-utils is used to configure the platform, in this case, `windowsx86-64`. This can be replaced for any platform listed in the previous section. Then arguments, such as `/utf-8` is appended to the C++ compiler.
 
@@ -24,8 +24,9 @@ native-utils is used to configure the platform, in this case, `windowsx86-64`. T
 
 Arguments can also be configured for Java. This can be accomplished by editing `build.gradle` and appending arguments to the `FRCJavaArtifact`. An example of this is shown below.
 
-.. code-block:: groovy
+```groovy
+frcJava(getArtifactClass('FRCJavaArtifact')) {
+  jvmArgs.add("-XX:+DisableExplicitGC")
+}
+```
 
-  frcJava(getArtifactClass('FRCJavaArtifact')) {
-    jvmArgs.add("-XX:+DisableExplicitGC")
-  }

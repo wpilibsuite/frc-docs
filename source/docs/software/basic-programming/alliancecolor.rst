@@ -8,45 +8,45 @@ Note that there are three cases: red, blue, and no color yet.  It is important t
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  Optional<Alliance> ally = DriverStation.getAlliance();
+  if (ally.isPresent()) {
+      if (ally.get() == Alliance.Red) {
+          <RED ACTION>
+      }
+      if (ally.get() == Alliance.Blue) {
+          <BLUE ACTION>
+      }
+  }
+  else {
+      <NO COLOR YET ACTION>
+  }
+  ```
 
-    Optional<Alliance> ally = DriverStation.getAlliance();
-    if (ally.isPresent()) {
-        if (ally.get() == Alliance.Red) {
-            <RED ACTION>
-        }
-        if (ally.get() == Alliance.Blue) {
-            <BLUE ACTION>
-        }
-    }
-    else {
-        <NO COLOR YET ACTION>
-    }
+  ```c++
+  using frc::DriverStation::Alliance;
+  if (auto ally = frc::DriverStation::GetAlliance()) {
+      if (ally.value() == Alliance::kRed) {
+          <RED ACTION>
+      }
+      if (ally.value() == Alliance::kBlue) {
+          <BLUE ACTION>
+      }
+  }
+  else {
+      <NO COLOR YET ACTION>
+  }
+  ```
 
-  .. code-block:: c++
-
-    using frc::DriverStation::Alliance;
-    if (auto ally = frc::DriverStation::GetAlliance()) {
-        if (ally.value() == Alliance::kRed) {
-            <RED ACTION>
-        }
-        if (ally.value() == Alliance::kBlue) {
-            <BLUE ACTION>
-        }
-    }
-    else {
-        <NO COLOR YET ACTION>
-    }
-
-  .. code-block:: Python
-
-    from wpilib import DriverStation
-
+  ```Python
+  from wpilib import DriverStation
     ally = DriverStation.getAlliance()
-    if ally is not None:
-        if ally == DriverStation.Alliance.kRed:
-            <RED ACTION>
-        elif ally == DriverStation.Alliance.kBlue:
-            <BLUE ACTION>
-    else:
-        <NO COLOR YET ACTION>
+  if ally is not None:
+      if ally == DriverStation.Alliance.kRed:
+          <RED ACTION>
+      elif ally == DriverStation.Alliance.kBlue:
+          <BLUE ACTION>
+  else:
+      <NO COLOR YET ACTION>
+  ```
+

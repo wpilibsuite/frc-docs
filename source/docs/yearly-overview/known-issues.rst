@@ -48,11 +48,11 @@ If you identify software that interferes with driver station, please post it to 
 
 **Workaround:** The true memory available to the robot program is available in the file ``/proc/meminfo``. :doc:`Use ssh to connect to the robot </docs/software/roborio-info/roborio-ssh>`, and run ``cat /proc/meminfo``.
 
-.. code-block:: text
-
-   MemTotal:         250152 kB
-   MemFree:           46484 kB
-   MemAvailable:     126956 kB
+```text
+MemTotal:         250152 kB
+MemFree:           46484 kB
+MemAvailable:     126956 kB
+```
 
 The proper value to look is as MemAvailable, rather then MemFree (which is what the driver station is reporting).
 
@@ -97,9 +97,9 @@ Several alternatives exist for accessing the REV color sensor without using the 
 
 **Issue:** Rarely, a user's Gradle cache will get broken and they will get shown errors similar to the following:
 
-.. code-block:: console
-
-   Could not apply requested plugin [id: ‘edu.wpi.first.GradleRIO’, version: ‘2020.3.2’] as it does not provide a plugin with id ‘edu.wpi.first.GradleRIO’
+```console
+Could not apply requested plugin [id: ‘edu.wpi.first.GradleRIO’, version: ‘2020.3.2’] as it does not provide a plugin with id ‘edu.wpi.first.GradleRIO’
+```
 
 **Workaround:**
 
@@ -147,9 +147,9 @@ There are two known workarounds:
 
 **Solution:** You may be able to workaround this issue by disabling the NI webserver using the following robotpy-installer command:
 
-.. code-block:: shell
-
-    python -m robotpy installer niweb disable
+```shell
+python -m robotpy installer niweb disable
+```
 
 .. seealso:: [Github issue](https://github.com/robotpy/mostrobotpy/issues/61)
 
@@ -163,17 +163,17 @@ There are two known workarounds:
 
 On Windows execute the following in powershell:
 
-.. code-block:: powershell
-
-   Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.module
-   Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\junit-bom\5.10.1\junit-bom-5.10.1.module
+```powershell
+Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.module
+Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\junit-bom\5.10.1\junit-bom-5.10.1.module
+```
 
 On Linux/macOS execute the following:
 
-.. code-block:: sh
-
-   curl https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -o ~/wpilib/2024/maven/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module
-   curl https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -o ~/wpilib/2024/maven/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module
+```sh
+curl https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -o ~/wpilib/2024/maven/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module
+curl https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -o ~/wpilib/2024/maven/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module
+```
 
 After running those, you’ll need to refresh Java intellisense in VS Code for it to pick up the new files. You can do so by running the ``Clean Java Language Server Workspace`` command in VS Code.
 

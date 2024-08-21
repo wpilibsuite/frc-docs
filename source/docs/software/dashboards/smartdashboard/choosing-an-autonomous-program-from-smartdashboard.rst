@@ -31,13 +31,12 @@ In ``Robot.java`` / ``Robot.h``, create a variable to hold a reference to a ``Se
    .. tab-item:: Python
       :sync: Python
 
-      .. code-block:: python
-
-         import wpilib
-
-         self.defaultAuto = "Default"
-         self.customAuto = "My Auto";
-         self.chooser = wpilib.SendableChooser()
+      ```python
+      import wpilib
+            self.defaultAuto = "Default"
+      self.customAuto = "My Auto";
+      self.chooser = wpilib.SendableChooser()
+      ```
 
 ### Setting Up Options
 
@@ -62,13 +61,12 @@ The chooser allows you to pick from a list of defined elements, in this case the
    .. tab-item:: Python
       :sync: Python
 
-      .. code-block:: python
-
-         from wpilib import SmartDashboard
-
-         self.chooser.setDefaultOption("Default Auto", self.defaultAuto)
-         self.chooser.addOption("My Auto", self.customAuto)
-         SmartDashboard.putData("Auto choices", self.chooser)
+      ```python
+      from wpilib import SmartDashboard
+            self.chooser.setDefaultOption("Default Auto", self.defaultAuto)
+      self.chooser.addOption("My Auto", self.customAuto)
+      SmartDashboard.putData("Auto choices", self.chooser)
+      ```
 
 ### Running Autonomous Code
 
@@ -93,18 +91,17 @@ Now, in ``autonomousInit`` and ``autonomousPeriodic``, you can use the ``m_autoS
    .. tab-item:: Python
       :sync: Python
 
-      .. code-block:: python
-
-         def autonomousInit(self):
-            self.autoSelected = self.chooser.getSelected()
-            print("Auto selected: " + self.autoSelected)
-
-         def autonomousPeriodic(self):
-            match self.autoSelected:
-               case self.customAuto:
-                  # Put custom auto code here
-               case _:
-                  # Put default auto code here
+      ```python
+      def autonomousInit(self):
+         self.autoSelected = self.chooser.getSelected()
+         print("Auto selected: " + self.autoSelected)
+            def autonomousPeriodic(self):
+         match self.autoSelected:
+            case self.customAuto:
+               # Put custom auto code here
+            case _:
+               # Put default auto code here
+      ```
 
 ## Command-Based
 
@@ -187,28 +184,27 @@ Then, publish the chooser to the dashboard:
    .. tab-item:: Java
       :sync: Java
 
-      .. code-block:: java
-
-         // Put the chooser on the dashboard
-         SmartDashboard.putData(m_chooser);
+      ```java
+      // Put the chooser on the dashboard
+      SmartDashboard.putData(m_chooser);
+      ```
 
    .. tab-item:: C++
       :sync: C++
 
-      .. code-block:: c++
-
-         // Put the chooser on the dashboard
-         frc::SmartDashboard::PutData(&m_chooser);
+      ```c++
+      // Put the chooser on the dashboard
+      frc::SmartDashboard::PutData(&m_chooser);
+      ```
 
    .. tab-item:: Python
       :sync: Python
 
-      .. code-block:: python
-
-         from wpilib import SmartDashboard
-
-         # Put the chooser on the dashboard
-         SmartDashboard.putData(chooser)
+      ```python
+      from wpilib import SmartDashboard
+            # Put the chooser on the dashboard
+      SmartDashboard.putData(chooser)
+      ```
 
 ### Starting an Autonomous Command
 

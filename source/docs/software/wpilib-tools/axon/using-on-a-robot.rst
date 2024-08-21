@@ -8,30 +8,30 @@ Because there can be any number of detected objects in a given image, the infere
 
 The JSON string has the following format:
 
-.. code-block:: JSON
-
-  [
-    {
-      "label": "blue robot",
-      "box": {
-        "ymin": 25,
-        "xmin": 10,
-        "ymax": 100,
-        "xmax": 150
-      },
-      "confidence": 0.75
+```JSON
+[
+  {
+    "label": "blue robot",
+    "box": {
+      "ymin": 25,
+      "xmin": 10,
+      "ymax": 100,
+      "xmax": 150
     },
-    {
-      "label": "red robot",
-      "box": {
-        "ymin": 111,
-        "xmin": 163,
-        "ymax": 240,
-        "xmax": 320
-      },
-      "confidence": 0.99
-    }
-  ]
+    "confidence": 0.75
+  },
+  {
+    "label": "red robot",
+    "box": {
+      "ymin": 111,
+      "xmin": 163,
+      "ymax": 240,
+      "xmax": 320
+    },
+    "confidence": 0.99
+  }
+]
+```
 
 The example above shows the value of the ``ML/detections`` entry if two objects are detected. It is a list of objects, where the ``label`` attribute means the kind of object that was detected. The ``box`` attribute describes the bottom left and top right corners of the bounding box, i.e. the box that completely surrounds the detected object within the image. There will be an empty list if no objects are detected. The ``confidence`` attribute is how confident the model is that the given object is correctly detected.
 

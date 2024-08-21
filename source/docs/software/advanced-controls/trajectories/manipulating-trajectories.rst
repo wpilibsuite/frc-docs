@@ -7,43 +7,43 @@ Because all trajectories have timestamps at each point, the amount of time it sh
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // Get the total time of the trajectory in seconds
+   double duration = trajectory.getTotalTimeSeconds();
+   ```
 
-      // Get the total time of the trajectory in seconds
-      double duration = trajectory.getTotalTimeSeconds();
+   ```c++
+   // Get the total time of the trajectory
+   units::second_t duration = trajectory.TotalTime();
+   ```
 
-   .. code-block:: c++
-
-      // Get the total time of the trajectory
-      units::second_t duration = trajectory.TotalTime();
-
-   .. code-block:: python
-
-      # Get the total time of the trajectory
-      duration = trajectory.totalTime()
+   ```python
+   # Get the total time of the trajectory
+   duration = trajectory.totalTime()
+   ```
 
 ## Sampling the trajectory
 The trajectory can be sampled at various timesteps to get the pose, velocity, and acceleration at that point. The ``Sample(units::second_t time)`` (C++) / ``sample(double timeSeconds)`` (Java/Python) method can be used to sample the trajectory at any timestep. The parameter refers to the amount of time passed since 0 seconds (the starting point of the trajectory). This method returns a ``Trajectory::Sample`` with information about that sample point.
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // Sample the trajectory at 1.2 seconds. This represents where the robot
+   // should be after 1.2 seconds of traversal.
+   Trajectory.Sample point = trajectory.sample(1.2);
+   ```
 
-      // Sample the trajectory at 1.2 seconds. This represents where the robot
-      // should be after 1.2 seconds of traversal.
-      Trajectory.Sample point = trajectory.sample(1.2);
+   ```c++
+   // Sample the trajectory at 1.2 seconds. This represents where the robot
+   // should be after 1.2 seconds of traversal.
+   Trajectory::State point = trajectory.Sample(1.2_s);
+   ```
 
-   .. code-block:: c++
-
-      // Sample the trajectory at 1.2 seconds. This represents where the robot
-      // should be after 1.2 seconds of traversal.
-      Trajectory::State point = trajectory.Sample(1.2_s);
-
-   .. code-block:: python
-
-      # Sample the trajectory at 1.2 seconds. This represents where the robot
-      # should be after 1.2 seconds of traversal.
-      point = trajectory.sample(1.2)
+   ```python
+   # Sample the trajectory at 1.2 seconds. This represents where the robot
+   # should be after 1.2 seconds of traversal.
+   point = trajectory.sample(1.2)
+   ```
 
 The ``Trajectory::Sample`` struct has several pieces of information about the sample point:
 

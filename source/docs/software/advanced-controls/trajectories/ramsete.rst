@@ -7,38 +7,33 @@ The Ramsete controller should be initialized with two gains, namely ``b`` and ``
 .. note:: Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results when all units were in meters. As such, a zero-argument constructor for ``RamseteController`` exists with gains defaulted to these values.
 
 .. tab-set-code::
-   .. code-block:: java
-
-      // Using the default constructor of RamseteController. Here
-      // the gains are initialized to 2.0 and 0.7.
-      RamseteController controller1 = new RamseteController();
-
+   ```java
+   // Using the default constructor of RamseteController. Here
+   // the gains are initialized to 2.0 and 0.7.
+   RamseteController controller1 = new RamseteController();
       // Using the secondary constructor of RamseteController where
-      // the user can choose any other gains.
-      RamseteController controller2 = new RamseteController(2.1, 0.8);
+   // the user can choose any other gains.
+   RamseteController controller2 = new RamseteController(2.1, 0.8);
+   ```
 
-   .. code-block:: c++
-
-      // Using the default constructor of RamseteController. Here
-      // the gains are initialized to 2.0 and 0.7.
-      frc::RamseteController controller1;
-
+   ```c++
+   // Using the default constructor of RamseteController. Here
+   // the gains are initialized to 2.0 and 0.7.
+   frc::RamseteController controller1;
       // Using the secondary constructor of RamseteController where
-      // the user can choose any other gains.
-      frc::RamseteController controller2{2.1, 0.8};
+   // the user can choose any other gains.
+   frc::RamseteController controller2{2.1, 0.8};
+   ```
 
-   .. code-block:: python
-
-      from wpimath.controller import RamseteController
-
+   ```python
+   from wpimath.controller import RamseteController
       # Using the default constructor of RamseteController. Here
-      # the gains are initialized to 2.0 and 0.7.
-      controller1 = RamseteController()
-
+   # the gains are initialized to 2.0 and 0.7.
+   controller1 = RamseteController()
       # Using the secondary constructor of RamseteController where
-      # the user can choose any other gains.
-      controller2 = RamseteController(2.1, 0.8)
-
+   # the user can choose any other gains.
+   controller2 = RamseteController(2.1, 0.8)
+      ```
 
 ## Getting Adjusted Velocities
 The Ramsete controller returns "adjusted velocities" so that the when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal comprises of a desired pose, desired linear velocity, and desired angular velocity. Furthermore, the current position of the robot should also be updated periodically. The controller uses these four arguments to return the adjusted linear and angular velocity. Users should command their robot to these linear and angular velocities to achieve optimal trajectory tracking.
@@ -49,21 +44,20 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   Trajectory.State goal = trajectory.sample(3.4); // sample the trajectory at 3.4 seconds from the beginning
+   ChassisSpeeds adjustedSpeeds = controller.calculate(currentRobotPose, goal);
+      ```
 
-      Trajectory.State goal = trajectory.sample(3.4); // sample the trajectory at 3.4 seconds from the beginning
-      ChassisSpeeds adjustedSpeeds = controller.calculate(currentRobotPose, goal);
+   ```c++
+   const Trajectory::State goal = trajectory.Sample(3.4_s); // sample the trajectory at 3.4 seconds from the beginning
+   ChassisSpeeds adjustedSpeeds = controller.Calculate(currentRobotPose, goal);
+   ```
 
-
-   .. code-block:: c++
-
-      const Trajectory::State goal = trajectory.Sample(3.4_s); // sample the trajectory at 3.4 seconds from the beginning
-      ChassisSpeeds adjustedSpeeds = controller.Calculate(currentRobotPose, goal);
-
-   .. code-block:: python
-
-      goal = trajectory.sample(3.4)  # sample the trajectory at 3.4 seconds from the beginning
-      adjustedSpeeds = controller.calculate(currentRobotPose, goal)
+   ```python
+   goal = trajectory.sample(3.4)  # sample the trajectory at 3.4 seconds from the beginning
+   adjustedSpeeds = controller.calculate(currentRobotPose, goal)
+   ```
 
 These calculations should be performed at every loop iteration, with an updated robot position and goal.
 
@@ -74,25 +68,25 @@ The returned adjusted speeds can be converted to usable speeds using the kinemat
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   ChassisSpeeds adjustedSpeeds = controller.calculate(currentRobotPose, goal);
+   DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.toWheelSpeeds(adjustedSpeeds);
+   double left = wheelSpeeds.leftMetersPerSecond;
+   double right = wheelSpeeds.rightMetersPerSecond;
+   ```
 
-      ChassisSpeeds adjustedSpeeds = controller.calculate(currentRobotPose, goal);
-      DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.toWheelSpeeds(adjustedSpeeds);
-      double left = wheelSpeeds.leftMetersPerSecond;
-      double right = wheelSpeeds.rightMetersPerSecond;
+   ```c++
+   ChassisSpeeds adjustedSpeeds = controller.Calculate(currentRobotPose, goal);
+   DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.ToWheelSpeeds(adjustedSpeeds);
+   auto [left, right] = kinematics.ToWheelSpeeds(adjustedSpeeds);
+   ```
 
-   .. code-block:: c++
-
-      ChassisSpeeds adjustedSpeeds = controller.Calculate(currentRobotPose, goal);
-      DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.ToWheelSpeeds(adjustedSpeeds);
-      auto [left, right] = kinematics.ToWheelSpeeds(adjustedSpeeds);
-
-   .. code-block:: python
-
-      adjustedSpeeds = controller.calculate(currentRobotPose, goal)
-      wheelSpeeds = kinematics.toWheelSpeeds(adjustedSpeeds)
-      left = wheelSpeeds.left
-      right = wheelSpeeds.right
+   ```python
+   adjustedSpeeds = controller.calculate(currentRobotPose, goal)
+   wheelSpeeds = kinematics.toWheelSpeeds(adjustedSpeeds)
+   left = wheelSpeeds.left
+   right = wheelSpeeds.right
+   ```
 
 Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController ([C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_p_i_d_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/PIDController.html), :external:py:class:`Python <wpimath.controller.PIDController>`) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX can be used.
 

@@ -7,40 +7,32 @@ Glass supports displaying your robot's position on the field using the :guilabel
 To send your robot's position (usually obtained by :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>` or a pose estimator), a ``Field2d`` instance must be created in robot code and sent over NetworkTables. The instance must then be updated periodically with the latest robot pose.
 
 .. tab-set-code::
-   .. code-block:: java
-
-      private final Field2d m_field = new Field2d();
-
+   ```java
+   private final Field2d m_field = new Field2d();
       // Do this in either robot or subsystem init
-      SmartDashboard.putData("Field", m_field);
-
+   SmartDashboard.putData("Field", m_field);
       // Do this in either robot periodic or subsystem periodic
-      m_field.setRobotPose(m_odometry.getPoseMeters());
+   m_field.setRobotPose(m_odometry.getPoseMeters());
+   ```
 
-   .. code-block:: c++
-
-      #include <frc/smartdashboard/Field2d.h>
-      #include <frc/smartdashboard/SmartDashboard.h>
-
+   ```c++
+   #include <frc/smartdashboard/Field2d.h>
+   #include <frc/smartdashboard/SmartDashboard.h>
       frc::Field2d m_field;
-
       // Do this in either robot or subsystem init
-      frc::SmartDashboard::PutData("Field", &m_field);
-
+   frc::SmartDashboard::PutData("Field", &m_field);
       // Do this in either robot periodic or subsystem periodic
-      m_field.SetRobotPose(m_odometry.GetPose());
+   m_field.SetRobotPose(m_odometry.GetPose());
+   ```
 
-   .. code-block:: python
-
-      from wpilib import SmartDashboard, Field2d
-
+   ```python
+   from wpilib import SmartDashboard, Field2d
       self.field = Field2d()
-
       # Do this in either robot or subsystem init
-      SmartDashboard.putData("Field", self.field)
-
+   SmartDashboard.putData("Field", self.field)
       # Do this in either robot periodic or subsystem periodic
-      self.field.setRobotPose(self.odometry.getPose())
+   self.field.setRobotPose(self.odometry.getPose())
+   ```
 
 .. note:: The ``Field2d`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`. In this case, the ``SmartDashboard`` API was used, meaning that the :guilabel:`Field2d` widget will appear under the ``SmartDashboard`` table name.
 

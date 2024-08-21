@@ -62,15 +62,15 @@ The ``setGoal()`` method can be used to set the goal state of the ``TrapezoidPro
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // The subsystem will execute a profile to a position of 5 and a velocity of 3.
+   examplePIDSubsystem.setGoal(new TrapezoidProfile.State(5, 3);
+   ```
 
-      // The subsystem will execute a profile to a position of 5 and a velocity of 3.
-      examplePIDSubsystem.setGoal(new TrapezoidProfile.State(5, 3);
-
-   .. code-block:: c++
-
-      // The subsystem will execute a profile to a position of 5 meters and a velocity of 3 mps.
-      examplePIDSubsyste.SetGoal({5_m, 3_mps});
+   ```c++
+   // The subsystem will execute a profile to a position of 5 meters and a velocity of 3 mps.
+   examplePIDSubsyste.SetGoal({5_m, 3_mps});
+   ```
 
 #### enable() and disable()
 

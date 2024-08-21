@@ -16,44 +16,38 @@ The WPILib ``Debouncer`` can be configured in three different modes:
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    // Initializes a DigitalInput on DIO 0
-    DigitalInput input = new DigitalInput(0);
-
+  ```java
+  // Initializes a DigitalInput on DIO 0
+  DigitalInput input = new DigitalInput(0);
     // Creates a Debouncer in "both" mode.
-    Debouncer m_debouncer = new Debouncer(0.1, Debouncer.DebounceType.kBoth);
-
+  Debouncer m_debouncer = new Debouncer(0.1, Debouncer.DebounceType.kBoth);
     // So if currently false the signal must go true for at least .1 seconds before being read as a True signal.
-    if (m_debouncer.calculate(input.get())) {
-        // Do something now that the DI is True.
-    }
+  if (m_debouncer.calculate(input.get())) {
+      // Do something now that the DI is True.
+  }
+  ```
 
-  .. code-block:: c++
-
-    // Initializes a DigitalInput on DIO 0
-    frc::DigitalInput input{0};
-
+  ```c++
+  // Initializes a DigitalInput on DIO 0
+  frc::DigitalInput input{0};
     // Creates a Debouncer in "both" mode.
-    frc::Debouncer m_debouncer{100_ms, frc::Debouncer::DebounceType::kBoth};
-
+  frc::Debouncer m_debouncer{100_ms, frc::Debouncer::DebounceType::kBoth};
     // So if currently false the signal must go true for at least .1 seconds before being read as a True signal.
-    if (m_debouncer.calculate(input.Get())) {
-        // Do something now that the DI is True.
-    }
+  if (m_debouncer.calculate(input.Get())) {
+      // Do something now that the DI is True.
+  }
+  ```
 
-  .. code-block:: python
-
-    from wpilib import DigitalInput
-    from wpimath.filter import Debouncer
-
+  ```python
+  from wpilib import DigitalInput
+  from wpimath.filter import Debouncer
     # Initializes a DigitalInput on DIO 0
-    self.input = DigitalInput(0)
-
+  self.input = DigitalInput(0)
     # Creates a Debouncer in "both" mode with a debounce time of 0.1 seconds
-    self.debouncer = Debouncer(0.1, Debouncer.DebounceType.kBoth)
-
+  self.debouncer = Debouncer(0.1, Debouncer.DebounceType.kBoth)
     # If currently false, the signal must go true for at least 0.1 seconds before being read as a True signal.
-    if self.debouncer.calculate(self.input.get()):
-        # Do something now that the DI is True.
-        pass
+  if self.debouncer.calculate(self.input.get()):
+      # Do something now that the DI is True.
+      pass
+  ```
+

@@ -34,13 +34,13 @@ Another way to debug your program is to use print statements in your code and vi
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    System.out.print("example");
+    ```
 
-        System.out.print("example");
-
-    .. code-block:: c++
-
-        wpi::outs() << "example\n";
+    ```c++
+    wpi::outs() << "example\n";
+    ```
 
 ## Debugging with NetworkTables
 

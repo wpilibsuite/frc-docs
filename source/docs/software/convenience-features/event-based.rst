@@ -121,12 +121,12 @@ To convert ``BooleanEvent`` objects to other types, most commonly the ``Trigger`
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  Trigger trigger = booleanEvent.castTo(Trigger::new);
+  ```
 
-    Trigger trigger = booleanEvent.castTo(Trigger::new);
-
-  .. code-block:: c++
-
-    frc2::Trigger trigger = booleanEvent.CastTo<frc2::Trigger>();
+  ```c++
+  frc2::Trigger trigger = booleanEvent.CastTo<frc2::Trigger>();
+  ```
 
 .. note:: In Java, the parameter expects a method reference to a constructor accepting an ``EventLoop`` instance and a ``BooleanSupplier``. Due to the lack of method references, this parameter is defaulted in C++ as long as a constructor of the form ``Type(frc::EventLoop*, std::function<bool()>)`` exists.

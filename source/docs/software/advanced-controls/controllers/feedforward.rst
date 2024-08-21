@@ -36,24 +36,23 @@ To create a ``SimpleMotorFeedforward``, simply construct it with the required ga
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Create a new SimpleMotorFeedforward with gains kS, kV, and kA
+  SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(kS, kV, kA);
+  ```
 
-    // Create a new SimpleMotorFeedforward with gains kS, kV, and kA
-    SimpleMotorFeedforward feedforward = new SimpleMotorFeedforward(kS, kV, kA);
+  ```c++
+  // Create a new SimpleMotorFeedforward with gains kS, kV, and kA
+  // Distance is measured in meters
+  frc::SimpleMotorFeedforward<units::meters> feedforward(kS, kV, kA);
+  ```
 
-  .. code-block:: c++
-
-    // Create a new SimpleMotorFeedforward with gains kS, kV, and kA
-    // Distance is measured in meters
-    frc::SimpleMotorFeedforward<units::meters> feedforward(kS, kV, kA);
-
-  .. code-block:: python
-
-    from wpimath.controller import SimpleMotorFeedforwardMeters
-
+  ```python
+  from wpimath.controller import SimpleMotorFeedforwardMeters
     # Create a new SimpleMotorFeedforward with gains kS, kV, and kA
-    # Distance is measured in meters
-    feedforward = SimpleMotorFeedforwardMeters(kS, kV, kA)
+  # Distance is measured in meters
+  feedforward = SimpleMotorFeedforwardMeters(kS, kV, kA)
+  ```
 
 To calculate the feedforward, simply call the ``calculate()`` method with the desired motor velocity and acceleration:
 
@@ -61,23 +60,23 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Calculates the feedforward for a velocity of 10 units/second and an acceleration of 20 units/second^2
+  // Units are determined by the units of the gains passed in at construction.
+  feedforward.calculate(10, 20);
+  ```
 
-    // Calculates the feedforward for a velocity of 10 units/second and an acceleration of 20 units/second^2
-    // Units are determined by the units of the gains passed in at construction.
-    feedforward.calculate(10, 20);
+  ```c++
+  // Calculates the feedforward for a velocity of 10 meters/second and an acceleration of 20 meters/second^2
+  // Output is in volts
+  feedforward.Calculate(10_mps, 20_mps_sq);
+  ```
 
-  .. code-block:: c++
-
-    // Calculates the feedforward for a velocity of 10 meters/second and an acceleration of 20 meters/second^2
-    // Output is in volts
-    feedforward.Calculate(10_mps, 20_mps_sq);
-
-  .. code-block:: python
-
-    # Calculates the feedforward for a velocity of 10 meters/second and an acceleration of 20 meters/second^2
-    # Output is in volts
-    feedforward.calculate(10, 20)
+  ```python
+  # Calculates the feedforward for a velocity of 10 meters/second and an acceleration of 20 meters/second^2
+  # Output is in volts
+  feedforward.calculate(10, 20)
+  ```
 
 ## ArmFeedforward
 
@@ -95,22 +94,21 @@ To create an ``ArmFeedforward``, simply construct it with the required gains:
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Create a new ArmFeedforward with gains kS, kG, kV, and kA
+  ArmFeedforward feedforward = new ArmFeedforward(kS, kG, kV, kA);
+  ```
 
-    // Create a new ArmFeedforward with gains kS, kG, kV, and kA
-    ArmFeedforward feedforward = new ArmFeedforward(kS, kG, kV, kA);
+  ```c++
+  // Create a new ArmFeedforward with gains kS, kG, kV, and kA
+  frc::ArmFeedforward feedforward(kS, kG, kV, kA);
+  ```
 
-  .. code-block:: c++
-
-    // Create a new ArmFeedforward with gains kS, kG, kV, and kA
-    frc::ArmFeedforward feedforward(kS, kG, kV, kA);
-
-  .. code-block:: python
-
-    from wpimath.controller import ArmFeedforward
-
+  ```python
+  from wpimath.controller import ArmFeedforward
     # Create a new ArmFeedforward with gains kS, kG, kV, and kA
-    feedforward = ArmFeedforward(kS, kG, kV, kA)
+  feedforward = ArmFeedforward(kS, kG, kV, kA)
+  ```
 
 To calculate the feedforward, simply call the ``calculate()`` method with the desired arm position, velocity, and acceleration:
 
@@ -118,26 +116,26 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Calculates the feedforward for a position of 1 units, a velocity of 2 units/second, and
+  // an acceleration of 3 units/second^2
+  // Units are determined by the units of the gains passed in at construction.
+  feedforward.calculate(1, 2, 3);
+  ```
 
-    // Calculates the feedforward for a position of 1 units, a velocity of 2 units/second, and
-    // an acceleration of 3 units/second^2
-    // Units are determined by the units of the gains passed in at construction.
-    feedforward.calculate(1, 2, 3);
+  ```c++
+  // Calculates the feedforward for a position of 1 radians, a velocity of 2 radians/second, and
+  // an acceleration of 3 radians/second^2
+  // Output is in volts
+  feedforward.Calculate(1_rad, 2_rad_per_s, 3_rad/(1_s * 1_s));
+  ```
 
-  .. code-block:: c++
-
-    // Calculates the feedforward for a position of 1 radians, a velocity of 2 radians/second, and
-    // an acceleration of 3 radians/second^2
-    // Output is in volts
-    feedforward.Calculate(1_rad, 2_rad_per_s, 3_rad/(1_s * 1_s));
-
-  .. code-block:: python
-
-    # Calculates the feedforward for a position of 1 radians, a velocity of 2 radians/second, and
-    # an acceleration of 3 radians/second^2
-    # Output is in volts
-    feedforward.calculate(1, 2, 3)
+  ```python
+  # Calculates the feedforward for a position of 1 radians, a velocity of 2 radians/second, and
+  # an acceleration of 3 radians/second^2
+  # Output is in volts
+  feedforward.calculate(1, 2, 3)
+  ```
 
 ## ElevatorFeedforward
 
@@ -155,24 +153,23 @@ To create a ``ElevatorFeedforward``, simply construct it with the required gains
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Create a new ElevatorFeedforward with gains kS, kG, kV, and kA
+  ElevatorFeedforward feedforward = new ElevatorFeedforward(kS, kG, kV, kA);
+  ```
 
-    // Create a new ElevatorFeedforward with gains kS, kG, kV, and kA
-    ElevatorFeedforward feedforward = new ElevatorFeedforward(kS, kG, kV, kA);
+  ```c++
+  // Create a new ElevatorFeedforward with gains kS, kV, and kA
+  // Distance is measured in meters
+  frc::ElevatorFeedforward feedforward(kS, kG, kV, kA);
+  ```
 
-  .. code-block:: c++
-
-    // Create a new ElevatorFeedforward with gains kS, kV, and kA
-    // Distance is measured in meters
-    frc::ElevatorFeedforward feedforward(kS, kG, kV, kA);
-
-  .. code-block:: python
-
-    from wpimath.controller import ElevatorFeedforward
-
+  ```python
+  from wpimath.controller import ElevatorFeedforward
     # Create a new ElevatorFeedforward with gains kS, kV, and kA
-    # Distance is measured in meters
-    feedforward = ElevatorFeedforward(kS, kG, kV, kA)
+  # Distance is measured in meters
+  feedforward = ElevatorFeedforward(kS, kG, kV, kA)
+  ```
 
 To calculate the feedforward, simply call the ``calculate()`` method with the desired motor velocity and acceleration:
 
@@ -180,26 +177,26 @@ To calculate the feedforward, simply call the ``calculate()`` method with the de
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Calculates the feedforward for a velocity of 20 units/second
+  // and an acceleration of 30 units/second^2
+  // Units are determined by the units of the gains passed in at construction.
+  feedforward.calculate(20, 30);
+  ```
 
-    // Calculates the feedforward for a velocity of 20 units/second
-    // and an acceleration of 30 units/second^2
-    // Units are determined by the units of the gains passed in at construction.
-    feedforward.calculate(20, 30);
+  ```c++
+  // Calculates the feedforward for a velocity of 20 meters/second
+  // and an acceleration of 30 meters/second^2
+  // Output is in volts
+  feedforward.Calculate(20_mps, 30_mps_sq);
+  ```
 
-  .. code-block:: c++
-
-    // Calculates the feedforward for a velocity of 20 meters/second
-    // and an acceleration of 30 meters/second^2
-    // Output is in volts
-    feedforward.Calculate(20_mps, 30_mps_sq);
-
-  .. code-block:: python
-
-    # Calculates the feedforward for a velocity of 20 meters/second
-    # and an acceleration of 30 meters/second^2
-    # Output is in volts
-    feedforward.calculate(20, 30)
+  ```python
+  # Calculates the feedforward for a velocity of 20 meters/second
+  # and an acceleration of 30 meters/second^2
+  # Output is in volts
+  feedforward.calculate(20, 30)
+  ```
 
 ## Using Feedforward to Control Mechanisms
 
@@ -209,23 +206,24 @@ Feedforward control can be used entirely on its own, without a feedback controll
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  public void tankDriveWithFeedforward(double leftVelocity, double rightVelocity) {
+    leftMotor.setVoltage(feedforward.calculate(leftVelocity));
+    rightMotor.setVoltage(feedForward.calculate(rightVelocity));
+  }
+  ```
 
-    public void tankDriveWithFeedforward(double leftVelocity, double rightVelocity) {
-      leftMotor.setVoltage(feedforward.calculate(leftVelocity));
-      rightMotor.setVoltage(feedForward.calculate(rightVelocity));
-    }
+  ```c++
+  void TankDriveWithFeedforward(units::meters_per_second_t leftVelocity,
+                                units::meters_per_second_t rightVelocity) {
+    leftMotor.SetVoltage(feedforward.Calculate(leftVelocity));
+    rightMotor.SetVoltage(feedforward.Calculate(rightVelocity));
+  }
+  ```
 
-  .. code-block:: c++
+  ```python
+  def tankDriveWithFeedforward(self, leftVelocity: float, rightVelocity: float):
+      self.leftMotor.setVoltage(feedForward.calculate(leftVelocity))
+      self.rightMotor.setVoltage(feedForward.calculate(rightVelocity))
+  ```
 
-    void TankDriveWithFeedforward(units::meters_per_second_t leftVelocity,
-                                  units::meters_per_second_t rightVelocity) {
-      leftMotor.SetVoltage(feedforward.Calculate(leftVelocity));
-      rightMotor.SetVoltage(feedforward.Calculate(rightVelocity));
-    }
-
-  .. code-block:: python
-
-    def tankDriveWithFeedforward(self, leftVelocity: float, rightVelocity: float):
-        self.leftMotor.setVoltage(feedForward.calculate(leftVelocity))
-        self.rightMotor.setVoltage(feedForward.calculate(rightVelocity))

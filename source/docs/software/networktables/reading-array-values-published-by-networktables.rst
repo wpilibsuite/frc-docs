@@ -18,59 +18,48 @@ Both of the following examples are extremely simplified programs that just illus
 
 .. tab-set-code::
 
-   .. code-block:: java
-
-      DoubleArraySubscriber areasSub;
-
+   ```java
+   DoubleArraySubscriber areasSub;
       @Override
-      public void robotInit() {
-        NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport");
-        areasSub = table.getDoubleArrayTopic("area").subscribe(new double[] {});
-      }
-
+   public void robotInit() {
+     NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport");
+     areasSub = table.getDoubleArrayTopic("area").subscribe(new double[] {});
+   }
       @Override
-      public void teleopPeriodic() {
-          double[] areas = areasSub.get();
-
+   public void teleopPeriodic() {
+       double[] areas = areasSub.get();
           System.out.print("areas: " );
-
           for (double area : areas) {
-            System.out.print(area + " ");
-          }
-
+         System.out.print(area + " ");
+       }
           System.out.println();
-      }
+   }
+   ```
 
-   .. code-block:: c++
-
-      nt::DoubleArraySubscriber areasSub;
-
+   ```c++
+   nt::DoubleArraySubscriber areasSub;
       void Robot::RobotInit() override {
-        auto table = nt::NetworkTableInstance::GetDefault().GetTable("GRIP/myContoursReport");
-        areasSub = table->GetDoubleArrayTopic("area").Subscribe({});
-      }
-
+     auto table = nt::NetworkTableInstance::GetDefault().GetTable("GRIP/myContoursReport");
+     areasSub = table->GetDoubleArrayTopic("area").Subscribe({});
+   }
       void Robot::TeleopPeriodic() override {
-        std::cout << "Areas: ";
-
+     std::cout << "Areas: ";
         std::vector<double> arr = areasSub.Get();
-
         for (double val : arr) {
-          std::cout << val << " ";
-        }
-
+       std::cout << val << " ";
+     }
         std::cout << std::endl;
-      }
+   }
+   ```
 
-   .. code-block:: python
-
-        def robotInit(self):
-            table = ntcore.NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport")
-            self.areasSub = table.getDoubleArrayTopic("area").subscribe([])
-
-        def teleopPeriodic(self):
-            areas = self.areasSub.get()
-            print("Areas:", areas)
+   ```python
+   def robotInit(self):
+       table = ntcore.NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport")
+       self.areasSub = table.getDoubleArrayTopic("area").subscribe([])
+      def teleopPeriodic(self):
+       areas = self.areasSub.get()
+       print("Areas:", areas)
+   ```
 
 The steps to getting the values and, in this program, printing them are:
 

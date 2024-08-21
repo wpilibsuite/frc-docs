@@ -14,46 +14,38 @@ The instructions for carrying out the CI process are stored in a YAML file. To c
 
 You will now be greeted with a text editor. Replace all the default text with the following:
 
-.. code-block:: yaml
-
-    # This is a basic workflow to build robot code.
-
-    name: CI
-
-    # Controls when the action will run. Triggers the workflow on push or pull request
-    # events but only for the main branch.
-    on:
-      push:
-        branches: [ main ]
-      pull_request:
-        branches: [ main ]
-
-    # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-    jobs:
-      # This workflow contains a single job called "build"
-      build:
-        # The type of runner that the job will run on
-        runs-on: ubuntu-latest
-
-        # This grabs the WPILib docker container
-        container: wpilib/roborio-cross-ubuntu:2024-22.04
-
-        # Steps represent a sequence of tasks that will be executed as part of the job
-        steps:
-        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v4
-
-        # Declares the repository safe and not under dubious ownership.
-        - name: Add repository to git safe directories
-          run: git config --global --add safe.directory $GITHUB_WORKSPACE
-
-        # Grant execute permission for gradlew
-        - name: Grant execute permission for gradlew
-          run: chmod +x gradlew
-
-        # Runs a single command using the runners shell
-        - name: Compile and run tests on robot code
-          run: ./gradlew build
+```yaml
+# This is a basic workflow to build robot code.
+name: CI
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # This grabs the WPILib docker container
+    container: wpilib/roborio-cross-ubuntu:2024-22.04
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v4
+    # Declares the repository safe and not under dubious ownership.
+    - name: Add repository to git safe directories
+      run: git config --global --add safe.directory $GITHUB_WORKSPACE
+    # Grant execute permission for gradlew
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    # Runs a single command using the runners shell
+    - name: Compile and run tests on robot code
+      run: ./gradlew build
+```
 
 Then, save changes by clicking the "Start commit" button on the top-right corner of the screen. You can amend the default commit message if you wish to do so. Then, click the green "Commit new file" button.
 
@@ -69,52 +61,48 @@ GitHub will now automatically run a build whenever a commit is pushed to main or
 ## A Breakdown of the Actions YAML File
 Here is a breakdown of the YAML file above. Although a strict understanding of each line is not required, some level of understanding will help you add more features and debug potential issues that may arise.
 
-.. code-block:: yaml
-
-    # Controls when the action will run. Triggers the workflow on push or pull request
-    # events but only for the main branch.
-    on:
-      push:
-        branches: [ main ]
-      pull_request:
-        branches: [ main ]
+```yaml
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the main branch.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+```
 
 This block of code dictates when the Action will run. Currently, the action will run when commits are pushed to main or when pull requests are opened against main.
 
-.. code-block:: yaml
-
-    # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-    jobs:
-      # This workflow contains a single job called "build"
-      build:
-        # The type of runner that the job will run on
-        runs-on: ubuntu-latest
-
-        # This grabs the WPILib docker container
-        container: wpilib/roborio-cross-ubuntu:2024-22.04
+```yaml
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # This grabs the WPILib docker container
+    container: wpilib/roborio-cross-ubuntu:2024-22.04
+```
 
 Each Action workflow is made of a one or more jobs that run either sequentially (one after another) or in parallel (at the same time). In our workflow, there is only one "build" job.
 
 We specify that we want the job to run on an Ubuntu virtual machine and in a virtualized [Docker container ](https://www.docker.com/resources/what-container) that contains the JDK, C++ compiler and roboRIO toolchains.
 
-.. code-block:: yaml
-
-        # Steps represent a sequence of tasks that will be executed as part of the job
-        steps:
-        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v4
-
-        # Declares the repository safe and not under dubious ownership.
-        - name: Add repository to git safe directories
-          run: git config --global --add safe.directory $GITHUB_WORKSPACE
-
-        # Grant execute permission for gradlew
-        - name: Grant execute permission for gradlew
-          run: chmod +x gradlew
-
-        # Runs a single command using the runners shell
-        - name: Compile and run tests on robot code
-          run: ./gradlew build
+```yaml
+# Steps represent a sequence of tasks that will be executed as part of the job
+steps:
+# Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+- uses: actions/checkout@v4
+# Declares the repository safe and not under dubious ownership.
+- name: Add repository to git safe directories
+  run: git config --global --add safe.directory $GITHUB_WORKSPACE
+# Grant execute permission for gradlew
+- name: Grant execute permission for gradlew
+  run: chmod +x gradlew
+# Runs a single command using the runners shell
+- name: Compile and run tests on robot code
+  run: ./gradlew build
+```
 
 Each job has certain steps that will be executed. This job has four steps. The first step involves checking out the repository to access the robot code. The second step is a workaround for a [GitHub Actions issue](https://github.com/actions/runner/issues/2033). The third step involves giving the virtual machine permission to execute gradle tasks using ``./gradlew``. The final step runs ``./gradlew build`` to compile robot code and run any unit tests.
 

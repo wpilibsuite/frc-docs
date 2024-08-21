@@ -9,46 +9,44 @@ The advantage of the robot program being the server is that it's at a known netw
     .. tab-item:: Java
        :sync: Java
 
-        .. code-block:: java
-
-            NetworkTableInstance inst = NetworkTableInstance.getDefault();
-            inst.startServer();
+        ```java
+        NetworkTableInstance inst = NetworkTableInstance.getDefault();
+        inst.startServer();
+        ```
 
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: c++
-
-            nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
-            inst.StartServer();
+        ```c++
+        nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
+        inst.StartServer();
+        ```
 
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: c++
-
-            NT_Inst inst = nt::GetDefaultInstance();
-            nt::StartServer(inst, "networktables.json", "", NT_DEFAULT_PORT3, NT_DEFAULT_PORT4);
+        ```c++
+        NT_Inst inst = nt::GetDefaultInstance();
+        nt::StartServer(inst, "networktables.json", "", NT_DEFAULT_PORT3, NT_DEFAULT_PORT4);
+        ```
 
     .. tab-item:: C
        :sync: C
 
-        .. code-block:: c
-
-            NT_Inst inst = NT_GetDefaultInstance();
-            NT_StartServer(inst, "networktables.json", "", NT_DEFAULT_PORT3, NT_DEFAULT_PORT4);
+        ```c
+        NT_Inst inst = NT_GetDefaultInstance();
+        NT_StartServer(inst, "networktables.json", "", NT_DEFAULT_PORT3, NT_DEFAULT_PORT4);
+        ```
 
     .. tab-item:: Python
      :sync: Python
 
 
-        .. code-block:: python
-
-            import ntcore
-
-            inst = ntcore.NetworkTableInstance.getDefault()
-            inst.startServer()
-
+        ```python
+        import ntcore
+                inst = ntcore.NetworkTableInstance.getDefault()
+        inst.startServer()
+                ```
 
 ## Starting a NetworkTables Client
 
@@ -57,97 +55,77 @@ The advantage of the robot program being the server is that it's at a known netw
     .. tab-item:: Java
      :sync: Java
 
-        .. code-block:: java
-
-            NetworkTableInstance inst = NetworkTableInstance.getDefault();
-
-            // start a NT4 client
-            inst.startClient4("example client");
-
-            // connect to a roboRIO with team number TEAM
-            inst.setServerTeam(TEAM);
-
-            // starting a DS client will try to get the roboRIO address from the DS application
-            inst.startDSClient();
-
-            // connect to a specific host/port
-            inst.setServer("host", NetworkTableInstance.kDefaultPort4)
+        ```java
+        NetworkTableInstance inst = NetworkTableInstance.getDefault();
+                // start a NT4 client
+        inst.startClient4("example client");
+                // connect to a roboRIO with team number TEAM
+        inst.setServerTeam(TEAM);
+                // starting a DS client will try to get the roboRIO address from the DS application
+        inst.startDSClient();
+                // connect to a specific host/port
+        inst.setServer("host", NetworkTableInstance.kDefaultPort4)
+        ```
 
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: c++
-
-            nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
-
-            // start a NT4 client
-            inst.StartClient4("example client");
-
-            // connect to a roboRIO with team number TEAM
-            inst.SetServerTeam(TEAM);
-
-            // starting a DS client will try to get the roboRIO address from the DS application
-            inst.StartDSClient();
-
-            // connect to a specific host/port
-            inst.SetServer("host", NT_DEFAULT_PORT4)
+        ```c++
+        nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
+                // start a NT4 client
+        inst.StartClient4("example client");
+                // connect to a roboRIO with team number TEAM
+        inst.SetServerTeam(TEAM);
+                // starting a DS client will try to get the roboRIO address from the DS application
+        inst.StartDSClient();
+                // connect to a specific host/port
+        inst.SetServer("host", NT_DEFAULT_PORT4)
+        ```
 
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: c++
-
-            NT_Inst inst = nt::GetDefaultInstance();
-
-            // start a NT4 client
-            nt::StartClient4(inst, "example client");
-
-            // connect to a roboRIO with team number TEAM
-            nt::SetServerTeam(inst, TEAM);
-
-            // starting a DS client will try to get the roboRIO address from the DS application
-            nt::StartDSClient(inst);
-
-            // connect to a specific host/port
-            nt::SetServer(inst, "host", NT_DEFAULT_PORT4)
+        ```c++
+        NT_Inst inst = nt::GetDefaultInstance();
+                // start a NT4 client
+        nt::StartClient4(inst, "example client");
+                // connect to a roboRIO with team number TEAM
+        nt::SetServerTeam(inst, TEAM);
+                // starting a DS client will try to get the roboRIO address from the DS application
+        nt::StartDSClient(inst);
+                // connect to a specific host/port
+        nt::SetServer(inst, "host", NT_DEFAULT_PORT4)
+        ```
 
     .. tab-item:: C
        :sync: C
 
-        .. code-block:: c
-
-            NT_Inst inst = NT_GetDefaultInstance();
-
-            // start a NT4 client
-            NT_StartClient4(inst, "example client");
-
-            // connect to a roboRIO with team number TEAM
-            NT_SetServerTeam(inst, TEAM);
-
-            // starting a DS client will try to get the roboRIO address from the DS application
-            NT_StartDSClient(inst);
-
-            // connect to a specific host/port
-            NT_SetServer(inst, "host", NT_DEFAULT_PORT4)
+        ```c
+        NT_Inst inst = NT_GetDefaultInstance();
+                // start a NT4 client
+        NT_StartClient4(inst, "example client");
+                // connect to a roboRIO with team number TEAM
+        NT_SetServerTeam(inst, TEAM);
+                // starting a DS client will try to get the roboRIO address from the DS application
+        NT_StartDSClient(inst);
+                // connect to a specific host/port
+        NT_SetServer(inst, "host", NT_DEFAULT_PORT4)
+        ```
 
     .. tab-item:: Python
      :sync: Python
 
 
-        .. code-block:: python
+        ```python
+        import ntcore
+                inst = ntcore.NetworkTableInstance.getDefault()
+                # start a NT4 client
+        inst.startClient4("example client")
+                # connect to a roboRIO with team number TEAM
+        inst.setServerTeam(TEAM)
+                # starting a DS client will try to get the roboRIO address from the DS application
+        inst.startDSClient()
+                # connect to a specific host/port
+        inst.setServer("host", ntcore.NetworkTableInstance.kDefaultPort4)
+        ```
 
-            import ntcore
-
-            inst = ntcore.NetworkTableInstance.getDefault()
-
-            # start a NT4 client
-            inst.startClient4("example client")
-
-            # connect to a roboRIO with team number TEAM
-            inst.setServerTeam(TEAM)
-
-            # starting a DS client will try to get the roboRIO address from the DS application
-            inst.startDSClient()
-
-            # connect to a specific host/port
-            inst.setServer("host", ntcore.NetworkTableInstance.kDefaultPort4)

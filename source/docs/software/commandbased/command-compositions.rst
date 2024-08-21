@@ -8,20 +8,20 @@ Most importantly, however, command compositions are themselves commands - they e
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // Will run fooCommand, and then a race between barCommand and bazCommand
+   button.onTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)));
+   ```
 
-      // Will run fooCommand, and then a race between barCommand and bazCommand
-      button.onTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)));
+   ```c++
+   // Will run fooCommand, and then a race between barCommand and bazCommand
+   button.OnTrue(std::move(fooCommand).AndThen(std::move(barCommand).RaceWith(std::move(bazCommand))));
+   ```
 
-   .. code-block:: c++
-
-      // Will run fooCommand, and then a race between barCommand and bazCommand
-      button.OnTrue(std::move(fooCommand).AndThen(std::move(barCommand).RaceWith(std::move(bazCommand))));
-
-   .. code-block:: python
-
-      # Will run fooCommand, and then a race between barCommand and bazCommand
-      button.onTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)))
+   ```python
+   # Will run fooCommand, and then a race between barCommand and bazCommand
+   button.onTrue(fooCommand.andThen(barCommand.raceWith(bazCommand)))
+   ```
 
 As a rule, command compositions require all subsystems their components require, may run when disabled if all their component set ``runsWhenDisabled`` as ``true``, and are ``kCancelIncoming`` if all their components are ``kCancelIncoming`` as well.
 
@@ -39,20 +39,20 @@ The ``repeatedly()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // Will run forever unless externally interrupted, restarting every time command.isFinished() returns true
+   Command repeats = command.repeatedly();
+   ```
 
-      // Will run forever unless externally interrupted, restarting every time command.isFinished() returns true
-      Command repeats = command.repeatedly();
+   ```c++
+   // Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
+   frc2::CommandPtr repeats = std::move(command).Repeatedly();
+   ```
 
-   .. code-block:: c++
-
-      // Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
-      frc2::CommandPtr repeats = std::move(command).Repeatedly();
-
-   .. code-block:: python
-
-      # Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
-      repeats = commands2.cmd.repeatedly()
+   ```python
+   # Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
+   repeats = commands2.cmd.repeatedly()
+   ```
 
 ### Sequence
 
@@ -62,18 +62,17 @@ The ``andThen()`` ([Java](https://github.wpilib.org/allwpilib/docs/development/j
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   fooCommand.andThen(barCommand)
+   ```
 
-      fooCommand.andThen(barCommand)
+   ```c++
+   std::move(fooCommand).AndThen(std::move(barCommand))
+   ```
 
-   .. code-block:: c++
-
-      std::move(fooCommand).AndThen(std::move(barCommand))
-
-   .. code-block:: python
-
-      fooCommand.andThen(barCommand)
-
+   ```python
+   fooCommand.andThen(barCommand)
+      ```
 
 ### Repeating Sequence
 
@@ -89,38 +88,32 @@ There are three types of parallel compositions, differing based on when the comp
 
 .. tab-set-code::
 
-   .. code-block:: java
-
-      // Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
-      button.onTrue(Commands.parallel(twoSecCommand, oneSecCommand, threeSecCommand));
-
+   ```java
+   // Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
+   button.onTrue(Commands.parallel(twoSecCommand, oneSecCommand, threeSecCommand));
       // Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
-      button.onTrue(Commands.race(twoSecCommand, oneSecCommand, threeSecCommand));
-
+   button.onTrue(Commands.race(twoSecCommand, oneSecCommand, threeSecCommand));
       // Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
-      button.onTrue(Commands.deadline(twoSecCommand, oneSecCommand, threeSecCommand));
+   button.onTrue(Commands.deadline(twoSecCommand, oneSecCommand, threeSecCommand));
+   ```
 
-   .. code-block:: c++
-
-      // Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
-      button.OnTrue(frc2::cmd::Parallel(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
-
+   ```c++
+   // Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
+   button.OnTrue(frc2::cmd::Parallel(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
       // Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
-      button.OnTrue(frc2::cmd::Race(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
-
+   button.OnTrue(frc2::cmd::Race(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
       // Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
-      button.OnTrue(frc2::cmd::Deadline(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
+   button.OnTrue(frc2::cmd::Deadline(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
+   ```
 
-   .. code-block:: python
-
-      # Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
-      button.onTrue(commands2.cmd.parallel(twoSecCommand, oneSecCommand, threeSecCommand))
-
+   ```python
+   # Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
+   button.onTrue(commands2.cmd.parallel(twoSecCommand, oneSecCommand, threeSecCommand))
       # Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
-      button.onTrue(commands2.cmd.race(twoSecCommand, oneSecCommand, threeSecCommand))
-
+   button.onTrue(commands2.cmd.race(twoSecCommand, oneSecCommand, threeSecCommand))
       # Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
-      button.onTrue(commands2.cmd.deadline(twoSecCommand, oneSecCommand, threeSecCommand))
+   button.onTrue(commands2.cmd.deadline(twoSecCommand, oneSecCommand, threeSecCommand))
+   ```
 
 ### Adding Command End Conditions
 
@@ -128,39 +121,39 @@ The ``until()`` ([Java](https://github.wpilib.org/allwpilib/docs/development/jav
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // Will be interrupted if m_limitSwitch.get() returns true
+   button.onTrue(command.until(m_limitSwitch::get));
+   ```
 
-      // Will be interrupted if m_limitSwitch.get() returns true
-      button.onTrue(command.until(m_limitSwitch::get));
+   ```c++
+   // Will be interrupted if m_limitSwitch.get() returns true
+   button.OnTrue(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
+   ```
 
-   .. code-block:: c++
-
-      // Will be interrupted if m_limitSwitch.get() returns true
-      button.OnTrue(command.Until([&m_limitSwitch] { return m_limitSwitch.Get(); }));
-
-   .. code-block:: python
-
-      # Will be interrupted if limitSwitch.get() returns true
-      button.onTrue(commands2.cmd.until(limitSwitch.get))
+   ```python
+   # Will be interrupted if limitSwitch.get() returns true
+   button.onTrue(commands2.cmd.until(limitSwitch.get))
+   ```
 
 The ``withTimeout()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_ptr.html#ac6b2e1e4f55ed905ec7d189b9288e3d0), :external:py:meth:`Python <commands2.Command.withTimeout>`) is a specialization of ``until`` that uses a timeout as the additional end condition.
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // Will time out 5 seconds after being scheduled, and be interrupted
+   button.onTrue(command.withTimeout(5));
+   ```
 
-      // Will time out 5 seconds after being scheduled, and be interrupted
-      button.onTrue(command.withTimeout(5));
+   ```c++
+   // Will time out 5 seconds after being scheduled, and be interrupted
+   button.OnTrue(command.WithTimeout(5.0_s));
+   ```
 
-   .. code-block:: c++
-
-      // Will time out 5 seconds after being scheduled, and be interrupted
-      button.OnTrue(command.WithTimeout(5.0_s));
-
-   .. code-block:: python
-
-      # Will time out 5 seconds after being scheduled, and be interrupted
-      button.onTrue(commands2.cmd.withTimeout(5.0))
+   ```python
+   # Will time out 5 seconds after being scheduled, and be interrupted
+   button.onTrue(commands2.cmd.withTimeout(5.0))
+   ```
 
 ### Adding End Behavior
 
@@ -198,39 +191,39 @@ The ``Either`` factory ([Java](https://github.wpilib.org/allwpilib/docs/developm
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
+   new ConditionalCommand(commandOnTrue, commandOnFalse, m_limitSwitch::get)
+   ```
 
-      // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
-      new ConditionalCommand(commandOnTrue, commandOnFalse, m_limitSwitch::get)
+   ```c++
+   // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
+   frc2::ConditionalCommand(commandOnTrue, commandOnFalse, [&m_limitSwitch] { return m_limitSwitch.Get(); })
+   ```
 
-   .. code-block:: c++
-
-      // Runs either commandOnTrue or commandOnFalse depending on the value of m_limitSwitch.get()
-      frc2::ConditionalCommand(commandOnTrue, commandOnFalse, [&m_limitSwitch] { return m_limitSwitch.Get(); })
-
-   .. code-block:: python
-
-      # Runs either commandOnTrue or commandOnFalse depending on the value of limitSwitch.get()
-      ConditionalCommand(commandOnTrue, commandOnFalse, limitSwitch.get)
+   ```python
+   # Runs either commandOnTrue or commandOnFalse depending on the value of limitSwitch.get()
+   ConditionalCommand(commandOnTrue, commandOnFalse, limitSwitch.get)
+   ```
 
 The ``unless()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Command.html#unless(java.util.function.BooleanSupplier)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_ptr.html#a2be7f65d40f68581104ab1f6a1ba5e93), :external:py:meth:`Python <commands2.Command.unless>`) composes a command with a condition that will prevent it from running.
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
+   button.onTrue(command.unless(() -> !intake.isDeployed()));
+   ```
 
-      // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
-      button.onTrue(command.unless(() -> !intake.isDeployed()));
+   ```c++
+   // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
+   button.OnTrue(command.Unless([&intake] { return !intake.IsDeployed(); }));
+   ```
 
-   .. code-block:: c++
-
-      // Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
-      button.OnTrue(command.Unless([&intake] { return !intake.IsDeployed(); }));
-
-   .. code-block:: python
-
-      # Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
-      button.onTrue(command.unless(lambda: not intake.isDeployed()))
+   ```python
+   # Command will only run if the intake is deployed. If the intake gets deployed while the command is running, the command will not stop running
+   button.onTrue(command.unless(lambda: not intake.isDeployed()))
+   ```
 
 ``ProxyCommand`` described below also has a constructor overload ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_proxy_command.html), :external:py:class:`Python <commands2.ProxyCommand>`) that calls a command-returning lambda at schedule-time and runs the returned command by proxy.
 
@@ -249,54 +242,54 @@ Command compositions inherit the union of their compoments' requirements and req
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // composition requirements are indexer and shooter, intake still reserved during its command but not afterwards
+   Commands.sequence(
+      intake.intakeGamePiece().asProxy(), // we want to let the intake intake another game piece while we are processing this one
+      indexer.processGamePiece(),
+      shooter.aimAndShoot()
+   );
+   ```
 
-      // composition requirements are indexer and shooter, intake still reserved during its command but not afterwards
-      Commands.sequence(
-         intake.intakeGamePiece().asProxy(), // we want to let the intake intake another game piece while we are processing this one
-         indexer.processGamePiece(),
-         shooter.aimAndShoot()
-      );
+   ```c++
+   // composition requirements are indexer and shooter, intake still reserved during its command but not afterwards
+   frc2::cmd::Sequence(
+      intake.IntakeGamePiece().AsProxy(), // we want to let the intake intake another game piece while we are processing this one
+      indexer.ProcessGamePiece(),
+      shooter.AimAndShoot()
+   );
+   ```
 
-   .. code-block:: c++
-
-      // composition requirements are indexer and shooter, intake still reserved during its command but not afterwards
-      frc2::cmd::Sequence(
-         intake.IntakeGamePiece().AsProxy(), // we want to let the intake intake another game piece while we are processing this one
-         indexer.ProcessGamePiece(),
-         shooter.AimAndShoot()
-      );
-
-   .. code-block:: python
-
-      # composition requirements are indexer and shooter, intake still reserved during its command but not afterwards
-      commands2.cmd.sequence(
-         intake.intakeGamePiece().asProxy(), # we want to let the intake intake another game piece while we are processing this one
-         indexer.processGamePiece(),
-         shooter.aimAndShoot()
-      )
+   ```python
+   # composition requirements are indexer and shooter, intake still reserved during its command but not afterwards
+   commands2.cmd.sequence(
+      intake.intakeGamePiece().asProxy(), # we want to let the intake intake another game piece while we are processing this one
+      indexer.processGamePiece(),
+      shooter.aimAndShoot()
+   )
+   ```
 
 For cases that don't need to track the proxied command, ``ScheduleCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_schedule_command.html), :external:py:class:`Python <commands2.ScheduleCommand>`) schedules a specified command and ends instantly.
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // ScheduleCommand ends immediately, so the sequence continues
+   new ScheduleCommand(Commands.waitSeconds(5.0))
+      .andThen(Commands.print("This will be printed immediately!"))
+   ```
 
-      // ScheduleCommand ends immediately, so the sequence continues
-      new ScheduleCommand(Commands.waitSeconds(5.0))
-         .andThen(Commands.print("This will be printed immediately!"))
+   ```c++
+   // ScheduleCommand ends immediately, so the sequence continues
+   frc2::ScheduleCommand(frc2::cmd::Wait(5.0_s))
+      .AndThen(frc2::cmd::Print("This will be printed immediately!"))
+   ```
 
-   .. code-block:: c++
-
-      // ScheduleCommand ends immediately, so the sequence continues
-      frc2::ScheduleCommand(frc2::cmd::Wait(5.0_s))
-         .AndThen(frc2::cmd::Print("This will be printed immediately!"))
-
-   .. code-block:: python
-
-      # ScheduleCommand ends immediately, so the sequence continues
-      ScheduleCommand(commands2.cmd.waitSeconds(5.0))
-         .andThen(commands2.cmd.print("This will be printed immediately!"))
+   ```python
+   # ScheduleCommand ends immediately, so the sequence continues
+   ScheduleCommand(commands2.cmd.waitSeconds(5.0))
+      .andThen(commands2.cmd.print("This will be printed immediately!"))
+   ```
 
 ## Subclassing Compositions
 

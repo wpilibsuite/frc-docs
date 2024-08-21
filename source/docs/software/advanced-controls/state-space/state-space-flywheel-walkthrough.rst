@@ -328,20 +328,21 @@ Mechanisms with a continuous angle can have that angle wrapped by calling the co
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   var error = lqr.getR().minus(x);
+   error.set(0, 0, MathUtil.angleModulus(error.get(0, 0)));
+   var u = lqr.getK().times(error);
+   ```
 
-      var error = lqr.getR().minus(x);
-      error.set(0, 0, MathUtil.angleModulus(error.get(0, 0)));
-      var u = lqr.getK().times(error);
+   ```c++
+   Eigen::Vector<double, 2> error = lqr.R() - x;
+   error(0) = frc::AngleModulus(units::radian_t{error(0)}).value();
+   Eigen::Vector<double, 2> u = lqr.K() * error;
+   ```
 
-   .. code-block:: c++
+   ```python
+   error = lqr.R() - x
+   error[0] = wpimath.angleModulus(error[0])
+   u = lqr.K() * error
+   ```
 
-      Eigen::Vector<double, 2> error = lqr.R() - x;
-      error(0) = frc::AngleModulus(units::radian_t{error(0)}).value();
-      Eigen::Vector<double, 2> u = lqr.K() * error;
-
-   .. code-block:: python
-
-      error = lqr.R() - x
-      error[0] = wpimath.angleModulus(error[0])
-      u = lqr.K() * error

@@ -81,15 +81,15 @@ The ``setGoal()`` method can be used to set the setpoint of the ``PIDSubsystem``
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // The subsystem will track to a goal of 5 meters and velocity of 3 meters per second.
+   examplePIDSubsystem.setGoal(5, 3);
+   ```
 
-      // The subsystem will track to a goal of 5 meters and velocity of 3 meters per second.
-      examplePIDSubsystem.setGoal(5, 3);
-
-   .. code-block:: c++
-
-      // The subsystem will track to a goal of 5 meters and velocity of 3 meters per second.
-      examplePIDSubsystem.SetGoal({5_m, 3_mps});
+   ```c++
+   // The subsystem will track to a goal of 5 meters and velocity of 3 meters per second.
+   examplePIDSubsystem.SetGoal({5_m, 3_mps});
+   ```
 
 #### enable() and disable()
 

@@ -21,35 +21,34 @@ Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PID
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a ProfiledPIDController
+  // Max velocity is 5 meters per second
+  // Max acceleration is 10 meters per second
+  ProfiledPIDController controller = new ProfiledPIDController(
+    kP, kI, kD,
+    new TrapezoidProfile.Constraints(5, 10));
+  ```
 
-    // Creates a ProfiledPIDController
-    // Max velocity is 5 meters per second
-    // Max acceleration is 10 meters per second
-    ProfiledPIDController controller = new ProfiledPIDController(
-      kP, kI, kD,
-      new TrapezoidProfile.Constraints(5, 10));
+  ```c++
+  // Creates a ProfiledPIDController
+  // Max velocity is 5 meters per second
+  // Max acceleration is 10 meters per second
+  frc::ProfiledPIDController<units::meters> controller(
+    kP, kI, kD,
+    frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq});
+  ```
 
-  .. code-block:: c++
-
-    // Creates a ProfiledPIDController
-    // Max velocity is 5 meters per second
-    // Max acceleration is 10 meters per second
-    frc::ProfiledPIDController<units::meters> controller(
-      kP, kI, kD,
-      frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq});
-
-  .. code-block:: python
-
-    from wpimath.controller import ProfiledPIDController
-    from wpimath.trajectory import TrapezoidProfile
-
+  ```python
+  from wpimath.controller import ProfiledPIDController
+  from wpimath.trajectory import TrapezoidProfile
     # Creates a ProfiledPIDController
-    # Max velocity is 5 meters per second
-    # Max acceleration is 10 meters per second
-    controller = ProfiledPIDController(
-      kP, kI, kD,
-      TrapezoidProfile.Constraints(5, 10))
+  # Max velocity is 5 meters per second
+  # Max acceleration is 10 meters per second
+  controller = ProfiledPIDController(
+    kP, kI, kD,
+    TrapezoidProfile.Constraints(5, 10))
+  ```
 
 ### Goal vs Setpoint
 
@@ -57,23 +56,23 @@ A major difference between a standard ``PIDController`` and a ``ProfiledPIDContr
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Calculates the output of the PID algorithm based on the sensor reading
+  // and sends it to a motor
+  motor.set(controller.calculate(encoder.getDistance(), goal));
+  ```
 
-    // Calculates the output of the PID algorithm based on the sensor reading
-    // and sends it to a motor
-    motor.set(controller.calculate(encoder.getDistance(), goal));
+  ```c++
+  // Calculates the output of the PID algorithm based on the sensor reading
+  // and sends it to a motor
+  motor.Set(controller.Calculate(encoder.GetDistance(), goal));
+  ```
 
-  .. code-block:: c++
-
-    // Calculates the output of the PID algorithm based on the sensor reading
-    // and sends it to a motor
-    motor.Set(controller.Calculate(encoder.GetDistance(), goal));
-
-  .. code-block:: python
-
-    # Calculates the output of the PID algorithm based on the sensor reading
-    # and sends it to a motor
-    motor.set(controller.calculate(encoder.getDistance(), goal))
+  ```python
+  # Calculates the output of the PID algorithm based on the sensor reading
+  # and sends it to a motor
+  motor.set(controller.calculate(encoder.getDistance(), goal))
+  ```
 
 The specified ``goal`` value (which can be either a position value or a ``TrapezoidProfile.State``, if nonzero velocity is desired) is *not* necessarily the *current* setpoint of the loop - rather, it is the *eventual* setpoint once the generated profile terminates.
 
@@ -85,68 +84,58 @@ The returned setpoint might then be used as in the following example:
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    double lastSpeed = 0;
-    double lastTime = Timer.getFPGATimestamp();
-
+  ```java
+  double lastSpeed = 0;
+  double lastTime = Timer.getFPGATimestamp();
     // Controls a simple motor's position using a SimpleMotorFeedforward
-    // and a ProfiledPIDController
-    public void goToPosition(double goalPosition) {
-      double pidVal = controller.calculate(encoder.getDistance(), goalPosition);
-      double acceleration = (controller.getSetpoint().velocity - lastSpeed) / (Timer.getFPGATimestamp() - lastTime);
-      motor.setVoltage(
-          pidVal
-          + feedforward.calculate(controller.getSetpoint().velocity, acceleration));
-      lastSpeed = controller.getSetpoint().velocity;
-      lastTime = Timer.getFPGATimestamp();
-    }
+  // and a ProfiledPIDController
+  public void goToPosition(double goalPosition) {
+    double pidVal = controller.calculate(encoder.getDistance(), goalPosition);
+    double acceleration = (controller.getSetpoint().velocity - lastSpeed) / (Timer.getFPGATimestamp() - lastTime);
+    motor.setVoltage(
+        pidVal
+        + feedforward.calculate(controller.getSetpoint().velocity, acceleration));
+    lastSpeed = controller.getSetpoint().velocity;
+    lastTime = Timer.getFPGATimestamp();
+  }
+  ```
 
-  .. code-block:: c++
-
-    units::meters_per_second_t lastSpeed = 0_mps;
-    units::second_t lastTime = frc2::Timer::GetFPGATimestamp();
-
+  ```c++
+  units::meters_per_second_t lastSpeed = 0_mps;
+  units::second_t lastTime = frc2::Timer::GetFPGATimestamp();
     // Controls a simple motor's position using a SimpleMotorFeedforward
-    // and a ProfiledPIDController
-    void GoToPosition(units::meter_t goalPosition) {
-      auto pidVal = controller.Calculate(units::meter_t{encoder.GetDistance()}, goalPosition);
-      auto acceleration = (controller.GetSetpoint().velocity - lastSpeed) /
-          (frc2::Timer::GetFPGATimestamp() - lastTime);
-      motor.SetVoltage(
-           pidVal +
-          feedforward.Calculate(controller.GetSetpoint().velocity, acceleration));
-      lastSpeed = controller.GetSetpoint().velocity;
-      lastTime = frc2::Timer::GetFPGATimestamp();
-    }
+  // and a ProfiledPIDController
+  void GoToPosition(units::meter_t goalPosition) {
+    auto pidVal = controller.Calculate(units::meter_t{encoder.GetDistance()}, goalPosition);
+    auto acceleration = (controller.GetSetpoint().velocity - lastSpeed) /
+        (frc2::Timer::GetFPGATimestamp() - lastTime);
+    motor.SetVoltage(
+         pidVal +
+        feedforward.Calculate(controller.GetSetpoint().velocity, acceleration));
+    lastSpeed = controller.GetSetpoint().velocity;
+    lastTime = frc2::Timer::GetFPGATimestamp();
+  }
+  ```
 
-  .. code-block:: python
-
-    from wpilib import Timer
-    from wpilib.controller import ProfiledPIDController
-    from wpilib.controller import SimpleMotorFeedforward
-
-
-    def __init__(self):
-
+  ```python
+  from wpilib import Timer
+  from wpilib.controller import ProfiledPIDController
+  from wpilib.controller import SimpleMotorFeedforward
+      def __init__(self):
         # Assuming encoder, motor, controller are already defined
-        self.lastSpeed = 0
-        self.lastTime = Timer.getFPGATimestamp()
-
+      self.lastSpeed = 0
+      self.lastTime = Timer.getFPGATimestamp()
         # Assuming feedforward is a SimpleMotorFeedforward object
-        self.feedforward = SimpleMotorFeedforward(ks=0.0, kv=0.0, ka=0.0)
-
+      self.feedforward = SimpleMotorFeedforward(ks=0.0, kv=0.0, ka=0.0)
     def goToPosition(self, goalPosition: float):
-
         pidVal = self.controller.calculate(self.encoder.getDistance(), goalPosition)
-        acceleration = (self.controller.getSetpoint().velocity - self.lastSpeed) / (Timer.getFPGATimestamp() - self.lastTime)
-
+      acceleration = (self.controller.getSetpoint().velocity - self.lastSpeed) / (Timer.getFPGATimestamp() - self.lastTime)
         self.motor.setVoltage(
-            pidVal
-            + self.feedforward.calculate(self.controller.getSetpoint().velocity, acceleration))
-
+          pidVal
+          + self.feedforward.calculate(self.controller.getSetpoint().velocity, acceleration))
         self.lastSpeed = controller.getSetpoint().velocity
-        self.lastTime = Timer.getFPGATimestamp()
+      self.lastTime = Timer.getFPGATimestamp()
+  ```
 
 ## Complete Usage Example
 

@@ -55,25 +55,23 @@ RGB stands for Red, Green, and Blue. This is a fairly common color model as it's
    .. tab-item:: Java
       :sync: Java
 
-      .. code-block:: Java
-
-         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-            // Sets the specified LED to the RGB values for red
-            m_ledBuffer.setRGB(i, 255, 0, 0);
-         }
-
-         m_led.setData(m_ledBuffer);
+      ```Java
+      for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+         // Sets the specified LED to the RGB values for red
+         m_ledBuffer.setRGB(i, 255, 0, 0);
+      }
+            m_led.setData(m_ledBuffer);
+      ```
 
    .. tab-item:: C++
       :sync: C++
 
-      .. code-block:: C++
-
-         for (int i = 0; i < kLength; i++) {
-            m_ledBuffer[i].SetRGB(255, 0, 0);
-         }
-
-         m_led.SetData(m_ledBuffer);
+      ```C++
+      for (int i = 0; i < kLength; i++) {
+         m_ledBuffer[i].SetRGB(255, 0, 0);
+      }
+            m_led.SetData(m_ledBuffer);
+      ```
 
 ### Using HSV Values
 
@@ -89,25 +87,23 @@ LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the 
    .. tab-item:: Java
       :sync: Java
 
-      .. code-block:: Java
-
-         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-            // Sets the specified LED to the HSV values for red
-            m_ledBuffer.setHSV(i, 0, 100, 100);
-         }
-
-         m_led.setData(m_ledBuffer);
+      ```Java
+      for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+         // Sets the specified LED to the HSV values for red
+         m_ledBuffer.setHSV(i, 0, 100, 100);
+      }
+            m_led.setData(m_ledBuffer);
+      ```
 
    .. tab-item:: C++
       :sync: C++
 
-      .. code-block:: C++
-
-         for (int i = 0; i < kLength; i++) {
-            m_ledBuffer[i].SetHSV(0, 100, 100);
-         }
-
-         m_led.SetData(m_ledBuffer);
+      ```C++
+      for (int i = 0; i < kLength; i++) {
+         m_ledBuffer[i].SetHSV(0, 100, 100);
+      }
+            m_led.SetData(m_ledBuffer);
+      ```
 
 ## Creating a Rainbow Effect
 

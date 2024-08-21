@@ -73,76 +73,64 @@ The above graph is what the following CameraServer snippet creates:
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        import edu.wpi.first.cameraserver.CameraServer;
-        import edu.wpi.cscore.CvSink;
-        import edu.wpi.cscore.CvSource;
-
+    ```java
+    import edu.wpi.first.cameraserver.CameraServer;
+    import edu.wpi.cscore.CvSink;
+    import edu.wpi.cscore.CvSource;
         // Creates UsbCamera and MjpegServer [1] and connects them
-        CameraServer.startAutomaticCapture();
-
+    CameraServer.startAutomaticCapture();
         // Creates the CvSink and connects it to the UsbCamera
-        CvSink cvSink = CameraServer.getVideo();
-
+    CvSink cvSink = CameraServer.getVideo();
         // Creates the CvSource and MjpegServer [2] and connects them
-        CvSource outputStream = CameraServer.putVideo("Blur", 640, 480);
+    CvSource outputStream = CameraServer.putVideo("Blur", 640, 480);
+    ```
 
-    .. code-block:: c++
-
-        #include "cameraserver/CameraServer.h"
-
+    ```c++
+    #include "cameraserver/CameraServer.h"
         // Creates UsbCamera and MjpegServer [1] and connects them
-        frc::CameraServer::StartAutomaticCapture();
-
+    frc::CameraServer::StartAutomaticCapture();
         // Creates the CvSink and connects it to the UsbCamera
-        cs::CvSink cvSink = frc::CameraServer::GetVideo();
-
+    cs::CvSink cvSink = frc::CameraServer::GetVideo();
         // Creates the CvSource and MjpegServer [2] and connects them
-        cs::CvSource outputStream = frc::CameraServer::PutVideo("Blur", 640, 480);
+    cs::CvSource outputStream = frc::CameraServer::PutVideo("Blur", 640, 480);
+    ```
 
 The CameraServer implementation effectively does the following at the cscore level (for explanation purposes). CameraServer takes care of many of the details such as creating unique names for all cscore objects and automatically selecting port numbers. CameraServer also keeps a singleton registry of created objects so they aren't destroyed if they go out of scope.
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        import edu.wpi.cscore.CvSink;
-        import edu.wpi.cscore.CvSource;
-        import edu.wpi.cscore.MjpegServer;
-        import edu.wpi.cscore.UsbCamera;
-
+    ```java
+    import edu.wpi.cscore.CvSink;
+    import edu.wpi.cscore.CvSource;
+    import edu.wpi.cscore.MjpegServer;
+    import edu.wpi.cscore.UsbCamera;
         // Creates UsbCamera and MjpegServer [1] and connects them
-        UsbCamera usbCamera = new UsbCamera("USB Camera 0", 0);
-        MjpegServer mjpegServer1 = new MjpegServer("serve_USB Camera 0", 1181);
-        mjpegServer1.setSource(usbCamera);
-
+    UsbCamera usbCamera = new UsbCamera("USB Camera 0", 0);
+    MjpegServer mjpegServer1 = new MjpegServer("serve_USB Camera 0", 1181);
+    mjpegServer1.setSource(usbCamera);
         // Creates the CvSink and connects it to the UsbCamera
-        CvSink cvSink = new CvSink("opencv_USB Camera 0");
-        cvSink.setSource(usbCamera);
-
+    CvSink cvSink = new CvSink("opencv_USB Camera 0");
+    cvSink.setSource(usbCamera);
         // Creates the CvSource and MjpegServer [2] and connects them
-        CvSource outputStream = new CvSource("Blur", PixelFormat.kMJPEG, 640, 480, 30);
-        MjpegServer mjpegServer2 = new MjpegServer("serve_Blur", 1182);
-        mjpegServer2.setSource(outputStream);
+    CvSource outputStream = new CvSource("Blur", PixelFormat.kMJPEG, 640, 480, 30);
+    MjpegServer mjpegServer2 = new MjpegServer("serve_Blur", 1182);
+    mjpegServer2.setSource(outputStream);
+    ```
 
-    .. code-block:: c++
-
-        #include "cscore_oo.h"
-
+    ```c++
+    #include "cscore_oo.h"
         // Creates UsbCamera and MjpegServer [1] and connects them
-        cs::UsbCamera usbCamera("USB Camera 0", 0);
-        cs::MjpegServer mjpegServer1("serve_USB Camera 0", 1181);
-        mjpegServer1.SetSource(usbCamera);
-
+    cs::UsbCamera usbCamera("USB Camera 0", 0);
+    cs::MjpegServer mjpegServer1("serve_USB Camera 0", 1181);
+    mjpegServer1.SetSource(usbCamera);
         // Creates the CvSink and connects it to the UsbCamera
-        cs::CvSink cvSink("opencv_USB Camera 0");
-        cvSink.SetSource(usbCamera);
-
+    cs::CvSink cvSink("opencv_USB Camera 0");
+    cvSink.SetSource(usbCamera);
         // Creates the CvSource and MjpegServer [2] and connects them
-        cs::CvSource outputStream("Blur", cs::PixelFormat::kMJPEG, 640, 480, 30);
-        cs::MjpegServer mjpegServer2("serve_Blur", 1182);
-        mjpegServer2.SetSource(outputStream);
+    cs::CvSource outputStream("Blur", cs::PixelFormat::kMJPEG, 640, 480, 30);
+    cs::MjpegServer mjpegServer2("serve_Blur", 1182);
+    mjpegServer2.SetSource(outputStream);
+    ```
 
 ### Reference Counting
 

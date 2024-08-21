@@ -10,68 +10,60 @@ There are three main steps to updating the model:
  3. Update simulated sensors with new positions, velocities, and angles to use in other places.
 
 .. tab-set-code::
-   .. code-block:: java
-
-      private PWMSparkMax m_leftMotor = new PWMSparkMax(0);
-      private PWMSparkMax m_rightMotor = new PWMSparkMax(1);
-
+   ```java
+   private PWMSparkMax m_leftMotor = new PWMSparkMax(0);
+   private PWMSparkMax m_rightMotor = new PWMSparkMax(1);
       public Drivetrain() {
-        ...
-        m_leftEncoder.setDistancePerPulse(2 * Math.PI * kWheelRadius / kEncoderResolution);
-        m_rightEncoder.setDistancePerPulse(2 * Math.PI * kWheelRadius / kEncoderResolution);
-      }
-
+     ...
+     m_leftEncoder.setDistancePerPulse(2 * Math.PI * kWheelRadius / kEncoderResolution);
+     m_rightEncoder.setDistancePerPulse(2 * Math.PI * kWheelRadius / kEncoderResolution);
+   }
       public void simulationPeriodic() {
-        // Set the inputs to the system. Note that we need to convert
-        // the [-1, 1] PWM signal to voltage by multiplying it by the
-        // robot controller voltage.
-        m_driveSim.setInputs(m_leftMotor.get() * RobotController.getInputVoltage(),
-                             m_rightMotor.get() * RobotController.getInputVoltage());
-
+     // Set the inputs to the system. Note that we need to convert
+     // the [-1, 1] PWM signal to voltage by multiplying it by the
+     // robot controller voltage.
+     m_driveSim.setInputs(m_leftMotor.get() * RobotController.getInputVoltage(),
+                          m_rightMotor.get() * RobotController.getInputVoltage());
         // Advance the model by 20 ms. Note that if you are running this
-        // subsystem in a separate thread or have changed the nominal timestep
-        // of TimedRobot, this value needs to match it.
-        m_driveSim.update(0.02);
-
+     // subsystem in a separate thread or have changed the nominal timestep
+     // of TimedRobot, this value needs to match it.
+     m_driveSim.update(0.02);
         // Update all of our sensors.
-        m_leftEncoderSim.setDistance(m_driveSim.getLeftPositionMeters());
-        m_leftEncoderSim.setRate(m_driveSim.getLeftVelocityMetersPerSecond());
-        m_rightEncoderSim.setDistance(m_driveSim.getRightPositionMeters());
-        m_rightEncoderSim.setRate(m_driveSim.getRightVelocityMetersPerSecond());
-        m_gyroSim.setAngle(-m_driveSim.getHeading().getDegrees());
-      }
+     m_leftEncoderSim.setDistance(m_driveSim.getLeftPositionMeters());
+     m_leftEncoderSim.setRate(m_driveSim.getLeftVelocityMetersPerSecond());
+     m_rightEncoderSim.setDistance(m_driveSim.getRightPositionMeters());
+     m_rightEncoderSim.setRate(m_driveSim.getRightVelocityMetersPerSecond());
+     m_gyroSim.setAngle(-m_driveSim.getHeading().getDegrees());
+   }
+   ```
 
-   .. code-block:: c++
-
-      frc::PWMSparkMax m_leftMotor{0};
-      frc::PWMSparkMax m_rightMotor{1};
-
+   ```c++
+   frc::PWMSparkMax m_leftMotor{0};
+   frc::PWMSparkMax m_rightMotor{1};
       Drivetrain() {
-        ...
-        m_leftEncoder.SetDistancePerPulse(2 * std::numbers::pi * kWheelRadius / kEncoderResolution);
-        m_rightEncoder.SetDistancePerPulse(2 * std::numbers::pi * kWheelRadius / kEncoderResolution);
-      }
-
+     ...
+     m_leftEncoder.SetDistancePerPulse(2 * std::numbers::pi * kWheelRadius / kEncoderResolution);
+     m_rightEncoder.SetDistancePerPulse(2 * std::numbers::pi * kWheelRadius / kEncoderResolution);
+   }
       void SimulationPeriodic() {
-        // Set the inputs to the system. Note that we need to convert
-        // the [-1, 1] PWM signal to voltage by multiplying it by the
-        // robot controller voltage.
-        m_driveSim.SetInputs(
-          m_leftMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()),
-          m_rightMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()));
-
+     // Set the inputs to the system. Note that we need to convert
+     // the [-1, 1] PWM signal to voltage by multiplying it by the
+     // robot controller voltage.
+     m_driveSim.SetInputs(
+       m_leftMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()),
+       m_rightMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()));
         // Advance the model by 20 ms. Note that if you are running this
-        // subsystem in a separate thread or have changed the nominal timestep
-        // of TimedRobot, this value needs to match it.
-        m_driveSim.Update(20_ms);
-
+     // subsystem in a separate thread or have changed the nominal timestep
+     // of TimedRobot, this value needs to match it.
+     m_driveSim.Update(20_ms);
         // Update all of our sensors.
-        m_leftEncoderSim.SetDistance(m_driveSim.GetLeftPosition().value());
-        m_leftEncoderSim.SetRate(m_driveSim.GetLeftVelocity().value());
-        m_rightEncoderSim.SetDistance(m_driveSim.GetRightPosition().value());
-        m_rightEncoderSim.SetRate(m_driveSim.GetRightVelocity().value());
-        m_gyroSim.SetAngle(-m_driveSim.GetHeading().Degrees());
-      }
+     m_leftEncoderSim.SetDistance(m_driveSim.GetLeftPosition().value());
+     m_leftEncoderSim.SetRate(m_driveSim.GetLeftVelocity().value());
+     m_rightEncoderSim.SetDistance(m_driveSim.GetRightPosition().value());
+     m_rightEncoderSim.SetRate(m_driveSim.GetRightVelocity().value());
+     m_gyroSim.SetAngle(-m_driveSim.GetHeading().Degrees());
+   }
+   ```
 
 .. important:: If the right side of your drivetrain is inverted, you MUST negate the right voltage in the ``SetInputs()`` call to ensure that positive voltages correspond to forward movement.
 

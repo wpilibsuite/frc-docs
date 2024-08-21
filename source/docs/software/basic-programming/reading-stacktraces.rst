@@ -35,14 +35,14 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
       In Java, it should look something like this:
 
-      .. code-block:: text
-
-         Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.NullPointerException
-                  at frc.robot.Robot.robotInit(Robot.java:24)
-                  at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
-                  at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
-                  at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
-                  at java.base/java.lang.Thread.run(Thread.java:834)
+      ```text
+      Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.NullPointerException
+               at frc.robot.Robot.robotInit(Robot.java:24)
+               at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
+               at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
+               at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
+               at java.base/java.lang.Thread.run(Thread.java:834)
+      ```
 
       There's a few important things to pick out of here:
 
@@ -64,17 +64,17 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
       For example, If the error happened deep inside your codebase, you might see more entries on the stack:
 
-      .. code-block:: text
-
-         Error at frc.robot.Robot.buggyMethod(TooManyBugs.java:1138): Unhandled exception: java.lang.NullPointerException
-                  at frc.robot.Robot.buggyMethod(TooManyBugs.java:1138)
-                  at frc.robot.Robot.barInit(Bar.java:21)
-                  at frc.robot.Robot.fooInit(Foo.java:34)
-                  at frc.robot.Robot.robotInit(Robot.java:24)
-                  at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
-                  at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
-                  at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
-                  at java.base/java.lang.Thread.run(Thread.java:834)
+      ```text
+      Error at frc.robot.Robot.buggyMethod(TooManyBugs.java:1138): Unhandled exception: java.lang.NullPointerException
+               at frc.robot.Robot.buggyMethod(TooManyBugs.java:1138)
+               at frc.robot.Robot.barInit(Bar.java:21)
+               at frc.robot.Robot.fooInit(Foo.java:34)
+               at frc.robot.Robot.robotInit(Robot.java:24)
+               at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:94)
+               at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:335)
+               at edu.wpi.first.wpilibj.RobotBase.lambda$startRobot$0(RobotBase.java:387)
+               at java.base/java.lang.Thread.run(Thread.java:834)
+      ```
 
       In this case: ``robotInit`` called ``fooInit``, which in turn called ``barInit``, which in turn called ``buggyMethod``. Then, during the execution of ``buggyMethod``, the ``NullPointerException`` occurred.
 
@@ -158,31 +158,27 @@ For example, consider the following code:
 .. tab-set-code::
 
 
-   .. code-block:: Java
-         :lineno-start: 19
+   ```Java
+   :lineno-start: 19
+      PWMSparkMax armMotorCtrl;
+      @Override
+   public void robotInit() {
+         armMotorCtrl.setInverted(true);
+   }
+      ```
 
-         PWMSparkMax armMotorCtrl;
-
-         @Override
-         public void robotInit() {
-               armMotorCtrl.setInverted(true);
-         }
-
-
-   .. code-block:: C++
-      :lineno-start: 17
-
+   ```C++
+   :lineno-start: 17
       class Robot : public frc::TimedRobot {
-         public:
-            void RobotInit() override {
-               motorRef->SetInverted(false);
-            }
-
+      public:
+         void RobotInit() override {
+            motorRef->SetInverted(false);
+         }
          private:
-            frc::PWMVictorSPX m_armMotor{0};
-            frc::PWMVictorSPX* motorRef;
-      };
-
+         frc::PWMVictorSPX m_armMotor{0};
+         frc::PWMVictorSPX* motorRef;
+   };
+      ```
 
 When run, you'll see output that looks like this:
 
@@ -191,21 +187,19 @@ When run, you'll see output that looks like this:
    .. tab-item:: Java
       :sync: tabcode-java
 
-      .. code-block:: text
-
-         ********** Robot program starting **********
-         Error at frc.robot.Robot.robotInit(Robot.java:23): Unhandled exception: java.lang.NullPointerException
-                 at frc.robot.Robot.robotInit(Robot.java:23)
-                 at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
-                 at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
-                 at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
-                 at frc.robot.Main.main(Main.java:23)
-
-         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
-           The above stacktrace can help determine where the error occurred.
-           See https://wpilib.org/stacktrace for more information.
-         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
-
+      ```text
+      ********** Robot program starting **********
+      Error at frc.robot.Robot.robotInit(Robot.java:23): Unhandled exception: java.lang.NullPointerException
+              at frc.robot.Robot.robotInit(Robot.java:23)
+              at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
+              at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
+              at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
+              at frc.robot.Main.main(Main.java:23)
+            Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
+        The above stacktrace can help determine where the error occurred.
+        See https://wpilib.org/stacktrace for more information.
+      Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
+            ```
 
       Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 23, and the exception involved "Null Pointer".
 
@@ -216,11 +210,11 @@ When run, you'll see output that looks like this:
    .. tab-item:: C++
       :sync: tabcode-c++
 
-      .. code-block:: text
-
-         Exception has occurred: W32/0xc0000005
-         Unhandled exception thrown: read access violation.
-         this->motorRef was nullptr.
+      ```text
+      Exception has occurred: W32/0xc0000005
+      Unhandled exception thrown: read access violation.
+      this->motorRef was nullptr.
+      ```
 
       In Simulation, this will show up in a debugger window that points to line 20 in the above buggy code.
 
@@ -242,34 +236,29 @@ A functional implementation could look like this:
 .. tab-set-code::
 
 
-   .. code-block:: Java
-         :lineno-start: 19
+   ```Java
+   :lineno-start: 19
+      PWMSparkMax armMotorCtrl;
+      @Override
+   public void robotInit() {
+         armMotorCtrl = new PWMSparkMax(0);
+         armMotorCtrl.setInverted(true);
+   }
+      ```
 
-         PWMSparkMax armMotorCtrl;
-
-         @Override
-         public void robotInit() {
-               armMotorCtrl = new PWMSparkMax(0);
-               armMotorCtrl.setInverted(true);
-         }
-
-
-   .. code-block:: C++
-      :lineno-start: 17
-
+   ```C++
+   :lineno-start: 17
       class Robot : public frc::TimedRobot {
-         public:
-            void RobotInit() override {
-               motorRef = &m_armMotor;
-               motorRef->SetInverted(false);
-            }
-
+      public:
+         void RobotInit() override {
+            motorRef = &m_armMotor;
+            motorRef->SetInverted(false);
+         }
          private:
-            frc::PWMVictorSPX m_armMotor{0};
-            frc::PWMVictorSPX* motorRef;
-      };
-
-
+         frc::PWMVictorSPX m_armMotor{0};
+         frc::PWMVictorSPX* motorRef;
+   };
+         ```
 
 ### Divide by Zero
 
@@ -280,34 +269,30 @@ For example, consider the following code:
 .. tab-set-code::
 
 
-   .. code-block:: Java
-         :lineno-start: 18
+   ```Java
+   :lineno-start: 18
+      int armLengthRatio;
+   int elbowToWrist_in = 39;
+   int shoulderToElbow_in = 0; //TODO
+      @Override
+   public void robotInit() {
+      armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+   }
+      ```
 
+   ```C++
+   :lineno-start: 17
+      class Robot : public frc::TimedRobot {
+      public:
+      void RobotInit() override {
+         armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+      }
+         private:
          int armLengthRatio;
          int elbowToWrist_in = 39;
          int shoulderToElbow_in = 0; //TODO
-
-         @Override
-         public void robotInit() {
-            armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-         }
-
-
-   .. code-block:: C++
-         :lineno-start: 17
-
-         class Robot : public frc::TimedRobot {
-            public:
-            void RobotInit() override {
-               armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-            }
-
-            private:
-               int armLengthRatio;
-               int elbowToWrist_in = 39;
-               int shoulderToElbow_in = 0; //TODO
-
-         };
+      };
+   ```
 
 When run, you'll see output that looks like this:
 
@@ -316,21 +301,19 @@ When run, you'll see output that looks like this:
    .. tab-item:: Java
       :sync: tabcode-java
 
-      .. code-block:: text
-
-
-         ********** Robot program starting **********
-         Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.ArithmeticException: / by zero
-                 at frc.robot.Robot.robotInit(Robot.java:24)
-                 at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
-                 at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
-                 at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
-                 at frc.robot.Main.main(Main.java:23)
-
-         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
-           The above stacktrace can help determine where the error occurred.
-           See https://wpilib.org/stacktrace for more information.
-         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
+      ```text
+            ********** Robot program starting **********
+      Error at frc.robot.Robot.robotInit(Robot.java:24): Unhandled exception: java.lang.ArithmeticException: / by zero
+              at frc.robot.Robot.robotInit(Robot.java:24)
+              at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
+              at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
+              at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
+              at frc.robot.Main.main(Main.java:23)
+            Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
+        The above stacktrace can help determine where the error occurred.
+        See https://wpilib.org/stacktrace for more information.
+      Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
+      ```
 
       Looking at the stack trace, we can see a ``java.lang.ArithmeticException: / by zero`` exception has occurred on line 24. If you look at the two variables which are used on the right-hand side of the ``=`` operator, you might notice one of them has been initialized to zero. Looks like someone forgot to update it! Furthermore, the zero-value variable is used in the denominator of a division operation. Hence, the divide by zero error happens.
 
@@ -339,10 +322,10 @@ When run, you'll see output that looks like this:
    .. tab-item:: C++
       :sync: tabcode-c++
 
-      .. code-block:: text
-
-         Exception has occurred: W32/0xc0000094
-         Unhandled exception at 0x00007FF71B223CD6 in frcUserProgram.exe: 0xC0000094: Integer division by zero.
+      ```text
+      Exception has occurred: W32/0xc0000094
+      Unhandled exception at 0x00007FF71B223CD6 in frcUserProgram.exe: 0xC0000094: Integer division by zero.
+      ```
 
       In Simulation, this will show up in a debugger window that points to line 20 in the above buggy code.
 
@@ -367,37 +350,30 @@ A functional implementation could look like this:
 
 .. tab-set-code::
 
-   .. code-block:: Java
-         :lineno-start: 18
+   ```Java
+   :lineno-start: 18
+      int armLengthRatio;
+   int elbowToWrist_in = 39;
+   int shoulderToElbow_in = 3;
+      @Override
+   public void robotInit() {
+         armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+      }
+         ```
 
+   ```C++
+   :lineno-start: 17
+      class Robot : public frc::TimedRobot {
+      public:
+      void RobotInit() override {
+         armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+      }
+         private:
          int armLengthRatio;
          int elbowToWrist_in = 39;
-         int shoulderToElbow_in = 3;
-
-         @Override
-         public void robotInit() {
-
-            armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-
-         }
-
-
-
-   .. code-block:: C++
-         :lineno-start: 17
-
-         class Robot : public frc::TimedRobot {
-            public:
-            void RobotInit() override {
-               armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-            }
-
-            private:
-               int armLengthRatio;
-               int elbowToWrist_in = 39;
-               int shoulderToElbow_in = 3
-
-         };
+         int shoulderToElbow_in = 3
+      };
+   ```
 
 Alternatively, if zero *is* a valid value, adding ``if/else`` statements around the calculation can help you define alternate behavior to avoid making the processor perform a division by zero.
 
@@ -413,35 +389,30 @@ For example, consider the following code:
 .. tab-set-code::
 
 
-   .. code-block:: Java
-         :lineno-start: 19
+   ```Java
+   :lineno-start: 19
+      PWMSparkMax leftFrontMotor;
+   PWMSparkMax leftRearMotor;
+      @Override
+   public void robotInit() {
+      leftFrontMotor = new PWMSparkMax(0);
+      leftRearMotor = new PWMSparkMax(0);
+   }
+      ```
 
-         PWMSparkMax leftFrontMotor;
-         PWMSparkMax leftRearMotor;
-
-         @Override
-         public void robotInit() {
-            leftFrontMotor = new PWMSparkMax(0);
-            leftRearMotor = new PWMSparkMax(0);
-         }
-
-
-   .. code-block:: C++
-      :lineno-start: 17
-
+   ```C++
+   :lineno-start: 17
       class Robot : public frc::TimedRobot {
-         public:
-            void RobotInit() override {
-               m_frontLeftMotor.Set(0.5);
-               m_rearLeftMotor.Set(0.25);
-            }
-
+      public:
+         void RobotInit() override {
+            m_frontLeftMotor.Set(0.5);
+            m_rearLeftMotor.Set(0.25);
+         }
          private:
-            frc::PWMVictorSPX m_frontLeftMotor{0};
-            frc::PWMVictorSPX m_rearLeftMotor{0};
-
+         frc::PWMVictorSPX m_frontLeftMotor{0};
+         frc::PWMVictorSPX m_rearLeftMotor{0};
          };
-
+      ```
 
 When run, you'll see output that looks like this:
 
@@ -450,33 +421,31 @@ When run, you'll see output that looks like this:
    .. tab-item:: Java
       :sync: tabcode-java
 
-      .. code-block:: text
-
-         ********** Robot program starting **********
-         Error at frc.robot.Robot.robotInit(Robot.java:25): Unhandled exception: edu.wpi.first.hal.util.AllocationException: Code: -1029
-         PWM or DIO 0 previously allocated.
-         Location of the previous allocation:
-                 at frc.robot.Robot.robotInit(Robot.java:24)
-                 at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
-                 at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
-                 at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
-                 at frc.robot.Main.main(Main.java:23)
-
-         Location of the current allocation:
-                 at edu.wpi.first.hal.PWMJNI.initializePWMPort(Native Method)
-                 at edu.wpi.first.wpilibj.PWM.<init>(PWM.java:66)
-                 at edu.wpi.first.wpilibj.motorcontrol.PWMMotorController.<init>(PWMMotorController.java:27)
-                 at edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax.<init>(PWMSparkMax.java:35)
-                 at frc.robot.Robot.robotInit(Robot.java:25)
-                 at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
-                 at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
-                 at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
-                 at frc.robot.Main.main(Main.java:23)
-
-         Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
-           The above stacktrace can help determine where the error occurred.
-           See https://wpilib.org/stacktrace for more information.
-         Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
+      ```text
+      ********** Robot program starting **********
+      Error at frc.robot.Robot.robotInit(Robot.java:25): Unhandled exception: edu.wpi.first.hal.util.AllocationException: Code: -1029
+      PWM or DIO 0 previously allocated.
+      Location of the previous allocation:
+              at frc.robot.Robot.robotInit(Robot.java:24)
+              at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
+              at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
+              at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
+              at frc.robot.Main.main(Main.java:23)
+            Location of the current allocation:
+              at edu.wpi.first.hal.PWMJNI.initializePWMPort(Native Method)
+              at edu.wpi.first.wpilibj.PWM.<init>(PWM.java:66)
+              at edu.wpi.first.wpilibj.motorcontrol.PWMMotorController.<init>(PWMMotorController.java:27)
+              at edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax.<init>(PWMSparkMax.java:35)
+              at frc.robot.Robot.robotInit(Robot.java:25)
+              at edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)
+              at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
+              at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
+              at frc.robot.Main.main(Main.java:23)
+            Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
+        The above stacktrace can help determine where the error occurred.
+        See https://wpilib.org/stacktrace for more information.
+      Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
+      ```
 
       This stack trace shows that a ``edu.wpi.first.hal.util.AllocationException`` has occurred. It also gives the helpful message: ``PWM or DIO 0 previously allocated.``.
 
@@ -489,46 +458,40 @@ When run, you'll see output that looks like this:
 
       In C++, you won't specifically see a stacktrace from this issue. Instead, you'll get messages which look like the following:
 
-      .. code-block:: text
-
-         Error at PWM [C::31]: PWM or DIO 0 previously allocated.
-         Location of the previous allocation:
-                 at frc::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
-                 at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
-                 at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
-                 at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
-                 at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
-                 at __libc_start_main + 0x114 [0xb57ec580]
-
-         Location of the current allocation:: Channel 0
-                 at  + 0x5fb5c [0xb6e81b5c]
-                 at frc::PWM::PWM(int, bool) + 0x334 [0xb6f01e4c]
-                 at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
-                 at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
-                 at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xb4 [0x13724]
-                 at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
-                 at __libc_start_main + 0x114 [0xb57ec580]
-
-         Error at RunRobot: Error: The robot program quit unexpectedly. This is usually due to a code error.
-           The above stacktrace can help determine where the error occurred.
-           See https://wpilib.org/stacktrace for more information.
-
-                 at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0x1c8 [0x13838]
-                 at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
-                 at __libc_start_main + 0x114 [0xb57ec580]
-
-         terminate called after throwing an instance of 'frc::RuntimeError'
-           what():  PWM or DIO 0 previously allocated.
-         Location of the previous allocation:
-                 at frc::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
-                 at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
-                 at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
-                 at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
-                 at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
-                 at __libc_start_main + 0x114 [0xb57ec580]
-
-         Location of the current allocation:: Channel 0
-
+      ```text
+      Error at PWM [C::31]: PWM or DIO 0 previously allocated.
+      Location of the previous allocation:
+              at frc::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
+              at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
+              at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
+              at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
+              at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+              at __libc_start_main + 0x114 [0xb57ec580]
+            Location of the current allocation:: Channel 0
+              at  + 0x5fb5c [0xb6e81b5c]
+              at frc::PWM::PWM(int, bool) + 0x334 [0xb6f01e4c]
+              at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
+              at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
+              at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xb4 [0x13724]
+              at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+              at __libc_start_main + 0x114 [0xb57ec580]
+            Error at RunRobot: Error: The robot program quit unexpectedly. This is usually due to a code error.
+        The above stacktrace can help determine where the error occurred.
+        See https://wpilib.org/stacktrace for more information.
+                    at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0x1c8 [0x13838]
+              at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+              at __libc_start_main + 0x114 [0xb57ec580]
+            terminate called after throwing an instance of 'frc::RuntimeError'
+        what():  PWM or DIO 0 previously allocated.
+      Location of the previous allocation:
+              at frc::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
+              at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
+              at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
+              at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
+              at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+              at __libc_start_main + 0x114 [0xb57ec580]
+            Location of the current allocation:: Channel 0
+            ```
 
       The key thing to notice here is the string, ``PWM or DIO 0 previously allocated.``. That string is your primary clue that something in code has incorrectly "doubled up" on pin 0 usage.
 
@@ -543,37 +506,30 @@ In the example, the left motor controllers are plugged into :term:`PWM` ports ``
 
 .. tab-set-code::
 
-   .. code-block:: Java
-         :lineno-start: 19
+   ```Java
+   :lineno-start: 19
+      PWMSparkMax leftFrontMotor;
+   PWMSparkMax leftRearMotor;
+      @Override
+   public void robotInit() {
+         leftFrontMotor = new PWMSparkMax(0);
+      leftRearMotor = new PWMSparkMax(1);
+      }
+      ```
 
-         PWMSparkMax leftFrontMotor;
-         PWMSparkMax leftRearMotor;
-
-         @Override
-         public void robotInit() {
-
-            leftFrontMotor = new PWMSparkMax(0);
-            leftRearMotor = new PWMSparkMax(1);
-
-         }
-
-
-   .. code-block:: C++
-
-      :lineno-start: 17
-
+   ```C++
+   :lineno-start: 17
       class Robot : public frc::TimedRobot {
-         public:
-            void RobotInit() override {
-               m_frontLeftMotor.Set(0.5);
-               m_rearLeftMotor.Set(0.25);
-            }
-
+      public:
+         void RobotInit() override {
+            m_frontLeftMotor.Set(0.5);
+            m_rearLeftMotor.Set(0.25);
+         }
          private:
-            frc::PWMVictorSPX m_frontLeftMotor{0};
-            frc::PWMVictorSPX m_rearLeftMotor{1};
-
+         frc::PWMVictorSPX m_frontLeftMotor{0};
+         frc::PWMVictorSPX m_rearLeftMotor{1};
          };
+   ```
 
 ### gradlew is not recognized...
 

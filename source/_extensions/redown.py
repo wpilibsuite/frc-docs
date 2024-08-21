@@ -55,7 +55,7 @@ def redown(text: str) -> str:
 
     # replace md code blocks with reST code blocks
     "redown, redown, redown, redown"
-    find = r"(?P<start>^|\n)(?P<btindent> *?)```(?P<lang>\w+) *?(?:\n\s*?)+(?P<cindent> *?)(?P<code>.*?)``` *?(?P<end>\n|$|\Z)"
+    find = r"(?P<start>^|\n)(?P<btindent> *?)```(?P<lang>\S+) *?(?:\n\s*?)+(?P<cindent> *?)(?P<code>.*?)``` *?(?P<end>\n|$|\Z)"
 
     def replace(match: re.Match) -> str:
         start = match.group("start")
@@ -68,10 +68,8 @@ def redown(text: str) -> str:
         ret = ""
         ret += start
         ret += btindent + f".. code-block:: {lang}\n\n"
-        if len(cindent) == 0:
-            cindent = btindent + " " * 4
-        else:
-            cindent = cindent + " " * 4
+        cindent = 3 * " "
+
         for line in code.splitlines(keepends=True):
             ret += cindent + line
         ret += end
@@ -160,7 +158,7 @@ def setup(app: Sphinx):
     @(lambda breadcrumb: app.connect("source-read", breadcrumb))
     def _(app, docname, content):
         content[0] = redown(content[0])
-        # Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0])
+        Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0])
 
     return {
         "version": "builtin",

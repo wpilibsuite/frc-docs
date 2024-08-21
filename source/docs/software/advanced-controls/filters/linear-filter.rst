@@ -29,28 +29,27 @@ The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse re
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a new Single-Pole IIR filter
+  // Time constant is 0.1 seconds
+  // Period is 0.02 seconds - this is the standard FRC main loop period
+  LinearFilter filter = LinearFilter.singlePoleIIR(0.1, 0.02);
+  ```
 
-    // Creates a new Single-Pole IIR filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    LinearFilter filter = LinearFilter.singlePoleIIR(0.1, 0.02);
+  ```c++
+  // Creates a new Single-Pole IIR filter
+  // Time constant is 0.1 seconds
+  // Period is 0.02 seconds - this is the standard FRC main loop period
+  frc::LinearFilter<double> filter = frc::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
+  ```
 
-  .. code-block:: c++
-
-    // Creates a new Single-Pole IIR filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    frc::LinearFilter<double> filter = frc::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
-
-  .. code-block:: python
-
-    from wpimath.filter import LinearFilter
-
+  ```python
+  from wpimath.filter import LinearFilter
     # Creates a new Single-Pole IIR filter
-    # Time constant is 0.1 seconds
-    # Period is 0.02 seconds - this is the standard FRC main loop period
-    filter = LinearFilter.singlePoleIIR(0.1, 0.02)
+  # Time constant is 0.1 seconds
+  # Period is 0.02 seconds - this is the standard FRC main loop period
+  filter = LinearFilter.singlePoleIIR(0.1, 0.02)
+  ```
 
 The "time constant" parameter determines the "characteristic timescale" of the filter's impulse response; the filter will cancel out any signal dynamics that occur on timescales significantly shorter than this.  Relatedly, it is also the approximate timescale of the introduced :ref:`phase lag <docs/software/advanced-controls/filters/introduction:Phase Lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "cutoff frequency" of the filter.
 
@@ -65,25 +64,24 @@ The ``movingAverage`` factory method creates a simple flat moving average filter
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a new flat moving average filter
+  // Average will be taken over the last 5 samples
+  LinearFilter filter = LinearFilter.movingAverage(5);
+  ```
 
-    // Creates a new flat moving average filter
-    // Average will be taken over the last 5 samples
-    LinearFilter filter = LinearFilter.movingAverage(5);
+  ```c++
+  // Creates a new flat moving average filter
+  // Average will be taken over the last 5 samples
+  frc::LinearFilter<double> filter = frc::LinearFilter<double>::MovingAverage(5);
+  ```
 
-  .. code-block:: c++
-
-    // Creates a new flat moving average filter
-    // Average will be taken over the last 5 samples
-    frc::LinearFilter<double> filter = frc::LinearFilter<double>::MovingAverage(5);
-
-  .. code-block:: python
-
-    from wpimath.filter import LinearFilter
-
+  ```python
+  from wpimath.filter import LinearFilter
     # Creates a new flat moving average filter
-    # Average will be taken over the last 5 samples
-    filter = LinearFilter.movingAverage(5)
+  # Average will be taken over the last 5 samples
+  filter = LinearFilter.movingAverage(5)
+  ```
 
 The "taps" parameter is the number of samples that will be included in the flat moving average.  This behaves similarly to the "time constant" above - the effective time constant is the number of taps times the period at which ``calculate()`` is called.
 
@@ -96,28 +94,27 @@ The ``highPass`` factory method creates a simple first-order infinite impulse re
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a new high-pass IIR filter
+  // Time constant is 0.1 seconds
+  // Period is 0.02 seconds - this is the standard FRC main loop period
+  LinearFilter filter = LinearFilter.highPass(0.1, 0.02);
+  ```
 
-    // Creates a new high-pass IIR filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    LinearFilter filter = LinearFilter.highPass(0.1, 0.02);
+  ```c++
+  // Creates a new high-pass IIR filter
+  // Time constant is 0.1 seconds
+  // Period is 0.02 seconds - this is the standard FRC main loop period
+  frc::LinearFilter<double> filter = frc::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
+  ```
 
-  .. code-block:: c++
-
-    // Creates a new high-pass IIR filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    frc::LinearFilter<double> filter = frc::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
-
-  .. code-block:: python
-
-    from wpimath.filter import LinearFilter
-
+  ```python
+  from wpimath.filter import LinearFilter
     # Creates a new high-pass IIR filter
-    # Time constant is 0.1 seconds
-    # Period is 0.02 seconds - this is the standard FRC main loop period
-    filter = LinearFilter.highPass(0.1, 0.02)
+  # Time constant is 0.1 seconds
+  # Period is 0.02 seconds - this is the standard FRC main loop period
+  filter = LinearFilter.highPass(0.1, 0.02)
+  ```
 
 The "time constant" parameter determines the "characteristic timescale" of the filter's impulse response; the filter will cancel out any signal dynamics that occur on timescales significantly longer than this.  Relatedly, it is also the approximate timescale of the introduced :ref:`phase lead <docs/software/advanced-controls/filters/introduction:Phase lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "cutoff frequency" of the filter.
 
@@ -131,17 +128,18 @@ Once your filter has been created, using it is easy - simply call the ``calculat
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Calculates the next value of the output
+  filter.calculate(input);
+  ```
 
-    // Calculates the next value of the output
-    filter.calculate(input);
+  ```c++
+  // Calculates the next value of the output
+  filter.Calculate(input);
+  ```
 
-  .. code-block:: c++
+  ```python
+  # Calculates the next value of the output
+  filter.calculate(input)
+  ```
 
-    // Calculates the next value of the output
-    filter.Calculate(input);
-
-  .. code-block:: python
-
-    # Calculates the next value of the output
-    filter.calculate(input)

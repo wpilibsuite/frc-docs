@@ -9,23 +9,23 @@ If you execute the command from the command line, it will show the various subco
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy
+      ```sh
+      py -3 -m robotpy
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy
+      ```sh
+      python3 -m robotpy
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
-
-         python3 -m robotpy
+      ```sh
+      python3 -m robotpy
+      ```
 
 .. note:: If you don't see a list of commands but either see a RobotPy logo or an error saying ``No module named robotpy.__main__; 'robotpy' is a package and cannot be directly executed``, you should uninstall the ``robotpy`` module and then reinstall it via pip.
 
@@ -38,23 +38,23 @@ You can pass the ``--help`` argument to see more information about the subcomman
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy sim --help
+      ```sh
+      py -3 -m robotpy sim --help
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy sim --help
+      ```sh
+      python3 -m robotpy sim --help
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
-
-         python3 -m robotpy sim --help
+      ```sh
+      python3 -m robotpy sim --help
+      ```
 
 This page has more detailed documentation for some of the subcommands:
 

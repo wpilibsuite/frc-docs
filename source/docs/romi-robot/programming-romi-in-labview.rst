@@ -49,12 +49,12 @@ It is recommended to run the Driver Station software on the same computer as the
 
 The gyro that is available on the Romi is available using the RomiGyro functions. This is located under
 
-.. code-block:: text
-
-   - WPI Robotics Library
-      - Sensors
-         - Third Party Libraries
-            - RomiGyro
+```text
+- WPI Robotics Library
+   - Sensors
+      - Third Party Libraries
+         - RomiGyro
+```
 
 .. image:: images/programming-romi-in-labview/adding-romi-gyro.png
    :alt: Tree structure of locating the RomiGyro function

@@ -42,15 +42,15 @@ Since ``OutOfMemoryError``\ s both crash the program and are a common reason to 
 
 Add to the code block so that it contains two ``jvmArgs`` commands, as shown below:
 
-.. code-block:: groovy
-
-   frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
-       // If you have other configuration here, you do not need to remove it.
-       // Enable automatic heap dumps on OutOfMemoryError
-       // Note: the heap dump path here is a path on a USB flash drive, see below
-       jvmArgs.add("-XX:+HeapDumpOnOutOfMemoryError")
-       jvmArgs.add("-XX:HeapDumpPath=/u/frc-usercode.hprof")
-   }
+```groovy
+frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
+    // If you have other configuration here, you do not need to remove it.
+    // Enable automatic heap dumps on OutOfMemoryError
+    // Note: the heap dump path here is a path on a USB flash drive, see below
+    jvmArgs.add("-XX:+HeapDumpOnOutOfMemoryError")
+    jvmArgs.add("-XX:HeapDumpPath=/u/frc-usercode.hprof")
+}
+```
 
 This will cause the JVM to write heap dumps to a file named ``frc-usercode.hprof`` at the root of a USB flash drive attached to the roboRIO when the code runs out of memory. It is recommended to save these heap dumps to a USB flash drive because heap dumps intrinsically consume the same amount of space on disk as the program heap did in memory when the program crashed, and are likely to be larger than the roboRIO's internal storage has capacity for. Once you have reproduced the ``OutOfMemoryError``, redeploy your code without these options enabled, and use the USB flash drive to transfer the heap dump to a computer for analysis in a memory profiler such as :ref:`VisualVM <docs/software/advanced-gradlerio/profiling-with-visualvm:Analyzing a Heap Dump>`.
 
@@ -107,20 +107,20 @@ Several Linux kernel options (called sysctls) can be set to tweak how the kernel
 
 You can set some or all of these options; the most important one is ``vm.overcommit_memory``. Setting these options requires connecting to the roboRIO with SSH and logging in as the ``admin`` user, then running the following commands:
 
-.. code-block:: text
-
-    echo "vm.overcommit_memory=1" >> /etc/sysctl.conf
-    echo "vm.vfs_cache_pressure=1000" >> /etc/sysctl.conf
-    echo "vm.swappiness=100" >> /etc/sysctl.conf
-    sync
+```text
+echo "vm.overcommit_memory=1" >> /etc/sysctl.conf
+echo "vm.vfs_cache_pressure=1000" >> /etc/sysctl.conf
+echo "vm.swappiness=100" >> /etc/sysctl.conf
+sync
+```
 
 The ``/etc/sysctl.conf`` file should contain the following lines at the end when done (to check, you can run the command ``cat /etc/sysctl.conf``):
 
-.. code-block:: text
-
-    vm.overcommit_memory=1
-    vm.vfs_cache_pressure=1000
-    vm.swappiness=100
+```text
+vm.overcommit_memory=1
+vm.vfs_cache_pressure=1000
+vm.swappiness=100
+```
 
 To revert the change, edit ``/etc/sysctl.conf`` (this will require the use of the vi editor) and remove these 3 lines.
 
@@ -128,20 +128,18 @@ To revert the change, edit ``/etc/sysctl.conf`` (this will require the use of th
 
 Sometimes the garbage collector won't run frequently enough to keep up with the quantity of allocations. As Java provides a way to trigger a garbage collection to occur, running it on a periodic basis may reduce peak memory usage. This can be done by adding a ``Timer`` and a periodic check:
 
-.. code-block:: java
-
-    Timer m_gcTimer = new Timer();
-
-    public void robotInit() {
-      m_gcTimer.start();
-    }
-
-    public void periodic() {
-      // run the garbage collector every 5 seconds
-      if (m_gcTimer.advanceIfElapsed(5)) {
-        System.gc();
-      }
-    }
+```java
+Timer m_gcTimer = new Timer();
+public void robotInit() {
+  m_gcTimer.start();
+}
+public void periodic() {
+  // run the garbage collector every 5 seconds
+  if (m_gcTimer.advanceIfElapsed(5)) {
+    System.gc();
+  }
+}
+```
 
 ### Setting Up Swap on a USB Flash Drive
 
@@ -153,22 +151,22 @@ A swap file on a Linux system provides disk-backed space that can be used by the
 
 A swap file can be set up by plugging the USB flash drive into the roboRIO USB port, connecting to the roboRIO with SSH and logging in as the ``admin`` user, and running the following commands. Note the vi step requires knowledge of how to edit and save a file in vi.
 
-.. code-block:: text
-
-    fallocate -l 100M /u/swapfile
-    mkswap /u/swapfile
-    swapon /u/swapfile
-    vi /etc/init.d/addswap.sh
-    chmod a+x /etc/init.d/addswap.sh
-    update-rc.d -v addswap.sh defaults
-    sync
+```text
+fallocate -l 100M /u/swapfile
+mkswap /u/swapfile
+swapon /u/swapfile
+vi /etc/init.d/addswap.sh
+chmod a+x /etc/init.d/addswap.sh
+update-rc.d -v addswap.sh defaults
+sync
+```
 
 The ``/etc/init.d/addswap.sh`` file contents should look like this:
 
-.. code-block:: text
-
-    #!/bin/sh
-    [ -x /sbin/swapon ] && swapon -e /u/swapfile
-    : exit 0
+```text
+#!/bin/sh
+[ -x /sbin/swapon ] && swapon -e /u/swapfile
+: exit 0
+```
 
 To revert the change, run ``update-rc.d -f addswap.sh remove; rm /etc/init.d/addswap.sh; sync; reboot``.
