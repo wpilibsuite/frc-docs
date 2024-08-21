@@ -27,7 +27,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       .. note:: If you previously installed a pre-2024 or 2024 beta version of RobotPy, you should first uninstall RobotPy via ``py -m pip uninstall robotpy`` before upgrading.
 
-      .. warning:: On Windows, the [Visual Studio 2019 redistributable](https:// support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) package is required to be installed.
+      .. warning:: On Windows, the [Visual Studio 2019 redistributable](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) package is required to be installed.
 
       Run the following command from cmd or Powershell to install the core RobotPy packages:
 
