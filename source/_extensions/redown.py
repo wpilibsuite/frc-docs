@@ -71,8 +71,11 @@ def redown(text: str) -> str:
         cindent = 3 * " "
 
         for line in code.splitlines(keepends=True):
-            ret += cindent + line
-        ret += end
+            if line.strip() == "":
+                ret += "\n"
+            else:
+                ret += cindent + line
+
         return ret
 
     code = lambda: re.sub(find, replace, text, flags=re.DOTALL)
