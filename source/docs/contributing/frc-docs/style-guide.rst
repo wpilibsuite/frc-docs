@@ -84,6 +84,14 @@ Lists should have a new line in between each indent level. The highest indent sh
 
 All code blocks should have a language specified.
 
+````md
+```python
+print("Hello!")
+
+import antigravity
+```
+````
+
 1. Exception: Content where formatting must be preserved and has no language. Instead use ``text``.
 
 Follow the [WPILib style guide](https://github.com/wpilibsuite/styleguide/) for C++ and Java example code. For example, use two spaces for indentation in C++ and Java.
@@ -110,25 +118,27 @@ Make sure to link to the raw version of the file on GitHub. There is a handy ``R
 .. note:: RLIs should use a tag instead of main to ensure the documentation isn't broken the next time there is a change to the RLIed code. If a tag hasn't been created, use the full (40 character) commit hash.
 
 ## Tabs
-To create code tabs in an article, you can use the ``.. tab-set-code::`` directive.  You can use ``code-block`` and ``rli`` directives inside. The format is:
+To create code tabs in an article, you can use the ``.. tab-set-code::`` directive.  You can use md style \`\`\` codeblocks and ``rli`` directives inside. The format is:
 
-```ReST
+````ReST
 .. tab-set-code::
    .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
       :language: java
       :lines: 44-61
       :linenos:
       :lineno-start: 44
-   .. code-block:: c++
-      // Start the timer.
-      m_timer.Start();
-      // Send Field2d to SmartDashboard.
-      frc::SmartDashboard::PutData(&m_field);
-      // Reset the drivetrain's odometry to the starting pose of the trajectory.
-      m_drive.ResetOdometry(m_trajectory.InitialPose());
-      // Send our generated trajectory to Field2d.
-      m_field.GetObject("traj")->SetTrajectory(m_trajectory);
-```
+   
+   ```c++
+   // Start the timer.
+   m_timer.Start();
+   // Send Field2d to SmartDashboard.
+   frc::SmartDashboard::PutData(&m_field);
+   // Reset the drivetrain's odometry to the starting pose of the trajectory.
+   m_drive.ResetOdometry(m_trajectory.InitialPose());
+   // Send our generated trajectory to Field2d.
+   m_field.GetObject("traj")->SetTrajectory(m_trajectory);
+   ```
+````
 
 If you need to use more than one tab per language, multiple RLIs per language, or text tabs, you can use the ``.. tab-set::`` and ``.. tab-item::`` directive.  The format is:
 
@@ -287,14 +297,15 @@ The category ``index.rst`` file can then be added to the root index file located
 
 ## Examples
 
-```ReST
+````ReST
 # Title
 This is an example article
-.. code-block:: java
-   System.out.println("Hello World");
+```java
+System.out.println("Hello World");
+```
 ## Section
 This is a section!
-```
+````
 
 ## Important Note!
 
