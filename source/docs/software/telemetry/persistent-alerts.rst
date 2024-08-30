@@ -1,8 +1,8 @@
 # Recording Faults with Persistent Alerts
 
-Robots encounter a variety of fault conditions: disconnected sensors/motors, invalid mechanism states, initialization failures, etc. While the FRC Driver Station provides a :ref:`console interface <docs/software/driverstation/driver-station:Messages Tab>` for instantaneous alerts, the risk of missing important messages makes it poorly suited to communicate faults that persistent over time.
+Robots encounter a variety of fault conditions: disconnected sensors/motors, invalid mechanism states, initialization failures, etc. While the FRC Driver Station provides a :ref:`console interface <docs/software/driverstation/driver-station:Messages Tab>` for instantaneous alerts, the risk of missing important messages makes it poorly suited to communicate faults that persist over time.
 
-Instead, WPILib provides an API for managing persistent alerts published via Network Tables. Alerts are assigned a priority (*error*, *warning*, or *info*) and can be *activated* or *deactivated* in robot code. The set of active alerts can be displayed on a dashboard, as shown below in Shuffleboard.
+Instead, the ``Alert`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Alert.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_alert.html), :external:py:class:[Python](wpilib.Alert)) can be used for managing persistent alerts published via Network Tables. Alerts are assigned a priority (*error*, *warning*, or *info*) and can be *activated* or *deactivated* in robot code. The set of active alerts can be displayed on a dashboard, as shown below in Shuffleboard.
 
 .. image:: images/alerts.png
    :alt: A screenshot of the alerts widget in Shuffleboard, with several active alerts.
@@ -11,7 +11,9 @@ Active alerts are automatically displayed in order based on priority and how rec
 
 ## API Usage
 
-Alerts are created and managed using the ``Alert`` class. Typically, an alert should be instantiated once and stored as a class member. Periodically, the ``set`` method should be called to update the state of the alert based on relevant data.
+Alerts are created and managed using the ``Alert`` class. Typically, an alert should be instantiated once and stored as a class member. The ``set`` method is used to activate or deactivate the alert. Change detection is built-in, so calling ``set`` multiple times with the same value does affect the order in which alerts are displayed.
+
+Alert states are often expressed most easily as a conditional, such as whether the latest signal from a CAN device is up-to-date. In this case, we recommend calling the ``set`` method in a periodic loop and relying on the built-in change detection to active the alert.
 
 .. tab-set-code::
    .. code-block:: java
