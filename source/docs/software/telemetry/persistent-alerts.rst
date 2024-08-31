@@ -13,7 +13,7 @@ Active alerts are automatically displayed in order based on priority and how rec
 
 Alerts are created and managed using the ``Alert`` class. Typically, an alert should be instantiated once and stored as a class member. The ``set`` method is used to activate or deactivate the alert. Change detection is built-in, so calling ``set`` multiple times with the same value does affect the order in which alerts are displayed.
 
-Alert states are often expressed most easily as a conditional, such as whether the latest signal from a CAN device is up-to-date. In this case, we recommend calling the ``set`` method in a periodic loop and relying on the built-in change detection to active the alert.
+Alert states are often expressed most easily as a conditional, such as whether the latest signal from a CAN device is up-to-date. In this case, we recommend calling the ``set`` method in a periodic loop and relying on the built-in change detection to activate the alert.
 
 .. tab-set-code::
    .. code-block:: java
