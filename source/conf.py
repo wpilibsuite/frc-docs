@@ -98,7 +98,7 @@ localization_languages = [
 ]
 
 # Redirect branch
-rediraffe_branch = "origin/main"
+rediraffe_branch = "origin/stable"
 
 # File containing redirects
 rediraffe_redirects = "redirects.txt"

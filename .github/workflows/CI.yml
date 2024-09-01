@@ -157,9 +157,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Checkout main
+    - name: Checkout stable
       run: |
-        git fetch origin main --depth=1
+        git fetch origin stable --depth=1
     - uses: actions/setup-python@v5
       with:
         python-version: 3.9
@@ -171,7 +171,7 @@ jobs:
         make rediraffecheckdiff
     - name: Check redirects format
       run: |
-        [[ $(<source/redirects.txt) == $(git show origin/main:source/redirects.txt)* ]] || { echo "Error: redirects.txt can only be appended to. Lines cannot be modified or deleted."; exit 1; }
+        [[ $(<source/redirects.txt) == $(git show origin/stable:source/redirects.txt)* ]] || { echo "Error: redirects.txt can only be appended to. Lines cannot be modified or deleted."; exit 1; }
         
   check-formatting:
     runs-on: ubuntu-latest
