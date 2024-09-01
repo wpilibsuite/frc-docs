@@ -11,46 +11,45 @@ The 2 PID controllers are controllers that should correct for error in the field
 The final parameter is a ``ProfiledPIDController`` for the rotation of the robot. Because the rotation dynamics of a holonomic drivetrain are decoupled from movement in the x and y directions, users can set custom heading references while following a trajectory. These heading references are profiled according to the parameters set in the ``ProfiledPIDController``.
 
 .. tab-set-code::
-   .. code-block:: java
+   ```java
+   var controller = new HolonomicDriveController(
+     new PIDController(1, 0, 0), new PIDController(1, 0, 0),
+     new ProfiledPIDController(1, 0, 0,
+       new TrapezoidProfile.Constraints(6.28, 3.14)));
+   // Here, our rotation profile constraints were a max velocity
+   // of 1 rotation per second and a max acceleration of 180 degrees
+   // per second squared.
+   ```
 
-      var controller = new HolonomicDriveController(
-        new PIDController(1, 0, 0), new PIDController(1, 0, 0),
-        new ProfiledPIDController(1, 0, 0,
-          new TrapezoidProfile.Constraints(6.28, 3.14)));
-      // Here, our rotation profile constraints were a max velocity
-      // of 1 rotation per second and a max acceleration of 180 degrees
-      // per second squared.
+   ```c++
+   frc::HolonomicDriveController controller{
+     frc::PIDController{1, 0, 0}, frc::PIDController{1, 0, 0},
+     frc::ProfiledPIDController<units::radian>{
+       1, 0, 0, frc::TrapezoidProfile<units::radian>::Constraints{
+         6.28_rad_per_s, 3.14_rad_per_s / 1_s}}};
+   // Here, our rotation profile constraints were a max velocity
+   // of 1 rotation per second and a max acceleration of 180 degrees
+   // per second squared.
+   ```
 
-   .. code-block:: c++
-
-      frc::HolonomicDriveController controller{
-        frc::PIDController{1, 0, 0}, frc::PIDController{1, 0, 0},
-        frc::ProfiledPIDController<units::radian>{
-          1, 0, 0, frc::TrapezoidProfile<units::radian>::Constraints{
-            6.28_rad_per_s, 3.14_rad_per_s / 1_s}}};
-      // Here, our rotation profile constraints were a max velocity
-      // of 1 rotation per second and a max acceleration of 180 degrees
-      // per second squared.
-
-   .. code-block:: python
-
-      from wpimath.controller import (
-         HolonomicDriveController,
-         PIDController,
-         ProfiledPIDControllerRadians,
-      )
-      from wpimath.trajectory import TrapezoidProfileRadians
-
+   ```python
+   from wpimath.controller import (
+      HolonomicDriveController,
+      PIDController,
+      ProfiledPIDControllerRadians,
+   )
+   from wpimath.trajectory import TrapezoidProfileRadians
       controller = HolonomicDriveController(
-         PIDController(1, 0, 0),
-         PIDController(1, 0, 0),
-         ProfiledPIDControllerRadians(
-            1, 0, 0, TrapezoidProfileRadians.Constraints(6.28, 3.14)
-         ),
-      )
-      # Here, our rotation profile constraints were a max velocity
-      # of 1 rotation per second and a max acceleration of 180 degrees
-      # per second squared.
+      PIDController(1, 0, 0),
+      PIDController(1, 0, 0),
+      ProfiledPIDControllerRadians(
+         1, 0, 0, TrapezoidProfileRadians.Constraints(6.28, 3.14)
+      ),
+   )
+   # Here, our rotation profile constraints were a max velocity
+   # of 1 rotation per second and a max acceleration of 180 degrees
+   # per second squared.
+   ```
 
 ## Getting Adjusted Velocities
 The holonomic drive controller returns "adjusted velocities" such that when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal is comprised of a desired pose, linear velocity, and heading.
@@ -60,38 +59,34 @@ The holonomic drive controller returns "adjusted velocities" such that when the 
 The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java/Python) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter and the desired heading as the last parameter. For the middle parameters, one overload accepts the desired pose and the linear velocity reference while the other accepts a ``Trajectory.State`` object, which contains information about the goal pose. The latter method is preferred for tracking trajectories.
 
 .. tab-set-code::
-   .. code-block:: java
-
-      // Sample the trajectory at 3.4 seconds from the beginning.
-      Trajectory.State goal = trajectory.sample(3.4);
-
+   ```java
+   // Sample the trajectory at 3.4 seconds from the beginning.
+   Trajectory.State goal = trajectory.sample(3.4);
       // Get the adjusted speeds. Here, we want the robot to be facing
-      // 70 degrees (in the field-relative coordinate system).
-      ChassisSpeeds adjustedSpeeds = controller.calculate(
-        currentRobotPose, goal, Rotation2d.fromDegrees(70.0));
+   // 70 degrees (in the field-relative coordinate system).
+   ChassisSpeeds adjustedSpeeds = controller.calculate(
+     currentRobotPose, goal, Rotation2d.fromDegrees(70.0));
+   ```
 
-   .. code-block:: c++
-
-      // Sample the trajectoty at 3.4 seconds from the beginning.
-      const auto goal = trajectory.Sample(3.4_s);
-
+   ```c++
+   // Sample the trajectoty at 3.4 seconds from the beginning.
+   const auto goal = trajectory.Sample(3.4_s);
       // Get the adjusted speeds. Here, we want the robot to be facing
-      // 70 degrees (in the field-relative coordinate system).
-      const auto adjustedSpeeds = controller.Calculate(
-        currentRobotPose, goal, 70_deg);
+   // 70 degrees (in the field-relative coordinate system).
+   const auto adjustedSpeeds = controller.Calculate(
+     currentRobotPose, goal, 70_deg);
+   ```
 
-   .. code-block:: python
-
-      from wpimath.geometry import Rotation2d
-
+   ```python
+   from wpimath.geometry import Rotation2d
       # Sample the trajectory at 3.4 seconds from the beginning.
-      goal = trajectory.sample(3.4)
-
+   goal = trajectory.sample(3.4)
       # Get the adjusted speeds. Here, we want the robot to be facing
-      # 70 degrees (in the field-relative coordinate system).
-      adjustedSpeeds = controller.calculate(
-         currentRobotPose, goal, Rotation2d.fromDegrees(70.0)
-      )
+   # 70 degrees (in the field-relative coordinate system).
+   adjustedSpeeds = controller.calculate(
+      currentRobotPose, goal, Rotation2d.fromDegrees(70.0)
+   )
+   ```
 
 ## Using the Adjusted Velocities
 The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity in the sideways direction), and an ``omega`` (angular velocity around the center of the robot frame).
@@ -99,21 +94,20 @@ The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (
 The returned adjusted speeds can be converted into usable speeds using the kinematics classes for your drivetrain type. In the example code below, we will assume a swerve drive robot; however, the kinematics code is exactly the same for a mecanum drive robot except using ``MecanumDriveKinematics``.
 
 .. tab-set-code::
-   .. code-block:: java
-
-      SwerveModuleState[] moduleStates = kinematics.toSwerveModuleStates(adjustedSpeeds);
-
+   ```java
+   SwerveModuleState[] moduleStates = kinematics.toSwerveModuleStates(adjustedSpeeds);
       SwerveModuleState frontLeft = moduleStates[0];
-      SwerveModuleState frontRight = moduleStates[1];
-      SwerveModuleState backLeft = moduleStates[2];
-      SwerveModuleState backRight = moduleStates[3];
+   SwerveModuleState frontRight = moduleStates[1];
+   SwerveModuleState backLeft = moduleStates[2];
+   SwerveModuleState backRight = moduleStates[3];
+   ```
 
-   .. code-block:: c++
+   ```c++
+   auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(adjustedSpeeds);
+   ```
 
-      auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(adjustedSpeeds);
-
-   .. code-block:: python
-
-      fl, fr, bl, br = kinematics.toSwerveModuleStates(adjustedSpeeds)
+   ```python
+   fl, fr, bl, br = kinematics.toSwerveModuleStates(adjustedSpeeds)
+   ```
 
 Because these swerve module states are still speeds and angles, you will need to use PID controllers to set these speeds and angles.

@@ -73,23 +73,23 @@ Running the ``robotpy init`` command will initialize a new robot project:
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy init
+      ```sh
+      py -3 -m robotpy init
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy init
+      ```sh
+      python3 -m robotpy init
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
-
-         python3 -m robotpy init
+      ```sh
+      python3 -m robotpy init
+      ```
 
 This will create a ``robot.py`` and ``pyproject.toml`` file, but will not overwrite an existing file.
 
@@ -162,61 +162,55 @@ Now let's look at various parts of the code.
       .. tab-set-code::
 
 
-         .. code-block:: java
+         ```java
+         import edu.wpi.first.wpilibj.TimedRobot;
+         import edu.wpi.first.wpilibj.Timer;
+         import edu.wpi.first.wpilibj.XboxController;
+         import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+         import com.ctre.phoenix6.hardware.TalonFX;
+                  ```
 
-            import edu.wpi.first.wpilibj.TimedRobot;
-            import edu.wpi.first.wpilibj.Timer;
-            import edu.wpi.first.wpilibj.XboxController;
-            import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-            import com.ctre.phoenix6.hardware.TalonFX;
+         ```c++
+         #include <frc/TimedRobot.h>
+         #include <frc/Timer.h>
+         #include <frc/XboxController.h>
+         #include <frc/drive/DifferentialDrive.h>
+         #include <ctre/phoenix6/TalonFX.hpp>
+                  ```
 
-
-         .. code-block:: c++
-
-            #include <frc/TimedRobot.h>
-            #include <frc/Timer.h>
-            #include <frc/XboxController.h>
-            #include <frc/drive/DifferentialDrive.h>
-            #include <ctre/phoenix6/TalonFX.hpp>
-
-
-         .. code-block:: python
-
-            import wpilib               # Used to get the joysticks
-            import wpilib.drive         # Used for the DifferentialDrive class
-            import phoenix6             # CTRE library
+         ```python
+         import wpilib               # Used to get the joysticks
+         import wpilib.drive         # Used for the DifferentialDrive class
+         import phoenix6             # CTRE library
+         ```
 
    .. tab-item:: REV
 
          .. tab-set-code::
 
-            .. code-block:: java
+            ```java
+            import com.revrobotics.CANSparkMax;
+            import com.revrobotics.CANSparkLowLevel.MotorType;
+                        import edu.wpi.first.wpilibj.TimedRobot;
+            import edu.wpi.first.wpilibj.Timer;
+            import edu.wpi.first.wpilibj.XboxController;
+            import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+                        ```
 
-               import com.revrobotics.CANSparkMax;
-               import com.revrobotics.CANSparkLowLevel.MotorType;
+            ```c++
+            #include <frc/TimedRobot.h>
+            #include <frc/Timer.h>
+            #include <frc/XboxController.h>
+            #include <frc/drive/DifferentialDrive.h>
+            #include <frc/motorcontrol/PWMSparkMax.h>
+                        #include <rev/CANSparkMax.h>
+                        ```
 
-               import edu.wpi.first.wpilibj.TimedRobot;
-               import edu.wpi.first.wpilibj.Timer;
-               import edu.wpi.first.wpilibj.XboxController;
-               import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-
-
-            .. code-block:: c++
-
-               #include <frc/TimedRobot.h>
-               #include <frc/Timer.h>
-               #include <frc/XboxController.h>
-               #include <frc/drive/DifferentialDrive.h>
-               #include <frc/motorcontrol/PWMSparkMax.h>
-
-               #include <rev/CANSparkMax.h>
-
-
-            .. code-block:: python
-
-               import wpilib           # Used to get the joysticks
-               import wpilib.drive     # Used for the DifferentialDrive class
-               import rev              # REV library
+            ```python
+            import wpilib           # Used to get the joysticks
+            import wpilib.drive     # Used for the DifferentialDrive class
+            import rev              # REV library
+            ```
 
    .. tab-item:: CTRE-Phoenix5
       :sync: ctre5
@@ -225,29 +219,27 @@ Now let's look at various parts of the code.
       .. tab-set-code::
 
 
-         .. code-block:: java
+         ```java
+         import edu.wpi.first.wpilibj.TimedRobot;
+         import edu.wpi.first.wpilibj.Timer;
+         import edu.wpi.first.wpilibj.XboxController;
+         import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+         import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+                  ```
 
-            import edu.wpi.first.wpilibj.TimedRobot;
-            import edu.wpi.first.wpilibj.Timer;
-            import edu.wpi.first.wpilibj.XboxController;
-            import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-            import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+         ```c++
+         #include <frc/TimedRobot.h>
+         #include <frc/Timer.h>
+         #include <frc/XboxController.h>
+         #include <frc/drive/DifferentialDrive.h>
+         #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
+                  ```
 
-
-         .. code-block:: c++
-
-            #include <frc/TimedRobot.h>
-            #include <frc/Timer.h>
-            #include <frc/XboxController.h>
-            #include <frc/drive/DifferentialDrive.h>
-            #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
-
-
-         .. code-block:: python
-
-            import wpilib           # Used to get the joysticks
-            import wpilib.drive     # Used for the DifferentialDrive class
-            import ctre             # CTRE library
+         ```python
+         import wpilib           # Used to get the joysticks
+         import wpilib.drive     # Used for the DifferentialDrive class
+         import ctre             # CTRE library
+         ```
 
 Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``XBoxController`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax`` / ``WPI_TalonSRX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the Xbox  controller to the motors).
 
@@ -307,15 +299,15 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: Java
             :sync: java
 
-            .. code-block:: java
-
-               public class Robot extends TimedRobot {
-                  private final TalonFX m_leftDrive = new TalonFX(1);
-                  private final TalonFX m_rightDrive = new TalonFX(2);
-                  private final DifferentialDrive m_robotDrive =
-                    new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
-                  private final XboxController m_controller = new XboxController(0);
-                  private final Timer m_timer = new Timer();
+            ```java
+            public class Robot extends TimedRobot {
+               private final TalonFX m_leftDrive = new TalonFX(1);
+               private final TalonFX m_rightDrive = new TalonFX(2);
+               private final DifferentialDrive m_robotDrive =
+                 new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
+               private final XboxController m_controller = new XboxController(0);
+               private final Timer m_timer = new Timer();
+            ```
 
          .. tab-item:: C++
             :sync: c++
@@ -332,42 +324,40 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                :linenos:
                :lineno-start: 17
 
-            .. code-block:: c++
-
-               private:
-                // Robot drive system
-                ctre::phoenix6::hardware::TalonFX m_left{1};
-                ctre::phoenix6::hardware::TalonFX m_right{2};
-                frc::DifferentialDrive m_robotDrive{
-                  [&](double output) { m_left.Set(output); },
-                  [&](double output) { m_right.Set(output); }};
-
-                frc::XboxController m_controller{0};
-                frc::Timer m_timer;
+            ```c++
+            private:
+             // Robot drive system
+             ctre::phoenix6::hardware::TalonFX m_left{1};
+             ctre::phoenix6::hardware::TalonFX m_right{2};
+             frc::DifferentialDrive m_robotDrive{
+               [&](double output) { m_left.Set(output); },
+               [&](double output) { m_right.Set(output); }};
+                         frc::XboxController m_controller{0};
+             frc::Timer m_timer;
+            ```
 
          .. tab-item:: Python
             :sync: python
 
-            .. code-block:: python
-
-               class MyRobot(wpilib.TimedRobot):
-                 def robotInit(self):
-                    """
-                    This function is called upon program startup and
-                    should be used for any initialization code.
-                    """
-                    self.leftDrive = phoenix6.hardware.TalonFX(1)
-                    self.rightDrive = phoenix6.hardware.TalonFX(2)
-                    self.robotDrive = wpilib.drive.DifferentialDrive(
-                        self.leftDrive, self.rightDrive
-                    )
-                    self.controller = wpilib.XboxController(0)
-                    self.timer = wpilib.Timer()
-
-                    # We need to invert one side of the drivetrain so that positive voltages
-                    # result in both sides moving forward. Depending on how your robot's
-                    # gearbox is constructed, you might have to invert the left side instead.
-                    self.rightDrive.setInverted(True)
+            ```python
+            class MyRobot(wpilib.TimedRobot):
+              def robotInit(self):
+                 """
+                 This function is called upon program startup and
+                 should be used for any initialization code.
+                 """
+                 self.leftDrive = phoenix6.hardware.TalonFX(1)
+                 self.rightDrive = phoenix6.hardware.TalonFX(2)
+                 self.robotDrive = wpilib.drive.DifferentialDrive(
+                     self.leftDrive, self.rightDrive
+                 )
+                 self.controller = wpilib.XboxController(0)
+                 self.timer = wpilib.Timer()
+                             # We need to invert one side of the drivetrain so that positive voltages
+                 # result in both sides moving forward. Depending on how your robot's
+                 # gearbox is constructed, you might have to invert the left side instead.
+                 self.rightDrive.setInverted(True)
+            ```
 
    .. tab-item:: REV
       :sync: rev
@@ -377,15 +367,15 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: Java
             :sync: java
 
-            .. code-block:: java
-
-               public class Robot extends TimedRobot {
-                 private final CANSparkMax m_leftDrive = new CANSparkMax(1, MotorType.kBrushless);
-                 private final CANSparkMax m_rightDrive = new CANSparkMax(2, MotorType.kBrushless);
-                 private final DifferentialDrive m_robotDrive =
-                   new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
-                 private final XboxController m_controller = new XboxController(0);
-                 private final Timer m_timer = new Timer();
+            ```java
+            public class Robot extends TimedRobot {
+              private final CANSparkMax m_leftDrive = new CANSparkMax(1, MotorType.kBrushless);
+              private final CANSparkMax m_rightDrive = new CANSparkMax(2, MotorType.kBrushless);
+              private final DifferentialDrive m_robotDrive =
+                new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
+              private final XboxController m_controller = new XboxController(0);
+              private final Timer m_timer = new Timer();
+            ```
 
          .. tab-item:: C++
             :sync: c++
@@ -402,18 +392,17 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                :linenos:
                :lineno-start: 17
 
-            .. code-block:: c++
-
-               private:
-                // Robot drive system
-                rev::CANSparkMax m_left{1, rev::CANSparkMax::MotorType::kBrushless};
-                rev::CANSparkMax m_right{2, rev::CANSparkMax::MotorType::kBrushless};
-                frc::DifferentialDrive m_robotDrive{
-                  [&](double output) { m_left.Set(output); },
-                  [&](double output) { m_right.Set(output); }};
-
-                frc::XboxController m_controller{0};
-                frc::Timer m_timer;
+            ```c++
+            private:
+             // Robot drive system
+             rev::CANSparkMax m_left{1, rev::CANSparkMax::MotorType::kBrushless};
+             rev::CANSparkMax m_right{2, rev::CANSparkMax::MotorType::kBrushless};
+             frc::DifferentialDrive m_robotDrive{
+               [&](double output) { m_left.Set(output); },
+               [&](double output) { m_right.Set(output); }};
+                         frc::XboxController m_controller{0};
+             frc::Timer m_timer;
+            ```
 
          .. tab-item:: Python
             :sync: python
@@ -432,14 +421,14 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: Java
             :sync: java
 
-            .. code-block:: java
-
-               public class Robot extends TimedRobot {
-                  private final WPI_TalonSRX m_leftDrive = new WPI_TalonSRX(1);
-                  private final WPI_TalonSRX m_rightDrive = new WPI_TalonSRX(2);
-                  private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive1::set, m_rightDrive2::set);
-                  private final XboxController m_controller = new XboxController(0);
-                  private final Timer m_timer = new Timer();
+            ```java
+            public class Robot extends TimedRobot {
+               private final WPI_TalonSRX m_leftDrive = new WPI_TalonSRX(1);
+               private final WPI_TalonSRX m_rightDrive = new WPI_TalonSRX(2);
+               private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive1::set, m_rightDrive2::set);
+               private final XboxController m_controller = new XboxController(0);
+               private final Timer m_timer = new Timer();
+            ```
 
          .. tab-item:: C++
             :sync: c++
@@ -456,18 +445,17 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                :linenos:
                :lineno-start: 17
 
-            .. code-block:: c++
-
-               private:
-                // Robot drive system
-                ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_left{1};
-                ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_right{2};
-                frc::DifferentialDrive m_robotDrive{
-                  [&](double output) { m_left.Set(output); },
-                  [&](double output) { m_right.Set(output); }};
-
-                frc::XboxController m_controller{0};
-                frc::Timer m_timer;
+            ```c++
+            private:
+             // Robot drive system
+             ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_left{1};
+             ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_right{2};
+             frc::DifferentialDrive m_robotDrive{
+               [&](double output) { m_left.Set(output); },
+               [&](double output) { m_right.Set(output); }};
+                         frc::XboxController m_controller{0};
+             frc::Timer m_timer;
+            ```
 
          .. tab-item:: Python
             :sync: python
@@ -501,16 +489,16 @@ The sample robot in our examples will have an Xbox Controller on USB port 0 for 
    .. tab-item:: C++
       :sync: c++
 
-      .. code-block:: c++
-
-         void RobotInit() {}
+      ```c++
+      void RobotInit() {}
+      ```
 
    .. tab-item:: Python
       :sync: python
 
-      .. code-block:: python
-
-         def robotInit(self):
+      ```python
+      def robotInit(self):
+      ```
 
 The ``RobotInit`` method is run when the robot program is starting up, but after the constructor. The ``RobotInit`` for our sample program inverts the right side of the drivetrain. Depending on your drive setup, you might need to invert the left side instead.
 

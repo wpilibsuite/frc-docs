@@ -8,25 +8,24 @@ To use the either Power Distribution module, create an instance of the :code:`Po
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    PowerDistribution examplePD = new PowerDistribution();
+    PowerDistribution examplePD = new PowerDistribution(0, ModuleType.kCTRE);
+    PowerDistribution examplePD = new PowerDistribution(1, ModuleType.kRev);
+    ```
 
-        PowerDistribution examplePD = new PowerDistribution();
-        PowerDistribution examplePD = new PowerDistribution(0, ModuleType.kCTRE);
-        PowerDistribution examplePD = new PowerDistribution(1, ModuleType.kRev);
+    ```c++
+    PowerDistribution examplePD{};
+    PowerDistribution examplePD{0, frc::PowerDistribution::ModuleType::kCTRE};
+    PowerDistribution examplePD{1, frc::PowerDistribution::ModuleType::kRev};
+    ```
 
-    .. code-block:: c++
-
-        PowerDistribution examplePD{};
-        PowerDistribution examplePD{0, frc::PowerDistribution::ModuleType::kCTRE};
-        PowerDistribution examplePD{1, frc::PowerDistribution::ModuleType::kRev};
-
-    .. code-block:: python
-
-        from wpilib import PowerDistribution
-
+    ```python
+    from wpilib import PowerDistribution
         examplePD = PowerDistribution()
-        examplePD = PowerDistribution(0, PowerDistribution.ModuleType.kCTRE)
-        examplePD = PowerDistribution(1, PowerDistribution.ModuleType.kRev)
+    examplePD = PowerDistribution(0, PowerDistribution.ModuleType.kCTRE)
+    examplePD = PowerDistribution(1, PowerDistribution.ModuleType.kRev)
+    ```
 
 Note: it is not necessary to create a PowerDistribution object unless you need to read values from it. The board will work and supply power on all the channels even if the object is never created.
 
@@ -140,17 +139,18 @@ The REV PDH has one channel that can be switched on or off to control custom cir
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    examplePD.setSwitchableChannel(true);
+    examplePD.setSwitchableChannel(false);
+    ```
 
-        examplePD.setSwitchableChannel(true);
-        examplePD.setSwitchableChannel(false);
+    ```c++
+    examplePD.SetSwitchableChannel(true);
+    examplePD.SetSwitchableChannel(false);
+    ```
 
-    .. code-block:: c++
+    ```python
+    examplePD.setSwitchableChannel(True)
+    examplePD.setSwitchableChannel(False)
+    ```
 
-        examplePD.SetSwitchableChannel(true);
-        examplePD.SetSwitchableChannel(false);
-
-    .. code-block:: python
-
-        examplePD.setSwitchableChannel(True)
-        examplePD.setSwitchableChannel(False)

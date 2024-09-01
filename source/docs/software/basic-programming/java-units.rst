@@ -42,49 +42,48 @@ It's important to note that not all measurements require such complex nested typ
 
 For local variables, you may choose to use Java's `var` keyword instead of including the full type name. For example, these are equivalent:
 
-.. code-block:: java
-
-  Measure<Per<Voltage, Velocity<Distance>>> v = VoltsPerMeterPerSecond.of(8);
-  var v = VoltsPerMeterPerSecond.of(8);
+```java
+Measure<Per<Voltage, Velocity<Distance>>> v = VoltsPerMeterPerSecond.of(8);
+var v = VoltsPerMeterPerSecond.of(8);
+```
 
 ### Creating Measures
 
 The ``Measure`` class is a generic type that represents a magnitude (physical quantity) with its corresponding unit. It provides a consistent and type-safe way to handle different dimensions of measurements, such as distance, angle, and velocity, but abstracts away the particular unit (e.g. meter vs. inch). To create a ``Measure`` object, you call the ``Unit.of`` method on the appropriate unit object. For example, to create a ``Measure<Distance>`` object representing a distance of 6 inches, you would write:
 
-.. code-block:: java
-
-  Measure<Distance> wheelDiameter = Inches.of(6);
+```java
+Measure<Distance> wheelDiameter = Inches.of(6);
+```
 
 Other measures can also be created using their ``Unit.of`` method:
 
-.. code-block:: java
-
-  Measure<Mass> kArmMass = Kilograms.of(1.423);
-  Measure<Distance> kArmLength = Inches.of(32.25);
-  Measure<Angle> kMinArmAngle = Degrees.of(5);
-  Measure<Angle> kArmMaxTravel = Rotations.of(0.45);
-  Measure<Velocity<Distance>> kMaxSpeed = MetersPerSecond.of(2.5);
+```java
+Measure<Mass> kArmMass = Kilograms.of(1.423);
+Measure<Distance> kArmLength = Inches.of(32.25);
+Measure<Angle> kMinArmAngle = Degrees.of(5);
+Measure<Angle> kArmMaxTravel = Rotations.of(0.45);
+Measure<Velocity<Distance>> kMaxSpeed = MetersPerSecond.of(2.5);
+```
 
 ### Performing Calculations
 
 The ``Measure`` class also supports arithmetic operations, such as addition, subtraction, multiplication, and division. These are done by calling methods on the objects. These operations always ensure that the units are compatible before performing the calculation, and they return a new ``Measure`` object. For example, you can add two ``Measure<Distance>`` objects together, even if they have different units:
 
-.. code-block:: java
-
-  Measure<Distance> distance1 = Inches.of(10);
-  Measure<Distance> distance2 = Meters.of(0.254);
-
-  Measure<Distance> totalDistance = distance1.plus(distance2);
+```java
+Measure<Distance> distance1 = Inches.of(10);
+Measure<Distance> distance2 = Meters.of(0.254);
+Measure<Distance> totalDistance = distance1.plus(distance2);
+```
 
 In this code, the units library will automatically convert the measures to the same unit before adding the two distances. The resulting ``totalDistance`` object will be a new ``Measure<Distance>`` object that has a value of 0.508 meters, or 20 inches.
 
 This example combines the wheel diameter and gear ratio to calculate the distance per rotation of the wheel:
 
-.. code-block:: java
-
-   Measure<Distance> wheelDiameter = Inches.of(3);
-   double gearRatio = 10.48;
-   Measure<Distance> distancePerRotation = wheelDiameter.times(Math.PI).divide(gearRatio);
+```java
+Measure<Distance> wheelDiameter = Inches.of(3);
+double gearRatio = 10.48;
+Measure<Distance> distancePerRotation = wheelDiameter.times(Math.PI).divide(gearRatio);
+```
 
 .. warning:: By default, arithmetic operations create new ``Measure`` instances for their results. See :ref:`Java Garbage Collection<docs/software/basic-programming/java-gc:Java Garbage Collection>` for discussion on creating a large number of short-lived objects. See also, the `Mutability and Object Creation`_ section below for a possible workaround.
 
@@ -92,29 +91,27 @@ This example combines the wheel diameter and gear ratio to calculate the distanc
 
 Unit conversions can be done by calling ``Measure.in(Unit)``. The Java type system will prevent units from being converted between incompatible types, such as distances to angles. The returned values will be bare ``double`` values without unit information - it is up to you, the programmer, to interpret them correctly! It is strongly recommended to only use unit conversions when interacting with APIs that do not support the units library.
 
-.. code-block:: java
-
-   Measure<Velocity<Distance>> kMaxVelocity = FeetPerSecond.of(12.5);
-   Measure<Velocity<Velocity<Distance>>> kMaxAcceleration = FeetPerSecond.per(Second).of(22.9);
-
-   kMaxVelocity.in(MetersPerSecond); // => OK! Returns 3.81
-   kMaxVelocity.in(RadiansPerSecond); // => Compile error! Velocity<Angle> cannot be converted to Unit<Velocity<Distance>>
-
-   // The WPILib math libraries use SI metric units, so we have to convert to meters:
-   TrapezoidProfile.Constraints kDriveConstraints = new TrapezoidProfile.Constraints(
-     maxVelocity.in(MetersPerSecond),
-     maxAcceleration.in(MetersPerSecondPerSecond)
-   );
+```java
+Measure<Velocity<Distance>> kMaxVelocity = FeetPerSecond.of(12.5);
+Measure<Velocity<Velocity<Distance>>> kMaxAcceleration = FeetPerSecond.per(Second).of(22.9);
+kMaxVelocity.in(MetersPerSecond); // => OK! Returns 3.81
+kMaxVelocity.in(RadiansPerSecond); // => Compile error! Velocity<Angle> cannot be converted to Unit<Velocity<Distance>>
+// The WPILib math libraries use SI metric units, so we have to convert to meters:
+TrapezoidProfile.Constraints kDriveConstraints = new TrapezoidProfile.Constraints(
+  maxVelocity.in(MetersPerSecond),
+  maxAcceleration.in(MetersPerSecondPerSecond)
+);
+```
 
 ### Usage Example
 
 Pulling all of the concepts together, we can create an example that calculates the end effector position of an arm mechanism:
 
-.. code-block:: java
-
-  Measure<Distance> armLength = Feet.of(3).plus(Inches.of(4.25));
-  Measure<Distance> endEffectorX = armLength.times(Math.cos(getArmAngle().in(Radians)));
-  Measure<Distance> endEffectorY = armLength.times(Math.sin(getArmAngle().in(Radians)));
+```java
+Measure<Distance> armLength = Feet.of(3).plus(Inches.of(4.25));
+Measure<Distance> endEffectorX = armLength.times(Math.cos(getArmAngle().in(Radians)));
+Measure<Distance> endEffectorY = armLength.times(Math.sin(getArmAngle().in(Radians)));
+```
 
 ### Human-readable Formatting
 
@@ -152,95 +149,86 @@ For the full list of methods and API documentation, see [the MutableMeasure API 
 | ``mut_setMagnitude(double)``  | Overrides the internal value, keeping the internal unit. Be careful when using this!             |
 +-------------------------------+--------------------------------------------------------------------------------------------------+
 
-.. code-block:: java
-
-   MutableMeasure<Distance> measure = MutableMeasure.zero(Feet);
-   measure.mut_plus(10, Inches);    // 0.8333 feet
-   measure.mut_plus(Inches.of(10)); // 1.6667 feet
-   measure.mut_minus(5, Inches);    // 1.25 feet
-   measure.mut_minus(Inches.of(5)); // 0.8333 feet
-   measure.mut_times(6);            // 0.8333 * 6 = 5 feet
-   measure.mut_divide(5);           // 5 / 5 = 1 foot
-   measure.mut_replace(6.2, Meters) // 6.2 meters - note the unit changed!
-   measure.mut_replace(Millimeters.of(14.2)) // 14.2mm - the unit changed again!
-   measure.mut_setMagnitude(72)     // 72mm
+```java
+MutableMeasure<Distance> measure = MutableMeasure.zero(Feet);
+measure.mut_plus(10, Inches);    // 0.8333 feet
+measure.mut_plus(Inches.of(10)); // 1.6667 feet
+measure.mut_minus(5, Inches);    // 1.25 feet
+measure.mut_minus(Inches.of(5)); // 0.8333 feet
+measure.mut_times(6);            // 0.8333 * 6 = 5 feet
+measure.mut_divide(5);           // 5 / 5 = 1 foot
+measure.mut_replace(6.2, Meters) // 6.2 meters - note the unit changed!
+measure.mut_replace(Millimeters.of(14.2)) // 14.2mm - the unit changed again!
+measure.mut_setMagnitude(72)     // 72mm
+```
 
 Revisiting the arm example from above, we can use ``mut_replace`` - and, optionally, ``mut_times`` - to calculate the end effector position
 
-.. code-block:: java
-
-   import edu.wpi.first.units.Measure;
-   import edu.wpi.first.units.MutableMeasure;
-   import static edu.wpi.first.units.Units.*;
-
-   public class Arm {
-     // Note the two ephemeral object allocations for the Feet.of and Inches.of calls.
-     // Because this is a constant value computed just once, they will easily be garbage collected without
-     // any problems with memory use or loop timing jitter.
-     private static final Measure<Distance> kArmLength = Feet.of(3).plus(Inches.of(4.25));
-
-     // Angle and X/Y locations will likely be called in the main robot loop, let's store them in a MutableMeasure
-     // to avoid allocating lots of short-lived objects
-     private final MutableMeasure<Angle> m_angle = MutableMeasure.zero(Degrees);
-     private final MutableMeasure<Distance> m_endEffectorX = MutableMeasure.zero(Feet);
-     private final MutableMeasure<Distance> m_endEffectorY = MutableMeasure.zero(Feet);
-
-     private final Encoder m_encoder = new Encoder(...);
-
-     public Measure<Distance> getEndEffectorX() {
-       m_endEffectorX.mut_replace(
-         Math.cos(getAngle().in(Radians)) * kArmLength.in(Feet), // the new magnitude to store
-         Feet // the units of the new magnitude
-       );
-       return m_endEffectorX;
-     }
-
-     public Measure<Distance> getEndEffectorY() {
-       // An alternative approach so we don't have to unpack and repack the units
-       m_endEffectorY.mut_replace(kArmLength);
-       m_endEffectorY.mut_times(Math.sin(getAngle().in(Radians)));
-       return m_endEffectorY;
-     }
-
-     public Measure<Angle> getAngle() {
-       double rawAngle = m_encoder.getPosition();
-       m_angle.mut_replace(rawAngle, Degrees); // NOTE: the encoder must be configured with distancePerPulse in terms of degrees!
-       return m_angle;
-     }
-   }
+```java
+import edu.wpi.first.units.Measure;
+import edu.wpi.first.units.MutableMeasure;
+import static edu.wpi.first.units.Units.*;
+public class Arm {
+  // Note the two ephemeral object allocations for the Feet.of and Inches.of calls.
+  // Because this is a constant value computed just once, they will easily be garbage collected without
+  // any problems with memory use or loop timing jitter.
+  private static final Measure<Distance> kArmLength = Feet.of(3).plus(Inches.of(4.25));
+  // Angle and X/Y locations will likely be called in the main robot loop, let's store them in a MutableMeasure
+  // to avoid allocating lots of short-lived objects
+  private final MutableMeasure<Angle> m_angle = MutableMeasure.zero(Degrees);
+  private final MutableMeasure<Distance> m_endEffectorX = MutableMeasure.zero(Feet);
+  private final MutableMeasure<Distance> m_endEffectorY = MutableMeasure.zero(Feet);
+  private final Encoder m_encoder = new Encoder(...);
+  public Measure<Distance> getEndEffectorX() {
+    m_endEffectorX.mut_replace(
+      Math.cos(getAngle().in(Radians)) * kArmLength.in(Feet), // the new magnitude to store
+      Feet // the units of the new magnitude
+    );
+    return m_endEffectorX;
+  }
+  public Measure<Distance> getEndEffectorY() {
+    // An alternative approach so we don't have to unpack and repack the units
+    m_endEffectorY.mut_replace(kArmLength);
+    m_endEffectorY.mut_times(Math.sin(getAngle().in(Radians)));
+    return m_endEffectorY;
+  }
+  public Measure<Angle> getAngle() {
+    double rawAngle = m_encoder.getPosition();
+    m_angle.mut_replace(rawAngle, Degrees); // NOTE: the encoder must be configured with distancePerPulse in terms of degrees!
+    return m_angle;
+  }
+}
+```
 
 .. warning:: ``MutableMeasure`` objects can - by definition - change their values at any time! It is unsafe to keep a stateful reference to them - prefer to extract a value using the ``Measure.in`` method, or create a copy with ``Measure.copy`` that can be safely stored. For the same reason, library authors must also be careful about methods accepting ``Measure``.
 
 Can you spot the bug in this code?
 
-.. code-block:: java
-
-   private Measure<Distance> m_lastDistance;
-
-   public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
-     if (m_lastDistance == null) {
-       m_lastDistance = currentDistance;
-       return currentDistance;
-     } else {
-       Measure<Distance> delta = currentDistance.minus(m_lastDistance);
-       m_lastDistance = currentDistance;
-       return delta;
-     }
-   }
+```java
+private Measure<Distance> m_lastDistance;
+public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
+  if (m_lastDistance == null) {
+    m_lastDistance = currentDistance;
+    return currentDistance;
+  } else {
+    Measure<Distance> delta = currentDistance.minus(m_lastDistance);
+    m_lastDistance = currentDistance;
+    return delta;
+  }
+}
+```
 
 If we run the ``calculateDelta`` method a few times, we can see a pattern:
 
-.. code-block:: java
-
-   MutableMeasure<Distance> distance = MutableMeasure.zero(Inches);
-   distance.mut_plus(10, Inches);
-   calculateDelta(distance); // expect 10 inches and get 10 - good!
-
-   distance.mut_plus(2, Inches);
-   calculateDelta(distance); // expect 2 inches, but get 0 instead!
-
-   distance.mut_plus(8, Inches);
-   calculateDelta(distance); // expect 8 inches, but get 0 instead!
+```java
+MutableMeasure<Distance> distance = MutableMeasure.zero(Inches);
+distance.mut_plus(10, Inches);
+calculateDelta(distance); // expect 10 inches and get 10 - good!
+distance.mut_plus(2, Inches);
+calculateDelta(distance); // expect 2 inches, but get 0 instead!
+distance.mut_plus(8, Inches);
+calculateDelta(distance); // expect 8 inches, but get 0 instead!
+```
 
 This is because the ``m_lastDistance`` field is a reference to the *same* ``MutableMeasure`` object as the input! Effectively, the delta is calculated as (currentDistance - currentDistance) on every call after the first, which naturally always returns zero. One solution would be to track ``m_lastDistance`` as a *copy* of the input measure to take a snapshot; however, this approach does incur one extra object allocation for the copy. If you need to be careful about object allocations, ``m_lastDistance`` could also be stored as a ``MutableMeasure``.
 
@@ -248,35 +236,33 @@ This is because the ``m_lastDistance`` field is a reference to the *same* ``Muta
 
    .. tab-item:: Immutable Copies
 
-      .. code-block:: java
-
-         private Measure<Distance> m_lastDistance;
-
-         public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
-           if (m_lastDistance == null) {
-             m_lastDistance = currentDistance.copy();
-             return currentDistance;
-           } else {
-             var delta = currentDistance.minus(m_lastDistance);
-             m_lastDistance = currentDistance.copy();
-             return delta;
-           }
-         }
+      ```java
+      private Measure<Distance> m_lastDistance;
+            public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
+        if (m_lastDistance == null) {
+          m_lastDistance = currentDistance.copy();
+          return currentDistance;
+        } else {
+          var delta = currentDistance.minus(m_lastDistance);
+          m_lastDistance = currentDistance.copy();
+          return delta;
+        }
+      }
+      ```
 
    .. tab-item:: Zero-allocation Mutables
 
-      .. code-block:: java
-
-         private final MutableMeasure<Distance> m_lastDistance = MutableMeasure.zero(Meters);
-         private final MutableMeasure<Distance> m_delta = MutableMeasure.zero(Meters);
-
-         public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
-           // m_delta = currentDistance - m_lastDistance
-           m_delta.mut_replace(currentDistance);
-           m_delta.mut_minus(m_lastDistance);
-           m_lastDistance.mut_replace(currentDistance);
-           return m_delta;
-         }
+      ```java
+      private final MutableMeasure<Distance> m_lastDistance = MutableMeasure.zero(Meters);
+      private final MutableMeasure<Distance> m_delta = MutableMeasure.zero(Meters);
+            public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
+        // m_delta = currentDistance - m_lastDistance
+        m_delta.mut_replace(currentDistance);
+        m_delta.mut_minus(m_lastDistance);
+        m_lastDistance.mut_replace(currentDistance);
+        return m_delta;
+      }
+      ```
 
 ## Defining New Units
 
@@ -289,41 +275,40 @@ There are four ways to define a new unit that isn't already present in the libra
 
 New units can be defined as combinations of existing units using the ``Unit.mult`` and ``Unit.per`` methods.
 
-.. code-block:: java
-
-   Per<Voltage, Distance> VoltsPerInch = Volts.per(Inch);
-   Velocity<Mass> KgPerSecond = Kilograms.per(Second);
-   Mult<Mass, Velocity<Velocity<Distance>> Newtons = Kilograms.mult(MetersPerSecondSquared);
+```java
+Per<Voltage, Distance> VoltsPerInch = Volts.per(Inch);
+Velocity<Mass> KgPerSecond = Kilograms.per(Second);
+Mult<Mass, Velocity<Velocity<Distance>> Newtons = Kilograms.mult(MetersPerSecondSquared);
+```
 
 Using ``mult`` and ``per`` will store the resulting unit. Every call will return the same object to avoid unnecessary allocations and garbage collector pressure.
 
-.. code-block:: java
-
-   @Override
-   public void robotPeriodic() {
-     // Feet.per(Millisecond) creates a new unit on the first loop,
-     // which will be reused on every successive loop
-     SmartDashboard.putNumber("Speed", m_drivebase.getSpeed().in(Feet.per(Millisecond)));
-   }
+```java
+@Override
+public void robotPeriodic() {
+  // Feet.per(Millisecond) creates a new unit on the first loop,
+  // which will be reused on every successive loop
+  SmartDashboard.putNumber("Speed", m_drivebase.getSpeed().in(Feet.per(Millisecond)));
+}
+```
 
 .. note:: Calling ``Unit.per(Time)`` will return a ``Velocity`` unit, which is different from and incompatible with a ``Per`` unit!
 
 New dimensions can also be created by subclassing ``Unit`` and implementing the two constructors. Note that ``Unit`` is also a parameterized generic type, where the generic type argument is self-referential; ``Distance`` is a ``Unit<Distance>``. This is what allows us to have stronger guarantees in the type system to prevent conversions between unrelated dimensions.
 
-.. code-block:: java
+```java
+public class ElectricCharge extends Unit<ElectricCharge> {
+  public ElectricCharge(double baseUnitEquivalent, String name, String symbol) {
+    super(ElectricCharge.class, baseUnitEquivalent, name, symbol);
+  }
+  // required for derivation with Milli, Kilo, etc.
+  public ElectricCharge(UnaryFunction toBaseConverter, UnaryFunction fromBaseConverter, String name, String symbol) {
+     super(ElectricCharge.class, toBaseConverter, fromBaseConverter, name, symbol);
+  }
+}
+public static final ElectricCharge Coulomb = new ElectricCharge(1, "Coulomb", "C");
+public static final ElectricCharge ElectronCharge = new ElectricCharge(1.60217646e-19, "Electron Charge", "e");
+public static final ElectricCharge AmpHour = new ElectricCharge(3600, "Amp Hour", "Ah");
+public static final ElectricCharge MilliampHour = Milli(AmpHour);
+```
 
-   public class ElectricCharge extends Unit<ElectricCharge> {
-     public ElectricCharge(double baseUnitEquivalent, String name, String symbol) {
-       super(ElectricCharge.class, baseUnitEquivalent, name, symbol);
-     }
-
-     // required for derivation with Milli, Kilo, etc.
-     public ElectricCharge(UnaryFunction toBaseConverter, UnaryFunction fromBaseConverter, String name, String symbol) {
-        super(ElectricCharge.class, toBaseConverter, fromBaseConverter, name, symbol);
-     }
-   }
-
-   public static final ElectricCharge Coulomb = new ElectricCharge(1, "Coulomb", "C");
-   public static final ElectricCharge ElectronCharge = new ElectricCharge(1.60217646e-19, "Electron Charge", "e");
-   public static final ElectricCharge AmpHour = new ElectricCharge(3600, "Amp Hour", "Ah");
-   public static final ElectricCharge MilliampHour = Milli(AmpHour);

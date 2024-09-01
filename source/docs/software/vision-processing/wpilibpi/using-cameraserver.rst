@@ -6,24 +6,19 @@ The WPILibPi image comes with all the necessary libraries to make your own visio
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      from cscore import CameraServer
-      import cv2
-      import numpy as np
-
+   ```py
+   from cscore import CameraServer
+   import cv2
+   import numpy as np
       CameraServer.enableLogging()
-
       camera = CameraServer.startAutomaticCapture()
-      camera.setResolution(width, height)
-
+   camera.setResolution(width, height)
       sink = cs.getVideo()
-
       while True:
-         time, input_img = cvSink.grabFrame(input_img)
-
+      time, input_img = cvSink.grabFrame(input_img)
          if time == 0: # There is an error
-            continue
+         continue
+   ```
 
 .. note:: OpenCV reads in the image as **BGR**, not **RGB** for historical reasons. Use ``cv2.cvtColor`` if you want to change it to RGB.
 
@@ -38,26 +33,21 @@ Sometimes, you may want to send processed video frames back to the CameraServer 
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      #
-      # CameraServer initialization code here
-      #
-
+   ```py
+   #
+   # CameraServer initialization code here
+   #
       output = cs.putVideo("Name", width, height)
-
       while True:
-         time, input_img = cvSink.grabFrame(input_img)
-
+      time, input_img = cvSink.grabFrame(input_img)
          if time == 0: # There is an error
-            output.notifyError(sink.getError())
-            continue
-
+         output.notifyError(sink.getError())
+         continue
          #
-         # Insert processing code here
-         #
-
+      # Insert processing code here
+      #
          output.putFrame(processed_img)
+   ```
 
 As an example, the processing code could outline the target in red, and show the corners in yellow for debugging purposes.
 

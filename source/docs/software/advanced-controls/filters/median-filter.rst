@@ -19,22 +19,21 @@ Creating a ``MedianFilter`` is simple:
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a MedianFilter with a window size of 5 samples
+  MedianFilter filter = new MedianFilter(5);
+  ```
 
-    // Creates a MedianFilter with a window size of 5 samples
-    MedianFilter filter = new MedianFilter(5);
+  ```c++
+  // Creates a MedianFilter with a window size of 5 samples
+  frc::MedianFilter<double> filter(5);
+  ```
 
-  .. code-block:: c++
-
-    // Creates a MedianFilter with a window size of 5 samples
-    frc::MedianFilter<double> filter(5);
-
-  .. code-block:: python
-
-    from wpimath.filter import MedianFilter
-
+  ```python
+  from wpimath.filter import MedianFilter
     # Creates a MedianFilter with a window size of 5 samples
-    filter = MedianFilter(5)
+  filter = MedianFilter(5)
+  ```
 
 ## Using a MedianFilter
 
@@ -42,17 +41,18 @@ Once your filter has been created, using it is easy - simply call the ``calculat
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Calculates the next value of the output
+  filter.calculate(input);
+  ```
 
-    // Calculates the next value of the output
-    filter.calculate(input);
+  ```c++
+  // Calculates the next value of the output
+  filter.Calculate(input);
+  ```
 
-  .. code-block:: c++
+  ```python
+  # Calculates the next value of the output
+  filter.calculate(input)
+  ```
 
-    // Calculates the next value of the output
-    filter.Calculate(input);
-
-  .. code-block:: python
-
-    # Calculates the next value of the output
-    filter.calculate(input)

@@ -6,44 +6,43 @@
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   protected void execute() {
+      SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge());
+      SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition());
+      SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle());
+      SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder());
+      SmartDashboard.putNumber("Right Drive Encoder", drivetrain.getRightEncoder());
+      SmartDashboard.putNumber("Turret Pot", turret.getCurrentAngle());
+      SmartDashboard.putNumber("Turret Pot Voltage", turret.getAverageVoltage());
+      SmartDashboard.putNumber("RPM", shooter.getRPM());
+   }
+   ```
 
-      protected void execute() {
-         SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge());
-         SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition());
-         SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle());
-         SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder());
-         SmartDashboard.putNumber("Right Drive Encoder", drivetrain.getRightEncoder());
-         SmartDashboard.putNumber("Turret Pot", turret.getCurrentAngle());
-         SmartDashboard.putNumber("Turret Pot Voltage", turret.getAverageVoltage());
-         SmartDashboard.putNumber("RPM", shooter.getRPM());
-      }
+   ```c++
+   void Command::Execute() {
+      frc::SmartDashboard::PutBoolean("Bridge Limit", BridgeTipper.AtBridge());
+      frc::SmartDashboard::PutNumber("Bridge Angle", BridgeTipper.GetPosition());
+      frc::SmartDashboard::PutNumber("Swerve Angle", Drivetrain.GetSwerveAngle());
+      frc::SmartDashboard::PutNumber("Left Drive Encoder", Drivetrain.GetLeftEncoder());
+      frc::SmartDashboard::PutNumber("Right Drive Encoder", Drivetrain.GetRightEncoder());
+      frc::SmartDashboard::PutNumber("Turret Pot", Turret.GetCurrentAngle());
+      frc::SmartDashboard::PutNumber("Turret Pot Voltage", Turret.GetAverageVoltage());
+      frc::SmartDashboard::PutNumber("RPM", Shooter.GetRPM());
+   }
+   ```
 
-   .. code-block:: c++
-
-      void Command::Execute() {
-         frc::SmartDashboard::PutBoolean("Bridge Limit", BridgeTipper.AtBridge());
-         frc::SmartDashboard::PutNumber("Bridge Angle", BridgeTipper.GetPosition());
-         frc::SmartDashboard::PutNumber("Swerve Angle", Drivetrain.GetSwerveAngle());
-         frc::SmartDashboard::PutNumber("Left Drive Encoder", Drivetrain.GetLeftEncoder());
-         frc::SmartDashboard::PutNumber("Right Drive Encoder", Drivetrain.GetRightEncoder());
-         frc::SmartDashboard::PutNumber("Turret Pot", Turret.GetCurrentAngle());
-         frc::SmartDashboard::PutNumber("Turret Pot Voltage", Turret.GetAverageVoltage());
-         frc::SmartDashboard::PutNumber("RPM", Shooter.GetRPM());
-      }
-
-   .. code-block:: python
-
-      from wpilib import SmartDashboard
-
+   ```python
+   from wpilib import SmartDashboard
       SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge())
-      SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition())
-      SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle())
-      SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder())
-      SmartDashboard.putNumber("Right Drive Encoder", drivetrain.getRightEncoder())
-      SmartDashboard.putNumber("Turret Pot", turret.getCurrentAngle())
-      SmartDashboard.putNumber("Turret Pot Voltage", turret.getAverageVoltage())
-      SmartDashboard.putNumber("RPM", shooter.getRPM())
+   SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition())
+   SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle())
+   SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder())
+   SmartDashboard.putNumber("Right Drive Encoder", drivetrain.getRightEncoder())
+   SmartDashboard.putNumber("Turret Pot", turret.getCurrentAngle())
+   SmartDashboard.putNumber("Turret Pot Voltage", turret.getAverageVoltage())
+   SmartDashboard.putNumber("RPM", shooter.getRPM())
+   ```
 
 You can write Boolean, Numeric, or String values to the SmartDashboard by simply calling the correct method for the type and including the name and the value of the data, no additional code is required. Any time in your program that you write another value with the same name, it appears in the same UI element on the screen on the driver station or development computer. As you can imagine this is a great way of debugging and getting status of your robot as it is operating.
 

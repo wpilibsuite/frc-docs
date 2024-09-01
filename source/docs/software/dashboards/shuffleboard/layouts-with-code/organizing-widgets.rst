@@ -10,28 +10,27 @@ Call ``withSize`` and ``withPosition`` to set the size and position of the widge
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   Shuffleboard.getTab("Pre-round")
+     .add("Auto Mode", autoModeChooser)
+     .withSize(2, 1) // make the widget 2x1
+     .withPosition(0, 0); // place it in the top-left corner
+   ```
 
-      Shuffleboard.getTab("Pre-round")
-        .add("Auto Mode", autoModeChooser)
-        .withSize(2, 1) // make the widget 2x1
-        .withPosition(0, 0); // place it in the top-left corner
+   ```c++
+   frc::Shuffleboard::GetTab("Pre-round")
+     .Add("Auto Mode", autoModeChooser)
+     .WithSize(2, 1)
+     .WithPosition(0,0);
+   ```
 
-   .. code-block:: c++
-
-      frc::Shuffleboard::GetTab("Pre-round")
-        .Add("Auto Mode", autoModeChooser)
-        .WithSize(2, 1)
-        .WithPosition(0,0);
-
-   .. code-block:: python
-
-      from wpilib.shuffleboard import Shuffleboard
-
+   ```python
+   from wpilib.shuffleboard import Shuffleboard
       (Shuffleboard.getTab("Pre-round")
-        .add("Auto Mode", autoModeChooser)
-        .withSize(2, 1) # make the widget 2x1
-        .withPosition(0, 0)) # place it in the top-left corner
+     .add("Auto Mode", autoModeChooser)
+     .withSize(2, 1) # make the widget 2x1
+     .withPosition(0, 0)) # place it in the top-left corner
+   ```
 
 ## Adding Widgets to Layouts
 
@@ -39,45 +38,39 @@ If there are many widgets in a tab with related data, it can be useful to place 
 
 .. tab-set-code::
 
-   .. code-block:: java
-
-      ShuffleboardLayout elevatorCommands = Shuffleboard.getTab("Commands")
-        .getLayout("Elevator", BuiltInLayouts.kList)
-        .withSize(2, 2)
-        .withProperties(Map.of("Label position", "HIDDEN")); // hide labels for commands
-
+   ```java
+   ShuffleboardLayout elevatorCommands = Shuffleboard.getTab("Commands")
+     .getLayout("Elevator", BuiltInLayouts.kList)
+     .withSize(2, 2)
+     .withProperties(Map.of("Label position", "HIDDEN")); // hide labels for commands
       elevatorCommands.add(new ElevatorDownCommand());
-      elevatorCommands.add(new ElevatorUpCommand());
+   elevatorCommands.add(new ElevatorUpCommand());
+   ```
 
-   .. code-block:: c++
-
-      wpi::StringMap<std::shared_ptr<nt::Value>> properties{
-        std::make_pair("Label position", nt::Value::MakeString("HIDDEN"))
-      };
-
+   ```c++
+   wpi::StringMap<std::shared_ptr<nt::Value>> properties{
+     std::make_pair("Label position", nt::Value::MakeString("HIDDEN"))
+   };
       frc::ShuffleboardLayout& elevatorCommands = frc::Shuffleboard::GetTab("Commands")
-        .GetLayout("Elevator", frc::BuiltInLayouts::kList)
-        .WithSize(2, 2)
-        .WithProperties(properties);
-
+     .GetLayout("Elevator", frc::BuiltInLayouts::kList)
+     .WithSize(2, 2)
+     .WithProperties(properties);
       ElevatorDownCommand* elevatorDown = new ElevatorDownCommand();
-      ElevatorUpCommand* elevatorUp = new ElevatorUpCommand();
-
+   ElevatorUpCommand* elevatorUp = new ElevatorUpCommand();
       elevatorCommands.Add("Elevator Down", elevatorDown);
-      elevatorCommands.Add("Elevator Up", elevatorUp);
+   elevatorCommands.Add("Elevator Up", elevatorUp);
+   ```
 
-   .. code-block:: python
-
-      from wpilib.shuffleboard import Shuffleboard
-      from wpilib.shuffleboard import BuiltInLayouts
-
+   ```python
+   from wpilib.shuffleboard import Shuffleboard
+   from wpilib.shuffleboard import BuiltInLayouts
       (elevatorCommands = Shuffleboard.getTab("Commands")
-        .getLayout("Elevator", BuiltInLayouts.kList)
-        .withSize(2, 2)
-        .withProperties(map("Label position", "HIDDEN"))) # hide labels for commands
-
+     .getLayout("Elevator", BuiltInLayouts.kList)
+     .withSize(2, 2)
+     .withProperties(map("Label position", "HIDDEN"))) # hide labels for commands
       elevatorCommands.add(ElevatorDownCommand())
-      elevatorCommands.add(ElevatorUpCommand())
+   elevatorCommands.add(ElevatorUpCommand())
+   ```
 
 .. image:: images/organizing-widgets/organized.png
   :alt: Commands buttons organized by the order they are added for the Elevator and Claw subsystems.

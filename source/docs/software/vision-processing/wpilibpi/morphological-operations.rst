@@ -26,10 +26,10 @@ Erosion in computer vision is similar to erosion on soil. It takes away from the
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      kernel = np.ones((3, 3), np.uint8)
-      binary_img = cv2.erode(binary_img, kernel, iterations = 1)
+   ```py
+   kernel = np.ones((3, 3), np.uint8)
+   binary_img = cv2.erode(binary_img, kernel, iterations = 1)
+   ```
 
 .. image:: images/morphological-operations/erosion.jpg
    :alt: Image after erosion.  Little spots have gone away and large spots reduced in size.
@@ -42,10 +42,10 @@ Dilation is opposite of erosion. Instead of taking away from the borders, it add
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      kernel = np.ones((3, 3), np.uint8)
-      binary_img = cv2.dilate(binary_img, kernel, iterations = 1)
+   ```py
+   kernel = np.ones((3, 3), np.uint8)
+   binary_img = cv2.dilate(binary_img, kernel, iterations = 1)
+   ```
 
 .. image:: images/morphological-operations/dilation.jpg
    :alt: Image after Dilation.  All of the spots have grown larger.
@@ -58,10 +58,10 @@ Opening is erosion followed by dilation. This process removes noise without affe
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      kernel = np.ones((3, 3), np.uint8)
-      binary_img = cv2.morphologyEx(binary_img, cv2.MORPH_OPEN, kernel)
+   ```py
+   kernel = np.ones((3, 3), np.uint8)
+   binary_img = cv2.morphologyEx(binary_img, cv2.MORPH_OPEN, kernel)
+   ```
 
 .. image:: images/morphological-operations/opening.jpg
    :alt: Image after Opening.  It has removed most of the small artifacts but still keeps the large size of the larger elements.
@@ -74,10 +74,10 @@ Closing is dilation followed by erosion. This process removes small holes or bre
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      kernel = np.ones((3, 3), np.uint8)
-      binary_img = cv2.morphologyEx(binary_img, cv2.MORPH_CLOSE, kernel)
+   ```py
+   kernel = np.ones((3, 3), np.uint8)
+   binary_img = cv2.morphologyEx(binary_img, cv2.MORPH_CLOSE, kernel)
+   ```
 
 .. image:: images/image-thresholding/after-thresholding.jpg
    :alt: Little holes around the image have been removed but overall size of each object stayed roughly the same.

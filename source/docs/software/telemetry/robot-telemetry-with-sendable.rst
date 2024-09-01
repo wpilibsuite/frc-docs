@@ -22,18 +22,17 @@ To send a ``Sendable`` object to the dashboard, simply use the dashboard's ``put
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    SmartDashboard.putData("Arm PID", armPIDController);
+    ```
 
-        SmartDashboard.putData("Arm PID", armPIDController);
+    ```c++
+    frc::SmartDashboard::PutData("Arm PID", &armPIDController);
+    ```
 
-    .. code-block:: c++
-
-        frc::SmartDashboard::PutData("Arm PID", &armPIDController);
-
-    .. code-block:: python
-
-        from wpilib import SmartDashboard
-
+    ```python
+    from wpilib import SmartDashboard
         SmartDashboard.putData("Arm PID", armPIDController)
+    ```
 
 Additionally, some ``Sendable`` classes bind setters to the data values sent *from the dashboard to the robot*, allowing remote tuning of robot parameters.

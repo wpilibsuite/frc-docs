@@ -206,13 +206,13 @@ In Java, it is recommended that the constants be used from other classes by stat
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   import static edu.wpi.first.wpilibj.templates.commandbased.Constants.OIConstants.*;
+   ```
 
-      import static edu.wpi.first.wpilibj.templates.commandbased.Constants.OIConstants.*;
-
-   .. code-block:: c++
-
-      using namespace OIConstants;
+   ```c++
+   using namespace OIConstants;
+   ```
 
 ## Subsystems
 

@@ -25,9 +25,9 @@ Java represents functions-as-data as instances of [functional interfaces](https:
 This might sound complicated, but in the context of WPILib we don't really need to worry much about using the functional interfaces themselves - the code that does that is internal to WPILib.  Instead, all we need to know is how to pass a function that we've written to a method that takes a functional interface as a parameter.  For a simple example, consider the signature of ``Commands.runOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
 .. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
-.. code-block:: java
-
-   public static Command runOnce(Runnable action, Subsystem... requirements)
+```java
+public static Command runOnce(Runnable action, Subsystem... requirements)
+```
 
 ``runOnce`` expects us to give it a ``Runnable`` parameter (named ``action``).  A ``Runnable`` is the Java term for a function that takes no parameters and returns no value.  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  There are two ways to do this: we can refer to some existing function using a "method reference", or we can define the function we want inline using a "lambda expression".
 
@@ -35,19 +35,19 @@ This might sound complicated, but in the context of WPILib we don't really need 
 
 A method reference lets us pass an already-existing function as our ``Runnable``:
 
-.. code-block:: java
-
-   // Create an InstantCommand that runs the `resetEncoders` method of the `drivetrain` object
-   Command disableCommand = runOnce(drivetrain::resetEncoders, drivetrain);
+```java
+// Create an InstantCommand that runs the `resetEncoders` method of the `drivetrain` object
+Command disableCommand = runOnce(drivetrain::resetEncoders, drivetrain);
+```
 
 The expression ``drivetrain::resetEncoders`` is a reference to the ``resetEncoders`` method of the ``drivetrain`` object.  It is not a method *call* - this line of code does not *itself* reset the encoders of the drivetrain.  Instead, it returns a ``Command`` that will do so *when it is scheduled.*
 
 Remember that in order for this to work, ``resetEncoders`` must be a ``Runnable`` - that is, it must take no parameters and return no value.  So, its signature must look like this:
 
-.. code-block:: java
-
-   // void because it returns no parameters, and has an empty parameter list
-   public void resetEncoders()
+```java
+// void because it returns no parameters, and has an empty parameter list
+public void resetEncoders()
+```
 
 If the function signature does not match this, Java will not be able to interpret the method reference as a ``Runnable`` and the code will not compile.  Note that all we need to do is make sure that the signature matches the signature of the single method in the ``Runnable`` functional interface - we don't need to *explicitly* name it as a ``Runnable``.
 
@@ -55,10 +55,10 @@ If the function signature does not match this, Java will not be able to interpre
 
 If we do not already have a named function that does what we want, we can define a function "inline" - that means, right inside of the call to ``runOnce``!  We do this by writing our function with a special syntax that uses an "arrow" symbol to link the argument list to the function body:
 
-.. code-block:: java
-
-   // Create an InstantCommand that runs the drive forward at half speed
-   Command driveHalfSpeed = runOnce(() -> { drivetrain.arcadeDrive(0.5, 0.0); }, drivetrain);
+```java
+// Create an InstantCommand that runs the drive forward at half speed
+Command driveHalfSpeed = runOnce(() -> { drivetrain.arcadeDrive(0.5, 0.0); }, drivetrain);
+```
 
 Java calls ``() -> { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression"; it may be less-confusingly called an "arrow function", "inline function", or "anonymous function" (because it has no name).  While this may look a bit funky, it is just another way of writing a function - the parentheses before the arrow are the function's argument list, and the code contained in the brackets is the function body.  The "lambda expression" here represents a function that calls ``drivetrain.arcadeDrive`` with a specific set of parameters - note again that this does not *call* the function, but merely defines it and passes it to the ``Command`` to be run later when the ``Command`` is scheduled.
 
@@ -82,19 +82,19 @@ If the function body of our lambda expression is only one line, Java lets us omi
 
 So, our ``Runnable`` lambda above could instead be written:
 
-.. code-block:: java
-
-   // Create an InstantCommand that runs the drive forward at half speed
-   Command driveHalfSpeed = runOnce(() -> drivetrain.arcadeDrive(0.5, 0.0), drivetrain);
+```java
+// Create an InstantCommand that runs the drive forward at half speed
+Command driveHalfSpeed = runOnce(() -> drivetrain.arcadeDrive(0.5, 0.0), drivetrain);
+```
 
 #### Omitting Parentheses around Single Lambda Parameters
 
 If the lambda expression is for a functional interface that takes only a single argument, we can omit the parenthesis around the parameter list:
 
-.. code-block:: java
-
-   // We can write this lambda with no parenthesis around its single argument
-   IntConsumer exampleLambda = (a -> System.out.println(a));
+```java
+// We can write this lambda with no parenthesis around its single argument
+IntConsumer exampleLambda = (a -> System.out.println(a));
+```
 
 ## Treating Functions as Data in C++
 
@@ -106,11 +106,11 @@ This sounds a lot more complicated than it is to use in practice.  Let's look at
 
 .. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
 
-.. code-block:: c++
-
-   CommandPtr RunOnce(
-    std::function<void()> action,
-    Requirements requirements);
+```c++
+CommandPtr RunOnce(
+ std::function<void()> action,
+ Requirements requirements);
+```
 
 ``runOnce`` expects us to give it a ``std::function<void()>`` parameter (named ``action``).  A ``std::function<void()>`` is the C++ type for a ``std::function`` that takes no parameters and returns no value (the template parameter, ``void()``, is a function type with no parameters and no return value).  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  C++ lacks a clean way to refer to existing class methods in a way that can automatically be converted to a ``std::function``, so the typical way to do this is to define a new function inline with a "lambda expression".
 
@@ -118,10 +118,10 @@ This sounds a lot more complicated than it is to use in practice.  Let's look at
 
 To pass a function to ``runOnce``, we need to write a short inline function expression using a special syntax that resembles ordinary C++ function declarations, but varies in a few important ways:
 
-.. code-block:: c++
-
-   // Create an InstantCommand that runs the drive forward at half speed
-   CommandPtr driveHalfSpeed = cmd::RunOnce([this] { drivetrain.ArcadeDrive(0.5, 0.0); }, {drivetrain});
+```c++
+// Create an InstantCommand that runs the drive forward at half speed
+CommandPtr driveHalfSpeed = cmd::RunOnce([this] { drivetrain.ArcadeDrive(0.5, 0.0); }, {drivetrain});
+```
 
 C++ calls ``[captures] (params) { body; }`` a "lambda expression".  It has three parts: a *capture list* (square brackets), an optional *parameter list* (parentheses), and a *function body* (curly brackets).  It may look a little strange, but the only real difference between a lambda expression and an ordinary function (apart from the lack of a function name) is the addition of the capture list.
 

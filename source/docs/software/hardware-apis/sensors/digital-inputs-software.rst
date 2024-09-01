@@ -14,15 +14,15 @@ A :code:`DigitalInput` can be initialized as follows:
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    // Initializes a DigitalInput on DIO 0
+    DigitalInput input = new DigitalInput(0);
+    ```
 
-        // Initializes a DigitalInput on DIO 0
-        DigitalInput input = new DigitalInput(0);
-
-    .. code-block:: c++
-
-        // Initializes a DigitalInput on DIO 0
-        frc::DigitalInput input{0};
+    ```c++
+    // Initializes a DigitalInput on DIO 0
+    frc::DigitalInput input{0};
+    ```
 
 ### Reading the value of the DigitalInput
 
@@ -30,15 +30,15 @@ The state of the :code:`DigitalInput` can be polled with the :code:`get` method:
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    // Gets the value of the digital input.  Returns true if the circuit is open.
+    input.get();
+    ```
 
-        // Gets the value of the digital input.  Returns true if the circuit is open.
-        input.get();
-
-    .. code-block:: c++
-
-        // Gets the value of the digital input.  Returns true if the circuit is open.
-        input.Get();
+    ```c++
+    // Gets the value of the digital input.  Returns true if the circuit is open.
+    input.Get();
+    ```
 
 ## Creating a DigitalInput from an AnalogInput
 
@@ -50,29 +50,25 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        // Initializes an AnalogTrigger on port 0
-        AnalogTrigger trigger0 = new AnalogTrigger(0);
-
+    ```java
+    // Initializes an AnalogTrigger on port 0
+    AnalogTrigger trigger0 = new AnalogTrigger(0);
         // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
-        AnalogInput input = new AnalogInput(1);
-        input.setAverageBits(2);
-
+    AnalogInput input = new AnalogInput(1);
+    input.setAverageBits(2);
         // Initializes an AnalogTrigger using the above input
-        AnalogTrigger trigger1 = new AnalogTrigger(input);
+    AnalogTrigger trigger1 = new AnalogTrigger(input);
+    ```
 
-    .. code-block:: c++
-
-        // Initializes an AnalogTrigger on port 0
-        frc::AnalogTrigger trigger0{0};
-
+    ```c++
+    // Initializes an AnalogTrigger on port 0
+    frc::AnalogTrigger trigger0{0};
         // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
-        frc::AnalogInput input{1};
-        input.SetAverageBits(2);
-
+    frc::AnalogInput input{1};
+    input.SetAverageBits(2);
         // Initializes an AnalogTrigger using the above input
-        frc::AnalogTrigger trigger1{input};
+    frc::AnalogTrigger trigger1{input};
+    ```
 
 ### Setting the trigger points
 
@@ -82,21 +78,19 @@ To convert the analog signal to a digital one, it is necessary to specify at wha
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
-        trigger.setLimitsRaw(1000, 3500);
-
+    ```java
+    // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
+    trigger.setLimitsRaw(1000, 3500);
         // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
-        trigger.setLimitsVoltage(1.5, 4);
+    trigger.setLimitsVoltage(1.5, 4);
+    ```
 
-    .. code-block:: c++
-
-        // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
-        trigger.SetLimitsRaw(1000, 3500);
-
+    ```c++
+    // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
+    trigger.SetLimitsRaw(1000, 3500);
         // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
-        trigger.SetLimitsVoltage(1.5, 4);
+    trigger.SetLimitsVoltage(1.5, 4);
+    ```
 
 ## Using DigitalInputs in code
 
@@ -108,38 +102,34 @@ Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| shoul
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        Spark spark = new Spark(0);
-
+    ```java
+    Spark spark = new Spark(0);
         // Limit switch on DIO 2
-        DigitalInput limit = new DigitalInput(2);
-
+    DigitalInput limit = new DigitalInput(2);
         public void autonomousPeriodic() {
-            // Runs the motor forwards at half speed, unless the limit is pressed
-            if(!limit.get()) {
-                spark.set(.5);
-            } else {
-                spark.set(0);
-            }
+        // Runs the motor forwards at half speed, unless the limit is pressed
+        if(!limit.get()) {
+            spark.set(.5);
+        } else {
+            spark.set(0);
         }
+    }
+    ```
 
-    .. code-block:: c++
-
-        // Motor for the mechanism
-        frc::Spark spark{0};
-
+    ```c++
+    // Motor for the mechanism
+    frc::Spark spark{0};
         // Limit switch on DIO 2
-        frc::DigitalInput limit{2};
-
+    frc::DigitalInput limit{2};
         void AutonomousPeriodic() {
-            // Runs the motor forwards at half speed, unless the limit is pressed
-            if(!limit.Get()) {
-                spark.Set(.5);
-            } else {
-                spark.Set(0);
-            }
+        // Runs the motor forwards at half speed, unless the limit is pressed
+        if(!limit.Get()) {
+            spark.Set(.5);
+        } else {
+            spark.Set(0);
         }
+    }
+    ```
 
 ### Homing a mechanism
 

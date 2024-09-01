@@ -34,17 +34,17 @@ Declaring requirements is done by overriding the ``getRequirements()`` method in
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  Commands.run(intake::activate, intake);
+  ```
 
-    Commands.run(intake::activate, intake);
+  ```c++
+  frc2::cmd::Run([&intake] { intake.Activate(); }, {&intake});
+  ```
 
-  .. code-block:: c++
-
-    frc2::cmd::Run([&intake] { intake.Activate(); }, {&intake});
-
-  .. code-block:: python
-
-    commands2.cmd.run(intake.activate, intake)
+  ```python
+  commands2.cmd.run(intake.activate, intake)
+  ```
 
 As a rule, command compositions require all subsystems their components require.
 
@@ -58,17 +58,17 @@ This property can be set either by overriding the ``runsWhenDisabled()`` method 
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  Command mayRunDuringDisabled = Commands.run(() -> updateTelemetry()).ignoringDisable(true);
+  ```
 
-    Command mayRunDuringDisabled = Commands.run(() -> updateTelemetry()).ignoringDisable(true);
+  ```c++
+  frc2::CommandPtr mayRunDuringDisabled = frc2::cmd::Run([] { UpdateTelemetry(); }).IgnoringDisable(true);
+  ```
 
-  .. code-block:: c++
-
-    frc2::CommandPtr mayRunDuringDisabled = frc2::cmd::Run([] { UpdateTelemetry(); }).IgnoringDisable(true);
-
-  .. code-block:: python
-
-    may_run_during_disabled = commands2.cmd.run(lambda: update_telemetry()).ignoring_disable(True)
+  ```python
+  may_run_during_disabled = commands2.cmd.run(lambda: update_telemetry()).ignoring_disable(True)
+  ```
 
 As a rule, command compositions may run when disabled if all their component commands set ``runsWhenDisabled`` as ``true``.
 
@@ -82,17 +82,17 @@ This property can be set either by overriding the ``getInterruptionBehavior`` me
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  Command noninteruptible = Commands.run(intake::activate, intake).withInterruptBehavior(Command.InterruptBehavior.kCancelIncoming);
+  ```
 
-    Command noninteruptible = Commands.run(intake::activate, intake).withInterruptBehavior(Command.InterruptBehavior.kCancelIncoming);
+  ```c++
+  frc2::CommandPtr noninterruptible = frc2::cmd::Run([&intake] { intake.Activate(); }, {&intake}).WithInterruptBehavior(Command::InterruptBehavior::kCancelIncoming);
+  ```
 
-  .. code-block:: c++
-
-    frc2::CommandPtr noninterruptible = frc2::cmd::Run([&intake] { intake.Activate(); }, {&intake}).WithInterruptBehavior(Command::InterruptBehavior::kCancelIncoming);
-
-  .. code-block:: python
-
-    non_interruptible = commands2.cmd.run(intake.activate, intake).with_interrupt_behavior(Command.InterruptBehavior.kCancelIncoming)
+  ```python
+  non_interruptible = commands2.cmd.run(intake.activate, intake).with_interrupt_behavior(Command.InterruptBehavior.kCancelIncoming)
+  ```
 
 As a rule, command compositions are ``kCancelIncoming`` if all their components are ``kCancelIncoming`` as well.
 
@@ -148,121 +148,117 @@ The ``run`` factory, backed by the ``RunCommand`` ([Java](https://github.wpilib.
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // A split-stick arcade command, with forward/backward controlled by the left
+  // hand, and turning controlled by the right.
+  new RunCommand(() -> m_robotDrive.arcadeDrive(
+      -driverController.getLeftY(),
+      driverController.getRightX()),
+      m_robotDrive)
+  ```
 
-    // A split-stick arcade command, with forward/backward controlled by the left
-    // hand, and turning controlled by the right.
-    new RunCommand(() -> m_robotDrive.arcadeDrive(
-        -driverController.getLeftY(),
-        driverController.getRightX()),
-        m_robotDrive)
+  ```c++
+  // A split-stick arcade command, with forward/backward controlled by the left
+  // hand, and turning controlled by the right.
+  frc2::RunCommand(
+    [this] {
+      m_drive.ArcadeDrive(
+          -m_driverController.GetLeftY(),
+          m_driverController.GetRightX());
+    },
+    {&m_drive}))
+  ```
 
-  .. code-block:: c++
-
-    // A split-stick arcade command, with forward/backward controlled by the left
-    // hand, and turning controlled by the right.
-    frc2::RunCommand(
-      [this] {
-        m_drive.ArcadeDrive(
-            -m_driverController.GetLeftY(),
-            m_driverController.GetRightX());
-      },
-      {&m_drive}))
-
-  .. code-block:: python
-
-    # A split-stick arcade command, with forward/backward controlled by the left
-    # hand, and turning controlled by the right.
-    commands2.cmd.run(lambda: robot_drive.arcade_drive(
-        -driver_controller.get_left_y(),
-        driver_controller.get_right_x()),
-        robot_drive)
-
-
+  ```python
+  # A split-stick arcade command, with forward/backward controlled by the left
+  # hand, and turning controlled by the right.
+  commands2.cmd.run(lambda: robot_drive.arcade_drive(
+      -driver_controller.get_left_y(),
+      driver_controller.get_right_x()),
+      robot_drive)
+      ```
 
 The ``startEnd`` factory, backed by the ``StartEndCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_start_end_command.html), :external:py:class:`Python <commands2.StartEndCommand>`) class, calls one lambda when scheduled, and then a second lambda when interrupted.
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    Commands.startEnd(
-        // Start a flywheel spinning at 50% power
-        () -> m_shooter.shooterSpeed(0.5),
-        // Stop the flywheel at the end of the command
-        () -> m_shooter.shooterSpeed(0.0),
-        // Requires the shooter subsystem
-        m_shooter
-    )
-
-  .. code-block:: c++
-
-    frc2::cmd::StartEnd(
+  ```java
+  Commands.startEnd(
       // Start a flywheel spinning at 50% power
-      [this] { m_shooter.shooterSpeed(0.5); },
+      () -> m_shooter.shooterSpeed(0.5),
       // Stop the flywheel at the end of the command
-      [this] { m_shooter.shooterSpeed(0.0); },
+      () -> m_shooter.shooterSpeed(0.0),
       // Requires the shooter subsystem
-      {&m_shooter}
-    )
+      m_shooter
+  )
+  ```
 
-  .. code-block:: python
+  ```c++
+  frc2::cmd::StartEnd(
+    // Start a flywheel spinning at 50% power
+    [this] { m_shooter.shooterSpeed(0.5); },
+    // Stop the flywheel at the end of the command
+    [this] { m_shooter.shooterSpeed(0.0); },
+    // Requires the shooter subsystem
+    {&m_shooter}
+  )
+  ```
 
-     commands2.cmd.start_end(
-        # Start a flywheel spinning at 50% power
-        lambda: shooter.shooter_speed(0.5),
-        # Stop the flywheel at the end of the command
-        lambda: shooter.shooter_speed(0.0),
-        # Requires the shooter subsystem
-        shooter)
+  ```python
+  commands2.cmd.start_end(
+     # Start a flywheel spinning at 50% power
+     lambda: shooter.shooter_speed(0.5),
+     # Stop the flywheel at the end of the command
+     lambda: shooter.shooter_speed(0.0),
+     # Requires the shooter subsystem
+     shooter)
+  ```
 
 ``FunctionalCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_functional_command.html), :external:py:class:`Python <commands2.FunctionalCommand>`) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>/Callable`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>/Callable[bool,[]]`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>/Callable[[],bool]`` for ``isFinished()``.
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    new FunctionalCommand(
-        // Reset encoders on command start
-        m_robotDrive::resetEncoders,
-        // Start driving forward at the start of the command
-        () -> m_robotDrive.arcadeDrive(kAutoDriveSpeed, 0),
-        // Stop driving at the end of the command
-        interrupted -> m_robotDrive.arcadeDrive(0, 0),
-        // End the command when the robot's driven distance exceeds the desired value
-        () -> m_robotDrive.getAverageEncoderDistance() >= kAutoDriveDistanceInches,
-        // Require the drive subsystem
-        m_robotDrive
-    )
-
-  .. code-block:: c++
-
-    frc2::FunctionalCommand(
+  ```java
+  new FunctionalCommand(
       // Reset encoders on command start
-      [this] { m_drive.ResetEncoders(); },
+      m_robotDrive::resetEncoders,
       // Start driving forward at the start of the command
-      [this] { m_drive.ArcadeDrive(ac::kAutoDriveSpeed, 0); },
+      () -> m_robotDrive.arcadeDrive(kAutoDriveSpeed, 0),
       // Stop driving at the end of the command
-      [this] (bool interrupted) { m_drive.ArcadeDrive(0, 0); },
+      interrupted -> m_robotDrive.arcadeDrive(0, 0),
       // End the command when the robot's driven distance exceeds the desired value
-      [this] { return m_drive.GetAverageEncoderDistance() >= kAutoDriveDistanceInches; },
-      // Requires the drive subsystem
-      {&m_drive}
-    )
+      () -> m_robotDrive.getAverageEncoderDistance() >= kAutoDriveDistanceInches,
+      // Require the drive subsystem
+      m_robotDrive
+  )
+  ```
 
+  ```c++
+  frc2::FunctionalCommand(
+    // Reset encoders on command start
+    [this] { m_drive.ResetEncoders(); },
+    // Start driving forward at the start of the command
+    [this] { m_drive.ArcadeDrive(ac::kAutoDriveSpeed, 0); },
+    // Stop driving at the end of the command
+    [this] (bool interrupted) { m_drive.ArcadeDrive(0, 0); },
+    // End the command when the robot's driven distance exceeds the desired value
+    [this] { return m_drive.GetAverageEncoderDistance() >= kAutoDriveDistanceInches; },
+    // Requires the drive subsystem
+    {&m_drive}
+  )
     .. code-block:: python
-
     commands2.cmd.functional_command(
-        # Reset encoders on command start
-        lambda: robot_drive.reset_encoders(),
-        # Start driving forward at the start of the command
-        lambda: robot_drive.arcade_drive(ac.kAutoDriveSpeed, 0),
-        # Stop driving at the end of the command
-        lambda interrupted: robot_drive.arcade_drive(0, 0),
-        # End the command when the robot's driven distance exceeds the desired value
-        lambda: robot_drive.get_average_encoder_distance() >= ac.kAutoDriveDistanceInches,
-        # Require the drive subsystem
-        robot_drive)
+      # Reset encoders on command start
+      lambda: robot_drive.reset_encoders(),
+      # Start driving forward at the start of the command
+      lambda: robot_drive.arcade_drive(ac.kAutoDriveSpeed, 0),
+      # Stop driving at the end of the command
+      lambda interrupted: robot_drive.arcade_drive(0, 0),
+      # End the command when the robot's driven distance exceeds the desired value
+      lambda: robot_drive.get_average_encoder_distance() >= ac.kAutoDriveDistanceInches,
+      # Require the drive subsystem
+      robot_drive)
+  ```
 
 To print a string and ending immediately, the library offers the ``Commands.print(String)``/``frc2::cmd::Print(std::string_view)``/``commands2.cmd.print(String)`` factory, backed by the ``PrintCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/PrintCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_print_command.html), :external:py:class:`Python <commands2.PrintCommand>`) subclass of ``InstantCommand``.
 
@@ -274,39 +270,39 @@ To wait and end after a specified period of time elapses, the library offers the
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Ends 5 seconds after being scheduled
+  new WaitCommand(5.0)
+  ```
 
-    // Ends 5 seconds after being scheduled
-    new WaitCommand(5.0)
+  ```c++
+  // Ends 5 seconds after being scheduled
+  frc2::WaitCommand(5.0_s)
+  ```
 
-  .. code-block:: c++
-
-    // Ends 5 seconds after being scheduled
-    frc2::WaitCommand(5.0_s)
-
-  .. code-block:: python
-
-    # Ends 5 seconds after being scheduled
-    commands2.cmd.wait(5.0)
+  ```python
+  # Ends 5 seconds after being scheduled
+  commands2.cmd.wait(5.0)
+  ```
 
 To wait until a certain condition becomes ``true``, the library offers the ``Commands.waitUntil(BooleanSupplier)``/``frc2::cmd::WaitUntil(std::function<bool()>)`` factory, backed by the ``WaitUntilCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_wait_until_command.html), :external:py:class:`Python <commands2.WaitUntilCommand>`).
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Ends after m_limitSwitch.get() returns true
+  new WaitUntilCommand(m_limitSwitch::get)
+  ```
 
-    // Ends after m_limitSwitch.get() returns true
-    new WaitUntilCommand(m_limitSwitch::get)
+  ```c++
+  // Ends after m_limitSwitch.Get() returns true
+  frc2::WaitUntilCommand([&m_limitSwitch] { return m_limitSwitch.Get(); })
+  ```
 
-  .. code-block:: c++
-
-    // Ends after m_limitSwitch.Get() returns true
-    frc2::WaitUntilCommand([&m_limitSwitch] { return m_limitSwitch.Get(); })
-
-  .. code-block:: python
-
-    # Ends after limit_switch.get() returns True
-    commands2.cmd.wait_until(limit_switch.get)
+  ```python
+  # Ends after limit_switch.get() returns True
+  commands2.cmd.wait_until(limit_switch.get)
+  ```
 
 ### Control Algorithm Commands
 

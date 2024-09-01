@@ -6,25 +6,24 @@ After thresholding and removing noise with morphological operations, you are now
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      _, contours, _ = cv2.findContours(binary_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+   ```py
+   _, contours, _ = cv2.findContours(binary_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+   ```
 
 In cases where there is only one vision target, you can just take the largest contour and assume that is the target you are looking for. When there is more than one vision target, you can use size, shape, fullness, and other properties to filter unwanted contours out.
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      if len(contours) > 0:
-         largest = contours[0]
-         for contour in contours:
-            if cv2.contourArea(contour) > cv2.contourArea(largest):
-               largest = contour
-
+   ```py
+   if len(contours) > 0:
+      largest = contours[0]
+      for contour in contours:
+         if cv2.contourArea(contour) > cv2.contourArea(largest):
+            largest = contour
          #
-         # Contour processing code
-         #
+      # Contour processing code
+      #
+   ```
 
 If you draw the contour you just found, it should look something like this:
 
@@ -39,28 +38,28 @@ Now that you've found the contour(s) that you want, you now want to get informat
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      rect = cv2.minAreaRect(contour)
-      center, _, _ = rect
-      center_x, center_y = center
+   ```py
+   rect = cv2.minAreaRect(contour)
+   center, _, _ = rect
+   center_x, center_y = center
+   ```
 
 ### Corners
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      corners = cv2.convexHull(contour)
-      corners = cv2.approxPolyDP(corners, 0.1 * cv2.arcLength(contour), True)
+   ```py
+   corners = cv2.convexHull(contour)
+   corners = cv2.approxPolyDP(corners, 0.1 * cv2.arcLength(contour), True)
+   ```
 
 ### Rotation
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-      _, _, rotation = cv2.fitEllipse(contour)
+   ```py
+   _, _, rotation = cv2.fitEllipse(contour)
+   ```
 
 For more information on how you can use these values, see :ref:`docs/software/vision-processing/introduction/identifying-and-processing-the-targets:Measurements`
 
@@ -70,21 +69,17 @@ You can use NetworkTables to send these properties to the Driver Station and the
 
 .. tab-set-code::
 
-   .. code-block:: py
-
-         import ntcore
-
-         nt = ntcore.NetworkTableInstance.getDefault().getTable('vision')
-
+   ```py
+   import ntcore
+      nt = ntcore.NetworkTableInstance.getDefault().getTable('vision')
+      #
+   # Initialization code here
+   #
+      while True:
          #
-         # Initialization code here
-         #
+      # Image processing code here
+      #
+         nt.putNumber('center_x', center_x)
+      nt.putNumber('center_y', center_y)
+   ```
 
-         while True:
-
-            #
-            # Image processing code here
-            #
-
-            nt.putNumber('center_x', center_x)
-            nt.putNumber('center_y', center_y)

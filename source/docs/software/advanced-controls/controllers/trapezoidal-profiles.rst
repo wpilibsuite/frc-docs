@@ -24,28 +24,27 @@ In order to create a trapezoidal motion profile, we must first impose some const
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a new set of trapezoidal motion profile constraints
+  // Max velocity of 10 meters per second
+  // Max acceleration of 20 meters per second squared
+  new TrapezoidProfile.Constraints(10, 20);
+  ```
 
-    // Creates a new set of trapezoidal motion profile constraints
-    // Max velocity of 10 meters per second
-    // Max acceleration of 20 meters per second squared
-    new TrapezoidProfile.Constraints(10, 20);
+  ```c++
+  // Creates a new set of trapezoidal motion profile constraints
+  // Max velocity of 10 meters per second
+  // Max acceleration of 20 meters per second squared
+  frc::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq};
+  ```
 
-  .. code-block:: c++
-
-    // Creates a new set of trapezoidal motion profile constraints
-    // Max velocity of 10 meters per second
-    // Max acceleration of 20 meters per second squared
-    frc::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq};
-
-  .. code-block:: python
-
-    from wpimath.trajectory import TrapezoidProfile
-
+  ```python
+  from wpimath.trajectory import TrapezoidProfile
     # Creates a new set of trapezoidal motion profile constraints
-    # Max velocity of 10 meters per second
-    # Max acceleration of 20 meters per second squared
-    TrapezoidProfile.Constraints(10, 20)
+  # Max velocity of 10 meters per second
+  # Max acceleration of 20 meters per second squared
+  TrapezoidProfile.Constraints(10, 20)
+  ```
 
 ### Start and End States
 
@@ -53,25 +52,24 @@ Next, we must specify the desired starting and ending states for our mechanisms 
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a new state with a position of 5 meters
+  // and a velocity of 0 meters per second
+  new TrapezoidProfile.State(5, 0);
+  ```
 
-    // Creates a new state with a position of 5 meters
-    // and a velocity of 0 meters per second
-    new TrapezoidProfile.State(5, 0);
+  ```c++
+  // Creates a new state with a position of 5 meters
+  // and a velocity of 0 meters per second
+  frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps};
+  ```
 
-  .. code-block:: c++
-
-    // Creates a new state with a position of 5 meters
-    // and a velocity of 0 meters per second
-    frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps};
-
-  .. code-block:: python
-
-    from wpimath.trajectory import TrapezoidProfile
-
+  ```python
+  from wpimath.trajectory import TrapezoidProfile
     # Creates a new state with a position of 5 meters
-    # and a velocity of 0 meters per second
-    TrapezoidProfile.State(5, 0)
+  # and a velocity of 0 meters per second
+  TrapezoidProfile.State(5, 0)
+  ```
 
 ### Putting It All Together
 
@@ -81,29 +79,28 @@ Now that we know how to create a set of constraints and the desired start/end st
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a new TrapezoidProfile
+  // Profile will have a max vel of 5 meters per second
+  // Profile will have a max acceleration of 10 meters per second squared
+  TrapezoidProfile profile = new TrapezoidProfile(new TrapezoidProfile.Constraints(5, 10));
+  ```
 
-    // Creates a new TrapezoidProfile
-    // Profile will have a max vel of 5 meters per second
-    // Profile will have a max acceleration of 10 meters per second squared
-    TrapezoidProfile profile = new TrapezoidProfile(new TrapezoidProfile.Constraints(5, 10));
+  ```c++
+  // Creates a new TrapezoidProfile
+  // Profile will have a max vel of 5 meters per second
+  // Profile will have a max acceleration of 10 meters per second squared
+  frc::TrapezoidProfile<units::meters> profile{
+    frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq}};
+  ```
 
-  .. code-block:: c++
-
-    // Creates a new TrapezoidProfile
-    // Profile will have a max vel of 5 meters per second
-    // Profile will have a max acceleration of 10 meters per second squared
-    frc::TrapezoidProfile<units::meters> profile{
-      frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq}};
-
-  .. code-block:: python
-
-    from wpimath.trajectory import TrapezoidProfile
-
+  ```python
+  from wpimath.trajectory import TrapezoidProfile
     # Creates a new TrapezoidProfile
-    # Profile will have a max vel of 5 meters per second
-    # Profile will have a max acceleration of 10 meters per second squared
-    profile = TrapezoidProfile(TrapezoidProfile.Constraints(5, 10))
+  # Profile will have a max vel of 5 meters per second
+  # Profile will have a max acceleration of 10 meters per second squared
+  profile = TrapezoidProfile(TrapezoidProfile.Constraints(5, 10))
+  ```
 
 ## Using a ``TrapezoidProfile``
 
@@ -113,28 +110,28 @@ Once we've created a ``TrapezoidProfile``, using it is very simple: to get the p
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Profile will start stationary at zero position
+  // Profile will end stationary at 5 meters
+  // Returns the motion profile state after 5 seconds of motion
+  profile.calculate(5, new TrapezoidProfile.State(0, 0), new TrapezoidProfile.State(5, 0));
+  ```
 
-    // Profile will start stationary at zero position
-    // Profile will end stationary at 5 meters
-    // Returns the motion profile state after 5 seconds of motion
-    profile.calculate(5, new TrapezoidProfile.State(0, 0), new TrapezoidProfile.State(5, 0));
+  ```c++
+  // Profile will start stationary at zero position
+  // Profile will end stationary at 5 meters
+  // Returns the motion profile state after 5 seconds of motion
+  profile.Calculate(5_s,
+  frc::TrapezoidProfile<units::meters>::State{0_m, 0_mps},
+  frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps});
+  ```
 
-  .. code-block:: c++
-
-    // Profile will start stationary at zero position
-    // Profile will end stationary at 5 meters
-    // Returns the motion profile state after 5 seconds of motion
-    profile.Calculate(5_s,
-    frc::TrapezoidProfile<units::meters>::State{0_m, 0_mps},
-    frc::TrapezoidProfile<units::meters>::State{5_m, 0_mps});
-
-  .. code-block:: python
-
-    # Profile will start stationary at zero position
-    # Profile will end stationary at 5 meters
-    # Returns the motion profile state after 5 seconds of motion
-    profile.calculate(5, TrapezoidProfile.State(0, 0), TrapezoidProfile.State(5, 0))
+  ```python
+  # Profile will start stationary at zero position
+  # Profile will end stationary at 5 meters
+  # Returns the motion profile state after 5 seconds of motion
+  profile.calculate(5, TrapezoidProfile.State(0, 0), TrapezoidProfile.State(5, 0))
+  ```
 
 ### Using the State
 
@@ -142,20 +139,20 @@ The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same on
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  var setpoint = profile.calculate(elapsedTime, initialState, goalState);
+  controller.calculate(encoder.getDistance(), setpoint.position);
+  ```
 
-    var setpoint = profile.calculate(elapsedTime, initialState, goalState);
-    controller.calculate(encoder.getDistance(), setpoint.position);
+  ```c++
+  auto setpoint = profile.Calculate(elapsedTime, initialState, goalState);
+  controller.Calculate(encoder.GetDistance(), setpoint.position.value());
+  ```
 
-  .. code-block:: c++
-
-    auto setpoint = profile.Calculate(elapsedTime, initialState, goalState);
-    controller.Calculate(encoder.GetDistance(), setpoint.position.value());
-
-  .. code-block:: python
-
-    setpoint = profile.calculate(elapsedTime, initialState, goalState)
-    controller.calculate(encoder.getDistance(), setpoint.position)
+  ```python
+  setpoint = profile.calculate(elapsedTime, initialState, goalState)
+  controller.calculate(encoder.getDistance(), setpoint.position)
+  ```
 
 ## Complete Usage Example
 

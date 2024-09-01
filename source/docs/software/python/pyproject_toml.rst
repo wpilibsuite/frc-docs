@@ -8,37 +8,33 @@ Currently RobotPy only stores deployment related information in ``pyproject.toml
 
 The ``pyproject.toml`` file looks something like this:
 
-.. code-block:: toml
-
-    #
-    # Use this configuration file to control what RobotPy packages are installed
-    # on your RoboRIO
-    #
-
-    [tool.robotpy]
-
-    # Version of robotpy this project depends on
-    robotpy_version = "2024.2.1.0"
-
-    # Which extra RobotPy components should be installed
-    # -> equivalent to `pip install robotpy[extra1, ...]
-    robotpy_extras = [
-        # "all"
-        # "apriltag"
-        # "commands2"
-        # "cscore"
-        # "navx"
-        # "pathplannerlib"
-        # "phoenix5"
-        # "phoenix6"
-        # "playingwithfusion"
-        # "rev"
-        # "romi"
-        # "sim"
-    ]
-
-    # Other pip packages to install
-    requires = []
+```toml
+#
+# Use this configuration file to control what RobotPy packages are installed
+# on your RoboRIO
+#
+[tool.robotpy]
+# Version of robotpy this project depends on
+robotpy_version = "2024.2.1.0"
+# Which extra RobotPy components should be installed
+# -> equivalent to `pip install robotpy[extra1, ...]
+robotpy_extras = [
+    # "all"
+    # "apriltag"
+    # "commands2"
+    # "cscore"
+    # "navx"
+    # "pathplannerlib"
+    # "phoenix5"
+    # "phoenix6"
+    # "playingwithfusion"
+    # "rev"
+    # "romi"
+    # "sim"
+]
+# Other pip packages to install
+requires = []
+```
 
 Each of the following will instruct the deploy process to install packages to the roboRIO:
 
@@ -48,14 +44,11 @@ Each of the following will instruct the deploy process to install packages to th
 
 ``requires`` is a list of strings, and each item is equivalent to a line of a [requirements.txt](https://pip.pypa.io/en/stable/reference/requirements-file-format/) file. You can install any pure python packages on the roboRIO and they will likely work, but any packages that have binary dependencies must be cross-compiled for the roboRIO. For example, if you needed to use ``numpy`` in your robot code:
 
-.. code-block:: toml
-
-    [tool.robotpy]
-
-    ...
-
-    requires = ["numpy"]
-
+```toml
+[tool.robotpy]
+...
+requires = ["numpy"]
+```
 
 The packages that can be installed are stored on the [WPILib Artifactory server](https://wpilib.jfrog.io/ui/native/wpilib-python-release-2024/).
 If you find that you need a package that isn't available on artifactory, consult the [roborio-wheels](https://github.com/robotpy/roborio-wheels) repository.

@@ -71,20 +71,26 @@ Use title case for headings.
 
 Lists should have a new line in between each indent level. The highest indent should have ``0`` indentation, and subsequent sublists should have an indentation starting at the first character of the previous indentation.
 
-.. code-block:: ReST
-
-   - Block one
-   - Block two
-   - Block three
-
-     - Sub 1
-     - Sub 2
-
-   - Block four
+```ReST
+- Block one
+- Block two
+- Block three
+  - Sub 1
+  - Sub 2
+- Block four
+```
 
 ## Code blocks
 
 All code blocks should have a language specified.
+
+````md
+```python
+print("Hello!")
+
+import antigravity
+```
+````
 
 1. Exception: Content where formatting must be preserved and has no language. Instead use ``text``.
 
@@ -94,61 +100,54 @@ Follow the [WPILib style guide](https://github.com/wpilibsuite/styleguide/) for 
 
 When possible, instead of using code blocks, an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
 
-.. code-block:: ReST
-
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
-      :language: java
-      :lines: 44-61
-      :linenos:
-      :lineno-start: 44
-
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
-      :language: c++
-      :lines: 18-30
-      :linenos:
-      :lineno-start: 18
+```ReST
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+   :language: java
+   :lines: 44-61
+   :linenos:
+   :lineno-start: 44
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+   :language: c++
+   :lines: 18-30
+   :linenos:
+   :lineno-start: 18
+```
 
 Make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
 
 .. note:: RLIs should use a tag instead of main to ensure the documentation isn't broken the next time there is a change to the RLIed code. If a tag hasn't been created, use the full (40 character) commit hash.
 
 ## Tabs
-To create code tabs in an article, you can use the ``.. tab-set-code::`` directive.  You can use ``code-block`` and ``rli`` directives inside. The format is:
+To create code tabs in an article, you can use the ``.. tab-set-code::`` directive.  You can use md style \`\`\` codeblocks and ``rli`` directives inside. The format is:
 
-.. code-block:: ReST
-
-   .. tab-set-code::
-
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
-         :language: java
-         :lines: 44-61
-         :linenos:
-         :lineno-start: 44
-
-
-      .. code-block:: c++
-         // Start the timer.
-         m_timer.Start();
-
-         // Send Field2d to SmartDashboard.
-         frc::SmartDashboard::PutData(&m_field);
-
-         // Reset the drivetrain's odometry to the starting pose of the trajectory.
-         m_drive.ResetOdometry(m_trajectory.InitialPose());
-
-         // Send our generated trajectory to Field2d.
-         m_field.GetObject("traj")->SetTrajectory(m_trajectory);
+````ReST
+.. tab-set-code::
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+      :language: java
+      :lines: 44-61
+      :linenos:
+      :lineno-start: 44
+   
+   ```c++
+   // Start the timer.
+   m_timer.Start();
+   // Send Field2d to SmartDashboard.
+   frc::SmartDashboard::PutData(&m_field);
+   // Reset the drivetrain's odometry to the starting pose of the trajectory.
+   m_drive.ResetOdometry(m_trajectory.InitialPose());
+   // Send our generated trajectory to Field2d.
+   m_field.GetObject("traj")->SetTrajectory(m_trajectory);
+   ```
+````
 
 If you need to use more than one tab per language, multiple RLIs per language, or text tabs, you can use the ``.. tab-set::`` and ``.. tab-item::`` directive.  The format is:
 
-.. code-block:: ReST
-
-   .. tab-set::
-
-      .. tab-item:: Title
-         :sync: sync-id
-
-            Content
+```ReST
+.. tab-set::
+   .. tab-item:: Title
+      :sync: sync-id
+         Content
+```
 
 This example uses the sync argument to allow all of the tabs with the same key to be synced together.  This means that when you click on a tab, all of the tabs with the same key will open.
 
@@ -160,16 +159,16 @@ Admonitions (list [here](https://docutils.sourceforge.io/docs/ref/rst/directives
 
 Use
 
-.. code-block:: ReST
-
-   .. warning:: This is a warning!
+```ReST
+.. warning:: This is a warning!
+```
 
 NOT
 
-.. code-block:: ReST
-
-   .. warning::
-      This is a warning!
+```ReST
+.. warning::
+   This is a warning!
+```
 
 ## Links
 
@@ -191,31 +190,30 @@ When using ``:ref:`` or ``:doc:`` you may customize the displayed text by surrou
 
 It is preferred to format external links as md style hyperlinks.
 
-.. code-block:: md
-
-   Hi there, [this is a link](https://example.com) and it's pretty cool!
+```md
+Hi there, [this is a link](https://example.com) and it's pretty cool!
+```
 
 However, in some cases where the same link must be referenced multiple times, the syntax below is accepted.
 
-.. code-block:: ReST
-
-   Hi there, `this is a link`_ and it's pretty cool!
-
-   ..  _this is a link: https://example.com
+```ReST
+Hi there, `this is a link`_ and it's pretty cool!
+..  _this is a link: https://example.com
+```
 
 ### Python API Links
 
 Links to the RobotPY API documentation should use the following sphinx [python syntax](https://www.sphinx-doc.org/en/master/usage/domains/python.html) (example linking to the DriverStation API docs).
 
-.. code-block:: ReST
-
-   :external:py:class:`Python <robotpy:wpilib.DriverStation>`
+```ReST
+:external:py:class:`Python <robotpy:wpilib.DriverStation>`
+```
 
 This expands to be equivalent to:
 
-.. code-block:: ReST
-
-   [Python](https://robotpy.readthedocs.io/projects/robotpy/en/stable/wpilib/DriverStation.html#wpilib.DriverStation)
+```ReST
+[Python](https://robotpy.readthedocs.io/projects/robotpy/en/stable/wpilib/DriverStation.html#wpilib.DriverStation)
+```
 
 ## Images
 
@@ -223,10 +221,10 @@ Images should be created with ``1`` new line separating content and directive.
 
 All images (including vectors) should be less than ``500`` kilobytes in size. Please make use of a smaller resolution and more efficient compression algorithms.
 
-.. code-block:: ReST
-
-   .. image:: images/my-article/my-image.png
-      :alt: Always add alt text here describing the image.
+```ReST
+.. image:: images/my-article/my-image.png
+   :alt: Always add alt text here describing the image.
+```
 
 ### Image Files
 
@@ -238,10 +236,10 @@ They should be of the ``.png`` or ``.jpg`` image extension. ``.gif`` is unaccept
 
 .. note:: Accessibility is important! Images should be marked with a ``:alt:`` directive.
 
-   .. code-block:: ReST
-
-      .. image:: images/my-document/my-image.png
-         :alt: An example image
+   ```ReST
+   .. image:: images/my-document/my-image.png
+      :alt: An example image
+   ```
 
 ### Vector Images
 
@@ -251,10 +249,10 @@ Simply use them as you would with any other image.
 
 .. note:: Ensure that any embedded images in the vector do not bloat the vector to exceed the 500KB limit.
 
-.. code-block:: ReST
-
-   .. image:: images/my-document/my-image.svg
-      :alt: Always add alt text here describing the image.
+```ReST
+.. image:: images/my-document/my-image.svg
+   :alt: Always add alt text here describing the image.
+```
 
 ### Draw.io Diagrams
 
@@ -262,10 +260,10 @@ Draw.io (also known as [diagrams.net](https://app.diagrams.net/)) diagrams are s
 
 Simply use them like you would any other vector image, or any other image.
 
-.. code-block:: ReST
-
-   .. image:: diagrams/my-document/diagram-1.drawio.svg
-      :alt: Always add alt text here describing the image.
+```ReST
+.. image:: diagrams/my-document/diagram-1.drawio.svg
+   :alt: Always add alt text here describing the image.
+```
 
 #### Draw.io Files
 
@@ -279,17 +277,17 @@ For the specifics of saving a diagram as a ``.svg`` with metadata, take a look a
 
 File extensions should use code formatting. For example, use:
 
-.. code-block:: text
-
-   ``.png``
+```text
+``.png``
+```
 
 instead of:
 
-.. code-block:: text
-
-   .png
-   ".png"
-   "``.png``"
+```text
+.png
+".png"
+"``.png``"
+```
 
 ## Table of Contents (TOC)
 
@@ -299,19 +297,15 @@ The category ``index.rst`` file can then be added to the root index file located
 
 ## Examples
 
-.. code-block:: ReST
-
-   # Title
-
-   This is an example article
-
-   .. code-block:: java
-
-      System.out.println("Hello World");
-
-   ## Section
-
-   This is a section!
+````ReST
+# Title
+This is an example article
+```java
+System.out.println("Hello World");
+```
+## Section
+This is a section!
+````
 
 ## Important Note!
 

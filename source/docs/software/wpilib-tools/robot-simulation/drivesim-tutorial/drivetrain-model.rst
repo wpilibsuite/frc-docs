@@ -21,45 +21,41 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 .. note:: It is very important to use SI units (i.e. meters and radians) when passing parameters in Java. In C++, the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` can be used to specify any unit type.
 
 .. tab-set-code::
-   .. code-block:: java
-
-      // Create the simulation model of our drivetrain.
-      DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
-        DCMotor.getNEO(2),       // 2 NEO motors on each side of the drivetrain.
-        7.29,                    // 7.29:1 gearing reduction.
-        7.5,                     // MOI of 7.5 kg m^2 (from CAD model).
-        60.0,                    // The mass of the robot is 60 kg.
-        Units.inchesToMeters(3), // The robot uses 3" radius wheels.
-        0.7112,                  // The track width is 0.7112 meters.
-
+   ```java
+   // Create the simulation model of our drivetrain.
+   DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
+     DCMotor.getNEO(2),       // 2 NEO motors on each side of the drivetrain.
+     7.29,                    // 7.29:1 gearing reduction.
+     7.5,                     // MOI of 7.5 kg m^2 (from CAD model).
+     60.0,                    // The mass of the robot is 60 kg.
+     Units.inchesToMeters(3), // The robot uses 3" radius wheels.
+     0.7112,                  // The track width is 0.7112 meters.
         // The standard deviations for measurement noise:
-        // x and y:          0.001 m
-        // heading:          0.001 rad
-        // l and r velocity: 0.1   m/s
-        // l and r position: 0.005 m
-        VecBuilder.fill(0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005));
+     // x and y:          0.001 m
+     // heading:          0.001 rad
+     // l and r velocity: 0.1   m/s
+     // l and r position: 0.005 m
+     VecBuilder.fill(0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005));
+   ```
 
-   .. code-block:: c++
-
-      #include <frc/simulation/DifferentialDrivetrainSim.h>
-
+   ```c++
+   #include <frc/simulation/DifferentialDrivetrainSim.h>
       ...
-
       // Create the simulation model of our drivetrain.
-      frc::sim::DifferentialDrivetrainSim m_driveSim{
-        frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
-        7.29,               // 7.29:1 gearing reduction.
-        7.5_kg_sq_m,        // MOI of 7.5 kg m^2 (from CAD model).
-        60_kg,              // The mass of the robot is 60 kg.
-        3_in,               // The robot uses 3" radius wheels.
-        0.7112_m,           // The track width is 0.7112 meters.
-
+   frc::sim::DifferentialDrivetrainSim m_driveSim{
+     frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
+     7.29,               // 7.29:1 gearing reduction.
+     7.5_kg_sq_m,        // MOI of 7.5 kg m^2 (from CAD model).
+     60_kg,              // The mass of the robot is 60 kg.
+     3_in,               // The robot uses 3" radius wheels.
+     0.7112_m,           // The track width is 0.7112 meters.
         // The standard deviations for measurement noise:
-        // x and y:          0.001 m
-        // heading:          0.001 rad
-        // l and r velocity: 0.1   m/s
-        // l and r position: 0.005 m
-        {0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005}};
+     // x and y:          0.001 m
+     // heading:          0.001 rad
+     // l and r velocity: 0.1   m/s
+     // l and r position: 0.005 m
+     {0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005}};
+   ```
 
 ## Creating a ``DifferentialDrivetrainSim`` from SysId Gains
 
@@ -83,68 +79,62 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 .. note:: It is very important to use SI units (i.e. meters and radians) when passing parameters in Java. In C++, the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` can be used to specify any unit type.
 
 .. tab-set-code::
-   .. code-block:: java
-
-      // Create our feedforward gain constants (from the identification
-      // tool)
-      static final double KvLinear = 1.98;
-      static final double KaLinear = 0.2;
-      static final double KvAngular = 1.5;
-      static final double KaAngular = 0.3;
-
+   ```java
+   // Create our feedforward gain constants (from the identification
+   // tool)
+   static final double KvLinear = 1.98;
+   static final double KaLinear = 0.2;
+   static final double KvAngular = 1.5;
+   static final double KaAngular = 0.3;
       // Create the simulation model of our drivetrain.
-      private DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
-        // Create a linear system from our identification gains.
-        LinearSystemId.identifyDrivetrainSystem(KvLinear, KaLinear, KvAngular, KaAngular),
-        DCMotor.getNEO(2),       // 2 NEO motors on each side of the drivetrain.
-        7.29,                    // 7.29:1 gearing reduction.
-        0.7112,                  // The track width is 0.7112 meters.
-        Units.inchesToMeters(3), // The robot uses 3" radius wheels.
-
+   private DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
+     // Create a linear system from our identification gains.
+     LinearSystemId.identifyDrivetrainSystem(KvLinear, KaLinear, KvAngular, KaAngular),
+     DCMotor.getNEO(2),       // 2 NEO motors on each side of the drivetrain.
+     7.29,                    // 7.29:1 gearing reduction.
+     0.7112,                  // The track width is 0.7112 meters.
+     Units.inchesToMeters(3), // The robot uses 3" radius wheels.
         // The standard deviations for measurement noise:
-        // x and y:          0.001 m
-        // heading:          0.001 rad
-        // l and r velocity: 0.1   m/s
-        // l and r position: 0.005 m
-        VecBuilder.fill(0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005));
+     // x and y:          0.001 m
+     // heading:          0.001 rad
+     // l and r velocity: 0.1   m/s
+     // l and r position: 0.005 m
+     VecBuilder.fill(0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005));
+   ```
 
-   .. code-block:: c++
-
-      #include <frc/simulation/DifferentialDrivetrainSim.h>
-      #include <frc/system/plant/LinearSystemId.h>
-      #include <units/acceleration.h>
-      #include <units/angular_acceleration.h>
-      #include <units/angular_velocity.h>
-      #include <units/voltage.h>
-      #include <units/velocity.h>
-
+   ```c++
+   #include <frc/simulation/DifferentialDrivetrainSim.h>
+   #include <frc/system/plant/LinearSystemId.h>
+   #include <units/acceleration.h>
+   #include <units/angular_acceleration.h>
+   #include <units/angular_velocity.h>
+   #include <units/voltage.h>
+   #include <units/velocity.h>
       ...
-
       // Create our feedforward gain constants (from the identification
-      // tool). Note that these need to have correct units.
-      static constexpr auto KvLinear = 1.98_V / 1_mps;
-      static constexpr auto KaLinear = 0.2_V / 1_mps_sq;
-      static constexpr auto KvAngular = 1.5_V / 1_rad_per_s;
-      static constexpr auto KaAngular = 0.3_V / 1_rad_per_s_sq;
-      // The track width is 0.7112 meters.
-      static constexpr auto kTrackwidth = 0.7112_m;
-
+   // tool). Note that these need to have correct units.
+   static constexpr auto KvLinear = 1.98_V / 1_mps;
+   static constexpr auto KaLinear = 0.2_V / 1_mps_sq;
+   static constexpr auto KvAngular = 1.5_V / 1_rad_per_s;
+   static constexpr auto KaAngular = 0.3_V / 1_rad_per_s_sq;
+   // The track width is 0.7112 meters.
+   static constexpr auto kTrackwidth = 0.7112_m;
       // Create the simulation model of our drivetrain.
-      frc::sim::DifferentialDrivetrainSim m_driveSim{
-        // Create a linear system from our identification gains.
-        frc::LinearSystemId::IdentifyDrivetrainSystem(
-          KvLinear, KaLinear, KvAngular, KaAngular, kTrackWidth),
-        kTrackWidth,
-        frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
-        7.29,               // 7.29:1 gearing reduction.
-        3_in,               // The robot uses 3" radius wheels.
-
+   frc::sim::DifferentialDrivetrainSim m_driveSim{
+     // Create a linear system from our identification gains.
+     frc::LinearSystemId::IdentifyDrivetrainSystem(
+       KvLinear, KaLinear, KvAngular, KaAngular, kTrackWidth),
+     kTrackWidth,
+     frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
+     7.29,               // 7.29:1 gearing reduction.
+     3_in,               // The robot uses 3" radius wheels.
         // The standard deviations for measurement noise:
-        // x and y:          0.001 m
-        // heading:          0.001 rad
-        // l and r velocity: 0.1   m/s
-        // l and r position: 0.005 m
-        {0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005}};
+     // x and y:          0.001 m
+     // heading:          0.001 rad
+     // l and r velocity: 0.1   m/s
+     // l and r position: 0.005 m
+     {0.001, 0.001, 0.001, 0.1, 0.1, 0.005, 0.005}};
+   ```
 
 ## Creating a ``DifferentialDrivetrainSim`` of the KoP Chassis
 
@@ -163,27 +153,25 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 .. note:: It is very important to use SI units (i.e. meters and radians) when passing parameters in Java. In C++, the :ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` can be used to specify any unit type.
 
 .. tab-set-code::
-   .. code-block:: java
+   ```java
+   private DifferentialDrivetrainSim m_driveSim = DifferentialDrivetrainSim.createKitbotSim(
+     KitbotMotor.kDualCIMPerSide, // 2 CIMs per side.
+     KitbotGearing.k10p71,        // 10.71:1
+     KitbotWheelSize.kSixInch,    // 6" diameter wheels.
+     null                         // No measurement noise.
+   );
+   ```
 
-      private DifferentialDrivetrainSim m_driveSim = DifferentialDrivetrainSim.createKitbotSim(
-        KitbotMotor.kDualCIMPerSide, // 2 CIMs per side.
-        KitbotGearing.k10p71,        // 10.71:1
-        KitbotWheelSize.kSixInch,    // 6" diameter wheels.
-        null                         // No measurement noise.
-      );
-
-   .. code-block:: c++
-
-      #include <frc/simulation/DifferentialDrivetrainSim.h>
-
+   ```c++
+   #include <frc/simulation/DifferentialDrivetrainSim.h>
       ...
-
       frc::sim::DifferentialDrivetrainSim m_driveSim =
-        frc::sim::DifferentialDrivetrainSim::CreateKitbotSim(
-          frc::sim::DifferentialDrivetrainSim::KitbotMotor::DualCIMPerSide, // 2 CIMs per side.
-          frc::sim::DifferentialDrivetrainSim::KitbotGearing::k10p71,       // 10.71:1
-          frc::sim::DifferentialDrivetrainSim::KitbotWheelSize::kSixInch    // 6" diameter wheels.
-      );
+     frc::sim::DifferentialDrivetrainSim::CreateKitbotSim(
+       frc::sim::DifferentialDrivetrainSim::KitbotMotor::DualCIMPerSide, // 2 CIMs per side.
+       frc::sim::DifferentialDrivetrainSim::KitbotGearing::k10p71,       // 10.71:1
+       frc::sim::DifferentialDrivetrainSim::KitbotWheelSize::kSixInch    // 6" diameter wheels.
+   );
+   ```
 
 .. note:: You can use the ``KitbotMotor``, ``KitbotGearing``, and ``KitbotWheelSize`` enum (Java) / struct (C++) to get commonly used configurations of the Kit of Parts Chassis.
 

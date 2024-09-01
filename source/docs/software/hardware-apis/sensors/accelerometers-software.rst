@@ -23,33 +23,27 @@ The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpili
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        // Creates an analog accelerometer on analog input 0
-        AnalogAccelerometer accelerometer = new AnalogAccelerometer(0);
-
+    ```java
+    // Creates an analog accelerometer on analog input 0
+    AnalogAccelerometer accelerometer = new AnalogAccelerometer(0);
         // Sets the sensitivity of the accelerometer to 1 volt per G
-        accelerometer.setSensitivity(1);
-
+    accelerometer.setSensitivity(1);
         // Sets the zero voltage of the accelerometer to 3 volts
-        accelerometer.setZero(3);
-
+    accelerometer.setZero(3);
         // Gets the current acceleration
-        double accel = accelerometer.getAcceleration();
+    double accel = accelerometer.getAcceleration();
+    ```
 
-    .. code-block:: c++
-
-        // Creates an analog accelerometer on analog input 0
-        frc::AnalogAccelerometer accelerometer{0};
-
+    ```c++
+    // Creates an analog accelerometer on analog input 0
+    frc::AnalogAccelerometer accelerometer{0};
         // Sets the sensitivity of the accelerometer to 1 volt per G
-        accelerometer.SetSensitivity(1);
-
+    accelerometer.SetSensitivity(1);
         // Sets the zero voltage of the accelerometer to 3 volts
-        accelerometer.SetZero(3);
-
+    accelerometer.SetZero(3);
         // Gets the current acceleration
-        double accel = accelerometer.GetAcceleration();
+    double accel = accelerometer.GetAcceleration();
+    ```
 
 If users have a 3-axis analog accelerometer, they can use three instances of this class, one for each axis.
 
@@ -57,15 +51,15 @@ There are getters for the acceleration along each cardinal direction (x, y, and 
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    // Sets the accelerometer to measure between -8 and 8 G's
+    accelerometer.setRange(BuiltInAccelerometer.Range.k8G);
+    ```
 
-        // Sets the accelerometer to measure between -8 and 8 G's
-        accelerometer.setRange(BuiltInAccelerometer.Range.k8G);
-
-    .. code-block:: c++
-
-        // Sets the accelerometer to measure between -8 and 8 G's
-        accelerometer.SetRange(BuiltInAccelerometer::Range::kRange_8G);
+    ```c++
+    // Sets the accelerometer to measure between -8 and 8 G's
+    accelerometer.SetRange(BuiltInAccelerometer::Range::kRange_8G);
+    ```
 
 ### ADXL345_I2C
 
@@ -73,17 +67,17 @@ The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/d
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    // Creates an ADXL345 accelerometer object on the MXP I2C port
+    // with a measurement range from -8 to 8 G's
+    ADXL345_I2C accelerometer = new ADXL345_I2C(I2C.Port.kMXP, ADXL345_I2C.Range.k8G);
+    ```
 
-        // Creates an ADXL345 accelerometer object on the MXP I2C port
-        // with a measurement range from -8 to 8 G's
-        ADXL345_I2C accelerometer = new ADXL345_I2C(I2C.Port.kMXP, ADXL345_I2C.Range.k8G);
-
-    .. code-block:: c++
-
-        // Creates an ADXL345 accelerometer object on the MXP I2C port
-        // with a measurement range from -8 to 8 G's
-        frc::ADXL345_I2C accelerometer{I2C::Port::kMXP, frc::ADXL345_I2C::Range::kRange_8G};
+    ```c++
+    // Creates an ADXL345 accelerometer object on the MXP I2C port
+    // with a measurement range from -8 to 8 G's
+    frc::ADXL345_I2C accelerometer{I2C::Port::kMXP, frc::ADXL345_I2C::Range::kRange_8G};
+    ```
 
 ### ADXL345_SPI
 
@@ -91,17 +85,17 @@ The :code:`ADXL345_SPI` class ([Java](https://github.wpilib.org/allwpilib/docs/d
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    // Creates an ADXL345 accelerometer object on the MXP SPI port
+    // with a measurement range from -8 to 8 G's
+    ADXL345_SPI accelerometer = new ADXL345_SPI(SPI.Port.kMXP, ADXL345_SPI.Range.k8G);
+    ```
 
-        // Creates an ADXL345 accelerometer object on the MXP SPI port
-        // with a measurement range from -8 to 8 G's
-        ADXL345_SPI accelerometer = new ADXL345_SPI(SPI.Port.kMXP, ADXL345_SPI.Range.k8G);
-
-    .. code-block:: c++
-
-        // Creates an ADXL345 accelerometer object on the MXP SPI port
-        // with a measurement range from -8 to 8 G's
-        frc::ADXL345_SPI accelerometer{SPI::Port::kMXP, frc::ADXL345_SPI::Range::kRange_8G};
+    ```c++
+    // Creates an ADXL345 accelerometer object on the MXP SPI port
+    // with a measurement range from -8 to 8 G's
+    frc::ADXL345_SPI accelerometer{SPI::Port::kMXP, frc::ADXL345_SPI::Range::kRange_8G};
+    ```
 
 ### ADXL362
 
@@ -109,17 +103,17 @@ The :code:`ADXL362` class ([Java](https://github.wpilib.org/allwpilib/docs/devel
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    // Creates an ADXL362 accelerometer object on the MXP SPI port
+    // with a measurement range from -8 to 8 G's
+    ADXL362 accelerometer = new ADXL362(SPI.Port.kMXP, ADXL362.Range.k8G);
+    ```
 
-        // Creates an ADXL362 accelerometer object on the MXP SPI port
-        // with a measurement range from -8 to 8 G's
-        ADXL362 accelerometer = new ADXL362(SPI.Port.kMXP, ADXL362.Range.k8G);
-
-    .. code-block:: c++
-
-        // Creates an ADXL362 accelerometer object on the MXP SPI port
-        // with a measurement range from -8 to 8 G's
-        frc::ADXL362 accelerometer{SPI::Port::kMXP, frc::ADXL362::Range::kRange_8G};
+    ```c++
+    // Creates an ADXL362 accelerometer object on the MXP SPI port
+    // with a measurement range from -8 to 8 G's
+    frc::ADXL362 accelerometer{SPI::Port::kMXP, frc::ADXL362::Range::kRange_8G};
+    ```
 
 ### BuiltInAccelerometer
 
@@ -127,17 +121,17 @@ The :code:`BuiltInAccelerometer` class ([Java](https://github.wpilib.org/allwpil
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    // Creates an object for the built-in accelerometer
+    // Range defaults to +- 8 G's
+    BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
+    ```
 
-        // Creates an object for the built-in accelerometer
-        // Range defaults to +- 8 G's
-        BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
-
-    .. code-block:: c++
-
-        // Creates an object for the built-in accelerometer
-        // Range defaults to +- 8 G's
-        frc::BuiltInAccelerometer accelerometer;
+    ```c++
+    // Creates an object for the built-in accelerometer
+    // Range defaults to +- 8 G's
+    frc::BuiltInAccelerometer accelerometer;
+    ```
 
 ## Third-party accelerometers
 
@@ -153,75 +147,63 @@ For detecting collisions, it is often more robust to measure the jerk than the a
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        double prevXAccel = 0.0;
-        double prevYAccel = 0.0;
-
+    ```java
+    double prevXAccel = 0.0;
+    double prevYAccel = 0.0;
         BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
-
         @Override
-        public void robotPeriodic() {
-            // Gets the current accelerations in the X and Y directions
-            double xAccel = accelerometer.getX();
-            double yAccel = accelerometer.getY();
-
+    public void robotPeriodic() {
+        // Gets the current accelerations in the X and Y directions
+        double xAccel = accelerometer.getX();
+        double yAccel = accelerometer.getY();
             // Calculates the jerk in the X and Y directions
-            // Divides by .02 because default loop timing is 20ms
-            double xJerk = (xAccel - prevXAccel) / 0.02;
-            double yJerk = (yAccel - prevYAccel) / 0.02;
-
+        // Divides by .02 because default loop timing is 20ms
+        double xJerk = (xAccel - prevXAccel) / 0.02;
+        double yJerk = (yAccel - prevYAccel) / 0.02;
             prevXAccel = xAccel;
-            prevYAccel = yAccel;
-        }
+        prevYAccel = yAccel;
+    }
+    ```
 
-    .. code-block:: c++
-
-        double prevXAccel = 0.0;
-        double prevYAccel = 0.0;
-
+    ```c++
+    double prevXAccel = 0.0;
+    double prevYAccel = 0.0;
         frc::BuiltInAccelerometer accelerometer;
-
         void Robot::RobotPeriodic() {
-            // Gets the current accelerations in the X and Y directions
-            double xAccel = accelerometer.GetX();
-            double yAccel = accelerometer.GetY();
-
+        // Gets the current accelerations in the X and Y directions
+        double xAccel = accelerometer.GetX();
+        double yAccel = accelerometer.GetY();
             // Calculates the jerk in the X and Y directions
-            // Divides by .02 because default loop timing is 20ms
-            double xJerk = (xAccel - prevXAccel) / 0.02;
-            double yJerk = (yAccel - prevYAccel) / 0.02;
-
+        // Divides by .02 because default loop timing is 20ms
+        double xJerk = (xAccel - prevXAccel) / 0.02;
+        double yJerk = (yAccel - prevYAccel) / 0.02;
             prevXAccel = xAccel;
-            prevYAccel = yAccel;
-        }
+        prevYAccel = yAccel;
+    }
+    ```
 
 Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_linear_filter.html)) to reduce the noise:
 
 .. tab-set-code::
 
-    .. code-block:: java
-
-        BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
-
+    ```java
+    BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
         // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
-
         LinearFilter xAccelFilter = LinearFilter.movingAverage(10);
-
         @Override
-        public void robotPeriodic() {
-            // Get the filtered X acceleration
-            double filteredXAccel = xAccelFilter.calculate(accelerometer.getX());
-        }
+    public void robotPeriodic() {
+        // Get the filtered X acceleration
+        double filteredXAccel = xAccelFilter.calculate(accelerometer.getX());
+    }
+    ```
 
-    .. code-block:: c++
-
-        frc::BuiltInAccelerometer accelerometer;
-
+    ```c++
+    frc::BuiltInAccelerometer accelerometer;
         // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
-        auto xAccelFilter = frc::LinearFilter::MovingAverage(10);
-
+    auto xAccelFilter = frc::LinearFilter::MovingAverage(10);
         void Robot::RobotPeriodic() {
-            // Get the filtered X acceleration
-            double filteredXAccel = xAccelFilter.Calculate(accelerometer.GetX());
-        }
+        // Get the filtered X acceleration
+        double filteredXAccel = xAccelFilter.Calculate(accelerometer.GetX());
+    }
+    ```
+

@@ -40,12 +40,12 @@ Often a team may want to test their code without having an actual robot availabl
 
       Your console output in Visual Studio Code should look like the below. However, teams probably will want to actually *test* their code versus just running the simulation. This can be done using :doc:`WPILib's Simulation GUI <simulation-gui>`.
 
-      .. code-block:: console
-
-         ********** Robot program starting **********
-         Default disabledInit() method... Override me!
-         Default disabledPeriodic() method... Override me!
-         Default robotPeriodic() method... Override me!
+      ```console
+      ********** Robot program starting **********
+      Default disabledInit() method... Override me!
+      Default disabledPeriodic() method... Override me!
+      Default robotPeriodic() method... Override me!
+      ```
 
       .. important:: Simulation can also be run outside of VS Code using ``./gradlew simulateJava`` for Java or ``./gradlew simulateNative`` for C++.
 
@@ -62,23 +62,23 @@ Often a team may want to test their code without having an actual robot availabl
          .. tab-item:: Windows
             :sync: windows
 
-            .. code-block:: sh
-
-               py -3 -m robotpy sim
+            ```sh
+            py -3 -m robotpy sim
+            ```
 
          .. tab-item:: macOS
             :sync: macos
 
-            .. code-block:: sh
-
-               python3 -m robotpy sim
+            ```sh
+            python3 -m robotpy sim
+            ```
 
          .. tab-item:: Linux
             :sync: linux
 
-            .. code-block:: sh
-
-               python3 -m robotpy sim
+            ```sh
+            python3 -m robotpy sim
+            ```
 
 ## Running Robot Dashboards
 

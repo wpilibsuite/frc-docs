@@ -40,19 +40,18 @@ The easiest way to get data displayed on the dashboard is simply to use methods 
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   SmartDashboard.putNumber("Joystick X value", joystick1.getX());
+   ```
 
-      SmartDashboard.putNumber("Joystick X value", joystick1.getX());
+   ```c++
+   frc::SmartDashboard::PutNumber("Joystick X value", joystick1.getX());
+   ```
 
-   .. code-block:: c++
-
-      frc::SmartDashboard::PutNumber("Joystick X value", joystick1.getX());
-
-   .. code-block:: python
-
-      from wpilib import SmartDashboard
-
+   ```python
+   from wpilib import SmartDashboard
       SmartDashboard.putNumber("Joystick X value", joystick1.getX())
+   ```
 
 to see a field displayed with the label "Joystick X value" and a value of the X value of the joystick. Each time this line of code is executed, a new joystick value will be sent to Shuffleboard. Remember: you must write the joystick value whenever you want to see an updated value. Executing this line once at the start of the program will only display the value once at the time the line of code was executed.
 

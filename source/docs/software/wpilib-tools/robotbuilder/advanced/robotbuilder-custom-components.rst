@@ -81,9 +81,9 @@ A line-by-line breakdown of the file:
 
 This example expects a KiwiDrive class with the constructor
 
-.. code-block:: c++
-
-   KiwiDrive(SpeedController, SpeedController, SpeedController)
+```c++
+KiwiDrive(SpeedController, SpeedController, SpeedController)
+```
 
 If your team uses Java, this file can be empty.
 
@@ -93,9 +93,9 @@ If your team uses Java, this file can be empty.
 
 Very similar to the C++ export file; the only difference should be the Construction line. This example expects a KiwiDrive class with the constructor
 
-.. code-block:: java
-
-   KiwiDrive(SpeedController, SpeedController, SpeedController)
+```java
+KiwiDrive(SpeedController, SpeedController, SpeedController)
+```
 
 If your team uses C++, this file can be empty.
 
