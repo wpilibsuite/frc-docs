@@ -112,9 +112,7 @@ linkcheckdiff_branch = "origin/main"
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/stable/"
 ogp_site_name = "FIRST Robotics Competition Documentation"
-ogp_image = (
-    "https://raw.githubusercontent.com/wpilibsuite/branding/main/png/wpilib-128.png"
-)
+ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/main/export/png/wpilib-icon-256.png"
 
 # Configure photofinish ci mode
 photofinish_ci_only = True
