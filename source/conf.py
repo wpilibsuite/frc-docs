@@ -47,7 +47,6 @@ extensions = [
     "sphinxext.rediraffe",
     "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
-    "sphinxext.linkcheckdiff",
     "sphinxext.mimictoc",
     "sphinxext.presentations",
     "hoverxref.extension",
@@ -105,9 +104,6 @@ rediraffe_redirects = "redirects.txt"
 
 # Required accuracy for redirect writer
 rediraffe_auto_redirect_perc = 80
-
-# Configure linkcheck diff branch
-linkcheckdiff_branch = "origin/main"
 
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/stable/"
