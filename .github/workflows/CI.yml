@@ -186,3 +186,18 @@ jobs:
     - name: Format
       run: |
         black --check .
+
+  check-codeblock-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.9
+      - name: Check Coverage
+        run: |
+          python scripts/check_codeblock_coverage.py --dir=source/docs/software --wordy --output=codeblock_coverage.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codeblock-coverage
+          path: codeblock_coverage.txt
