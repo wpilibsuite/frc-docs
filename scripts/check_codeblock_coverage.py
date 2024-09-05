@@ -4,6 +4,7 @@ import re
 import argparse
 from dataclasses import dataclass
 
+
 @dataclass
 class CodeBlock:
     """
@@ -14,9 +15,11 @@ class CodeBlock:
         file (str): The file path of the .rst file.
         langs (list[str]): A list of languages found in the code block.
     """
+
     start: int
     file: str
     langs: list[str]
+
 
 def get_all_rst_files(dir: str) -> list[str]:
     """
@@ -35,6 +38,7 @@ def get_all_rst_files(dir: str) -> list[str]:
                 files.append(os.path.join(root, filename))
     return files
 
+
 def is_codeblock(line: str) -> bool:
     """
     Checks if a line in an .rst file indicates the start of a code block.
@@ -46,6 +50,7 @@ def is_codeblock(line: str) -> bool:
         bool: True if the line starts a code block, False otherwise.
     """
     return line.startswith(".. tab-set-code::") or line.startswith(".. tab-set::")
+
 
 def get_blocks_from_rst_file(file: str) -> list[CodeBlock]:
     """
@@ -69,12 +74,17 @@ def get_blocks_from_rst_file(file: str) -> list[CodeBlock]:
                 langs = []
             else:
                 if line.startswith(" ") or line.startswith("\t"):
-                    lang = re.search("(`{3}|:language: )(java|python|c\\+\\+)", line.lower())
+                    lang = re.search(
+                        "(`{3}|:language: )(java|python|c\\+\\+)", line.lower()
+                    )
                     if lang is not None:
                         langs.append(lang.group(2))
     return blocks
 
-def generate_report(blocks: list[CodeBlock], langs: list[str], wordy: bool, output: str):
+
+def generate_report(
+    blocks: list[CodeBlock], langs: list[str], wordy: bool, output: str
+):
     """
     Generates a report of code block coverage and writes it to the specified output.
 
@@ -100,7 +110,10 @@ def generate_report(blocks: list[CodeBlock], langs: list[str], wordy: bool, outp
     # Print the coverage summary
     print(f"Total code blocks: {blocks_count}", file=stream)
     for lang, coverage in langs_coverage.items():
-        print(f"{lang} coverage: {coverage}/{blocks_count} ({coverage/blocks_count*100:.2f}%)", file=stream)
+        print(
+            f"{lang} coverage: {coverage}/{blocks_count} ({coverage/blocks_count*100:.2f}%)",
+            file=stream,
+        )
 
     # If wordy flag is set, print detailed information about missing code blocks
     if wordy:
@@ -115,12 +128,15 @@ def generate_report(blocks: list[CodeBlock], langs: list[str], wordy: bool, outp
         if stream is not sys.stdout:
             stream.close()
 
+
 def main():
     """
     The main entry point of the script.
     """
     # Set up argument parsing
-    parser = argparse.ArgumentParser(description="Check code block coverage in FRC docs")
+    parser = argparse.ArgumentParser(
+        description="Check code block coverage in FRC docs"
+    )
     parser.add_argument("--dir", type=str, help="Directory to search for rst files")
     parser.add_argument(
         "--wordy",
@@ -152,11 +168,12 @@ def main():
             continue
         else:
             blocks.extend(file_blocks)
-    
+
     # Generate the report based on the collected code blocks
     generate_report(
         blocks=blocks, langs=args.langs, wordy=args.wordy, output=args.output
     )
+
 
 if __name__ == "__main__":
     main()
