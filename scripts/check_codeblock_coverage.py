@@ -37,7 +37,7 @@ def get_blocks_from_rst_file(file: str):
                 block_start = index + 1
             elif found_block:
                 if line.startswith(' ') or line.startswith('\t'):
-                    lang = re.search("(`{3}|:language: )(java|python|cpp|c\+\+)", line)
+                    lang = re.search("(`{3}|:language: )(java|python|cpp|c\\+\\+)", line)
                     if(lang is not None):
                         langs.append(lang.group(2))
                     block_text += line
@@ -55,6 +55,7 @@ def get_blocks_from_rst_file(file: str):
                     block_text = ''
                     block_start = None
                     found_block = False
+                    langs = []
     return blocks
 
 def main():
