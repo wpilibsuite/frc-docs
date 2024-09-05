@@ -46,10 +46,10 @@ def get_blocks_from_rst_file(file: str):
                         langs.append(lang.group(2))
     return blocks
 
-def generate_report(blocks: list[CodeBlock], langs: list[str], wordy: bool):
+def generate_report(blocks: list[CodeBlock], langs: list[str], wordy: bool, output: str):
     stream = sys.stdout
     if wordy:
-        stream = open("output.txt", "w")
+        stream = open(output, "w")
 
     blocks_count = len(blocks)
     langs_coverage = {lang: 0 for lang in langs}
@@ -75,6 +75,8 @@ def main():
     parser = argparse.ArgumentParser(description='Check code block coverage in FRC docs')
     parser.add_argument('--dir', type=str, help='Directory to search for rst files')
     parser.add_argument('--wordy', action='store_true', help='Outputs which code blocks are missing languages')
+    parser.add_argument('--output', type=str, default='output.txt', help='Output file for missing code blocks')
+    parser.add_argument('--langs', nargs='+', default=["java", "python", "c++"], help='Languages to check for')
 
     args = parser.parse_args()
     print(args.wordy)
@@ -87,7 +89,7 @@ def main():
             continue
         else: 
             blocks.extend(file_blocks)
-    generate_report(blocks=blocks, langs=["java", "python", "c++"], wordy=args.wordy)
+    generate_report(blocks=blocks, langs=args.langs, wordy=args.wordy, output=args.output)
 
 
 
