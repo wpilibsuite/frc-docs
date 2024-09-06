@@ -1,6 +1,6 @@
 # Trapezoidal Motion Profiles in WPILib
 
-.. todo:: link to conceptual motion profiling art
+.. todo:: link to conceptual motion profiling article
 
 .. note:: This article covers the in-code generation of trapezoidal motion profiles.  Documentation describing the involved concepts in more detail is forthcoming.
 
