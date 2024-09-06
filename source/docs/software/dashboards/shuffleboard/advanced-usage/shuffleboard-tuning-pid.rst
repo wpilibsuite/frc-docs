@@ -40,9 +40,9 @@ The following example demonstrates how to create a button on your dashboard that
   ```java
   ShuffleboardTab tab = Shuffleboard.getTab("Shooter");
   GenericEntry shooterEnable = tab.add("Shooter Enable", false).getEntry();
-    // Command Example assumed to be in a PIDSubsystem
+  // Command Example assumed to be in a PIDSubsystem
   new NetworkButton(shooterEnable).onTrue(new InstantCommand(m_shooter::enable));
-    // Timed Robot Example
+  // Timed Robot Example
   if (shooterEnable.getBoolean()) {
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
@@ -53,9 +53,9 @@ The following example demonstrates how to create a button on your dashboard that
   ```c++
   frc::ShuffleboardTab& tab = frc::Shuffleboard::GetTab("Shooter");
   nt::GenericEntry& shooterEnable = *tab.Add("Shooter Enable", false).GetEntry();
-    // Command-based assumed to be in a PIDSubsystem
+  // Command-based assumed to be in a PIDSubsystem
   frc2::NetworkButton(shooterEnable).OnTrue(frc2::InstantCommand([&] { m_shooter.Enable(); }));
-    // Timed Robot Example
+  // Timed Robot Example
   if (shooterEnable.GetBoolean()) {
     // Calculates the output of the PID algorithm based on the sensor reading
     // and sends it to a motor
@@ -65,11 +65,11 @@ The following example demonstrates how to create a button on your dashboard that
 
   ```python
   from wpilib.shuffleboard import Shuffleboard
-    tab = Shuffleboard.getTab("Shooter")
+  tab = Shuffleboard.getTab("Shooter")
   shooterEnable = tab.add("Shooter Enable", false).getEntry()
-    # Command Example assumed to be in a PIDSubsystem
+  # Command Example assumed to be in a PIDSubsystem
   NetworkButton(shooterEnable).onTrue(InstantCommand(m_shooter.enable()))
-    # Timed Robot Example
+  # Timed Robot Example
   if (shooterEnable.getBoolean()):
     # Calculates the output of the PID algorithm based on the sensor reading
     # and sends it to a motor

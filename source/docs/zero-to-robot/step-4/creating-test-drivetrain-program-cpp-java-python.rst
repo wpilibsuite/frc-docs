@@ -168,7 +168,7 @@ Now let's look at various parts of the code.
          import edu.wpi.first.wpilibj.XboxController;
          import edu.wpi.first.wpilibj.drive.DifferentialDrive;
          import com.ctre.phoenix6.hardware.TalonFX;
-                  ```
+         ```
 
          ```c++
          #include <frc/TimedRobot.h>
@@ -176,7 +176,7 @@ Now let's look at various parts of the code.
          #include <frc/XboxController.h>
          #include <frc/drive/DifferentialDrive.h>
          #include <ctre/phoenix6/TalonFX.hpp>
-                  ```
+         ```
 
          ```python
          import wpilib               # Used to get the joysticks
@@ -191,11 +191,11 @@ Now let's look at various parts of the code.
             ```java
             import com.revrobotics.CANSparkMax;
             import com.revrobotics.CANSparkLowLevel.MotorType;
-                        import edu.wpi.first.wpilibj.TimedRobot;
+            import edu.wpi.first.wpilibj.TimedRobot;
             import edu.wpi.first.wpilibj.Timer;
             import edu.wpi.first.wpilibj.XboxController;
             import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-                        ```
+            ```
 
             ```c++
             #include <frc/TimedRobot.h>
@@ -203,8 +203,8 @@ Now let's look at various parts of the code.
             #include <frc/XboxController.h>
             #include <frc/drive/DifferentialDrive.h>
             #include <frc/motorcontrol/PWMSparkMax.h>
-                        #include <rev/CANSparkMax.h>
-                        ```
+            #include <rev/CANSparkMax.h>
+            ```
 
             ```python
             import wpilib           # Used to get the joysticks
@@ -225,7 +225,7 @@ Now let's look at various parts of the code.
          import edu.wpi.first.wpilibj.XboxController;
          import edu.wpi.first.wpilibj.drive.DifferentialDrive;
          import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-                  ```
+         ```
 
          ```c++
          #include <frc/TimedRobot.h>
@@ -233,7 +233,7 @@ Now let's look at various parts of the code.
          #include <frc/XboxController.h>
          #include <frc/drive/DifferentialDrive.h>
          #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
-                  ```
+         ```
 
          ```python
          import wpilib           # Used to get the joysticks
@@ -332,7 +332,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
              frc::DifferentialDrive m_robotDrive{
                [&](double output) { m_left.Set(output); },
                [&](double output) { m_right.Set(output); }};
-                         frc::XboxController m_controller{0};
+             frc::XboxController m_controller{0};
              frc::Timer m_timer;
             ```
 
@@ -353,7 +353,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                  )
                  self.controller = wpilib.XboxController(0)
                  self.timer = wpilib.Timer()
-                             # We need to invert one side of the drivetrain so that positive voltages
+                 # We need to invert one side of the drivetrain so that positive voltages
                  # result in both sides moving forward. Depending on how your robot's
                  # gearbox is constructed, you might have to invert the left side instead.
                  self.rightDrive.setInverted(True)
@@ -400,7 +400,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
              frc::DifferentialDrive m_robotDrive{
                [&](double output) { m_left.Set(output); },
                [&](double output) { m_right.Set(output); }};
-                         frc::XboxController m_controller{0};
+             frc::XboxController m_controller{0};
              frc::Timer m_timer;
             ```
 
@@ -453,7 +453,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
              frc::DifferentialDrive m_robotDrive{
                [&](double output) { m_left.Set(output); },
                [&](double output) { m_right.Set(output); }};
-                         frc::XboxController m_controller{0};
+             frc::XboxController m_controller{0};
              frc::Timer m_timer;
             ```
 

@@ -20,7 +20,7 @@ In cases where there is only one vision target, you can just take the largest co
       for contour in contours:
          if cv2.contourArea(contour) > cv2.contourArea(largest):
             largest = contour
-         #
+      #
       # Contour processing code
       #
    ```
@@ -71,15 +71,15 @@ You can use NetworkTables to send these properties to the Driver Station and the
 
    ```py
    import ntcore
-      nt = ntcore.NetworkTableInstance.getDefault().getTable('vision')
-      #
+   nt = ntcore.NetworkTableInstance.getDefault().getTable('vision')
+   #
    # Initialization code here
    #
-      while True:
-         #
+   while True:
+      #
       # Image processing code here
       #
-         nt.putNumber('center_x', center_x)
+      nt.putNumber('center_x', center_x)
       nt.putNumber('center_y', center_y)
    ```
 

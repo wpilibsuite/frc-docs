@@ -18,9 +18,9 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
         ```java
         // get the default NetworkTable instance
         NetworkTableInstance defaultInst = NetworkTableInstance.getDefault();
-                // create a NetworkTable instance
+        // create a NetworkTable instance
         NetworkTableInstance inst = NetworkTableInstance.create();
-                // destroy a NetworkTable instance
+        // destroy a NetworkTable instance
         inst.close();
         ```
 
@@ -30,9 +30,9 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
         ```c++
         // get the default NetworkTable instance
         nt::NetworkTableInstance defaultInst = nt::NetworkTableInstance::GetDefault();
-                // create a NetworkTable instance
+        // create a NetworkTable instance
         nt::NetworkTableInstance inst = nt::NetworkTableInstance::Create();
-                // destroy a NetworkTable instance; NetworkTableInstance objects are not RAII
+        // destroy a NetworkTable instance; NetworkTableInstance objects are not RAII
         nt::NetworkTableInstance::Destroy(inst);
         ```
 
@@ -42,9 +42,9 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
         ```c++
         // get the default NetworkTable instance
         NT_Instance defaultInst = nt::GetDefaultInstance();
-                // create a NetworkTable instance
+        // create a NetworkTable instance
         NT_Instance inst = nt::CreateInstance();
-                // destroy a NetworkTable instance
+        // destroy a NetworkTable instance
         nt::DestroyInstance(inst);
         ```
 
@@ -54,9 +54,9 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
         ```c
         // get the default NetworkTable instance
         NT_Instance defaultInst = NT_GetDefaultInstance();
-                // create a NetworkTable instance
+        // create a NetworkTable instance
         NT_Instance inst = NT_CreateInstance();
-                // destroy a NetworkTable instance
+        // destroy a NetworkTable instance
         NT_DestroyInstance(inst);
         ```
 
@@ -66,11 +66,11 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
 
         ```python
         import ntcore
-                # get the default NetworkTable instance
+        # get the default NetworkTable instance
         defaultInst = ntcore.NetworkTableInstance.getDefault()
-                # create a NetworkTable instance
+        # create a NetworkTable instance
         inst = ntcore.NetworkTableInstance.create()
-                # destroy a NetworkTable instance
+        # destroy a NetworkTable instance
         ntcore.NetworkTableInstance.destroy(inst)
         ```
 

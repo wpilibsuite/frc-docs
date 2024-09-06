@@ -26,22 +26,22 @@ The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpili
     ```java
     // Creates an analog accelerometer on analog input 0
     AnalogAccelerometer accelerometer = new AnalogAccelerometer(0);
-        // Sets the sensitivity of the accelerometer to 1 volt per G
+    // Sets the sensitivity of the accelerometer to 1 volt per G
     accelerometer.setSensitivity(1);
-        // Sets the zero voltage of the accelerometer to 3 volts
+    // Sets the zero voltage of the accelerometer to 3 volts
     accelerometer.setZero(3);
-        // Gets the current acceleration
+    // Gets the current acceleration
     double accel = accelerometer.getAcceleration();
     ```
 
     ```c++
     // Creates an analog accelerometer on analog input 0
     frc::AnalogAccelerometer accelerometer{0};
-        // Sets the sensitivity of the accelerometer to 1 volt per G
+    // Sets the sensitivity of the accelerometer to 1 volt per G
     accelerometer.SetSensitivity(1);
-        // Sets the zero voltage of the accelerometer to 3 volts
+    // Sets the zero voltage of the accelerometer to 3 volts
     accelerometer.SetZero(3);
-        // Gets the current acceleration
+    // Gets the current acceleration
     double accel = accelerometer.GetAcceleration();
     ```
 
@@ -150,17 +150,17 @@ For detecting collisions, it is often more robust to measure the jerk than the a
     ```java
     double prevXAccel = 0.0;
     double prevYAccel = 0.0;
-        BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
-        @Override
+    BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
+    @Override
     public void robotPeriodic() {
         // Gets the current accelerations in the X and Y directions
         double xAccel = accelerometer.getX();
         double yAccel = accelerometer.getY();
-            // Calculates the jerk in the X and Y directions
+        // Calculates the jerk in the X and Y directions
         // Divides by .02 because default loop timing is 20ms
         double xJerk = (xAccel - prevXAccel) / 0.02;
         double yJerk = (yAccel - prevYAccel) / 0.02;
-            prevXAccel = xAccel;
+        prevXAccel = xAccel;
         prevYAccel = yAccel;
     }
     ```
@@ -168,16 +168,16 @@ For detecting collisions, it is often more robust to measure the jerk than the a
     ```c++
     double prevXAccel = 0.0;
     double prevYAccel = 0.0;
-        frc::BuiltInAccelerometer accelerometer;
-        void Robot::RobotPeriodic() {
+    frc::BuiltInAccelerometer accelerometer;
+    void Robot::RobotPeriodic() {
         // Gets the current accelerations in the X and Y directions
         double xAccel = accelerometer.GetX();
         double yAccel = accelerometer.GetY();
-            // Calculates the jerk in the X and Y directions
+        // Calculates the jerk in the X and Y directions
         // Divides by .02 because default loop timing is 20ms
         double xJerk = (xAccel - prevXAccel) / 0.02;
         double yJerk = (yAccel - prevYAccel) / 0.02;
-            prevXAccel = xAccel;
+        prevXAccel = xAccel;
         prevYAccel = yAccel;
     }
     ```
@@ -188,9 +188,9 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
 
     ```java
     BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
-        // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
-        LinearFilter xAccelFilter = LinearFilter.movingAverage(10);
-        @Override
+    // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
+    LinearFilter xAccelFilter = LinearFilter.movingAverage(10);
+    @Override
     public void robotPeriodic() {
         // Get the filtered X acceleration
         double filteredXAccel = xAccelFilter.calculate(accelerometer.getX());
@@ -199,9 +199,9 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
 
     ```c++
     frc::BuiltInAccelerometer accelerometer;
-        // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
+    // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
     auto xAccelFilter = frc::LinearFilter::MovingAverage(10);
-        void Robot::RobotPeriodic() {
+    void Robot::RobotPeriodic() {
         // Get the filtered X acceleration
         double filteredXAccel = xAccelFilter.Calculate(accelerometer.GetX());
     }

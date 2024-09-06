@@ -38,7 +38,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
    PWMSparkMax rightDrive;
    PWMVictorSPX arm;
    BuiltInAccelerometer accel;
-      @Override
+   @Override
    public void robotInit() {
       leftDrive = new PWMSparkMax(0);
       rightDrive = new PWMSparkMax(1);
@@ -54,7 +54,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
    frc::PWMSparkMax rigthDrive{1};
    frc::BuiltInAccelerometer accel{};
    frc::PWMVictorSPX arm{3};
-      void Robot::RobotInit() {
+   void Robot::RobotInit() {
       wpi::SendableRegistry::SetName(&arm, "SomeSubsystem", "Arm");
       wpi::SendableRegistry::SetName(&accel, "SomeSubsystem", "Accelerometer");
    }
@@ -63,7 +63,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
    ```python
    from wpilib import BuiltInAccelerometer, PWMSparkMax, PWMVictorSPX
    from wpiutil import SendableRegistry
-      def robotInit(self) -> None:
+   def robotInit(self) -> None:
       leftDrive = PWMSparkMax(0)
       rightDrive = PWMSparkMax(1)
       arm = PWMVictorSPX(2)

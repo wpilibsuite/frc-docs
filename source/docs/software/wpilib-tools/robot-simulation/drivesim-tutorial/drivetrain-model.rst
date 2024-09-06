@@ -30,7 +30,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
      60.0,                    // The mass of the robot is 60 kg.
      Units.inchesToMeters(3), // The robot uses 3" radius wheels.
      0.7112,                  // The track width is 0.7112 meters.
-        // The standard deviations for measurement noise:
+     // The standard deviations for measurement noise:
      // x and y:          0.001 m
      // heading:          0.001 rad
      // l and r velocity: 0.1   m/s
@@ -40,8 +40,8 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
    ```c++
    #include <frc/simulation/DifferentialDrivetrainSim.h>
-      ...
-      // Create the simulation model of our drivetrain.
+   ...
+   // Create the simulation model of our drivetrain.
    frc::sim::DifferentialDrivetrainSim m_driveSim{
      frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
      7.29,               // 7.29:1 gearing reduction.
@@ -49,7 +49,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
      60_kg,              // The mass of the robot is 60 kg.
      3_in,               // The robot uses 3" radius wheels.
      0.7112_m,           // The track width is 0.7112 meters.
-        // The standard deviations for measurement noise:
+     // The standard deviations for measurement noise:
      // x and y:          0.001 m
      // heading:          0.001 rad
      // l and r velocity: 0.1   m/s
@@ -86,15 +86,15 @@ You can calculate the measurement noise of your sensors by taking multiple data 
    static final double KaLinear = 0.2;
    static final double KvAngular = 1.5;
    static final double KaAngular = 0.3;
-      // Create the simulation model of our drivetrain.
+   // Create the simulation model of our drivetrain.
    private DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
-     // Create a linear system from our identification gains.
+   // Create a linear system from our identification gains.
      LinearSystemId.identifyDrivetrainSystem(KvLinear, KaLinear, KvAngular, KaAngular),
      DCMotor.getNEO(2),       // 2 NEO motors on each side of the drivetrain.
      7.29,                    // 7.29:1 gearing reduction.
      0.7112,                  // The track width is 0.7112 meters.
      Units.inchesToMeters(3), // The robot uses 3" radius wheels.
-        // The standard deviations for measurement noise:
+     // The standard deviations for measurement noise:
      // x and y:          0.001 m
      // heading:          0.001 rad
      // l and r velocity: 0.1   m/s
@@ -110,8 +110,8 @@ You can calculate the measurement noise of your sensors by taking multiple data 
    #include <units/angular_velocity.h>
    #include <units/voltage.h>
    #include <units/velocity.h>
-      ...
-      // Create our feedforward gain constants (from the identification
+   ...
+   // Create our feedforward gain constants (from the identification
    // tool). Note that these need to have correct units.
    static constexpr auto KvLinear = 1.98_V / 1_mps;
    static constexpr auto KaLinear = 0.2_V / 1_mps_sq;
@@ -119,7 +119,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
    static constexpr auto KaAngular = 0.3_V / 1_rad_per_s_sq;
    // The track width is 0.7112 meters.
    static constexpr auto kTrackwidth = 0.7112_m;
-      // Create the simulation model of our drivetrain.
+   // Create the simulation model of our drivetrain.
    frc::sim::DifferentialDrivetrainSim m_driveSim{
      // Create a linear system from our identification gains.
      frc::LinearSystemId::IdentifyDrivetrainSystem(
@@ -128,7 +128,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
      frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
      7.29,               // 7.29:1 gearing reduction.
      3_in,               // The robot uses 3" radius wheels.
-        // The standard deviations for measurement noise:
+     // The standard deviations for measurement noise:
      // x and y:          0.001 m
      // heading:          0.001 rad
      // l and r velocity: 0.1   m/s
@@ -164,8 +164,8 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
    ```c++
    #include <frc/simulation/DifferentialDrivetrainSim.h>
-      ...
-      frc::sim::DifferentialDrivetrainSim m_driveSim =
+   ...
+   frc::sim::DifferentialDrivetrainSim m_driveSim =
      frc::sim::DifferentialDrivetrainSim::CreateKitbotSim(
        frc::sim::DifferentialDrivetrainSim::KitbotMotor::DualCIMPerSide, // 2 CIMs per side.
        frc::sim::DifferentialDrivetrainSim::KitbotGearing::k10p71,       // 10.71:1

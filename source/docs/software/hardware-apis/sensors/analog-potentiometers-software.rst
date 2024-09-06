@@ -20,14 +20,14 @@ An AnalogPotentiometer can be initialized as follows:
     // Initializes an AnalogPotentiometer on analog port 0
     // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
     // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-        AnalogPotentiometer pot = new AnalogPotentiometer(0, 180, 30);
+    AnalogPotentiometer pot = new AnalogPotentiometer(0, 180, 30);
     ```
 
     ```c++
     // Initializes an AnalogPotentiometer on analog port 0
     // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
     // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-        frc::AnalogPotentiometer pot{0, 180, 30};
+    frc::AnalogPotentiometer pot{0, 180, 30};
     ```
 
 ### Customizing the underlying AnalogInput
@@ -42,20 +42,20 @@ If the user would like to apply custom settings to the underlying :code:`AnalogI
     // Initializes an AnalogInput on port 0, and enables 2-bit averaging
     AnalogInput input = new AnalogInput(0);
     input.setAverageBits(2);
-        // Initializes an AnalogPotentiometer with the given AnalogInput
+    // Initializes an AnalogPotentiometer with the given AnalogInput
     // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
     // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-        AnalogPotentiometer pot = new AnalogPotentiometer(input, 180, 30);
+    AnalogPotentiometer pot = new AnalogPotentiometer(input, 180, 30);
     ```
 
     ```c++
     // Initializes an AnalogInput on port 0, and enables 2-bit averaging
     frc::AnalogInput input{0};
     input.SetAverageBits(2);
-        // Initializes an AnalogPotentiometer with the given AnalogInput
+    // Initializes an AnalogPotentiometer with the given AnalogInput
     // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
     // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-        frc::AnalogPotentiometer pot{input, 180, 30};
+    frc::AnalogPotentiometer pot{input, 180, 30};
     ```
 
 ### Reading values from the AnalogPotentiometer

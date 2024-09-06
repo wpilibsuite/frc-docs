@@ -53,20 +53,20 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
     ```java
     // Initializes an AnalogTrigger on port 0
     AnalogTrigger trigger0 = new AnalogTrigger(0);
-        // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
+    // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
     AnalogInput input = new AnalogInput(1);
     input.setAverageBits(2);
-        // Initializes an AnalogTrigger using the above input
+    // Initializes an AnalogTrigger using the above input
     AnalogTrigger trigger1 = new AnalogTrigger(input);
     ```
 
     ```c++
     // Initializes an AnalogTrigger on port 0
     frc::AnalogTrigger trigger0{0};
-        // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
+    // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
     frc::AnalogInput input{1};
     input.SetAverageBits(2);
-        // Initializes an AnalogTrigger using the above input
+    // Initializes an AnalogTrigger using the above input
     frc::AnalogTrigger trigger1{input};
     ```
 
@@ -81,14 +81,14 @@ To convert the analog signal to a digital one, it is necessary to specify at wha
     ```java
     // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
     trigger.setLimitsRaw(1000, 3500);
-        // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
+    // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
     trigger.setLimitsVoltage(1.5, 4);
     ```
 
     ```c++
     // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
     trigger.SetLimitsRaw(1000, 3500);
-        // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
+    // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
     trigger.SetLimitsVoltage(1.5, 4);
     ```
 
@@ -104,9 +104,9 @@ Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| shoul
 
     ```java
     Spark spark = new Spark(0);
-        // Limit switch on DIO 2
+    // Limit switch on DIO 2
     DigitalInput limit = new DigitalInput(2);
-        public void autonomousPeriodic() {
+    public void autonomousPeriodic() {
         // Runs the motor forwards at half speed, unless the limit is pressed
         if(!limit.get()) {
             spark.set(.5);
@@ -119,9 +119,9 @@ Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| shoul
     ```c++
     // Motor for the mechanism
     frc::Spark spark{0};
-        // Limit switch on DIO 2
+    // Limit switch on DIO 2
     frc::DigitalInput limit{2};
-        void AutonomousPeriodic() {
+    void AutonomousPeriodic() {
         // Runs the motor forwards at half speed, unless the limit is pressed
         if(!limit.Get()) {
             spark.Set(.5);

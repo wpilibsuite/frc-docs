@@ -13,8 +13,8 @@ The robot pose can be visualized on the Simulator GUI (during simulation) or on 
 
    ```c++
    #include <frc/smartdashboard/Field2d.h>
-      ..
-      frc::Field2d m_field;
+   ...
+   frc::Field2d m_field;
    ```
 
 This ``Field2d`` instance must then be sent over NetworkTables. The best place to do this is in the constructor of your subsystem.
@@ -29,7 +29,7 @@ This ``Field2d`` instance must then be sent over NetworkTables. The best place t
 
    ```c++
    #include <frc/smartdashboard/SmartDashboard.h>
-      Drivetrain() {
+   Drivetrain() {
      ...
      frc::SmartDashboard::PutData("Field", &m_field);
    }

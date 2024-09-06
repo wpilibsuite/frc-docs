@@ -121,19 +121,19 @@ The returned setpoint might then be used as in the following example:
   from wpilib import Timer
   from wpilib.controller import ProfiledPIDController
   from wpilib.controller import SimpleMotorFeedforward
-      def __init__(self):
-        # Assuming encoder, motor, controller are already defined
+  def __init__(self):
+      # Assuming encoder, motor, controller are already defined
       self.lastSpeed = 0
       self.lastTime = Timer.getFPGATimestamp()
-        # Assuming feedforward is a SimpleMotorFeedforward object
+      # Assuming feedforward is a SimpleMotorFeedforward object
       self.feedforward = SimpleMotorFeedforward(ks=0.0, kv=0.0, ka=0.0)
-    def goToPosition(self, goalPosition: float):
-        pidVal = self.controller.calculate(self.encoder.getDistance(), goalPosition)
+  def goToPosition(self, goalPosition: float):
+      pidVal = self.controller.calculate(self.encoder.getDistance(), goalPosition)
       acceleration = (self.controller.getSetpoint().velocity - self.lastSpeed) / (Timer.getFPGATimestamp() - self.lastTime)
-        self.motor.setVoltage(
+      self.motor.setVoltage(
           pidVal
           + self.feedforward.calculate(self.controller.getSetpoint().velocity, acceleration))
-        self.lastSpeed = controller.getSetpoint().velocity
+      self.lastSpeed = controller.getSetpoint().velocity
       self.lastTime = Timer.getFPGATimestamp()
   ```
 

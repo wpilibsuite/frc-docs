@@ -61,12 +61,12 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
    ```java
    NetworkTableEntry m_xEntry = NetworkTableInstance.getDefault().getTable("troubleshooting").getEntry("X");
    NetworkTableEntry m_yEntry = NetworkTableInstance.getDefault().getTable("troubleshooting").getEntry("Y");
-      @Override
+   @Override
    public void periodic() {
        // Update the odometry in the periodic block
        m_odometry.update(Rotation2d.fromDegrees(getHeading()), m_leftEncoder.getDistance(),
            m_rightEncoder.getDistance());
-          var translation = m_odometry.getPoseMeters().getTranslation();
+       var translation = m_odometry.getPoseMeters().getTranslation();
        m_xEntry.setNumber(translation.getX());
        m_yEntry.setNumber(translation.getY());
    }
@@ -75,12 +75,12 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
    ```c++
    NetworkTableEntry m_xEntry = nt::NetworkTableInstance::GetDefault().GetTable("troubleshooting")->GetEntry("X");
    NetworkTableEntry m_yEntry = nt::NetworkTableInstance::GetDefault().GetTable("troubleshooting")->GetEntry("Y");
-      void DriveSubsystem::Periodic() {
+   void DriveSubsystem::Periodic() {
        // Implementation of subsystem periodic method goes here.
        m_odometry.Update(frc::Rotation2d(units::degree_t(GetHeading())),
                            units::meter_t(m_leftEncoder.GetDistance()),
                            units::meter_t(m_rightEncoder.GetDistance()));
-          auto translation = m_odometry.GetPose().Translation();
+       auto translation = m_odometry.GetPose().Translation();
        m_xEntry.SetDouble(translation.X().value());
        m_yEntry.SetDouble(translation.Y().value());
    }
@@ -115,7 +115,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
    ```java
    RamseteController m_disabledRamsete = new RamseteController();
    m_disabledRamsete.setEnabled(false);
-      // Be sure to pass your new disabledRamsete variable
+   // Be sure to pass your new disabledRamsete variable
    RamseteCommand ramseteCommand = new RamseteCommand(
        exampleTrajectory,
        m_robotDrive::getPose,
@@ -127,7 +127,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
    ```c++
    frc::RamseteController m_disabledRamsete;
    m_disabledRamsete.SetEnabled(false);
-      // Be sure to pass your new disabledRamsete variable
+   // Be sure to pass your new disabledRamsete variable
    frc2::RamseteCommand ramseteCommand(
      exampleTrajectory,
      [this]() { return m_drive.GetPose(); },
@@ -146,7 +146,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
    var leftMeasurement = table.getEntry("left_measurement");
    var rightReference = table.getEntry("right_reference");
    var rightMeasurement = table.getEntry("right_measurement");
-      var leftController = new PIDController(kPDriveVel, 0, 0);
+   var leftController = new PIDController(kPDriveVel, 0, 0);
    var rightController = new PIDController(kPDriveVel, 0, 0);
    RamseteCommand ramseteCommand = new RamseteCommand(
        exampleTrajectory,
@@ -160,9 +160,9 @@ If your feedforwards are bad then the P controllers for each side of the robot w
        // RamseteCommand passes volts to the callback
        (leftVolts, rightVolts) -> {
            m_robotDrive.tankDriveVolts(leftVolts, rightVolts);
-              leftMeasurement.setNumber(m_robotDrive.getWheelSpeeds().leftMetersPerSecond);
+           leftMeasurement.setNumber(m_robotDrive.getWheelSpeeds().leftMetersPerSecond);
            leftReference.setNumber(leftController.getSetpoint());
-              rightMeasurement.setNumber(m_robotDrive.getWheelSpeeds().rightMetersPerSecond);
+           rightMeasurement.setNumber(m_robotDrive.getWheelSpeeds().rightMetersPerSecond);
            rightReference.setNumber(rightController.getSetpoint());
        },
        m_robotDrive
@@ -176,7 +176,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
    auto leftMeas = table->GetEntry("left_measurement");
    auto rightRef = table->GetEntry("right_reference");
    auto rightMeas = table->GetEntry("right_measurement");
-      frc::PIDController leftController(DriveConstants::kPDriveVel, 0, 0);
+   frc::PIDController leftController(DriveConstants::kPDriveVel, 0, 0);
    frc::PIDController rightController(DriveConstants::kPDriveVel, 0, 0);
    frc2::RamseteCommand ramseteCommand(
        exampleTrajectory, [this]() { return m_drive.GetPose(); },
@@ -192,10 +192,10 @@ If your feedforwards are bad then the P controllers for each side of the robot w
            auto leftMeasurement = leftMeas;
            auto rightReference = rightRef;
            auto rightMeasurement = rightMeas;
-              m_drive.TankDriveVolts(left, right);
-              leftMeasurement.SetDouble(m_drive.GetWheelSpeeds().left.value());
+           m_drive.TankDriveVolts(left, right);
+           leftMeasurement.SetDouble(m_drive.GetWheelSpeeds().left.value());
            leftReference.SetDouble(leftController.GetSetpoint());
-              rightMeasurement.SetDouble(m_drive.GetWheelSpeeds().right.value());
+           rightMeasurement.SetDouble(m_drive.GetWheelSpeeds().right.value());
            rightReference.SetDouble(rightController.GetSetpoint());
        },
        {&m_drive});

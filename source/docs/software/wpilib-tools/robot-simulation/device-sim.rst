@@ -65,7 +65,7 @@ In C++, save the ``CallbackStore`` object in the right scope - the callback will
      }
    }
    CallbackStore store = simEncoder.registerCountCallback(callback);
-      store.close(); // cancel the callback
+   store.close(); // cancel the callback
    ```
 
    ```c++

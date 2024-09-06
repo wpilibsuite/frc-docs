@@ -87,13 +87,13 @@ The :code:`Encoder` class offers a number of configuration methods:
     // Configures the encoder to return a distance of 4 for every 256 pulses
     // Also changes the units of getRate
     encoder.setDistancePerPulse(4.0/256.0);
-        // Configures the encoder to consider itself stopped after .1 seconds
+    // Configures the encoder to consider itself stopped after .1 seconds
     encoder.setMaxPeriod(0.1);
-        // Configures the encoder to consider itself stopped when its rate is below 10
+    // Configures the encoder to consider itself stopped when its rate is below 10
     encoder.setMinRate(10);
-        // Reverses the direction of the encoder
+    // Reverses the direction of the encoder
     encoder.setReverseDirection(true);
-        // Configures an encoder to average its period measurement over 5 samples
+    // Configures an encoder to average its period measurement over 5 samples
     // Can be between 1 and 127 samples
     encoder.setSamplesToAverage(5);
     ```
@@ -102,13 +102,13 @@ The :code:`Encoder` class offers a number of configuration methods:
     // Configures the encoder to return a distance of 4 for every 256 pulses
     // Also changes the units of getRate
     encoder.SetDistancePerPulse(4.0/256.0);
-        // Configures the encoder to consider itself stopped after .1 seconds
+    // Configures the encoder to consider itself stopped after .1 seconds
     encoder.SetMaxPeriod(0.1);
-        // Configures the encoder to consider itself stopped when its rate is below 10
+    // Configures the encoder to consider itself stopped when its rate is below 10
     encoder.SetMinRate(10);
-        // Reverses the direction of the encoder
+    // Reverses the direction of the encoder
     encoder.SetReverseDirection(true);
-        // Configures an encoder to average its period measurement over 5 samples
+    // Configures an encoder to average its period measurement over 5 samples
     // Can be between 1 and 127 samples
     encoder.SetSamplesToAverage(5);
     ```
@@ -281,7 +281,7 @@ Users can obtain the distance measured by the encoder with the :code:`getDistanc
     ```c++
     // Gets the distance traveled
     encoder.GetDistance();
-        ```
+    ```
 
 ### Detecting a Duty Cycle Encoder is Connected
 
@@ -297,7 +297,7 @@ As duty cycle encoders output a continuous set of pulses, it is possible to dete
     ```c++
     // Gets if the encoder is connected
     encoder.IsConnected();
-        ```
+    ```
 
 ### Resetting a Duty Cycle Encoder
 
@@ -308,18 +308,18 @@ To reset an encoder so the current distance is 0, call the :code:`reset()` metho
     ```java
     // Resets the encoder to read a distance of zero at the current position
     encoder.reset();
-        // get the position offset from when the encoder was reset
+    // get the position offset from when the encoder was reset
     encoder.getPositionOffset();
-        // set the position offset to half a rotation
+    // set the position offset to half a rotation
     encoder.setPositionOffset(0.5);
     ```
 
     ```c++
     // Resets the encoder to read a distance of zero at the current position
     encoder.Reset();
-        // get the position offset from when the encoder was reset
+    // get the position offset from when the encoder was reset
     encoder.GetPositionOffset();
-        // set the position offset to half a rotation
+    // set the position offset to half a rotation
     encoder.SetPositionOffset(0.5);
     ```
 
@@ -383,7 +383,7 @@ Users can obtain the distance measured by the encoder with the :code:`getDistanc
     ```c++
     // Gets the distance measured
     encoder.GetDistance();
-            ```
+    ```
 
 ### Resetting an Analog Encoder
 
@@ -394,18 +394,18 @@ To reset an analog encoder so the current distance is 0, call the :code:`reset()
     ```java
     // Resets the encoder to read a distance of zero at the current position
     encoder.reset();
-        // get the position offset from when the encoder was reset
+    // get the position offset from when the encoder was reset
     encoder.getPositionOffset();
-        // set the position offset to half a rotation
+    // set the position offset to half a rotation
     encoder.setPositionOffset(0.5);
     ```
 
     ```c++
     // Resets the encoder to read a distance of zero at the current position
     encoder.Reset();
-        // get the position offset from when the encoder was reset
+    // get the position offset from when the encoder was reset
     encoder.GetPositionOffset();
-        // set the position offset to half a rotation
+    // set the position offset to half a rotation
     encoder.SetPositionOffset(0.5);
     ```
 
@@ -424,25 +424,25 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
     ```java
     // Creates an encoder on DIO ports 0 and 1
     Encoder encoder = new Encoder(0, 1);
-        // Initialize motor controllers and drive
+    // Initialize motor controllers and drive
     Spark leftLeader = new Spark(0);
     Spark leftFollower = new Spark(1);
-        Spark rightLeader = new Spark(2);
+    Spark rightLeader = new Spark(2);
     Spark rightFollower = new Spark(3);
-        DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
-        @Override
+    DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
+    @Override
     public void robotInit() {
         // Configures the encoder's distance-per-pulse
         // The robot moves forward 1 foot per encoder rotation
         // There are 256 pulses per encoder rotation
         encoder.setDistancePerPulse(1./256.);
-            // Invert the right side of the drivetrain. You might have to invert the other side
+        // Invert the right side of the drivetrain. You might have to invert the other side
         rightLeader.setInverted(true);
-            // Configure the followers to follow the leaders
+        // Configure the followers to follow the leaders
         leftLeader.addFollower(leftFollower);
         rightLeader.addFollower(rightFollower);
     }
-        @Override
+    @Override
     public void autonomousPeriodic() {
         // Drives forward at half speed until the robot has moved 5 feet, then stops:
         if(encoder.getDistance() < 5) {
@@ -456,25 +456,25 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
     ```c++
      // Creates an encoder on DIO ports 0 and 1.
     frc::Encoder encoder{0, 1};
-        // Initialize motor controllers and drive
+    // Initialize motor controllers and drive
     frc::Spark leftLeader{0};
     frc::Spark leftFollower{1};
-        frc::Spark rightLeader{2};
+    frc::Spark rightLeader{2};
     frc::Spark rightFollower{3};
-        frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
+    frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
                                  [&](double output) { rightLeader.Set(output); }};
         void Robot::RobotInit() {
         // Configures the encoder's distance-per-pulse
         // The robot moves forward 1 foot per encoder rotation
         // There are 256 pulses per encoder rotation
         encoder.SetDistancePerPulse(1.0/256.0);
-            // Invert the right side of the drivetrain. You might have to invert the other side
+        // Invert the right side of the drivetrain. You might have to invert the other side
         rightLeader.SetInverted(true);
-            // Configure the followers to follow the leaders
+        // Configure the followers to follow the leaders
         leftLeader.AddFollower(leftFollower);
         rightLeader.AddFollower(rightFollower);
     }
-        void Robot::AutonomousPeriodic() {
+    void Robot::AutonomousPeriodic() {
         // Drives forward at half speed until the robot has moved 5 feet, then stops:
         if(encoder.GetDistance() < 5) {
             drive.TankDrive(0.5, 0.5);
@@ -494,10 +494,10 @@ Since quadrature encoders measure *relative* distance, it is often important to 
 
     ```java
     Encoder encoder = new Encoder(0, 1);
-        Spark spark = new Spark(0);
-        // Limit switch on DIO 2
+    Spark spark = new Spark(0);
+    // Limit switch on DIO 2
     DigitalInput limit = new DigitalInput(2);
-        public void autonomousPeriodic() {
+    public void autonomousPeriodic() {
         // Runs the motor backwards at half speed until the limit switch is pressed
         // then turn off the motor and reset the encoder
         if(!limit.get()) {
@@ -511,10 +511,10 @@ Since quadrature encoders measure *relative* distance, it is often important to 
 
     ```c++
     frc::Encoder encoder{0,1};
-        frc::Spark spark{0};
-        // Limit switch on DIO 2
+    frc::Spark spark{0};
+    // Limit switch on DIO 2
     frc::DigitalInput limit{2};
-        void AutonomousPeriodic() {
+    void AutonomousPeriodic() {
         // Runs the motor backwards at half speed until the limit switch is pressed
         // then turn off the motor and reset the encoder
         if(!limit.Get()) {

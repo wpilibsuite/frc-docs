@@ -16,12 +16,12 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
             private Encoder m_encoder = new Encoder(1, 2);
             private Spark m_motor = new Spark(1);
             private PIDController m_controller = new PIDController(1.0, 0.0, 0.5, 0.01);
-                    public Robot() {
+            public Robot() {
                 addPeriodic(() -> {
                     m_motor.set(m_controller.calculate(m_encoder.getRate()));
                 }, 0.01, 0.005);
             }
-                    @Override
+            @Override
             public teleopPeriodic() {
                 if (m_joystick.getRawButtonPressed(1)) {
                     if (m_controller.getSetpoint() == 0.0) {
@@ -31,7 +31,7 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
                     }
                 }
             }
-          }
+        }
         ```
 
     .. tab-item:: C++ (Header)
@@ -44,8 +44,8 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
           frc::Encoder m_encoder{1, 2};
           frc::Spark m_motor{1};
           frc::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
-                  Robot();
-                  void TeleopPeriodic() override;
+          Robot();
+          void TeleopPeriodic() override;
         };
         ```
 
@@ -58,7 +58,7 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
             m_motor.Set(m_controller.Calculate(m_encoder.GetRate()));
           }, 10_ms, 5_ms);
         }
-                void Robot::TeleopPeriodic() {
+        void Robot::TeleopPeriodic() {
           if (m_joystick.GetRawButtonPressed(1)) {
             if (m_controller.GetSetpoint() == 0.0) {
               m_controller.SetSetpoint(30.0);

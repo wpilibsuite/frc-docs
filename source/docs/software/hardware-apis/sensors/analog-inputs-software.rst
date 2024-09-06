@@ -147,14 +147,14 @@ Analog input channels 0 and 1 additionally support an accumulator, which integra
     // Sets the initial value of the accumulator to 0
     // This is the "starting point" from which the value will change over time
     analog.setAccumulatorInitialValue(0);
-        // Sets the "center" of the accumulator to 0.  This value is subtracted from
+    // Sets the "center" of the accumulator to 0.  This value is subtracted from
     // all measured values prior to accumulation.
     analog.setAccumulatorCenter(0);
-        // Returns the number of accumulated samples since the accumulator was last started/reset
+    // Returns the number of accumulated samples since the accumulator was last started/reset
     analog.getAccumulatorCount();
-        // Returns the value of the accumulator.  Return type is long.
+    // Returns the value of the accumulator.  Return type is long.
     analog.getAccumulatorValue();
-        // Resets the accumulator to the initial value
+    // Resets the accumulator to the initial value
     analog.resetAccumulator();
     ```
 
@@ -162,14 +162,14 @@ Analog input channels 0 and 1 additionally support an accumulator, which integra
     // Sets the initial value of the accumulator to 0
     // This is the "starting point" from which the value will change over time
     analog.SetAccumulatorInitialValue(0);
-        // Sets the "center" of the accumulator to 0.  This value is subtracted from
+    // Sets the "center" of the accumulator to 0.  This value is subtracted from
     // all measured values prior to accumulation.
     analog.SetAccumulatorCenter(0);
-        // Returns the number of accumulated samples since the accumulator was last started/reset
+    // Returns the number of accumulated samples since the accumulator was last started/reset
     analog.GetAccumulatorCount();
-        // Returns the value of the accumulator.  Return type is long.
+    // Returns the value of the accumulator.  Return type is long.
     analog.GetAccumulatorValue();
-        // Resets the accumulator to the initial value
+    // Resets the accumulator to the initial value
     analog.ResetAccumulator();
     ```
 
@@ -182,9 +182,9 @@ Sometimes, it is necessarily to obtain matched measurements of the count and the
     ```java
     // Instantiate an AccumulatorResult object to hold the matched measurements
     AccumulatorResult result = new AccumulatorResult();
-        // Fill the AccumulatorResult with the matched measurements
+    // Fill the AccumulatorResult with the matched measurements
     analog.getAccumulatorOutput(result);
-        // Read the values from the AccumulatorResult
+    // Read the values from the AccumulatorResult
     long count = result.count;
     long value = result.value;
     ```
@@ -193,7 +193,7 @@ Sometimes, it is necessarily to obtain matched measurements of the count and the
     // The count and value variables to fill
     int_64t count;
     int_64t value;
-        // Fill the count and value variables with the matched measurements
+    // Fill the count and value variables with the matched measurements
     analog.GetAccumulatorOutput(count, value);
     ```
 

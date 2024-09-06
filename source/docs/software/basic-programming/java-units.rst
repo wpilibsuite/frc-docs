@@ -238,7 +238,7 @@ This is because the ``m_lastDistance`` field is a reference to the *same* ``Muta
 
       ```java
       private Measure<Distance> m_lastDistance;
-            public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
+      public Measure<Distance> calculateDelta(Measure<Distance> currentDistance) {
         if (m_lastDistance == null) {
           m_lastDistance = currentDistance.copy();
           return currentDistance;
