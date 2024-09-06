@@ -26,7 +26,7 @@ The locations for the modules must be relative to the center of the robot. Posit
    Translation2d m_frontRightLocation = new Translation2d(0.381, -0.381);
    Translation2d m_backLeftLocation = new Translation2d(-0.381, 0.381);
    Translation2d m_backRightLocation = new Translation2d(-0.381, -0.381);
-      // Creating my kinematics object using the module locations
+   // Creating my kinematics object using the module locations
    SwerveDriveKinematics m_kinematics = new SwerveDriveKinematics(
      m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation, m_backRightLocation
    );
@@ -38,7 +38,7 @@ The locations for the modules must be relative to the center of the robot. Posit
    frc::Translation2d m_frontRightLocation{0.381_m, -0.381_m};
    frc::Translation2d m_backLeftLocation{-0.381_m, 0.381_m};
    frc::Translation2d m_backRightLocation{-0.381_m, -0.381_m};
-      // Creating my kinematics object using the module locations.
+   // Creating my kinematics object using the module locations.
    frc::SwerveDriveKinematics<4> m_kinematics{
      m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation,
      m_backRightLocation};
@@ -46,14 +46,14 @@ The locations for the modules must be relative to the center of the robot. Posit
 
    ```python
    # Python requires using the right class for the number of modules you have
-      from wpimath.geometry import Translation2d
+   from wpimath.geometry import Translation2d
    from wpimath.kinematics import SwerveDrive4Kinematics
-      # Locations for the swerve drive modules relative to the robot center.
+   # Locations for the swerve drive modules relative to the robot center.
    frontLeftLocation = Translation2d(0.381, 0.381)
    frontRightLocation = Translation2d(0.381, -0.381)
    backLeftLocation = Translation2d(-0.381, 0.381)
    backRightLocation = Translation2d(-0.381, -0.381)
-      # Creating my kinematics object using the module locations
+   # Creating my kinematics object using the module locations
    self.kinematics = SwerveDrive4Kinematics(
      frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
    )
@@ -71,15 +71,15 @@ The elements in the array that is returned by this method are the same order in 
    // per second to the left, and rotation at 1.5 radians per second
    // counterclockwise.
    ChassisSpeeds speeds = new ChassisSpeeds(1.0, 3.0, 1.5);
-      // Convert to module states
+   // Convert to module states
    SwerveModuleState[] moduleStates = kinematics.toSwerveModuleStates(speeds);
-      // Front left module state
+   // Front left module state
    SwerveModuleState frontLeft = moduleStates[0];
-      // Front right module state
+   // Front right module state
    SwerveModuleState frontRight = moduleStates[1];
-      // Back left module state
+   // Back left module state
    SwerveModuleState backLeft = moduleStates[2];
-      // Back right module state
+   // Back right module state
    SwerveModuleState backRight = moduleStates[3];
    ```
 
@@ -88,7 +88,7 @@ The elements in the array that is returned by this method are the same order in 
    // per second to the left, and rotation at 1.5 radians per second
    // counterclockwise.
    frc::ChassisSpeeds speeds{1_mps, 3_mps, 1.5_rad_per_s};
-      // Convert to module states. Here, we can use C++17's structured
+   // Convert to module states. Here, we can use C++17's structured
    // bindings feature to automatically split up the array into its
    // individual SwerveModuleState components.
    auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(speeds);
@@ -96,11 +96,11 @@ The elements in the array that is returned by this method are the same order in 
 
    ```python
    from wpimath.kinematics import ChassisSpeeds
-      # Example chassis speeds: 1 meter per second forward, 3 meters
+   # Example chassis speeds: 1 meter per second forward, 3 meters
    # per second to the left, and rotation at 1.5 radians per second
    # counterclockwise.
    speeds = ChassisSpeeds(1.0, 3.0, 1.5)
-      # Convert to module states
+   # Convert to module states
    frontLeft, frontRight, backLeft, backRight = self.kinematics.toSwerveModuleStates(speeds)
    ```
 
@@ -123,7 +123,7 @@ This method takes two parameters: the desired state (usually from the ``toSwerve
    ```python
    from wpimath.kinematics import SwerveModuleState
    from wpimath.geometry import Rotation2d
-      frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
+   frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
       Rotation2d(self.m_turningEncoder.getDistance()))
    ```
 
@@ -139,21 +139,21 @@ Cosine compensation has been shown to reduce the amount of "skew" a swerve drive
 .. tab-set-code::
    ```java
    var currentAngle = new Rotation2d.fromRadians(m_turningEncoder.getDistance());
-      var frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle);
+   var frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle);
    frontLeftOptimized.speedMetersPerSecond *= frontLeftOptimized.angle.minus(currentAngle).getCos();
    ```
 
    ```c++
    Rotation2d currentAngle(m_turningEncoder.GetDistance());
-      auto flOptimized = frc::SwerveModuleState::Optimize(fl, currentAngle);
+   auto flOptimized = frc::SwerveModuleState::Optimize(fl, currentAngle);
    flOptimized.speed *= (flOptimized.angle - currentAngle).Cos();
    ```
 
    ```python
    from wpimath.kinematics import SwerveModuleState
    from wpimath.geometry import Rotation2d
-      currentAngle = Rotation2d(self.m_turningEncoder.getDistance())
-      frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle)
+   currentAngle = Rotation2d(self.m_turningEncoder.getDistance())
+   frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle)
    frontLeftOptimized.speed *= (frontLeftOptimized.angle - currentAngle).cos()
    ```
 
@@ -170,7 +170,7 @@ Cosine compensation has been shown to reduce the amount of "skew" a swerve drive
    // robot angle is 45 degrees.
    ChassisSpeeds speeds = ChassisSpeeds.fromFieldRelativeSpeeds(
      2.0, 2.0, Math.PI / 2.0, Rotation2d.fromDegrees(45.0));
-      // Now use this in our kinematics
+   // Now use this in our kinematics
    SwerveModuleState[] moduleStates = kinematics.toSwerveModuleStates(speeds);
    ```
 
@@ -182,7 +182,7 @@ Cosine compensation has been shown to reduce the amount of "skew" a swerve drive
    // robot angle is 45 degrees.
    frc::ChassisSpeeds speeds = frc::ChassisSpeeds::FromFieldRelativeSpeeds(
      2_mps, 2_mps, units::radians_per_second_t(std::numbers::pi / 2.0), Rotation2d(45_deg));
-      // Now use this in our kinematics
+   // Now use this in our kinematics
    auto [fl, fr, bl, br] = kinematics.ToSwerveModuleStates(speeds);
    ```
 
@@ -190,14 +190,14 @@ Cosine compensation has been shown to reduce the amount of "skew" a swerve drive
    from wpimath.kinematics import ChassisSpeeds
    import math
    from wpimath.geometry import Rotation2d
-      # The desired field relative speed here is 2 meters per second
+   # The desired field relative speed here is 2 meters per second
    # toward the opponent's alliance station wall, and 2 meters per
    # second toward the left field boundary. The desired rotation
    # is a quarter of a rotation per second counterclockwise. The current
    # robot angle is 45 degrees.
    speeds = ChassisSpeeds.fromFieldRelativeSpeeds(
      2.0, 2.0, math.pi / 2.0, Rotation2d.fromDegrees(45.0))
-      # Now use this in our kinematics
+   # Now use this in our kinematics
    self.moduleStates = self.kinematics.toSwerveModuleStates(speeds)
    ```
 
@@ -219,10 +219,10 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
    var frontRightState = new SwerveModuleState(23.43, Rotation2d.fromDegrees(-39.81));
    var backLeftState = new SwerveModuleState(54.08, Rotation2d.fromDegrees(-109.44));
    var backRightState = new SwerveModuleState(54.08, Rotation2d.fromDegrees(-70.56));
-      // Convert to chassis speeds
+   // Convert to chassis speeds
    ChassisSpeeds chassisSpeeds = kinematics.toChassisSpeeds(
      frontLeftState, frontRightState, backLeftState, backRightState);
-      // Getting individual speeds
+   // Getting individual speeds
    double forward = chassisSpeeds.vxMetersPerSecond;
    double sideways = chassisSpeeds.vyMetersPerSecond;
    double angular = chassisSpeeds.omegaRadiansPerSecond;
@@ -234,7 +234,7 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
    frc::SwerveModuleState frontRightState{23.43_mps, Rotation2d(-39.81_deg)};
    frc::SwerveModuleState backLeftState{54.08_mps, Rotation2d(-109.44_deg)};
    frc::SwerveModuleState backRightState{54.08_mps, Rotation2d(-70.56_deg)};
-      // Convert to chassis speeds. Here, we can use C++17's structured bindings
+   // Convert to chassis speeds. Here, we can use C++17's structured bindings
    // feature to automatically break up the ChassisSpeeds struct into its
    // three components.
    auto [forward, sideways, angular] = kinematics.ToChassisSpeeds(
@@ -244,15 +244,15 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
    ```python
    from wpimath.kinematics import SwerveModuleState
    from wpimath.geometry import Rotation2d
-      # Example module states
+   # Example module states
    frontLeftState = SwerveModuleState(23.43, Rotation2d.fromDegrees(-140.19))
    frontRightState = SwerveModuleState(23.43, Rotation2d.fromDegrees(-39.81))
    backLeftState = SwerveModuleState(54.08, Rotation2d.fromDegrees(-109.44))
    backRightState = SwerveModuleState(54.08, Rotation2d.fromDegrees(-70.56))
-      # Convert to chassis speeds
+   # Convert to chassis speeds
    chassisSpeeds = self.kinematics.toChassisSpeeds(
      frontLeftState, frontRightState, backLeftState, backRightState)
-      # Getting individual speeds
+   # Getting individual speeds
    forward = chassisSpeeds.vx
    sideways = chassisSpeeds.vy
    angular = chassisSpeeds.omega
@@ -266,12 +266,12 @@ By recording a set of swerve module states using :ref:`NetworkTables <docs/softw
    ```java
    public class Example {
      private final StructArrayPublisher<SwerveModuleState> publisher;
-        public Example() {
+     public Example() {
        // Start publishing an array of module states with the "/SwerveStates" key
        publisher = NetworkTableInstance.getDefault()
          .getStructArrayTopic("/SwerveStates", SwerveModuleState.struct).publish();
      }
-        public void periodic() {
+     public void periodic() {
        // Periodically send a set of module states
        publisher.set(new SwerveModuleState[] {
          frontLeftState,
@@ -286,13 +286,13 @@ By recording a set of swerve module states using :ref:`NetworkTables <docs/softw
    ```c++
    class Example {
      nt::StructArrayPublisher<frc::SwerveModuleState> publisher
-       public:
+    public:
      Example() {
        // Start publishing an array of module states with the "/SwerveStates" key
        publisher = nt::NetworkTableInstance::GetDefault()
          .GetStructArrayTopic<frc::SwerveModuleState>("/SwerveStates").Publish();
      }
-        void Periodic() {
+     void Periodic() {
        // Periodically send a set of module states
        swervePublisher.Set(
          std::vector{
@@ -309,12 +309,12 @@ By recording a set of swerve module states using :ref:`NetworkTables <docs/softw
    ```python
    import ntcore
    from wpimath.kinematics import SwerveModuleState
-      # get the default instance of NetworkTables
+   # get the default instance of NetworkTables
    nt = ntcore.NetworkTableInstance.getDefault()
-      # Start publishing an array of module states with the "/SwerveStates" key
+   # Start publishing an array of module states with the "/SwerveStates" key
    topic = nt.getStructArrayTopic("/SwerveStates", SwerveModuleState)
    self.pub = topic.publish()
-      def periodic(self):
+   def periodic(self):
      # Periodically send a set of module states
      self.pub.set([frontLeftState,frontRightState,backLeftState,backRightState])
    ```

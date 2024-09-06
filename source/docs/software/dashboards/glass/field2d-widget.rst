@@ -9,28 +9,28 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
 .. tab-set-code::
    ```java
    private final Field2d m_field = new Field2d();
-      // Do this in either robot or subsystem init
+   // Do this in either robot or subsystem init
    SmartDashboard.putData("Field", m_field);
-      // Do this in either robot periodic or subsystem periodic
+   // Do this in either robot periodic or subsystem periodic
    m_field.setRobotPose(m_odometry.getPoseMeters());
    ```
 
    ```c++
    #include <frc/smartdashboard/Field2d.h>
    #include <frc/smartdashboard/SmartDashboard.h>
-      frc::Field2d m_field;
-      // Do this in either robot or subsystem init
+   frc::Field2d m_field;
+   // Do this in either robot or subsystem init
    frc::SmartDashboard::PutData("Field", &m_field);
-      // Do this in either robot periodic or subsystem periodic
+   // Do this in either robot periodic or subsystem periodic
    m_field.SetRobotPose(m_odometry.GetPose());
    ```
 
    ```python
    from wpilib import SmartDashboard, Field2d
-      self.field = Field2d()
-      # Do this in either robot or subsystem init
+   self.field = Field2d()
+   # Do this in either robot or subsystem init
    SmartDashboard.putData("Field", self.field)
-      # Do this in either robot periodic or subsystem periodic
+   # Do this in either robot periodic or subsystem periodic
    self.field.setRobotPose(self.odometry.getPose())
    ```
 

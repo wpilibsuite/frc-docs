@@ -18,14 +18,14 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
         ```java
         NetworkTableInstance inst = NetworkTableInstance.getDefault();
         NetworkTable table = inst.getTable("datatable");
-                // get a topic from a NetworkTableInstance
+        // get a topic from a NetworkTableInstance
         // the topic name in this case is the full name
         DoubleTopic dblTopic = inst.getDoubleTopic("/datatable/X");
-                // get a topic from a NetworkTable
+        // get a topic from a NetworkTable
         // the topic name in this case is the name within the table;
         // this line and the one above reference the same topic
         DoubleTopic dblTopic = table.getDoubleTopic("X");
-                // get a type-specific topic from a generic Topic
+        // get a type-specific topic from a generic Topic
         Topic genericTopic = inst.getTopic("/datatable/X");
         DoubleTopic dblTopic = new DoubleTopic(genericTopic);
         ```
@@ -36,14 +36,14 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
         ```c++
         nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
         std::shared_ptr<nt::NetworkTable> table = inst.GetTable("datatable");
-                // get a topic from a NetworkTableInstance
+        // get a topic from a NetworkTableInstance
         // the topic name in this case is the full name
         nt::DoubleTopic dblTopic = inst.GetDoubleTopic("/datatable/X");
-                // get a topic from a NetworkTable
+        // get a topic from a NetworkTable
         // the topic name in this case is the name within the table;
         // this line and the one above reference the same topic
         nt::DoubleTopic dblTopic = table->GetDoubleTopic("X");
-                // get a type-specific topic from a generic Topic
+        // get a type-specific topic from a generic Topic
         nt::Topic genericTopic = inst.GetTopic("/datatable/X");
         nt::DoubleTopic dblTopic{genericTopic};
         ```
@@ -53,7 +53,7 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
 
         ```c++
         NT_Instance inst = nt::GetDefaultInstance();
-                // get a topic from a NetworkTableInstance
+        // get a topic from a NetworkTableInstance
         NT_Topic topic = nt::GetTopic(inst, "/datatable/X");
         ```
 
@@ -62,7 +62,7 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
 
         ```c
         NT_Instance inst = NT_GetDefaultInstance();
-                // get a topic from a NetworkTableInstance
+        // get a topic from a NetworkTableInstance
         NT_Topic topic = NT_GetTopic(inst, "/datatable/X");
         ```
 
@@ -72,16 +72,16 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
 
         ```python
         import ntcore
-                inst = ntcore.NetworkTableInstance.getDefault()
+        inst = ntcore.NetworkTableInstance.getDefault()
         table = inst.getTable("datatable")
-                # get a topic from a NetworkTableInstance
+        # get a topic from a NetworkTableInstance
         # the topic name in this case is the full name
         dblTopic = inst.getDoubleTopic("/datatable/X")
-                # get a topic from a NetworkTable
+        # get a topic from a NetworkTable
         # the topic name in this case is the name within the table;
         # this line and the one above reference the same topic
         dblTopic = table.getDoubleTopic("X")
-                # get a type-specific topic from a generic Topic
+        # get a type-specific topic from a generic Topic
         genericTopic = inst.getTopic("/datatable/X")
         dblTopic = ntcore.DoubleTopic(genericTopic)
         ```

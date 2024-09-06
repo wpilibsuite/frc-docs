@@ -44,9 +44,9 @@ This is sufficient for commands that are only used once. However, for a command 
   ```java
   // RobotContainer.java
   intakeButton.whileTrue(Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake));
-    Command intakeAndShoot = Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake)
+  Command intakeAndShoot = Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake)
       .alongWith(new RunShooter(shooter));
-    Command autonomousCommand = Commands.sequence(
+  Command autonomousCommand = Commands.sequence(
       Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0),
       Commands.waitSeconds(3.0),
       Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0)
@@ -55,9 +55,9 @@ This is sufficient for commands that are only used once. However, for a command 
 
   ```c++
   intakeButton.WhileTrue(frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}));
-    frc2::CommandPtr intakeAndShoot = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake})
+  frc2::CommandPtr intakeAndShoot = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake})
       .AlongWith(RunShooter(&shooter).ToPtr());
-    frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
+  frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
     frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s),
     frc2::cmd::Wait(3.0_s),
     frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s)
@@ -78,12 +78,12 @@ For example, a command like the intake-running command is conceptually related t
 
   ```java
   public class Intake extends SubsystemBase {
-      // [code for motor controllers, configuration, etc.]
-      // ...
-        public Command runIntakeCommand() {
-        // implicitly requires `this`
-        return this.startEnd(() -> this.set(1.0), () -> this.set(0.0));
-      }
+    // [code for motor controllers, configuration, etc.]
+    // ...
+    public Command runIntakeCommand() {
+      // implicitly requires `this`
+      return this.startEnd(() -> this.set(1.0), () -> this.set(0.0));
+    }
   }
   ```
 
@@ -104,8 +104,8 @@ Using this new factory method in command groups and button bindings is highly ex
 
   ```java
   intakeButton.whileTrue(intake.runIntakeCommand());
-    Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter(shooter));
-    Command autonomousCommand = Commands.sequence(
+  Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter(shooter));
+  Command autonomousCommand = Commands.sequence(
       intake.runIntakeCommand().withTimeout(5.0),
       Commands.waitSeconds(3.0),
       intake.runIntakeCommand().withTimeout(5.0)
@@ -114,8 +114,8 @@ Using this new factory method in command groups and button bindings is highly ex
 
   ```c++
   intakeButton.WhileTrue(intake.RunIntakeCommand());
-    frc2::CommandPtr intakeAndShoot = intake.RunIntakeCommand().AlongWith(RunShooter(&shooter).ToPtr());
-    frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
+  frc2::CommandPtr intakeAndShoot = intake.RunIntakeCommand().AlongWith(RunShooter(&shooter).ToPtr());
+  frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
     intake.RunIntakeCommand().WithTimeout(5.0_s),
     frc2::cmd::Wait(3.0_s),
     intake.RunIntakeCommand().WithTimeout(5.0_s)
@@ -167,7 +167,7 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
   ```java
   public class AutoRoutines {
-        public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
+      public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
           return Commands.sequence(
               Commands.parallel(
                   drivetrain.driveCommand(0.5, 0.5),
@@ -193,25 +193,25 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
 
   ```java
   public class AutoRoutines {
-        private Drivetrain drivetrain;
-        private Intake intake;
-        public AutoRoutines(Drivetrain drivetrain, Intake intake) {
-        this.drivetrain = drivetrain;
-        this.intake = intake;
+      private Drivetrain drivetrain;
+      private Intake intake;
+      public AutoRoutines(Drivetrain drivetrain, Intake intake) {
+          this.drivetrain = drivetrain;
+          this.intake = intake;
       }
-        public Command driveAndIntake() {
+      public Command driveAndIntake() {
           return Commands.sequence(
               Commands.parallel(
                   drivetrain.driveCommand(0.5, 0.5),
                   intake.runIntakeCommand(1.0)
               ).withTimeout(5.0),
               Commands.parallel(
-                drivetrain.stopCommand();
-                intake.stopCommand();
+                  drivetrain.stopCommand();
+                  intake.stopCommand();
               )
           );
       }
-        public Command driveThenIntake() {
+      public Command driveThenIntake() {
           return Commands.sequence(
               drivetrain.driveCommand(0.5, 0.5).withTimeout(5.0),
               drivetrain.stopCommand(),
@@ -232,9 +232,9 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
 
   ```java
   AutoRoutines autoRoutines = new AutoRoutines(this.drivetrain, this.intake);
-    Command driveAndIntake = autoRoutines.driveAndIntake();
+  Command driveAndIntake = autoRoutines.driveAndIntake();
   Command driveThenIntake = autoRoutines.driveThenIntake();
-    Command drivingAndIntakingSequence = Commands.sequence(
+  Command drivingAndIntakingSequence = Commands.sequence(
     autoRoutines.driveAndIntake(),
     autoRoutines.driveThenIntake()
   );
@@ -260,7 +260,7 @@ However, it is still possible to ergonomically write a stateful command composit
       PIDController controller = new PIDController(Constants.kTurnToAngleP, 0, 0);
       // We can do whatever configuration we want on the created state before returning from the factory
       controller.setPositionTolerance(Constants.kTurnToAngleTolerance);
-        // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
+      // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
       return run(() -> arcadeDrive(0,-controller.calculate(gyro.getHeading(), targetDegrees)))
           .until(controller::atSetpoint)
           .andThen(runOnce(() -> arcadeDrive(0, 0)));
@@ -286,19 +286,19 @@ Returning to our simple intake command from earlier, we could do this by creatin
   ```java
   public class RunIntakeCommand extends Command {
       private Intake m_intake;
-        public RunIntakeCommand(Intake intake) {
+      public RunIntakeCommand(Intake intake) {
           this.m_intake = intake;
           addRequirements(intake);
       }
-        @Override
+      @Override
       public void initialize() {
           m_intake.set(1.0);
       }
-        @Override
+      @Override
       public void end(boolean interrupted) {
           m_intake.set(0.0);
       }
-        // execute() defaults to do nothing
+      // execute() defaults to do nothing
       // isFinished() defaults to return false
   }
   ```

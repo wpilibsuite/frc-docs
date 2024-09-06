@@ -80,7 +80,7 @@ In cases where vendor libraries do not compile when running the robot simulation
    ```java
    TalonSRX motorLeft;
    TalonSRX motorRight;
-      public Robot() {
+   public Robot() {
     if (RobotBase.isReal()) {
       motorLeft = new TalonSRX(0);
       motorRight = new TalonSRX(1);

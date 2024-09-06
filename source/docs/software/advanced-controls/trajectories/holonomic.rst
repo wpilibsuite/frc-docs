@@ -39,7 +39,7 @@ The final parameter is a ``ProfiledPIDController`` for the rotation of the robot
       ProfiledPIDControllerRadians,
    )
    from wpimath.trajectory import TrapezoidProfileRadians
-      controller = HolonomicDriveController(
+   controller = HolonomicDriveController(
       PIDController(1, 0, 0),
       PIDController(1, 0, 0),
       ProfiledPIDControllerRadians(
@@ -62,7 +62,7 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
    ```java
    // Sample the trajectory at 3.4 seconds from the beginning.
    Trajectory.State goal = trajectory.sample(3.4);
-      // Get the adjusted speeds. Here, we want the robot to be facing
+   // Get the adjusted speeds. Here, we want the robot to be facing
    // 70 degrees (in the field-relative coordinate system).
    ChassisSpeeds adjustedSpeeds = controller.calculate(
      currentRobotPose, goal, Rotation2d.fromDegrees(70.0));
@@ -71,7 +71,7 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
    ```c++
    // Sample the trajectoty at 3.4 seconds from the beginning.
    const auto goal = trajectory.Sample(3.4_s);
-      // Get the adjusted speeds. Here, we want the robot to be facing
+   // Get the adjusted speeds. Here, we want the robot to be facing
    // 70 degrees (in the field-relative coordinate system).
    const auto adjustedSpeeds = controller.Calculate(
      currentRobotPose, goal, 70_deg);
@@ -79,9 +79,9 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
 
    ```python
    from wpimath.geometry import Rotation2d
-      # Sample the trajectory at 3.4 seconds from the beginning.
+   # Sample the trajectory at 3.4 seconds from the beginning.
    goal = trajectory.sample(3.4)
-      # Get the adjusted speeds. Here, we want the robot to be facing
+   # Get the adjusted speeds. Here, we want the robot to be facing
    # 70 degrees (in the field-relative coordinate system).
    adjustedSpeeds = controller.calculate(
       currentRobotPose, goal, Rotation2d.fromDegrees(70.0)
@@ -96,7 +96,7 @@ The returned adjusted speeds can be converted into usable speeds using the kinem
 .. tab-set-code::
    ```java
    SwerveModuleState[] moduleStates = kinematics.toSwerveModuleStates(adjustedSpeeds);
-      SwerveModuleState frontLeft = moduleStates[0];
+   SwerveModuleState frontLeft = moduleStates[0];
    SwerveModuleState frontRight = moduleStates[1];
    SwerveModuleState backLeft = moduleStates[2];
    SwerveModuleState backRight = moduleStates[3];

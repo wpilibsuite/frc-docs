@@ -31,7 +31,7 @@ Creating a ``MedianFilter`` is simple:
 
   ```python
   from wpimath.filter import MedianFilter
-    # Creates a MedianFilter with a window size of 5 samples
+  # Creates a MedianFilter with a window size of 5 samples
   filter = MedianFilter(5)
   ```
 

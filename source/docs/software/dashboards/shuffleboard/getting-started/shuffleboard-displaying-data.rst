@@ -37,7 +37,7 @@ Often debugging or monitoring the status of a robot involves writing a number of
 
    ```python
    from wpilib import SmartDashboard
-      SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge())
+   SmartDashboard.putBoolean("Bridge Limit", bridgeTipper.atBridge())
    SmartDashboard.putNumber("Bridge Angle", bridgeTipper.getPosition())
    SmartDashboard.putNumber("Swerve Angle", drivetrain.getSwerveAngle())
    SmartDashboard.putNumber("Left Drive Encoder", drivetrain.getLeftEncoder())

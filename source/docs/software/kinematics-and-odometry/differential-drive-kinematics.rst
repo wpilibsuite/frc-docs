@@ -15,24 +15,24 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(Ch
    // Creating my kinematics object: track width of 27 inches
    DifferentialDriveKinematics kinematics =
      new DifferentialDriveKinematics(Units.inchesToMeters(27.0));
-      // Example chassis speeds: 2 meters per second linear velocity,
+   // Example chassis speeds: 2 meters per second linear velocity,
    // 1 radian per second angular velocity.
    var chassisSpeeds = new ChassisSpeeds(2.0, 0, 1.0);
-      // Convert to wheel speeds
+   // Convert to wheel speeds
    DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.toWheelSpeeds(chassisSpeeds);
-      // Left velocity
+   // Left velocity
    double leftVelocity = wheelSpeeds.leftMetersPerSecond;
-      // Right velocity
+   // Right velocity
    double rightVelocity = wheelSpeeds.rightMetersPerSecond;
    ```
 
    ```c++
    // Creating my kinematics object: track width of 27 inches
    frc::DifferentialDriveKinematics kinematics{27_in};
-      // Example chassis speeds: 2 meters per second linear velocity,
+   // Example chassis speeds: 2 meters per second linear velocity,
    // 1 radian per second angular velocity.
    frc::ChassisSpeeds chassisSpeeds{2_mps, 0_mps, 1_rad_per_s};
-      // Convert to wheel speeds. Here, we can use C++17's structured bindings
+   // Convert to wheel speeds. Here, we can use C++17's structured bindings
    // feature to automatically split the DifferentialDriveWheelSpeeds
    // struct into left and right velocities.
    auto [left, right] = kinematics.ToWheelSpeeds(chassisSpeeds);
@@ -42,14 +42,14 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(Ch
    from wpimath.kinematics import DifferentialDriveKinematics
    from wpimath.kinematics import ChassisSpeeds
    from wpimath.units import inchesToMeters
-      # Creating my kinematics object: track width of 27 inches
+   # Creating my kinematics object: track width of 27 inches
    kinematics = DifferentialDriveKinematics(Units.inchesToMeters(27.0))
-      # Example chassis speeds: 2 meters per second linear velocity,
+   # Example chassis speeds: 2 meters per second linear velocity,
    # 1 radian per second angular velocity.
    chassisSpeeds = ChassisSpeeds(2.0, 0, 1.0)
-      # Convert to wheel speeds
+   # Convert to wheel speeds
    wheelSpeeds = kinematics.toWheelSpeeds(chassisSpeeds)
-      # Left velocity
+   # Left velocity
    leftVelocity = wheelSpeeds.left
    # Right velocity
    rightVelocity = wheelSpeeds.right
@@ -64,24 +64,24 @@ One can also use the kinematics object to convert individual wheel speeds (left 
    // Creating my kinematics object: track width of 27 inches
    DifferentialDriveKinematics kinematics =
      new DifferentialDriveKinematics(Units.inchesToMeters(27.0));
-      // Example differential drive wheel speeds: 2 meters per second
+   // Example differential drive wheel speeds: 2 meters per second
    // for the left side, 3 meters per second for the right side.
    var wheelSpeeds = new DifferentialDriveWheelSpeeds(2.0, 3.0);
-      // Convert to chassis speeds.
+   // Convert to chassis speeds.
    ChassisSpeeds chassisSpeeds = kinematics.toChassisSpeeds(wheelSpeeds);
-      // Linear velocity
+   // Linear velocity
    double linearVelocity = chassisSpeeds.vxMetersPerSecond;
-      // Angular velocity
+   // Angular velocity
    double angularVelocity = chassisSpeeds.omegaRadiansPerSecond;
    ```
 
    ```c++
    // Creating my kinematics object: track width of 27 inches
    frc::DifferentialDriveKinematics kinematics{27_in};
-      // Example differential drive wheel speeds: 2 meters per second
+   // Example differential drive wheel speeds: 2 meters per second
    // for the left side, 3 meters per second for the right side.
    frc::DifferentialDriveWheelSpeeds wheelSpeeds{2_mps, 3_mps};
-      // Convert to chassis speeds. Here we can use C++17's structured bindings
+   // Convert to chassis speeds. Here we can use C++17's structured bindings
    // feature to automatically split the ChassisSpeeds struct into its 3 components.
    // Note that because a differential drive is non-holonomic, the vy variable
    // will be equal to zero.
@@ -92,16 +92,16 @@ One can also use the kinematics object to convert individual wheel speeds (left 
    from wpimath.kinematics import DifferentialDriveKinematics
    from wpimath.kinematics import DifferentialDriveWheelSpeeds
    from wpimath.units import inchesToMeters
-      # Creating my kinematics object: track width of 27 inches
+   # Creating my kinematics object: track width of 27 inches
    kinematics = DifferentialDriveKinematics(inchesToMeters(27.0))
-      # Example differential drive wheel speeds: 2 meters per second
+   # Example differential drive wheel speeds: 2 meters per second
    # for the left side, 3 meters per second for the right side.
    wheelSpeeds = DifferentialDriveWheelSpeeds(2.0, 3.0)
-      # Convert to chassis speeds.
+   # Convert to chassis speeds.
    chassisSpeeds = kinematics.toChassisSpeeds(wheelSpeeds)
-      # Linear velocity
+   # Linear velocity
    linearVelocity = chassisSpeeds.vx
-      # Angular velocity
+   # Angular velocity
    angularVelocity = chassisSpeeds.omega
    ```
 

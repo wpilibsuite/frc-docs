@@ -13,33 +13,33 @@ There are a few different ways to detect that a topic's value has changed; the e
         public class Example {
           final DoubleSubscriber ySub;
           double prev;
-                  public Example() {
+          public Example() {
             // get the default instance of NetworkTables
             NetworkTableInstance inst = NetworkTableInstance.getDefault();
-                    // get the subtable called "datatable"
+            // get the subtable called "datatable"
             NetworkTable datatable = inst.getTable("datatable");
-                    // subscribe to the topic in "datatable" called "Y"
+            // subscribe to the topic in "datatable" called "Y"
             ySub = datatable.getDoubleTopic("Y").subscribe(0.0);
           }
-                  public void periodic() {
+          public void periodic() {
             // get() can be used with simple change detection to the previous value
             double value = ySub.get();
             if (value != prev) {
               prev = value;  // save previous value
               System.out.println("X changed value: " + value);
             }
-                    // readQueueValues() provides all value changes since the last call;
+            // readQueueValues() provides all value changes since the last call;
             // this way it's not possible to miss a change by polling too slowly
             for (double iterVal : ySub.readQueueValues()) {
               System.out.println("X changed value: " + iterVal);
             }
-                    // readQueue() is similar to readQueueValues(), but provides timestamps
+            // readQueue() is similar to readQueueValues(), but provides timestamps
             // for each change as well
             for (TimestampedDouble tsValue : ySub.readQueue()) {
               System.out.println("X changed value: " + tsValue.value + " at local time " + tsValue.timestamp);
             }
           }
-                  // may not be necessary for robot programs if this class lives for
+          // may not be necessary for robot programs if this class lives for
           // the length of the program
           public void close() {
             ySub.close();
@@ -54,28 +54,28 @@ There are a few different ways to detect that a topic's value has changed; the e
         class Example {
           nt::DoubleSubscriber ySub;
           double prev = 0;
-                 public:
+         public:
           Example() {
             // get the default instance of NetworkTables
             nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
-                    // get the subtable called "datatable"
+            // get the subtable called "datatable"
             auto datatable = inst.GetTable("datatable");
-                    // subscribe to the topic in "datatable" called "Y"
+            // subscribe to the topic in "datatable" called "Y"
             ySub = datatable->GetDoubleTopic("Y").Subscribe(0.0);
           }
-                  void Periodic() {
+          void Periodic() {
             // Get() can be used with simple change detection to the previous value
             double value = ySub.Get();
             if (value != prev) {
               prev = value;  // save previous value
               fmt::print("X changed value: {}\n", value);
             }
-                    // ReadQueueValues() provides all value changes since the last call;
+            // ReadQueueValues() provides all value changes since the last call;
             // this way it's not possible to miss a change by polling too slowly
             for (double iterVal : ySub.ReadQueueValues()) {
               fmt::print("X changed value: {}\n", iterVal);
             }
-                    // ReadQueue() is similar to ReadQueueValues(), but provides timestamps
+            // ReadQueue() is similar to ReadQueueValues(), but provides timestamps
             // for each change as well
             for (nt::TimestampedDouble tsValue : ySub.ReadQueue()) {
               fmt::print("X changed value: {} at local time {}\n", tsValue.value, tsValue.timestamp);
@@ -91,21 +91,21 @@ There are a few different ways to detect that a topic's value has changed; the e
         class Example {
           NT_Subscriber ySub;
           double prev = 0;
-                 public:
+         public:
           Example() {
             // get the default instance of NetworkTables
             NT_Inst inst = nt::GetDefaultInstance();
-                    // subscribe to the topic in "datatable" called "Y"
+            // subscribe to the topic in "datatable" called "Y"
             ySub = nt::Subscribe(nt::GetTopic(inst, "/datatable/Y"), NT_DOUBLE, "double");
           }
-                  void Periodic() {
+          void Periodic() {
             // Get() can be used with simple change detection to the previous value
             double value = nt::GetDouble(ySub, 0.0);
             if (value != prev) {
               prev = value;  // save previous value
               fmt::print("X changed value: {}\n", value);
             }
-                    // ReadQueue() provides all value changes since the last call;
+            // ReadQueue() provides all value changes since the last call;
             // this way it's not possible to miss a change by polling too slowly
             for (nt::TimestampedDouble value : nt::ReadQueueDouble(ySub)) {
               fmt::print("X changed value: {} at local time {}\n", tsValue.value, tsValue.timestamp);
@@ -121,21 +121,21 @@ There are a few different ways to detect that a topic's value has changed; the e
         ```python
         class Example:
             def __init__(self) -> None:
-                        # get the default instance of NetworkTables
+                # get the default instance of NetworkTables
                 inst = ntcore.NetworkTableInstance.getDefault()
-                        # get the subtable called "datatable"
+                # get the subtable called "datatable"
                 datatable = inst.getTable("datatable")
-                        # subscribe to the topic in "datatable" called "Y"
+                # subscribe to the topic in "datatable" called "Y"
                 self.ySub = datatable.getDoubleTopic("Y").subscribe(0.0)
-                        self.prev = 0
-                    def periodic(self):
+                self.prev = 0
+            def periodic(self):
                 # get() can be used with simple change detection to the previous value
                 value = self.ySub.get()
                 if value != self.prev:
                     self.prev = value
                     # save previous value
                     print("X changed value: " + value)
-                        # readQueue() provides all value changes since the last call;
+                # readQueue() provides all value changes since the last call;
                 # this way it's not possible to miss a change by polling too slowly
                 for tsValue in self.ySub.readQueue():
                     print(f"X changed value: {tsValue.value} at local time {tsValue.time}")
@@ -177,10 +177,10 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
           int connListenerHandle;
           int valueListenerHandle;
           int topicListenerHandle;
-                  public Example() {
+          public Example() {
             // get the default instance of NetworkTables
             NetworkTableInstance inst = NetworkTableInstance.getDefault();
-                    // add a connection listener; the first parameter will cause the
+            // add a connection listener; the first parameter will cause the
             // callback to be called immediately for any current connections
             connListenerHandle = inst.addConnectionListener(true, event -> {
               if (event.is(NetworkTableEvent.Kind.kConnected)) {
@@ -189,11 +189,11 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                 System.out.println("Disconnected from " + event.connInfo.remote_id);
               }
             });
-                    // get the subtable called "datatable"
+            // get the subtable called "datatable"
             NetworkTable datatable = inst.getTable("datatable");
-                    // subscribe to the topic in "datatable" called "Y"
+            // subscribe to the topic in "datatable" called "Y"
             ySub = datatable.getDoubleTopic("Y").subscribe(0.0);
-                    // add a listener to only value changes on the Y subscriber
+            // add a listener to only value changes on the Y subscriber
             valueListenerHandle = inst.addListener(
                 ySub,
                 EnumSet.of(NetworkTableEvent.Kind.kValueAll),
@@ -202,7 +202,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                   // could check value.isDouble() here too
                   yValue.set(event.valueData.value.getDouble());
                 });
-                    // add a listener to see when new topics are published within datatable
+            // add a listener to see when new topics are published within datatable
             // the string array is an array of topic name prefixes.
             topicListenerHandle = inst.addListener(
                 new String[] { datatable.getPath() + "/" },
@@ -214,7 +214,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                   }
                 });
           }
-                  public void periodic() {
+          public void periodic() {
             // get the latest value by reading the AtomicReference; set it to null
             // when we read to ensure we only get value changes
             Double value = yValue.getAndSet(null);
@@ -222,7 +222,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
               System.out.println("got new value " + value);
             }
           }
-                  // may not be needed for robot programs if this class exists for the
+          // may not be needed for robot programs if this class exists for the
           // lifetime of the program
           public void close() {
             NetworkTableInstance inst = NetworkTableInstance.getDefault();
@@ -248,11 +248,11 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
           NT_Listener connListenerHandle;
           NT_Listener valueListenerHandle;
           NT_Listener topicListenerHandle;
-                 public:
+         public:
           Example() {
             // get the default instance of NetworkTables
             nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
-                    // add a connection listener; the first parameter will cause the
+            // add a connection listener; the first parameter will cause the
             // callback to be called immediately for any current connections
             connListenerHandle = inst.AddConnectionListener(true, [] (const nt::Event& event) {
               if (event.Is(nt::EventFlags::kConnected)) {
@@ -261,11 +261,11 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                 fmt::print("Disconnected from {}\n", event.GetConnectionInfo()->remote_id);
               }
             });
-                    // get the subtable called "datatable"
+            // get the subtable called "datatable"
             auto datatable = inst.GetTable("datatable");
-                    // subscribe to the topic in "datatable" called "Y"
+            // subscribe to the topic in "datatable" called "Y"
             ySub = datatable.GetDoubleTopic("Y").Subscribe(0.0);
-                    // add a listener to only value changes on the Y subscriber
+            // add a listener to only value changes on the Y subscriber
             valueListenerHandle = inst.AddListener(
                 ySub,
                 nt::EventFlags::kValueAll,
@@ -276,7 +276,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                   yValue = event.GetValueData()->value.GetDouble();
                   yValueUpdated = true;
                 });
-                    // add a listener to see when new topics are published within datatable
+            // add a listener to see when new topics are published within datatable
             // the string array is an array of topic name prefixes.
             topicListenerHandle = inst.AddListener(
                 {{fmt::format("{}/", datatable->GetPath())}},
@@ -288,7 +288,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                   }
                 });
           }
-                  void Periodic() {
+          void Periodic() {
             // get the latest value by reading the value; set it to false
             // when we read to ensure we only get value changes
             wpi::scoped_lock lock{mutex};
@@ -297,7 +297,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
               fmt::print("got new value {}\n", yValue);
             }
           }
-                  ~Example() {
+          ~Example() {
             nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
             inst.RemoveListener(connListenerHandle);
             inst.RemoveListener(valueListenerHandle);
@@ -313,14 +313,14 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
         ```python
         import ntcore
         import threading
-                class Example:
+        class Example:
             def __init__(self) -> None:
-                        # get the default instance of NetworkTables
+                # get the default instance of NetworkTables
                 inst = ntcore.NetworkTableInstance.getDefault()
-                        # Use a mutex to ensure thread safety
+                # Use a mutex to ensure thread safety
                 self.lock = threading.Lock()
                 self.yValue = None
-                        # add a connection listener; the first parameter will cause the
+                # add a connection listener; the first parameter will cause the
                 # callback to be called immediately for any current connections
                 def _connect_cb(event: ntcore.Event):
                     if event.is_(ntcore.EventFlags.kConnected):
@@ -328,11 +328,11 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                     elif event.is_(ntcore.EventFlags.kDisconnected):
                         print("Disconnected from", event.data.remote_id)
                         self.connListenerHandle = inst.addConnectionListener(True, _connect_cb)
-                        # get the subtable called "datatable"
+                # get the subtable called "datatable"
                 datatable = inst.getTable("datatable")
-                        # subscribe to the topic in "datatable" called "Y"
+                # subscribe to the topic in "datatable" called "Y"
                 self.ySub = datatable.getDoubleTopic("Y").subscribe(0.0)
-                        # add a listener to only value changes on the Y subscriber
+                # add a listener to only value changes on the Y subscriber
                 def _on_ysub(event: ntcore.Event):
                     # can only get doubles because it's a DoubleSubscriber, but
                     # could check value.isDouble() here too
@@ -341,7 +341,7 @@ The ``addListener`` functions in NetworkTableInstance return a listener handle. 
                         self.valueListenerHandle = inst.addListener(
                     self.ySub, ntcore.EventFlags.kValueAll, _on_ysub
                 )
-                        # add a listener to see when new topics are published within datatable
+                # add a listener to see when new topics are published within datatable
                 # the string array is an array of topic name prefixes.
                 def _on_pub(event: ntcore.Event):
                     if event.is_(ntcore.EventFlags.kPublish):

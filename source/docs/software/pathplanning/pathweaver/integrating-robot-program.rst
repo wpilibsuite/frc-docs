@@ -13,7 +13,7 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
    ```java
    String trajectoryJSON = "paths/YourPath.wpilib.json";
    Trajectory trajectory = new Trajectory();
-      @Override
+   @Override
    public void robotInit() {
       try {
          Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
@@ -28,8 +28,8 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
    #include <frc/Filesystem.h>
    #include <frc/trajectory/TrajectoryUtil.h>
    #include <wpi/fs.h>
-      frc::Trajectory trajectory;
-      void Robot::RobotInit() {
+   frc::Trajectory trajectory;
+   void Robot::RobotInit() {
       fs::path deployDirectory = frc::filesystem::GetDeployDirectory();
       deployDirectory = deployDirectory / "paths" / "YourPath.wpilib.json";
       trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory.string());

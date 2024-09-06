@@ -95,9 +95,9 @@ Solenoids can be switched from one output to the other (known as toggling) by us
    ```java
    Solenoid exampleSingle = new Solenoid(PneumaticsModuleType.CTREPCM, 0);
    DoubleSolenoid exampleDouble = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+   // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
    exampleDouble.set(kReverse);
-      if (m_controller.getYButtonPressed()) {
+   if (m_controller.getYButtonPressed()) {
       exampleSingle.toggle();
       exampleDouble.toggle();
    }
@@ -106,9 +106,9 @@ Solenoids can be switched from one output to the other (known as toggling) by us
    ```c++
    frc::Solenoid exampleSingle{frc::PneumaticsModuleType::CTREPCM, 0};
    frc::DoubleSolenoid exampleDouble{frc::PneumaticsModuleType::CTREPCM, 1, 2};
-      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+   // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
    exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
-      if (m_controller.GetYButtonPressed()) {
+   if (m_controller.GetYButtonPressed()) {
       exampleSingle.Toggle();
       exampleDouble.Toggle();
    }

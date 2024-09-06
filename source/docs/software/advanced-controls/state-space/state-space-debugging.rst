@@ -32,7 +32,7 @@ Reliable data of the :term:`system's <system>` :term:`state`\s, :term:`input`\s 
 
    ```python
    from ntcore import NetworkTableInstance
-      def robotPeriodic(self):
+   def robotPeriodic(self):
       NetworkTableInstance.getDefault().flush()
    ```
 

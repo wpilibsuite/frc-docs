@@ -18,7 +18,7 @@ Sending simple data (numbers, strings, booleans, and arrays of these) is done by
 
    ```python
    from wpilib.shuffleboard import Shuffleboard
-      Shuffleboard.getTab("Tab Title").add("Pi", 3.14)
+   Shuffleboard.getTab("Tab Title").add("Pi", 3.14)
    ```
 
 If data needs to be updated (for example, the output of some calculation done on the robot), call ``getEntry()`` after defining the value, then update it when needed or in a ``periodic`` function
@@ -31,19 +31,19 @@ If data needs to be updated (for example, the output of some calculation done on
       private GenericEntry distanceEntry =
          tab.add("Distance to target", 0)
             .getEntry();
-         public void calculate() {
-      double distance = ...;
-      distanceEntry.setDouble(distance);
+      public void calculate() {
+         double distance = ...;
+         distanceEntry.setDouble(distance);
       }
    }
    ```
 
    ```python
    from wpilib.shuffleboard import Shuffleboard
-      def robotInit(self):
+   def robotInit(self):
       tab = Shuffleboard.getTab("Vision")
       self.distanceEntry = tab.add("Distance to target", 0).getEntry()
-      def teleopPeriodic(self):
+   def teleopPeriodic(self):
       distance = self.encoder.getDistance()
       self.distanceEntry.setDouble(distance)
    ```
@@ -70,7 +70,7 @@ Simply using `addPersistent` instead of `add` will make the value saved on the r
 
    ```python
    from wpilib.shuffleboard import Shuffleboard
-      (Shuffleboard.getTab("Drive")
+   (Shuffleboard.getTab("Drive")
          .addPersistent("Max Speed", 1.0))
    ```
 
@@ -92,7 +92,7 @@ Analogous to ``SmartDashboard.putData``, any ``Sendable`` object (most sensors, 
 
    ```python
    from wpilib.shuffleboard import Shuffleboard
-      (Shuffleboard.getTab("Tab Title")
+   (Shuffleboard.getTab("Tab Title")
          .add("Sendable Title", mySendable))
    ```
 

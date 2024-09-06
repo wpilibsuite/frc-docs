@@ -80,13 +80,13 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
       List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
       new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
       new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
-      var trajectoryTwo =
+   var trajectoryTwo =
    TrajectoryGenerator.generateTrajectory(
       new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
       List.of(new Translation2d(4, 4), new Translation2d(6, 3)),
       new Pose2d(6, 0, Rotation2d.fromDegrees(0)),
       new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
-      var concatTraj = trajectoryOne.concatenate(trajectoryTwo);
+   var concatTraj = trajectoryOne.concatenate(trajectoryTwo);
    ```
 
    ```c++
@@ -94,23 +94,23 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
       frc::Pose2d(0_m, 0_m, 0_rad),
       {frc::Translation2d(1_m, 1_m), frc::Translation2d(2_m, -1_m)},
       frc::Pose2d(3_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
-      auto trajectoryTwo = frc::TrajectoryGenerator::GenerateTrajectory(
+   auto trajectoryTwo = frc::TrajectoryGenerator::GenerateTrajectory(
       frc::Pose2d(3_m, 0_m, 0_rad),
       {frc::Translation2d(4_m, 4_m), frc::Translation2d(5_m, 3_m)},
       frc::Pose2d(6_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
-      auto concatTraj = m_trajectoryOne + m_trajectoryTwo;
+   auto concatTraj = m_trajectoryOne + m_trajectoryTwo;
    ```
 
    ```python
    from wpimath.geometry import Pose2d, Rotation2d, Translation2d
    from wpimath.trajectory import TrajectoryGenerator, TrajectoryConfig
-         trajectoryOne = TrajectoryGenerator.generateTrajectory(
+   trajectoryOne = TrajectoryGenerator.generateTrajectory(
       Pose2d(0, 0, Rotation2d.fromDegrees(0)),
       [Translation2d(1, 1), Translation2d(2, -1)],
       Pose2d(3, 0, Rotation2d.fromDegrees(0)),
       TrajectoryConfig.fromFps(3.0, 3.0),
    )
-      trajectoryTwo = TrajectoryGenerator.generateTrajectory(
+   trajectoryTwo = TrajectoryGenerator.generateTrajectory(
       Pose2d(3, 0, Rotation2d.fromDegrees(0)),
       [Translation2d(4, 4), Translation2d(6, 3)],
       Pose2d(6, 0, Rotation2d.fromDegrees(0)),

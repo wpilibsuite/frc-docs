@@ -59,7 +59,8 @@ To be able to run the tests, SysIdRoutine exposes test "factories", or functions
   public Command sysIdQuasistatic(SysIdRoutine.Direction direction) {
     return routine.quasistatic(direction);
   }
-    public Command sysIdDynamic(SysIdRoutine.Direction direction) {
+
+  public Command sysIdDynamic(SysIdRoutine.Direction direction) {
     return routine.dynamic(direction);
   }
   ```

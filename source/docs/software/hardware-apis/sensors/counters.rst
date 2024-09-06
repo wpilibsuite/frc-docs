@@ -31,12 +31,12 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
     ```java
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.k2Pulse);
-        @Override
+    @Override
     public void robotInit() {
         // Set up the input channels for the counter
         counter.setUpSource(1);
         counter.setDownSource(2);
-            // Set the decoding type to 2X
+        // Set the decoding type to 2X
         counter.setUpSourceEdge(true, true);
         counter.setDownSourceEdge(true, true);
     }
@@ -45,11 +45,11 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
     ```c++
     // Create a new Counter object in two-pulse mode
     frc::Counter counter{frc::Counter::Mode::k2Pulse};
-        void Robot::RobotInit() {
+    void Robot::RobotInit() {
         // Set up the input channels for the counter
         counter.SetUpSource(1);
         counter.SetDownSource(2);
-            // Set the decoding type to 2X
+        // Set the decoding type to 2X
         counter.SetUpSourceEdge(true, true);
         counter.SetDownSourceEdge(true, true);
     ```
@@ -63,11 +63,11 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
     ```java
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.kSemiperiod);
-        @Override
+    @Override
     public void robotInit() {
         // Set up the input channel for the counter
         counter.setUpSource(1);
-            // Set the encoder to count pulse duration from rising edge to falling edge
+        // Set the encoder to count pulse duration from rising edge to falling edge
         counter.setSemiPeriodMode(true);
     }
     ```
@@ -75,10 +75,10 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
     ```c++
     // Create a new Counter object in two-pulse mode
     frc::Counter counter{frc::Counter::Mode::kSemiperiod};
-        void Robot() {
+    void Robot() {
         // Set up the input channel for the counter
         counter.SetUpSource(1);
-            // Set the encoder to count pulse duration from rising edge to falling edge
+        // Set the encoder to count pulse duration from rising edge to falling edge
         counter.SetSemiPeriodMode(true);
     ```
 
@@ -105,13 +105,13 @@ In pulse-length mode, the counter will count either up or down depending on the 
     ```java
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.kPulseLength);
-        @Override
+    @Override
     public void robotInit() {
         // Set up the input channel for the counter
         counter.setUpSource(1);
-            // Set the decoding type to 2X
+        // Set the decoding type to 2X
         counter.setUpSourceEdge(true, true);
-            // Set the counter to count down if the pulses are longer than .05 seconds
+        // Set the counter to count down if the pulses are longer than .05 seconds
         counter.setPulseLengthMode(.05)
     }
     ```
@@ -119,12 +119,12 @@ In pulse-length mode, the counter will count either up or down depending on the 
     ```c++
     // Create a new Counter object in two-pulse mode
     frc::Counter counter{frc::Counter::Mode::kPulseLength};
-        void Robot::RobotInit() {
+    void Robot::RobotInit() {
         // Set up the input channel for the counter
         counter.SetUpSource(1);
-            // Set the decoding type to 2X
+        // Set the decoding type to 2X
         counter.SetUpSourceEdge(true, true);
-            // Set the counter to count down if the pulses are longer than .05 seconds
+        // Set the counter to count down if the pulses are longer than .05 seconds
         counter.SetPulseLengthMode(.05)
     ```
 
@@ -137,12 +137,12 @@ In external direction mode, the counter counts either up or down depending on th
     ```java
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.kExternalDirection);
-        @Override
+    @Override
     public void robotInit() {
         // Set up the input channels for the counter
         counter.setUpSource(1);
         counter.setDownSource(2);
-            // Set the decoding type to 2X
+        // Set the decoding type to 2X
         counter.setUpSourceEdge(true, true);
     }
     ```
@@ -150,11 +150,11 @@ In external direction mode, the counter counts either up or down depending on th
     ```c++
     // Create a new Counter object in two-pulse mode
     frc::Counter counter{frc::Counter::Mode::kExternalDirection};
-        void RobotInit() {
+    void RobotInit() {
         // Set up the input channels for the counter
         counter.SetUpSource(1);
         counter.SetDownSource(2);
-            // Set the decoding type to 2X
+        // Set the decoding type to 2X
         counter.SetUpSourceEdge(true, true);
     ```
 
@@ -172,13 +172,13 @@ Apart from the mode-specific configurations, the :code:`Counter` class offers a 
     // Configures the counter to return a distance of 4 for every 256 pulses
     // Also changes the units of getRate
     counter.setDistancePerPulse(4./256.);
-        // Configures the counter to consider itself stopped after .1 seconds
+    // Configures the counter to consider itself stopped after .1 seconds
     counter.setMaxPeriod(.1);
-        // Configures the counter to consider itself stopped when its rate is below 10
+    // Configures the counter to consider itself stopped when its rate is below 10
     counter.setMinRate(10);
-        // Reverses the direction of the counter
+    // Reverses the direction of the counter
     counter.setReverseDirection(true);
-        // Configures an counter to average its period measurement over 5 samples
+    // Configures an counter to average its period measurement over 5 samples
     // Can be between 1 and 127 samples
     counter.setSamplesToAverage(5);
     ```
@@ -187,13 +187,13 @@ Apart from the mode-specific configurations, the :code:`Counter` class offers a 
     // Configures the counter to return a distance of 4 for every 256 pulses
     // Also changes the units of getRate
     counter.SetDistancePerPulse(4./256.);
-        // Configures the counter to consider itself stopped after .1 seconds
+    // Configures the counter to consider itself stopped after .1 seconds
     counter.SetMaxPeriod(.1);
-        // Configures the counter to consider itself stopped when its rate is below 10
+    // Configures the counter to consider itself stopped when its rate is below 10
     counter.SetMinRate(10);
-        // Reverses the direction of the counter
+    // Reverses the direction of the counter
     counter.SetReverseDirection(true);
-        // Configures an counter to average its period measurement over 5 samples
+    // Configures an counter to average its period measurement over 5 samples
     // Can be between 1 and 127 samples
     counter.SetSamplesToAverage(5);
     ```

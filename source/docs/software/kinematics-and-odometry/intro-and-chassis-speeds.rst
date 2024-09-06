@@ -41,7 +41,7 @@ The constructor for the ``ChassisSpeeds`` object is very straightforward, accept
    ```python
    import math
    from wpimath.kinematics import ChassisSpeeds
-      # The robot is moving at 3 meters per second forward, 2 meters
+   # The robot is moving at 3 meters per second forward, 2 meters
    # per second to the right, and rotating at half a rotation per
    # second counterclockwise.
    speeds = ChassisSpeeds(3.0, -2.0, math.pi)
@@ -78,7 +78,7 @@ The static ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java / Python) / ``Chassis
    import math
    from wpimath.kinematics import ChassisSpeeds
    from wpimath.geometry  import Rotation2d
-      # The desired field relative speed here is 2 meters per second
+   # The desired field relative speed here is 2 meters per second
    # toward the opponent's alliance station wall, and 2 meters per
    # second toward the left field boundary. The desired rotation
    # is a quarter of a rotation per second counterclockwise. The current

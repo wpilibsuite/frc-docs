@@ -26,19 +26,19 @@ The most basic usage of DataLogManager only requires a single line of code (typi
 
     ```java
     import edu.wpi.first.wpilibj.DataLogManager;
-        // Starts recording to data log
+    // Starts recording to data log
     DataLogManager.start();
     ```
 
     ```c++
     #include "frc/DataLogManager.h"
-        // Starts recording to data log
+    // Starts recording to data log
     frc::DataLogManager::Start();
     ```
 
     ```python
     from wpilib import DataLogManager
-        DataLogManager.start()
+    DataLogManager.start()
     ```
 
 DataLogManager provides a convenience function (``DataLogManager.log()``) for logging of text messages to the ``messages`` entry in the data log. The message is also printed to standard output, so this can be a replacement for ``System.out.println()``.
@@ -56,32 +56,32 @@ DataLogManager by default does not record joystick data.  The ``DriverStation`` 
     ```java
     import edu.wpi.first.wpilibj.DataLogManager;
     import edu.wpi.first.wpilibj.DriverStation;
-        // Starts recording to data log
+    // Starts recording to data log
     DataLogManager.start();
-        // Record both DS control and joystick data
+    // Record both DS control and joystick data
     DriverStation.startDataLog(DataLogManager.getLog());
-        // (alternatively) Record only DS control data
+    // (alternatively) Record only DS control data
     DriverStation.startDataLog(DataLogManager.getLog(), false);
     ```
 
     ```c++
     #include "frc/DataLogManager.h"
     #include "frc/DriverStation.h"
-        // Starts recording to data log
+    // Starts recording to data log
     frc::DataLogManager::Start();
-        // Record both DS control and joystick data
+    // Record both DS control and joystick data
     DriverStation::StartDataLog(DataLogManager::GetLog());
-        // (alternatively) Record only DS control data
+    // (alternatively) Record only DS control data
     DriverStation::StartDataLog(DataLogManager::GetLog(), false);
     ```
 
     ```python
     from wpilib import DataLogManager, DriverStation
-        # Starts recording to data log
+    # Starts recording to data log
     DataLogManager.start()
-        # Record both DS control and joystick data
+    # Record both DS control and joystick data
     DriverStation.startDataLog(DataLogManager.getLog())
-        # (alternatively) Record only DS control data
+    # (alternatively) Record only DS control data
     DriverStation.startDataLog(DataLogManager.getLog(), False)
     ```
 
@@ -101,19 +101,19 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
     import edu.wpi.first.util.datalog.DoubleLogEntry;
     import edu.wpi.first.util.datalog.StringLogEntry;
     import edu.wpi.first.wpilibj.DataLogManager;
-        BooleanLogEntry myBooleanLog;
+    BooleanLogEntry myBooleanLog;
     DoubleLogEntry myDoubleLog;
     StringLogEntry myStringLog;
-        public void robotInit() {
+    public void robotInit() {
       // Starts recording to data log
       DataLogManager.start();
-          // Set up custom log entries
+      // Set up custom log entries
       DataLog log = DataLogManager.getLog();
       myBooleanLog = new BooleanLogEntry(log, "/my/boolean");
       myDoubleLog = new DoubleLogEntry(log, "/my/double");
       myStringLog = new StringLogEntry(log, "/my/string");
     }
-        public void teleopPeriodic() {
+    public void teleopPeriodic() {
       if (...) {
         // Only log when necessary
         myBooleanLog.append(true);
@@ -126,19 +126,19 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
     ```c++
     #include "frc/DataLogManager.h"
     #include "wpi/DataLog.h"
-        wpi::log::BooleanLogEntry myBooleanLog;
+    wpi::log::BooleanLogEntry myBooleanLog;
     wpi::log::DoubleLogEntry myDoubleLog;
     wpi::log::StringLogEntry myStringLog;
-        void RobotInit() {
+    void RobotInit() {
       // Starts recording to data log
       frc::DataLogManager::Start();
-          // Set up custom log entries
+      // Set up custom log entries
       wpi::log::DataLog& log = frc::DataLogManager::GetLog();
       myBooleanLog = wpi::Log::BooleanLogEntry(log, "/my/boolean");
       myDoubleLog = wpi::log::DoubleLogEntry(log, "/my/double");
       myStringLog = wpi::log::StringLogEntry(log, "/my/string");
     }
-        void TeleopPeriodic() {
+    void TeleopPeriodic() {
       if (...) {
         // Only log when necessary
         myBooleanLog.Append(true);
@@ -156,16 +156,16 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
         DoubleLogEntry,
         StringLogEntry,
     )
-        class MyRobot(TimedRobot):
+   class MyRobot(TimedRobot):
         def robotInit(self):
             # Starts recording to data log
             DataLogManager.start()
-                # Set up custom log entries
+            # Set up custom log entries
             log = DataLogManager.getLog()
             self.myBooleanLog = BooleanLogEntry(log, "/my/boolean")
             self.myDoubleLog = DoubleLogEntry(log, "/my/double")
             self.myStringLog = StringLogEntry(log, "/my/string")
-            def teleopPeriodic(self):
+        def teleopPeriodic(self):
             if ...:
                 # Only log when necessary
                 self.myBooleanLog.append(True)

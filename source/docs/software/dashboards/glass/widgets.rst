@@ -39,7 +39,7 @@ The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instanc
 
    ```python
    from wpilib import SmartDashboard
-      SmartDashboard.putData("Auto Selector", selector)
+   SmartDashboard.putData("Auto Selector", selector)
    ```
 
 .. note:: For more information on creating a ``SendableChooser``, please see :ref:`this document <docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard:Setting up SendableChooser>`.
@@ -63,7 +63,7 @@ The :guilabel:`PID Controller` widget allows you to quickly tune PID values for 
 
    ```python
    from wpilib import SmartDashboard
-      SmartDashboard.putData("Elevator PID Controller", elevatorPIDController)
+   SmartDashboard.putData("Elevator PID Controller", elevatorPIDController)
    ```
 
 This allows you to quickly tune P, I, and D values for various setpoints.

@@ -26,7 +26,7 @@ Call ``withSize`` and ``withPosition`` to set the size and position of the widge
 
    ```python
    from wpilib.shuffleboard import Shuffleboard
-      (Shuffleboard.getTab("Pre-round")
+   (Shuffleboard.getTab("Pre-round")
      .add("Auto Mode", autoModeChooser)
      .withSize(2, 1) # make the widget 2x1
      .withPosition(0, 0)) # place it in the top-left corner
@@ -51,20 +51,20 @@ If there are many widgets in a tab with related data, it can be useful to place 
    wpi::StringMap<std::shared_ptr<nt::Value>> properties{
      std::make_pair("Label position", nt::Value::MakeString("HIDDEN"))
    };
-      frc::ShuffleboardLayout& elevatorCommands = frc::Shuffleboard::GetTab("Commands")
+   frc::ShuffleboardLayout& elevatorCommands = frc::Shuffleboard::GetTab("Commands")
      .GetLayout("Elevator", frc::BuiltInLayouts::kList)
      .WithSize(2, 2)
      .WithProperties(properties);
-      ElevatorDownCommand* elevatorDown = new ElevatorDownCommand();
+   ElevatorDownCommand* elevatorDown = new ElevatorDownCommand();
    ElevatorUpCommand* elevatorUp = new ElevatorUpCommand();
-      elevatorCommands.Add("Elevator Down", elevatorDown);
+   elevatorCommands.Add("Elevator Down", elevatorDown);
    elevatorCommands.Add("Elevator Up", elevatorUp);
    ```
 
    ```python
    from wpilib.shuffleboard import Shuffleboard
    from wpilib.shuffleboard import BuiltInLayouts
-      (elevatorCommands = Shuffleboard.getTab("Commands")
+   (elevatorCommands = Shuffleboard.getTab("Commands")
      .getLayout("Elevator", BuiltInLayouts.kList)
      .withSize(2, 2)
      .withProperties(map("Label position", "HIDDEN"))) # hide labels for commands

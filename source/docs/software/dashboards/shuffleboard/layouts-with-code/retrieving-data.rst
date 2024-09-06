@@ -9,11 +9,11 @@ Unlike ``SmartDashboard.getNumber`` and friends, retrieving data from Shuffleboa
       private GenericEntry maxSpeed =
          tab.add("Max Speed", 1)
             .getEntry();
-         private DifferentialDrive robotDrive = ...;
-         public void drive(double left, double right) {
-      // Retrieve the maximum speed from the dashboard
-      double max = maxSpeed.getDouble(1.0);
-      robotDrive.tankDrive(left * max, right * max);
+      private DifferentialDrive robotDrive = ...;
+      public void drive(double left, double right) {
+         // Retrieve the maximum speed from the dashboard
+         double max = maxSpeed.getDouble(1.0);
+         robotDrive.tankDrive(left * max, right * max);
       }
    }
    ```
@@ -22,13 +22,13 @@ Unlike ``SmartDashboard.getNumber`` and friends, retrieving data from Shuffleboa
    import commands2
    import wpilib.drive
    from wpilib.shuffleboard import Shuffleboard
-      class DriveSubsystem(commands2.SubsystemBase):
+   class DriveSubsystem(commands2.SubsystemBase):
       def __init__(self) -> None:
          super().__init__()
-            tab = Shuffleboard.getTab("Drive")
+         tab = Shuffleboard.getTab("Drive")
          self.maxSpeed = tab.add("Max Speed", 1).getEntry()
-            this.robotDrive = ...
-         def drive(self, left: float, right: float):
+         this.robotDrive = ...
+      def drive(self, left: float, right: float):
          # Retrieve the maximum speed from the dashboard
          max = self.maxSpeed.getDouble(1.0)
          self.robotDrive.tankDrive(left * max, right * max)
