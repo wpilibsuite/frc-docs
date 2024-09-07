@@ -51,8 +51,19 @@ def is_codeblock(line: str) -> bool:
     """
     return line.startswith(".. tab-set-code::") or line.startswith(".. tab-set::")
 
+def generate_language_regex(langs: list[str]) -> str:
+    """
+    Generates a regex pattern to match the specified languages.
 
-def get_blocks_from_rst_file(file: str) -> list[CodeBlock]:
+    Parameters:
+        langs (list[str]): A list of languages to match.
+
+    Returns:
+        str: A regex pattern to match the specified languages.
+    """
+    return f"(`{{3}}|:language: )({'|'.join(langs)})".replace("+", r"\+")
+
+def get_blocks_from_rst_file(file: str, langs: list[str]) -> list[CodeBlock]:
     """
     Extracts code blocks from a given .rst file.
 
@@ -63,6 +74,7 @@ def get_blocks_from_rst_file(file: str) -> list[CodeBlock]:
         list[CodeBlock]: A list of CodeBlock instances representing the code blocks in the file.
     """
     blocks = []
+    lang_regex = generate_language_regex(langs)
     with open(file, "r", encoding="utf8") as f:
         block_start = None
         langs = []
@@ -75,7 +87,7 @@ def get_blocks_from_rst_file(file: str) -> list[CodeBlock]:
             else:
                 if line.startswith(" ") or line.startswith("\t"):
                     lang = re.search(
-                        "(`{3}|:language: )(java|python|c\\+\\+|kotlin)", line.lower()
+                        lang_regex, line.lower()
                     )
                     if lang is not None:
                         langs.append(lang.group(2))
@@ -156,18 +168,21 @@ def main():
     parser.add_argument(
         "--langs",
         nargs="+",
-        default=["java", "python", "c++"],
+        default=['java', 'python', 'c++'],
         help="Languages to check for",
     )
 
+
     # Parse the command line arguments
     args = parser.parse_args()
+
+    print(generate_language_regex(args.langs))
 
     # Get all .rst files from the specified directory
     files = get_all_rst_files(dir=args.dir)
     blocks = []
     for file in files:
-        file_blocks = get_blocks_from_rst_file(file)
+        file_blocks = get_blocks_from_rst_file(file, args.langs)
         if len(file_blocks) == 0:
             continue
         else:
