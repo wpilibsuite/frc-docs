@@ -11,7 +11,7 @@ The Ramsete controller should be initialized with two gains, namely ``b`` and ``
    // Using the default constructor of RamseteController. Here
    // the gains are initialized to 2.0 and 0.7.
    RamseteController controller1 = new RamseteController();
-      // Using the secondary constructor of RamseteController where
+   // Using the secondary constructor of RamseteController where
    // the user can choose any other gains.
    RamseteController controller2 = new RamseteController(2.1, 0.8);
    ```
@@ -20,20 +20,20 @@ The Ramsete controller should be initialized with two gains, namely ``b`` and ``
    // Using the default constructor of RamseteController. Here
    // the gains are initialized to 2.0 and 0.7.
    frc::RamseteController controller1;
-      // Using the secondary constructor of RamseteController where
+   // Using the secondary constructor of RamseteController where
    // the user can choose any other gains.
    frc::RamseteController controller2{2.1, 0.8};
    ```
 
    ```python
    from wpimath.controller import RamseteController
-      # Using the default constructor of RamseteController. Here
+   # Using the default constructor of RamseteController. Here
    # the gains are initialized to 2.0 and 0.7.
    controller1 = RamseteController()
-      # Using the secondary constructor of RamseteController where
+   # Using the secondary constructor of RamseteController where
    # the user can choose any other gains.
    controller2 = RamseteController(2.1, 0.8)
-      ```
+   ```
 
 ## Getting Adjusted Velocities
 The Ramsete controller returns "adjusted velocities" so that the when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal comprises of a desired pose, desired linear velocity, and desired angular velocity. Furthermore, the current position of the robot should also be updated periodically. The controller uses these four arguments to return the adjusted linear and angular velocity. Users should command their robot to these linear and angular velocities to achieve optimal trajectory tracking.
@@ -47,7 +47,7 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
    ```java
    Trajectory.State goal = trajectory.sample(3.4); // sample the trajectory at 3.4 seconds from the beginning
    ChassisSpeeds adjustedSpeeds = controller.calculate(currentRobotPose, goal);
-      ```
+   ```
 
    ```c++
    const Trajectory::State goal = trajectory.Sample(3.4_s); // sample the trajectory at 3.4 seconds from the beginning

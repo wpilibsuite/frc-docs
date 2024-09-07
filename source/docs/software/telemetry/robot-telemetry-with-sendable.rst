@@ -32,7 +32,7 @@ To send a ``Sendable`` object to the dashboard, simply use the dashboard's ``put
 
     ```python
     from wpilib import SmartDashboard
-        SmartDashboard.putData("Arm PID", armPIDController)
+    SmartDashboard.putData("Arm PID", armPIDController)
     ```
 
 Additionally, some ``Sendable`` classes bind setters to the data values sent *from the dashboard to the robot*, allowing remote tuning of robot parameters.

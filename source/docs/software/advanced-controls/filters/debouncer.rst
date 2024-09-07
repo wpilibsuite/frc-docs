@@ -19,33 +19,33 @@ The WPILib ``Debouncer`` can be configured in three different modes:
   ```java
   // Initializes a DigitalInput on DIO 0
   DigitalInput input = new DigitalInput(0);
-    // Creates a Debouncer in "both" mode.
+  // Creates a Debouncer in "both" mode.
   Debouncer m_debouncer = new Debouncer(0.1, Debouncer.DebounceType.kBoth);
-    // So if currently false the signal must go true for at least .1 seconds before being read as a True signal.
+  // So if currently false the signal must go true for at least .1 seconds before being read as a True signal.
   if (m_debouncer.calculate(input.get())) {
-      // Do something now that the DI is True.
+    // Do something now that the DI is True.
   }
   ```
 
   ```c++
   // Initializes a DigitalInput on DIO 0
   frc::DigitalInput input{0};
-    // Creates a Debouncer in "both" mode.
+  // Creates a Debouncer in "both" mode.
   frc::Debouncer m_debouncer{100_ms, frc::Debouncer::DebounceType::kBoth};
-    // So if currently false the signal must go true for at least .1 seconds before being read as a True signal.
+  // So if currently false the signal must go true for at least .1 seconds before being read as a True signal.
   if (m_debouncer.calculate(input.Get())) {
-      // Do something now that the DI is True.
+    // Do something now that the DI is True.
   }
   ```
 
   ```python
   from wpilib import DigitalInput
   from wpimath.filter import Debouncer
-    # Initializes a DigitalInput on DIO 0
+  # Initializes a DigitalInput on DIO 0
   self.input = DigitalInput(0)
-    # Creates a Debouncer in "both" mode with a debounce time of 0.1 seconds
+  # Creates a Debouncer in "both" mode with a debounce time of 0.1 seconds
   self.debouncer = Debouncer(0.1, Debouncer.DebounceType.kBoth)
-    # If currently false, the signal must go true for at least 0.1 seconds before being read as a True signal.
+  # If currently false, the signal must go true for at least 0.1 seconds before being read as a True signal.
   if self.debouncer.calculate(self.input.get()):
       # Do something now that the DI is True.
       pass

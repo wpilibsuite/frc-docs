@@ -40,7 +40,7 @@ Note that there are three cases: red, blue, and no color yet.  It is important t
 
   ```Python
   from wpilib import DriverStation
-    ally = DriverStation.getAlliance()
+  ally = DriverStation.getAlliance()
   if ally is not None:
       if ally == DriverStation.Alliance.kRed:
           <RED ACTION>

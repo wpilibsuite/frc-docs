@@ -22,7 +22,7 @@ To use the either Power Distribution module, create an instance of the :code:`Po
 
     ```python
     from wpilib import PowerDistribution
-        examplePD = PowerDistribution()
+    examplePD = PowerDistribution()
     examplePD = PowerDistribution(0, PowerDistribution.ModuleType.kCTRE)
     examplePD = PowerDistribution(1, PowerDistribution.ModuleType.kRev)
     ```

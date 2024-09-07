@@ -87,8 +87,8 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
       ```toml
       [tool.robotpy]
-            ...
-            # Add cscore to the robotpy-extras list
+      ...
+      # Add cscore to the robotpy-extras list
       robotpy_extras = ["cscore"]
       ```
 

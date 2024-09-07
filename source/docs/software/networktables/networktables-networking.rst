@@ -44,9 +44,9 @@ The advantage of the robot program being the server is that it's at a known netw
 
         ```python
         import ntcore
-                inst = ntcore.NetworkTableInstance.getDefault()
+        inst = ntcore.NetworkTableInstance.getDefault()
         inst.startServer()
-                ```
+        ```
 
 ## Starting a NetworkTables Client
 
@@ -57,13 +57,13 @@ The advantage of the robot program being the server is that it's at a known netw
 
         ```java
         NetworkTableInstance inst = NetworkTableInstance.getDefault();
-                // start a NT4 client
+        // start a NT4 client
         inst.startClient4("example client");
-                // connect to a roboRIO with team number TEAM
+        // connect to a roboRIO with team number TEAM
         inst.setServerTeam(TEAM);
-                // starting a DS client will try to get the roboRIO address from the DS application
+        // starting a DS client will try to get the roboRIO address from the DS application
         inst.startDSClient();
-                // connect to a specific host/port
+        // connect to a specific host/port
         inst.setServer("host", NetworkTableInstance.kDefaultPort4)
         ```
 
@@ -72,13 +72,13 @@ The advantage of the robot program being the server is that it's at a known netw
 
         ```c++
         nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
-                // start a NT4 client
+        // start a NT4 client
         inst.StartClient4("example client");
-                // connect to a roboRIO with team number TEAM
+        // connect to a roboRIO with team number TEAM
         inst.SetServerTeam(TEAM);
-                // starting a DS client will try to get the roboRIO address from the DS application
+        // starting a DS client will try to get the roboRIO address from the DS application
         inst.StartDSClient();
-                // connect to a specific host/port
+        // connect to a specific host/port
         inst.SetServer("host", NT_DEFAULT_PORT4)
         ```
 
@@ -87,13 +87,13 @@ The advantage of the robot program being the server is that it's at a known netw
 
         ```c++
         NT_Inst inst = nt::GetDefaultInstance();
-                // start a NT4 client
+        // start a NT4 client
         nt::StartClient4(inst, "example client");
-                // connect to a roboRIO with team number TEAM
+        // connect to a roboRIO with team number TEAM
         nt::SetServerTeam(inst, TEAM);
-                // starting a DS client will try to get the roboRIO address from the DS application
+        // starting a DS client will try to get the roboRIO address from the DS application
         nt::StartDSClient(inst);
-                // connect to a specific host/port
+        // connect to a specific host/port
         nt::SetServer(inst, "host", NT_DEFAULT_PORT4)
         ```
 
@@ -102,13 +102,13 @@ The advantage of the robot program being the server is that it's at a known netw
 
         ```c
         NT_Inst inst = NT_GetDefaultInstance();
-                // start a NT4 client
+        // start a NT4 client
         NT_StartClient4(inst, "example client");
-                // connect to a roboRIO with team number TEAM
+        // connect to a roboRIO with team number TEAM
         NT_SetServerTeam(inst, TEAM);
-                // starting a DS client will try to get the roboRIO address from the DS application
+        // starting a DS client will try to get the roboRIO address from the DS application
         NT_StartDSClient(inst);
-                // connect to a specific host/port
+        // connect to a specific host/port
         NT_SetServer(inst, "host", NT_DEFAULT_PORT4)
         ```
 
@@ -118,14 +118,14 @@ The advantage of the robot program being the server is that it's at a known netw
 
         ```python
         import ntcore
-                inst = ntcore.NetworkTableInstance.getDefault()
-                # start a NT4 client
+        inst = ntcore.NetworkTableInstance.getDefault()
+        # start a NT4 client
         inst.startClient4("example client")
-                # connect to a roboRIO with team number TEAM
+        # connect to a roboRIO with team number TEAM
         inst.setServerTeam(TEAM)
-                # starting a DS client will try to get the roboRIO address from the DS application
+        # starting a DS client will try to get the roboRIO address from the DS application
         inst.startDSClient()
-                # connect to a specific host/port
+        # connect to a specific host/port
         inst.setServer("host", ntcore.NetworkTableInstance.kDefaultPort4)
         ```
 

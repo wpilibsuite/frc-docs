@@ -12,24 +12,24 @@ PWM motor controllers can be controlled in the same way as a CAN motor controlle
 
    ```java
    Spark spark = new Spark(0); // 0 is the RIO PWM port this is connected to
-      spark.set(-0.75); // the % output of the motor, between -1 and 1
-      VictorSP victor = new VictorSP(0); // 0 is the RIO PWM port this is connected to
-      victor.set(0.6); // the % output of the motor, between -1 and 1
+   spark.set(-0.75); // the % output of the motor, between -1 and 1
+   VictorSP victor = new VictorSP(0); // 0 is the RIO PWM port this is connected to
+   victor.set(0.6); // the % output of the motor, between -1 and 1
    ```
 
    ```c++
    frc::Spark spark{0}; // 0 is the RIO PWM port this is connected to
-      spark.Set(-0.75); // the % output of the motor, between -1 and 1
-      frc::VictorSP victor{0}; // 0 is the RIO PWM port this is connected to
-      victor.Set(0.6); // the % output of the motor, between -1 and 1
+   spark.Set(-0.75); // the % output of the motor, between -1 and 1
+   frc::VictorSP victor{0}; // 0 is the RIO PWM port this is connected to
+   victor.Set(0.6); // the % output of the motor, between -1 and 1
    ```
 
    ```python
    spark = wpilib.Spark(0) # 0 is the RIO PWM port this is connected to
-      spark.set(-0.75) # the % output of the motor, between -1 and 1
-      victor = wpilib.VictorSP(0) # 0 is the RIO PWM port this is connected to
-      victor.set(0.6) # the % output of the motor, between -1 and 1
-      ```
+   spark.set(-0.75) # the % output of the motor, between -1 and 1
+   victor = wpilib.VictorSP(0) # 0 is the RIO PWM port this is connected to
+   victor.set(0.6) # the % output of the motor, between -1 and 1
+   ```
 
 ## CAN Motor Controllers
 

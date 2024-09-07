@@ -31,7 +31,7 @@ In the following examples, you'll see what the screen would look like when there
    ```python
    from wpilib import SmartDashboard
    from commands2 import CommandScheduler
-      SmartDashboard.putData(CommandScheduler.getInstance())
+   SmartDashboard.putData(CommandScheduler.getInstance())
    ```
 
 You can display the status of the Scheduler (the code that schedules your commands to run). This is easily done by adding a single line to the ``RobotInit`` method in your RobotProgram as shown here. In this example the Scheduler instance is written using the ``putData`` method to SmartDashboard. This line of code produces the display in the previous image.
@@ -55,7 +55,7 @@ This is the scheduler status when there are two commands running, ``ExampleComma
 
    ```python
    from wpilib import SmartDashboard
-      SmartDashboard.putData(exampleSubsystem)
+   SmartDashboard.putData(exampleSubsystem)
    ```
 
 In this example we are writing the command instance, ``exampleSubsystem`` and instance of the ``ExampleSubsystem`` class to the SmartDashboard. This causes the display shown in the previous image. The text field will either contain a few dashes, ``---`` indicating that no command is current using this subsystem, or the name of the command currently using this subsystem.
@@ -79,7 +79,7 @@ Running commands will "require" subsystems. That is the command is reserving the
 
    ```python
    from wpilib import SmartDashboard
-      SmartDashboard.putData("Autonomous Command", exampleCommand)
+   SmartDashboard.putData("Autonomous Command", exampleCommand)
    ```
 
 This is the code required to create a button for the command on SmartDashboard. Pressing the button will schedule the command. While the command is running, the button label changes from ``start`` to ``cancel`` and pressing the button will cancel the command.

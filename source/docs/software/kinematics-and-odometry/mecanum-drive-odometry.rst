@@ -24,11 +24,11 @@ The fourth optional argument is the starting pose of your robot on the field (as
    Translation2d m_frontRightLocation = new Translation2d(0.381, -0.381);
    Translation2d m_backLeftLocation = new Translation2d(-0.381, 0.381);
    Translation2d m_backRightLocation = new Translation2d(-0.381, -0.381);
-      // Creating my kinematics object using the wheel locations.
+   // Creating my kinematics object using the wheel locations.
    MecanumDriveKinematics m_kinematics = new MecanumDriveKinematics(
      m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation, m_backRightLocation
    );
-      // Creating my odometry object from the kinematics object and the initial wheel positions.
+   // Creating my odometry object from the kinematics object and the initial wheel positions.
    // Here, our starting pose is 5 meters along the long end of the field and in the
    // center of the field along the short end, facing the opposing alliance wall.
    MecanumDriveOdometry m_odometry = new MecanumDriveOdometry(
@@ -48,12 +48,12 @@ The fourth optional argument is the starting pose of your robot on the field (as
    frc::Translation2d m_frontRightLocation{0.381_m, -0.381_m};
    frc::Translation2d m_backLeftLocation{-0.381_m, 0.381_m};
    frc::Translation2d m_backRightLocation{-0.381_m, -0.381_m};
-      // Creating my kinematics object using the wheel locations.
+   // Creating my kinematics object using the wheel locations.
    frc::MecanumDriveKinematics m_kinematics{
      m_frontLeftLocation, m_frontRightLocation,
      m_backLeftLocation, m_backRightLocation
    };
-      // Creating my odometry object from the kinematics object. Here,
+   // Creating my odometry object from the kinematics object. Here,
    // our starting pose is 5 meters along the long end of the field and in the
    // center of the field along the short end, facing forward.
    frc::MecanumDriveOdometry m_odometry{
@@ -75,16 +75,16 @@ The fourth optional argument is the starting pose of your robot on the field (as
    from wpimath.kinematics import MecanumDriveWheelPositions
    from wpimath.geometry import Pose2d
    from wpimath.geometry import Rotation2d
-      # Locations of the wheels relative to the robot center.
+   # Locations of the wheels relative to the robot center.
    frontLeftLocation = Translation2d(0.381, 0.381)
    frontRightLocation = Translation2d(0.381, -0.381)
    backLeftLocation = Translation2d(-0.381, 0.381)
    backRightLocation = Translation2d(-0.381, -0.381)
-      # Creating my kinematics object using the wheel locations.
+   # Creating my kinematics object using the wheel locations.
    self.kinematics = MecanumDriveKinematics(
      frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
    )
-      # Creating my odometry object from the kinematics object and the initial wheel positions.
+   # Creating my odometry object from the kinematics object and the initial wheel positions.
    # Here, our starting pose is 5 meters along the long end of the field and in the
    # center of the field along the short end, facing the opposing alliance wall.
    self.odometry = MecanumDriveOdometry(
@@ -110,9 +110,9 @@ The ``update`` method of the odometry class updates the robot position on the fi
      var wheelPositions = new MecanumDriveWheelPositions(
        m_frontLeftEncoder.getDistance(), m_frontRightEncoder.getDistance(),
        m_backLeftEncoder.getDistance(), m_backRightEncoder.getDistance());
-        // Get the rotation of the robot from the gyro.
+     // Get the rotation of the robot from the gyro.
      var gyroAngle = m_gyro.getRotation2d();
-        // Update the pose
+     // Update the pose
      m_pose = m_odometry.update(gyroAngle, wheelPositions);
    }
    ```
@@ -125,9 +125,9 @@ The ``update`` method of the odometry class updates the robot position on the fi
        units::meter_t{m_frontRightEncoder.GetDistance()},
        units::meter_t{m_backLeftEncoder.GetDistance()},
        units::meter_t{m_backRightEncoder.GetDistance()}};
-        // Get the rotation of the robot from the gyro.
+     // Get the rotation of the robot from the gyro.
      frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
-        // Update the pose
+     // Update the pose
      m_pose = m_odometry.Update(gyroAngle, wheelPositions);
    }
    ```
@@ -139,9 +139,9 @@ The ``update`` method of the odometry class updates the robot position on the fi
      wheelPositions = MecanumDriveWheelPositions(
        self.frontLeftEncoder.getDistance(), self.frontRightEncoder.getDistance(),
        self.backLeftEncoder.getDistance(), self.backRightEncoder.getDistance())
-        # Get the rotation of the robot from the gyro.
+     # Get the rotation of the robot from the gyro.
      gyroAngle = gyro.getRotation2d()
-        # Update the pose
+     # Update the pose
      self.pose = odometry.update(gyroAngle, wheelPositions)
    ```
 

@@ -114,7 +114,7 @@ An axis can be used with ``.getRawAxis(int index)`` (if not using any of the cla
    private final PWMSparkMax m_rightMotor = new PWMSparkMax(Constants.kRightMotorPort);
    private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
    private final GenericHID m_stick = new GenericHID(Constants.kJoystickPort);
-      m_robotDrive.arcadeDrive(-m_stick.getRawAxis(0), m_stick.getRawAxis(1));
+   m_robotDrive.arcadeDrive(-m_stick.getRawAxis(0), m_stick.getRawAxis(1));
    ```
 
    ```c++
@@ -123,7 +123,7 @@ An axis can be used with ``.getRawAxis(int index)`` (if not using any of the cla
    frc::DifferentialDrive m_robotDrive{[&](double output) { m_leftMotor.Set(output); },
                                        [&](double output) { m_rightMotor.Set(output); }};
    frc::GenericHID m_stick{Constants::kJoystickPort};
-      m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
+   m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
    ```
 
    ```python
@@ -131,8 +131,8 @@ An axis can be used with ``.getRawAxis(int index)`` (if not using any of the cla
    rightMotor = wpilib.PWMVictorSPX(RIGHT_MOTOR_PORT)
    self.robotDrive = wpilib.drive.DifferentialDrive(leftMotor, rightMotor)
    self.stick = wpilib.GenericHID(JOYSTICK_PORT)
-      self.robotDrive.arcadeDrive(-self.stick.getRawAxis(0), self.stick.getRawAxis(1))
-      ```
+   self.robotDrive.arcadeDrive(-self.stick.getRawAxis(0), self.stick.getRawAxis(1))
+   ```
 
 ## Button Usage
 
@@ -149,8 +149,8 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
    if (joystick.getRawButtonReleased(0)) {
       turnIntakeOff(); // When released the intake turns off
    }
-      OR
-      if (joystick.getRawButton(0)) {
+   // OR
+   if (joystick.getRawButton(0)) {
       turnIntakeOn();
    } else {
       turnIntakeOff();
@@ -164,8 +164,8 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
    if (joystick.GetRawButtonReleased(0)) {
       turnIntakeOff(); // When released the intake turns off
    }
-      OR
-      if (joystick.GetRawButton(0)) {
+   // OR
+   if (joystick.GetRawButton(0)) {
       turnIntakeOn();
    } else {
       turnIntakeOff();
@@ -175,10 +175,10 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
    ```python
    if joystick.getRawButtonPressed(0):
       turnIntakeOn() # When pressed the intake turns on
-      if joystick.getRawButtonReleased(0):
+   if joystick.getRawButtonReleased(0):
       turnIntakeOff() # When released the intake turns off
-      # OR
-      if joystick.getRawButton(0):
+   # OR
+   if joystick.getRawButton(0):
       turnIntakeOn()
    else:
       turnIntakeOff()
@@ -190,7 +190,7 @@ A common request is to toggle something on and off with the press of a button.  
 
    ```java
    boolean toggle = false;
-      if (joystick.getRawButtonPressed(0)) {
+   if (joystick.getRawButtonPressed(0)) {
       if (toggle) {
          // Current state is true so turn off
          retractIntake();
@@ -205,7 +205,7 @@ A common request is to toggle something on and off with the press of a button.  
 
    ```c++
    bool toggle{false};
-      if (joystick.GetRawButtonPressed(0)) {
+   if (joystick.GetRawButtonPressed(0)) {
       if (toggle) {
          // Current state is true so turn off
          retractIntake();
@@ -220,7 +220,7 @@ A common request is to toggle something on and off with the press of a button.  
 
    ```python
    toggle = False
-      if joystick.getRawButtonPressed(0):
+   if joystick.getRawButtonPressed(0):
       if toggle:
          # current state is True so turn off
          retractIntake()

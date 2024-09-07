@@ -42,7 +42,7 @@ Users can create their own constraint by implementing the ``TrajectoryConstraint
    units::meters_per_second_t velocity) override {
      // code here
    }
-      MinMax MinMaxAcceleration(const Pose2d& pose, units::curvature_t curvature,
+   MinMax MinMaxAcceleration(const Pose2d& pose, units::curvature_t curvature,
                          units::meters_per_second_t speed) override {
      // code here
    }
@@ -52,7 +52,7 @@ Users can create their own constraint by implementing the ``TrajectoryConstraint
    from wpimath import units
    from wpimath.geometry import Pose2d
    from wpimath.trajectory.constraint import TrajectoryConstraint
-         class MyConstraint(TrajectoryConstraint):
+   class MyConstraint(TrajectoryConstraint):
        def maxVelocity(
            self,
            pose: Pose2d,
@@ -60,7 +60,7 @@ Users can create their own constraint by implementing the ``TrajectoryConstraint
            velocity: units.meters_per_second,
        ) -> units.meters_per_second:
            ...
-          def minMaxAcceleration(
+       def minMaxAcceleration(
            self,
            pose: Pose2d,
            curvature: units.radians_per_meter,

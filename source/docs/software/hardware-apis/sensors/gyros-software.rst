@@ -30,7 +30,7 @@ The ADIS16448 uses the :code:`ADIS16448_IMU` class ([Java](https://github.wpilib
 
     ```python
     from wpilib import ADIS16448_IMU
-        # ADIS16448 plugged into the MXP port
+    # ADIS16448 plugged into the MXP port
     self.gyro = ADIS16448_IMU()
     ```
 
@@ -121,7 +121,7 @@ The navX uses the :code:`AHRS` class.  See the [navX documentation](https://pdoc
 
     ```python
     import navx
-        # navX MXP using SPI
+    # navX MXP using SPI
     self.gyro = navx.AHRS(SPI.Port.kMXP)
     ```
 
@@ -148,7 +148,7 @@ The Pigeon should use the :code:`WPI_PigeonIMU` class.  The Pigeon can either be
     ```python
     import phoenix5
     import ctre.sensors
-        self.gyro = ctre.WPI_PigeonIMU(0); # Pigeon is on CAN Bus with device ID 0
+    self.gyro = ctre.WPI_PigeonIMU(0); # Pigeon is on CAN Bus with device ID 0
     # OR (choose one or the other based on your connection)
     talon = ctre.TalonSRX(0); # TalonSRX is on CAN Bus with device ID 0
     self.gyro = ctre.WPI_PigeonIMU(talon) # Pigeon uses the talon created above
@@ -168,7 +168,7 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 
     ```java
     // Use gyro declaration from above here
-        public void robotInit() {
+    public void robotInit() {
         // Places a compass indicator for the gyro heading on the dashboard
         Shuffleboard.getTab("Example tab").add(gyro);
     }
@@ -176,7 +176,7 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 
     ```c++
     // Use gyro declaration from above here
-        void Robot::RobotInit() {
+    void Robot::RobotInit() {
         // Places a compass indicator for the gyro heading on the dashboard
         frc::Shuffleboard.GetTab("Example tab").Add(gyro);
     }
@@ -184,9 +184,9 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 
     ```python
     from wpilib.shuffleboard import Shuffleboard
-        def robotInit(self):
+    def robotInit(self):
         # Use gyro declaration from above here
-            # Places a compass indicator for the gyro heading on the dashboard
+        # Places a compass indicator for the gyro heading on the dashboard
         Shuffleboard.getTab("Example tab").add(self.gyro)
     ```
 
@@ -206,57 +206,57 @@ The following example shows how to stabilize heading using a simple P loop close
 
     ```java
     // Use gyro declaration from above here
-        // The gain for a simple P loop
+    // The gain for a simple P loop
     double kP = 1;
-        // Initialize motor controllers and drive
+    // Initialize motor controllers and drive
     Spark leftLeader = new Spark(0);
     Spark leftFollower = new Spark(1);
-        Spark rightLeader = new Spark(2);
+    Spark rightLeader = new Spark(2);
     Spark rightFollower = new Spark(3);
-        DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
-        @Override
+    DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
+    @Override
     public void robotInit() {
         // Configures the encoder's distance-per-pulse
         // The robot moves forward 1 foot per encoder rotation
         // There are 256 pulses per encoder rotation
         encoder.setDistancePerPulse(1./256.);
-            // Invert the right side of the drivetrain. You might have to invert the other side
+        // Invert the right side of the drivetrain. You might have to invert the other side
         rightLeader.setInverted(true);
-            // Configure the followers to follow the leaders
+        // Configure the followers to follow the leaders
         leftLeader.addFollower(leftFollower);
         rightLeader.addFollower(rightFollower);
     }
-        @Override
+    @Override
     public void autonomousPeriodic() {
         // Setpoint is implicitly 0, since we don't want the heading to change
         double error = -gyro.getRate();
-            // Drives forward continuously at half speed, using the gyro to stabilize the heading
+        // Drives forward continuously at half speed, using the gyro to stabilize the heading
         drive.tankDrive(.5 + kP * error, .5 - kP * error);
     }
     ```
 
     ```c++
     // Use gyro declaration from above here
-        // The gain for a simple P loop
+    // The gain for a simple P loop
     double kP = 1;
-        // Initialize motor controllers and drive
+    // Initialize motor controllers and drive
     frc::Spark leftLeader{0};
     frc::Spark leftFollower{1};
-        frc::Spark rightLeader{2};
+    frc::Spark rightLeader{2};
     frc::Spark rightFollower{3};
-        frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
+    frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
                                  [&](double output) { rightLeader.Set(output); }};
-        void Robot::RobotInit() {
+    void Robot::RobotInit() {
         // Invert the right side of the drivetrain. You might have to invert the other side
         rightLeader.SetInverted(true);
-            // Configure the followers to follow the leaders
+        // Configure the followers to follow the leaders
         leftLeader.AddFollower(leftFollower);
         rightLeader.AddFollower(rightFollower);
     }
-        void Robot::AutonomousPeriodic() {
+    void Robot::AutonomousPeriodic() {
         // Setpoint is implicitly 0, since we don't want the heading to change
         double error = -gyro.GetRate();
-            // Drives forward continuously at half speed, using the gyro to stabilize the heading
+        // Drives forward continuously at half speed, using the gyro to stabilize the heading
         drive.TankDrive(.5 + kP * error, .5 - kP * error);
     }
     ```
@@ -265,23 +265,23 @@ The following example shows how to stabilize heading using a simple P loop close
     from wpilib import Spark
     from wpilib import MotorControllerGroup
     from wpilib.drive import DifferentialDrive
-        def robotInit(self):
+    def robotInit(self):
         # Use gyro declaration from above here
-            # The gain for a simple P loop
+        # The gain for a simple P loop
         self.kP = 1
-            # Initialize motor controllers and drive
+        # Initialize motor controllers and drive
         left1 = Spark(0)
         left2 = Spark(1)
         right1 = Spark(2)
         right2 = Spark(3)
-            leftMotors = MotorControllerGroup(left1, left2)
+        leftMotors = MotorControllerGroup(left1, left2)
         rightMotors = MotorControllerGroup(right1, right2)
-            self.drive = DifferentialDrive(leftMotors, rightMotors)
-            rightMotors.setInverted(true)
-        def autonomousPeriodic(self):
+        self.drive = DifferentialDrive(leftMotors, rightMotors)
+        rightMotors.setInverted(true)
+    def autonomousPeriodic(self):
         # Setpoint is implicitly 0, since we don't want the heading to change
         error = -self.gyro.getRate()
-            # Drives forward continuously at half speed, using the gyro to stabilize the heading
+        # Drives forward continuously at half speed, using the gyro to stabilize the heading
         self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
     ```
 
@@ -297,59 +297,59 @@ The following example shows how to stabilize heading using a simple P loop close
 
     ```java
     // Use gyro declaration from above here
-        // The gain for a simple P loop
+    // The gain for a simple P loop
     double kP = 1;
-        // The heading of the robot when starting the motion
+    // The heading of the robot when starting the motion
     double heading;
-        // Initialize motor controllers and drive
+    // Initialize motor controllers and drive
     Spark left1 = new Spark(0);
     Spark left2 = new Spark(1);
-        Spark right1 = new Spark(2);
+    Spark right1 = new Spark(2);
     Spark right2 = new Spark(3);
-        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
+    MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
     MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
-        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
-        @Override
+    DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
+    @Override
     public void robotInit() {
         rightMotors.setInverted(true);
     }
-        @Override
+    @Override
     public void autonomousInit() {
         // Set setpoint to current heading at start of auto
         heading = gyro.getAngle();
     }
-        @Override
+    @Override
     public void autonomousPeriodic() {
         double error = heading - gyro.getAngle();
-            // Drives forward continuously at half speed, using the gyro to stabilize the heading
+        // Drives forward continuously at half speed, using the gyro to stabilize the heading
         drive.tankDrive(.5 + kP * error, .5 - kP * error);
     }
     ```
 
     ```c++
     // Use gyro declaration from above here
-        // The gain for a simple P loop
+    // The gain for a simple P loop
     double kP = 1;
-        // The heading of the robot when starting the motion
+    // The heading of the robot when starting the motion
     double heading;
-        // Initialize motor controllers and drive
+    // Initialize motor controllers and drive
     frc::Spark left1{0};
     frc::Spark left2{1};
     frc::Spark right1{2};
     frc::Spark right2{3};
-        frc::MotorControllerGroup leftMotors{left1, left2};
+    frc::MotorControllerGroup leftMotors{left1, left2};
     frc::MotorControllerGroup rightMotors{right1, right2};
-        frc::DifferentialDrive drive{leftMotors, rightMotors};
-        void Robot::RobotInit() {
+    frc::DifferentialDrive drive{leftMotors, rightMotors};
+    void Robot::RobotInit() {
       rightMotors.SetInverted(true);
     }
-        void Robot::AutonomousInit() {
+    void Robot::AutonomousInit() {
         // Set setpoint to current heading at start of auto
         heading = gyro.GetAngle();
     }
-        void Robot::AutonomousPeriodic() {
+    void Robot::AutonomousPeriodic() {
         double error = heading - gyro.GetAngle();
-            // Drives forward continuously at half speed, using the gyro to stabilize the heading
+        // Drives forward continuously at half speed, using the gyro to stabilize the heading
         drive.TankDrive(.5 + kP * error, .5 - kP * error);
     }
     ```
@@ -358,25 +358,25 @@ The following example shows how to stabilize heading using a simple P loop close
     from wpilib import Spark
     from wpilib import MotorControllerGroup
     from wpilib.drive import DifferentialDrive
-        def robotInit(self):
+    def robotInit(self):
         # Use gyro declaration from above here
-            # The gain for a simple P loop
+        # The gain for a simple P loop
         self.kP = 1
-            # Initialize motor controllers and drive
+        # Initialize motor controllers and drive
         left1 = Spark(0)
         left2 = Spark(1)
         right1 = Spark(2)
         right2 = Spark(3)
-            leftMotors = MotorControllerGroup(left1, left2)
+        leftMotors = MotorControllerGroup(left1, left2)
         rightMotors = MotorControllerGroup(right1, right2)
-            self.drive = DifferentialDrive(leftMotors, rightMotors)
-            rightMotors.setInverted(true)
-        def autonomousInit(self):
+        self.drive = DifferentialDrive(leftMotors, rightMotors)
+        rightMotors.setInverted(true)
+    def autonomousInit(self):
         # Set setpoint to current heading at start of auto
         self.heading = self.gyro.getAngle()
         def autonomousPeriodic(self):
         error = self.heading - self.gyro.getAngle()
-            # Drives forward continuously at half speed, using the gyro to stabilize the heading
+        # Drives forward continuously at half speed, using the gyro to stabilize the heading
         self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
     ```
 
@@ -392,48 +392,48 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
     ```java
     // Use gyro declaration from above here
-        // The gain for a simple P loop
+    // The gain for a simple P loop
     double kP = 0.05;
-        // Initialize motor controllers and drive
+    // Initialize motor controllers and drive
     Spark left1 = new Spark(0);
     Spark left2 = new Spark(1);
-        Spark right1 = new Spark(2);
+    Spark right1 = new Spark(2);
     Spark right2 = new Spark(3);
-        MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
+    MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
     MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
-        DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
-        @Override
+    DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
+    @Override
     public void robotInit() {
         rightMotors.setInverted(true);
     }
-        @Override
+    @Override
     public void autonomousPeriodic() {
         // Find the heading error; setpoint is 90
         double error = 90 - gyro.getAngle();
-            // Turns the robot to face the desired direction
+        // Turns the robot to face the desired direction
         drive.tankDrive(kP * error, -kP * error);
     }
     ```
 
     ```c++
     // Use gyro declaration from above here
-        // The gain for a simple P loop
+    // The gain for a simple P loop
     double kP = 0.05;
-        // Initialize motor controllers and drive
+    // Initialize motor controllers and drive
     frc::Spark left1{0};
     frc::Spark left2{1};
     frc::Spark right1{2};
     frc::Spark right2{3};
-        frc::MotorControllerGroup leftMotors{left1, left2};
+    frc::MotorControllerGroup leftMotors{left1, left2};
     frc::MotorControllerGroup rightMotors{right1, right2};
-        frc::DifferentialDrive drive{leftMotors, rightMotors};
-        void Robot::RobotInit() {
+    frc::DifferentialDrive drive{leftMotors, rightMotors};
+    void Robot::RobotInit() {
       rightMotors.SetInverted(true);
     }
-        void Robot::AutonomousPeriodic() {
+    void Robot::AutonomousPeriodic() {
         // Find the heading error; setpoint is 90
         double error = 90 - gyro.GetAngle();
-            // Turns the robot to face the desired direction
+        // Turns the robot to face the desired direction
         drive.TankDrive(kP * error, -kP * error);
     }
     ```
@@ -442,23 +442,23 @@ Much like with heading stabilization, this is often accomplished with a PID loop
     from wpilib import Spark
     from wpilib import MotorControllerGroup
     from wpilib.drive import DifferentialDrive
-        def robotInit(self):
+    def robotInit(self):
         # Use gyro declaration from above here
-            # The gain for a simple P loop
+        # The gain for a simple P loop
         self.kP = 0.05
-            # Initialize motor controllers and drive
+        # Initialize motor controllers and drive
         left1 = Spark(0)
         left2 = Spark(1)
         right1 = Spark(2)
         right2 = Spark(3)
-            leftMotors = MotorControllerGroup(left1, left2)
+        leftMotors = MotorControllerGroup(left1, left2)
         rightMotors = MotorControllerGroup(right1, right2)
-            self.drive = DifferentialDrive(leftMotors, rightMotors)
-            rightMotors.setInverted(true)
-        def autonomousPeriodic(self):
+        self.drive = DifferentialDrive(leftMotors, rightMotors)
+        rightMotors.setInverted(true)
+    def autonomousPeriodic(self):
         # Find the heading error; setpoint is 90
         error = 90 - self.gyro.getAngle()
-            # Drives forward continuously at half speed, using the gyro to stabilize the heading
+        # Drives forward continuously at half speed, using the gyro to stabilize the heading
         self.drive.tankDrive(self.kP * error, -self.kP * error)
     ```
 

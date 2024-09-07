@@ -8,7 +8,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'wpilibsuite' }}
+    if: ${{ github.repository_owner == 'wpilibsuite' }} && env.PUBLISH_STABLE == 'true'
+    env:
+      PUBLISH_STABLE: ${{ secrets.PUBLISH_STABLE }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,7 +36,5 @@ jobs:
 
       - name: Push
         if: env.PUBLISH_STABLE == 'true' || github.event.action == 'workflow_dispatch'
-        env:
-          PUBLISH_STABLE: ${{ secrets.PUBLISH_STABLE }}
         run: |
           git push origin stable

@@ -20,35 +20,35 @@ Both of the following examples are extremely simplified programs that just illus
 
    ```java
    DoubleArraySubscriber areasSub;
-      @Override
+   @Override
    public void robotInit() {
      NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport");
      areasSub = table.getDoubleArrayTopic("area").subscribe(new double[] {});
    }
-      @Override
+   @Override
    public void teleopPeriodic() {
-       double[] areas = areasSub.get();
-          System.out.print("areas: " );
-          for (double area : areas) {
-         System.out.print(area + " ");
-       }
-          System.out.println();
+     double[] areas = areasSub.get();
+     System.out.print("areas: " );
+     for (double area : areas) {
+       System.out.print(area + " ");
+     }
+     System.out.println();
    }
    ```
 
    ```c++
    nt::DoubleArraySubscriber areasSub;
-      void Robot::RobotInit() override {
+   void Robot::RobotInit() override {
      auto table = nt::NetworkTableInstance::GetDefault().GetTable("GRIP/myContoursReport");
      areasSub = table->GetDoubleArrayTopic("area").Subscribe({});
    }
-      void Robot::TeleopPeriodic() override {
+   void Robot::TeleopPeriodic() override {
      std::cout << "Areas: ";
-        std::vector<double> arr = areasSub.Get();
-        for (double val : arr) {
+     std::vector<double> arr = areasSub.Get();
+     for (double val : arr) {
        std::cout << val << " ";
      }
-        std::cout << std::endl;
+     std::cout << std::endl;
    }
    ```
 
@@ -56,7 +56,7 @@ Both of the following examples are extremely simplified programs that just illus
    def robotInit(self):
        table = ntcore.NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport")
        self.areasSub = table.getDoubleArrayTopic("area").subscribe([])
-      def teleopPeriodic(self):
+   def teleopPeriodic(self):
        areas = self.areasSub.get()
        print("Areas:", areas)
    ```

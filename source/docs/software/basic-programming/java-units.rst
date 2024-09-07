@@ -194,7 +194,7 @@ public class Arm {
   private final MutDistance m_endEffectorY = Feet.mutable(0);
   private final Encoder m_encoder = new Encoder(...);
 
-  public Measure<Distance> getEndEffectorX() {
+  public Distance getEndEffectorX() {
     return m_endEffectorX.mut_replace(
       Math.cos(getAngle().in(Radians)) * kArmLength.in(Feet), // the new magnitude to store
       Feet // the units of the new magnitude
