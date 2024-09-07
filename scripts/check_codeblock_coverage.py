@@ -1,3 +1,18 @@
+"""
+This script checks the code block coverage in .rst files in a specified directory.
+It counts the number of code blocks for each language and outputs the coverage percentage for each language.
+If the verbose flag is set, it also outputs detailed information about missing code blocks.
+
+Arguments for the script:
+--dir: The directory to search for .rst files (required)
+--verbose: Include detailed information about missing code blocks, as well as output to file rather than terminal (optional, default=False)
+--output: The path to the output file (optional, default="output.txt")
+--langs: The languages to check for (optional, default=["java", "python", "c++"])
+
+Example usage: python check_codeblock_coverage.py --dir=docs --verbose --output=missing_code_blocks.txt
+Example usage: python check_codeblock_coverage.py --dir=docs --langs=java python c++
+"""
+
 import sys
 import os
 import re
@@ -51,6 +66,7 @@ def is_codeblock(line: str) -> bool:
     """
     return line.startswith(".. tab-set-code::") or line.startswith(".. tab-set::")
 
+
 def generate_language_regex(langs: list[str]) -> str:
     """
     Generates a regex pattern to match the specified languages.
@@ -62,6 +78,7 @@ def generate_language_regex(langs: list[str]) -> str:
         str: A regex pattern to match the specified languages.
     """
     return f"(`{{3}}|:language: )({'|'.join(langs)})".replace("+", r"\+")
+
 
 def get_blocks_from_rst_file(file: str, langs: list[str]) -> list[CodeBlock]:
     """
@@ -86,12 +103,10 @@ def get_blocks_from_rst_file(file: str, langs: list[str]) -> list[CodeBlock]:
                 langs = []
             else:
                 if line.startswith(" ") or line.startswith("\t"):
-                    lang = re.search(
-                        lang_regex, line.lower()
-                    )
+                    lang = re.search(lang_regex, line.lower())
                     if lang is not None:
                         langs.append(lang.group(2))
-    
+
     if langs != []:
         blocks.append(CodeBlock(start=block_start, file=file, langs=langs))
 
@@ -168,10 +183,9 @@ def main():
     parser.add_argument(
         "--langs",
         nargs="+",
-        default=['java', 'python', 'c++'],
+        default=["java", "python", "c++"],
         help="Languages to check for",
     )
-
 
     # Parse the command line arguments
     args = parser.parse_args()
