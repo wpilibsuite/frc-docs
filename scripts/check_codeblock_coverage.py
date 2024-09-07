@@ -99,7 +99,7 @@ def get_blocks_from_rst_file(file: str, langs: list[str]) -> list[CodeBlock]:
 
 
 def generate_report(
-    blocks: list[CodeBlock], langs: list[str], wordy: bool, output: str
+    blocks: list[CodeBlock], langs: list[str], verbose: bool, output: str
 ):
     """
     Generates a report of code block coverage and writes it to the specified output.
@@ -107,11 +107,11 @@ def generate_report(
     Parameters:
         blocks (list[CodeBlock]): A list of CodeBlock instances to analyze.
         langs (list[str]): A list of languages to check for.
-        wordy (bool): Whether to include detailed missing code block information.
+        verbose (bool): Whether to include detailed missing code block information.
         output (str): The path to the output file.
     """
     stream = sys.stdout
-    if wordy:
+    if verbose:
         stream = open(output, "w")
 
     blocks_count = len(blocks)
@@ -131,8 +131,8 @@ def generate_report(
             file=stream,
         )
 
-    # If wordy flag is set, print detailed information about missing code blocks
-    if wordy:
+    # If verbose flag is set, print detailed information about missing code blocks
+    if verbose:
         print("\n\nMissing code blocks:", file=stream)
         for block in blocks:
             missing_langs = [lang for lang in langs if lang not in block.langs]
@@ -155,7 +155,7 @@ def main():
     )
     parser.add_argument("--dir", type=str, help="Directory to search for rst files")
     parser.add_argument(
-        "--wordy",
+        "--verbose",
         action="store_true",
         help="Outputs which code blocks are missing languages",
     )
@@ -190,7 +190,7 @@ def main():
 
     # Generate the report based on the collected code blocks
     generate_report(
-        blocks=blocks, langs=args.langs, wordy=args.wordy, output=args.output
+        blocks=blocks, langs=args.langs, verbose=args.verbose, output=args.output
     )
 
 
