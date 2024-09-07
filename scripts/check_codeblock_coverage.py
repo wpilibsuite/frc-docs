@@ -176,8 +176,6 @@ def main():
     # Parse the command line arguments
     args = parser.parse_args()
 
-    print(generate_language_regex(args.langs))
-
     # Get all .rst files from the specified directory
     files = get_all_rst_files(dir=args.dir)
     blocks = []
