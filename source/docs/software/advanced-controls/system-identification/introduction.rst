@@ -40,7 +40,7 @@ Several of these options use nearly identical robot-side code, and differ only i
 
 The simple motor identification tool determines the best-fit parameters for the equation:
 
-.. math:: V = kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
+.. math:: V = K_s \cdot sgn(\dot{d}) + K_v \cdot \dot{d} + K_a \cdot \ddot{d}
 
 where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the drive, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  This is the model for a permanent-magnet dc motor with no loading other than friction and inertia, as mentioned above, and is an accurate model for flywheels, turrets, and horizontal linear sliders.
 
@@ -48,17 +48,17 @@ where :math:`V` is the applied voltage, :math:`d` is the displacement (position)
 
 The elevator identification tool determines the best-fit parameters for the equation:
 
-.. math:: V = kG + kS \cdot sgn(\dot{d}) + kV \cdot \dot{d} + kA \cdot \ddot{d}
+.. math:: V = K_g + K_s \cdot sgn(\dot{d}) + K_v \cdot \dot{d} + K_a \cdot \ddot{d}
 
-where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the elevator, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  The constant term (:math:`kG`) is added to correctly account for the effect of gravity.
+where :math:`V` is the applied voltage, :math:`d` is the displacement (position) of the elevator, :math:`\dot{d}` is its velocity, and :math:`\ddot{d}` is its acceleration.  The constant term (:math:`K_g`) is added to correctly account for the effect of gravity.
 
 #### Arm Identification
 
 The arm identification tool determines the best-fit parameters for the equation:
 
-.. math:: V = kG \cdot cos(\theta) + kS \cdot sgn(\dot{\theta}) + kV \cdot \dot{\theta} + kA \cdot \ddot{\theta}
+.. math:: V = K_g \cdot cos(\theta) + K_s \cdot sgn(\dot{\theta}) + K_v \cdot \dot{\theta} + K_a \cdot \ddot{\theta}
 
-where :math:`V` is the applied voltage, :math:`\theta` is the angular displacement (position) of the arm, :math:`\dot{\theta}` is its angular velocity, and :math:`\ddot{\theta}` is its angular acceleration.  The cosine term (:math:`kG`) is added to correctly account for the effect of gravity.
+where :math:`V` is the applied voltage, :math:`\theta` is the angular displacement (position) of the arm, :math:`\dot{\theta}` is its angular velocity, and :math:`\ddot{\theta}` is its angular acceleration.  The cosine term (:math:`K_g`) is added to correctly account for the effect of gravity.
 
 ## Installing SysId
 
