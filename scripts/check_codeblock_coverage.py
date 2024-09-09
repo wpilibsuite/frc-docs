@@ -166,7 +166,8 @@ def main():
     """
     # Set up argument parsing
     parser = argparse.ArgumentParser(
-        description="Check code block coverage in FRC docs"
+        description="Check code block coverage in FRC docs",
+        add_help=False,
     )
     parser.add_argument("--dir", type=str, help="Directory to search for rst files")
     parser.add_argument(
@@ -186,9 +187,18 @@ def main():
         default=["java", "python", "c++"],
         help="Languages to check for",
     )
+    parser.add_argument(
+        "--help",
+        action="store_true",
+        help="Displays the help message",
+    )
 
     # Parse the command line arguments
     args = parser.parse_args()
+
+    if args.help:
+        print(__doc__)
+        return
 
     # Get all .rst files from the specified directory
     files = get_all_rst_files(dir=args.dir)
