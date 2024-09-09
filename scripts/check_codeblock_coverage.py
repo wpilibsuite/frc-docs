@@ -148,6 +148,7 @@ def generate_report(
 
     # If verbose flag is set, print detailed information about missing code blocks
     if verbose:
+        print("Outputting missing code blocks to:", output)
         print("\n\nMissing code blocks:", file=stream)
         for block in blocks:
             missing_langs = [lang for lang in langs if lang not in block.langs]
@@ -195,6 +196,10 @@ def main():
 
     # Parse the command line arguments
     args = parser.parse_args()
+
+    if not len(sys.argv) > 1:
+        print(__doc__)
+        return
 
     if args.help:
         print(__doc__)
