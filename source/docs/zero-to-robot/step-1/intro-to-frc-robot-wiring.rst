@@ -278,7 +278,7 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube-nocookie.com/embed/Zsnro-9_ZfQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/SfkmyN9mYLA" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
 
