@@ -161,7 +161,7 @@ def setup(app: Sphinx):
     @(lambda breadcrumb: app.connect("source-read", breadcrumb))
     def _(app, docname, content):
         content[0] = redown(content[0])
-        Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0])
+        # Path(app.srcdir, docname).with_suffix(".rd").write_text(content[0], encoding="utf8")
 
     return {
         "version": "builtin",
