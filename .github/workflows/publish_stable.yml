@@ -32,9 +32,14 @@ jobs:
             exit 0
           fi;
 
+          git fetch origin ${{ secrets.STABLE_YEAR }}
+          (git checkout ${{ secrets.STABLE_YEAR }} && git pull) || git checkout -b ${{ secrets.STABLE_YEAR }} origin/${{ secrets.STABLE_YEAR }}
+
           git merge --ff-only main
+          git merge --ff-only ${{ secrets.STABLE_YEAR }}
 
       - name: Push
         if: env.PUBLISH_STABLE == 'true' || github.event.action == 'workflow_dispatch'
         run: |
           git push origin stable
+          git push origin ${{ secrets.STABLE_YEAR }}
