@@ -98,7 +98,7 @@ localization_languages = [
 ]
 
 # Redirect branch
-rediraffe_branch = "origin/main"
+rediraffe_branch = "origin/2024"
 
 # File containing redirects
 rediraffe_redirects = "redirects.txt"
@@ -107,7 +107,7 @@ rediraffe_redirects = "redirects.txt"
 rediraffe_auto_redirect_perc = 80
 
 # Configure linkcheck diff branch
-linkcheckdiff_branch = "origin/main"
+linkcheckdiff_branch = "origin/2024"
 
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/stable/"
