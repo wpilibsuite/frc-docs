@@ -8,9 +8,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'wpilibsuite' }} && env.PUBLISH_STABLE == 'true'
-    env:
-      PUBLISH_STABLE: ${{ secrets.PUBLISH_STABLE }}
+    if: ${{ github.repository_owner == 'wpilibsuite' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,6 +33,5 @@ jobs:
           git merge --ff-only main
 
       - name: Push
-        if: env.PUBLISH_STABLE == 'true' || github.event.action == 'workflow_dispatch'
         run: |
           git push origin stable
