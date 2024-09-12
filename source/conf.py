@@ -57,7 +57,7 @@ extensions = [
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
     "sphinx_copybutton",
-    "sphinx-docsearch",
+    "sphinx_docsearch",
 ]
 
 local_extensions = [
