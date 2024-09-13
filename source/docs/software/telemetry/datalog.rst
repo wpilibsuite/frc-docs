@@ -159,7 +159,7 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
 
           // Set up custom log entries
           wpi::log::DataLog& log = frc::DataLogManager::GetLog();
-          myBooleanLog = wpi::Log::BooleanLogEntry(log, "/my/boolean");
+          myBooleanLog = wpi::log::BooleanLogEntry(log, "/my/boolean");
           myDoubleLog = wpi::log::DoubleLogEntry(log, "/my/double");
           myStringLog = wpi::log::StringLogEntry(log, "/my/string");
         }
