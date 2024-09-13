@@ -60,17 +60,26 @@ def redown(text: str) -> str:
     def replace(match: re.Match) -> str:
         start = match.group("start")
         btindent = match.group("btindent")
-        lang = match.group("lang")
+        lang: str = match.group("lang")
         cindent = match.group("cindent")
         code = match.group("code")
         end = match.group("end")
 
         ret = ""
         ret += start
-        ret += btindent + f".. code-block:: {lang}\n\n"
+        ret += btindent + f".. code-block:: {lang}\n"
         cindent = 3 * " "
 
+        in_args = True
+
         for line in code.splitlines(keepends=True):
+            if in_args and re.search(r"^\s*:.+:", line) and not re.match(r"re?st", lang.lower()):
+                ret += cindent + line
+                continue
+            elif in_args:
+                in_args = False
+                ret += "\n"
+
             if line.strip() == "":
                 ret += "\n"
             else:
