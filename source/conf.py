@@ -254,6 +254,14 @@ def setup(app):
     app.add_js_file("js/version-2014.js")
 
 
+html_context = {
+    "display_github": True,  # Integrate GitHub
+    "github_user": "wpilibsuite",  # Username
+    "github_repo": "frc-docs",  # Repo name
+    "github_version": "main",  # Version
+    "conf_py_path": "/source/",  # Path in the checkout to the docs root
+}
+
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = "xelatex"
