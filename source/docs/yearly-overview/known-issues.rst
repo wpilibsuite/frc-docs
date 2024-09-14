@@ -6,12 +6,6 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 ## Open Issues
 
-### AdvantageScope isn't updated by WPILib Installer on macOS
-
-**Issue:** When running the WPILib Installer, a pop-up saying ``"WPILibInstaller" was prevented from modifying apps on your Mac.`` and AdvantageScope remains version 3.0.1. This issue occurs when upgrading WPILib, when a beta version of WPIlib or WPILib 2024.1.1 was installed on macOS.
-
-**Workaround:** Delete AdvantageScope from ``~/wpilib/tools`` and re-run the WPILib Installer.
-
 ### Driver Station randomly disabled
 
 **Issue:** The Driver Station contains tighter safety mechanisms in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.
@@ -152,35 +146,3 @@ python -m robotpy installer niweb disable
 ```
 
 .. seealso:: [Github issue](https://github.com/robotpy/mostrobotpy/issues/61)
-
-## Fixed in WPILib 2024.2.1
-
-### Visual Studio Code Reports Unresolved Dependency
-
-**Issue:** Java programs will report ``Unresolved dependency: org.junit.platform junit-platform-launcherJava(0)`` on build.gradle. Programs that use unit tests will fail to build. This causes build.gradle to be highlighted red in the Visual Studio Code explorer, and the ``plugins`` line in build.gradle to have a red squiggle.
-
-**Workaround:** This can be safely ignored if you aren't running unit tests. To fix it, do the following:
-
-On Windows execute the following in powershell:
-
-```powershell
-Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\jupiter\junit-jupiter\5.10.1\junit-jupiter-5.10.1.module
-Invoke-WebRequest -Uri https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -OutFile C:\Users\Public\wpilib\2024\maven\org\junit\junit-bom\5.10.1\junit-bom-5.10.1.module
-```
-
-On Linux/macOS execute the following:
-
-```sh
-curl https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module -o ~/wpilib/2024/maven/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.module
-curl https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module -o ~/wpilib/2024/maven/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.module
-```
-
-After running those, you’ll need to refresh Java intellisense in VS Code for it to pick up the new files. You can do so by running the ``Clean Java Language Server Workspace`` command in VS Code.
-
-## Fixed in Game Tools 2024 Patch 1
-
-### Driver Station internal issue with print error and tags
-
-**Issue:** The Driver Station will occasionally print ``internal issue with print error and tags``. The message is caused when the DS reports a message on its side intermixed with messages from the robot; it is not caused by and does not affect robot code.
-
-**Workaround:** This will be fixed in the next Game Tools release. There is no known workaround.
