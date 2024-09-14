@@ -286,7 +286,7 @@ A number of the CAN and power connectors in the system use a Weidmuller LSF seri
 
 - Wire should be 16 AWG (1.5 :math:`mm^2`) to 24 AWG (0.25 :math:`mm^2`) (consult rules to verify required gauge for power wiring)
 - Wire ends should be stripped approximately 5/16 (~8 mm)"
-- A ferrule can be added to reinforce the connection and prevent splaying.
+- A ferrule can be added to reinforce the connection and prevent splaying, as shown in the video above.
 - To insert or remove the wire, press down on the corresponding "button" to open the terminal
 
 After making the connection check to be sure that it is clean and secure:
