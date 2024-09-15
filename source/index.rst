@@ -445,6 +445,6 @@ Community translations can be found in a variety of languages in the bottom-left
    :caption: Issues
    :hidden:
 
-   Report an Issue <https://github.com/wpilibsuite/allwpilib/issues>
+   Report a Documentation Issue <https://github.com/wpilibsuite/frc-docs/issues>
 
 .. todolist::
