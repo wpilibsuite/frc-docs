@@ -145,10 +145,17 @@ Some operating systems require some final action to complete installation.
    .. tab-item:: Linux
       :sync: linux
 
-      Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
+      Some versions of Linux (e.g. Ubuntu 22.04 and later) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
 
       .. image:: images/wpilib-setup/linux-enable-launching.png
          :alt: Menu that pops up after right click the desktop icon in Linux.
+
+      Ubuntu 23.10 and later [disable the kernel user namespaces feature for unknown applications](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces). This means that the [sandboxing feature](https://code.visualstudio.com/blogs/2022/11/28/vscode-sandbox) won't work on the WPILib VS Code. To enable sandboxing for the WPILib applications, AppArmor profiles are provided, and can be installed using the command below.
+
+      ```console
+      $ sudo cp ~/wpilib/YEAR/frccode/AppArmor/* /etc/apparmor.d/
+      $ sudo systemctl reload apparmor.service
+      ```
 
 .. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and macOS.
 
