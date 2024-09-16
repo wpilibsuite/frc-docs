@@ -7,7 +7,7 @@ WPIcal is a cross-platform utility that can be used to empirically measure the p
 
 In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Start Tool`, then select :guilabel:`WPIcal`.
 
-.. warning:: Before using this tool, it is important to understand that this tool is not the end-all-be-all of computer vision accuracy. Knowing the exact location of Apriltags on the field is useful, but it isn't the most important factor that goes into consistent precision for localization. In order to get accurate localization, good camera placement, proper filtering, and well tuned standard deviations are a necessity, whereas knowing the precise locations of the apriltags is not.
+.. warning:: Before using this tool, it is important to understand that this tool is not a "silver bullet" of computer vision accuracy. The primary use case for WPIcal is to help detect and correct for incorrect Apriltag placement. While this tool can detect minor errors in precise tag positioning on a competition field, these corrections offer limited benefit and only for teams that have rigorously implemented all other good localization practices. With that said, this tool is exceedingly helpful in correcting for minor errors in practice fields, which are generally not within the normal field tolerance.
 
 Overview
 --------
