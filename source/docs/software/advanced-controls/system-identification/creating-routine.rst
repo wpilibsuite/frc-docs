@@ -31,13 +31,13 @@ The callbacks can either be created in-place via Lambda expressions or can be th
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    // Creates a SysIdRoutine
-    SysIdRoutine routine = new SysIdRoutine(
-        new SysIdRoutine.Config(),
-        new SysIdRoutine.Mechanism(this::voltageDrive, this::logMotors, this)
-    );
+  ```java
+  // Creates a SysIdRoutine
+  SysIdRoutine routine = new SysIdRoutine(
+      new SysIdRoutine.Config(),
+      new SysIdRoutine.Mechanism(this::voltageDrive, this::logMotors, this)
+  );
+  ```
 
 ### Mechanism Callbacks
 
@@ -55,14 +55,14 @@ To be able to run the tests, SysIdRoutine exposes test "factories", or functions
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  public Command sysIdQuasistatic(SysIdRoutine.Direction direction) {
+    return routine.quasistatic(direction);
+  }
 
-    public Command sysIdQuasistatic(SysIdRoutine.Direction direction) {
-      return routine.quasistatic(direction);
-    }
-
-    public Command sysIdDynamic(SysIdRoutine.Direction direction) {
-      return routine.dynamic(direction);
-    }
+  public Command sysIdDynamic(SysIdRoutine.Direction direction) {
+    return routine.dynamic(direction);
+  }
+  ```
 
 Either bind the factory methods to either controller buttons or create an autonomous routine with them. It is recommended to bind them to buttons that the user must hold down for the duration of the test so that the user can stop the routine quickly if it exceeds safe limits.

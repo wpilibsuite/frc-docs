@@ -15,72 +15,62 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
     .. tab-item:: Java
      :sync: Java
 
-        .. code-block:: java
-
-            // get the default NetworkTable instance
-            NetworkTableInstance defaultInst = NetworkTableInstance.getDefault();
-
-            // create a NetworkTable instance
-            NetworkTableInstance inst = NetworkTableInstance.create();
-
-            // destroy a NetworkTable instance
-            inst.close();
+        ```java
+        // get the default NetworkTable instance
+        NetworkTableInstance defaultInst = NetworkTableInstance.getDefault();
+        // create a NetworkTable instance
+        NetworkTableInstance inst = NetworkTableInstance.create();
+        // destroy a NetworkTable instance
+        inst.close();
+        ```
 
     .. tab-item:: C++
      :sync: C++
 
-        .. code-block:: c++
-
-            // get the default NetworkTable instance
-            nt::NetworkTableInstance defaultInst = nt::NetworkTableInstance::GetDefault();
-
-            // create a NetworkTable instance
-            nt::NetworkTableInstance inst = nt::NetworkTableInstance::Create();
-
-            // destroy a NetworkTable instance; NetworkTableInstance objects are not RAII
-            nt::NetworkTableInstance::Destroy(inst);
+        ```c++
+        // get the default NetworkTable instance
+        nt::NetworkTableInstance defaultInst = nt::NetworkTableInstance::GetDefault();
+        // create a NetworkTable instance
+        nt::NetworkTableInstance inst = nt::NetworkTableInstance::Create();
+        // destroy a NetworkTable instance; NetworkTableInstance objects are not RAII
+        nt::NetworkTableInstance::Destroy(inst);
+        ```
 
     .. tab-item:: C++ (Handle-based)
      :sync: C++ (Handle-based)
 
-        .. code-block:: c++
-
-            // get the default NetworkTable instance
-            NT_Instance defaultInst = nt::GetDefaultInstance();
-
-            // create a NetworkTable instance
-            NT_Instance inst = nt::CreateInstance();
-
-            // destroy a NetworkTable instance
-            nt::DestroyInstance(inst);
+        ```c++
+        // get the default NetworkTable instance
+        NT_Instance defaultInst = nt::GetDefaultInstance();
+        // create a NetworkTable instance
+        NT_Instance inst = nt::CreateInstance();
+        // destroy a NetworkTable instance
+        nt::DestroyInstance(inst);
+        ```
 
     .. tab-item:: C
        :sync: C
 
-        .. code-block:: c
-
-            // get the default NetworkTable instance
-            NT_Instance defaultInst = NT_GetDefaultInstance();
-
-            // create a NetworkTable instance
-            NT_Instance inst = NT_CreateInstance();
-
-            // destroy a NetworkTable instance
-            NT_DestroyInstance(inst);
+        ```c
+        // get the default NetworkTable instance
+        NT_Instance defaultInst = NT_GetDefaultInstance();
+        // create a NetworkTable instance
+        NT_Instance inst = NT_CreateInstance();
+        // destroy a NetworkTable instance
+        NT_DestroyInstance(inst);
+        ```
 
     .. tab-item:: Python
      :sync: Python
 
 
-        .. code-block:: python
+        ```python
+        import ntcore
+        # get the default NetworkTable instance
+        defaultInst = ntcore.NetworkTableInstance.getDefault()
+        # create a NetworkTable instance
+        inst = ntcore.NetworkTableInstance.create()
+        # destroy a NetworkTable instance
+        ntcore.NetworkTableInstance.destroy(inst)
+        ```
 
-            import ntcore
-
-            # get the default NetworkTable instance
-            defaultInst = ntcore.NetworkTableInstance.getDefault()
-
-            # create a NetworkTable instance
-            inst = ntcore.NetworkTableInstance.create()
-
-            # destroy a NetworkTable instance
-            ntcore.NetworkTableInstance.destroy(inst)

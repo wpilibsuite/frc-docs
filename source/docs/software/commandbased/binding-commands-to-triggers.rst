@@ -16,15 +16,15 @@ The command-based HID classes contain factory methods returning a ``Trigger`` fo
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  CommandXboxController exampleCommandController = new CommandXboxController(1); // Creates a CommandXboxController on port 1.
+  Trigger xButton = exampleCommandController.x(); // Creates a new Trigger object for the `X` button on exampleCommandController
+  ```
 
-    CommandXboxController exampleCommandController = new CommandXboxController(1); // Creates a CommandXboxController on port 1.
-    Trigger xButton = exampleCommandController.x(); // Creates a new Trigger object for the `X` button on exampleCommandController
-
-  .. code-block:: c++
-
-    frc2::CommandXboxController exampleCommandController{1} // Creates a CommandXboxController on port 1
-    frc2::Trigger xButton = exampleCommandController.X() // Creates a new Trigger object for the `X` button on exampleCommandController
+  ```c++
+  frc2::CommandXboxController exampleCommandController{1} // Creates a CommandXboxController on port 1
+  frc2::Trigger xButton = exampleCommandController.X() // Creates a new Trigger object for the `X` button on exampleCommandController
+  ```
 
 ### JoystickButton
 
@@ -32,15 +32,15 @@ Alternatively, the :ref:`regular HID classes <docs/software/basic-programming/jo
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  XboxController exampleController = new XboxController(2); // Creates an XboxController on port 2.
+  Trigger yButton = new JoystickButton(exampleController, XboxController.Button.kY.value); // Creates a new JoystickButton object for the `Y` button on exampleController
+  ```
 
-    XboxController exampleController = new XboxController(2); // Creates an XboxController on port 2.
-    Trigger yButton = new JoystickButton(exampleController, XboxController.Button.kY.value); // Creates a new JoystickButton object for the `Y` button on exampleController
-
-  .. code-block:: c++
-
-    frc::XboxController exampleController{2} // Creates an XboxController on port 2
-    frc2::JoystickButton yButton(&exampleStick, frc::XboxController::Button::kY); // Creates a new JoystickButton object for the `Y` button on exampleController
+  ```c++
+  frc::XboxController exampleController{2} // Creates an XboxController on port 2
+  frc2::JoystickButton yButton(&exampleStick, frc::XboxController::Button::kY); // Creates a new JoystickButton object for the `Y` button on exampleController
+  ```
 
 ### Arbitrary Triggers
 
@@ -48,17 +48,15 @@ While binding to HID buttons is by far the most common use case, users may want 
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  DigitalInput limitSwitch = new DigitalInput(3); // Limit switch on DIO 3
+  Trigger exampleTrigger = new Trigger(limitSwitch::get);
+  ```
 
-    DigitalInput limitSwitch = new DigitalInput(3); // Limit switch on DIO 3
-
-    Trigger exampleTrigger = new Trigger(limitSwitch::get);
-
-  .. code-block:: c++
-
-    frc::DigitalInput limitSwitch{3}; // Limit switch on DIO 3
-
-    frc2::Trigger exampleTrigger([&limitSwitch] { return limitSwitch.Get(); });
+  ```c++
+  frc::DigitalInput limitSwitch{3}; // Limit switch on DIO 3
+  frc2::Trigger exampleTrigger([&limitSwitch] { return limitSwitch.Get(); });
+  ```
 
 ## Trigger Bindings
 
@@ -138,21 +136,21 @@ It is useful to note that the command binding methods all return the trigger tha
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  exampleButton
+      // Binds a FooCommand to be scheduled when the button is pressed
+      .onTrue(new FooCommand())
+      // Binds a BarCommand to be scheduled when that same button is released
+      .onFalse(new BarCommand());
+  ```
 
-    exampleButton
-        // Binds a FooCommand to be scheduled when the button is pressed
-        .onTrue(new FooCommand())
-        // Binds a BarCommand to be scheduled when that same button is released
-        .onFalse(new BarCommand());
-
-  .. code-block:: c++
-
-    exampleButton
-        // Binds a FooCommand to be scheduled when the button is pressed
-        .OnTrue(FooCommand().ToPtr())
-        // Binds a BarCommand to be scheduled when that same button is released
-        .OnFalse(BarCommand().ToPtr());
+  ```c++
+  exampleButton
+      // Binds a FooCommand to be scheduled when the button is pressed
+      .OnTrue(FooCommand().ToPtr())
+      // Binds a BarCommand to be scheduled when that same button is released
+      .OnFalse(BarCommand().ToPtr());
+  ```
 
 ## Composing Triggers
 
@@ -160,19 +158,19 @@ The ``Trigger`` class can be composed to create composite triggers through the `
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Binds an ExampleCommand to be scheduled when both the 'X' and 'Y' buttons of the driver gamepad are pressed
+  exampleCommandController.x()
+      .and(exampleCommandController.y())
+      .onTrue(new ExampleCommand());
+  ```
 
-    // Binds an ExampleCommand to be scheduled when both the 'X' and 'Y' buttons of the driver gamepad are pressed
-    exampleCommandController.x()
-        .and(exampleCommandController.y())
-        .onTrue(new ExampleCommand());
-
-  .. code-block:: c++
-
-    // Binds an ExampleCommand to be scheduled when both the 'X' and 'Y' buttons of the driver gamepad are pressed
-    (exampleCommandController.X()
-        && exampleCommandController.Y())
-        .OnTrue(ExampleCommand().ToPtr());
+  ```c++
+  // Binds an ExampleCommand to be scheduled when both the 'X' and 'Y' buttons of the driver gamepad are pressed
+  (exampleCommandController.X()
+      && exampleCommandController.Y())
+      .OnTrue(ExampleCommand().ToPtr());
+  ```
 
 ## Debouncing Triggers
 
@@ -180,18 +178,17 @@ To avoid rapid repeated activation, triggers (especially those originating from 
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // debounces exampleButton with a 0.1s debounce time, rising edges only
+  exampleButton.debounce(0.1).onTrue(new ExampleCommand());
+  // debounces exampleButton with a 0.1s debounce time, both rising and falling edges
+  exampleButton.debounce(0.1, Debouncer.DebounceType.kBoth).onTrue(new ExampleCommand());
+  ```
 
-    // debounces exampleButton with a 0.1s debounce time, rising edges only
-    exampleButton.debounce(0.1).onTrue(new ExampleCommand());
+  ```c++
+  // debounces exampleButton with a 100ms debounce time, rising edges only
+  exampleButton.Debounce(100_ms).OnTrue(ExampleCommand().ToPtr());
+  // debounces exampleButton with a 100ms debounce time, both rising and falling edges
+  exampleButton.Debounce(100_ms, Debouncer::DebounceType::Both).OnTrue(ExampleCommand().ToPtr());
+  ```
 
-    // debounces exampleButton with a 0.1s debounce time, both rising and falling edges
-    exampleButton.debounce(0.1, Debouncer.DebounceType.kBoth).onTrue(new ExampleCommand());
-
-  .. code-block:: c++
-
-    // debounces exampleButton with a 100ms debounce time, rising edges only
-    exampleButton.Debounce(100_ms).OnTrue(ExampleCommand().ToPtr());
-
-    // debounces exampleButton with a 100ms debounce time, both rising and falling edges
-    exampleButton.Debounce(100_ms, Debouncer::DebounceType::Both).OnTrue(ExampleCommand().ToPtr());

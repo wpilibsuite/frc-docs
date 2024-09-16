@@ -92,29 +92,25 @@ Solenoids can be switched from one output to the other (known as toggling) by us
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   Solenoid exampleSingle = new Solenoid(PneumaticsModuleType.CTREPCM, 0);
+   DoubleSolenoid exampleDouble = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
+   // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+   exampleDouble.set(kReverse);
+   if (m_controller.getYButtonPressed()) {
+      exampleSingle.toggle();
+      exampleDouble.toggle();
+   }
+   ```
 
-      Solenoid exampleSingle = new Solenoid(PneumaticsModuleType.CTREPCM, 0);
-      DoubleSolenoid exampleDouble = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2);
-
-      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
-      exampleDouble.set(kReverse);
-
-      if (m_controller.getYButtonPressed()) {
-         exampleSingle.toggle();
-         exampleDouble.toggle();
-      }
-
-   .. code-block:: c++
-
-      frc::Solenoid exampleSingle{frc::PneumaticsModuleType::CTREPCM, 0};
-      frc::DoubleSolenoid exampleDouble{frc::PneumaticsModuleType::CTREPCM, 1, 2};
-
-      // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
-      exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
-
-      if (m_controller.GetYButtonPressed()) {
-         exampleSingle.Toggle();
-         exampleDouble.Toggle();
-      }
+   ```c++
+   frc::Solenoid exampleSingle{frc::PneumaticsModuleType::CTREPCM, 0};
+   frc::DoubleSolenoid exampleDouble{frc::PneumaticsModuleType::CTREPCM, 1, 2};
+   // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+   exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
+   if (m_controller.GetYButtonPressed()) {
+      exampleSingle.Toggle();
+      exampleDouble.Toggle();
+   }
+   ```
 

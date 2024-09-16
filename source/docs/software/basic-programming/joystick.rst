@@ -32,17 +32,17 @@ When the robot is connected to the Field Management System at competition, the D
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   Joystick exampleJoystick = new Joystick(0); // 0 is the USB Port to be used as indicated on the Driver Station
+   ```
 
-      Joystick exampleJoystick = new Joystick(0); // 0 is the USB Port to be used as indicated on the Driver Station
+   ```c++
+   Joystick exampleJoystick{0}; // 0 is the USB Port to be used as indicated on the Driver Station
+   ```
 
-   .. code-block:: c++
-
-      Joystick exampleJoystick{0}; // 0 is the USB Port to be used as indicated on the Driver Station
-
-   .. code-block:: python
-
-      exampleJoystick = wpilib.Joystick(0) # 0 is the USB Port to be used as indicated on the Driver Station
+   ```python
+   exampleJoystick = wpilib.Joystick(0) # 0 is the USB Port to be used as indicated on the Driver Station
+   ```
 
 The ``Joystick`` class is designed to make using a flight joystick to operate the robot significantly easier.  Depending on the flight joystick, the user may need to set the specific X, Y, Z, and Throttle channels that your flight joystick uses.  This class offers special methods for accessing the angle and magnitude of the flight joystick.
 
@@ -55,17 +55,17 @@ The ``Joystick`` class is designed to make using a flight joystick to operate th
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   XboxController exampleXbox = new XboxController(0); // 0 is the USB Port to be used as indicated on the Driver Station
+   ```
 
-      XboxController exampleXbox = new XboxController(0); // 0 is the USB Port to be used as indicated on the Driver Station
+   ```c++
+   XboxController exampleXbox{0}; // 0 is the USB Port to be used as indicated on the Driver Station
+   ```
 
-   .. code-block:: c++
-
-      XboxController exampleXbox{0}; // 0 is the USB Port to be used as indicated on the Driver Station
-
-   .. code-block:: python
-
-      exampleXbox = wpilib.XboxController(0) # 0 is the USB Port to be used as indicated on the Driver Station
+   ```python
+   exampleXbox = wpilib.XboxController(0) # 0 is the USB Port to be used as indicated on the Driver Station
+   ```
 
 The ``XboxController`` class provides named methods (e.g. ``getXButton``, ``getXButtonPressed``, ``getXButtonReleased``) for each of the buttons, and the indices can be accessed with ``XboxController.Button.kX.value``.  The rumble feature of the controller can be controlled by using ``XboxController.setRumble(GenericHID.RumbleType.kRightRumble, value)``.  Many users do a split stick arcade drive that uses the left stick for just forwards / backwards and the right stick for left / right turning.
 
@@ -79,17 +79,17 @@ The ``XboxController`` class provides named methods (e.g. ``getXButton``, ``getX
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   PS4Controller examplePS4 = new PS4Controller(0); // 0 is the USB Port to be used as indicated on the Driver Station
+   ```
 
-      PS4Controller examplePS4 = new PS4Controller(0); // 0 is the USB Port to be used as indicated on the Driver Station
+   ```c++
+   PS4Controller examplePS4{0}; // 0 is the USB Port to be used as indicated on the Driver Station
+   ```
 
-   .. code-block:: c++
-
-      PS4Controller examplePS4{0}; // 0 is the USB Port to be used as indicated on the Driver Station
-
-   .. code-block:: python
-
-      examplePS4 = wpilib.PS4Controller(0) # 0 is the USB Port to be used as indicated on the Driver Station
+   ```python
+   examplePS4 = wpilib.PS4Controller(0) # 0 is the USB Port to be used as indicated on the Driver Station
+   ```
 
 The ``PS4Controller`` class provides named methods (e.g. ``getSquareButton``, ``getSquareButtonPressed``, ``getSquareButtonReleased``) for each of the buttons, and the indices can be accessed with  ``PS4Controller.Button.kSquare.value``.  The rumble feature of the controller can be controlled by using ``PS4Controller.setRumble(GenericHID.RumbleType.kRightRumble, value)``.
 
@@ -109,34 +109,30 @@ An axis can be used with ``.getRawAxis(int index)`` (if not using any of the cla
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   private final PWMSparkMax m_leftMotor = new PWMSparkMax(Constants.kLeftMotorPort);
+   private final PWMSparkMax m_rightMotor = new PWMSparkMax(Constants.kRightMotorPort);
+   private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
+   private final GenericHID m_stick = new GenericHID(Constants.kJoystickPort);
+   m_robotDrive.arcadeDrive(-m_stick.getRawAxis(0), m_stick.getRawAxis(1));
+   ```
 
-      private final PWMSparkMax m_leftMotor = new PWMSparkMax(Constants.kLeftMotorPort);
-      private final PWMSparkMax m_rightMotor = new PWMSparkMax(Constants.kRightMotorPort);
-      private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);
-      private final GenericHID m_stick = new GenericHID(Constants.kJoystickPort);
+   ```c++
+   frc::PWMVictorSPX m_leftMotor{Constants::kLeftMotorPort};
+   frc::PWMVictorSPX m_rightMotor{Constants::kRightMotorPort};
+   frc::DifferentialDrive m_robotDrive{[&](double output) { m_leftMotor.Set(output); },
+                                       [&](double output) { m_rightMotor.Set(output); }};
+   frc::GenericHID m_stick{Constants::kJoystickPort};
+   m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
+   ```
 
-      m_robotDrive.arcadeDrive(-m_stick.getRawAxis(0), m_stick.getRawAxis(1));
-
-   .. code-block:: c++
-
-      frc::PWMVictorSPX m_leftMotor{Constants::kLeftMotorPort};
-      frc::PWMVictorSPX m_rightMotor{Constants::kRightMotorPort};
-      frc::DifferentialDrive m_robotDrive{[&](double output) { m_leftMotor.Set(output); },
-                                          [&](double output) { m_rightMotor.Set(output); }};
-      frc::GenericHID m_stick{Constants::kJoystickPort};
-
-      m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
-
-   .. code-block:: python
-
-      leftMotor = wpilib.PWMVictorSPX(LEFT_MOTOR_PORT)
-      rightMotor = wpilib.PWMVictorSPX(RIGHT_MOTOR_PORT)
-      self.robotDrive = wpilib.drive.DifferentialDrive(leftMotor, rightMotor)
-      self.stick = wpilib.GenericHID(JOYSTICK_PORT)
-
-      self.robotDrive.arcadeDrive(-self.stick.getRawAxis(0), self.stick.getRawAxis(1))
-
+   ```python
+   leftMotor = wpilib.PWMVictorSPX(LEFT_MOTOR_PORT)
+   rightMotor = wpilib.PWMVictorSPX(RIGHT_MOTOR_PORT)
+   self.robotDrive = wpilib.drive.DifferentialDrive(leftMotor, rightMotor)
+   self.stick = wpilib.GenericHID(JOYSTICK_PORT)
+   self.robotDrive.arcadeDrive(-self.stick.getRawAxis(0), self.stick.getRawAxis(1))
+   ```
 
 ## Button Usage
 
@@ -146,101 +142,92 @@ Unlike an axis, you will usually want to use the ``pressed`` and ``released`` me
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   if (joystick.getRawButtonPressed(0)) {
+      turnIntakeOn(); // When pressed the intake turns on
+   }
+   if (joystick.getRawButtonReleased(0)) {
+      turnIntakeOff(); // When released the intake turns off
+   }
+   // OR
+   if (joystick.getRawButton(0)) {
+      turnIntakeOn();
+   } else {
+      turnIntakeOff();
+   }
+   ```
 
-      if (joystick.getRawButtonPressed(0)) {
-         turnIntakeOn(); // When pressed the intake turns on
-      }
-      if (joystick.getRawButtonReleased(0)) {
-         turnIntakeOff(); // When released the intake turns off
-      }
+   ```c++
+   if (joystick.GetRawButtonPressed(0)) {
+      turnIntakeOn(); // When pressed the intake turns on
+   }
+   if (joystick.GetRawButtonReleased(0)) {
+      turnIntakeOff(); // When released the intake turns off
+   }
+   // OR
+   if (joystick.GetRawButton(0)) {
+      turnIntakeOn();
+   } else {
+      turnIntakeOff();
+   }
+   ```
 
-      OR
-
-      if (joystick.getRawButton(0)) {
-         turnIntakeOn();
-      } else {
-         turnIntakeOff();
-      }
-
-   .. code-block:: c++
-
-      if (joystick.GetRawButtonPressed(0)) {
-         turnIntakeOn(); // When pressed the intake turns on
-      }
-      if (joystick.GetRawButtonReleased(0)) {
-         turnIntakeOff(); // When released the intake turns off
-      }
-
-      OR
-
-      if (joystick.GetRawButton(0)) {
-         turnIntakeOn();
-      } else {
-         turnIntakeOff();
-      }
-
-   .. code-block:: python
-
-      if joystick.getRawButtonPressed(0):
-         turnIntakeOn() # When pressed the intake turns on
-
-      if joystick.getRawButtonReleased(0):
-         turnIntakeOff() # When released the intake turns off
-
-      # OR
-
-      if joystick.getRawButton(0):
-         turnIntakeOn()
-      else:
-         turnIntakeOff()
+   ```python
+   if joystick.getRawButtonPressed(0):
+      turnIntakeOn() # When pressed the intake turns on
+   if joystick.getRawButtonReleased(0):
+      turnIntakeOff() # When released the intake turns off
+   # OR
+   if joystick.getRawButton(0):
+      turnIntakeOn()
+   else:
+      turnIntakeOff()
+   ```
 
 A common request is to toggle something on and off with the press of a button.  Toggles should be used with caution, as they require the user to keep track of the robot state.
 
 .. tab-set-code::
 
-   .. code-block:: java
-
-      boolean toggle = false;
-
-      if (joystick.getRawButtonPressed(0)) {
-         if (toggle) {
-            // Current state is true so turn off
-            retractIntake();
-            toggle = false;
-         } else {
-            // Current state is false so turn on
-            deployIntake();
-            toggle = true;
-         }
+   ```java
+   boolean toggle = false;
+   if (joystick.getRawButtonPressed(0)) {
+      if (toggle) {
+         // Current state is true so turn off
+         retractIntake();
+         toggle = false;
+      } else {
+         // Current state is false so turn on
+         deployIntake();
+         toggle = true;
       }
+   }
+   ```
 
-   .. code-block:: c++
-
-      bool toggle{false};
-
-      if (joystick.GetRawButtonPressed(0)) {
-         if (toggle) {
-            // Current state is true so turn off
-            retractIntake();
-            toggle = false;
-         } else {
-            // Current state is false so turn on
-            deployIntake();
-            toggle = true;
-         }
+   ```c++
+   bool toggle{false};
+   if (joystick.GetRawButtonPressed(0)) {
+      if (toggle) {
+         // Current state is true so turn off
+         retractIntake();
+         toggle = false;
+      } else {
+         // Current state is false so turn on
+         deployIntake();
+         toggle = true;
       }
+   }
+   ```
 
-   .. code-block:: python
+   ```python
+   toggle = False
+   if joystick.getRawButtonPressed(0):
+      if toggle:
+         # current state is True so turn off
+         retractIntake()
+         toggle = False
+      else:
+         # Current state is False so turn on
+         deployIntake()
+         toggle = True
+   ```
 
-      toggle = False
-
-      if joystick.getRawButtonPressed(0):
-         if toggle:
-            # current state is True so turn off
-            retractIntake()
-            toggle = False
-         else:
-            # Current state is False so turn on
-            deployIntake()
-            toggle = True

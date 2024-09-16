@@ -8,19 +8,18 @@ To see the status of a subsystem while the robot is operating in either autonomo
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   SmartDashboard.putData(subsystem-reference);
+   ```
 
-      SmartDashboard.putData(subsystem-reference);
+   ```c++
+   SmartDashboard::PutData(subsystem-pointer);
+   ```
 
-   .. code-block:: c++
-
-      SmartDashboard::PutData(subsystem-pointer);
-
-   .. code-block:: python
-
-      from wpilib import SmartDashboard
-
-      SmartDashboard.putData(subsystem-reference)
+   ```python
+   from wpilib import SmartDashboard
+   SmartDashboard.putData(subsystem-reference)
+   ```
 
 Shuffleboard will display the subsystem name, the default command associated with this subsystem, and the currently running command. In this example the default command for the Elevator subsystem is called ``AutonomousCommand`` and it is also the current command that is using the Elevator subsystem.
 
@@ -36,9 +35,9 @@ In Test mode (Test/Enabled in the driver station) subsystems may be displayed in
 
 More information on tuning PIDSubsystems can be found :doc:`here <shuffleboard-tuning-pid>`. Using RobotBuilder will automatically generate the code to get the subsystem displayed in Test mode. The code that is necessary to have subsystems displayed is shown below where subsystem-name is a string containing the name of the subsystem:
 
-.. code-block:: java
-
-   setName(subsystem-name);
+```java
+setName(subsystem-name);
+```
 
 ## Displaying Commands
 
@@ -46,19 +45,18 @@ Using commands and subsystems makes very modular robot programs that can easily 
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   SmartDashboard.putData("ElevatorMove: up", new ElevatorMove(2.7));
+   ```
 
-      SmartDashboard.putData("ElevatorMove: up", new ElevatorMove(2.7));
+   ```c++
+   SmartDashboard::PutData("ElevatorMove: up", new ElevatorMove(2.7));
+   ```
 
-   .. code-block:: c++
-
-      SmartDashboard::PutData("ElevatorMove: up", new ElevatorMove(2.7));
-
-   .. code-block:: python
-
-      from wpilib import SmartDashboard
-
-      SmartDashboard.putData("ElevatorMove: up", ElevatorMove(2.7))
+   ```python
+   from wpilib import SmartDashboard
+   SmartDashboard.putData("ElevatorMove: up", ElevatorMove(2.7))
+   ```
 
 Shuffleboard will display the command name and a button to execute the command. In this way individual commands and command groups can easily be tested without needing special test code in a robot program. In the image below there are a number of commands contained in a Shuffleboard list. Pressing the button once runs the command and pressing it again stops the command. To use this feature the robot must be enabled in teleop mode.
 

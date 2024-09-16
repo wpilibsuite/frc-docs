@@ -6,10 +6,12 @@ This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`l
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
- * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
- * macOS 11 or higher, both Intel and Arm for Java. C++ requires macOS 12 or higher with Xcode 14.
+ * Ubuntu 22.04 & 24.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
+ * macOS 13 or higher, both Intel and Arm.
 
-.. warning:: The following OSes are no longer supported: macOS 10.15, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
+.. warning:: The following OSes are no longer supported: macOS 12 or earlier, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
+
+.. note:: [Windows 10 support from Microsoft will end in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
@@ -56,8 +58,6 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
       For this release, macOS users will need to have the Xcode Command Line Tools installed before running the installer; we are working on removing this requirement in a future release. This can be done by running ``xcode-select --install`` in the Terminal.
 
-      .. important:: When upgrading from a 2024 beta release or 2024.1.1, it's necessary to manually delete AdvantageScope before running the installer. Navigate to ``~/wpilib/2024/tools`` and delete AdvantageScope.
-
       macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
 
       .. image:: images/wpilib-setup/macos-launch.png
@@ -68,11 +68,11 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
       Linux users should extract the downloaded ``.tar.gz`` and then launch ``WPILibInstaller``. Ubuntu treats executables in the file explorer as shared libraries, so double-clicking won't run them. Run the following commands in a terminal instead with ``<version>`` replaced with the version you're installing.
 
-      .. code-block:: console
-
-          $ tar -xf WPILib_Linux-<version>.tar.gz
-          $ cd WPILib_Linux-<version>/
-          $ ./WPILibInstaller
+      ```console
+      $ tar -xf WPILib_Linux-<version>.tar.gz
+      $ cd WPILib_Linux-<version>/
+      $ ./WPILibInstaller
+      ```
 
 ## Running the Installer
 
@@ -145,10 +145,17 @@ Some operating systems require some final action to complete installation.
    .. tab-item:: Linux
       :sync: linux
 
-      Some versions of Linux (e.g. Ubuntu 20.04) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
+      Some versions of Linux (e.g. Ubuntu 22.04 and later) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
 
       .. image:: images/wpilib-setup/linux-enable-launching.png
          :alt: Menu that pops up after right click the desktop icon in Linux.
+
+      Ubuntu 23.10 and later [disable the kernel user namespaces feature for unknown applications](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces). This means that the [sandboxing feature](https://code.visualstudio.com/blogs/2022/11/28/vscode-sandbox) won't work on the WPILib VS Code. To enable sandboxing for the WPILib applications, AppArmor profiles are provided, and can be installed using the command below.
+
+      ```console
+      $ sudo cp ~/wpilib/YEAR/frccode/AppArmor/* /etc/apparmor.d/
+      $ sudo systemctl reload apparmor.service
+      ```
 
 .. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and macOS.
 

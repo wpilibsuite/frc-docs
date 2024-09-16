@@ -22,58 +22,52 @@ Users can create their own constraint by implementing the ``TrajectoryConstraint
 
 .. tab-set-code::
 
-   .. code-block:: java
-
+   ```java
+   @Override
+   public double getMaxVelocityMetersPerSecond(Pose2d poseMeters, double curvatureRadPerMeter,
+                                               double velocityMetersPerSecond) {
+     // code here
+   }
       @Override
-      public double getMaxVelocityMetersPerSecond(Pose2d poseMeters, double curvatureRadPerMeter,
-                                                  double velocityMetersPerSecond) {
-        // code here
-      }
+   public MinMax getMinMaxAccelerationMetersPerSecondSq(Pose2d poseMeters,
+                                                        double curvatureRadPerMeter,
+                                                        double velocityMetersPerSecond) {
+     // code here
+   }
+   ```
 
-      @Override
-      public MinMax getMinMaxAccelerationMetersPerSecondSq(Pose2d poseMeters,
-                                                           double curvatureRadPerMeter,
-                                                           double velocityMetersPerSecond) {
-        // code here
-      }
+   ```c++
+   units::meters_per_second_t MaxVelocity(
+   const Pose2d& pose, units::curvature_t curvature,
+   units::meters_per_second_t velocity) override {
+     // code here
+   }
+   MinMax MinMaxAcceleration(const Pose2d& pose, units::curvature_t curvature,
+                         units::meters_per_second_t speed) override {
+     // code here
+   }
+   ```
 
-   .. code-block:: c++
-
-      units::meters_per_second_t MaxVelocity(
-      const Pose2d& pose, units::curvature_t curvature,
-      units::meters_per_second_t velocity) override {
-        // code here
-      }
-
-      MinMax MinMaxAcceleration(const Pose2d& pose, units::curvature_t curvature,
-                            units::meters_per_second_t speed) override {
-        // code here
-      }
-
-   .. code-block:: python
-
-      from wpimath import units
-      from wpimath.geometry import Pose2d
-      from wpimath.trajectory.constraint import TrajectoryConstraint
-
-
-      class MyConstraint(TrajectoryConstraint):
-          def maxVelocity(
-              self,
-              pose: Pose2d,
-              curvature: units.radians_per_meter,
-              velocity: units.meters_per_second,
-          ) -> units.meters_per_second:
-              ...
-
-          def minMaxAcceleration(
-              self,
-              pose: Pose2d,
-              curvature: units.radians_per_meter,
-              speed: units.meters_per_second,
-          ) -> TrajectoryConstraint.MinMax:
-              ...
-
+   ```python
+   from wpimath import units
+   from wpimath.geometry import Pose2d
+   from wpimath.trajectory.constraint import TrajectoryConstraint
+   class MyConstraint(TrajectoryConstraint):
+       def maxVelocity(
+           self,
+           pose: Pose2d,
+           curvature: units.radians_per_meter,
+           velocity: units.meters_per_second,
+       ) -> units.meters_per_second:
+           ...
+       def minMaxAcceleration(
+           self,
+           pose: Pose2d,
+           curvature: units.radians_per_meter,
+           speed: units.meters_per_second,
+       ) -> TrajectoryConstraint.MinMax:
+           ...
+      ```
 
 The ``MaxVelocity`` method should return the maximum allowed velocity for the given pose, curvature, and original velocity of the trajectory without any constraints. The ``MinMaxAcceleration`` method should return the minimum and maximum allowed acceleration for the given pose, curvature, and constrained velocity.
 

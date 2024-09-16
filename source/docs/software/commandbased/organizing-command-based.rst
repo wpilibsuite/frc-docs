@@ -29,44 +29,40 @@ The easiest and most expressive way to do this is with a ``StartEndCommand``:
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  Command runIntake = Commands.startEnd(() -> intake.set(1), () -> intake.set(0), intake);
+  ```
 
-    Command runIntake = Commands.startEnd(() -> intake.set(1), () -> intake.set(0), intake);
-
-  .. code-block:: c++
-
-    frc2::CommandPtr runIntake = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake});
+  ```c++
+  frc2::CommandPtr runIntake = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake});
+  ```
 
 This is sufficient for commands that are only used once. However, for a command like this that might get used in many different autonomous routines and button bindings, inline commands everywhere means a lot of repetitive code:
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // RobotContainer.java
+  intakeButton.whileTrue(Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake));
+  Command intakeAndShoot = Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake)
+      .alongWith(new RunShooter(shooter));
+  Command autonomousCommand = Commands.sequence(
+      Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0),
+      Commands.waitSeconds(3.0),
+      Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0)
+  );
+  ```
 
-    // RobotContainer.java
-    intakeButton.whileTrue(Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake));
-
-    Command intakeAndShoot = Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0), intake)
-        .alongWith(new RunShooter(shooter));
-
-    Command autonomousCommand = Commands.sequence(
-        Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0),
-        Commands.waitSeconds(3.0),
-        Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0)
-    );
-
-  .. code-block:: c++
-
-    intakeButton.WhileTrue(frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}));
-
-    frc2::CommandPtr intakeAndShoot = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake})
-        .AlongWith(RunShooter(&shooter).ToPtr());
-
-    frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
-      frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s),
-      frc2::cmd::Wait(3.0_s),
-      frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s)
-    );
+  ```c++
+  intakeButton.WhileTrue(frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}));
+  frc2::CommandPtr intakeAndShoot = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake})
+      .AlongWith(RunShooter(&shooter).ToPtr());
+  frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
+    frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s),
+    frc2::cmd::Wait(3.0_s),
+    frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0); }, {&intake}).WithTimeout(5.0_s)
+  );
+  ```
 
 Creating one ``StartEndCommand`` instance and putting it in a variable won't work here, since once an instance of a command is added to a command group it is effectively "owned" by that command group and cannot be used in any other context.
 
@@ -80,24 +76,23 @@ For example, a command like the intake-running command is conceptually related t
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    public class Intake extends SubsystemBase {
-        // [code for motor controllers, configuration, etc.]
-        // ...
-
-        public Command runIntakeCommand() {
-          // implicitly requires `this`
-          return this.startEnd(() -> this.set(1.0), () -> this.set(0.0));
-        }
-    }
-
-  .. code-block:: c++
-
-    frc2::CommandPtr Intake::RunIntakeCommand() {
+  ```java
+  public class Intake extends SubsystemBase {
+    // [code for motor controllers, configuration, etc.]
+    // ...
+    public Command runIntakeCommand() {
       // implicitly requires `this`
-      return this->StartEnd([this] { this->Set(1.0); }, [this] { this->Set(0); });
+      return this.startEnd(() -> this.set(1.0), () -> this.set(0.0));
     }
+  }
+  ```
+
+  ```c++
+  frc2::CommandPtr Intake::RunIntakeCommand() {
+    // implicitly requires `this`
+    return this->StartEnd([this] { this->Set(1.0); }, [this] { this->Set(0); });
+  }
+  ```
 
 Notice how since we are in the ``Intake`` class, we no longer refer to ``intake``; instead, we use the ``this`` keyword to refer to the current instance.
 
@@ -107,63 +102,58 @@ Using this new factory method in command groups and button bindings is highly ex
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  intakeButton.whileTrue(intake.runIntakeCommand());
+  Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter(shooter));
+  Command autonomousCommand = Commands.sequence(
+      intake.runIntakeCommand().withTimeout(5.0),
+      Commands.waitSeconds(3.0),
+      intake.runIntakeCommand().withTimeout(5.0)
+  );
+  ```
 
-    intakeButton.whileTrue(intake.runIntakeCommand());
-
-    Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter(shooter));
-
-    Command autonomousCommand = Commands.sequence(
-        intake.runIntakeCommand().withTimeout(5.0),
-        Commands.waitSeconds(3.0),
-        intake.runIntakeCommand().withTimeout(5.0)
-    );
-
-  .. code-block:: c++
-
-    intakeButton.WhileTrue(intake.RunIntakeCommand());
-
-    frc2::CommandPtr intakeAndShoot = intake.RunIntakeCommand().AlongWith(RunShooter(&shooter).ToPtr());
-
-    frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
-      intake.RunIntakeCommand().WithTimeout(5.0_s),
-      frc2::cmd::Wait(3.0_s),
-      intake.RunIntakeCommand().WithTimeout(5.0_s)
-    );
+  ```c++
+  intakeButton.WhileTrue(intake.RunIntakeCommand());
+  frc2::CommandPtr intakeAndShoot = intake.RunIntakeCommand().AlongWith(RunShooter(&shooter).ToPtr());
+  frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
+    intake.RunIntakeCommand().WithTimeout(5.0_s),
+    frc2::cmd::Wait(3.0_s),
+    intake.RunIntakeCommand().WithTimeout(5.0_s)
+  );
+  ```
 
 Adding a parameter to the ``runIntakeCommand`` method to provide the exact percentage to run the intake is easy and allows for even more flexibility.
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  public Command runIntakeCommand(double percent) {
+      return new StartEndCommand(() -> this.set(percent), () -> this.set(0.0), this);
+  }
+  ```
 
-    public Command runIntakeCommand(double percent) {
-        return new StartEndCommand(() -> this.set(percent), () -> this.set(0.0), this);
-    }
-
-  .. code-block:: c++
-
-    frc2::CommandPtr Intake::RunIntakeCommand() {
-      // implicitly requires `this`
-      return this->StartEnd([this, percent] { this->Set(percent); }, [this] { this->Set(0); });
-    }
+  ```c++
+  frc2::CommandPtr Intake::RunIntakeCommand() {
+    // implicitly requires `this`
+    return this->StartEnd([this, percent] { this->Set(percent); }, [this] { this->Set(0); });
+  }
+  ```
 
 For instance, this code creates a command group that runs the intake forwards for two seconds, waits for two seconds, and then runs the intake backwards for five seconds.
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  Command intakeRunSequence = intake.runIntakeCommand(1.0).withTimeout(2.0)
+      .andThen(Commands.waitSeconds(2.0))
+      .andThen(intake.runIntakeCommand(-1.0).withTimeout(5.0));
+  ```
 
-    Command intakeRunSequence = intake.runIntakeCommand(1.0).withTimeout(2.0)
-        .andThen(Commands.waitSeconds(2.0))
-        .andThen(intake.runIntakeCommand(-1.0).withTimeout(5.0));
-
-  .. code-block:: c++
-
-    frc2::CommandPtr intakeRunSequence = intake.RunIntakeCommand(1.0).WithTimeout(2.0_s)
-        .AndThen(frc2::cmd::Wait(2.0_s))
-        .AndThen(intake.RunIntakeCommand(-1.0).WithTimeout(5.0_s));
-
+  ```c++
+  frc2::CommandPtr intakeRunSequence = intake.RunIntakeCommand(1.0).WithTimeout(2.0_s)
+      .AndThen(frc2::cmd::Wait(2.0_s))
+      .AndThen(intake.RunIntakeCommand(-1.0).WithTimeout(5.0_s));
+    ```
 
 This approach is recommended for commands that are conceptually related to only a single subsystem, and is very concise. However, it doesn't fare well with commands related to more than one subsystem: passing in other subsystem objects is unintuitive and can cause race conditions and circular dependencies, and thus should be avoided. Therefore, this approach is best suited for single-subsystem commands, and should be used only for those cases.
 
@@ -175,92 +165,84 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  public class AutoRoutines {
+      public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
+          return Commands.sequence(
+              Commands.parallel(
+                  drivetrain.driveCommand(0.5, 0.5),
+                  intake.runIntakeCommand(1.0)
+              ).withTimeout(5.0),
+              Commands.parallel(
+                drivetrain.stopCommand();
+                intake.stopCommand();
+              )
+          );
+      }
+  }
+  ```
 
-    public class AutoRoutines {
-
-        public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
-            return Commands.sequence(
-                Commands.parallel(
-                    drivetrain.driveCommand(0.5, 0.5),
-                    intake.runIntakeCommand(1.0)
-                ).withTimeout(5.0),
-                Commands.parallel(
-                  drivetrain.stopCommand();
-                  intake.stopCommand();
-                )
-            );
-        }
-    }
-
-  .. code-block:: c++
-
-    // TODO
+  ```c++
+  // TODO
+  ```
 
 #### Non-Static Command Factories
 If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our ``AutoRoutines`` class and inject our subsystems through the constructor:
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    public class AutoRoutines {
-
-        private Drivetrain drivetrain;
-
-        private Intake intake;
-
-        public AutoRoutines(Drivetrain drivetrain, Intake intake) {
+  ```java
+  public class AutoRoutines {
+      private Drivetrain drivetrain;
+      private Intake intake;
+      public AutoRoutines(Drivetrain drivetrain, Intake intake) {
           this.drivetrain = drivetrain;
           this.intake = intake;
-        }
-
-        public Command driveAndIntake() {
-            return Commands.sequence(
-                Commands.parallel(
-                    drivetrain.driveCommand(0.5, 0.5),
-                    intake.runIntakeCommand(1.0)
-                ).withTimeout(5.0),
-                Commands.parallel(
+      }
+      public Command driveAndIntake() {
+          return Commands.sequence(
+              Commands.parallel(
+                  drivetrain.driveCommand(0.5, 0.5),
+                  intake.runIntakeCommand(1.0)
+              ).withTimeout(5.0),
+              Commands.parallel(
                   drivetrain.stopCommand();
                   intake.stopCommand();
-                )
-            );
-        }
+              )
+          );
+      }
+      public Command driveThenIntake() {
+          return Commands.sequence(
+              drivetrain.driveCommand(0.5, 0.5).withTimeout(5.0),
+              drivetrain.stopCommand(),
+              intake.runIntakeCommand(1.0).withTimeout(5.0),
+              intake.stopCommand()
+          );
+      }
+  }
+  ```
 
-        public Command driveThenIntake() {
-            return Commands.sequence(
-                drivetrain.driveCommand(0.5, 0.5).withTimeout(5.0),
-                drivetrain.stopCommand(),
-                intake.runIntakeCommand(1.0).withTimeout(5.0),
-                intake.stopCommand()
-            );
-        }
-    }
-
-  .. code-block:: c++
-
-    // TODO
+  ```c++
+  // TODO
+  ```
 
 Then, elsewhere in our code, we can instantiate an single instance of this class and use it to produce several commands:
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  AutoRoutines autoRoutines = new AutoRoutines(this.drivetrain, this.intake);
+  Command driveAndIntake = autoRoutines.driveAndIntake();
+  Command driveThenIntake = autoRoutines.driveThenIntake();
+  Command drivingAndIntakingSequence = Commands.sequence(
+    autoRoutines.driveAndIntake(),
+    autoRoutines.driveThenIntake()
+  );
+  ```
 
-    AutoRoutines autoRoutines = new AutoRoutines(this.drivetrain, this.intake);
-
-    Command driveAndIntake = autoRoutines.driveAndIntake();
-    Command driveThenIntake = autoRoutines.driveThenIntake();
-
-    Command drivingAndIntakingSequence = Commands.sequence(
-      autoRoutines.driveAndIntake(),
-      autoRoutines.driveThenIntake()
-    );
-
-  .. code-block:: c++
-
-    // TODO
+  ```c++
+  // TODO
+  ```
 
 #### Capturing State in Inline Commands
 
@@ -272,23 +254,22 @@ However, it is still possible to ergonomically write a stateful command composit
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  public Command turnToAngle(double targetDegrees) {
+      // Create a controller for the inline command to capture
+      PIDController controller = new PIDController(Constants.kTurnToAngleP, 0, 0);
+      // We can do whatever configuration we want on the created state before returning from the factory
+      controller.setPositionTolerance(Constants.kTurnToAngleTolerance);
+      // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
+      return run(() -> arcadeDrive(0,-controller.calculate(gyro.getHeading(), targetDegrees)))
+          .until(controller::atSetpoint)
+          .andThen(runOnce(() -> arcadeDrive(0, 0)));
+  }
+  ```
 
-    public Command turnToAngle(double targetDegrees) {
-        // Create a controller for the inline command to capture
-        PIDController controller = new PIDController(Constants.kTurnToAngleP, 0, 0);
-        // We can do whatever configuration we want on the created state before returning from the factory
-        controller.setPositionTolerance(Constants.kTurnToAngleTolerance);
-
-        // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
-        return run(() -> arcadeDrive(0,-controller.calculate(gyro.getHeading(), targetDegrees)))
-            .until(controller::atSetpoint)
-            .andThen(runOnce(() -> arcadeDrive(0, 0)));
-    }
-
-  .. code-block:: c++
-
-    // TODO
+  ```c++
+  // TODO
+  ```
 
 This pattern works very well in Java so long as the captured state is "effectively final" - i.e., it is never reassigned.  This means that we cannot directly define and capture primitive types (e.g. `int`, `double`, `boolean`) - to circumvent this, we need to wrap any state primitives in a mutable container type (the same way `PIDController` wraps its internal `kP`, `kI`, and `kD` values).
 
@@ -302,33 +283,29 @@ Returning to our simple intake command from earlier, we could do this by creatin
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  public class RunIntakeCommand extends Command {
+      private Intake m_intake;
+      public RunIntakeCommand(Intake intake) {
+          this.m_intake = intake;
+          addRequirements(intake);
+      }
+      @Override
+      public void initialize() {
+          m_intake.set(1.0);
+      }
+      @Override
+      public void end(boolean interrupted) {
+          m_intake.set(0.0);
+      }
+      // execute() defaults to do nothing
+      // isFinished() defaults to return false
+  }
+  ```
 
-    public class RunIntakeCommand extends Command {
-        private Intake m_intake;
-
-        public RunIntakeCommand(Intake intake) {
-            this.m_intake = intake;
-            addRequirements(intake);
-        }
-
-        @Override
-        public void initialize() {
-            m_intake.set(1.0);
-        }
-
-        @Override
-        public void end(boolean interrupted) {
-            m_intake.set(0.0);
-        }
-
-        // execute() defaults to do nothing
-        // isFinished() defaults to return false
-    }
-
-  .. code-block:: c++
-
-    // TODO
+  ```c++
+  // TODO
+  ```
 
 This, however, is just as cumbersome as the original repetitive code, if not more verbose. The only two lines that really matter in this entire file are the two calls to ``intake.set()``, yet there are over 20 lines of boilerplate code! Not to mention, doing this for a lot of robot actions quickly clutters up a robot project with dozens of small files. Nevertheless, this might feel more "natural," particularly for programmers who prefer to stick closely to an object-oriented model.
 
@@ -341,20 +318,21 @@ If we wish to write composite commands as their own classes, we may write a cons
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  public class IntakeThenOuttake extends SequentialCommandGroup {
+      public IntakeThenOuttake(Intake intake) {
+          super(
+              intake.runIntakeCommand(1.0).withTimeout(2.0),
+              new WaitCommand(2.0),
+              intake.runIntakeCommand(-1).withTimeout(5.0)
+          );
+      }
+  }
+  ```
 
-    public class IntakeThenOuttake extends SequentialCommandGroup {
-        public IntakeThenOuttake(Intake intake) {
-            super(
-                intake.runIntakeCommand(1.0).withTimeout(2.0),
-                new WaitCommand(2.0),
-                intake.runIntakeCommand(-1).withTimeout(5.0)
-            );
-        }
-    }
-  .. code-block:: c++
-
-    // TODO
+  ```c++
+  // TODO
+  ```
 
 This is relatively short and minimizes boilerplate. It is also comfortable to use in a purely object-oriented paradigm and may be more acceptable to novice programmers. However, it has some downsides. For one, it is not immediately clear exactly what type of command group this is from the constructor definition: it is better to define this in a more inline and expressive way, particularly when nested command groups start showing up. Additionally, it requires a new file for every single command group, even when the groups are conceptually related.
 

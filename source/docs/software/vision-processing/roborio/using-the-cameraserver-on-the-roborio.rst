@@ -85,13 +85,11 @@ In the following example a thread created in robotInit() gets the Camera Server 
 
       You need to update ``pyproject.toml`` contents to include cscore in the robotpy-extras key (this only shows the portions you need to update):
 
-      .. code-block:: toml
-
-         [tool.robotpy]
-
-         ...
-
-         # Add cscore to the robotpy-extras list
-         robotpy_extras = ["cscore"]
+      ```toml
+      [tool.robotpy]
+      ...
+      # Add cscore to the robotpy-extras list
+      robotpy_extras = ["cscore"]
+      ```
 
 Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on SmartDashboard or Shuffleboard, select that named stream. In this case that is "Rectangle".

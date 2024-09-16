@@ -17,25 +17,24 @@ Reliable data of the :term:`system's <system>` :term:`state`\s, :term:`input`\s 
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   @Override
+   public void robotPeriodic() {
+      NetworkTableInstance.getDefault().flush();
+   }
+   ```
 
-      @Override
-      public void robotPeriodic() {
-         NetworkTableInstance.getDefault().flush();
-      }
+   ```c++
+   void RobotPeriodic() {
+      NetworkTableInstance::GetDefault().Flush();
+   }
+   ```
 
-   .. code-block:: c++
-
-      void RobotPeriodic() {
-         NetworkTableInstance::GetDefault().Flush();
-      }
-
-   .. code-block:: python
-
-      from ntcore import NetworkTableInstance
-
-      def robotPeriodic(self):
-         NetworkTableInstance.getDefault().flush()
+   ```python
+   from ntcore import NetworkTableInstance
+   def robotPeriodic(self):
+      NetworkTableInstance.getDefault().flush()
+   ```
 
 ## Compensating for Input Lag
 Often times, some sensor input data (i.e. velocity readings) may be delayed due to onboard filtering that smart motor controllers tend to perform. By default, LQR's K gain assumes no input delay, so introducing significant delay on the order of tens of milliseconds can cause instability. To combat this, the LQR's K gain can be reduced, trading off performance for stability. A code example for how to compensate for this latency in a mathematically rigorous manner is available :ref:`here <docs/software/advanced-controls/state-space/state-space-intro:LQR and Measurement Latency Compensation>`.

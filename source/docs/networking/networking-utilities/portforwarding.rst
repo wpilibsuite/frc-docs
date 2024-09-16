@@ -8,22 +8,22 @@ Often teams may wish to connect directly to the roboRIO for controlling their ro
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   @Override
+   public void robotInit() {
+      PortForwarder.add(8888, "wpilibpi.local", 80);
+   }
+   ```
 
-      @Override
-      public void robotInit() {
-         PortForwarder.add(8888, "wpilibpi.local", 80);
-      }
+   ```c++
+   void Robot::RobotInit {
+      wpi::PortForwarder::GetInstance().Add(8888, "wpilibpi.local", 80);
+   }
+   ```
 
-   .. code-block:: c++
-
-      void Robot::RobotInit {
-         wpi::PortForwarder::GetInstance().Add(8888, "wpilibpi.local", 80);
-      }
-
-   .. code-block:: python
-
-      wpinet.PortForwarder.getInstance().add(8888, "wpilibpi.local", 80)
+   ```python
+   wpinet.PortForwarder.getInstance().add(8888, "wpilibpi.local", 80)
+   ```
 
 .. important:: You **can not** use a port less than 1024 as your local forwarded port. It is also important to note that you **can not** use full URLs (``http://wpilibpi.local``) and should only use IP Addresses or DNS names.
 
@@ -33,19 +33,20 @@ To stop forwarding on a specified port, simply call ``remove(int port)`` with po
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   @Override
+   public void robotInit() {
+      PortForwarder.remove(8888);
+   }
+   ```
 
-      @Override
-      public void robotInit() {
-         PortForwarder.remove(8888);
-      }
+   ```c++
+   void Robot::RobotInit {
+      wpi::PortForwarder::GetInstance().Remove(8888);
+   }
+   ```
 
-   .. code-block:: c++
+   ```python
+   wpinet.PortForwarder.getInstance().remove(8888)
+   ```
 
-      void Robot::RobotInit {
-         wpi::PortForwarder::GetInstance().Remove(8888);
-      }
-
-   .. code-block:: python
-
-      wpinet.PortForwarder.getInstance().remove(8888)

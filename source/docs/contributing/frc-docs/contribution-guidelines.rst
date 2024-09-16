@@ -63,8 +63,8 @@ In the instance that the article references content that is described in another
 
 Imagine we have the following content in a drivetrain tutorial:
 
-.. code-block:: text
-
-   Teams may often need to test their robot code outside of a competition. :ref:`Simulation <link-to-simulation:simulation>` is a means to achieve this. Simulation offers teams a way to unit test and test their robot code without ever needing a robot.
+```text
+Teams may often need to test their robot code outside of a competition. :ref:`Simulation <link-to-simulation:simulation>` is a means to achieve this. Simulation offers teams a way to unit test and test their robot code without ever needing a robot.
+```
 
 Notice how only the first instance of Simulation is linked. This is the structure the author should follow. There are times where a linked article has different topics of content. If you reference the different types of content in the article, you should link to each new reference once (except in situations where the author has deemed it appropriate otherwise).

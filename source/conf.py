@@ -112,9 +112,7 @@ linkcheckdiff_branch = "origin/main"
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/stable/"
 ogp_site_name = "FIRST Robotics Competition Documentation"
-ogp_image = (
-    "https://raw.githubusercontent.com/wpilibsuite/branding/main/png/wpilib-128.png"
-)
+ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/main/export/png/wpilib-icon-256.png"
 
 # Configure photofinish ci mode
 photofinish_ci_only = True
@@ -184,8 +182,6 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     "docs/yearly-overview/2020-Game-Data.rst",
-    "docs/software/wpilib-tools/axon/**",
-    "docs/software/vision-processing/grip/**",
     "docs/beta/*",
 ]
 
@@ -262,6 +258,14 @@ def setup(app):
     # Add 2014 archive link to rtd versions menu
     app.add_js_file("js/version-2014.js")
 
+
+html_context = {
+    "display_github": True,  # Integrate GitHub
+    "github_user": "wpilibsuite",  # Username
+    "github_repo": "frc-docs",  # Repo name
+    "github_version": "main",  # Version
+    "conf_py_path": "/source/",  # Path in the checkout to the docs root
+}
 
 # -- Options for latex generation --------------------------------------------
 

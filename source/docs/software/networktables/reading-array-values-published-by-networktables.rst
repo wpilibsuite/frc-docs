@@ -8,7 +8,7 @@ Very often the values are for one or more areas of interest such as goals or gam
 .. image:: images/reading-array-values-published-by-networktables-1.png
    :alt: Image of OutlineViewer with the NetworkTables topics
 
-You can verify the names of the NetworkTables topics used for publishing the values by using the Outline Viewer application. It is a C++ program in your user directory in the wpilib/<YEAR>/tools folder. The application is started by selecting the "WPILib" menu in Visual Studio Code then Start Tool then "OutlineViewer". In this example, with the image processing program running (GRIP) you can see the values being put into NetworkTables.
+You can verify the names of the NetworkTables topics used for publishing the values by using the Outline Viewer application. It is a C++ program in your user directory in the wpilib/<YEAR>/tools folder. The application is started by selecting the "WPILib" menu in Visual Studio Code then Start Tool then "OutlineViewer".
 
 In this case the values are stored in a table called GRIP and a sub-table called myContoursReport. You can see that the values are in brackets and there are 2 values in this case for each topic. The NetworkTables topic names are centerX, centerY, area, height and width.
 
@@ -18,59 +18,48 @@ Both of the following examples are extremely simplified programs that just illus
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   DoubleArraySubscriber areasSub;
+   @Override
+   public void robotInit() {
+     NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport");
+     areasSub = table.getDoubleArrayTopic("area").subscribe(new double[] {});
+   }
+   @Override
+   public void teleopPeriodic() {
+     double[] areas = areasSub.get();
+     System.out.print("areas: " );
+     for (double area : areas) {
+       System.out.print(area + " ");
+     }
+     System.out.println();
+   }
+   ```
 
-      DoubleArraySubscriber areasSub;
+   ```c++
+   nt::DoubleArraySubscriber areasSub;
+   void Robot::RobotInit() override {
+     auto table = nt::NetworkTableInstance::GetDefault().GetTable("GRIP/myContoursReport");
+     areasSub = table->GetDoubleArrayTopic("area").Subscribe({});
+   }
+   void Robot::TeleopPeriodic() override {
+     std::cout << "Areas: ";
+     std::vector<double> arr = areasSub.Get();
+     for (double val : arr) {
+       std::cout << val << " ";
+     }
+     std::cout << std::endl;
+   }
+   ```
 
-      @Override
-      public void robotInit() {
-        NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport");
-        areasSub = table.getDoubleArrayTopic("area").subscribe(new double[] {});
-      }
-
-      @Override
-      public void teleopPeriodic() {
-          double[] areas = areasSub.get();
-
-          System.out.print("areas: " );
-
-          for (double area : areas) {
-            System.out.print(area + " ");
-          }
-
-          System.out.println();
-      }
-
-   .. code-block:: c++
-
-      nt::DoubleArraySubscriber areasSub;
-
-      void Robot::RobotInit() override {
-        auto table = nt::NetworkTableInstance::GetDefault().GetTable("GRIP/myContoursReport");
-        areasSub = table->GetDoubleArrayTopic("area").Subscribe({});
-      }
-
-      void Robot::TeleopPeriodic() override {
-        std::cout << "Areas: ";
-
-        std::vector<double> arr = areasSub.Get();
-
-        for (double val : arr) {
-          std::cout << val << " ";
-        }
-
-        std::cout << std::endl;
-      }
-
-   .. code-block:: python
-
-        def robotInit(self):
-            table = ntcore.NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport")
-            self.areasSub = table.getDoubleArrayTopic("area").subscribe([])
-
-        def teleopPeriodic(self):
-            areas = self.areasSub.get()
-            print("Areas:", areas)
+   ```python
+   def robotInit(self):
+       table = ntcore.NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport")
+       self.areasSub = table.getDoubleArrayTopic("area").subscribe([])
+   def teleopPeriodic(self):
+       areas = self.areasSub.get()
+       print("Areas:", areas)
+   ```
 
 The steps to getting the values and, in this program, printing them are:
 

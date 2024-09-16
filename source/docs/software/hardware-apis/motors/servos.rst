@@ -6,17 +6,17 @@ Servo motors are a type of motor which integrates positional feedback into the m
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    Servo exampleServo = new Servo(1);
+    ```
 
-        Servo exampleServo = new Servo(1);
+    ```c++
+    frc::Servo exampleServo {1};
+    ```
 
-    .. code-block:: c++
-
-        frc::Servo exampleServo {1};
-
-    .. code-block:: python
-
-       exampleServo = wpilib.Servo(1)
+    ```python
+    exampleServo = wpilib.Servo(1)
+    ```
 
 A servo object is constructed by passing a channel.
 
@@ -24,20 +24,20 @@ A servo object is constructed by passing a channel.
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    exampleServo.set(.5);
+    exampleServo.setAngle(75);
+    ```
 
-        exampleServo.set(.5);
-        exampleServo.setAngle(75);
+    ```c++
+    exampleServo.Set(.5);
+    exampleServo.SetAngle(75);
+    ```
 
-    .. code-block:: c++
-
-        exampleServo.Set(.5);
-        exampleServo.SetAngle(75);
-
-    .. code-block:: python
-
-       exampleServo.set(.5)
-       exampleServo.setAngle(75)
+    ```python
+    exampleServo.set(.5)
+    exampleServo.setAngle(75)
+    ```
 
 There are two methods of setting servo values in WPILib:
 

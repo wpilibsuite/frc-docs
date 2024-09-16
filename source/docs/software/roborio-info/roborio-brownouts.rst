@@ -66,13 +66,13 @@ The NI roboRIO 2.0 adds the option for a software settable brownout level.  The 
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  RobotController.setBrownoutVoltage(7.0);
+  ```
 
-    RobotController.setBrownoutVoltage(7.0);
-
-  .. code-block:: c++
-
-    frc::RobotController::SetBrownoutVoltage(7_V);
+  ```c++
+  frc::RobotController::SetBrownoutVoltage(7_V);
+  ```
 
 ## Measuring Current Draw using the PDP/PDH
 

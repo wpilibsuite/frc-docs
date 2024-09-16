@@ -2,7 +2,7 @@
 
 # What Are AprilTags?
 
-.. image:: images/apriltagrobots_overlay.png
+.. image:: images/apriltagrobots_overlay.jpg
    :alt: A demonstration of AprilTag fiducial targets attached to generic robots.
 
 AprilTags are a system of visual tags developed by researchers at the University of Michigan to provide low overhead, high accuracy localization for many different applications.

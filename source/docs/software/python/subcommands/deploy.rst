@@ -9,23 +9,23 @@
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy deploy
+      ```sh
+      py -3 -m robotpy deploy
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy
+      ```sh
+      python3 -m robotpy deploy
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy
+      ```sh
+      python3 -m robotpy deploy
+      ```
 
 When you execute the ``robotpy deploy`` subcommand, it will do the following:
 
@@ -51,23 +51,23 @@ When deploying the code to the roboRIO, you can have immediate feedback by addin
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy deploy --nc
+      ```sh
+      py -3 -m robotpy deploy --nc
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy --nc
+      ```sh
+      python3 -m robotpy deploy --nc
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy --nc
+      ```sh
+      python3 -m robotpy deploy --nc
+      ```
 
 .. note:: Viewing netconsole output requires the driver station software to be connected to your robot
 
@@ -80,20 +80,21 @@ In the event that the tests are failing but you want to upload the code anyway, 
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy deploy --skip-tests
+      ```sh
+      py -3 -m robotpy deploy --skip-tests
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy --skip-tests
+      ```sh
+      python3 -m robotpy deploy --skip-tests
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
+      ```sh
+      python3 -m robotpy deploy --skip-tests
+      ```
 
-         python3 -m robotpy deploy --skip-tests

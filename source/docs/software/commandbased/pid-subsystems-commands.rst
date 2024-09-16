@@ -77,15 +77,15 @@ The ``setSetpoint()`` method can be used to set the setpoint of the ``PIDSubsyst
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // The subsystem will track to a setpoint of 5.
+   examplePIDSubsystem.setSetpoint(5);
+   ```
 
-      // The subsystem will track to a setpoint of 5.
-      examplePIDSubsystem.setSetpoint(5);
-
-   .. code-block:: c++
-
-      // The subsystem will track to a setpoint of 5.
-      examplePIDSubsystem.SetSetpoint(5);
+   ```c++
+   // The subsystem will track to a setpoint of 5.
+   examplePIDSubsystem.SetSetpoint(5);
+   ```
 
 #### enable() and disable()
 

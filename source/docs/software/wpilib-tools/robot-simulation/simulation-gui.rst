@@ -77,17 +77,16 @@ In cases where vendor libraries do not compile when running the robot simulation
 
 .. tab-set-code::
 
-   .. code-block:: java
-
-      TalonSRX motorLeft;
-      TalonSRX motorRight;
-
-      public Robot() {
-       if (RobotBase.isReal()) {
-         motorLeft = new TalonSRX(0);
-         motorRight = new TalonSRX(1);
-       }
-      }
+   ```java
+   TalonSRX motorLeft;
+   TalonSRX motorRight;
+   public Robot() {
+    if (RobotBase.isReal()) {
+      motorLeft = new TalonSRX(0);
+      motorRight = new TalonSRX(1);
+    }
+   }
+   ```
 
 .. note:: Reassigning value types in C++ requires move or copy assignment; vendors classes that both do not support the SIM and lack a move or copy assignment operator cannot be worked around with conditional allocation unless a pointer is used, instead of a value type.
 

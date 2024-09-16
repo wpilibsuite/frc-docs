@@ -217,25 +217,25 @@ The roboRIO provides a universal CAN heartbeat that any device on the bus can li
 | Time of day (hours)   | 1    | 5            |
 +-----------------------+------+--------------+
 
-.. code-block:: c++
-
-   struct [[gnu::packed]] RobotState {
-     uint64_t matchTimeSeconds : 8;
-     uint64_t matchNumber : 10;
-     uint64_t replayNumber : 6;
-     uint64_t redAlliance : 1;
-     uint64_t enabled : 1;
-     uint64_t autonomous : 1;
-     uint64_t testMode : 1;
-     uint64_t systemWatchdog : 1;
-     uint64_t tournamentType : 3;
-     uint64_t timeOfDay_yr : 6;
-     uint64_t timeOfDay_month : 4;
-     uint64_t timeOfDay_day : 5;
-     uint64_t timeOfDay_sec : 6;
-     uint64_t timeOfDay_min : 6;
-     uint64_t timeOfDay_hr : 5;
-   };
+```c++
+struct [[gnu::packed]] RobotState {
+  uint64_t matchTimeSeconds : 8;
+  uint64_t matchNumber : 10;
+  uint64_t replayNumber : 6;
+  uint64_t redAlliance : 1;
+  uint64_t enabled : 1;
+  uint64_t autonomous : 1;
+  uint64_t testMode : 1;
+  uint64_t systemWatchdog : 1;
+  uint64_t tournamentType : 3;
+  uint64_t timeOfDay_yr : 6;
+  uint64_t timeOfDay_month : 4;
+  uint64_t timeOfDay_day : 5;
+  uint64_t timeOfDay_sec : 6;
+  uint64_t timeOfDay_min : 6;
+  uint64_t timeOfDay_hr : 5;
+};
+```
 
 If the ``System watchdog`` flag is set, motor controllers are enabled. If 100 ms has passed since this packet was received, the robot program can be considered hung, and devices should act as if the robot has been disabled.
 

@@ -18,22 +18,21 @@ Creating a SlewRateLimiter is simple:
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 units per second
+  SlewRateLimiter filter = new SlewRateLimiter(0.5);
+  ```
 
-    // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 units per second
-    SlewRateLimiter filter = new SlewRateLimiter(0.5);
+  ```c++
+  // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 volts per second
+  frc::SlewRateLimiter<units::volts> filter{0.5_V / 1_s};
+  ```
 
-  .. code-block:: c++
-
-    // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 volts per second
-    frc::SlewRateLimiter<units::volts> filter{0.5_V / 1_s};
-
-  .. code-block:: python
-
-    from wpimath.filter import SlewRateLimiter
-
-    # Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 units per second
-    filter = SlewRateLimiter(0.5)
+  ```python
+  from wpimath.filter import SlewRateLimiter
+  # Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 units per second
+  filter = SlewRateLimiter(0.5)
+  ```
 
 ## Using a SlewRateLimiter
 
@@ -41,20 +40,20 @@ Once your filter has been created, using it is easy - simply call the ``calculat
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Calculates the next value of the output
+  filter.calculate(input);
+  ```
 
-    // Calculates the next value of the output
-    filter.calculate(input);
+  ```c++
+  // Calculates the next value of the output
+  filter.Calculate(input);
+  ```
 
-  .. code-block:: c++
-
-    // Calculates the next value of the output
-    filter.Calculate(input);
-
-  .. code-block:: python
-
-    # Calculates the next value of the output
-    filter.calculate(input)
+  ```python
+  # Calculates the next value of the output
+  filter.calculate(input)
+  ```
 
 ### Using a SlewRateLimiter with DifferentialDrive
 
@@ -64,26 +63,24 @@ A typical use of a SlewRateLimiter is to limit the acceleration of a robot's dri
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Ordinary call with no ramping applied
+  drivetrain.arcadeDrive(forward, turn);
+  // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
+  drivetrain.arcadeDrive(filter.calculate(forward), turn);
+  ```
 
-    // Ordinary call with no ramping applied
-    drivetrain.arcadeDrive(forward, turn);
+  ```c++
+  // Ordinary call with no ramping applied
+  drivetrain.ArcadeDrive(forward, turn);
+  // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
+  drivetrain.ArcadeDrive(filter.Calculate(forward), turn);
+  ```
 
-    // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
-    drivetrain.arcadeDrive(filter.calculate(forward), turn);
+  ```python
+  # Ordinary call with no ramping applied
+  drivetrain.arcadeDrive(forward, turn)
+  # Slew-rate limits the forward/backward input, limiting forward/backward acceleration
+  drivetrain.arcadeDrive(filter.calculate(forward), turn)
+  ```
 
-  .. code-block:: c++
-
-    // Ordinary call with no ramping applied
-    drivetrain.ArcadeDrive(forward, turn);
-
-    // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
-    drivetrain.ArcadeDrive(filter.Calculate(forward), turn);
-
-  .. code-block:: python
-
-    # Ordinary call with no ramping applied
-    drivetrain.arcadeDrive(forward, turn)
-
-    # Slew-rate limits the forward/backward input, limiting forward/backward acceleration
-    drivetrain.arcadeDrive(filter.calculate(forward), turn)

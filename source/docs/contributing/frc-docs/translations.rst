@@ -17,21 +17,21 @@ Links must be preserved in their original syntax. To translate a link, you can r
 
 An example of the original text may be
 
-.. code-block:: text
-
-   For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System Document <Wiring the FRC Control System document>`.
+```text
+For complete wiring instructions/diagrams, please see the :doc:`Wiring the FRC Control System Document <Wiring the FRC Control System document>`.
+```
 
 where the ``Wiring the FRC Control System Document`` then gets translated.
 
-.. code-block:: text
-
-   For complete wiring instructions/diagrams, please see the :doc:`TRANSLATED TEXT <Wiring the FRC Control System document>`.
+```text
+For complete wiring instructions/diagrams, please see the :doc:`TRANSLATED TEXT <Wiring the FRC Control System document>`.
+```
 
 Another example is below
 
-.. code-block:: text
-
-  For complete wiring instructions/diagrams, please see the :ref:`TRANSLATED TEXT <docs/zero-to-robot/step-1/how-to-wire-a-simple-robot:How to Wire an FRC Robot>`
+```text
+For complete wiring instructions/diagrams, please see the :ref:`TRANSLATED TEXT <docs/zero-to-robot/step-1/how-to-wire-a-simple-robot:How to Wire an FRC Robot>`
+```
 
 ## Publishing Translations
 

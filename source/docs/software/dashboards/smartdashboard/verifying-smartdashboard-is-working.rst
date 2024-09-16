@@ -20,33 +20,29 @@ SmartDashboard includes a connection indicator widget which will turn red or gre
 
 .. tab-set-code::
 
-   .. code-block:: java
-
-      public class Robot extends TimedRobot {
-         double counter = 0.0;
-
-         public void teleopPeriodic() {
-            SmartDashboard.putNumber("Counter", counter++);
-         }
+   ```java
+   public class Robot extends TimedRobot {
+      double counter = 0.0;
+      public void teleopPeriodic() {
+         SmartDashboard.putNumber("Counter", counter++);
       }
+   }
+   ```
 
-   .. code-block:: c++
+   ```c++
+   #include "Robot.h"
+   float counter = 0.0;
+   void Robot::TeleopPeriodic() {
+      frc::SmartDashboard::PutNumber("Counter", counter++);
+   }
+   ```
 
-      #include "Robot.h"
-      float counter = 0.0;
-
-      void Robot::TeleopPeriodic() {
-         frc::SmartDashboard::PutNumber("Counter", counter++);
-      }
-
-   .. code-block:: python
-
-      from wpilib import SmartDashboard
-
-      self.counter = 0.0
-
-      def teleopPeriodic(self) -> None:
-         SmartDashboard.putNumber("Counter", self.counter += 1)
+   ```python
+   from wpilib import SmartDashboard
+   self.counter = 0.0
+   def teleopPeriodic(self) -> None:
+      SmartDashboard.putNumber("Counter", self.counter += 1)
+   ```
 
 This is a minimal robot program that writes a value to the SmartDashboard. It simply increments a counter 50 times per second to verify that the connection is working. However, to minimize bandwidth usage, NetworkTables by default will throttle the updates to 10 times per second.
 

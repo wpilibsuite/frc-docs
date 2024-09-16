@@ -6,47 +6,47 @@ WPILib is coupled with a [Units](https://github.com/nholthaus/units) library for
 
 The units library is a header-only library. You must include the relevant header in your source files for the units you want to use. Here's a list of available units.
 
-.. code-block:: c++
-
-   #include <units/acceleration.h>
-   #include <units/angle.h>
-   #include <units/angular_acceleration.h>
-   #include <units/angular_velocity.h>
-   #include <units/area.h>
-   #include <units/capacitance.h>
-   #include <units/charge.h>
-   #include <units/concentration.h>
-   #include <units/conductance.h>
-   #include <units/current.h>
-   #include <units/curvature.h>
-   #include <units/data.h>
-   #include <units/data_transfer_rate.h>
-   #include <units/density.h>
-   #include <units/dimensionless.h>
-   #include <units/energy.h>
-   #include <units/force.h>
-   #include <units/frequency.h>
-   #include <units/illuminance.h>
-   #include <units/impedance.h>
-   #include <units/inductance.h>
-   #include <units/length.h>
-   #include <units/luminous_flux.h>
-   #include <units/luminous_intensity.h>
-   #include <units/magnetic_field_strength.h>
-   #include <units/magnetic_flux.h>
-   #include <units/mass.h>
-   #include <units/moment_of_inertia.h>
-   #include <units/power.h>
-   #include <units/pressure.h>
-   #include <units/radiation.h>
-   #include <units/solid_angle.h>
-   #include <units/substance.h>
-   #include <units/temperature.h>
-   #include <units/time.h>
-   #include <units/torque.h>
-   #include <units/velocity.h>
-   #include <units/voltage.h>
-   #include <units/volume.h>
+```c++
+#include <units/acceleration.h>
+#include <units/angle.h>
+#include <units/angular_acceleration.h>
+#include <units/angular_velocity.h>
+#include <units/area.h>
+#include <units/capacitance.h>
+#include <units/charge.h>
+#include <units/concentration.h>
+#include <units/conductance.h>
+#include <units/current.h>
+#include <units/curvature.h>
+#include <units/data.h>
+#include <units/data_transfer_rate.h>
+#include <units/density.h>
+#include <units/dimensionless.h>
+#include <units/energy.h>
+#include <units/force.h>
+#include <units/frequency.h>
+#include <units/illuminance.h>
+#include <units/impedance.h>
+#include <units/inductance.h>
+#include <units/length.h>
+#include <units/luminous_flux.h>
+#include <units/luminous_intensity.h>
+#include <units/magnetic_field_strength.h>
+#include <units/magnetic_flux.h>
+#include <units/mass.h>
+#include <units/moment_of_inertia.h>
+#include <units/power.h>
+#include <units/pressure.h>
+#include <units/radiation.h>
+#include <units/solid_angle.h>
+#include <units/substance.h>
+#include <units/temperature.h>
+#include <units/time.h>
+#include <units/torque.h>
+#include <units/velocity.h>
+#include <units/voltage.h>
+#include <units/volume.h>
+```
 
 The ``units/math.h`` header provides unit-aware functions like ``units::math::abs()``.
 
@@ -72,30 +72,30 @@ A full list of unit and container types can be found in the [documentation](http
 
 To create an instance of a specific unit, we create an instance of its container type:
 
-.. code-block:: c++
-
-   // The variable speed has a value of 5 meters per second.
-   units::meter_per_second_t speed{5.0};
+```c++
+// The variable speed has a value of 5 meters per second.
+units::meter_per_second_t speed{5.0};
+```
 
 Alternatively, the units library has [type literals](https://en.cppreference.com/w/cpp/language/user_literal) defined for some of the more common container types.  These can be used in conjunction with type inference via ``auto`` to define a unit more succinctly:
 
-.. code-block:: c++
-
-   // The variable speed has a value of 5 meters per second.
-   auto speed = 5_mps;
+```c++
+// The variable speed has a value of 5 meters per second.
+auto speed = 5_mps;
+```
 
 Units can also be initialized using a value of an another container type, as long as the types can be converted between one another. For example, a ``meter_t`` value can be created from a ``foot_t`` value.
 
-.. code-block:: c++
-
-   auto feet = 6_ft;
-   units::meter_t meters{feet};
+```c++
+auto feet = 6_ft;
+units::meter_t meters{feet};
+```
 
 In fact, all container types representing convertible unit types are *implicitly convertible*.  Thus, the following is perfectly legal:
 
-.. code-block:: c++
-
-   units::meter_t distance = 6_ft;
+```c++
+units::meter_t distance = 6_ft;
+```
 
 In short, we can use *any* unit of length in place of *any other* unit of length, anywhere in our code; the units library will automatically perform the correct conversion for us.
 
@@ -103,30 +103,28 @@ In short, we can use *any* unit of length in place of *any other* unit of length
 
 Container types support all of the ordinary arithmetic operations of their underlying data type, with the added condition that the operation must be *dimensionally* sound.  Thus, addition must always be performed on two compatible container types:
 
-.. code-block:: c++
-
-   // Add two meter_t values together
-   auto sum = 5_m + 7_m; // sum is 12_m
-
-   // Adds meters to feet; both are length, so this is fine
-   auto sum = 5_m + 7_ft;
-
-   // Tries to add a meter_t to a second_t, will throw a compile-time error
-   auto sum = 5_m + 7_s;
+```c++
+// Add two meter_t values together
+auto sum = 5_m + 7_m; // sum is 12_m
+// Adds meters to feet; both are length, so this is fine
+auto sum = 5_m + 7_ft;
+// Tries to add a meter_t to a second_t, will throw a compile-time error
+auto sum = 5_m + 7_s;
+```
 
 Multiplication may be performed on any pair of container types, and yields the container type of a compound unit:
 
 .. note:: When a calculation yields a compound unit type, this type will only be checked for validity at the point of operation if the result type is specified explicitly.  If ``auto`` is used, this check will not occur.  For example, when we divide distance by time, we may want to ensure the result is, indeed, a velocity (i.e. ``units::meter_per_second_t``). If the return type is declared as ``auto``, this check will not be made.
 
-.. code-block:: c++
+```c++
+// Multiply two meter_t values, result is square_meter_t
+auto product = 5_m * 7_m; // product is 35_sq_m
+```
 
-   // Multiply two meter_t values, result is square_meter_t
-   auto product = 5_m * 7_m; // product is 35_sq_m
-
-.. code-block:: c++
-
-   // Divide a meter_t value by a second_t, result is a meter_per_second_t
-   units::meter_per_second_t speed = 6_m / 0.5_s; // speed is 12_mps
+```c++
+// Divide a meter_t value by a second_t, result is a meter_per_second_t
+units::meter_per_second_t speed = 6_m / 0.5_s; // speed is 12_mps
+```
 
 ### ``<cmath>`` Functions
 
@@ -134,45 +132,42 @@ Some ``std`` functions (such as ``clamp``) are templated to accept any type on w
 
 However, other ``std`` functions work only on ordinary numerical types (e.g. ``double``).  The units library's ``units::math`` namespace contains wrappers for several of these functions that accept units. Examples of such functions include ``sqrt``, ``pow``, etc.
 
-.. code-block:: c++
-
-   auto area = 36_sq_m;
-   units::meter_t sideLength = units::math::sqrt(area);
+```c++
+auto area = 36_sq_m;
+units::meter_t sideLength = units::math::sqrt(area);
+```
 
 ### Removing the Unit Wrapper
 
 To convert a container type to its underlying value, use the ``value()`` method. This serves as an escape hatch from the units type system, which should be used only when necessary.
 
-.. code-block:: c++
-
-   units::meter_t distance = 6.5_m;
-   double distanceMeters = distance.value();
-
+```c++
+units::meter_t distance = 6.5_m;
+double distanceMeters = distance.value();
+```
 
 ## Example of the Units Library in WPILib Code
 Several arguments for methods in new features of WPILib (ex. :ref:`kinematics <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is kinematics?>`) use the units library. Here is an example of :ref:`sampling a trajectory <docs/software/advanced-controls/trajectories/manipulating-trajectories:Sampling the trajectory>`.
 
-.. code-block:: c++
-
-   // Sample the trajectory at 1.2 seconds. This represents where the robot
-   // should be after 1.2 seconds of traversal.
-   Trajectory::State point = trajectory.Sample(1.2_s);
-
-   // Since units of time are implicitly convertible, this is exactly equivalent to the above code
-   Trajectory::State point = trajectory.Sample(1200_ms);
+```c++
+// Sample the trajectory at 1.2 seconds. This represents where the robot
+// should be after 1.2 seconds of traversal.
+Trajectory::State point = trajectory.Sample(1.2_s);
+// Since units of time are implicitly convertible, this is exactly equivalent to the above code
+Trajectory::State point = trajectory.Sample(1200_ms);
+```
 
 Some WPILib classes represent objects that could naturally work with multiple choices of unit types - for example, a motion profile might operate on either linear distance (e.g. meters) or angular distance (e.g. radians).  For such classes, the unit type is required as a template parameter:
 
-.. code-block:: c++
-
-   // Creates a new set of trapezoidal motion profile constraints
-   // Max velocity of 10 meters per second
-   // Max acceleration of 20 meters per second squared
-   frc::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq};
-
-   // Creates a new set of trapezoidal motion profile constraints
-   // Max velocity of 10 radians per second
-   // Max acceleration of 20 radians per second squared
-   frc::TrapezoidProfile<units::radians>::Constraints{10_rad_per_s, 20__rad_per_s / 1_s};
+```c++
+// Creates a new set of trapezoidal motion profile constraints
+// Max velocity of 10 meters per second
+// Max acceleration of 20 meters per second squared
+frc::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq};
+// Creates a new set of trapezoidal motion profile constraints
+// Max velocity of 10 radians per second
+// Max acceleration of 20 radians per second squared
+frc::TrapezoidProfile<units::radians>::Constraints{10_rad_per_s, 20__rad_per_s / 1_s};
+```
 
 For more detailed documentation, please visit the official [GitHub page](https://github.com/nholthaus/units) for the units library.

@@ -10,178 +10,143 @@ NT3 code (was):
 
 .. tab-set-code::
 
-      .. code-block:: java
+      ```java
+      public class Example {
+        final NetworkTableEntry yEntry;
+        final NetworkTableEntry outEntry;
+        public Example() {
+          NetworkTableInstance inst = NetworkTableInstance.getDefault();
+          // get the subtable called "datatable"
+          NetworkTable datatable = inst.getTable("datatable");
+          // get the entry in "datatable" called "Y"
+          yEntry = datatable.getEntry("Y");
+          // get the entry in "datatable" called "Out"
+          outEntry = datatable.getEntry("Out");
+        }
+        public void periodic() {
+          // read a double value from Y, and set Out to that value multiplied by 2
+          double value = yEntry.getDouble(0.0);  // default to 0
+          outEntry.setDouble(value * 2);
+        }
+      }
+      ```
 
-          public class Example {
-            final NetworkTableEntry yEntry;
-            final NetworkTableEntry outEntry;
+      ```c++
+      class Example {
+        nt::NetworkTableEntry yEntry;
+        nt::NetworkTableEntry outEntry;
+       public:
+        Example() {
+          nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
+          // get the subtable called "datatable"
+          auto datatable = inst.GetTable("datatable");
+          // get the entry in "datatable" called "Y"
+          yEntry = datatable->GetEntry("Y");
+          // get the entry in "datatable" called "Out"
+          outEntry = datatable->GetEntry("Out");
+        }
+        void Periodic() {
+          // read a double value from Y, and set Out to that value multiplied by 2
+          double value = yEntry.GetDouble(0.0);  // default to 0
+          outEntry.SetDouble(value * 2);
+        }
+      };
+      ```
 
-            public Example() {
-              NetworkTableInstance inst = NetworkTableInstance.getDefault();
-
-              // get the subtable called "datatable"
-              NetworkTable datatable = inst.getTable("datatable");
-
-              // get the entry in "datatable" called "Y"
-              yEntry = datatable.getEntry("Y");
-
-              // get the entry in "datatable" called "Out"
-              outEntry = datatable.getEntry("Out");
-            }
-
-            public void periodic() {
-              // read a double value from Y, and set Out to that value multiplied by 2
-              double value = yEntry.getDouble(0.0);  // default to 0
-              outEntry.setDouble(value * 2);
-            }
-          }
-
-
-      .. code-block:: c++
-
-          class Example {
-            nt::NetworkTableEntry yEntry;
-            nt::NetworkTableEntry outEntry;
-
-            public:
-            Example() {
-              nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
-
-              // get the subtable called "datatable"
-              auto datatable = inst.GetTable("datatable");
-
-              // get the entry in "datatable" called "Y"
-              yEntry = datatable->GetEntry("Y");
-
-              // get the entry in "datatable" called "Out"
-              outEntry = datatable->GetEntry("Out");
-            }
-
-            void Periodic() {
-              // read a double value from Y, and set Out to that value multiplied by 2
-              double value = yEntry.GetDouble(0.0);  // default to 0
-              outEntry.SetDouble(value * 2);
-            }
-          };
-
-
-      .. code-block:: python
-
-          class Example:
-              def __init__(self):
-                  inst = ntcore.NetworkTableInstance.getDefault()
-
-                  # get the subtable called "datatable"
-                  datatable = inst.getTable("datatable")
-
-                  # get the entry in "datatable" called "Y"
-                  self.yEntry = datatable.getEntry("Y")
-
-                  # get the entry in "datatable" called "Out"
-                  self.outEntry = datatable.getEntry("Out")
-
-              def periodic(self):
-                  # read a double value from Y, and set Out to that value multiplied by 2
-                  value = self.yEntry.getDouble(0.0)  # default to 0
-                  self.outEntry.setDouble(value * 2)
-
+      ```python
+      class Example:
+          def __init__(self):
+              inst = ntcore.NetworkTableInstance.getDefault()
+              # get the subtable called "datatable"
+              datatable = inst.getTable("datatable")
+              # get the entry in "datatable" called "Y"
+              self.yEntry = datatable.getEntry("Y")
+              # get the entry in "datatable" called "Out"
+              self.outEntry = datatable.getEntry("Out")
+          def periodic(self):
+              # read a double value from Y, and set Out to that value multiplied by 2
+              value = self.yEntry.getDouble(0.0)  # default to 0
+              self.outEntry.setDouble(value * 2)
+      ```
 
 Recommended NT4 equivalent (should be):
 
 .. tab-set-code::
 
-      .. code-block:: java
+      ```java
+      public class Example {
+        final DoubleSubscriber ySub;
+        final DoublePublisher outPub;
+        public Example() {
+          NetworkTableInstance inst = NetworkTableInstance.getDefault();
+          // get the subtable called "datatable"
+          NetworkTable datatable = inst.getTable("datatable");
+          // subscribe to the topic in "datatable" called "Y"
+          // default value is 0
+          ySub = datatable.getDoubleTopic("Y").subscribe(0.0);
+          // publish to the topic in "datatable" called "Out"
+          outPub = datatable.getDoubleTopic("Out").publish();
+        }
+        public void periodic() {
+          // read a double value from Y, and set Out to that value multiplied by 2
+          double value = ySub.get();
+          outPub.set(value * 2);
+        }
+        // often not required in robot code, unless this class doesn't exist for
+        // the lifetime of the entire robot program, in which case close() needs to be
+        // called to stop subscribing
+        public void close() {
+          ySub.close();
+          outPub.close();
+        }
+      }
+      ```
 
-          public class Example {
-            final DoubleSubscriber ySub;
-            final DoublePublisher outPub;
+      ```c++
+      class Example {
+        nt::DoubleSubscriber ySub;
+        nt::DoublePublisher outPub;
+       public:
+        Example() {
+          nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
+          // get the subtable called "datatable"
+          auto datatable = inst.GetTable("datatable");
+          // subscribe to the topic in "datatable" called "Y"
+          // default value is 0
+          ySub = datatable->GetDoubleTopic("Y").Subscribe(0.0);
+          // publish to the topic in "datatable" called "Out"
+          outPub = datatable->GetDoubleTopic("Out").Publish();
+        }
+        void Periodic() {
+          // read a double value from Y, and set Out to that value multiplied by 2
+          double value = ySub.Get();
+          outPub.Set(value * 2);
+        }
+      };
+      ```
 
-            public Example() {
-              NetworkTableInstance inst = NetworkTableInstance.getDefault();
-
-              // get the subtable called "datatable"
-              NetworkTable datatable = inst.getTable("datatable");
-
-              // subscribe to the topic in "datatable" called "Y"
-              // default value is 0
-              ySub = datatable.getDoubleTopic("Y").subscribe(0.0);
-
-              // publish to the topic in "datatable" called "Out"
-              outPub = datatable.getDoubleTopic("Out").publish();
-            }
-
-            public void periodic() {
-              // read a double value from Y, and set Out to that value multiplied by 2
-              double value = ySub.get();
-              outPub.set(value * 2);
-            }
-
-            // often not required in robot code, unless this class doesn't exist for
-            // the lifetime of the entire robot program, in which case close() needs to be
-            // called to stop subscribing
-            public void close() {
-              ySub.close();
-              outPub.close();
-            }
-          }
-
-
-      .. code-block:: c++
-
-          class Example {
-            nt::DoubleSubscriber ySub;
-            nt::DoublePublisher outPub;
-
-            public:
-            Example() {
-              nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
-
-              // get the subtable called "datatable"
-              auto datatable = inst.GetTable("datatable");
-
-              // subscribe to the topic in "datatable" called "Y"
-              // default value is 0
-              ySub = datatable->GetDoubleTopic("Y").Subscribe(0.0);
-
-              // publish to the topic in "datatable" called "Out"
-              outPub = datatable->GetDoubleTopic("Out").Publish();
-            }
-
-            void Periodic() {
-              // read a double value from Y, and set Out to that value multiplied by 2
-              double value = ySub.Get();
-              outPub.Set(value * 2);
-            }
-          };
-
-
-      .. code-block:: python
-
-          class Example:
-              def __init__(self) -> None:
-                  inst = ntcore.NetworkTableInstance.getDefault()
-
-                  # get the subtable called "datatable"
-                  datatable = inst.getTable("datatable")
-
-                  # subscribe to the topic in "datatable" called "Y"
-                  # default value is 0
-                  self.ySub = datatable.getDoubleTopic("Y").subscribe(0.0)
-
-                  # publish to the topic in "datatable" called "Out"
-                  self.outPub = datatable.getDoubleTopic("Out").publish()
-
-              def periodic(self):
-                  # read a double value from Y, and set Out to that value multiplied by 2
-                  value = self.ySub.get()
-                  self.outPub.set(value * 2)
-
-              # often not required in robot code, unless this class doesn't exist for
-              # the lifetime of the entire robot program, in which case close() needs to be
-              # called to stop subscribing
-              def close(self):
-                  self.ySub.close()
-                  self.outPub.close()
+      ```python
+      class Example:
+          def __init__(self) -> None:
+              inst = ntcore.NetworkTableInstance.getDefault()
+              # get the subtable called "datatable"
+              datatable = inst.getTable("datatable")
+              # subscribe to the topic in "datatable" called "Y"
+              # default value is 0
+              self.ySub = datatable.getDoubleTopic("Y").subscribe(0.0)
+              # publish to the topic in "datatable" called "Out"
+              self.outPub = datatable.getDoubleTopic("Out").publish()
+          def periodic(self):
+              # read a double value from Y, and set Out to that value multiplied by 2
+              value = self.ySub.get()
+              self.outPub.set(value * 2)
+          # often not required in robot code, unless this class doesn't exist for
+          # the lifetime of the entire robot program, in which case close() needs to be
+          # called to stop subscribing
+          def close(self):
+              self.ySub.close()
+              self.outPub.close()
+      ```
 
 ## Shuffleboard
 

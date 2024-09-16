@@ -16,15 +16,13 @@ In order to define a plugin, the plugin class must be a subclass of [edu.wpi.fir
 
 .. tab-set-code::
 
-   .. code-block:: java
-
-      import edu.wpi.first.shuffleboard.api.plugin.Description;
-      import edu.wpi.first.shuffleboard.api.plugin.Plugin;
-
-      @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
-      public class MyPlugin extends Plugin {
-
-      }
+   ```java
+   import edu.wpi.first.shuffleboard.api.plugin.Description;
+   import edu.wpi.first.shuffleboard.api.plugin.Plugin;
+   @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
+   public class MyPlugin extends Plugin {
+   }
+   ```
 
 Additional explanations on how these attributes are used, including version numbers can be found [here](https://semver.org/).
 
@@ -43,14 +41,13 @@ Edit ``settings.gradle`` in the shuffleboard root directory to add ``include "ex
 
 Plugins are allowed to have dependencies on other plugins and libraries, however, they must be included correctly in the maven or gradle build file. When a plugin depends on other plugins, it is good practice to define those dependencies so the plugin does not load when the dependencies do not load as well. This can be done using the ``@Requires`` annotation as shown below:
 
-.. code-block:: java
-
-   @Requires(group = "com.example", name = "Good Plugin", minVersion = "1.2.3")
-   @Requires(group = "edu.wpi.first.shuffleboard", name = "Base", minVersion = "1.0.0")
-   @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
-   public class MyPlugin extends Plugin {
-
-   }
+```java
+@Requires(group = "com.example", name = "Good Plugin", minVersion = "1.2.3")
+@Requires(group = "edu.wpi.first.shuffleboard", name = "Base", minVersion = "1.0.0")
+@Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
+public class MyPlugin extends Plugin {
+}
+```
 
 The ``minVersion`` specifies the minimum allowable version of the plugin that can be loaded. For example, if the ``minVersion`` is 1.4.5, and the plugin with the version 1.4.7 is loaded, it will be allowed to do so. However, if the plugin with the version 1.2.4 is loaded, it will not be allowed to since it is less than the ``minVersion``.
 

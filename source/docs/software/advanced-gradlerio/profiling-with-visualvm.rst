@@ -20,17 +20,17 @@ GradleRIO supports passing JVM launch arguments, and this is what is necessary t
 
 We will be replacing the highlighted lines with:
 
-.. code-block:: groovy
-
-   frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
-      // Enable VisualVM connection
-      jvmArgs.add("-Dcom.sun.management.jmxremote=true")
-      jvmArgs.add("-Dcom.sun.management.jmxremote.port=1198")
-      jvmArgs.add("-Dcom.sun.management.jmxremote.local.only=false")
-      jvmArgs.add("-Dcom.sun.management.jmxremote.ssl=false")
-      jvmArgs.add("-Dcom.sun.management.jmxremote.authenticate=false")
-      jvmArgs.add("-Djava.rmi.server.hostname=10.TE.AM.2") // Replace TE.AM with team number
-   }
+```groovy
+frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
+   // Enable VisualVM connection
+   jvmArgs.add("-Dcom.sun.management.jmxremote=true")
+   jvmArgs.add("-Dcom.sun.management.jmxremote.port=1198")
+   jvmArgs.add("-Dcom.sun.management.jmxremote.local.only=false")
+   jvmArgs.add("-Dcom.sun.management.jmxremote.ssl=false")
+   jvmArgs.add("-Dcom.sun.management.jmxremote.authenticate=false")
+   jvmArgs.add("-Djava.rmi.server.hostname=10.TE.AM.2") // Replace TE.AM with team number
+}
+```
 
 We are adding a few arguments here. In order:
 
@@ -46,10 +46,10 @@ We are adding a few arguments here. In order:
 
 Launching VisualVM is done via the commandline with a few parameters. First, we navigate to the directory containing VisualVM. Then, launch it with parameters, passing it the WPILib JDK path. On a Windows machine, it looks like the following:
 
-.. code-block:: bash
-
-   cd "C:\Users\Public\wpilib\visualvm_217\bin"
-   ./visualvm --jdkhome "C:\Users\Public\wpilib\2024\jdk"
+```bash
+cd "C:\Users\Public\wpilib\visualvm_217\bin"
+./visualvm --jdkhome "C:\Users\Public\wpilib\2024\jdk"
+```
 
 .. important:: The exact path ``visualvm_217`` may vary and depends on the version of VisualVM downloaded.
 
@@ -81,13 +81,13 @@ An important feature of VisualVM is the ability to view how much time a specific
 
 The above screenshot shows a breakdown of the total time a specific function takes. You can see that ``totallyNotSlowFunction()`` accounts for ``61.9%`` of the robot program CPU time. We can then correlate this to our robot program. In ``totallyNotSlowFunction()``, we have the following code.
 
-.. code-block:: Java
-
-   public static void totallyNotSlowFunction() {
-      for (int i = 0; i < 2000; i++) {
-         System.out.println("HAHAHAHA");
-      }
+```Java
+public static void totallyNotSlowFunction() {
+   for (int i = 0; i < 2000; i++) {
+      System.out.println("HAHAHAHA");
    }
+}
+```
 
 In this code snippet, we can identify 2 major causes of concern. A long running ``for`` loop blocks the rest of the robot program from running. Additionally, ``System.out.println()`` calls on the roboRIO are typically quite expensive. We found this information by profiling the Java application on the roboRIO!
 

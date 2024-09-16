@@ -33,47 +33,35 @@ The recommended method to create a subsystem for most users is to subclass the a
    .. tab-item:: Python
       :sync: Python
 
-      .. code-block:: python
-
-            from commands2 import Command
-            from commands2 import Subsystem
-
-
-            class ExampleSubsystem(Subsystem):
-
-                def __init__(self):
-                    """Creates a new ExampleSubsystem."""
-                    super().__init__()
-
-
-                def exampleMethodCommand()->Command:
-                    """
-                    Example command factory method.
-
-                     :return a command
-                    """
-
-                    return self.runOnce(
-                        lambda: # one-time action goes here #
-                    )
-
-                def exampleCondition(self)->bool:
-                    """
-                    An example method querying a boolean state of the subsystem (for example, a digital sensor).
-
-                    :return value of some boolean subsystem state, such as a digital sensor.
-                    """
-
-                    #Query some boolean state, such as a digital sensor.
-                    return False
-
-                def periodic(self):
-                    # This method will be called once per scheduler run
-                    pass
-
-                def simulationPeriodic(self):
-                    # This method will be called once per scheduler run during simulation
-                    pass
+      ```python
+      from commands2 import Command
+      from commands2 import Subsystem
+      class ExampleSubsystem(Subsystem):
+          def __init__(self):
+              """Creates a new ExampleSubsystem."""
+              super().__init__()
+          def exampleMethodCommand()->Command:
+              """
+              Example command factory method.
+               :return a command
+              """
+              return self.runOnce(
+                  lambda: # one-time action goes here #
+              )
+          def exampleCondition(self)->bool:
+              """
+              An example method querying a boolean state of the subsystem (for example, a digital sensor).
+              :return value of some boolean subsystem state, such as a digital sensor.
+              """
+              #Query some boolean state, such as a digital sensor.
+              return False
+          def periodic(self):
+              # This method will be called once per scheduler run
+              pass
+          def simulationPeriodic(self):
+              # This method will be called once per scheduler run during simulation
+              pass
+      ```
 
 This class contains a few convenience features on top of the basic ``Subsystem`` interface: it automatically calls the ``register()`` method in its constructor to register the subsystem with the scheduler (this is necessary for the ``periodic()`` method to be called when the scheduler runs), and also implements the ``Sendable`` interface so that it can be sent to the dashboard to display/log relevant status information.
 
@@ -204,15 +192,15 @@ Subsystems have a ``periodic`` method that is called once every scheduler iterat
    .. tab-item:: Python
       :sync: Python
 
-      .. code-block:: python
-
-        def periodic(self):
-            #Update the odometry in the periodic block
-            self.odometry.update(
-                Rotation2d.fromDegrees(getHeading()),
-                self.leftEncoder.getDistance(),
-                self.rightEncoder.getDistance())
-            self.fieldSim.setRobotPose(getPose())
+      ```python
+      def periodic(self):
+          #Update the odometry in the periodic block
+          self.odometry.update(
+              Rotation2d.fromDegrees(getHeading()),
+              self.leftEncoder.getDistance(),
+              self.rightEncoder.getDistance())
+          self.fieldSim.setRobotPose(getPose())
+      ```
 
 There is also a ``simulationPeriodic()`` method that is similar to ``periodic()`` except that it is only run during :doc:`Simulation </docs/software/wpilib-tools/robot-simulation/introduction>` and can be used to update the state of the robot.
 
@@ -226,30 +214,30 @@ Setting a default command for a subsystem is very easy; one simply calls ``Comma
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand);
+   ```
 
-      CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand);
+   ```c++
+   CommandScheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
+   ```
 
-   .. code-block:: c++
-
-      CommandScheduler.GetInstance().SetDefaultCommand(exampleSubsystem, std::move(exampleCommand));
-
-   .. code-block:: python
-
-      CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand)
+   ```python
+   CommandScheduler.getInstance().setDefaultCommand(exampleSubsystem, exampleCommand)
+   ```
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   exampleSubsystem.setDefaultCommand(exampleCommand);
+   ```
 
-      exampleSubsystem.setDefaultCommand(exampleCommand);
+   ```c++
+   exampleSubsystem.SetDefaultCommand(std::move(exampleCommand));
+   ```
 
-   .. code-block:: c++
-
-      exampleSubsystem.SetDefaultCommand(std::move(exampleCommand));
-
-   .. code-block:: python
-
-      exampleSubsystem.setDefaultCommand(exampleCommand)
+   ```python
+   exampleSubsystem.setDefaultCommand(exampleCommand)
+   ```
 
 .. note:: A command that is assigned as the default command for a subsystem must require that subsystem.

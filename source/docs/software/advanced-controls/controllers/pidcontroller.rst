@@ -16,22 +16,21 @@ In order to use WPILib's PID control functionality, users must first construct a
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a PIDController with gains kP, kI, and kD
+  PIDController pid = new PIDController(kP, kI, kD);
+  ```
 
-    // Creates a PIDController with gains kP, kI, and kD
-    PIDController pid = new PIDController(kP, kI, kD);
+  ```c++
+  // Creates a PIDController with gains kP, kI, and kD
+  frc::PIDController pid{kP, kI, kD};
+  ```
 
-  .. code-block:: c++
-
-    // Creates a PIDController with gains kP, kI, and kD
-    frc::PIDController pid{kP, kI, kD};
-
-  .. code-block:: python
-
-    from wpimath.controller import PIDController
-
+  ```python
+  from wpimath.controller import PIDController
     # Creates a PIDController with gains kP, kI, and kD
-    pid = PIDController(kP, kI, kD)
+  pid = PIDController(kP, kI, kD)
+  ```
 
 An optional fourth parameter can be provided to the constructor, specifying the period at which the controller will be run.  The ``PIDController`` object is intended primarily for synchronous use from the main robot loop, and so this value is defaulted to 20ms.
 
@@ -43,23 +42,23 @@ Using the constructed ``PIDController`` is simple: simply call the ``calculate()
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Calculates the output of the PID algorithm based on the sensor reading
+  // and sends it to a motor
+  motor.set(pid.calculate(encoder.getDistance(), setpoint));
+  ```
 
-    // Calculates the output of the PID algorithm based on the sensor reading
-    // and sends it to a motor
-    motor.set(pid.calculate(encoder.getDistance(), setpoint));
+  ```c++
+  // Calculates the output of the PID algorithm based on the sensor reading
+  // and sends it to a motor
+  motor.Set(pid.Calculate(encoder.GetDistance(), setpoint));
+  ```
 
-  .. code-block:: c++
-
-    // Calculates the output of the PID algorithm based on the sensor reading
-    // and sends it to a motor
-    motor.Set(pid.Calculate(encoder.GetDistance(), setpoint));
-
-  .. code-block:: python
-
-    # Calculates the output of the PID algorithm based on the sensor reading
-    # and sends it to a motor
-    motor.set(pid.calculate(encoder.getDistance(), setpoint))
+  ```python
+  # Calculates the output of the PID algorithm based on the sensor reading
+  # and sends it to a motor
+  motor.set(pid.calculate(encoder.getDistance(), setpoint))
+  ```
 
 ### Checking Errors
 
@@ -81,32 +80,29 @@ To do this, we first must specify the tolerances with the ``setTolerance()`` met
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    // Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
-    pid.setTolerance(5, 10);
-
+  ```java
+  // Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
+  pid.setTolerance(5, 10);
     // Returns true if the error is less than 5 units, and the
-    // error derivative is less than 10 units
-    pid.atSetpoint();
+  // error derivative is less than 10 units
+  pid.atSetpoint();
+  ```
 
-  .. code-block:: c++
-
-    // Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
-    pid.SetTolerance(5, 10);
-
+  ```c++
+  // Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
+  pid.SetTolerance(5, 10);
     // Returns true if the error is less than 5 units, and the
-    // error derivative is less than 10 units
-    pid.AtSetpoint();
+  // error derivative is less than 10 units
+  pid.AtSetpoint();
+  ```
 
-  .. code-block:: python
-
-    # Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
-    pid.setTolerance(5, 10)
-
+  ```python
+  # Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
+  pid.setTolerance(5, 10)
     # Returns true if the error is less than 5 units, and the
-    # error derivative is less than 10 units
-    pid.atSetpoint()
+  # error derivative is less than 10 units
+  pid.atSetpoint()
+  ```
 
 ### Resetting the Controller
 
@@ -124,23 +120,23 @@ The range limits may be increased or decreased using the ``setIntegratorRange()`
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // The integral gain term will never add or subtract more than 0.5 from
+  // the total loop output
+  pid.setIntegratorRange(-0.5, 0.5);
+  ```
 
-    // The integral gain term will never add or subtract more than 0.5 from
-    // the total loop output
-    pid.setIntegratorRange(-0.5, 0.5);
+  ```c++
+  // The integral gain term will never add or subtract more than 0.5 from
+  // the total loop output
+  pid.SetIntegratorRange(-0.5, 0.5);
+  ```
 
-  .. code-block:: c++
-
-    // The integral gain term will never add or subtract more than 0.5 from
-    // the total loop output
-    pid.SetIntegratorRange(-0.5, 0.5);
-
-  .. code-block:: python
-
-    # The integral gain term will never add or subtract more than 0.5 from
-    # the total loop output
-    pid.setIntegratorRange(-0.5, 0.5)
+  ```python
+  # The integral gain term will never add or subtract more than 0.5 from
+  # the total loop output
+  pid.setIntegratorRange(-0.5, 0.5)
+  ```
 
 ### Disabling Integral Gain if the Error is Too High
 
@@ -152,32 +148,29 @@ By default, ``IZone`` is disabled.
 
 .. tab-set-code::
 
-  .. code-block:: java
-
-    // Disable IZone
-    pid.setIZone(Double.POSITIVE_INFINITY);
-
+  ```java
+  // Disable IZone
+  pid.setIZone(Double.POSITIVE_INFINITY);
     // Integral gain will not be applied if the absolute value of the error is
-    // more than 2
-    pid.setIZone(2);
+  // more than 2
+  pid.setIZone(2);
+  ```
 
-  .. code-block:: c++
-
-    // Disable IZone
-    pid.SetIZone(std::numeric_limits<double>::infinity());
-
+  ```c++
+  // Disable IZone
+  pid.SetIZone(std::numeric_limits<double>::infinity());
     // Integral gain will not be applied if the absolute value of the error is
-    // more than 2
-    pid.SetIZone(2);
+  // more than 2
+  pid.SetIZone(2);
+  ```
 
-  .. code-block:: python
-
-    # Disable IZone
-    pid.setIZone(math.inf)
-
+  ```python
+  # Disable IZone
+  pid.setIZone(math.inf)
     # Integral gain will not be applied if the absolute value of the error is
-    # more than 2
-    pid.setIZone(2)
+  # more than 2
+  pid.setIZone(2)
+  ```
 
 ### Setting Continuous Input
 
@@ -189,40 +182,40 @@ To configure a ``PIDController`` to automatically do this, use the ``enableConti
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Enables continuous input on a range from -180 to 180
+  pid.enableContinuousInput(-180, 180);
+  ```
 
-    // Enables continuous input on a range from -180 to 180
-    pid.enableContinuousInput(-180, 180);
+  ```c++
+  // Enables continuous input on a range from -180 to 180
+  pid.EnableContinuousInput(-180, 180);
+  ```
 
-  .. code-block:: c++
-
-    // Enables continuous input on a range from -180 to 180
-    pid.EnableContinuousInput(-180, 180);
-
-  .. code-block:: python
-
-    # Enables continuous input on a range from -180 to 180
-    pid.enableContinuousInput(-180, 180)
+  ```python
+  # Enables continuous input on a range from -180 to 180
+  pid.enableContinuousInput(-180, 180)
+  ```
 
 ## Clamping Controller Output
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Clamps the controller output to between -0.5 and 0.5
+  MathUtil.clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5);
+  ```
 
-    // Clamps the controller output to between -0.5 and 0.5
-    MathUtil.clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5);
+  ```c++
+  // Clamps the controller output to between -0.5 and 0.5
+  std::clamp(pid.Calculate(encoder.GetDistance(), setpoint), -0.5, 0.5);
+  ```
 
-  .. code-block:: c++
-
-    // Clamps the controller output to between -0.5 and 0.5
-    std::clamp(pid.Calculate(encoder.GetDistance(), setpoint), -0.5, 0.5);
-
-  .. code-block:: python
-
-    # Python doesn't have a builtin clamp function
-    def clamp(v, minval, maxval):
-        return max(min(v, maxval), minval)
-
+  ```python
+  # Python doesn't have a builtin clamp function
+  def clamp(v, minval, maxval):
+      return max(min(v, maxval), minval)
     # Clamps the controller output to between -0.5 and 0.5
-    clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5)
+  clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5)
+  ```
+

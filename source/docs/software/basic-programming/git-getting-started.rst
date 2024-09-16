@@ -101,34 +101,34 @@ If a directory is empty, a file needs to be created in order for git to have som
 
    .. tab-item:: Empty Directory
 
-      .. code-block:: console
-
-         > cd "C:\Users\ExampleUser9007\Documents\Example Folder"
-         > git init
-         Initialized empty Git repository in C:/Users/ExampleUser9007/Documents/Example Folder/.git/
-         > echo "# ExampleRepo" >> README.md
-         > git add README.md
-         > git commit -m "First commit"
-         [main (root-commit) fafafa] First commit
-          1 file changed, 1 insertions(+), 0 deletions(-)
-          create mode 100644 README.md
-         > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
-         > git push -u origin main
+      ```console
+      > cd "C:\Users\ExampleUser9007\Documents\Example Folder"
+      > git init
+      Initialized empty Git repository in C:/Users/ExampleUser9007/Documents/Example Folder/.git/
+      > echo "# ExampleRepo" >> README.md
+      > git add README.md
+      > git commit -m "First commit"
+      [main (root-commit) fafafa] First commit
+       1 file changed, 1 insertions(+), 0 deletions(-)
+       create mode 100644 README.md
+      > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
+      > git push -u origin main
+      ```
 
    .. tab-item:: Existing Project
 
-      .. code-block:: console
-
-         > cd "C:\Users\ExampleUser9007\Documents\Example Folder"
-         > git init
-         Initialized empty Git repository in C:/Users/ExampleUser9007/Documents/Example Folder/.git/
-         > git add .
-         > git commit -m "First commit"
-         [main (root-commit) fafafa] First commit
-          1 file changed, 1 insertions(+), 0 deletions(-)
-          create mode 100644 README.md
-         > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
-         > git push -u origin main
+      ```console
+      > cd "C:\Users\ExampleUser9007\Documents\Example Folder"
+      > git init
+      Initialized empty Git repository in C:/Users/ExampleUser9007/Documents/Example Folder/.git/
+      > git add .
+      > git commit -m "First commit"
+      [main (root-commit) fafafa] First commit
+       1 file changed, 1 insertions(+), 0 deletions(-)
+       create mode 100644 README.md
+      > git remote add origin https://github.com/ExampleUser9007/ExampleRepo.git
+      > git push -u origin main
+      ```
 
 ## Commits
 
@@ -136,13 +136,13 @@ Repositories are primarily composed of commits. Commits are saved states or *ver
 
 In the previous example, we created a file called README.md. Open that file in your favorite text editor and edit a few lines. After tinkering with the file for a bit, simply save and close. Navigate to PowerShell and type the following commands.
 
-.. code-block:: console
-
-    > git add README.md
-    > git commit -m "Adds a description to the repository"
-    [main bcbcbc] Adds a description to the repository
-     1 file changed, 2 insertions(+), 0 deletions(-)
-    > git push
+```console
+> git add README.md
+> git commit -m "Adds a description to the repository"
+[main bcbcbc] Adds a description to the repository
+ 1 file changed, 2 insertions(+), 0 deletions(-)
+> git push
+```
 
 .. note:: Writing good commit messages is a key part of a maintainable project. A guide on writing commit messages can be found [here](https://cbea.ms/git-commit/).
 
@@ -230,9 +230,9 @@ Forks can be treated similarly to branches. You can merge the upstream (original
 
 In the situation that a repository is already created and stored on a remote, you can clone it using
 
-.. code-block:: console
-
-   git clone https://github.com/myrepo.git
+```console
+git clone https://github.com/myrepo.git
+```
 
 where ``myrepo.git`` is replaced with your git repo. If you follow this, you can skip to :ref:`commits <docs/software/basic-programming/git-getting-started:Commits>`.
 

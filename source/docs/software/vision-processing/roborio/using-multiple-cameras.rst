@@ -9,59 +9,52 @@ If you're interested in just switching what the driver sees, and are using Smart
   .. tab-item:: Java
     :sync: tabcode-java
 
-    .. code-block:: java
-
-       UsbCamera camera1;
-       UsbCamera camera2;
-       Joystick joy1 = new Joystick(0);
-       NetworkTableEntry cameraSelection;
-
-       @Override
-       public void robotInit() {
-           camera1 = CameraServer.startAutomaticCapture(0);
-           camera2 = CameraServer.startAutomaticCapture(1);
-
-           cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection");
-       }
-
-       @Override
-       public void teleopPeriodic() {
-           if (joy1.getTriggerPressed()) {
-               System.out.println("Setting camera 2");
-               cameraSelection.setString(camera2.getName());
-           } else if (joy1.getTriggerReleased()) {
-               System.out.println("Setting camera 1");
-               cameraSelection.setString(camera1.getName());
-           }
-       }
+    ```java
+    UsbCamera camera1;
+    UsbCamera camera2;
+    Joystick joy1 = new Joystick(0);
+    NetworkTableEntry cameraSelection;
+    @Override
+    public void robotInit() {
+        camera1 = CameraServer.startAutomaticCapture(0);
+        camera2 = CameraServer.startAutomaticCapture(1);
+        cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection");
+    }
+    @Override
+    public void teleopPeriodic() {
+        if (joy1.getTriggerPressed()) {
+            System.out.println("Setting camera 2");
+            cameraSelection.setString(camera2.getName());
+        } else if (joy1.getTriggerReleased()) {
+            System.out.println("Setting camera 1");
+            cameraSelection.setString(camera1.getName());
+        }
+    }
+    ```
 
   .. tab-item:: C++
     :sync: tabcode-c++
 
-    .. code-block:: c++
-
-       cs::UsbCamera camera1;
-       cs::UsbCamera camera2;
-       frc::Joystick joy1{0};
-
-       nt::NetworkTableEntry cameraSelection;
-
-       void RobotInit() override {
-         camera1 = frc::CameraServer::StartAutomaticCapture(0);
-         camera2 = frc::CameraServer::StartAutomaticCapture(1);
-
-         cameraSelection = nt::NetworkTableInstance::GetDefault().GetTable("")->GetEntry("CameraSelection");
-       }
-
-       void TeleopPeriodic() override {
-         if (joy1.GetTriggerPressed()) {
-           std::cout << "Setting Camera 2" << std::endl;
-           cameraSelection.SetString(camera2.GetName());
-         } else if (joy1.GetTriggerReleased()) {
-           std::cout << "Setting Camera 1" << std::endl;
-           cameraSelection.SetString(camera1.GetName());
-         }
-       }
+    ```c++
+    cs::UsbCamera camera1;
+    cs::UsbCamera camera2;
+    frc::Joystick joy1{0};
+    nt::NetworkTableEntry cameraSelection;
+    void RobotInit() override {
+      camera1 = frc::CameraServer::StartAutomaticCapture(0);
+      camera2 = frc::CameraServer::StartAutomaticCapture(1);
+      cameraSelection = nt::NetworkTableInstance::GetDefault().GetTable("")->GetEntry("CameraSelection");
+    }
+    void TeleopPeriodic() override {
+      if (joy1.GetTriggerPressed()) {
+        std::cout << "Setting Camera 2" << std::endl;
+        cameraSelection.SetString(camera2.GetName());
+      } else if (joy1.GetTriggerReleased()) {
+        std::cout << "Setting Camera 1" << std::endl;
+        cameraSelection.SetString(camera1.GetName());
+      }
+    }
+    ```
 
   .. tab-item:: PYTHON
     :sync: tabcode-python
@@ -70,108 +63,97 @@ If you're interested in just switching what the driver sees, and are using Smart
 
     ``robot.py`` contents:
 
-    .. code-block:: python
-
-       import wpilib
-       from ntcore import NetworkTableInstance
-
-       class MyRobot(wpilib.TimedRobot):
-           def robotInit(self):
-               self.joy1 = wpilib.Joystick(0)
-               self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
-               wpilib.CameraServer.launch("vision.py:main")
-
-           def teleopPeriodic(self):
-               if self.joy1.getTriggerPressed():
-                   print("Setting camera 2")
-                   self.cameraSelection.setString("USB Camera 1")
-               elif self.joy1.getTriggerReleased():
-                   print("Setting camera 1")
-                   self.cameraSelection.setString("USB Camera 0")
+    ```python
+    import wpilib
+    from ntcore import NetworkTableInstance
+    class MyRobot(wpilib.TimedRobot):
+        def robotInit(self):
+            self.joy1 = wpilib.Joystick(0)
+            self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
+            wpilib.CameraServer.launch("vision.py:main")
+        def teleopPeriodic(self):
+            if self.joy1.getTriggerPressed():
+                print("Setting camera 2")
+                self.cameraSelection.setString("USB Camera 1")
+            elif self.joy1.getTriggerReleased():
+                print("Setting camera 1")
+                self.cameraSelection.setString("USB Camera 0")
+    ```
 
     ``vision.py`` contents:
 
-    .. code-block:: python
-
-       from cscore import CameraServer
-
-       def main():
-           CameraServer.enableLogging()
-
-           camera1 = CameraServer.startAutomaticCapture(0)
-           camera2 = CameraServer.startAutomaticCapture(1)
-
-           CameraServer.waitForever()
+    ```python
+    from cscore import CameraServer
+    def main():
+        CameraServer.enableLogging()
+        camera1 = CameraServer.startAutomaticCapture(0)
+        camera2 = CameraServer.startAutomaticCapture(1)
+        CameraServer.waitForever()
+    ```
 
     ``pyproject.toml`` contents (this only shows the portions you need to update):
 
-    .. code-block:: toml
-
-       [tool.robotpy]
-
-       ...
-
-       # Add cscore to the robotpy-extras list
-       robotpy_extras = ["cscore"]
+    ```toml
+    [tool.robotpy]
+    ...
+    # Add cscore to the robotpy-extras list
+    robotpy_extras = ["cscore"]
+    ```
 
 If you're using some other dashboard, you can change the camera used by the camera server dynamically. If you open a stream viewer nominally to camera1, the robot code will change the stream contents to either camera1 or camera2 based on the joystick trigger.
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    UsbCamera camera1;
+    UsbCamera camera2;
+    VideoSink server;
+    Joystick joy1 = new Joystick(0);
+    @Override
+    public void robotInit() {
+        camera1 = CameraServer.startAutomaticCapture(0);
+        camera2 = CameraServer.startAutomaticCapture(1);
+        server = CameraServer.getServer();
+    }
+    @Override
+    public void teleopPeriodic() {
+        if (joy1.getTriggerPressed()) {
+            System.out.println("Setting camera 2");
+            server.setSource(camera2);
+        } else if (joy1.getTriggerReleased()) {
+            System.out.println("Setting camera 1");
+            server.setSource(camera1);
+        }
+    }
+    ```
 
-       UsbCamera camera1;
-       UsbCamera camera2;
-       VideoSink server;
-       Joystick joy1 = new Joystick(0);
+    ```c++
+    cs::UsbCamera camera1;
+    cs::UsbCamera camera2;
+    cs::VideoSink server;
+    frc::Joystick joy1{0};
+    bool prevTrigger = false;
+    void RobotInit() override {
+      camera1 = frc::CameraServer::StartAutomaticCapture(0);
+      camera2 = frc::CameraServer::StartAutomaticCapture(1);
+      server = frc::CameraServer::GetServer();
+    }
+    void TeleopPeriodic() override {
+      if (joy1.GetTrigger() && !prevTrigger) {
+        std::cout << "Setting Camera 2" << std::endl;
+        server.SetSource(camera2);
+      } else if (!joy1.GetTrigger() && prevTrigger) {
+        std::cout << "Setting Camera 1" << std::endl;
+        server.SetSource(camera1);
+      }
+      prevTrigger = joy1.GetTrigger();
+    }
+    ```
 
-       @Override
-       public void robotInit() {
-           camera1 = CameraServer.startAutomaticCapture(0);
-           camera2 = CameraServer.startAutomaticCapture(1);
-           server = CameraServer.getServer();
-       }
-
-       @Override
-       public void teleopPeriodic() {
-           if (joy1.getTriggerPressed()) {
-               System.out.println("Setting camera 2");
-               server.setSource(camera2);
-           } else if (joy1.getTriggerReleased()) {
-               System.out.println("Setting camera 1");
-               server.setSource(camera1);
-           }
-       }
-
-    .. code-block:: c++
-
-       cs::UsbCamera camera1;
-       cs::UsbCamera camera2;
-       cs::VideoSink server;
-       frc::Joystick joy1{0};
-       bool prevTrigger = false;
-
-       void RobotInit() override {
-         camera1 = frc::CameraServer::StartAutomaticCapture(0);
-         camera2 = frc::CameraServer::StartAutomaticCapture(1);
-         server = frc::CameraServer::GetServer();
-       }
-
-       void TeleopPeriodic() override {
-         if (joy1.GetTrigger() && !prevTrigger) {
-           std::cout << "Setting Camera 2" << std::endl;
-           server.SetSource(camera2);
-         } else if (!joy1.GetTrigger() && prevTrigger) {
-           std::cout << "Setting Camera 1" << std::endl;
-           server.SetSource(camera1);
-         }
-         prevTrigger = joy1.GetTrigger();
-       }
-
-    .. code-block:: python
-
-       # Setting the source directly via joystick isn't possible in Python, you
-       # should use NetworkTables as shown above instead
+    ```python
+    # Setting the source directly via joystick isn't possible in Python, you
+    # should use NetworkTables as shown above instead
+    ```
 
 ## Keeping Streams Open
 
@@ -182,62 +164,58 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
   .. tab-item:: Java
     :sync: tabcode-java
 
-    .. code-block:: java
-
-       UsbCamera camera1;
-       UsbCamera camera2;
-       VideoSink server;
-       Joystick joy1 = new Joystick(0);
-
-       @Override
-       public void robotInit() {
-           camera1 = CameraServer.startAutomaticCapture(0);
-           camera2 = CameraServer.startAutomaticCapture(1);
-           server = CameraServer.getServer();
-
-           camera1.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
-           camera2.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
-       }
-
-       @Override
-       public void teleopPeriodic() {
-           if (joy1.getTriggerPressed()) {
-               System.out.println("Setting camera 2");
-               server.setSource(camera2);
-           } else if (joy1.getTriggerReleased()) {
-               System.out.println("Setting camera 1");
-               server.setSource(camera1);
-           }
-       }
+    ```java
+    UsbCamera camera1;
+    UsbCamera camera2;
+    VideoSink server;
+    Joystick joy1 = new Joystick(0);
+    @Override
+    public void robotInit() {
+        camera1 = CameraServer.startAutomaticCapture(0);
+        camera2 = CameraServer.startAutomaticCapture(1);
+        server = CameraServer.getServer();
+        camera1.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
+        camera2.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
+    }
+    @Override
+    public void teleopPeriodic() {
+        if (joy1.getTriggerPressed()) {
+            System.out.println("Setting camera 2");
+            server.setSource(camera2);
+        } else if (joy1.getTriggerReleased()) {
+            System.out.println("Setting camera 1");
+            server.setSource(camera1);
+        }
+    }
+    ```
 
   .. tab-item:: C++
     :sync: tabcode-c++
 
-    .. code-block:: c++
-
-       cs::UsbCamera camera1;
-       cs::UsbCamera camera2;
-       cs::VideoSink server;
-       frc::Joystick joy1{0};
-       bool prevTrigger = false;
-       void RobotInit() override {
-         camera1 = frc::CameraServer::StartAutomaticCapture(0);
-         camera2 = frc::CameraServer::StartAutomaticCapture(1);
-         server = frc::CameraServer::GetServer();
-         camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
-         camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
-       }
-
-       void TeleopPeriodic() override {
-         if (joy1.GetTrigger() && !prevTrigger) {
-           std::cout << "Setting Camera 2" << std::endl;
-           server.SetSource(camera2);
-         } else if (!joy1.GetTrigger() && prevTrigger) {
-           std::cout << "Setting Camera 1" << std::endl;
-           server.SetSource(camera1);
-         }
-         prevTrigger = joy1.GetTrigger();
-       }
+    ```c++
+    cs::UsbCamera camera1;
+    cs::UsbCamera camera2;
+    cs::VideoSink server;
+    frc::Joystick joy1{0};
+    bool prevTrigger = false;
+    void RobotInit() override {
+      camera1 = frc::CameraServer::StartAutomaticCapture(0);
+      camera2 = frc::CameraServer::StartAutomaticCapture(1);
+      server = frc::CameraServer::GetServer();
+      camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
+      camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
+    }
+    void TeleopPeriodic() override {
+      if (joy1.GetTrigger() && !prevTrigger) {
+        std::cout << "Setting Camera 2" << std::endl;
+        server.SetSource(camera2);
+      } else if (!joy1.GetTrigger() && prevTrigger) {
+        std::cout << "Setting Camera 1" << std::endl;
+        server.SetSource(camera1);
+      }
+      prevTrigger = joy1.GetTrigger();
+    }
+    ```
 
   .. tab-item:: PYTHON
     :sync: tabcode-python
@@ -246,62 +224,54 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
 
     ``robot.py`` contents:
 
-    .. code-block:: python
-
-       import wpilib
-       from ntcore import NetworkTableInstance
-
-       class MyRobot(wpilib.TimedRobot):
-           def robotInit(self):
-               self.joy1 = wpilib.Joystick(0)
-               self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
-               wpilib.CameraServer.launch("vision.py:main")
-
-           def teleopPeriodic(self):
-               if self.joy1.getTriggerPressed():
-                   print("Setting camera 2")
-                   self.cameraSelection.setString("USB Camera 1")
-               elif self.joy1.getTriggerReleased():
-                   print("Setting camera 1")
-                   self.cameraSelection.setString("USB Camera 0")
+    ```python
+    import wpilib
+    from ntcore import NetworkTableInstance
+    class MyRobot(wpilib.TimedRobot):
+        def robotInit(self):
+            self.joy1 = wpilib.Joystick(0)
+            self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
+            wpilib.CameraServer.launch("vision.py:main")
+        def teleopPeriodic(self):
+            if self.joy1.getTriggerPressed():
+                print("Setting camera 2")
+                self.cameraSelection.setString("USB Camera 1")
+            elif self.joy1.getTriggerReleased():
+                print("Setting camera 1")
+                self.cameraSelection.setString("USB Camera 0")
+    ```
 
     ``vision.py`` contents:
 
-    .. code-block:: python
-
-       from cscore import CameraServer, VideoSource
-
-       def main():
-           CameraServer.enableLogging()
-
-           camera1 = CameraServer.startAutomaticCapture(0)
-           camera2 = CameraServer.startAutomaticCapture(1)
-
-           camera1.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
-           camera2.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
-
-           CameraServer.waitForever()
+    ```python
+    from cscore import CameraServer, VideoSource
+        def main():
+        CameraServer.enableLogging()
+        camera1 = CameraServer.startAutomaticCapture(0)
+        camera2 = CameraServer.startAutomaticCapture(1)
+        camera1.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
+        camera2.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
+            CameraServer.waitForever()
+    ```
 
     ``pyproject.toml`` contents (this only shows the portions you need to update):
 
-    .. code-block:: toml
-
-       [tool.robotpy]
-
-       ...
-
-       # Add cscore to the robotpy-extras list
-       robotpy_extras = ["cscore"]
+    ```toml
+    [tool.robotpy]
+    ...
+    # Add cscore to the robotpy-extras list
+    robotpy_extras = ["cscore"]
+    ```
 
 .. note::
     If both cameras are USB, you may run into USB bandwidth limitations with higher resolutions, as in all of these cases the roboRIO is going to be streaming data from both cameras to the roboRIO simultaneously (for a short period in options 1 and 2, and continuously in option 3). It is theoretically possible for the library to avoid this simultaneity in the option 2 case (only), but this is not currently implemented.
 
     Different cameras report bandwidth usage differently. The library will tell you if you're hitting the limit; you'll get this error message:
 
-    .. code-block:: text
-
-        could not start streaming due to USB bandwidth limitations;
-        try a lower resolution or a different pixel format
-        (VIDIOC_STREAMON: No space left on device)
+    ```text
+    could not start streaming due to USB bandwidth limitations;
+    try a lower resolution or a different pixel format
+    (VIDIOC_STREAMON: No space left on device)
+    ```
 
     If you're using Option 3 it will give you this error during ``RobotInit()``. Thus you should just try your desired resolution and adjusting as necessary until you both don't get that error and don't exceed the radio bandwidth limitations.

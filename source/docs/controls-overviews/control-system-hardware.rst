@@ -109,7 +109,7 @@ The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) ba
 
    .. tab-item:: Allen-Bradley
 
-      .. figure:: images/control-system-hardware/rsl-allenbradley.png
+      .. figure:: images/control-system-hardware/rsl-allenbradley.jpg
          :alt: Orange Robot Signal Light (Allen-Bradley)
          :width: 500
 
@@ -244,7 +244,7 @@ The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller. Due
 
 ### Venom Motor Controller
 
-.. image:: images/control-system-hardware/venom.png
+.. image:: images/control-system-hardware/venom.jpg
   :alt: Venom Motor Controller
   :width: 500
 
@@ -252,7 +252,7 @@ The [Venom Motor Controller](https://www.playingwithfusion.com/productview.php?p
 
 ### Nidec Dynamo BLDC Motor with Controller
 
-.. image:: images/control-system-hardware/nidec-dynamo.png
+.. image:: images/control-system-hardware/nidec-dynamo.jpg
   :alt: Nidec Dynamo BLDC Motor with Controller
   :width: 500
 

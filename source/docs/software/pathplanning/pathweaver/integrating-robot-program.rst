@@ -10,34 +10,31 @@ The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods 
 
 .. tab-set-code::
 
-   .. code-block:: java
-
-      String trajectoryJSON = "paths/YourPath.wpilib.json";
-      Trajectory trajectory = new Trajectory();
-
-      @Override
-      public void robotInit() {
-         try {
-            Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
-            trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
-         } catch (IOException ex) {
-            DriverStation.reportError("Unable to open trajectory: " + trajectoryJSON, ex.getStackTrace());
-         }
+   ```java
+   String trajectoryJSON = "paths/YourPath.wpilib.json";
+   Trajectory trajectory = new Trajectory();
+   @Override
+   public void robotInit() {
+      try {
+         Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
+         trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+      } catch (IOException ex) {
+         DriverStation.reportError("Unable to open trajectory: " + trajectoryJSON, ex.getStackTrace());
       }
+   }
+   ```
 
-   .. code-block:: c++
-
-      #include <frc/Filesystem.h>
-      #include <frc/trajectory/TrajectoryUtil.h>
-      #include <wpi/fs.h>
-
-      frc::Trajectory trajectory;
-
-      void Robot::RobotInit() {
-         fs::path deployDirectory = frc::filesystem::GetDeployDirectory();
-         deployDirectory = deployDirectory / "paths" / "YourPath.wpilib.json";
-         trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory.string());
-      }
+   ```c++
+   #include <frc/Filesystem.h>
+   #include <frc/trajectory/TrajectoryUtil.h>
+   #include <wpi/fs.h>
+   frc::Trajectory trajectory;
+   void Robot::RobotInit() {
+      fs::path deployDirectory = frc::filesystem::GetDeployDirectory();
+      deployDirectory = deployDirectory / "paths" / "YourPath.wpilib.json";
+      trajectory = frc::TrajectoryUtil::FromPathweaverJson(deployDirectory.string());
+   }
+   ```
 
 In the examples above, ``YourPath`` should be replaced with the name of your path.
 
