@@ -50,6 +50,17 @@ Periodic methods are called every 20 ms by default. This can be changed by calli
    Robot() : frc::TimedRobot(30_ms) {}
    ```
 
+### Timeslice Robot 
+
+Documentation:
+[Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/TimesliceRobot.html)
+- [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_timeslice_robot.html#details)
+
+Source:
+[Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimesliceRobot.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimesliceRobot.cpp)
+The ``TimesliceRobot`` 
+
 ### RobotBase
 
 Documentation:
