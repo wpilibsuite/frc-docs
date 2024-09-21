@@ -263,7 +263,11 @@ html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "wpilibsuite",  # Username
     "github_repo": "frc-docs",  # Repo name
-    "github_version": "main",  # Version
+    "github_version": (
+        "main"
+        if os.getenv("READTHEDOCS_VERSION_TYPE") == "external"
+        else os.environ.get("READTHEDOCS_GIT_IDENTIFIER")
+    ),  # Set version to main normally but commit id for PRs for Delta extension
     "conf_py_path": "/source/",  # Path in the checkout to the docs root
 }
 
