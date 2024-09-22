@@ -4,7 +4,7 @@ AdvantageScope is a data visualization tool for :ref:`NetworkTables <docs/softwa
 
 In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Start Tool`, then select :guilabel:`AdvantageScope`. You can also open any supported log file in AdvantageScope using a standard file browser.
 
-.. note:: Detailed documentation for AdvantageScope can be found [here](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/INDEX.md). It is also available offline by clicking the book icon in the tab bar.
+.. note:: Detailed documentation for AdvantageScope can be found [here](https://docs.advantagescope.org). It is also available offline by clicking the book icon in the tab bar.
 
 The capabilities of AdvantageScope include:
 

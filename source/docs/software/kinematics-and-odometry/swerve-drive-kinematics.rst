@@ -319,7 +319,7 @@ By recording a set of swerve module states using :ref:`NetworkTables <docs/softw
      self.pub.set([frontLeftState,frontRightState,backLeftState,backRightState])
    ```
 
-See the documentation for the [swerve](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/SWERVE.md) tab for more details on visualizing this data using AdvantageScope.
+See the documentation for the [swerve](https://docs.advantagescope.org/tab-reference/swerve) tab for more details on visualizing this data using AdvantageScope.
 
 .. image:: images/advantagescope-swerve.png
    :alt: Screenshot of an AdvantageScope window displaying a swerve visualization.
