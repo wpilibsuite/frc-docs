@@ -88,7 +88,7 @@ This subsystem also provides functions for retrieving and resetting the Romi's o
 
 ### XRP
 
-Teams using a :ref:`Romi <docs/xrp-robot/index:Getting Started with XRP>` should use the ``XRP - Timed`` or ``XRP - Command Bot`` template.
+Teams using a :ref:`XRP <docs/xrp-robot/index:Getting Started with XRP>` should use the ``XRP - Timed`` or ``XRP - Command Bot`` template.
 
 #### XRP - Timed
 
