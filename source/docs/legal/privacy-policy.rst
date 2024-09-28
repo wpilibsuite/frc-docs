@@ -30,7 +30,7 @@ Our online documentation site is hosted by ReadTheDocs.
 
 WPILib uses Cloudflare for distribution of the WPILib installer.
 
-[Cloudflare Privacy Policy(https://www.cloudflare.com/privacypolicy/)
+[Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/)
 
 ### JFrog Artifactory
 
