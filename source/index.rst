@@ -443,6 +443,13 @@ Community translations can be found in a variety of languages in the bottom-left
 
 .. toctree::
    :maxdepth: 1
+   :caption: Legal
+   :hidden:
+
+   docs/legal/privacy-policy
+
+.. toctree::
+   :maxdepth: 1
    :caption: Issues
    :hidden:
 
