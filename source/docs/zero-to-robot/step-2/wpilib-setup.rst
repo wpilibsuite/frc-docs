@@ -7,7 +7,7 @@ This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`l
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
  * Ubuntu 22.04 & 24.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
- * macOS 13 or higher, both Intel and Arm.
+ * macOS 13.3 or higher, both Intel and Arm.
 
 .. warning:: The following OSes are no longer supported: macOS 12 or earlier, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 

@@ -8,8 +8,8 @@ You must install a supported version of Python on a supported operating system. 
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
- * macOS 12 or higher
- * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.35 may work, but are unsupported
+ * macOS 13.3 or higher
+ * Ubuntu 22.04 & 24.04, 64 bit. Other Linux distributions with glibc >= 2.35 may work, but are unsupported
 
 On Windows and macOS, we recommend using the official Python installers distributed by python.org.
 
