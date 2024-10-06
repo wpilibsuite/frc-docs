@@ -2,7 +2,7 @@
 
 # Known Issues
 
-This article details known issues (and workarounds) for FRC\ |reg| Control System.
+This article details known issues (and workarounds) for FRC\ |reg| Control System Software.
 
 ## Open Issues
 
