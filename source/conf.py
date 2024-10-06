@@ -263,7 +263,7 @@ html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "wpilibsuite",  # Username
     "github_repo": "frc-docs",  # Repo name
-    "github_version": "main", # Version, set to main so edit on github makes PRs to main
+    "github_version": "main",  # Version, set to main so edit on github makes PRs to main
     "conf_py_path": "/source/",  # Path in the checkout to the docs root
 }
 
