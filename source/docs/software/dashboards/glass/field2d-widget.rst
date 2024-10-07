@@ -9,28 +9,28 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
 .. tab-set-code::
    ```java
    private final Field2d m_field = new Field2d();
-      // Do this in either robot or subsystem init
+   // Do this in either robot or subsystem init
    SmartDashboard.putData("Field", m_field);
-      // Do this in either robot periodic or subsystem periodic
+   // Do this in either robot periodic or subsystem periodic
    m_field.setRobotPose(m_odometry.getPoseMeters());
    ```
 
    ```c++
    #include <frc/smartdashboard/Field2d.h>
    #include <frc/smartdashboard/SmartDashboard.h>
-      frc::Field2d m_field;
-      // Do this in either robot or subsystem init
+   frc::Field2d m_field;
+   // Do this in either robot or subsystem init
    frc::SmartDashboard::PutData("Field", &m_field);
-      // Do this in either robot periodic or subsystem periodic
+   // Do this in either robot periodic or subsystem periodic
    m_field.SetRobotPose(m_odometry.GetPose());
    ```
 
    ```python
    from wpilib import SmartDashboard, Field2d
-      self.field = Field2d()
-      # Do this in either robot or subsystem init
+   self.field = Field2d()
+   # Do this in either robot or subsystem init
    SmartDashboard.putData("Field", self.field)
-      # Do this in either robot periodic or subsystem periodic
+   # Do this in either robot periodic or subsystem periodic
    self.field.setRobotPose(self.odometry.getPose())
    ```
 
@@ -100,7 +100,7 @@ Now, uncheck the :guilabel:`Arrows` checkbox. This will cause our trajectory to 
 
 ## Viewing Pose Data with AdvantageScope
 
-:ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an alternative option for viewing pose data from a ``Field2d`` object, including data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. Both 2D and 3D visualizations are supported. See the documentation for the [odometry](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/ODOMETRY.md) and [3D field](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/3D-FIELD.md) tabs for more details.
+:ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an alternative option for viewing pose data from a ``Field2d`` object, including data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. Both 2D and 3D visualizations are supported. See the documentation for the [odometry](https://docs.advantagescope.org/tab-reference/odometry) and [3D field](https://docs.advantagescope.org/tab-reference/3d-field) tabs for more details.
 
 .. image:: images/advantagescope-field2d.png
    :alt: Screenshot of an AdvantageScope window displaying a robot and trajectory on a 3D field.

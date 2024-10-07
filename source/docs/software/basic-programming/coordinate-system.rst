@@ -255,10 +255,10 @@ A simple way to deal with field oriented driving is to check the alliance color 
    if (alliance.isPresent() && alliance.get() == Alliance.Red) {
        invert = -1;
    }
-      // Create field relative ChassisSpeeds for controlling Swerve
+   // Create field relative ChassisSpeeds for controlling Swerve
    var chassisSpeeds = ChassisSpeeds
            .fromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
-      // Control a mecanum drivetrain
+   // Control a mecanum drivetrain
    m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
    ```
 
@@ -268,10 +268,10 @@ A simple way to deal with field oriented driving is to check the alliance color 
    if (frc::DriverStation::GetAlliance() == frc::DriverStation::Alliance::kRed) {
        invert = -1;
    }
-      // Create field relative ChassisSpeeds for controlling Swerve
+   // Create field relative ChassisSpeeds for controlling Swerve
    frc::ChassisSpeeds chassisSpeeds =
            frc::ChassisSpeeds::FromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
-      // Control a mecanum drivetrain
+   // Control a mecanum drivetrain
    m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
    ```
 
@@ -280,11 +280,11 @@ A simple way to deal with field oriented driving is to check the alliance color 
    invert = 1
    if wpilib.DriverStation.getAlliance() == wpilib.DriverStation.Alliance.kRed:
        invert = -1
-      # Create field relative ChassisSpeeds for controlling Swerve
+   # Create field relative ChassisSpeeds for controlling Swerve
    chassis_speeds = wpilib.ChassisSpeeds.FromFieldRelativeSpeeds(
        xSpeed * invert, ySpeed * invert, zRotation, self.imu.GetAngle()
    )
-      # Control a mecanum drivetrain
+   # Control a mecanum drivetrain
    self.robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, self.imu.GetAngle())
    ```
 

@@ -6,8 +6,8 @@ Data logs can be processed and viewed offline by AdvantageScope, the DataLogTool
 
 :ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an analysis tool that supports downloading, visualizing, and exporting data logs. See the relevant sections of the documentation for more details:
 
-- [Downloading log files](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/OPEN-FILE.md)
-- [Exporting to new formats](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/EXPORT.md)
+- [Downloading log files](https://docs.advantagescope.org/getting-started/open-file)
+- [Exporting to new formats](https://docs.advantagescope.org/more-features/export)
 
 ## Managing Data Logs with the DataLogTool
 

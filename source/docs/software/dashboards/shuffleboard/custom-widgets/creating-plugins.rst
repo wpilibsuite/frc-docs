@@ -19,9 +19,9 @@ In order to define a plugin, the plugin class must be a subclass of [edu.wpi.fir
    ```java
    import edu.wpi.first.shuffleboard.api.plugin.Description;
    import edu.wpi.first.shuffleboard.api.plugin.Plugin;
-      @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
+   @Description(group = "com.example", name = "MyPlugin", version = "1.2.3", summary = "An example plugin")
    public class MyPlugin extends Plugin {
-      }
+   }
    ```
 
 Additional explanations on how these attributes are used, including version numbers can be found [here](https://semver.org/).

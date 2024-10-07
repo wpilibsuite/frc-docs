@@ -32,4 +32,4 @@ This dashboard is designed for debugging code and analyzing data from the robot.
 
 [Elastic](https://github.com/Gold872/elastic-dashboard) (Driver) - simple and modern Shuffleboard alternative made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing.  It features draggable and resizable card widgets.
 
-[QFRCDashboard](https://github.com/binex-dsk/QFRCDashboard) (Driver) - described as reliable, high-performance, low-footprint dashboard.  QFRCDashboard has been specifically designed to use as few resources as possible.
+[QFRCDashboard](https://github.com/Q-FRC/Dashboard) (Driver) - described as reliable, high-performance, low-footprint dashboard.  QFRCDashboard has been specifically designed to use as few resources as possible.

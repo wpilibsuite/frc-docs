@@ -13,11 +13,11 @@ Limit switches can have "normally open" or "normally closed" outputs.  This will
    DigitalInput bottomlimitSwitch = new DigitalInput(1);
    PWMVictorSPX motor = new PWMVictorSPX(0);
    Joystick joystick = new Joystick(0);
-      @Override
+   @Override
    public void teleopPeriodic() {
        setMotorSpeed(joystick.getRawAxis(2));
    }
-      public void setMotorSpeed(double speed) {
+   public void setMotorSpeed(double speed) {
        if (speed > 0) {
            if (toplimitSwitch.get()) {
                // We are going up and top limit is tripped so stop
@@ -43,10 +43,10 @@ Limit switches can have "normally open" or "normally closed" outputs.  This will
    frc::DigitalInput bottomlimitSwitch {1};
    frc::PWMVictorSPX motor {0};
    frc::Joystick joystick {0};
-      void TeleopPeriodic() {
+   void TeleopPeriodic() {
        SetMotorSpeed(joystick.GetRawAxis(2));
    }
-      void SetMotorSpeed(double speed) {
+   void SetMotorSpeed(double speed) {
        if (speed > 0) {
            if (toplimitSwitch.Get()) {
                // We are going up and top limit is tripped so stop

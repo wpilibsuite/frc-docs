@@ -4,7 +4,7 @@
 
 .. note:: This article covers the in-code generation of trapezoidal motion profiles.  Documentation describing the involved concepts in more detail is forthcoming.
 
-.. note:: For a guide on implementing the ``TrapezoidProfile`` class in the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework, see :ref:`docs/software/commandbased/profile-subsystems-commands:Motion Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands`.
+.. note:: For a guide on implementing the ``TrapezoidProfile`` class in the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework, see :doc:`/docs/software/commandbased/profile-subsystems-commands`.
 
 .. note:: The ``TrapezoidProfile`` class, used on its own, is most useful when composed with a custom controller (such as a "smart" motor controller with a built-in PID functionality).  To integrate it with a WPILib ``PIDController``, see :doc:`profiled-pidcontroller`.
 
@@ -40,7 +40,7 @@ In order to create a trapezoidal motion profile, we must first impose some const
 
   ```python
   from wpimath.trajectory import TrapezoidProfile
-    # Creates a new set of trapezoidal motion profile constraints
+  # Creates a new set of trapezoidal motion profile constraints
   # Max velocity of 10 meters per second
   # Max acceleration of 20 meters per second squared
   TrapezoidProfile.Constraints(10, 20)
@@ -66,7 +66,7 @@ Next, we must specify the desired starting and ending states for our mechanisms 
 
   ```python
   from wpimath.trajectory import TrapezoidProfile
-    # Creates a new state with a position of 5 meters
+  # Creates a new state with a position of 5 meters
   # and a velocity of 0 meters per second
   TrapezoidProfile.State(5, 0)
   ```
@@ -96,7 +96,7 @@ Now that we know how to create a set of constraints and the desired start/end st
 
   ```python
   from wpimath.trajectory import TrapezoidProfile
-    # Creates a new TrapezoidProfile
+  # Creates a new TrapezoidProfile
   # Profile will have a max vel of 5 meters per second
   # Profile will have a max acceleration of 10 meters per second squared
   profile = TrapezoidProfile(TrapezoidProfile.Constraints(5, 10))

@@ -11,18 +11,18 @@ For each sensor or actuator that is created, set the subsystem name and display 
     ```java
     Ultrasonic ultrasonic = new Ultrasonic(1, 2);
     SendableRegistry.setName(ultrasonic, "Arm", "Ultrasonic");
-        Jaguar elbow = new Jaguar(1);
+    Jaguar elbow = new Jaguar(1);
     SendableRegistry.setName(elbow, "Arm", "Elbow");
-        Victor wrist = new Victor(2);
+    Victor wrist = new Victor(2);
     SendableRegistry.setName(wrist, "Arm", "Wrist");
     ```
 
     ```c++
     frc::Ultrasonic ultrasonic{1, 2};
     SendableRegistry::SetName(ultrasonic, "Arm", "Ultrasonic");
-        frc::Jaguar elbow{1};
+    frc::Jaguar elbow{1};
     SendableRegistry::SetName(elbow, "Arm", "Elbow");
-        frc::Victor wrist{2};
+    frc::Victor wrist{2};
     SendableRegistry::SetName(wrist, "Arm", "Wrist");
     ```
 
@@ -31,9 +31,9 @@ For each sensor or actuator that is created, set the subsystem name and display 
     from wpiutil import SendableRegistry
         ultrasonic = Ultrasonic(1, 2)
     SendableRegistry.setName(ultrasonic, "Arm", "Ultrasonic")
-        elbow = Jaguar(1)
+    elbow = Jaguar(1)
     SendableRegistry.setName(elbow, "Arm", "Elbow")
-        wrist = Victor(2)
+    wrist = Victor(2)
     SendableRegistry.setName(wrist, "Arm", "Wrist")
     ```
 
@@ -44,18 +44,18 @@ If your objects are in a ``Subsystem``, this can be simplified using the addChil
     ```java
     Ultrasonic ultrasonic = new Ultrasonic(1, 2);
     addChild("Ultrasonic", ultrasonic);
-        Jaguar elbow = new Jaguar(1);
+    Jaguar elbow = new Jaguar(1);
     addChild("Elbow", elbow);
-        Victor wrist = new Victor(2);
+    Victor wrist = new Victor(2);
     addChild("Wrist", wrist);
     ```
 
     ```c++
     frc::Ultrasonic ultrasonic{1, 2};
     AddChild("Ultrasonic", ultrasonic);
-        frc::Jaguar elbow{1};
+    frc::Jaguar elbow{1};
     AddChild("Elbow", elbow);
-        frc::Victor wrist{2};
+    frc::Victor wrist{2};
     AddChild("Wrist", wrist);
     ```
 
@@ -64,9 +64,9 @@ If your objects are in a ``Subsystem``, this can be simplified using the addChil
     from commands2 import SubsystemBase
         ultrasonic = Ultrasonic(1, 2)
     SubsystemBase.addChild("Ultrasonic", ultrasonic)
-        elbow = Jaguar(1)
+    elbow = Jaguar(1)
     SubsystemBase.addChild("Elbow", elbow)
-        wrist = Victor(2)
+    wrist = Victor(2)
     SubsystemBase.addChild("Wrist", wrist)
     ```
 

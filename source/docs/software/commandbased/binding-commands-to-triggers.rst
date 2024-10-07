@@ -50,12 +50,12 @@ While binding to HID buttons is by far the most common use case, users may want 
 
   ```java
   DigitalInput limitSwitch = new DigitalInput(3); // Limit switch on DIO 3
-    Trigger exampleTrigger = new Trigger(limitSwitch::get);
+  Trigger exampleTrigger = new Trigger(limitSwitch::get);
   ```
 
   ```c++
   frc::DigitalInput limitSwitch{3}; // Limit switch on DIO 3
-    frc2::Trigger exampleTrigger([&limitSwitch] { return limitSwitch.Get(); });
+  frc2::Trigger exampleTrigger([&limitSwitch] { return limitSwitch.Get(); });
   ```
 
 ## Trigger Bindings
@@ -181,14 +181,14 @@ To avoid rapid repeated activation, triggers (especially those originating from 
   ```java
   // debounces exampleButton with a 0.1s debounce time, rising edges only
   exampleButton.debounce(0.1).onTrue(new ExampleCommand());
-    // debounces exampleButton with a 0.1s debounce time, both rising and falling edges
+  // debounces exampleButton with a 0.1s debounce time, both rising and falling edges
   exampleButton.debounce(0.1, Debouncer.DebounceType.kBoth).onTrue(new ExampleCommand());
   ```
 
   ```c++
   // debounces exampleButton with a 100ms debounce time, rising edges only
   exampleButton.Debounce(100_ms).OnTrue(ExampleCommand().ToPtr());
-    // debounces exampleButton with a 100ms debounce time, both rising and falling edges
+  // debounces exampleButton with a 100ms debounce time, both rising and falling edges
   exampleButton.Debounce(100_ms, Debouncer::DebounceType::Both).OnTrue(ExampleCommand().ToPtr());
   ```
 

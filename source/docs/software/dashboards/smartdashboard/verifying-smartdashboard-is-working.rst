@@ -23,7 +23,7 @@ SmartDashboard includes a connection indicator widget which will turn red or gre
    ```java
    public class Robot extends TimedRobot {
       double counter = 0.0;
-         public void teleopPeriodic() {
+      public void teleopPeriodic() {
          SmartDashboard.putNumber("Counter", counter++);
       }
    }
@@ -32,15 +32,15 @@ SmartDashboard includes a connection indicator widget which will turn red or gre
    ```c++
    #include "Robot.h"
    float counter = 0.0;
-      void Robot::TeleopPeriodic() {
+   void Robot::TeleopPeriodic() {
       frc::SmartDashboard::PutNumber("Counter", counter++);
    }
    ```
 
    ```python
    from wpilib import SmartDashboard
-      self.counter = 0.0
-      def teleopPeriodic(self) -> None:
+   self.counter = 0.0
+   def teleopPeriodic(self) -> None:
       SmartDashboard.putNumber("Counter", self.counter += 1)
    ```
 

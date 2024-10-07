@@ -15,18 +15,18 @@ This is enough to start logging data to NetworkTables for display and capture on
     public class Robot extends TimedRobot {
       private final Arm arm;
       private final Drivetrain drivetrain;
-          public Robot() {
+      public Robot() {
         arm = new Arm();
         drivetrain = new Drivetrain();
-            DataLogManager.start(); // Optional to mirror the NetworkTables-logged data to a file on disk
+        DataLogManager.start(); // Optional to mirror the NetworkTables-logged data to a file on disk
         Epilogue.bind(this);
       }
     }
-        @Logged
+    @Logged
     public class Arm {
       // ...
     }
-        @Logged
+    @Logged
     public class Drivetrain {
       // ...
     }
@@ -80,22 +80,22 @@ The names of log entries can be changed using the ``name`` configuration option 
         ```java
         public class Robot extends RobotBase {
           private final Arm arm;
-                  public Robot() {
+          public Robot() {
             arm = new Arm();
           }
         }
-                class Arm {
+        class Arm {
           public final Trigger atLowStop = new Trigger(...);
           public final Trigger atHighStop = new Trigger(...);
           private Rotation2d lastPosition = getPosition();
-                  public Rotation2d getPosition() {
+          public Rotation2d getPosition() {
             // ...
           }
-                  public Measure<Velocity<Angle>> getSpeed() {
+          public Measure<Velocity<Angle>> getSpeed() {
             // ...
           }
         }
-                ```
+        ```
 
    .. tab-item:: Code with logging (minimal)
 
@@ -103,21 +103,21 @@ The names of log entries can be changed using the ``name`` configuration option 
         @Logged
         public class Robot extends RobotBase {
           private final Arm arm; // Anything loggable within the arm object will be logged under an "arm" entry
-                  public Robot() {
+            public Robot() {
             arm = new Arm();
-                    Epilogue.bind(this);
+            Epilogue.bind(this);
           }
         }
-                @Logged
+        @Logged
         class Arm {
           public final Trigger atLowStop = new Trigger(...);  // Logged as a boolean in an "atLowStop" entry
           public final Trigger atHighStop = new Trigger(...); // Logged as a boolean in an "atHighStop" entry
           private Rotation2d lastPosition = getPosition();    // Logged as a Rotation2d struct in a "lastPosition" entry
-                  // Logged as a Rotation2d struct object in a "getPosition" entry
+          // Logged as a Rotation2d struct object in a "getPosition" entry
           public Rotation2d getPosition() {
             // ...
           }
-                  // Logged as a double in terms of radians per second in a "getSpeed" entry
+          // Logged as a double in terms of radians per second in a "getSpeed" entry
           public Measure<Velocity<Angle>> getSpeed() {
             // ...
           }
@@ -141,25 +141,25 @@ The names of log entries can be changed using the ``name`` configuration option 
         public class Robot extends RobotBase {
           @Logged(name = "Arm")
           private Arm arm;
-                  public Robot() {
+          public Robot() {
             arm = new Arm();
-                    DataLogManager.start();
+            DataLogManager.start();
             Epilogue.bind(this);
           }
         }
-                @Logged(strategy = OPT_IN)
+        @Logged(strategy = OPT_IN)
         class Arm {
           @Logged(name = "At Low Stop", importance = DEBUG)
           public final Trigger atLowStop = new Trigger(...);
-                  @Logged(name = "At High Stop", importance = DEBUG)
+          @Logged(name = "At High Stop", importance = DEBUG)
           public final Trigger atHighStop = new Trigger(...);
-                  @NotLogged // Redundant because the class strategy is opt-in
+          @NotLogged // Redundant because the class strategy is opt-in
           private Rotation2d lastPosition = getPosition(); // No @Logged annotation, not logged
-                  @Logged(name = "Position", importance = CRITICAL)
+          @Logged(name = "Position", importance = CRITICAL)
           public Rotation2d getPosition() {
             // ...
           }
-                  @Logged(name = "Speed", importance = CRITICAL)
+          @Logged(name = "Speed", importance = CRITICAL)
           public Measure<Velocity<Angle>> getSpeed() {
               // ...
           }
@@ -211,19 +211,19 @@ If your main robot class inherits from ``TimedRobot``, the generated ``Epilogue`
           // Log only to disk, instead of the default NetworkTables logging
           // Note that this means data cannot be analyzed in realtime by a dashboard
           config.dataLogger = new FileLogger(DataLogManager.getLog());
-              if (isSimulation()) {
+          if (isSimulation()) {
             // If running in simulation, then we'd want to re-throw any errors that
             // occur so we can debug and fix them!
             config.errorHandler = ErrorHandler.crashOnError();
           }
               // Change the root data path
           config.root = "Telemetry";
-              // Only log critical information instead of the default DEBUG level.
+          // Only log critical information instead of the default DEBUG level.
           // This can be helpful in a pinch to reduce network bandwidth or log file size
           // while still logging important information.
           config.minimumImportance = Logged.Importance.CRITICAL;
         });
-            Epilogue.bind(this);
+        Epilogue.bind(this);
       }
     }
         ```
@@ -246,22 +246,22 @@ Custom loggers can be declared in any package, and only need to have the ``@Cust
       public double getAppliedVoltage();
       public double getInputCurrent();
     }
-        @CustomLoggerFor(VendorMotor.class)
+    @CustomLoggerFor(VendorMotor.class)
     public class YourCustomVendorMotorLogger extends ClassSpecificLogger<VendorMotor> {
       public YourCustomVendorMotorLogger() {
         super(VendorMotor.class);
       }
-          @Override
+      @Override
       public void update(DataLogger dataLogger, VendorMotor motor) {
         if (Epilogue.shouldLog(Logged.Importance.DEBUG)) {
           dataLogger.log("Faults", motor.getFaults());
         }
-            dataLogger.log("Requested Speed (Duty Cycle)", motor.get());
+        dataLogger.log("Requested Speed (Duty Cycle)", motor.get());
         dataLogger.log("Motor Voltage (V)", motor.getAppliedVoltage());
         dataLogger.log("Input Current (A)", motor.getInputCurrent());
       }
     }
-        ```
+    ```
 
 Caveats and Limitations
 -----------------------

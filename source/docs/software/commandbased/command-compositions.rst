@@ -72,7 +72,7 @@ The ``andThen()`` ([Java](https://github.wpilib.org/allwpilib/docs/development/j
 
    ```python
    fooCommand.andThen(barCommand)
-      ```
+   ```
 
 ### Repeating Sequence
 
@@ -91,27 +91,27 @@ There are three types of parallel compositions, differing based on when the comp
    ```java
    // Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
    button.onTrue(Commands.parallel(twoSecCommand, oneSecCommand, threeSecCommand));
-      // Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
+   // Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
    button.onTrue(Commands.race(twoSecCommand, oneSecCommand, threeSecCommand));
-      // Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+   // Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
    button.onTrue(Commands.deadline(twoSecCommand, oneSecCommand, threeSecCommand));
    ```
 
    ```c++
    // Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
    button.OnTrue(frc2::cmd::Parallel(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
-      // Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
+   // Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
    button.OnTrue(frc2::cmd::Race(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
-      // Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+   // Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
    button.OnTrue(frc2::cmd::Deadline(std::move(twoSecCommand), std::move(oneSecCommand), std::move(threeSecCommand)));
    ```
 
    ```python
    # Will be a parallel command composition that ends after three seconds with all three commands running their full duration.
    button.onTrue(commands2.cmd.parallel(twoSecCommand, oneSecCommand, threeSecCommand))
-      # Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
+   # Will be a parallel race composition that ends after one second with the two and three second commands getting interrupted.
    button.onTrue(commands2.cmd.race(twoSecCommand, oneSecCommand, threeSecCommand))
-      # Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
+   # Will be a parallel deadline composition that ends after two seconds (the deadline) with the three second command getting interrupted (one second command already finished).
    button.onTrue(commands2.cmd.deadline(twoSecCommand, oneSecCommand, threeSecCommand))
    ```
 

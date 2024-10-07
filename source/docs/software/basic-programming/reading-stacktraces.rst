@@ -160,25 +160,25 @@ For example, consider the following code:
 
    ```Java
    :lineno-start: 19
-      PWMSparkMax armMotorCtrl;
-      @Override
+   PWMSparkMax armMotorCtrl;
+   @Override
    public void robotInit() {
-         armMotorCtrl.setInverted(true);
+      armMotorCtrl.setInverted(true);
    }
-      ```
+   ```
 
    ```C++
    :lineno-start: 17
-      class Robot : public frc::TimedRobot {
-      public:
-         void RobotInit() override {
-            motorRef->SetInverted(false);
-         }
-         private:
-         frc::PWMVictorSPX m_armMotor{0};
-         frc::PWMVictorSPX* motorRef;
+   class Robot : public frc::TimedRobot {
+    public:
+     void RobotInit() override {
+        motorRef->SetInverted(false);
+     }
+    private:
+     frc::PWMVictorSPX m_armMotor{0};
+     frc::PWMVictorSPX* motorRef;
    };
-      ```
+   ```
 
 When run, you'll see output that looks like this:
 
@@ -195,11 +195,11 @@ When run, you'll see output that looks like this:
               at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
               at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
               at frc.robot.Main.main(Main.java:23)
-            Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
+      Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
         The above stacktrace can help determine where the error occurred.
         See https://wpilib.org/stacktrace for more information.
       Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
-            ```
+      ```
 
       Reading the stack trace, you can see that the issue happened inside of the ``robotInit()`` function, on line 23, and the exception involved "Null Pointer".
 
@@ -238,27 +238,27 @@ A functional implementation could look like this:
 
    ```Java
    :lineno-start: 19
-      PWMSparkMax armMotorCtrl;
-      @Override
+   PWMSparkMax armMotorCtrl;
+   @Override
    public void robotInit() {
-         armMotorCtrl = new PWMSparkMax(0);
-         armMotorCtrl.setInverted(true);
+      armMotorCtrl = new PWMSparkMax(0);
+      armMotorCtrl.setInverted(true);
    }
-      ```
+   ```
 
    ```C++
    :lineno-start: 17
-      class Robot : public frc::TimedRobot {
-      public:
-         void RobotInit() override {
-            motorRef = &m_armMotor;
-            motorRef->SetInverted(false);
-         }
-         private:
-         frc::PWMVictorSPX m_armMotor{0};
-         frc::PWMVictorSPX* motorRef;
+   class Robot : public frc::TimedRobot {
+    public:
+     void RobotInit() override {
+        motorRef = &m_armMotor;
+        motorRef->SetInverted(false);
+     }
+    private:
+     frc::PWMVictorSPX m_armMotor{0};
+     frc::PWMVictorSPX* motorRef;
    };
-         ```
+   ```
 
 ### Divide by Zero
 
@@ -271,27 +271,27 @@ For example, consider the following code:
 
    ```Java
    :lineno-start: 18
-      int armLengthRatio;
+   int armLengthRatio;
    int elbowToWrist_in = 39;
    int shoulderToElbow_in = 0; //TODO
-      @Override
+   @Override
    public void robotInit() {
       armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
    }
-      ```
+   ```
 
    ```C++
    :lineno-start: 17
-      class Robot : public frc::TimedRobot {
-      public:
-      void RobotInit() override {
-         armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-      }
-         private:
-         int armLengthRatio;
-         int elbowToWrist_in = 39;
-         int shoulderToElbow_in = 0; //TODO
-      };
+   class Robot : public frc::TimedRobot {
+    public:
+     void RobotInit() override {
+        armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+     }
+    private:
+     int armLengthRatio;
+     int elbowToWrist_in = 39;
+     int shoulderToElbow_in = 0; //TODO
+   };
    ```
 
 When run, you'll see output that looks like this:
@@ -309,7 +309,7 @@ When run, you'll see output that looks like this:
               at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
               at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
               at frc.robot.Main.main(Main.java:23)
-            Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
+      Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
         The above stacktrace can help determine where the error occurred.
         See https://wpilib.org/stacktrace for more information.
       Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
@@ -352,27 +352,27 @@ A functional implementation could look like this:
 
    ```Java
    :lineno-start: 18
-      int armLengthRatio;
+   int armLengthRatio;
    int elbowToWrist_in = 39;
    int shoulderToElbow_in = 3;
-      @Override
+   @Override
    public void robotInit() {
-         armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-      }
-         ```
+      armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+   }
+   ```
 
    ```C++
    :lineno-start: 17
-      class Robot : public frc::TimedRobot {
-      public:
-      void RobotInit() override {
-         armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
-      }
-         private:
-         int armLengthRatio;
-         int elbowToWrist_in = 39;
-         int shoulderToElbow_in = 3
-      };
+   class Robot : public frc::TimedRobot {
+    public:
+     void RobotInit() override {
+        armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
+     }
+    private:
+     int armLengthRatio;
+     int elbowToWrist_in = 39;
+     int shoulderToElbow_in = 3
+   };
    ```
 
 Alternatively, if zero *is* a valid value, adding ``if/else`` statements around the calculation can help you define alternate behavior to avoid making the processor perform a division by zero.
@@ -391,28 +391,28 @@ For example, consider the following code:
 
    ```Java
    :lineno-start: 19
-      PWMSparkMax leftFrontMotor;
+   PWMSparkMax leftFrontMotor;
    PWMSparkMax leftRearMotor;
-      @Override
+   @Override
    public void robotInit() {
       leftFrontMotor = new PWMSparkMax(0);
       leftRearMotor = new PWMSparkMax(0);
    }
-      ```
+   ```
 
    ```C++
    :lineno-start: 17
-      class Robot : public frc::TimedRobot {
-      public:
-         void RobotInit() override {
-            m_frontLeftMotor.Set(0.5);
-            m_rearLeftMotor.Set(0.25);
-         }
-         private:
-         frc::PWMVictorSPX m_frontLeftMotor{0};
-         frc::PWMVictorSPX m_rearLeftMotor{0};
-         };
-      ```
+   class Robot : public frc::TimedRobot {
+    public:
+     void RobotInit() override {
+        m_frontLeftMotor.Set(0.5);
+        m_rearLeftMotor.Set(0.25);
+     }
+    private:
+     frc::PWMVictorSPX m_frontLeftMotor{0};
+     frc::PWMVictorSPX m_rearLeftMotor{0};
+   };
+   ```
 
 When run, you'll see output that looks like this:
 
@@ -431,7 +431,7 @@ When run, you'll see output that looks like this:
               at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
               at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
               at frc.robot.Main.main(Main.java:23)
-            Location of the current allocation:
+      Location of the current allocation:
               at edu.wpi.first.hal.PWMJNI.initializePWMPort(Native Method)
               at edu.wpi.first.wpilibj.PWM.<init>(PWM.java:66)
               at edu.wpi.first.wpilibj.motorcontrol.PWMMotorController.<init>(PWMMotorController.java:27)
@@ -441,7 +441,7 @@ When run, you'll see output that looks like this:
               at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)
               at edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)
               at frc.robot.Main.main(Main.java:23)
-            Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
+      Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error.
         The above stacktrace can help determine where the error occurred.
         See https://wpilib.org/stacktrace for more information.
       Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above.
@@ -467,7 +467,7 @@ When run, you'll see output that looks like this:
               at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
               at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
               at __libc_start_main + 0x114 [0xb57ec580]
-            Location of the current allocation:: Channel 0
+      Location of the current allocation:: Channel 0
               at  + 0x5fb5c [0xb6e81b5c]
               at frc::PWM::PWM(int, bool) + 0x334 [0xb6f01e4c]
               at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
@@ -475,13 +475,13 @@ When run, you'll see output that looks like this:
               at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xb4 [0x13724]
               at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
               at __libc_start_main + 0x114 [0xb57ec580]
-            Error at RunRobot: Error: The robot program quit unexpectedly. This is usually due to a code error.
+      Error at RunRobot: Error: The robot program quit unexpectedly. This is usually due to a code error.
         The above stacktrace can help determine where the error occurred.
         See https://wpilib.org/stacktrace for more information.
-                    at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0x1c8 [0x13838]
+              at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0x1c8 [0x13838]
               at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
               at __libc_start_main + 0x114 [0xb57ec580]
-            terminate called after throwing an instance of 'frc::RuntimeError'
+      terminate called after throwing an instance of 'frc::RuntimeError'
         what():  PWM or DIO 0 previously allocated.
       Location of the previous allocation:
               at frc::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
@@ -490,8 +490,8 @@ When run, you'll see output that looks like this:
               at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
               at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
               at __libc_start_main + 0x114 [0xb57ec580]
-            Location of the current allocation:: Channel 0
-            ```
+      Location of the current allocation:: Channel 0
+      ```
 
       The key thing to notice here is the string, ``PWM or DIO 0 previously allocated.``. That string is your primary clue that something in code has incorrectly "doubled up" on pin 0 usage.
 
@@ -508,27 +508,27 @@ In the example, the left motor controllers are plugged into :term:`PWM` ports ``
 
    ```Java
    :lineno-start: 19
-      PWMSparkMax leftFrontMotor;
+   PWMSparkMax leftFrontMotor;
    PWMSparkMax leftRearMotor;
-      @Override
+   @Override
    public void robotInit() {
-         leftFrontMotor = new PWMSparkMax(0);
+      leftFrontMotor = new PWMSparkMax(0);
       leftRearMotor = new PWMSparkMax(1);
-      }
-      ```
+   }
+   ```
 
    ```C++
    :lineno-start: 17
-      class Robot : public frc::TimedRobot {
-      public:
-         void RobotInit() override {
-            m_frontLeftMotor.Set(0.5);
-            m_rearLeftMotor.Set(0.25);
-         }
-         private:
-         frc::PWMVictorSPX m_frontLeftMotor{0};
-         frc::PWMVictorSPX m_rearLeftMotor{1};
-         };
+   class Robot : public frc::TimedRobot {
+    public:
+     void RobotInit() override {
+        m_frontLeftMotor.Set(0.5);
+        m_rearLeftMotor.Set(0.25);
+     }
+     private:
+      frc::PWMVictorSPX m_frontLeftMotor{0};
+      frc::PWMVictorSPX m_rearLeftMotor{1};
+   };
    ```
 
 ### gradlew is not recognized...

@@ -60,7 +60,7 @@ RGB stands for Red, Green, and Blue. This is a fairly common color model as it's
          // Sets the specified LED to the RGB values for red
          m_ledBuffer.setRGB(i, 255, 0, 0);
       }
-            m_led.setData(m_ledBuffer);
+      m_led.setData(m_ledBuffer);
       ```
 
    .. tab-item:: C++
@@ -70,7 +70,7 @@ RGB stands for Red, Green, and Blue. This is a fairly common color model as it's
       for (int i = 0; i < kLength; i++) {
          m_ledBuffer[i].SetRGB(255, 0, 0);
       }
-            m_led.SetData(m_ledBuffer);
+      m_led.SetData(m_ledBuffer);
       ```
 
 ### Using HSV Values
@@ -92,7 +92,7 @@ LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the 
          // Sets the specified LED to the HSV values for red
          m_ledBuffer.setHSV(i, 0, 100, 100);
       }
-            m_led.setData(m_ledBuffer);
+      m_led.setData(m_ledBuffer);
       ```
 
    .. tab-item:: C++
@@ -102,7 +102,7 @@ LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the 
       for (int i = 0; i < kLength; i++) {
          m_ledBuffer[i].SetHSV(0, 100, 100);
       }
-            m_led.SetData(m_ledBuffer);
+      m_led.SetData(m_ledBuffer);
       ```
 
 ## Creating a Rainbow Effect

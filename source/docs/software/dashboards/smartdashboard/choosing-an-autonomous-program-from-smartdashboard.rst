@@ -33,7 +33,7 @@ In ``Robot.java`` / ``Robot.h``, create a variable to hold a reference to a ``Se
 
       ```python
       import wpilib
-            self.defaultAuto = "Default"
+      self.defaultAuto = "Default"
       self.customAuto = "My Auto";
       self.chooser = wpilib.SendableChooser()
       ```
@@ -63,7 +63,7 @@ The chooser allows you to pick from a list of defined elements, in this case the
 
       ```python
       from wpilib import SmartDashboard
-            self.chooser.setDefaultOption("Default Auto", self.defaultAuto)
+      self.chooser.setDefaultOption("Default Auto", self.defaultAuto)
       self.chooser.addOption("My Auto", self.customAuto)
       SmartDashboard.putData("Auto choices", self.chooser)
       ```
@@ -95,7 +95,7 @@ Now, in ``autonomousInit`` and ``autonomousPeriodic``, you can use the ``m_autoS
       def autonomousInit(self):
          self.autoSelected = self.chooser.getSelected()
          print("Auto selected: " + self.autoSelected)
-            def autonomousPeriodic(self):
+      def autonomousPeriodic(self):
          match self.autoSelected:
             case self.customAuto:
                # Put custom auto code here
@@ -202,7 +202,7 @@ Then, publish the chooser to the dashboard:
 
       ```python
       from wpilib import SmartDashboard
-            # Put the chooser on the dashboard
+      # Put the chooser on the dashboard
       SmartDashboard.putData(chooser)
       ```
 

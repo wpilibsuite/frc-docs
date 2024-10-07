@@ -30,7 +30,7 @@ Creating a SlewRateLimiter is simple:
 
   ```python
   from wpimath.filter import SlewRateLimiter
-    # Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 units per second
+  # Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 units per second
   filter = SlewRateLimiter(0.5)
   ```
 
@@ -66,21 +66,21 @@ A typical use of a SlewRateLimiter is to limit the acceleration of a robot's dri
   ```java
   // Ordinary call with no ramping applied
   drivetrain.arcadeDrive(forward, turn);
-    // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
+  // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
   drivetrain.arcadeDrive(filter.calculate(forward), turn);
   ```
 
   ```c++
   // Ordinary call with no ramping applied
   drivetrain.ArcadeDrive(forward, turn);
-    // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
+  // Slew-rate limits the forward/backward input, limiting forward/backward acceleration
   drivetrain.ArcadeDrive(filter.Calculate(forward), turn);
   ```
 
   ```python
   # Ordinary call with no ramping applied
   drivetrain.arcadeDrive(forward, turn)
-    # Slew-rate limits the forward/backward input, limiting forward/backward acceleration
+  # Slew-rate limits the forward/backward input, limiting forward/backward acceleration
   drivetrain.arcadeDrive(filter.calculate(forward), turn)
   ```
 

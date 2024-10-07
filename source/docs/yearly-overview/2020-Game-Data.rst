@@ -26,7 +26,7 @@ In C++ and Java the Game Data is accessed by using the GetGameSpecificMessage me
 
   ```java
   import edu.wpi.first.wpilibj.DriverStation;
-    String gameData;
+  String gameData;
   gameData = DriverStation.getInstance().getGameSpecificMessage();
   if(gameData.length() > 0)
   {
@@ -55,7 +55,7 @@ In C++ and Java the Game Data is accessed by using the GetGameSpecificMessage me
 
   ```c++
   #include <frc/DriverStation.h>
-    std::string gameData;
+  std::string gameData;
   gameData = frc::DriverStation::GetInstance().GetGameSpecificMessage();
   if(gameData.length() > 0)
   {

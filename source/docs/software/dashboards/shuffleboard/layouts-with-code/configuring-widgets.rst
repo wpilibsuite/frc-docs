@@ -25,7 +25,7 @@ Call ``withWidget`` after ``add`` in the call chain:
    ```python
    from wpilib.shuffleboard import Shuffleboard
    from wpilib.shuffleboard import BuiltInWidgets
-      (Shuffleboard.getTab("Drive")
+   (Shuffleboard.getTab("Drive")
       .add("Max Speed", 1)
       .withWidget(BuiltInWidgets.kNumberSlider) # specify the widget here
       .getEntry())
@@ -63,7 +63,7 @@ Since the maximum speed only makes sense to be a value from 0 to 1 (full stop to
    ```python
    from wpilib.shuffleboard import Shuffleboard
    from wpilib.shuffleboard import BuiltInWidgets
-      (Shuffleboard.getTab("Drive")
+   (Shuffleboard.getTab("Drive")
       .add("Max Speed", 1)
       .withWidget(BuiltInWidgets.kNumberSlider)
       .withProperties(map("min", 0, "max", 1)) # specify widget properties here

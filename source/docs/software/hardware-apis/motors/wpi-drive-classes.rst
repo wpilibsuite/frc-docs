@@ -32,7 +32,7 @@ It is the responsibility of the user to manage proper inversions for their drive
 
    ```java
    PWMSparkMax m_motorRight = new PWMSparkMax(0);
-      @Override
+   @Override
    public void robotInit() {
       m_motorRight.setInverted(true);
    }
@@ -40,7 +40,7 @@ It is the responsibility of the user to manage proper inversions for their drive
 
    ```c++
    frc::PWMSparkMax m_motorLeft{0};
-      public:
+   public:
     void RobotInit() override {
       m_motorRight.SetInverted(true);
     }
@@ -192,11 +192,11 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
            rearLeft = wpilib.Spark(2)
            left = wpilib.MotorControllerGroup(frontLeft, rearLeft)
            left.setInverted(True) # if you want to invert the entire side you can do so here
-                  frontRight = wpilib.Spark(3)
+           frontRight = wpilib.Spark(3)
            rearRight = wpilib.Spark(4)
            right = wpilib.MotorControllerGroup(frontLeft, rearLeft)
-                  self.drive = wpilib.drive.DifferentialDrive(left, right)
-                     ```
+           self.drive = wpilib.drive.DifferentialDrive(left, right)
+       ```
 
 ### Drive Modes
 .. note::
@@ -220,9 +220,9 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
     public void teleopPeriodic() {
         // Tank drive with a given left and right rates
         myDrive.tankDrive(-leftStick.getY(), -rightStick.getY());
-            // Arcade drive with a given forward and turn rate
+        // Arcade drive with a given forward and turn rate
         myDrive.arcadeDrive(-driveStick.getY(), -driveStick.getX());
-            // Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
+        // Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
         myDrive.curvatureDrive(-driveStick.getY(), -driveStick.getX(), driveStick.getButton(1));
     }
     ```
@@ -231,9 +231,9 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
     void TeleopPeriodic() override {
         // Tank drive with a given left and right rates
         myDrive.TankDrive(-leftStick.GetY(), -rightStick.GetY());
-            // Arcade drive with a given forward and turn rate
+        // Arcade drive with a given forward and turn rate
         myDrive.ArcadeDrive(-driveStick.GetY(), -driveStick.GetX());
-            // Curvature drive with a given forward and turn rate, as well as a quick-turn button
+        // Curvature drive with a given forward and turn rate, as well as a quick-turn button
         myDrive.CurvatureDrive(-driveStick.GetY(), -driveStick.GetX(), driveStick.GetButton(1));
     }
     ```
@@ -242,9 +242,9 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
     def teleopPeriodic(self):
         # Tank drive with a given left and right rates
         self.myDrive.tankDrive(-self.leftStick.getY(), -self.rightStick.getY())
-            # Arcade drive with a given forward and turn rate
+        # Arcade drive with a given forward and turn rate
         self.myDrive.arcadeDrive(-self.driveStick.getY(), -self.driveStick.getX())
-            # Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
+        # Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
         self.myDrive.curvatureDrive(-self.driveStick.getY(), -self.driveStick.getX(), self.driveStick.getButton(1))
     ```
 

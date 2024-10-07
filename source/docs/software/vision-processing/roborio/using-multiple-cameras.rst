@@ -14,13 +14,13 @@ If you're interested in just switching what the driver sees, and are using Smart
     UsbCamera camera2;
     Joystick joy1 = new Joystick(0);
     NetworkTableEntry cameraSelection;
-        @Override
+    @Override
     public void robotInit() {
         camera1 = CameraServer.startAutomaticCapture(0);
         camera2 = CameraServer.startAutomaticCapture(1);
-            cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection");
+        cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection");
     }
-        @Override
+    @Override
     public void teleopPeriodic() {
         if (joy1.getTriggerPressed()) {
             System.out.println("Setting camera 2");
@@ -39,13 +39,13 @@ If you're interested in just switching what the driver sees, and are using Smart
     cs::UsbCamera camera1;
     cs::UsbCamera camera2;
     frc::Joystick joy1{0};
-        nt::NetworkTableEntry cameraSelection;
-        void RobotInit() override {
+    nt::NetworkTableEntry cameraSelection;
+    void RobotInit() override {
       camera1 = frc::CameraServer::StartAutomaticCapture(0);
       camera2 = frc::CameraServer::StartAutomaticCapture(1);
-          cameraSelection = nt::NetworkTableInstance::GetDefault().GetTable("")->GetEntry("CameraSelection");
+      cameraSelection = nt::NetworkTableInstance::GetDefault().GetTable("")->GetEntry("CameraSelection");
     }
-        void TeleopPeriodic() override {
+    void TeleopPeriodic() override {
       if (joy1.GetTriggerPressed()) {
         std::cout << "Setting Camera 2" << std::endl;
         cameraSelection.SetString(camera2.GetName());
@@ -66,12 +66,12 @@ If you're interested in just switching what the driver sees, and are using Smart
     ```python
     import wpilib
     from ntcore import NetworkTableInstance
-        class MyRobot(wpilib.TimedRobot):
+    class MyRobot(wpilib.TimedRobot):
         def robotInit(self):
             self.joy1 = wpilib.Joystick(0)
             self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
             wpilib.CameraServer.launch("vision.py:main")
-            def teleopPeriodic(self):
+        def teleopPeriodic(self):
             if self.joy1.getTriggerPressed():
                 print("Setting camera 2")
                 self.cameraSelection.setString("USB Camera 1")
@@ -84,19 +84,19 @@ If you're interested in just switching what the driver sees, and are using Smart
 
     ```python
     from cscore import CameraServer
-        def main():
+    def main():
         CameraServer.enableLogging()
-            camera1 = CameraServer.startAutomaticCapture(0)
+        camera1 = CameraServer.startAutomaticCapture(0)
         camera2 = CameraServer.startAutomaticCapture(1)
-            CameraServer.waitForever()
+        CameraServer.waitForever()
     ```
 
     ``pyproject.toml`` contents (this only shows the portions you need to update):
 
     ```toml
     [tool.robotpy]
-        ...
-        # Add cscore to the robotpy-extras list
+    ...
+    # Add cscore to the robotpy-extras list
     robotpy_extras = ["cscore"]
     ```
 
@@ -109,13 +109,13 @@ If you're using some other dashboard, you can change the camera used by the came
     UsbCamera camera2;
     VideoSink server;
     Joystick joy1 = new Joystick(0);
-        @Override
+    @Override
     public void robotInit() {
         camera1 = CameraServer.startAutomaticCapture(0);
         camera2 = CameraServer.startAutomaticCapture(1);
         server = CameraServer.getServer();
     }
-        @Override
+    @Override
     public void teleopPeriodic() {
         if (joy1.getTriggerPressed()) {
             System.out.println("Setting camera 2");
@@ -133,12 +133,12 @@ If you're using some other dashboard, you can change the camera used by the came
     cs::VideoSink server;
     frc::Joystick joy1{0};
     bool prevTrigger = false;
-        void RobotInit() override {
+    void RobotInit() override {
       camera1 = frc::CameraServer::StartAutomaticCapture(0);
       camera2 = frc::CameraServer::StartAutomaticCapture(1);
       server = frc::CameraServer::GetServer();
     }
-        void TeleopPeriodic() override {
+    void TeleopPeriodic() override {
       if (joy1.GetTrigger() && !prevTrigger) {
         std::cout << "Setting Camera 2" << std::endl;
         server.SetSource(camera2);
@@ -169,15 +169,15 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     UsbCamera camera2;
     VideoSink server;
     Joystick joy1 = new Joystick(0);
-        @Override
+    @Override
     public void robotInit() {
         camera1 = CameraServer.startAutomaticCapture(0);
         camera2 = CameraServer.startAutomaticCapture(1);
         server = CameraServer.getServer();
-            camera1.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
+        camera1.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
         camera2.setConnectionStrategy(ConnectionStrategy.kKeepOpen);
     }
-        @Override
+    @Override
     public void teleopPeriodic() {
         if (joy1.getTriggerPressed()) {
             System.out.println("Setting camera 2");
@@ -205,7 +205,7 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
       camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
       camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
     }
-        void TeleopPeriodic() override {
+    void TeleopPeriodic() override {
       if (joy1.GetTrigger() && !prevTrigger) {
         std::cout << "Setting Camera 2" << std::endl;
         server.SetSource(camera2);
@@ -227,12 +227,12 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     ```python
     import wpilib
     from ntcore import NetworkTableInstance
-        class MyRobot(wpilib.TimedRobot):
+    class MyRobot(wpilib.TimedRobot):
         def robotInit(self):
             self.joy1 = wpilib.Joystick(0)
             self.cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection")
             wpilib.CameraServer.launch("vision.py:main")
-            def teleopPeriodic(self):
+        def teleopPeriodic(self):
             if self.joy1.getTriggerPressed():
                 print("Setting camera 2")
                 self.cameraSelection.setString("USB Camera 1")
@@ -247,9 +247,9 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     from cscore import CameraServer, VideoSource
         def main():
         CameraServer.enableLogging()
-            camera1 = CameraServer.startAutomaticCapture(0)
+        camera1 = CameraServer.startAutomaticCapture(0)
         camera2 = CameraServer.startAutomaticCapture(1)
-            camera1.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
+        camera1.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
         camera2.setConnectionStrategy(VideoSource.ConnectionStrategy.kConnectionKeepOpen)
             CameraServer.waitForever()
     ```
@@ -258,8 +258,8 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
 
     ```toml
     [tool.robotpy]
-        ...
-        # Add cscore to the robotpy-extras list
+    ...
+    # Add cscore to the robotpy-extras list
     robotpy_extras = ["cscore"]
     ```
 
