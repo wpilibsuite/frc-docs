@@ -307,5 +307,5 @@
 "docs/software/wpilib-tools/axon/retraining-mobilenet.rst" "docs/software/vision-processing/index.rst"
 "docs/software/wpilib-tools/axon/using-on-a-robot.rst" "docs/software/vision-processing/index.rst"
 "docs/software/wpilib-tools/axon/viewing-datasets.rst" "docs/software/vision-processing/index.rst"
-"/docs/software/vision-processing/introduction/2017-vision-examples.rst" "/docs/software/vision-processing/index.rst"
+"docs/software/vision-processing/introduction/2017-vision-examples.rst" "docs/software/vision-processing/index.rst"
 
