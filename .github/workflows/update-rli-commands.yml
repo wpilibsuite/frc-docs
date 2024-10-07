@@ -33,7 +33,7 @@ jobs:
 
       # Run Inspector autofix on everything
       - name: Trigger-All
-        uses: shanegenschaw/pull-request-comment-trigger@v3.0,0
+        uses: shanegenschaw/pull-request-comment-trigger@v3.0.0
         id: trigger-all
         with:
           trigger: '\inspector fix all'
