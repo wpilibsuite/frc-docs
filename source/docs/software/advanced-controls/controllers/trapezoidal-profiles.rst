@@ -168,7 +168,7 @@ A more complete example of ``TrapezoidProfile`` usage is provided in the Elevato
     :linenos:
     :lineno-start: 5
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp/Robot.cpp
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp/Robot.cpp
     :language: c++
     :lines: 5-
     :linenos:
