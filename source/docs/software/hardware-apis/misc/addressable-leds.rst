@@ -19,28 +19,73 @@ After the length of the strip has been set, you'll have to create an ``Addressab
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
-         :lines: 17-32
+         :lines: 32-47
          :linenos:
-         :lineno-start: 17
+         :lineno-start: 34
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: c++
          :lines: 12-12, 18-27
          :linenos:
          :lineno-start: 11
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 7-13
          :linenos:
          :lineno-start: 7
 
 .. note:: The roboRIO only supports only 1 ``AddressableLED`` object. As WS2812B LEDs are connected in series, you can drive several strips connected in series from from ``AddressableLED`` object.
+
+## Controlling Sections of an LED Strip
+
+The roboRIO can only control a single addressable LED output at a time, but there are often multiple physical LED strips daisy-chained around a robot, or a single flexible LED strip wrapped around structures on a robot. Individual sections can be accessed in Java using ``AddressableLEDBufferView``. Buffer views behave like subsections of the larger buffer, and can be accessed using indices in the typical [0, length) range. They can also be reversed, to allow for parallel serpentine sections to be animated in the same physical orientation (i.e. both sections would animate "forward" in the same direction, even if the strips are physically tip-to-tail).
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create the buffer
+      AddressableLEDBuffer m_buffer = new AddressableLEDBuffer(120);
+
+      // Create the view for the section of the strip on the left side of the robot.
+      // This section spans LEDs from index 0 through index 59, inclusive.
+      AddressableLEDBufferView m_left = m_buffer.createView(0, 59);
+
+      // The section of the strip on the right side of the robot.
+      // This section spans LEDs from index 60 through index 119, inclusive.
+      // This view is reversed to cancel out the serpentine arrangement of the
+      // physical LED strip on the robot.
+      AddressableLEDBufferView m_right = m_buffer.createView(60, 119).reversed();
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create the buffer
+      std::array<frc::AddressableLED::LEDData, 120> m_buffer;
+
+      // Create the view for the section of the strip on the left side of the robot.
+      // This section spans LEDs from index 0 through index 59, inclusive.
+      std::view<frc::AddressableLED::LEDData> m_left =
+         std::ranges::take_view(m_buffer, 60);
+
+      // The section of the strip on the right side of the robot.
+      // This section spans LEDs from index 60 through index 119, inclusive.
+      // This view is reversed to cancel out the serpentine arrangement of the
+      // physical LED strip on the robot.
+      std::view<frc::AddressableLED::LEDData> m_right =
+         std::ranges::reverse_view(
+            std::ranges::drop_view(m_buffer, 60));
+      ```
 
 ## Setting the Entire Strip to One Color
 
@@ -70,6 +115,40 @@ RGB stands for Red, Green, and Blue. This is a fairly common color model as it's
       for (int i = 0; i < kLength; i++) {
          m_ledBuffer[i].SetRGB(255, 0, 0);
       }
+      m_led.SetData(m_ledBuffer);
+      ```
+
+### Using Solid Color Patterns
+
+The ``LEDPattern`` API simplifies setting LED data. Rather than needing to manually loop over every LED index, you can apply a pattern object to the data buffer directly. LED patterns are stateless, and can safely be applied to multiple buffers or views.
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that sets the entire strip to solid red
+      LEDPattern red = LEDPattern.solid(Color.kRed);
+
+      // Apply the LED pattern to the data buffer
+      red.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that sets the entire strip to solid red
+      LEDPattern red = LEDPattern.Solid(Color::kRed);
+
+      // Apply the LED pattern to the data buffer
+      red.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
       m_led.SetData(m_ledBuffer);
       ```
 
@@ -107,50 +186,49 @@ LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the 
 
 ## Creating a Rainbow Effect
 
-The below method does a couple of important things. Inside of the *for* loop, it equally distributes the hue over the entire length of the strand and stores the individual LED hue to a variable called ``hue``. Then the for loop sets the HSV value of that specified pixel using the ``hue`` value.
-
-Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the pixel that contains the "initial" hue creating the rainbow effect. ``m_rainbowFirstPixelHue`` then checks to make sure that the hue is inside the hue boundaries of 180. This is because HSV hue is a value from 0-180.
-
-.. note:: It's good robot practice to keep the ``robotPeriodic()`` method as clean as possible, so we'll create a method for handling setting our LED data. We'll call this method ``rainbow()`` and call it from ``robotPeriodic()``.
+Using the built in ``LEDPattern.rainbow`` method, we can create a pattern that displays a full rainbow across an entire LED strip. Then, by calling ``scrollAtAbsoluteSpeed`` we can make it animate and cycle around the strip. ``rainbow`` accepts two arguments - one for the saturation and one for the value, expressed as a number from 0 to 255.
 
 .. tab-set::
 
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
-         :lines: 42-55
+         :lines: 21-31
          :linenos:
-         :lineno-start: 42
+         :lineno-start: 21
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: c++
-         :lines: 22-35
+         :lines: 27-37
          :linenos:
-         :lineno-start: 22
+         :lineno-start: 27
 
-Now that we have our ``rainbow`` method created, we have to actually call the method and set the data of the LED.
+Now that the rainbow pattern is defined, we only need to apply it.
 
 .. tab-set::
 
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
-         :lines: 34-40
+         :lines: 50-56
          :linenos:
-         :lineno-start: 34
+         :lineno-start: 50
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 15-20
          :linenos:
          :lineno-start: 15
+
+.. image:: images/rainbow.gif
+   :alt: Scrolling rainbow pattern running in simulation
