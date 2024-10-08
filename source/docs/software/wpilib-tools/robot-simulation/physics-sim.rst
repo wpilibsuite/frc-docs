@@ -41,16 +41,16 @@ In the following example, we simulate an elevator given the mass of the moving c
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
-         :lines: 47-59
+         :lines: 46-58
          :linenos:
-         :lineno-start: 47
+         :lineno-start: 46
 
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/include/subsystems/Elevator.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/include/subsystems/Elevator.h
          :language: c++
          :lines: 51-61
          :linenos:
@@ -63,13 +63,13 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java
          :language: java
-         :lines: 31-40
+         :lines: 30-39
          :linenos:
-         :lineno-start: 31
+         :lineno-start: 30
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
          :lines: 99-106
          :linenos:
@@ -78,13 +78,13 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp
          :language: c++
          :lines: 20-28
          :linenos:
          :lineno-start: 20
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
          :language: c++
          :lines: 42-50
          :linenos:
@@ -101,7 +101,7 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
          :lines: 79-92
          :linenos:
@@ -110,7 +110,7 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
          :language: c++
          :lines: 20-35
          :linenos:

@@ -101,16 +101,23 @@ Follow the [WPILib style guide](https://github.com/wpilibsuite/styleguide/) for 
 When possible, instead of using code blocks, an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
 
 ```ReST
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
    :language: java
-   :lines: 44-61
+   :lines: 19-25
    :linenos:
-   :lineno-start: 44
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
+   :lineno-start: 19
+
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
    :language: c++
-   :lines: 18-30
+   :lines: 50-60
    :linenos:
-   :lineno-start: 18
+   :lineno-start: 50
+
+.. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/GettingStarted/robot.py
+   :language: python
+   :linenos:
+   :lines: 12-29
+   :lineno-start: 12
 ```
 
 Make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
@@ -122,11 +129,11 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
 
 ````ReST
 .. tab-set-code::
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
       :language: java
-      :lines: 44-61
+      :lines: 19-25
       :linenos:
-      :lineno-start: 44
+      :lineno-start: 19
    
    ```c++
    // Start the timer.

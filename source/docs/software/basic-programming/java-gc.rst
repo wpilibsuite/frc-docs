@@ -33,7 +33,7 @@ All objects in Java are retained in a section of memory called the *heap*. As ob
 
 Since ``OutOfMemoryError``\ s both crash the program and are a common reason to want a heap dump, the JVM can be configured to automatically take a heap dump the moment an ``OutOfMemoryError`` is caught by the JVM. To configure these options, locate the ``frcJava`` code block in your project's ``build.gradle``:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.3.1/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.0.0-alpha-2/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
    :lines: 15-40
    :linenos:
