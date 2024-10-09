@@ -1,5 +1,4 @@
-Hardware - Basics
-=================
+# Hardware - Basics
 
 .. toctree::
    :maxdepth: 1

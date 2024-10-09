@@ -1,19 +1,16 @@
 .. include:: <isonum.txt>
 
-New for 2024
-============
+# New for 2024
 
-A number of improvements have been made to FRC\ |reg| Control System software for 2024. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories.
+A number of improvements have been made to FRC\ |reg| Control System software for 2024. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories.
 
 It's recommended to also review the list of :doc:`known issues <known-issues>`.
 
-Importing Projects from Previous Years
---------------------------------------
+## Importing Projects from Previous Years
 
 Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2024 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2023 projects must be :doc:`imported </docs/software/vscode-overview/importing-last-years-robot-code>` to be compatible.
 
-Major Changes (Java/C++)
-------------------------
+## Major Changes (Java/C++)
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
@@ -33,11 +30,9 @@ Supported Operating Systems and Architectures:
 
 .. warning:: The following OSes are no longer supported: macOS 11, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
-WPILib
-------
+## WPILib
 
-General Library
-^^^^^^^^^^^^^^^
+### General Library
 
 - Commands:
 
@@ -111,13 +106,12 @@ General Library
 - Add ``PWMSparkFlex`` Motor Controller
 - ADIS16470: allow accessing all three axes
 - Deprecated ``MotorControllerGroup``. Use ``PWMMotorController`` ``addFollower()`` method or if using CAN motor controllers use their method of following.
-- Added functional inteface to ``DifferentialDrive`` and ``MecanumDrive``. The ``MotorController`` interface may be removed in the future to reduce coupling with vendor libraries. Instead of passing ``MotorController`` objects, the following method references or lambda expressions can be used:
+- Added functional interface to ``DifferentialDrive`` and ``MecanumDrive``. The ``MotorController`` interface may be removed in the future to reduce coupling with vendor libraries. Instead of passing ``MotorController`` objects, the following method references or lambda expressions can be used:
 
     - Java: ``DifferentialDrive drive = new DifferentialDrive(m_leftMotor::set, m_rightMotor::set);``
     - C++: ``frc::DifferentialDrive m_drive{[&](double output) { m_leftMotor.Set(output); }, [&](double output) { m_rightMotor.Set(output); }};``
 
-Breaking Changes
-^^^^^^^^^^^^^^^^
+### Breaking Changes
 
 - Changed ``DriverStation.getAllianceStation()`` to return optional value.  See :doc:`example usage </docs/software/basic-programming/alliancecolor>`
 - Merged CommandBase into Command (Command is now a base class instead of an interface)
@@ -148,16 +142,14 @@ Breaking Changes
 - Add new parameter for ``ElevatorSim`` constructor for starting height
 - Report error on negative PID gains
 
-Simulation
-----------
+## Simulation
 
 - Unified PWM simulation Speed, Position, and Raw values to be consistent with robot behavior
 - Expanded DutyCycleEncoderSim API
 - Added ability to set starting state of mechanism sims
 - Added mechanism-specific SetState overloads to physics sims
 
-SmartDashboard
---------------
+## SmartDashboard
 
 .. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
 
@@ -165,8 +157,7 @@ SmartDashboard
 - Added LiveWindow widgets to containing subsystem widget when creating them from the save file
 - Now properly handles putting the Scheduler on SmartDashboard with ``SmartDashboard.putData()``
 
-Glass / OutlineViewer / Simulation GUI
---------------------------------------
+## Glass / OutlineViewer / Simulation GUI
 
 - Include standard field images for Field2D background
 - Enhanced array support in NetworkTables views
@@ -178,8 +169,7 @@ Glass / OutlineViewer / Simulation GUI
 - Fixed file dialogs not closing after window closes
 - add ProfiledPIDController support
 
-GradleRIO
----------
+## GradleRIO
 
 - Use Java Serial GC by default
 - Remove AlwaysPreTouch from Java arguments (reduces startup memory usage)
@@ -188,8 +178,7 @@ GradleRIO
 - Upgraded to Gradle 8.4
 - Check that project isn't in OneDrive, as that causes issues
 
-WPILib All in One Installer
----------------------------
+## WPILib All in One Installer
 
 - Update to VS Code 1.85.1
 - VS Code extension updates: cpptools 1.19.1, javaext 1.26.0
@@ -197,21 +186,18 @@ WPILib All in One Installer
 - Update to use .NET 8
 - AdvantageScope is now bundlled by the installer
 
-Visual Studio Code Extension
-----------------------------
+## Visual Studio Code Extension
 
 - Java source code is now bundled into the deployed jar file. This makes it possible to recover source code from a deployed robot program.
 - Added XRP support
 - Check that project isn't created in OneDrive, as that causes issues
 
-RobotBuilder
-------------
+## RobotBuilder
 
 - Add POVButton
 - Fixed constants aliasing
 - Updated PCM references and wiring export for addition of REV PH
 
-SysId
------
+## SysId
 
 - Removed project generation; Replaced with data logging within team robot program

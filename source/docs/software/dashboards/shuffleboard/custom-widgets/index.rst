@@ -1,5 +1,4 @@
-Shuffleboard - Custom Widgets
-=============================
+# Shuffleboard - Custom Widgets
 
 .. toctree::
    :maxdepth: 1

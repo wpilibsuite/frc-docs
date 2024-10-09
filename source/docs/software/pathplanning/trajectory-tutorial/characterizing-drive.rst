@@ -1,5 +1,4 @@
-Step 1: Characterizing Your Robot Drive
-=======================================
+# Step 1: Characterizing Your Robot Drive
 
 .. note::  For detailed instructions on using the System Identification tool, see its :ref:`dedicated documentation <docs/software/advanced-controls/system-identification/introduction:Introduction to System Identification>`.
 
@@ -9,21 +8,18 @@ Step 1: Characterizing Your Robot Drive
 
 Before accurately following a path with a robot, it is important to have an accurate model for how the robot moves in response to its control inputs.  Determining such a model is a process called "system identification."  WPILib's System Identification tool can accurately determine such a model.
 
-Gathering the Data
-------------------
+## Gathering the Data
 
 We begin by gathering our drive identification data.
 
 1. :ref:`Configure and Deploy your robot project <docs/software/advanced-controls/system-identification/creating-routine:Creating an Identification Routine>`.
 2. :ref:`Run the identification Routine <docs/software/advanced-controls/system-identification/running-routine:Running the Identification Routine>`.
 
-Analyzing the Data
-------------------
+## Analyzing the Data
 
 Once the identification routine has been run and the data file has been saved, it is time to :ref:`open it in the analysis pane <docs/software/advanced-controls/system-identification/analyzing-gains:Analyzing Data>`.
 
-Checking Diagnostics
-^^^^^^^^^^^^^^^^^^^^
+### Checking Diagnostics
 
 Per the :ref:`system identification guide <docs/software/advanced-controls/system-identification/viewing-diagnostics:Viewing Diagnostics>`, we first view the diagnostics to ensure that our data look reasonable:
 
@@ -32,8 +28,7 @@ Per the :ref:`system identification guide <docs/software/advanced-controls/syste
 
 As our data look reasonably linear, and the fit metrics are within acceptable parameters, we proceed to the next step.
 
-Record Feedforward Gains
-^^^^^^^^^^^^^^^^^^^^^^^^
+### Record Feedforward Gains
 
 .. note:: Feedforward gains do *not*, in general, transfer across robots.  Do *not* use the gains from this tutorial for your own robot.
 
@@ -50,8 +45,7 @@ Since our wheel diameter was specified in meters, our feedforward gains are in t
 
 If you have specified your units correctly, your feedforward gains will likely be within an order of magnitude of the ones reported here (a possible exception exists for ``kA``, which may be vanishingly small if your robot is light).  If they are not, it is possible you specified one of your drive parameters incorrectly when generating your robot project.  A good test for this is to calculate the "theoretical" value of ``kV``, which is 12 volts divided by the theoretical free speed of your drivetrain (which is, in turn, the free speed of the motor times the wheel circumference divided by the gear reduction).  This value should agree very closely with the ``kV`` measured by the tool - if it does not, you have likely made an error somewhere.
 
-Calculate Feedback Gains
-^^^^^^^^^^^^^^^^^^^^^^^^
+### Calculate Feedback Gains
 
 .. note:: Feedback gains do *not*, in general, transfer across robots.  Do *not* use the gains from this tutorial for your own robot.
 

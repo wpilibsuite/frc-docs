@@ -1,10 +1,8 @@
-Control System Basics
-=====================
+# Control System Basics
 
-.. note:: This article includes sections of `Controls Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__ by Tyler Veness with permission.
+.. note:: This article includes sections of [Controls Engineering in FRC](https://file.tavsys.net/control/controls-engineering-in-frc.pdf) by Tyler Veness with permission.
 
-The Need for Control Systems
-----------------------------
+## The Need for Control Systems
 
 Control systems are all around us and we interact with them daily. A small list of ones you may have seen includes heaters and air conditioners with thermostats, cruise control and the anti-lock braking system (ABS) on automobiles, and fan speed modulation on modern laptops. Control systems monitor or control the behavior of systems like these and may consist of humans controlling them directly (manual control), or of only machines (automatic control).
 
@@ -20,8 +18,7 @@ How can we prove closed-loop controllers on an autonomous car, for example, will
 
 Controls engineering is, put simply, the engineering process applied to control theory. As such, it's more than just applied math. While control theory has some beautiful math behind it, controls engineering is an engineering discipline like any other that is filled with trade-offs. The solutions control theory gives should always be sanity checked and informed by our performance specifications. We don't need to be perfect; we just need to be good enough to meet our specifications.
 
-Nomenclature
-------------
+## Nomenclature
 
 Most resources for advanced engineering topics assume a level of knowledge well above that which is necessary. Part of the problem is the use of jargon. While it efficiently communicates ideas to those within the field, new people who aren't familiar with it are lost.
 
@@ -34,8 +31,7 @@ Controllers which incorporate information fed back from the plant's output are c
 
 .. note:: The input and output of a system are defined from the plant's point of view. The negative feedback controller shown is driving the difference between the reference and output, also known as the error, to zero.
 
-What is Gain?
--------------
+## What is Gain?
 
 *Gain* is a proportional value that shows the relationship between the magnitude of an input signal to the magnitude of an output signal at steady-state. Many systems contain a method by which the gain can be altered, providing more or less "power" to the system.
 
@@ -44,8 +40,7 @@ The figure below shows a system with a hypothetical input and output. Since the 
 .. image:: images/control-system-basics-whatisgain.png
    :alt: A system diagram with hypothetical input and output
 
-What is a Model?
-----------------
+## What is a Model?
 
 A *model* of your mechanism is a mathematical description of its behavior. Specifically, this mathematical description must define the mechanism's inputs and outputs, and how the output values change over time as a function of its input values.
 
@@ -53,8 +48,7 @@ The mathematical description is often just simple algebra equations. It can also
 
 :term:`Classical Mechanics` defines many of the equations used to build up models of system behavior. Many of the values inside those equations can be determined by doing experiments on the mechanism.
 
-Block Diagrams
---------------
+## Block Diagrams
 
 When designing or analyzing a control system, it is useful to model it graphically. Block diagrams are used for this purpose. They can be manipulated and simplified systematically.
 
@@ -70,8 +64,7 @@ The below figure is a block diagram with more formal notation in a feedback conf
 
 :math:`\mp` means "minus or plus" where a minus represents negative feedback.
 
-A Note on Dimensionality
-------------------------
+## A Note on Dimensionality
 
 For the purposes of the introductory section, all systems and controllers (except feedforward controllers) are assumed to be "single-in, single-out" (SISO) - this means they only map single values to single values.  For example, a DC motor is considered to take an :term:`input` of a single scalar value (voltage) and yield an :term:`output` of only a single scalar value in return (either position or velocity).  This forces us to consider *position controllers* and *velocity controllers* as separate entities - this is sometimes source of confusion in situations when we want to control both (such as when following a motion profiles).  Limiting ourselves to SISO systems also means that we are unable to analyze more-complex "multiple-in, multiple-out" (MIMO) systems like drivetrains that cannot be represented with a single state (there are at least two independent sets of wheels in a drive).
 

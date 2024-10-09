@@ -1,19 +1,16 @@
-Profiling with VisualVM
-=======================
+# Profiling with VisualVM
 
-This document is intended to familiarize the reader with the diagnostic tool that is `VisualVM <https://visualvm.github.io/>`__ for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot ``build.gradle``. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
+This document is intended to familiarize the reader with the diagnostic tool that is [VisualVM](https://visualvm.github.io/) for debugging Java robot programs. VisualVM is a tool for profiling JVM based applications, such as viewing why an application is using a large amount of memory. This document assumes the reader is familiar with the *risks* associated with modifying their robot ``build.gradle``. This tutorial also assumes that the user knows basic terminal/commandline knowledge.
 
-Unpacking VisualVM
-------------------
+## Unpacking VisualVM
 
-To begin, `download VisualVM <https://visualvm.github.io/download.html>`__ and unpack it to the WPILib installation folder. The folder is located at ``~/wpilib/`` where ``~`` indicates the users home directory. On Windows, this is ``C:\Users\Public\wpilib``.
+To begin, [download VisualVM](https://visualvm.github.io/download.html) and unpack it to the WPILib installation folder. The folder is located at ``~/wpilib/`` where ``~`` indicates the users home directory. On Windows, this is ``C:\Users\Public\wpilib``.
 
-Setting up Gradle
------------------
+## Setting up Gradle
 
 GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a roboRIO). To begin, locate the ``frcJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.3.1/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.3.2/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
    :lines: 15-40
    :linenos:
@@ -23,17 +20,17 @@ GradleRIO supports passing JVM launch arguments, and this is what is necessary t
 
 We will be replacing the highlighted lines with:
 
-.. code-block:: groovy
-
-   frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
-      // Enable VisualVM connection
-      jvmArgs.add("-Dcom.sun.management.jmxremote=true")
-      jvmArgs.add("-Dcom.sun.management.jmxremote.port=1198")
-      jvmArgs.add("-Dcom.sun.management.jmxremote.local.only=false")
-      jvmArgs.add("-Dcom.sun.management.jmxremote.ssl=false")
-      jvmArgs.add("-Dcom.sun.management.jmxremote.authenticate=false")
-      jvmArgs.add("-Djava.rmi.server.hostname=10.XX.XX.2") // Replace XX.XX with team number
-   }
+```groovy
+frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
+   // Enable VisualVM connection
+   jvmArgs.add("-Dcom.sun.management.jmxremote=true")
+   jvmArgs.add("-Dcom.sun.management.jmxremote.port=1198")
+   jvmArgs.add("-Dcom.sun.management.jmxremote.local.only=false")
+   jvmArgs.add("-Dcom.sun.management.jmxremote.ssl=false")
+   jvmArgs.add("-Dcom.sun.management.jmxremote.authenticate=false")
+   jvmArgs.add("-Djava.rmi.server.hostname=10.TE.AM.2") // Replace TE.AM with team number
+}
+```
 
 We are adding a few arguments here. In order:
 
@@ -41,21 +38,20 @@ We are adding a few arguments here. In order:
 * Set the remote debugging port to 1198
 * Allow listening from remote targets
 * Disable SSL authentication being required
-* Set the hostname to the roboRIOs team number. Be sure to replace this.
+* Set the hostname to the roboRIOs team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`)
 
 .. important:: The hostname when connected via USB-B should be ``172.22.11.2``.
 
-Running VisualVM
-----------------
+## Running VisualVM
 
 Launching VisualVM is done via the commandline with a few parameters. First, we navigate to the directory containing VisualVM. Then, launch it with parameters, passing it the WPILib JDK path. On a Windows machine, it looks like the following:
 
-.. code-block:: bash
+```bash
+cd "C:\Users\Public\wpilib\visualvm_217\bin"
+./visualvm --jdkhome "C:\Users\Public\wpilib\2024\jdk"
+```
 
-   cd "C:\Users\Public\wpilib\visualvm_216\bin"
-   ./visualvm --jdkhome "C:\Users\Public\wpilib\2023\jdk"
-
-.. important:: The exact path ``visualvm_216`` may vary and depends on the version of VisualVM downloaded.
+.. important:: The exact path ``visualvm_217`` may vary and depends on the version of VisualVM downloaded.
 
 This should launch VisualVM. Once launched, open the :guilabel:`Add JMX Connection` dialog.
 
@@ -75,8 +71,7 @@ If correctly done, a new menu option in the left-hand sidebar will appear. Click
    :alt: VisualVM diagnostics dashboard
    :width: 700
 
-Analyzing Function Timings
---------------------------
+## Analyzing Function Timings
 
 An important feature of VisualVM is the ability to view how much time a specific function is taking up. This is *without* having a code debugger attached. To begin, click on the :guilabel:`Sampler` tab and then click on :guilabel:`CPU`. This will immediately give a breakdown of what functions are taking CPU time.
 
@@ -86,20 +81,19 @@ An important feature of VisualVM is the ability to view how much time a specific
 
 The above screenshot shows a breakdown of the total time a specific function takes. You can see that ``totallyNotSlowFunction()`` accounts for ``61.9%`` of the robot program CPU time. We can then correlate this to our robot program. In ``totallyNotSlowFunction()``, we have the following code.
 
-.. code-block:: Java
-
-   public static void totallyNotSlowFunction() {
-      for (int i = 0; i < 2000; i++) {
-         System.out.println("HAHAHAHA");
-      }
+```Java
+public static void totallyNotSlowFunction() {
+   for (int i = 0; i < 2000; i++) {
+      System.out.println("HAHAHAHA");
    }
+}
+```
 
 In this code snippet, we can identify 2 major causes of concern. A long running ``for`` loop blocks the rest of the robot program from running. Additionally, ``System.out.println()`` calls on the roboRIO are typically quite expensive. We found this information by profiling the Java application on the roboRIO!
 
-Creating a Heap Dump
---------------------
+## Creating a Heap Dump
 
-Besides viewing the remote systems CPU and memory usage, VisualVM is most useful by creating a **Heap Dump**. When a Java object is created, it resides in an area of memory called the heap. When the heap is full, a process called `garbage collection <https://www.geeksforgeeks.org/garbage-collection-java/>`__ begins. Garbage collection can be a common cause of loop overruns in a traditional Java robot program.
+Besides viewing the remote systems CPU and memory usage, VisualVM is most useful by creating a **Heap Dump**. When a Java object is created, it resides in an area of memory called the heap. When the heap is full, a process called [garbage collection](https://www.geeksforgeeks.org/garbage-collection-java/) begins. Garbage collection can be a common cause of loop overruns in a traditional Java robot program.
 
 To begin, ensure you are on the :guilabel:`Monitor` tab and click :guilabel:`Heap Dump`.
 
@@ -111,8 +105,9 @@ This heap dump will be stored on the target system (roboRIO) and must be retriev
 
 Once downloaded, the dump can be analyzed with VisualVM.
 
-Analyzing a Heap Dump
----------------------
+.. tip:: You can also :ref:`configure the JVM to take a heap dump automatically when your robot code runs out of memory <docs/software/basic-programming/java-gc:Diagnosing Out of Memory Errors with Heap Dumps>`.
+
+## Analyzing a Heap Dump
 
 Reopen VisualVM if closed using the previous instructions. Then click on :guilabel:`File` and :guilabel:`Load`. Navigate to the retrieved dump file and load it.
 
@@ -134,7 +129,6 @@ with an ``ArrayList`` of ~10000 integers.
    :alt: List of objects in a modified robot program
    :width: 700
 
-Additional Info
----------------
+## Additional Info
 
-For more information on VisualVM, check out the `VisualVM documentation pages <https://visualvm.github.io/documentation.html>`__.
+For more information on VisualVM, check out the [VisualVM documentation pages](https://visualvm.github.io/documentation.html).

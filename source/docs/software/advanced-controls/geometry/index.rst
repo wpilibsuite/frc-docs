@@ -1,5 +1,4 @@
-Geometry Classes
-================
+# Geometry Classes
 
 This section covers the geometry classes of WPILib.
 

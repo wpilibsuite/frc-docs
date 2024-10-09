@@ -1,18 +1,15 @@
-Downloading & Processing Data Logs
-==================================
+# Downloading & Processing Data Logs
 
 Data logs can be processed and viewed offline by AdvantageScope, the DataLogTool, or custom utilities. If data log files are being stored to the roboRIO integrated flash memory instead of a removable USB flash drive, it's important to periodically download and delete data logs to avoid the storage from filling up.
 
-Managing Data Logs with AdvantageScope
---------------------------------------
+## Managing Data Logs with AdvantageScope
 
 :ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an analysis tool that supports downloading, visualizing, and exporting data logs. See the relevant sections of the documentation for more details:
 
-- `Downloading log files <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/OPEN-FILE.md>`__
-- `Exporting to new formats <https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/EXPORT.md>`__
+- [Downloading log files](https://docs.advantagescope.org/getting-started/open-file)
+- [Exporting to new formats](https://docs.advantagescope.org/more-features/export)
 
-Managing Data Logs with the DataLogTool
----------------------------------------
+## Managing Data Logs with the DataLogTool
 
 The DataLogTool desktop application integrates a SFTP client for downloading data log files from a network device (e.g. roboRIO or coprocessor) to the local computer.
 
@@ -23,8 +20,7 @@ This process consists of four steps:
 3. Select download folder
 4. Download files and optionally delete remote files after downloading
 
-Connecting to RoboRIO
-^^^^^^^^^^^^^^^^^^^^^
+### Connecting to RoboRIO
 
 .. note:: The downloader uses SSH, so it will not be able to connect wirelessly if the radio firewall is enabled (e.g. when the robot is on the competition field).
 
@@ -39,8 +35,7 @@ The tool also supports connecting to network devices other than the roboRIO, suc
 
 Click :guilabel:`Connect` to connect to the remote device.  This will attempt to connect to the device.  The connection attempt can be aborted at any time by clicking :guilabel:`Disconnect`.  If the application is unable to connect to the remote device, an error will be displayed above the :guilabel:`Team Number / Address` field and a new connection can be attempted.
 
-Downloading Files
-^^^^^^^^^^^^^^^^^
+### Downloading Files
 
 After the connection is successfully established, a simplified file browser will be displayed.  This is used to navigate the remote filesystem and select which files to download.  The first text box shows the current directory.  A specific directory can be navigated to by typing it in this text box and pressing Enter.  Alternatively, directory navigation can be performed by clicking on one of the directories that are listed below the remote dir textbox.  Following the list of directories is a table of files.  Only files with a ``.wpilog`` extension are shown, so the table will be empty if there are no log files in the current directory.  The checkbox next to each data log file indicates whether the file should be downloaded.
 
@@ -58,8 +53,7 @@ Once a download folder is selected, :guilabel:`Download` will appear.  After cli
 .. image:: images/datalogtool/download-downloading.png
    :alt: Download status showing 100% completion on the first file and a "file exists" error on the second file.
 
-Converting Data Logs to CSV
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Converting Data Logs to CSV
 
 As data logs are binary files, the DataLogTool desktop application provides functionality to convert data logs into CSV files for further processing or analysis.  Multiple data logs may be simultaneously loaded into the tool for batch processing, and partial data exports can be performed by selecting only the data that is desired to be output.
 
@@ -72,17 +66,15 @@ After at least one file is loaded, the "Entries" window displays a tree view of 
 
 The output window is used to specify the output folder (via :guilabel:`Select Output Folder...`) as well as the output style (list or table).  The list output style outputs a CSV file with 3 columns (timestamp, entry name, and value) and a row for every value change (for every exported entry).  The table output style outputs a CSV file with a timestamp column and a column for every exported entry; a row is output for every value change (for every exported entry), but the value is placed in the correct column for that entry.  Clicking :guilabel:`Export CSV` will create a ``.csv`` file in the output folder corresponding to each input file.
 
-Managing Data Logs with the Driver Station
-------------------------------------------
+## Managing Data Logs with the Driver Station
 
 .. image:: images/datalogtool/DS_WPILogs.png
    :alt: Selecting Upload WPILogs in the Driver Station
 
 The Driver Station software can download WPILogs. Click on the gear icon and select :guilabel:`Upload WPILogs`. The logs in ``/home/lvuser/logs`` or ``/u/logs`` will be downloaded automatically to ``C:\Users\Public\Documents\FRC\Log Files\WPILogs``
 
-Custom Processing of Data Logs
-------------------------------
+## Custom Processing of Data Logs
 
-For more advanced processing of data logs (e.g. for processing of binary values that can't be converted to CSV), WPILib provides a ``DataLogReader`` class for reading data logs in `Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/datalog/DataLogReader.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log_reader.html>`__, or :external:py:class:`Python <wpiutil.log.DataLogReader>`. There is also a pure python datalog reader (`datalog.py <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/datalog.py>`__). For other languages, the `data log format <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__ is also documented.
+For more advanced processing of data logs (e.g. for processing of binary values that can't be converted to CSV), WPILib provides a ``DataLogReader`` class for reading data logs in [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/util/datalog/DataLogReader.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classwpi_1_1log_1_1_data_log_reader.html), or :external:py:class:[Python](wpiutil.log.DataLogReader). There is also a pure python datalog reader ([datalog.py](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/datalog.py)). For other languages, the [data log format](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc) is also documented.
 
-DataLogReader provides a low-level view of a data log, in that it supports iterating over a data log's control and data records and decoding of common data types, but does not provide any higher level abstractions such as a NetworkTables-like map of entries.  The printlog example in `Java <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/src/printlog/java/printlog/PrintLog.java>`__ and `C++ <https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/printlog.cpp>`__ (and the Python ``datalog.py``) demonstrates basic usage.
+DataLogReader provides a low-level view of a data log, in that it supports iterating over a data log's control and data records and decoding of common data types, but does not provide any higher level abstractions such as a NetworkTables-like map of entries.  The printlog example in [Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/src/printlog/java/printlog/PrintLog.java) and [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/printlog.cpp) (and the Python ``datalog.py``) demonstrates basic usage.

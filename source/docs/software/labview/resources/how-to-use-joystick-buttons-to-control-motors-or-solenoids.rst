@@ -1,12 +1,10 @@
-How to Use Joystick Buttons to Control Motors or Solenoids
-==========================================================
+# How to Use Joystick Buttons to Control Motors or Solenoids
 
 As we all get our drive systems working, we are moving on to connecting our auxiliary devices such as motors and solenoids.  With this, we will generally use joystick buttons to control these devices.  To get started with this, we'll go through several ways to control devices with joystick buttons.
 
 Did you know that you can click and drag a VI Snippet from a document like this right into your LabVIEW code?  Try it with the snippets in this document.
 
-Setup:
-------
+## Setup:
 
 No matter what the configuration, you'll need to add one, two, or more (if you're really excited) joysticks to the "Begin.vi".  The first example uses 2 joysticks and the others only use one.  Give each one a unique name so we can use it in other places, like the snippet below.  I named them "LeftStick" and "RightStick" because they are on the left and right sides of my desk.  If your joysticks are already configured, great! You can skip this step.
 
@@ -14,8 +12,7 @@ No matter what the configuration, you'll need to add one, two, or more (if you'r
 
 The rest of the code in this document will be placed in the "Teleop.VI" This is where we will be programming our joystick buttons to control different aspects of our motors or solenoids.
 
-Scenario 1
-----------
+## Scenario 1
 
 **"I want a motor to move one way when I press one button and the other way when I press a different button."**
 
@@ -29,8 +26,7 @@ You may want to use multiple buttons from the same joystick for control.  For an
 
 Here I used joystick buttons 0 and 2, but feel free to use whatever buttons you need.
 
-Scenario 2
-----------
+## Scenario 2
 
 **"I want different joystick buttons move at various speeds."**
 
@@ -62,8 +58,7 @@ https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-Lesson-3
 
 Since our requirements were simple, we only need a single constant in each case.  For case 1 (full ahead) we use a 1, for case 2 (half back) we use a -0.5, etc.  We can use any constant value between 1 and -1.  I left case 0 as the default so if multiple buttons are pressed (any undefined state was reached) the motor will stop.  You of course are free to customize these states however you want.
 
-Scenario 3
------------
+## Scenario 3
 
 **"I want to control a solenoid with my joystick buttons."**
 

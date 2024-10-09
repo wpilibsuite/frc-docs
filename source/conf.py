@@ -41,13 +41,12 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.rsvgconverter",
-    "sphinxext.delta",
+    # "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.photofinish",
     "sphinxext.rediraffe",
     "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
-    "sphinxext.linkcheckdiff",
     "sphinxext.mimictoc",
     "sphinxext.presentations",
     "hoverxref.extension",
@@ -66,6 +65,7 @@ local_extensions = [
     "_extensions.controls_js_sim",
     "_extensions.wpilib_release",
     "_extensions.default_latex_image_settings",
+    "_extensions.redown",
 ]
 
 extensions += local_extensions
@@ -105,15 +105,10 @@ rediraffe_redirects = "redirects.txt"
 # Required accuracy for redirect writer
 rediraffe_auto_redirect_perc = 80
 
-# Configure linkcheck diff branch
-linkcheckdiff_branch = "origin/main"
-
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/stable/"
 ogp_site_name = "FIRST Robotics Competition Documentation"
-ogp_image = (
-    "https://raw.githubusercontent.com/wpilibsuite/branding/main/png/wpilib-128.png"
-)
+ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/main/export/png/wpilib-icon-256.png"
 
 # Configure photofinish ci mode
 photofinish_ci_only = True
@@ -130,6 +125,7 @@ delta_doc_path = "source"
 
 # Enable hover content on glossary term
 hoverxref_roles = ["term"]
+hoverxref_role_types = {"term": "tooltip"}
 
 # TODO Directives omit a warning
 todo_emit_warnings = False
@@ -138,7 +134,7 @@ todo_emit_warnings = False
 todo_include_todos = False
 
 # Disable following anchors in URLS for linkcheck
-linkcheck_anchors = False
+linkcheck_anchors = True
 
 # Linkcheck Exclusions
 linkcheck_ignore = [
@@ -154,6 +150,13 @@ linkcheck_ignore = [
     r".*chiefdelphi.com.*",
     r".*raspberrypi.com.*",
     r".*stackoverflow.com.*",
+    r".*allaboutcircuits.com.*",
+    r".*knowledge.ni.com.*",
+]
+
+linkcheck_anchors_ignore_for_url = [
+    r".*github.com.*",
+    r".*ni.com/en/support/downloads/drivers/download.frc-game-tools.html.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -175,8 +178,6 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     "docs/yearly-overview/2020-Game-Data.rst",
-    "docs/software/wpilib-tools/axon/**",
-    "docs/software/vision-processing/grip/**",
     "docs/beta/*",
 ]
 
@@ -222,9 +223,10 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
-    "collapse_navigation": True,
+    "collapse_navigation": False,
     "sticky_navigation": False,
     "titles_only": True,
+    # "flyout_display": "attached",
 }
 
 user_options = [
@@ -253,6 +255,14 @@ def setup(app):
     # Add 2014 archive link to rtd versions menu
     app.add_js_file("js/version-2014.js")
 
+
+html_context = {
+    "display_github": True,  # Integrate GitHub
+    "github_user": "wpilibsuite",  # Username
+    "github_repo": "frc-docs",  # Repo name
+    "github_version": "main",  # Version
+    "conf_py_path": "/source/",  # Path in the checkout to the docs root
+}
 
 # -- Options for latex generation --------------------------------------------
 
@@ -331,6 +341,10 @@ http.client.HTTPConnection.send = new_send
 
 intersphinx_mapping = {
     "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/stable/", None),
+    "commands2": (
+        "https://robotpy.readthedocs.io/projects/commands-v2/en/stable/",
+        None,
+    ),
 }
 
 # We recommend adding the following config value.

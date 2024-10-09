@@ -1,14 +1,12 @@
-Coordinate System
-=================
+# Coordinate System
 
 Coordinate systems are used in FRC programming in several places. A few of the common places are: robot movement, joystick input, :term:`pose` estimation, AprilTags, and path planning.
 
 It is important to understand the basics of the coordinate system used throughout WPILib and other common tools for programming an FRC robot, such as PathPlanner. Many teams intuitively  think of a coordinate system that is different from what is used in WPILib, and this leads to problems that need to be tracked down throughout the season. It is worthwhile to take a few minutes to understand the coordinate system, and come back here as a reference when programming. It's not very difficult to get robot movement with a joystick working without getting the coordinate system right, but it will be much more difficult to build on code using a different coordinate system to add :term:`pose estimation` with :term:`AprilTags` and path planning for autonomous.
 
-WPILib coordinate system
-------------------------
+## WPILib coordinate system
 
-In most cases, WPILib uses the NWU axes convention (North-West-Up as external reference in the world frame.) In the NWU axes convention, where the positive X axis points ahead, the positive Y axis points left, and the positive Z axis points up. When viewed with each positive axis pointing toward you, counter-clockwise (CCW) is a positive value and clockwise (CW) is a negative value.
+In most cases, WPILib uses the NWU axes convention (North-West-Up as external reference in the world frame.) In the NWU axes convention, where the positive X axis points ahead, the positive Y axis points left, and the positive Z axis points up referenced from the floor. When viewed with each positive axis pointing toward you, counter-clockwise (CCW) is a positive value and clockwise (CW) is a negative value.
 
 .. figure:: images/coordinate-system/robot-3d.svg
    :scale: 200
@@ -24,8 +22,7 @@ The figure above shows the coordinate system in relation to an FRC robot. The fi
 
    Robot coordinate system in two dimensions
 
-Rotation conventions
---------------------
+## Rotation conventions
 
 In most cases in WPILib programming, 0° is aligned with the positive X axis, and 180° is aligned with the negative X axis. CCW rotation is positive, so 90° is aligned with the positive Y axis, and -90° is aligned with the negative Y axis.
 
@@ -45,8 +42,7 @@ There are some places you may choose to use a different range, such as 0° to 36
 
 .. warning:: Many sensors that read rotation around an axis, such as encoders and IMU's, read continuously. This means they read more than one rotation, so when rotating past 180° they read 181°, not -179°. Some sensors have configuration settings where you can choose their wrapping behavior and range, while others need to be handled in your code. Careful attention should be paid to make sure sensor readings are consistent and your control loop handles wrapping in the same way as your sensor.
 
-Joystick and controller coordinate system
------------------------------------------
+## Joystick and controller coordinate system
 
 Joysticks, including the sticks on controllers, don't use the same NWU coordinate system. They use the NED (North-East-Down) convention, where the positive X axis points ahead, the positive Y axis points right, and the positive Z axis points down. When viewed with each positive axis pointing toward you, counter-clockwise (CCW) is a positive value and clockwise (CW) is a negative value.
 
@@ -62,13 +58,11 @@ It's important to note that joystick input values are rotations around an axis, 
 - pushing to the right (toward the positive Y axis) is a CCW rotation around the X axis, so you get a positive X value.
 - twisting the joystick CW (toward the positive Y axis) is a CCW rotation around the Z axis, so you get a positive Z value.
 
-Using Joystick and controller input to drive a robot
----------------------------------------------------------
+## Using Joystick and controller input to drive a robot
 
 You may have noticed, the coordinate system used by WPILib for the robot is not the same as the coordinate system used for joysticks and controllers. Care needs to be taken to understand the difference, and properly pass driver input to the drive subsystem.
 
-Differential drivetrain example
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Differential drivetrain example
 
 Differential drivetrains are non-holonomic, which means the robot drivetrain cannot move side-to-side (strafe). This type of drivetrain can move forward and backward along the X axis, and rotate around the Z axis. Consider a common arcade drive scheme using a single joystick where the driver pushes the joystick forward/backward for forward/backward robot movement, and push the joystick left/right to rotate the robot left/right.
 
@@ -76,25 +70,25 @@ The code snippet below uses the ``DifferentialDrive`` and ``Joystick`` classes t
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    public void teleopPeriodic() {
+        // Arcade drive with a given forward and turn rate
+        myDrive.arcadeDrive(-driveStick.getY(), -driveStick.getX());
+    }
+    ```
 
-        public void teleopPeriodic() {
-            // Arcade drive with a given forward and turn rate
-            myDrive.arcadeDrive(-driveStick.getY(), -driveStick.getX());
-        }
+    ```c++
+    void TeleopPeriodic() override {
+        // Arcade drive with a given forward and turn rate
+        myDrive.ArcadeDrive(-driveStick.GetY(), -driveStick.GetX());
+    }
+    ```
 
-    .. code-block:: c++
-
-        void TeleopPeriodic() override {
-            // Arcade drive with a given forward and turn rate
-            myDrive.ArcadeDrive(-driveStick.GetY(), -driveStick.GetX());
-        }
-
-    .. code-block:: python
-
-       def teleopPeriodic(self):
-           # Arcade drive with a given forward and turn rate
-           self.myDrive.arcadeDrive(-self.driveStick.getY(), -self.driveStick.getX())
+    ```python
+    def teleopPeriodic(self):
+        # Arcade drive with a given forward and turn rate
+        self.myDrive.arcadeDrive(-self.driveStick.getY(), -self.driveStick.getX())
+    ```
 
 The code calls the ``DifferentialDrive.arcadeDrive(xSpeed, zRotation)`` method, with values it gets from the ``Joystick`` class:
 
@@ -110,32 +104,31 @@ The code calls the ``DifferentialDrive.arcadeDrive(xSpeed, zRotation)`` method, 
     - Joystick: The driver sets rotation speed by rotating the joystick along its X axis, which is pushing the joystick left/right.
     - Code: Moving the joystick to the right is positive X rotation, whereas robot rotation is CCW positive. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
 
-Mecanum drivetrain example
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Mecanum drivetrain example
 
 Mecanum drivetrains are holonomic, meaning they have the ability to move side-to-side. This type of drivetrain can move forward/backward and rotate around the Z axis like differential drivetrains, but it can also move side-to-side along the robot's Y axis. Consider a common arcade drive scheme using a single joystick where the driver pushes the joystick forward/backward for forward/backward robot movement, pushes the joystick left/right to move side-to-side, and twists the joystick to rotate the robot.
 
 .. tab-set-code::
 
-    .. code-block:: java
+    ```java
+    public void teleopPeriodic() {
+        // Drive using the X, Y, and Z axes of the joystick.
+        m_robotDrive.driveCartesian(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
+    }
+    ```
 
-        public void teleopPeriodic() {
-            // Drive using the X, Y, and Z axes of the joystick.
-            m_robotDrive.driveCartesian(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
-        }
+    ```c++
+    void TeleopPeriodic() override {
+        // Drive using the X, Y, and Z axes of the joystick.
+        m_robotDrive.driveCartesian(-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ());
+    }
+    ```
 
-    .. code-block:: c++
-
-        void TeleopPeriodic() override {
-            // Drive using the X, Y, and Z axes of the joystick.
-            m_robotDrive.driveCartesian(-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ());
-        }
-
-    .. code-block:: python
-
-       def teleopPeriodic(self):
-           // Drive using the X, Y, and Z axes of the joystick.
-           self.robotDrive.driveCartesian(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
+    ```python
+    def teleopPeriodic(self):
+        // Drive using the X, Y, and Z axes of the joystick.
+        self.robotDrive.driveCartesian(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
+    ```
 
 The code calls the ``MecanumDrive.driveCartesian(xSpeed, ySpeed, zRotation)`` method, with values it gets from the ``Joystick`` class:
 
@@ -158,32 +151,30 @@ The code calls the ``MecanumDrive.driveCartesian(xSpeed, ySpeed, zRotation)`` me
     - Joystick: The driver sets rotation speed by twisting the joystick along its Z axis, which is twisting the joystick left/right.
     - Code: Twisting the joystick to the right is positive Z rotation, whereas robot rotation is CCW positive. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
 
-Swerve drivetrain example
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Swerve drivetrain example
 
 Like mecanum drivetrains, swerve drivetrains are holonomic and have the ability to move side-to-side. Joystick control can be handled the same way for all holonomic drivetrains, but WPILib doesn't have a built-in robot drive class for swerve. Swerve coding is described in other sections of this documentation, but an example of using joystick input to set ``ChassisSpeeds`` values is included below. Consider the same common arcade drive scheme described in the mecanum section above. The scheme uses a single joystick where the driver pushes the joystick forward/backward for forward/backward robot movement, pushes the joystick left/right to move side-to-side, and twists the joystick to rotate the robot.
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // Drive using the X, Y, and Z axes of the joystick.
+   var speeds = new ChassisSpeeds(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
+   ```
 
-      // Drive using the X, Y, and Z axes of the joystick.
-      var speeds = new ChassisSpeeds(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
+   ```c++
+   // Drive using the X, Y, and Z axes of the joystick.
+   frc::ChassisSpeeds speeds{-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ()};
+   ```
 
-   .. code-block:: c++
-
-      // Drive using the X, Y, and Z axes of the joystick.
-      frc::ChassisSpeeds speeds{-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ()};
-
-   .. code-block:: python
-
-      # Drive using the X, Y, and Z axes of the joystick.
-      speeds = ChassisSpeeds(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
+   ```python
+   # Drive using the X, Y, and Z axes of the joystick.
+   speeds = ChassisSpeeds(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
+   ```
 
 The three arguments to the ``ChassisSpeeds`` constructor are the same as ``driveCartesian`` in the mecanum section above; ``xSpeed``, ``ySpeed``, and ``zRotation``. See the description of the arguments, and their joystick input in the section above.
 
-Robot drive kinematics
-----------------------
+## Robot drive kinematics
 
 :doc:`Kinematics is a topic that is covered in a different section </docs/software/kinematics-and-odometry/intro-and-chassis-speeds>`, but it's worth discussing here in relation to the coordinate system. It is critically important that kinematics is configured using the coordinate system described above. Kinematics is a common starting point for coordinate system errors that then cascade to basic drivetrain control, field oriented driving, pose estimation, and path planning.
 
@@ -203,16 +194,14 @@ For the robot in the diagram above, let's assume the distance between the front 
 
 .. warning:: A common error is to use an incorrect coordinate system where the positive Y axis points forward on the robot. The correct coordinate system has the positive X axis pointing forward.
 
-Field coordinate systems
-------------------------
+## Field coordinate systems
 
 The field coordinate system (or global coordinate system) is an absolute coordinate system where a point on the field is designated as the origin. Two common uses of the field coordinate system will be explored in this document:
 
 - Field oriented driving is a drive scheme for holonomic drivetrains, where the driver moves the controls relative to their perspective of the field, and the robot moves in that direction regardless of where the front of the robot is facing. For example, a driver on the red alliance pushes the joystick forward, the robot will move downfield toward the blue alliance wall, even if the robot's front is facing the driver.
 - Pose estimation with odometry and/or AprilTags are used to estimate the robot's pose on the field.
 
-Mirrored field vs. rotated field
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Mirrored field vs. rotated field
 
 Historically, FRC has used two types of field layouts in relation to the red and blue alliance.
 
@@ -230,8 +219,7 @@ Games such as CHARGED UP in 2023 and CRESCENDO in 2024 used a mirrored layout. A
 
    Mirrored field from CHARGED UP in 2023 [#]_
 
-Dealing with red or blue alliance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Dealing with red or blue alliance
 
 There are two primary ways many teams choose to define the field coordinate system. In both methods, positive rotation (theta) is in the counter-clockwise (CCW) direction.
 
@@ -239,8 +227,7 @@ There are two primary ways many teams choose to define the field coordinate syst
 
 .. note:: At competition events, the FMS will automatically report your Team Station and alliance color. When you are not connected to an FMS, you can choose your Team Station and alliance color on the Driver Station :ref:`docs/software/driverstation/driver-station:operation tab`.
 
-Always blue origin
-~~~~~~~~~~~~~~~~~~
+#### Always blue origin
 
 You may choose to define the origin of the field on the blue side, and keep it there regardless of your alliance color. With this solution, positive x-axis points away from the blue alliance wall.
 
@@ -261,54 +248,47 @@ A simple way to deal with field oriented driving is to check the alliance color 
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   // The origin is always blue. When our alliance is red, X and Y need to be inverted
+   var alliance = DriverStation.getAlliance();
+   var invert = 1;
+   if (alliance.isPresent() && alliance.get() == Alliance.Red) {
+       invert = -1;
+   }
+   // Create field relative ChassisSpeeds for controlling Swerve
+   var chassisSpeeds = ChassisSpeeds
+           .fromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
+   // Control a mecanum drivetrain
+   m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
+   ```
 
-      // The origin is always blue. When our alliance is red, X and Y need to be inverted
-      var alliance = DriverStation.getAlliance();
-      var invert = 1;
-      if (alliance.isPresent() && alliance.get() == Alliance.Red) {
-          invert = -1;
-      }
+   ```c++
+   // The origin is always blue. When our alliance is red, X and Y need to be inverted
+   int invert = 1;
+   if (frc::DriverStation::GetAlliance() == frc::DriverStation::Alliance::kRed) {
+       invert = -1;
+   }
+   // Create field relative ChassisSpeeds for controlling Swerve
+   frc::ChassisSpeeds chassisSpeeds =
+           frc::ChassisSpeeds::FromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
+   // Control a mecanum drivetrain
+   m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
+   ```
 
-      // Create field relative ChassisSpeeds for controlling Swerve
-      var chassisSpeeds = ChassisSpeeds
-              .fromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
+   ```python
+   # The origin is always blue. When our alliance is red, X and Y need to be inverted
+   invert = 1
+   if wpilib.DriverStation.getAlliance() == wpilib.DriverStation.Alliance.kRed:
+       invert = -1
+   # Create field relative ChassisSpeeds for controlling Swerve
+   chassis_speeds = wpilib.ChassisSpeeds.FromFieldRelativeSpeeds(
+       xSpeed * invert, ySpeed * invert, zRotation, self.imu.GetAngle()
+   )
+   # Control a mecanum drivetrain
+   self.robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, self.imu.GetAngle())
+   ```
 
-      // Control a mecanum drivetrain
-      m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
-
-   .. code-block:: c++
-
-      // The origin is always blue. When our alliance is red, X and Y need to be inverted
-      int invert = 1;
-      if (frc::DriverStation::GetAlliance() == frc::DriverStation::Alliance::kRed) {
-          invert = -1;
-      }
-
-      // Create field relative ChassisSpeeds for controlling Swerve
-      frc::ChassisSpeeds chassisSpeeds =
-              frc::ChassisSpeeds::FromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
-
-      // Control a mecanum drivetrain
-      m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
-
-   .. code-block:: python
-
-       # The origin is always blue. When our alliance is red, X and Y need to be inverted
-       invert = 1
-       if wpilib.DriverStation.getAlliance() == wpilib.DriverStation.Alliance.kRed:
-           invert = -1
-
-       # Create field relative ChassisSpeeds for controlling Swerve
-       chassis_speeds = wpilib.ChassisSpeeds.FromFieldRelativeSpeeds(
-           xSpeed * invert, ySpeed * invert, zRotation, self.imu.GetAngle()
-       )
-
-       # Control a mecanum drivetrain
-       self.robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, self.imu.GetAngle())
-
-Origin follows your alliance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Origin follows your alliance
 
 You may choose to define the origin of the field based on the alliance you are one. With this approach, the positive x-axis always points away from your alliance wall.
 

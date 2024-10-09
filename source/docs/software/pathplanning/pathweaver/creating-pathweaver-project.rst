@@ -1,12 +1,10 @@
 .. include:: <isonum.txt>
 
-Creating a Pathweaver Project
-=============================
+# Creating a Pathweaver Project
 
 PathWeaver is the tool used to draw the paths for a robot to follow. The paths for a single program are stored in a PathWeaver project.
 
-Starting PathWeaver
--------------------
+## Starting PathWeaver
 
 PathWeaver is started by clicking on the ellipsis icon in the top right of the corner of the Visual Studio Code interface. You must select a source file from the WPILib project to see the icon. Then click on "Start tool" and then click on "PathWeaver" as shown below.
 
@@ -16,8 +14,7 @@ PathWeaver is started by clicking on the ellipsis icon in the top right of the c
 .. image:: images/creating-pathweaver-project/pick-tool.png
     :alt: Choose PathWeaver from the tool dropdown list.
 
-Creating the Project
---------------------
+## Creating the Project
 
 To create a PathWeaver project, click on "Create project" and then fill out the project creation form. Notice that hovering over any of the fields in the form will display more information about what is required.
 
@@ -40,8 +37,7 @@ To create a PathWeaver project, click on "Create project" and then fill out the 
 
 **Wheel Base:** The distance between the left and right wheels of your robot. This is used to ensure that no wheel on a differential drive will go over the specified max velocity around turns.
 
-PathWeaver User Interface
--------------------------
+## PathWeaver User Interface
 
 .. image:: images/creating-pathweaver-project/user-interface.png
     :alt: An overview of the PathWeaver user interface.

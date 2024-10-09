@@ -1,10 +1,8 @@
 .. include:: <isonum.txt>
 
-Networking Basics
-=================
+# Networking Basics
 
-What is an IP Address?
-----------------------
+## What is an IP Address?
 
 An IP address is a unique string of numbers, separated by periods that identifies each device on a network. Each IP address is divided up into 4 sections (octets) ranging from 0-255.
 
@@ -17,8 +15,7 @@ This brings up our **first key point** of IP Addressing: Each device on the netw
 
 Since there are only 4 billion addresses, and there are more than 4 billion computers connected to the internet, we need to be as efficient as possible with giving out IP addresses. This brings us to public vs. private addresses.
 
-Public vs Private IP Addresses
-------------------------------
+## Public vs Private IP Addresses
 
 To be efficient with using IP Addresses, the idea of "Reserved IP Ranges" was implemented. In short, this means that there are ranges of IP Addresses that will never be assigned to web servers, and will only be used for local networks, such as those in your house.
 
@@ -41,45 +38,38 @@ then passing the returned data back to the private IP that requested it. This al
    :alt: Devices on the private network send their traffic through the NAT device to communicate to the outside network and vice versa.
 
 .. note::
-   For the FRC\ |reg| networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format. An example of this formatting would be ``10.17.50.1`` for FRC Team 1750.
+   For the FRC\ |reg| networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`).
 
 
-How are these addresses assigned?
----------------------------------
+## How are these addresses assigned?
 
 We’ve covered the basics of what IP addresses are, and which IP addresses we will use for the FRC competition, so now we need to discuss how these addresses will get assigned to the devices on our network. We already stated above that we can’t have two devices on the same network with the same IP Address, so we need a way to be sure that every device receives an address without overlapping. This can be done Dynamically (automatic), or Statically (manual).
 
-Dynamically
-^^^^^^^^^^^
+### Dynamically
 
 Dynamically assigning IP addresses means that we are letting a device on the network manage the IP address assignments. This is done through the Dynamic Host Configuration Protocol (DHCP). DHCP has many components to it, but for the scope of this document, we will think of it as a service that automatically manages the network. Whenever you plug in a new device to the network, the DHCP service sees the new device, then provides it with an available IP address and the other network settings required for the device to communicate. This can mean that there are times we do not know the exact IP address of each device.
 
-What is a DHCP server?
-~~~~~~~~~~~~~~~~~~~~~~
+#### What is a DHCP server?
 
 A :term:`DHCP` server is a device that runs the DHCP service to monitor the network for new devices to configure. In larger businesses, this could be a dedicated computer running the DHCP service and that computer would be the DHCP server. For home networks, FRC networks, and other smaller networks, the DHCP service is usually running on the router; in this case, the router is the DHCP server.
 
 This means that if you ever run into a situation where you need to have a DHCP server assigning IP addresses to your network devices, it’s as simple as finding the closest home router, and plugging it in.
 
-Statically
-^^^^^^^^^^
+### Statically
 
 Statically assigning IP addresses means that we are manually telling each device on the network which IP address we want it to have. This configuration happens through a setting on each device. By disabling DHCP on the network and assigning the addresses manually, we get the benefit of knowing the exact IP address of each device on the network, but because we set each one manually and there is no service keeping track of the used IP addresses, we have to keep track of this ourselves. While statically setting IP addresses, we must be careful not to assign duplicate addresses, and must be sure we are setting the other network settings (such as subnet mask and default gateway) correctly on each device.
 
-What is link-local?
--------------------
+## What is link-local?
 
 If a device does not have an IP address, then it cannot communicate on a network. This can become an issue if we have a device that is set to dynamically acquire its address from a DHCP server, but there is no DHCP server on the network. An example of this would be when you have a laptop directly connected to a roboRIO and both are set to dynamically acquire an IP address. Neither device is a DHCP server, and since they are the only two devices on the network, they will not be assigned IP addresses automatically.
 
 Link-local addresses give us a standard set of addresses that we can "fall-back" to if a device set to acquire dynamically is not able to acquire an address. If this happens, the device will assign itself an IP address in the ``169.254.xx.yy`` address range; this is a link-local address. In our roboRIO and computer example above, both devices will realize they haven’t been assigned an IP address and assign themselves a link-local address. Once they are both assigned addresses in the ``169.254.xx.yy`` range, they will be in the same network and will be able to communicate, even though they were set to dynamic and a DHCP server did not assign addresses.
 
-IP Addressing for FRC
----------------------
+## IP Addressing for FRC
 
 See the :doc:`IP Networking Article <ip-configurations>` for more information.
 
-Mixing Dynamic and Static Configurations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Mixing Dynamic and Static Configurations
 
 While on the field, the team should not notice any issues with having devices set statically in the ``10.TE.AM.xx`` range, and having the field assign DHCP addresses as long as there are no IP address conflicts as referred to in the section above.
 
@@ -90,18 +80,15 @@ In the pits, a team may encounter issues with mixing Static and DHCP devices for
 
 .. warning:: When connected via USB to the roboRIO, a :ref:`docs/networking/networking-utilities/portforwarding:Port Forwarding` configuration is required to access devices connected to the OpenMesh radio (on the green network shown above).
 
-Available Network Ports
-^^^^^^^^^^^^^^^^^^^^^^^
+### Available Network Ports
 
 Please see R704 of the 2024 Game Manual for information regarding available network ports.
 
-mDNS
-----
+## mDNS
 
 mDNS, or multicast Domain Name System is a protocol that allows us to benefit from the features of DNS, without having a DNS server on the network. To make this clearer, let’s take a step back and talk about what DNS is.
 
-What is DNS?
-^^^^^^^^^^^^
+### What is DNS?
 
 DNS (Domain Name System) can become a complex topic, but for the scope of this paper, we are going to just look at the high-level overview of DNS. In the most basic explanation, DNS is what allows us to relate human-friendly names for network devices to IP Addresses, and keep track of those IP addresses if they change.
 
@@ -113,8 +100,7 @@ Example 2: On your home network, you have a server named ``MYCOMPUTER`` that you
 
 This is the second benefit to DNS and the most relevant for FRC. With DNS, if we reference devices by their friendly name instead of IP Address, we don’t have to change anything in our program if the IP Address changes. DNS will keep track of the changes and return the new address if it ever changes.
 
-DNS for FRC
-^^^^^^^^^^^
+### DNS for FRC
 
 On the field and in the pits, there is no DNS server that allows us to perform the lookups like we do for the Google website, but we’d still like to have the benefits of not remembering every IP Address, and not having to guess at every device’s address if DHCP assigns a different address than we expect. This is where mDNS comes into the picture.
 
@@ -123,13 +109,11 @@ mDNS provides us the same benefits as traditional DNS, but is just implemented i
 .. note::
    If a device used for FRC does not support mDNS, then it will be assigned an IP Address in the 10.TE.AM.20 - 10.TE.AM.255 range, but we won’t know the exact address to connect and we won’t be able to use the friendly name like before. In this case, the device would need to have a static IP Address.
 
-mDNS - Principles
-^^^^^^^^^^^^^^^^^
+### mDNS - Principles
 
 Multicast Domain Name System (mDNS) is a system which allows for resolution of hostnames to IP addresses on small networks with no dedicated name server. To resolve a hostname a device sends out a multicast message to the network querying for the device. The device then responds with a multicast message containing its IP. Devices on the network can store this information in a cache so subsequent requests for this address can be resolved from the cache without repeating the network query.
 
-mDNS - Providers
-^^^^^^^^^^^^^^^^
+### mDNS - Providers
 
 To use mDNS, an mDNS implementation is required to be installed on your PC. Here are some common mDNS implementations for each major platform:
 
@@ -146,8 +130,7 @@ Linux:
 
 - **nss-mDNS/Avahi/Zeroconf:** Installed and enabled by default on some Linux variants (such as Ubuntu or Mint). May need to be installed or enabled on others (such as Arch)
 
-mDNS - Firewalls
-^^^^^^^^^^^^^^^^
+### mDNS - Firewalls
 
 .. note:: Depending on your PC configuration, no changes may be required, this section is provided to assist with troubleshooting.
 
@@ -162,25 +145,21 @@ To work properly mDNS must be allowed to pass through your firewall. Because the
   - ``169.254.0.0 - 169.254.255.255``
   - ``224.0.0.251``
 
-mDNS - Browser support
-^^^^^^^^^^^^^^^^^^^^^^
+### mDNS - Browser support
 
 Most web-browsers should be able to utilize the mDNS address to access the roboRIO web server as long as an mDNS provider is installed. These browsers include Microsoft Edge, Firefox, and Google Chrome.
 
-USB
----
+## USB
 
 If using the USB interface, no network setup is required (you do need the :ref:`docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools` installed to provide the roboRIO USB Driver). The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
 
-Ethernet/Wireless
------------------
+## Ethernet/Wireless
 
 The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team-based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, :term:`FMS` will also hand out addresses in the same IP range.
 
-Summary
--------
+## Summary
 
-IP Addresses are what allow us to communicate with devices on a network. For FRC, these addresses are going to be in the 10.TE.AM.xx range if we are connected to a DHCP server or if they are assigned statically, or in the link-local ``169.254.xx.yy`` range if the devices are set to DHCP, but there is no server present. For more information on how IP Addresses work, see `this <https://support.microsoft.com/en-us/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics>`__ article by Microsoft.
+IP Addresses are what allow us to communicate with devices on a network. For FRC, these addresses are going to be in the 10.TE.AM.xx range if we are connected to a DHCP server or if they are assigned statically, or in the link-local ``169.254.xx.yy`` range if the devices are set to DHCP, but there is no server present. For more information on how IP Addresses work, see [this](https://support.microsoft.com/en-us/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics) article by Microsoft.
 
 If all devices on the network support mDNS, then all devices can be set to DHCP and referred to using their friendly names (ex. ``roboRIO-TEAM-FRC.local``). If some devices do not support mDNS, they will need to be set to use static addresses.
 

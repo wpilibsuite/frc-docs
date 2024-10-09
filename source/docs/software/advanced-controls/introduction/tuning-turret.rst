@@ -1,10 +1,8 @@
-Tuning a Turret Position Controller
-===================================
+# Tuning a Turret Position Controller
 
 In this section, we will tune a simple position controller for a turret.  The tuning principles explained here will also work for almost any position-control scenarios under no external loading.
 
-Turret Model Description
-------------------------
+## Turret Model Description
 
 A turret rotates some mechanism side-to-side to position it for scoring gamepieces.
 
@@ -24,8 +22,7 @@ Where:
 * The controller's :term:`setpoint` :math:`r(t)` is the desired position of the turret
 * The controller's :term:`control effort`, :math:`u(t)` is the voltage applied to the motor driving the turret
 
-Picking the Control Strategy for a Turret Position Controller
--------------------------------------------------------------
+## Picking the Control Strategy for a Turret Position Controller
 
 In general: the more voltage that is applied to the motor, the faster the motor (and turret) will spin. Once voltage is removed, friction and back-EMF slowly decrease the spinning until the turret stops.  We want to make the turret rotate to a given position.
 
@@ -33,8 +30,7 @@ The tutorials below will demonstrate the behavior of the system under pure feedf
 
 This simulation does not include any motion profile generation, so acceleration setpoints are not very well-defined.  Accordingly, the `kA` term of the feedforward equation is not used by the controller.  This means there will be some amount of delay/lag inherent to the feedforward-only response.
 
-Pure Feedforward Control
-~~~~~~~~~~~~~~~~~~~~~~~~
+#### Pure Feedforward Control
 
 Interact with the simulation below to examine how the turret system responds when controlled only by a feedforward controller.
 
@@ -69,8 +65,7 @@ Note that the turret may "lag" the commanded motion - this is normal, and is fin
 
    The exact gain used by the plant is :math:`K_v = 0.2`. Note that due to timing inaccuracy in browser simulations, the :math:`K_v` that works best in the simulation may be somewhat smaller than this.
 
-Issues with Feed-Forward Control Alone
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Issues with Feed-Forward Control Alone
 
 As mentioned above, our simulated mechanism perfectly obeys the WPILib :ref:`docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward` equation (as long as the "system noise" option is disabled).  We might then expect, like in the case of the :ref:`flywheel velocity controller <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, that we should be able to achieve perfect convergence-to-setpoint with a feedforward loop alone.
 
@@ -80,8 +75,7 @@ The resulting behavior from the feedforward controller is to output a single "vo
 
 You may notice that *smooth* motion below the turret's maximum achievable speed can be followed accurately in the simulation with feedforward alone.  This is misleading, however, because no real mechanism perfectly obeys its feedforward equation.  With the "system noise" option enabled, we can see that even smooth, slow motion eventually results in compounding position errors when only feedforward control is used.  To accurately converge to the setpoint, we need to use a feedback (PID) controller.
 
-Pure Feedback Control
-~~~~~~~~~~~~~~~~~~~~~
+#### Pure Feedback Control
 
 Interact with the simulation below to examine how the turret system responds when controlled only by a feedback (PID) controller.
 
@@ -112,13 +106,11 @@ Perform the following:
    Gains of :math:`K_p = 0.3` and :math:`K_d = 0.05` yield rapid and stable convergence to the setpoint.  Other, similar gains will work nearly as well.
 
 
-Issues with Feedback Control Alone
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Issues with Feedback Control Alone
 
 Note that even with system noise enabled, the feedback controller is able to drive the turret to the setpoint in a stable manner over time.  However, it may not be possible to smoothly track a moving setpoint without lag using feedback alone, as the feedback controller can only respond to errors once they have built up.  To get the best of both worlds, we need to combine our feedback controller with a feedforward controller.
 
-Combined Feedforward and Feedback Control
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Combined Feedforward and Feedback Control
 
 Interact with the simulation below to examine how the turret system responds under simultaneous feedforward and feedback control.
 
@@ -146,11 +138,9 @@ Tuning the combined turret controller is simple - we first tune the feedforward 
 
 Once tuned properly, the combined controller should accurately track a smoothly moving setpoint, and also accurately converge to the setpoint over time after a "jump" command.
 
-Tuning Conclusions
-------------------
+## Tuning Conclusions
 
-Choice of Control Strategies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Choice of Control Strategies
 
 Like in the case of the :ref:`vertical arm <docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>`, and unlike the case of the :ref:`flywheel <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`, we are trying to control the *position* rather than the *velocity* of our mechanism.
 
@@ -162,13 +152,11 @@ Controlling a mechanism with only feedback can produce reasonable results in cas
 
 We saw in the feedforward-only example above that an accurate feedforward can track slow, smooth velocity setpoints quite well.  Combining a feedforward controller with the feedback controller gives the smooth velocity-following of a feedforward controller with the stable long-term error elimination of a feedback controller.
 
-Reasons for Non-Ideal Performance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### Reasons for Non-Ideal Performance
 
 This simulation does not include any motion profile generation, so acceleration setpoints are not very well-defined.  Accordingly, the `kA` term of the feedforward equation is not used by the controller.  This means there will be some amount of delay/lag inherent to the feedforward-only response.
 
-A Note on Feedforward and Static Friction
------------------------------------------
+## A Note on Feedforward and Static Friction
 
 For the sake of simplicity, the simulations above omit the :math:`K_s` term from the WPILib SimpleMotorFeedforward equation.  On actual mechanisms, however, this can be important - especially if there's a lot of friction in the mechanism gearing.  A turret with a lot of static friction will be very hard to control accurately with feedback alone - it will get "stuck" near (but not at) the setpoint when the loop output falls below :math:`K_s`.
 

@@ -1,5 +1,4 @@
-Running the Identification Routine
-==================================
+# Running the Identification Routine
 
 Once the code has been deployed, we can now run the system identification routine, and record the resulting data for analysis.
 
@@ -7,8 +6,7 @@ Once the code has been deployed, we can now run the system identification routin
 
 .. warning:: Only log files with a single routine in them are usable for analysis. Multiple motors can be run in one routine, but they must be run at the same time. If you run a routine on one motor and then run a routine on another motor without extracting the log or power-cycling the roboRIO in between, analysis will fail.
 
-Running Tests
--------------
+## Running Tests
 Perform the tests using the bindings you created in the previous section.
 
 .. warning:: Watch out for your mechanism and stop the test early if it exceeds safe limits! The routine only creates voltage commands for you to connect to your motors, it is up to you to set up hard or soft limits to prevent injury or damage.

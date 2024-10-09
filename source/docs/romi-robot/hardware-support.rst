@@ -1,10 +1,8 @@
-Romi Hardware Support
-=====================
+# Romi Hardware Support
 
 The Romi robot, having a different hardware architecture than a roboRIO, is compatible with a subset of commonly used FRC control system components.
 
-Compatible Hardware
-------------------------
+## Compatible Hardware
 
 In general, the Romi is compatible with the following:
 
@@ -12,8 +10,7 @@ In general, the Romi is compatible with the following:
 - Standard RC-style :term:`PWM` output devices (e.g. servos, PWM based motor controllers)
 - Analog Input sensors (e.g distance sensors that report distance as a voltage)
 
-Incompatible Hardware
----------------------
+## Incompatible Hardware
 
 Due to hardware limitations, the Romi Robot is not compatible with the following:
 
@@ -23,8 +20,7 @@ Due to hardware limitations, the Romi Robot is not compatible with the following
 - CAN based devices
 - Romi built-in buzzer
 
-Compatible Classes
-------------------
+## Compatible Classes
 
 All classes listed here are supported by the Romi Robot. If a class is not listed here, assume that it is not supported and *will not* work.
 
@@ -36,7 +32,7 @@ All classes listed here are supported by the Romi Robot. If a class is not liste
 - ``Servo``
 - ``BuiltInAccelerometer``
 
-The following classes are provided by the `Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/main/RomiVendordep.json>`__.
+The following classes are provided by the [Romi Vendordep](https://raw.githubusercontent.com/wpilibsuite/romi-vendordep/main/RomiVendordep.json).
 
 - ``RomiGyro``
 - ``RomiMotor``

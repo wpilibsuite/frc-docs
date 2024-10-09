@@ -1,25 +1,22 @@
-Python Installation Guide
-=========================
+# Python Installation Guide
 
 This guide is intended for Python teams. Java and C++ teams can skip to :doc:`wpilib-setup`. LabVIEW teams can skip to :doc:`labview-setup`.
 
-Prerequisites
--------------
+## Prerequisites
 
 You must install a supported version of Python on a supported operating system. We currently support Python 3.8/3.9/3.10/3.11/3.12, but only 3.12 is available for the roboRIO.
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
- * macOS 12 or higher
- * Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.35 may work, but are unsupported
+ * macOS 13.3 or higher
+ * Ubuntu 22.04 & 24.04, 64 bit. Other Linux distributions with glibc >= 2.35 may work, but are unsupported
 
 On Windows and macOS, we recommend using the official Python installers distributed by python.org.
 
-* `Python for Windows <https://www.python.org/downloads/windows/>`_
-* `Python for macOS <https://www.python.org/downloads/mac-osx/>`_
+* [Python for Windows](https://www.python.org/downloads/windows/)
+* [Python for macOS](https://www.python.org/downloads/mac-osx/)
 
-Install RobotPy
----------------
+## Install RobotPy
 
 Once you have installed Python, you can use pip to install RobotPy on your development computer.
 
@@ -30,25 +27,25 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       .. note:: If you previously installed a pre-2024 or 2024 beta version of RobotPy, you should first uninstall RobotPy via ``py -m pip uninstall robotpy`` before upgrading.
 
-      .. warning:: On Windows, the `Visual Studio 2019 redistributable <https:// support.microsoft.com/en-us/help/2977003/       the-latest-supported-visual-c-downloads>`_ package is required to be installed.
+      .. warning:: On Windows, the [Visual Studio 2019 redistributable](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) package is required to be installed.
 
       Run the following command from cmd or Powershell to install the core RobotPy packages:
 
-      .. code-block:: sh
-
-         py -3 -m pip install robotpy
+      ```sh
+      py -3 -m pip install robotpy
+      ```
 
       To upgrade, you can run this:
 
-      .. code-block:: sh
+      ```sh
+      py -3 -m pip install --upgrade robotpy
+      ```
 
-         py -3 -m pip install --upgrade robotpy
+      If you don't have administrative rights on your computer, either use [virtualenv/virtualenvwrapper-win](https://docs.python-guide.org/en/latest/dev/virtualenvs/), or or you can install to the user site-packages directory:
 
-      If you don't have administrative rights on your computer, either use `virtualenv/virtualenvwrapper-win <https://docs.python-guide.org/en/latest/dev/virtualenvs/>`_, or or you can install to the user site-packages directory:
-
-      .. code-block:: sh
-
-         py -3 -m pip install --user robotpy
+      ```sh
+      py -3 -m pip install --user robotpy
+      ```
 
    .. tab-item:: macOS
       :sync: macos
@@ -57,21 +54,21 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       On a macOS system that has pip installed, just run the following command from the Terminal application (may require admin rights):
 
-      .. code-block:: sh
-
-         python3 -m pip install robotpy
+      ```sh
+      python3 -m pip install robotpy
+      ```
 
       To upgrade, you can run this:
 
-      .. code-block:: sh
-
-         python3 -m pip install --upgrade robotpy
+      ```sh
+      python3 -m pip install --upgrade robotpy
+      ```
 
       If you don't have administrative rights on your computer, either use `virtualenv/virtualenvwrapper <http://docs.python-guide.org/en/latest/dev/virtualenvs/>`_, or you can install to the user site-packages directory:
 
-      .. code-block:: sh
-
-         python3 -m pip install --user robotpy
+      ```sh
+      python3 -m pip install --user robotpy
+      ```
 
    .. tab-item:: Linux
       :sync: linux
@@ -80,23 +77,23 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       RobotPy distributes manylinux binary wheels on PyPI. However, installing these requires a distro that has glibc 2.35 or newer, and an installer that implements :pep:`600`, such as pip 20.3 or newer. You can check your version of pip with the following command:
 
-      .. code-block:: sh
+      ```sh
+      python3 -m pip --version
+      ```
 
-         python3 -m pip --version
-
-      If you need to upgrade your version of pip, it is highly recommended to use a `virtual environment <https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/>`_.
+      If you need to upgrade your version of pip, it is highly recommended to use a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
       If you have a compatible version of pip, you can simply run:
 
-      .. code-block:: sh
-
-         python3 -m pip install robotpy
+      ```sh
+      python3 -m pip install robotpy
+      ```
 
       To upgrade, you can run this:
 
-      .. code-block:: sh
-
-         python3 -m pip install --upgrade robotpy
+      ```sh
+      python3 -m pip install --upgrade robotpy
+      ```
 
       If you manage to install the packages and get the following error or something similar, your system is most likely not compatible with RobotPy::
 
@@ -107,9 +104,9 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       We publish prebuilt wheels on artifactory, which can be downloaded by giving the ``--extra-index-url`` option to pip:
 
-      .. code-block:: sh
-
-         python3 -m pip install --extra-index-url=https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2024/simple robotpy
+      ```sh
+      python3 -m pip install --extra-index-url=https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2024/simple robotpy
+      ```
 
       **source install**
 
@@ -123,12 +120,11 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       If you need to build with a specific compiler version, you can specify them using the :envvar:`CC` and :envvar:`CXX` environment variables:
 
-      .. code-block:: sh
+      ```sh
+      export CC=gcc-12 CXX=g++-12
+      ```
 
-         export CC=gcc-12 CXX=g++-12
-
-Download RobotPy for roboRIO
-----------------------------
+## Download RobotPy for roboRIO
 
 After installing the ``robotpy`` project on your computer, there are a variety of commands available that can be ran from the command line via the ``robotpy`` module.
 
@@ -141,23 +137,23 @@ If you already have a RobotPy robot project, you can use that to download the pi
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy init
+      ```sh
+      py -3 -m robotpy init
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy init
+      ```sh
+      python3 -m robotpy init
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
-
-         python3 -m robotpy init
+      ```sh
+      python3 -m robotpy init
+      ```
 
 This will create a ``robot.py`` and ``pyproject.toml`` file. The ``pyproject.toml`` file should be customized and details the requirements needed to run your robot code, among other things.
 
@@ -176,22 +172,22 @@ Next run the ``robotpy sync`` subcommand, which will:
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy sync
+      ```sh
+      py -3 -m robotpy sync
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy sync
+      ```sh
+      python3 -m robotpy sync
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
-
-         python3 -m robotpy sync
+      ```sh
+      python3 -m robotpy sync
+      ```
 
 When you deploy your code to the roboRIO, :doc:`the deploy subcommand </docs/software/python/subcommands/deploy>` will automatically install Python (if needed) and your robot project requirements on the roboRIO as part of the deploy process.

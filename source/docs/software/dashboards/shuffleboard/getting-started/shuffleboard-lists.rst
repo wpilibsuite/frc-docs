@@ -1,5 +1,4 @@
-Working with Lists
-==================
+# Working with Lists
 
 Lists in Shuffleboard are sets of tiles grouped together in a vertical layout, making it visually obvious that those tiles are related. In addition, tiles in lists take up less screen space than individual tiles:
 
@@ -9,8 +8,7 @@ Lists in Shuffleboard are sets of tiles grouped together in a vertical layout, m
 .. figure:: images/list-1.png
    :alt:
 
-Creating a list
----------------
+## Creating a list
 
 .. figure:: images/list-2.png
    :alt:
@@ -23,8 +21,7 @@ A list can be created as follows:
 
 Note that tiles in lists do not have header labels; their label is at the bottom of their list entry.
 
-Adding tiles to/removing tiles from a list
-------------------------------------------
+## Adding tiles to/removing tiles from a list
 
 A tile can be **added** to an existing list as follows:
 
@@ -41,8 +38,7 @@ A tile can be **removed** from a list by following the process in reverse:
 .. figure:: images/list-3.png
    :alt:
 
-Rearranging tiles in a list
----------------------------
+## Rearranging tiles in a list
 
 .. figure:: images/list-4.png
    :alt:
@@ -59,8 +55,7 @@ Tiles in a list can be rearranged by right-clicking on the tile and selecting:
    - The **bottom** :guilabel:`Remove` button (below the pinline; section of dropdown with grayed-out *list* label) **deletes** the *list and all tiles inside it* from the Shuffleboard layout.
    - If you want to take an entry out of a list without deleting it, see `Adding tiles to/removing tiles from a list`_.
 
-Renaming a list
----------------
+## Renaming a list
 
 You can rename a list by double-clicking on the list label and changing the name. Click outside the label to save changes.
 

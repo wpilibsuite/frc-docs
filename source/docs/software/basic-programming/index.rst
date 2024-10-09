@@ -1,5 +1,4 @@
-Basic Programming
-=================
+# Basic Programming
 
 .. toctree::
    :maxdepth: 1

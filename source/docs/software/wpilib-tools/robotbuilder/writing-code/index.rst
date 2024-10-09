@@ -1,5 +1,4 @@
-RobotBuilder - Writing the Code
-===============================
+# RobotBuilder - Writing the Code
 
 .. toctree::
    :maxdepth: 1

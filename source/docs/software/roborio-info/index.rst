@@ -1,5 +1,4 @@
-roboRIO
-=======
+# roboRIO
 
 .. toctree::
    :maxdepth: 1

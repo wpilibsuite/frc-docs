@@ -1,35 +1,30 @@
-XRP Hardware, Assembly and Imaging
-==================================
+# XRP Hardware, Assembly and Imaging
 
 To get started with the XRP, you will need to have the necessary hardware.
 
-1. XRP Kit `from SparkFun <https://www.sparkfun.com/products/22230>`__ or `from DigiKey <https://www.digikey.com/en/products/detail/sparkfun-electronics/KIT-22296/19117674>`__ - Available at a discount for educational institutions or FIRST teams. See individual vendors for details.
-2. `Micro-USB cable <https://www.amazon.com/dp/B0711PVX6Z>`__ - Ensure that this is a data cable
-3. `4 AA batteries <https://www.amazon.com/gp/product/B07TW9T8JW/>`__ - Rechargeable (`example <https://www.amazon.com/AmazonBasics-AA-High-Capacity-Rechargeable-4-Pack/dp/B081FF82RK>`__) is best (don't forget the charger)
+1. XRP Kit [from SparkFun](https://www.sparkfun.com/products/22230) or [from DigiKey](https://www.digikey.com/en/products/detail/sparkfun-electronics/KIT-22296/19117674) - Available at a discount for educational institutions or FIRST teams. See individual vendors for details.
+2. [Micro-USB cable](https://www.amazon.com/dp/B0711PVX6Z) - Ensure that this is a data cable
+3. [4 AA batteries](https://www.amazon.com/gp/product/B07TW9T8JW/) - Rechargeable ([example](https://www.amazon.com/AmazonBasics-AA-High-Capacity-Rechargeable-4-Pack/dp/B081FF82RK)) is best (don't forget the charger)
 
-Assembly
---------
+## Assembly
 
 .. note::
 
-   See the assembly instructions on the `XRP User Guide <https://xrpusersguide.readthedocs.io/en/latest/course/building.html>`_.
+   See the assembly instructions on the [XRP User Guide](https://xrpusersguide.readthedocs.io/en/latest/course/building.html).
 
    You should follow the instructions up to and including the point where the XRP arm is mounted to the servo.
 
-Imaging your XRP
-----------------
+## Imaging your XRP
 
 The XRP uses a Raspberry Pi Pico W as its main processor. A special firmware will need to be installed so that the robot operates properly.
 
-Download
-^^^^^^^^
+### Download
 
 The XRP firmware must be downloaded and written to the Pico W. Click on ``Assets`` at the bottom of the description to see the available image files:
 
-`XRP-WPILib Firmware <https://github.com/wpilibsuite/xrp-wpilib-firmware/releases>`__
+[XRP-WPILib Firmware](https://github.com/wpilibsuite/xrp-wpilib-firmware/releases)
 
-Imaging
-^^^^^^^
+### Imaging
 
 To image the XRP, perform the following steps:
 
@@ -48,8 +43,7 @@ To image the XRP, perform the following steps:
 
 6. Once complete, the ``RPI-RP2`` USB storage device will disconnect. At this point, you can disconnect the XRP board from your computer and run it off battery power.
 
-First Boot
-^^^^^^^^^^
+### First Boot
 
 Perform the following steps to get your XRP ready for use:
 

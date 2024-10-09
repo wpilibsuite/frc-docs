@@ -1,15 +1,12 @@
-3rd Party Libraries
-===================
+# 3rd Party Libraries
 
 Teams that are using non-:term:`PWM` motor controllers or advanced sensors will most likely need to install external vendor dependencies.
 
-What Are Vendor Dependencies?
------------------------------
+## What Are Vendor Dependencies?
 
 A vendor dependency is a way for vendors such as CTRE, REV, and others to add their :term:`software library` to robot projects. This library can interface with motor controllers and other devices. This way, teams can interact with their devices via CAN and have access to more complex and in-depth features than traditional PWM control.
 
-Managing Vendor Dependencies
-----------------------------
+## Managing Vendor Dependencies
 
 Vendor dependencies are installed on a per-project basis (so each robot project can have its own set of vendor dependencies). Vendor dependencies can be installed "online" or "offline". The "online" functionality is done by downloading the dependencies over the internet, while offline is typically provided by a vendor-specific installer.
 
@@ -17,30 +14,25 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
 
 .. note:: Vendors recommend using their offline installers when available, because the offline installer is typically bundled with additional programs that are extremely useful when working with their devices.
 
-How Does It Work?
-^^^^^^^^^^^^^^^^^
+### How Does It Work?
 
-How Does It Work? - Java/C++
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### How Does It Work? - Java/C++
 
 For Java and C++, a :term:`JSON` file describing the vendor library is installed on your system to ``~/wpilib/YYYY/vendordeps`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This can either be done by an offline installer or the file can be fetched from an online location using the menu item in Visual Studio Code. This file is then used from VS Code to add to the library to each individual project. Vendor library information is managed on a per-project basis to make sure that a project is always pointing to a consistent version of a given vendor library. The libraries themselves are placed in the Maven cache at ``C:\Users\Public\wpilib\YYYY\maven``. Vendors can place a local copy here with an offline installer (recommended) or require users to be connected to the internet for an initial build to fetch the library from a remote Maven location.
 
 This JSON file allows specification of complex libraries with multiple components (Java, C++, JNI, etc.) and also helps handle some complexities related to simulation. Vendors that choose to provide a remote URL in the JSON also enable users to check for updates from within VS Code.
 
-How Does It Work? - LabVIEW
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### How Does It Work? - LabVIEW
 
 For LabVIEW teams, there might be a few new :guilabel:`Third Party` items on various palettes (specifically, one in :guilabel:`Actuators`, one in :guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN Motor`, and one in :guilabel:`Sensors`). These correspond to folders in ``C:\Program Files\National Instruments\LabVIEW 2023\vi.lib\Rock Robotics\WPI\Third Party``
 
 In order to install third party libraries for LabVIEW, download the VIs from the vendor (typically via some sort of installer). Then drag and drop the third party VIs into the respective folder mentioned above just like any other VI.
 
-How Does It Work? - Python
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+#### How Does It Work? - Python
 
 Third party libraries are packaged into Python wheels and uploaded to PyPI (if pure python) and/or WPILib's artifactory. Users can enable them as dependencies either by adding the component name to ``robotpy_extras`` (recommended) or by adding an explicit dependency for the PyPI package in ``requires``. The dependencies are downloaded when ``robotpy sync`` is executed, and installed on the roboRIO when ``robotpy deploy`` is executed.
 
-Installing Libraries
-^^^^^^^^^^^^^^^^^^^^^^^^
+### Installing Libraries
 
 .. tab-set::
 
@@ -90,14 +82,11 @@ Installing Libraries
 
       .. seealso:: :doc:`/docs/software/python/pyproject_toml`
 
-Libraries
----------
+## Libraries
 
-WPILib Libraries
-^^^^^^^^^^^^^^^^
+### WPILib Libraries
 
-Command Library
-~~~~~~~~~~~~~~~
+#### Command Library
 
 The WPILib :doc:`command library </docs/software/commandbased/index>` has been split into a vendor library. It is installed by the WPILib installer for offline installation.
 
@@ -106,7 +95,7 @@ The WPILib :doc:`command library </docs/software/commandbased/index>` has been s
    .. tab-item:: Java/C++
       :sync: javacpp
 
-      `New Command Library <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json>`__
+      [New Command Library](https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json)
 
    .. tab-item:: Python
       :sync: python
@@ -114,8 +103,7 @@ The WPILib :doc:`command library </docs/software/commandbased/index>` has been s
       * PyPI package: ``robotpy[commands2]`` or ``robotpy-commands-v2``
       * In ``pyproject.toml``: ``robotpy_extras = ["commands2"]``
 
-Romi Library
-~~~~~~~~~~~~
+#### Romi Library
 
 A Romi Library has been created to contain several helper classes that are used in the ``RomiReference`` example.
 
@@ -124,7 +112,7 @@ A Romi Library has been created to contain several helper classes that are used 
    .. tab-item:: Java/C++
       :sync: javacpp
 
-      `Romi Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/romiVendordep/RomiVendordep.json>`__.
+      [Romi Vendordep](https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/romiVendordep/RomiVendordep.json).
 
    .. tab-item:: Python
       :sync: python
@@ -132,8 +120,7 @@ A Romi Library has been created to contain several helper classes that are used 
       * PyPI package: ``robotpy[romi]`` or ``robotpy-romi``
       * In ``pyproject.toml``: ``robotpy_extras = ["romi"]``
 
-XRP Library
-~~~~~~~~~~~
+#### XRP Library
 
 An XRP Library has been created to contain several helper classes that are used in the ``XRPReference`` example.
 
@@ -142,7 +129,7 @@ An XRP Library has been created to contain several helper classes that are used 
    .. tab-item:: Java/C++
       :sync: javacpp
 
-      `XRP Vendordep <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/xrpVendordep/XRPVendordep.json>`__.
+      [XRP Vendordep](https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/xrpVendordep/XRPVendordep.json).
 
    .. tab-item:: Python
       :sync: python
@@ -150,12 +137,11 @@ An XRP Library has been created to contain several helper classes that are used 
       * PyPI package: ``robotpy[xrp]`` or ``robotpy-xrp``
       * In ``pyproject.toml``: ``robotpy_extras = ["xrp"]``
 
-Vendor Libraries
-^^^^^^^^^^^^^^^^
+### Vendor Libraries
 
 Click these links to visit the vendor site to see whether they offer online installers, offline installers, or both.  URLs below are to plug in to the :guilabel:`VS Code` -> :guilabel:`Install New Libraries (online)` feature.
 
-`CTRE Phoenix Framework <https://docs.ctr-electronics.com/>`__ - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
+[CTRE Phoenix Framework](https://docs.ctr-electronics.com/) - Contains CANcoder, CANifier, CANdle, Pigeon IMU, Pigeon 2.0, Talon FX, Talon SRX, and Victor SPX Libraries and Phoenix Tuner program for configuring CTRE CAN devices
 
 .. tab-set::
    .. tab-item:: Java/C++
@@ -180,7 +166,7 @@ Click these links to visit the vendor site to see whether they offer online inst
       * PyPI package: ``robotpy[phoenix5]`` or ``robotpy-ctre``
       * In ``pyproject.toml``: ``robotpy_extras = ["phoenix5"]``
 
-`Redux Robotics ReduxLib <https://docs.reduxrobotics.com/reduxlib.html>`__ - Library for all Redux devices including the Canandcoder and Canandcolor
+[Redux Robotics ReduxLib](https://docs.reduxrobotics.com/reduxlib.html) - Library for all Redux devices including the Canandcoder and Canandcolor
 
 .. tab-set::
 
@@ -194,7 +180,7 @@ Click these links to visit the vendor site to see whether they offer online inst
 
       Not yet available
 
-`Playing With Fusion Driver <https://www.playingwithfusion.com/docview.php?docid=1205>`__ - Library for all PWF devices including the Venom motor/controller
+[Playing With Fusion Driver](https://www.playingwithfusion.com/docview.php?docid=1205) - Library for all PWF devices including the Venom motor/controller
 
 .. tab-set::
 
@@ -211,7 +197,7 @@ Click these links to visit the vendor site to see whether they offer online inst
       * PyPI package: ``robotpy[playingwithfusion]`` or ``robotpy-playingwithfusion``
       * In ``pyproject.toml``: ``robotpy_extras = ["playingwithfusion"]``
 
-`Kauai Labs <https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/>`__ - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
+[Kauai Labs](https://pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/) - Libraries for NavX-MXP, NavX-Micro, and Sensor Fusion
 
 .. tab-set::
 
@@ -228,7 +214,7 @@ Click these links to visit the vendor site to see whether they offer online inst
       * PyPI package: ``robotpy[navx]`` or ``robotpy-navx``
       * In ``pyproject.toml``: ``robotpy_extras = ["navx"]``
 
-`REV Robotics REVLib <https://docs.revrobotics.com/brushless/spark-flex/revlib>`__ - Library for all REV devices including SPARK Flex, SPARK MAX, and Color Sensor V3
+[REV Robotics REVLib](https://docs.revrobotics.com/brushless/spark-flex/revlib) - Library for all REV devices including SPARK Flex, SPARK MAX, and Color Sensor V3
 
 .. tab-set::
 
@@ -245,10 +231,9 @@ Click these links to visit the vendor site to see whether they offer online inst
       * PyPI package: ``robotpy[rev]`` or ``robotpy-rev``
       * In ``pyproject.toml``: ``robotpy_extras = ["rev"]``
 
-Community Libraries
-^^^^^^^^^^^^^^^^^^^
+### Community Libraries
 
-`PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html>`_ - Library for PhotonVision CV software
+[PhotonVision](https://docs.photonvision.org/en/latest/docs/programming/photonlib/adding-vendordep.html) - Library for PhotonVision CV software
 
 .. tab-set::
 
@@ -263,7 +248,7 @@ Community Libraries
       * PyPI package: ``photonlibpy``
       * In ``pyproject.toml``: ``requires = ["photonlibpy"]``
 
-`PathPlanner <https://pathplanner.dev/home.html>`_ - Library for PathPlanner
+[PathPlanner](https://pathplanner.dev/home.html) - Library for PathPlanner
 
 .. tab-set::
 
@@ -278,7 +263,7 @@ Community Libraries
       * PyPI package: ``pathplannerlib``
       * In ``pyproject.toml``: ``requires = ["pathplannerlib"]``
 
-`ChoreoLib <https://sleipnirgroup.github.io/Choreo/choreolib/installation/>`_ - Library for reading and following trajectories generated by `Choreo <https://sleipnirgroup.github.io/Choreo/>`_
+[ChoreoLib](https://sleipnirgroup.github.io/Choreo/choreolib/installation/) - Library for reading and following trajectories generated by [Choreo](https://sleipnirgroup.github.io/Choreo/)
 
 .. tab-set::
 
@@ -286,6 +271,20 @@ Community Libraries
       :sync: javacpp
 
       ``https://sleipnirgroup.github.io/ChoreoLib/dep/ChoreoLib.json``
+
+   .. tab-item:: Python
+      :sync: python
+
+      Not available
+
+[YAGSL](https://yagsl.gitbook.io/yagsl) - Library for Swerve Drives of any configuration
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: javacpp
+
+      ``https://broncbotz3481.github.io/YAGSL-Lib/yagsl/yagsl.json``
 
    .. tab-item:: Python
       :sync: python

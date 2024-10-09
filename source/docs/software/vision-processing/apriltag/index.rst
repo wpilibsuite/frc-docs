@@ -1,5 +1,4 @@
-AprilTag Introduction
-=====================
+# AprilTag Introduction
 
 .. toctree::
    :maxdepth: 2

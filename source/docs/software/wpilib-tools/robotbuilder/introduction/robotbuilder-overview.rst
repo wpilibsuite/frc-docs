@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-RobotBuilder Overview
-=====================
+# RobotBuilder Overview
 
 RobotBuilder is an application designed to aid the robot development process. RobotBuilder can help you:
 
@@ -16,8 +15,7 @@ Creating a program with RobotBuilder is a very straight forward procedure by fol
 
 .. note:: RobotBuilder generates code using the new Command Framework. For more details on the new framework see :ref:`Command Based Programming <docs/software/commandbased/index:Command-Based Programming>`.
 
-Divide the Robot into Subsystems
---------------------------------
+## Divide the Robot into Subsystems
 
 .. image:: images/robotbuilder-overview-1.png
 
@@ -25,8 +23,7 @@ Your robot is naturally made up of a number of smaller systems like the drive tr
 
 For more information see :doc:`Creating a Subsystem <robotbuilder-creating-subsystem>`.
 
-Adding each Subsystem to the Project
-------------------------------------
+## Adding each Subsystem to the Project
 
 .. image:: images/robotbuilder-overview-2.png
 
@@ -39,8 +36,7 @@ As you look through more of this documentation the differences between the subsy
 
 For more information see :doc:`Creating a Subsystem <robotbuilder-creating-subsystem>` and :ref:`Writing Code for a Subsystem <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code:Writing the Code for a Subsystem>`.
 
-Adding Components to each of the Subsystems
--------------------------------------------
+## Adding Components to each of the Subsystems
 
 .. image:: images/robotbuilder-overview-3.png
 
@@ -48,8 +44,7 @@ Each subsystem consists of a number of actuators, sensors and controllers that i
 
 In this example there is an Elevator subsystem that uses a motor and a potentiometer (motor and pot) that have been dragged to the Elevator subsystem.
 
-Adding Commands That Describe Subsystem Goals
----------------------------------------------
+## Adding Commands That Describe Subsystem Goals
 
 Commands are distinct goals that the robot will perform. These commands are added by dragging the command under the "Commands" folder. When creating a command, there are 7 choices (shown on the palette on the left of the picture):
 
@@ -64,8 +59,7 @@ Commands are distinct goals that the robot will perform. These commands are adde
 
 For more information see :doc:`Creating a Command <robotbuilder-creating-command>` and :ref:`Writing Command Code <docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing the Code for a Command>`.
 
-Testing each Command
---------------------
+## Testing each Command
 
 .. image:: images/robotbuilder-overview-4.png
 
@@ -75,8 +69,7 @@ By creating buttons, each command can be tested individually. If all the command
 
 For more information see :doc:`Testing with Smartdashboard <robotbuilder-testing-with-shuffleboard>`.
 
-Adding Operator Interface Components
-------------------------------------
+## Adding Operator Interface Components
 
 .. image:: images/robotbuilder-overview-5.png
 
@@ -84,8 +77,7 @@ The operator interface consists of joysticks, gamepads and other HID input devic
 
 The operator interface components are dragged from the palette to the "Operator Interface" folder in the RobotBuilder program. First (1) add Joysticks to the program then put buttons under the associated joysticks (2) and give them meaningful names, like ShootButton.
 
-Connecting the Commands to the Operator Interface
--------------------------------------------------
+## Connecting the Commands to the Operator Interface
 
 .. image:: images/robotbuilder-overview-6.png
 
@@ -95,8 +87,7 @@ This is simply done by (1) adding the command to the JoystickButton object in th
 
 For more information see :doc:`Connecting the Operator Interface to a Command <robotbuilder-operator-interface-to-command>`.
 
-Developing Autonomous Commands
-------------------------------
+## Developing Autonomous Commands
 
 .. image:: images/robotbuilder-overview-7.png
 
@@ -106,8 +97,7 @@ Select the robot at the root of the RobotBuilder project (1), then edit the Auto
 
 For more information see :doc:`Setting the Autonomous Commands <robotbuilder-autonomous-command>`.
 
-Generating Code
----------------
+## Generating Code
 
 .. image:: images/robotbuilder-overview-8.png
 

@@ -1,31 +1,26 @@
-Creating a Subsystem
-====================
+# Creating a Subsystem
 
 Subsystems are classes that encapsulate (or contain) all the data and code that make a subsystem on your robot operate. The first step in creating a robot program with the RobotBuilder is to identify and create all the subsystems on the robot. Examples of subsystems are grippers, ball collectors, the drive base, elevators, arms, etc. Each subsystem contains all the sensors and actuators that are used to make it work. For example, an elevator might have a Victor SPX motor controller and a potentiometer to provide feedback of the robot position.
 
-Creating a Subsystem using the Palette
---------------------------------------
+## Creating a Subsystem using the Palette
 
 .. image:: images/creating-subsystem-1.png
 
 Drag the subsystem icon from the palette to the Subsystems folder in the robot description to create a subsystem class.
 
-Creating a Subsystem using the Context Menu
--------------------------------------------
+## Creating a Subsystem using the Context Menu
 
 .. image:: images/creating-subsystem-2.png
 
 Right-click on the Subsystem folder in the robot description to add a subsystem to that folder.
 
-Name the Subsystem
-------------------
+## Name the Subsystem
 
 .. image:: images/creating-subsystem-3.png
 
 After creating the subsystem by either dragging or using the context menu as described above, simply type the name you would like to give the subsystem. The name can be multiple words separated by spaces, RobotBuilder will concatenate the words to make a proper Java or C++ class name for you.
 
-Adding Constants
-----------------
+## Adding Constants
 
 .. image:: images/creating-subsystem-4.png
 
@@ -33,15 +28,13 @@ Constants are very useful to reduce the amount of magic numbers in your code. In
 
 By default, there will be no constants in a subsystem. Press the button next to "Constants" to open a dialog to create some.
 
-Creating Constants
-^^^^^^^^^^^^^^^^^^
+### Creating Constants
 
 .. image:: images/creating-subsystem-5.png
 
 The constants table will be empty at first. Press "Add constant" to add one.
 
-Add Constants
-^^^^^^^^^^^^^
+### Add Constants
 
 .. image:: images/creating-subsystem-6.png
 
@@ -49,22 +42,19 @@ Add Constants
 2. The type of the constant. This will most likely be a double, but you can choose from one of: String, double, int, long, boolean, or byte.
 3. The value of the constant.
 
-Saving Constants
-^^^^^^^^^^^^^^^^
+### Saving Constants
 
 .. image:: images/creating-subsystem-7.png
 
 After adding constants and setting their values, just press "Save and close" to save the constants and close the dialog. If you don't want to save, press the exit button on the top of the window.
 
-After Saving
-^^^^^^^^^^^^
+### After Saving
 
 .. image:: images/creating-subsystem-8.png
 
 After saving constants, the names will appear in the "Constants" button in the subsystem properties.
 
-Dragging Actuators/Sensors into the Subsystem
----------------------------------------------
+## Dragging Actuators/Sensors into the Subsystem
 
 .. image:: images/creating-subsystem-9.png
 

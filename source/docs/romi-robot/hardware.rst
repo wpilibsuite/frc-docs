@@ -1,16 +1,14 @@
-Romi Hardware & Assembly
-========================
+# Romi Hardware & Assembly
 
 To get started with the Romi, you will need to have the necessary hardware.
 
-1. `Romi Kit from Pololu <https://www.pololu.com/product/4022>`__ – Order qualifies for free shipping
-2. `Raspberry Pi <https://www.amazon.com/gp/product/B07BFH96M3/>`__ – 3B+ or 4
-3. `8GB (or larger) Micro SD card <https://www.amazon.com/dp/B073K14CVB/>`__
-4. `Micro SD card reader <https://www.amazon.com/gp/product/B0779V61XB/>`__ - if you don't already have one
-5. `6 AA batteries <https://www.amazon.com/gp/product/B07TW9T8JW/>`__ – Rechargeable is best (don't forget the charger)
+1. [Romi Kit from Pololu](https://www.pololu.com/product/4022) – Order qualifies for free shipping
+2. [Raspberry Pi](https://www.amazon.com/gp/product/B07BFH96M3/) – 3B+ or 4
+3. [8GB (or larger) Micro SD card](https://www.amazon.com/dp/B073K14CVB/)
+4. [Micro SD card reader](https://www.amazon.com/gp/product/B0779V61XB/) - if you don't already have one
+5. [6 AA batteries](https://www.amazon.com/gp/product/B07TW9T8JW/) – Rechargeable is best (don't forget the charger)
 
-Assembly
---------
+## Assembly
 
 The Romi Robot Kit for FIRST comes pre-soldered and only has to be put together before it can be used. Once you have gathered all the materials you can begin assembly:
 

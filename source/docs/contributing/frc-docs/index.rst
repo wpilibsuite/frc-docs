@@ -1,5 +1,4 @@
-Contributing to frc-docs
-========================
+# Contributing to frc-docs
 
 .. toctree::
    :maxdepth: 1

@@ -1,5 +1,4 @@
-Deploy Python program to roboRIO
-================================
+# Deploy Python program to roboRIO
 
 .. note:: Before deploying the code to your robot, you must start by :doc:`installing RobotPy on your computer </docs/zero-to-robot/step-2/python-setup>`
 
@@ -10,23 +9,23 @@ Deploy Python program to roboRIO
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy deploy
+      ```sh
+      py -3 -m robotpy deploy
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy
+      ```sh
+      python3 -m robotpy deploy
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy
+      ```sh
+      python3 -m robotpy deploy
+      ```
 
 When you execute the ``robotpy deploy`` subcommand, it will do the following:
 
@@ -39,7 +38,7 @@ When you execute the ``robotpy deploy`` subcommand, it will do the following:
 
 When successful, you will see a ``SUCCESS: Deploy was successful!`` message.
 
-You can watch your robot code's output (and see any problems) with netconsole by using the Driver Station Log Viewer or `pynetconsole <https://github.com/robotpy/pynetconsole>`__. You can use netconsole and the normal FRC tools to interact with the running robot code.
+You can watch your robot code's output (and see any problems) with netconsole by using the Driver Station Log Viewer or [pynetconsole](https://github.com/robotpy/pynetconsole). You can use netconsole and the normal FRC tools to interact with the running robot code.
 
 .. seealso:: :doc:`/docs/software/vscode-overview/viewing-console-output`
 
@@ -52,23 +51,23 @@ When deploying the code to the roboRIO, you can have immediate feedback by addin
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy deploy --nc
+      ```sh
+      py -3 -m robotpy deploy --nc
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy --nc
+      ```sh
+      python3 -m robotpy deploy --nc
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy --nc
+      ```sh
+      python3 -m robotpy deploy --nc
+      ```
 
 .. note:: Viewing netconsole output requires the driver station software to be connected to your robot
 
@@ -81,20 +80,21 @@ In the event that the tests are failing but you want to upload the code anyway, 
    .. tab-item:: Windows
       :sync: windows
 
-      .. code-block:: sh
-
-         py -3 -m robotpy deploy --skip-tests
+      ```sh
+      py -3 -m robotpy deploy --skip-tests
+      ```
 
    .. tab-item:: macOS
       :sync: macos
 
-      .. code-block:: sh
-
-         python3 -m robotpy deploy --skip-tests
+      ```sh
+      python3 -m robotpy deploy --skip-tests
+      ```
 
    .. tab-item:: Linux
       :sync: linux
 
-      .. code-block:: sh
+      ```sh
+      python3 -m robotpy deploy --skip-tests
+      ```
 
-         python3 -m robotpy deploy --skip-tests

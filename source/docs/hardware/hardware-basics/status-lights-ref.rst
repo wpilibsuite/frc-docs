@@ -1,12 +1,12 @@
 .. include:: <isonum.txt>
 
-Status Light Quick Reference
-============================
+# Status Light Quick Reference
 
 Many of the components of the FRC\ |reg| Control System have indicator lights that can be used to quickly diagnose problems with your robot. This guide shows each of the hardware components and describes the meaning of the indicators. Photos and information from Innovation FIRST and Cross the Road Electronics.
 
-Robot Signal Light (RSL)
-------------------------
+A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Status-Light-Reference.pdf>`_ is available.
+
+## Robot Signal Light (RSL)
 
 .. image:: images/status-lights/rsl.svg
   :alt: Robot Signal Light with wiring.
@@ -20,8 +20,7 @@ Robot Signal Light (RSL)
 | Off      | Robot Off, roboRIO not powered or RSL not wired properly |
 +----------+----------------------------------------------------------+
 
-roboRIO
--------
+## roboRIO
 
 .. image:: images/status-lights/roborio-status-lights.svg
   :alt: roboRIO status lights highlighted.
@@ -65,8 +64,7 @@ roboRIO
 | **RSL**    | `See above <#robot-signal-light-rsl>`_                                                             |
 +------------+----------------------------------------------------------------------------------------------------+
 
-OpenMesh Radio
---------------
+## OpenMesh Radio
 
 .. image:: images/status-lights/openmesh-radio-status-lights.png
   :alt: Radio with the Wifi, Eth Link (2), and Power ports labeled.
@@ -91,15 +89,13 @@ OpenMesh Radio
 |          | Green         | Bridge mode, Linked          |
 +----------+---------------+------------------------------+
 
-Power Distribution Panel
-------------------------
+## Power Distribution Panel
 
 .. image:: images/status-lights/pdp-status-lights.svg
   :alt: The location of the "STAT" and "COMM" lights on the PDP.
   :width: 600
 
-PDP Status/Comm LEDs
-^^^^^^^^^^^^^^^^^^^^
+### PDP Status/Comm LEDs
 
 +--------+--------------------------+---------------------------+
 | LED    | Strobe                   | Slow                      |
@@ -115,8 +111,7 @@ PDP Status/Comm LEDs
 
 .. note:: Note that the No :term:`CAN` Comm fault will occur if the PDP cannot communicate with the roboRIO via CAN Bus.
 
-PDP Special States
-^^^^^^^^^^^^^^^^^^
+### PDP Special States
 
 +--------------+------------------------------+
 | LED Colors   | Problem                      |
@@ -128,8 +123,7 @@ PDP Special States
 | No LED       | No Power/ Incorrect Polarity |
 +--------------+------------------------------+
 
-Power Distribution Hub
-----------------------
+## Power Distribution Hub
 
 .. image:: images/status-lights/power-distribution-hub.png
   :alt: REV Power Distribution Hub with Status LED, and Channel LEDs Highlighted
@@ -137,8 +131,7 @@ Power Distribution Hub
 
 .. note:: These led patterns only apply to firmware version 21.1.7 and later
 
-PDH Status LED
---------------
+## PDH Status LED
 
 +-------------------------+--------------------------------------------------------+
 | LED Color               | Status                                                 |
@@ -162,8 +155,7 @@ PDH Status LED
 | Orange/Magenta Blinking | Device Over Current                                    |
 +-------------------------+--------------------------------------------------------+
 
-Channel LEDs
-^^^^^^^^^^^^
+### Channel LEDs
 
 +--------------+----------------------------------------------------------------------------------------------------------+
 | LED Color    | Status                                                                                                   |
@@ -175,8 +167,7 @@ Channel LEDs
 | Red Blinking | Sticky fault on the channel. Check for tripped circuit breaker / fuse.                                   |
 +--------------+----------------------------------------------------------------------------------------------------------+
 
-Voltage Regulator Module
-------------------------
+## Voltage Regulator Module
 
 .. image:: images/status-lights/vrm-status-lights.svg
   :alt: Highlights the position of the 12V and 5V status lights.
@@ -184,15 +175,13 @@ Voltage Regulator Module
 
 The status LEDs on the VRM indicate the state of the two power supplies. If the supply is functioning properly the LED should be lit bright green. If the LED is not lit or is dim, the output may be shorted or drawing too much current.
 
-Pneumatics Control Module (PCM)
--------------------------------
+## Pneumatics Control Module (PCM)
 
 .. image:: images/status-lights/pcm-status-lights.svg
   :alt: Highlights both the "Status" and "Comp" lights in the middle and the individual channel lights on the sides.
   :width: 400
 
-PCM Status LED
-^^^^^^^^^^^^^^
+### PCM Status LED
 
 +--------+---------------+-------------------------------+------------------+
 | LED    | Strobe        | Slow                          | Long             |
@@ -210,8 +199,7 @@ PCM Status LED
 
 .. note:: Note that the No CAN Comm fault will not occur only if the device cannot communicate with any other device, if the PCM and PDP can communicate with each other, but not the roboRIO.
 
-PCM LED Special States Table
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### PCM LED Special States Table
 
 +--------------+-----------------------------+
 | LED          | Problems                    |
@@ -223,18 +211,15 @@ PCM LED Special States Table
 | No LED       | No Power/Incorrect Polarity |
 +--------------+-----------------------------+
 
-PCM Comp LED
-^^^^^^^^^^^^
+### PCM Comp LED
 
 This is the Compressor LED. This LED is green when the compressor output is active (compressor is currently on) and off when the compressor output is not active.
 
-PCM Solenoid Channel LEDs
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### PCM Solenoid Channel LEDs
 
 These LEDs are lit red if the Solenoid channel is enabled and not lit if it is disabled.
 
-Pneumatic Hub
--------------
+## Pneumatic Hub
 
 .. image:: images/status-lights/pneumatic-hub.png
   :alt: REV Pneumatic Hub with Status LED, Compressor LED, and Solenoid LEDs highlighted
@@ -242,8 +227,7 @@ Pneumatic Hub
 
 .. note:: These led patterns only apply to firmware version 21.1.7 and later
 
-PH Status LED
-^^^^^^^^^^^^^
+### PH Status LED
 
 +-------------------------+--------------------------------------------------+
 | LED Color               | Status                                           |
@@ -267,8 +251,7 @@ PH Status LED
 | Orange/Green Blinking   | Orange/Green Blinking                            |
 +-------------------------+--------------------------------------------------+
 
-Compressor LED
-^^^^^^^^^^^^^^
+### Compressor LED
 
 +-------------+----------------+
 | LED Color   | Status         |
@@ -278,8 +261,7 @@ Compressor LED
 | Black Solid | Compressor Off |
 +-------------+----------------+
 
-Solenoid LEDs
-^^^^^^^^^^^^^
+### Solenoid LEDs
 
 +-------------+--------------+
 | LED Color   | Status       |
@@ -289,15 +271,13 @@ Solenoid LEDs
 | Black Solid | Solenoid Off |
 +-------------+--------------+
 
-Talon SRX & Victor SPX & Talon FX Motor Controllers
----------------------------------------------------
+## Talon SRX & Victor SPX & Talon FX Motor Controllers
 
 .. image:: images/status-lights/talon-srx-status-lights.png
   :alt: Status LEDs on either side of the center of the Talon SRX.
   :width: 600
 
-Status LEDs During Normal Operation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Status LEDs During Normal Operation
 
 +------------------------------+----------------+--------------------------------------------+
 | LEDs                         | Colors         | Talon SRX State                            |
@@ -327,8 +307,7 @@ Status LEDs During Normal Operation
 | LEDs Strobe towards (M+)     | Off/Orange     | Thermal Fault / Shutoff (Talon FX Only)    |
 +------------------------------+----------------+--------------------------------------------+
 
-Status LEDs During Calibration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Status LEDs During Calibration
 
 +------------------------+------------------------+
 | Status LEDs Blink Code | Talon SRX State        |
@@ -340,8 +319,7 @@ Status LEDs During Calibration
 | Blinking Red           | Failed Calibration     |
 +------------------------+------------------------+
 
-B/C CAL Blink Codes
-^^^^^^^^^^^^^^^^^^^
+### B/C CAL Blink Codes
 
 +----------------------+-----------------+
 | B/C CAL Button Color | Talon SRX State |
@@ -351,20 +329,17 @@ B/C CAL Blink Codes
 | Off                  | Coast Mode      |
 +----------------------+-----------------+
 
-SPARK-MAX Motor Controller
---------------------------
+## SPARK-MAX Motor Controller
 
 .. image:: images/status-lights/sparkMAXLight.png
   :alt: Table listing the SPARKMAX blink codes.
 
-REV Robotics SPARK
-------------------
+## REV Robotics SPARK
 
 .. image:: images/status-lights/sparkLight.png
   :alt: Table of the SPARK blink codes.
 
-Victor-SP Motor Controller
---------------------------
+## Victor-SP Motor Controller
 
 .. image:: images/status-lights/victorSPLight.png
   :alt: Status LEDs on either side of the center of the Victor-SP.
@@ -372,8 +347,7 @@ Victor-SP Motor Controller
 
 Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the controller is in coast mode
 
-Status
-^^^^^^
+### Status
 
 +-----------+----------+------------------------------------------------------------------------+
 | Green     | Solid    | Full forward output                                                    |
@@ -391,8 +365,7 @@ Status
 |           |          | calibration, and red several times indicates unsuccessful calibration. |
 +-----------+----------+------------------------------------------------------------------------+
 
-Talon Motor Controller
-----------------------
+## Talon Motor Controller
 
 .. image:: images/status-lights/talonsr-status-light.png
   :alt: Talon motor controller with a single multicolor LED in the bottom right corner.
@@ -417,8 +390,7 @@ Talon Motor Controller
 |           |          | calibration, and red several times indicates unsuccessful calibration. |
 +-----------+----------+------------------------------------------------------------------------+
 
-Victor888 Motor Controller
---------------------------
+## Victor888 Motor Controller
 
 .. image:: images/status-lights/victor888-status-light.svg
   :alt: Victor888 motor controller with a single multicolor LED in the bottom right corner.
@@ -438,8 +410,7 @@ Victor888 Motor Controller
 | Red/Green | Blinking | Calibration mode         |
 +-----------+----------+--------------------------+
 
-Jaguar Motor Controller
------------------------
+## Jaguar Motor Controller
 
 .. image:: images/status-lights/jaguar-status-light.png
   :alt: Jaguar motor controller with a single multicolor LED in the bottom center.
@@ -487,8 +458,7 @@ Jaguar Motor Controller
 |                              | awaiting valid ID assignment                   |
 +------------------------------+------------------------------------------------+
 
-Digilent DMC-60
----------------
+## Digilent DMC-60
 
 .. image:: images/status-lights/dmc60c-status-lights.png
   :alt: The 5 LEDs in each of the corners plus the center.
@@ -532,8 +502,7 @@ At power-on, the RGB LEDs illuminate Blue, continually getting brighter. This la
 | The specified control mode resulted in a Negative Duty Cycle being Motor Output           | The LED update rate is proportional to the duty cycle of the output and increases with increased duty cycle. At 100% duty cycle, all 4 LEDs are illuminated Red.   |
 +-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Fault Color Indicators
-^^^^^^^^^^^^^^^^^^^^^^
+### Fault Color Indicators
 
 When a fault condition is detected, the output duty cycle is reduced to 0% and a fault is signaled. The output then remains disabled for 3 seconds. During this time the onboard LEDs (LED1-4) are used to indicate the fault condition. The fault condition is indicated by toggling between the top (LED1 and LED2) and bottom (LED3 and LED4) LEDs being illuminated Red and off. The color of the bottom LEDs depends on which faults are presently active. The table below describes how the color of the bottom LEDs maps to the presently active faults.
 
@@ -547,19 +516,16 @@ When a fault condition is detected, the output duty cycle is reduced to 0% and a
 | Cyan / Aqua | On               | On            |
 +-------------+------------------+---------------+
 
-Break/Coast Mode
-^^^^^^^^^^^^^^^^
+### Break/Coast Mode
 
 When the center LED is off the device is operating in coast mode. When the center LED is illuminated the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle and then releasing the button.
 
-Venom Motor Controller
-----------------------
+## Venom Motor Controller
 
 .. image:: images/status-lights/venom.png
   :alt: The LED blink codes for the Venom.
 
-Mindsensors SD540B (PWM)
-------------------------
+## Mindsensors SD540B (PWM)
 
 .. image:: images/status-lights/sd540b-status-lights.png
   :alt: The two LEDs on the top one at each end and the LED on the side next to the connector.
@@ -579,8 +545,7 @@ Mindsensors SD540B (PWM)
 |                | Green | Valid PWM signal is detected    |
 +----------------+-------+---------------------------------+
 
-Mindsensors SD540C (CAN Bus)
-----------------------------
+## Mindsensors SD540C (CAN Bus)
 
 .. image:: images/status-lights/sd540c-status-lights.png
   :alt: The two LEDs on the top one at each end and the LED on the side next to the connector.
@@ -600,15 +565,13 @@ Mindsensors SD540C (CAN Bus)
 |                | Off              | Connected to the roboRIO and the driver station is open |
 +----------------+------------------+---------------------------------------------------------+
 
-REV Robotics Servo Power Module
--------------------------------
+## REV Robotics Servo Power Module
 
 .. image:: images/status-lights/rev-robotics-servo-power-module.png
   :alt: One power LED and a status LED for each channel all down the center.
   :width: 400
 
-Status LEDs
-^^^^^^^^^^^
+### Status LEDs
 
 Each channel has a corresponding status LED that will indicate the sensed state of the connected :term:`PWM` signal. The table below describes each state’s corresponding LED pattern.
 
@@ -626,8 +589,7 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 
 - 6V Power LED off, dim or flickering with power applied = Over-current shutdown
 
-Spike relay configured as a motor, light, or solenoid switch
-------------------------------------------------------------
+## Spike relay configured as a motor, light, or solenoid switch
 
 .. image:: images/status-lights/spikeRelay1Light.png
   :alt: Single LED in the corner.
@@ -649,8 +611,7 @@ Spike relay configured as a motor, light, or solenoid switch
 
 .. note:: 'Brake Condition' refers to the dynamic stopping of the motor due to the shorting of the motor inputs. This condition is not optional when going to an off state.
 
-Spike relay configured as for one or two solenoids
---------------------------------------------------
+## Spike relay configured as for one or two solenoids
 
 .. image:: images/status-lights/spikeRelay2Light.png
   :alt: Single LED in the corner.
@@ -670,8 +631,7 @@ Spike relay configured as for one or two solenoids
 | On                  | On                | +12v   | +12v   | Off           | Both Solenoids ON              |
 +---------------------+-------------------+--------+--------+---------------+--------------------------------+
 
-CANCoder Encoder
-----------------
+## CANCoder Encoder
 
 .. image:: images/status-lights/cancoder-status-lights.png
   :alt: LED at the top of the encoder.

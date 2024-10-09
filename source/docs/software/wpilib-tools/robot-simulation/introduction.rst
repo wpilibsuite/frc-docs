@@ -1,5 +1,4 @@
-Introduction to Robot Simulation
-================================
+# Introduction to Robot Simulation
 
 Often a team may want to test their code without having an actual robot available. WPILib provides teams with the ability to simulate various robot features using simple gradle commands.
 
@@ -24,7 +23,7 @@ Often a team may want to test their code without having an actual robot availabl
 
       .. _cpp_sim_additional_dependency:
 
-      .. note:: C++ robot simulation requires that a native compiler to be installed. For Windows, this would be `Visual Studio 2022 <https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS requires `Xcode 14 or later <https://apps.apple.com/us/app/xcode/id497799835>`__, and Linux (Ubuntu) requires the ``build-essential`` package.
+      .. note:: C++ robot simulation requires that a native compiler to be installed. For Windows, this would be [Visual Studio 2022 version 17.9 or later](https://visualstudio.microsoft.com/vs/) (**not** VS Code), macOS requires [Xcode 14 or later](https://apps.apple.com/us/app/xcode/id497799835), and Linux (Ubuntu) requires the ``build-essential`` package.
 
                 Ensure the :guilabel:`Desktop Development with C++` option is checked in the Visual Studio installer for simulation support.
 
@@ -41,12 +40,12 @@ Often a team may want to test their code without having an actual robot availabl
 
       Your console output in Visual Studio Code should look like the below. However, teams probably will want to actually *test* their code versus just running the simulation. This can be done using :doc:`WPILib's Simulation GUI <simulation-gui>`.
 
-      .. code-block:: console
-
-         ********** Robot program starting **********
-         Default disabledInit() method... Override me!
-         Default disabledPeriodic() method... Override me!
-         Default robotPeriodic() method... Override me!
+      ```console
+      ********** Robot program starting **********
+      Default disabledInit() method... Override me!
+      Default disabledPeriodic() method... Override me!
+      Default robotPeriodic() method... Override me!
+      ```
 
       .. important:: Simulation can also be run outside of VS Code using ``./gradlew simulateJava`` for Java or ``./gradlew simulateNative`` for C++.
 
@@ -63,47 +62,43 @@ Often a team may want to test their code without having an actual robot availabl
          .. tab-item:: Windows
             :sync: windows
 
-            .. code-block:: sh
-
-               py -3 -m robotpy sim
+            ```sh
+            py -3 -m robotpy sim
+            ```
 
          .. tab-item:: macOS
             :sync: macos
 
-            .. code-block:: sh
-
-               python3 -m robotpy sim
+            ```sh
+            python3 -m robotpy sim
+            ```
 
          .. tab-item:: Linux
             :sync: linux
 
-            .. code-block:: sh
+            ```sh
+            python3 -m robotpy sim
+            ```
 
-               python3 -m robotpy sim
-
-Running Robot Dashboards
-------------------------
+## Running Robot Dashboards
 
 Shuffleboard, SmartDashboard, Glass, and AdvantageScope can be used with WPILib simulation when they are configured to connect to the local computer (i.e. ``localhost``).
 
-Shuffleboard
-^^^^^^^^^^^^
+### Shuffleboard
 
 Shuffleboard is automatically configured to look for a NetworkTables instance from the robotRIO but **not from other sources**. To connect to a simulation, open Shuffleboard preferences from the :guilabel:`File` menu and select :guilabel:`NetworkTables` under :guilabel:`Plugins` on the left navigation bar. In the :guilabel:`Server` field, type in the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
 .. image:: images/shuffleboard-networktables.png
    :alt: Shuffleboard connection settings set to localhost.
 
-SmartDashboard
-^^^^^^^^^^^^^^
+### SmartDashboard
 
 SmartDashboard is automatically configured to look for a NetworkTables instance from the roboRIO, but **not from other sources**. To connect to a simulation, open SmartDashboard preferences under the :guilabel:`File` menu and in the :guilabel:`Team Number` field, enter the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
 .. image:: /docs/software/dashboards/smartdashboard/images/smartdashboard-intro/smartdashboard-networktables.png
    :alt: SmartDashboard team number set to localhost.
 
-Glass
-^^^^^
+### Glass
 
 Glass is automatically configured to look for a NetworkTables instance from the roboRIO, but **not from other sources**. To connect to a simulation, open :guilabel:`NetworkTables Settings` under the :guilabel:`NetworkTables` menu and in the :guilabel:`Team/IP` field, enter the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
 
@@ -111,12 +106,10 @@ Glass is automatically configured to look for a NetworkTables instance from the 
    :alt: Glass NetworkTables Preferences showing Team/IP set to localhost.
 
 
-AdvantageScope
-^^^^^^^^^^^^^^
+### AdvantageScope
 
 No configuration is required to connect to a NetworkTables instance running on the local computer. To connect to a simulation, click :guilabel:`Connect to Simulator` under the :guilabel:`File` menu or press :kbd:`Ctrl+Shift+K`.
 
 .. image:: images/advantagescope-sim.png
    :alt: AdvantageScope file menu with the "Connect to Simulator" option highlighted.
-   :height: 750
-   :width: 500
+   :height: 300
