@@ -261,13 +261,15 @@ html_context = {
     "github_user": "wpilibsuite",  # Username
     "github_repo": "frc-docs",  # Repo name
     "github_version": "main",  # Version, set to main so edit on github makes PRs to main
-    "commit": os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8],
     "conf_py_path": "/source/",  # Path in the checkout to the docs root
 }
 
 # Override github_version to commit ID for PRs so Delta extension shows PR changed files
 if os.getenv("READTHEDOCS_VERSION_TYPE") == "external":
     html_context["github_version"] = os.environ.get("READTHEDOCS_GIT_IDENTIFIER")
+
+if os.getenv("READTHEDOCS") == "True":
+    html_context["commit"] = os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8]
 
 # -- Options for latex generation --------------------------------------------
 
