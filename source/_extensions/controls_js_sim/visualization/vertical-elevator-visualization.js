@@ -14,6 +14,52 @@ class VerticalElevatorVisualization extends BaseVisualization {
     this.elevBottom = this.height * 0.9;
     this.elevTop = this.height * 0.1;
     this.elevMaxHeightM = elevHeightM;
+
+    this.bonks = []; // Array to store pops
+    this.bonkLifetime = 35; // Duration before pop fully fades (adjust as needed)
+  }
+
+  // Method to draw a jagged polygon (comic-book punch style) around the text
+  drawJaggedPolygon(x, y, radius, numVertices) {
+    var fixedRandList = [0.234,0,0.523,0,0.692,0,0.442,0,0.2643,0,0.5962,0,0.343,0,0.7954,0];
+    const context = this.animatedCanvasContext;
+    context.fillStyle = "#CCCC00"; // Color for the jagged polygon (e.g., bright yellow)
+    context.strokeStyle = "#000000"; 
+    context.lineWidth = 2;
+    context.beginPath();
+
+    for (let i = 0; i < numVertices; i++) {
+      // Randomness to create jagged effect
+      const angle = (i / numVertices) * Math.PI * 2;
+      const randomOffset = fixedRandList[i%fixedRandList.length]*30; // Semi-jaggedness
+      const xOffset = Math.cos(angle) * (radius + randomOffset);
+      const yOffset = Math.sin(angle) * (radius + randomOffset);
+
+      if (i === 0) {
+        context.moveTo(x + xOffset, y + yOffset); // Start the polygon path
+      } else {
+        context.lineTo(x + xOffset, y + yOffset); // Add vertices to the path
+      }
+    }
+
+    context.closePath();
+    context.stroke()
+    context.fill()
+  }
+
+  // Method to add a "pop" at a random location
+  addBonk() {
+    const x = Math.random() * (this.width * 0.2) + this.width * 0.4; // Random x within constraints
+    const y = Math.random() * (this.height * 0.3) + this.height * 0.1; // Random y within constraints
+    this.bonks.push({ x, y, transparency: 1.0 }); // Start fully opaque
+  }
+
+  // Method to update the transparency of pops and remove if too transparent
+  updateBonks() {
+    this.bonks = this.bonks.filter((pop) => {
+      pop.transparency -= 1 / this.bonkLifetime; // Decrease transparency over time
+      return pop.transparency > 0; // Keep pop if still visible
+    });
   }
 
   getCursorPosition(event) {
@@ -133,7 +179,6 @@ class VerticalElevatorVisualization extends BaseVisualization {
     const setpointDraw = this.posToCanvas(this.setpoint);
     const positionDraw = this.posToCanvas(this.position);
 
-
     // Elevator
     const elevDrawWidth = this.width * 0.2;
     const elevDrawHeight = this.height * 0.1;
@@ -165,6 +210,30 @@ class VerticalElevatorVisualization extends BaseVisualization {
     this.animatedCanvasContext.moveTo(this.width * 0.3, setpointDraw);
     this.animatedCanvasContext.lineTo(this.width * 0.7, setpointDraw);
     this.animatedCanvasContext.stroke();
+
+    //Bonk
+    if(this.position >= 0.98 && this.positionPrev < 0.98){
+      this.addBonk()
+    }
+    this.updateBonks()
+
+    this.bonks.forEach((bonk) => {
+      this.animatedCanvasContext.globalAlpha = bonk.transparency; // Set transparency
+
+      // Draw jagged "cutout" shape behind the text
+      this.drawJaggedPolygon(bonk.x, bonk.y, 20, 17); // Radius and vertices for jagged shape
+
+      // Set text style and draw "Bonk!"
+      this.animatedCanvasContext.fillStyle = "#FF0000";
+      this.animatedCanvasContext.font = "bold 16px Comic Sans MS"; // Halved font size
+      this.animatedCanvasContext.fillText("Bonk!", bonk.x - 20, bonk.y + 5); // Adjust text position to center it
+
+      this.animatedCanvasContext.globalAlpha = 1.0; // Reset globalAlpha after drawing
+   });
+    // Reset globalAlpha to default
+    this.animatedCanvasContext.globalAlpha = 1.0;
+
+    this.positionPrev = this.position
 
   }
 
