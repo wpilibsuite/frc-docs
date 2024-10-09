@@ -264,6 +264,8 @@ html_context = {
     "conf_py_path": "/source/",  # Path in the checkout to the docs root
 }
 
+print(html_context)
+
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = "xelatex"
