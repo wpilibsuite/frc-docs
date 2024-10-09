@@ -4,7 +4,7 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 
 ## Choosing a Base Class
 
-To start a project using one of the WPILib robot program templates, users must first choose a base class for their robot.  Users subclass these base classes to create their primary :code:`Robot` class, which controls the main flow of the robot program.  There are three choices available for the base class:
+To start a project using one of the WPILib robot program templates, users must first choose a base class for their robot.  Users subclass these base classes to create their primary :code:`Robot` class, which controls the main flow of the robot program.  There are various choices available for the base class:
 
 ### TimedRobot
 
@@ -49,6 +49,21 @@ Periodic methods are called every 20 ms by default. This can be changed by calli
    ```c++
    Robot() : frc::TimedRobot(30_ms) {}
    ```
+
+### Timeslice Robot
+
+Documentation:
+[Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/TimesliceRobot.html)
+- [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_timeslice_robot.html#details)
+
+Source:
+[Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimesliceRobot.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimesliceRobot.cpp)
+
+The :code:`TimesliceRobot` class extends the :code:`TimedRobot` framework to provide more control over the scheduling of periodic functions. It allows users to allocate specific time slices to different robot operations, running them sequentially within a defined period (typically shorter than TimedRobot's default 20ms). This class is recommended for users who need more precise timing control and consistent starting times for their robot's periodic functions.
+
+:code:`TimesliceRobot` provides the same :code:`init()`, :code:`periodic()`, and :code:`exit()` methods as :code:`TimedRobot`, but adds the ability to schedule additional periodic functions with custom allocations. This allows for more efficient use of processing time and can lead to improved performance which can make odometry and estimators more accurate and controller outputs change more consistently.
+
 
 ### RobotBase
 
