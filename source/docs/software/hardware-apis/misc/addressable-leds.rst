@@ -230,5 +230,268 @@ Now that the rainbow pattern is defined, we only need to apply it.
          :linenos:
          :lineno-start: 15
 
-.. image:: images/rainbow.gif
+.. image:: images/scrolling-rainbow.gif
    :alt: Scrolling rainbow pattern running in simulation
+
+## Combining patterns
+
+Complex LED patterns are built up from combining simple base patterns (such as solid colors or gradients) with animating effects (such as scrolling or breathing) and combinatory effects (like masks and overlays). Multiple effects can be combined at once, like in the scrolling rainbow effect above that takes a basic base effect - the rainbow - and then adds a scrolling effect to it.
+
+### Basic effects
+
+The basic effects can all be created from the factory methods declared in the ``LEDPattern`` class
+
+#### Solid color
+
+.. image:: images/solid.png
+   :alt: A solid red LED pattern
+
+The solid color pattern sets the target LED buffer to a single solid color.
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that sets the entire strip to solid red
+      LEDPattern red = LEDPattern.solid(Color.kRed);
+
+      // Apply the LED pattern to the data buffer
+      red.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that sets the entire strip to solid red
+      LEDPattern red = LEDPattern.Solid(Color::kRed);
+
+      // Apply the LED pattern to the data buffer
+      red.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
+#### Continuous Gradient
+
+The gradient pattern sets the target buffer to display a smooth gradient between the specified colors. The gradient wraps around so scrolling effects can be seamless.
+
+.. image:: images/continuous-gradient.png
+   :alt: A contiuous red-to-blue-to-red gradient
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient.
+      // The LED strip will be red at both ends and blue in the center,
+      // with smooth gradients between
+      LEDPattern gradient = LEDPattern.gradient(LEDPattern.GradientType.kContinuous, Color.kRed, Color.kBlue);
+
+      // Apply the LED pattern to the data buffer
+      gradient.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient.
+      // The LED strip will be red at both ends and blue in the center,
+      // with smooth gradients between
+      LEDPattern gradient = LEDPattern.Gradient(LEDPattern::GradientType::kContinuous, Color::kRed, Color::kBlue);
+
+      // Apply the LED pattern to the data buffer
+      gradient.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
+#### Discontinuous Gradient
+
+The gradient pattern sets the target buffer to display a smooth gradient between the specified colors. The gradient does not wrap around so it can be used for non-scrolling patterns that don't care about continuity.
+
+.. image:: images/discontinuous-gradient.png
+   :alt: A discontiuous red-to-blue gradient
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient.
+      // The LED strip will be red at one end and blue at the other.
+      LEDPattern gradient = LEDPattern.gradient(LEDPattern.GradientType.kDiscontinuous, Color.kRed, Color.kBlue);
+
+      // Apply the LED pattern to the data buffer
+      gradient.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient.
+      // The LED strip will be red at one end and blue at the other.
+      LEDPattern gradient = LEDPattern.Gradient(LEDPattern::GradientType::kDiscontinuous, Color::kRed, Color::kBlue);
+
+      // Apply the LED pattern to the data buffer
+      gradient.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
+#### Steps
+
+.. image:: images/steps.png
+   :alt: Steps of solid red on one half and solid blue on the other
+
+Displays segments of solid colors along the target buffer. This combines well with mask and overlay combination effects.
+
+Steps are specified as a combination of the *starting position* of that color, as a number between 0 (start of the buffer) and 1 (end of the buffer).
+
+.. note:: If the first step does not start at zero, every LED before that step starts will be set to black - effectively, as if there is a default step of ``(0, Color.kBlack)`` that can be overwritten.
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays the first half of a strip as solid red,
+      // and the second half of the strip as solid blue.
+      LEDPattern steps = LEDPattern.steps(Map.of(0, Color.kRed, 0.5, Color.kBlue));
+
+      // Apply the LED pattern to the data buffer
+      steps.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays the first half of a strip as solid red,
+      // and the second half of the strip as solid blue.
+      std::array<std::pair<double, Color>, 2> colorSteps{std::pair{0.0, Color::kRed},
+                                                         std::pair{0.5, Color::kBlue}};
+      LEDPattern steps = LEDPattern.Steps(colorSteps);
+
+      // Apply the LED pattern to the data buffer
+      gradient.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
+#### Progress mask
+
+.. image:: images/progress-mask.gif
+   :alt: A raw progress mask pattern, running in a sinusoidal pattern
+
+Slightly different from the basic color patterns, the progres mask pattern generates a white-and-black pattern where the white portion is a varying length depending on the value of the value function. This can be combined with another pattern using a :ref:`mask <docs/software/hardware-apis/misc/addressable-leds:Mask>` to display a portion of another base pattern depending on the progress of some process - such as the position of a mechanism in its range of motion (eg an elevator's height) or the progress of a PID controller towards its goal.
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient at a variable length
+      // depending on the relative position of the elevator. The blue end of the gradient
+      // will only be shown when the elevator gets close to its maximum height; otherwise,
+      // that end will be solid black when the elevator is at lower heights.
+      LEDPattern base = LEDPattern.discontinuousGradient(Color.kRed, Color.kBlue);
+      LEDPattern mask = LEDPattern.progressMaskLayer(() -> m_elevator.getHeight() / m_elevator.getMaxHeight());
+      LEDPattern heightDisplay = base.mask(mask);
+
+      // Apply the LED pattern to the data buffer
+      heightDisplay.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient at a variable length
+      // depending on the relative position of the elevator. The blue end of the gradient
+      // will only be shown when the elevator gets close to its maximum height; otherwise,
+      // that end will be solid black when the elevator is at lower heights.
+      LEDPattern base = LEDPattern::DiscontinuousGradient(Color.kRed, Color.kBlue);
+      LEDPattern mask = LEDPattern::ProgressMaskLayer([&]() { m_elevator.GetHeight() / m_elevator.GetMaxHeight() });
+      LEDPattern heightDisplay = base.Mask(mask);
+
+      // Apply the LED pattern to the data buffer
+      heightDisplay.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
+### Modifying effects
+
+#### Offset
+
+.. image:: images/offset.png
+   :alt: A discontinuous gradient, offset by 40 pixels
+
+#### Reverse
+
+.. image:: images/reverse.png
+   :alt: A discontinuous gradient running from blue-to-red instead of red-to-blue
+
+#### Scroll
+
+.. image:: images/scroll-relative.gif
+   :alt:
+
+.. image:: images/scroll-absolute.gif
+   :alt:
+
+#### Breathe
+
+.. image:: images/breathe.gif
+   :alt:
+
+#### Blink
+
+.. image:: images/blink-symmetric.gif
+   :alt:
+
+.. image:: images/blink-asymmetric.gif
+   :alt:
+
+#### Brightness
+
+.. image:: images/brightness.png
+   :alt: A discontinuous gradient at half brightness
+
+### Combinatory effects
+
+#### Mask
+
+#### Overlay
+
+#### Blend
