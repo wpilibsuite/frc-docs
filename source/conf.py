@@ -41,7 +41,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.rsvgconverter",
-    # "sphinxext.delta",
+    "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.photofinish",
     "sphinxext.rediraffe",
@@ -261,6 +261,7 @@ html_context = {
     "github_user": "wpilibsuite",  # Username
     "github_repo": "frc-docs",  # Repo name
     "github_version": "main",  # Version, set to main so edit on github makes PRs to main
+    "commit": os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8],
     "conf_py_path": "/source/",  # Path in the checkout to the docs root
 }
 
