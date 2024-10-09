@@ -268,8 +268,10 @@ html_context = {
 if os.getenv("READTHEDOCS_VERSION_TYPE") == "external":
     html_context["github_version"] = os.environ.get("READTHEDOCS_GIT_IDENTIFIER")
 
+# Set commit and current_version, used by delta extension, when on RTD
 if os.getenv("READTHEDOCS") == "True":
     html_context["commit"] = os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8]
+    html_context["current_version"] = os.environ.get("READTHEDOCS_VERSION_NAME")
 
 # -- Options for latex generation --------------------------------------------
 
