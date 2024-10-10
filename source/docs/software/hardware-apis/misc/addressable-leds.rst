@@ -310,7 +310,8 @@ The gradient pattern sets the target buffer to display a smooth gradient between
       // Create an LED pattern that displays a red-to-blue gradient.
       // The LED strip will be red at both ends and blue in the center,
       // with smooth gradients between
-      LEDPattern gradient = LEDPattern.Gradient(LEDPattern::GradientType::kContinuous, Color::kRed, Color::kBlue);
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern gradient = LEDPattern.Gradient(LEDPattern::GradientType::kContinuous, colors);
 
       // Apply the LED pattern to the data buffer
       gradient.ApplyTo(m_ledBuffer);
@@ -349,7 +350,8 @@ The gradient pattern sets the target buffer to display a smooth gradient between
       ```C++
       // Create an LED pattern that displays a red-to-blue gradient.
       // The LED strip will be red at one end and blue at the other.
-      LEDPattern gradient = LEDPattern.Gradient(LEDPattern::GradientType::kDiscontinuous, Color::kRed, Color::kBlue);
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern gradient = LEDPattern.Gradient(LEDPattern::GradientType::kDiscontinuous, colors);
 
       // Apply the LED pattern to the data buffer
       gradient.ApplyTo(m_ledBuffer);
@@ -439,7 +441,8 @@ Slightly different from the basic color patterns, the progres mask pattern gener
       // depending on the relative position of the elevator. The blue end of the gradient
       // will only be shown when the elevator gets close to its maximum height; otherwise,
       // that end will be solid black when the elevator is at lower heights.
-      LEDPattern base = LEDPattern::DiscontinuousGradient(Color.kRed, Color.kBlue);
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
       LEDPattern mask = LEDPattern::ProgressMaskLayer([&]() { m_elevator.GetHeight() / m_elevator.GetMaxHeight() });
       LEDPattern heightDisplay = base.Mask(mask);
 
@@ -452,15 +455,91 @@ Slightly different from the basic color patterns, the progres mask pattern gener
 
 ### Modifying effects
 
+.. note:: The built in animating effects like blinking and scrolling are based on the time returned by ``WPIUtilJNI.now()`` - in effect, they will play as if they started when the robot booted. Because all built in animation patterns are periodic, this means that the *first* period of a pattern may be truncated at any arbitrary point between 0% and 100%, and every period after that will play normally.
+
+Basic LED patterns can be combined with modifier effects to create new patterns with a combination of effects. Multiple modifiers can be used together to create complex patterns.
+
 #### Offset
 
 .. image:: images/offset.png
    :alt: A discontinuous gradient, offset by 40 pixels
 
+Offsets can be used to bias patterns forward of backward by a certain number of pixels. Offset patterns will wrap around the end of an LED strip; offset values can be positive (biasing *away* from the start of the strip) or negative (biasing *towards* the start of the strip).
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient, offset 40 pixels forward.
+      LEDPattern base = LEDPattern.discontinuousGradient(Color.kRed, Color.kBlue);
+      LEDPattern pattern = base.offsetBy(40);
+      LEDPattern negative = base.offsetBy(-20); // Equivalent to the above when applied to a 60-LED buffer
+
+      // Apply the LED pattern to the data buffer
+      pattern.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient, offset 40 pixels forward.
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
+      LEDPattern pattern = base.OffsetBy(40);
+      LEDPattern negative = base.OffsetBy(-20); // Equivalent to the above when applied to a 60-LED buffer
+
+      // Apply the LED pattern to the data buffer
+      heightDisplay.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
 #### Reverse
 
 .. image:: images/reverse.png
    :alt: A discontinuous gradient running from blue-to-red instead of red-to-blue
+
+Patterns and animations can be reversed to flip the direction that patterns are applied in; instead of starting from the lowest-indexed pixel in a buffer or view, a reversed pattern will start from the highest-indexed pixel and move toward the lowest-index pixel. A reversed :ref:`scrolling pattern <docs/software/hardware-apis/misc/addressable-leds:Scroll>` will scroll in reverse, as if its velocity's sign was flipped.
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient, then reverse it so it displays blue-to-red.
+      LEDPattern base = LEDPattern.discontinuousGradient(Color.kRed, Color.kBlue);
+      LEDPattern pattern = base.reversed();
+
+      // Apply the LED pattern to the data buffer
+      pattern.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient, then reverse it so it displays blue-to-red.
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
+      LEDPattern pattern = base.Reversed();
+
+      // Apply the LED pattern to the data buffer
+      heightDisplay.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
 
 #### Scroll
 
@@ -470,10 +549,85 @@ Slightly different from the basic color patterns, the progres mask pattern gener
 .. image:: images/scroll-absolute.gif
    :alt:
 
+Scrolling can be controlled in two different ways: either at a speed as a function of the length of the buffer or view to which it is applied (i.e., the scrolling speed is in terms of percentage per second, or a similar unit), or as a function of the density of the phsyical LED strips (i.e. scrolling speed is in meters per second, or a similar unit). Relative velocities are particularly useful when a scrolling pattern is applied to different LED strips with different LED spacing (such as one strip with 120 LEDs per meter daisy chained to a second strip with 60 or 144 LEDs per meter), when prototyping before having a particular LED strip in mind (where the density isn't yet known), or when LED strips are quickly changed out. Scrolling at a fixed real-world speed (eg ``InchesPerSecond.of(2)``) may be more understandable to readers, but will move faster or slower when applied to an LED strip with a lower or higher pixel density, respectively.
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient, then scroll at one quarter of the LED strip's length per second.
+      // For a half-meter length of a 120 LED-per-meter strip, this is equivalent to scrolling at 12.5 centimeters per second.
+      Distance ledSpacing = Meters.of(1 / 120.0);
+      LEDPattern base = LEDPattern.discontinuousGradient(Color.kRed, Color.kBlue);
+      LEDPattern pattern = base.scrollAtRelativeSpeed(Percent.per(Second).of(25));
+      LEDPattern absolute = base.scrollAtAbsoluteSpeed(Centimeters.per(Second).of(12.5), ledSpacing);
+
+      // Apply the LED pattern to the data buffer
+      pattern.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient, then scroll at one quarter of the LED strip's length per second.
+      // For a half-meter length of a 120 LED-per-meter strip, this is equivalent to scrolling at 12.5 centimeters per second.
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
+      LEDPattern pattern = base.ScrollAtRelativeSpeed(units::hertz_t{4.0});
+      LEDPattern absolute = base.ScrollAtAbsoluteSpeed(0.125_mps, units::meter_t{1/120.0});
+
+      // Apply the LED pattern to the data buffer
+      heightDisplay.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
 #### Breathe
 
 .. image:: images/breathe.gif
    :alt:
+
+A breathing modifier will make the base pattern brighten and dim in a sinusoidal pattern over the given period of time. Brightness is relative to the original brightness of the base pattern - breathing will only make it dimmer, never brighter than the original.
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient, breathing at a 2 second period (0.5 Hz)
+      LEDPattern base = LEDPattern.discontinuousGradient(Color.kRed, Color.kBlue);
+      LEDPattern pattern = base.breathe(Seconds.of(2));
+
+      // Apply the LED pattern to the data buffer
+      pattern.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient, breathing at a 2 second period (0.5 Hz)
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
+      LEDPattern pattern = base.Breathe(2_s);
+
+      // Apply the LED pattern to the data buffer
+      heightDisplay.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
 
 #### Blink
 
@@ -483,10 +637,71 @@ Slightly different from the basic color patterns, the progres mask pattern gener
 .. image:: images/blink-asymmetric.gif
    :alt:
 
+Blinking can be done in one of three ways:
+
+1. Symmetrically, where an equal amount of time is spent in the "on" and "off" states per cycle
+2. Asymetrically, where the time spent "on" can be configured independently from the time spent "off"
+3. Synchronously, where the time spent on and off is synchronized with an external source (for example, the state of the RSL)
+
+.. note:: The time-based blinking modifiers are synced with the robot's clock
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient, blinking at various rates.
+      LEDPattern base = LEDPattern.discontinuousGradient(Color.kRed, Color.kBlue);
+
+      // 1.5 seconds on, 1.5 seconds off, for a total period of 3 seconds
+      LEDPattern pattern = base.blink(Seconds.of(1.5));
+
+      // 2 seconds on, 1 second off, for a total period of 3 seconds
+      LEDPattern asymmetric = base.blink(Seconds.of(2), Seconds.of(1));
+
+      // Turn the base pattern on when the RSL is on, and off when the RSL is off
+      LEDPattern sycned = base.synchronizedBlink(RobotController::getRSLState);
+
+      // Apply the LED pattern to the data buffer
+      pattern.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient, blinking at various rates.
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
+
+      // 1.5 seconds on, 1.5 seconds off, for a total period of 3 seconds
+      LEDPattern pattern = base.Blink(1.5_s);
+
+      // 2 seconds on, 1 second off, for a total period of 3 seconds
+      LEDPattern asymmetric = base.Blink(2_s, 1_s));
+
+      // Turn the base pattern on when the RSL is on, and off when the RSL is off
+      LEDPattern sycned = base.SynchronizedBlink([]() { return RobotController.GetRSLState(); });
+
+      // Apply the LED pattern to the data buffer
+      pattern.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
 #### Brightness
 
 .. image:: images/brightness.png
    :alt: A discontinuous gradient at half brightness
+
+Patterns can be brightened and dimmed relative to their original brightness; a brightness value of 100% is identical to the original pattern, a value of 200% is twice as bright, and a value of 0% is completely turned off. This can be useful in a pinch to tone down patterns that are too bright (apologies to the 2024 NE Greater Boston district event staff, who were subjected to a maximimum brightness white flashing pattern with a precursor version of this library before the brightness modifier was added).
+
+.. note:: For speed, brightness calculations are done naively in the RGB color space instead of HSL/HSV/Lab. This sacrifices accuracy, so large changes in brightness may look undersaturated.
 
 ### Combinatory effects
 
