@@ -418,16 +418,12 @@ Slightly different from the basic color patterns, the progres mask pattern gener
       :sync: Java
 
       ```Java
-      // Create an LED pattern that displays a red-to-blue gradient at a variable length
-      // depending on the relative position of the elevator. The blue end of the gradient
-      // will only be shown when the elevator gets close to its maximum height; otherwise,
-      // that end will be solid black when the elevator is at lower heights.
-      LEDPattern base = LEDPattern.discontinuousGradient(Color.kRed, Color.kBlue);
-      LEDPattern mask = LEDPattern.progressMaskLayer(() -> m_elevator.getHeight() / m_elevator.getMaxHeight());
-      LEDPattern heightDisplay = base.mask(mask);
+      // Create an LED pattern that displays a black-and-white mask that displays the current height of an elevator
+      // mechanism. This can be combined with other patterns to change the displayed color to something other than white.
+      LEDPattern pattern = LEDPattern.progressMaskLayer(() -> m_elevator.getHeight() / m_elevator.getMaxHeight());
 
       // Apply the LED pattern to the data buffer
-      heightDisplay.applyTo(m_ledBuffer);
+      pattern.applyTo(m_ledBuffer);
 
       // Write the data to the LED strip
       m_led.setData(m_ledBuffer);
@@ -437,17 +433,12 @@ Slightly different from the basic color patterns, the progres mask pattern gener
       :sync: C++
 
       ```C++
-      // Create an LED pattern that displays a red-to-blue gradient at a variable length
-      // depending on the relative position of the elevator. The blue end of the gradient
-      // will only be shown when the elevator gets close to its maximum height; otherwise,
-      // that end will be solid black when the elevator is at lower heights.
-      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
-      LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
-      LEDPattern mask = LEDPattern::ProgressMaskLayer([&]() { m_elevator.GetHeight() / m_elevator.GetMaxHeight() });
-      LEDPattern heightDisplay = base.Mask(mask);
+      // Create an LED pattern that displays a black-and-white mask that displays the current height of an elevator
+      // mechanism. This can be combined with other patterns to change the displayed color to something other than white.
+      LEDPattern pattern = LEDPattern::ProgressMaskLayer([&]() { m_elevator.GetHeight() / m_elevator.GetMaxHeight() });
 
       // Apply the LED pattern to the data buffer
-      heightDisplay.ApplyTo(m_ledBuffer);
+      pattern.ApplyTo(m_ledBuffer);
 
       // Write the data to the LED strip
       m_led.SetData(m_ledBuffer);
@@ -456,6 +447,8 @@ Slightly different from the basic color patterns, the progres mask pattern gener
 ### Modifying effects
 
 .. note:: The built in animating effects like blinking and scrolling are based on the time returned by ``WPIUtilJNI.now()`` - in effect, they will play as if they started when the robot booted. Because all built in animation patterns are periodic, this means that the *first* period of a pattern may be truncated at any arbitrary point between 0% and 100%, and every period after that will play normally.
+
+.. note:: Animating effects use the :ref:`Java units library <docs/software/basic-programming/java-units:The Java Units Library>` and the :ref:`C++ units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` for speeds and durations.
 
 Basic LED patterns can be combined with modifier effects to create new patterns with a combination of effects. Multiple modifiers can be used together to create complex patterns.
 
@@ -703,10 +696,136 @@ Patterns can be brightened and dimmed relative to their original brightness; a b
 
 .. note:: For speed, brightness calculations are done naively in the RGB color space instead of HSL/HSV/Lab. This sacrifices accuracy, so large changes in brightness may look undersaturated.
 
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient at half brightness
+      LEDPattern base = LEDPattern.discontinuousGradient(Color.kRed, Color.kBlue);
+      LEDPattern pattern = base.atBrightness(Percent.of(50));
+
+      // Apply the LED pattern to the data buffer
+      pattern.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient at half brightness
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
+      LEDPattern pattern = base.AtBrightness(0.5);
+
+      // Apply the LED pattern to the data buffer
+      pattern.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
 ### Combinatory effects
 
 #### Mask
 
+.. image:: images/mask.gif
+
+Masks work by combining the RGB values of two patterns and keeping only the values that are shared by both. The combination works on the individual bits of each color using a bitwise AND operation - for example, if a pixel's red channel were set to 255 by one pattern (represented as 11111111 in binary), then the output red color would be identical to the red channel of the second pattern. If the first pattern sets it to zero (00000000 in binary), then the output red color would also be zero, regardless of whatever the second pattern sets. For this reason, black (all zeroes) and white (all ones) masks are very useful for selectively enabling and disabling parts of another pattern. Other mask colors can be used as well: masking with solid red would keep only the red channel of the original pattern, while discarding all green and blue values.
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      // Create an LED pattern that displays a red-to-blue gradient at a variable length
+      // depending on the relative position of the elevator. The blue end of the gradient
+      // will only be shown when the elevator gets close to its maximum height; otherwise,
+      // that end will be solid black when the elevator is at lower heights.
+      LEDPattern base = LEDPattern.discontinuousGradient(Color.kRed, Color.kBlue);
+      LEDPattern mask = LEDPattern.progressMaskLayer(() -> m_elevator.getHeight() / m_elevator.getMaxHeight());
+      LEDPattern heightDisplay = base.mask(mask);
+
+      // Apply the LED pattern to the data buffer
+      heightDisplay.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      // Create an LED pattern that displays a red-to-blue gradient at a variable length
+      // depending on the relative position of the elevator. The blue end of the gradient
+      // will only be shown when the elevator gets close to its maximum height; otherwise,
+      // that end will be solid black when the elevator is at lower heights.
+      std::array<Color, 2> colors{Color::kRed, Color::kBlue};
+      LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
+      LEDPattern mask = LEDPattern::ProgressMaskLayer([&]() { m_elevator.GetHeight() / m_elevator.GetMaxHeight() });
+      LEDPattern heightDisplay = base.Mask(mask);
+
+      // Apply the LED pattern to the data buffer
+      heightDisplay.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
+
+.. image:: images/rainbow-with-scrolling-mask.gif
+
+Masks can also be animated (see :ref:`progressMask <docs/software/hardware-apis/misc/addressable-leds:Progress mask>`). Masking a base pattern with a scrolling pattern will result in a panning effect. The animation above was generated by masking a rainbow pattern with a scrolling white/black pattern
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      Map<Double, Color> maskSteps = Map.of(0, Color.kWhite, 0.5, Color.kBlack);
+      LEDPattern base = LEDPattern.rainbow(255, 255);
+      LEDPattern mask =
+         LEDPattern.steps(maskSteps).scrollAtRelativeSpeed(Percent.per(Second).of(0.25));
+
+      LEDPattern pattern = base.mask(mask);
+
+      // Apply the LED pattern to the data buffer
+      pattern.applyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      ```C++
+      std::array<std::pair<double, Color>, 2> maskSteps{std::pair{0.0, Color::kWhite},
+                                                        std::pair{0.5, Color::kBlack}};
+      LEDPattern base = LEDPattern::Rainbow(255, 255);
+      LEDPattern mask =
+         LEDPattern::Steps(maskSteps).ScrollAtRelativeSpeed(units::hertz_t{0.25});
+
+      LEDPattern pattern = base.Mask(mask);
+
+      // Apply the LED pattern to the data buffer
+      pattern.ApplyTo(m_ledBuffer);
+
+      // Write the data to the LED strip
+      m_led.SetData(m_ledBuffer);
+      ```
+
 #### Overlay
 
+Overlays can be used to "stack" patterns atop each other, where black pixels (set to ``Color.kBlack``, RGB value #000000) are treated as transparent and allow a lower layer to be displayed. Upper layers are typically combined with :ref:`masks <docs/software/hardware-apis/misc/addressable-leds:Mask>` to set transparent sections; recall that masking a pixel with ``Color.kBlack`` will *set* that pixel to black, which will then be treated by the overlay as transparent.
+
 #### Blend
+
+Blends will combine the output colors of patterns together, by averaging out the individual RGB colors for every pixel. Like the :ref:`brightness modifier <docs/software/hardware-apis/misc/addressable-leds:Brightness>`, this tends to output colors that are more desaturated than its inputs.
