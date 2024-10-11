@@ -52,7 +52,7 @@ The ``and()``/``&&`` composes two ``BooleanEvent`` conditions into a third condi
       :language: java
       :lines: 43-48
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.2/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 35-40
 
@@ -66,7 +66,7 @@ The ``or()``/``||`` composes two ``BooleanEvent`` conditions into a third condit
       :language: java
       :lines: 50-56
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.2/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 42-47
 
@@ -80,7 +80,7 @@ The ``negate()``/``!`` composes one ``BooleanEvent`` condition into another cond
       :language: java
       :lines: 45-46
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.2/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
+   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/EventLoop/cpp/Robot.cpp
       :language: c++
       :lines: 37-38
 
