@@ -579,7 +579,7 @@ Scrolling can be controlled in two different ways: either at a speed as a functi
       // For a half-meter length of a 120 LED-per-meter strip, this is equivalent to scrolling at 12.5 centimeters per second.
       std::array<Color, 2> colors{Color::kRed, Color::kBlue};
       LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
-      LEDPattern pattern = base.ScrollAtRelativeSpeed(units::hertz_t{4.0});
+      LEDPattern pattern = base.ScrollAtRelativeSpeed(units::hertz_t{0.25});
       LEDPattern absolute = base.ScrollAtAbsoluteSpeed(0.125_mps, units::meter_t{1/120.0});
 
       // Apply the LED pattern to the data buffer
