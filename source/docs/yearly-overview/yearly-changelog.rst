@@ -15,8 +15,9 @@ Due to internal GradleRIO changes, it is necessary to update projects from previ
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
 - Added :doc:`annotation based logging (Epilogue) </docs/software/telemetry/robot-telemetry-with-annotations>` for Java
-- The units library has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
-- Add persistent alerts API. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
+- The :doc:`Java units library </docs/software/basic-programming/java-units>` has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
+- Add :doc:`persistent alerts API </docs/software/telemetry/persistent-alerts>`. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
+- Add LED pattern API for easily animating addressable LEDs
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
@@ -33,29 +34,30 @@ Supported Operating Systems and Architectures:
 
 - The units library has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add persistent alerts API. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
-- C++: Add FRC_ReportWarning
-- Implement ``Sendable`` for HID classes
-- Remove ``RobotInit`` usage in examples. Use constructor instead. RobotInit may be deprecated in the future.
-- Include sendable type information in topic metadata
 - Add LED pattern API for easily animating addressable LEDs
-- Deprecate AxisCamera
 - Breaking: Remove deprecated ``Gyro`` and ``Accelerometer`` interface
+- Breaking: Remove deprecated ``Notifier.SetHandler`` function
+- Remove ``RobotInit`` usage in examples. Use constructor instead. RobotInit may be deprecated in the future.
+- Deprecate ``AxisCamera``
+- C++: Add ``FRC_ReportWarning``
+- Implement ``Sendable`` for HID classes
+- Include sendable type information in topic metadata
 - ``GenericHID.setRumble``: Fix Java integer overflow
-- Remove deprecated ``Notifier.SetHandler`` function
 
 #### Commands
 
-- Add deadband trigger methods to ``CommandGenericHID``
-- Deprecate ``TrapezoidProfileCommand``. Use :doc:`TrapezoidProfile Directly </docs/software/commandbased/profile-subsystems-commands>`
-- Cache controller ``BooleanEvents`` / ``Triggers`` and directly construct ``Triggers``, fixing issues if ``BooleanEvents`` / ``Triggers`` are created in loops
-- Make requirements private\
-- Add ``setRumble`` and ``isConnected`` to ``CommandGenericHID``
-- Breaking: Remove deprecated C++ method ``TransferOwnership``
-- Add ``StartRun`` command factory
-- Deprecate proxy supplier constructor
 - Breaking: Remove deprecated ``CommandBase``
+- Remove deprecated ``TrapzoidProfileCommand`` API
+- Breaking: Remove deprecated C++ method ``TransferOwnership``
+- Deprecate ``PIDCommand``, ``PIDSubsystem``, ``ProfiledPIDCommand``, ``ProfiledPIDSubsystem``, ``TrapezoidProfileSubsystem``
+- Deprecate ``TrapezoidProfileCommand``. Use :doc:`TrapezoidProfile Directly </docs/software/commandbased/profile-subsystems-commands>`
+- Deprecate proxy supplier constructor
+- Cache controller ``BooleanEvents`` / ``Triggers`` and directly construct ``Triggers``, fixing issues if ``BooleanEvents`` / ``Triggers`` are created in loops
+- Add deadband trigger methods to ``CommandGenericHID``
+- Make requirements private
+- Add ``setRumble`` and ``isConnected`` to ``CommandGenericHID``
+- Add ``StartRun`` command factory
 - Rename ``deadlineWith`` to ``deadlineFor``
-- Remove deprecated ``TrapzoidProfileCommand`` api
 - Fix double composition error message truncation
 
 #### NetworkTables
@@ -65,16 +67,17 @@ Supported Operating Systems and Architectures:
 #### Data Logging
 
 - Added :doc:`annotation based logging (Epilogue) </docs/software/telemetry/robot-telemetry-with-annotations>` for Java
-- logging the console can be enabled with ``DatalogManager.logConsoleOutput``
+- Logging the console can be enabled with ``DatalogManager.logConsoleOutput``
 - DataLog: Add last value and change detection
 - DataLogManager: Fix behavior when low on space
 
 #### Hardware interfaces
 
+- Add ``getVoltage`` to ``PWMMotorController``
+- Add support for Sharp IR sensors
 - Fix edge cases of CAN ID validation and reporting for CTRE and REV devices
 - Report Radio LED state
 - Correct maximum length of DS console send
-- Add ``getVoltage`` to ``PWMMotorController``
 - C++: Refactor AnalogTrigger to use shared_ptr
 - Add ``RobotController.GetCommsDisableCount()``
 - Expose sticky hardware and firmware faults in PDH and PH
@@ -85,27 +88,26 @@ Supported Operating Systems and Architectures:
 - Propagate ``PWMMotorController`` ``stopMotor()`` and ``disable()`` to followers
 - ``Compressor``: Add more Sendable data
 - Fix ``PowerDistribution.GetAllCurrents()``
-- Add support for Sharp IR sensors
 - Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder``
 - Fix ``AsynchronousInterrupt``
 
 #### Math
 
+- Breaking: Remove deprecated TrapezoidProfile constructors
+- Breaking: Remove deprecated MatBuilder factory
+- Deprecate ``RamseteController``. Use ``LTVUnicycleController`` instead
+- Breaking: Remove deprecated ``MatBuilder`` constructor. Use ``MatBuilder.fill`` instead
 - Discretize ``SimpleMotorFeedForward``, ``ArmFeedForward`` and ``ElevatorFeedForward``
 - ``SwerveDrivePoseEstimator``: Fix stationary module emitting error when calculating angle
 - Add ``DCMotor.getCurrent()`` overload accepting torque
 - Add ``cosineScale`` method to ``SwerveModuleState`` and instance optimize
-- Breaking: Remove deprecated ``MatBuilder`` constructor. Use ``MatBuilder.fill`` instead
 - Make trajectory constraints use ``Rectangle2d`` and ``Ellipse2d``
 - Add Protobuf and Struct support to many more classes
 - Add ``getAccumulatedError()`` to ``PIDController``
 - Remove ``WheelPositions`` interface/concept
 - Add ``kinematics.copyInto()``
 - Add geometry classes for ``Rectangle2d`` and ``Ellipse2d``
-- Deprecate ``RamseteController``. Use ``LTVUnicycleController`` instead
 - Add reset methods to ``Odometry`` and ``PoseEstimator``
-- Breaking: Remove deprecated TrapezoidProfile constructors
-- Breaking: Remove deprecated MatBuilder factory
 - Add ArmFeedforward calculate() overload that takes current and next velocity instead of acceleration
 
 ### Simulation
@@ -124,8 +126,8 @@ Supported Operating Systems and Architectures:
 
 ### Util
 
-- Deprecate ``RuntimeDetector``
 - Breaking: Remove ``RuntimeLoader``
+- Deprecate ``RuntimeDetector``
 
 ## Branding
 
