@@ -14,7 +14,9 @@ The purpose of this task is to test any newly developed or heavily modified feat
 
 **C++/Java**
 
-- SysID (when available)
+- Use :doc:`Epilogue annotation logging </docs/software/telemetry/robot-telemetry-with-annotations>`
+
+**Java/C++/Python**
 
 Desired Feedback
 ----------------
