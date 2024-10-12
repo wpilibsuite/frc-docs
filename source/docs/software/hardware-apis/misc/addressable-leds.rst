@@ -237,7 +237,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
          :linenos:
          :lineno-start: 15
 
-.. video:: images/scrolling-rainbow.webm
+.. video:: images/scrolling-rainbow.mp4
    :loop:
    :poster: ../../../../_images/rainbow.png
    :width: 900
@@ -420,7 +420,7 @@ Steps are specified as a combination of the *starting position* of that color, a
 
 #### Progress mask
 
-.. video:: images/progress-mask.webm
+.. video:: images/progress-mask.mp4
    :loop:
    :width: 900
 
@@ -552,12 +552,12 @@ Patterns and animations can be reversed to flip the direction that patterns are 
 
 #### Scroll
 
-.. video:: images/scroll-relative.webm
+.. video:: images/scroll-relative.mp4
    :loop:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
-.. video:: images/scroll-absolute.webm
+.. video:: images/scroll-absolute.mp4
    :loop:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
@@ -604,7 +604,7 @@ Scrolling can be controlled in two different ways: either at a speed as a functi
 
 #### Breathe
 
-.. video:: images/breathe.webm
+.. video:: images/breathe.mp4
    :loop:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
@@ -646,12 +646,12 @@ A breathing modifier will make the base pattern brighten and dim in a sinusoidal
 
 #### Blink
 
-.. video:: images/blink-symmetric.webm
+.. video:: images/blink-symmetric.mp4
    :loop:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
-.. video:: images/blink-asymmetric.webm
+.. video:: images/blink-asymmetric.mp4
    :loop:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
@@ -760,7 +760,7 @@ Patterns can be brightened and dimmed relative to their original brightness; a b
 
 #### Mask
 
-.. video:: images/mask.webm
+.. video:: images/mask.mp4
    :loop:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
@@ -809,7 +809,7 @@ Masks work by combining the RGB values of two patterns and keeping only the valu
       ```
 
 
-.. video:: images/rainbow-with-scrolling-mask.webm
+.. video:: images/rainbow-with-scrolling-mask.mp4
    :loop:
    :poster: ../../../../_images/rainbow.png
    :width: 900
