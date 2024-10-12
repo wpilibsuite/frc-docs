@@ -19,7 +19,7 @@ After the length of the strip has been set, you'll have to create an ``Addressab
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 32-47
          :linenos:
@@ -28,13 +28,13 @@ After the length of the strip has been set, you'll have to create an ``Addressab
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: c++
          :lines: 12-12, 18-27
          :linenos:
          :lineno-start: 11
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 7-13
          :linenos:
@@ -158,6 +158,7 @@ HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, satu
 
 .. image:: images/hsv-models.png
    :alt: HSV models picture
+   :width: 900
 
 LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the LED, hue, saturation, and value. An example is shown below for setting the color of an LED strip to red (hue of 0).
 
@@ -188,12 +189,18 @@ LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the 
 
 Using the built in ``LEDPattern.rainbow`` method, we can create a pattern that displays a full rainbow across an entire LED strip. Then, by calling ``scrollAtAbsoluteSpeed`` we can make it animate and cycle around the strip. ``rainbow`` accepts two arguments - one for the saturation and one for the value, expressed as a number from 0 to 255.
 
+The base rainbow pattern will look like this:
+
+.. image:: images/rainbow.png
+   :alt: A full-brightness rainbow pattern
+   :width: 900
+
 .. tab-set::
 
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 21-31
          :linenos:
@@ -202,7 +209,7 @@ Using the built in ``LEDPattern.rainbow`` method, we can create a pattern that d
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: c++
          :lines: 27-37
          :linenos:
@@ -215,7 +222,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 50-56
          :linenos:
@@ -224,7 +231,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 15-20
          :linenos:
@@ -232,7 +239,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
 
 .. video:: images/scrolling-rainbow.webm
    :loop:
-   :poster: images/rainbow.png
+   :poster: ../../../../_images/rainbow.png
    :width: 900
 
 ## Combining patterns
@@ -247,6 +254,7 @@ The basic effects can all be created from the factory methods declared in the ``
 
 .. image:: images/solid.png
    :alt: A solid red LED pattern
+   :width: 900
 
 The solid color pattern sets the target LED buffer to a single solid color.
 
@@ -286,6 +294,7 @@ The gradient pattern sets the target buffer to display a smooth gradient between
 
 .. image:: images/continuous-gradient.png
    :alt: A contiuous red-to-blue-to-red gradient
+   :width: 900
 
 .. tab-set::
 
@@ -328,6 +337,7 @@ The gradient pattern sets the target buffer to display a smooth gradient between
 
 .. image:: images/discontinuous-gradient.png
    :alt: A discontiuous red-to-blue gradient
+   :width: 900
 
 .. tab-set::
 
@@ -366,6 +376,7 @@ The gradient pattern sets the target buffer to display a smooth gradient between
 
 .. image:: images/steps.png
    :alt: Steps of solid red on one half and solid blue on the other
+   :width: 900
 
 Displays segments of solid colors along the target buffer. This combines well with mask and overlay combination effects.
 
@@ -459,6 +470,7 @@ Basic LED patterns can be combined with modifier effects to create new patterns 
 
 .. image:: images/offset.png
    :alt: A discontinuous gradient, offset by 40 pixels
+   :width: 900
 
 Offsets can be used to bias patterns forward of backward by a certain number of pixels. Offset patterns will wrap around the end of an LED strip; offset values can be positive (biasing *away* from the start of the strip) or negative (biasing *towards* the start of the strip).
 
@@ -501,6 +513,7 @@ Offsets can be used to bias patterns forward of backward by a certain number of 
 
 .. image:: images/reverse.png
    :alt: A discontinuous gradient running from blue-to-red instead of red-to-blue
+   :width: 900
 
 Patterns and animations can be reversed to flip the direction that patterns are applied in; instead of starting from the lowest-indexed pixel in a buffer or view, a reversed pattern will start from the highest-indexed pixel and move toward the lowest-index pixel. A reversed :ref:`scrolling pattern <docs/software/hardware-apis/misc/addressable-leds:Scroll>` will scroll in reverse, as if its velocity's sign was flipped.
 
@@ -593,7 +606,7 @@ Scrolling can be controlled in two different ways: either at a speed as a functi
 
 .. video:: images/breathe.webm
    :loop:
-   :poster: images/discontinuous-gradient.png
+   :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
 A breathing modifier will make the base pattern brighten and dim in a sinusoidal pattern over the given period of time. Brightness is relative to the original brightness of the base pattern - breathing will only make it dimmer, never brighter than the original.
@@ -635,12 +648,12 @@ A breathing modifier will make the base pattern brighten and dim in a sinusoidal
 
 .. video:: images/blink-symmetric.webm
    :loop:
-   :poster: images/discontinuous-gradient.png
+   :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
 .. video:: images/blink-asymmetric.webm
    :loop:
-   :poster: images/discontinuous-gradient.png
+   :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
 Blinking can be done in one of three ways:
@@ -704,6 +717,7 @@ Blinking can be done in one of three ways:
 
 .. image:: images/brightness.png
    :alt: A discontinuous gradient at half brightness
+   :width: 900
 
 Patterns can be brightened and dimmed relative to their original brightness; a brightness value of 100% is identical to the original pattern, a value of 200% is twice as bright, and a value of 0% is completely turned off. This can be useful in a pinch to tone down patterns that are too bright (apologies to the 2024 NE Greater Boston district event staff, who were subjected to a maximimum brightness white flashing pattern with a precursor version of this library before the brightness modifier was added).
 
@@ -748,7 +762,7 @@ Patterns can be brightened and dimmed relative to their original brightness; a b
 
 .. video:: images/mask.webm
    :loop:
-   :poster: images/discontinuous-gradient.png
+   :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
 Masks work by combining the RGB values of two patterns and keeping only the values that are shared by both. The combination works on the individual bits of each color using a bitwise AND operation - for example, if a pixel's red channel were set to 255 by one pattern (represented as 11111111 in binary), then the output red color would be identical to the red channel of the second pattern. If the first pattern sets it to zero (00000000 in binary), then the output red color would also be zero, regardless of whatever the second pattern sets. For this reason, black (all zeroes) and white (all ones) masks are very useful for selectively enabling and disabling parts of another pattern. Other mask colors can be used as well: masking with solid red would keep only the red channel of the original pattern, while discarding all green and blue values.
@@ -797,7 +811,7 @@ Masks work by combining the RGB values of two patterns and keeping only the valu
 
 .. video:: images/rainbow-with-scrolling-mask.webm
    :loop:
-   :poster: images/rainbow.png
+   :poster: ../../../../_images/rainbow.png
    :width: 900
 
 Masks can also be animated (see :ref:`progressMask <docs/software/hardware-apis/misc/addressable-leds:Progress mask>`). Masking a base pattern with a scrolling pattern will result in a panning effect. The animation above was generated by masking a rainbow pattern with a scrolling white/black pattern
