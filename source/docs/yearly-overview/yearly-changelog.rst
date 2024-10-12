@@ -156,6 +156,8 @@ Supported Operating Systems and Architectures:
 
 .. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
 
+- No changes other then build updates were made to SmartDashboard
+
 ## Glass / OutlineViewer / Simulation GUI
 
 - Save input after clicking away
@@ -190,3 +192,11 @@ Supported Operating Systems and Architectures:
 
 - Fix crash when all data is filtered out during analysis
 - Remove obsolete WPILib & CTWRE presets, rename CTRE presets
+
+## PathWeaver
+
+- No changes other then build updates were made to SmartDashboard
+
+## AdvantageScope
+
+- Update to (2025 AdvantageScope)[https://docs.advantagescope.org/whats-new]
