@@ -18,6 +18,7 @@ These changes contain *some* of the major changes to the library that it's impor
 - The :doc:`Java units library </docs/software/basic-programming/java-units>` has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add :doc:`persistent alerts API </docs/software/telemetry/persistent-alerts>`. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
 - Add LED pattern API for easily animating addressable LEDs
+- Java Source and Target compatibility have been bumped to JDK 17
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
@@ -62,6 +63,11 @@ Supported Operating Systems and Architectures:
 
 #### NetworkTables
 
+- Server round robin message processing
+- Unify NetworkInterface and MessageHandler
+- Add StopRead/StartRead to WireConnection
+- Client: only connect to IPv4 addresses
+- ParallelTcpConnector: Add option to resolve only IPv4 addresses
 - Deprecate setNetworkTablesFlushEnabled
 
 #### Data Logging
@@ -136,34 +142,51 @@ Supported Operating Systems and Architectures:
 .. image:: /assets/wpilib-generic.svg
   :alt: WPILib Logo
 
+## Shuffleboard
+
+- The live network table preview has been removed due to the high frequency of node redraws. Spot checking data will now need to be done by dragging a data widget into a tab. Generic table data should still be displayable with the generic tree table widget. The NT source preview now displays the data type of a topic instead of its current value.
+- The subscribe-to-all-NT-data behavior has been changed to only subscribe to topic information. This should cut down on bandwidth and some CPU usage
+- The widget gallery has been removed with no replacement. Drawing the large number of dummy widgets took a surprising CPU load and occasionally caused problems at startup when third party widgets from plugins would crash
+- Fix widgets getting permanently disabled after network disconnects
+- Expose orientation property for NumberSlider
+- Add :doc:`persistent alerts widget </docs/software/telemetry/persistent-alerts>`
+- Correct FieldData de/serialization
+
 ## SmartDashboard
 
 .. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
 
-
-
 ## Glass / OutlineViewer / Simulation GUI
 
-
+- Save input after clicking away
+- Check for struct descriptor size 0
 
 ## GradleRIO
 
-
+- Use Gradle 8.10.2
+- Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
 
 ## WPILib All in One Installer
 
-- Update to VS Code XX
-- VS Code extension updates: cpptools XX, javaext XXS
-
+- Update to VS Code 1.94.2
+- VS Code extension updates: cpptools 1.22, javaext 1.36
+- Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
+- Only install scripts if they are used by a specific platform
+- Make shortcuts use the app icon
+- Add AppArmor file for electron apps for Ubuntu 24.04
+- Fix icon in dock on Ubuntu 24.04
 
 ## Visual Studio Code Extension
 
-
+- Add dependency view extension for easier finding and updating of 3rd party libraries
+- Add gradle clean command
+- Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
 
 ## RobotBuilder
 
-
+- Remove robotInit in favour of Robot constructor
 
 ## SysId
 
-
+- Fix crash when all data is filtered out during analysis
+- Remove obsolete WPILib & CTWRE presets, rename CTRE presets
