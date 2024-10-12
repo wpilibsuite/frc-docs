@@ -18,7 +18,7 @@ These changes contain *some* of the major changes to the library that it's impor
 - The :doc:`Java units library </docs/software/basic-programming/java-units>` has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add :doc:`persistent alerts API </docs/software/telemetry/persistent-alerts>`. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
 - Add LED pattern API for easily animating addressable LEDs
-- Java Source and Target compatibility have been bumped to JDK 17
+- Java 17 must be used as Java Source and Target compatibility have been bumped to Java 17. Java 17 has been used since 2023.
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
@@ -186,7 +186,7 @@ Supported Operating Systems and Architectures:
 
 ## RobotBuilder
 
-- Remove robotInit in favour of Robot constructor
+- Remove robotInit in favor of Robot constructor
 
 ## SysId
 
