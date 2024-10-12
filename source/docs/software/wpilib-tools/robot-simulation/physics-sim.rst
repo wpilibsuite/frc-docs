@@ -6,6 +6,7 @@ Because :ref:`state-space notation <docs/software/advanced-controls/state-space/
 
    - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings
    - Motor outputs are set
+
 - In simulation periodic code:
 
    - The simulation's :term:`state` is updated using :term:`inputs <input>`, usually voltages from motors set from a PID loop
@@ -41,11 +42,11 @@ In the following example, we simulate an elevator given the mass of the moving c
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
-         :lines: 46-58
+         :lines: 49-61
          :linenos:
-         :lineno-start: 46
+         :lineno-start: 49
 
    .. tab-item:: C++
       :sync: c++
@@ -69,11 +70,11 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
          :linenos:
          :lineno-start: 30
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
-         :lines: 99-106
+         :lines: 102-109
          :linenos:
-         :lineno-start: 99
+         :lineno-start: 102
 
    .. tab-item:: C++
       :sync: c++
@@ -101,11 +102,11 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
-         :lines: 79-92
+         :lines: 82-95
          :linenos:
-         :lineno-start: 79
+         :lineno-start: 82
 
    .. tab-item:: C++
       :sync: c++
