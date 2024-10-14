@@ -64,10 +64,7 @@ Supported Operating Systems and Architectures:
 #### NetworkTables
 
 - Server round robin message processing
-- Unify NetworkInterface and MessageHandler
-- Add StopRead/StartRead to WireConnection
 - Client: only connect to IPv4 addresses
-- ParallelTcpConnector: Add option to resolve only IPv4 addresses
 - Deprecate setNetworkTablesFlushEnabled
 
 #### Data Logging
