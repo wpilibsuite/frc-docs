@@ -12,9 +12,14 @@ The purpose of this task is to test any newly developed or heavily modified feat
 
 **LabVIEW**
 
-**C++/Java**
+**Java**
 
 - Use :doc:`Epilogue annotation logging </docs/software/telemetry/robot-telemetry-with-annotations>`
+- Use the re-written :doc:`Java units library </docs/software/basic-programming/java-units>`
+
+**Java/C++**
+
+- Utilize the new Vendor Dependency manager in Visual Studio Code
 
 **Java/C++/Python**
 

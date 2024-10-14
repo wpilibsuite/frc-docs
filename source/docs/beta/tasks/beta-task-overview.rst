@@ -45,4 +45,6 @@ Note: Objectives in Task 4 may be completed in any order.
 The purpose of Task 4 is to write new code in order to test features and functionality of the new Control System software. While we have written up a number of ideas, please feel free to come up with your own and report on what you tried/are trying and how it went.
 
 1. Java: Use :doc:`Epilogue annotation logging </docs/software/telemetry/robot-telemetry-with-annotations>`
+2. Java: Use the re-written :doc:`Java units library </docs/software/basic-programming/java-units>`
+3. Java/C++: Utilize the new Vendor Dependency manager in Visual Studio Code
 
