@@ -197,8 +197,6 @@ In Java, all constants should be declared ``public static final`` so that they a
 
 For more illustrative examples of what a ``constants`` class should look like in practice, see those of the various command-based example projects:
 
-* FrisbeeBot ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot/Constants.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/Frisbeebot/include/Constants.h))
-* GyroDriveCommands ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands/Constants.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands/include/Constants.h))
 * Hatchbot ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Constants.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/Constants.h))
 * RapidReactCommandBot ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/Constants.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/Constants.h))
 
