@@ -24,6 +24,7 @@
 "docs/software/advanced-control/trajectories/index.rst" "docs/software/advanced-controls/trajectories/index.rst"
 "docs/software/advanced-control/trajectories/manipulating-trajectories.rst" "docs/software/advanced-controls/trajectories/manipulating-trajectories.rst"
 "docs/software/advanced-control/trajectories/ramsete.rst" "docs/software/advanced-controls/trajectories/ramsete.rst"
+"docs/software/advanced-controls/trajectories/ramsete.rst" "docs/software/advanced-controls/trajectories/ltv.rst"
 "docs/software/advanced-control/trajectories/transforming-trajectories.rst" "docs/software/advanced-controls/trajectories/transforming-trajectories.rst"
 "docs/software/advanced-control/trajectories/troubleshooting.rst" "docs/software/advanced-controls/trajectories/troubleshooting.rst"
 "docs/software/vision-processing/grip/reading-array-values-published-by-networktables.rst" "docs/software/networktables/reading-array-values-published-by-networktables.rst"

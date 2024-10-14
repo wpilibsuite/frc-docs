@@ -1,42 +1,24 @@
-# Ramsete Controller
-The Ramsete Controller is a trajectory tracker that is built in to WPILib. This tracker can be used to accurately track trajectories with correction for minor disturbances.
+# LTV Unicycle Controller
+The LTV Unicycle Controller is a trajectory tracker that is built in to WPILib. This tracker can be used to accurately track trajectories with correction for minor disturbances.
 
-## Constructing the Ramsete Controller Object
-The Ramsete controller should be initialized with two gains, namely ``b`` and ``zeta``. Larger values of ``b`` make convergence more aggressive like a proportional term whereas larger values of ``zeta`` provide more damping in the response. These controller gains only dictate how the controller will output adjusted velocities. It does NOT affect the actual velocity tracking of the robot. This means that these controller gains are generally robot-agnostic.
-
-.. note:: Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results when all units were in meters. As such, a zero-argument constructor for ``RamseteController`` exists with gains defaulted to these values.
+## Constructing the LTV Unicycle Controller Object
+The LTV controller should be initialized with two parameters, `dt` and `maxVelocity`. `dt` represents the timestep used in calculations and `maxVelocity` should be the max velocity your robot can achieve.
 
 .. tab-set-code::
    ```java
-   // Using the default constructor of RamseteController. Here
-   // the gains are initialized to 2.0 and 0.7.
-   RamseteController controller1 = new RamseteController();
-   // Using the secondary constructor of RamseteController where
-   // the user can choose any other gains.
-   RamseteController controller2 = new RamseteController(2.1, 0.8);
+   LTVUnicycle controller = new LTVUnicycleController(0.2, 9);
    ```
 
    ```c++
-   // Using the default constructor of RamseteController. Here
-   // the gains are initialized to 2.0 and 0.7.
-   frc::RamseteController controller1;
-   // Using the secondary constructor of RamseteController where
-   // the user can choose any other gains.
-   frc::RamseteController controller2{2.1, 0.8};
+   frc::LTVUnicycleController controller{0.2_s, 9_mps};
    ```
 
    ```python
-   from wpimath.controller import RamseteController
-   # Using the default constructor of RamseteController. Here
-   # the gains are initialized to 2.0 and 0.7.
-   controller1 = RamseteController()
-   # Using the secondary constructor of RamseteController where
-   # the user can choose any other gains.
-   controller2 = RamseteController(2.1, 0.8)
+   controller = LTVUnicycleController(0.2, 9)
    ```
 
 ## Getting Adjusted Velocities
-The Ramsete controller returns "adjusted velocities" so that the when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal comprises of a desired pose, desired linear velocity, and desired angular velocity. Furthermore, the current position of the robot should also be updated periodically. The controller uses these four arguments to return the adjusted linear and angular velocity. Users should command their robot to these linear and angular velocities to achieve optimal trajectory tracking.
+The LTV Unicycle controller returns "adjusted velocities" so that the when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal comprises of a desired pose, desired linear velocity, and desired angular velocity. Furthermore, the current position of the robot should also be updated periodically. The controller uses these four arguments to return the adjusted linear and angular velocity. Users should command their robot to these linear and angular velocities to achieve optimal trajectory tracking.
 
 .. note:: The "goal pose" represents the position that the robot should be at a particular timestep when tracking the trajectory. It does NOT represent the final endpoint of the trajectory.
 
@@ -89,7 +71,4 @@ The returned adjusted speeds can be converted to usable speeds using the kinemat
    ```
 
 Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController ([C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_p_i_d_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/PIDController.html), :external:py:class:`Python <wpimath.controller.PIDController>`) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX can be used.
-
-## Ramsete in the Command-Based Framework
-For the sake of ease for users, a ``RamseteCommand`` class is built in to WPILib. For a full tutorial on implementing a path-following autonomous using RamseteCommand, see :ref:`docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial`.
 
