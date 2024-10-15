@@ -72,6 +72,10 @@ The names of log entries can be changed using the ``name`` configuration option 
       - Sets the specific importance level for the annotated element, which can be used by the runtime ``minimumImportance`` configuration to control what data to log. If placed on a class, this sets the *default* importance level for all contained elements, which can be overridden on an element-by-element basis. Defaults to ``DEBUG``.
     * - Strategy (class only)
       - Sets the opt-in/opt-out strategy to use for logging elements in the annotated class. Defaults to opt-out, which means every loggable element in the class will be logged unless opted out using the ``@NotLogged`` annotation. Setting this to opt-in gives finer control over what gets logged, but takes more work to set up by manually annotating all the opted-in elements. Setting this option on a field or method has no effect.
+    * - Logging Period
+      - Sets the amount of time between logging calls.
+    * - Logging Period Offset
+      - Sets the offset of logging calls relative to the robot periodic functions.
 
 .. tab-set::
 
