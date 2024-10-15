@@ -43,7 +43,7 @@ extensions = [
     "sphinxcontrib.rsvgconverter",
     "sphinxext.delta",
     "sphinxext.opengraph",
-    "sphinxext.photofinish",
+    # "sphinxext.photofinish",
     "sphinxext.rediraffe",
     "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
