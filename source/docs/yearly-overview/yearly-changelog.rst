@@ -196,4 +196,4 @@ Supported Operating Systems and Architectures:
 
 ## AdvantageScope
 
-- Update to (2025 AdvantageScope)[https://docs.advantagescope.org/whats-new]
+- Update to [2025 AdvantageScope](https://docs.advantagescope.org/whats-new)
