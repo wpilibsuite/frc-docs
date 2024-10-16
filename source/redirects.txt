@@ -307,3 +307,4 @@
 "docs/software/wpilib-tools/axon/retraining-mobilenet.rst" "docs/software/vision-processing/index.rst"
 "docs/software/wpilib-tools/axon/using-on-a-robot.rst" "docs/software/vision-processing/index.rst"
 "docs/software/wpilib-tools/axon/viewing-datasets.rst" "docs/software/vision-processing/index.rst"
+"stubs/programming-basics-stub.rst" "stubs/programming-misc-stub.rst"

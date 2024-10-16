@@ -124,7 +124,7 @@ Community translations can be found in a variety of languages in the bottom-left
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
 
-      **Programming Basics**
+      **Miscellaneous Programming**
 
       ^^^
 
@@ -132,7 +132,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       +++
 
-      .. button-ref:: stubs/programming-basics-stub
+      .. button-ref:: stubs/programming-misc-stub
          :color: primary
          :shadow:
          :align: center
@@ -357,7 +357,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
 .. toctree::
    :maxdepth: 1
-   :caption: Programming Basics
+   :caption: Miscellaneous Programming
    :hidden:
 
    docs/software/what-is-wpilib
