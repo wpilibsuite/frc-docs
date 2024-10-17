@@ -9,7 +9,7 @@ Overview
 --------
 Documentation for installation can be found on the :ref:`docs/zero-to-robot/step-2/index:Step 2: Installing Software` page.
 
-.. note:: For this task, use the files in the Releases sections of the Beta GitHub project instead of the files linked in the installation documentation.
+.. note:: For this task, use the files in the README of the [Beta GitHub project](https://github.com/wpilibsuite/2025Beta) instead of the files linked in the installation documentation.
 
 Desired Feedback
 ----------------
