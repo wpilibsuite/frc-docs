@@ -22,7 +22,18 @@ native-utils is used to configure the platform, in this case, `windowsx86-64`. T
 
 ## Java
 
-Arguments can also be configured for Java. This can be accomplished by editing `build.gradle` and appending arguments to the `FRCJavaArtifact`. An example of this is shown below.
+Compiler arguments can also be configured for Java. We do this by adding arguments in the `JavaCompile` task.
+
+```groovy
+// Configure string concat to always inline compile
+tasks.withType(JavaCompile) {
+    options.compilerArgs.add '-XDstringConcat=inline'
+}
+```
+
+### JVM Arguments
+
+Along with being able to configure compiler arguments Java also allows us to configure runtime options for the JVM. We do this by editing the `frcJava` artifact's arguments.
 
 ```groovy
 frcJava(getArtifactClass('FRCJavaArtifact')) {
