@@ -12,7 +12,7 @@ The FRC Control System Beta Test will primarily be administered through a GitHub
 
 - :ref:`docs/beta/beta-getting-started/accessing-the-beta-project:Accessing the Beta Project`
 - :ref:`docs/beta/beta-getting-started/reporting-progress:Reporting Progress`
-- :ref:`docs/beta/beta-getting-started/trackers-reporting-bugs:Issues - Reporting Bugs`
+- :ref:`docs/beta/beta-getting-started/trackers-reporting-bugs:Reporting Bugs or Other Issues`
 - :ref:`docs/beta/beta-getting-started/monitoring-via-email-notifications:Monitoring Via Email Notifications`
 
 Beta Test Documentation
