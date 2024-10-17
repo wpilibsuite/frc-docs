@@ -6,4 +6,4 @@ If you encounter issues like bugs, incorrect/unclear documentation, or unexpecte
 .. image:: images/trackers-reporting-bugs/github-issues.png
    :alt: The Github issues tab in the beta project.
 
-To report an issue, click the **Issues** tab and select :guilabel:`New issue`. A template should appear that will help prompt for useful items to report along with your issue. When done, click :guilabel:`Submit new issue`.
+To report an issue, click the **Issues** tab and select :guilabel:`New issue`. Select :guilabel:`Bug report` and a template will appear that will help prompt for useful items to report along with your issue. When done, click :guilabel:`Submit new issue`.
