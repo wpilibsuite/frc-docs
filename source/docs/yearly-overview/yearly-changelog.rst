@@ -197,3 +197,7 @@ Supported Operating Systems and Architectures:
 ## AdvantageScope
 
 - Update to [2025 AdvantageScope](https://docs.advantagescope.org/whats-new)
+
+## Choreo
+
+Choreo is bundled in the installer! Choreo is an application for creating time optimal autonomous trajectories. [Read more here](https://sleipnirgroup.github.io/Choreo/).
