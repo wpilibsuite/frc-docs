@@ -29,8 +29,6 @@ To use the either Power Distribution module, create an instance of the :code:`Po
 
 Note: it is not necessary to create a PowerDistribution object unless you need to read values from it. The board will work and supply power on all the channels even if the object is never created.
 
-.. warning:: To enable voltage and current logging in the Driver Station, the CAN ID for the CTRE Power Distribution Panel *must* be 0, and for the REV Power Distribution Hub it *must* be 1.
-
 ## Reading the Bus Voltage
 
 .. tab-set-code::
