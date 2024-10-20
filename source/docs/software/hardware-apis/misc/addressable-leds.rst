@@ -178,9 +178,96 @@ Now that the rainbow pattern is defined, we only need to apply it.
    :poster: ../../../../_images/rainbow.png
    :width: 900
 
-## Combining patterns
+### Controlling when patterns are applied
 
-Complex LED patterns are built up from combining simple base patterns (such as solid colors or gradients) with animating effects (such as scrolling or breathing) and combinatory effects (like masks and overlays). Multiple effects can be combined at once, like in the scrolling rainbow effect above that takes a basic base effect - the rainbow - and then adds a scrolling effect to it.
+Use commands. The command framework is specifically built for managing when actions run and stop, and prevents multiple actions from running simultaneously.
+
+.. tab-set::
+
+   .. tab-item:: Java
+      :sync: Java
+
+      ```Java
+      public class LEDSubsystem extends SubsystemBase {
+        private static final int kPort = 9;
+        private static final int kLength = 120;
+
+        private final AddressableLED m_led;
+        private final AddressableLEDBuffer m_buffer;
+
+        public LEDSubsystem() {
+          m_led = new AddressableLED(kPort);
+          m_buffer = new AddressableLEDBuffer(kLength);
+          m_led.setLength(kLength);
+          m_led.start();
+
+          // Set the default command to turn the strip off, otherwise the last colors written by
+          // the last command to run will continue to be displayed.
+          // Note: Other default patterns could be used instead!
+          setDefaultCommand(runPattern(LEDPattern.solid(Color.kBlack)).withName("Off"));
+        }
+
+        @Override
+        public void periodic() {
+          // Periodically send the latest LED color data to the LED strip for it to display
+          m_led.setData(m_buffer);
+        }
+
+        /**
+         * Creates a command that runs a pattern on the entire LED strip.
+         *
+         * @param pattern the LED pattern to run
+         */
+        public Command runPattern(LEDPattern pattern) {
+          return run(() -> pattern.apply(m_buffer));
+        }
+      }
+      ```
+
+   .. tab-item:: C++
+      :sync: C++
+
+      Header:
+
+      ```C++
+      class LEDSubsystem : public SubsystemBase {
+       public:
+        LEDSubsystem();
+        void Periodic() override;
+
+        frc::CommandPtr RunPattern(frc::LEDPattern pattern);
+
+       private:
+        static constexpr int kPort = 9;
+        static constexpr int kLength = 120;
+        frc::AddressableLED m_led{kPort};
+        std::array<frc::AddressableLED::LEDData, kLength> m_ledBuffer;
+      }
+      ```
+
+      ```C++
+      LEDSubsystem::LEDSubsystem() {
+        m_led.SetLength(kLength);
+        m_led.Start();
+
+        // Set the default command to turn the strip off, otherwise the last colors written by
+        // the last command to run will continue to be displayed.
+        // Note: Other default patterns could be used instead!
+        SetDefaultCommand(RunPattern(frc::LEDPattern::Solid(frc::Color::kBlack)).WithName("Off"));
+      }
+
+      LEDSubsystem::Periodic() {
+        // Periodically send the latest LED color data to the LED strip for it to display
+        m_led.SetData(m_ledBuffer);
+      }
+
+      frc::CommandPtr LEDSubsystem::RunPattern(frc::LEDPattern pattern) {
+        // std::move is necessary for inline pattern declarations to work
+        // Otherwise we could have a use-after-free!
+        return Run([this, pattern = std::move(pattern)] { pattern.ApplyTo(m_buffer); });
+      }
+      ```
+
 
 ### Basic effects
 
