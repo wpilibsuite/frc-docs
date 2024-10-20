@@ -58,12 +58,6 @@ The proper value to look is as MemAvailable, rather then MemFree (which is what 
 
  .. note:: Pressing the physical :guilabel:`User` button on the roboRIO for 5 seconds can also cause the robot code to not start, but a reboot will not start the robot code. If the robot code does not start after rebooting, press the :guilabel:`User` button. Ensure that nothing on the robot is in contact with the :guilabel:`User` button.
 
-### Radio Second Port Sometimes Fails to Communicate
-
-**Issue:** There is a rare occurrence in the OM5P Radios that causes the second Ethernet port (the one farthest from the power plug) to not communicate.
-
-**Workaround:** Generally, power cycling the radio will restablish communication with the second port. Alternately, utilize a network switch such as the tp-link switch formerly available from [FIRST Choice](https://www.amazon.com/gp/product/B000FNFSPY) or the [brainboxes SW-005](https://www.brainboxes.com/product/industrial-ethernet-switches/fast-ethernet/sw-005) and plug all ethernet devices into the network switch and then plug the switch into the radio's first Ethernet port. This also allows easier tethering while at competition.
-
 ### Onboard I2C Causing System Lockups
 
 **Issue:** Use of the onboard I2C port on the roboRIO 1 or 2, in any language, can result in system lockups. The frequency of these lockups appears to be dependent on the specific hardware (i.e. different roboRIOs will behave differently) as well as how the bus is being used.

@@ -1,6 +1,6 @@
 # WPILib Installation Guide
 
-This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can skip to :doc:`python-setup`. Additionally, the below tutorial shows Windows 10, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
+This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can skip to :doc:`python-setup`. Additionally, the below tutorial shows Windows 11, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ WPILib is designed to install to different folders for different years, so that 
 
 ## Downloading
 
-.. wpilibrelease:: v2024.3.2
+.. wpilibrelease:: v2025.1.1-beta-1
 
 [You can download the latest release of the installer from GitHub](https://github.com/wpilibsuite/allwpilib/releases/latest/).
 
@@ -116,7 +116,7 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
-Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~100MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
+Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~150MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar
@@ -126,7 +126,7 @@ After installation is complete, you will be presented with the finished screen.
 .. image:: images/wpilib-setup/installer-finish.png
    :alt: Installer finished screen.
 
-.. important:: WPILib installs a separate version of VS Code. It does not use an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2022``. Please launch the WPILib VS Code and not a system installed copy!
+.. important:: WPILib installs a separate version of VS Code. It does not use an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2025``. Please launch the WPILib VS Code and not a system installed copy!
 
 Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
 
