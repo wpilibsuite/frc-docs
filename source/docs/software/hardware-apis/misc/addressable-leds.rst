@@ -85,38 +85,7 @@ The roboRIO can only control a single addressable LED output at a time, but ther
             std::ranges::drop_view(m_buffer, 60));
       ```
 
-## Setting the Entire Strip to One Color
-
-Color can be set to an individual led on the strip using two methods. ``setRGB()`` which takes RGB values as an input and ``setHSV()`` which takes HSV values as an input.
-
-### Using RGB Values
-
-RGB stands for Red, Green, and Blue. This is a fairly common color model as it's quite easy to understand. LEDs can be set with the ``setRGB`` method that takes 4 arguments: index of the LED, amount of red, amount of green, amount of blue. The amount of Red, Green, and Blue are integer values between 0-255.
-
-.. tab-set::
-
-   .. tab-item:: Java
-      :sync: Java
-
-      ```Java
-      for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-         // Sets the specified LED to the RGB values for red
-         m_ledBuffer.setRGB(i, 255, 0, 0);
-      }
-      m_led.setData(m_ledBuffer);
-      ```
-
-   .. tab-item:: C++
-      :sync: C++
-
-      ```C++
-      for (int i = 0; i < kLength; i++) {
-         m_ledBuffer[i].SetRGB(255, 0, 0);
-      }
-      m_led.SetData(m_ledBuffer);
-      ```
-
-### Using Solid Color Patterns
+## LED Patterns
 
 The ``LEDPattern`` API simplifies setting LED data. Rather than needing to manually loop over every LED index, you can apply a pattern object to the data buffer directly. LED patterns are stateless, and can safely be applied to multiple buffers or views.
 
@@ -150,40 +119,7 @@ The ``LEDPattern`` API simplifies setting LED data. Rather than needing to manua
       m_led.SetData(m_ledBuffer);
       ```
 
-### Using HSV Values
-
-HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. In WPILib, Hue is an integer from 0 - 180. Saturation and Value are integers from 0 - 255. If you look at a color picker like [Google's](https://www.google.com/search?q=color+picker), Hue will be 0 - 360 and Saturation and Value are from 0% to 100%. This is the same way that OpenCV handles HSV colors. Make sure the HSV values entered to WPILib are correct, or the color produced might not be the same as was expected.
-
-.. image:: images/hsv-models.png
-   :alt: HSV models picture
-   :width: 900
-
-LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the LED, hue, saturation, and value. An example is shown below for setting the color of an LED strip to red (hue of 0).
-
-.. tab-set::
-
-   .. tab-item:: Java
-      :sync: Java
-
-      ```Java
-      for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-         // Sets the specified LED to the HSV values for red
-         m_ledBuffer.setHSV(i, 0, 100, 100);
-      }
-      m_led.setData(m_ledBuffer);
-      ```
-
-   .. tab-item:: C++
-      :sync: C++
-
-      ```C++
-      for (int i = 0; i < kLength; i++) {
-         m_ledBuffer[i].SetHSV(0, 100, 100);
-      }
-      m_led.SetData(m_ledBuffer);
-      ```
-
-## Creating a Rainbow Effect
+### Creating a Rainbow Effect
 
 Using the built in ``LEDPattern.rainbow`` method, we can create a pattern that displays a full rainbow across an entire LED strip. Then, by calling ``scrollAtAbsoluteSpeed`` we can make it animate and cycle around the strip. ``rainbow`` accepts two arguments - one for the saturation and one for the value, expressed as a number from 0 to 255.
 
@@ -754,6 +690,8 @@ Patterns can be brightened and dimmed relative to their original brightness; a b
 
 ### Combinatory effects
 
+Complex LED patterns are built up from combining simple base patterns (such as solid colors or gradients) with animating effects (such as scrolling or breathing) and combinatory effects (like masks and overlays). Multiple effects can be combined at once, like in the scrolling rainbow effect above that takes a basic base effect - a static rainbow - and then adds a scrolling effect to it.
+
 #### Mask
 
 .. video:: images/mask.mp4
@@ -858,3 +796,64 @@ Overlays can be used to "stack" patterns atop each other, where black pixels (se
 #### Blend
 
 Blends will combine the output colors of patterns together, by averaging out the individual RGB colors for every pixel. Like the :ref:`brightness modifier <docs/software/hardware-apis/misc/addressable-leds:Brightness>`, this tends to output colors that are more desaturated than its inputs.
+
+## Low Level Access
+
+``LEDPattern`` is an easy and convenient way of controlling LEDs, but direct access to the LED colors is sometimes needed for custom patterns and animations.
+
+Color can be set to an individual led on the strip using two methods: ``setRGB()``, which takes RGB values as an input, and ``setHSV()``, which takes HSV values as an input. Low-level access is typically done with an indexed for-loop that iterates over each LED index of the section to control. This method can be used for both ``AddressableLEDBuffer`` and ``AddressableLEDBufferView`` objects in Java, and for ``std::span`` for C++.
+
+.. note:: RGB stands for Red, Green, and Blue. This is a fairly common color model as it's quite easy to understand, and it corresponds with a typical LED configuration that's comprised of one red, one green, and one blue sub-LED. LEDs can be set with the ``setRGB`` method that takes 4 arguments: index of the LED, amount of red, amount of green, amount of blue. The amount of red, green, and blue are integer values between 0-255.
+
+.. note:: HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. In WPILib, Hue is an integer from 0 - 180. Saturation and Value are integers from 0 - 255. If you look at a color picker like [Google's](https://www.google.com/search?q=color+picker), Hue will be 0 - 360 and Saturation and Value are from 0% to 100%. This is the same way that OpenCV handles HSV colors. Make sure the HSV values entered to WPILib are correct, or the color produced might not be the same as was expected.
+
+These examples demonstrate setting an entire LED strip to solid red using the RGB and HSV methods:
+
+.. tab-set::
+
+   .. tab-item:: Java (RGB)
+      :sync: Java
+
+      ```Java
+      for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+         // Sets the specified LED to the RGB values for red
+         m_ledBuffer.setRGB(i, 255, 0, 0);
+      }
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++ (RGB)
+      :sync: C++
+
+      ```C++
+      for (int i = 0; i < kLength; i++) {
+         m_ledBuffer[i].SetRGB(255, 0, 0);
+      }
+      m_led.SetData(m_ledBuffer);
+      ```
+
+   .. tab-item:: Java (HSV)
+
+      ```Java
+      for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+         // Sets the specified LED to the HSV values for red
+         m_ledBuffer.setHSV(i, 0, 100, 100);
+      }
+      m_led.setData(m_ledBuffer);
+      ```
+
+   .. tab-item:: C++ (HSV)
+
+      ```C++
+      for (int i = 0; i < kLength; i++) {
+         m_ledBuffer[i].SetHSV(0, 100, 100);
+      }
+      m_led.SetData(m_ledBuffer);
+      ```
+
+
+### Using HSV Values
+
+.. image:: images/hsv-models.png
+   :alt: HSV models picture
+   :width: 900
