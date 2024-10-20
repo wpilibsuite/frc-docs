@@ -460,9 +460,9 @@ Slightly different from the basic color patterns, the progress mask pattern gene
 
 ### Modifying effects
 
-.. note:: The built in animating effects like blinking and scrolling are based on the time returned by ``WPIUtilJNI.now()`` - in effect, they will play as if they started when the robot booted. Because all built in animation patterns are periodic, this means that the *first* period of a pattern may be truncated at any arbitrary point between 0% and 100%, and every period after that will play normally.
-
 Basic LED patterns can be combined with modifier effects to create new patterns with a combination of effects. Multiple modifiers can be used together to create complex patterns.
+
+.. note:: The built in animating effects like blinking and scrolling are based on the time returned by ``WPIUtilJNI.now()`` - in effect, they will play as if they started when the robot booted. Because all built in animation patterns are periodic, this means that the *first* period of a pattern may be truncated at any arbitrary point between 0% and 100%, and every period after that will play normally.
 
 #### Offset
 
@@ -560,7 +560,7 @@ Patterns and animations can be reversed to flip the direction that patterns are 
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
-Scrolling can be controlled in two different ways: either at a speed as a function of the length of the buffer or view to which it is applied (i.e., the scrolling speed is in terms of percentage per second, or a similar unit), or as a function of the density of the phsyical LED strips (i.e. scrolling speed is in meters per second, or a similar unit). Relative velocities are particularly useful when a scrolling pattern is applied to different LED strips with different LED spacing (such as one strip with 120 LEDs per meter daisy chained to a second strip with 60 or 144 LEDs per meter), when prototyping before having a particular LED strip in mind (where the density isn't yet known), or when LED strips are quickly changed out. Scrolling at a fixed real-world speed (eg ``InchesPerSecond.of(2)``) may be more understandable to readers, but will move faster or slower when applied to an LED strip with a lower or higher pixel density, respectively.
+Scrolling can be controlled in two different ways: either at a speed as a function of the length of the buffer or view to which it is applied (i.e., the scrolling speed is in terms of percentage per second, or a similar unit), or as a function of the density of the physical LED strips (i.e. scrolling speed is in meters per second, or a similar unit). Relative velocities are particularly useful when a scrolling pattern is applied to different LED strips with different LED spacing (such as one strip with 120 LEDs per meter daisy chained to a second strip with 60 or 144 LEDs per meter), when prototyping before having a particular LED strip in mind (where the density isn't yet known), or when LED strips are quickly changed out. Scrolling at a fixed real-world speed (eg ``InchesPerSecond.of(2)``) may be more understandable to readers, but will move faster or slower when applied to an LED strip with a lower or higher pixel density, respectively.
 
 .. tab-set::
 
@@ -659,8 +659,6 @@ Blinking can be done in one of three ways:
 1. Symmetrically, where an equal amount of time is spent in the "on" and "off" states per cycle
 2. Asymetrically, where the time spent "on" can be configured independently from the time spent "off"
 3. Synchronously, where the time spent on and off is synchronized with an external source (for example, the state of the RSL)
-
-.. note:: The time-based blinking modifiers are synced with the robot's clock
 
 .. tab-set::
 
