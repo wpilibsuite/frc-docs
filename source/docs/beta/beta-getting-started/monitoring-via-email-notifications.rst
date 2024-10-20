@@ -3,7 +3,7 @@ Monitoring Via Email Notifications
 
 Configuring GitHub Notifications
 --------------------------------
-Your overall Github notification preferences can be set at `<https://github.com/settings/notifications>`__
+Your overall Github notification preferences can be set at https://github.com/settings/notifications
 
 Configuring Repository Settings
 -------------------------------
