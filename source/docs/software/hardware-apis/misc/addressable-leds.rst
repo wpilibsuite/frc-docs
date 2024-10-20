@@ -187,6 +187,8 @@ LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the 
 
 Using the built in ``LEDPattern.rainbow`` method, we can create a pattern that displays a full rainbow across an entire LED strip. Then, by calling ``scrollAtAbsoluteSpeed`` we can make it animate and cycle around the strip. ``rainbow`` accepts two arguments - one for the saturation and one for the value, expressed as a number from 0 to 255.
 
+.. note:: Animating effects like scrolling use the :ref:`Java units library <docs/software/basic-programming/java-units:The Java Units Library>` and the :ref:`C++ units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` for speeds and durations.
+
 The base rainbow pattern will look like this:
 
 .. image:: images/rainbow.png
@@ -459,8 +461,6 @@ Slightly different from the basic color patterns, the progress mask pattern gene
 ### Modifying effects
 
 .. note:: The built in animating effects like blinking and scrolling are based on the time returned by ``WPIUtilJNI.now()`` - in effect, they will play as if they started when the robot booted. Because all built in animation patterns are periodic, this means that the *first* period of a pattern may be truncated at any arbitrary point between 0% and 100%, and every period after that will play normally.
-
-.. note:: Animating effects use the :ref:`Java units library <docs/software/basic-programming/java-units:The Java Units Library>` and the :ref:`C++ units library <docs/software/basic-programming/cpp-units:The C++ Units Library>` for speeds and durations.
 
 Basic LED patterns can be combined with modifier effects to create new patterns with a combination of effects. Multiple modifiers can be used together to create complex patterns.
 
