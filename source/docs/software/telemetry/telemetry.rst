@@ -22,6 +22,6 @@ WPILib supports several :ref:`dashboards <docs/software/dashboards/index:Dashboa
 * ``string[]``
 * ``byte[]``
 
-Telemetry data can be sent to a WPILib dashboard using an associated WPILib method (for more details, see the documentation for the individual dashboard in question), or by :ref:`directly publishing to NetworkTables <docs/software/networktables/networktables-intro:what is networktables>`.
+Along with these primitive data types NetworkTables supports logging with two different serialisation formats, struct and protobuf. For most users structs will be preferable as they are significantly more performant, but in some cases (ie dynamically sized types) protobufs must be used. These can be used to log more complex data types such as `Pose2d`.
 
-While NetworkTables does not yet support serialization of complex data types (this is tentatively scheduled for 2024), *mutable* types from user code can be easily extended to interface directly with WPILib dashboards via the ``Sendable`` interface, whose usage is described in the next article.
+Telemetry data can be sent to a WPILib dashboard using an associated WPILib method (for more details, see the documentation for the individual dashboard in question), or by :ref:`directly publishing to NetworkTables <docs/software/networktables/networktables-intro:what is networktables>`.
