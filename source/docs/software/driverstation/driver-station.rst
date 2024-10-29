@@ -28,6 +28,8 @@ The FRC Driver Station can be launched by double-clicking the icon on the Deskto
    .. video:: images/driver-station/ds-astop.mp4
       :loop:
       :width: 900
+      :autoplay:
+      :muted:
       :alt: Driver Station flashing yellow in A-Stop mode
 
 .. only:: not html
