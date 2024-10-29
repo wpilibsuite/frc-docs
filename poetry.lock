@@ -2201,6 +2201,25 @@ Sphinx = ">=1.6.3"
 cairosvg = ["cairosvg (>=1.0)"]
 
 [[package]]
+name = "sphinxcontrib-video"
+version = "0.2.1"
+description = "Allows embedding of HTML5 videos in sphinx"
+optional = false
+python-versions = ">=3.6.9"
+files = [
+    {file = "sphinxcontrib_video-0.2.1-py3-none-any.whl", hash = "sha256:ebc31be0bb96e1aee260efe6b3806b81f9db20535c55b2f4ba355404f38d067d"},
+    {file = "sphinxcontrib_video-0.2.1.tar.gz", hash = "sha256:b813be3b602aa14b537ed18e8a52a876d0818ccfc9c4c7c8e4822227f677ce48"},
+]
+
+[package.dependencies]
+sphinx = "*"
+
+[package.extras]
+dev = ["mypy", "nox", "pre-commit"]
+doc = ["pydata-sphinx-theme (==0.13.0rc3)", "sphinx-design"]
+test = ["beautifulsoup4", "pytest", "pytest-cov", "pytest-regressions"]
+
+[[package]]
 name = "sphinxext-delta"
 version = "0.2.0"
 description = "Sphinx extension for listing changed Sphinx articles"
@@ -2519,4 +2538,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "c610bad862aa95651968fabd51344b036e3eb77be7c50570c7b194b309987a96"
+content-hash = "bbf6f8f139d7b2a04ab8cff68f692298f1281ff069978c55bc45e818bfa62675"

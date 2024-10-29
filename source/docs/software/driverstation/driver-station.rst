@@ -23,7 +23,17 @@ The FRC Driver Station can be launched by double-clicking the icon on the Deskto
   * :kbd:`Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
   * :kbd:`Backspace` - "A-Stop" the robot when in Practice Mode - Autonomous Enabled. The robot will be disabled until the Practice Mode reaches Teleop then will be automatically re-enabled. While disabled, the application background will flash orange indicating the robot will re-enable automatically.
 
- .. image:: images/driver-station/ds-astop.gif
+.. only:: html
+
+   .. video:: images/driver-station/ds-astop.mp4
+      :loop:
+      :width: 900
+      :alt: Driver Station flashing yellow in A-Stop mode
+
+.. only:: not html
+
+    .. image:: images/driver-station/ds-astop.png
+       :alt: Driver Station flashing yellow in A-Stop mode
 
 .. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
 

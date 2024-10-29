@@ -41,6 +41,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.rsvgconverter",
+    "sphinxcontrib.video",
     "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.photofinish",
@@ -56,7 +57,6 @@ extensions = [
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
     "sphinx_copybutton",
-    "sphinx.ext.imgconverter",
 ]
 
 local_extensions = [
