@@ -18,7 +18,7 @@ Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`, and ty
 
 This will bring up the "New Project Creator Window". From here, click on "Select a project type (Example or Template), and pick "Example" from the prompt that appears:
 
-.. image:: images/programming-romi/romi-vscode-select-type.png
+.. image:: images/programming-romi/romi-vscode-select-example.png
 
 Next, a list of examples will appear. Scroll through the list to find the "RomiReference" example:
 
@@ -43,7 +43,7 @@ To run a Romi program, first, ensure that your Romi is powered on. Next, connect
 
 Now to start your Romi robot code, open the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) and select "Simulate Robot Code", or press :kbd:`F5`.
 
-.. image:: images/programming-romi/romi-vscode-launch-sim.png
+.. image:: images/programming-romi/romi-vscode-simulate.png
    :alt: Launching simulation via the WPILib Command Palette
 
 If all goes well, you should see a line in the console output that reads "HALSimWS: WebSocket Connected":
