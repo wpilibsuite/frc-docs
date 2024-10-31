@@ -34,8 +34,10 @@ The FRC Driver Station can be launched by double-clicking the icon on the Deskto
 
 .. only:: not html
 
-    .. image:: images/driver-station/ds-astop.png
-       :alt: Driver Station flashing yellow in A-Stop mode
+    .. figure:: images/driver-station/ds-astop.png
+       :alt: Driver Station flashing orange in A-Stop mode
+
+       View this page in the web documentation for an animation of the A-Stop behavior
 
 .. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
 
