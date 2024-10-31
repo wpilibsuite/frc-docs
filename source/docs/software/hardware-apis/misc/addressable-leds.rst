@@ -173,11 +173,18 @@ Now that the rainbow pattern is defined, we only need to apply it.
          :linenos:
          :lineno-start: 15
 
-.. video:: images/scrolling-rainbow.mp4
-   :loop:
-   :nocontrols:
-   :poster: ../../../../_images/rainbow.png
-   :width: 900
+.. only:: html
+
+   .. video:: images/scrolling-rainbow.mp4
+      :loop:
+      :nocontrols:
+      :poster: ../../../../_images/rainbow.png
+      :width: 900
+
+.. only:: not html
+
+   .. image:: images/scrolling-rainbow.gif
+      :width: 900
 
 ### Controlling when patterns are applied
 
@@ -444,10 +451,17 @@ Steps are specified as a combination of the *starting position* of that color, a
 
 #### Progress mask
 
-.. video:: images/progress-mask.mp4
-   :loop:
-   :nocontrols:
-   :width: 900
+.. only:: html
+
+   .. video:: images/progress-mask.mp4
+      :loop:
+      :nocontrols:
+      :width: 900
+
+.. only:: not html
+
+   .. image:: images/progress-mask.gif
+      :width: 900
 
 Slightly different from the basic color patterns, the progress mask pattern generates a white-and-black pattern where the white portion is a varying length depending on the value of the value function. This can be combined with another pattern using a :ref:`mask <docs/software/hardware-apis/misc/addressable-leds:Mask>` to display a portion of another base pattern depending on the progress of some process - such as the position of a mechanism in its range of motion (eg an elevator's height) or the progress of a PID controller towards its goal.
 
@@ -575,17 +589,27 @@ Patterns and animations can be reversed to flip the direction that patterns are 
 
 #### Scroll
 
-.. video:: images/scroll-relative.mp4
-   :loop:
-   :nocontrols:
-   :poster: ../../../../_images/discontinuous-gradient.png
-   :width: 900
+.. only:: html
 
-.. video:: images/scroll-absolute.mp4
-   :loop:
-   :nocontrols:
-   :poster: ../../../../_images/discontinuous-gradient.png
-   :width: 900
+   .. video:: images/scroll-relative.mp4
+      :loop:
+      :nocontrols:
+      :poster: ../../../../_images/discontinuous-gradient.png
+      :width: 900
+
+   .. video:: images/scroll-absolute.mp4
+      :loop:
+      :nocontrols:
+      :poster: ../../../../_images/discontinuous-gradient.png
+      :width: 900
+
+.. only:: not html
+
+   .. image:: images/scroll-relative.gif
+      :width: 900
+
+   .. image:: images/scroll-absolute.gif
+      :width: 900
 
 Scrolling can be controlled in two different ways: either at a speed as a function of the length of the buffer or view to which it is applied (i.e., the scrolling speed is in terms of percentage per second, or a similar unit), or as a function of the density of the physical LED strips (i.e. scrolling speed is in meters per second, or a similar unit). Relative velocities are particularly useful when a scrolling pattern is applied to different LED strips with different LED spacing (such as one strip with 120 LEDs per meter daisy chained to a second strip with 60 or 144 LEDs per meter), when prototyping before having a particular LED strip in mind (where the density isn't yet known), or when LED strips are quickly changed out. Scrolling at a fixed real-world speed (eg ``InchesPerSecond.of(2)``) may be more understandable to readers, but will move faster or slower when applied to an LED strip with a lower or higher pixel density, respectively.
 
@@ -629,11 +653,18 @@ Scrolling can be controlled in two different ways: either at a speed as a functi
 
 #### Breathe
 
-.. video:: images/breathe.mp4
-   :loop:
-   :nocontrols:
-   :poster: ../../../../_images/discontinuous-gradient.png
-   :width: 900
+.. only:: html
+
+   .. video:: images/breathe.mp4
+      :loop:
+      :nocontrols:
+      :poster: ../../../../_images/discontinuous-gradient.png
+      :width: 900
+
+.. only:: not html
+
+   .. image:: images/breathe.gif
+      :width: 900
 
 A breathing modifier will make the base pattern brighten and dim in a sinusoidal pattern over the given period of time. Brightness is relative to the original brightness of the base pattern - breathing will only make it dimmer, never brighter than the original.
 
@@ -672,17 +703,27 @@ A breathing modifier will make the base pattern brighten and dim in a sinusoidal
 
 #### Blink
 
-.. video:: images/blink-symmetric.mp4
-   :loop:
-   :nocontrols:
-   :poster: ../../../../_images/discontinuous-gradient.png
-   :width: 900
+.. only:: html
 
-.. video:: images/blink-asymmetric.mp4
-   :loop:
-   :nocontrols:
-   :poster: ../../../../_images/discontinuous-gradient.png
-   :width: 900
+   .. video:: images/blink-symmetric.mp4
+      :loop:
+      :nocontrols:
+      :poster: ../../../../_images/discontinuous-gradient.png
+      :width: 900
+
+   .. video:: images/blink-asymmetric.mp4
+      :loop:
+      :nocontrols:
+      :poster: ../../../../_images/discontinuous-gradient.png
+      :width: 900
+
+.. only:: not html
+
+   .. image:: images/blink-symmetric.gif
+      :width: 900
+
+   .. image:: images/blink-asymmetric.gif
+      :width: 900
 
 Blinking can be done in one of three ways:
 
@@ -788,11 +829,18 @@ Complex LED patterns are built up from combining simple base patterns (such as s
 
 #### Mask
 
-.. video:: images/mask.mp4
-   :loop:
-   :nocontrols:
-   :poster: ../../../../_images/discontinuous-gradient.png
-   :width: 900
+.. only:: html
+
+   .. video:: images/mask.mp4
+      :loop:
+      :nocontrols:
+      :poster: ../../../../_images/discontinuous-gradient.png
+      :width: 900
+
+.. only:: not html
+
+   .. image:: images/mask.gif
+      :width: 900
 
 Masks work by combining the RGB values of two patterns and keeping only the values that are shared by both. The combination works on the individual bits of each color using a bitwise AND operation - for example, if a pixel's red channel were set to 255 by one pattern (represented as 11111111 in binary), then the output red color would be identical to the red channel of the second pattern. If the first pattern sets it to zero (00000000 in binary), then the output red color would also be zero, regardless of whatever the second pattern sets. For this reason, black (all zeroes) and white (all ones) masks are very useful for selectively enabling and disabling parts of another pattern. Other mask colors can be used as well: masking with solid red would keep only the red channel of the original pattern, while discarding all green and blue values.
 
@@ -838,11 +886,18 @@ Masks work by combining the RGB values of two patterns and keeping only the valu
       ```
 
 
-.. video:: images/rainbow-with-scrolling-mask.mp4
-   :loop:
-   :nocontrols:
-   :poster: ../../../../_images/rainbow.png
-   :width: 900
+.. only:: html
+
+   .. video:: images/rainbow-with-scrolling-mask.mp4
+      :loop:
+      :nocontrols:
+      :poster: ../../../../_images/rainbow.png
+      :width: 900
+
+.. only:: not html
+
+   .. image:: images/rainbow-with-scrolling-mask.gif
+      :width: 900
 
 Masks can also be animated (see :ref:`progressMask <docs/software/hardware-apis/misc/addressable-leds:Progress mask>`). Masking a base pattern with a scrolling pattern will result in a panning effect. The animation above was generated by masking a rainbow pattern with a scrolling white/black pattern
 
