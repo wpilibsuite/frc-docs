@@ -1,7 +1,7 @@
 Motion Profiling in Command-based
 ================================================================================
 
-.. note:: For a description of the WPILib motion profiling features used by these command-based wrappers, see :ref:`docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib`.
+.. note:: For a description of the WPILib motion profiling features used by these command-based wrappers, see :ref:`docs/software/controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib`.
 
 .. note:: The ``TrapezoidProfile`` class, used on its own, is most useful when composed with external controllers, such as a "smart" motor controller with a built-in PID functionality.  For combining trapezoidal motion profiling with WPILib's ``PIDController``, see :doc:`profilepid-subsystems-commands`.
 

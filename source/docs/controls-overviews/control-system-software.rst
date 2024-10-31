@@ -122,7 +122,7 @@ PathWeaver allows teams to quickly generate and configure paths for advanced aut
 .. image:: images/control-system-software/sysid.png
    :alt: SysId UI showing diagnostics and analysis for a flywheel.
 
-This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`System Identification section <docs/software/advanced-controls/system-identification/introduction:Introduction to System Identification>`.
+This tool helps teams automatically calculate constants that can be used to describe the physical properties of your robot for use in features like robot simulation, trajectory following, and PID control.  For more information see the :ref:`System Identification section <docs/software/controls/system-identification/introduction:Introduction to System Identification>`.
 
 ## OutlineViewer
 

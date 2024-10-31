@@ -174,7 +174,7 @@ The ``Trigger`` class can be composed to create composite triggers through the `
 
 ## Debouncing Triggers
 
-To avoid rapid repeated activation, triggers (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/software/advanced-controls/filters/debouncer:Debouncer>` using the `debounce` method:
+To avoid rapid repeated activation, triggers (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/software/controls/filters/debouncer:Debouncer>` using the `debounce` method:
 
 .. tab-set-code::
 

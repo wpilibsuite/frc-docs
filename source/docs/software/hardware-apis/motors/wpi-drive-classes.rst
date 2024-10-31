@@ -312,4 +312,4 @@ The use of field-oriented driving makes often makes the robot much easier to dri
 
 Just remember to get the gyro angle each time ``driveCartesian()`` is called.
 
-.. note:: Many teams also like to ramp the joysticks inputs over time to promote a smooth acceleration and reduce jerk.  This can be accomplished with a :ref:`Slew Rate Limiter <docs/software/advanced-controls/filters/slew-rate-limiter:Slew Rate Limiter>`.
+.. note:: Many teams also like to ramp the joysticks inputs over time to promote a smooth acceleration and reduce jerk.  This can be accomplished with a :ref:`Slew Rate Limiter <docs/software/controls/filters/slew-rate-limiter:Slew Rate Limiter>`.

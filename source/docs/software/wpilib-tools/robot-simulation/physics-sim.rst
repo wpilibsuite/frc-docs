@@ -1,6 +1,6 @@
 # Physics Simulation with WPILib
 
-Because :ref:`state-space notation <docs/software/advanced-controls/state-space/state-space-intro:What is State-Space Notation?>` allows us to compactly represent the :term:`dynamics <dynamics>` of :term:`systems <system>`, we can leverage it to provide a backend for simulating physical systems on robots. The goal of these simulators is to simulate the motion of robot mechanisms without modifying existing non-simulation user code. The basic flow of such simulators is as follows:
+Because :ref:`state-space notation <docs/software/controls/state-space/state-space-intro:What is State-Space Notation?>` allows us to compactly represent the :term:`dynamics <dynamics>` of :term:`systems <system>`, we can leverage it to provide a backend for simulating physical systems on robots. The goal of these simulators is to simulate the motion of robot mechanisms without modifying existing non-simulation user code. The basic flow of such simulators is as follows:
 
 - In normal user code:
 

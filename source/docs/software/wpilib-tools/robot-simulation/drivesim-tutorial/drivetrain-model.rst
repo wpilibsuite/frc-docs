@@ -59,7 +59,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 ## Creating a ``DifferentialDrivetrainSim`` from SysId Gains
 
-You can also use the gains produced by :ref:`System Identification <docs/software/advanced-controls/system-identification/introduction:Introduction to System Identification>`, which you may have performed as part of setting up the trajectory tracking workflow outlined :ref:`here <docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial>` to create a simulation model of your drivetrain and often yield results closer to real-world behavior than the method above.
+You can also use the gains produced by :ref:`System Identification <docs/software/controls/system-identification/introduction:Introduction to System Identification>`, which you may have performed as part of setting up the trajectory tracking workflow outlined :ref:`here <docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial>` to create a simulation model of your drivetrain and often yield results closer to real-world behavior than the method above.
 
 .. important:: You must need two sets of ``Kv`` and ``Ka`` gains from the identification tool -- one from straight-line motion and the other from rotating in place. We will refer to these two sets of gains as linear and angular gains respectively.
 

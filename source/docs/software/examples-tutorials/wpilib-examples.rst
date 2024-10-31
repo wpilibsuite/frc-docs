@@ -70,7 +70,7 @@ These examples demonstrate the use of the :ref:`Command-Based framework <docs/so
 
 ## State-Space Examples
 
-These examples demonstrate the use of the :ref:`State-Space Control <docs/software/advanced-controls/state-space/state-space-intro:Introduction to State-Space Control>`.
+These examples demonstrate the use of the :ref:`State-Space Control <docs/software/controls/state-space/state-space-intro:Introduction to State-Space Control>`.
 
 * **StateSpaceFlywheel** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel), [Python](https://github.com/robotpy/examples/tree/main/StateSpaceFlywheel)): Demonstrates state-space control of a flywheel.
 * **StateSpaceFlywheelSysId** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId), [Python](https://github.com/robotpy/examples/tree/main/StateSpaceFlywheelSysId)): Demonstrates state-space control using SysId's System Identification for controlling a flywheel.
