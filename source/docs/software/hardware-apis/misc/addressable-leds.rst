@@ -175,6 +175,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
 
 .. video:: images/scrolling-rainbow.mp4
    :loop:
+   :nocontrols:
    :poster: ../../../../_images/rainbow.png
    :width: 900
 
@@ -445,6 +446,7 @@ Steps are specified as a combination of the *starting position* of that color, a
 
 .. video:: images/progress-mask.mp4
    :loop:
+   :nocontrols:
    :width: 900
 
 Slightly different from the basic color patterns, the progress mask pattern generates a white-and-black pattern where the white portion is a varying length depending on the value of the value function. This can be combined with another pattern using a :ref:`mask <docs/software/hardware-apis/misc/addressable-leds:Mask>` to display a portion of another base pattern depending on the progress of some process - such as the position of a mechanism in its range of motion (eg an elevator's height) or the progress of a PID controller towards its goal.
@@ -575,11 +577,13 @@ Patterns and animations can be reversed to flip the direction that patterns are 
 
 .. video:: images/scroll-relative.mp4
    :loop:
+   :nocontrols:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
 .. video:: images/scroll-absolute.mp4
    :loop:
+   :nocontrols:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
@@ -627,6 +631,7 @@ Scrolling can be controlled in two different ways: either at a speed as a functi
 
 .. video:: images/breathe.mp4
    :loop:
+   :nocontrols:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
@@ -669,11 +674,13 @@ A breathing modifier will make the base pattern brighten and dim in a sinusoidal
 
 .. video:: images/blink-symmetric.mp4
    :loop:
+   :nocontrols:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
 .. video:: images/blink-asymmetric.mp4
    :loop:
+   :nocontrols:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
@@ -783,6 +790,7 @@ Complex LED patterns are built up from combining simple base patterns (such as s
 
 .. video:: images/mask.mp4
    :loop:
+   :nocontrols:
    :poster: ../../../../_images/discontinuous-gradient.png
    :width: 900
 
@@ -832,6 +840,7 @@ Masks work by combining the RGB values of two patterns and keeping only the valu
 
 .. video:: images/rainbow-with-scrolling-mask.mp4
    :loop:
+   :nocontrols:
    :poster: ../../../../_images/rainbow.png
    :width: 900
 
@@ -944,3 +953,23 @@ These examples demonstrate setting an entire LED strip to solid red using the RG
 .. image:: images/hsv-models.png
    :alt: HSV models picture
    :width: 900
+
+
+.. only:: html
+
+   .. raw:: html
+
+      <script type="text/javascript">
+        // Set a jQuery listener to allow users to click the videos to toggle play/pause
+        // We can't easily use the standard video controls because they overlap and obscure the video contents
+        $(document).ready(() => {
+          $('video').off('click').on('click', (event) => {
+            const videoPlayer = event.target;
+            if (videoPlayer.paused === true) {
+              videoPlayer.play();
+            } else {
+              videoPlayer.pause();
+            }
+          })
+        });
+      </script>
