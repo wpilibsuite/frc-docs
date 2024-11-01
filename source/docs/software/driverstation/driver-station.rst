@@ -21,6 +21,23 @@ The FRC Driver Station can be launched by double-clicking the icon on the Deskto
   * :kbd:`[` + :kbd:`]` + :kbd:`\\` - Enable the robot (the 3 keys above Enter on most keyboards)
   * :kbd:`Enter` - Disable the Robot
   * :kbd:`Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
+  * :kbd:`Backspace` - "A-Stop" the robot when in Practice Mode - Autonomous Enabled. The robot will be disabled until the Practice Mode reaches Teleop then will be automatically re-enabled. While disabled, the application background will flash orange indicating the robot will re-enable automatically.
+
+.. only:: html
+
+   .. video:: images/driver-station/ds-astop.mp4
+      :loop:
+      :width: 900
+      :autoplay:
+      :muted:
+      :alt: Driver Station flashing orange in A-Stop mode
+
+.. only:: not html
+
+    .. figure:: images/driver-station/ds-astop.png
+       :alt: Driver Station flashing orange in A-Stop mode
+
+       View this page in the web documentation for an animation of the A-Stop behavior
 
 .. note:: Space bar will E-Stop the robot regardless of if the Driver Station window has focus or not
 
@@ -58,7 +75,7 @@ The Operations Tab is used to control the mode of the robot and provide addition
 
   - Teleoperated Mode causes the robot to run the code in the Teleoperated portion of the match.
   - Autonomous Mode causes the robot to run the code in the Autonomous portion of the match.
-  - Practice Mode causes the robot to cycle through the same transitions as an FRC match after the Enable button is pressed (timing for practice mode can be found on the setup tab).
+  - Practice Mode causes the robot to cycle through the same transitions as an FRC match after the Enable button is pressed (timing for practice mode can be found on the setup tab). When Practice Mode is in use, the DS will flash the background orange to indicate a pending enable (either the start of Autonomous or the start of Teleop after an A-Stop).
   - :doc:`Test Mode </docs/software/basic-programming/using-test-mode>` is an additional mode where test code that doesn't run in a regular match can be tested.
 
 2. Enable/Disable - These controls enable and disable the robot. See also `Driver Station Key Shortcuts`_.

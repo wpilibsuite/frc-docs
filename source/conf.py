@@ -41,6 +41,7 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.rsvgconverter",
+    "sphinxcontrib.video",
     "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.photofinish",
