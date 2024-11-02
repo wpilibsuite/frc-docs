@@ -164,6 +164,7 @@ Supported Operating Systems and Architectures:
 
 - Use Gradle 8.10.2
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
+- Add method to delete files on roboRIO that have been deleted in the deploy directory. Set deleteOldFiles to true in the frcStaticFileDeploy block
 
 ## WPILib All in One Installer
 
