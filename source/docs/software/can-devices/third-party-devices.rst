@@ -107,16 +107,31 @@ Playing With Fusion (PWF) offers the Venom integrated motor/controller as well a
 
 ## Redux Robotics
 
-Redux Robotics currently offers the Canandcoder :term:`CAN` + :term:`PWM` magnetic encoder and the Canandcolor :term:`CAN`-enabled color sensor.
+Redux Robotics currently offers the Canandcoder :term:`CAN` + :term:`PWM` magnetic encoder, the Canandcolor :term:`CAN`-enabled color sensor, and the Canandgyro :term:`CAN`-enabled gyro.
 
 ### Redux Sensors
 
-- **Canandcoder**
+- **HELIUM Canandmag**
 
-    - API Documentation ([Java](https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandcoder/Canandcoder.html), [C++](https://apidocs.reduxrobotics.com/current/cpp/classredux_1_1sensors_1_1canandcoder_1_1Canandcoder.html))
-    - [Technical Manual](https://docs.reduxrobotics.com/canandcoder/index.html)
+    - API Documentation ([Java](https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandmag/package-summary), [C++](https://apidocs.reduxrobotics.com/current/cpp/namespaceredux_1_1sensors_1_1canandmag))
+    - [Technical Manual](https://docs.reduxrobotics.com/canandmag)
 
 - **Canandcolor**
 
     - API Documentation ([Java](https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandcolor/Canandcolor.html), [C++](https://apidocs.reduxrobotics.com/current/cpp/classredux_1_1sensors_1_1canandcolor_1_1Canandcolor.html))
     - [Technical Manual](https://docs.reduxrobotics.com/canandcolor/index.html)
+- **BORON CANandgyro**
+
+    - API Documentation ([Java](https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandgyro/package-summary), [C++](https://apidocs.reduxrobotics.com/current/cpp/namespaceredux_1_1sensors_1_1canandgyro))
+    - [Technical Manual](https://docs.reduxrobotics.com/canandgyro/)
+
+## Grapple Robotics
+
+Grapple Robotics currently offers the LaserCAN :term:`CAN`-enabled range finding sensor
+
+## Grapple Sensors
+
+- **LaserCAN**
+  
+    - API Documentation ([Java](https://github.com/GrappleRobotics/LaserCAN/blob/master/docs/example-java.md), [C++](https://github.com/GrappleRobotics/LaserCAN/blob/master/docs/example-cpp.md))
+    - [Technical Manual](https://github.com/GrappleRobotics/LaserCAN/blob/master/docs/getting-started.md)
