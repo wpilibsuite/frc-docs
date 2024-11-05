@@ -107,7 +107,7 @@ Playing With Fusion (PWF) offers the Venom integrated motor/controller as well a
 
 ## Redux Robotics
 
-Redux Robotics currently offers the Canandcoder :term:`CAN` + :term:`PWM` magnetic encoder, the Canandcolor :term:`CAN`-enabled color sensor, and the Canandgyro :term:`CAN`-enabled gyro.
+Redux Robotics currently offers the HELIUM Canandmag :term:`CAN` + :term:`PWM` magnetic encoder, the Canandcolor :term:`CAN`-enabled color sensor, and the Canandgyro :term:`CAN`-enabled gyro.
 
 ### Redux Sensors
 
