@@ -153,6 +153,7 @@ linkcheck_ignore = [
     r".*stackoverflow.com.*",
     r".*allaboutcircuits.com.*",
     r".*knowledge.ni.com.*",
+    r".*reduxrobotics.com.*",
 ]
 
 linkcheck_anchors_ignore_for_url = [
