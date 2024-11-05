@@ -128,6 +128,6 @@ Grapple Robotics currently offers the LaserCAN :term:`CAN`-enabled range finding
 ### Grapple Sensors
 
 - **LaserCAN**
-  
+
     - API Documentation ([Java](https://github.com/GrappleRobotics/LaserCAN/blob/master/docs/example-java.md), [C++](https://github.com/GrappleRobotics/LaserCAN/blob/master/docs/example-cpp.md))
     - [Technical Manual](https://github.com/GrappleRobotics/LaserCAN/blob/master/docs/getting-started.md)
