@@ -49,10 +49,10 @@ This message is printed each time the DS begins communicating with the roboRIO. 
 ```
 WARNING<Code>44008 occurred at FRC_NetworkCommunications
 <radioLostEvents> 19.004<radioSeenEvents> 0.000
-FRC: Robot radio dectection times
+FRC: Robot radio detection times
 WARNING<Code>44008 occurred at FRC_NetworkCommunications
 <radioLostEvents> 2.501,422.008<radioSeenEvents> 0.000,147.005
-FRC: Robot radio dectection times.
+FRC: Robot radio detection times.
 ```
 
 This message may be printed when the DS begins communicating with the roboRIO and indicates the time, in seconds, since the last time the radio was lost and seen. In the first example image above the message indicates that the roboRIO's connection to the radio was lost 19 seconds before the message was printed and the radio was seen again right when the message was printed. If multiple radioLost or radioSeen events have occurred since the roboRIO booted, up to 2 events of each type will be included, separated by commas.
