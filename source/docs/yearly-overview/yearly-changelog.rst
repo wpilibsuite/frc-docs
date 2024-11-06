@@ -14,7 +14,7 @@ Due to internal GradleRIO changes, it is necessary to update projects from previ
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
-- The Dependency Manager in VS Code will help teams :doc:`install their vendordeps <docs/software/vscode-overview/3rd-party-libraries>`.
+- The Dependency Manager in VS Code will help teams :doc:`install their vendordeps </docs/software/vscode-overview/3rd-party-libraries>`.
 - Added :doc:`annotation based logging (Epilogue) </docs/software/telemetry/robot-telemetry-with-annotations>` for Java
 - The :doc:`Java units library </docs/software/basic-programming/java-units>` has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add :doc:`persistent alerts API </docs/software/telemetry/persistent-alerts>`. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
