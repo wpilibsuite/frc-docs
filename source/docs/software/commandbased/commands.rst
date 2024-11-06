@@ -310,8 +310,6 @@ There are commands for various control setups:
 
 - ``TrapezoidProfile`` tracks a trapezoid motion profile. For more info, see :doc:`/docs/software/commandbased/profile-subsystems-commands`.
 
-- ``ProfiledPIDCommand`` combines PID control with trapezoid motion profiles. For more info, see :ref:`docs/software/commandbased/profilepid-subsystems-commands:ProfiledPIDCommand`.
-
 - ``MecanumControllerCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/MecanumControllerCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_mecanum_controller_command.html)) is useful for controlling mecanum drivetrains. See API docs and the **MecanumControllerCommand** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumcontrollercommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/MecanumControllerCommand)) example project for more info.
 
 - ``SwerveControllerCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/SwerveControllerCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_swerve_controller_command.html)) is useful for controlling swerve drivetrains. See API docs and the **SwerveControllerCommand** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervecontrollercommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveControllerCommand)) example project for more info.
