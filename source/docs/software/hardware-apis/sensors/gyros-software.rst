@@ -127,22 +127,16 @@ The navX uses the :code:`AHRS` class.  See the [navX documentation](https://pdoc
 
 ## Pigeon
 
-The Pigeon should use the :code:`WPI_PigeonIMU` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The [Pigeon IMU User's Guide](https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf) contains full details on using the Pigeon.
+The Pigeon should use the :code:`Pigeon2` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The [Pigeon IMU User's Guide](https://ctre.download/files/user-manual/Pigeon2%20User's%20Guide.pdf) contains full details on using the Pigeon.
 
 .. tab-set-code::
 
     ```java
-    WPI_PigeonIMU gyro = new WPI_PigeonIMU(0); // Pigeon is on CAN Bus with device ID 0
-    // OR (choose one or the other based on your connection)
-    TalonSRX talon = new TalonSRX(0); // TalonSRX is on CAN Bus with device ID 0
-    WPI_PigeonIMU gyro = new WPI_PigeonIMU(talon); // Pigeon uses the talon created above
+    private final Pigeon2 pidgey = new Pigeon2(1, "rio"); // Pigeon is on roboRIO CAN Bus with device ID 1
     ```
 
     ```c++
-    WPI_PigeonIMU gyro{0}; // Pigeon is on CAN Bus with device ID 0
-    // OR (choose one or the other based on your connection)
-    TalonSRX talon{0}; // TalonSRX is on CAN Bus with device ID 0
-    WPI_PigeonIMU gyro{talon}; // Pigeon uses the talon created above
+    ctre::phoenix6::hardware::Pigeon2 pidgey{1, "rio"}; // Pigeon is on roboRIO CAN Bus with device ID 1
     ```
 
     ```python
