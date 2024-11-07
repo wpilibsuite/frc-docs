@@ -26,7 +26,7 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
       .. image:: images/3rd-party-libraries/dependency-activity-bar.png
          :alt: The activity bar of VS Code showing the WPILib icon that opens the Dependency Manager.
 
-      All vendordep operations can be controlled by the Dependency Manager.  Click the button shown above to access the interface.
+      All vendordep operations can be controlled by the Dependency Manager.  Click the WPILib logo in the activity bar as shown above to access the interface.
 
       .. image:: images/3rd-party-libraries/dependency-sidebar.png
          :alt: The interface of the Dependency Manager with the installed vendordeps at the top and a list of available vendordeps below it.
@@ -37,7 +37,7 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
 
       The button with the trash icon will uninstall the vendordep.  The dropdown shows what version is currently installed but you can change that to a different version to :guilabel:`update` or :guilabel:`downgrade` to the specified version.
 
-      .. note:: The Dependncy Manager will automatically build your program when it loses focus.  This allows you to use the changed dependencies.
+      .. note:: The Dependency Manager will automatically build your program when it loses focus.  This allows you to use the changed dependencies.
 
    .. tab-item:: Python
       :sync: python
@@ -78,7 +78,7 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
 
       To remove a library dependency from a project, select :guilabel:`Manage Current Libraries` from the :guilabel:`Manage Vendor Libraries` menu, check the box for any libraries to uninstall and click :guilabel:`OK`. These libraries will be removed as dependencies from the project.
 
-      **Command-Line**
+   .. tab-item:: Command-Line
 
       Adding a vendor library dependency from the vendor URL can also be done through the command-line via a gradle task. Open a command-line instance at the project root, and enter ``gradlew vendordep --url=<url>`` where ``<url>`` is the vendor JSON URL. This will add the vendor library dependency JSON file to the ``vendordeps`` folder of the project. Vendor libraries can be updated the same way.
 
@@ -88,7 +88,7 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
 
 #### How Does It Work? - Java/C++
 
-For Java and C++, a :term:`JSON` file describing the vendor library is installed on your system to ``~/wpilib/YYYY/vendordeps`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This can either be done by an offline installer or the file can be fetched from an online location using the menu item in Visual Studio Code. This file is then used from VS Code to add to the library to each individual project. Vendor library information is managed on a per-project basis to make sure that a project is always pointing to a consistent version of a given vendor library. The libraries themselves are placed in the Maven cache at ``C:\Users\Public\wpilib\YYYY\maven``. Vendors can place a local copy here with an offline installer (recommended) or require users to be connected to the internet for an initial build to fetch the library from a remote Maven location.
+For Java and C++, a :term:`JSON` file describing the vendor library is installed on your system to ``~/wpilib/YYYY/vendordeps`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This is often done by an offline installer, but may need to be done manually if a ``.zip`` of the ``.json`` files is provided. This file is then used from VS Code to add to the library to each individual project. Vendor library information is managed on a per-project basis to make sure that a project is always pointing to a consistent version of a given vendor library. The libraries themselves are placed in the Maven cache at ``C:\Users\Public\wpilib\YYYY\maven``. Vendors can place a local copy here with an offline installer (recommended) or require users to be connected to the internet for an initial build to fetch the library from a remote Maven location.
 
 This JSON file allows specification of complex libraries with multiple components (Java, C++, JNI, etc.) and also helps handle some complexities related to simulation.
 

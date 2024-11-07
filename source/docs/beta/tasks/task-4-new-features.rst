@@ -21,7 +21,7 @@ The purpose of this task is to test any newly developed or heavily modified feat
 
 **Java/C++**
 
-- Utilize the new Vendor Dependency manager in Visual Studio Code
+- Utilize the new Vendor :doc:`Dependency Manager </docs/software/vscode-overview/3rd-party-libraries>` in Visual Studio Code
 
 **Java/C++/Python**
 

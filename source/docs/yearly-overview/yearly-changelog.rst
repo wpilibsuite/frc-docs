@@ -179,7 +179,7 @@ Supported Operating Systems and Architectures:
 
 ## Visual Studio Code Extension
 
-- Add dependency view extension for easier finding and updating of 3rd party libraries
+- Add :doc:`Dependency Manager extension </docs/software/vscode-overview/3rd-party-libraries>` for easier finding and updating of 3rd party libraries
 - Add gradle clean command
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
 
