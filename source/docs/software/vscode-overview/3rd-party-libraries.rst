@@ -90,7 +90,7 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
 
    .. tab-item:: Java/C++
       :sync: javacpp
-      
+
       For Java and C++, a :term:`JSON` file describing the vendor library is installed on your system to ``~/wpilib/YYYY/vendordeps`` (where YYYY is the year and ~ is ``C:\Users\Public`` on Windows). This is often done by an offline installer, but may need to be done manually if a ``.zip`` of the ``.json`` files is provided. This file is then used from VS Code to add to the library to each individual project. Vendor library information is managed on a per-project basis to make sure that a project is always pointing to a consistent version of a given vendor library. The libraries themselves are placed in the Maven cache at ``C:\Users\Public\wpilib\YYYY\maven``. Vendors can place a local copy here with an offline installer (recommended) or require users to be connected to the internet for an initial build to fetch the library from a remote Maven location.
 
       This JSON file allows specification of complex libraries with multiple components (Java, C++, JNI, etc.) and also helps handle some complexities related to simulation.
