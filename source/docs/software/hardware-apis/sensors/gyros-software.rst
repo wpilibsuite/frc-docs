@@ -125,7 +125,7 @@ The navX uses the :code:`AHRS` class.  See the [navX documentation](https://pdoc
     self.gyro = navx.AHRS(SPI.Port.kMXP)
     ```
 
-## Pigeon
+## Pigeon 2
 
 The Pigeon should use the :code:`Pigeon2` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The [Pigeon IMU User's Guide](https://ctre.download/files/user-manual/Pigeon2%20User's%20Guide.pdf) contains full details on using the Pigeon.
 
