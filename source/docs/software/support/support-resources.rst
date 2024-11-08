@@ -9,7 +9,7 @@ In addition to the documentation here, there are a variety of other resources av
 In addition to this site there are a few other places teams may check for documentation:
 
 -  [NI FRC Community Documents Section](https://forums.ni.com/t5/FIRST-Robotics-Competition/bd-p/1014?profile.language=en&view=documents)
--  [FIRST Inspires Technical Resources Page](https://www.firstinspires.org/resource-library?flagged=All&combine=&field_content_type_value%5B0%5D=first_robotics_competition&field_resource_library_tags_tid=171&sort_by=created_1)
+-  [FIRST Inspires Technical Resources Page](https://www.firstinspires.org/resource-library/frc/technical-resources)
 -  [CTRE Software & Resources Page](https://store.ctr-electronics.com/software/)
 -  [REV Robotics Documentation](https://docs.revrobotics.com/docs/)
 
@@ -38,6 +38,9 @@ Support for vendors outside of the KOP can be found below.
 - [Limelight](https://limelightvision.io/pages/contact-us)
 - [PhotonVision (Discord)](https://discord.com/invite/wYxTwym)
 - [Playing with Fusion](https://www.playingwithfusion.com/contactus.php)
+- [Redux Robotics](https://shop.reduxrobotics.com/)
+- [The Thrifty Bot](https://www.thethriftybot.com/)
+- [Vivid Hosting](https://frc-radio.vivid-hosting.net/)
 
 ## Unofficial Support
 
