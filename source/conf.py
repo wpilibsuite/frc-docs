@@ -42,7 +42,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinxcontrib.rsvgconverter",
     "sphinxcontrib.video",
-    "sphinxext.delta",
+    # "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.photofinish",
     "sphinxext.rediraffe",
@@ -67,6 +67,7 @@ local_extensions = [
     "_extensions.wpilib_release",
     "_extensions.default_latex_image_settings",
     "_extensions.redown",
+    "_extensions.delta2",
 ]
 
 extensions += local_extensions
