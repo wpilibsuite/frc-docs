@@ -54,4 +54,4 @@ frcStaticFileDeploy(getArtifactTypeClass('FileTreeArtifact')) {
 }
 ```
 
-This will overwrite any duplicate files found in the `/home/lvuser/deploy` directory on the RIO and copy over any additional not present there.  If `deleteOldFiles` is false it will not remove any files no longer present in the project deploy directory.  Changing it to `true` helps prevent programs like [Choreo](https://sleipnirgroup.github.io/Choreo/) and [PathPlanner](https://github.com/mjansen4857/pathplanner) from getting confused by files that were deleted locally but still exist on the roboRIO. 
+This will overwrite any duplicate files found in the `/home/lvuser/deploy` directory on the RIO and copy over any additional not present there.  If `deleteOldFiles` is false it will not remove any files no longer present in the project deploy directory.  Changing it to `true` helps prevent programs like [Choreo](https://sleipnirgroup.github.io/Choreo/) and [PathPlanner](https://github.com/mjansen4857/pathplanner) from getting confused by files that were deleted locally but still exist on the roboRIO.
