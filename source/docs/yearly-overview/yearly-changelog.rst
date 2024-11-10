@@ -202,4 +202,4 @@ Supported Operating Systems and Architectures:
 
 ## Choreo
 
-Choreo is bundled in the installer! Choreo is an application for creating time optimal autonomous trajectories. [Read more here](https://sleipnirgroup.github.io/Choreo/).
+Choreo is bundled in the installer! Choreo is an application for creating time optimal autonomous trajectories. :doc:`Read more here </docs/software/wpilib-tools/choreo/index>`.
