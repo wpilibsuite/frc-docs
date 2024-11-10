@@ -45,7 +45,7 @@ frcJava(getArtifactClass('FRCJavaArtifact')) {
 
 By default the `src/main/deploy` directory in your project is transferred to the roboRIO when code is deployed.  It is initiated by this section of the `build.gradle` file.
 
-```c
+```groovy
 frcStaticFileDeploy(getArtifactTypeClass('FileTreeArtifact')) {
     files = project.fileTree('src/main/deploy')
     directory = '/home/lvuser/deploy'
