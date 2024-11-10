@@ -41,3 +41,17 @@ frcJava(getArtifactClass('FRCJavaArtifact')) {
 }
 ```
 
+## Deleting Unused Deploy Files
+
+By default the `src/main/deploy` directory in your project is transferred to the roboRIO when code is deployed.  It is initiated by this section of the `build.gradle` file.
+
+```c
+frcStaticFileDeploy(getArtifactTypeClass('FileTreeArtifact')) {
+    files = project.fileTree('src/main/deploy')
+    directory = '/home/lvuser/deploy'
+    deleteOldFiles = false // Change to true to delete files on roboRIO that no
+                           // longer exist in deploy directory on roboRIO
+}
+```
+
+This will overwrite any duplicate files found in the `/home/lvuser/deploy` directory on the RIO and copy over any additional not present there.  If `deleteOldFiles` is false it will not remove any files no longer present in the project deploy directory.  Changing it to `true` helps prevent programs like [Choreo](https://sleipnirgroup.github.io/Choreo/) and [PathPlanner](https://github.com/mjansen4857/pathplanner) from getting confused by files that were deleted locally but still exist on the roboRIO. 
