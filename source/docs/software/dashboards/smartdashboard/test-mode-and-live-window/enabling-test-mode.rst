@@ -12,7 +12,6 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
 .. tab-set-code::
 
    ```java
-   @Override
    public Robot() {
       enableLiveWindowInTest(true);
    }
@@ -38,7 +37,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
    PWMSparkMax rightDrive;
    PWMVictorSPX arm;
    BuiltInAccelerometer accel;
-   @Override
+
    public Robot() {
       leftDrive = new PWMSparkMax(0);
       rightDrive = new PWMSparkMax(1);

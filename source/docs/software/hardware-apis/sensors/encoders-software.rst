@@ -430,7 +430,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
     Spark rightLeader = new Spark(2);
     Spark rightFollower = new Spark(3);
     DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
-    @Override
+
     public Robot() {
         // Configures the encoder's distance-per-pulse
         // The robot moves forward 1 foot per encoder rotation
@@ -442,6 +442,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
         leftLeader.addFollower(leftFollower);
         rightLeader.addFollower(rightFollower);
     }
+
     @Override
     public void autonomousPeriodic() {
         // Drives forward at half speed until the robot has moved 5 feet, then stops:

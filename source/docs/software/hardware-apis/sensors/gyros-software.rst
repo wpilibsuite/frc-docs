@@ -399,10 +399,11 @@ Much like with heading stabilization, this is often accomplished with a PID loop
     MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
     MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
     DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
-    @Override
+
     public Robot() {
         rightMotors.setInverted(true);
     }
+
     @Override
     public void autonomousPeriodic() {
         // Find the heading error; setpoint is 90

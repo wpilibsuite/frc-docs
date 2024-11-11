@@ -31,7 +31,7 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
     ```java
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.k2Pulse);
-    @Override
+
     public Robot() {
         // Set up the input channels for the counter
         counter.setUpSource(1);
@@ -63,7 +63,7 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
     ```java
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.kSemiperiod);
-    @Override
+
     public Robot() {
         // Set up the input channel for the counter
         counter.setUpSource(1);
@@ -105,7 +105,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
     ```java
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.kPulseLength);
-    @Override
+
     public Robot() {
         // Set up the input channel for the counter
         counter.setUpSource(1);
@@ -137,7 +137,7 @@ In external direction mode, the counter counts either up or down depending on th
     ```java
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.kExternalDirection);
-    @Override
+
     public Robot() {
         // Set up the input channels for the counter
         counter.setUpSource(1);
