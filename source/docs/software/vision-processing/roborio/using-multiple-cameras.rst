@@ -274,4 +274,4 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     (VIDIOC_STREAMON: No space left on device)
     ```
 
-    If you're using Option 3 it will give you this error during the ``Robot`` constructor or ``RobotInit()``. Thus you should just try your desired resolution and adjusting as necessary until you both don't get that error and don't exceed the radio bandwidth limitations.
+    If you're using Option 3 it will give you this error during the ``Robot`` constructor. Thus you should just try your desired resolution and adjusting as necessary until you both don't get that error and don't exceed the radio bandwidth limitations.
