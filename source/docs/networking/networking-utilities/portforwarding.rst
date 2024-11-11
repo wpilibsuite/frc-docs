@@ -9,14 +9,13 @@ Often teams may wish to connect directly to the roboRIO for controlling their ro
 .. tab-set-code::
 
    ```java
-   @Override
-   public void robotInit() {
+   public Robot() {
       PortForwarder.add(8888, "wpilibpi.local", 80);
    }
    ```
 
    ```c++
-   void Robot::RobotInit {
+   Robot::Robot() {
       wpi::PortForwarder::GetInstance().Add(8888, "wpilibpi.local", 80);
    }
    ```
@@ -34,14 +33,13 @@ To stop forwarding on a specified port, simply call ``remove(int port)`` with po
 .. tab-set-code::
 
    ```java
-   @Override
-   public void robotInit() {
+   public Robot() {
       PortForwarder.remove(8888);
    }
    ```
 
    ```c++
-   void Robot::RobotInit {
+   Robot::Robot() {
       wpi::PortForwarder::GetInstance().Remove(8888);
    }
    ```

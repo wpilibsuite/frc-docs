@@ -130,7 +130,7 @@ Sometimes the garbage collector won't run frequently enough to keep up with the 
 
 ```java
 Timer m_gcTimer = new Timer();
-public void robotInit() {
+public Robot() {
   m_gcTimer.start();
 }
 public void periodic() {

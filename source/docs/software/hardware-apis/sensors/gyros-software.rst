@@ -162,7 +162,7 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 
     ```java
     // Use gyro declaration from above here
-    public void robotInit() {
+    public Robot() {
         // Places a compass indicator for the gyro heading on the dashboard
         Shuffleboard.getTab("Example tab").add(gyro);
     }
@@ -170,7 +170,7 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 
     ```c++
     // Use gyro declaration from above here
-    void Robot::RobotInit() {
+    Robot::Robot() {
         // Places a compass indicator for the gyro heading on the dashboard
         frc::Shuffleboard.GetTab("Example tab").Add(gyro);
     }
@@ -208,8 +208,8 @@ The following example shows how to stabilize heading using a simple P loop close
     Spark rightLeader = new Spark(2);
     Spark rightFollower = new Spark(3);
     DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
-    @Override
-    public void robotInit() {
+
+    public Robot() {
         // Configures the encoder's distance-per-pulse
         // The robot moves forward 1 foot per encoder rotation
         // There are 256 pulses per encoder rotation
@@ -220,6 +220,7 @@ The following example shows how to stabilize heading using a simple P loop close
         leftLeader.addFollower(leftFollower);
         rightLeader.addFollower(rightFollower);
     }
+
     @Override
     public void autonomousPeriodic() {
         // Setpoint is implicitly 0, since we don't want the heading to change
@@ -240,7 +241,7 @@ The following example shows how to stabilize heading using a simple P loop close
     frc::Spark rightFollower{3};
     frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
                                  [&](double output) { rightLeader.Set(output); }};
-    void Robot::RobotInit() {
+    Robot::Robot() {
         // Invert the right side of the drivetrain. You might have to invert the other side
         rightLeader.SetInverted(true);
         // Configure the followers to follow the leaders
@@ -303,15 +304,17 @@ The following example shows how to stabilize heading using a simple P loop close
     MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
     MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
     DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
-    @Override
-    public void robotInit() {
+
+    public Robot() {
         rightMotors.setInverted(true);
     }
+
     @Override
     public void autonomousInit() {
         // Set setpoint to current heading at start of auto
         heading = gyro.getAngle();
     }
+
     @Override
     public void autonomousPeriodic() {
         double error = heading - gyro.getAngle();
@@ -334,7 +337,7 @@ The following example shows how to stabilize heading using a simple P loop close
     frc::MotorControllerGroup leftMotors{left1, left2};
     frc::MotorControllerGroup rightMotors{right1, right2};
     frc::DifferentialDrive drive{leftMotors, rightMotors};
-    void Robot::RobotInit() {
+    Robot::Robot() {
       rightMotors.SetInverted(true);
     }
     void Robot::AutonomousInit() {
@@ -396,10 +399,11 @@ Much like with heading stabilization, this is often accomplished with a PID loop
     MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
     MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
     DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
-    @Override
-    public void robotInit() {
+
+    public Robot() {
         rightMotors.setInverted(true);
     }
+
     @Override
     public void autonomousPeriodic() {
         // Find the heading error; setpoint is 90
@@ -421,7 +425,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
     frc::MotorControllerGroup leftMotors{left1, left2};
     frc::MotorControllerGroup rightMotors{right1, right2};
     frc::DifferentialDrive drive{leftMotors, rightMotors};
-    void Robot::RobotInit() {
+    Robot::Robot() {
       rightMotors.SetInverted(true);
     }
     void Robot::AutonomousPeriodic() {
