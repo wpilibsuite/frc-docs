@@ -431,7 +431,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
     Spark rightFollower = new Spark(3);
     DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
     @Override
-    public void robotInit() {
+    public Robot() {
         // Configures the encoder's distance-per-pulse
         // The robot moves forward 1 foot per encoder rotation
         // There are 256 pulses per encoder rotation
@@ -463,7 +463,7 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
     frc::Spark rightFollower{3};
     frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
                                  [&](double output) { rightLeader.Set(output); }};
-        void Robot::RobotInit() {
+        Robot::Robot() {
         // Configures the encoder's distance-per-pulse
         // The robot moves forward 1 foot per encoder rotation
         // There are 256 pulses per encoder rotation

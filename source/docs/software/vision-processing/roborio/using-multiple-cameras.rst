@@ -14,8 +14,8 @@ If you're interested in just switching what the driver sees, and are using Smart
     UsbCamera camera2;
     Joystick joy1 = new Joystick(0);
     NetworkTableEntry cameraSelection;
-    @Override
-    public void robotInit() {
+
+    public Robot() {
         camera1 = CameraServer.startAutomaticCapture(0);
         camera2 = CameraServer.startAutomaticCapture(1);
         cameraSelection = NetworkTableInstance.getDefault().getTable("").getEntry("CameraSelection");
@@ -40,7 +40,7 @@ If you're interested in just switching what the driver sees, and are using Smart
     cs::UsbCamera camera2;
     frc::Joystick joy1{0};
     nt::NetworkTableEntry cameraSelection;
-    void RobotInit() override {
+    Robot() {
       camera1 = frc::CameraServer::StartAutomaticCapture(0);
       camera2 = frc::CameraServer::StartAutomaticCapture(1);
       cameraSelection = nt::NetworkTableInstance::GetDefault().GetTable("")->GetEntry("CameraSelection");
@@ -109,8 +109,8 @@ If you're using some other dashboard, you can change the camera used by the came
     UsbCamera camera2;
     VideoSink server;
     Joystick joy1 = new Joystick(0);
-    @Override
-    public void robotInit() {
+
+    public Robot() {
         camera1 = CameraServer.startAutomaticCapture(0);
         camera2 = CameraServer.startAutomaticCapture(1);
         server = CameraServer.getServer();
@@ -133,7 +133,7 @@ If you're using some other dashboard, you can change the camera used by the came
     cs::VideoSink server;
     frc::Joystick joy1{0};
     bool prevTrigger = false;
-    void RobotInit() override {
+    Robot() {
       camera1 = frc::CameraServer::StartAutomaticCapture(0);
       camera2 = frc::CameraServer::StartAutomaticCapture(1);
       server = frc::CameraServer::GetServer();
@@ -169,8 +169,8 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     UsbCamera camera2;
     VideoSink server;
     Joystick joy1 = new Joystick(0);
-    @Override
-    public void robotInit() {
+
+    public Robot() {
         camera1 = CameraServer.startAutomaticCapture(0);
         camera2 = CameraServer.startAutomaticCapture(1);
         server = CameraServer.getServer();
@@ -198,7 +198,7 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     cs::VideoSink server;
     frc::Joystick joy1{0};
     bool prevTrigger = false;
-    void RobotInit() override {
+    Robot() {
       camera1 = frc::CameraServer::StartAutomaticCapture(0);
       camera2 = frc::CameraServer::StartAutomaticCapture(1);
       server = frc::CameraServer::GetServer();
@@ -274,4 +274,4 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     (VIDIOC_STREAMON: No space left on device)
     ```
 
-    If you're using Option 3 it will give you this error during ``RobotInit()``. Thus you should just try your desired resolution and adjusting as necessary until you both don't get that error and don't exceed the radio bandwidth limitations.
+    If you're using Option 3 it will give you this error during the ``Robot`` constructor or ``RobotInit()``. Thus you should just try your desired resolution and adjusting as necessary until you both don't get that error and don't exceed the radio bandwidth limitations.

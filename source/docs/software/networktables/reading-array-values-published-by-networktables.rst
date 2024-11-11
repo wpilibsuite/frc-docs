@@ -20,11 +20,12 @@ Both of the following examples are extremely simplified programs that just illus
 
    ```java
    DoubleArraySubscriber areasSub;
-   @Override
-   public void robotInit() {
+
+   public Robot() {
      NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport");
      areasSub = table.getDoubleArrayTopic("area").subscribe(new double[] {});
    }
+
    @Override
    public void teleopPeriodic() {
      double[] areas = areasSub.get();
@@ -38,7 +39,7 @@ Both of the following examples are extremely simplified programs that just illus
 
    ```c++
    nt::DoubleArraySubscriber areasSub;
-   void Robot::RobotInit() override {
+   Robot::Robot() {
      auto table = nt::NetworkTableInstance::GetDefault().GetTable("GRIP/myContoursReport");
      areasSub = table->GetDoubleArrayTopic("area").Subscribe({});
    }

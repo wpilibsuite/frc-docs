@@ -32,7 +32,7 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.k2Pulse);
     @Override
-    public void robotInit() {
+    public Robot() {
         // Set up the input channels for the counter
         counter.setUpSource(1);
         counter.setDownSource(2);
@@ -45,7 +45,7 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
     ```c++
     // Create a new Counter object in two-pulse mode
     frc::Counter counter{frc::Counter::Mode::k2Pulse};
-    void Robot::RobotInit() {
+    Robot::Robot() {
         // Set up the input channels for the counter
         counter.SetUpSource(1);
         counter.SetDownSource(2);
@@ -64,7 +64,7 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.kSemiperiod);
     @Override
-    public void robotInit() {
+    public Robot() {
         // Set up the input channel for the counter
         counter.setUpSource(1);
         // Set the encoder to count pulse duration from rising edge to falling edge
@@ -106,7 +106,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.kPulseLength);
     @Override
-    public void robotInit() {
+    public Robot() {
         // Set up the input channel for the counter
         counter.setUpSource(1);
         // Set the decoding type to 2X
@@ -119,7 +119,7 @@ In pulse-length mode, the counter will count either up or down depending on the 
     ```c++
     // Create a new Counter object in two-pulse mode
     frc::Counter counter{frc::Counter::Mode::kPulseLength};
-    void Robot::RobotInit() {
+    Robot::Robot() {
         // Set up the input channel for the counter
         counter.SetUpSource(1);
         // Set the decoding type to 2X
@@ -138,7 +138,7 @@ In external direction mode, the counter counts either up or down depending on th
     // Create a new Counter object in two-pulse mode
     Counter counter = new Counter(Counter.Mode.kExternalDirection);
     @Override
-    public void robotInit() {
+    public Robot() {
         // Set up the input channels for the counter
         counter.setUpSource(1);
         counter.setDownSource(2);
