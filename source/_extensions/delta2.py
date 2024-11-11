@@ -38,7 +38,9 @@ def on_rtd() -> bool:
 
 def on_pr(html_context: Dict[str, str]) -> bool:
     return (
-        html_context["github_version"].startswith(os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8])
+        html_context["github_version"].startswith(
+            os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8]
+        )
         or os.getenv("GITHUB_EVENT_NAME") == "pull_request"
     )
 
