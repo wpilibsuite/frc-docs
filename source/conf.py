@@ -59,6 +59,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_contributors",
     "sphinx_last_updated_by_git",
+    "sphinx_build_compatibility.extension",
 ]
 
 local_extensions = [
