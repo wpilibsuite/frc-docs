@@ -59,7 +59,6 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_contributors",
     "sphinx_last_updated_by_git",
-    "sphinx_build_compatibility.extension",
 ]
 
 local_extensions = [
@@ -70,6 +69,9 @@ local_extensions = [
     "_extensions.default_latex_image_settings",
     "_extensions.redown",
 ]
+
+if os.getenv("READTHEDOCS") == "True":
+    extensions.append("sphinx_build_compatibility.extension")
 
 extensions += local_extensions
 
