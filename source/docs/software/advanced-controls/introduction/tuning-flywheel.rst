@@ -50,7 +50,9 @@ Interact with the simulation below to see how the flywheel system responds when 
          <div id="flywheel_bb_ctrls"></div>
       </div>
       <script>
-         flywheel_bb = new FlywheelBangBang("flywheel_bb");
+         addEventListener("load", () => {
+            flywheel_bb = new FlywheelBangBang("flywheel_bb");
+         });
       </script>
     </div>
 
@@ -88,7 +90,9 @@ Interact with the simulation below to see how the flywheel system responds when 
          <div id="flywheel_feedforward_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_feedforward", "feedforward");
+         addEventListener("load", () => {
+            flywheel_pid = new FlywheelPIDF("flywheel_feedforward", "feedforward");
+         });
       </script>
     </div>
 
@@ -116,7 +120,9 @@ Interact with the simulation below to see how the flywheel system responds when 
          <div id="flywheel_feedback_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_feedback", "feedback");
+         addEventListener("load", () => {
+            flywheel_pid = new FlywheelPIDF("flywheel_feedback", "feedback");
+         });
       </script>
     </div>
 
@@ -152,7 +158,9 @@ Interact with the simulation below to see how the flywheel system responds under
          <div id="flywheel_feedforward_feedback_ctrls"></div>
       </div>
       <script>
-         flywheel_pid = new FlywheelPIDF("flywheel_feedforward_feedback", "both");
+         addEventListener("load", () => {
+            flywheel_pid = new FlywheelPIDF("flywheel_feedforward_feedback", "both");
+         });
       </script>
     </div>
 
