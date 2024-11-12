@@ -62,7 +62,6 @@ extensions = [
 ]
 
 local_extensions = [
-    "_extensions.post_process",
     "_extensions.rtd_patch",
     "_extensions.localization",
     "_extensions.controls_js_sim",
