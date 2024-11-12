@@ -2062,6 +2062,26 @@ sphinx = ">=4.0"
 docs = ["furo", "ipython", "myst-parser", "sphinx-copybutton", "sphinx-inline-tabs"]
 
 [[package]]
+name = "sphinx-build-compatibility"
+version = "0.0.1"
+description = "Sphinx extension to keep Read the Docs compatibility"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = []
+develop = false
+
+[package.dependencies]
+requests = "*"
+sphinx = ">=5"
+
+[package.source]
+type = "git"
+url = "https://github.com/readthedocs/sphinx-build-compatibility"
+reference = "HEAD"
+resolved_reference = "58aabc5f207c6c2421f23d3578adc0b14af57047"
+
+[[package]]
 name = "sphinx-contributors"
 version = "0.2.7"
 description = "Contributors extension for Sphinx."
@@ -2778,4 +2798,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.9,<3.14"
-content-hash = "70d86e4374f13b0cc4774a2c7538f16ab77bf6dd430d9a0da11af53d4270f60a"
+content-hash = "a76102c024dbd9420b7fff8080a5f1640369e0357752efa0b5ab367e4653ce10"
