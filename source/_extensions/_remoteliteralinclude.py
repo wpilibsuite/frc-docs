@@ -2,12 +2,15 @@ import codecs
 import requests
 import sys
 import warnings
+
 from difflib import unified_diff
 
 from docutils import nodes
 from docutils.parsers.rst import directives
 from docutils.statemachine import ViewList
 from six import text_type
+
+from importlib import metadata
 
 from sphinx import addnodes
 from sphinx.locale import __
@@ -49,6 +52,9 @@ class RemoteLiteralIncludeReader(object):
 
         self.parse_options()
 
+        # print("User-Agent: sphinxext-remoteliteralinclude/" + metadata.version.__str__)
+        # __version__ = metadata.version.__str__
+
     def parse_options(self):
         # type: () -> None
         for option1, option2 in self.INVALID_OPTIONS_PAIR:
@@ -62,13 +68,16 @@ class RemoteLiteralIncludeReader(object):
         # try:
         # with codecs.open(url, 'r', self.encoding, errors='strict') as f:  # type: ignore  # NOQA
         #     text = f.read()  # type: unicode
-        response = requests.get(url, headers = {'User-Agent': 'sphinxext-remoteliteralinclude'})
+        response = requests.get(
+            url  # , headers={"User-Agent": "sphinxext-remoteliteralinclude"}
+        )
         text = response.text
 
         if text:
             if not response.status_code == requests.codes.ok:
                 raise ValueError(
-                    "HTTP request returned error code %s" % response.status_code
+                    "HTTP request returned error code %s, %s"
+                    % (response.status_code, response.reason)
                 )
 
             if "tab-width" in self.options:

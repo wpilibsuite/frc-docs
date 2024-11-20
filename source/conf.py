@@ -46,7 +46,7 @@ extensions = [
     "sphinxext.opengraph",
     "sphinxext.photofinish",
     "sphinxext.rediraffe",
-    #"sphinxext.remoteliteralinclude",
+    # "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
     "sphinxext.mimictoc",
     "sphinxext.presentations",
