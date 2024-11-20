@@ -46,7 +46,7 @@ extensions = [
     "sphinxext.opengraph",
     "sphinxext.photofinish",
     "sphinxext.rediraffe",
-    "sphinxext.remoteliteralinclude",
+    #"sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
     "sphinxext.mimictoc",
     "sphinxext.presentations",
@@ -67,6 +67,7 @@ local_extensions = [
     "_extensions.wpilib_release",
     "_extensions.default_latex_image_settings",
     "_extensions.redown",
+    "_extensions._remoteliteralinclude",
 ]
 
 extensions += local_extensions
