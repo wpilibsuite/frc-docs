@@ -69,7 +69,7 @@ class RemoteLiteralIncludeReader(object):
         # with codecs.open(url, 'r', self.encoding, errors='strict') as f:  # type: ignore  # NOQA
         #     text = f.read()  # type: unicode
         response = requests.get(
-            url  # , headers={"User-Agent": "sphinxext-remoteliteralinclude"}
+            url, headers={"User-Agent": "sphinxext-remoteliteralinclude"}
         )
         text = response.text
 
