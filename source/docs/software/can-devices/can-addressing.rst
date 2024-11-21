@@ -33,7 +33,8 @@ Power Distribution Module 8
 Pneumatics Controller     9
 Miscellaneous             10
 IO Breakout               11
-Reserved                  12-30
+Servo Controller          12
+Reserved                  13-30
 Firmware Update           31
 ========================= =====
 
