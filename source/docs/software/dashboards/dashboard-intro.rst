@@ -20,7 +20,7 @@ This dashboard is designed for debugging code and analyzing data from the robot.
 
 :ref:`SmartDashboard <docs/software/dashboards/smartdashboard/index:SmartDashboard>` (Driver) - simple and efficient dashboard that uses relatively few computer resources.  It does not have the fancy look or some of the features Shuffleboard has, but it displays network tables data with a variety of widgets without bogging down the driver station computer.
 
-:ref:`Shuffleboard <docs/software/dashboards/shuffleboard/index:Shuffleboard>` (Driver) - straightforward and easily customizable dashboard. It displays network tables data using a variety of widgets that can be positioned and controlled with robot code. It includes many extra features like: tabs, recording / playback, and advanced custom widgets.
+:ref:`Shuffleboard <docs/software/dashboards/shuffleboard/index:Shuffleboard>` (Driver / Programming) - straightforward and easily customizable dashboard. It displays network tables data using a variety of widgets that can be positioned and controlled with robot code. It includes many extra features like: tabs, recording / playback, and advanced custom widgets.
 
 :ref:`Glass <docs/software/dashboards/glass/index:Glass>` (Programming) - robot data visualization tool. Its GUI is extremely similar to that of the :ref:`Simulation GUI <docs/software/wpilib-tools/robot-simulation/simulation-gui:Simulation Specific User Interface Elements>`. In its current state, it is meant to be used as a programmer's tool rather than a proper dashboard in a competition environment, with a focus on high performance real time plotting.
 
