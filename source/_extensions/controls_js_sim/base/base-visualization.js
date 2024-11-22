@@ -27,6 +27,9 @@ class BaseVisualization {
 
     window.addEventListener("resize", this.updateSize.bind(this));
     window.addEventListener("load", this.updateSize.bind(this));
+
+    this.position = 0;
+    this.positionPrev = 0;
   }
 
   updateSize() {

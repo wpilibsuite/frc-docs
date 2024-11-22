@@ -45,6 +45,8 @@ class VerticalElevatorPIDF extends VerticalElevatorSim {
     input = document.createElement("INPUT");
     input.setAttribute("type", "text");
     input.setAttribute("value", "0.0");
+    input.setAttribute("min", "0.0");
+    input.setAttribute("max", "1.0");
     input.setAttribute("id", divIdPrefix + "_setpoint");
     input.onchange = function (event) {
       this.setSetpointM(parseFloat(event.target.value));
