@@ -127,6 +127,8 @@ Supported Operating Systems and Architectures:
 
 - XRP: Add ``GetRotation2d`` to ``Gyro``
 - XRP: Add Support for Encoder Period
+- XRP: Add ``GetLED`` to ``OnBoardIO``
+- XRP & Romi: Changed applicable C++ methods to use units library
 
 ### Util
 
