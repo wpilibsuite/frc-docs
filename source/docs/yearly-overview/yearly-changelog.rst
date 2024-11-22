@@ -144,7 +144,7 @@ Supported Operating Systems and Architectures:
 - The units library has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add resistance units
 - Use div instead of divide
-- Add absolute value and copy sign functionalit
+- Add absolute value and copy sign functionality
 
 ### CameraServer
 
