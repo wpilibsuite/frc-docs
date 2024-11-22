@@ -44,7 +44,7 @@ Supported Operating Systems and Architectures:
 - Implement ``Sendable`` for HID classes
 - Include sendable type information in topic metadata
 - ``GenericHID.setRumble``: Fix Java integer overflow
-- rename SysId example to SysIdRoutine
+- Rename SysId example to SysIdRoutine
 - Add ``Timer.isRunning`` method
 - Add Java unit support for RobotController
 
