@@ -37,8 +37,7 @@ To run a Romi program, first, ensure that your Romi is powered on. Next, connect
 .. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1-beta-1/vscode-wpilib/resources/gradle/javaromi/build.gradle
    :language: groovy
    :lines: 44-47
-   :linenos:
-   :lineno-start: 44
+   :lineno-match:
    :emphasize-lines: 2
 
 Now to start your Romi robot code, open the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) and select "Simulate Robot Code", or press :kbd:`F5`.

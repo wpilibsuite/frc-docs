@@ -22,8 +22,7 @@ After the length of the strip has been set, you'll have to create an ``Addressab
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 17-32
-         :linenos:
-         :lineno-start: 17
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
@@ -31,14 +30,12 @@ After the length of the strip has been set, you'll have to create an ``Addressab
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: c++
          :lines: 12-12, 18-27
-         :linenos:
-         :lineno-start: 11
+         :lineno-match:
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 7-13
-         :linenos:
-         :lineno-start: 7
+         :lineno-match:
 
 .. note:: The roboRIO only supports only 1 ``AddressableLED`` object. As WS2812B LEDs are connected in series, you can drive several strips connected in series from from ``AddressableLED`` object.
 
@@ -121,8 +118,7 @@ Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 42-55
-         :linenos:
-         :lineno-start: 42
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
@@ -130,8 +126,7 @@ Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 22-35
-         :linenos:
-         :lineno-start: 22
+         :lineno-match:
 
 Now that we have our ``rainbow`` method created, we have to actually call the method and set the data of the LED.
 
@@ -143,8 +138,7 @@ Now that we have our ``rainbow`` method created, we have to actually call the me
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 34-40
-         :linenos:
-         :lineno-start: 34
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
@@ -152,5 +146,4 @@ Now that we have our ``rainbow`` method created, we have to actually call the me
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 15-20
-         :linenos:
-         :lineno-start: 15
+         :lineno-match:

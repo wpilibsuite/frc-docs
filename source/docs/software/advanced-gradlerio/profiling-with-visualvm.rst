@@ -13,8 +13,7 @@ GradleRIO supports passing JVM launch arguments, and this is what is necessary t
 .. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1-beta-1/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
    :lines: 15-40
-   :linenos:
-   :lineno-start: 15
+   :lineno-match:
    :emphasize-lines: 15-16
 
 

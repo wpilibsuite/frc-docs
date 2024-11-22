@@ -14,8 +14,7 @@ A common FRC\ |reg| controls solution is to pair a trapezoidal motion profile fo
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/subsystems/Drive.java
          :language: java
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
@@ -23,8 +22,7 @@ A common FRC\ |reg| controls solution is to pair a trapezoidal motion profile fo
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Drive.h
          :language: c++
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
@@ -32,7 +30,6 @@ A common FRC\ |reg| controls solution is to pair a trapezoidal motion profile fo
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/subsystems/Drive.cpp
          :language: c++
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
 ``turnToAngleCommand`` uses a ProfiledPIDController to smoothly turn the drivetrain. The ``startRun`` command factory is used to reset the ``ProfiledPIDController`` when the command is scheduled to avoid unwanted behavior, and to calculate PID and feedforward outputs to pass into the ``arcadeDrive`` method in order to drive the robot. The command is decorated using the ``until`` decorator to end the command when the ProfiledPIDController is finished with the profile. To ensure the drivetrain stops when the command ends, the ``finallyDo`` decorator is used to stop the drivetrain by setting the speed to zero.

@@ -175,8 +175,7 @@ The ``Select`` factory ([Java](https://github.wpilib.org/allwpilib/docs/developm
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand/RobotContainer.java
          :language: java
          :lines: 20-45
-         :linenos:
-         :lineno-start: 20
+         :lineno-match:
 
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
@@ -184,8 +183,7 @@ The ``Select`` factory ([Java](https://github.wpilib.org/allwpilib/docs/developm
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/SelectCommand/include/RobotContainer.h
          :language: c++
          :lines: 26-43
-         :linenos:
-         :lineno-start: 26
+         :lineno-match:
 
 The ``Either`` factory ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/Commands.html#either(edu.wpi.first.wpilibj2.command.Command,edu.wpi.first.wpilibj2.command.Command,java.util.function.BooleanSupplier)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/namespacefrc2_1_1cmd.html#a389d1d0055c3be03a852bfc88aaa2ee5), :external:py:func:[Python](commands2.cmd.either>`), backed by the ``ConditionalCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_conditional_command.html), :external:py:class:`Python <commands2.ConditionalCommand>`), is a specialization accepting two commands and a boolean selector function.
 
@@ -303,8 +301,7 @@ Command compositions can also be written as a constructor-only subclass of the m
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/ComplexAuto.java
          :language: java
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
@@ -312,8 +309,7 @@ Command compositions can also be written as a constructor-only subclass of the m
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.h
          :language: c++
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
@@ -321,8 +317,7 @@ Command compositions can also be written as a constructor-only subclass of the m
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
          :language: c++
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
    .. tab-item:: Python
       :sync: Python
@@ -330,7 +325,6 @@ Command compositions can also be written as a constructor-only subclass of the m
       .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/complexauto.py
          :language: python
          :lines: 7-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
 The advantages and disadvantages of this subclassing approach in comparison to others are discussed in :ref:`docs/software/commandbased/organizing-command-based:Subclassing Command Groups`.

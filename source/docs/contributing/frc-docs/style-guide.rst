@@ -104,20 +104,17 @@ When possible, instead of using code blocks, an RLI should be used.  This pulls 
 .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
    :language: java
    :lines: 19-25
-   :linenos:
-   :lineno-start: 19
+   :lineno-match:
 
 .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
    :language: c++
    :lines: 50-60
-   :linenos:
-   :lineno-start: 50
+   :lineno-match:
 
 .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/GettingStarted/robot.py
    :language: python
-   :linenos:
    :lines: 12-29
-   :lineno-start: 12
+   :lineno-match:
 ```
 
 Make sure to link to the raw version of the file on GitHub. There is a handy ``Raw`` button in the top right corner of the page.
@@ -132,8 +129,7 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
       :language: java
       :lines: 19-25
-      :linenos:
-      :lineno-start: 19
+      :lineno-match:
    
    ```c++
    // Start the timer.
