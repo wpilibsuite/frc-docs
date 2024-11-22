@@ -57,7 +57,8 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib ([Java
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/solenoid/Robot.java
           :language: java
           :lines: 100, 102
-          :lineno-match:
+          :linenos:
+          :lineno-start: 100
 
     .. tab-item:: C++ (Header)
        :sync: C++ (Header)
@@ -73,7 +74,8 @@ Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib ([Java
        .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/Solenoid/cpp/Robot.cpp
           :language: c++
           :lines: 54, 56
-          :lineno-match:
+          :linenos:
+          :lineno-start: 54
 
 ## Toggling Solenoids
 

@@ -461,7 +461,8 @@ The sample robot in our examples will have an Xbox Controller on USB port 0 for 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
          :language: java
          :lines: 27-28,32-36
-         :lineno-match:
+         :linenos:
+         :lineno-start: 27
 
    .. tab-item:: C++
       :sync: c++
@@ -469,7 +470,8 @@ The sample robot in our examples will have an Xbox Controller on USB port 0 for 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
          :lines: 12-13,17-24
-         :lineno-match:
+         :linenos:
+         :lineno-start: 12
 
    .. tab-item:: Python
       :sync: python

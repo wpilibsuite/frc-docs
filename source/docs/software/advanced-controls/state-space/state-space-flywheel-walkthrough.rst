@@ -127,7 +127,7 @@ The ``LinearSystem`` class contains methods to easily create a model of a flywhe
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
          :language: c++
-         :lines: 17,31-46
+         :lines: 31-46
          :lineno-match:
 
    .. tab-item:: Python

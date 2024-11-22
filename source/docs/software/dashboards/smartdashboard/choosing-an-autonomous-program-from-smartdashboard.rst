@@ -259,7 +259,8 @@ In ``Robot.java``, this will run the scheduler every driver station update perio
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
          :language: java
          :lines: 49-50,55-56
-         :lineno-match:
+         :linenos:
+         :lineno-start: 49
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
