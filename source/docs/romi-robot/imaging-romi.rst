@@ -1,5 +1,4 @@
-Imaging your Romi
-=================
+# Imaging your Romi
 
 The Romi has 2 microprocessor boards:
 
@@ -8,28 +7,24 @@ The Romi has 2 microprocessor boards:
 
 Both boards need to have firmware installed so that the robot operates properly.
 
-Raspberry Pi
-------------
+## Raspberry Pi
 
-Download
-^^^^^^^^
+### Download
 
 The Raspberry Pi firmware is based on WPILibPi (formerly FRCVision) and must be downloaded and written to the Raspberry Pi micro SD card. Click on ``Assets`` at the bottom of the description to see the available image files:
 
-`Romi WPILibPi <https://github.com/wpilibsuite/WPILibPi/releases>`__
+[Romi WPILibPi](https://github.com/wpilibsuite/WPILibPi/releases)
 
 Be sure to download the Romi version and not the standard release of WPILibPi. The Romi version is suffixed with ``-Romi``. See the below image for an example.
 
 .. image:: images/imaging-romi/romi-download.png
    :alt: GitHub Romi Release
 
-Imaging
-^^^^^^^
+### Imaging
 
 The procedure for installing the image is described here: :doc:`WPILibPi Installation</docs/software/vision-processing/wpilibpi/installing-the-image-to-your-microsd-card>`.
 
-Wireless Network Setup
-^^^^^^^^^^^^^^^^^^^^^^
+### Wireless Network Setup
 
 Perform the following steps to get your Raspberry Pi ready to use with the Romi:
 
@@ -58,8 +53,7 @@ Be sure to set the Dashboard to ``Read-only`` when all the changes have been com
 .. image:: images/imaging-romi/network-settings.png
    :alt: Romi web dashboard network settings
 
-32U4 Control Board
-------------------
+## 32U4 Control Board
 
 The Raspberry Pi can now be used to write the firmware image to the 32U4 Control Board.
 

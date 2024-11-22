@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Trajectory Generation and Following with WPILib
-===============================================
+# Trajectory Generation and Following with WPILib
 
 This section describes WPILib support for generating parameterized spline trajectories and following those trajectories with typical FRC\ |reg| robot drives.
 

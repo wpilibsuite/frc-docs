@@ -1,10 +1,8 @@
-Setting up the Robot Project
-============================
+# Setting up the Robot Project
 
 The RobotBuilder program has some default properties that need to be set up so the generated program and other generated files work properly. This setup information is stored in the properties for robot description (the first line).
 
-Robot Project Properties
-------------------------
+## Robot Project Properties
 
 The properties that describe the robot are:
 
@@ -30,8 +28,7 @@ The properties that describe the robot are:
 
 * **Desktop Support** - Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it.
 
-Using Source Control with the RobotBuilder Project
---------------------------------------------------
+## Using Source Control with the RobotBuilder Project
 
 .. image:: images/robotbuilder-setup-1.png
 

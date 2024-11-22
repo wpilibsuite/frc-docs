@@ -1,24 +1,20 @@
-Creating a Command
-==================
+# Creating a Command
 
 Commands are classes you create that provide behaviors or actions for your subsystems. The subsystem class should set the operation of the subsystem, like MoveElevator to start the elevator moving, or ElevatorToSetPoint to set the elevator's PID setpoint. The commands initiate the subsystem operation and keep track of when it is finished.
 
-Drag the Command to the Commands Folder
----------------------------------------
+## Drag the Command to the Commands Folder
 
 .. image:: images/creating-commands-1.png
 
 Simple commands can be dragged from the palette to the robot description. The command will be created under the Commands folder.
 
-Creating Commands using the Context Menu
-----------------------------------------
+## Creating Commands using the Context Menu
 
 .. image:: images/creating-commands-2.png
 
 You can also create commands using the right-click context menu on the Command folder in the robot description.
 
-Configuring the Command
------------------------
+## Configuring the Command
 
 .. image:: images/creating-commands-3.png
 
@@ -32,8 +28,7 @@ Configuring the Command
 
 Setpoint commands come with a single parameter ('setpoint', of type double); parameters cannot be added, edited, or deleted for setpoint commands.
 
-Adding and Editing Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Adding and Editing Parameters
 
 .. image:: images/creating-commands-4.png
 
@@ -46,8 +41,7 @@ To add or edit parameters:
 
 Rows can be reordered simply by dragging, and can be deleted by selecting them and pressing delete or backspace.
 
-Adding and Editing Parameter Presets
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Adding and Editing Parameter Presets
 
 .. image:: images/creating-commands-5.png
 

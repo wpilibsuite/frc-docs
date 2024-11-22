@@ -1,5 +1,4 @@
-Vision Processing
-=================
+# Vision Processing
 
 .. toctree::
    :maxdepth: 2

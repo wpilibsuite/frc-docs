@@ -1,12 +1,10 @@
 .. include:: <isonum.txt>
 
-Adding Custom Components
-========================
+# Adding Custom Components
 
 RobotBuilder works very well for creating robot programs that just use WPILib for motors, controllers, and sensors. But for teams that use custom classes, RobotBuilder doesn't have any support for those classes, so a few steps need to be taken to use them in RobotBuilder
 
-Custom Component Structure
---------------------------
+## Custom Component Structure
 
 .. image:: images/custom-components-1.png
 
@@ -14,8 +12,7 @@ Custom components all go in ``~/wpilib/YYYY/Robotbuilder/extensions`` where ~ is
 
 There are seven files and one folder that are needed for a custom component. The folder contains the files describing the component and how to export it. It should have the same name as the component (e.g."Kiwi Drive" for a kiwi drive controller, "Robot Drive 6" for a six-motor drive controller, etc.). The files should have the same names and extensions as the ones shown here. Other files can be in the folder along with these seven, but the seven must be present for RobotBuilder to recognize the custom component.
 
-PaletteDescription.yaml
------------------------
+## PaletteDescription.yaml
 
 .. image:: images/custom-components-2.png
 
@@ -40,8 +37,7 @@ The types of component RobotBuilder supports (these are case-sensitive):
 - Joystick
 - Joystick Button
 
-Properties
-^^^^^^^^^^
+### Properties
 
 The properties relevant for a custom component:
 
@@ -55,15 +51,13 @@ The fields for each property are described below:
 
 .. image:: images/custom-components-3.png
 
-Validators.yaml
----------------
+## Validators.yaml
 
 .. image:: images/custom-components-4.png
 
 You may have noticed "KiwiDriveValidator" in the validators entry of each of the motor properties in PaletteDescription.yaml. It's not a built-in validator, so it had to be defined in Validators.yaml. This example validator is very simple - it just makes sure that each of the named fields has a different value than the others.
 
-Built-in Validators and Validator Types
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Built-in Validators and Validator Types
 
 .. image:: images/custom-components-5.png
 
@@ -74,8 +68,7 @@ The built-in validators are very useful (especially the UniqueValidators for por
 - UniqueValidator: Makes sure that the value for the property is unique globally for the given fields
 - ListValidator: Makes sure that all the values in a list property are valid
 
-C++ Export.yaml
----------------
+## C++ Export.yaml
 
 .. image:: images/custom-components-6.png
 
@@ -88,27 +81,25 @@ A line-by-line breakdown of the file:
 
 This example expects a KiwiDrive class with the constructor
 
-.. code-block:: c++
-
-   KiwiDrive(SpeedController, SpeedController, SpeedController)
+```c++
+KiwiDrive(SpeedController, SpeedController, SpeedController)
+```
 
 If your team uses Java, this file can be empty.
 
-Java Export.yaml
-----------------
+## Java Export.yaml
 
 .. image:: images/custom-components-7.png
 
 Very similar to the C++ export file; the only difference should be the Construction line. This example expects a KiwiDrive class with the constructor
 
-.. code-block:: java
-
-   KiwiDrive(SpeedController, SpeedController, SpeedController)
+```java
+KiwiDrive(SpeedController, SpeedController, SpeedController)
+```
 
 If your team uses C++, this file can be empty.
 
-Using Macros and Variables
---------------------------
+## Using Macros and Variables
 
 Macros are simple functions that RobotBuilder uses to turn variables into text that will be inserted into generated code. They always start with the "#" symbol, and have a syntax similar to functions: ``<macro_name>( arg0, arg1, arg2, ...)``. The only macro you'll probably need to use is ``#variable( component_name )``
 
@@ -133,15 +124,13 @@ Variables are either component properties (e.g. "Motor 1", "Motor 2", "Motor 3" 
 
 If you have variables with spaces in the name (such as "Motor 1", "Right Front Motor", etc.), the spaces need to be replaced with underscores when using them in the export files.
 
-help.html
----------
+## help.html
 
 .. image:: images/custom-components-8.png
 
 A HTML file giving information on the component. It is better to have this be as detailed as possible, though it certainly isn't necessary if the programmer(s) are familiar enough with the component, or if it's so simple that there's little point in a detailed description.
 
-config.txt
-----------
+## config.txt
 
 .. image:: images/custom-components-9.png
 
@@ -157,9 +146,8 @@ The sections of the palette (these are case sensitive):
 - OI
 - Commands
 
-icon.png
---------
+## icon.png
 
 The icon that shows up in the palette and the help page. This should be a 64x64 ``.png`` file.
 
-It should use the color scheme and general style of the section it's in to avoid visual clutter, but this is entirely optional. Photoshop ``.psd`` files of the icons and backgrounds are in `src/main/icons/icons <https://github.com/wpilibsuite/RobotBuilder/tree/main/src/main/icons/icons>`_ and png files of the icons and backgrounds are in `src/main/resources/icons <https://github.com/wpilibsuite/RobotBuilder/tree/main/src/main/resources/icons>`_.
+It should use the color scheme and general style of the section it's in to avoid visual clutter, but this is entirely optional. Photoshop ``.psd`` files of the icons and backgrounds are in [src/main/icons/icons](https://github.com/wpilibsuite/RobotBuilder/tree/main/src/main/icons/icons) and png files of the icons and backgrounds are in [src/main/resources/icons](https://github.com/wpilibsuite/RobotBuilder/tree/main/src/main/resources/icons).

@@ -1,5 +1,4 @@
-Kinematics and Odometry
-=======================
+# Kinematics and Odometry
 
 .. toctree::
    :maxdepth: 1

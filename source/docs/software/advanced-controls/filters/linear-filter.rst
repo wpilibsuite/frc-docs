@@ -1,5 +1,4 @@
-Linear Filters
-==============
+# Linear Filters
 
 The first (and most commonly-employed) sort of filter that WPILib supports is a *linear filter* - or, more specifically, a linear time-invariant (LTI) filter.
 
@@ -11,10 +10,9 @@ Infinite impulse responses have infinite "support" - that is, they are nonzero o
 
 Finite impulse responses have finite "support" - that is, they are nonzero on a bounded region.  The "archetypical" FIR filter is a flat moving average - that is, simply setting the output equal to the average of the past n inputs.  FIR filters tend to have more-desirable properties than IIR filters, but are more costly to compute.
 
-Linear filters are supported in WPILib through the ``LinearFilter`` class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html>`__, , :external:py:class:`Python <wpimath.filter.LinearFilter>`).
+Linear filters are supported in WPILib through the ``LinearFilter`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_linear_filter.html), , :external:py:class:`Python <wpimath.filter.LinearFilter>`).
 
-Creating a LinearFilter
------------------------
+## Creating a LinearFilter
 
 .. note:: The C++ ``LinearFilter`` class is templated on the data type used for the input.
 
@@ -22,8 +20,7 @@ Creating a LinearFilter
 
 While it is possible to directly instantiate ``LinearFilter`` class to build a custom filter, it is far more convenient (and common) to use one of the supplied factory methods, instead:
 
-singlePoleIIR
-^^^^^^^^^^^^^
+### singlePoleIIR
 
 .. image:: images/singlepolefilter.png
   :alt: A graph with two peaks with the input closely following the target signal.
@@ -32,35 +29,33 @@ The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse re
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a new Single-Pole IIR filter
+  // Time constant is 0.1 seconds
+  // Period is 0.02 seconds - this is the standard FRC main loop period
+  LinearFilter filter = LinearFilter.singlePoleIIR(0.1, 0.02);
+  ```
 
-    // Creates a new Single-Pole IIR filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    LinearFilter filter = LinearFilter.singlePoleIIR(0.1, 0.02);
+  ```c++
+  // Creates a new Single-Pole IIR filter
+  // Time constant is 0.1 seconds
+  // Period is 0.02 seconds - this is the standard FRC main loop period
+  frc::LinearFilter<double> filter = frc::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
+  ```
 
-  .. code-block:: c++
-
-    // Creates a new Single-Pole IIR filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    frc::LinearFilter<double> filter = frc::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
-
-  .. code-block:: python
-
-    from wpimath.filter import LinearFilter
-
-    # Creates a new Single-Pole IIR filter
-    # Time constant is 0.1 seconds
-    # Period is 0.02 seconds - this is the standard FRC main loop period
-    filter = LinearFilter.singlePoleIIR(0.1, 0.02)
+  ```python
+  from wpimath.filter import LinearFilter
+  # Creates a new Single-Pole IIR filter
+  # Time constant is 0.1 seconds
+  # Period is 0.02 seconds - this is the standard FRC main loop period
+  filter = LinearFilter.singlePoleIIR(0.1, 0.02)
+  ```
 
 The "time constant" parameter determines the "characteristic timescale" of the filter's impulse response; the filter will cancel out any signal dynamics that occur on timescales significantly shorter than this.  Relatedly, it is also the approximate timescale of the introduced :ref:`phase lag <docs/software/advanced-controls/filters/introduction:Phase Lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "cutoff frequency" of the filter.
 
 The "period" parameter is the period at which the filter's ``calculate()`` method will be called.  For the vast majority of implementations, this will be the standard main robot loop period of 0.02 seconds.
 
-movingAverage
-^^^^^^^^^^^^^
+### movingAverage
 
 .. image:: images/firfilter.png
   :alt: A graph with two peaks with the input closely following the target signal.
@@ -69,30 +64,28 @@ The ``movingAverage`` factory method creates a simple flat moving average filter
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a new flat moving average filter
+  // Average will be taken over the last 5 samples
+  LinearFilter filter = LinearFilter.movingAverage(5);
+  ```
 
-    // Creates a new flat moving average filter
-    // Average will be taken over the last 5 samples
-    LinearFilter filter = LinearFilter.movingAverage(5);
+  ```c++
+  // Creates a new flat moving average filter
+  // Average will be taken over the last 5 samples
+  frc::LinearFilter<double> filter = frc::LinearFilter<double>::MovingAverage(5);
+  ```
 
-  .. code-block:: c++
-
-    // Creates a new flat moving average filter
-    // Average will be taken over the last 5 samples
-    frc::LinearFilter<double> filter = frc::LinearFilter<double>::MovingAverage(5);
-
-  .. code-block:: python
-
-    from wpimath.filter import LinearFilter
-
-    # Creates a new flat moving average filter
-    # Average will be taken over the last 5 samples
-    filter = LinearFilter.movingAverage(5)
+  ```python
+  from wpimath.filter import LinearFilter
+  # Creates a new flat moving average filter
+  # Average will be taken over the last 5 samples
+  filter = LinearFilter.movingAverage(5)
+  ```
 
 The "taps" parameter is the number of samples that will be included in the flat moving average.  This behaves similarly to the "time constant" above - the effective time constant is the number of taps times the period at which ``calculate()`` is called.
 
-highPass
-^^^^^^^^
+### highPass
 
 .. image:: images/highpassfilter.png
    :alt: A graph with two peaks except the highpass only shows the rate of change centered around 0.
@@ -101,35 +94,33 @@ The ``highPass`` factory method creates a simple first-order infinite impulse re
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a new high-pass IIR filter
+  // Time constant is 0.1 seconds
+  // Period is 0.02 seconds - this is the standard FRC main loop period
+  LinearFilter filter = LinearFilter.highPass(0.1, 0.02);
+  ```
 
-    // Creates a new high-pass IIR filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    LinearFilter filter = LinearFilter.highPass(0.1, 0.02);
+  ```c++
+  // Creates a new high-pass IIR filter
+  // Time constant is 0.1 seconds
+  // Period is 0.02 seconds - this is the standard FRC main loop period
+  frc::LinearFilter<double> filter = frc::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
+  ```
 
-  .. code-block:: c++
-
-    // Creates a new high-pass IIR filter
-    // Time constant is 0.1 seconds
-    // Period is 0.02 seconds - this is the standard FRC main loop period
-    frc::LinearFilter<double> filter = frc::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
-
-  .. code-block:: python
-
-    from wpimath.filter import LinearFilter
-
-    # Creates a new high-pass IIR filter
-    # Time constant is 0.1 seconds
-    # Period is 0.02 seconds - this is the standard FRC main loop period
-    filter = LinearFilter.highPass(0.1, 0.02)
+  ```python
+  from wpimath.filter import LinearFilter
+  # Creates a new high-pass IIR filter
+  # Time constant is 0.1 seconds
+  # Period is 0.02 seconds - this is the standard FRC main loop period
+  filter = LinearFilter.highPass(0.1, 0.02)
+  ```
 
 The "time constant" parameter determines the "characteristic timescale" of the filter's impulse response; the filter will cancel out any signal dynamics that occur on timescales significantly longer than this.  Relatedly, it is also the approximate timescale of the introduced :ref:`phase lead <docs/software/advanced-controls/filters/introduction:Phase lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "cutoff frequency" of the filter.
 
 The "period" parameter is the period at which the filter's ``calculate()`` method will be called.  For the vast majority of implementations, this will be the standard main robot loop period of 0.02 seconds.
 
-Using a LinearFilter
---------------------
+## Using a LinearFilter
 
 .. note:: In order for the created filter to obey the specified timescale parameter, its ``calculate()`` function *must* be called regularly at the specified period.  If, for some reason, a significant lapse in ``calculate()`` calls must occur, the filter's ``reset()`` method should be called before further use.
 
@@ -137,17 +128,18 @@ Once your filter has been created, using it is easy - simply call the ``calculat
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Calculates the next value of the output
+  filter.calculate(input);
+  ```
 
-    // Calculates the next value of the output
-    filter.calculate(input);
+  ```c++
+  // Calculates the next value of the output
+  filter.Calculate(input);
+  ```
 
-  .. code-block:: c++
+  ```python
+  # Calculates the next value of the output
+  filter.calculate(input)
+  ```
 
-    // Calculates the next value of the output
-    filter.Calculate(input);
-
-  .. code-block:: python
-
-    # Calculates the next value of the output
-    filter.calculate(input)

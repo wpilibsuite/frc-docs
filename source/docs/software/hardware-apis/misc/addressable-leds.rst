@@ -1,10 +1,10 @@
-Addressable LEDs
-================
+# Addressable LEDs
 
 LED strips have been commonly used by teams for several years for a variety of reasons. They allow teams to debug robot functionality from the audience, provide a visual marker for their robot, and can simply add some visual appeal. WPILib has an API for controlling WS2812 LEDs with their data pin connected via :term:`PWM`.
 
-Instantiating the AddressableLED Object
----------------------------------------
+.. note:: LEDs can be controlled through this API while the robot is disabled.
+
+## Instantiating the AddressableLED Object
 
 You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header on the roboRIO. Then you set the number of LEDs located on your LED strip, which can be done with the ``setLength()`` function.
 
@@ -19,36 +19,32 @@ After the length of the strip has been set, you'll have to create an ``Addressab
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 17-32
-         :linenos:
-         :lineno-start: 17
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: c++
          :lines: 12-12, 18-27
          :linenos:
-         :lineno-start: 11
+         :lineno-start: 12
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 7-13
-         :linenos:
-         :lineno-start: 7
+         :lineno-match:
 
 .. note:: The roboRIO only supports only 1 ``AddressableLED`` object. As WS2812B LEDs are connected in series, you can drive several strips connected in series from from ``AddressableLED`` object.
 
-Setting the Entire Strip to One Color
--------------------------------------
+## Setting the Entire Strip to One Color
 
 Color can be set to an individual led on the strip using two methods. ``setRGB()`` which takes RGB values as an input and ``setHSV()`` which takes HSV values as an input.
 
-Using RGB Values
-^^^^^^^^^^^^^^^^
+### Using RGB Values
 
 RGB stands for Red, Green, and Blue. This is a fairly common color model as it's quite easy to understand. LEDs can be set with the ``setRGB`` method that takes 4 arguments: index of the LED, amount of red, amount of green, amount of blue. The amount of Red, Green, and Blue are integer values between 0-255.
 
@@ -57,30 +53,27 @@ RGB stands for Red, Green, and Blue. This is a fairly common color model as it's
    .. tab-item:: Java
       :sync: Java
 
-      .. code-block:: Java
-
-         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-            // Sets the specified LED to the RGB values for red
-            m_ledBuffer.setRGB(i, 255, 0, 0);
-         }
-
-         m_led.setData(m_ledBuffer);
+      ```Java
+      for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+         // Sets the specified LED to the RGB values for red
+         m_ledBuffer.setRGB(i, 255, 0, 0);
+      }
+      m_led.setData(m_ledBuffer);
+      ```
 
    .. tab-item:: C++
       :sync: C++
 
-      .. code-block:: C++
+      ```C++
+      for (int i = 0; i < kLength; i++) {
+         m_ledBuffer[i].SetRGB(255, 0, 0);
+      }
+      m_led.SetData(m_ledBuffer);
+      ```
 
-         for (int i = 0; i < kLength; i++) {
-            m_ledBuffer[i].SetRGB(255, 0, 0);
-         }
+### Using HSV Values
 
-         m_led.SetData(m_ledBuffer);
-
-Using HSV Values
-^^^^^^^^^^^^^^^^
-
-HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. In WPILib, Hue is an integer from 0 - 180. Saturation and Value are integers from 0 - 255. If you look at a color picker like `Google's <https://www.google.com/search?q=color+picker>`_, Hue will be 0 - 360 and Saturation and Value are from 0% to 100%. This is the same way that OpenCV handles HSV colors. Make sure the HSV values entered to WPILib are correct, or the color produced might not be the same as was expected.
+HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, saturation being the amount of gray, and value being the brightness. In WPILib, Hue is an integer from 0 - 180. Saturation and Value are integers from 0 - 255. If you look at a color picker like [Google's](https://www.google.com/search?q=color+picker), Hue will be 0 - 360 and Saturation and Value are from 0% to 100%. This is the same way that OpenCV handles HSV colors. Make sure the HSV values entered to WPILib are correct, or the color produced might not be the same as was expected.
 
 .. image:: images/hsv-models.png
    :alt: HSV models picture
@@ -92,28 +85,25 @@ LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of the 
    .. tab-item:: Java
       :sync: Java
 
-      .. code-block:: Java
-
-         for (var i = 0; i < m_ledBuffer.getLength(); i++) {
-            // Sets the specified LED to the HSV values for red
-            m_ledBuffer.setHSV(i, 0, 100, 100);
-         }
-
-         m_led.setData(m_ledBuffer);
+      ```Java
+      for (var i = 0; i < m_ledBuffer.getLength(); i++) {
+         // Sets the specified LED to the HSV values for red
+         m_ledBuffer.setHSV(i, 0, 100, 100);
+      }
+      m_led.setData(m_ledBuffer);
+      ```
 
    .. tab-item:: C++
       :sync: C++
 
-      .. code-block:: C++
+      ```C++
+      for (int i = 0; i < kLength; i++) {
+         m_ledBuffer[i].SetHSV(0, 100, 100);
+      }
+      m_led.SetData(m_ledBuffer);
+      ```
 
-         for (int i = 0; i < kLength; i++) {
-            m_ledBuffer[i].SetHSV(0, 100, 100);
-         }
-
-         m_led.SetData(m_ledBuffer);
-
-Creating a Rainbow Effect
--------------------------
+## Creating a Rainbow Effect
 
 The below method does a couple of important things. Inside of the *for* loop, it equally distributes the hue over the entire length of the strand and stores the individual LED hue to a variable called ``hue``. Then the for loop sets the HSV value of that specified pixel using the ``hue`` value.
 
@@ -126,20 +116,18 @@ Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates the
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 42-55
-         :linenos:
-         :lineno-start: 42
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 22-35
-         :linenos:
-         :lineno-start: 22
+         :lineno-match:
 
 Now that we have our ``rainbow`` method created, we have to actually call the method and set the data of the LED.
 
@@ -148,17 +136,15 @@ Now that we have our ``rainbow`` method created, we have to actually call the me
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 34-40
-         :linenos:
-         :lineno-start: 34
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 15-20
-         :linenos:
-         :lineno-start: 15
+         :lineno-match:

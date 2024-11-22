@@ -1,8 +1,6 @@
-Getting to know your XRP
-========================
+# Getting to know your XRP
 
-Booting up the XRP
-------------------
+## Booting up the XRP
 
 Upon start up (when power is applied to the XRP either via battery or USB), the following will happen:
 
@@ -12,8 +10,7 @@ Upon start up (when power is applied to the XRP either via battery or USB), the 
 
 3. After this, the XRP is ready for use.
 
-Hardware, Sensors and GPIO
---------------------------
+## Hardware, Sensors and GPIO
 
 The XRP has the following built-in hardware/peripherals:
 
@@ -26,8 +23,7 @@ The XRP has the following built-in hardware/peripherals:
 - 1x Line following sensor (exposed as 2 Analog inputs)
 - 1x Ultrasonic PING style rangefinder (uses 2 digital IO pins, exposed as an analog input)
 
-Motors, Wheels, and Encoders
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Motors, Wheels, and Encoders
 
 The motors used on the XRP have a 48.75:1 gear reduction and a no-load output speed of 90 RPM at 4.5V.
 
@@ -89,15 +85,13 @@ The encoder channels are listed in the table below.
 
 .. note:: By default, the encoders count up when the XRP moves forward.
 
-Inertial Measurement Unit
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### Inertial Measurement Unit
 
 The XRP includes an STMicroelectronics LSM6DSOX Inertial Measurement Unit (IMU) which contains a 3-axis gyro and a 3-axis accelerometer.
 
 The XRP will calibrate the gyro and accelerometer upon each boot (the onboard LED will quickly flash for about 3-5 seconds at startup time).
 
-Onboard LED and Push Button
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Onboard LED and Push Button
 
 The XRP has a push button (labeled USER) and a green LED onboard that are exposed as Digital IO (DIO) channels to robot code.
 
@@ -111,8 +105,7 @@ The XRP has a push button (labeled USER) and a green LED onboard that are expose
 
 .. note:: DIO 2 and 3 are reserved for future system use.
 
-Line Following (Reflectance) Sensor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Line Following (Reflectance) Sensor
 
 When assembled according to the instructions, the XRP supports a line following sensor with 2 sensing elements. Each sensing element measures reflectance exposes these as AnalogInput channels to robot code. The returned values range from 0V (pure white) to 5V (pure black).
 
@@ -124,8 +117,7 @@ When assembled according to the instructions, the XRP supports a line following 
 | AnalogInput 1       | Right Reflectance Sensor  |
 +---------------------+---------------------------+
 
-Ultrasonic Rangefinder
-^^^^^^^^^^^^^^^^^^^^^^
+### Ultrasonic Rangefinder
 
 When assembled according to the instructions, the XRP supports an ultrasonic, PING style, rangefinder. This is exposed as an AnalogInput channel to robot code. The returned values range from 0V (20mm) to 5V (4000mm).
 

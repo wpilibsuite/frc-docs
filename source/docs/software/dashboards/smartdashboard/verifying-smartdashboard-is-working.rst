@@ -1,8 +1,6 @@
-Verifying SmartDashboard is working
-===================================
+# Verifying SmartDashboard is working
 
-Connection Indicator
---------------------
+## Connection Indicator
 
 SmartDashboard will automatically include the connection status and IP address of the NetworkTables source in the title of the window.
 
@@ -14,64 +12,55 @@ SmartDashboard will automatically include the connection status and IP address o
   :alt: SmartDashboard connected and showing the IP address.
   :width: 350
 
-Connection Indicator Widget
----------------------------
+## Connection Indicator Widget
 
 SmartDashboard includes a connection indicator widget which will turn red or green depending on the connection to NetworkTables, usually provided by the roboRIO. For instructions to add this widget, look at :ref:`Adding a Connection Indicator <docs/software/dashboards/smartdashboard/smartdashboard-intro:Adding a Connection Indicator>` in the SmartDashboard Intro.
 
-Robot Program Example
----------------------
+## Robot Program Example
 
 .. tab-set-code::
 
-   .. code-block:: java
-
-      public class Robot extends TimedRobot {
-         double counter = 0.0;
-
-         public void teleopPeriodic() {
-            SmartDashboard.putNumber("Counter", counter++);
-         }
+   ```java
+   public class Robot extends TimedRobot {
+      double counter = 0.0;
+      public void teleopPeriodic() {
+         SmartDashboard.putNumber("Counter", counter++);
       }
+   }
+   ```
 
-   .. code-block:: c++
+   ```c++
+   #include "Robot.h"
+   float counter = 0.0;
+   void Robot::TeleopPeriodic() {
+      frc::SmartDashboard::PutNumber("Counter", counter++);
+   }
+   ```
 
-      #include "Robot.h"
-      float counter = 0.0;
-
-      void Robot::TeleopPeriodic() {
-         frc::SmartDashboard::PutNumber("Counter", counter++);
-      }
-
-   .. code-block:: python
-
-      from wpilib import SmartDashboard
-
-      self.counter = 0.0
-
-      def teleopPeriodic(self) -> None:
-         SmartDashboard.putNumber("Counter", self.counter += 1)
+   ```python
+   from wpilib import SmartDashboard
+   self.counter = 0.0
+   def teleopPeriodic(self) -> None:
+      SmartDashboard.putNumber("Counter", self.counter += 1)
+   ```
 
 This is a minimal robot program that writes a value to the SmartDashboard. It simply increments a counter 50 times per second to verify that the connection is working. However, to minimize bandwidth usage, NetworkTables by default will throttle the updates to 10 times per second.
 
-SmartDashboard Output for the Sample Program
---------------------------------------------
+## SmartDashboard Output for the Sample Program
 
 .. image:: images/verifying-smartdashboard-is-working/smartdashboard-output-sample-program.png
   :alt: SmartDashboard showing the output of "counter" set up in the code above.
 
 The SmartDashboard display should look like this after about 6 seconds of the robot being enabled in Teleop mode. If it doesn't, then you need to check that the connection is correctly set up.
 
-Verifying the IP address in SmartDashboard
-------------------------------------------
+## Verifying the IP address in SmartDashboard
 
 .. image:: images/verifying-smartdashboard-is-working/verifying-ip-address.png
   :alt: Checking the "Team Number" property in the Preferences dialog box.
 
 If the display of the value is not appearing, verify that the team number is correctly set as shown in this picture. The preferences dialog can be viewed by selecting ``File``, then ``Preferences``.
 
-Verifying Program using OutlineViewer
--------------------------------------
+## Verifying Program using OutlineViewer
 
 You can verify that the robot program is generating SmartDashboard values by using the :doc:`OutlineViewer program </docs/software/wpilib-tools/outlineviewer/index>`.
 

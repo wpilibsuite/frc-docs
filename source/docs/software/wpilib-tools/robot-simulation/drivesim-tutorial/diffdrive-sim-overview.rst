@@ -1,5 +1,4 @@
-Drivetrain Simulation Overview
-==============================
+# Drivetrain Simulation Overview
 
 .. note:: The code in this tutorial does not use any specific framework (i.e. command-based vs. simple data flow); however, guidance will be provided in certain areas for how to best implement certain pieces of code in specific framework types.
 
@@ -13,6 +12,5 @@ The goal of this tutorial is to provide guidance on implementing simulation capa
 
 .. image:: images/simgui.png
 
-Why Simulate a Drivetrain?
---------------------------
+## Why Simulate a Drivetrain?
 The drivetrain of a robot is one of the most important mechanisms on the robot -- therefore, it is important to ensure that the software powering your drivetrain is as robust as possible. By being able to simulate how a physical drivetrain responds, you can get a head start on writing quality software before you have access to the physical hardware. With the simulation framework, you can verify not only basic functionality, like making sure that the inversions on motors and encoders are correct, but also advanced capabilities such as verifying accuracy of path following.

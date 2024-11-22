@@ -8,8 +8,7 @@
 .. meta::
    :google-site-verification: POR_nG8b56eXGxmUIutST7jcA_Vl58ypSdJTzJ1g0zg
 
-FIRST Robotics Competition Control System
-=========================================
+# FIRST Robotics Competition Control System
 
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This site contains everything you need to know for programming a competition robot!
 
@@ -25,7 +24,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       ^^^
 
-      If you are a returning team, please check out the overview of changes from 2023 to 2024, known issues, and quick start guide for updating.
+      If you are a returning team, please check out the overview of changes from 2024 to 2025, known issues, and quick start guide for updating.
 
       +++
 
@@ -220,7 +219,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       Java, C++, and Python class documentation.
 
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/release/java/index.html
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/development/java/index.html
          :color: primary
          :shadow:
          :align: center
@@ -229,7 +228,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
          Java
 
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/release/cpp/index.html
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/development/cpp/index.html
          :color: primary
          :shadow:
          :align: center
@@ -330,6 +329,15 @@ Community translations can be found in a variety of languages in the bottom-left
 .. toctree::
    :maxdepth: 1
    :titlesonly:
+   :caption: FRC Beta Test
+   :hidden:
+
+   docs/beta/beta-getting-started/index
+   docs/beta/tasks/index
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
    :caption: Zero to Robot
    :hidden:
 
@@ -370,8 +378,8 @@ Community translations can be found in a variety of languages in the bottom-left
    :caption: API Docs
    :hidden:
 
-   WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/release/java/index.html>
-   WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/release/cpp/index.html>
+   WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/development/java/index.html>
+   WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/development/cpp/index.html>
    WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/stable/>
 
 .. toctree::
@@ -384,6 +392,7 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/outlineviewer/index
    docs/software/wpilib-tools/roborio-team-number-setter/index
+   docs/software/wpilib-tools/choreo/index
 
 .. toctree::
    :maxdepth: 1
@@ -443,9 +452,16 @@ Community translations can be found in a variety of languages in the bottom-left
 
 .. toctree::
    :maxdepth: 1
+   :caption: Legal
+   :hidden:
+
+   docs/legal/privacy-policy
+
+.. toctree::
+   :maxdepth: 1
    :caption: Issues
    :hidden:
 
-   Report an Issue <https://github.com/wpilibsuite/frc-docs/issues>
+   Report a Documentation Issue <https://github.com/wpilibsuite/frc-docs/issues>
 
 .. todolist::

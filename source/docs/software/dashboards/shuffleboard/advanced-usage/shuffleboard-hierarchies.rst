@@ -1,5 +1,4 @@
-Viewing Hierarchies of Data
-===========================
+# Viewing Hierarchies of Data
 
 Dragging a key with other keys below it (deeper in the hierarchy) displays the hierarchy in a tree, similar to the NetworkTables sources on the left.
 

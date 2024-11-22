@@ -1,8 +1,6 @@
-Getting to know your Romi
-=========================
+# Getting to know your Romi
 
-Directional Conventions
------------------------
+## Directional Conventions
 
 The front of the Romi is where the Raspberry Pi USB ports, GPIO pins and suspended caster wheel are.
 
@@ -14,8 +12,7 @@ In all Romi documentation, references to driving forward use the above definitio
 .. image:: images/getting-to-know-romi/romi-forward.png
    :alt: Romi Forward Driving Direction
 
-Hardware, Sensors, and GPIO
----------------------------
+## Hardware, Sensors, and GPIO
 
 The Romi has the following built-in hardware/peripherals:
 
@@ -28,8 +25,7 @@ The Romi has the following built-in hardware/peripherals:
 
 .. note:: The Buzzer is currently not supported by WPILib.
 
-Motors, Wheels, and Encoders
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Motors, Wheels, and Encoders
 
 The motors used on the Romi have a 120:1 gear reduction, and a no-load output speed of 150 RPM at 4.5V. The free current is 0.13 amps and the stall current is 1.25 amps. Stall torque is 25 oz-in (0.1765 N-m) but the built-in safety clutch might start slipping at lower torques.
 
@@ -65,8 +61,7 @@ The encoder channels are listed in the table below.
 
 .. note:: By default, the encoders count up when the Romi moves forward.
 
-Inertial Measurement Unit
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### Inertial Measurement Unit
 
 The Romi includes an STMicroelectronics LSM6DS33 Inertial Measurement Unit (IMU) which contains a 3-axis gyro and a 3-axis accelerometer.
 
@@ -74,8 +69,7 @@ The accelerometer has selectable sensitivity of 2G, 4G, 8G, and 16G. The gyro ha
 
 The Romi Web UI also provides a means to calibrate the gyro and measure its zero-offsets before use with robot code.
 
-Onboard LEDs and Push Buttons
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Onboard LEDs and Push Buttons
 
 The Romi 32U4 control board has 3 push buttons and 3 LEDs onboard that are exposed as Digital IO (DIO) channels to robot code.
 
@@ -96,8 +90,7 @@ The Romi 32U4 control board has 3 push buttons and 3 LEDs onboard that are expos
 
 Writes to DIO 0, 4, 5, 6 and 7 will result in a :term:`no-op`.
 
-Configurable GPIO Pins
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Configurable GPIO Pins
 
 The control board has 5 configurable GPIO pins (named EXT0 through EXT4) that allow a user to connect external sensors and actuators to the Romi.
 
@@ -110,8 +103,7 @@ The GPIO channels are exposed via a 3-pin, servo style interface, with connectio
 
 The power connections for the GPIO pins are initially left unconnected but can be hooked into the Romi's on-board 5V supply by using a jumper to connect the 5V pin to the power bus (as seen in the image above). Additionally, if more power than the Romi can provide is needed, the user can provide their own 5V power supply and connect it directly to power bus and ground pins.
 
-GPIO Default Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### GPIO Default Configuration
 
 The table below shows the default configuration of the GPIO pins (EXT0 through EXT4). :ref:`The Romi Web UI <docs/romi-robot/web-ui:External IO Configuration>` allows the user to customize the functions of the 5 configurable GPIO pins. The UI will also provide the appropriate WPILib channel/device mappings on screen once the IO configuration is complete.
 

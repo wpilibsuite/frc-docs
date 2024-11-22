@@ -1,7 +1,6 @@
 .. include:: <isonum.txt>
 
-Tour of Shuffleboard
-====================
+# Tour of Shuffleboard
 
 Shuffleboard is a dashboard for FRC\ |reg| based on newer technologies such as JavaFX that are available to Java programs. It is designed to be used for creating dashboards for C++, Java, and Python programs. If you've used SmartDashboard in the past then you are already familiar with many of the features of Shuffleboard since they fundamentally work the same way. But Shuffleboard has many features that aren't in SmartDashboard. Here are some of the highlights:
 
@@ -20,8 +19,7 @@ Shuffleboard is a dashboard for FRC\ |reg| based on newer technologies such as J
 2. **Tab panes:** This is where you data is displayed from the robot or other sources. In this example it is Test-mode subsystems that are shown here in the LiveWindow tab. This area can show any number of tabbed windows, and each window has it's own set of properties like grid size and auto-populate.
 3. **Record/playback controls:** set of media-like controls where you can playback the current session to see historical data
 
-Starting Shuffleboard
----------------------
+## Starting Shuffleboard
 
 .. figure:: images/shuffleboard-driverstation.png
    :alt:
@@ -36,26 +34,24 @@ You can start Shuffleboard in one of four ways:
 
 .. note:: The ``.vbs`` (Windows) and ``.py`` (macOS/Linux) scripts help launch the tools using the correct JDK.
 
-Getting robot data onto the dashboard
--------------------------------------
+## Getting robot data onto the dashboard
 
 The easiest way to get data displayed on the dashboard is simply to use methods in the ``SmartDashboard`` class. For example to write a number to Shuffleboard write:
 
 .. tab-set-code::
 
-   .. code-block:: java
+   ```java
+   SmartDashboard.putNumber("Joystick X value", joystick1.getX());
+   ```
 
-      SmartDashboard.putNumber("Joystick X value", joystick1.getX());
+   ```c++
+   frc::SmartDashboard::PutNumber("Joystick X value", joystick1.getX());
+   ```
 
-   .. code-block:: c++
-
-      frc::SmartDashboard::PutNumber("Joystick X value", joystick1.getX());
-
-   .. code-block:: python
-
-      from wpilib import SmartDashboard
-
-      SmartDashboard.putNumber("Joystick X value", joystick1.getX())
+   ```python
+   from wpilib import SmartDashboard
+   SmartDashboard.putNumber("Joystick X value", joystick1.getX())
+   ```
 
 to see a field displayed with the label "Joystick X value" and a value of the X value of the joystick. Each time this line of code is executed, a new joystick value will be sent to Shuffleboard. Remember: you must write the joystick value whenever you want to see an updated value. Executing this line once at the start of the program will only display the value once at the time the line of code was executed.
 

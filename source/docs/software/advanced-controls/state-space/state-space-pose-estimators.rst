@@ -1,5 +1,4 @@
-Pose Estimators
-===============
+# Pose Estimators
 
 WPILib includes pose estimators for differential, swerve and mecanum drivetrains. These estimators are designed to be drop-in replacements for the existing :ref:`odometry <docs/software/kinematics-and-odometry/index:Kinematics and Odometry>` classes that also support fusing latency-compensated robot pose estimates with encoder and gyro measurements. These estimators can account for encoder drift and noisy vision data. These estimators can behave identically to their corresponding odometry classes if only ``update`` is called on these estimators.
 
@@ -13,14 +12,12 @@ Here's how to initialize a ``DifferentialDrivePoseEstimator``:
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
     :language: java
     :lines: 86-94
-    :linenos:
-    :lineno-start: 86
+    :lineno-match:
 
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/include/Drivetrain.h
     :language: c++
     :lines: 158-165
-    :linenos:
-    :lineno-start: 158
+    :lineno-match:
 
 Add odometry measurements every loop by calling ``Update()``.
 
@@ -29,14 +26,12 @@ Add odometry measurements every loop by calling ``Update()``.
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
       :language: java
       :lines: 227-228
-      :linenos:
-      :lineno-start: 227
+      :lineno-match:
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/cpp/Drivetrain.cpp
       :language: c++
       :lines: 84-86
-      :linenos:
-      :lineno-start: 84
+      :lineno-match:
 
 Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
 
@@ -44,18 +39,15 @@ Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
 
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
     :language: java
-    :lines: 236-241
-    :linenos:
-    :lineno-start: 236
+    :lines: 236-245
+    :lineno-match:
 
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/cpp/Drivetrain.cpp
     :language: c++
     :lines: 93-106
-    :linenos:
-    :lineno-start: 93
+    :lineno-match:
 
-Tuning Pose Estimators
-----------------------
+## Tuning Pose Estimators
 
 All pose estimators offer user-customizable standard deviations for model and measurements (defaults are used if you don't provide them). Standard deviation is a measure of how spread out the noise is for a random signal. Giving a state a smaller standard deviation means it will be trusted more during data fusion.
 

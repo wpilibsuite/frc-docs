@@ -1,5 +1,4 @@
-Building and Deploying Robot Code
-=================================
+# Building and Deploying Robot Code
 
 Robot projects must be compiled ("built") and deployed in order to run on the roboRIO.  Since the code is not compiled natively on the robot controller, this is known as "cross-compilation."
 

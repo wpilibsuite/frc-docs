@@ -1,23 +1,20 @@
-roboRIO Web Dashboard
-=====================
+# roboRIO Web Dashboard
 
 The roboRIO web dashboard is a webpage built into the roboRIO that can
 be used for checking status and updating settings of the roboRIO.
 
-Opening the WebDash
--------------------
+## Opening the WebDash
 
 .. figure:: images/roborio-page-home.png
    :alt:
 
 To open the web dashboard, open a web browser and enter the address of
 the roboRIO into the address bar (172.22.11.2 for USB, or
-"roboRIO-####-FRC.local where #### is your team number, with no leading
+"roboRIO-#####-FRC.local where ##### is your team number, with no leading
 zeroes, for either interface). See this document for more details about
 mDNS and roboRIO networking: :ref:`docs/networking/networking-introduction/ip-configurations:IP Configurations`
 
-System Configuration Tab
-------------------------
+## System Configuration Tab
 
 .. figure:: images/system-configuration-tab.png
    :alt:
@@ -38,8 +35,7 @@ which has 5 main sections:
 4. System Resources (not pictured) - This section provides a snapshot of
    system resources such as memory and CPU load.
 
-Startup Settings
-~~~~~~~~~~~~~~~~
+#### Startup Settings
 
 .. figure:: images/startup-settings.png
    :alt:
@@ -59,8 +55,7 @@ Startup Settings
 -  LabVIEW Project Access - **It is recommended to leave this box checked.**
    This setting allows LabVIEW projects to access the roboRIO.
 
-Network Configuration
----------------------
+## Network Configuration
 
 .. figure:: images/network-configuration.png
    :alt:

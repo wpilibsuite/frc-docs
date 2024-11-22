@@ -1,5 +1,4 @@
-Introduction To Controls Tuning Tutorials
-=========================================
+# Introduction To Controls Tuning Tutorials
 
 The WPILib docs include three interactive tuning simulations. Their goal is to allow students to learn how tuning parameters impact system behavior, without having to deal with software bugs or other real-world behavior.
 
@@ -9,22 +8,19 @@ Ultimately, students should use the examples to build intuition and make their t
 
 This page details a few tips while working with the tutorials.
 
-Parameter Exponential Search
-----------------------------
+## Parameter Exponential Search
 
 While interacting with the simulations, you will get instructions to "increase" or "decrease" different parameters.
 
 When "increasing" a value, multiply it by two until the expected effect is observed.  After the first time the value becomes too large (i.e. the behavior is unstable or the mechanism overshoots), reduce the value to halfway between the first too-large value encountered and the previous value tested before that.  Continue iterating this "split-half" procedure to zero in on the optimal value (if the response undershoots, pick the halfway point between the new value and the last value immediately above it - if it overshoots, pick the halfway point between the new value and the last value immediately below it). This is called an :term:`exponential search`, and is a very efficient way to find positive values of unknown scale.
 
-System Noise
-------------
+## System Noise
 
 The "system noise" option introduces random, gaussian error into the plant to provide a more realistic situation of system behavior.
 
 Leave the setting turned off at first to learn the system's ideal behavior. Later, turn it on to see how your tuning works in the presence of real-world effects.
 
-Be Systematic
--------------
+## Be Systematic
 
 As seen in :ref:`the introduction to PID <docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID>`, a PID controller has *three* tuned constants.Feedforward components will add even more. This means searching for the "correct" constants manually can be quite difficult - it is therefore necessary to approach the tuning procedure systematically.
 

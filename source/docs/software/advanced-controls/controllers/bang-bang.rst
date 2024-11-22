@@ -1,5 +1,4 @@
-Bang-Bang Control with BangBangController
-=========================================
+# Bang-Bang Control with BangBangController
 
 The :term:`bang-bang control` algorithm is a control strategy that employs only two states: on (when the measurement is below the setpoint) and off (otherwise).  This is roughly equivalent to a proportional loop with infinite gain.
 
@@ -7,34 +6,31 @@ This may initially seem like a poor control strategy, as PID loops are known to 
 
 However, when controlling the velocity of high-inertia mechanisms under varying loads (like a shooter flywheel), a bang-bang controller can yield faster recovery time and thus better/more consistent performance than a proportional controller.  Unlike an ordinary P loop, a bang-bang controller is *asymmetric* - that is, the controller turns on when the process variable is below the setpoint, and does nothing otherwise.  This allows the control effort in the forward direction to be made as large as possible without risking destructive oscillations as the control loop tries to correct a resulting overshoot.
 
-Asymmetric bang-bang control is provided in WPILib by the BangBangController class (`Java <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/BangBangController.html>`__, `C++ <https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_bang_bang_controller.html>`__, :external:py:class:`Python <wpimath.controller.BangBangController>`).
+Asymmetric bang-bang control is provided in WPILib by the BangBangController class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/BangBangController.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_bang_bang_controller.html), :external:py:class:`Python <wpimath.controller.BangBangController>`).
 
-Constructing a BangBangController
----------------------------------
+## Constructing a BangBangController
 
 Since a bang-bang controller does not have any gains, it does not need any constructor arguments (one can optionally specify the controller tolerance used by ``atSetpoint``, but it is not required).
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Creates a BangBangController
+  BangBangController controller = new BangBangController();
+  ```
 
-    // Creates a BangBangController
-    BangBangController controller = new BangBangController();
+  ```c++
+  // Creates a BangBangController
+  frc::BangBangController controller;
+  ```
 
-  .. code-block:: c++
-
-    // Creates a BangBangController
-    frc::BangBangController controller;
-
-  .. code-block:: python
-
-    from wpimath.controller import BangBangController
-
+  ```python
+  from wpimath.controller import BangBangController
     # Creates a BangBangController
-    controller = BangBangController()
+  controller = BangBangController()
+  ```
 
-Using a BangBangController
---------------------------
+## Using a BangBangController
 
 .. warning:: Bang-bang control is an extremely aggressive algorithm that relies on response asymmetry to remain stable.  Be *absolutely certain* that your motor controllers have been set to "coast mode" before attempting to control them with a bang-bang controller, or else the braking action will fight the controller and cause potentially destructive oscillation.
 
@@ -42,41 +38,41 @@ Using a bang-bang controller is easy:
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Controls a motor with the output of the BangBang controller
+  motor.set(controller.calculate(encoder.getRate(), setpoint));
+  ```
 
-    // Controls a motor with the output of the BangBang controller
-    motor.set(controller.calculate(encoder.getRate(), setpoint));
+  ```c++
+  // Controls a motor with the output of the BangBang controller
+  motor.Set(controller.Calculate(encoder.GetRate(), setpoint));
+  ```
 
-  .. code-block:: c++
+  ```python
+  # Controls a motor with the output of the BangBang controller
+  motor.set(controller.calculate(encoder.getRate(), setpoint))
+  ```
 
-    // Controls a motor with the output of the BangBang controller
-    motor.Set(controller.Calculate(encoder.GetRate(), setpoint));
-
-  .. code-block:: python
-
-    # Controls a motor with the output of the BangBang controller
-    motor.set(controller.calculate(encoder.getRate(), setpoint))
-
-Combining Bang Bang Control with Feedforward
---------------------------------------------
+## Combining Bang Bang Control with Feedforward
 
 Like a PID controller, best results are obtained in conjunction with a :ref:`feedforward <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>` controller that provides the necessary voltage to sustain the system output at the desired speed, so that the bang-bang controller is only responsible for rejecting disturbances.  Since the bang-bang controller can *only* correct in the forward direction, however, it may be preferable to use a slightly conservative feedforward estimate to ensure that the shooter does not over-speed.
 
 .. tab-set-code::
 
-  .. code-block:: java
+  ```java
+  // Controls a motor with the output of the BangBang controller and a feedforward
+  // Shrinks the feedforward slightly to avoid overspeeding the shooter
+  motor.setVoltage(controller.calculate(encoder.getRate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint));
+  ```
 
-    // Controls a motor with the output of the BangBang controller and a feedforward
-    // Shrinks the feedforward slightly to avoid overspeeding the shooter
-    motor.setVoltage(controller.calculate(encoder.getRate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint));
+  ```c++
+  // Controls a motor with the output of the BangBang controller and a feedforward
+  // Shrinks the feedforward slightly to avoid overspeeding the shooter
+  motor.SetVoltage(controller.Calculate(encoder.GetRate(), setpoint) * 12.0 + 0.9 * feedforward.Calculate(setpoint));
+  ```
 
-  .. code-block:: c++
+  ```python
+  # Controls a motor with the output of the BangBang controller and a feedforward
+  motor.setVoltage(controller.calculate(encoder.getRate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint))
+  ```
 
-    // Controls a motor with the output of the BangBang controller and a feedforward
-    // Shrinks the feedforward slightly to avoid overspeeding the shooter
-    motor.SetVoltage(controller.Calculate(encoder.GetRate(), setpoint) * 12.0 + 0.9 * feedforward.Calculate(setpoint));
-
-  .. code-block:: python
-
-    # Controls a motor with the output of the BangBang controller and a feedforward
-    motor.setVoltage(controller.calculate(encoder.getRate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint))

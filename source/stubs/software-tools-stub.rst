@@ -1,7 +1,6 @@
 :orphan:
 
-Software Tools
-==============
+# Software Tools
 
 Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
 
@@ -14,3 +13,4 @@ Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool a
    /docs/software/wpilib-tools/robotbuilder/index
    /docs/software/wpilib-tools/robot-simulation/index
    /docs/software/wpilib-tools/outlineviewer/index
+   /docs/software/wpilib-tools/choreo/index

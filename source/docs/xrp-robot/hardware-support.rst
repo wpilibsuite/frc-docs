@@ -1,10 +1,8 @@
-XRP Hardware Support
-====================
+# XRP Hardware Support
 
 The XRP robot, having a different hardware architecture than a roboRIO, is compatible with a subset of commonly used FRC control system components.
 
-Compatible Hardware
--------------------
+## Compatible Hardware
 
 In general, the XRP is compatible with the following:
 
@@ -12,8 +10,7 @@ In general, the XRP is compatible with the following:
 - Standard RC-style :term:`PWM` output devices (e.g. servos, PWM based motor controllers)
 - "Ping" style ultrasonic sensors (only when connected to the RANGE port)
 
-Incompatible Hardware
----------------------
+## Incompatible Hardware
 
 Due to hardware limitations, the XRP is not compatible with the following:
 
@@ -21,8 +18,7 @@ Due to hardware limitations, the XRP is not compatible with the following:
 - Timing based sensors
 - CAN based devices
 
-Compatible Classes
-------------------
+## Compatible Classes
 
 All classes listed here are supported by the XRP. If a class is not listed here, assume that it is not supported and *will not* work.
 

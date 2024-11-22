@@ -1,5 +1,4 @@
-VS Code Overview
-================
+# VS Code Overview
 
 .. toctree::
    :maxdepth: 1

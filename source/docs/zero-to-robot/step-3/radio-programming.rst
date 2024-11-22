@@ -1,24 +1,22 @@
 .. include:: <isonum.txt>
 
-Programming your Radio
-======================
+# Programming your Radio
 
 This guide will show you how to use the FRC\ |reg| Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
 
-Prerequisites
--------------
+## Prerequisites
 
 The FRC Radio Configuration Utility requires administrator privileges to configure the network settings on your machine. The program should request the necessary privileges automatically (may require a password if run from a non-administrator account), but if you are having trouble, try running it from an administrator account.
 
 Download the latest FRC Radio Configuration Utility Installer from the following links:
 
-`FRC Radio Configuration 24.0.1 <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip>`_
+[FRC Radio Configuration 24.0.1](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip)
 
-`FRC Radio Configuration 24.0.1 Israel Version <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip>`_
+[FRC Radio Configuration 24.0.1 Israel Version](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip)
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
-.. note::. Teams planning on using the radio tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptium.net/temurin/releases/?version=17>`__.
+.. note::. Teams planning on using the radio tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded [here](https://adoptium.net/temurin/releases/?version=17).
 
 Before you begin using the software:
 
@@ -27,15 +25,13 @@ Before you begin using the software:
 
 .. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
 
-Application Notes
------------------
+## Application Notes
 
 By default, the Radio Configuration Utility will program the radio to enforce the 4Mbps bandwidth limit on traffic exiting the radio over the wireless interface. In the home configuration (AP mode) this is a total, not a per client limit. This means that streaming video to multiple clients is not recommended.
 
 The Utility has been tested on Windows 7, 8 and 10. It may work on other operating systems, but has not been tested.
 
-Programmed Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^
+### Programmed Configuration
 
 .. image:: /docs/hardware/hardware-basics/images/status-lights/openmesh-radio-status-lights.png
   :alt: Lists the names of each of the status lights on the two legal radios.
@@ -69,8 +65,7 @@ At home only:
 
 .. warning:: It is not possible to modify the configuration manually.
 
-Install the Software
---------------------
+## Install the Software
 
 .. image:: images/radio-programming/radio-installer.png
   :alt: The radio configuration installer .exe file in windows explorer.
@@ -79,8 +74,7 @@ Double click on ``FRC_Radio_Configuration_VERSION.exe`` to launch the installer.
 
 Part of the installation prompts will include installing Npcap if it is not already present. The Npcap installer contains a number of checkboxes to configure the install. You should leave the options as the defaults.
 
-Launch the software
--------------------
+## Launch the software
 
 .. image:: images/radio-programming/radio-launch.png
   :alt: The FRC Radio Configuration Utility in the start menu.
@@ -89,16 +83,14 @@ Use the Start menu or desktop shortcut to launch the program.
 
 .. note:: If you need to locate the program, it is installed to ``C:\Program Files (x86)\FRC Radio Configuration Utility``. For 32-bit machines the path is ``C:\Program Files\FRC Radio Configuration Utility``
 
-Allow the program to make changes, if prompted
-----------------------------------------------
+## Allow the program to make changes, if prompted
 
 .. image:: images/radio-programming/allow-changes.png
   :alt: User Account Control dialog that pops up when running the config utility.
 
 A prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
 
-Select the network interface
-----------------------------
+## Select the network interface
 
 .. image:: images/radio-programming/select-network-connection.png
   :alt: Each of the Parts of the Network Interfaces selection pop up.
@@ -109,8 +101,7 @@ Use the pop-up window to select the which ethernet interface the configuration u
 2. Select the interface you want to use from the drop-down list.
 3. Click :guilabel:`OK`.
 
-Open Mesh Firmware Note
------------------------
+## Open Mesh Firmware Note
 
 For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio, the radio must be running an FRC specific build of the OpenWRT firmware.
 
@@ -118,8 +109,7 @@ If you do not need to update or re-load the firmware, skip the next step.
 
 .. warning:: Radios used in 2019-2023 **do not** need to be updated before configuring, the 2024 tool uses the same 2019 firmware.
 
-Loading FRC Firmware to Open Mesh Radio
----------------------------------------
+## Loading FRC Firmware to Open Mesh Radio
 
 .. image:: images/radio-programming/openmesh-firmware.png
   :alt: Highlighting the radio dropdown and the Load Firmware button on the main configuration utility screen.
@@ -135,10 +125,9 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 
 .. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`Disabling Network Adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>` for more info.
 
-   Teams may also see this error with Operating Systems configured for languages other than US English. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.html>`_.
+   Teams may also see this error with Operating Systems configured for languages other than US English. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on [this page](https://www.java.com/en/download/help/locale.html).
 
-Select Radio and Operating Mode
--------------------------------
+## Select Radio and Operating Mode
 
 .. image:: images/radio-programming/select-bridge-model-mode.png
   :alt: Highlights the Radio and Mode dropdown boxes.
@@ -146,8 +135,7 @@ Select Radio and Operating Mode
 1. Select which radio you are configuring using the drop-down list.
 2. Select which operating mode you want to configure. For most cases, the default selection of 2.4GHz Access Point will be sufficient. If your computers support it, the 5GHz AP mode is recommended, as 5GHz is less congested in many environments.
 
-Select Options
---------------
+## Select Options
 
 .. image:: images/radio-programming/select-options.png
   :alt: Setting the robot name will change the SSID.  The checkboxes make the radio more similar to competition operation.
@@ -162,16 +150,14 @@ The default values of the options have been selected to match the use case of mo
 
 .. warning:: The "Firewall" option configures the radio to emulate the field firewall. This means that you will not be able to deploy code wirelessly with this option enabled. This is useful for simulating blocked ports that may exist at competitions.
 
-Starting the Configuration Process
-----------------------------------
+## Starting the Configuration Process
 
 .. image:: images/radio-programming/start-config.png
   :alt: At the bottom of the screen is instructions for completing the configuration process.
 
 Follow the on-screen instructions for preparing your wireless bridge, entering the settings the bridge will be configured with, and starting the configuration process. These on-screen instructions update to match the bridge model and operating mode chosen.
 
-Configuration Progress
-----------------------
+## Configuration Progress
 
 .. image:: images/radio-programming/config-in-progress.png
   :alt: The progress bar dialog while the configuration is working.
@@ -182,8 +168,7 @@ Throughout the configuration process, the window will indicate:
 2. The overall progress of the configuration process.
 3. All steps executed so far.
 
-Configuration Completed
------------------------
+## Configuration Completed
 
 .. image:: images/radio-programming/config-completed.png
   :alt: A pop up dialog indicating the programming was successful.
@@ -193,16 +178,14 @@ Once the configuration is complete:
 1. Press :guilabel:`OK` on the dialog window.
 2. Press :guilabel:`OK` on the main window to return to the settings screen.
 
-Configuration Errors
---------------------
+## Configuration Errors
 
 .. image:: images/radio-programming/config-errors.png
   :alt: A error dialog pop up.
 
 If an error occurs during the configuration process, follow the instructions in the error message to correct the problem.
 
-Troubleshooting
----------------
+## Troubleshooting
 
 - :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`.
 - Make sure you wait long enough that the power light has stayed solid for 10 seconds.
@@ -210,7 +193,7 @@ Troubleshooting
 - Make sure your firewall is turned off.
 - Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
 - Ensure the ethernet is plugged into the port closest to the power jack on the wireless bridge.
-- If using an Operating System configured for languages other than US English, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.html>`_.
-- Due to Unicode incompatibles, non-US Teams may face a configuration failure because of incorrect network interface reading. In that case, change the network adapter name to another name in English and retry.
-- Some users have reported success after installing `npcap 1.60 <https://npcap.com/>`__. If this doesn't resolve the issue, it's recommended to uninstall npcap and the radio tool and then reinstall the radio tool in order to get back to a known configuration.
+- If using an Operating System configured for languages other than US English, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on [this page](https://www.java.com/en/download/help/locale.html).
+- Due to Unicode incompatibilities, non-US Teams may face a configuration failure because of incorrect network interface reading. In that case, change the network adapter name to another name in English and retry.
+- Some users have reported success after installing [npcap 1.60](https://npcap.com/). If this doesn't resolve the issue, it's recommended to uninstall npcap and the radio tool and then reinstall the radio tool in order to get back to a known configuration.
 - If all else fails, try a different computer.

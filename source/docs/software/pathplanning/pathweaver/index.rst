@@ -1,7 +1,7 @@
-PathWeaver
-==========
+# PathWeaver
 
-.. note:: Users may find a community driven project `PathPlanner <https://github.com/mjansen4857/pathplanner>`__ as potentially more useful. PathPlanner improves upon traditional pathplanning applications with an intuitive user interface and swerve path following support. Note that WPILib offers no support for community projects.
+.. note:: Users may find :doc:`Choreo </docs/software/wpilib-tools/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support. Users should already have access to Choreo as it is distributed with the WPILib installer.
+
 
 .. toctree::
    :maxdepth: 1

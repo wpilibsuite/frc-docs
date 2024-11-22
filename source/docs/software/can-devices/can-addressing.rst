@@ -1,20 +1,17 @@
 .. include:: <isonum.txt>
 
-FRC CAN Device Specifications
-=============================
+# FRC CAN Device Specifications
 
 This document seeks to describe the basic functions of the current FRC\ |reg|
 :term:`CAN` system and the requirements for any new CAN devices seeking to work
 with the system.
 
-Addressing
-----------
+## Addressing
 
 FRC CAN nodes assign arbitration IDs based on a pre-defined scheme that
 breaks the ID into 5 components:
 
-Device Type
-~~~~~~~~~~~
+#### Device Type
 
 This is a 5-bit value describing the type of device being addressed. A
 table of currently assigned device types can be found below. If you wish
@@ -36,12 +33,12 @@ Power Distribution Module 8
 Pneumatics Controller     9
 Miscellaneous             10
 IO Breakout               11
-Reserved                  12-30
+Servo Controller          12
+Reserved                  13-30
 Firmware Update           31
 ========================= =====
 
-Manufacturer
-~~~~~~~~~~~~
+#### Manufacturer
 
 This is an 8-bit value indicating the manufacturer of the CAN device.
 Currently assigned values can be found in the table below. If you wish
@@ -71,8 +68,7 @@ Vivid Hosting         16
 Reserved              17-255
 ===================== ==========
 
-API/Message Identifier
-~~~~~~~~~~~~~~~~~~~~~~
+#### API/Message Identifier
 
 The API or Message Identifier is a 10-bit value that identifies a
 particular command or message type. These identifiers are unique for
@@ -84,8 +80,7 @@ for a CTR Power Distribution Module).
 The Message identifier is further broken down into 2 sub-fields: the
 6-bit API Class and the 4-bit API Index.
 
-API Class
-~~~~~~~~~
+#### API Class
 
 The API Class is a 6-bit identifier for an API grouping. Similar
 messages are grouped into a single API Class. An example of the API
@@ -105,8 +100,7 @@ Configuration             7
 Ack                       8
 ========================= =
 
-API Index
-~~~~~~~~~
+#### API Index
 
 The API Index is a 4-bit identifier for a particular message within an
 API Class. An example of the API Index values for the Jaguar Motor
@@ -128,8 +122,7 @@ Trusted Set Setpoint No Ack 10
 Set Setpoint No Ack         11
 =========================== ==
 
-Device Number
-~~~~~~~~~~~~~
+#### Device Number
 
 Device Number is a 6-bit quantity indicating the number of the device of
 a particular type. Devices should default to device ID 0 to match other
@@ -139,16 +132,14 @@ device specific broadcast messages.
 .. image:: images/can-addressing/can-id-example.png
    :alt: CAN addressing bit mapping.
 
-Protected Frames
-----------------
+## Protected Frames
 
 FRC CAN Nodes which implement actuator control capability (motor
 controllers, relays, pneumatics controllers, etc.) must implement a way
 to verify that the robot is enabled and that commands originate with the
 main robot controller (i.e. the roboRIO).
 
-Broadcast Messages
-------------------
+## Broadcast Messages
 
 Broadcast messages are messages sent to all nodes by setting the device
 type and manufacturer fields to 0. The API Class for broadcast messages
@@ -174,8 +165,7 @@ System Resume     10
 Devices should disable immediately when receiving the Disable message
 (arbID 0).  Implementation of other broadcast messages is optional.
 
-Requirements for FRC CAN Nodes
-------------------------------
+## Requirements for FRC CAN Nodes
 For CAN Nodes to be accepted for use in the FRC System, they must:
 
 -  Communicate using Arbitration IDs which match the prescribed FRC
@@ -190,8 +180,7 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 -  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present.
 -  Provide software library support for LabVIEW, C++, and Java or arrange with *FIRST*\ |reg| or FIRST's Control System Partners to provide such interfaces.
 
-Universal Heartbeat
--------------------
+## Universal Heartbeat
 
 The roboRIO provides a universal CAN heartbeat that any device on the bus can listen and react to. This heartbeat is sent every 20 ms. The heartbeat has a full CAN ID of ``0x01011840`` (which is the NI Manufacturer ID, RobotController type, Device ID 0 and API ID ``0x061``). It is an 8 byte CAN packet with the following bitfield layout.
 
@@ -229,25 +218,25 @@ The roboRIO provides a universal CAN heartbeat that any device on the bus can li
 | Time of day (hours)   | 1    | 5            |
 +-----------------------+------+--------------+
 
-.. code-block:: c++
-
-   struct [[gnu::packed]] RobotState {
-     uint64_t matchTimeSeconds : 8;
-     uint64_t matchNumber : 10;
-     uint64_t replayNumber : 6;
-     uint64_t redAlliance : 1;
-     uint64_t enabled : 1;
-     uint64_t autonomous : 1;
-     uint64_t testMode : 1;
-     uint64_t systemWatchdog : 1;
-     uint64_t tournamentType : 3;
-     uint64_t timeOfDay_yr : 6;
-     uint64_t timeOfDay_month : 4;
-     uint64_t timeOfDay_day : 5;
-     uint64_t timeOfDay_sec : 6;
-     uint64_t timeOfDay_min : 6;
-     uint64_t timeOfDay_hr : 5;
-   };
+```c++
+struct [[gnu::packed]] RobotState {
+  uint64_t matchTimeSeconds : 8;
+  uint64_t matchNumber : 10;
+  uint64_t replayNumber : 6;
+  uint64_t redAlliance : 1;
+  uint64_t enabled : 1;
+  uint64_t autonomous : 1;
+  uint64_t testMode : 1;
+  uint64_t systemWatchdog : 1;
+  uint64_t tournamentType : 3;
+  uint64_t timeOfDay_yr : 6;
+  uint64_t timeOfDay_month : 4;
+  uint64_t timeOfDay_day : 5;
+  uint64_t timeOfDay_sec : 6;
+  uint64_t timeOfDay_min : 6;
+  uint64_t timeOfDay_hr : 5;
+};
+```
 
 If the ``System watchdog`` flag is set, motor controllers are enabled. If 100 ms has passed since this packet was received, the robot program can be considered hung, and devices should act as if the robot has been disabled.
 

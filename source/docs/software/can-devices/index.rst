@@ -1,5 +1,4 @@
-CAN Devices
-===========
+# CAN Devices
 
 .. toctree::
    :maxdepth: 1
