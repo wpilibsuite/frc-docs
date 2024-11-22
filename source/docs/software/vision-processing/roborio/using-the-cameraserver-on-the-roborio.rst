@@ -12,8 +12,7 @@ The following program starts automatic capture of a USB camera like the Microsof
    .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
       :language: java
       :lines: 7-19
-      :linenos:
-      :lineno-start: 7
+      :lineno-match:
 
    .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
       :language: c++
@@ -37,8 +36,7 @@ In the following example a thread created in ``Robot`` constructor gets the Came
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
          :language: java
          :lines: 7-65
-         :linenos:
-         :lineno-start: 7
+         :lineno-match:
 
    .. tab-item:: c++
       :sync: tabcode-c++

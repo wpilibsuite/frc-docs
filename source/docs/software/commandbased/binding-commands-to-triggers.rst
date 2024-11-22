@@ -78,15 +78,13 @@ This binding schedules a command when a trigger changes from ``false`` to ``true
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/RapidReactCommandBot.java
       :language: java
       :lines: 65-66
-      :linenos:
-      :lineno-start: 66
+      :lineno-match:
 
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/RapidReactCommandBot.cpp
       :language: c++
       :lines: 28-29
-      :linenos:
-      :lineno-start: 28
+      :lineno-match:
 
 The ``onFalse`` binding is identical, only that it schedules on ``false`` instead of on ``true``.
 
@@ -99,14 +97,12 @@ This binding schedules a command when a trigger changes from ``false`` to ``true
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java
     :language: java
     :lines: 49-51
-    :linenos:
-    :lineno-start: 49
+    :lineno-match:
 
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
     :language: c++
     :lines: 27-29
-    :linenos:
-    :lineno-start: 27
+    :lineno-match:
 
 The ``whileFalse`` binding is identical, only that it schedules on ``false`` and cancels on ``true``.
 
@@ -119,14 +115,12 @@ This binding toggles a command, scheduling it when a trigger changes from ``fals
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/RapidReactCommandBot.java
       :language: java
       :lines: 78-79
-      :linenos:
-      :lineno-start: 78
+      :lineno-match:
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/RapidReactCommandBot.cpp
       :language: c++
       :lines: 41-43
-      :linenos:
-      :lineno-start: 41
+      :lineno-match:
 
 The ``toggleOnFalse`` binding is identical, only that it toggles on ``false`` instead of on ``true``.
 

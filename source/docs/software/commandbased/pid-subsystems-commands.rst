@@ -15,8 +15,7 @@ One of the most common control algorithms used in FRC\ |reg| is the :term:`PID` 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/subsystems/Shooter.java
          :language: java
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++ (Header)
@@ -24,8 +23,7 @@ One of the most common control algorithms used in FRC\ |reg| is the :term:`PID` 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Shooter.h
          :language: c++
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
@@ -33,7 +31,6 @@ One of the most common control algorithms used in FRC\ |reg| is the :term:`PID` 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/subsystems/Shooter.cpp
          :language: c++
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
 A ``PIDController`` is declared inside the ``Shooter`` subsystem. It is used by ``ShootCommand`` alongside a feedforward to spin the shooter flywheel to the specified velocity. Once the ``PIDController`` reaches the specified velocity, the ``ShootCommand`` runs the feeder.

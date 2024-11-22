@@ -34,14 +34,12 @@ This method walks through the following steps:
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
          :language: java
          :lines: 202-245
-         :linenos:
-         :lineno-start: 202
+         :lineno-match:
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
          :language: java
          :lines: 181-191
-         :linenos:
-         :lineno-start: 181
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: tabcode-c++
@@ -49,8 +47,7 @@ This method walks through the following steps:
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
          :language: c++
          :lines: 114-159
-         :linenos:
-         :lineno-start: 114
+         :lineno-match:
 
 ## The Scheduler Run Sequence
 
@@ -70,8 +67,7 @@ First, the scheduler runs the ``periodic()`` method of each registered ``Subsyst
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
          :language: java
          :lines: 278-285
-         :linenos:
-         :lineno-start: 278
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: tabcode-c++
@@ -79,8 +75,7 @@ First, the scheduler runs the ``periodic()`` method of each registered ``Subsyst
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
          :language: c++
          :lines: 183-190
-         :linenos:
-         :lineno-start: 183
+         :lineno-match:
 
 ### Step 2: Poll Command Scheduling Triggers
 
@@ -96,8 +91,7 @@ Secondly, the scheduler polls the state of all registered triggers to see if any
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
          :language: java
          :lines: 290-292
-         :linenos:
-         :lineno-start: 290
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: tabcode-c++
@@ -105,8 +99,7 @@ Secondly, the scheduler polls the state of all registered triggers to see if any
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
          :language: c++
          :lines: 195-197
-         :linenos:
-         :lineno-start: 195
+         :lineno-match:
 
 ### Step 3: Run/Finish Scheduled Commands
 
@@ -122,8 +115,7 @@ Note that this sequence of calls is done in order for each command - thus, one c
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
          :language: java
          :lines: 295-325
-         :linenos:
-         :lineno-start: 295
+         :lineno-match:
          :emphasize-lines: 16,21-22
 
    .. tab-item:: C++ (Source)
@@ -132,8 +124,7 @@ Note that this sequence of calls is done in order for each command - thus, one c
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
          :language: c++
          :lines: 201-226
-         :linenos:
-         :lineno-start: 201
+         :lineno-match:
          :emphasize-lines: 7,13-14
 
 ### Step 4: Schedule Default Commands
@@ -148,8 +139,7 @@ Finally, any registered ``Subsystem`` has its default command scheduled (if it h
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java
          :language: java
          :lines: 340-346
-         :linenos:
-         :lineno-start: 340
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: tabcode-c++
@@ -157,8 +147,7 @@ Finally, any registered ``Subsystem`` has its default command scheduled (if it h
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2023.4.3/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp
          :language: c++
          :lines: 240-246
-         :linenos:
-         :lineno-start: 240
+         :lineno-match:
 
 ## Disabling the Scheduler
 
@@ -188,8 +177,7 @@ A typical use-case for these methods is adding markers in an event log whenever 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
          :language: java
          :lines: 73-88
-         :linenos:
-         :lineno-start: 73
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: tabcode-c++
@@ -197,5 +185,4 @@ A typical use-case for these methods is adding markers in an event log whenever 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
          :language: c++
          :lines: 23-47
-         :linenos:
-         :lineno-start: 23
+         :lineno-match:

@@ -260,7 +260,7 @@ In ``Robot.java``, this will run the scheduler every driver station update perio
          :language: java
          :lines: 49-50,55-56
          :linenos:
-         :lineno-start: 40
+         :lineno-start: 49
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
@@ -268,8 +268,7 @@ In ``Robot.java``, this will run the scheduler every driver station update perio
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
          :language: c++
          :lines: 29-31
-         :linenos:
-         :lineno-start: 29
+         :lineno-match:
 
 ### Canceling the Autonomous Command
 
@@ -283,8 +282,7 @@ In ``Robot.java``, when the teleop period begins, the autonomous command will be
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Robot.java
          :language: java
          :lines: 87-96
-         :linenos:
-         :lineno-start: 78
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
@@ -292,8 +290,7 @@ In ``Robot.java``, when the teleop period begins, the autonomous command will be
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/Robot.cpp
          :language: c++
          :lines: 56-65
-         :linenos:
-         :lineno-start: 56
+         :lineno-match:
 
    .. tab-item:: Python
       :sync: Python
@@ -301,8 +298,7 @@ In ``Robot.java``, when the teleop period begins, the autonomous command will be
       .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2024.0.0b4/HatchbotTraditional/robot.py
          :language: Python
          :lines: 51-57
-         :linenos:
-         :lineno-start: 51
+         :lineno-match:
 
 ### SmartDashboard Display
 

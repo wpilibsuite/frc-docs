@@ -36,8 +36,7 @@ Since ``OutOfMemoryError``\ s both crash the program and are a common reason to 
 .. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1-beta-1/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
    :lines: 15-40
-   :linenos:
-   :lineno-start: 15
+   :lineno-match:
    :emphasize-lines: 15-16
 
 Add to the code block so that it contains two ``jvmArgs`` commands, as shown below:

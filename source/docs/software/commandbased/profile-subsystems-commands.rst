@@ -19,8 +19,7 @@ The following examples are taken from the DriveDistanceOffboard example project 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/subsystems/DriveSubsystem.java
          :language: java
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
@@ -28,8 +27,7 @@ The following examples are taken from the DriveDistanceOffboard example project 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/include/subsystems/DriveSubsystem.h
          :language: c++
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
@@ -37,8 +35,7 @@ The following examples are taken from the DriveDistanceOffboard example project 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/subsystems/DriveSubsystem.cpp
          :language: c++
          :lines: 5-
-         :linenos:
-         :lineno-start: 5
+         :lineno-match:
 
 There are two commands in this example. They function very similarly, with the main difference being that one resets encoders, and the other doesn't, which allows encoder data to be preserved.
 
