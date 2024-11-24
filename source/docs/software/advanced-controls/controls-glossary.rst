@@ -61,7 +61,6 @@
 
    input
       An input to the :term:`plant` (hence the name) that can be used to change the :term:`plant's <plant>` :term:`state`.
-
          - Ex. A flywheel will have 1 input: the voltage of the motor driving it.
          - Ex. A drivetrain might have 2 inputs: the voltages of the left and right motors.
 
@@ -87,7 +86,6 @@
 
    output
       Measurements from sensors. There can be more measurements than states. These outputs are used in the "correct" step of Kalman Filters.
-
          - Ex. A flywheel might have 1 :term:`output` from a encoder that measures it's velocity.
          - Ex. A drivetrain might use solvePNP and V-SLAM to find it's x/y/heading position on the field. It's fine that there are 6 measurements (solvePNP x/y/heading and V-SLAM x/y/heading) and 3 states (robot x/y/heading).
 
@@ -129,7 +127,6 @@
 
    state
       A characteristic of a :term:`system` (e.g., velocity) that can be used to determine the :term:`system <system>`\'s future behavior. In state-space notation, the state of a system is written as a column vector describing its position in state-space.
-
          - Ex. A drivetrain system might have the states :math:`\begin{bmatrix}x \\ y \\ \theta \end{bmatrix}` to describe its position on the field.
          - Ex. An elevator system might have the states :math:`\begin{bmatrix} \text{position} \\ \text{velocity} \end{bmatrix}` to describe its current height and velocity.
 

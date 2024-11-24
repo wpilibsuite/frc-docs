@@ -8,9 +8,9 @@ Debouncing is implemented in WPILib by the ``Debouncer`` class ([Java](https://g
 
 The WPILib ``Debouncer`` can be configured in three different modes:
 
-  * Rising (default): Debounces rising edges (transitions from `false` to `true`) only.
-  * Falling: Debounces falling edges (transitions from `true` to `false`) only.
-  * Both: Debounces all transitions.
+* Rising (default): Debounces rising edges (transitions from `false` to `true`) only.
+* Falling: Debounces falling edges (transitions from `true` to `false`) only.
+* Both: Debounces all transitions.
 
 ## Usage
 

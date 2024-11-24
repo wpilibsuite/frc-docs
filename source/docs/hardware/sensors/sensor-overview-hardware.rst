@@ -17,22 +17,19 @@ Sensors used in FRC can be generally categorized in two different ways: by funct
 Sensors can provide feedback on a variety of different aspects of the robot's state.  Sensor functions common to FRC include:
 
 - :doc:`Proximity switches <proximity-switches>`
-
-    * Mechanical proximity switches ("limit switches")
-    * Magnetic proximity switches
-    * Inductive proximity switches
-    * Photoelectric proximity switches
+   * Mechanical proximity switches ("limit switches")
+   * Magnetic proximity switches
+   * Inductive proximity switches
+   * Photoelectric proximity switches
 
 - Distance sensors
-
-    * :doc:`Ultrasonic sensors <ultrasonics-hardware>`
-    * :doc:`Triangulating rangefinders <triangulating-rangefinders>`
-    * :doc:`LIDAR <lidar>`
+   * :doc:`Ultrasonic sensors <ultrasonics-hardware>`
+   * :doc:`Triangulating rangefinders <triangulating-rangefinders>`
+   * :doc:`LIDAR <lidar>`
 
 - Shaft rotation sensors
-
-    * :doc:`Encoders <encoders-hardware>`
-    * :doc:`Potentiometers <analog-potentiometers-hardware>`
+   * :doc:`Encoders <encoders-hardware>`
+   * :doc:`Potentiometers <analog-potentiometers-hardware>`
 
 - :doc:`Accelerometers <accelerometers-hardware>`
 
