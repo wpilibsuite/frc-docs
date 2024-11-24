@@ -8,8 +8,8 @@ A turret rotates some mechanism side-to-side to position it for scoring gamepiec
 
 Our "turret" consists of:
 
-  * A rotating inertial mass (the turret)
-  * A motor and gearbox driving the mass
+* A rotating inertial mass (the turret)
+* A motor and gearbox driving the mass
 
 For the purposes of this tutorial, this plant is modeled with the same equation used by WPILib's :ref:`docs/software/advanced-controls/controllers/feedforward:SimpleMotorFeedforward`, with additional adjustment for sensor delay and gearbox inefficiency. The simulation assumes the plant is controlled by feedforward and feedback controllers, composed in this fashion:
 
