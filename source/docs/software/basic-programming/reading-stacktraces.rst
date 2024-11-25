@@ -53,7 +53,6 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
       * The exception was a ``java.lang.NullPointerException``
 
       * The error happened while running line ``24`` inside of ``Robot.java``
-
          * ``robotInit`` was the name of the method executing when the error happened.
 
       * ``robotInit`` is a function in the ``frc.robot.Robot`` package (AKA, your team's code)
@@ -100,7 +99,6 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
       * The reason it paused was one thread having an ``exception``
 
       * The error happened while running line ``20`` inside of ``Robot.cpp``
-
          * ``RobotInit`` was the name of the method executing when the error happened.
 
       * ``RobotInit`` is a function in the ``Robot::`` namespace (AKA, your team's code)
@@ -123,8 +121,8 @@ Often, just looking in (or near) the problematic location in code will be fruitf
 
 A key strategy for analyzing code is to ask the following questions:
 
- * When was the last time the code "worked" (I.e., didn't have this particular error)?
- * What has changed in the code between the last working version, and now?
+* When was the last time the code "worked" (I.e., didn't have this particular error)?
+* What has changed in the code between the last working version, and now?
 
 Frequent testing and careful code changes help make this particular strategy more effective.
 
@@ -140,8 +138,8 @@ Sometimes, just looking at code isn't enough to spot the issue. The :ref:`single
 
 If all else fails, you can seek out advice and help from others (both in-person and online). When working with folks who aren't familiar with your codebase, it's very important to provide the following information:
 
- * Access to your source code, (EX: :ref:`on github.com <docs/software/basic-programming/git-getting-started:Git Version Control Introduction>`)
- * The **full text** of the error, including the full stack trace.
+* Access to your source code, (EX: :ref:`on github.com <docs/software/basic-programming/git-getting-started:Git Version Control Introduction>`)
+* The **full text** of the error, including the full stack trace.
 
 ## Common Examples & Patterns
 
