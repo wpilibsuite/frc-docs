@@ -15,6 +15,7 @@ This is enough to start logging data to NetworkTables for display and capture on
     public class Robot extends TimedRobot {
       private final Arm arm;
       private final Drivetrain drivetrain;
+
       public Robot() {
         arm = new Arm();
         drivetrain = new Drivetrain();
@@ -22,10 +23,12 @@ This is enough to start logging data to NetworkTables for display and capture on
         Epilogue.bind(this);
       }
     }
+
     @Logged
     public class Arm {
       // ...
     }
+
     @Logged
     public class Drivetrain {
       // ...
@@ -84,17 +87,21 @@ The names of log entries can be changed using the ``name`` configuration option 
         ```java
         public class Robot extends RobotBase {
           private final Arm arm;
+
           public Robot() {
             arm = new Arm();
           }
         }
+
         class Arm {
           public final Trigger atLowStop = new Trigger(...);
           public final Trigger atHighStop = new Trigger(...);
           private Rotation2d lastPosition = getPosition();
+
           public Rotation2d getPosition() {
             // ...
           }
+
           public Measure<Velocity<Angle>> getSpeed() {
             // ...
           }
@@ -107,20 +114,24 @@ The names of log entries can be changed using the ``name`` configuration option 
         @Logged
         public class Robot extends RobotBase {
           private final Arm arm; // Anything loggable within the arm object will be logged under an "arm" entry
-            public Robot() {
+
+          public Robot() {
             arm = new Arm();
             Epilogue.bind(this);
           }
         }
+
         @Logged
         class Arm {
           public final Trigger atLowStop = new Trigger(...);  // Logged as a boolean in an "atLowStop" entry
           public final Trigger atHighStop = new Trigger(...); // Logged as a boolean in an "atHighStop" entry
           private Rotation2d lastPosition = getPosition();    // Logged as a Rotation2d struct in a "lastPosition" entry
+
           // Logged as a Rotation2d struct object in a "getPosition" entry
           public Rotation2d getPosition() {
             // ...
           }
+
           // Logged as a double in terms of radians per second in a "getSpeed" entry
           public Measure<Velocity<Angle>> getSpeed() {
             // ...
@@ -145,24 +156,30 @@ The names of log entries can be changed using the ``name`` configuration option 
         public class Robot extends RobotBase {
           @Logged(name = "Arm")
           private Arm arm;
+
           public Robot() {
             arm = new Arm();
             DataLogManager.start();
             Epilogue.bind(this);
           }
         }
+
         @Logged(strategy = OPT_IN)
         class Arm {
           @Logged(name = "At Low Stop", importance = DEBUG)
           public final Trigger atLowStop = new Trigger(...);
+
           @Logged(name = "At High Stop", importance = DEBUG)
           public final Trigger atHighStop = new Trigger(...);
+
           @NotLogged // Redundant because the class strategy is opt-in
           private Rotation2d lastPosition = getPosition(); // No @Logged annotation, not logged
+
           @Logged(name = "Position", importance = CRITICAL)
           public Rotation2d getPosition() {
             // ...
           }
+
           @Logged(name = "Speed", importance = CRITICAL)
           public Measure<Velocity<Angle>> getSpeed() {
               // ...
