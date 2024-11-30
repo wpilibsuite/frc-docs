@@ -238,8 +238,10 @@ If your main robot class inherits from ``TimedRobot``, the generated ``Epilogue`
             // occur so we can debug and fix them!
             config.errorHandler = ErrorHandler.crashOnError();
           }
-              // Change the root data path
+
+          // Change the root data path
           config.root = "Telemetry";
+
           // Only log critical information instead of the default DEBUG level.
           // This can be helpful in a pinch to reduce network bandwidth or log file size
           // while still logging important information.
