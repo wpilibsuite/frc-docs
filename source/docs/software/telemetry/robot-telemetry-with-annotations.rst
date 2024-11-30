@@ -231,7 +231,8 @@ If your main robot class inherits from ``TimedRobot``, the generated ``Epilogue`
         Epilogue.configure(config -> {
           // Log only to disk, instead of the default NetworkTables logging
           // Note that this means data cannot be analyzed in realtime by a dashboard
-          config.dataLogger = new FileLogger(DataLogManager.getLog());
+          config.backend = new FileBackend(DataLogManager.getLog());
+
           if (isSimulation()) {
             // If running in simulation, then we'd want to re-throw any errors that
             // occur so we can debug and fix them!
@@ -267,19 +268,21 @@ Custom loggers can be declared in any package, and only need to have the ``@Cust
       public double getAppliedVoltage();
       public double getInputCurrent();
     }
+
     @CustomLoggerFor(VendorMotor.class)
     public class YourCustomVendorMotorLogger extends ClassSpecificLogger<VendorMotor> {
       public YourCustomVendorMotorLogger() {
         super(VendorMotor.class);
       }
+
       @Override
-      public void update(DataLogger dataLogger, VendorMotor motor) {
+      public void update(EpilogueBackend backend, VendorMotor motor) {
         if (Epilogue.shouldLog(Logged.Importance.DEBUG)) {
-          dataLogger.log("Faults", motor.getFaults());
+          backend.log("Faults", motor.getFaults());
         }
-        dataLogger.log("Requested Speed (Duty Cycle)", motor.get());
-        dataLogger.log("Motor Voltage (V)", motor.getAppliedVoltage());
-        dataLogger.log("Input Current (A)", motor.getInputCurrent());
+        backend.log("Requested Speed (Duty Cycle)", motor.get());
+        backend.log("Motor Voltage (V)", motor.getAppliedVoltage());
+        backend.log("Input Current (A)", motor.getInputCurrent());
       }
     }
     ```
