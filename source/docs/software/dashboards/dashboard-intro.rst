@@ -12,7 +12,7 @@ Take caution to carefully consider what *needs* to be on this dashboard and if t
 
 This dashboard is designed for debugging code and analyzing data from the robot. It supports the monitoring of a wide variety of information simultaneously, prioritizing function and utility over simplicity or ease of use. This functionality often includes complex data visualization and graphing across extended periods. In scenarios where there is an overwhelming amount of data to review, real-time analysis becomes challenging. The capability to examine past data and replay it proves to be extremely beneficial. While some dashboards may log data transmitted to them, :ref:`on-robot telemetry <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>` using the ``DataLog`` class simplifies the process.
 
-## Specific Dashboards (oldest to newest)
+## Dashboards (oldest to newest)
 
 .. note:: SmartDashboard and Shuffleboard have a long history of aiding FRC teams. However, they do not have a person to maintain them so are not receiving bug fixes or improvements. Notably, Shuffleboard may experience performance issues on some machines under certain scenarios.  PRs from external contributors will be reviewed.
 
@@ -26,10 +26,4 @@ This dashboard is designed for debugging code and analyzing data from the robot.
 
 :ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` (Programming) - robot diagnostics, log review/analysis, and data visualization application.  It reads the WPILib Data Log (``.wpilog``) and Driver Station Log (``.dslog`` / ``.dsevents``) file formats, plus live robot data viewing.
 
-## Third Party Dashboards
-
-[FRC Web Components](https://github.com/frc-web-components/frc-web-components) (Driver) - A web-based dashboard that can be installed as a standalone application, or as a JavaScript package for custom dashboard solutions.
-
-[Elastic](https://github.com/Gold872/elastic-dashboard) (Driver) - simple and modern Shuffleboard alternative made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing.  It features draggable and resizable card widgets.
-
-[QFRCDashboard](https://github.com/Q-FRC/Dashboard) (Driver) - described as reliable, high-performance, low-footprint dashboard.  QFRCDashboard has been specifically designed to use as few resources as possible.
+:ref:`Elastic <docs/software/dashboards/elastic:Elastic>` (Driver) - simple and modern Shuffleboard alternative made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing.  It features draggable and resizable card widgets.
