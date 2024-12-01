@@ -34,7 +34,6 @@ Supported Operating Systems and Architectures:
 
 ### General Library
 
-- The units library has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add persistent alerts API. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
 - Add LED pattern API for easily animating addressable LEDs
 - Breaking: Remove deprecated ``Gyro`` and ``Accelerometer`` interface
@@ -45,6 +44,9 @@ Supported Operating Systems and Architectures:
 - Implement ``Sendable`` for HID classes
 - Include sendable type information in topic metadata
 - ``GenericHID.setRumble``: Fix Java integer overflow
+- Rename SysId example to SysIdRoutine
+- Add ``Timer.isRunning`` method
+- Add Java unit support for RobotController
 
 #### Commands
 
@@ -67,6 +69,7 @@ Supported Operating Systems and Architectures:
 - Server round robin message processing
 - Client: only connect to IPv4 addresses
 - Deprecate setNetworkTablesFlushEnabled
+- Set NetworkTables 3 client network identity
 
 #### Data Logging
 
@@ -74,6 +77,7 @@ Supported Operating Systems and Architectures:
 - Logging the console can be enabled with ``DatalogManager.logConsoleOutput``
 - DataLog: Add last value and change detection
 - DataLogManager: Fix behavior when low on space
+- Epilogue: Autogenerate nicer data names by default, not just raw element names
 
 #### Hardware interfaces
 
@@ -113,6 +117,11 @@ Supported Operating Systems and Architectures:
 - Add geometry classes for ``Rectangle2d`` and ``Ellipse2d``
 - Add reset methods to ``Odometry`` and ``PoseEstimator``
 - Add ArmFeedforward calculate() overload that takes current and next velocity instead of acceleration
+- Fix C++ pose estimator poseEstimate initialization
+- ChassisSpeeds fromRelative and discretize methods made instance methods
+- Fix PIDController error tolerance getters
+- Add time-varying RKDP
+- Add 2D to 3D geometry constructors
 
 ### Simulation
 
@@ -122,6 +131,7 @@ Supported Operating Systems and Architectures:
 - Fix interrupt edges being flipped in sim
 - Don't send joystick data during auto
 - Initialize DIO to true in sim
+- Clamp battery voltage to 0
 
 ### Romi/XRP
 
@@ -129,6 +139,20 @@ Supported Operating Systems and Architectures:
 - XRP: Add Support for Encoder Period
 - XRP: Add ``GetLED`` to ``OnBoardIO``
 - XRP & Romi: Changed applicable C++ methods to use units library
+
+### Java units
+
+- The units library has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
+- Add resistance units
+- Use div instead of divide
+- Add absolute value and copy sign functionality
+
+### CameraServer
+
+- Wake up even if no frames received
+- Fix wakeup on sink destruction
+- HttpCamera: Send width/height/fps stream settings
+- HttpCamera: Auto-detect mode from stream if not set
 
 ### Util
 
@@ -162,12 +186,15 @@ Supported Operating Systems and Architectures:
 
 - Save input after clicking away
 - Check for struct descriptor size 0
+- Align Field2d border and image padding for custom images
+- Add Alerts widget
 
 ## GradleRIO
 
-- Use Gradle 8.10.2
+- Use Gradle 8.11
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
 - Add method to delete files on roboRIO that have been deleted in the deploy directory. :ref:`Set deleteOldFiles to true <docs/software/advanced-gradlerio/compiler-args:Deleting Unused Deploy Files>` in the frcStaticFileDeploy block
+- Gradle now consolidates Java compile errors at the bottom of the terminal to aid discoverability https://docs.gradle.org/8.11/release-notes.html#error-warning
 
 ## WPILib All in One Installer
 
@@ -177,13 +204,16 @@ Supported Operating Systems and Architectures:
 - Only install scripts if they are used by a specific platform
 - Make shortcuts use the app icon
 - Add AppArmor file for electron apps for Ubuntu 24.04
-- Fix icon in dock on Ubuntu 24.04
 
 ## Visual Studio Code Extension
 
 - Add :doc:`Dependency Manager extension </docs/software/vscode-overview/3rd-party-libraries>` for easier finding and updating of 3rd party libraries
 - Add gradle clean command
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
+- Add option to importer to import XRP project
+- Importer: Update for Java Units changes
+- Extract WPILib Utility on mac
+- Define java.configuration.runtimes in settings.json to ensure WPILib JDK is used
 
 ## RobotBuilder
 
@@ -193,6 +223,7 @@ Supported Operating Systems and Architectures:
 
 - Fix crash when all data is filtered out during analysis
 - Remove obsolete WPILib & CTRE presets, rename CTRE presets
+- Clamp feedback measurement delay to zero or higher
 
 ## PathWeaver
 
@@ -205,3 +236,7 @@ Supported Operating Systems and Architectures:
 ## Choreo
 
 Choreo is bundled in the installer! Choreo is an application for creating time optimal autonomous trajectories. :doc:`Read more here </docs/software/wpilib-tools/choreo/index>`.
+
+## Elastic
+
+Elastic is bundled in the installer! Elastic is a simple and modern dashboard.
