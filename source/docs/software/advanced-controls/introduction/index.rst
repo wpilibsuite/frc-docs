@@ -12,4 +12,5 @@
    tuning-flywheel
    tuning-turret
    tuning-vertical-arm
+   tuning-elevator
    common-control-issues
