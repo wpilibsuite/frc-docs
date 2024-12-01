@@ -239,4 +239,4 @@ Choreo is bundled in the installer! Choreo is an application for creating time o
 
 ## Elastic
 
-Elastic is bundled in the installer! Elastic is a simple and modern dashboard.
+Elastic is bundled in the installer! Elastic is a simple and modern dashboard. :doc:`Read more here </docs/software/dashboards/elastic>`.
