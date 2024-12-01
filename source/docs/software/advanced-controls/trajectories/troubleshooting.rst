@@ -99,14 +99,12 @@ If your feedforwards are bad then the P controllers for each side of the robot w
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
     :language: java
     :lines: 123-124
-    :linenos:
-    :lineno-start: 123
+    :lineno-match:
 
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
     :language: c++
     :lines: 79-80
-    :linenos:
-    :lineno-start: 81
+    :lineno-match:
 
 1. Next, we want to disable the Ramsete controller to make it easier to isolate our problematic behavior. To do so, simply call ``setEnabled(false)`` on the ``RamseteController`` passed into your ``RamseteCommand``:
 

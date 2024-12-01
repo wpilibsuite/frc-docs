@@ -12,8 +12,7 @@ As per the :ref:`standard command-based project structure <docs/software/command
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 74-135
-      :linenos:
-      :lineno-start: 74
+      :lineno-match:
 
   .. tab-item:: C++ (Source)
     :sync: C++ (Source)
@@ -22,8 +21,7 @@ As per the :ref:`standard command-based project structure <docs/software/command
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 45-94
-      :linenos:
-      :lineno-start: 45
+      :lineno-match:
 
 ## Configuring the Trajectory Constraints
 
@@ -41,8 +39,7 @@ The first piece of configuration we will need is a voltage constraint.  This wil
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 80-88
-      :linenos:
-      :lineno-start: 80
+      :lineno-match:
 
   .. tab-item:: C++ (Source)
     :sync: C++ (Source)
@@ -51,8 +48,7 @@ The first piece of configuration we will need is a voltage constraint.  This wil
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 46-50
-      :linenos:
-      :lineno-start: 46
+      :lineno-match:
 
 Notice that we set the maximum voltage to 10V, rather than the nominal battery voltage of 12V.  This gives us some "headroom" to deal with "voltage sag" during operation.
 
@@ -69,8 +65,7 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 90-98
-      :linenos:
-      :lineno-start: 90
+      :lineno-match:
 
   .. tab-item:: C++ (Source)
     :sync: C++ (Source)
@@ -79,8 +74,7 @@ Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 52-58
-      :linenos:
-      :lineno-start: 52
+      :lineno-match:
 
 ## Generating the Trajectory
 
@@ -95,8 +89,7 @@ With our trajectory configuration in hand, we are now ready to generate our traj
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 100-110
-      :linenos:
-      :lineno-start: 100
+      :lineno-match:
 
   .. tab-item:: C++ (Source)
     :sync: C++ (Source)
@@ -105,8 +98,7 @@ With our trajectory configuration in hand, we are now ready to generate our traj
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 60-69
-      :linenos:
-      :lineno-start: 60
+      :lineno-match:
 
 .. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can also :ref:`import a PathWeaver JSON <docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`.
 
@@ -123,8 +115,7 @@ We will first reset our robot's pose to the starting pose of the trajectory. Thi
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 129-131
-      :linenos:
-      :lineno-start: 129
+      :lineno-match:
 
   .. tab-item:: C++ (Source)
     :sync: C++ (Source)
@@ -133,8 +124,7 @@ We will first reset our robot's pose to the starting pose of the trajectory. Thi
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 84-86
-      :linenos:
-      :lineno-start: 84
+      :lineno-match:
 
 
 It is very important that the initial robot pose match the first pose in the trajectory.  For the purposes of our example, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use, however, it is probably not desirable to base your coordinate system on the robot position, and so the starting position for both the robot and the trajectory should be set to some other value.  If you wish to use a trajectory that has been defined in robot-centric coordinates in such a situation, you can transform it to be relative to the robot's current pose using the ``transformBy`` method ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/trajectory/Trajectory.html#transformBy(edu.wpi.first.math.geometry.Transform2d)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_trajectory.html#a8edfbd82347bbf32ddfb092679336cd8)).  For more information about transforming trajectories, see :ref:`docs/software/advanced-controls/trajectories/transforming-trajectories:Transforming Trajectories`.
@@ -150,8 +140,7 @@ Now that we have a trajectory, we can create a command that, when executed, will
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
       :language: java
       :lines: 112-127
-      :linenos:
-      :lineno-start: 112
+      :lineno-match:
 
   .. tab-item:: C++ (Source)
     :sync: C++ (Source)
@@ -160,8 +149,7 @@ Now that we have a trajectory, we can create a command that, when executed, will
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
       :language: c++
       :lines: 71-82
-      :linenos:
-      :lineno-start: 71
+      :lineno-match:
 
 This declaration is fairly substantial, so we'll go through it argument-by-argument:
 
