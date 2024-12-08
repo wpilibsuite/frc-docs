@@ -12,7 +12,7 @@ There are getters the current angular rate and heading and functions for zeroing
 
 ## ADIS16448
 
-The ADIS16448 uses the :code:`ADIS16448_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html), :external:py:class:[Python](wpilib.ADIS16448_IMU)).  See the [Analog Devices ADIS16448 documentation](https://wiki.analog.com/first/adis16448_imu_frc) for additional information and examples.
+The ADIS16448 uses the :code:`ADIS16448_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html), :external:py:class:`Python <wpilib.ADIS16448_IMU>`).  See the [Analog Devices ADIS16448 documentation](https://wiki.analog.com/first/adis16448_imu_frc) for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16448 is now built into WPILib.
 
@@ -36,7 +36,7 @@ The ADIS16448 uses the :code:`ADIS16448_IMU` class ([Java](https://github.wpilib
 
 ## ADIS16470
 
-The ADIS16470 uses the :code:`ADIS16470_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html), :external:py:class:[Python](wpilib.ADIS16470_IMU)).  See the [Analog Devices ADIS16470 documentation](https://wiki.analog.com/first/adis16470_imu_frc) for additional information and examples.
+The ADIS16470 uses the :code:`ADIS16470_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html), :external:py:class:`Python <wpilib.ADIS16470_IMU>`).  See the [Analog Devices ADIS16470 documentation](https://wiki.analog.com/first/adis16470_imu_frc) for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16470 is now built into WPILib.
 
