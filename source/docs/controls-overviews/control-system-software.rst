@@ -66,7 +66,7 @@ Shuffleboard has the same features as SmartDashboard. It also improves on the se
 .. image:: /docs/software/dashboards/images/elastic.png
    :alt: Screenshot of an Elastic showing field trajectory, match time, and several other widgets
 
-Elastic is a simple and modern dashboard made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing. It was built with the goal of being a drag & drop dashboard with an easy setup and elegant UI designed for a high pressure competition environment.
+Elastic is a simple and modern dashboard made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing. It was built with the goal of being a drag & drop dashboard with an easy setup and elegant UI designed for a high pressure competition environment. For more information see the :doc:`Elastic section </docs/software/dashboards/elastic>`.
 
 ## LiveWindow
 
@@ -129,7 +129,7 @@ PathWeaver allows teams to quickly generate and configure paths for advanced aut
 .. image:: /docs/software/wpilib-tools/choreo/images/choreo.png
    :alt: Screenshot of an Choreo showing the 2024 field with a trajectory plotted on it
 
-Choreo is a tool for calculating time optimal autonomous trajectories for swerve and differntial drivetrains. This allows simple and efficient creation of autonomous routines.
+Choreo is a tool for calculating time optimal autonomous trajectories for swerve and differntial drivetrains. This allows simple and efficient creation of autonomous routines. For more information see the :doc:`Choreo section </docs/software/wpilib-tools/choreo/index>`.
 
 ## System Identification
 
