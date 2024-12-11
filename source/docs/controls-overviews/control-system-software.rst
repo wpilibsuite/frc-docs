@@ -61,6 +61,13 @@ Shuffleboard has the same features as SmartDashboard. It also improves on the se
 
 :ref:`Glass <docs/software/dashboards/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantages are the field view, pose visualization and advanced signal plotting tools.
 
+### Elastic
+
+.. image:: /docs/software/dashboards/images/elastic.png
+   :alt: Screenshot of an Elastic showing field trajectory, match time, and several other widgets
+
+Elastic is a simple and modern dashboard made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing. It was built with the goal of being a drag & drop dashboard with an easy setup and elegant UI designed for a high pressure competition environment. For more information see the :doc:`Elastic section </docs/software/dashboards/elastic>`.
+
 ## LiveWindow
 
 .. image:: images/control-system-software/livewindow-smartdashboard.png
@@ -115,7 +122,14 @@ The FRC Robot Simulator is a component of the LabVIEW programming environment th
 .. image:: images/control-system-software/pathweaver.png
    :alt: PathWeaver UI with a project for FRC Deep Space plotting a trajectory to the back of the rocket.
 
-PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines.  These paths have smooth curves allowing the team to quickly navigate their robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
+PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines for differential drivetrains.  These paths have smooth curves allowing the team to quickly navigate their robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
+
+## Choreo
+
+.. image:: /docs/software/wpilib-tools/choreo/images/choreo.png
+   :alt: Screenshot of an Choreo showing the 2024 field with a trajectory plotted on it
+
+Choreo is a tool for calculating time optimal autonomous trajectories for swerve and differntial drivetrains. This allows simple and efficient creation of autonomous routines. For more information see the :doc:`Choreo section </docs/software/wpilib-tools/choreo/index>`.
 
 ## System Identification
 
