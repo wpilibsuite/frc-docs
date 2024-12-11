@@ -93,16 +93,14 @@ The code snippet below uses the ``DifferentialDrive`` and ``Joystick`` classes t
 The code calls the ``DifferentialDrive.arcadeDrive(xSpeed, zRotation)`` method, with values it gets from the ``Joystick`` class:
 
 - The first argument is ``xSpeed``
-
-    - Robot: ``xSpeed`` is the speed along the robot's X axis, which is forward/backward.
-    - Joystick: The driver sets forward/backward speed by rotating the joystick along its Y axis, which is pushing the joystick forward/backward.
-    - Code: Moving the joystick forward is negative Y rotation, whereas moving the robot forward is along the positive X axis. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
+   - Robot: ``xSpeed`` is the speed along the robot's X axis, which is forward/backward.
+   - Joystick: The driver sets forward/backward speed by rotating the joystick along its Y axis, which is pushing the joystick forward/backward.
+   - Code: Moving the joystick forward is negative Y rotation, whereas moving the robot forward is along the positive X axis. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
 
 - The second argument is ``zRotation``
-
-    - Robot: ``zRotation`` is the speed of rotation along the robot's Z axis, which is rotating left/right.
-    - Joystick: The driver sets rotation speed by rotating the joystick along its X axis, which is pushing the joystick left/right.
-    - Code: Moving the joystick to the right is positive X rotation, whereas robot rotation is CCW positive. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
+   - Robot: ``zRotation`` is the speed of rotation along the robot's Z axis, which is rotating left/right.
+   - Joystick: The driver sets rotation speed by rotating the joystick along its X axis, which is pushing the joystick left/right.
+   - Code: Moving the joystick to the right is positive X rotation, whereas robot rotation is CCW positive. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
 
 ### Mecanum drivetrain example
 
@@ -133,23 +131,20 @@ Mecanum drivetrains are holonomic, meaning they have the ability to move side-to
 The code calls the ``MecanumDrive.driveCartesian(xSpeed, ySpeed, zRotation)`` method, with values it gets from the ``Joystick`` class:
 
 - The first argument is ``xSpeed``
-
-    - Robot: ``xSpeed`` is the speed along the robot's X axis, which is forward/backward.
-    - Joystick: The driver sets forward/backward speed by rotating the joystick along its Y axis, which is pushing the joystick forward/backward.
-    - Code: Moving the joystick forward is negative Y rotation, whereas robot forward is along the positive X axis. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
+   - Robot: ``xSpeed`` is the speed along the robot's X axis, which is forward/backward.
+   - Joystick: The driver sets forward/backward speed by rotating the joystick along its Y axis, which is pushing the joystick forward/backward.
+   - Code: Moving the joystick forward is negative Y rotation, whereas robot forward is along the positive X axis. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
 
 
 - The second argument is ``ySpeed``
-
-    - Robot: ``ySpeed`` is the speed along the robot's Y axis, which is left/right.
-    - Joystick: The driver sets left/right speed by rotating the joystick along its X axis, which is pushing the joystick left/right.
-    - Code: Moving the joystick to the right is positive X rotation, whereas robot right is along the negative Y axis. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
+   - Robot: ``ySpeed`` is the speed along the robot's Y axis, which is left/right.
+   - Joystick: The driver sets left/right speed by rotating the joystick along its X axis, which is pushing the joystick left/right.
+   - Code: Moving the joystick to the right is positive X rotation, whereas robot right is along the negative Y axis. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
 
 - The third argument is ``zRotation``
-
-    - Robot: ``zRotation`` is the speed of rotation along the robot's Z axis, which is rotating left/right.
-    - Joystick: The driver sets rotation speed by twisting the joystick along its Z axis, which is twisting the joystick left/right.
-    - Code: Twisting the joystick to the right is positive Z rotation, whereas robot rotation is CCW positive. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
+   - Robot: ``zRotation`` is the speed of rotation along the robot's Z axis, which is rotating left/right.
+   - Joystick: The driver sets rotation speed by twisting the joystick along its Z axis, which is twisting the joystick left/right.
+   - Code: Twisting the joystick to the right is positive Z rotation, whereas robot rotation is CCW positive. This means the joystick value needs to be inverted by placing a - (minus sign) in front of the value.
 
 ### Swerve drivetrain example
 
