@@ -61,6 +61,13 @@ Shuffleboard has the same features as SmartDashboard. It also improves on the se
 
 :ref:`Glass <docs/software/dashboards/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantages are the field view, pose visualization and advanced signal plotting tools.
 
+### AdvantageScope
+
+.. image:: /docs/software/dashboards/images/advantagescope.png
+   :alt: Screenshot of an AdvantageScope window displaying a line graph, a list of fields, and a series of miscellaneous tabs.
+
+AdvantageScope is a data visualization tool for :ref:`NetworkTables <docs/software/networktables/networktables-intro:What is NetworkTables>`, :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`, and :ref:`Driver Station logs <docs/software/driverstation/driver-station-log-viewer:Driver Station Log File Viewer>`. It is a programmer's tool (rather than a competition dashboard) and can be used to debug real or simulated robot code from a log file or live over the network. For more information see the :doc:`AdvantageScope section </docs/software/dashboards/advantagescope>`.
+
 ### Elastic
 
 .. image:: /docs/software/dashboards/images/elastic.png
