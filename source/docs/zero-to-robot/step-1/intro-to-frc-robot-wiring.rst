@@ -21,7 +21,7 @@
     .. tab-item:: Basic
         :sync: basic
 
-        .. figure:: images/frc-control-system-layout-basic.svg
+        .. figure:: /docs/controls-overviews/images/frc-control-system-layout-basic.svg
          :alt: Layout of the core components of the control system and introductory information for them.
          :width: 600
 
@@ -30,7 +30,7 @@
     .. tab-item:: REV
         :sync: rev
 
-        .. figure:: images/frc-control-system-layout-rev.svg
+        .. figure:: /docs/controls-overviews/images/frc-control-system-layout-rev.svg
          :alt: Layout of all popular components of the control system including REV Control System Components
          :width: 600
 
@@ -39,7 +39,7 @@
     .. tab-item:: CTRE
         :sync: ctre
 
-        .. figure:: images/frc-control-system-layout.svg
+        .. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
          :alt: Layout of all popular components of the control system including CTRE Control System Components
          :width: 600
 
