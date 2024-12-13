@@ -8,4 +8,3 @@
    target-info-and-retroreflection
    identifying-and-processing-the-targets
    cameraserver-class
-   2017-vision-examples
