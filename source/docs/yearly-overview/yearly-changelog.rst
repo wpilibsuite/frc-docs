@@ -233,10 +233,6 @@ Supported Operating Systems and Architectures:
 
 - Update to [2025 AdvantageScope](https://docs.advantagescope.org/whats-new)
 
-## Choreo
-
-Choreo is bundled in the installer! Choreo is an application for creating time optimal autonomous trajectories. :doc:`Read more here </docs/software/wpilib-tools/choreo/index>`.
-
 ## Elastic
 
 Elastic is bundled in the installer! Elastic is a simple and modern dashboard. :doc:`Read more here </docs/software/dashboards/elastic>`.
