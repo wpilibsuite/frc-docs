@@ -62,7 +62,7 @@ While binding to HID buttons is by far the most common use case, users may want 
 
 .. note:: The C++ command-based library offers two overloads of each button binding method - one that takes an [rvalue reference](https://learn.microsoft.com/en-us/cpp/cpp/rvalue-reference-declarator-amp-amp?view=msvc-170) (``CommandPtr&&``), and one that takes a raw pointer (``Command*``).  The rvalue overload moves ownership to the scheduler, while the raw pointer overload leaves the user responsible for the lifespan of the command object.  It is recommended that users preferentially use the rvalue reference overload unless there is a specific need to retain a handle to the command in the calling code.
 
-There are a number of bindings available for the ``Trigger`` class. All of these bindings will automatically schedule a command when a certain trigger activation event occurs - however, each binding has different specific behavior.
+There are a number of bindings available for the ``Trigger`` class. All of these bindings wille automatically schedule a command when a certain trigger activation event occurs - however, each binding has different specific behavior.
 
 ``Trigger`` objects *do not need to survive past the call to a binding method*, so the binding methods may be simply called on a temp. Remember that button binding is *declarative*: bindings only need to be declared once, ideally some time during robot initialization. The library handles everything else.
 
