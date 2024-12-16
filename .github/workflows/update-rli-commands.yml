@@ -6,7 +6,7 @@ on:
 jobs:
   check-rli:
     if: contains(github.event.comment.html_url, '/pull/')  && contains(github.event.comment.body, '\inspector')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       # ---- Find Trigger States ----
       # Run Inspector autofix on everything
