@@ -47,6 +47,7 @@ Supported Operating Systems and Architectures:
 - Rename SysId example to SysIdRoutine
 - Add ``Timer.isRunning`` method
 - Add Java unit support for RobotController
+- Add a functional interface for MecanumDriveMotorVoltages and deprecate old interface
 
 #### Commands
 
@@ -63,6 +64,7 @@ Supported Operating Systems and Architectures:
 - Add ``StartRun`` command factory
 - Rename ``deadlineWith`` to ``deadlineFor``
 - Fix double composition error message truncation
+- Add ``withDeadline`` modifier
 
 #### NetworkTables
 
@@ -118,7 +120,6 @@ Supported Operating Systems and Architectures:
 - Add reset methods to ``Odometry`` and ``PoseEstimator``
 - Add ArmFeedforward calculate() overload that takes current and next velocity instead of acceleration
 - Fix C++ pose estimator poseEstimate initialization
-- ChassisSpeeds fromRelative and discretize methods made instance methods
 - Fix PIDController error tolerance getters
 - Add time-varying RKDP
 - Add 2D to 3D geometry constructors
@@ -132,6 +133,8 @@ Supported Operating Systems and Architectures:
 - Don't send joystick data during auto
 - Initialize DIO to true in sim
 - Clamp battery voltage to 0
+- Fix: Update FMS widget when real DS is connected
+- Fix DS GUI System Joysticks window auto-hiding
 
 ### Romi/XRP
 
@@ -149,6 +152,7 @@ Supported Operating Systems and Architectures:
 
 ### CameraServer
 
+- Update to OpenCV 4.10.0
 - Wake up even if no frames received
 - Fix wakeup on sink destruction
 - HttpCamera: Send width/height/fps stream settings
@@ -158,6 +162,7 @@ Supported Operating Systems and Architectures:
 
 - Breaking: Remove ``RuntimeLoader``
 - Deprecate ``RuntimeDetector``
+- Add a simple web server for serving files. Example: ``WebServer.start(5800, Filesystem.getDeployDirectory());``
 
 ## Branding
 
@@ -198,12 +203,12 @@ Supported Operating Systems and Architectures:
 
 ## WPILib All in One Installer
 
-- Update to VS Code 1.94.2
+- Update to VS Code 1.95.3
 - VS Code extension updates: cpptools 1.22, javaext 1.36
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
 - Only install scripts if they are used by a specific platform
 - Make shortcuts use the app icon
-- Add AppArmor file for electron apps for Ubuntu 24.04
+- Add AppArmor file for electron apps for Ubuntu 24.04, which must be :ref:`manually installed <docs/zero-to-robot/step-2/wpilib-setup:Post-Installation>`
 
 ## Visual Studio Code Extension
 
@@ -214,6 +219,7 @@ Supported Operating Systems and Architectures:
 - Importer: Update for Java Units changes
 - Extract WPILib Utility on mac
 - Define java.configuration.runtimes in settings.json to ensure WPILib JDK is used
+- Improve intellisense by hiding items not likely to be used in Robot Programs
 
 ## RobotBuilder
 
@@ -227,7 +233,7 @@ Supported Operating Systems and Architectures:
 
 ## PathWeaver
 
-- No changes other than build updates were made to PathWeaver
+- Fix finding deploy directory when outputdir blank
 
 ## AdvantageScope
 
