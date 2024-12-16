@@ -19,7 +19,7 @@ A common FRC\ |reg| controls solution is to pair a trapezoidal motion profile fo
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Drive.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Drive.h
          :language: c++
          :lines: 5-
          :lineno-match:
@@ -27,7 +27,7 @@ A common FRC\ |reg| controls solution is to pair a trapezoidal motion profile fo
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/subsystems/Drive.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/cpp/subsystems/Drive.cpp
          :language: c++
          :lines: 5-
          :lineno-match:
