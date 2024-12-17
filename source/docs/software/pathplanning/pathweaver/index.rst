@@ -1,6 +1,6 @@
 # PathWeaver
 
-.. note:: Users may find :doc:`Choreo </docs/software/wpilib-tools/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support. Users should already have access to Choreo as it is distributed with the WPILib installer.
+.. note:: Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support. Users should already have access to Choreo as it is distributed with the WPILib installer.
 
 
 .. toctree::
