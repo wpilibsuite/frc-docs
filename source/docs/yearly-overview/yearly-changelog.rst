@@ -203,8 +203,8 @@ Supported Operating Systems and Architectures:
 
 ## WPILib All in One Installer
 
-- Update to VS Code 1.95.3
-- VS Code extension updates: cpptools 1.22, javaext 1.36
+- Update to VS Code 1.96.0
+- VS Code extension updates: cpptools 1.23.2, javaext 1.37
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
 - Only install scripts if they are used by a specific platform
 - Make shortcuts use the app icon
