@@ -164,7 +164,7 @@ Spotless will attempt to apply line endings per-OS, which means Git diffs will b
 
 ### Requirements
 
-- [Python 3.6 or higher](https://www.python.org/)
+- [Python 3.9 or higher](https://www.python.org/)
 
 You can install [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst) by typing ``pip3 install wpiformat`` into a terminal or command prompt.
 
@@ -196,6 +196,6 @@ modifiableFileExclude {
 
 You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``, as shown in the example GitHub Actions workflow below:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/.github/workflows/lint-format.yml
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/.github/workflows/lint-format.yml
    :language: yaml
    :lines: 1-5, 13-34
