@@ -152,7 +152,7 @@ jobs:
         with:
           locale: "US"
           reporter: "github-check"
-          fail_on_error: "true"
+          fail_level: "error"
           
   check-redirects:
     runs-on: ubuntu-22.04
