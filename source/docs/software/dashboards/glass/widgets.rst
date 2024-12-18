@@ -14,15 +14,15 @@ Widgets for specific hardware (such as motor controllers) are usually available 
 
 The list of hardware (sent over LiveWindow automatically) that has widgets is below:
 
- - ``DigitalInput``
- - ``DigitalOutput``
- - ``SpeedController``
- - ``Gyro``
+- ``DigitalInput``
+- ``DigitalOutput``
+- ``SpeedController``
+- ``Gyro``
 
 Here is an example of the widget for gyroscopes:
 
- .. image:: images/gyro.png
-    :alt: Gyro widget with both text and dial visualizations of the current gyro angle. Current Gyro Angle in degrees is -60.9704.
+.. image:: images/gyro.png
+   :alt: Gyro widget with both text and dial visualizations of the current gyro angle. Current Gyro Angle in degrees is -60.9704.
 
 ## Sendable Chooser Widget
 

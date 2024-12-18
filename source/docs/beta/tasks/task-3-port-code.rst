@@ -13,9 +13,9 @@ Desired Feedback
 
 Please keep the following questions in mind as you complete the task and include this information, as appropriate, in your Task 3 report.
 
- 1. Note any required changes to your robot program not detailed in the :doc:`documentation for porting robot code </docs/yearly-overview/yearly-changelog>`.
- 2. What problems or difficulties did you encounter?
- 3. What questions did you have during the process?
- 4. Any specific suggestions on improving the documentation? (Were any instructions unclear?)
- 5. Compare the Free RAM on the DS diagnostics tab to similar code running on the 2024 image.
- 6. Is there anything else you want to tell us related to this task?
+1. Note any required changes to your robot program not detailed in the :doc:`documentation for porting robot code </docs/yearly-overview/yearly-changelog>`.
+2. What problems or difficulties did you encounter?
+3. What questions did you have during the process?
+4. Any specific suggestions on improving the documentation? (Were any instructions unclear?)
+5. Compare the Free RAM on the DS diagnostics tab to similar code running on the 2024 image.
+6. Is there anything else you want to tell us related to this task?

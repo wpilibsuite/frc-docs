@@ -17,10 +17,10 @@ If there is no response, try pinging ``10.TE.AM.2`` (:ref:`TE.AM IP Notation <do
 
 ## Ping Fails
 
-   .. image:: images/roborio-troubleshooting/win10-dhcp.png
-      :alt: Windows 10+ image of the adapter setting
+.. image:: images/roborio-troubleshooting/win10-dhcp.png
+   :alt: Windows 10+ image of the adapter setting
 
-   If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Automatic**. To check this, click :guilabel:`Start` -> :guilabel:`Settings` -> :guilabel:`Network & Internet`. Depending on your network, select :guilabel:`Wifi` or :guilabel:`Ethernet`. Then click on your connected network. Scroll down to **IP settings** and click :guilabel:`Edit` and ensure the :guilabel:`Automatic (DHCP)` option is selected.
+If pinging the IP address directly fails, you may have an issue with the network configuration of the PC. The PC should be configured to **Automatic**. To check this, click :guilabel:`Start` -> :guilabel:`Settings` -> :guilabel:`Network & Internet`. Depending on your network, select :guilabel:`Wifi` or :guilabel:`Ethernet`. Then click on your connected network. Scroll down to **IP settings** and click :guilabel:`Edit` and ensure the :guilabel:`Automatic (DHCP)` option is selected.
 
 ## USB Connection Troubleshooting
 
