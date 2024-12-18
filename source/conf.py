@@ -57,6 +57,7 @@ extensions = [
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
     "sphinx_copybutton",
+    "sphinx_docsearch",
 ]
 
 local_extensions = [
@@ -236,6 +237,9 @@ user_options = [
     ("warning-is-error", True),
 ]
 
+docsearch_app_id = "A8AKA13JPF"
+docsearch_api_key = "e394dd6e7f75ad724520eeb82c5504fe"
+docsearch_index_name = "wpilib"
 
 def setup(app):
     app.add_css_file("css/frc-rtd.css")
