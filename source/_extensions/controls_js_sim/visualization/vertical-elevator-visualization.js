@@ -76,14 +76,11 @@ class VerticalElevatorVisualization extends BaseVisualization {
   handleMouseDown(event) {
     event.preventDefault();
     event.stopPropagation();
-
+    const clickLocation = this.getCursorPosition(event);
+    this.draggingSetpoint = true;
+    this.setSimulationSetpoint(this.setpointFromClick(clickLocation));
     this.beginSimulation();
 
-    const clickLocation = this.getCursorPosition(event);
-
-    this.draggingSetpoint = true;
-
-    this.setSimulationSetpoint(this.setpointFromClick(clickLocation));
   }
 
   posToCanvas(posIn){

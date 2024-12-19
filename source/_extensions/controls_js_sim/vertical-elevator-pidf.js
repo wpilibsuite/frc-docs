@@ -147,6 +147,9 @@ class VerticalElevatorPIDF extends VerticalElevatorSim {
       curRow.appendChild(label);
       curRow.appendChild(control);
 
+    } else {
+      this.maxAccelMps2 = 99999.0; // effectively no profiling
+      this.maxVelMps = 99999.0; // effectively no profiling
     }
 
     if (this.controlStrategy == "feedback" || this.controlStrategy == "both") {

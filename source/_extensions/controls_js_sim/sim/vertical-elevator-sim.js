@@ -24,7 +24,6 @@ class VerticalElevatorSim extends BaseSim {
 
     this.accumulatedError = 0.0;
     this.previousPositionError = 0.0;
-    this.previousPositionSetpoint = 0.0;
 
     //User-configured feedback
     this.kP = 0.0;
@@ -43,14 +42,14 @@ class VerticalElevatorSim extends BaseSim {
     this.inputVolts = 0.0;
 
     //Default starting setpoint
-    this.goal = new TrapezoidProfile.State(0.0, 0.0);
+    this.goal = new ProfileState(0.0, 0.0, 0.0);
 
     // Reset at least once right at the start
     this.resetCustom();
   }
 
   setSetpointM(setpoint) {
-    this.goal = new TrapezoidProfile.State(setpoint, 0.0);
+    this.goal = new ProfileState(setpoint, 0.0, 0.0);
     document.getElementById(this.divIdPrefix + "_setpoint").value = setpoint;
   }
 
@@ -69,7 +68,6 @@ class VerticalElevatorSim extends BaseSim {
 
     this.accumulatedError = 0.0;
     this.previousPositionError = 0.0;
-    this.previousPositionSetpoint = 0.0;
     this.inputvolts = 0.0;
     this.iterationCount = 0;
 
@@ -80,10 +78,11 @@ class VerticalElevatorSim extends BaseSim {
   }
   
   makeProfile(){
-    var constraints = new TrapezoidProfile.Constraints(this.maxVelMps, this.maxAccelMps2);
+    var constraints = new ProfileConstraints(this.maxVelMps, this.maxAccelMps2);
     this.profile = new TrapezoidProfile(constraints)
-    this.start = new TrapezoidProfile.State(0,0);
+    this.start = new ProfileState(0.0,0.0,0.0);
     this.setpoint = this.start;
+    this.profile.init(this.start, this.goal)
   }
 
   iterateCustom() {
@@ -94,7 +93,7 @@ class VerticalElevatorSim extends BaseSim {
 
     // Update controller at controller freq
     if (this.timeSinceLastControllerIteration >= this.controllerTimestepS) {
-      this.setpoint = this.profile.calculate(this.curSimTimeS, this.start, this.goal)
+      this.setpoint = this.profile.calculate(this.curSimTimeS, this.setpoint)
       this.inputVolts = this.updateController(this.setpoint, measuredPositionM);
       this.timeSinceLastControllerIteration = this.controllerTimestepS;
     } else {
@@ -107,11 +106,11 @@ class VerticalElevatorSim extends BaseSim {
 
     this.visualization.setCurPos(this.plant.getPositionM());
     this.visualization.setCurTime(this.curSimTimeS);
-    this.visualization.setCurSetpoint(this.setpoint.position);
+    this.visualization.setCurSetpoint(this.setpoint.pos);
     this.visualization.setCurControlEffort(this.inputVolts);
 
     this.procVarActualSignal.addSample(new Sample(this.curSimTimeS, this.plant.getPositionM()));
-    this.procVarDesiredSignal.addSample(new Sample(this.curSimTimeS, this.setpoint.position));
+    this.procVarDesiredSignal.addSample(new Sample(this.curSimTimeS, this.setpoint.pos));
     this.voltsSignal.addSample(new Sample(this.curSimTimeS, this.inputVolts));
 
     this.iterationCount++;
@@ -124,9 +123,7 @@ class VerticalElevatorSim extends BaseSim {
   updateController(setpoint, measurement) {
 
     // Calculate error, error derivative, and error integral
-    let positionError = setpoint.position - measurement;
-    const derivativeSetpoint =
-      (setpoint.position - this.previousPositionSetpoint) / this.controllerTimestepS;
+    let positionError = setpoint.pos - measurement;
 
     this.accumulatedError += positionError * this.controllerTimestepS;
 
@@ -136,8 +133,8 @@ class VerticalElevatorSim extends BaseSim {
     // PID + gravity/Profiled feed-forward control law
     let controlEffortVolts =
       this.kG  +
-      this.kV * setpoint.velocity +
-      this.kA * setpoint.acceleration +
+      this.kV * setpoint.vel +
+      this.kA * setpoint.accel +
       this.kP * positionError +
       this.kI * this.accumulatedError +
       this.kD * derivativeError;
@@ -150,7 +147,6 @@ class VerticalElevatorSim extends BaseSim {
     }
 
     this.previousPositionError = positionError;
-    this.previousPositionSetpoint = setpoint;
 
     return controlEffortVolts;
   }

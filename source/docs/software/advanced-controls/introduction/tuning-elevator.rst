@@ -81,7 +81,7 @@ Perform the following:
 
 .. collapse:: Tuning solution
 
-   There is no perfect tuning solution for this control strategy.  Values of :math:`K_p = 10.0`,  :math:`K_i = 2.5` and and :math:`K_d = 0.0`` yield a possible solution, but with overshoot and large settling times. Additionally, it will act very differently depending on the setpoint - aggressively overshooting at the top and undershooting at the bottom.
+   There is no perfect tuning solution for this control strategy.  Values of :math:`K_p = 10.0`,  :math:`K_i = 2.5` and and :math:`K_d = 0.0` yield a possible solution, but with overshoot and large settling times. Additionally, it will act very differently depending on the setpoint - aggressively overshooting at the top and undershooting at the bottom.
 
 
 Motion Profiled, Feedforward, and Feedback Control
