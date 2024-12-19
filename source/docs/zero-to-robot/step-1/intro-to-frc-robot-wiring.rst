@@ -18,22 +18,30 @@
 ----
 
 .. tab-set::
+    .. tab-item:: Basic
+        :sync: basic
 
-   .. tab-item:: REV
-      :sync: REV
-
-      .. figure:: /docs/controls-overviews/images/frc-control-system-layout-rev.svg
-        :alt: Detailed diagram of all of the components and how they are connected.
-        :width: 600
+        .. figure:: /docs/controls-overviews/images/frc-control-system-layout-basic.svg
+         :alt: Layout of the core components of the control system and introductory information for them.
+         :width: 600
 
         Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
-   .. tab-item:: CTR
-      :sync: CTR
+    .. tab-item:: REV
+        :sync: rev
 
-      .. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
-        :alt: Detailed diagram of all of the components and how they are connected.
-        :width: 600
+        .. figure:: /docs/controls-overviews/images/frc-control-system-layout-rev.svg
+         :alt: Layout of all popular components of the control system including REV Control System Components
+         :width: 600
+
+        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+
+    .. tab-item:: CTRE
+        :sync: ctre
+
+        .. figure:: /docs/controls-overviews/images/frc-control-system-layout.svg
+         :alt: Layout of all popular components of the control system including CTRE Control System Components
+         :width: 600
 
         Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
