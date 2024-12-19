@@ -29,7 +29,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     # This grabs the WPILib docker container
     container: wpilib/roborio-cross-ubuntu:2024-22.04
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -79,7 +79,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     # This grabs the WPILib docker container
     container: wpilib/roborio-cross-ubuntu:2024-22.04
 ```
