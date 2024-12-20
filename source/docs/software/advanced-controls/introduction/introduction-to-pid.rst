@@ -27,7 +27,6 @@ Roughly speaking: the proportional term drives the position error to zero, the d
    Throughout the WPILib documentation, you'll see two ways of writing the tunable constants of the PID controller.
 
    For example, for the proportional gain:
-
       * :math:`K_p` is the standard math-equation-focused way to notate the constant.
       * ``kP`` is a common way to see it written as a variable in software.
 
