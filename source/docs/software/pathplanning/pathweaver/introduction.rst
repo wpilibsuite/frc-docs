@@ -1,6 +1,8 @@
 # Introduction to PathWeaver
 
-.. note:: Users may find :doc:`Choreo </docs/software/wpilib-tools/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support. Users should already have access to Choreo as it is distributed with the WPILib installer.
+.. _deprecation-notice:
+
+.. warning:: PathWeaver is deprecated and will be removed for 2027. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support.
 
 Autonomous is an important section of the match; it is exciting when robots do impressive things in autonomous. In order to score, the robot usually need to go somewhere. The faster the robot arrives at that location, the sooner it can score points! The traditional method for autonomous is driving in a straight line, turning to a certain angle, and driving in a straight line again. This approach works fine, but the robot spends a non-negligible amount of time stopping and starting again after each straight line and turn.
 

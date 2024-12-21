@@ -131,13 +131,6 @@ The FRC Robot Simulator is a component of the LabVIEW programming environment th
 
 PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines for differential drivetrains.  These paths have smooth curves allowing the team to quickly navigate their robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
 
-## Choreo
-
-.. image:: /docs/software/wpilib-tools/choreo/images/choreo.png
-   :alt: Screenshot of an Choreo showing the 2024 field with a trajectory plotted on it
-
-Choreo is a tool for calculating time optimal autonomous trajectories for swerve and differntial drivetrains. This allows simple and efficient creation of autonomous routines. For more information see the :doc:`Choreo section </docs/software/wpilib-tools/choreo/index>`.
-
 ## System Identification
 
 .. image:: images/control-system-software/sysid.png
