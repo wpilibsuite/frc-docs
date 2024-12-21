@@ -24,7 +24,8 @@ class WpilibRelease(SphinxDirective):
 
         release_url = f"https://api.github.com/repos/wpilibsuite/allwpilib/releases/tags/{version}"
         release_json = requests.get(release_url)
-        print(release_json)
+        if release_json:
+            release_json.raise_for_status()
         release: Dict = release_json.json()
 
         cf_folder = f"https://packages.wpilib.workers.dev/installer/{version}"
