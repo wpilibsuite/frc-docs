@@ -23,10 +23,9 @@ class WpilibRelease(SphinxDirective):
         version: str = self.arguments[0]
 
         release_url = f"https://api.github.com/repos/wpilibsuite/allwpilib/releases/tags/{version}"
-        release_json = requests.get(release_url)
+        release_json = requests.get(release_url, headers={"User-Agent": "frcdocs-wpilib-release/0.1"})
         release_json.raise_for_status()
         release: Dict = release_json.json()
-        print(release)
 
         cf_folder = f"https://packages.wpilib.workers.dev/installer/{version}"
         artifactory_folder = (
@@ -48,7 +47,6 @@ class WpilibRelease(SphinxDirective):
 
         # There's something weird going where the hashes are all printed on one line.
         # This works around that.
-        print(release["body"])
         release_notes = release["body"].replace("\r", "")
 
         r2 = release_notes.split("```")
