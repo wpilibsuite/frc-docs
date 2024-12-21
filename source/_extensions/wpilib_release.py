@@ -22,11 +22,31 @@ class WpilibRelease(SphinxDirective):
     def run(self) -> List[nodes.Node]:
         version: str = self.arguments[0]
 
+        def print_roundtrip(response, *args, **kwargs):
+            format_headers = lambda d: '\n'.join(f'{k}: {v}' for k, v in d.items())
+            print(textwrap.dedent('''
+                ---------------- request ----------------
+                {req.method} {req.url}
+                {reqhdrs}
+
+                {req.body}
+                ---------------- response ----------------
+                {res.status_code} {res.reason} {res.url}
+                {reshdrs}
+
+                {res.text}
+            ''').format(
+                req=response.request, 
+                res=response, 
+                reqhdrs=format_headers(response.request.headers), 
+                reshdrs=format_headers(response.headers), 
+            ))
+
         release_url = f"https://api.github.com/repos/wpilibsuite/allwpilib/releases/tags/{version}"
         release_json = requests.get(
-            release_url, headers={"User-Agent": "frcdocs-wpilib-release/0.1"}
+            release_url, headers={"User-Agent": "frcdocs-wpilib-release/0.1"}, hooks={'response': print_roundtrip}
         )
-        print(release_json.request)
+        # print(release_json.request)
         release_json.raise_for_status()
         release: Dict = release_json.json()
 
