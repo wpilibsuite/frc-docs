@@ -1892,6 +1892,24 @@ numpy = ["nptyping (>=2.5)"]
 testing = ["covdefaults (>=2.3)", "coverage (>=7.4.4)", "defusedxml (>=0.7.1)", "diff-cover (>=9)", "pytest (>=8.1.1)", "pytest-cov (>=5)", "sphobjinv (>=2.3.1)", "typing-extensions (>=4.11)"]
 
 [[package]]
+name = "sphinx-contributors"
+version = "0.2.7"
+description = "Contributors extension for Sphinx."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "sphinx_contributors-0.2.7-py3-none-any.whl", hash = "sha256:f409295eb22f05606528ff3a9b93b4ae076d93d3153de13ff47bfcdd1c792463"},
+    {file = "sphinx_contributors-0.2.7.tar.gz", hash = "sha256:aace731366096f2104a06eca77b9354b11768ddec149d699520c254f09cbb4f4"},
+]
+
+[package.dependencies]
+sphinx = ">=3"
+
+[package.extras]
+doc = ["furo"]
+test = ["pre-commit", "pytest"]
+
+[[package]]
 name = "sphinx-copybutton"
 version = "0.5.2"
 description = "Add a copy button to each of your code cells."
@@ -2538,4 +2556,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "8d3c871086df49f5e55d38faefd236aaccd58faef6f24078bb526e3da27ed218"
+content-hash = "e7cab165008103cb2c6f979ef4fd3942260467c5a8f09ea5e09cacee9a1bb510"
