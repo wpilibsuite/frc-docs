@@ -23,7 +23,9 @@ class WpilibRelease(SphinxDirective):
         version: str = self.arguments[0]
 
         release_url = f"https://api.github.com/repos/wpilibsuite/allwpilib/releases/tags/{version}"
-        release_json = requests.get(release_url, headers={"User-Agent": "frcdocs-wpilib-release/0.1"})
+        release_json = requests.get(
+            release_url, headers={"User-Agent": "frcdocs-wpilib-release/0.1"}
+        )
         release_json.raise_for_status()
         release: Dict = release_json.json()
 
