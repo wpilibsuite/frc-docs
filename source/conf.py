@@ -330,7 +330,7 @@ def new_send(self, data):
         )
 
         new_data = data
-        if b"api.github.com" in headers[b"host"]:
+        if headers[b"host"].endswith(b"api.github.com"):
             if b"authorization" not in headers:
                 if github_token := os.environ.get("GITHUB_TOKEN", None):
                     new_data = (
