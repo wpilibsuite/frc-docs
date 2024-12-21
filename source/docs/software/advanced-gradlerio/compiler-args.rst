@@ -45,7 +45,7 @@ frcJava(getArtifactClass('FRCJavaArtifact')) {
 
 By default the `src/main/deploy` directory in your project is transferred to the roboRIO when code is deployed.  It is initiated by this section of the `build.gradle` file.
 
-.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/refs/tags/v2025.1.1-beta-2/vscode-wpilib/resources/gradle/java/build.gradle
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/refs/tags/v2025.1.1-beta-3/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
    :lines: 32-38
    :lineno-match:
