@@ -63,3 +63,5 @@ The image writing process above does not set a team number.  To fix this teams w
 
 .. figure:: images/roborio2-imaging/teamnumber.png
    :alt: The edit Startup Settings portion of the imaging utility allow a team to renumber their robot.
+
+The team number can also be set using the :doc:`RoboRIO Team Number Setter (RTNS) </docs/software/wpilib-tools/roborio-team-number-setter/index>`.
