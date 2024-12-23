@@ -24,7 +24,7 @@ class WpilibRelease(SphinxDirective):
 
         release_url = f"https://api.github.com/repos/wpilibsuite/allwpilib/releases/tags/{version}"
         release_json = requests.get(release_url)
-        release_json.raise_for_status
+        release_json.raise_for_status()
         release: Dict = release_json.json()
 
         cf_folder = f"https://packages.wpilib.workers.dev/installer/{version}"
@@ -34,7 +34,7 @@ class WpilibRelease(SphinxDirective):
 
         def get_url_size(osname):
             release_data = requests.get(f"{cf_folder}/{osname}/")
-            release_data.raise_for_status
+            release_data.raise_for_status()
             soup = BeautifulSoup(release_data.text, "html.parser")
             file = str(soup.find_all("tr")[-1].contents[0].string)
             size = str(soup.find_all("tr")[-1].contents[2].string)
