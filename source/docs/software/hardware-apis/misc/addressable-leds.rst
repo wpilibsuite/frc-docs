@@ -22,8 +22,7 @@ After the length of the strip has been set, you'll have to create an ``Addressab
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 32-47
-         :linenos:
-         :lineno-start: 34
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
@@ -32,13 +31,12 @@ After the length of the strip has been set, you'll have to create an ``Addressab
          :language: c++
          :lines: 12-12, 18-27
          :linenos:
-         :lineno-start: 11
+         :lineno-start: 12
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 7-13
-         :linenos:
-         :lineno-start: 7
+         :lineno-match:
 
 ## Controlling Sections of an LED Strip
 
@@ -139,8 +137,7 @@ The base rainbow pattern will look like this:
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 21-31
-         :linenos:
-         :lineno-start: 21
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
@@ -148,8 +145,7 @@ The base rainbow pattern will look like this:
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: c++
          :lines: 27-37
-         :linenos:
-         :lineno-start: 27
+         :lineno-match:
 
 Now that the rainbow pattern is defined, we only need to apply it.
 
@@ -161,8 +157,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 50-56
-         :linenos:
-         :lineno-start: 50
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
@@ -170,8 +165,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 15-20
-         :linenos:
-         :lineno-start: 15
+         :lineno-match:
 
 .. only:: html
 

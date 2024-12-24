@@ -15,7 +15,8 @@ The example robot program below publishes incrementing X and Y values to a table
     public class EasyNetworkTableExample extends TimedRobot {
       DoublePublisher xPub;
       DoublePublisher yPub;
-      public void robotInit() {
+
+      public Robot() {
         // Get the default instance of NetworkTables that was created automatically
         // when the robot program starts
         NetworkTableInstance inst = NetworkTableInstance.getDefault();
@@ -29,6 +30,7 @@ The example robot program below publishes incrementing X and Y values to a table
         xPub = table.getDoubleTopic("x").publish();
         yPub = table.getDoubleTopic("y").publish();
       }
+
       double x = 0;
       double y = 0;
       public void teleopPeriodic() {
@@ -50,7 +52,7 @@ The example robot program below publishes incrementing X and Y values to a table
      public:
       nt::DoublePublisher xPub;
       nt::DoublePublisher yPub;
-      void RobotInit() {
+      Robot() {
         // Get the default instance of NetworkTables that was created automatically
         // when the robot program starts
         auto inst = nt::NetworkTableInstance::GetDefault();

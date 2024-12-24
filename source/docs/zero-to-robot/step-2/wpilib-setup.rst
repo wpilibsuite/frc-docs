@@ -17,7 +17,7 @@ WPILib is designed to install to different folders for different years, so that 
 
 ## Downloading
 
-.. wpilibrelease:: v2025.1.1-beta-1
+.. wpilibrelease:: v2025.1.1-beta-3
 
 [You can download the latest release of the installer from GitHub](https://github.com/wpilibsuite/allwpilib/releases/latest/).
 
@@ -56,12 +56,15 @@ When you download the WPILib installer, it is distributed as a disk image file `
    .. tab-item:: macOS
       :sync: macos
 
-      For this release, macOS users will need to have the Xcode Command Line Tools installed before running the installer; we are working on removing this requirement in a future release. This can be done by running ``xcode-select --install`` in the Terminal.
-
-      macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
+      macOS users can double click on the downloaded ``dmg`` and then select ``WPILibInstaller`` to launch the application.
 
       .. image:: images/wpilib-setup/macos-launch.png
-         :alt: Show the macOS screen after double clicking the DMG file.
+         :alt: Show the macOS screen after double clicking the .dmg file.
+
+      If a warning is shown about WPILibInstaller being downloaded from the internet, select :guilabel:`Open`.
+
+      .. image:: images/wpilib-setup/macos-downloaded.png
+         :alt: Warning about WPILibInstaller being downloaded from the internet
 
    .. tab-item:: Linux
       :sync: linux
