@@ -172,7 +172,9 @@ Now that the rainbow pattern is defined, we only need to apply it.
    .. video:: images/scrolling-rainbow.mp4
       :loop:
       :nocontrols:
-      :poster: ../../../../_images/rainbow.png
+      :muted:
+      :autoplay:
+      :playsinline:
       :width: 900
 
 .. only:: not html
@@ -450,6 +452,9 @@ Steps are specified as a combination of the *starting position* of that color, a
    .. video:: images/progress-mask.mp4
       :loop:
       :nocontrols:
+      :muted:
+      :autoplay:
+      :playsinline:
       :width: 900
 
 .. only:: not html
@@ -588,13 +593,16 @@ Patterns and animations can be reversed to flip the direction that patterns are 
    .. video:: images/scroll-relative.mp4
       :loop:
       :nocontrols:
-      :poster: ../../../../_images/discontinuous-gradient.png
+      :muted:
+      :autoplay:
+      :playsinline:
       :width: 900
 
    .. video:: images/scroll-absolute.mp4
       :loop:
       :nocontrols:
-      :poster: ../../../../_images/discontinuous-gradient.png
+      :muted:
+      :autoplay:
       :width: 900
 
 .. only:: not html
@@ -652,7 +660,9 @@ Scrolling can be controlled in two different ways: either at a speed as a functi
    .. video:: images/breathe.mp4
       :loop:
       :nocontrols:
-      :poster: ../../../../_images/discontinuous-gradient.png
+      :muted:
+      :autoplay:
+      :playsinline:
       :width: 900
 
 .. only:: not html
@@ -702,13 +712,17 @@ A breathing modifier will make the base pattern brighten and dim in a sinusoidal
    .. video:: images/blink-symmetric.mp4
       :loop:
       :nocontrols:
-      :poster: ../../../../_images/discontinuous-gradient.png
+      :muted:
+      :autoplay:
+      :playsinline:
       :width: 900
 
    .. video:: images/blink-asymmetric.mp4
       :loop:
       :nocontrols:
-      :poster: ../../../../_images/discontinuous-gradient.png
+      :muted:
+      :autoplay:
+      :playsinline:
       :width: 900
 
 .. only:: not html
@@ -828,7 +842,9 @@ Complex LED patterns are built up from combining simple base patterns (such as s
    .. video:: images/mask.mp4
       :loop:
       :nocontrols:
-      :poster: ../../../../_images/discontinuous-gradient.png
+      :muted:
+      :autoplay:
+      :playsinline:
       :width: 900
 
 .. only:: not html
@@ -885,7 +901,9 @@ Masks work by combining the RGB values of two patterns and keeping only the valu
    .. video:: images/rainbow-with-scrolling-mask.mp4
       :loop:
       :nocontrols:
-      :poster: ../../../../_images/rainbow.png
+      :muted:
+      :autoplay:
+      :playsinline:
       :width: 900
 
 .. only:: not html
