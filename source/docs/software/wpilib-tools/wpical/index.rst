@@ -44,10 +44,21 @@ Example:
 
 Camera Calibration
 ------------------
-To measure the distance between tags in a video, you need the camera's intrinsics to account for things like distortion. WPIcal allows users to upload a video file to calibrate the camera in the tool, or upload a JSON file with your camera's intrinsics
+To measure the distance between tags in a video, you need the camera's intrinsics to account for things like distortion. WPIcal allows users to upload a video file to calibrate the camera in the tool, or upload a JSON file with your camera's intrinsics.
+
+The best way to obtain videos like this is with a cell phone. Users can then transfer these videos to the computer running WPIcal for processing.
 
 In-App Calibration
 ^^^^^^^^^^^^^^^^^^
+
+Linux Users Only:
+*****************
+Linux users must transcode all videos to MJPEG codec without an audio stream in an .avi file before uploading to WPIcal. This can be done with an ffmpeg command:
+``ffmpeg -i <video_file.mp4> -f avi -c:v mjpeg -b:v 4000k -an <video_file.avi>``
+
+All Users:
+**********
+
 To calibrate your camera from a video file, click on :guilabel:`Calibrate Camera`
 
 .. image:: images/Calibrate.png
@@ -79,19 +90,14 @@ For :guilabel:`MRcal`, there are two more options to fill in:
 .. image:: images/MRcal.png
     :alt: MRcal
 
-.. important:: For the calibration to work properly, it is important that you enter the exact width of the squares (and markers for ChArUco). It is recommended to use calipers to accurately measure these widths.
+.. important:: For the calibration to work properly, it is important that you enter the exact width of the squares and markers. It is recommended to use calipers to accurately measure these widths.
 
-When all the calibration fields have been entered, select :guilabel:`Calibrate` to run the calibration. A window will appear showing you the corner detection process:
-
-ChArUco:
+When all the calibration fields have been entered, select :guilabel:`Calibrate` to run the calibration. A window will appear showing you the corner detection process (except on Linux, see below):
 
 .. image:: images/ChArUcoDetection.png
     :alt: ChArUcoDetection
 
-Checkerboard:
-
-.. image:: images/ChessboardDetection.png
-    :alt: CheckerboardDetection
+.. warning:: The corner detection window will not appear on Linux machines. WPIcal may show a ``not responding`` warning during the calibration, which is safe to ignore. The warning will disappear after calibration is complete.
 
 .. warning:: If any frames from the camera calibration look suspect, take a new video of the calibration board and try again.
 
@@ -180,11 +186,6 @@ Pinned Tag
 ^^^^^^^^^^
 
 The pinned tag is the tag that other tags are transformed relative to. This tag should be the tag that is the most accurate on the field.
-
-Calibration FPS
-^^^^^^^^^^^^^^^
-
-The calibration FPS is the number of frames WPIcal uses for calibration per second of video. It is important that this setting is set to a value less than the frame rate of the calibration videos.
 
 View Field Calibration
 ^^^^^^^^^^^^^^^^^^^^^^
