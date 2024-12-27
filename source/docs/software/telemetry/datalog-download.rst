@@ -6,8 +6,8 @@ Data logs can be processed and viewed offline by AdvantageScope, the DataLogTool
 
 :ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an analysis tool that supports downloading, visualizing, and exporting data logs. See the relevant sections of the documentation for more details:
 
-- [Downloading log files](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/OPEN-FILE.md)
-- [Exporting to new formats](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/EXPORT.md)
+- [Downloading log files](https://docs.advantagescope.org/getting-started/manage-files)
+- [Exporting to new formats](https://docs.advantagescope.org/more-features/export)
 
 ## Managing Data Logs with the DataLogTool
 
@@ -75,6 +75,6 @@ The Driver Station software can download WPILogs. Click on the gear icon and sel
 
 ## Custom Processing of Data Logs
 
-For more advanced processing of data logs (e.g. for processing of binary values that can't be converted to CSV), WPILib provides a ``DataLogReader`` class for reading data logs in [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/util/datalog/DataLogReader.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classwpi_1_1log_1_1_data_log_reader.html), or :external:py:class:[Python](wpiutil.log.DataLogReader). There is also a pure python datalog reader ([datalog.py](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/datalog.py)). For other languages, the [data log format](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc) is also documented.
+For more advanced processing of data logs (e.g. for processing of binary values that can't be converted to CSV), WPILib provides a ``DataLogReader`` class for reading data logs in [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/util/datalog/DataLogReader.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classwpi_1_1log_1_1_data_log_reader.html), or :external:py:class:`Python <wpiutil.log.DataLogReader>`. There is also a pure python datalog reader ([datalog.py](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/datalog.py)). For other languages, the [data log format](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc) is also documented.
 
 DataLogReader provides a low-level view of a data log, in that it supports iterating over a data log's control and data records and decoding of common data types, but does not provide any higher level abstractions such as a NetworkTables-like map of entries.  The printlog example in [Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/src/printlog/java/printlog/PrintLog.java) and [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/examples/printlog/printlog.cpp) (and the Python ``datalog.py``) demonstrates basic usage.

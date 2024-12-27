@@ -14,7 +14,7 @@ WPILib comes with two templates for XRP projects, including one based on TimedRo
 
 Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`, and type "New project" into the prompt. Select the "Create a new project" command:
 
-.. image:: images/programming-xrp/xrp-vscode-new-project.png
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
 
 This will bring up the "New Project Creator Window". From here, click on "Select a project type (Example or Template)", and pick "Example" from the prompt that appears:
 
@@ -34,11 +34,10 @@ One aspect where an XRP project differs from a regular FRC robot project is that
 
 To run an XRP program, first, ensure that your XRP is powered on. Next, connect to ``XRP-<IDENT>`` WiFi network broadcast by the XRP. If you changed the XRP network settings (for example, to connect it to your own network), you may change the IP address that your program uses to connect to the XRP. To do this, open the ``build.gradle`` file and update the ``wpi.sim.envVar`` line to the appropriate IP address.
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2024.3.2/vscode-wpilib/resources/gradle/javaxrp/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1-beta-3/vscode-wpilib/resources/gradle/javaxrp/build.gradle
    :language: groovy
-   :lines: 43-46
-   :linenos:
-   :lineno-start: 43
+   :lines: 44-47
+   :lineno-match:
    :emphasize-lines: 2
 
 Now to start your XRP robot code, open the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) and select "Simulate Robot Code", or press :kbd:`F5`.

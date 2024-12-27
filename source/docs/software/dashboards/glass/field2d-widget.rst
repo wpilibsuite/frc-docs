@@ -45,14 +45,12 @@ Visualizing your trajectory is a great debugging step for verifying that your tr
    .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
       :language: java
       :lines: 44-61
-      :linenos:
-      :lineno-start: 44
+      :lineno-match:
 
    .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
       :language: c++
       :lines: 18-30
-      :linenos:
-      :lineno-start: 18
+      :lineno-match:
 
    .. rli:: https://raw.githubusercontent.com/robotpy/examples/2024.0.0b4/RamseteController/robot.py
       :language: python
@@ -100,7 +98,7 @@ Now, uncheck the :guilabel:`Arrows` checkbox. This will cause our trajectory to 
 
 ## Viewing Pose Data with AdvantageScope
 
-:ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an alternative option for viewing pose data from a ``Field2d`` object, including data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. Both 2D and 3D visualizations are supported. See the documentation for the [odometry](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/ODOMETRY.md) and [3D field](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/3D-FIELD.md) tabs for more details.
+:ref:`AdvantageScope <docs/software/dashboards/advantagescope:AdvantageScope>` is an alternative option for viewing pose data from a ``Field2d`` object, including data recorded to a log file using :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`. Both 2D and 3D visualizations are supported. See the documentation for the [odometry](https://docs.advantagescope.org/tab-reference/odometry) and [3D field](https://docs.advantagescope.org/tab-reference/3d-field) tabs for more details.
 
 .. image:: images/advantagescope-field2d.png
    :alt: Screenshot of an AdvantageScope window displaying a robot and trajectory on a 3D field.

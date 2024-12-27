@@ -41,13 +41,13 @@ extensions = [
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.rsvgconverter",
+    "sphinxcontrib.video",
     "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.photofinish",
     "sphinxext.rediraffe",
     "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
-    "sphinxext.linkcheckdiff",
     "sphinxext.mimictoc",
     "sphinxext.presentations",
     "hoverxref.extension",
@@ -57,6 +57,7 @@ extensions = [
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
     "sphinx_copybutton",
+    "sphinx_contributors",
 ]
 
 local_extensions = [
@@ -106,9 +107,6 @@ rediraffe_redirects = "redirects.txt"
 # Required accuracy for redirect writer
 rediraffe_auto_redirect_perc = 80
 
-# Configure linkcheck diff branch
-linkcheckdiff_branch = "origin/main"
-
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/stable/"
 ogp_site_name = "FIRST Robotics Competition Documentation"
@@ -156,6 +154,7 @@ linkcheck_ignore = [
     r".*stackoverflow.com.*",
     r".*allaboutcircuits.com.*",
     r".*knowledge.ni.com.*",
+    r".*reduxrobotics.com.*",
 ]
 
 linkcheck_anchors_ignore_for_url = [
@@ -167,6 +166,7 @@ linkcheck_anchors_ignore_for_url = [
 linkcheck_timeout = 30
 linkcheck_retries = 3
 linkcheck_workers = 1
+linkcheck_report_timeouts_as_broken = False
 
 # Specify a standard user agent, as Sphinx default is blocked on some sites
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
@@ -182,7 +182,7 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     "docs/yearly-overview/2020-Game-Data.rst",
-    "docs/beta/*",
+    "docs/software/wpilib-tools/robotbuilder/resources/**",
 ]
 
 # Specify the master doc file, AKA our homepage
@@ -230,6 +230,7 @@ html_theme_options = {
     "collapse_navigation": False,
     "sticky_navigation": False,
     "titles_only": True,
+    # "flyout_display": "attached",
 }
 
 user_options = [
@@ -263,9 +264,18 @@ html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "wpilibsuite",  # Username
     "github_repo": "frc-docs",  # Repo name
-    "github_version": "main",  # Version
+    "github_version": "main",  # Version, set to main so edit on github makes PRs to main
     "conf_py_path": "/source/",  # Path in the checkout to the docs root
 }
+
+# Override github_version to commit ID for PRs so Delta extension shows PR changed files
+if os.getenv("READTHEDOCS_VERSION_TYPE") == "external":
+    html_context["github_version"] = os.environ.get("READTHEDOCS_GIT_IDENTIFIER")
+
+# Set commit and current_version, used by delta extension, when on RTD
+if os.getenv("READTHEDOCS") == "True":
+    html_context["commit"] = os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8]
+    html_context["current_version"] = os.environ.get("READTHEDOCS_VERSION_NAME")
 
 # -- Options for latex generation --------------------------------------------
 
@@ -321,7 +331,7 @@ def new_send(self, data):
         )
 
         new_data = data
-        if b"api.github.com" in headers[b"host"]:
+        if headers[b"host"].endswith(b"api.github.com"):
             if b"authorization" not in headers:
                 if github_token := os.environ.get("GITHUB_TOKEN", None):
                     new_data = (

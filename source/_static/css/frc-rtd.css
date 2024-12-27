@@ -38,6 +38,16 @@
 	width: 320px;
 }
 
+/*
+* Prevent video containers from spilling over the edges of the main panel.
+* This matches the built-in style for `.rst-content img`
+*/
+.rst-content video {
+	max-width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+
 .document img {
 	margin-bottom: 10px;
 }

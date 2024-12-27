@@ -12,14 +12,13 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
 .. tab-set-code::
 
    ```java
-   @Override
-   public void robotInit() {
+   public Robot() {
       enableLiveWindowInTest(true);
    }
    ```
 
    ```c++
-   void Robot::RobotInit() {
+   Robot::Robot() {
       EnableLiveWindowInTest(true);
    }
    ```
@@ -38,8 +37,8 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
    PWMSparkMax rightDrive;
    PWMVictorSPX arm;
    BuiltInAccelerometer accel;
-   @Override
-   public void robotInit() {
+
+   public Robot() {
       leftDrive = new PWMSparkMax(0);
       rightDrive = new PWMSparkMax(1);
       arm = new PWMVictorSPX(2);
@@ -54,7 +53,7 @@ To run LiveWindow in Test Mode, the following code is needed in the ``Robot`` cl
    frc::PWMSparkMax rigthDrive{1};
    frc::BuiltInAccelerometer accel{};
    frc::PWMVictorSPX arm{3};
-   void Robot::RobotInit() {
+   Robot::Robot() {
       wpi::SendableRegistry::SetName(&arm, "SomeSubsystem", "Arm");
       wpi::SendableRegistry::SetName(&accel, "SomeSubsystem", "Accelerometer");
    }

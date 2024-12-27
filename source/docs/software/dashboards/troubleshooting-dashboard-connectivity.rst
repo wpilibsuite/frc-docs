@@ -44,7 +44,14 @@ Glass indicates if it is connected or not in the title bar. It shows the IP addr
 .. image:: images/troubleshooting-dashboard-connectivity/advantagescope-connection.png
    :alt: The titlebar of AdvantageScope showing a connection to 172.22.11.2
 
-AdvantageScope indicates if it is connected or not in the title bar. It shows the IP address it is connected to, or else the IP address it is attempting to connect to. See the [AdvantageScope Documentation](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/OPEN-LIVE.md) for more on configuring the connection.
+AdvantageScope indicates if it is connected or not in the title bar. It shows the IP address it is connected to, or else the IP address it is attempting to connect to. See the [AdvantageScope Documentation](https://docs.advantagescope.org/getting-started/connect-live) for more on configuring the connection.
+
+## Recognizing Elastic Connectivity
+
+.. image:: images/troubleshooting-dashboard-connectivity/elastic-connection.png
+   :alt: The lower left corner of Elastic showing a connection to localhost
+
+Elastic indicates if it is connected or not in the lower left corner. It shows what it is connected to. See the [Elastic Documentation](https://frc-elastic.gitbook.io/docs/getting-started/connecting-to-your-robot) for more on configuring the connection.
 
 ## Troubleshooting Connectivity
 

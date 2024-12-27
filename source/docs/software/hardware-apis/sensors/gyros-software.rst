@@ -12,7 +12,7 @@ There are getters the current angular rate and heading and functions for zeroing
 
 ## ADIS16448
 
-The ADIS16448 uses the :code:`ADIS16448_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html), :external:py:class:[Python](wpilib.ADIS16448_IMU)).  See the [Analog Devices ADIS16448 documentation](https://wiki.analog.com/first/adis16448_imu_frc) for additional information and examples.
+The ADIS16448 uses the :code:`ADIS16448_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html), :external:py:class:`Python <wpilib.ADIS16448_IMU>`).  See the [Analog Devices ADIS16448 documentation](https://wiki.analog.com/first/adis16448_imu_frc) for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16448 is now built into WPILib.
 
@@ -36,7 +36,7 @@ The ADIS16448 uses the :code:`ADIS16448_IMU` class ([Java](https://github.wpilib
 
 ## ADIS16470
 
-The ADIS16470 uses the :code:`ADIS16470_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html), :external:py:class:[Python](wpilib.ADIS16470_IMU)).  See the [Analog Devices ADIS16470 documentation](https://wiki.analog.com/first/adis16470_imu_frc) for additional information and examples.
+The ADIS16470 uses the :code:`ADIS16470_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html), :external:py:class:`Python <wpilib.ADIS16470_IMU>`).  See the [Analog Devices ADIS16470 documentation](https://wiki.analog.com/first/adis16470_imu_frc) for additional information and examples.
 
 .. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16470 is now built into WPILib.
 
@@ -125,24 +125,18 @@ The navX uses the :code:`AHRS` class.  See the [navX documentation](https://pdoc
     self.gyro = navx.AHRS(SPI.Port.kMXP)
     ```
 
-## Pigeon
+## Pigeon 2
 
-The Pigeon should use the :code:`WPI_PigeonIMU` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The [Pigeon IMU User's Guide](https://store.ctr-electronics.com/content/user-manual/Pigeon%20IMU%20User's%20Guide.pdf) contains full details on using the Pigeon.
+The Pigeon should use the :code:`Pigeon2` class.  The Pigeon can either be connected with CAN or by data cable to a TalonSRX.  The [Pigeon IMU User's Guide](https://ctre.download/files/user-manual/Pigeon2%20User's%20Guide.pdf) contains full details on using the Pigeon.
 
 .. tab-set-code::
 
     ```java
-    WPI_PigeonIMU gyro = new WPI_PigeonIMU(0); // Pigeon is on CAN Bus with device ID 0
-    // OR (choose one or the other based on your connection)
-    TalonSRX talon = new TalonSRX(0); // TalonSRX is on CAN Bus with device ID 0
-    WPI_PigeonIMU gyro = new WPI_PigeonIMU(talon); // Pigeon uses the talon created above
+    private final Pigeon2 pidgey = new Pigeon2(1, "rio"); // Pigeon is on roboRIO CAN Bus with device ID 1
     ```
 
     ```c++
-    WPI_PigeonIMU gyro{0}; // Pigeon is on CAN Bus with device ID 0
-    // OR (choose one or the other based on your connection)
-    TalonSRX talon{0}; // TalonSRX is on CAN Bus with device ID 0
-    WPI_PigeonIMU gyro{talon}; // Pigeon uses the talon created above
+    ctre::phoenix6::hardware::Pigeon2 pidgey{1, "rio"}; // Pigeon is on roboRIO CAN Bus with device ID 1
     ```
 
     ```python
@@ -168,7 +162,7 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 
     ```java
     // Use gyro declaration from above here
-    public void robotInit() {
+    public Robot() {
         // Places a compass indicator for the gyro heading on the dashboard
         Shuffleboard.getTab("Example tab").add(gyro);
     }
@@ -176,7 +170,7 @@ Gyros are extremely useful in FRC for both measuring and controlling robot headi
 
     ```c++
     // Use gyro declaration from above here
-    void Robot::RobotInit() {
+    Robot::Robot() {
         // Places a compass indicator for the gyro heading on the dashboard
         frc::Shuffleboard.GetTab("Example tab").Add(gyro);
     }
@@ -214,8 +208,8 @@ The following example shows how to stabilize heading using a simple P loop close
     Spark rightLeader = new Spark(2);
     Spark rightFollower = new Spark(3);
     DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
-    @Override
-    public void robotInit() {
+
+    public Robot() {
         // Configures the encoder's distance-per-pulse
         // The robot moves forward 1 foot per encoder rotation
         // There are 256 pulses per encoder rotation
@@ -226,6 +220,7 @@ The following example shows how to stabilize heading using a simple P loop close
         leftLeader.addFollower(leftFollower);
         rightLeader.addFollower(rightFollower);
     }
+
     @Override
     public void autonomousPeriodic() {
         // Setpoint is implicitly 0, since we don't want the heading to change
@@ -246,7 +241,7 @@ The following example shows how to stabilize heading using a simple P loop close
     frc::Spark rightFollower{3};
     frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
                                  [&](double output) { rightLeader.Set(output); }};
-    void Robot::RobotInit() {
+    Robot::Robot() {
         // Invert the right side of the drivetrain. You might have to invert the other side
         rightLeader.SetInverted(true);
         // Configure the followers to follow the leaders
@@ -309,15 +304,17 @@ The following example shows how to stabilize heading using a simple P loop close
     MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
     MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
     DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
-    @Override
-    public void robotInit() {
+
+    public Robot() {
         rightMotors.setInverted(true);
     }
+
     @Override
     public void autonomousInit() {
         // Set setpoint to current heading at start of auto
         heading = gyro.getAngle();
     }
+
     @Override
     public void autonomousPeriodic() {
         double error = heading - gyro.getAngle();
@@ -340,7 +337,7 @@ The following example shows how to stabilize heading using a simple P loop close
     frc::MotorControllerGroup leftMotors{left1, left2};
     frc::MotorControllerGroup rightMotors{right1, right2};
     frc::DifferentialDrive drive{leftMotors, rightMotors};
-    void Robot::RobotInit() {
+    Robot::Robot() {
       rightMotors.SetInverted(true);
     }
     void Robot::AutonomousInit() {
@@ -402,10 +399,11 @@ Much like with heading stabilization, this is often accomplished with a PID loop
     MotorControllerGroup leftMotors = new MotorControllerGroup(left1, left2);
     MotorControllerGroup rightMotors = new MotorControllerGroup(right1, right2);
     DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
-    @Override
-    public void robotInit() {
+
+    public Robot() {
         rightMotors.setInverted(true);
     }
+
     @Override
     public void autonomousPeriodic() {
         // Find the heading error; setpoint is 90
@@ -427,7 +425,7 @@ Much like with heading stabilization, this is often accomplished with a PID loop
     frc::MotorControllerGroup leftMotors{left1, left2};
     frc::MotorControllerGroup rightMotors{right1, right2};
     frc::DifferentialDrive drive{leftMotors, rightMotors};
-    void Robot::RobotInit() {
+    Robot::Robot() {
       rightMotors.SetInverted(true);
     }
     void Robot::AutonomousPeriodic() {

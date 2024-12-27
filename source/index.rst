@@ -24,7 +24,7 @@ Community translations can be found in a variety of languages in the bottom-left
 
       ^^^
 
-      If you are a returning team, please check out the overview of changes from 2023 to 2024, known issues, and quick start guide for updating.
+      If you are a returning team, please check out the overview of changes from 2024 to 2025, known issues, and quick start guide for updating.
 
       +++
 
@@ -329,6 +329,15 @@ Community translations can be found in a variety of languages in the bottom-left
 .. toctree::
    :maxdepth: 1
    :titlesonly:
+   :caption: FRC Beta Test
+   :hidden:
+
+   docs/beta/beta-getting-started/index
+   docs/beta/tasks/index
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
    :caption: Zero to Robot
    :hidden:
 
@@ -440,6 +449,13 @@ Community translations can be found in a variety of languages in the bottom-left
 
    docs/contributing/frc-docs/index
    docs/contributing/wpilib/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Legal
+   :hidden:
+
+   docs/legal/privacy-policy
 
 .. toctree::
    :maxdepth: 1

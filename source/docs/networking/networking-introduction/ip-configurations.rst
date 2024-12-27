@@ -47,7 +47,7 @@ When configured for an event, the Team Radio runs a DHCP server with a pool for 
 
 ### On the Field Static Configuration
 
-It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are ``10.TE.AM.1`` for the OpenMesh radio, ``10.TE.AM.4`` for the field router, and anything greater than ``10.TE.AM.20`` which may be assigned to a device configured for DHCP or else reserved. The roboRIO network configuration can be set from the webdashboard.
+It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are ``10.TE.AM.1`` for the OpenMesh radio, ``10.TE.AM.4`` for the field router, and anything ``10.TE.AM.20`` or greater which may be assigned to a device configured for DHCP or else reserved. The roboRIO network configuration can be set from the webdashboard.
 
 -  OpenMesh radio - Static ``10.TE.AM.1`` programmed by Kiosk
 -  roboRIO - Static ``10.TE.AM.2`` would be a reasonable choice, subnet mask

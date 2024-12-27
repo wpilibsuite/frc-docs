@@ -6,12 +6,12 @@ on:
 jobs:
   check-rli:
     if: contains(github.event.comment.html_url, '/pull/')  && contains(github.event.comment.body, '\inspector')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       # ---- Find Trigger States ----
       # Run Inspector autofix on everything
       - name: Trigger-Check
-        uses: shanegenschaw/pull-request-comment-trigger@v3
+        uses: shanegenschaw/pull-request-comment-trigger@v3.0.0
         id: trigger-check-all
         with:
           trigger: '\inspector check all'
@@ -22,7 +22,7 @@ jobs:
 
       # Run Inspector autofix only on files changed by the PR
       - name: Trigger-Diff
-        uses: shanegenschaw/pull-request-comment-trigger@v3
+        uses: shanegenschaw/pull-request-comment-trigger@v3.0.0
         id: trigger-diff
         with:
           trigger: '\inspector fix diff'
@@ -33,7 +33,7 @@ jobs:
 
       # Run Inspector autofix on everything
       - name: Trigger-All
-        uses: shanegenschaw/pull-request-comment-trigger@v3
+        uses: shanegenschaw/pull-request-comment-trigger@v3.0.0
         id: trigger-all
         with:
           trigger: '\inspector fix all'

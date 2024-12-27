@@ -1,13 +1,13 @@
 # WPILib Installation Guide
 
-This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can skip to :doc:`python-setup`. Additionally, the below tutorial shows Windows 10, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
+This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can skip to :doc:`python-setup`. Additionally, the below tutorial shows Windows 11, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
 
 ## Prerequisites
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
  * Ubuntu 22.04 & 24.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
- * macOS 13 or higher, both Intel and Arm.
+ * macOS 13.3 or higher, both Intel and Arm.
 
 .. warning:: The following OSes are no longer supported: macOS 12 or earlier, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
@@ -17,7 +17,7 @@ WPILib is designed to install to different folders for different years, so that 
 
 ## Downloading
 
-.. wpilibrelease:: v2024.3.2
+.. wpilibrelease:: v2025.1.1-beta-3
 
 [You can download the latest release of the installer from GitHub](https://github.com/wpilibsuite/allwpilib/releases/latest/).
 
@@ -56,12 +56,15 @@ When you download the WPILib installer, it is distributed as a disk image file `
    .. tab-item:: macOS
       :sync: macos
 
-      For this release, macOS users will need to have the Xcode Command Line Tools installed before running the installer; we are working on removing this requirement in a future release. This can be done by running ``xcode-select --install`` in the Terminal.
-
-      macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
+      macOS users can double click on the downloaded ``dmg`` and then select ``WPILibInstaller`` to launch the application.
 
       .. image:: images/wpilib-setup/macos-launch.png
-         :alt: Show the macOS screen after double clicking the DMG file.
+         :alt: Show the macOS screen after double clicking the .dmg file.
+
+      If a warning is shown about WPILibInstaller being downloaded from the internet, select :guilabel:`Open`.
+
+      .. image:: images/wpilib-setup/macos-downloaded.png
+         :alt: Warning about WPILibInstaller being downloaded from the internet
 
    .. tab-item:: Linux
       :sync: linux
@@ -116,7 +119,7 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
-Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~100MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
+Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~150MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar
@@ -126,7 +129,7 @@ After installation is complete, you will be presented with the finished screen.
 .. image:: images/wpilib-setup/installer-finish.png
    :alt: Installer finished screen.
 
-.. important:: WPILib installs a separate version of VS Code. It does not use an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2022``. Please launch the WPILib VS Code and not a system installed copy!
+.. important:: WPILib installs a separate version of VS Code. It does not use an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2025``. Please launch the WPILib VS Code and not a system installed copy!
 
 Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
 

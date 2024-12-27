@@ -19,7 +19,7 @@ To assist in creating SysId-compatible identification routines, WPILib provides 
 
 The ``Config`` object takes in a a voltage ramp rate for use in Quasistatic tests, a steady state step voltage for use in Dynamic tests, a time to use as the maximum test duration for safety reasons, and a callback method that accepts the current test state (such as "dynamic-forward") for use by a 3rd party logging solution. The constructor may be left blank to default the ramp rate to 1 volt per second and the step voltage to 7 volts.
 
-.. note:: Not all 3rd party loggers will interact with SysIdRoutine directly. CTRE users who do not wish to use SysIdRoutine directly for logging should use the [SignalLogger](https://pro.docs.ctr-electronics.com/en/latest/docs/api-reference/api-usage/signal-logging.html) API and use Tuner X to convert to wpilog. REV users may use Team 6328's [Unofficial REV-Compatible Logger (URCL)](https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/REV-LOGGING.md). In both cases the log callback should be set to ``null``. Once the log file is in hand, it may be used with SysId just like any other.
+.. note:: Not all 3rd party loggers will interact with SysIdRoutine directly. CTRE users who do not wish to use SysIdRoutine directly for logging should use the [SignalLogger](https://pro.docs.ctr-electronics.com/en/latest/docs/api-reference/api-usage/signal-logging.html) API and use Tuner X to convert to wpilog. REV users may use Team 6328's [Unofficial REV-Compatible Logger (URCL)](https://docs.advantagescope.org/more-features/urcl). In both cases the log callback should be set to ``null``. Once the log file is in hand, it may be used with SysId just like any other.
 
 The timeout and state callback are optional and defaulted to 10 seconds and null (which will log the data to a normal WPILog file) respectively.
 
@@ -47,7 +47,7 @@ The ``drive`` callback exists so that you can pass the requested voltage directl
 
 The ``log`` callback reads sensors so that the routine can log the voltage, position, and velocity at each timestep.
 
-See the SysIdRoutine ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/sysid), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SysId)) example project for example callbacks.
+See the SysIdRoutine ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/sysidroutine), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SysIdRoutine)) example project for example callbacks.
 
 ### Test Factories
 
