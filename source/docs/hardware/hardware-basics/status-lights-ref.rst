@@ -71,6 +71,7 @@ A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Stat
   :width: 600
 
 [VH-109 Status Lights](https://frc-radio.vivid-hosting.net/overview/led-status-indications)
+
 +----------+----------------+------------------------------+
 | Power    | Green          | On or Powering up            |
 |          +----------------+------------------------------+
@@ -139,7 +140,7 @@ A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Stat
 
 +-------------------------+--------------------------------------------------------+
 | LED Color               | Status                                                 |
-+-------------------------+--------------------------------------------------------+
++=========================+========================================================+
 | Blue Solid              | Device on but no communication established             |
 +-------------------------+--------------------------------------------------------+
 | Green Solid             | Main Communication with roboRIO established            |
@@ -163,7 +164,7 @@ A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Stat
 
 +--------------+----------------------------------------------------------------------------------------------------------+
 | LED Color    | Status                                                                                                   |
-+--------------+----------------------------------------------------------------------------------------------------------+
++==============+==========================================================================================================+
 | Off          | Channel has voltage and is operating as expected                                                         |
 +--------------+----------------------------------------------------------------------------------------------------------+
 | Red Solid    | Channel has NO voltage and there is an active fault. Check for tripped or missing circuit breaker / fuse |
