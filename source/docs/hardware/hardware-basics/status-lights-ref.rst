@@ -64,30 +64,34 @@ A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Stat
 | **RSL**    | `See above <#robot-signal-light-rsl>`_                                                             |
 +------------+----------------------------------------------------------------------------------------------------+
 
-## OpenMesh Radio
+## Vivid-Hosting VH-109 Radio
 
-.. image:: images/status-lights/openmesh-radio-status-lights.png
-  :alt: Radio with the Wifi, Eth Link (2), and Power ports labeled.
+.. image:: images/status-lights/radio-lights.png
+  :alt: The 5 lights positioned on the top side of the radio.
   :width: 600
 
-+----------+---------------+------------------------------+
-| Power    | Blue          | On or Powering up            |
-|          +---------------+------------------------------+
-|          | Blue Blinking | Powering Up                  |
-+----------+---------------+------------------------------+
-| Eth Link | Blue          | Link up                      |
-|          +---------------+------------------------------+
-|          | Blue Blinking | Traffic Present              |
-+----------+---------------+------------------------------+
-| WiFi     | Off           | Bridge mode,                 |
-|          |               | Unlinked or non-FRC firmware |
-|          +---------------+------------------------------+
-|          | Red           | AP, Unlinked                 |
-|          +---------------+------------------------------+
-|          | Yellow/Orange | AP, Linked                   |
-|          +---------------+------------------------------+
-|          | Green         | Bridge mode, Linked          |
-+----------+---------------+------------------------------+
+[VH-109 Status Lights](https://frc-radio.vivid-hosting.net/overview/led-status-indications)
++----------+----------------+------------------------------+
+| Power    | Green          | On or Powering up            |
+|          +----------------+------------------------------+
+|          | Off            | No Power                     |
++----------+----------------+------------------------------+
+| System   | Solid Green    | Able to ping the field       |
+| Status   +----------------+------------------------------+
+|          | Blinking (1Hz) | Unable to ping the field     |
+|          +----------------+------------------------------+
+|          | Blinking (20Hz)| Firmware being flashed       |
+|          +----------------+------------------------------+
+|          | Blinking (50Hz)| Performing "first boot"      |
+|          +----------------+------------------------------+
+|          | Off            | Booting Up                   |
++----------+----------------+------------------------------+
+| 2.4G     | Blinking (20Hz)| Battery detected,            |
+|          | Sys Blinking   | Wireless is disabled         |
+|----------+----------------+------------------------------+
+| 6G       | Blinking (20Hz)| Battery detected,            |
+|          | Sys Blinking   | Wireless is disabled         |
++----------+----------------+------------------------------+
 
 ## Power Distribution Panel
 

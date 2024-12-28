@@ -236,7 +236,7 @@
       [REV Robotics](https://www.revrobotics.com/) - inspires innovation and creativity within the educational robotics community by offering comprehensive product lines, extensive educational resources, world-class customer service, and specialized sponsorship programs. With a global presence spanning over 190 countries, we empower the next generation of STEM professionals by providing cutting-edge solutions and essential tools for success. Founded in 2014 by robotics enthusiasts Greg Needel and David Yanoshak, REV Robotics is driven by the mission to inspire and support students as they explore the exciting world of robotics and unlock their full robotic design potential. A majority of our employees are FIRST Alumni who remain actively involved, serving as volunteers and mentors for the local FIRST Community. This deep engagement reflects our commitment to supporting and inspiring the next generation of STEM enthusiasts.
 
    RPM
-      Radio Power Module - is designed to keep one of the most critical system components, the OpenMesh OM5P-AC WiFi radio, powered in the toughest moments of the competition.
+      Radio Power Module - was designed to keep the old OpenMesh OM5P-AC WiFi radio, powered in the toughest moments of the competition.
       Revolutions Per Minute - a unit of rotational speed often used when describing motors.
 
    RSL

@@ -56,8 +56,7 @@ Locate the following control system components and tools
       - Power Distribution Hub (:term:`PDH`) / Power Distribution Panel (:term:`PDP`)
       - roboRIO
       - Pneumatics Hub (:term:`PH`) / Pneumatics Control Module (:term:`PCM`)
-      - Radio Power Module (:term:`RPM`) / Voltage Regulator Module (:term:`VRM`)
-      - OpenMesh radio (with power cable and Ethernet cable)
+      - VH-109 radio
       - Robot Signal Light (:term:`RSL`)
       - 4x SPARK MAX or other motor controllers
       - 2x :term:`PWM` y-cables

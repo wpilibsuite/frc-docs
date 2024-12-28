@@ -10,4 +10,3 @@ This section outlines basic robot configuration and usage relating to communicat
    roborio-network-troubleshooting
    windows-firewall-configuration
    measuring-bandwidth-usage
-   om5p-ac-radio-modification

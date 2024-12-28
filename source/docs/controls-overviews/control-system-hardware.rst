@@ -74,17 +74,15 @@ The CTRE Voltage Regulator Module (VRM) is an independent module that is powered
   :alt: REV Radio Power Module
   :width: 500
 
-The [REV Radio Power Module](https://docs.revrobotics.com/rev-11-1856/) is designed to keep one of the most critical system components, the OpenMesh WiFi radio, powered in the toughest moments of the competition. The Radio Power Module eliminates the need for powering the radio through a traditional barrel power jack. Utilizing 18V Passive POE with two socketed RJ45 connectors, the Radio Power Module passes signal between the radio and roboRIO while providing power directly to the radio. After connecting the radio and roboRIO, easily add power to the Radio Power Module by wiring it to the low-current channels on the Power Distribution Hub utilizing the color coded push button WAGO terminals.
+The [REV Radio Power Module](https://docs.revrobotics.com/rev-11-1856/) was designed to keep one of the old OpenMesh WiFi radio, powered in the toughest moments of the competition. The Radio Power Module eliminates the need for powering the radio through a traditional barrel power jack. Utilizing 18V Passive POE with two socketed RJ45 connectors, the Radio Power Module passes signal between the radio and roboRIO while providing power directly to the radio. After connecting the radio and roboRIO, easily add power to the Radio Power Module by wiring it to the low-current channels on the Power Distribution Hub utilizing the color coded push button WAGO terminals.
 
-## OpenMesh OM5P-AN or OM5P-AC Radio
+## Vivid-Hosting VH-109 Radio
 
-.. image:: images/control-system-hardware/openmesh-radio.png
-  :alt: OpenMesh OM5P-AN or OM5P-AC Radio
+.. image:: images/control-system-hardware/radio.png
+  :alt: VH-109 Radio on a white background with nothing plugged in.
   :width: 500
 
-Either the OpenMesh OM5P-AN or [OpenMesh OM5P-AC](https://www.andymark.com/products/open-mesh-om5p-ac-dual-band-1-17-gbps-access-point-radio) wireless radio is used as the robot radio to provide wireless communication functionality to the robot. The device can be configured as an Access Point for direct connection of a laptop for use at home. It can also be configured as a bridge for use on the field. The robot radio should be powered by one of the 12V/2A outputs on the VRM and connected to the roboRIO controller over Ethernet. For more information, see :ref:`Programming your Radio <docs/zero-to-robot/step-3/radio-programming:Programming your Radio>`.
-
-The OM5P-AN [is no longer available for purchase](https://www.firstinspires.org/robotics/frc/blog/radio-silence). The OM5P-AC is slightly heavier, has more cooling grates, and has a rough surface texture compared to the OM5P-AN.
+The Vivid-Hosting VH-109 radio is designed specifically for FRC.  It uses Wi-Fi 6E to avoid the common congestion problems that plague 2.4 GHz Wi-Fi networks.  The ruggedized design allows for unfiltered power input coming directly from you power distribution.  It also has 4 Ethernet ports reducing the need for an additional network switch.
 
 ## 120A Circuit Breaker
 
