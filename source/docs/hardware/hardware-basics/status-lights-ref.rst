@@ -89,7 +89,7 @@ A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Stat
 +----------+----------------+------------------------------+
 | 2.4G     | Blinking (20Hz)| Battery detected,            |
 |          | Sys Blinking   | Wireless is disabled         |
-|----------+----------------+------------------------------+
++----------+----------------+------------------------------+
 | 6G       | Blinking (20Hz)| Battery detected,            |
 |          | Sys Blinking   | Wireless is disabled         |
 +----------+----------------+------------------------------+
