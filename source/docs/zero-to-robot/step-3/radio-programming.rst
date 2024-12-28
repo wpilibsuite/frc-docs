@@ -6,7 +6,7 @@ This guide will show you how to do a basic setup for controlling your robot "at 
 
 ## Prerequisites
 
-The recommended setup requires: 2 VH-109 radios, 1 VH-117 POE Wall Adapter, and 1 Radio Heatsink.
+The recommended setup requires: 2 VH-109 radios, 1 VH-117 :term:PoE Wall Adapter, and 1 Radio Heatsink.
 
 ## Robot Radio Configuration (All Teams)
 

@@ -64,8 +64,8 @@ Before attempting wireless operation, tethered operation should have been confir
 
 ### Configuring the Access Point
 
-See the article :ref:`Programming your radio <docs/zero-to-robot/step-3/radio-programming:Programming your Radio>` for details on configuring the robot radio for use as an access point.
+See the article :ref:`Programming your radio <docs/zero-to-robot/step-3/radio-programming:Programming your Radio>` for details on configuring the second VH-109 for use as an access point.
 
-After configuring the access point, connect the driver station wirelessly to the robot. The SSID will be your team number (as entered in the Bridge Configuration Utility). If you set a key when using the Bridge Configuration Utility you will need to enter it to connect to the network. Make sure the computer network adapter is set to DHCP ("Obtain an IP address automatically").
+After configuring the access point, connect the driver station via Ethernet to the VH-109 AP radio.
 
 You can now confirm wireless operation using the same steps in **Confirm Connectivity** and **Operate the Robot** above.

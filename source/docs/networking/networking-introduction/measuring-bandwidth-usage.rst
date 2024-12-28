@@ -4,8 +4,6 @@
 
 On the FRC\ |reg| Field each team is allocated limited network bandwidth (see R704 in the 2024 manual). Some teams may wish to measure their overall bandwidth consumption. This document details how to make that measurement.
 
-.. note:: Teams can simulate the bandwidth throttling at home using the FRC Bridge Configuration Utility with the bandwidth checkbox checked.
-
 ## Measuring Bandwidth Using the Performance Monitor (Win 7/10)
 
 Windows contains a built-in tool called the Performance Monitor that can be used to monitor the bandwidth usage over a network interface.

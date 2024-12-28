@@ -27,7 +27,7 @@ Support for Cross The Road Electronics components (Pneumatics Control Module, Po
 
 ## REV Robotics Support
 
-Support for REV Robotics components (SPARK MAX, Sensors, Pneumatic Hub, Power Distribution Hub, Radio Power Module) is provided via phone at [844-255-2267](tel:844-255-2267) or via the email address [support@revrobotics.com](mailto:support@revrobotics.com).
+Support for REV Robotics components (SPARK MAX, Sensors, Pneumatic Hub, Power Distribution Hub) is provided via phone at [844-255-2267](tel:844-255-2267) or via the email address [support@revrobotics.com](mailto:support@revrobotics.com).
 
 ## Other Vendors
 

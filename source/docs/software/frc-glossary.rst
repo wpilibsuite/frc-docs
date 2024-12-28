@@ -202,6 +202,9 @@
    PH
       Pneumatic Hub - is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types.
 
+   PoE
+      Power Over Ethernet - method of powering a device by an Ethernet cord that also carries power.  FRC uses passive PoE usually 12-24V that is always being supplied, this can damage a device not expecting the provided voltage.  The most common industry standard is active PoE which uses 48V but first verifies that the device is expecting the power.
+
    property
       In :term:`NetworkTables`, named information (metadata) about a :term:`topic` stored and updated separately from the topic's data. A topic may have any number of properties. A property's value can be any data type that can be represented in JSON.
 
@@ -236,7 +239,6 @@
       [REV Robotics](https://www.revrobotics.com/) - inspires innovation and creativity within the educational robotics community by offering comprehensive product lines, extensive educational resources, world-class customer service, and specialized sponsorship programs. With a global presence spanning over 190 countries, we empower the next generation of STEM professionals by providing cutting-edge solutions and essential tools for success. Founded in 2014 by robotics enthusiasts Greg Needel and David Yanoshak, REV Robotics is driven by the mission to inspire and support students as they explore the exciting world of robotics and unlock their full robotic design potential. A majority of our employees are FIRST Alumni who remain actively involved, serving as volunteers and mentors for the local FIRST Community. This deep engagement reflects our commitment to supporting and inspiring the next generation of STEM enthusiasts.
 
    RPM
-      Radio Power Module - was designed to keep the old OpenMesh OM5P-AC WiFi radio, powered in the toughest moments of the competition.
       Revolutions Per Minute - a unit of rotational speed often used when describing motors.
 
    RSL
