@@ -9,12 +9,21 @@ The goal of this document is to provide a brief overview of the hardware compone
 ## Overview of Control System
 
 .. tab-set::
+    .. tab-item:: Basic
+        :sync: basic
+
+        .. figure:: images/frc-control-system-layout-basic.svg
+         :alt: Layout of the core components of the control system and introductory information for them.
+         :width: 600
+
+        Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
+
     .. tab-item:: REV
         :sync: rev
 
         .. figure:: images/frc-control-system-layout-rev.svg
          :alt: Layout of all popular components of the control system including REV Control System Components
-         :width: 500
+         :width: 600
 
         Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
@@ -22,8 +31,8 @@ The goal of this document is to provide a brief overview of the hardware compone
         :sync: ctre
 
         .. figure:: images/frc-control-system-layout.svg
-         :alt: Layout of all of the core components of the control system and how they are connected.
-         :width: 500
+         :alt: Layout of all popular components of the control system including CTRE Control System Components
+         :width: 600
 
         Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
