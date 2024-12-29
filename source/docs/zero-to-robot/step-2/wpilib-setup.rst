@@ -13,6 +13,8 @@ Supported Operating Systems and Architectures:
 
 .. note:: [Windows 10 support from Microsoft will end in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
 
+.. note:: C++ compilation is memory intensive. A minimum of 32 GB of RAM is recommended for C++ teams.
+
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
 ## Downloading
