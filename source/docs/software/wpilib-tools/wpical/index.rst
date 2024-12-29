@@ -42,11 +42,23 @@ Example:
 .. important:: WPIcal is meant to correct for SMALL variations in tag placement. It is still important that you set up your Apriltags in mostly the correct location and orientation, so WPIcal performs the optimal calibration.
 .. important:: Make sure that you verify the results of each calibration thoroughly to ensure that your calibration matches your field setup accurately.
 
+Video Capture
+-------------
+
+The best way to obtain videos for both camera and field calibration is with a phone/tablet. Users can then transfer these videos to the computer running WPIcal for processing.
+
+Alternatively, users can use other devices to capture videos, such as a laptop cameras. Users who opt to capture videos this way should use `OBS Studio <https://obsproject.com/>`_.
+
+OBS Users should set the resolution of the video capture and the base video resolution in the OBS settings:
+
+.. image:: images/OBSCaptureSettings.png
+    :alt: OBSCaptureSettings
+.. image:: images/OBSVideoSettings.png
+    :alt: OBSVideoSettings
+
 Camera Calibration
 ------------------
 To measure the distance between tags in a video, you need the camera's intrinsics to account for things like distortion. WPIcal allows users to upload a video file to calibrate the camera in the tool, or upload a JSON file with your camera's intrinsics.
-
-The best way to obtain videos like this is with a cell phone. Users can then transfer these videos to the computer running WPIcal for processing.
 
 In-App Calibration
 ^^^^^^^^^^^^^^^^^^
@@ -54,7 +66,9 @@ In-App Calibration
 Linux Users Only:
 *****************
 Linux users must transcode all videos to MJPEG codec without an audio stream in an .avi file before uploading to WPIcal. This can be done with an ffmpeg command:
-``ffmpeg -i <video_file.mp4> -f avi -c:v mjpeg -b:v 4000k -an <video_file.avi>``
+``ffmpeg -i <video_file.mp4> -f avi -c:v mjpeg -b:v 20m -an <video_file.avi>``
+
+.. note :: The ``-b:v 20m`` flag is optional, but it is recommended to use it to ensure the video quality is high enough for the calibration process. If you find the output .avi file is too grainy, you can increase the value of the flag.
 
 All Users:
 **********
@@ -65,7 +79,6 @@ To calibrate your camera from a video file, click on :guilabel:`Calibrate Camera
     :alt: Calibrate
 
 There are two options for calibrating your camera, :guilabel:`OpenCV` and :guilabel:`MRcal`. It is generally recommended to calibrate with :guilabel:`MRcal`, as it has slightly better accuracy and is more robust against bad calibration data. WPIcal uses a 5x5 dictionary ChArUco board for camera calibration. You can generate a ChArUco board here: `calib.io <https://calib.io/pages/camera-calibration-pattern-generator>`_
-
 
 .. warning:: If generating a ChArUco board with calib.io, make sure the height of the board is an odd number of squares. There is a `bug in OpenCV <https://github.com/opencv/opencv_contrib/issues/3291>`_ which effects boards with an even number of rows.
 .. note:: Regardless of which calibration option you use, make sure your calibration board has not been bent or creased, and is lying on a flat surface. It does not matter if you use the exact same board as shown in the images, as there are fields in each calibration option to customize the calibration for your specific board.
