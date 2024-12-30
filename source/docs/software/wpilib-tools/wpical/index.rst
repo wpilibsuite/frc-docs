@@ -144,7 +144,7 @@ After calibrating the camera, you can use the camera model to find the relative 
     :alt: FieldCalibration
 
 ### Upload Ideal Field Map
-WPIcal uses an "ideal" field map JSON as an initial guess point for the optimization. It is recommended to upload the json file included with WPILib, which can be found here: `Field JSON <https://github.com/wpilibsuite/allwpilib/tree/main/apriltag/src/main/native/resources/edu/wpi/first/apriltag>`_ If using a custom map, it must follow these rules:
+WPIcal uses an "ideal" field map JSON as an initial guess point for the optimization. It is recommended to upload the json file included with WPILib, which can be found here: `Field JSON <https://github.com/wpilibsuite/allwpilib/tree/main/apriltag/src/main/native/resources/edu/wpi/first/apriltag>`_. If using a custom map, it must follow these rules:
 
 * Translation components (in meters) are measured relative to the blue alliance origin.
 * Rotations are represented as Quaternions.
@@ -180,6 +180,17 @@ The pinned tag is the tag that other tags are transformed relative to. This tag 
 
 ### View Field Calibration
 After the calibration is completed, you can view the difference between the reference tags and the calibrated tags to double check that your calibrated values look reasonable.
+
+Differences are shown in meters and degrees. The differences are calculated by taking the difference between the pose of the tag in the ideal map and the pose of the tag in the calibrated map.
+
+References show the pose of the calibrated tag in relation to another calibrated tag to aid in double checking the tag's position relative to others.
+
+:guilabel:`Focused Tag` is the tag that WPIcal is calculating the position error of.
+
+:guilabel:`Reference Tag` is the tag that the :guilabel:`Focused Tag` is being compared to.
+
+.. image:: images/Visualization.png
+    :alt: Visualization
 
 .. important:: WPIcal is meant to correct for SMALL variations in tag placement. It is still important that you set up your Apriltags in mostly the correct location and orientation, so WPIcal performs the optimal calibration.
 .. important:: Make sure that you verify the results of each calibration thoroughly to ensure that your calibration matches your field setup accurately.
