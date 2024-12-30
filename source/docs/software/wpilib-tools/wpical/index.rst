@@ -1,5 +1,4 @@
-WPIcal
-======
+# WPIcal
 WPIcal is a cross-platform utility that can be used to empirically measure the position and orientation of Apriltags. The primary use case for WPIcal is to make sure robots can perform as they would on an event field, but on a practice field that may have imperfect Apriltags setup.
 
 .. image:: images/WPIcal.png
@@ -9,13 +8,10 @@ In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click th
 
 .. warning:: Before using this tool, it is important to understand that this tool is not a "silver bullet" of computer vision accuracy. The primary use case for WPIcal is to help detect and correct for incorrect Apriltag placement. While this tool can detect minor errors in precise tag positioning on a competition field, these corrections offer limited benefit and only for teams that have rigorously implemented all other good localization practices. With that said, this tool is exceedingly helpful in correcting for minor errors in practice fields, which are generally not within the normal field tolerance.
 
-Overview
---------
+## Overview
 Conceptually, if you know how far tags are away from each other, and you know the field-relative coordinates of one of the tags, (the "pinned" tag) you can figure out the field-relative coordinates of the other tags. WPIcal achieves this by running an optimization on frames from videos that the user takes of the field. WPIcal is field-agnostic, meaning it will work with any FRC apriltag layout, as well as custom apriltag layouts.
 
-Video Capture
--------------
-
+## Video Capture
 The best way to obtain videos for both camera and field calibration is with a phone/tablet. Users can then transfer these videos to the computer running WPIcal for processing.
 
 Alternatively, users can use other devices to capture videos, such as a laptop cameras. Users who opt to capture videos this way should use `OBS Studio <https://obsproject.com/>`_.
@@ -27,23 +23,17 @@ OBS Users should set the resolution of the video capture and the base video reso
 .. image:: images/OBSVideoSettings.png
     :alt: OBSVideoSettings
 
-Camera Calibration
-------------------
+## Camera Calibration
 To measure the distance between tags in a video, you need the camera's intrinsics to account for things like distortion. WPIcal allows users to upload a video file to calibrate the camera in the tool, or upload a JSON file with your camera's intrinsics.
 
-In-App Calibration
-^^^^^^^^^^^^^^^^^^
-
-Linux Users Only:
-*****************
+### In-App Calibration
+#### Linux Users Only:
 Linux users must transcode all videos to MJPEG codec without an audio stream in an .avi file before uploading to WPIcal. This can be done with an ffmpeg command:
 ``ffmpeg -i <video_file.mp4> -f avi -c:v mjpeg -b:v 20m -an <video_file.avi>``
 
 .. note :: The ``-b:v 20m`` flag is optional, but it is recommended to use it to ensure the video quality is high enough for the calibration process. If you find the output .avi file is too grainy, you can increase the value of the flag.
 
-All Users:
-**********
-
+#### All Users:
 To calibrate your camera from a video file, click on :guilabel:`Calibrate Camera`
 
 .. image:: images/Calibrate.png
@@ -87,13 +77,10 @@ When all the calibration fields have been entered, select :guilabel:`Calibrate` 
 
 The camera calibration will automatically load the generated camera intrinsics JSON into WPIcal to continue to field calibration, but will also output the JSON file so it can be used for future calibrations. The calibration JSON will be saved as ``cameracalibration.json`` in the directory containing the calibration video you provided to WPIcal.
 
-External Camera Calibration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+### External Camera Calibration
 As opposed to calibrating cameras in the tool, WPIcal also allows you to upload a camera intrinsics JSON.
 
-CalibDB
-*******
+#### CalibDB
 One common method for external camera calibration is `CalibDB.net <https://calibdb.net/>`_. WPIcal allows you to directly upload the generated CalibDB JSON without any modification. Make sure to download the OpenCV format JSON:
 
 .. image:: images/CalibdbDownload.png
@@ -108,8 +95,7 @@ Then:
 
 .. warning:: CalibDB calibrations have been known to fail when bad snapshots are taken. If your calibration data looks suspect, repeat calibration process again.
 
-Custom JSON
-***********
+#### Custom JSON
 There are a three things each calibration JSON needs:
 
 * ``avg_reprojection_error``
@@ -151,14 +137,10 @@ Example:
         ]
     }
 
-Field Calibration
------------------
-
+## Field Calibration
 After calibrating the camera, you can use the camera model to find the relative positions of the Apriltags. The calibration process will generate a WPILib field layout .json file and a .fmap for use on coprocessors and in robot code. WPIcal will prompt the user to specify a location to save the generated .json and .fmap field layouts to when the :guilabel:`Calibrate!!!` button is pressed.
 
-Upload Ideal Field Map
-^^^^^^^^^^^^^^^^^^^^^^
-
+### Upload Ideal Field Map
 WPIcal uses an "ideal" field map JSON as an initial guess point for the optimization. It is recommended to upload the json file included with WPILib, which can be found here: `Field JSON <https://github.com/wpilibsuite/allwpilib/tree/main/apriltag/src/main/native/resources/edu/wpi/first/apriltag>`_ If using a custom map, it must follow these rules:
 
 * Translation components (in meters) are measured relative to the blue alliance origin.
@@ -187,19 +169,13 @@ Example:
         },
     }
 
-Select Field Calibration Directory
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+### Select Field Calibration Directory
 WPIcal can calibrate a field based on one or more videos. All the calibration videos must be stored in their own directory, separate from any other files.
 
-Pinned Tag
-^^^^^^^^^^
-
+### Pinned Tag
 The pinned tag is the tag that other tags are transformed relative to. This tag should be the tag that is the most accurate on the field.
 
-View Field Calibration
-^^^^^^^^^^^^^^^^^^^^^^
-
+### View Field Calibration
 After the calibration is completed, you can view the difference between the reference tags and the calibrated tags to double check that your calibrated values look reasonable.
 
 .. important:: WPIcal is meant to correct for SMALL variations in tag placement. It is still important that you set up your Apriltags in mostly the correct location and orientation, so WPIcal performs the optimal calibration.
