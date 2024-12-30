@@ -11,33 +11,7 @@ In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click th
 
 Overview
 --------
-Conceptually, if you know how far tags are away from each other, and you know the field-relative coordinates of one of the tags, (the "pinned" tag) you can figure out the field-relative coordinates of the other tags. WPIcal achieves this by running an optimization on frames from videos that the user takes of the field. WPIcal is field-agnostic, meaning it will work with any FRC apriltag layout, as well as custom apriltag layouts, as long as they follow a couple of rules:
-
-* Translation components (in meters) are measured relative to the blue alliance origin.
-* Rotations are represented as Quaternions.
-
-Example:
-
-.. code-block:: json
-
-    {
-        "ID": 1,
-        "pose": {
-            "translation": {
-                "x": 15.079471999999997,
-                "y": 0.24587199999999998,
-                "z": 1.355852
-            },
-            "rotation": {
-                "quaternion": {
-                    "W": 0.5000000000000001,
-                    "X": 0.0,
-                    "Y": 0.0,
-                    "Z": 0.8660254037844386
-                }
-            },
-        },
-    }
+Conceptually, if you know how far tags are away from each other, and you know the field-relative coordinates of one of the tags, (the "pinned" tag) you can figure out the field-relative coordinates of the other tags. WPIcal achieves this by running an optimization on frames from videos that the user takes of the field. WPIcal is field-agnostic, meaning it will work with any FRC apriltag layout, as well as custom apriltag layouts.
 
 Video Capture
 -------------
@@ -185,7 +159,33 @@ After calibrating the camera, you can use the camera model to find the relative 
 Upload Ideal Field Map
 ^^^^^^^^^^^^^^^^^^^^^^
 
-WPIcal uses an "ideal" field map JSON as an initial guess point for the optimization. It is recommended to upload the json file included with WPILib, which can be found here: `Field JSON <https://github.com/wpilibsuite/allwpilib/tree/main/apriltag/src/main/native/resources/edu/wpi/first/apriltag>`_
+WPIcal uses an "ideal" field map JSON as an initial guess point for the optimization. It is recommended to upload the json file included with WPILib, which can be found here: `Field JSON <https://github.com/wpilibsuite/allwpilib/tree/main/apriltag/src/main/native/resources/edu/wpi/first/apriltag>`_ If using a custom map, it must follow these rules:
+
+* Translation components (in meters) are measured relative to the blue alliance origin.
+* Rotations are represented as Quaternions.
+
+Example:
+
+.. code-block:: json
+
+    {
+        "ID": 1,
+        "pose": {
+            "translation": {
+                "x": 15.079471999999997,
+                "y": 0.24587199999999998,
+                "z": 1.355852
+            },
+            "rotation": {
+                "quaternion": {
+                    "W": 0.5000000000000001,
+                    "X": 0.0,
+                    "Y": 0.0,
+                    "Z": 0.8660254037844386
+                }
+            },
+        },
+    }
 
 Select Field Calibration Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
