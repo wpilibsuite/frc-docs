@@ -2,15 +2,47 @@
 
 # Programming your Radio
 
-This guide will show you how to do a basic setup for controlling your robot "at home" using the VH-109 FRC\ |reg| Radio.  For complete documentation and information please see the (Vivid-Hosting radio site)[https://frc-radio.vivid-hosting.net/].
+This guide will show you how to do a basic setup for controlling your robot "at home" using the VH-109 FRC\ |reg| Radio.  For complete documentation and information please see the [Vivid-Hosting radio site](https://frc-radio.vivid-hosting.net/).
 
 ## Prerequisites
 
-The recommended setup requires: 2 VH-109 radios, 1 VH-117 :term:PoE Wall Adapter, and 1 Radio Heatsink.
+The recommended setup requires: 2 VH-109 radios, 1 VH-117 :term:`PoE` Wall Adapter, and 1 Radio Heatsink.  Available [here](https://wcproducts.com/products/frc-radio).
+
+Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Setup Discussion` if you do not currently have this hardware.
+
+## Getting to the Web Configuration Page
+
+1. Connect the radio directly to your computer using an Ethernet cable in the :guilabel:`DS` port.
+
+2. Ensure the radio has power either through the Weidmuller connectors or :term:`PoE`.
+
+3. Open a web browser and navigate to :guilabel:`http://192.168.69.1/`
+
+## Radio Firmware Update (You can skip if already at version 1.2.6)
+
+.. image:: images/radio-programming/radio-firmware.png
+  :alt: The Firmware Upload section of the radio configuration page
+
+.. note:: Newer versions of the radio firmware will have the version listed at the bottom.  If you do not see the version listed you have firmware prior to 1.2.0.
+
+1. On the Vivid-Hosting [firmware releases](https://frc-radio.vivid-hosting.net/miscellaneous/firmware-releases) page download the proper firmware for the current firmware version you have.  Always choose the `Radio Variant`.
+
+2. Copy the SHA-256 key below the firmware you downloaded.
+
+3. Paste that key into the :guilabel:`Checksum` box of the :guilabel:`Firmware Upload` section at the bottom of the configuration page we navigated to above.
+
+4. Click :guilabel:`Browse...` and select the firmware file you downloaded.
+
+5. Click the :guilabel:`Upload` button.
+
+.. warning:: The radio will take approximately 2-3 minutes to complete firmware updates. Do not remove power during this process. Damage to the radio can occur.  When the PWR light is solid and the SYS light is slowly blinking at 1 Hz, the firmware upgrade process is complete.
 
 ## Robot Radio Configuration (All Teams)
 
-This is the default configuration for the VH-109 radio to act as a ROBOT RADIO for FRC competitions while at home. This procedure is not required when at a competition.
+.. image:: images/radio-programming/configuration-page.png
+  :alt: The top section of the radio configuration page
+
+This is the default configuration for the VH-109 radio to act as a Robot Radio for FRC competitions while at home. This procedure is not required when at a competition.
 
 1. Select :guilabel:`Robot Radio Mode`
 
@@ -21,6 +53,12 @@ This is the default configuration for the VH-109 radio to act as a ROBOT RADIO f
 4. Enter the 6 GHz WPA/SAE key.  This key will need to match the key on the Acess Point you configure.
 
 5. Enter the 2.4 GHz WPA/SAE key.  This is the password team members will type in when connecting to the 2.4 GHz network, if available.
+
+## Access Point Radio Configuration
+
+Follow all of the same steps as the robot radio configuration instead choosing :guilabel:`Access Point Mode` at the top of the configuration page.
+
+## Alternative Setup Discussion
 
 ### Optimal Setup: Two VH-109 Radios
 

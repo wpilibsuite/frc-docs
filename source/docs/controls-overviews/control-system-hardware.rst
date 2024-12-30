@@ -74,7 +74,7 @@ The CTRE Voltage Regulator Module (VRM) is an independent module that is powered
   :alt: VH-109 Radio on a white background with nothing plugged in.
   :width: 500
 
-The Vivid-Hosting VH-109 radio is designed specifically for FRC.  It uses Wi-Fi 6E to avoid the common congestion problems that plague 2.4 GHz Wi-Fi networks.  The ruggedized design allows for unfiltered power input coming directly from you power distribution.  It also has 4 Ethernet ports reducing the need for an additional network switch.
+The [Vivid-Hosting VH-109 radio](https://frc-radio.vivid-hosting.net/) is designed specifically for FRC.  It uses Wi-Fi 6E to avoid the common congestion problems that plague 2.4 GHz Wi-Fi networks.  The ruggedized design allows for unfiltered power input coming directly from you power distribution.  It also has 4 Ethernet ports reducing the need for an additional network switch.
 
 ## 120A Circuit Breaker
 

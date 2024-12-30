@@ -106,6 +106,8 @@ For a test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or plastic)
 
 Lay out the components on the board. An example layout is shown in the image above.
 
+.. note:: A Vivid-Hosting has a [guide](https://frc-radio.vivid-hosting.net/getting-started/usage/mounting-your-radio) for mounting the VH-109 radio.
+
 ## Fasten Components
 
 .. image:: images/how-to-wire-a-simple-robot/ziptie.png
@@ -337,6 +339,7 @@ After making the connection check to be sure that it is clean and secure:
 
 
 ## Radio Power
+[Vivid-Hosting Wiring Guide](https://frc-radio.vivid-hosting.net/getting-started/usage/wiring-your-radio)
 .. tab-set::
 
    .. tab-item:: REV
@@ -368,7 +371,7 @@ After making the connection check to be sure that it is clean and secure:
 4. Cut and strip ~5/16" (~8 mm) from the end of the wire.
 5. Connect the wire to the VH-109 "12V" Weidmuller terminals.
 
-.. note:: The radio can additionally be powered by :term:PoE to create a more redundant connection.
+.. note:: The radio can additionally be powered by :term:`PoE` to create a more redundant connection.
 
 ## Pneumatics Power (Optional)
 
@@ -420,9 +423,9 @@ Requires: an Ethernet cable
 
 1. Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the `RIO` port on the VH-109 Radio.
 
-.. note:: If using :term:PoE you may need a second Ethernet cable or longer power wires.
+.. note:: If using :term:`PoE` you may need a second Ethernet cable or longer power wires.
 
-.. warning:: DO NOT connect the Rev passive :term:PoE injector cable directly to the roboRIO. The roboRIO MUST connect to the socket end of the cable using an additional Ethernet cable as shown in the next step.
+.. warning:: DO NOT connect the Rev passive :term:`PoE` injector cable directly to the roboRIO. The roboRIO MUST connect to the socket end of the cable using an additional Ethernet cable as shown in the next step.
 
 ## CAN Devices
 
