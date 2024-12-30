@@ -48,9 +48,9 @@ This section is used for configuring the VH-109 radio outside of competition. At
 
 2. Enter the team number
 
-3. Enter the suffix, if desired.  This will help identify you robot and distinguish it from other networks.
+3. Enter the suffix, if desired.  This will help identify your robot and distinguish it from other networks.
 
-4. Enter the 6 GHz WPA/SAE key.  This key will need to match the key on the Acess Point you configure.
+4. Enter the 6 GHz WPA/SAE key.  This key will need to match the key on the Access Point you configure.
 
 5. Enter the 2.4 GHz WPA/SAE key.  This is the password team members will type in when connecting to the 2.4 GHz network, if available.
 
