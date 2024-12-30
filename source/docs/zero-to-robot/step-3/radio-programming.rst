@@ -18,12 +18,14 @@ Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Set
 
 3. Open a web browser and navigate to :guilabel:`http://radio.local/`.  See :ref:`docs/zero-to-robot/step-3/radio-programming:Troubleshooting` if the connection doesn't work.
 
-## Radio Firmware Update (You can skip if already at version 1.2.6)
+## Radio Firmware Update
 
 .. image:: images/radio-programming/radio-firmware.png
   :alt: The Firmware Upload section of the radio configuration page
 
 .. note:: Newer versions of the radio firmware will have the version listed at the bottom.  If you do not see the version listed you have firmware prior to 1.2.0.
+
+You can skip this section if already at version 1.2.6.
 
 1. On the Vivid-Hosting [firmware releases](https://frc-radio.vivid-hosting.net/miscellaneous/firmware-releases) page download the proper firmware for the current firmware version you have.  Always choose the `Radio Variant`.
 
@@ -71,14 +73,17 @@ If your team has access to only one VH-109 radio, there are still viable options
 #### Use an Old Radio for Testing
 
 If your team still has an older radio from a previous season, it can serve as a temporary substitute for the VH-109 on your robot. In this case, you should:
+
 - Reserve a spot on your robot specifically for the VH-109 radio to ensure seamless integration during competition.
 - Provide the older radio regulated power with a REV Radio Power Module or a CTRE Voltage Regulator Module.
 - Be prepared to connect devices via a network switch if the older radio does not provide enough Ethernet ports. This may add complexity but ensures all devices are networked properly during testing.
 
 Advantages:
+
 - Connection strength similar to previous years.
 
 Disadvantages:
+
 - Requires additional hardware (e.g., the old radio and maybe a network switch).
 - The older radio may not offer the same performance as the VH-109, potentially affecting test results.
 
@@ -87,6 +92,7 @@ Disadvantages:
 The VH-109 radio includes a standalone mode that can be activated using DIP switch 3. In this configuration, the radio hosts its own 2.4GHz network, enabling direct connections without additional hardware.
 
 To enable standalone mode:
+
 1. Locate the DIP switches on the VH-109 radio, removing the sticker if required.
 2. Flip DIP switch 3 to the "ON" position.
 3. Connect devices directly to the 2.4GHz network hosted by the radio, using the 2.4 GHz WPA/SAE key from configuration.
@@ -114,6 +120,7 @@ The access point radio will get hot after being on for a longer than a full matc
 ### Cannot Reach the Configuration Page at radio.local
 
 Set a [static ip address](https://www.trendnet.com/press/resource-library/how-to-set-static-ip-address) with these parameters:
+
 - IP Address: 192.168.69.2
 - Subnet Mask: 255.255.255.0
 - Gateway: Leave Blank

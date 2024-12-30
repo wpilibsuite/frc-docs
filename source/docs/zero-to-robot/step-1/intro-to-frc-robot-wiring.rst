@@ -339,7 +339,9 @@ After making the connection check to be sure that it is clean and secure:
 
 
 ## Radio Power
+
 [Vivid-Hosting Wiring Guide](https://frc-radio.vivid-hosting.net/getting-started/usage/wiring-your-radio)
+
 .. tab-set::
 
    .. tab-item:: REV
