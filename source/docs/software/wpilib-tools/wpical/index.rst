@@ -39,9 +39,6 @@ Example:
         },
     }
 
-.. important:: WPIcal is meant to correct for SMALL variations in tag placement. It is still important that you set up your Apriltags in mostly the correct location and orientation, so WPIcal performs the optimal calibration.
-.. important:: Make sure that you verify the results of each calibration thoroughly to ensure that your calibration matches your field setup accurately.
-
 Video Capture
 -------------
 
@@ -204,3 +201,6 @@ View Field Calibration
 ^^^^^^^^^^^^^^^^^^^^^^
 
 After the calibration is completed, you can view the difference between the reference tags and the calibrated tags to double check that your calibrated values look reasonable.
+
+.. important:: WPIcal is meant to correct for SMALL variations in tag placement. It is still important that you set up your Apriltags in mostly the correct location and orientation, so WPIcal performs the optimal calibration.
+.. important:: Make sure that you verify the results of each calibration thoroughly to ensure that your calibration matches your field setup accurately.
