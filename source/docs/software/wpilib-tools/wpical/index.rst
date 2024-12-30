@@ -143,6 +143,22 @@ After calibrating the camera, you can use the camera model to find the relative 
 .. image:: images/Calibrate!!!.png
     :alt: FieldCalibration
 
+### Field Video Tips
+In order to get a good field calibration, it is important use follow these tips:
+
+* Make sure to use the same camera as was used in the camera calibration.
+
+* WPIcal can take in a directory of videos to calibrate the field. It is recommended to take videos from multiple angles on the tags of interest to get the best calibration.
+
+* Tags of interest should clearly link back to the pinned tag. For example if tag 1 is pinned:
+
++-----------------+-----------------+
+|     Video 1     |     Video 2     |
++-----------------+-----------------+
+|  tag 1, tag 2   |  tag 2, tag 3   |
++-----------------+-----------------+
+
+
 ### Upload Ideal Field Map
 WPIcal uses an "ideal" field map JSON as an initial guess point for the optimization. It is recommended to upload the json file included with WPILib, which can be found here: `Field JSON <https://github.com/wpilibsuite/allwpilib/tree/main/apriltag/src/main/native/resources/edu/wpi/first/apriltag>`_. If using a custom map, it must follow these rules:
 
@@ -178,7 +194,7 @@ WPIcal can calibrate a field based on one or more videos. All the calibration vi
 ### Pinned Tag
 The pinned tag is the tag that other tags are transformed relative to. This tag should be the tag that is the most accurate on the field.
 
-### View Field Calibration
+## View Field Calibration
 After the calibration is completed, you can view the difference between the reference tags and the calibrated tags to double check that your calibrated values look reasonable.
 
 Differences are shown in meters and degrees. The differences are calculated by taking the difference between the pose of the tag in the ideal map and the pose of the tag in the calibrated map.
