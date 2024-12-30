@@ -16,7 +16,7 @@ Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Set
 
 2. Ensure the radio has power either through the Weidmuller connectors or :term:`PoE`.
 
-3. Open a web browser and navigate to :guilabel:`http://192.168.69.1/`
+3. Open a web browser and navigate to :guilabel:`http://radio.local/`.  See :ref:`docs/zero-to-robot/step-3/radio-programming:Troubleshooting` if the connection doesn't work.
 
 ## Radio Firmware Update (You can skip if already at version 1.2.6)
 
@@ -42,7 +42,7 @@ Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Set
 .. image:: images/radio-programming/configuration-page.png
   :alt: The top section of the radio configuration page
 
-This is the default configuration for the VH-109 radio to act as a Robot Radio for FRC competitions while at home. This procedure is not required when at a competition.
+This section is used for configuring the VH-109 radio outside of competition. At competition, configuration will be done by a provided computer and manual configuration using this page **should not be used**.
 
 1. Select :guilabel:`Robot Radio Mode`
 
@@ -70,44 +70,65 @@ If your team has access to only one VH-109 radio, there are still viable options
 
 #### Use an Old Radio for Testing
 
-If your team still has an older radio from a previous season, it can serve as a temporary substitute for a second VH-109. In this case, you should:
-
-Reserve a spot on your robot specifically for the VH-109 radio to ensure seamless integration during competition.
-
-Be prepared to connect devices via a network switch if the older radio does not provide enough Ethernet ports. This may add complexity but ensures all devices are networked properly during testing.
+If your team still has an older radio from a previous season, it can serve as a temporary substitute for the VH-109 on your robot. In this case, you should:
+- Reserve a spot on your robot specifically for the VH-109 radio to ensure seamless integration during competition.
+- Provide the older radio regulated power with a REV Radio Power Module or a CTRE Voltage Regulator Module.
+- Be prepared to connect devices via a network switch if the older radio does not provide enough Ethernet ports. This may add complexity but ensures all devices are networked properly during testing.
 
 Advantages:
-
-Maintains the ability to simulate dual-radio setups with some fidelity.
-
-Preserves the design for easy integration of the VH-109 at competition.
+- Connection strength similar to previous years.
 
 Disadvantages:
-
-Requires additional hardware (e.g., the old radio and maybe a network switch).
-
-The older radio may not offer the same performance as the VH-109, potentially affecting test results.
+- Requires additional hardware (e.g., the old radio and maybe a network switch).
+- The older radio may not offer the same performance as the VH-109, potentially affecting test results.
 
 #### Enable 2.4GHz Wifi on the VH-109
 
 The VH-109 radio includes a standalone mode that can be activated using DIP switch 3. In this configuration, the radio hosts its own 2.4GHz network, enabling direct connections without additional hardware.
 
 To enable standalone mode:
-
-Locate the DIP switches on the VH-109 radio, removing the sticker if required.
-
-Flip DIP switch 3 to the "ON" position.
-
-Connect devices directly to the 2.4GHz network hosted by the radio.
+1. Locate the DIP switches on the VH-109 radio, removing the sticker if required.
+2. Flip DIP switch 3 to the "ON" position.
+3. Connect devices directly to the 2.4GHz network hosted by the radio, using the 2.4 GHz WPA/SAE key from configuration.
 
 Advantages:
 
-Simple setup with no need for additional hardware.
-
-Allows immediate use of the VH-109 without extra configuration.
+- Simple setup with no need for additional hardware.
+- Allows immediate use of the VH-109 without extra configuration.
 
 Disadvantages:
 
-The 2.4GHz band is more prone to congestion and interference, especially in crowded environments.
+- The 2.4GHz band is more prone to congestion and interference, especially in crowded environments.
+- Range and accessibility may be limited compared to the 6GHz band.
 
-Range and accessibility may be limited compared to the 6GHz band.
+### No VH-117 :term:`PoE` Wall Adapter
+
+You can power the access point radio with a 12V wall plug connecting wires to the Weidmuller ports.  We recommend trying to find one with a [switch](https://a.co/d/cUsD25n) to simplify turning on and off the radio.  The primary concern will be cord length which will likely not be long enough to run from your wall outlet so you will need to bring the power closer with an extension cord.
+
+### No Radio Heatsink
+
+The access point radio will get hot after being on for a longer than a full match.  This will cause latency to increase.
+
+## Troubleshooting
+
+### Cannot Reach the Configuration Page at radio.local
+
+Set a [static ip address](https://www.trendnet.com/press/resource-library/how-to-set-static-ip-address) with these parameters:
+- IP Address: 192.168.69.2
+- Subnet Mask: 255.255.255.0
+- Gateway: Leave Blank
+- DNS: 192.168.69.1 or Leave Blank
+
+Navigate to :guilabel:`http://192.168.69.1/`
+
+### Setting Up an Entire Field
+
+See the documentation on using the [VH-113 Access Point](https://frc-radio.vivid-hosting.net/getting-started/usage/practicing-at-home#vh-113-access-point).
+
+### How do I run an Offseason Event?
+
+Use the [Vivid-Hosting radio kiosk](https://frc-radio.vivid-hosting.net/miscellaneous/offseason-kiosk-programmer).
+
+### Additional Radio Problems
+
+Contact WCP support at: [support@westcoastproducts.com](mailto:support@westcoastproducts.com)
