@@ -2,7 +2,7 @@
 WPIcal (inspired by `cowlibration from FRC 1538 <https://github.com/TheHolyCows/cowlibration-field>`_) is a cross-platform utility that can be used to empirically measure the position and orientation of Apriltags. The primary use case for WPIcal is to make sure robots can perform as they would on an event field, but on a practice field that may have imperfect Apriltags setup.
 
 .. image:: images/WPIcal.png
-    :alt: WPIcal
+    :alt: default WPIcal image with no calibration.
 
 In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Start Tool`, then select :guilabel:`WPIcal`.
 
@@ -19,9 +19,9 @@ Alternatively, users can use other devices to capture videos, such as a laptop c
 OBS Users should set the resolution of the video capture and the base video resolution in the OBS settings:
 
 .. image:: images/OBSCaptureSettings.png
-    :alt: OBSCaptureSettings
+    :alt: OBS capture settings screenshot showing proper resolution settings.
 .. image:: images/OBSVideoSettings.png
-    :alt: OBSVideoSettings
+    :alt: OBS video settings screenshot showing proper resolution settings.
 
 ## Camera Calibration
 To measure the distance between tags in a video, you need the camera's intrinsics to account for things like distortion. WPIcal allows users to upload a video file to calibrate the camera in the tool, or upload a JSON file with your camera's intrinsics.
@@ -37,7 +37,7 @@ Linux users must transcode all videos to MJPEG codec without an audio stream in 
 To calibrate your camera from a video file, click on :guilabel:`Calibrate Camera`
 
 .. image:: images/Calibrate.png
-    :alt: Calibrate
+    :alt: WPIcal image with the camera calibration button highlighted.
 
 There are two options for calibrating your camera, :guilabel:`OpenCV` and :guilabel:`MRcal`. It is generally recommended to calibrate with :guilabel:`MRcal`, as it has slightly better accuracy and is more robust against bad calibration data. WPIcal uses a 5x5 aruco dictionary ChArUco board for camera calibration. You can generate a ChArUco board here: `calib.io <https://calib.io/pages/camera-calibration-pattern-generator>`_
 
@@ -62,14 +62,14 @@ For :guilabel:`MRcal`, there are two more options to fill in:
 * :guilabel:`Image Height` is the height (in pixels) of the video's resolution
 
 .. image:: images/MRcal.png
-    :alt: MRcal
+    :alt: Camera calibration window with MRcal options filled in.
 
 .. important:: For the calibration to work properly, it is important that you enter the exact width of the squares and markers. It is recommended to use calipers to accurately measure these widths.
 
 When all the calibration fields have been entered, select :guilabel:`Calibrate` to run the calibration. A window will appear showing you the corner detection process (except on Linux, see below):
 
 .. image:: images/ChArUcoDetection.png
-    :alt: ChArUcoDetection
+    :alt: Example ChArUco detection window.
 
 .. warning:: The corner detection window will not appear on Linux machines. WPIcal may show a ``not responding`` warning during the calibration, which is safe to ignore. The warning will disappear after calibration is complete.
 
@@ -84,12 +84,12 @@ As opposed to calibrating cameras in the tool, WPIcal also allows you to upload 
 One common method for external camera calibration is `CalibDB.net <https://calibdb.net/>`_. WPIcal allows you to directly upload the generated CalibDB JSON without any modification. Make sure to download the OpenCV format JSON:
 
 .. image:: images/CalibdbDownload.png
-    :alt: CalibdbDownload
+    :alt: Calibdb Download Button.
 
 Then:
 
 .. image:: images/CalibdbOpenCVFormat.png
-    :alt: CalibdbOpenCVFormat
+    :alt: Calibdb OpenCV Format Option.
 
 .. important:: When uploading a CalibDB JSON, ensure that you download the calibration with the proper resolution selected.
 
@@ -141,7 +141,7 @@ Example:
 After calibrating the camera, you can use the camera model to find the relative positions of the Apriltags. The calibration process will generate a WPILib field layout .json file and a .fmap for use on coprocessors and in robot code. WPIcal will prompt the user to specify a location to save the generated .json and .fmap field layouts to when the :guilabel:`Calibrate!!!` button is pressed.
 
 .. image:: images/FieldCalibration.png
-    :alt: FieldCalibration
+    :alt: WPIcal image with the calibrate!!! button highlighted.
 
 ### Field Video Tips
 In order to get a good field calibration, it is important use follow these tips:
@@ -206,7 +206,7 @@ References show the pose of the calibrated tag in relation to another calibrated
 :guilabel:`Reference Tag` is the tag that the :guilabel:`Focused Tag` is being compared to.
 
 .. image:: images/Visualization.png
-    :alt: Visualization
+    :alt: Image of WPIcal's visualization window.
 
 .. important:: WPIcal is meant to correct for SMALL variations in tag placement. It is still important that you set up your Apriltags in mostly the correct location and orientation, so WPIcal performs the optimal calibration.
 .. important:: Make sure that you verify the results of each calibration thoroughly to ensure that your calibration matches your field setup accurately.
