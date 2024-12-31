@@ -11,3 +11,4 @@
    viewing-console-output
    debugging-robot-program
    importing-last-years-robot-code
+   organize-imports
