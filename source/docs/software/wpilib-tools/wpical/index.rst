@@ -140,7 +140,7 @@ Example:
 ## Field Calibration
 After calibrating the camera, you can use the camera model to find the relative positions of the Apriltags. The calibration process will generate a WPILib field layout .json file and a .fmap for use on coprocessors and in robot code. WPIcal will prompt the user to specify a location to save the generated .json and .fmap field layouts to when the :guilabel:`Calibrate!!!` button is pressed.
 
-.. image:: images/Calibrate!!!.png
+.. image:: images/FieldCalibration.png
     :alt: FieldCalibration
 
 ### Field Video Tips
