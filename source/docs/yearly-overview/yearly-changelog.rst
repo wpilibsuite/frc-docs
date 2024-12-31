@@ -242,3 +242,7 @@ Supported Operating Systems and Architectures:
 ## Elastic
 
 Elastic is bundled in the installer! Elastic is a simple and modern dashboard. :doc:`Read more here </docs/software/dashboards/elastic>`.
+
+## WPIcal
+
+WPIcal is new WPILib tool for calibrating FRC Apriltags to correct for field setup error. :doc:`Read more here </docs/software/wpilib-tools/wpical/index>`.
