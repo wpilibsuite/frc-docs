@@ -16,12 +16,19 @@ The LabVIEW runtime components required for the Driver Station and Imaging Tool 
 
 - Windows 10 or higher (Windows 10, 11).
 
-- Download the [FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107) from NI.
+## Download Game Tools
+
+Navigate to the  [FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) from NI.
+
+.. image:: images/labview/ni-login.png
+   :alt: The login button for the NI installer.
+
+Log-in or create an National Instruments account.
 
 .. image:: images/labview/offline-installer.png
    :alt: The Download button for the NI installer with the offline installer link below it.
 
-If you wish to install on other machines offline, click :guilabel:`Individual Offline Installers` before clicking :guilabel:`Download` to download the full installer.
+If you wish to install on other machines offline, click :guilabel:`Install Offline` or else choose :guilabel:`Download` to download the online installer which will download while installing.
 
 ## Uninstall Old Versions (Recommended)
 

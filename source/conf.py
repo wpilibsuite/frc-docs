@@ -160,6 +160,7 @@ linkcheck_ignore = [
 linkcheck_anchors_ignore_for_url = [
     r".*github.com.*",
     r".*ni.com/en/support/downloads/drivers/download.frc-game-tools.html.*",
+    r".*ni.com/en/support/downloads/software-products/download.package-manager.html.*",
 ]
 
 # Sets linkcheck timeout in seconds
