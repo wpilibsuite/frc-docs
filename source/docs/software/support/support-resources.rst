@@ -12,6 +12,7 @@ In addition to this site there are a few other places teams may check for docume
 -  [FIRST Inspires Technical Resources Page](https://www.firstinspires.org/resource-library/frc/technical-resources)
 -  [CTRE Software & Resources Page](https://store.ctr-electronics.com/software/)
 -  [REV Robotics Documentation](https://docs.revrobotics.com/docs/)
+-  [Vivid Hosting](https://frc-radio.vivid-hosting.net/)
 
 ## Forums
 
@@ -44,7 +45,6 @@ Support for vendors outside of the KOP can be found below.
 - [Playing with Fusion](https://www.playingwithfusion.com/contactus.php)
 - [Redux Robotics](https://shop.reduxrobotics.com/)
 - [The Thrifty Bot](https://www.thethriftybot.com/)
-- [Vivid Hosting](https://frc-radio.vivid-hosting.net/)
 
 ## Unofficial Support
 

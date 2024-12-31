@@ -307,5 +307,5 @@
 "docs/software/wpilib-tools/axon/using-on-a-robot.rst" "docs/software/vision-processing/index.rst"
 "docs/software/wpilib-tools/axon/viewing-datasets.rst" "docs/software/vision-processing/index.rst"
 "docs/software/wpilib-tools/choreo/index.rst" "docs/software/pathplanning/choreo/index.rst"
-"docs/networking/networking-introduction/om5p-ac-radio-modification.rst" "docs/networking/networking-introduction/index.rst"
-"docs/software/driverstation/programming-radios-for-fms-offseason.rst" "docs/software/driverstation/index.rst"
+"docs/networking/networking-introduction/om5p-ac-radio-modification.rst" "docs/zero-to-robot/step-3/radio-programming.rst"
+"docs/software/driverstation/programming-radios-for-fms-offseason.rst" "docs/zero-to-robot/step-3/radio-programming.rst"
