@@ -151,3 +151,10 @@ OutlineViewer is a utility used to view, modify and add to all of the contents o
    :alt: roboRIO Team Number Setter tool.
 
 The roboRIO Team Number Setter is a cross-platform utility that can be used to set the team number on the roboRIO. It is an alternative to the roboRIO imaging tool for setting the team number.  For more information see the :ref:`roboRIO Team Number Setter section <docs/software/wpilib-tools/roborio-team-number-setter/index:roboRIO Team Number Setter>`.
+
+## WPIcal
+
+.. image:: /docs/software/wpilib-tools/wpical/images/WPIcal.png
+   :alt: WPIcal tool.
+
+WPIcal is a cross-platform utility that can be used to calibrate the Apriltags on FRC fields to correct for field setup error.  For more information see the :ref:`WPIcal section <docs/software/wpilib-tools/wpical/index:WPIcal>`.
