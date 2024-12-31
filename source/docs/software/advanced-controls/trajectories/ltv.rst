@@ -2,19 +2,19 @@
 The LTV Unicycle Controller is a trajectory tracker that is built in to WPILib. This tracker can be used to accurately track trajectories with correction for minor disturbances.
 
 ## Constructing the LTV Unicycle Controller Object
-The LTV controller should be initialized with two parameters, `dt` and `maxVelocity`. `dt` represents the timestep used in calculations and `maxVelocity` should be the max velocity your robot can achieve.
+The LTV Unicycle controller should be initialized with two parameters, `dt` and `maxVelocity`. `dt` represents the timestep used in calculations (the default loop rate of 20 ms is a reasonable value) and `maxVelocity` should be the max velocity your robot can achieve.
 
 .. tab-set-code::
    ```java
-   LTVUnicycle controller = new LTVUnicycleController(0.2, 9);
+   LTVUnicycleController controller = new LTVUnicycleController(0.02, 9);
    ```
 
    ```c++
-   frc::LTVUnicycleController controller{0.2_s, 9_mps};
+   frc::LTVUnicycleController controller{0.02_s, 9_mps};
    ```
 
    ```python
-   controller = LTVUnicycleController(0.2, 9)
+   controller = LTVUnicycleController(0.02, 9)
    ```
 
 ## Getting Adjusted Velocities
@@ -44,7 +44,7 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
 These calculations should be performed at every loop iteration, with an updated robot position and goal.
 
 ## Using the Adjusted Velocities
-The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity in the sideways direction), and an ``omega`` (angular velocity around the center of the robot frame). Because the Ramsete controller is a controller for non-holonomic robots (robots which cannot move sideways), the adjusted speeds object has a ``vy`` of zero.
+The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity in the sideways direction), and an ``omega`` (angular velocity around the center of the robot frame).
 
 The returned adjusted speeds can be converted to usable speeds using the kinematics classes for your drivetrain type. For example, the adjusted velocities can be converted to left and right velocities for a differential drive using a ``DifferentialDriveKinematics`` object.
 
