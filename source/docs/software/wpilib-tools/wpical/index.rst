@@ -1,5 +1,5 @@
 # WPIcal
-WPIcal is a cross-platform utility that can be used to empirically measure the position and orientation of Apriltags. The primary use case for WPIcal is to make sure robots can perform as they would on an event field, but on a practice field that may have imperfect Apriltags setup.
+WPIcal (inspired by `cowlibration from FRC 1538 <https://github.com/TheHolyCows/cowlibration-field>`_) is a cross-platform utility that can be used to empirically measure the position and orientation of Apriltags. The primary use case for WPIcal is to make sure robots can perform as they would on an event field, but on a practice field that may have imperfect Apriltags setup.
 
 .. image:: images/WPIcal.png
     :alt: WPIcal
