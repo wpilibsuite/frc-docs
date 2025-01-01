@@ -32,8 +32,8 @@ It is the responsibility of the user to manage proper inversions for their drive
 
    ```java
    PWMSparkMax m_motorRight = new PWMSparkMax(0);
-   @Override
-   public void robotInit() {
+
+   public Robot() {
       m_motorRight.setInverted(true);
    }
    ```
@@ -41,7 +41,7 @@ It is the responsibility of the user to manage proper inversions for their drive
    ```c++
    frc::PWMSparkMax m_motorLeft{0};
    public:
-    void RobotInit() override {
+    Robot::Robot() {
       m_motorRight.SetInverted(true);
     }
    ```
@@ -159,7 +159,7 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
             :language: java
             :lines: 19-25
 
-        In robotInit or Subsystem constructor:
+        In Robot or Subsystem constructor:
 
         .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
             :language: java
@@ -175,7 +175,7 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
     .. tab-item:: C++ (Source)
      :sync: C++ (Source)
 
-        In robotInit or Subsystem constructor:
+        In Robot or Subsystem constructor:
 
         .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
             :language: c++

@@ -4,7 +4,7 @@ In an effort to provide both Teams and Volunteers (:term:`FTA` / :term:`CSA` / e
 
 ## Joystick Unplugged
 
-```
+```text
 ERROR<Code>-44009 occurred at Driver Station
 <time>2/5/2013 4:43:54 PM <unique#>1
 FRC: A joystick was disconnected while the robot was enabled.
@@ -16,7 +16,7 @@ This error is triggered when a Joystick is unplugged. Contrary to the message te
 
 ## Lost Communication
 
-```
+```text
 Warning<Code>44004 occurred at Driver Station
 <time>2/6/2013 11:07:53 AM<unique#>2
 FRC: The Driver Station has lost communication with the robot.
@@ -26,7 +26,7 @@ This Warning message is printed whenever the Driver Station loses communication 
 
 ## Ping Status
 
-```
+```text
 Warning<Code>44002 occurred at Ping Results: link-GOOD, DS radio(.4)-bad, robot radio(.1)-GOOD, cRIO(.2)-bad, FMS- bad Driver Station
 <time>2/6/2013 11:07:59 AM<unique#>5
 FRC: Driver Station ping status has changed.
@@ -36,7 +36,7 @@ A Ping Status warning is generated each time the Ping Status to a device changes
 
 ## Time Since Robot Boot
 
-```
+```text
 WARNING<Code>44007 occurred at FRC_NetworkCommunications
 **<secondsSinceReboot> 3.585**
 FRC: Time since robot boot.
@@ -46,20 +46,20 @@ This message is printed each time the DS begins communicating with the roboRIO. 
 
 ## Radio Detection Times
 
-```
+```text
 WARNING<Code>44008 occurred at FRC_NetworkCommunications
 <radioLostEvents> 19.004<radioSeenEvents> 0.000
-FRC: Robot radio dectection times
+FRC: Robot radio detection times
 WARNING<Code>44008 occurred at FRC_NetworkCommunications
 <radioLostEvents> 2.501,422.008<radioSeenEvents> 0.000,147.005
-FRC: Robot radio dectection times.
+FRC: Robot radio detection times.
 ```
 
 This message may be printed when the DS begins communicating with the roboRIO and indicates the time, in seconds, since the last time the radio was lost and seen. In the first example image above the message indicates that the roboRIO's connection to the radio was lost 19 seconds before the message was printed and the radio was seen again right when the message was printed. If multiple radioLost or radioSeen events have occurred since the roboRIO booted, up to 2 events of each type will be included, separated by commas.
 
 ## No Robot Code
 
-```
+```text
 Warning<Code>44003 occurred at Driver Station
 <time>2/8/2013 9:50:13 AM<unique#>8
 FRC: No robot code is currently running.

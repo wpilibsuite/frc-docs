@@ -34,7 +34,7 @@ In the following examples, you'll see what the screen would look like when there
    SmartDashboard.putData(CommandScheduler.getInstance())
    ```
 
-You can display the status of the Scheduler (the code that schedules your commands to run). This is easily done by adding a single line to the ``RobotInit`` method in your RobotProgram as shown here. In this example the Scheduler instance is written using the ``putData`` method to SmartDashboard. This line of code produces the display in the previous image.
+You can display the status of the Scheduler (the code that schedules your commands to run). This is easily done by adding a single line to the ``Robot`` constructor in your Robot program as shown here. In this example the Scheduler instance is written using the ``putData`` method to SmartDashboard. This line of code produces the display in the previous image.
 
 .. image:: images/displaying-status-of-commands-and-subsystems/commands-running.png
    :alt: The schedulers is showing which commands are being run.

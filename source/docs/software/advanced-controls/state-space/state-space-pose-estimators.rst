@@ -12,14 +12,12 @@ Here's how to initialize a ``DifferentialDrivePoseEstimator``:
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
     :language: java
     :lines: 86-94
-    :linenos:
-    :lineno-start: 86
+    :lineno-match:
 
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/include/Drivetrain.h
     :language: c++
     :lines: 158-165
-    :linenos:
-    :lineno-start: 158
+    :lineno-match:
 
 Add odometry measurements every loop by calling ``Update()``.
 
@@ -28,14 +26,12 @@ Add odometry measurements every loop by calling ``Update()``.
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
       :language: java
       :lines: 227-228
-      :linenos:
-      :lineno-start: 227
+      :lineno-match:
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/cpp/Drivetrain.cpp
       :language: c++
       :lines: 84-86
-      :linenos:
-      :lineno-start: 84
+      :lineno-match:
 
 Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
 
@@ -44,14 +40,12 @@ Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdriveposeestimator/Drivetrain.java
     :language: java
     :lines: 236-245
-    :linenos:
-    :lineno-start: 236
+    :lineno-match:
 
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.1.1-beta-4/wpilibcExamples/src/main/cpp/examples/DifferentialDrivePoseEstimator/cpp/Drivetrain.cpp
     :language: c++
     :lines: 93-106
-    :linenos:
-    :lineno-start: 93
+    :lineno-match:
 
 ## Tuning Pose Estimators
 

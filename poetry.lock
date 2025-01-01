@@ -963,13 +963,13 @@ type = ["pytest-mypy"]
 
 [[package]]
 name = "jinja2"
-version = "3.1.4"
+version = "3.1.5"
 description = "A very fast and expressive template engine."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "jinja2-3.1.4-py3-none-any.whl", hash = "sha256:bc5dd2abb727a5319567b7a813e6a2e7318c39f4f487cfe6c89c6f9c7d25197d"},
-    {file = "jinja2-3.1.4.tar.gz", hash = "sha256:4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"},
+    {file = "jinja2-3.1.5-py3-none-any.whl", hash = "sha256:aba0f4dc9ed8013c424088f68a5c226f7d6097ed89b246d7749c2ec4175c6adb"},
+    {file = "jinja2-3.1.5.tar.gz", hash = "sha256:8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"},
 ]
 
 [package.dependencies]
@@ -1892,6 +1892,24 @@ numpy = ["nptyping (>=2.5)"]
 testing = ["covdefaults (>=2.3)", "coverage (>=7.4.4)", "defusedxml (>=0.7.1)", "diff-cover (>=9)", "pytest (>=8.1.1)", "pytest-cov (>=5)", "sphobjinv (>=2.3.1)", "typing-extensions (>=4.11)"]
 
 [[package]]
+name = "sphinx-contributors"
+version = "0.2.7"
+description = "Contributors extension for Sphinx."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "sphinx_contributors-0.2.7-py3-none-any.whl", hash = "sha256:f409295eb22f05606528ff3a9b93b4ae076d93d3153de13ff47bfcdd1c792463"},
+    {file = "sphinx_contributors-0.2.7.tar.gz", hash = "sha256:aace731366096f2104a06eca77b9354b11768ddec149d699520c254f09cbb4f4"},
+]
+
+[package.dependencies]
+sphinx = ">=3"
+
+[package.extras]
+doc = ["furo"]
+test = ["pre-commit", "pytest"]
+
+[[package]]
 name = "sphinx-copybutton"
 version = "0.5.2"
 description = "Add a copy button to each of your code cells."
@@ -2201,6 +2219,25 @@ Sphinx = ">=1.6.3"
 cairosvg = ["cairosvg (>=1.0)"]
 
 [[package]]
+name = "sphinxcontrib-video"
+version = "0.3.1"
+description = "Allows embedding of HTML5 videos in sphinx"
+optional = false
+python-versions = ">=3.6.9"
+files = [
+    {file = "sphinxcontrib_video-0.3.1-py3-none-any.whl", hash = "sha256:953450be3491241c7de889eeba15cd08fc4abab558963694154446b1167264c7"},
+    {file = "sphinxcontrib_video-0.3.1.tar.gz", hash = "sha256:d574467ebc36cb71af0326048dc96bb8dc7c73608f056de90f0df178fd80ac31"},
+]
+
+[package.dependencies]
+sphinx = "*"
+
+[package.extras]
+dev = ["mypy", "nox", "pre-commit"]
+doc = ["pydata-sphinx-theme", "sphinx-design"]
+test = ["beautifulsoup4", "defusedxml", "pytest", "pytest-cov", "pytest-regressions"]
+
+[[package]]
 name = "sphinxext-delta"
 version = "0.2.0"
 description = "Sphinx extension for listing changed Sphinx articles"
@@ -2291,13 +2328,13 @@ sphinx = ">=2.0"
 
 [[package]]
 name = "sphinxext-remoteliteralinclude"
-version = "0.4.0"
+version = "0.5.0"
 description = "Extending literalinclude to include remote URLs"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 files = [
-    {file = "sphinxext-remoteliteralinclude-0.4.0.tar.gz", hash = "sha256:4db25a23c04e09560cbe5e0787b0263305e3f3282a2396945ef5c04c1bb97a33"},
-    {file = "sphinxext_remoteliteralinclude-0.4.0-py3-none-any.whl", hash = "sha256:e91378f07f378e6ca435246e07334c19a8c16b9baf6e180fc3e428a359846ea2"},
+    {file = "sphinxext-remoteliteralinclude-0.5.0.tar.gz", hash = "sha256:76e08941aa1892e83439728b0f8603b0ad0231d0f5bc368181add0c5d9909444"},
+    {file = "sphinxext_remoteliteralinclude-0.5.0-py3-none-any.whl", hash = "sha256:d8be8fbff4a23b8412cf3a2270e6a4358ae705c585dc4e3251b34423f93b6c23"},
 ]
 
 [package.dependencies]
@@ -2519,4 +2556,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "c610bad862aa95651968fabd51344b036e3eb77be7c50570c7b194b309987a96"
+content-hash = "9f0c95feb2938bdbc3b18e67cf2786da778f04a18cbb5191b2cd3f00fb913dd5"

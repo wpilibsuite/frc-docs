@@ -14,11 +14,11 @@ WPILib comes with two templates for Romi projects, including one based on TimedR
 
 Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`, and type "New project" into the prompt. Select the "Create a new project" command:
 
-.. image:: images/programming-romi/romi-vscode-new-project.png
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
 
 This will bring up the "New Project Creator Window". From here, click on "Select a project type (Example or Template), and pick "Example" from the prompt that appears:
 
-.. image:: images/programming-romi/romi-vscode-select-type.png
+.. image:: images/programming-romi/romi-vscode-select-example.png
 
 Next, a list of examples will appear. Scroll through the list to find the "RomiReference" example:
 
@@ -34,16 +34,15 @@ One aspect where a Romi project differs from a regular FRC robot project is that
 
 To run a Romi program, first, ensure that your Romi is powered on. Next, connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If you changed the Romi network settings (for example, to connect it to your own WiFi network) you may change the IP address that your program uses to connect to the Romi. To do this, open the ``build.gradle`` file and update the ``wpi.sim.envVar`` line to the appropriate IP address.
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1-beta-1/vscode-wpilib/resources/gradle/javaromi/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1-beta-3/vscode-wpilib/resources/gradle/javaromi/build.gradle
    :language: groovy
    :lines: 44-47
-   :linenos:
-   :lineno-start: 44
+   :lineno-match:
    :emphasize-lines: 2
 
 Now to start your Romi robot code, open the WPILib Command Palette (type :kbd:`Ctrl+Shift+P`) and select "Simulate Robot Code", or press :kbd:`F5`.
 
-.. image:: images/programming-romi/romi-vscode-launch-sim.png
+.. image:: images/programming-romi/romi-vscode-simulate.png
    :alt: Launching simulation via the WPILib Command Palette
 
 If all goes well, you should see a line in the console output that reads "HALSimWS: WebSocket Connected":

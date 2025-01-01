@@ -1,6 +1,6 @@
 # CameraServer Web Interface
 
-When CameraServer opens a camera, it creates a webpage that you can use to view the camera stream and view the effects of various camera settings. To connect to the web interface, use a web browser to navigate to ``http://roboRIO-TEAM-frc.local:1181``. There is no additional code needed other then :ref:`docs/software/vision-processing/roborio/using-the-cameraserver-on-the-roborio:Simple CameraServer Program`.
+When CameraServer opens a camera, it creates a webpage that you can use to view the camera stream and view the effects of various camera settings. To connect to the web interface, use a web browser to navigate to ``http://roboRIO-TEAM-frc.local:1181``. There is no additional code needed other than the :ref:`docs/software/vision-processing/roborio/using-the-cameraserver-on-the-roborio:Simple CameraServer Program`.
 
 .. note:: The port ``1181`` is used for the first camera. The port increments for additional camera, so if you have two cameras, the replace ``1181`` above with ``1182``.
 

@@ -1,6 +1,7 @@
 # PathWeaver
 
-.. note:: Users may find a community driven project [PathPlanner](https://github.com/mjansen4857/pathplanner) as potentially more useful. PathPlanner improves upon traditional pathplanning applications with an intuitive user interface and swerve path following support. Note that WPILib offers no support for community projects.
+.. warning:: PathWeaver is deprecated and will be removed for 2027. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support.
+
 
 .. toctree::
    :maxdepth: 1
