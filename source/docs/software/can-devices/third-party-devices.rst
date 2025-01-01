@@ -25,6 +25,10 @@ CTR Electronics (CTRE) offers several CAN peripherals with external libraries. G
     - Hardware User's Manual ([Falcon 500](https://ctre.download/files/user-manual/Falcon%20500%20v3%20User's%20Guide.pdf), [Kraken x60](https://docs.wcproducts.com/kraken-x60), [Kraken x44](https://docs.wcproducts.com/kraken-x44))
     - [Software Documentation](https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/index.html)
 
+- **Talon FXS**
+
+
+
 - **Talon SRX**
 
     - API Documentation ([Java](https://api.ctr-electronics.com/phoenix/release/java/com/ctre/phoenix/motorcontrol/can/WPI_TalonSRX.html), [C++](https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_w_p_i___talon_s_r_x.html))
@@ -63,6 +67,10 @@ CTR Electronics (CTRE) offers several CAN peripherals with external libraries. G
     - [Hardware User's Manual](https://ctre.download/files/user-manual/CANifier%20User's%20Guide.pdf)
     - [Software Documentation](https://v5.docs.ctr-electronics.com/en/stable/ch12_BringUpCANifier.html)
 
+- **CANdi**
+
+
+
 ### CTRE Other CAN Devices
 
 - **CANdle LED Controller**
@@ -86,6 +94,12 @@ REV Robotics currently offers the SPARK MAX and SPARK Flex motor controllers whi
 
     - API Documentation ([Java](https://codedocs.revrobotics.com/java/com/revrobotics/spark/sparkflex), [C++](https://codedocs.revrobotics.com/cpp/classrev_1_1spark_1_1_spark_flex.html))
     - [Technical Manual](https://docs.revrobotics.com/brushless/spark-flex/overview)
+
+### REV Other CAN Devices
+
+- **Servo Hub**
+
+
 
 ## Playing With Fusion
 
@@ -131,3 +145,9 @@ Grapple Robotics currently offers the LaserCAN :term:`CAN`-enabled range finding
 
     - API Documentation ([Java](https://github.com/GrappleRobotics/LaserCAN/blob/master/docs/example-java.md), [C++](https://github.com/GrappleRobotics/LaserCAN/blob/master/docs/example-cpp.md))
     - [Technical Manual](https://github.com/GrappleRobotics/LaserCAN/blob/master/docs/getting-started.md)
+
+### The Thrifty Bot
+
+- **Thrifty Nova**
+
+
