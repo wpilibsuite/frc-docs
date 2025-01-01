@@ -198,4 +198,4 @@ You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-p
 
 .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/.github/workflows/lint-format.yml
    :language: yaml
-   :lines: 1-5, 13, 21-41
+   :lines: 1-5, 13, 21-43
