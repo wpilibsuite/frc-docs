@@ -57,6 +57,7 @@ extensions = [
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
     "sphinx_copybutton",
+    "sphinx_contributors",
 ]
 
 local_extensions = [
@@ -181,6 +182,8 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     "docs/yearly-overview/2020-Game-Data.rst",
+    "docs/software/wpilib-tools/robotbuilder/resources/**",
+    "docs/beta/*",
 ]
 
 # Specify the master doc file, AKA our homepage
@@ -193,6 +196,7 @@ IMAGE_SIZE_EXCLUSIONS = [
     "docs/software/vision-processing/introduction/diagrams/vision-code-on-a-coprocessor.drawio.svg",
     "docs/controls-overviews/images/frc-control-system-layout.svg",
     "docs/controls-overviews/images/frc-control-system-layout-rev.svg",
+    "docs/controls-overviews/images/frc-control-system-layout-basic.svg",
 ]
 
 # Required to display LaTeX in hover content
@@ -329,7 +333,7 @@ def new_send(self, data):
         )
 
         new_data = data
-        if b"api.github.com" in headers[b"host"]:
+        if headers[b"host"].endswith(b"api.github.com"):
             if b"authorization" not in headers:
                 if github_token := os.environ.get("GITHUB_TOKEN", None):
                     new_data = (

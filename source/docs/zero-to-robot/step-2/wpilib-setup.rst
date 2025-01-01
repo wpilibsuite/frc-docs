@@ -13,11 +13,13 @@ Supported Operating Systems and Architectures:
 
 .. note:: [Windows 10 support from Microsoft will end in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
 
+.. note:: C++ compilation is memory intensive. A minimum of 32 GB of RAM is recommended for C++ teams.
+
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
 ## Downloading
 
-.. wpilibrelease:: v2025.1.1-beta-1
+.. wpilibrelease:: v2025.1.1-beta-3
 
 [You can download the latest release of the installer from GitHub](https://github.com/wpilibsuite/allwpilib/releases/latest/).
 
@@ -56,12 +58,15 @@ When you download the WPILib installer, it is distributed as a disk image file `
    .. tab-item:: macOS
       :sync: macos
 
-      For this release, macOS users will need to have the Xcode Command Line Tools installed before running the installer; we are working on removing this requirement in a future release. This can be done by running ``xcode-select --install`` in the Terminal.
-
-      macOS users can double click on the downloaded ``DMG`` and then select ``WPILibInstaller`` to launch the application.
+      macOS users can double click on the downloaded ``dmg`` and then select ``WPILibInstaller`` to launch the application.
 
       .. image:: images/wpilib-setup/macos-launch.png
-         :alt: Show the macOS screen after double clicking the DMG file.
+         :alt: Show the macOS screen after double clicking the .dmg file.
+
+      If a warning is shown about WPILibInstaller being downloaded from the internet, select :guilabel:`Open`.
+
+      .. image:: images/wpilib-setup/macos-downloaded.png
+         :alt: Warning about WPILibInstaller being downloaded from the internet
 
    .. tab-item:: Linux
       :sync: linux

@@ -329,15 +329,6 @@ Community translations can be found in a variety of languages in the bottom-left
 .. toctree::
    :maxdepth: 1
    :titlesonly:
-   :caption: FRC Beta Test
-   :hidden:
-
-   docs/beta/beta-getting-started/index
-   docs/beta/tasks/index
-
-.. toctree::
-   :maxdepth: 1
-   :titlesonly:
    :caption: Zero to Robot
    :hidden:
 
@@ -392,7 +383,7 @@ Community translations can be found in a variety of languages in the bottom-left
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/outlineviewer/index
    docs/software/wpilib-tools/roborio-team-number-setter/index
-   docs/software/wpilib-tools/choreo/index
+   docs/software/wpilib-tools/wpical/index
 
 .. toctree::
    :maxdepth: 1

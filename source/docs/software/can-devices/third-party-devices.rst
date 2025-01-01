@@ -46,13 +46,13 @@ CTR Electronics (CTRE) offers several CAN peripherals with external libraries. G
 - **CANcoder**
 
     - API Documentation (v6: [Java](https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/hardware/CANcoder.html), [C++](https://api.ctr-electronics.com/phoenix6/release/cpp/namespacectre_1_1phoenix_1_1platform.html#ad0cac06e0817cbcfe20851a8619a19a8a13b25ca6c3f7037c0f6e13b59cc1e571))
-    - [Hardware User's Manual](https://store.ctr-electronics.com/content/user-manual/CANCoder%20User's%20Guide.pdf)
+    - [Hardware User's Manual](https://ctre.download/files/user-manual/CANCoder%20User's%20Guide.pdf)
     - [Software Documentation](https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/cancoder/index.html)
 
 - **Pigeon 2.0**
 
     - API Documentation (v6: [Java](https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/hardware/Pigeon2.html), [C++](https://api.ctr-electronics.com/phoenix6/release/cpp/namespacectre_1_1phoenix_1_1platform.html#ad0cac06e0817cbcfe20851a8619a19a8a7bd5c8d59e1daa07d31aa1d7116c5c64))
-    - [Hardware User's Manual](https://store.ctr-electronics.com/content/user-manual/Pigeon2%20User's%20Guide.pdf)
+    - [Hardware User's Manual](https://ctre.download/files/user-manual/Pigeon2%20User's%20Guide.pdf)
     - [Software Documentation6](https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/pigeon2/index.html)
 
 - **Pigeon IMU**

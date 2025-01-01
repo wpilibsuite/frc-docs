@@ -1,6 +1,6 @@
 # PathWeaver
 
-.. note:: Users may find [Choreo](https://sleipnirgroup.github.io/Choreo/) or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support. Users should already have access to Choreo as it is distributed with the WPILib installer.
+.. warning:: PathWeaver is deprecated and will be removed for 2027. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support.
 
 
 .. toctree::
