@@ -185,7 +185,7 @@ The Offline Installer installs the following components:
 
 - **Java JDK/JRE** - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the JAVA_HOME variable
 
-- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, OutlineViewer, PathWeaver, Glass, SysId, Data Log Tool, roboRIO Team Number Setter, AdvantageScope
+- **WPILib Tools** - :doc:`SmartDashboard </docs/software/dashboards/smartdashboard/index>`, :doc:`Shuffleboard </docs/software/dashboards/shuffleboard/index>`, :doc:`RobotBuilder </docs/software/wpilib-tools/robotbuilder/index>`, :doc:`OutlineViewer </docs/software/wpilib-tools/outlineviewer/index>`, :doc:`PathWeaver </docs/software/pathplanning/pathweaver/index>`, :doc:`Glass </docs/software/dashboards/glass/index>`, :doc:`SysId </docs/software/advanced-controls/system-identification/index>`, :ref:`Data Log Tool <docs/software/telemetry/datalog-download:Managing Data Logs with the DataLogTool>`, :doc:`roboRIO Team Number Setter </docs/software/wpilib-tools/roborio-team-number-setter/index>`, :doc:`AdvantageScope </docs/software/dashboards/advantagescope>`, :doc:`Elastic </docs/software/dashboards/elastic>`, :doc:`WPIcal </docs/software/wpilib-tools/wpical/index>`
 
 - **WPILib Dependencies** - OpenCV, etc.
 
