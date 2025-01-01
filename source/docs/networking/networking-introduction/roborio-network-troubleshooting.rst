@@ -13,7 +13,7 @@ The first step to identifying roboRIO networking issues is to isolate if it is a
 If there is no response, try pinging ``10.TE.AM.2`` (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`) using the command prompt as described above. If this works, you have an issue resolving the mDNS address on your PC. The two most common causes are not having an mDNS resolver installed on the system and a DNS server on the network that is trying to resolve the .local address using regular DNS.
 
 - Verify that you have an mDNS resolver installed on your system. On Windows, this is typically fulfilled by the NI FRC Game Tools. For more information on mDNS resolvers, see the :ref:`Network Basics article <docs/networking/networking-introduction/networking-basics:mDNS>`.
-- Disconnect your computer from any other networks and make sure you have the OM5P-AN configured as an access point, using the :ref:`FRC Radio Configuration Utility <docs/zero-to-robot/step-3/radio-programming:Programming your Radio>`. Removing any other routers from the system will help verify that there is not a DNS server causing the issue.
+- Disconnect your computer from any other networks. Removing any other routers from the system will help verify that there is not a DNS server causing the issue.
 
 ## Ping Fails
 
@@ -36,7 +36,7 @@ If this ping succeeds, but the .local ping fails, it is likely that either the r
 .. image:: images/roborio-troubleshooting/roborio-ip-address.png
    :alt: The IP address from the roboRIO webdashboard.
 
-If you are troubleshooting an Ethernet connection, it may be helpful to first make sure that you can connect to the roboRIO using the USB connection. Using the USB connection, open the :ref:`roboRIO webdashboard <docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard>` and verify that the roboRIO has an IP address on the ethernet interface. If you are tethering to the roboRIO directly this should be a self-assigned ``169.*.*.*`` address, if you are connected to the OM5P-AN radio, it should be an address of the form ``10.TE.AM.XX`` where TEAM is your five digit FRC team number(:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`). If the only IP address here is the USB address, verify the physical roboRIO ethernet connection.
+If you are troubleshooting an Ethernet connection, it may be helpful to first make sure that you can connect to the roboRIO using the USB connection. Using the USB connection, open the :ref:`roboRIO webdashboard <docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard>` and verify that the roboRIO has an IP address on the ethernet interface. If you are tethering to the roboRIO directly this should be a self-assigned ``169.*.*.*`` address, if you are connected to the VH-109 radio, it should be an address of the form ``10.TE.AM.XX`` where TEAM is your five digit FRC team number(:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`). If the only IP address here is the USB address, verify the physical roboRIO ethernet connection.
 
 ## Disabling Network Adapters
 

@@ -16,9 +16,9 @@ This documentation can be downloaded for offline viewing. The link to download t
 
 ### All Teams
 
--  [2024 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107) (Note: Click on link for "Individual Offline Installers")
+-  [2025 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) (Note: Click on link for "Install Offline")
 
--  [2024 FRC Radio Configuration Utility](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip) or [2024 FRC Radio Configuration Utility Israel Version](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip)
+-  [National Instruments Package Manager](https://www.ni.com/en/support/downloads/software-products/download.package-manager.html#322516) (Note: Click on link for "Install Offline")
 
 ### LabVIEW Teams
 

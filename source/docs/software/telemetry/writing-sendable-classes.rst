@@ -20,7 +20,7 @@ To enable the automatic updating of values by WPILib "in the background", ``Send
 
 ## The SendableBuilder Class
 
-As seen above, the ``initSendable`` method takes a single parameter, ``builder``, of type ``SendableBuilder`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/util/sendable/SendableBuilder.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classwpi_1_1_sendable_builder.html), :external:py:class:`Python <wpiutil.SendableBuilder>`).  This builder exposes methods that allow binding of getters and setters to dashboard names, as well as methods for safely ensuring that values consumed *from* the dashboard do not cause unsafe robot behavior.
+As seen above, the ``initSendable`` method takes a single parameter, ``builder``, of type ``SendableBuilder`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/sendable/SendableBuilder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_sendable_builder.html), :external:py:class:`Python <wpiutil.SendableBuilder>`).  This builder exposes methods that allow binding of getters and setters to dashboard names, as well as methods for safely ensuring that values consumed *from* the dashboard do not cause unsafe robot behavior.
 
 ### Databinding with addProperty Methods
 

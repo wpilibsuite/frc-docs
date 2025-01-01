@@ -6,7 +6,7 @@
 
 The roboRIO's FPGA supports up to 26 digital inputs.  10 of these are made available through the built-in DIO ports on the RIO itself, while the other 16 are available through the :term:`MXP` breakout port.
 
-Digital inputs read one of two states - "high" or "low."  By default, the built-in ports on the RIO will read "high" due to internal pull-up resistors (for more information, see :ref:`docs/hardware/sensors/digital-inputs-hardware:Digital Inputs - Hardware`).  Accordingly, digital inputs are most-commonly used with switches of some sort.  Support for this usage is provided through the :code:`DigitalInput` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/DigitalInput.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_digital_input.html)).
+Digital inputs read one of two states - "high" or "low."  By default, the built-in ports on the RIO will read "high" due to internal pull-up resistors (for more information, see :ref:`docs/hardware/sensors/digital-inputs-hardware:Digital Inputs - Hardware`).  Accordingly, digital inputs are most-commonly used with switches of some sort.  Support for this usage is provided through the :code:`DigitalInput` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DigitalInput.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_digital_input.html)).
 
 ## The DigitalInput class
 
@@ -44,7 +44,7 @@ The state of the :code:`DigitalInput` can be polled with the :code:`get` method:
 
 .. note:: An :code:`AnalogTrigger` constructed with a port number argument can share that analog port with a separate :code:`AnalogInput`, but two `AnalogInput` objects may not share the same port.
 
-Sometimes, it is desirable to use an analog input as a digital input.  This can be easily achieved using the :code:`AnalogTrigger` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/AnalogTrigger.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_analog_trigger.html)).
+Sometimes, it is desirable to use an analog input as a digital input.  This can be easily achieved using the :code:`AnalogTrigger` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogTrigger.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_trigger.html)).
 
 An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPotentiometer`, an :code:`AnalogInput` may be passed explicitly if the user wishes to customize the sampling settings:
 

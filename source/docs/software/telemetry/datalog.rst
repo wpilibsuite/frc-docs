@@ -12,7 +12,7 @@ Data logs consist of a series of timestamped records.  Control records allow sta
 
 ## Standard Data Logging using DataLogManager
 
-The ``DataLogManager`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/DataLogManager.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_data_log_manager.html), :external:py:class:`Python <wpilib.DataLogManager>`) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The data file will be saved to a USB flash drive in a folder called ``logs`` if one is attached, or to ``/home/lvuser/logs`` otherwise.
+The ``DataLogManager`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DataLogManager.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_data_log_manager.html), :external:py:class:`Python <wpilib.DataLogManager>`) provides a centralized data log that provides automatic data log file management.  It automatically cleans up old files when disk space is low and renames the file based either on current date/time or (if available) competition match number.  The data file will be saved to a USB flash drive in a folder called ``logs`` if one is attached, or to ``/home/lvuser/logs`` otherwise.
 
 .. note:: USB flash drives need to be formatted as FAT32 to work with the roboRIO.  NTFS or exFAT formatted drives will not work. Flash drives of 32GB or smaller are recommended, as Windows doesn't format drives larger then 32GB with FAT32.
 
@@ -87,7 +87,7 @@ DataLogManager by default does not record joystick data.  The ``DriverStation`` 
 
 ## Custom Data Logging using DataLog
 
-The ``DataLog`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/util/datalog/DataLog.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classwpi_1_1log_1_1_data_log.html), :external:py:class:`Python <wpiutil.log.DataLog>`) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
+The ``DataLog`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/datalog/DataLog.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1log_1_1_data_log.html), :external:py:class:`Python <wpiutil.log.DataLog>`) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
 
 .. note:: Unlike NetworkTables, there is no change checking performed.  **Every** call to a ``LogEntry.append()`` function will result in a record being written to the data log.  Checking for changes and only appending to the log when necessary is the responsibility of the caller.
 

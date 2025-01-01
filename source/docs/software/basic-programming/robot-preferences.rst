@@ -1,6 +1,6 @@
 # Setting Robot Preferences
 
-The Robot Preferences ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Preferences.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_preferences.html)) class is used to store values in the flash memory on the roboRIO. The values might be for remembering preferences on the robot such as calibration settings for potentiometers, PID values, setpoints, etc. that you would like to change without having to rebuild the program. The values can be viewed on SmartDashboard or Shuffleboard and read and written by the robot program.
+The Robot Preferences ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Preferences.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_preferences.html)) class is used to store values in the flash memory on the roboRIO. The values might be for remembering preferences on the robot such as calibration settings for potentiometers, PID values, setpoints, etc. that you would like to change without having to rebuild the program. The values can be viewed on SmartDashboard or Shuffleboard and read and written by the robot program.
 
 This example shows how to utilize Preferences to change the setpoint of a PID controller and the P constant. The code examples are adapted from the Arm Simulation example ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp)). You can run the Arm Simulation example in the Robot Simulator to see how to use the preference class and interact with it using the dashboards without needing a robot.
 
@@ -12,22 +12,22 @@ This example shows how to utilize Preferences to change the setpoint of a PID co
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Constants.java
          :language: java
          :lines: 15-20
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 27-29, 73-74, 80-83
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.h
          :language: c++
          :lines: 30-34
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: c++
          :lines: 12, 18-22
 
@@ -55,14 +55,14 @@ If using the Command Framework, this type of code could be placed in the constru
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 105-112
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: c++
          :lines: 44-52
 
@@ -82,20 +82,20 @@ Depending on the data that is stored in preferences, you can use it when you rea
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java
          :language: java
          :lines: 28-37
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 114-120
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: c++
          :lines: 15-24
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: c++
          :lines: 54-60
 

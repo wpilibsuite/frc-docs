@@ -6,6 +6,15 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 ## Open Issues
 
+### Game Tools install fails due to outdated NI Package Manager
+
+**Issue:** An offiline installation of NI Game Tools may fail due to outdated NI Package Manager
+
+.. image:: images/known-issues/game-tools-package-manager.png
+  :alt: Chinese character appearing in the Driver Station log window.
+
+**Workaround:** Install the latest [National Instruments Package Manager](https://www.ni.com/en/support/downloads/software-products/download.package-manager.html) (Note: Click on link for "Install Offline") and then restart Game Tools installation.
+
 ### Driver Station randomly disabled
 
 **Issue:** The Driver Station contains tighter safety mechanisms in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.

@@ -8,7 +8,7 @@ The FRC\ |reg| software consists of a wide variety of mandatory and optional com
 
 The primary supported OS for FRC components is Windows. All required FRC software components have been tested on Windows 10 & 11.
 
-Many of the tools for C++/Java/Python programming are also supported and tested on macOS and Linux. Teams programming in C++/Java/Python should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station, Radio Configuration Utility, and roboRIO Imaging Tool.
+Many of the tools for C++/Java/Python programming are also supported and tested on macOS and Linux. Teams programming in C++/Java/Python should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station and roboRIO Imaging Tool.
 
 ## LabVIEW FRC (Windows Only)
 
@@ -88,13 +88,6 @@ LiveWindow is a feature of SmartDashboard and Shuffleboard, designed for use wit
    :alt: roboRIO Imaging Tool after it has found a connected roboRIO.
 
 This tool is used to format and setup a roboRIO for use in FRC. Installation instructions can be found :ref:`here <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`. Additional instructions on imaging your roboRIO using this tool can be found :doc:`here </docs/zero-to-robot/step-3/imaging-your-roborio>`.
-
-## FRC Radio Configuration Utility (Windows Only)
-
-.. image:: images/control-system-software/frc-radio-configuration-utility.png
-   :alt: Initial screen of the FRC Radio Configuration Utility.
-
-The FRC Radio Configuration Utility is a tool used to configure the standard radio for practice use at home. This tool sets the appropriate network settings to mimic the experience of the FRC playing field. The FRC Radio Configuration Utility is installed by a standalone installer that can be found :ref:`here <docs/zero-to-robot/step-3/radio-programming:Programming your Radio>`.
 
 ## FRC Driver Station Log Viewer (Windows Only)
 

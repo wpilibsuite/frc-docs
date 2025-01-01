@@ -12,7 +12,7 @@ FRC: A joystick was disconnected while the robot was enabled.
 
 This error is triggered when a Joystick is unplugged. Contrary to the message text this error will be printed even if the robot is not enabled, or even connected to the DS. You will see a single instance of this message occur each time the Driver Station is started, even if Joysticks are properly connected and functioning.
 
-.. note:: Joystick Unplugged warnings can be silenced by calling ``DriverStation.silenceJoystickConnectionWarning(true)`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/DriverStation.html#silenceJoystickConnectionWarning(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_driver_station.html#ad92dee0301f96316ffd2a28a22ab9e54))
+.. note:: Joystick Unplugged warnings can be silenced by calling ``DriverStation.silenceJoystickConnectionWarning(true)`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DriverStation.html#silenceJoystickConnectionWarning(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_driver_station.html#ad92dee0301f96316ffd2a28a22ab9e54))
 
 ## Lost Communication
 

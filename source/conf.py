@@ -160,6 +160,7 @@ linkcheck_ignore = [
 linkcheck_anchors_ignore_for_url = [
     r".*github.com.*",
     r".*ni.com/en/support/downloads/drivers/download.frc-game-tools.html.*",
+    r".*ni.com/en/support/downloads/software-products/download.package-manager.html.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -183,6 +184,7 @@ templates_path = ["_templates"]
 exclude_patterns = [
     "docs/yearly-overview/2020-Game-Data.rst",
     "docs/software/wpilib-tools/robotbuilder/resources/**",
+    "docs/beta/*",
 ]
 
 # Specify the master doc file, AKA our homepage

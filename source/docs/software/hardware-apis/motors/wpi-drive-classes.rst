@@ -146,7 +146,7 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
 
 ### Multi-Motor DifferentialDrive
 
-Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived from ``PWMMotorController`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.html) / [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_p_w_m_motor_controller.html) / :external:py:class:`Python <wpilib.PWMMotorController>`) have an ``addFollower`` method so that multiple follower motor controllers can be updated when the leader motor controller is commanded. CAN motor controllers have similar features, review the vendor's documentation to see how to use them. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and use additional ``addFollower`` calls.
+Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived from ``PWMMotorController`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.html) / [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_w_m_motor_controller.html) / :external:py:class:`Python <wpilib.PWMMotorController>`) have an ``addFollower`` method so that multiple follower motor controllers can be updated when the leader motor controller is commanded. CAN motor controllers have similar features, review the vendor's documentation to see how to use them. The examples below show a 4 motor (2 per side) drivetrain. To extend to more motors, simply create the additional controllers and use additional ``addFollower`` calls.
 
 .. tab-set::
 

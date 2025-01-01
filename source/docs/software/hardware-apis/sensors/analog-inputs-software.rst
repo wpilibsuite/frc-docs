@@ -10,7 +10,7 @@ Analog inputs from the FPGA by default return a 12-bit integer proportional to t
 
 .. note:: It is often more convenient to use the :doc:`Analog Potentiometers <analog-potentiometers-software>` wrapper class than to use :code:`AnalogInput` directly, as it supports scaling to meaningful units.
 
-Support for reading the voltages on the FPGA analog inputs is provided through the :code:`AnalogInput` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/AnalogInput.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_analog_input.html)).
+Support for reading the voltages on the FPGA analog inputs is provided through the :code:`AnalogInput` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogInput.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_input.html)).
 
 ### Initializing an AnalogInput
 
