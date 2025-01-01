@@ -2,7 +2,7 @@
 
 Robots encounter a variety of fault conditions: disconnected sensors/motors, invalid mechanism states, initialization failures, etc. While the FRC Driver Station provides a :ref:`console interface <docs/software/driverstation/driver-station:Messages Tab>` for instantaneous alerts, the risk of missing important messages makes it poorly suited to communicate faults that persist over time.
 
-Instead, the ``Alert`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Alert.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_alert.html)) can be used for managing persistent alerts published via Network Tables. Alerts are assigned a priority (*error*, *warning*, or *info*) and can be *activated* or *deactivated* in robot code. The set of active alerts can be displayed on a dashboard, as shown below in Shuffleboard.
+Instead, the ``Alert`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Alert.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_alert.html)) can be used for managing persistent alerts published via Network Tables. Alerts are assigned a priority (*error*, *warning*, or *info*) and can be *activated* or *deactivated* in robot code. The set of active alerts can be displayed on a dashboard, as shown below in Shuffleboard.
 
 .. image:: images/alerts.png
    :alt: A screenshot of the alerts widget in Shuffleboard, with several active alerts.

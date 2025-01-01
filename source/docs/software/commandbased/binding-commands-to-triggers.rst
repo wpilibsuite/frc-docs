@@ -4,7 +4,7 @@ Apart from autonomous commands, which are scheduled at the start of the autonomo
 
 As mentioned earlier, command-based is a :term:`declarative programming` paradigm. Accordingly, binding buttons to commands is done declaratively; the association of a button and a command is "declared" once, during robot initialization. The library then does all the hard work of checking the button state and scheduling (or canceling) the command as needed, behind-the-scenes. Users only need to worry about designing their desired UI setup - not about implementing it!
 
-Command binding is done through the ``Trigger`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/Trigger.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_trigger.html)).
+Command binding is done through the ``Trigger`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Trigger.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_trigger.html)).
 
 ## Getting a Trigger Instance
 
@@ -12,7 +12,7 @@ To bind commands to conditions, we need a ``Trigger`` object. There are three wa
 
 ### HID Factories
 
-The command-based HID classes contain factory methods returning a ``Trigger`` for a given button. ``CommandGenericHID`` has an index-based ``button(int)`` factory ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/CommandGenericHID.html#button(int)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_generic_h_i_d.html#a661f49794a913615c94fba927e1072a8)), and its subclasses ``CommandXboxController`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/CommandXboxController.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_xbox_controller.html)), ``CommandPS4Controller`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/CommandPS4Controller.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_p_s4_controller.html)), and ``CommandJoystick`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/CommandJoystick.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_joystick.html)) have named factory methods for each button.
+The command-based HID classes contain factory methods returning a ``Trigger`` for a given button. ``CommandGenericHID`` has an index-based ``button(int)`` factory ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/CommandGenericHID.html#button(int)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_generic_h_i_d.html#a661f49794a913615c94fba927e1072a8)), and its subclasses ``CommandXboxController`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/CommandXboxController.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_xbox_controller.html)), ``CommandPS4Controller`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/CommandPS4Controller.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_p_s4_controller.html)), and ``CommandJoystick`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/CommandJoystick.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_joystick.html)) have named factory methods for each button.
 
 .. tab-set-code::
 
@@ -28,7 +28,7 @@ The command-based HID classes contain factory methods returning a ``Trigger`` fo
 
 ### JoystickButton
 
-Alternatively, the :ref:`regular HID classes <docs/software/basic-programming/joystick:Joysticks>` can be used and passed to create an instance of ``JoystickButton`` [Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_joystick_button.html)), a constructor-only subclass of ``Trigger``:
+Alternatively, the :ref:`regular HID classes <docs/software/basic-programming/joystick:Joysticks>` can be used and passed to create an instance of ``JoystickButton`` [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_joystick_button.html)), a constructor-only subclass of ``Trigger``:
 
 .. tab-set-code::
 
@@ -108,7 +108,7 @@ The ``whileFalse`` binding is identical, only that it schedules on ``false`` and
 
 ### toggleOnTrue
 
-This binding toggles a command, scheduling it when a trigger changes from ``false`` to ``true`` (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are not a highly-recommended option for user control, as they require the driver to keep track of the robot state.  The preferred method is to use two buttons; one to turn on and another to turn off.  Using a [StartEndCommand](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html) or a [ConditionalCommand](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html) is a good way to specify the commands that you want to be want to be toggled between.
+This binding toggles a command, scheduling it when a trigger changes from ``false`` to ``true`` (or a button is initially pressed), and canceling it under the same condition if the command is currently running. Note that while this functionality is supported, toggles are not a highly-recommended option for user control, as they require the driver to keep track of the robot state.  The preferred method is to use two buttons; one to turn on and another to turn off.  Using a [StartEndCommand](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html) or a [ConditionalCommand](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html) is a good way to specify the commands that you want to be want to be toggled between.
 
 .. tab-set-code::
 

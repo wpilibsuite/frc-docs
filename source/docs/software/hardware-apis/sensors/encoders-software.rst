@@ -10,7 +10,7 @@ Encoders are devices used to measure motion (usually, the rotation of a shaft).
 
 ## Quadrature Encoders - The :code:`Encoder` Class
 
-WPILib provides support for quadrature encoders through the :code:`Encoder` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/Encoder.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_encoder.html)).  This class provides a simple API for configuring and reading data from encoders.
+WPILib provides support for quadrature encoders through the :code:`Encoder` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_encoder.html)).  This class provides a simple API for configuring and reading data from encoders.
 
 .. image:: images/encoders-software/encoding-direction.png
     :alt: Quadrature Encoders determine direction by observing which pulse channel (A or B) receives a pulse first.
@@ -219,7 +219,7 @@ To reset a quadrature encoder to a distance reading of zero, call the :code:`res
 
 ## Duty Cycle Encoders - The :code:`DutyCycleEncoder` class
 
-WPILib provides support for duty cycle (also marketed as :term:`PWM`) encoders through the :code:`DutyCycleEncoder` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_duty_cycle_encoder.html)).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+WPILib provides support for duty cycle (also marketed as :term:`PWM`) encoders through the :code:`DutyCycleEncoder` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_duty_cycle_encoder.html)).  This class provides a simple API for configuring and reading data from duty cycle encoders.
 
 The roboRIO's FPGA handles duty cycle encoders automatically.
 
@@ -325,7 +325,7 @@ To reset an encoder so the current distance is 0, call the :code:`reset()` metho
 
 ## Analog Encoders - The :code:`AnalogEncoder` Class
 
-WPILib provides support for analog absolute encoders through the :code:`AnalogEncoder` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/AnalogEncoder.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_analog_encoder.html)).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+WPILib provides support for analog absolute encoders through the :code:`AnalogEncoder` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html)).  This class provides a simple API for configuring and reading data from duty cycle encoders.
 
 Examples of analog encoders:
 

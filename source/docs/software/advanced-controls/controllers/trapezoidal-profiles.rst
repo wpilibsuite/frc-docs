@@ -10,7 +10,7 @@
 
 While feedforward and feedback control offer convenient ways to achieve a given setpoint, we are often still faced with the problem of generating setpoints for our mechanisms.  While the naive approach of immediately commanding a mechanism to its desired state may work, it is often suboptimal.  To improve the handling of our mechanisms, we often wish to command mechanisms to a *sequence* of setpoints that smoothly interpolate between its current state, and its desired goal state.
 
-To help users do this, WPILib provides a ``TrapezoidProfile`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_trapezoid_profile.html), :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile>`).
+To help users do this, WPILib provides a ``TrapezoidProfile`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile.html), :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile>`).
 
 ## Creating a TrapezoidProfile
 
@@ -20,7 +20,7 @@ To help users do this, WPILib provides a ``TrapezoidProfile`` class ([Java](http
 
 .. note:: The various :ref:`feedforward helper classes <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>` provide methods for calculating the maximum simultaneously-achievable velocity and acceleration of a mechanism.  These can be very useful for calculating appropriate motion constraints for your ``TrapezoidProfile``.
 
-In order to create a trapezoidal motion profile, we must first impose some constraints on the desired motion.  Namely, we must specify a maximum velocity and acceleration that the mechanism will be expected to achieve during the motion.  To do this, we create an instance of the ``TrapezoidProfile.Constraints`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/trajectory/TrapezoidProfile.Constraints.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_trapezoid_profile_1_1_constraints.html), :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile.Constraints>`):
+In order to create a trapezoidal motion profile, we must first impose some constraints on the desired motion.  Namely, we must specify a maximum velocity and acceleration that the mechanism will be expected to achieve during the motion.  To do this, we create an instance of the ``TrapezoidProfile.Constraints`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.Constraints.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile_1_1_constraints.html), :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile.Constraints>`):
 
 .. tab-set-code::
 
@@ -48,7 +48,7 @@ In order to create a trapezoidal motion profile, we must first impose some const
 
 ### Start and End States
 
-Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/trajectory/TrapezoidProfile.State.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_trapezoid_profile_1_1_state.html), :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile.State>`).  Each state has a position and a velocity:
+Next, we must specify the desired starting and ending states for our mechanisms using the ``TrapezoidProfile.State`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.State.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile_1_1_state.html), :external:py:class:`Python <wpimath.trajectory.TrapezoidProfile.State>`).  Each state has a position and a velocity:
 
 .. tab-set-code::
 

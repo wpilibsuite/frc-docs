@@ -1,6 +1,6 @@
 # The Command Scheduler
 
-The ``CommandScheduler`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html)) is the class responsible for actually running commands.  Each iteration (ordinarily once per 20ms), the scheduler polls all registered buttons, schedules commands for execution accordingly, runs the command bodies of all scheduled commands, and ends those commands that have finished or are interrupted.
+The ``CommandScheduler`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html)) is the class responsible for actually running commands.  Each iteration (ordinarily once per 20ms), the scheduler polls all registered buttons, schedules commands for execution accordingly, runs the command bodies of all scheduled commands, and ends those commands that have finished or are interrupted.
 
 The ``CommandScheduler`` also runs the ``periodic()`` method of each registered ``Subsystem``.
 
@@ -14,7 +14,7 @@ However, there is one exception: users *must* call ``CommandScheduler.getInstanc
 
 ## The ``schedule()`` Method
 
-To schedule a command, users call the ``schedule()`` method ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(edu.wpi.first.wpilibj2.command.Command...)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#a9f3f7bb5c1a3cf57592fe5cfadb6a57d)).  This method takes a command, and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called.
+To schedule a command, users call the ``schedule()`` method ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(edu.wpi.first.wpilibj2.command.Command...)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a9f3f7bb5c1a3cf57592fe5cfadb6a57d)).  This method takes a command, and attempts to add it to list of currently-running commands, pending whether it is already running or whether its requirements are available.  If it is added, its ``initialize()`` method is called.
 
 This method walks through the following steps:
 
@@ -53,7 +53,7 @@ This method walks through the following steps:
 
 .. note:: The ``initialize()`` method of each ``Command`` is called when the command is scheduled, which is not necessarily when the scheduler runs (unless that command is bound to a button).
 
-What does a single iteration of the scheduler's ``run()`` method ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#aa5000fa52e320da7ba72c196f34aa0f5)) actually do?  The following section walks through the logic of a scheduler iteration. For the full implementation, see the source code ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java#L252-L331), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp#L173-L253)).
+What does a single iteration of the scheduler's ``run()`` method ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#aa5000fa52e320da7ba72c196f34aa0f5)) actually do?  The following section walks through the logic of a scheduler iteration. For the full implementation, see the source code ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibNewCommands/src/main/java/edu/wpi/first/wpilibj2/command/CommandScheduler.java#L252-L331), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibNewCommands/src/main/native/cpp/frc2/command/CommandScheduler.cpp#L173-L253)).
 
 ### Step 1: Run Subsystem Periodic Methods
 
@@ -159,13 +159,13 @@ The scheduler may be re-enabled by calling ``CommandScheduler.getInstance().enab
 
 Occasionally, it is desirable to have the scheduler execute a custom action whenever a certain command event (initialization, execution, or ending) occurs.  This can be done with the following methods:
 
-- ``onCommandInitialize`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#a5f983f0e45b0500c96eebe52780324d4)) runs a specified action whenever a command is initialized.
+- ``onCommandInitialize`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a5f983f0e45b0500c96eebe52780324d4)) runs a specified action whenever a command is initialized.
 
-- ``onCommandExecute`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#a58c538f4b8dd95e266e4a99167aa7f99)) runs a specified action whenever a command is executed.
+- ``onCommandExecute`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a58c538f4b8dd95e266e4a99167aa7f99)) runs a specified action whenever a command is executed.
 
-- ``onCommandFinish`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#a068e61446afe2341cc0651f0dfd2a55f)) runs a specified action whenever a command finishes normally (i.e. the ``isFinished()`` method returned true).
+- ``onCommandFinish`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a068e61446afe2341cc0651f0dfd2a55f)) runs a specified action whenever a command finishes normally (i.e. the ``isFinished()`` method returned true).
 
-- ``onCommandInterrupt`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc2_1_1_command_scheduler.html#ab5ba99a542aa778a76726d7c68461bf0)) runs a specified action whenever a command is interrupted (i.e. by being explicitly canceled or by another command that shares one of its requirements).
+- ``onCommandInterrupt`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#ab5ba99a542aa778a76726d7c68461bf0)) runs a specified action whenever a command is interrupted (i.e. by being explicitly canceled or by another command that shares one of its requirements).
 
 A typical use-case for these methods is adding markers in an event log whenever a command scheduling event takes place, as demonstrated in the following code from the HatchbotInlined example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined)):
 
