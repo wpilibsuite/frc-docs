@@ -1,0 +1,11 @@
+{% extends '!breadcrumbs.html' %}
+
+{%- block breadcrumbs_aside %}
+<li class="wy-breadcrumbs-aside" style="padding-inline-start: 6px;">
+    <a href="?present" class="btn" style="background-color: #2980b9; color: white; padding: 5px">
+        Present
+        <span class="fa fa-expand"></span>
+    </a>
+</li>
+{{ super() }}
+{%- endblock %}

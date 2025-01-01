@@ -1,35 +1,20 @@
-roboRIO Web Dashboard
-=====================
+# roboRIO Web Dashboard
 
 The roboRIO web dashboard is a webpage built into the roboRIO that can
 be used for checking status and updating settings of the roboRIO.
 
-Unlike the 2015-2018 roboRIO web dashboard, the 2019 web dashboard does
-not use SilverLight. Users may encounter issues using IE (compatibility)
-or Edge (mDNS site access). Alternate browsers such as Google Chrome or
-Mozilla Firefox are recommended for the best experience.
-
-.. note:: The roboRIO web dashboard was been re-written for 2019. All CAN
- configuration functionality has been removed. Configuration of CAN
- devices should be done with software provided by the device vendor. For
- CTRE devices previously serviced using the webdashboard, the appropriate
- software is `CTRE Phoenix
- Tuner <https://phoenix-documentation.readthedocs.io/en/latest/ch03_PrimerPhoenixSoft.html#what-is-phoenix-tuner>`__.
-
-Opening the WebDash
--------------------
+## Opening the WebDash
 
 .. figure:: images/roborio-page-home.png
    :alt:
 
 To open the web dashboard, open a web browser and enter the address of
 the roboRIO into the address bar (172.22.11.2 for USB, or
-"roboRIO-####-FRC.local where #### is your team number, with no leading
+"roboRIO-#####-FRC.local where ##### is your team number, with no leading
 zeroes, for either interface). See this document for more details about
 mDNS and roboRIO networking: :ref:`docs/networking/networking-introduction/ip-configurations:IP Configurations`
 
-System Configuration Tab
-------------------------
+## System Configuration Tab
 
 .. figure:: images/system-configuration-tab.png
    :alt:
@@ -50,8 +35,7 @@ which has 5 main sections:
 4. System Resources (not pictured) - This section provides a snapshot of
    system resources such as memory and CPU load.
 
-Startup Settings
-~~~~~~~~~~~~~~~~
+#### Startup Settings
 
 .. figure:: images/startup-settings.png
    :alt:
@@ -61,25 +45,17 @@ Startup Settings
    use the Reset button on the roboRIO to put the device into Safe Mode
    instead (with power already applied, hold the rest button for 5
    seconds). **Default is unchecked.**
--  Enable Console Out - This enables the on-board RS232 port to be used
-   as a Console output. It is recommended to leave this enabled unless
-   you are using this port to talk to a serial device (note that this
-   port uses RS232 levels and and should not be connected to many
-   microcontrollers which use TTL levels). **Default is checked.**
+-  Enable Console Out - This enables the on-board RS232 port to be used as a
+   Console output. This port uses RS232 levels and should not be connected to
+   many microcontrollers which use TTL levels). **Default is unchecked.**
 -  Disable RT Startup App - Checking this box disables code from running
    at startup. This may be used for troubleshooting if you find the
    roboRIO is unresponsive to new program download. Default is unchecked
 -  Disable FPGA Startup App - **This box should not be checked.**
--  Enable Secure Shell Server (sshd) - **It is recommended to leave this
-   box checked.** This setting enables SSH which is a way to remotely
-   access a console on the roboRIO. Unchecking this box will prevent C++
-   and Java teams from loading code onto the roboRIO.
--  LabVIEW Project Access -\*\* It is recommended to leave this box
-   checked.\*\* This setting allows LabVIEW projects to access the
-   roboRIO.
+-  LabVIEW Project Access - **It is recommended to leave this box checked.**
+   This setting allows LabVIEW projects to access the roboRIO.
 
-Network Configuration
----------------------
+## Network Configuration
 
 .. figure:: images/network-configuration.png
    :alt:

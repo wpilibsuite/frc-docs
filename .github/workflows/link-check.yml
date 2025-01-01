@@ -5,15 +5,18 @@ on:
   schedule:
     - cron:  '0 4 * * *'
 
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
 jobs:
   check-links:
-    if: github.repository_owner	== 'wpilibsuite'
-    runs-on: ubuntu-latest
+    if: github.repository_owner == 'wpilibsuite'
+    runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
       with:
-        python-version: 3.7
+        python-version: 3.11
     - name: Install Dependencies
       run: pip install -r source/requirements.txt
     - name: Check Links

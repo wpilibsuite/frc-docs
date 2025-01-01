@@ -1,0 +1,33 @@
+.flex-grid {
+    display: flex;
+    margin: 5px;
+
+}
+
+@media (max-width: 800px) {
+    .flex-grid {
+      display: block;
+      margin: 5px;
+
+    }
+  }
+
+.col {
+    flex: 1;
+    min-height: 300px;
+    max-height: 300px;
+    margin: 5px;
+}
+
+controlTable {
+    margin: 5px;
+}
+
+.viz-div {
+  margin:10px;
+  border-style: solid;
+  border-width: 3px;
+
+}
+    
+    

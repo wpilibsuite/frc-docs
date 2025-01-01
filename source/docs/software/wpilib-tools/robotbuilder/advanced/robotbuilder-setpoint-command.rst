@@ -1,32 +1,38 @@
-Setpoint Command
-================
+# Setpoint Command
 
-.. important:: RobotBuilder has been updated to support the new commandbased framework! Unfortunately, this documentation is outdated and only for the old commandbased framework. Individuals interested in updating this documentation can open a pull request on the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository.
+A Setpoint Command works in conjunction with a PIDSubsystem to drive an actuator to a particular angle or position that is measured using a potentiometer or encoder. This happens so often that there is a shortcut in RobotBuilder to do this task.
 
-A common use case in robot programs is to drive an actuator to a particular angle or position that is measured using a potentiometer or encoder. This happens so often that there is a shortcut in RobotBuilder to do this task. It is called the Setpoint command and it's one of the choices on the palette or the right-click context menu that can be inserted under "Commands".
-
-Start with a PIDSubsystem
--------------------------
+## Start with a PIDSubsystem
 
 .. image:: images/setpoint-command-1.png
 
-Suppose in a robot there is a wrist joint with a potentiometer that measures the angle. First :doc:`create a PIDSubsystem <../writing-code/robotbuilder-writing-pidsubsystem-code>` that include the motor that moves the wrist joint and the potentiometer that measures the angle. The PIDSubsystem should have all the PID constants filled in and working properly.
+Suppose in a robot there is a wrist joint with a potentiometer that measures the angle. First :doc:`create a PIDSubsystem <robotbuilder-writing-pidsubsystem-code>` that include the motor that moves the wrist joint and the potentiometer that measures the angle. The PIDSubsystem should have all the PID constants filled in and working properly.
 
 It is important to set the **Tolerance** parameter. This controls how far off the current value can be from the setpoint and be considered on target. This is the criteria that the SetpointCommand uses to move onto the next command.
 
-Creating the Setpoint Command
------------------------------
+## Creating the Setpoint Command
 
 .. image:: images/setpoint-command-2.png
 
 Right-click on the Commands folder in the palette and select "Add Setpoint command".
 
-Setpoint Command Parameters
----------------------------
+## Setpoint Command Parameters
 
 .. image:: images/setpoint-command-3.png
 
-Fill in the name of the new command. The Requires field is the PIDSubsystem that is being driven to a setpoint and the Setpoint parameter is the setpoint value for the PIDSubsystem. There is no need to fill in any code for this command, it is automatically created by RobotBuilder.
+Fill in the name of the new command. The Requires field is the PIDSubsystem that is being driven to a setpoint, in this case the Elevator subsystem.
+
+.. image:: images/setpoint-command-4.png
+
+1. Click on the Parameter Presets to set up the setpoints.
+2. Select :guilabel:`Add Preset`
+3. Enter a preset name (in this case 'bottom'
+4. Click the dropdown next to the setpoint entry box
+5. Select the Elevator.Bottom constant, that was created in the Elevator subsystem previously
+6. Repeat steps 2-5 for the other setpoints.
+7. Click :guilabel:`Save and close`
+
+There is no need to fill in any code for this command, it is automatically created by RobotBuilder.
 
 Whenever this command is scheduled, it will automatically drive the subsystem to the specified setpoint. When the setpoint is reached within the tolerance specified in the PIDSubsystem, the command ends and the next command starts. It is important to specify a tolerance in the PIDSubsystem or this command might never end because the tolerance is not achieved.
 

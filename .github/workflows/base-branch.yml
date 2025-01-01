@@ -1,0 +1,17 @@
+name: Check Base Branch
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - stable
+
+jobs:
+  check-base-branch:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Base Branch
+        run: | 
+          echo "::error ::Base branch of PR is stable. It should be main. Please retarget the base branch of the PR." 
+          exit 1
+

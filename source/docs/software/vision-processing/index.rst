@@ -1,11 +1,9 @@
-Vision Processing
-=================
+# Vision Processing
 
 .. toctree::
    :maxdepth: 2
 
    introduction/index
-   frcvision/index
-   grip/index
+   wpilibpi/index
+   apriltag/index
    roborio/index
-   axis-camera/index

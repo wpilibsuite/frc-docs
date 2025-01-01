@@ -1,6 +1,21 @@
-requirements_file: source/requirements.txt
+version: 2
 
 sphinx:
   builder: html
   configuration: source/conf.py
   fail_on_warning: true
+
+build:
+  os: ubuntu-20.04
+  tools:
+    python: "3.9"
+  apt_packages:
+    - librsvg2-bin
+ 
+formats:
+  - htmlzip
+  - pdf
+
+python:
+  install:
+  - requirements: source/requirements.txt

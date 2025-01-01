@@ -9,9 +9,9 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=source
 set BUILDDIR=build
-set SPHINXOPTS=-W --keep-going
-set LINTER=doc8
-set LINTEROPTS=--ignore D001 --ignore D002 --ignore D004
+set SPHINXOPTS=-W --keep-going -q -T
+set LINTER=python scripts/doc8_redown.py
+set LINTEROPTS=--ignore D001 --ignore D004 --ignore-path "source/docs/software/wpilib-tools/robotbuilder/resources/**"
 set SIZECHECKER=python -m scripts.imagesizechecker
 set CONFEXCLUDE=--exclude-file source/conf.py
 set SIZEMAX=500
@@ -22,7 +22,7 @@ if "%1" == "lint" goto lint
 
 if "%1" == "sizecheck" goto sizecheck
 
-%SPHINXBUILD% >NUL 2>NUL
+CALL %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
 	echo.
 	echo.The 'sphinx-build' command was not found. Make sure you have Sphinx

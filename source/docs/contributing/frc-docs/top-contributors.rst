@@ -1,5 +1,6 @@
 Top Contributors
 ================
 
-.. ghcontributors:: wpilibsuite/frc-docs
+.. contributors:: wpilibsuite/frc-docs
    :limit: 10
+   :contributions:

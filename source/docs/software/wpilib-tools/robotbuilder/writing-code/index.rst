@@ -1,7 +1,4 @@
-RobotBuilder - Writing the Code
-===============================
-
-.. important:: RobotBuilder has been updated to support the new commandbased framework! Unfortunately, this documentation is outdated and only for the old commandbased framework. Individuals interested in updating this documentation can open a pull request on the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository.
+# RobotBuilder - Writing the Code
 
 .. toctree::
    :maxdepth: 1
@@ -9,4 +6,4 @@ RobotBuilder - Writing the Code
    robotbuilder-generating-code
    robotbuilder-writing-subsystem-code
    robotbuilder-writing-command-code
-   robotbuilder-writing-pidsubsystem-code
+   robotbuilder-drive-tank

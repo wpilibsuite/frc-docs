@@ -3,18 +3,13 @@
 Task 1: Software Installation
 =============================
 
-Task: Choose, acquire, and install the software required for developing FRC\ |reg| software in the language you have been assigned (C++, Java or LabVIEW).
+Task: Choose, acquire, and install the software required for developing FRC\ |reg| software in your desired testing language.
 
 Overview
 --------
-
-The FRC Control System can be programmed in LabVIEW, Java or C/C++. Teams should use the language they have been assigned for the Beta test.
-
 Documentation for installation can be found on the :ref:`docs/zero-to-robot/step-2/index:Step 2: Installing Software` page.
 
-.. note:: For the 2021 FRC season, LabVIEW will be remaining at the same version used in the 2020 FRC season. Teams do not need to un-install or re-install the base LabVIEW installation (you will still need to install updated Game Tools). There will be re-licensing instructions coming later that we may ask teams to test.
-
-.. note:: For this task, there is supplemental documentation provided in TeamForge for all languages. See the Documents and File Releases sections on TeamForge. Use the files in the File Releases sections instead of the files linked in the installation documentation.
+.. note:: For this task, use the files in the README of the [Beta GitHub project](https://github.com/wpilibsuite/2025Beta) instead of the files linked in the installation documentation.
 
 Desired Feedback
 ----------------

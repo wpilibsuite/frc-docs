@@ -1,16 +1,14 @@
-Trajectory Generation
-=====================
-The 2020 release of WPILib contains classes that help generating trajectories. A trajectory is a smooth curve, with velocities and accelerations at each point along the curve, connecting two endpoints on the field. Generation and following of trajectories is incredibly useful for performing autonomous tasks. Instead of a simple autonomous routine -- which involves moving forward, stopping, turning 90 degrees to the right, then moving forward -- using trajectories allows for motion along a smooth curve. This has the advantage of speeding up autonomous routines, creating more time for other tasks; and when implemented well, makes autonomous navigation more accurate and precise.
+# Trajectory Generation
+WPILib contains classes that help generating trajectories. A trajectory is a smooth curve, with velocities and accelerations at each point along the curve, connecting two endpoints on the field. Generation and following of trajectories is incredibly useful for performing autonomous tasks. Instead of a simple autonomous routine -- which involves moving forward, stopping, turning 90 degrees to the right, then moving forward -- using trajectories allows for motion along a smooth curve. This has the advantage of speeding up autonomous routines, creating more time for other tasks; and when implemented well, makes autonomous navigation more accurate and precise.
 
 This article goes over how to generate a trajectory. The next few articles in this series will go over how to actually follow the generated trajectory. There are a few things that your robot must have before you dive into the world of trajectories:
 
 * A way to measure the position and velocity of each side of the robot. An encoder is the best way to do this; however, other options may include optical flow sensors, etc.
 * A way to measure the angle or angular rate of the robot chassis. A gyroscope is the best way to do this. Although the angular rate can be calculated using encoder velocities, this method is NOT recommended because of wheel scrubbing.
 
-If you are looking for a simpler way to perform autonomous navigation, see :ref:`the section on driving to a distance <docs/software/sensors/encoders-software:Driving to a distance>`.
+If you are looking for a simpler way to perform autonomous navigation, see :ref:`the section on driving to a distance <docs/software/hardware-apis/sensors/encoders-software:Driving to a distance>`.
 
-Splines
--------
+## Splines
 A spline refers to a set of curves that interpolate between points. Think of it as connecting dots, except with curves. WPILib supports two types of splines: hermite clamped cubic and hermite quintic.
 
 * Hermite clamped cubic: This is the recommended option for most users. Generation of trajectories using these splines involves specifying the (x, y) coordinates of all points, and the headings at the start and end waypoints. The headings at the interior waypoints are automatically determined to ensure continuous curvature (rate of change of the heading) throughout.
@@ -19,21 +17,19 @@ A spline refers to a set of curves that interpolate between points. Think of it 
 
 Splines are used as a tool to generate trajectories; however, the spline itself does not have any information about velocities and accelerations. Therefore, it is not recommended that you use the spline classes directly. In order to generate a smooth path with velocities and accelerations, a *trajectory* must be generated.
 
-Creating the trajectory config
-------------------------------
+## Creating the trajectory config
 A configuration must be created in order to generate a trajectory. The config contains information about special constraints, the max velocity, the max acceleration in addition to the start velocity and end velocity. The config also contains information about whether the trajectory should be reversed (robot travels backward along the waypoints). The ``TrajectoryConfig`` class should be used to construct a config. The constructor for this class takes two arguments, the max velocity and max acceleration. The other fields (``startVelocity``, ``endVelocity``, ``reversed``, ``constraints``) are defaulted to reasonable values (``0``, ``0``, ``false``, ``{}``) when the object is created. If you wish to modify the values of any of these fields, you can call the following methods:
 
-* ``setStartVelocity(double startVelocityMetersPerSecond)`` (Java) / ``SetStartVelocity(units::meters_per_second_t startVelocity)`` (C++)
-* ``setEndVelocity(double endVelocityMetersPerSecond)`` (Java) / ``SetEndVelocity(units::meters_per_second_t endVelocity)`` (C++)
-* ``setReversed(boolean reversed)`` (Java) / ``SetReversed(bool reversed)`` (C++)
-* ``addConstraint(TrajectoryConstraint constraint)`` (Java) / ``AddConstraint(TrajectoryConstraint constraint)`` (C++)
+* ``setStartVelocity(double startVelocityMetersPerSecond)`` (Java/Python) / ``SetStartVelocity(units::meters_per_second_t startVelocity)`` (C++)
+* ``setEndVelocity(double endVelocityMetersPerSecond)`` (Java/Python) / ``SetEndVelocity(units::meters_per_second_t endVelocity)`` (C++)
+* ``setReversed(boolean reversed)`` (Java/Python) / ``SetReversed(bool reversed)`` (C++)
+* ``addConstraint(TrajectoryConstraint constraint)`` (Java/Python) / ``AddConstraint(TrajectoryConstraint constraint)`` (C++)
 
 
 .. note:: The ``reversed`` property simply represents whether the robot is traveling backward. If you specify four waypoints, a, b, c, and d, the robot will still travel in the same order through the waypoints when the ``reversed`` flag is set to ``true``. This also means that you must account for the direction of the robot when providing the waypoints. For example, if your robot is facing your alliance station wall and travels backwards to some field element, the starting waypoint should have a rotation of 180 degrees.
 
 
-Generating the trajectory
--------------------------
+## Generating the trajectory
 
 The method used to generate a trajectory is ``generateTrajectory(...)``. There are four overloads for this method. Two that use clamped cubic splines and the two others that use quintic splines. For each type of spline, there are two ways to construct a trajectory. The easiest methods are the overloads that accept ``Pose2d`` objects.
 
@@ -45,21 +41,81 @@ When using clamped cubic splines, the length of the array must be 2 (0th and 1st
 
 Here is an example of generating a trajectory using clamped cubic splines for the 2018 game, FIRST Power Up:
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: Java
+   .. tab-item:: Java
 
       .. literalinclude:: examples/trajectory-generation-1/java/ExampleTrajectory.java
          :language: java
          :lines: 10-32
 
-   .. tab:: C++
+   .. tab-item:: C++
 
       .. literalinclude:: examples/trajectory-generation-1/cpp/ExampleTrajectory.cpp
-         :language: cpp
+         :language: c++
          :lines: 8-22
 
-.. note:: The Java code utilizes the `Units <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/util/Units.html>`_ utility, which was added to WPILib in 2020 for easy unit conversions.
+   .. tab-item:: Python
 
+      .. literalinclude:: examples/trajectory-generation-1/py/ExampleTrajectory.py
+         :language: python
+         :lines: 5-20
 
-.. note:: Even though this trajectory generation is orders of magnitude faster than Pathfinder, it is highly recommended to generate all trajectories on startup (``robotInit``) as the generation time is still not negligible. Generation time often ranges from 10 ms to 25 ms for each trajectory.
+.. note:: The Java code utilizes the [Units](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/util/Units.html) utility, for easy unit conversions.
+
+.. note:: Generating a typical trajectory takes about 10 ms to 25 ms. This isn't long, but it's still highly recommended to generate all trajectories on startup in the ``Robot`` constructor.
+
+## Concatenating Trajectories
+
+Trajectories in Java can be combined into a single trajectory using the ``concatenate(trajectory)`` function. C++/Python users can simply add (``+``) the two trajectories together.
+
+.. warning:: It is up to the user to ensure that the end of the initial and start of the appended trajectory match. It is also the user's responsibility to ensure that the start and end velocities of their trajectories match.
+
+.. tab-set-code::
+
+   ```java
+   var trajectoryOne =
+   TrajectoryGenerator.generateTrajectory(
+      new Pose2d(0, 0, Rotation2d.fromDegrees(0)),
+      List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
+      new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+      new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
+   var trajectoryTwo =
+   TrajectoryGenerator.generateTrajectory(
+      new Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+      List.of(new Translation2d(4, 4), new Translation2d(6, 3)),
+      new Pose2d(6, 0, Rotation2d.fromDegrees(0)),
+      new TrajectoryConfig(Units.feetToMeters(3.0), Units.feetToMeters(3.0)));
+   var concatTraj = trajectoryOne.concatenate(trajectoryTwo);
+   ```
+
+   ```c++
+   auto trajectoryOne = frc::TrajectoryGenerator::GenerateTrajectory(
+      frc::Pose2d(0_m, 0_m, 0_rad),
+      {frc::Translation2d(1_m, 1_m), frc::Translation2d(2_m, -1_m)},
+      frc::Pose2d(3_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
+   auto trajectoryTwo = frc::TrajectoryGenerator::GenerateTrajectory(
+      frc::Pose2d(3_m, 0_m, 0_rad),
+      {frc::Translation2d(4_m, 4_m), frc::Translation2d(5_m, 3_m)},
+      frc::Pose2d(6_m, 0_m, 0_rad), frc::TrajectoryConfig(3_fps, 3_fps_sq));
+   auto concatTraj = m_trajectoryOne + m_trajectoryTwo;
+   ```
+
+   ```python
+   from wpimath.geometry import Pose2d, Rotation2d, Translation2d
+   from wpimath.trajectory import TrajectoryGenerator, TrajectoryConfig
+   trajectoryOne = TrajectoryGenerator.generateTrajectory(
+      Pose2d(0, 0, Rotation2d.fromDegrees(0)),
+      [Translation2d(1, 1), Translation2d(2, -1)],
+      Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+      TrajectoryConfig.fromFps(3.0, 3.0),
+   )
+   trajectoryTwo = TrajectoryGenerator.generateTrajectory(
+      Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+      [Translation2d(4, 4), Translation2d(6, 3)],
+      Pose2d(6, 0, Rotation2d.fromDegrees(0)),
+      TrajectoryConfig.fromFps(3.0, 3.0),
+   )
+      concatTraj = trajectoryOne + trajectoryTwo
+   ```
+

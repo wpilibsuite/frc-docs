@@ -1,11 +1,76 @@
-Creating multiple instances of NetworkTables
-============================================
-This feature is mainly useful for coprocessors and unit testing. It allows a single program to be a member of two completely independent Networktables "networks" that contain completely different (and unrelated) sets of tables. For most general usage, you should use tables within the single instance, as all current dashboard programs can only connect to a single NT server at a time.
+# NetworkTables Instances
 
-Normally the "default" instance is set up on the robot as a server, and used for communication with the dashboard program running on your driver station computer. This is what the SmartDashboard and LiveWindow classes use.
+The NetworkTables implementation supports simultaneous operation of multiple "instances." Each instance has a completely independent set of topics, publishers, subscribers, and client/server state. This feature is mainly useful for unit testing. It allows a single program to be a member of two :term:`NetworkTables` "networks" that contain different (and unrelated) sets of topics, or running both client and server instances in a single program.
 
-If you had a coprocessor and wanted to have a set of tables that's shared only between the coprocessor and the robot, you could set up a separate instance in the robot code that acts as a client (or a server) and connect the coprocessor to it, and those tables will NOT be sent to the dashboard.
+For most general usage, you should use the "default" instance, as all current dashboard programs can only connect to a single NetworkTables server at a time. Normally the default instance is set up on the robot as a server, and used for communication with the dashboard program running on your driver station computer. This is what the SmartDashboard and LiveWindow classes use.
 
-Similarly, if you wanted to do unit testing of your robot program's NT communications, you could set up your unit tests such that they create a separate client instance (still within the same program) and have it connect to the server instance that the main robot code is running.
+However, if you wanted to do unit testing of your robot program's NetworkTables communications, you could set up your unit tests such that they create a separate client instance (still within the same program) and have it connect to the server instance that the main robot code is running.
 
-Another example might be having two completely separate dashboard programs. You could set up two networktables server instances in your robot program (on different TCP ports of course), set up different tables on each one, and have each dashboard connect to a different server instance. Each dashboard would only see the tables on its instance.
+The ``NetworkTableInstance`` ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/networktables/NetworkTableInstance.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classnt_1_1_network_table_instance.html), :external:py:class:`Python <ntcore.NetworkTableInstance>`) class provides the API abstraction for instances. The number of instances that can be simultaneously created is limited to 16 (including the default instance), so when using multiple instances in cases such as unit testing code, it's important to destroy instances that are no longer needed.
+
+Destroying a NetworkTableInstance frees all resources related to the instance. All classes or handles that reference the instance (e.g. Topics, Publishers, and Subscribers) are invalidated and may result in unexpected behavior if used after the instance is destroyed--in particular, instance handles are reused so it's possible for a handle "left over" from a previously destroyed instance to refer to an unexpected resource in a newly created instance.
+
+.. tab-set::
+
+    .. tab-item:: Java
+     :sync: Java
+
+        ```java
+        // get the default NetworkTable instance
+        NetworkTableInstance defaultInst = NetworkTableInstance.getDefault();
+        // create a NetworkTable instance
+        NetworkTableInstance inst = NetworkTableInstance.create();
+        // destroy a NetworkTable instance
+        inst.close();
+        ```
+
+    .. tab-item:: C++
+     :sync: C++
+
+        ```c++
+        // get the default NetworkTable instance
+        nt::NetworkTableInstance defaultInst = nt::NetworkTableInstance::GetDefault();
+        // create a NetworkTable instance
+        nt::NetworkTableInstance inst = nt::NetworkTableInstance::Create();
+        // destroy a NetworkTable instance; NetworkTableInstance objects are not RAII
+        nt::NetworkTableInstance::Destroy(inst);
+        ```
+
+    .. tab-item:: C++ (Handle-based)
+     :sync: C++ (Handle-based)
+
+        ```c++
+        // get the default NetworkTable instance
+        NT_Instance defaultInst = nt::GetDefaultInstance();
+        // create a NetworkTable instance
+        NT_Instance inst = nt::CreateInstance();
+        // destroy a NetworkTable instance
+        nt::DestroyInstance(inst);
+        ```
+
+    .. tab-item:: C
+       :sync: C
+
+        ```c
+        // get the default NetworkTable instance
+        NT_Instance defaultInst = NT_GetDefaultInstance();
+        // create a NetworkTable instance
+        NT_Instance inst = NT_CreateInstance();
+        // destroy a NetworkTable instance
+        NT_DestroyInstance(inst);
+        ```
+
+    .. tab-item:: Python
+     :sync: Python
+
+
+        ```python
+        import ntcore
+        # get the default NetworkTable instance
+        defaultInst = ntcore.NetworkTableInstance.getDefault()
+        # create a NetworkTable instance
+        inst = ntcore.NetworkTableInstance.create()
+        # destroy a NetworkTable instance
+        ntcore.NetworkTableInstance.destroy(inst)
+        ```
+

@@ -6,17 +6,24 @@ Task: Test any new features or heavily modified code
 Overview
 --------
 
-The purpose of this task is to test any newly developed or heavily modified features for the new season. This will help the Control System team find any bugs or issues with the new code. A complete description of changes for 2021 can be found in the :doc:`/docs/yearly-overview/yearly-changelog` document. Below is a list of some of the new or modified features to focus on:
+The purpose of this task is to test any newly developed or heavily modified features for the new season. This will help the Control System team find any bugs or issues with the new code. A complete description of changes for 2025 can be found in the :doc:`/docs/yearly-overview/yearly-changelog` document. Below is a list of some of the new or modified features to focus on:
+
+**All languages**
+
+- Use the new A-Stop functionality built into the :doc:`Driver Station's Practice mode </docs/software/driverstation/driver-station>`.
 
 **LabVIEW**
 
-**C++/Java**
+**Java**
 
-- :ref:`docs/software/wpilib-tools/robot-simulation/index:Robot Simulation` (including simulation UI, Mechanism2D and simulation physics classes. Additional SimGUI updates to come later in Beta)
-- Robot Builder for New Command Based Framework (updated docs not yet available)
-- Pathweaver update for reversed paths
-- :ref:`docs/software/wpilib-tools/robot-characterization/index:Robot Characterization` (heavily updated underneath)
-- :ref:`docs/software/advanced-controls/state-space/index:State-Space and Model Based Control with WPILib`
+- Use :doc:`Epilogue annotation logging </docs/software/telemetry/robot-telemetry-with-annotations>`
+- Use the re-written :doc:`Java units library </docs/software/basic-programming/java-units>`
+
+**Java/C++**
+
+- Utilize the new Vendor :doc:`Dependency Manager </docs/software/vscode-overview/3rd-party-libraries>` in Visual Studio Code
+
+**Java/C++/Python**
 
 Desired Feedback
 ----------------

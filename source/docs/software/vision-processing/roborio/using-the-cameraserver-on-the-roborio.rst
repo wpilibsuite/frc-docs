@@ -1,117 +1,93 @@
-Using the CameraServer on the roboRIO
-=====================================
+# Using the CameraServer on the roboRIO
 
-Simple CameraServer Program
----------------------------
+## Simple CameraServer Program
 
 The following program starts automatic capture of a USB camera like the Microsoft LifeCam that is connected to the roboRIO. In this mode, the camera will capture frames and send them to the dashboard. To view the images, create a CameraServer Stream Viewer widget using the "View", then "Add" menu in the dashboard. The images are unprocessed and just forwarded from the camera to the dashboard.
 
 .. image:: images/using-the-cameraserver-on-the-roborio/simple-cameraserver-program.png
+  :alt: By going to View then "Add..." then "CameraServer Stream Viewer" SmartDashboard adds a stream viewer widget.
 
-.. tabs::
+.. tab-set-code::
 
-    .. code-tab:: java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
+      :language: java
+      :lines: 7-19
+      :lineno-match:
 
-        package org.usfirst.frc.team190.robot;
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
+      :language: c++
+      :lines: 7-8, 16-18, 20, 25-31
 
-        import edu.wpi.first.cameraserver.CameraServer;
-        import edu.wpi.first.wpilibj.IterativeRobot;
-
-        public class Robot extends IterativeRobot {
-
-          public void robotInit() {
-            CameraServer.getInstance().startAutomaticCapture();
-          }
-        }
-
-    .. code-tab:: c++
-
-        #include "cameraserver/CameraServer.h"
-        class Robot: public IterativeRobot
-        {
-        private:
-          void RobotInit()
-          {
-            CameraServer::GetInstance()->StartAutomaticCapture();
-          }
-        };
-        START_ROBOT_CLASS(Robot)
+   .. rli:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/QuickVision/robot.py
+      :language: python
+      :lines: 8-17
+      :linenos:
 
 
-Advanced Camera Server Program
-------------------------------
+## Advanced Camera Server Program
 
-In the following example a thread created in robotInit() gets the Camera Server instance. Each frame of the video is individually processed, in this case converting a color image (BGR) to gray scale using the OpenCV cvtColor() method. The resultant images are then passed to the output stream and sent to the dashboard. You can replace the cvtColor operation with any image processing code that is necessary for your application. You can even annotate the image using OpenCV methods to write targeting information onto the image being sent to the dashboard.
+In the following example a thread created in ``Robot`` constructor gets the Camera Server instance. Each frame of the video is individually processed, in this case drawing a rectangle on the image using the OpenCV ``rectangle()`` method. The resultant images are then passed to the output stream and sent to the dashboard. You can replace the ``rectangle`` operation with any image processing code that is necessary for your application. You can even annotate the image using OpenCV methods to write targeting information onto the image being sent to the dashboard.
 
-.. tabs::
+.. tab-set::
 
-    .. code-tab:: java
+   .. tab-item:: Java
+      :sync: tabcode-java
 
-        package org.usfirst.frc.team190.robot;
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
+         :language: java
+         :lines: 7-65
+         :lineno-match:
 
-        import org.opencv.core.Mat;
-        import org.opencv.imgproc.Imgproc;
+   .. tab-item:: c++
+      :sync: tabcode-c++
 
-        import edu.wpi.cscore.CvSink;
-        import edu.wpi.cscore.CvSource;
-        import edu.wpi.cscore.UsbCamera;
-        import edu.wpi.first.cameraserver.CameraServer;
-        import edu.wpi.first.wpilibj.IterativeRobot;
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-3/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
+         :language: c++
+         :lines: 5-24, 26-27, 32, 36-69, 71-77
 
-        public class Robot extends IterativeRobot {
+   .. tab-item:: PYTHON
+      :sync: tabcode-python
 
-          public void robotInit() {
-            new Thread(() -> {
-              UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-              camera.setResolution(640, 480);
+      Image processing on the roboRIO when using Python is slightly different from C++/Java. Instead of using a separate thread, we need to launch the image processing code in a completely separate process.
 
-              CvSink cvSink = CameraServer.getInstance().getVideo();
-              CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+      .. warning:: Image processing is a CPU intensive task, and because of the Python Global Interpreter Lock (GIL) **we do NOT recommend using cscore directly in your robot process**. Don't do it. Really.
 
-              Mat source = new Mat();
-              Mat output = new Mat();
+                   For more information on the GIL and its effects, you may wish to read the following resources:
 
-              while(!Thread.interrupted()) {
-                if (cvSink.grabFrame(source) == 0) {
-                  continue;
-                }
-                Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-                outputStream.putFrame(output);
-              }
-            }).start();
-          }
-        }
+                   * [Python Wiki: Global Interpreter Lock](https://wiki.python.org/moin/GlobalInterpreterLock)
+                   * [Efficiently Exploiting Multiple Cores with Python](http://python-notes.curiousefficiency.org/en/latest/python3/multicore_python.html)
 
-    .. code-tab:: c++
+      This introduces a number of rules that your image processing code must follow to efficiently and safely run on the RoboRIO:
 
-        #include "cameraserver/CameraServer.h"
-        #include <opencv2/imgproc/imgproc.hpp>
-        #include <opencv2/core/core.hpp>
-        class Robot: public IterativeRobot
-        {
-        private:
-          static void VisionThread()
-          {
-            cs::UsbCamera camera = CameraServer::GetInstance()->StartAutomaticCapture();
-            camera.SetResolution(640, 480);
-            cs::CvSink cvSink = CameraServer::GetInstance()->GetVideo();
-            cs::CvSource outputStreamStd = CameraServer::GetInstance()->PutVideo("Gray", 640, 480);
-            cv::Mat source;
-            cv::Mat output;
-            while(true) {
-              if (cvSink.GrabFrame(source) == 0) {
-                continue;
-              }
-              cvtColor(source, output, cv::COLOR_BGR2GRAY);
-              outputStreamStd.PutFrame(output);
-            }
-          }
-          void RobotInit()
-          {
-            std::thread visionThread(VisionThread);
-            visionThread.detach();
-          }
-        };
-        START_ROBOT_CLASS(Robot)
+      * Your image processing code must be in its own file. It's easiest to just place it next to your ``robot.py``
+      * Never import the ``cscore`` package from your robot code, it will just waste memory
+      * Never import the ``wpilib`` or ``hal`` packages from your image processing file
+      * The camera code will be killed when the ``robot.py`` program exits. If you wish to perform cleanup, you should register an atexit handler.
+      * ``robotpy-cscore`` is not installed on the roboRIO by default, you need to update your ``pyproject.toml`` file to install it
 
-Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on Shuffleboard, select that named stream. In this case that is "Blur" for the Java program and "Gray" for the C++ sample.
+      .. warning:: ``wpilib`` may not be imported from two programs on the RoboRIO. If this happens, the second program will attempt to kill the first program.
+
+      Here's what your ``robot.py`` needs to contain to launch the image processing process:
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/IntermediateVision/robot.py
+         :language: python
+         :lines: 8-17
+         :linenos:
+
+      The ``launch("vision.py")`` function says to launch ``vision.py`` and call the ``run`` function in that file. Here's what is in ``vision.py``:
+
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/IntermediateVision/vision.py
+         :language: python
+         :lines: 12-55
+         :linenos:
+
+      You need to update ``pyproject.toml`` contents to include cscore in the robotpy-extras key (this only shows the portions you need to update):
+
+      ```toml
+      [tool.robotpy]
+      ...
+      # Add cscore to the robotpy-extras list
+      robotpy_extras = ["cscore"]
+      ```
+
+Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on SmartDashboard or Shuffleboard, select that named stream. In this case that is "Rectangle".

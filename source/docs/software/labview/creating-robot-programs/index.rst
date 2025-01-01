@@ -1,9 +1,8 @@
-Creating Robot Programs
-=======================
+# Creating Robot Programs
 
 .. toctree::
    :maxdepth: 1
 
-   creating-building-and-loading-your-benchtop-test-program
+   /docs/zero-to-robot/step-4/creating-test-drivetrain-program-labview
    tank-drive-tutorial
    command-and-control-tutorial

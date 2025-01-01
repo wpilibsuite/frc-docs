@@ -1,9 +1,8 @@
-2021 Overview
-=============
+# 2025 Overview
 
 .. toctree::
    :maxdepth: 1
 
    known-issues
    yearly-changelog
-   2020-Game-Data
+   returning-quickstart

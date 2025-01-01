@@ -1,9 +1,8 @@
 .. include:: <isonum.txt>
 
-Controllers
-===========
+# Controllers
 
-This section describes various WPILib feedback and feedforward controller classes that are useful for controlling the motion of FRC\ |reg| mechanisms, as well as motion-profiling classes that can automatically generate setpoints for use with these controllers.
+This section describes various WPILib feedback and feedforward controller classes that are useful for controlling the motion of robot mechanisms, as well as motion-profiling classes that can automatically generate setpoints for use with these controllers.
 
 .. toctree::
    :maxdepth: 1
@@ -13,3 +12,4 @@ This section describes various WPILib feedback and feedforward controller classe
    combining-feedforward-feedback
    trapezoidal-profiles
    profiled-pidcontroller
+   bang-bang

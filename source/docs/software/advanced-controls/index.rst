@@ -1,5 +1,4 @@
-Advanced Controls
-=================
+# Advanced Controls
 
 This section covers advanced control features in WPILib, such as various feedback/feedforward control algorithms and trajectory following.
 
@@ -10,6 +9,8 @@ This section covers advanced control features in WPILib, such as various feedbac
    introduction/index
    filters/index
    geometry/index
+   system-identification/index
    controllers/index
    trajectories/index
    state-space/index
+   controls-glossary

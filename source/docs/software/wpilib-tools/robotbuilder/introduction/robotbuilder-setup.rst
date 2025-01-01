@@ -1,37 +1,34 @@
-Setting up the Robot Project
-============================
-
-.. important:: RobotBuilder has been updated to support the new commandbased framework! Unfortunately, this documentation is outdated and only for the old commandbased framework. Individuals interested in updating this documentation can open a pull request on the `frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository.
+# Setting up the Robot Project
 
 The RobotBuilder program has some default properties that need to be set up so the generated program and other generated files work properly. This setup information is stored in the properties for robot description (the first line).
 
-Robot Project Properties
-------------------------
+## Robot Project Properties
 
 The properties that describe the robot are:
 
-**Name** - The name of the robot project that is created
+* **Name** - The name of the robot project that is created
 
-**Autnomous Command** - the command that will run by default when the program is placed in autonomous mode
+* **Autonomous Command** - the command that will run by default when the program is placed in autonomous mode
 
-**Team Number** - the team number is used for creating the package names
+* **Autonomous Command Parameters** - Parameters for the Autonomous Command
 
-**Use Default Java Package** - If checked RobotBuilder will use the default package (org.usfirst.frc####). Otherwise you can specify a custom package name to be used.
+* **Team Number** - The team number for the project, which will be used to locate the robot when deploying code.
 
-**Java Package** - The name of the generated Java package used when generating the project code
+* **Use Default Java Package** - If checked RobotBuilder will use the default package (frc.robot). Otherwise you can specify a custom package name to be used.
 
-**Export Directory** - The folder that the Java project is generated into when Export to Java is selected
+* **Java Package** - The name of the generated Java package used when generating the project code
 
-**Export Subsystems** - Checked if RobotBuilder should export the Subsystem classes from your project
+* **Export Directory** - The folder that the project is generated into when Export to Java or C++ is selected
 
-**Export Commands** - Checked if RobotBuilder should export the Command classes from your project
+* **Export Subsystems** - Checked if RobotBuilder should export the Subsystem classes from your project
 
-**Simulation World File** - The World File that is used for simulation of your robot project
+* **Export Commands** - Checked if RobotBuilder should export the Command classes from your project
 
-**Wiring File** - the location of the html file that contains the wiring diagram for your robot
+* **Wiring File location** - the location of the html file to generate that contains the wiring diagram for your robot
 
-Using Source Control with the RobotBuilder Project
---------------------------------------------------
+* **Desktop Support** - Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it.
+
+## Using Source Control with the RobotBuilder Project
 
 .. image:: images/robotbuilder-setup-1.png
 

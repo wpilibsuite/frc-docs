@@ -1,41 +1,49 @@
-Manipulating Trajectories
-=========================
+# Manipulating Trajectories
 Once a trajectory has been generated, you can retrieve information from it using certain methods. These methods will be useful when writing code to follow these trajectories.
 
-Getting the total duration of the trajectory
---------------------------------------------
-Because all trajectories have timestamps at each point, the amount of time it should take for a robot to traverse the entire trajectory is pre-determined. The ``TotalTime()`` (C++) / ``getTotalTimeSeconds()`` (Java) method can be used to determine the time it takes to traverse the trajectory.
+## Getting the total duration of the trajectory
+Because all trajectories have timestamps at each point, the amount of time it should take for a robot to traverse the entire trajectory is pre-determined. The ``TotalTime()`` (C++) / ``getTotalTimeSeconds()`` (Java) / ``totalTime`` (Python) method can be used to determine the time it takes to traverse the trajectory.
 
 
-.. tabs::
+.. tab-set-code::
 
-   .. code-tab:: java
+   ```java
+   // Get the total time of the trajectory in seconds
+   double duration = trajectory.getTotalTimeSeconds();
+   ```
 
-      // Get the total time of the trajectory in seconds
-      double duration = trajectory.getTotalTimeSeconds();
+   ```c++
+   // Get the total time of the trajectory
+   units::second_t duration = trajectory.TotalTime();
+   ```
 
-   .. code-tab:: c++
+   ```python
+   # Get the total time of the trajectory
+   duration = trajectory.totalTime()
+   ```
 
-      // Get the total time of the trajectory
-      units::second_t duration = trajectory.TotalTime();
+## Sampling the trajectory
+The trajectory can be sampled at various timesteps to get the pose, velocity, and acceleration at that point. The ``Sample(units::second_t time)`` (C++) / ``sample(double timeSeconds)`` (Java/Python) method can be used to sample the trajectory at any timestep. The parameter refers to the amount of time passed since 0 seconds (the starting point of the trajectory). This method returns a ``Trajectory::Sample`` with information about that sample point.
 
-Sampling the trajectory
------------------------
-The trajectory can be sampled at various timesteps to get the pose, velocity, and acceleration at that point. The ``Sample(units::second_t time)`` (C++) / ``sample(double timeSeconds)`` (Java) method can be used to sample the trajectory at any timestep. The parameter refers to the amount of time passed since 0 seconds (the starting point of the trajectory). This method returns a ``Trajectory::Sample`` with information about that sample point.
+.. tab-set-code::
 
-.. tabs::
+   ```java
+   // Sample the trajectory at 1.2 seconds. This represents where the robot
+   // should be after 1.2 seconds of traversal.
+   Trajectory.Sample point = trajectory.sample(1.2);
+   ```
 
-   .. code-tab:: java
+   ```c++
+   // Sample the trajectory at 1.2 seconds. This represents where the robot
+   // should be after 1.2 seconds of traversal.
+   Trajectory::State point = trajectory.Sample(1.2_s);
+   ```
 
-      // Sample the trajectory at 1.2 seconds. This represents where the robot
-      // should be after 1.2 seconds of traversal.
-      Trajectory.Sample point = trajectory.sample(1.2);
-
-   .. code-tab:: c++
-
-      // Sample the trajectory at 1.2 seconds. This represents where the robot
-      // should be after 1.2 seconds of traversal.
-      Trajectory::State point = trajectory.Sample(1.2_s);
+   ```python
+   # Sample the trajectory at 1.2 seconds. This represents where the robot
+   # should be after 1.2 seconds of traversal.
+   point = trajectory.sample(1.2)
+   ```
 
 The ``Trajectory::Sample`` struct has several pieces of information about the sample point:
 
@@ -47,6 +55,5 @@ The ``Trajectory::Sample`` struct has several pieces of information about the sa
 
 Note: The angular velocity at the sample point can be calculated by multiplying the velocity by the curvature.
 
-Getting all states of the trajectory (advanced)
------------------------------------------------
-A more advanced user can get a list of all states of the trajectory by calling the ``States()`` (C++) / ``getStates()`` (Java) method. Each state represents a point on the trajectory. :ref:`When the trajectory is created <docs/software/advanced-controls/trajectories/trajectory-generation:Generating the trajectory>` using the ``TrajectoryGenerator::GenerateTrajectory(...)`` method, a list of trajectory points / states are created. When the user samples the trajectory at a particular timestep, a new sample point is interpolated between two existing points / states in the list.
+## Getting all states of the trajectory (advanced)
+A more advanced user can get a list of all states of the trajectory by calling the ``States()`` (C++) / ``getStates()`` (Java) / ``states`` (Python) method. Each state represents a point on the trajectory. :ref:`When the trajectory is created <docs/software/advanced-controls/trajectories/trajectory-generation:Generating the trajectory>` using the ``TrajectoryGenerator::GenerateTrajectory(...)`` method, a list of trajectory points / states are created. When the user samples the trajectory at a particular timestep, a new sample point is interpolated between two existing points / states in the list.
