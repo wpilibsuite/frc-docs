@@ -162,7 +162,7 @@ Some operating systems require some final action to complete installation.
       $ sudo systemctl reload apparmor.service
       ```
 
-      This will fix the error:
+      The above will fix the following error:
 
       ```console
       The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that ~/wpilib/2025/advantagescope/chrome-sandbox is owned by root and has mode 4755.
