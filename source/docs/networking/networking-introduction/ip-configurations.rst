@@ -37,7 +37,7 @@ This section describes networking when connected to the Field Network for match 
 The Field Network runs a :term:`DHCP` server with pools for each team that will hand out addresses in the range of ``10.TE.AM.20`` to ``10.TE.AM.199`` with a subnet mask of ``255.255.255.0``, and a default gateway of ``10.TE.AM.4``.
 When configured for an event, the Team Radio runs a DHCP server with a pool for devices onboard the robot that will hand out addresses in the range of 10.TE.AM.200 to 10.TE.AM.219 with a subnet mask of 255.255.255.0, and a gateway of 10.TE.AM.1.
 
--  OpenMesh OM5P-AN or OM5P-AC radio - Static ``10.TE.AM.1`` programmed by
+-  Vivid-Hosting VH-109 Robot Radio - Static ``10.TE.AM.1`` programmed by
    Kiosk
 -  roboRIO - DHCP ``10.TE.AM.2`` assigned by the Robot Radio
 -  Driver Station - DHCP ("Obtain an IP address automatically")
@@ -47,9 +47,9 @@ When configured for an event, the Team Radio runs a DHCP server with a pool for 
 
 ### On the Field Static Configuration
 
-It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are ``10.TE.AM.1`` for the OpenMesh radio, ``10.TE.AM.4`` for the field router, and anything ``10.TE.AM.20`` or greater which may be assigned to a device configured for DHCP or else reserved. The roboRIO network configuration can be set from the webdashboard.
+It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are ``10.TE.AM.1`` for the VH-109 radio, ``10.TE.AM.4`` for the field router, and anything ``10.TE.AM.20`` or greater which may be assigned to a device configured for DHCP or else reserved. The roboRIO network configuration can be set from the webdashboard.
 
--  OpenMesh radio - Static ``10.TE.AM.1`` programmed by Kiosk
+-  VH-109 radio - Static ``10.TE.AM.1`` programmed by Kiosk
 -  roboRIO - Static ``10.TE.AM.2`` would be a reasonable choice, subnet mask
    of ``255.255.255.0`` (default)
 -  Driver Station - Static ``10.TE.AM.5`` would be a reasonable choice,
@@ -62,11 +62,11 @@ It is also possible to configure static IPs on your devices to accommodate devic
 
 ## In the Pits
 
-.. note:: **New for 2018:** There is now a DHCP server running on the wired side of the Robot Radio in the event configuration.
+.. note:: There is a DHCP server running on the wired side of the Robot Radio in the event configuration.
 
 ### In the Pits DHCP Configuration
 
--  OpenMesh radio - Static ``10.TE.AM.1`` programmed by Kiosk.
+-  VH-109 radio - Static ``10.TE.AM.1`` programmed by Kiosk.
 -  roboRIO - ``10.TE.AM.2``, assigned by Robot Radio
 -  Driver Station - DHCP ("Obtain an IP address automatically"),
    ``10.TE.AM.X``, assigned by Robot Radio
@@ -75,4 +75,4 @@ It is also possible to configure static IPs on your devices to accommodate devic
 
 ### In the Pits Static Configuration
 
-It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are ``10.TE.AM.1`` for the OpenMesh radio and ``10.TE.AM.4`` for the field router.
+It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are ``10.TE.AM.1`` for the VH-109 radio and ``10.TE.AM.4`` for the field router.

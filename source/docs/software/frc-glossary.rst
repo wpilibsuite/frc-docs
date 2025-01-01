@@ -202,6 +202,9 @@
    PH
       Pneumatic Hub - is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types.
 
+   PoE
+      Power Over Ethernet - method of powering a device by an Ethernet cord that also carries power.  FRC uses passive PoE usually 12-24V that is always being supplied, this can damage a device not expecting the provided voltage.  The most common industry standard is active PoE which uses 48V but first verifies that the device is expecting the power.
+
    property
       In :term:`NetworkTables`, named information (metadata) about a :term:`topic` stored and updated separately from the topic's data. A topic may have any number of properties. A property's value can be any data type that can be represented in JSON.
 

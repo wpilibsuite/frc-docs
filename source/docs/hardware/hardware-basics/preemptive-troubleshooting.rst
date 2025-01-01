@@ -97,17 +97,13 @@ If you can remove the blade fuses by hand then they are not in completely. Make 
 
 Swarf is fine chips or filings of stone, metal, or other material produced by a machining operation. Often modifications must be made to a robot while the control system parts are in place. The circuit board for the roboRIO is conformally coated, but that doesn't absolutely guarantee that metal chips won't short out traces or components inside the case. In this case, you must exercise care in making sure that none of the chips end up in the roboRIO or any of the other components. In particular, the exposed 3 pin headers are a place where chips can enter the case. A quick sweep through each of the four sides with a flashlight is usually sufficient to find the really bad areas of infiltration.
 
-## Radio Barrel Jack
-
-Make sure the correct barrel jack is used, not one that is too small and falls out for no reason.  This isn’t common, but ask an :term:`FTA` and every once in awhile a team will use some random barrel jack that is not sized correctly, and it falls out in a match on first contact.
-
 ## Ethernet Cable
 
 If the RIO to radio ethernet cable is missing the clip that locks the connector in, get another cable.  This is a common problem that will happen several times in every competition. Make sure that your cables are secure. The clip often breaks off, especially when pulling it through a tight path, it snags on something then breaks.
 
 ## Loose Cables
 
-Cables must be tightened down, particularly the radio power and ethernet cable.  The radio power cables don’t have a lot of friction force and will fall out (even if it is the correct barrel) if the weight of the cable-slack is allowed to swing freely.
+Cables must be tightened down, particularly the radio power and ethernet cable.
 
 Ethernet cable is also pretty heavy, if it’s allowed to swing freely, the plastic clip may not be enough to hold the ethernet pin connectors in circuit.
 

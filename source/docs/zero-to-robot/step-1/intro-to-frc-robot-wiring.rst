@@ -56,8 +56,7 @@ Locate the following control system components and tools
       - Power Distribution Hub (:term:`PDH`) / Power Distribution Panel (:term:`PDP`)
       - roboRIO
       - Pneumatics Hub (:term:`PH`) / Pneumatics Control Module (:term:`PCM`)
-      - Radio Power Module (:term:`RPM`) / Voltage Regulator Module (:term:`VRM`)
-      - OpenMesh radio (with power cable and Ethernet cable)
+      - VH-109 radio
       - Robot Signal Light (:term:`RSL`)
       - 4x SPARK MAX or other motor controllers
       - 2x :term:`PWM` y-cables
@@ -106,6 +105,8 @@ For a test board, cut piece of 1/4" or 1/2" (6-12 mm) material (wood or plastic)
         :alt: A basic wiring layout with CTR components.
 
 Lay out the components on the board. An example layout is shown in the image above.
+
+.. note:: A Vivid-Hosting has a [guide](https://frc-radio.vivid-hosting.net/getting-started/usage/mounting-your-radio) for mounting the VH-109 radio.
 
 ## Fasten Components
 
@@ -338,49 +339,41 @@ After making the connection check to be sure that it is clean and secure:
 
 
 ## Radio Power
+
+[Vivid-Hosting Wiring Guide](https://frc-radio.vivid-hosting.net/getting-started/usage/wiring-your-radio)
+
 .. tab-set::
 
    .. tab-item:: REV
       :sync: REV
 
-         .. image:: images/how-to-wire-a-simple-robot/rpm-pdh-power.jpg
-           :alt: Power going from the PDH to the RPM.
+      .. image:: images/how-to-wire-a-simple-robot/pdh-power.jpg
+        :alt: Power coming from a PDH non-switchable fused channel.
 
-         .. image:: images/how-to-wire-a-simple-robot/rpm.jpg
-           :alt: Power going into the RPM.
+      Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
 
-         Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
-
-         1. Insert the 10A fuse into the PDH in one of the non-switchable fused channels (20-22).
-         2. Strip ~5/16" (~8 mm) on the end of the red and black 18 AWG (1 :math:`mm^2`) wire and connect the wire to the corresponding terminals on the PDH.
-         3. Measure the length required to reach the "12V Input" terminals on the Radio Power Module. Take care to leave enough length to route the wires around any other components such as the battery and to allow for any strain relief or cable management.
-         4. Cut and strip ~5/16" (~8 mm) from the end of the wire.
-         5. Connect the wire to the RPM 12V Input terminals.
+      1. Insert the 10A fuse into the PDH in one of the non-switchable fused channels (20-22).
+      2. Strip ~5/16" (~8 mm) on the end of the red and black 18 AWG (1 :math:`mm^2`) wire and connect the wire to the corresponding terminals on the PDH.
 
    .. tab-item:: CTR
       :sync: CTR
 
-      .. image:: images/how-to-wire-a-simple-robot/vrm-power.jpg
-        :alt: Power going from the PDP to the VRM.
+      .. image:: images/how-to-wire-a-simple-robot/pdp-radio-power.jpg
+        :alt: Power going from the PDP "Vbat VRM PCM PWR" terminals.
 
       Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
 
       1. Strip ~5/16" (~8 mm) on the end of the red and black 18 AWG (1 :math:`mm^2`) wire.
       2. Connect the wire to one of the two terminal pairs labeled "Vbat VRM PCM PWR" on the PDP.
-      3. Measure the length required to reach the "12Vin" terminals on the VRM. Take care to leave enough length to route the wires around any other components such as the battery and to allow for any strain relief or cable management.
-      4. Cut and strip ~5/16" (~8 mm) from the end of the wire.
-      5. Connect the wire to the VRM 12Vin terminals.
 
-      .. warning:: DO NOT connect the Rev passive POE injector cable directly to the roboRIO. The roboRIO MUST connect to the socket end of the cable using an additional Ethernet cable as shown in the next step.
+.. image:: images/how-to-wire-a-simple-robot/radio-power.png
+  :alt: Power connections to the VH-109 robot radio.
 
-      .. image:: images/how-to-wire-a-simple-robot/radio-power.jpg
-        :alt: Connection power to the robot radio via a PoE cable.
+3. Measure the length required to reach the "12V" Weidmuller terminals on the VH-109 Radio. Take care to leave enough length to route the wires around any other components such as the battery and to allow for any strain relief or cable management.
+4. Cut and strip ~5/16" (~8 mm) from the end of the wire.
+5. Connect the wire to the VH-109 "12V" Weidmuller terminals.
 
-      Requires: Small flat screwdriver (optional), Rev radio PoE cable
-
-      1. Insert the ferrules of the passive PoE injector cable into the corresponding colored terminals on the 12V/2A section of the VRM.
-      2. Connect the RJ45 (Ethernet) plug end of the cable into the Ethernet port on the radio closest to the barrel connector (labeled 18-24v POE)
-
+.. note:: The radio can additionally be powered by :term:`PoE` to create a more redundant connection.
 
 ## Pneumatics Power (Optional)
 
@@ -425,31 +418,16 @@ After making the connection check to be sure that it is clean and secure:
 
 ## Ethernet Cables
 
-.. tab-set::
+.. image:: images/how-to-wire-a-simple-robot/rio-port.png
+  :alt: Power going from the PDP to the PCM.
 
-   .. tab-item:: REV
-      :sync: REV
+Requires: an Ethernet cable
 
-      .. image:: images/how-to-wire-a-simple-robot/rpm.jpg
-        :alt: Picture of the RPM.
+1. Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the `RIO` port on the VH-109 Radio.
 
-      .. image:: images/how-to-wire-a-simple-robot/radio.jpg
-        :alt: Picture of the radio.
+.. note:: If using :term:`PoE` you may need a second Ethernet cable or longer power wires.
 
-      Requires: 2x Ethernet cables
-
-      1. Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the port on the Radio Power Module labeled roboRIO.
-      2. Connect an Ethernet cable from the RJ45 socket of the radio closest to the barrel connector socket (labeled 18-24v POE) to the socket labeled WiFi Radio on the RPM
-
-   .. tab-item:: CTR
-      :sync: CTR
-
-      .. image:: images/how-to-wire-a-simple-robot/radio-ethernet.jpg
-        :alt: Connecting Ethernet from the roboRIO to the PoE cable.
-
-      Requires: Ethernet cable
-
-      Connect an Ethernet cable from the RJ45 (Ethernet) socket of the Rev Passive POE cable to the RJ45 (Ethernet) port on the roboRIO.
+.. warning:: DO NOT connect the Rev passive :term:`PoE` injector cable directly to the roboRIO. The roboRIO MUST connect to the socket end of the cable using an additional Ethernet cable as shown in the next step.
 
 ## CAN Devices
 
@@ -644,7 +622,6 @@ For the SPARK or other non-integrated-wire controllers (bottom image):
 - Check that the red wire passes through the main breaker and to the + terminal of the PDP and that the black wire travels directly to the - terminal.
 - For each motor controller, verify that the red wire goes from the red PDP terminal to the V+ terminal on the motor controller (not M+!!!!)
 - For each non-motor controller device, verify that the red wire runs from a red terminal on the PD connects to a red terminal on the component.
-- Make sure that the PoE cable is plugged directly into the radio NOT THE roboRIO!
 
 .. tip:: It is also recommended to put the robot on blocks so the wheels are off the ground before proceeding. This will prevent any unexpected movement from becoming dangerous.
 
