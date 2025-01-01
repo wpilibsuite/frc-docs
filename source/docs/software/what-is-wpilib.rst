@@ -24,8 +24,8 @@ The Java and C++ source code can be found in the WPILibJ and WPILibC source dire
 
 While users are strongly encouraged to read the source code to resolve detailed questions about library functionality, more-concise documentation can be found on the official documentation pages for WPILibJ and WPILibC and RobotPy:
 
- - [Java documentation](https://github.wpilib.org/allwpilib/docs/development/java/)
+ - [Java documentation](https://github.wpilib.org/allwpilib/docs/release/java/)
 
- - [C++ documentation](https://github.wpilib.org/allwpilib/docs/development/cpp/)
+ - [C++ documentation](https://github.wpilib.org/allwpilib/docs/release/cpp/)
 
  - [Python documentation](https://robotpy.readthedocs.io/projects/robotpy/en/stable/)

@@ -29,9 +29,9 @@ These concepts are used within the Units Library. For example, the **measure** *
 
 The Java units library is available in the ``edu.wpi.first.units`` package. The most relevant classes are:
 
-- The various classes for predefined dimensions, such as [DistanceUnit](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/DistanceUnit.html) and [TimeUnit](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/TimeUnit.html)
-- [Units](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/Units.html), which contains a set of predefined units. Take a look a the [Units javadoc](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/Units.html) to browse the available units and their types.
-- [Measure](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/Measure.html), which is used to tag a value with a unit, and the dimension-specific implementations like [Distance](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/measure/Distance.html) and [Time](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/measure/Time.html)
+- The various classes for predefined dimensions, such as [DistanceUnit](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/DistanceUnit.html) and [TimeUnit](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/TimeUnit.html)
+- [Units](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/Units.html), which contains a set of predefined units. Take a look a the [Units javadoc](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/Units.html) to browse the available units and their types.
+- [Measure](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/Measure.html), which is used to tag a value with a unit, and the dimension-specific implementations like [Distance](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/measure/Distance.html) and [Time](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/measure/Time.html)
 
 .. note:: It is recommended to static import ``edu.wpi.first.units.Units.*`` to get full access to all the predefined units.
 
@@ -140,7 +140,7 @@ To reduce the number of object instances you create, and reduce memory usage, a 
 ``MutableMeasure`` allows the internal state of the object to be updated, such as with the results of arithmetic operations, to avoid allocating new objects. Special care needs to be taken when mutating a measure because it will change the value every place that instance is referenced. If the object will be exposed as part of a public method, have that method return a regular ``Measure`` in its signature to prevent the caller from modifying your internal state.
 
 Extra methods are available on ``MutableMeasure`` for updating the internal value. Note that these methods all begin with the ``mut_`` prefix - this is to make it obvious that these methods will be mutating the object and are potentially unsafe!
-For the full list of methods and API documentation, see [the MutableMeasure API documentation](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/units/MutableMeasure.html)
+For the full list of methods and API documentation, see [the MutableMeasure API documentation](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/units/MutableMeasure.html)
 
 +-------------------------------+--------------------------------------------------------------------------------------------------+
 | ``mut_plus(double, Unit)``    | Increments the internal value by an amount in another unit. The internal unit will stay the same |

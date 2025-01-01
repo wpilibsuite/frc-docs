@@ -6,7 +6,7 @@ This may initially seem like a poor control strategy, as PID loops are known to 
 
 However, when controlling the velocity of high-inertia mechanisms under varying loads (like a shooter flywheel), a bang-bang controller can yield faster recovery time and thus better/more consistent performance than a proportional controller.  Unlike an ordinary P loop, a bang-bang controller is *asymmetric* - that is, the controller turns on when the process variable is below the setpoint, and does nothing otherwise.  This allows the control effort in the forward direction to be made as large as possible without risking destructive oscillations as the control loop tries to correct a resulting overshoot.
 
-Asymmetric bang-bang control is provided in WPILib by the BangBangController class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/controller/BangBangController.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_bang_bang_controller.html), :external:py:class:`Python <wpimath.controller.BangBangController>`).
+Asymmetric bang-bang control is provided in WPILib by the BangBangController class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/BangBangController.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_bang_bang_controller.html), :external:py:class:`Python <wpimath.controller.BangBangController>`).
 
 ## Constructing a BangBangController
 
