@@ -87,10 +87,14 @@ A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Stat
 |          +----------------+------------------------------+
 |          | Off            | Booting Up                   |
 +----------+----------------+------------------------------+
-| 2.4G     | Blinking (20Hz)| Battery detected,            |
+| 2.4 GHz  | Solid Green    | Wifi available               |
+|          +----------------+------------------------------+
+|          | Blinking (20Hz)| Battery detected,            |
 |          | Sys Blinking   | Wireless is disabled         |
 +----------+----------------+------------------------------+
-| 6G       | Blinking (20Hz)| Battery detected,            |
+| 6 GHz    | Solid Blue     | 6 GHz connection made        |
+|          +----------------+------------------------------+
+|          | Blinking (20Hz)| Battery detected,            |
 |          | Sys Blinking   | Wireless is disabled         |
 +----------+----------------+------------------------------+
 
