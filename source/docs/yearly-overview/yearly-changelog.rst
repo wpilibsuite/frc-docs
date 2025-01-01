@@ -48,6 +48,7 @@ Supported Operating Systems and Architectures:
 - Add ``Timer.isRunning`` method
 - Add Java unit support for RobotController
 - Add a functional interface for MecanumDriveMotorVoltages and deprecate old interface
+- Add ``Koors40`` Motor Controller
 
 #### Commands
 
@@ -56,7 +57,6 @@ Supported Operating Systems and Architectures:
 - Breaking: Remove deprecated C++ method ``TransferOwnership``
 - Deprecate ``PIDCommand``, ``PIDSubsystem``, ``ProfiledPIDCommand``, ``ProfiledPIDSubsystem``, ``TrapezoidProfileSubsystem``
 - Deprecate ``TrapezoidProfileCommand``. Use :doc:`TrapezoidProfile Directly </docs/software/commandbased/profile-subsystems-commands>`
-- Deprecate proxy supplier constructor
 - Cache controller ``BooleanEvents`` / ``Triggers`` and directly construct ``Triggers``, fixing issues if ``BooleanEvents`` / ``Triggers`` are created in loops
 - Add deadband trigger methods to ``CommandGenericHID``
 - Make requirements private
@@ -157,6 +157,7 @@ Supported Operating Systems and Architectures:
 - Fix wakeup on sink destruction
 - HttpCamera: Send width/height/fps stream settings
 - HttpCamera: Auto-detect mode from stream if not set
+- Sink: add ability to get most recent frame instead of waiting
 
 ### Util
 
@@ -193,6 +194,7 @@ Supported Operating Systems and Architectures:
 - Check for struct descriptor size 0
 - Align Field2d border and image padding for custom images
 - Add Alerts widget
+- Fix minimum widget width
 
 ## GradleRIO
 
@@ -203,8 +205,8 @@ Supported Operating Systems and Architectures:
 
 ## WPILib All in One Installer
 
-- Update to VS Code 1.96.0
-- VS Code extension updates: cpptools 1.23.2, javaext 1.37
+- Update to VS Code 1.96.2
+- VS Code extension updates: cpptools 1.23.2, javaext 1.38
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
 - Only install scripts if they are used by a specific platform
 - Make shortcuts use the app icon
@@ -232,6 +234,8 @@ Supported Operating Systems and Architectures:
 - Clamp feedback measurement delay to zero or higher
 
 ## PathWeaver
+
+.. warning:: PathWeaver is deprecated and will be removed for 2027. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support.
 
 - Fix finding deploy directory when outputdir blank
 
