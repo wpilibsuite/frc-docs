@@ -14,11 +14,13 @@ Due to internal GradleRIO changes, it is necessary to update projects from previ
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
-- The Dependency Manager in VS Code will help teams :doc:`install their vendordeps </docs/software/vscode-overview/3rd-party-libraries>`.
+- The Dependency Manager in VS Code will help teams :doc:`discover and install vendordeps </docs/software/vscode-overview/3rd-party-libraries>`.
+- Added :doc:`Elastic Dashboard </docs/software/dashboards/elastic>` a driver focused dashboard.
 - Added :doc:`annotation based logging (Epilogue) </docs/software/telemetry/robot-telemetry-with-annotations>` for Java
+- Added :doc:`WPIcal </docs/software/wpilib-tools/wpical/index>` tool for calibrating FRC Apriltags to correct for field setup error
 - The :doc:`Java units library </docs/software/basic-programming/java-units>` has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add :doc:`persistent alerts API </docs/software/telemetry/persistent-alerts>`. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
-- Add LED pattern API for easily animating addressable LEDs
+- Add :ref:`LED pattern API <docs/software/hardware-apis/misc/addressable-leds:LED Patterns>` for easily animating addressable LEDs
 - Java 17 must be used as Java Source and Target compatibility have been bumped to Java 17. Java 17 has been used since 2023.
 
 Supported Operating Systems and Architectures:
