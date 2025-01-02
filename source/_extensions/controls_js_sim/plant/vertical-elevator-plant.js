@@ -2,6 +2,9 @@ class VerticalElevatorPlant {
   constructor(TimestepS, heightM) {
     this.TimestepS = TimestepS;
 
+
+    this.mass = 20.0; // in kg
+
     // Gains estimated by ReCalc (http://reca.lc) with the specs below
     // motor: 1x REV Neo
     // gearing: 3:1
@@ -11,6 +14,14 @@ class VerticalElevatorPlant {
     this.kGVolts = 2.28;
     this.kVVoltSecondPerM = 3.07;
     this.kAVoltSecondSquaredPerM = 0.41;
+
+    //Factor for loosely-modeled air resistance for some unmodeled disturbance
+    // See https://www.grc.nasa.gov/www/k-12/VirtualAero/BottleRocket/airplane/falling.html
+    let r = 1.225; //Air density at sea level
+    let Cd = 1.42; // Drag Coefficient for a hollow hemisphere pointed the "wrong way" into the wind
+    let A = 1.5; //Exposed Area (m^2)
+    this.airResistanceCoef = Cd * r * A / 2.0;
+
     
     //Maximum height the elevator travels to
     this.heightM = heightM;
@@ -30,7 +41,7 @@ class VerticalElevatorPlant {
     const gravityAcceleration = -this.kGVolts / this.kAVoltSecondSquaredPerM;
     const EMFAcceleration = -this.kVVoltSecondPerM * velMPerS / this.kAVoltSecondSquaredPerM;
     const controlEffortAcceleration = inputVolts / this.kAVoltSecondSquaredPerM;
-    const airResistanceAccel = -1.0 * Math.sign(velMPerS) * Math.pow(velMPerS, 2) * 0.2;
+    const airResistanceAccel = -1.0 * Math.sign(velMPerS) * Math.pow(velMPerS, 2) * this.airResistanceCoef / this.mass;
 
     var springAccel = 0.0;
     var dashpotAccel = 0.0;
