@@ -70,7 +70,7 @@ For more advanced usage of JUnit and Google Test, see the framework docs.
 
 For Java tests to run, make sure that your ``build.gradle`` file contains the following block:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1-beta-3/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
    :lines: 77-80
    :lineno-match:
