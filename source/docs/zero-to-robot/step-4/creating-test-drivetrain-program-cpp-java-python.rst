@@ -148,7 +148,7 @@ Now let's look at various parts of the code.
 
          .. tab-item:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/GettingStarted/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/GettingStarted/robot.py
                :language: python
                :lines: 8-9
                :lineno-match:
@@ -496,7 +496,7 @@ The ``Robot`` constructor for our sample program inverts the right side of the d
       :lines: 25-36
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/GettingStarted/robot.py
       :language: python
       :lines: 31-43
       :lineno-match:
@@ -519,7 +519,7 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
       :lines: 38-45
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/GettingStarted/robot.py
       :language: python
       :lines: 45-52
       :lineno-match:
@@ -540,7 +540,7 @@ Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` 
       :lines: 45-48
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/GettingStarted/robot.py
       :language: python
       :lines: 54-58
       :lineno-match:
