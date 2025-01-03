@@ -60,7 +60,11 @@ We must also decide on a nominal max acceleration and max velocity for the robot
 
 ## Ramsete Parameters
 
-Finally, we must include a pair of parameters for the RAMSETE controller.  The values shown below should work well for most robots, provided distances have been correctly measured in meters - for more information on tuning these values (if it is required), see :ref:`docs/software/advanced-controls/trajectories/ramsete:Constructing the Ramsete Controller Object`.
+Finally, we must include a pair of parameters for the RAMSETE controller.  The values ``b`` and ``zeta`` shown below should work well for most robots, provided distances have been correctly measured in meters.
+
+Larger values of ``b`` make convergence more aggressive like a proportional term whereas larger values of ``zeta`` provide more damping in the response. These controller gains only dictate how the controller will output adjusted velocities. It does NOT affect the actual velocity tracking of the robot. This means that these controller gains are generally robot-agnostic.
+
+.. note:: Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results when all units were in meters. As such, a zero-argument constructor for ``RamseteController`` exists with gains defaulted to these values.
 
 .. tab-set-code::
 
