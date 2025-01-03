@@ -33,11 +33,11 @@ Replace the string after ``=`` with ``"C:\\PATH\\TO\\DASHBOARD.exe"`` where the 
 
 Replace the string after ``=`` with ``java -jar "C:\\PATH\\TO\\DASHBOARD.jar"`` where the path specified is the path to the dashboard ``jar`` file. Save the ``FRC DS Data Storage`` file.
 
-.. tip:: Shuffleboard and Smartdashboard require Java 11.
+.. tip:: Shuffleboard and Smartdashboard require Java 17.
 
 ### Dashboard from WPILib installer
 
-Replace the string after ``=`` with ``wscript "C:\\Users\\Public\\wpilib\\YYYY\\tools\\DASHBOARD.vbs"`` where ``YYYY`` is the year and ``DASHBOARD.vbs`` is either ``Shuffleboard.vbs`` or ``Smartdashboard.vbs``. Save the ``FRC DS Data Storage`` file.
+Replace the string after ``=`` with ``wscript C:\\Users\\Public\\wpilib\\YYYY\\tools\\DASHBOARD.vbs`` where ``YYYY`` is the year and ``DASHBOARD.vbs`` is ``Shuffleboard.vbs``, ``Smartdashboard.vbs``, or ``Elastic.vbs``. For example ``DashboardCmdLine = "wscript C:\\Users\\Public\\wpilib\\2025\\tools\\Elastic.vbs"``. Save the ``FRC DS Data Storage`` file.
 
 ## Launch Driver Station
 
