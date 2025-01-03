@@ -1,7 +1,7 @@
 Tuning a Vertical Elevator with Motion Profiling
 ================================================
 
-In this section, we will tune a simple position controller for a vertical elevator.  In addition, we will discussion advantages of using motion profiling for this situation.
+In this section, we will tune a simple position controller for a vertical elevator.  In addition, we will discuss the advantages of using motion profiling for this situation.
 
 About the Profiler
 ------------------
