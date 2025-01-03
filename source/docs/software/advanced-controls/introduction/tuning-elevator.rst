@@ -45,7 +45,7 @@ Picking the Control Strategy for a Vertical Elevator
 
 Applying voltage to the motor causes a force on the mechanism that drives the elevator up or down. If there is no voltage, gravity still acts on the elevator to pull it downward.  Generally, it is desirable to fight this effect, and keep the elevator at a specific height.
 
-The tutorials below will demonstrate the behavior of the system under pure pure feedback (PID), and then combined feedforward-feedback with motion profiling control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.  Even though WPILib tooling can provide you with optimal gains, it is worth going through the manual tuning process to see how the different control strategies interact with the mechanism.
+The tutorials below will demonstrate the behavior of the system under just feedback (PID), and then combined feedforward-feedback with motion profiling control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.  Even though WPILib tooling can provide you with optimal gains, it is worth going through the manual tuning process to see how the different control strategies interact with the mechanism.
 
 Pure Feedback Control
 ~~~~~~~~~~~~~~~~~~~~~
