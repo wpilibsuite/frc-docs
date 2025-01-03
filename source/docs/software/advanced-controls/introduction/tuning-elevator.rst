@@ -47,7 +47,7 @@ Applying voltage to the motor causes a force on the mechanism that drives the el
 
 The tutorials below will demonstrate the behavior of the system under just feedback (PID), and then combined feedforward-feedback with motion profiling control strategies.  Follow the instructions to learn how to manually tune these controllers, and expand the "tuning solution" to view an optimal model-based set of tuning parameters.  Even though WPILib tooling can provide you with optimal gains, it is worth going through the manual tuning process to see how the different control strategies interact with the mechanism.
 
-Pure Feedback Control
+Feedback Only Control
 ~~~~~~~~~~~~~~~~~~~~~
 
 Interact with the simulation below to examine how the vertical elevator system responds when controlled only by a feedback (PID) controller.
