@@ -10,7 +10,7 @@ In this specific example: We assume there are is one or more *fixed positions* t
 
 In one periodic loop, the operator's commanded position might instantly snap from one value to a different one. Naturally, we don't expect the elevator to physically move that fast.
 
-Since it is not physically plausible for the elevator to move in that manner, using a motion profiler is useful. 
+Since it is not physically plausible for the elevator to move in that manner, using a motion profiler is useful.
 
 Constraining to realistic motion is a generally good principle for robust controls: don't ask the physical system to do something it physically can't. Having desired velocity and acceleration signals are also useful for supporting a more complex feedforward model.
 
