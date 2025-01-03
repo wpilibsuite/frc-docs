@@ -73,7 +73,7 @@ Interact with the simulation below to examine how the vertical elevator system r
 Perform the following:
 
 1. Set :math:`K_p`, :math:`K_i`, and :math:`K_d` to zero.
-2. Increase :math:`K_p` until the mechanism responds to a sudden change in setpoint by moving sharply to the new position.  If the controller oscillates too much around the setpoint, reduce `K_p` until it stops.
+2. Increase :math:`K_p` until the mechanism responds to a sudden change in setpoint by moving sharply to the new position.  If the controller oscillates too much around the setpoint, reduce :math:`K_p` until it stops.
 3. Increase :math:`K_i` when the :term:`output` gets "stuck" before converging to the :term:`setpoint`.
 4. Increase :math:`K_d` to help the system track smoothly-moving setpoints and further reduce oscillation.
 
