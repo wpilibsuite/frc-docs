@@ -20,12 +20,12 @@ The code example below initialize the LTV Unicycle Controller with `qelms` of 0.
    controller = LTVUnicycleController([0.0625, 0.125, 2.0], [1.0, 2.0], 0.02, 9)
    ```
 
-## Getting Adjusted Velocities
-The LTV Unicycle controller returns "adjusted velocities" so that the when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal comprises of a desired pose, desired linear velocity, and desired angular velocity. Furthermore, the current position of the robot should also be updated periodically. The controller uses these four arguments to return the adjusted linear and angular velocity. Users should command their robot to these linear and angular velocities to achieve optimal trajectory tracking.
+## Getting Velocity Commands
+The LTV Unicycle controller returns linear and angular velocity commands which, if followed, will make the robot accurately reach a goal state consisting of a desired pose, desired linear velocity, and desired angular velocity.
 
 .. note:: The "goal pose" represents the position that the robot should be at a particular timestep when tracking the trajectory. It does NOT represent the final endpoint of the trajectory.
 
-The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java/Python) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter. For the other parameters, one of these overloads takes in the goal as three separate parameters (pose, linear velocity, and angular velocity) whereas the other overload accepts a ``Trajectory.State`` object, which contains information about the goal pose. For its ease, users should use the latter method when tracking trajectories.
+The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java/Python) method. The first overload of this method accepts the current robot pose, desired robot pose, desired linear velocity, and desired angular velocity. The second overload accepts the current robot pose and desired pose, linear velocity, and angular velocity as a ``Trajectory.State`` object. This overload is ideal for those using the WPILib trajectory API.
 
 .. tab-set-code::
 
@@ -46,8 +46,8 @@ The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Jav
 
 These calculations should be performed at every loop iteration, with an updated robot position and goal.
 
-## Using the Adjusted Velocities
-The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity in the sideways direction), and an ``omega`` (angular velocity around the center of the robot frame).
+## Using the Velocity Commands
+The velocity commands are of type ``ChassisSpeeds``, which contains a ``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity in the sideways direction), and an ``omega`` (angular velocity around the center of the robot frame).
 
 The returned adjusted speeds can be converted to usable speeds using the kinematics classes for your drivetrain type. For example, the adjusted velocities can be converted to left and right velocities for a differential drive using a ``DifferentialDriveKinematics`` object.
 
@@ -73,5 +73,5 @@ The returned adjusted speeds can be converted to usable speeds using the kinemat
    right = wheelSpeeds.right
    ```
 
-Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController ([C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_i_d_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html), :external:py:class:`Python <wpimath.controller.PIDController>`) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX can be used.
+These new left and right velocities are still speeds and not voltages, so two PID Controllers, one for each side, should be used to track them. You can use either the WPILib PIDController ([C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_i_d_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html), :external:py:class:`Python <wpimath.controller.PIDController>`) or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX.
 
