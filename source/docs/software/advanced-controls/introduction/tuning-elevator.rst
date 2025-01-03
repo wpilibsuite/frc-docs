@@ -87,7 +87,7 @@ Perform the following:
 Motion Profiled, Feedforward, and Feedback Control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Interact with the simulation below to examine how the elevator system responds when controlled only by a feedforward controller.
+Interact with the simulation below to initially examine how the elevator system responds when controlled only by a feedforward controller and then transition to using a little bit of feedback to correct any leftover error.
 
 .. note:: To change the elevator setpoint, click on the desired height along the vertical support.
 
