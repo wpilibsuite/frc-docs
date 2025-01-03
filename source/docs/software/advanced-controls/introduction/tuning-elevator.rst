@@ -11,7 +11,7 @@ The operator will command a position that changes in "steps" - in one loop, the 
 1. Motion is constrained to be realistic
 2. Desired velocity and acceleration signals are produced.
 
-Realistic motion is just a generally good principle for robust controls: don't ask the physical system to do something it physically can't. Having desired velocity and acceleration signals are also useful for supporting a more complex feedforward model.
+Constraining to realistic motion is a generally good principle for robust controls: don't ask the physical system to do something it physically can't. Having desired velocity and acceleration signals are also useful for supporting a more complex feedforward model.
 
 The result is now two :term:`setpoint` concepts: An "unprofiled" input setpoint which is allowed to change freely, and a "profiled" intermediate setpoint which is constrained to move in a more physically realistic manner.
 
