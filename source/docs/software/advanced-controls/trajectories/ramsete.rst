@@ -1,6 +1,6 @@
 # Ramsete Controller
 
-.. warning:: Ramsete Controller has been deprecated. Use :doc:`LTV Unicycle Controller <ltv>` which has more intuitive tuning.
+.. warning:: Ramsete Controller has been :term:`deprecated`. Use :doc:`LTV Unicycle Controller <ltv>` which has more intuitive tuning.
 
 The Ramsete Controller is a trajectory tracker that is built in to WPILib. This tracker can be used to accurately track trajectories with correction for minor disturbances.
 

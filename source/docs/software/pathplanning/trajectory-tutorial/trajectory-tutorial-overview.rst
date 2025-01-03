@@ -2,7 +2,7 @@
 
 # Trajectory Tutorial Overview
 
-.. todo:: add pathweaver stuff once it is available
+.. warning:: This tutorial uses the Ramsete Controller which has been :term:`deprecated`. The replacement is :doc:`LTV Unicycle Controller </docs/software/advanced-controls/trajectories/ltv>` which has more intuitive tuning. We are looking for volunteers to [update this tutorial](https://github.com/wpilibsuite/frc-docs/issues/2651).
 
 .. note:: Before following this tutorial, it is helpful (but not strictly necessary) to have a baseline familiarity with WPILib's :ref:`PID control <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`, :ref:`feedforward <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>`, and :ref:`trajectory <docs/software/advanced-controls/trajectories/index:Trajectory Generation and Following with WPILib>` features.
 
