@@ -1,20 +1,23 @@
 # LTV Unicycle Controller
-The LTV Unicycle Controller is a trajectory tracker that is built in to WPILib. This tracker can be used to accurately track trajectories with correction for minor disturbances.
+The LTV Unicycle Controller ([C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_l_t_v_unicycle_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/LTVUnicycleController.html), :external:py:class:`Python <wpimath.controller.LTVUnicycleController>`) is a trajectory tracker that is built in to WPILib. This tracker can be used to accurately track trajectories with correction for minor disturbances.
 
 ## Constructing the LTV Unicycle Controller Object
-The LTV Unicycle controller should be initialized with two parameters, `dt` and `maxVelocity`. `dt` represents the timestep used in calculations (the default loop rate of 20 ms is a reasonable value) and `maxVelocity` should be the max velocity your robot can achieve.
+
+The LTV Unicycle controller should be initialized with four parameters. `qelms` is a vector of the maximum desired error tolerance in the X and Y directions and heading. `relms` is a vector of the desired control effort in linear velocity and angular velocity. `dt` represents the timestep used in calculations (the default loop rate of 20 ms is a reasonable value) and `maxVelocity` should be the max velocity your robot can achieve. See :ref:`The State Space contrl LQR Tuning <docs/software/advanced-controls/state-space/state-space-intro:LQR: tuning>` for more information on the effect of `relms` and `qelms` on the controller.
+
+The code example below initialize the LTV Unicycle Controller with `qelms` of 0.0625 m in X, 0.125 m in Y, and 2 radians in heading; `relms` of 1 m/s of linear velocity, and 2 rad/sec angular velocity; `dt` of 20 ms; and `maxVelocity` of 9 m/s.
 
 .. tab-set-code::
    ```java
-   LTVUnicycleController controller = new LTVUnicycleController(0.02, 9);
+   LTVUnicycleController controller = new LTVUnicycleController(VecBuilder.fill(0.0625, 0.125, 2.0), VecBuilder.fill(1.0, 2.0), 0.02, 9);
    ```
 
    ```c++
-   frc::LTVUnicycleController controller{0.02_s, 9_mps};
+   frc::LTVUnicycleController controller{{0.0625, 0.125, 2.0}, {1.0, 2.0}, 0.02_s, 9_mps};
    ```
 
    ```python
-   controller = LTVUnicycleController(0.02, 9)
+   controller = LTVUnicycleController([0.0625, 0.125, 2.0], [1.0, 2.0], 0.02, 9)
    ```
 
 ## Getting Adjusted Velocities
