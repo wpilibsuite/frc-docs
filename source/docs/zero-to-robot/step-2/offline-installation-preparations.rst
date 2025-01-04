@@ -16,9 +16,7 @@ This documentation can be downloaded for offline viewing. The link to download t
 
 ### All Teams
 
--  [2025 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) (Note: Click on link for "Install Offline") - This currently requires installing the NI Package Manager (linked below) for successful offline install.
-
--  [National Instruments Package Manager](https://www.ni.com/en/support/downloads/software-products/download.package-manager.html#322516) (Note: Click on link for "Install Offline")
+-  [2025 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) (Note: Click on link for "Install Offline")
 
 ### LabVIEW Teams
 
