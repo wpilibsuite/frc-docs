@@ -86,6 +86,8 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
       +---------------------+-----------+-------------------+---------------------------+
       | Studica             | Community | navx              | robotpy-navx              |
       +---------------------+-----------+-------------------+---------------------------+
+      | URCL                | Community |                   | robotpy-urcl              |
+      +---------------------+-----------+-------------------+---------------------------+
 
    .. tab-item:: Java/C++ (Legacy)
       :sync: javacpplegacy
