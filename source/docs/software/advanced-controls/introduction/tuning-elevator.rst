@@ -6,7 +6,7 @@ In this section, we will tune a simple position controller for a vertical elevat
 
 A *Motion Profiler* is the software logic which, given a goal, commands a changing position, velocity, acceleration which are physically realistic for how a mechanism can move. These position/velocity/acceleration commands can be passed to feedforward and feedback controllers to cause the mechanism to actually achieve the commands.
 
-In this specific example: We assume there are is one or more *fixed positions* that our elevator needs to move to. The operator commands which position is desired.
+In this specific example: We assume there are one or more *fixed positions* that our elevator needs to move to. The operator commands which position is desired.
 
 In one periodic loop, the operator's commanded position might instantly snap from one value to a different one. Naturally, we don't expect the elevator to physically move that fast.
 
