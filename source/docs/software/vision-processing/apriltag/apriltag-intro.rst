@@ -15,15 +15,13 @@ In the context of FRC, AprilTags are useful for helping your robot know where it
 
 AprilTags have been in development since 2011, and have been refined over the years to increase the robustness and speed of detection.
 
-[Starting in 2023, FIRST is providing a number of tags,](https://www.firstinspires.org/robotics/frc/blog/2022-2023-approved-devices-rules-preview-and-vision-target-update) scattered throughout the field, each at a known :term:`pose`.
-
-In 2024, [the tag family was updated to the 36h11 family](https://www.firstinspires.org/robotics/frc/blog/2023-technology-updates-past-present-future-and-beyond).
+Starting in 2023, FIRST is providing a number of tags, scattered throughout the field, each at a known :term:`pose`.
 
 .. collapse:: What is the 36h11 family?
 
    The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families [are described here](https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html).
 
-   FIRST has chosen the 36h11 family for 2024. This family of tags is made of a 6x6 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
+   FIRST has chosen the 36h11 family for 2025. This family of tags is made of a 6x6 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
 
    While there are :math:`2^{36} = 68,719,476,736` theoretical possible tags, only 587 are actually used. These are chosen to:
 
