@@ -49,6 +49,44 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
 
       .. seealso:: :doc:`/docs/software/python/pyproject_toml`
 
+      Optional WPILib components:
+
+      +----------+----------------+---------------------+
+      |          | robotpy_extras | requires            |
+      +==========+================+=====================+
+      | Apriltag | apriltag       | robotpy-apriltag    |
+      +----------+----------------+---------------------+
+      | Commands | commands2      | robotpy-commands-v2 |
+      +----------+----------------+---------------------+
+      | cscore   | cscore         | robotpy-cscore      |
+      +----------+----------------+---------------------+
+      | Romi     | romi           | robotpy-romi        |
+      +----------+----------------+---------------------+
+      | XRP      | xrp            | robotpy-xrp         |
+      +----------+----------------+---------------------+
+
+      Optional vendor-specific components (not all are available at the beginning of the season):
+
+      +---------------------+-----------+-------------------+---------------------------+
+      |                     | Origin    | robotpy_extras    | requires                  |
+      +=====================+===========+===================+===========================+
+      | ChoreoLib           | Vendor    |                   | sleipnirgroup-choreolib   |
+      +---------------------+-----------+-------------------+---------------------------+
+      | CTRE Phoenix 6      | Vendor    | phoenix6          | phoenix6                  |
+      +---------------------+-----------+-------------------+---------------------------+
+      | CTRE Phoenix 5      | Community | phoenix5          | robotpy-ctre              |
+      +---------------------+-----------+-------------------+---------------------------+
+      | PathPlannerLib      | Vendor    | pathplannerlib    | robotpy-pathplannerlib    |
+      +---------------------+-----------+-------------------+---------------------------+
+      | PhotonVision        | Vendor    | photonvision      | photonlibpy               |
+      +---------------------+-----------+-------------------+---------------------------+
+      | Playing With Fusion | Community | playingwithfusion | robotpy-playingwithfusion |
+      +---------------------+-----------+-------------------+---------------------------+
+      | REVLib              | Community | rev               | robotpy-rev               |
+      +---------------------+-----------+-------------------+---------------------------+
+      | Studica             | Community | navx              | robotpy-navx              |
+      +---------------------+-----------+-------------------+---------------------------+
+
    .. tab-item:: Java/C++ (Legacy)
       :sync: javacpplegacy
 
