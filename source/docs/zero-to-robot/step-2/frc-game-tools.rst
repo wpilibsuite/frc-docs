@@ -30,8 +30,6 @@ Log-in or create an National Instruments account.
 
 If you wish to install on other machines offline, click :guilabel:`Install Offline` or else choose :guilabel:`Download` to download the online installer which will download while installing.
 
-.. warning:: The offline installer currently requires a newer version of the NI Package Manager. Either download an updated version of [NI Package Manager](https://www.ni.com/en/support/downloads/software-products/download.package-manager.html) to install offline, or use the online install.
-
 ## Uninstall Old Versions (Recommended)
 
 .. important:: LabVIEW teams have already completed this step, do not repeat it. LabVIEW teams should skip to the :ref:`docs/zero-to-robot/step-2/frc-game-tools:installation` section.
