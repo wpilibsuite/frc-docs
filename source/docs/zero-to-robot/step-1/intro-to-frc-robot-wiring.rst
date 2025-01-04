@@ -153,7 +153,7 @@ Connect one free end of the CAN bus chain to the PDH and the other to the roboRI
 
 Requires: Battery Connector, 1x 6 AWG (16 :math:`mm^2`) terminal lugs, 7/16" (11 mm) Box end
 
-Attach the red wire from the battery conenctor to the main breaker using a terminal lug and attach the black side to the power input of the PDH.
+Attach the red wire from the battery connector to the main breaker using a terminal lug and attach the black side to the power input of the PDH.
 
 .. collapse:: Details
 
