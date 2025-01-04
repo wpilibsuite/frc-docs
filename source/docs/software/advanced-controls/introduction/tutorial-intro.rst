@@ -33,4 +33,4 @@ Furthermore, work from easy to difficult. The tutorials progress in complexity i
 #. :ref:`Flywheel Mechanisms <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`
 #. :ref:`Turret Mechanisms <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>`
 #. :ref:`Vertical Arm Mechanisms<docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>`
-#. :ref:`Vertical Elevator Mechanisms (with Motion Profiling) <docs/software/advanced-controls/introduction/tuning-elevator:Tuning a Tuning a Vertical Elevator with Motion Profiling>`
+#. :ref:`Vertical Elevator Mechanisms (with Motion Profiling) <docs/software/advanced-controls/introduction/tuning-elevator:Tuning a Vertical Elevator with Motion Profiling>`
