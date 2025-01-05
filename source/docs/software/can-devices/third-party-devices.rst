@@ -21,7 +21,7 @@ CTR Electronics (CTRE) offers several CAN peripherals with external libraries. G
 
 - **Talon FX (with Falcon 500 Motor, Kraken x60 motor, and Kraken x44)**
 
-    - API Documentation (v6: [Java](https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/hardware/TalonFX.html), [C++](https://api.ctr-electronics.com/phoenix/release/cpp/classctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_f_x.html))
+    - API Documentation (v6: [Java](https://api.ctr-electronics.com/phoenix6/release/java/com/ctre/phoenix6/hardware/TalonFX.html), [C++](https://api.ctr-electronics.com/phoenix6/release/cpp/classctre_1_1phoenix6_1_1hardware_1_1_talon_f_x.html))
     - Hardware User's Manual ([Falcon 500](https://ctre.download/files/user-manual/Falcon%20500%20v3%20User's%20Guide.pdf), [Kraken x60](https://docs.wcproducts.com/kraken-x60), [Kraken x44](https://docs.wcproducts.com/kraken-x44))
     - [Software Documentation](https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/index.html)
 
