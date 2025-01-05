@@ -2,7 +2,7 @@
 
 SmartDashboard is a simple and efficient dashboard that uses relatively few computer resources.  It does not have the fancy look or some of the features Shuffleboard has, but it displays network tables data with a variety of widgets without bogging down the driver station computer.
 
-.. warning:: SmartDashboard is deprecated and will be removed for 2027 due to it's usage on Network Tables v3. Users can find :doc:`additional modern dashboard options at </docs/software/dashboards/dashboard-intro>`
+.. warning:: SmartDashboard is deprecated and will be removed for 2027 due to it's usage of Network Tables v3. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
 
 .. toctree::
    :maxdepth: 1
