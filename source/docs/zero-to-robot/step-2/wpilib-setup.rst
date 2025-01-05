@@ -123,6 +123,8 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
 Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~150MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
+.. note:: teams upgrading from Beta will already have a version of VS Code installed. However, it's still recommended to select :guilabel:`Download for this computer only` to ensure the latest recommended version of VS Code is installed
+
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar
 
