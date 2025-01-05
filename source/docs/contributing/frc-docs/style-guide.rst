@@ -209,7 +209,7 @@ Hi there, `this is a link`_ and it's pretty cool!
 Links to the RobotPY API documentation should use the following sphinx [python syntax](https://www.sphinx-doc.org/en/master/usage/domains/python.html) (example linking to the DriverStation API docs).
 
 ```ReST
-:external:py:class:`Python <robotpy:wpilib.DriverStation>`
+:py:class:`Python <robotpy:wpilib.DriverStation>`
 ```
 
 This expands to be equivalent to:
