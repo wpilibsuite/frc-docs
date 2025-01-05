@@ -6,6 +6,15 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 ## Open Issues
 
+### LabVIEW Getting Started page reports 2024
+
+**Issue:** The LabVIEW Getting Started page shows 2024 instead of 2025.
+
+.. image:: images/known-issues/labview-getting-started-2024.png
+  :alt: LabVIEW Getting Started window showing 2024
+
+**Workaround:** This is an issue with the LabVIEW update. You can confirm that the proper version is installed by opening the Driver station and confirming the version in the titlebar is 25.0
+
 ### Driver Station randomly disabled
 
 **Issue:** The Driver Station contains tighter safety mechanisms in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.
@@ -148,6 +157,6 @@ python -m robotpy installer niweb disable
 **Issue:** An offiline installation of NI Game Tools may fail due to outdated NI Package Manager
 
 .. image:: images/known-issues/game-tools-package-manager.png
-  :alt: Chinese character appearing in the Driver Station log window.
+  :alt: Game Tools error message requireing update to NI Package Manager.
 
 **Workaround:** Install the latest [National Instruments Package Manager](https://www.ni.com/en/support/downloads/software-products/download.package-manager.html) (Note: Click on link for "Install Offline") and then restart Game Tools installation.
