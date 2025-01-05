@@ -210,3 +210,30 @@ References show the pose of the calibrated tag in relation to another calibrated
 
 .. important:: WPIcal is meant to correct for SMALL variations in tag placement. It is still important that you set up your Apriltags in mostly the correct location and orientation, so WPIcal performs the optimal calibration.
 .. important:: Make sure that you verify the results of each calibration thoroughly to ensure that your calibration matches your field setup accurately.
+
+## Combine Field Calibrations
+
+WPIcal can combine multiple field calibrations into a single field calibration. This is useful in cases where fields are split into multiple sections. To combine field calibrations, select the :guilabel:`Combine Calibrations` button.
+
+.. image:: images/CombineCalibrationsButton.png
+    :alt: Image of WPIcal's combine calibrations button highlighted.
+
+
+Load in the ideal field map JSON and the field calibration JSONs you want to combine.
+
+.. image:: images/CombineCalibrationsBase.png
+    :alt: Image of WPIcal's combine calibrations window.
+
+WPIcal will prompt you to select which tags you would like to add to your combined field calibration. Change :guilabel:`Tag ID` to the ID of the tag you would like to add or remove from the combined field calibration. Press :guilabel:`Add` to add the tag to the combined field calibration, or :guilabel:`Remove` to remove the tag from the combined field calibration.
+
+.. image:: images/CombineCalibrationsPostSelection.png
+    :alt: Image of WPIcal's combine calibrations window after selecting field maps.
+
+.. tip:: Any tags that you do not include in the combination will fall back to the ideal field map.
+
+After selecting the tags you would like to add to your combined field calibration, drag and drop the calibrated fields to the tags you wish to associate them with.
+
+.. image:: images/CombineCalibrationsDragDrop.png
+    :alt: Image of WPIcal's combine calibrations window after dragging and dropping field maps.
+
+After dragging and dropping the field maps, press :guilabel:`Download` to generate the combined field calibration .json and .fmap. If you have not yet selected a download directory from the field calibration process, WPIcal will prompt you to save the combined field calibration to a directory.
