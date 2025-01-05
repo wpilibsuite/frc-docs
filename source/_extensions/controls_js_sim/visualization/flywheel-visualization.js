@@ -55,7 +55,7 @@ class FlywheelVisualization extends BaseVisualization{
     }
 
     drawDynamicCustom(){
-        const positionRad = this.positionRad;
+        const positionRad = this.position;
 
         // todo: magic numbers again
         const setpointPlotScale = this.setpoint * 1/500 * this.wheelRadius;
@@ -96,15 +96,15 @@ class FlywheelVisualization extends BaseVisualization{
                 //Ball is in contact with the shooter and should move along with it
                 if(this.ballEnterAngle == null){
                     //First loop of exit, calc entry wheel angle
-                    this.ballEnterAngle = this.positionRad;
+                    this.ballEnterAngle = this.position;
                 }    
 
-                let ballDrawAngle = this.positionRad - this.ballEnterAngle  + Math.PI;
+                let ballDrawAngle = this.position - this.ballEnterAngle  + Math.PI;
                 ballCenterX = this.wheelCenterX + (this.wheelRadius + this.ballRadius) * Math.cos(ballDrawAngle);
                 ballCenterY = this.wheelCenterY + (this.wheelRadius + this.ballRadius) * Math.sin(ballDrawAngle);
 
                 //Check for ball exit conditions
-                if(this.positionRad - this.ballEnterAngle > Math.PI/2){
+                if(this.position - this.ballEnterAngle > Math.PI/2){
                     this.ballExited = true;
                     this.ballExitSpeed = 2 * Math.PI * (this.wheelRadius + this.ballRadius) / 60 * this.output; //output assumed in RPM
                     this.ballExitTime = this.timeS;

@@ -1,6 +1,6 @@
 # Introduction To Controls Tuning Tutorials
 
-The WPILib docs include three interactive tuning simulations. Their goal is to allow students to learn how tuning parameters impact system behavior, without having to deal with software bugs or other real-world behavior.
+The WPILib docs include multiple interactive tuning simulations. Their goal is to allow students to learn how tuning parameters impact system behavior, without having to deal with software bugs or other real-world behavior.
 
 Even though WPILib tooling can provide you with optimal gains, it is worth going through the manual tuning process to see how the different control strategies interact with the mechanism.
 
@@ -28,4 +28,9 @@ Follow the order of tuning presented in the tutorials - it will maximize your ch
 
 Resist checking the tuning solutions until you believe your solution is close to correct. Then check your answer, and try the provided one to compare against your own results.
 
-Furthermore, work from easy to difficult. :ref:`Flywheel mechanisms <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>` are the easiest to tune. After that, look into the :ref:`turret tuning <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>`. Then, finish off with the :ref:`vertical arm example<docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>`.
+Furthermore, work from easy to difficult. The tutorials progress in complexity in this order:
+
+#. :ref:`Flywheel Mechanisms <docs/software/advanced-controls/introduction/tuning-flywheel:Tuning a Flywheel Velocity Controller>`
+#. :ref:`Turret Mechanisms <docs/software/advanced-controls/introduction/tuning-turret:Tuning a Turret Position Controller>`
+#. :ref:`Vertical Arm Mechanisms<docs/software/advanced-controls/introduction/tuning-vertical-arm:Tuning a Vertical Arm Position Controller>`
+#. :ref:`Vertical Elevator Mechanisms (with Motion Profiling) <docs/software/advanced-controls/introduction/tuning-elevator:Tuning a Vertical Elevator with Motion Profiling>`
