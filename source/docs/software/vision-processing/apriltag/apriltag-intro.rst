@@ -21,7 +21,7 @@ Starting in 2023, FIRST is providing a number of tags, scattered throughout the 
 
    The AprilTag library implementation defines standards on how sets of tags should be designed. Some of the possible tag families [are described here](https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html).
 
-   FIRST has chosen the 36h11 family for 2025. This family of tags is made of a 6x6 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
+   Starting from 2024, FIRST has chosen the 36h11 family. This family of tags is made of a 6x6 grid of pixels, each representing one bit of information. An additional black and white border must be present around the outside of the bits.
 
    While there are :math:`2^{36} = 68,719,476,736` theoretical possible tags, only 587 are actually used. These are chosen to:
 
