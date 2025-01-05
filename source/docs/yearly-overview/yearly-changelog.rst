@@ -188,6 +188,8 @@ Supported Operating Systems and Architectures:
 
 .. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
 
+.. warning:: SmartDashboard is deprecated and will be removed for 2027 due to it's usage of Network Tables v3. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
+
 - No changes other than build updates were made to SmartDashboard
 
 ## Glass / OutlineViewer / Simulation GUI
