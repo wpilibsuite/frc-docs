@@ -6,12 +6,13 @@ This guide will show you how to do a basic setup for controlling your robot "at 
 
 ## Prerequisites
 
-.. image:: images/radio-programming/VH-109-2-radios.drawio.svg
-   :alt: Connectivity diagram of VH-109 on robot connected to VH-109 on Driver station, powered by VH-117 POE wall adapter, with DS and programming laptops connected to it
-
 The recommended setup requires: 2 VH-109 radios, 1 VH-117 :term:`PoE` Wall Adapter, and 1 Radio Heatsink.  Available [here](https://wcproducts.com/products/frc-radio).
 
 Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Setup Discussion` if you do not currently have this hardware.
+
+.. image:: images/radio-programming/VH-109-2-radios.drawio.svg
+   :alt: Connectivity diagram of VH-109 on robot connected to VH-109 on Driver station, powered by VH-117 POE wall adapter, with DS and programming laptops connected to it
+   :width: 500
 
 ## Getting to the Web Configuration Page
 
