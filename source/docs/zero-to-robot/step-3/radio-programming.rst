@@ -10,6 +10,10 @@ The recommended setup requires: 2 VH-109 radios, 1 VH-117 :term:`PoE` Wall Adapt
 
 Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Setup Discussion` if you do not currently have this hardware.
 
+.. image:: images/radio-programming/VH-109-2-radios.drawio.svg
+   :alt: Connectivity diagram of VH-109 on robot connected to VH-109 on Driver station, powered by VH-117 POE wall adapter, with DS and programming laptops connected to it
+   :width: 500
+
 ## Getting to the Web Configuration Page
 
 1. Connect the radio directly to your computer using an Ethernet cable in the :guilabel:`DS` port.
