@@ -58,7 +58,7 @@ The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distrib
   :alt: REV Power Distribution Hub
   :width: 500
 
-The [REV Power Distribution Hub](https://docs.revrobotics.com/rev-11-1850/) (PDH) is designed to distribute power from a 12VDC battery to various robot components.  The PDH features 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry.
+The [REV Power Distribution Hub](https://docs.revrobotics.com/ion-control-system/pdh/overview) (PDH) is designed to distribute power from a 12VDC battery to various robot components.  The PDH features 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry.
 
 ## CTRE Voltage Regulator Module
 
@@ -138,7 +138,7 @@ The :ref:`CTRE Pneumatics Control Module <docs/software/can-devices/pneumatics-c
   :alt: REV Pneumatic Hub
   :width: 500
 
-The [REV Pneumatic Hub](https://docs.revrobotics.com/rev-11-1852/) is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types. The user selectable output voltage is fully regulated, allowing even 12V solenoids to stay active when the robot battery drops as low as 4.75V.
+The [REV Pneumatic Hub](https://docs.revrobotics.com/ion-control-system/ph/overview) is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types. The user selectable output voltage is fully regulated, allowing even 12V solenoids to stay active when the robot battery drops as low as 4.75V.
 
 Digital and analog pressure sensor ports are built into the device, increasing the flexibility and feedback functionality of the pneumatic system. The USB-C connection on the Hub works with the REV Hardware Client, allowing users to test pneumatic systems without a need for an additional robot controller.
 
@@ -170,15 +170,15 @@ The [Victor SPX Motor Controller](https://store.ctr-electronics.com/victor-spx/)
   :alt: SPARK MAX Motor Controller
   :width: 400
 
-The [SPARK MAX Motor Controller](https://www.revrobotics.com/rev-11-2158/) is an advanced brushed and brushless DC motor controller from REV Robotics. When using CAN bus or USB control, the SPARK MAX uses input from limit switches, encoders, and other sensors, including the integrated encoder of the REV NEO Brushless Motor, to perform advanced control modes. The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only). For more information, see the [SPARK MAX User's Manual](https://docs.revrobotics.com/sparkmax/).
+The [SPARK MAX Motor Controller](https://docs.revrobotics.com/brushless/spark-max/overview) is an advanced brushed and brushless DC motor controller from REV Robotics. When using CAN bus or USB control, the SPARK MAX uses input from limit switches, encoders, and other sensors, including the integrated encoder of the REV NEO Brushless Motor, to perform advanced control modes. The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only). For more information, see the [SPARK MAX User's Manual](https://docs.revrobotics.com/sparkmax/).
 
 ### TalonFX Motor Controller
 
-.. image:: images/control-system-hardware/talonfx.png
+.. image:: images/control-system-hardware/talonfx.PNG
   :alt: TalonFX Motor Controller
   :width: 500
 
-The [TalonFX Motor Controller](https://store.ctr-electronics.com/falcon-500-powered-by-talon-fx/)  is integrated into the Falcon 500 brushless motor.  It features an integrated encoder and all of the smart features of the Talon SRX and more!  For more information see the [Falcon 500 User Guide](https://ctre.download/files/user-manual/Falcon%20500%20v3%20User's%20Guide.pdf).
+The TalonFX Motor Controller is a brushless integrated into the Falcon 500, Kraken X60 and Kraken X44 brushless motors.  It features an integrated encoder and all of the smart features of the Talon SRX and more! For more information see the [TalonFX Hardware Reference](https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/).
 
 ### SPARK Motor Controller
 
