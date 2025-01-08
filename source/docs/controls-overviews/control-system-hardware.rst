@@ -54,7 +54,7 @@ The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distrib
 
 ## CTRE Power Distribution Panel 2.0
 
-.. image:: images/control-system-hardware/power-distribution-panel-2.PNG
+.. image:: images/control-system-hardware/power-distribution-panel-2.png
   :alt: CTRE Power Distribution Panel 2.0
   :width: 500
 
@@ -174,7 +174,7 @@ The [SPARK MAX Motor Controller](https://www.revrobotics.com/rev-11-2158/) is an
 
 ### TalonFX Motor Controller
 
-.. image:: images/control-system-hardware/talonfx.PNG
+.. image:: images/control-system-hardware/talonfx.png
   :alt: TalonFX Motor Controller
   :width: 400
 
@@ -283,7 +283,7 @@ The [Nidec Dynamo BLDC Motor with Controller](https://www.andymark.com/products/
 
 ### Thrifty Nova Motor Controller
 
-.. image:: images/control-system-hardware/nova.PNG
+.. image:: images/control-system-hardware/nova.png
   :alt: Thrifty Nova Motor Controller
   :width: 400
 
@@ -291,7 +291,7 @@ The [Thrifty Nova Motor Controller](https://www.thethriftybot.com/products/thrif
 
 ### Talon FXS Motor Controller
 
-.. image:: images/control-system-hardware/talonfxs.PNG
+.. image:: images/control-system-hardware/talonfxs.png
   :alt: Talon FXS Motor Controller
   :width: 500
 
@@ -299,7 +299,7 @@ The [Talon FXS Motor Controller](https://store.ctr-electronics.com/products/talo
 
 ### Koors 40 Brushed DC Motor Controller
 
-.. image:: images/control-system-hardware/koors-40.PNG
+.. image:: images/control-system-hardware/koors-40.png
   :alt: Koors 40 Brushed DC Motor Controller
   :width: 400
 
