@@ -287,7 +287,7 @@ The [Nidec Dynamo BLDC Motor with Controller](https://www.andymark.com/products/
   :alt: Thrifty Nova Motor Controller
   :width: 400
 
-The [Thrifty Nova Motor Controller](https://www.thethriftybot.com/products/thrifty-nova) is a brushless DC motor controller from The Thrifty Bot with CAN and USB connectivity. It can recieve sensor inputs from NEO and NEO 550 brushless motors as well as other sensors with the use of expansion boards. For more information, see the [Thrifty Nova Documentation](https://www.thethriftybot.com/products/thrifty-nova).
+The [Thrifty Nova Motor Controller](https://www.thethriftybot.com/products/thrifty-nova) is a brushless DC motor controller from The Thrifty Bot with CAN and USB connectivity. It can receive sensor inputs from NEO and NEO 550 brushless motors as well as other sensors with the use of expansion boards. For more information, see the [Thrifty Nova Documentation](https://www.thethriftybot.com/products/thrifty-nova).
 
 ### Talon FXS Motor Controller
 
