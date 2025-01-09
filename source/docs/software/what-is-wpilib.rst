@@ -6,7 +6,6 @@
    :alt: The logo for the WPI Robotics Library.
    :width: 500
 
-
 The WPI Robotics Library ([WPILib](https://wpilib.org)) is the standard :term:`software library` provided for teams to write code for their FRC\ |reg| robots. WPILib contains a set of useful classes and subroutines for interfacing with various parts of the FRC control system (such as sensors, motor controllers, and the driver station), as well as an assortment of other utility functions.
 
 .. image:: images/wpi-logo.png
