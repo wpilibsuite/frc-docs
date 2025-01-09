@@ -123,6 +123,12 @@ The access point radio will get hot after being on for a longer than a full matc
 
 ### Cannot Reach the Configuration Page at radio.local
 
+Disconnect other network connections such as Wi-Fi.
+
+Disable :doc:`firewalls </docs/networking/networking-introduction/windows-firewall-configuration>`.
+
+Ensure :doc:`Game Tools </docs/zero-to-robot/step-2/frc-game-tools>` or another :ref:`mdns responder <docs/networking/networking-introduction/networking-basics:mDNS - Providers>` is installed.
+
 Set a [static ip address](https://www.trendnet.com/press/resource-library/how-to-set-static-ip-address) with these parameters:
 
 - IP Address: 192.168.69.2
