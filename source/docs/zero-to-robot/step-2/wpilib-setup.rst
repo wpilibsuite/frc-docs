@@ -202,6 +202,9 @@ The Offline Installer installs the following components:
 
 - **Documentation** - Offline copies of this frc-docs documentation and Java/C++/Python APIs
 
+.. note:: It's not recommended to use the VS Code Backup and Settings Sync feature to sync settings between a regular VS Code installation and the FRC VS Code installation. This could lead to either installation being broken.
+
+
 ## Uninstalling
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib. However, the following instructions can be used to uninstall WPILib if desired.
