@@ -70,6 +70,8 @@ Follow all of the same steps as the robot radio configuration instead choosing :
 
 For the best experience and to closely simulate field conditions, it is strongly recommended that your team uses two VH-109 radios during testing and preparation. This dual-radio setup mirrors the competition environment, ensuring your robot operates under realistic network conditions. Additionally, having two radios allows you to fully leverage the high-speed, low-latency communication provided by the 6GHz band, which is crucial for optimal robot performance in high-stakes scenarios.
 
+When mounting the access point radio, ensure it is mounted high where it has a clear line of sight to the robot.
+
 ### Only 1 VH-109 radio
 
 If your team has access to only one VH-109 radio, there are still viable options to continue testing and preparing for competition. However, these setups require additional considerations:
