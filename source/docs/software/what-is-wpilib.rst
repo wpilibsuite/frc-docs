@@ -2,7 +2,7 @@
 
 # What is WPILib?
 
-.. image:: images/wpilib-logo.png
+.. image:: /assets/wpilib-generic.svg
    :alt: The logo for the WPI Robotics Library.
    :width: 500
 
