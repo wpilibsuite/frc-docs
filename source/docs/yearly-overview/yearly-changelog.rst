@@ -262,4 +262,4 @@ Elastic is bundled in the installer! Elastic is a simple and modern dashboard. :
 
 WPIcal is new WPILib tool for calibrating FRC Apriltags to correct for field setup error. :doc:`Read more here </docs/software/wpilib-tools/wpical/index>`.
 
-- 2025.2.1: Add JSON combineer which allows users to combine multiple Apriltag layouts
+- 2025.2.1: Add JSON combiner which allows users to combine multiple AprilTag layouts
