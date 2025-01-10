@@ -51,6 +51,7 @@ Supported Operating Systems and Architectures:
 - Add Java unit support for RobotController
 - Add a functional interface for MecanumDriveMotorVoltages and deprecate old interface
 - Add ``Koors40`` Motor Controller
+- 2025.2.1: Add 2025 field image and april tag map
 
 #### Commands
 
@@ -85,6 +86,7 @@ Supported Operating Systems and Architectures:
 
 #### Hardware interfaces
 
+- Breaking: Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder``
 - Add ``getVoltage`` to ``PWMMotorController``
 - Add support for Sharp IR sensors
 - Fix edge cases of CAN ID validation and reporting for CTRE and REV devices
@@ -100,7 +102,6 @@ Supported Operating Systems and Architectures:
 - Propagate ``PWMMotorController`` ``stopMotor()`` and ``disable()`` to followers
 - ``Compressor``: Add more Sendable data
 - Fix ``PowerDistribution.GetAllCurrents()``
-- Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder``
 - Fix ``AsynchronousInterrupt``
 
 #### Math
@@ -125,6 +126,7 @@ Supported Operating Systems and Architectures:
 - Fix PIDController error tolerance getters
 - Add time-varying RKDP
 - Add 2D to 3D geometry constructors
+- 2025.2.1: Implement Translation3d.RotateAround
 
 ### Simulation
 
@@ -160,6 +162,7 @@ Supported Operating Systems and Architectures:
 - HttpCamera: Send width/height/fps stream settings
 - HttpCamera: Auto-detect mode from stream if not set
 - Sink: add ability to get most recent frame instead of waiting
+- 2025.2.1: Use frame time in Linux UsbCameraImpl
 
 ### Util
 
@@ -183,6 +186,7 @@ Supported Operating Systems and Architectures:
 - Expose orientation property for NumberSlider
 - Add :doc:`persistent alerts widget </docs/software/telemetry/persistent-alerts>`
 - Correct FieldData de/serialization
+- 2025.2.1: Add 2025 field image
 
 ## SmartDashboard
 
@@ -199,6 +203,8 @@ Supported Operating Systems and Architectures:
 - Align Field2d border and image padding for custom images
 - Add Alerts widget
 - Fix minimum widget width
+- 2025.2.1: Add 2025 field image
+- 2025.2.1: Make picking a Field2d field JSON more obvious
 
 ## GradleRIO
 
@@ -242,6 +248,7 @@ Supported Operating Systems and Architectures:
 .. warning:: PathWeaver is deprecated and will be removed for 2027. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support.
 
 - Fix finding deploy directory when outputdir blank
+- 2025.2.1: Add 2025 field image
 
 ## AdvantageScope
 
@@ -254,3 +261,5 @@ Elastic is bundled in the installer! Elastic is a simple and modern dashboard. :
 ## WPIcal
 
 WPIcal is new WPILib tool for calibrating FRC Apriltags to correct for field setup error. :doc:`Read more here </docs/software/wpilib-tools/wpical/index>`.
+
+- 2025.2.1: Add JSON combineer which allows users to combine multiple Apriltag layouts
