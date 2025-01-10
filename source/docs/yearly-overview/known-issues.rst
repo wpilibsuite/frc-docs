@@ -28,10 +28,10 @@ The Driver Station software has new tools for control packet delays that could c
 Some teams have seen this happen only when the robot is operated wirelessly, but not when operated via USB or ethernet tether. Some potential mitigations:
 
 1. Try relocating the robot radio to a better location (high in the robot and away from motors or large amounts of metal). Follow the `manufacturer's recommended mounting <https://frc-radio.vivid-hosting.net/getting-started/usage/mounting-your-radio>`__
-2. :doc:`Measure your robot's bandwidth </docs/networking/networking-introduction/measuring-bandwidth-usage>` and ensure you have margin to the 7 Mbps bandwidth limit
+2. :doc:`Measure your robot's bandwidth </docs/networking/networking-introduction/measuring-bandwidth-usage>` and ensure you have margin under the 7 Mbps bandwidth limit
 3. See if the Wi-Fi environment is congested using a tool like [WiFi Analyzer](https://apps.microsoft.com/detail/9NBLGGH33N0N?hl=en-US&gl=US).
 4. Utilize the recommended :doc:`2 radio setup </docs/zero-to-robot/step-3/radio-programming>`.
-   1. Ensure the DS Radio is mounted high away from interference and humans walking between the DS radio and the robot.
+   1. Ensure the DS Radio is mounted high, away from interference and humans walking between the DS radio and the robot.
    2. Use ethernet to connect the DS computer to the DS Radio
 5. Update the Wi-Fi drivers for the DS computer.
 
