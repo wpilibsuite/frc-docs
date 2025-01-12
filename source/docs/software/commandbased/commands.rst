@@ -162,7 +162,7 @@ The ``run`` factory, backed by the ``RunCommand`` ([Java](https://github.wpilib.
           -m_driverController.GetLeftY(),
           m_driverController.GetRightX());
     },
-    {&m_drive}))
+    {&m_drive})
   ```
 
   ```python
