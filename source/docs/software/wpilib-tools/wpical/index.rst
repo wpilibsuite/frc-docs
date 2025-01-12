@@ -104,7 +104,7 @@ There are a three things each calibration JSON needs:
 
 Example:
 
-.. code-block:: json
+```json
 
     {
         "avg_reprojection_error": 0.3989609373420966,
@@ -136,6 +136,7 @@ Example:
             0.0                         // ty
         ]
     }
+```
 
 ## Field Calibration
 After calibrating the camera, you can use the camera model to find the relative positions of the Apriltags. The calibration process will generate a WPILib field layout .json file and a .fmap for use on coprocessors and in robot code. WPIcal will prompt the user to specify a location to save the generated .json and .fmap field layouts to when the :guilabel:`Calibrate!!!` button is pressed.
@@ -167,8 +168,7 @@ WPIcal uses an "ideal" field map JSON as an initial guess point for the optimiza
 
 Example:
 
-.. code-block:: json
-
+```json
     {
         "ID": 1,
         "pose": {
@@ -187,6 +187,7 @@ Example:
             },
         },
     }
+```
 
 ### Select Field Calibration Directory
 WPIcal can calibrate a field based on one or more videos. All the calibration videos must be stored in their own directory, separate from any other files.

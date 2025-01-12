@@ -16,7 +16,7 @@ Alerts are created and managed using the ``Alert`` class. Typically, an alert sh
 Alert states are often expressed most easily as a conditional, such as whether the latest signal from a CAN device is up-to-date. In this case, we recommend calling the ``set`` method in a periodic loop and relying on the built-in change detection to activate the alert.
 
 .. tab-set-code::
-   .. code-block:: java
+   ```java
 
       class Robot {
         Alert alert = new Alert("Something went wrong", AlertType.kWarning);
@@ -25,8 +25,9 @@ Alert states are often expressed most easily as a conditional, such as whether t
           alert.set(...);
         }
       }
+   ```
 
-   .. code-block:: c++
+   ```c++
 
       class Robot {
         frc::Alert alert{"Something went wrong", frc::Alert::AlertType::kWarning};
@@ -35,14 +36,16 @@ Alert states are often expressed most easily as a conditional, such as whether t
       Robot::periodic() {
         alert.Set(...);
       }
+   ```
 
-   .. code-block:: python
+   ```python
 
       self.alert = Alert("Something went wrong", AlertType.kWarning)
 
       def periodic() {
         self.alert.set(...)
       }
+   ```
 
 .. note:: Suggested usage of each alert type (error, warning, or info) is provided in the enum API documentation.
 

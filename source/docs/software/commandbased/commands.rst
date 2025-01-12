@@ -242,7 +242,9 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` ([Java](https://gith
     // Requires the drive subsystem
     {&m_drive}
   )
-    .. code-block:: python
+  ```
+
+  ```python
     commands2.cmd.functional_command(
       # Reset encoders on command start
       lambda: robot_drive.reset_encoders(),
