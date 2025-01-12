@@ -13,7 +13,7 @@ The command-based paradigm is also an example of :term:`declarative programming`
   ```
 
   ```c++
-  Trigger([&condition] { return condition.Get()).OnTrue(frc2::cmd::RunOnce([&piston] { piston.Set(frc::DoubleSolenoid::kForward)));
+  Trigger([&condition] { return condition.Get(); }).OnTrue(frc2::cmd::RunOnce([&piston] { piston.Set(frc::DoubleSolenoid::kForward); }));
   ```
 
   ```python
