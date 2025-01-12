@@ -242,18 +242,20 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` ([Java](https://gith
     // Requires the drive subsystem
     {&m_drive}
   )
-    .. code-block:: python
-    commands2.cmd.functional_command(
-      # Reset encoders on command start
-      lambda: robot_drive.reset_encoders(),
-      # Start driving forward at the start of the command
-      lambda: robot_drive.arcade_drive(ac.kAutoDriveSpeed, 0),
-      # Stop driving at the end of the command
-      lambda interrupted: robot_drive.arcade_drive(0, 0),
-      # End the command when the robot's driven distance exceeds the desired value
-      lambda: robot_drive.get_average_encoder_distance() >= ac.kAutoDriveDistanceInches,
-      # Require the drive subsystem
-      robot_drive)
+
+  ```python
+  commands2.cmd.functional_command(
+    # Reset encoders on command start
+    lambda: robot_drive.reset_encoders(),
+    # Start driving forward at the start of the command
+    lambda: robot_drive.arcade_drive(ac.kAutoDriveSpeed, 0),
+    # Stop driving at the end of the command
+    lambda interrupted: robot_drive.arcade_drive(0, 0),
+    # End the command when the robot's driven distance exceeds the desired value
+    lambda: robot_drive.get_average_encoder_distance() >= ac.kAutoDriveDistanceInches,
+    # Require the drive subsystem
+    robot_drive
+  )
   ```
 
 To print a string and ending immediately, the library offers the ``Commands.print(String)``/``frc2::cmd::Print(std::string_view)``/``commands2.cmd.print(String)`` factory, backed by the ``PrintCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PrintCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_print_command.html), :external:py:class:`Python <commands2.PrintCommand>`) subclass of ``InstantCommand``.
