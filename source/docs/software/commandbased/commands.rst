@@ -159,10 +159,11 @@ The ``run`` factory, backed by the ``RunCommand`` ([Java](https://github.wpilib.
   frc2::RunCommand(
     [this] {
       m_drive.ArcadeDrive(
-          -m_driverController.GetLeftY(),
-          m_driverController.GetRightX());
-    },
-    {&m_drive}))
+        -m_driverController.GetLeftY(),
+        m_driverController.GetRightX()
+      );
+    }, {&m_drive}
+  )
   ```
 
   ```python
