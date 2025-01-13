@@ -127,6 +127,8 @@ The access point radio will get hot after being on for a longer than a full matc
 
 Disconnect other network connections such as Wi-Fi.
 
+Download and use the [Network Assistant](https://frc-radio.vivid-hosting.net/miscellaneous/network-assistant-tool).  See the instructions below the download for how to use.
+
 Disable :doc:`firewalls </docs/networking/networking-introduction/windows-firewall-configuration>`.
 
 Ensure :doc:`Game Tools </docs/zero-to-robot/step-2/frc-game-tools>` or another :ref:`mdns responder <docs/networking/networking-introduction/networking-basics:mDNS - Providers>` is installed.
