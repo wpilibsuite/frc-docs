@@ -255,7 +255,7 @@ A duty cycle encoder can be instantiated as follows:
 
 The :code:`DutyCycleEncoder` class provides an alternate constructor that allows control over the full range and the zero position of the encoder.
 
-The zero is useful for ensuring that the measured rotation corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. The current rotation that is desired to be read and then stored to be set when the program starts. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
+The zero position is useful for ensuring that the measured rotation corresponds to the desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. The desired rotation can be read and stored to be set when the program starts. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides methods to save and retrieve these values on the roboRIO.
 
 .. tab-set-code::
 
