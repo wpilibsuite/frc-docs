@@ -223,7 +223,7 @@ WPILib provides support for duty cycle (also marketed as :term:`PWM`) encoders t
 
 The roboRIO's FPGA handles duty cycle encoders automatically.
 
-.. warning:: The API has changed for 2025 to remove rollover detection as rollover detection did not work. The :code:`get()` method returns the value within a rotation where the maximum value in a rotation is defined in the constructor (default 1).
+.. warning:: In 2025 the API changed to remove rollover detection as rollover detection did not work. The :code:`get()` method returns the value within a rotation where the maximum value in a rotation is defined in the constructor (default 1).
 
 Examples of duty cycle encoders:
 
@@ -251,9 +251,9 @@ A duty cycle encoder can be instantiated as follows:
 
 ### Configuring Duty Cycle Encoder Range and Zero
 
-.. note:: The :code:`DutyCycleEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the full range value. Users thus have complete control over the distance units used.
+.. note:: The :code:`DutyCycleEncoder` class does not assume specific units of distance. It returns values in the same units used to calculate the full range, giving users complete control over the distance units.
 
-The :code:`DutyCycleEncoder` class offers an alternate constructor that offers control over the distance per rotation and zero position of the encoder.
+The :code:`DutyCycleEncoder` class provides an alternate constructor that allows control over the distance per rotation and the zero position of the encoder.
 
 The zero is useful for ensuring that the measured rotation corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. The current rotation that is desired to be read and then stored to be set when the program starts. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
 
@@ -335,11 +335,11 @@ An analog encoder can be instantiated as follows:
 
 ### Configuring Analog Encoder Range and Zero
 
-.. note:: The :code:`AnalogEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the full range value. Users thus have complete control over the distance units used.
+.. note:: The :code:`AnalogEncoder` class makes no assumptions about distance units, returning values in the same units used to calculate the full range. This gives users complete control over the choice of distance units.
 
 The :code:`AnalogEncoder` class offers an alternate constructor that offers control over the distance per rotation and zero position of the encoder.
 
-The zero is useful for ensuring that the measured rotation corresponds to the actual desired physical measurement. Unlike quadrature encoders, analog encoders don't need to be homed. The current rotation that is desired to be read and then stored to be set when the program starts. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
+The zero position is useful for ensuring that the measured rotation corresponds to the desired physical measurement. Unlike quadrature encoders, analog encoders don't need to be homed. The desired rotation can be read and stored to be set when the program starts. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides methods to save and retrieve these values on the roboRIO.
 
 .. tab-set-code::
 
