@@ -251,29 +251,29 @@ A duty cycle encoder can be instantiated as follows:
 
 ### Configuring Duty Cycle Encoder Range and Zero
 
-.. note:: The :code:`DutyCycleEncoder` class does not assume specific units of distance. It returns values in the same units used to calculate the full range, giving users complete control over the distance units.
+.. note:: The :code:`DutyCycleEncoder` class does not assume specific units of rotation. It returns values in the same units used to calculate the full range of rotation, giving users complete control over the rotation units.
 
-The :code:`DutyCycleEncoder` class provides an alternate constructor that allows control over the distance per rotation and the zero position of the encoder.
+The :code:`DutyCycleEncoder` class provides an alternate constructor that allows control over the full range and the zero position of the encoder.
 
 The zero is useful for ensuring that the measured rotation corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. The current rotation that is desired to be read and then stored to be set when the program starts. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
 
 .. tab-set-code::
 
     ```java
-    // Initializes a duty cycle encoder on DIO pins 0 to return a distance of 4 for
-    // every rotation, with the encoder reporting 0 half way through rotation (2
+    // Initializes a duty cycle encoder on DIO pins 0 to return a value of 4 for
+    // a full rotation, with the encoder reporting 0 half way through rotation (2
     // out of 4)
     DutyCycleEncoder encoder = new DutyCycleEncoder(0, 4.0, 2.0);
     ```
 
     ```c++
-    // Initializes a duty cycle encoder on DIO pins 0 to return a distance of 4 for
-    // every rotation, with the encoder reporting 0 half way through rotation (2
+    // Initializes a duty cycle encoder on DIO pins 0 to return a value of 4 for
+    // a full rotation, with the encoder reporting 0 half way through rotation (2
     // out of 4)
     frc::DutyCycleEncoder encoder{0, 4.0, 2.0};
     ```
 
-### Reading Distance from Duty Cycle Encoders
+### Reading Rotation from Duty Cycle Encoders
 
 .. note:: Duty Cycle encoders measure absolute rotation. It does not depend on the starting position of the encoder.
 
@@ -324,42 +324,42 @@ An analog encoder can be instantiated as follows:
 .. tab-set-code::
 
     ```java
-    // Initializes an analog encoder on Analog Input pins 0
+    // Initializes an analog encoder on Analog Input pin 0
     AnalogEncoder encoder = new AnalogEncoder(0);
     ```
 
     ```c++
-    // Initializes a analog cycle encoder on DIO pins 0
+    // Initializes an analog encoder on Analog Input pin 0
     frc::AnalogEncoder encoder{0};
     ```
 
 ### Configuring Analog Encoder Range and Zero
 
-.. note:: The :code:`AnalogEncoder` class makes no assumptions about distance units, returning values in the same units used to calculate the full range. This gives users complete control over the choice of distance units.
+.. note:: The :code:`AnalogEncoder` class makes no assumptions about rotation units, returning values in the same units used to calculate the full range. This gives users complete control over the choice of rotation units.
 
-The :code:`AnalogEncoder` class offers an alternate constructor that offers control over the distance per rotation and zero position of the encoder.
+The :code:`AnalogEncoder` class offers an alternate constructor that offers control over the full range of rotation and zero position of the encoder.
 
 The zero position is useful for ensuring that the measured rotation corresponds to the desired physical measurement. Unlike quadrature encoders, analog encoders don't need to be homed. The desired rotation can be read and stored to be set when the program starts. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides methods to save and retrieve these values on the roboRIO.
 
 .. tab-set-code::
 
     ```java
-    // Initializes an analog encoder on DIO pins 0 to return a distance of 4 for
-    // every rotation, with the encoder reporting 0 half way through rotation (2
+    // Initializes an analog encoder on DIO pins 0 to return a value of 4 for
+    // a full rotation, with the encoder reporting 0 half way through rotation (2
     // out of 4)
     AnalogEncoder encoder = new AnalogEncoder(0, 4.0, 2.0);
     ```
 
     ```c++
-    // Initializes an analog encoder on DIO pins 0 to return a distance of 4 for
-    // every rotation, with the encoder reporting 0 half way through rotation (2
+    // Initializes an analog encoder on DIO pins 0 to return a value of 4 for
+    // a full rotation, with the encoder reporting 0 half way through rotation (2
     // out of 4)
     frc::AnalogEncoder encoder{0, 4.0, 2.0};
     ```
 
-### Reading Distance from Analog Encoders
+### Reading Rotation from Analog Encoders
 
-.. note:: Analog encoders measure absolute distance. It does not depend on the starting position of the encoder.
+.. note:: Analog encoders measure absolute rotation. It does not depend on the starting position of the encoder.
 
 Users can obtain the rotation measured by the encoder with the :code:`get()` method:
 
