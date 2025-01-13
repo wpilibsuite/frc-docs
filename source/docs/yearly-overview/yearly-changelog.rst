@@ -86,7 +86,7 @@ Supported Operating Systems and Architectures:
 
 #### Hardware interfaces
 
-- Breaking: Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder``
+- Breaking: Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder`` to simplify and remove rollover detection that was broken
 - Add ``getVoltage`` to ``PWMMotorController``
 - Add support for Sharp IR sensors
 - Fix edge cases of CAN ID validation and reporting for CTRE and REV devices

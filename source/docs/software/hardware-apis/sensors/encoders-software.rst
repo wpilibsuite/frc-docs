@@ -223,6 +223,8 @@ WPILib provides support for duty cycle (also marketed as :term:`PWM`) encoders t
 
 The roboRIO's FPGA handles duty cycle encoders automatically.
 
+.. warning:: The API has changed for 2025 to remove rollover detection as rollover detection did not work. The :code:`get()` method returns the value within a rotation where the maximum value in a rotation is defined in the constructor (default 1).
+
 Examples of duty cycle encoders:
 
 - [AndyMark Mag Encoder](https://www.andymark.com/products/am-mag-encoder)
@@ -247,40 +249,46 @@ A duty cycle encoder can be instantiated as follows:
     frc::DutyCycleEncoder encoder{0};
     ```
 
-### Configuring Duty Cycle Encoder Parameters
+### Configuring Duty Cycle Encoder Range and Zero
 
-.. note:: The :code:`DutyCycleEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-rotation value.  Users thus have complete control over the distance units used.
+.. note:: The :code:`DutyCycleEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the full range value. Users thus have complete control over the distance units used.
 
-The :code:`DutyCycleEncoder` class offers a number of configuration methods:
+The :code:`DutyCycleEncoder` class offers an alternate constructor that offers control over the distance per rotation and zero position of the encoder.
+
+The zero is useful for ensuring that the measured rotation corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. The current rotation that is desired to be read and then stored to be set when the program starts. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
 
 .. tab-set-code::
 
     ```java
-    // Configures the encoder to return a distance of 4 for every rotation
-    encoder.setDistancePerRotation(4.0);
+    // Initializes a duty cycle encoder on DIO pins 0 to return a distance of 4 for
+    // every rotation, with the encoder reporting 0 half way through rotation (2
+    // out of 4)
+    DutyCycleEncoder encoder = new DutyCycleEncoder(0, 4.0, 2.0);
     ```
 
     ```c++
-    // Configures the encoder to return a distance of 4 for every rotation
-    encoder.SetDistancePerRotation(4.0);
+    // Initializes a duty cycle encoder on DIO pins 0 to return a distance of 4 for
+    // every rotation, with the encoder reporting 0 half way through rotation (2
+    // out of 4)
+    frc::DutyCycleEncoder encoder{0, 4.0, 2.0};
     ```
 
 ### Reading Distance from Duty Cycle Encoders
 
-.. note:: Duty Cycle encoders measure absolute distance. It does not depend on the starting position of the encoder.
+.. note:: Duty Cycle encoders measure absolute rotation. It does not depend on the starting position of the encoder.
 
-Users can obtain the distance measured by the encoder with the :code:`getDistance()` method:
+Users can obtain the rotation measured by the encoder with the :code:`get()` method:
 
 .. tab-set-code::
 
     ```java
-    // Gets the distance traveled
-    encoder.getDistance();
+    // Gets the rotation
+    encoder.get();
     ```
 
     ```c++
-    // Gets the distance traveled
-    encoder.GetDistance();
+    // Gets the rotation
+    encoder.Get();
     ```
 
 ### Detecting a Duty Cycle Encoder is Connected
@@ -299,33 +307,9 @@ As duty cycle encoders output a continuous set of pulses, it is possible to dete
     encoder.IsConnected();
     ```
 
-### Resetting a Duty Cycle Encoder
-
-To reset an encoder so the current distance is 0, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. However, after reset, the position offset can be stored to be set when the program starts so that the reset doesn't have to be performed again. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
-
-.. tab-set-code::
-
-    ```java
-    // Resets the encoder to read a distance of zero at the current position
-    encoder.reset();
-    // get the position offset from when the encoder was reset
-    encoder.getPositionOffset();
-    // set the position offset to half a rotation
-    encoder.setPositionOffset(0.5);
-    ```
-
-    ```c++
-    // Resets the encoder to read a distance of zero at the current position
-    encoder.Reset();
-    // get the position offset from when the encoder was reset
-    encoder.GetPositionOffset();
-    // set the position offset to half a rotation
-    encoder.SetPositionOffset(0.5);
-    ```
-
 ## Analog Encoders - The :code:`AnalogEncoder` Class
 
-WPILib provides support for analog absolute encoders through the :code:`AnalogEncoder` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html)).  This class provides a simple API for configuring and reading data from duty cycle encoders.
+WPILib provides support for analog absolute encoders through the :code:`AnalogEncoder` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html)).  This class provides a simple API for configuring and reading data from analog encoders.
 
 Examples of analog encoders:
 
@@ -340,73 +324,55 @@ An analog encoder can be instantiated as follows:
 .. tab-set-code::
 
     ```java
-    // Initializes a duty cycle encoder on Analog Input pins 0
+    // Initializes an analog encoder on Analog Input pins 0
     AnalogEncoder encoder = new AnalogEncoder(0);
     ```
 
     ```c++
-    // Initializes a duty cycle encoder on DIO pins 0
+    // Initializes a analog cycle encoder on DIO pins 0
     frc::AnalogEncoder encoder{0};
     ```
 
-### Configuring Analog Encoder Parameters
+### Configuring Analog Encoder Range and Zero
 
-.. note:: The :code:`AnalogEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the distance-per-rotation value.  Users thus have complete control over the distance units used.
+.. note:: The :code:`AnalogEncoder` class does not make any assumptions about units of distance; it will return values in whatever units were used to calculate the full range value. Users thus have complete control over the distance units used.
 
-The :code:`AnalogEncoder` class offers a number of configuration methods:
+The :code:`AnalogEncoder` class offers an alternate constructor that offers control over the distance per rotation and zero position of the encoder.
+
+The zero is useful for ensuring that the measured rotation corresponds to the actual desired physical measurement. Unlike quadrature encoders, analog encoders don't need to be homed. The current rotation that is desired to be read and then stored to be set when the program starts. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
 
 .. tab-set-code::
 
     ```java
-    // Configures the encoder to return a distance of 4 for every rotation
-    encoder.setDistancePerRotation(4.0);
+    // Initializes an analog encoder on DIO pins 0 to return a distance of 4 for
+    // every rotation, with the encoder reporting 0 half way through rotation (2
+    // out of 4)
+    AnalogEncoder encoder = new AnalogEncoder(0, 4.0, 2.0);
     ```
 
     ```c++
-    // Configures the encoder to return a distance of 4 for every rotation
-    encoder.SetDistancePerRotation(4.0);
+    // Initializes an analog encoder on DIO pins 0 to return a distance of 4 for
+    // every rotation, with the encoder reporting 0 half way through rotation (2
+    // out of 4)
+    frc::AnalogEncoder encoder{0, 4.0, 2.0};
     ```
 
 ### Reading Distance from Analog Encoders
 
 .. note:: Analog encoders measure absolute distance. It does not depend on the starting position of the encoder.
 
-Users can obtain the distance measured by the encoder with the :code:`getDistance()` method:
+Users can obtain the rotation measured by the encoder with the :code:`get()` method:
 
 .. tab-set-code::
 
     ```java
-    // Gets the distance measured
-    encoder.getDistance();
+    // Gets the rotation
+    encoder.get();
     ```
 
     ```c++
-    // Gets the distance measured
-    encoder.GetDistance();
-    ```
-
-### Resetting an Analog Encoder
-
-To reset an analog encoder so the current distance is 0, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement. Unlike quadrature encoders, duty cycle encoders don't need to be homed. However, after reset, the position offset can be stored to be set when the program starts so that the reset doesn't have to be performed again. The :doc:`Preferences class </docs/software/basic-programming/robot-preferences>` provides a method to save and retrieve the values on the roboRIO.
-
-.. tab-set-code::
-
-    ```java
-    // Resets the encoder to read a distance of zero at the current position
-    encoder.reset();
-    // get the position offset from when the encoder was reset
-    encoder.getPositionOffset();
-    // set the position offset to half a rotation
-    encoder.setPositionOffset(0.5);
-    ```
-
-    ```c++
-    // Resets the encoder to read a distance of zero at the current position
-    encoder.Reset();
-    // get the position offset from when the encoder was reset
-    encoder.GetPositionOffset();
-    // set the position offset to half a rotation
-    encoder.SetPositionOffset(0.5);
+    // Gets the rotation
+    encoder.Get();
     ```
 
 ## Using Encoders in Code
