@@ -58,6 +58,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
    .. tab-item:: macOS
       :sync: macos
 
+      .. note:: Ensure you've ejected any previous WPILibInstaller images from the desktop before starting installation
+
       macOS users can double click on the downloaded ``dmg`` and then select ``WPILibInstaller`` to launch the application.
 
       .. image:: images/wpilib-setup/macos-launch.png
