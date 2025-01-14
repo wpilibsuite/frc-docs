@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
 
-# Using the OpenMesh OMP5 Radio
+# Using the OpenMesh OM5P Radio
 
 
 Prior to 2025 the official radio used in FRC was an OM5P-AN or OM5P-AC Radio.
