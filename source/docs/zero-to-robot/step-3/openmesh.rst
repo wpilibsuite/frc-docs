@@ -18,13 +18,12 @@ Either the OpenMesh OM5P-AN or `OpenMesh OM5P-AC <https://www.andymark.com/produ
 
 
 
-Programming your Radio
--------------------
+## Programming your Radio
+
 
 This guide will show you how to use the FRC\ |reg|  Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
 
-Prerequisites
--------------------
+## Prerequisites
 
 The FRC Radio Configuration Utility requires administrator privileges to configure the network settings on your machine. The program should request the necessary privileges automatically (may require a password if run from a non-administrator account), but if you are having trouble, try running it from an administrator account.
 
@@ -45,16 +44,16 @@ Before you begin using the software:
 
 .. warning:: Many barrel connectors look alike, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
 
-Application Notes
--------------------
+## Application Notes
+
 
 
 By default, the Radio Configuration Utility will program the radio to enforce the 4Mbps bandwidth limit on traffic exiting the radio over the wireless interface. In the home configuration (AP mode) this is a total, not a per client limit. This means that streaming video to multiple clients is not recommended.
 
 The Utility has been tested on Windows 7, 8, 10 and 11. It may work on other operating systems, but has not been tested.
 
-Programmed Configuration
--------------------
+## Programmed Configuration
+
 
 
 .. image:: /docs/hardware/hardware-basics/images/status-lights/openmesh-radio-status-lights.png
@@ -89,8 +88,8 @@ At home only:
 
 .. warning:: It is not possible to modify the configuration manually.
 
-Install the Software
--------------------
+## Install the Software
+
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/radio-installer.png
   :alt: The radio configuration installer .exe file in windows explorer.
@@ -99,8 +98,8 @@ Double click on ``FRC_Radio_Configuration_VERSION.exe`` to launch the installer.
 
 Part of the installation prompts will include installing Npcap if it is not already present. The Npcap installer contains a number of checkboxes to configure the install. You should leave the options as the defaults.
 
-Launch the software
--------------------
+## Launch the software
+
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/radio-launch.png
   :alt: The FRC Radio Configuration Utility in the start menu.
@@ -109,16 +108,15 @@ Use the Start menu or desktop shortcut to launch the program.
 
 .. note:: If you need to locate the program, it is installed to ``C:\Program Files (x86)\FRC Radio Configuration Utility``. For 32-bit machines the path is ``C:\Program Files\FRC Radio Configuration Utility``
 
-Allow the program to make changes, if prompted
-----------------------------------------------
+## Allow the program to make changes, if prompted
+
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/allow-changes.png
   :alt: User Account Control dialog that pops up when running the config utility.
 
 A prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
 
-Select the network interface
-----------------------------
+## Select the network interface
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/select-network-connection.png
   :alt: Each of the Parts of the Network Interfaces selection pop up.
@@ -129,8 +127,7 @@ Use the pop-up window to select the which ethernet interface the configuration u
 2. Select the interface you want to use from the drop-down list.
 3. Click :guilabel:`OK`.
 
-Open Mesh Firmware Note
------------------------
+## Open Mesh Firmware Note
 
 For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio, the radio must be running an FRC specific build of the OpenWRT firmware.
 
@@ -138,8 +135,7 @@ If you do not need to update or re-load the firmware, skip the next step.
 
 .. warning:: Radios used in 2019-2024 **do not** need to be updated before configuring, the 2024 tool uses the same 2019 firmware.
 
-Loading FRC Firmware to Open Mesh Radio
----------------------------------------
+## Loading FRC Firmware to Open Mesh Radio
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/openmesh-firmware.png
   :alt: Highlighting the radio dropdown and the Load Firmware button on the main configuration utility screen.
@@ -157,8 +153,8 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 
    Teams may also see this error with Operating Systems configured for languages other than US English. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.html>`_.
 
-Select Radio and Operating Mode
--------------------------------
+## Select Radio and Operating Mode
+
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/select-bridge-model-mode.png
   :alt: Highlights the Radio and Mode dropdown boxes.
@@ -166,8 +162,7 @@ Select Radio and Operating Mode
 1. Select which radio you are configuring using the drop-down list.
 2. Select which operating mode you want to configure. For most cases, the default selection of 2.4GHz Access Point will be sufficient. If your computers support it, the 5GHz AP mode is recommended, as 5GHz is less congested in many environments.
 
-Select Options
---------------
+## Select Options
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/select-options.png
   :alt: Setting the robot name will change the SSID.  The checkboxes make the radio more similar to competition operation.
@@ -180,16 +175,14 @@ The default values of the options have been selected to match the use case of mo
 
 .. warning:: The "Firewall" option configures the radio to emulate the field firewall. This means that you will not be able to deploy code wirelessly with this option enabled. This is useful for simulating blocked ports that may exist at competitions.
 
-Starting the Configuration Process
-----------------------------------
+## Starting the Configuration Process
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/start-config.png
   :alt: At the bottom of the screen is instructions for completing the configuration process.
 
 Follow the on-screen instructions for preparing your wireless bridge, entering the settings the bridge will be configured with, and starting the configuration process. These on-screen instructions update to match the bridge model and operating mode chosen.
 
-Configuration Progress
-----------------------
+## Configuration Progress
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/config-in-progress.png
   :alt: The progress bar dialog while the configuration is working.
@@ -200,8 +193,7 @@ Throughout the configuration process, the window will indicate:
 2. The overall progress of the configuration process.
 3. All steps executed so far.
 
-Configuration Completed
------------------------
+## Configuration Completed
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/config-completed.png
   :alt: A pop up dialog indicating the programming was successful.
@@ -211,16 +203,14 @@ Once the configuration is complete:
 1. Press :guilabel:`OK` on the dialog window.
 2. Press :guilabel:`OK` on the main window to return to the settings screen.
 
-Configuration Errors
---------------------
+## Configuration Errors
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/config-errors.png
   :alt: A error dialog pop up.
 
 If an error occurs during the configuration process, follow the instructions in the error message to correct the problem.
 
-Troubleshooting
----------------
+## Troubleshooting
 
 - :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`.
 - Make sure you wait long enough that the power light has stayed solid for 10 seconds.
