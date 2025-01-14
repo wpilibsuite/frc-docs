@@ -7,7 +7,7 @@
 Prior to 2025 the official radio used in FRC was an OM5P-AN or OM5P-AC Radio.
 As of the 2025 season the OpenMesh radio is still being used in Taiwan and China.
 
-. warning:: This page is either for teams looking to use the OMP5 radio to test or teams in China and Taiwan. For the current robot radio please see :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio`
+.. warning:: This page is either for teams looking to use the OMP5 radio to test or teams in China and Taiwan. For the current robot radio please see :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio`
 
 
 .. image:: /docs/controls-overviews/images/control-system-hardware/openmesh-radio.png
@@ -18,11 +18,13 @@ Either the OpenMesh OM5P-AN or `OpenMesh OM5P-AC <https://www.andymark.com/produ
 
 
 
-##Programming your Radio
+Programming your Radio
+-------------------
 
 This guide will show you how to use the FRC\ |reg|  Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
 
-##Prerequisites
+Prerequisites
+-------------------
 
 The FRC Radio Configuration Utility requires administrator privileges to configure the network settings on your machine. The program should request the necessary privileges automatically (may require a password if run from a non-administrator account), but if you are having trouble, try running it from an administrator account.
 
@@ -43,14 +45,16 @@ Before you begin using the software:
 
 .. warning:: Many barrel connectors look alike, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
 
-##Application Notes
+Application Notes
+-------------------
 
 
 By default, the Radio Configuration Utility will program the radio to enforce the 4Mbps bandwidth limit on traffic exiting the radio over the wireless interface. In the home configuration (AP mode) this is a total, not a per client limit. This means that streaming video to multiple clients is not recommended.
 
 The Utility has been tested on Windows 7, 8, 10 and 11. It may work on other operating systems, but has not been tested.
 
-##Programmed Configuration
+Programmed Configuration
+-------------------
 
 
 .. image:: /docs/hardware/hardware-basics/images/status-lights/openmesh-radio-status-lights.png
@@ -85,8 +89,8 @@ At home only:
 
 .. warning:: It is not possible to modify the configuration manually.
 
-##Install the Software
-
+Install the Software
+-------------------
 
 .. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/radio-installer.png
   :alt: The radio configuration installer .exe file in windows explorer.
