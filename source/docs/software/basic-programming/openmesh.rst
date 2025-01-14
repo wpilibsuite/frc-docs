@@ -9,7 +9,7 @@ As of the 2025 season  The OpenMesh radio is still being used in Taiwan and Chin
 
 
 
-.. image:: /source/docs/controls-overviews/images/control-system-hardware/openmesh-radio.png
+.. image:: /docs/controls-overviews/images/control-system-hardware/openmesh-radio.png
   :alt: OpenMesh OM5P-AN or OM5P-AC Radio
   :width: 500
 
@@ -52,7 +52,7 @@ The Utility has been tested on Windows 7, 8, 10 and 11. It may work on other ope
 ##Programmed Configuration
 
 
-.. image:: /source/docs/hardware/hardware-basics/images/status-lights/openmesh-radio-status-lights.png
+.. image:: /docs/hardware/hardware-basics/images/status-lights/openmesh-radio-status-lights.png
   :alt: Lists the names of each of the status lights on the two legal radios.
 
 The Radio Configuration Utility programs a number of configuration settings into the radio when run. These settings apply to the radio in all modes (including at events). These include:
@@ -87,7 +87,7 @@ At home only:
 ##Install the Software
 
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/radio-installer.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/radio-installer.png
   :alt: The radio configuration installer .exe file in windows explorer.
 
 Double click on ``FRC_Radio_Configuration_VERSION.exe`` to launch the installer. Follow the prompts to complete the installation.
@@ -97,7 +97,7 @@ Part of the installation prompts will include installing Npcap if it is not alre
 Launch the software
 -------------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/radio-launch.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/radio-launch.png
   :alt: The FRC Radio Configuration Utility in the start menu.
 
 Use the Start menu or desktop shortcut to launch the program.
@@ -107,7 +107,7 @@ Use the Start menu or desktop shortcut to launch the program.
 Allow the program to make changes, if prompted
 ----------------------------------------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/allow-changes.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/allow-changes.png
   :alt: User Account Control dialog that pops up when running the config utility.
 
 A prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
@@ -115,7 +115,7 @@ A prompt may appear about allowing the configuration utility to make changes to 
 Select the network interface
 ----------------------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/select-network-connection.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/select-network-connection.png
   :alt: Each of the Parts of the Network Interfaces selection pop up.
 
 Use the pop-up window to select the which ethernet interface the configuration utility will use to communicate with the wireless bridge. On Windows machines, ethernet interfaces are typically named "Local Area Connection". The configuration utility can not program a bridge over a wireless connection.
@@ -155,7 +155,7 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 Select Radio and Operating Mode
 -------------------------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/select-bridge-model-mode.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/select-bridge-model-mode.png
   :alt: Highlights the Radio and Mode dropdown boxes.
 
 1. Select which radio you are configuring using the drop-down list.
@@ -164,7 +164,7 @@ Select Radio and Operating Mode
 Select Options
 --------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/select-options.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/select-options.png
   :alt: Setting the robot name will change the SSID.  The checkboxes make the radio more similar to competition operation.
 
 The default values of the options have been selected to match the use case of most teams, however, you may wish to customize these options to your specific scenario:
@@ -180,7 +180,7 @@ The default values of the options have been selected to match the use case of mo
 Starting the Configuration Process
 ----------------------------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/start-config.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/start-config.png
   :alt: At the bottom of the screen is instructions for completing the configuration process.
 
 Follow the on-screen instructions for preparing your wireless bridge, entering the settings the bridge will be configured with, and starting the configuration process. These on-screen instructions update to match the bridge model and operating mode chosen.
@@ -188,7 +188,7 @@ Follow the on-screen instructions for preparing your wireless bridge, entering t
 Configuration Progress
 ----------------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/config-in-progress.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/config-in-progress.png
   :alt: The progress bar dialog while the configuration is working.
 
 Throughout the configuration process, the window will indicate:
@@ -200,7 +200,7 @@ Throughout the configuration process, the window will indicate:
 Configuration Completed
 -----------------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/config-completed.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/config-completed.png
   :alt: A pop up dialog indicating the programming was successful.
 
 Once the configuration is complete:
@@ -211,7 +211,7 @@ Once the configuration is complete:
 Configuration Errors
 --------------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/config-errors.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/config-errors.png
   :alt: A error dialog pop up.
 
 If an error occurs during the configuration process, follow the instructions in the error message to correct the problem.
