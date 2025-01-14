@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 
 # Using the OpenMesh OMP5 Radio
 
@@ -17,7 +19,7 @@ Either the OpenMesh OM5P-AN or `OpenMesh OM5P-AC <https://www.andymark.com/produ
 
 ##Programming your Radio
 
-This guide will show you how to use the FRC\ |reg| Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
+This guide will show you how to use the FRC\ |reg|  Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
 
 ##Prerequisites
 
