@@ -131,7 +131,7 @@ For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio
 
 If you do not need to update or re-load the firmware, skip the next step.
 
-.. warning:: Radios used in 2019-2023 **do not** need to be updated before configuring, the 2024 tool uses the same 2019 firmware.
+.. warning:: Radios used in 2019-2024 **do not** need to be updated before configuring, the 2024 tool uses the same 2019 firmware.
 
 Loading FRC Firmware to Open Mesh Radio
 ---------------------------------------
