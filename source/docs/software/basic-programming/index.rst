@@ -14,3 +14,4 @@
    functions-as-data
    alliancecolor
    java-gc
+   openmesh
