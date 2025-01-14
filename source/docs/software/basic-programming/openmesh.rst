@@ -6,7 +6,7 @@ Prior to 2025 the official radio used in FRC was an OM5P-AN or OM5P-AC Radio.
 
 
 
-.. image:: frc-docs/docs/controls-overviews/images/control-system-hardware/openmesh-radio.png
+.. image:: /source/docs/controls-overviews/images/control-system-hardware/openmesh-radio.png
   :alt: OpenMesh OM5P-AN or OM5P-AC Radio
   :width: 500
 
