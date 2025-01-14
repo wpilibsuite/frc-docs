@@ -2,8 +2,8 @@
 # Using the OpenMesh OMP5 Radio
 
 
-Prior to 2025 the official radio used in FRC was an OM5P-AN or OM5P-AC Radio. 
-As of the 2025 season  The OpenMesh radio is still being used in Taiwan and China 
+Prior to 2025 the official radio used in FRC was an OM5P-AN or OM5P-AC Radio.
+As of the 2025 season  The OpenMesh radio is still being used in Taiwan and China.
 
 
 
