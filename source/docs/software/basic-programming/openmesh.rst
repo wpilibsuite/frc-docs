@@ -136,7 +136,7 @@ If you do not need to update or re-load the firmware, skip the next step.
 Loading FRC Firmware to Open Mesh Radio
 ---------------------------------------
 
-.. image:: /source/docs/zero-to-robot/step-3/images/radio-programming/openmesh/openmesh-firmware.png
+.. image:: /docs/zero-to-robot/step-3/images/radio-programming/openmesh/openmesh-firmware.png
   :alt: Highlighting the radio dropdown and the Load Firmware button on the main configuration utility screen.
 
 If you need to load the FRC firmware (or reset the radio), you can do so using the FRC Radio Configuration Utility.
