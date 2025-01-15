@@ -14,7 +14,7 @@ As of the 2025 season the OpenMesh radio is still being used in Taiwan and China
   :alt: OpenMesh OM5P-AN or OM5P-AC Radio
   :width: 500
 
-Either the OpenMesh OM5P-AN or `OpenMesh OM5P-AC <https://www.andymark.com/products/open-mesh-om5p-ac-dual-band-1-17-gbps-access-point-radio>`__ wireless radio was used as the robot radio to provide wireless communication functionality to the robot. The device can still be configured as an Access Point for direct connection of a laptop for use at home. It can also be configured as a bridge for use on the field. The robot radio should be powered by one of the 12V/2A outputs on the VRM and connected to the roboRIO controller over Ethernet.
+Either the OpenMesh OM5P-AN or [OpenMesh OM5P-AC](https://www.andymark.com/products/open-mesh-om5p-ac-dual-band-1-17-gbps-access-point-radio) wireless radio was used as the robot radio to provide wireless communication functionality to the robot. The device can still be configured as an Access Point for direct connection of a laptop for use at home. It can also be configured as a bridge for use on the field. The robot radio should be powered by one of the 12V/2A outputs on the VRM and connected to the roboRIO controller over Ethernet.
 
 
 
@@ -29,17 +29,17 @@ The FRC Radio Configuration Utility requires administrator privileges to configu
 
 Download the latest FRC Radio Configuration Utility Installer from the following links:
 
-`FRC Radio Configuration 24.0.1 <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip>`_
+[FRC Radio Configuration 24.0.1](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip)
 
-`FRC Radio Configuration 24.0.1 Israel Version <https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip>`_
+[FRC Radio Configuration 24.0.1 Israel Version](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip)
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
-.. note:: Teams planning on using the radio tool on a machine without the **2024** WPILib suite installed, will need a copy of Java installed. This can be downloaded `here <https://adoptium.net/temurin/releases/?version=17&os=windows>`__.
+.. note:: Teams planning on using the radio tool on a machine without the **2024** WPILib suite installed, will need a copy of Java installed. This can be downloaded [here](https://adoptium.net/temurin/releases/?version=17&os=windows).
 
 Before you begin using the software:
 
-1. :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
+1. :ref:`docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters`
 2. Plug directly from your computer into the wireless bridge ethernet port closest to the power jack. Make sure no other devices are connected to your computer via ethernet. If powering the radio via PoE, plug an Ethernet cable from the PC into the socket side of the PoE adapter (where the roboRIO would plug in). If you experience issues configuring through the PoE adapter, you may try connecting the PC to the alternate port on the radio.
 
 .. warning:: Many barrel connectors look alike, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
@@ -149,9 +149,9 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 5. Press the Load Firmware button
 6. When prompted, plug in the radio power. The software should detect the radio, load the firmware and prompt you when complete.
 
-.. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`Disabling Network Adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>` for more info.
+.. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters` for more info.
 
-   Teams may also see this error with Operating Systems configured for languages other than US English. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.html>`_.
+   Teams may also see this error with Operating Systems configured for languages other than US English. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on [this page] (https://www.java.com/en/download/help/locale.html).
 
 ## Select Radio and Operating Mode
 
@@ -212,13 +212,13 @@ If an error occurs during the configuration process, follow the instructions in 
 
 ## Troubleshooting
 
-- :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`.
+- :ref:`docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters`.
 - Make sure you wait long enough that the power light has stayed solid for 10 seconds.
 - Make sure you have the correct network interface, and only one interface is listed in the drop-down.
 - Make sure your firewall is turned off.
 - Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
 - Ensure the ethernet is plugged into the port closest to the power jack on the wireless bridge.
-- If using an Operating System configured for languages other than US English, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on `this page <https://www.java.com/en/download/help/locale.html>`_.
+- If using an Operating System configured for languages other than US English, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on [this page](https://www.java.com/en/download/help/locale.html).
 - Due to Unicode incompatibilities, non-US Teams may face a configuration failure because of incorrect network interface reading. In that case, change the network adapter name to another name in English and retry.
-- Some users have reported success after installing `npcap 1.60 <https://npcap.com/>`__. If this doesn't resolve the issue, it's recommended to uninstall npcap and the radio tool and then reinstall the radio tool in order to get back to a known configuration.
+- Some users have reported success after installing [npcap 1.60](https://npcap.com/). If this doesn't resolve the issue, it's recommended to uninstall npcap and the radio tool and then reinstall the radio tool in order to get back to a known configuration.
 - If all else fails, try a different computer.
