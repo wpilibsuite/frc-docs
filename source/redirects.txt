@@ -273,7 +273,6 @@
 "docs/software/commandbased/builtins.rst" "docs/software/commandbased/command-compositions.rst"
 "docs/software/commandbased/convenience-features.rst" "docs/software/commandbased/command-compositions.rst"
 "docs/software/wpilib-tools/axon/index.rst" "stubs/software-tools-stub.rst"
-"docs/contributing/frc-docs/top-contributors.rst" "docs/contributing/frc-docs/index.rst"
 "docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst" "docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst"
 "docs/zero-to-robot/step-4/creating-benchtop-test-program-labview.rst" "docs/zero-to-robot/step-4/creating-test-drivetrain-program-labview.rst"
 "docs/zero-to-robot/step-4/running-benchtop-test.rst" "docs/zero-to-robot/step-4/running-test-program.rst"
@@ -310,3 +309,4 @@
 "docs/software/wpilib-tools/choreo/index.rst" "docs/software/pathplanning/choreo/index.rst"
 "docs/networking/networking-introduction/om5p-ac-radio-modification.rst" "docs/zero-to-robot/step-3/radio-programming.rst"
 "docs/software/driverstation/programming-radios-for-fms-offseason.rst" "docs/zero-to-robot/step-3/radio-programming.rst"
+"docs/contributing/frc-docs/top-contributors.rst" "docs/contributing/frc-docs/index.rst"
