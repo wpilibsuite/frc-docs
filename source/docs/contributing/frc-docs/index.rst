@@ -8,5 +8,4 @@
    build-instructions
    drawio-saving-instructions
    translations
-   top-contributors
    top-translators

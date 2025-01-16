@@ -57,7 +57,6 @@ extensions = [
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
     "sphinx_copybutton",
-    "sphinx_contributors",
 ]
 
 local_extensions = [
