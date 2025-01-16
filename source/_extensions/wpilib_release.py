@@ -24,6 +24,7 @@ class WpilibRelease(SphinxDirective):
 
         release_url = f"https://api.github.com/repos/wpilibsuite/allwpilib/releases/tags/{version}"
         release_json = requests.get(release_url)
+        print(release_json.headers)  # prints the entire header as a dictionary
         release_json.raise_for_status()
         release: Dict = release_json.json()
 
