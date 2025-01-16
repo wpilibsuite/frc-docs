@@ -4,6 +4,8 @@
 
 This guide will show you how to do a basic setup for controlling your robot "at home" using the VH-109 FRC\ |reg| Radio.  For complete documentation and information please see the [Vivid-Hosting radio site](https://frc-radio.vivid-hosting.net/).
 
+.. note:: If looking for how to use the OpenMesh (OM5P) Radio please see :ref:`docs/zero-to-robot/step-3/openmesh:Using the OpenMesh OM5P Radio`
+
 ## Prerequisites
 
 The recommended setup requires: 2 VH-109 radios, 1 VH-117 :term:`PoE` Wall Adapter, and 1 Radio Heatsink.  Available [here](https://wcproducts.com/products/frc-radio).
