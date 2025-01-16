@@ -335,6 +335,8 @@ def new_send(self, data):
 
         new_data = data
         if headers[b"host"].endswith(b"api.github.com"):
+            print("Adding token to: ")
+            print(headers[b"host"])
             if b"authorization" not in headers:
                 if github_token := os.environ.get("GITHUB_TOKEN", None):
                     new_data = (
@@ -343,6 +345,7 @@ def new_send(self, data):
                         + github_token.encode("ascii")
                         + b"\r\n\r\n"
                     )
+                    print("added\n")
 
         original_send(self, new_data)
     except Exception as e:
