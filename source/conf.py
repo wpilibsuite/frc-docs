@@ -263,7 +263,9 @@ def setup(app):
     app.add_js_file("js/version-2014.js")
 
     if on_rtd() and on_pr():
-        app.tags.add('prbuild')
+        print("adding tag prbuild")
+        app.tags.add("prbuild")
+
 
 html_context = {
     "display_github": True,  # Integrate GitHub
@@ -373,7 +375,10 @@ intersphinx_mapping = {
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#confval-intersphinx_disabled_reftypes
 intersphinx_disabled_reftypes = ["*"]
 
+
 def on_pr() -> bool:
+    print("github_version: " + html_context["github_version"])
+    print("GITHUB_EVENT_NAME: " + os.getenv("GITHUB_EVENT_NAME"))
     return (
         html_context["github_version"].startswith(
             os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8]
@@ -381,5 +386,7 @@ def on_pr() -> bool:
         or os.getenv("GITHUB_EVENT_NAME") == "pull_request"
     )
 
+
 def on_rtd() -> bool:
+    print("On RTD: " + os.getenv("READTHEDOCS"))
     return os.getenv("READTHEDOCS") == "True"
