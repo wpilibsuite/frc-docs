@@ -263,7 +263,6 @@ def setup(app):
     app.add_js_file("js/version-2014.js")
 
     if on_pr():
-        print("adding tag prbuild")
         app.tags.add("prbuild")
 
 
