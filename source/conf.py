@@ -262,6 +262,8 @@ def setup(app):
     # Add 2014 archive link to rtd versions menu
     app.add_js_file("js/version-2014.js")
 
+    if on_rtd() and on_pr():
+        app.tags.add('prbuild')
 
 html_context = {
     "display_github": True,  # Integrate GitHub
@@ -370,3 +372,14 @@ intersphinx_mapping = {
 # See also:
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#confval-intersphinx_disabled_reftypes
 intersphinx_disabled_reftypes = ["*"]
+
+def on_pr() -> bool:
+    return (
+        html_context["github_version"].startswith(
+            os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8]
+        )
+        or os.getenv("GITHUB_EVENT_NAME") == "pull_request"
+    )
+
+def on_rtd() -> bool:
+    return os.getenv("READTHEDOCS") == "True"
