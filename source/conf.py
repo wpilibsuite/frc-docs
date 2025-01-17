@@ -378,7 +378,7 @@ intersphinx_disabled_reftypes = ["*"]
 
 def on_pr() -> bool:
     print("github_version: " + html_context["github_version"])
-    print("GITHUB_EVENT_NAME: " + os.getenv("GITHUB_EVENT_NAME"))
+    print("GITHUB_EVENT_NAME: " + str(os.getenv("GITHUB_EVENT_NAME")))
     return (
         html_context["github_version"].startswith(
             os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8]
@@ -388,5 +388,5 @@ def on_pr() -> bool:
 
 
 def on_rtd() -> bool:
-    print("On RTD: " + os.getenv("READTHEDOCS"))
+    print("On RTD: " + str(os.getenv("READTHEDOCS") == "True"))
     return os.getenv("READTHEDOCS") == "True"
