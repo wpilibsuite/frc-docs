@@ -377,12 +377,10 @@ intersphinx_disabled_reftypes = ["*"]
 
 
 def on_pr() -> bool:
-    print("github_version: " + html_context["github_version"])
+    print("READTHEDOCS_VERSION_TYPE: " + os.getenv("READTHEDOCS_VERSION_TYPE"))
     print("GITHUB_EVENT_NAME: " + str(os.getenv("GITHUB_EVENT_NAME")))
     return (
-        html_context["github_version"].startswith(
-            os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8]
-        )
+        os.getenv("READTHEDOCS_VERSION_TYPE") == "external"
         or os.getenv("GITHUB_EVENT_NAME") == "pull_request"
     )
 
