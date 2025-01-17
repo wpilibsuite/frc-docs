@@ -262,7 +262,7 @@ def setup(app):
     # Add 2014 archive link to rtd versions menu
     app.add_js_file("js/version-2014.js")
 
-    if on_rtd() and on_pr():
+    if on_pr():
         print("adding tag prbuild")
         app.tags.add("prbuild")
 
@@ -377,14 +377,7 @@ intersphinx_disabled_reftypes = ["*"]
 
 
 def on_pr() -> bool:
-    print("READTHEDOCS_VERSION_TYPE: " + os.getenv("READTHEDOCS_VERSION_TYPE"))
-    print("GITHUB_EVENT_NAME: " + str(os.getenv("GITHUB_EVENT_NAME")))
     return (
         os.getenv("READTHEDOCS_VERSION_TYPE") == "external"
         or os.getenv("GITHUB_EVENT_NAME") == "pull_request"
     )
-
-
-def on_rtd() -> bool:
-    print("On RTD: " + str(os.getenv("READTHEDOCS") == "True"))
-    return os.getenv("READTHEDOCS") == "True"
