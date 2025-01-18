@@ -2239,13 +2239,13 @@ test = ["beautifulsoup4", "defusedxml", "pytest", "pytest-cov", "pytest-regressi
 
 [[package]]
 name = "sphinxext-delta"
-version = "0.3.0"
+version = "0.3.1"
 description = "Sphinx extension for listing changed Sphinx articles"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "sphinxext_delta-0.3.0-py3-none-any.whl", hash = "sha256:ee11aff0d53f143b020dc15c5bbdbff0bdbb819877a76ae805ee3687d7834d3e"},
-    {file = "sphinxext_delta-0.3.0.tar.gz", hash = "sha256:fdef3e94c4c13d865bca0a01afcd69c8bf5ead0924ce3c53ebc3f2d6a9d5bddc"},
+    {file = "sphinxext_delta-0.3.1-py3-none-any.whl", hash = "sha256:23f96cf5013fdb5cdd3edb1325dcca2c8a1e2792b70220a3731f218ca3bd253e"},
+    {file = "sphinxext_delta-0.3.1.tar.gz", hash = "sha256:02ce0044144b12f818051ee2545500cfda4e0f8ef4384f4bfa227c85f8b09d2f"},
 ]
 
 [package.dependencies]
@@ -2556,4 +2556,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "890e8b78d084fbbce581426a58a64d7a16c22ac850dcc861bc40b3d8a299915e"
+content-hash = "7a8b004f75900d8909f6867e08832352845d4a31e42eef20bffae09ea57e984d"
