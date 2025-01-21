@@ -42,7 +42,7 @@ Note: it is not necessary to create a PowerDistribution object unless you need t
          :language: c++
          :lines: 28-31
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/CANPDP/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/CANPDP/robot.py
          :language: python
          :lines: 34-37
 
@@ -61,7 +61,7 @@ Monitoring the bus voltage can be useful for (among other things) detecting when
       :language: c++
       :lines: 33-35
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/CANPDP/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/CANPDP/robot.py
       :language: python
       :lines: 39-41
 
@@ -80,7 +80,7 @@ Monitoring the temperature can be useful for detecting if the robot has been dra
       :language: c++
       :lines: 37-49
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/CANPDP/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/CANPDP/robot.py
          :language: python
          :lines: 43-55
 
@@ -101,7 +101,7 @@ The PDP/PDH also allows users to monitor the current drawn by the individual dev
       :language: c++
       :lines: 22-26
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/CANPDP/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/CANPDP/robot.py
       :language: python
       :lines: 28-32
 
