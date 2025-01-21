@@ -41,7 +41,7 @@ Often a team may want to test their code without having an actual robot availabl
       .. image:: images/vscode-pick-extension.png
          :alt: Picking Sim GUI simulation extension
 
-      By default the :guilabel:`Sim GUI` option will be selected by default. This will launch the :doc:`Simulation GUI <simulation-gui>`. You can also launch simulation without a GUI by unchecking :guilabel:`Sim GUI` in which case your console output in Visual Studio Code should look like the below.
+     The :guilabel:`Sim GUI` option will be selected by default. This will launch the :doc:`Simulation GUI <simulation-gui>`. You can also launch simulation without a GUI by unchecking :guilabel:`Sim GUI` in which case your console output in Visual Studio Code should look like the below.
 
       ```console
       ********** Robot program starting **********
