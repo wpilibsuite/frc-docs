@@ -19,7 +19,9 @@ WPILib is designed to install to different folders for different years, so that 
 
 ## Downloading
 
-.. wpilibrelease:: v2025.1.1
+.. only:: not prbuild
+
+   .. wpilibrelease:: v2025.2.1
 
 [You can download the latest release of the installer from GitHub](https://github.com/wpilibsuite/allwpilib/releases/latest/).
 
@@ -57,6 +59,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
    .. tab-item:: macOS
       :sync: macos
+
+      .. note:: Ensure you've ejected any previous WPILibInstaller images from the desktop before starting installation
 
       macOS users can double click on the downloaded ``dmg`` and then select ``WPILibInstaller`` to launch the application.
 
@@ -122,6 +126,8 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
 
 Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~150MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
+
+.. note:: teams upgrading from Beta will already have a version of VS Code installed. However, it's still recommended to select :guilabel:`Download for this computer only` to ensure the latest recommended version of VS Code is installed
 
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar
@@ -199,6 +205,9 @@ The Offline Installer installs the following components:
 - **VS Code Extensions** - WPILib and Java/C++/Python extensions for robot code development in VS Code
 
 - **Documentation** - Offline copies of this frc-docs documentation and Java/C++/Python APIs
+
+.. note:: It's not recommended to use the VS Code Backup and Settings Sync feature to sync settings between a regular VS Code installation and the FRC VS Code installation. This could lead to either installation being broken.
+
 
 ## Uninstalling
 

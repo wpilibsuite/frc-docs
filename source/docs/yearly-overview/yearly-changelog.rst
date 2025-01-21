@@ -14,11 +14,13 @@ Due to internal GradleRIO changes, it is necessary to update projects from previ
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
-- The Dependency Manager in VS Code will help teams :doc:`install their vendordeps </docs/software/vscode-overview/3rd-party-libraries>`.
+- The Dependency Manager in VS Code will help teams :doc:`discover and install vendordeps </docs/software/vscode-overview/3rd-party-libraries>`.
+- Added :doc:`Elastic Dashboard </docs/software/dashboards/elastic>` a driver focused dashboard.
 - Added :doc:`annotation based logging (Epilogue) </docs/software/telemetry/robot-telemetry-with-annotations>` for Java
+- Added :doc:`WPIcal </docs/software/wpilib-tools/wpical/index>` tool for calibrating FRC Apriltags to correct for field setup error
 - The :doc:`Java units library </docs/software/basic-programming/java-units>` has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add :doc:`persistent alerts API </docs/software/telemetry/persistent-alerts>`. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
-- Add LED pattern API for easily animating addressable LEDs
+- Add :ref:`LED pattern API <docs/software/hardware-apis/misc/addressable-leds:LED Patterns>` for easily animating addressable LEDs
 - Java 17 must be used as Java Source and Target compatibility have been bumped to Java 17. Java 17 has been used since 2023.
 
 Supported Operating Systems and Architectures:
@@ -49,6 +51,7 @@ Supported Operating Systems and Architectures:
 - Add Java unit support for RobotController
 - Add a functional interface for MecanumDriveMotorVoltages and deprecate old interface
 - Add ``Koors40`` Motor Controller
+- 2025.2.1: Add 2025 field image and april tag map
 
 #### Commands
 
@@ -83,6 +86,7 @@ Supported Operating Systems and Architectures:
 
 #### Hardware interfaces
 
+- Breaking: Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder`` to simplify and remove rollover detection that was broken
 - Add ``getVoltage`` to ``PWMMotorController``
 - Add support for Sharp IR sensors
 - Fix edge cases of CAN ID validation and reporting for CTRE and REV devices
@@ -98,7 +102,6 @@ Supported Operating Systems and Architectures:
 - Propagate ``PWMMotorController`` ``stopMotor()`` and ``disable()`` to followers
 - ``Compressor``: Add more Sendable data
 - Fix ``PowerDistribution.GetAllCurrents()``
-- Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder``
 - Fix ``AsynchronousInterrupt``
 
 #### Math
@@ -123,6 +126,7 @@ Supported Operating Systems and Architectures:
 - Fix PIDController error tolerance getters
 - Add time-varying RKDP
 - Add 2D to 3D geometry constructors
+- 2025.2.1: Implement Translation3d.RotateAround
 
 ### Simulation
 
@@ -158,6 +162,7 @@ Supported Operating Systems and Architectures:
 - HttpCamera: Send width/height/fps stream settings
 - HttpCamera: Auto-detect mode from stream if not set
 - Sink: add ability to get most recent frame instead of waiting
+- 2025.2.1: Use frame time in Linux UsbCameraImpl
 
 ### Util
 
@@ -181,10 +186,13 @@ Supported Operating Systems and Architectures:
 - Expose orientation property for NumberSlider
 - Add :doc:`persistent alerts widget </docs/software/telemetry/persistent-alerts>`
 - Correct FieldData de/serialization
+- 2025.2.1: Add 2025 field image
 
 ## SmartDashboard
 
 .. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
+
+.. warning:: SmartDashboard is deprecated and will be removed for 2027 due to its usage of Network Tables v3. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
 
 - No changes other than build updates were made to SmartDashboard
 
@@ -195,6 +203,8 @@ Supported Operating Systems and Architectures:
 - Align Field2d border and image padding for custom images
 - Add Alerts widget
 - Fix minimum widget width
+- 2025.2.1: Add 2025 field image
+- 2025.2.1: Make picking a Field2d field JSON more obvious
 
 ## GradleRIO
 
@@ -238,6 +248,7 @@ Supported Operating Systems and Architectures:
 .. warning:: PathWeaver is deprecated and will be removed for 2027. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support.
 
 - Fix finding deploy directory when outputdir blank
+- 2025.2.1: Add 2025 field image
 
 ## AdvantageScope
 
@@ -250,3 +261,5 @@ Elastic is bundled in the installer! Elastic is a simple and modern dashboard. :
 ## WPIcal
 
 WPIcal is new WPILib tool for calibrating FRC Apriltags to correct for field setup error. :doc:`Read more here </docs/software/wpilib-tools/wpical/index>`.
+
+- 2025.2.1: Add JSON combiner which allows users to combine multiple AprilTag layouts

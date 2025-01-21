@@ -4,11 +4,17 @@
 
 This guide will show you how to do a basic setup for controlling your robot "at home" using the VH-109 FRC\ |reg| Radio.  For complete documentation and information please see the [Vivid-Hosting radio site](https://frc-radio.vivid-hosting.net/).
 
+.. note:: If looking for how to use the OpenMesh (OM5P) Radio please see :ref:`docs/zero-to-robot/step-3/openmesh:Using the OpenMesh OM5P Radio`
+
 ## Prerequisites
 
 The recommended setup requires: 2 VH-109 radios, 1 VH-117 :term:`PoE` Wall Adapter, and 1 Radio Heatsink.  Available [here](https://wcproducts.com/products/frc-radio).
 
 Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Setup Discussion` if you do not currently have this hardware.
+
+.. image:: images/radio-programming/VH-109-2-radios.drawio.svg
+   :alt: Connectivity diagram of VH-109 on robot connected to VH-109 on Driver station, powered by VH-117 POE wall adapter, with DS and programming laptops connected to it
+   :width: 500
 
 ## Getting to the Web Configuration Page
 
@@ -66,6 +72,8 @@ Follow all of the same steps as the robot radio configuration instead choosing :
 
 For the best experience and to closely simulate field conditions, it is strongly recommended that your team uses two VH-109 radios during testing and preparation. This dual-radio setup mirrors the competition environment, ensuring your robot operates under realistic network conditions. Additionally, having two radios allows you to fully leverage the high-speed, low-latency communication provided by the 6GHz band, which is crucial for optimal robot performance in high-stakes scenarios.
 
+When mounting the access point radio, ensure it is mounted high where it has a clear line of sight to the robot.
+
 ### Only 1 VH-109 radio
 
 If your team has access to only one VH-109 radio, there are still viable options to continue testing and preparing for competition. However, these setups require additional considerations:
@@ -118,6 +126,14 @@ The access point radio will get hot after being on for a longer than a full matc
 ## Troubleshooting
 
 ### Cannot Reach the Configuration Page at radio.local
+
+Disconnect other network connections such as Wi-Fi.
+
+Download and use the [Network Assistant](https://frc-radio.vivid-hosting.net/miscellaneous/network-assistant-tool).  See the instructions below the download for how to use.
+
+Disable :doc:`firewalls </docs/networking/networking-introduction/windows-firewall-configuration>`.
+
+Ensure :doc:`Game Tools </docs/zero-to-robot/step-2/frc-game-tools>` or another :ref:`mdns responder <docs/networking/networking-introduction/networking-basics:mDNS - Providers>` is installed.
 
 Set a [static ip address](https://www.trendnet.com/press/resource-library/how-to-set-static-ip-address) with these parameters:
 

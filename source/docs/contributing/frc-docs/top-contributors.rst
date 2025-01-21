@@ -1,6 +1,8 @@
 Top Contributors
 ================
 
-.. contributors:: wpilibsuite/frc-docs
-   :limit: 10
-   :contributions:
+.. only:: not prbuild
+
+   .. contributors:: wpilibsuite/frc-docs
+      :limit: 10
+      :contributions:

@@ -18,8 +18,6 @@ This documentation can be downloaded for offline viewing. The link to download t
 
 -  [2025 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) (Note: Click on link for "Install Offline")
 
--  [National Instruments Package Manager](https://www.ni.com/en/support/downloads/software-products/download.package-manager.html#322516) (Note: Click on link for "Install Offline")
-
 ### LabVIEW Teams
 
 -  [LabVIEW Base Installer](https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html) (Note: Click on link for "Individual Offline Installers")

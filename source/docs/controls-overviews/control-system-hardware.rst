@@ -52,13 +52,21 @@ The :ref:`NI-roboRIO <docs/software/roborio-info/roborio-introduction:roboRIO In
 
 The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the [PDP User Manual](https://ctre.download/files/user-manual/PDP%20User's%20Guide.pdf).
 
+## CTRE Power Distribution Panel 2.0
+
+.. image:: images/control-system-hardware/power-distribution-panel-2.png
+  :alt: CTRE Power Distribution Panel 2.0
+  :width: 500
+
+The [CTRE Power Distribution Panel 2.0](https://store.ctr-electronics.com/products/pdp-2) (PDP 2.0) is designed to distribute power from a 12VDC battery to various robot components. The PDP 2.0 features 24 40A channels and can accoommodate ATO breakers. The PDP 2.0 is designed to maximize efficiency.
+
 ## REV Power Distribution Hub
 
 .. image:: images/control-system-hardware/power-distribution-hub.png
   :alt: REV Power Distribution Hub
   :width: 500
 
-The [REV Power Distribution Hub](https://docs.revrobotics.com/rev-11-1850/) (PDH) is designed to distribute power from a 12VDC battery to various robot components.  The PDH features 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry.
+The [REV Power Distribution Hub](https://docs.revrobotics.com/ion-control-system/pdh/overview) (PDH) is designed to distribute power from a 12VDC battery to various robot components.  The PDH features 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry.
 
 ## CTRE Voltage Regulator Module
 
@@ -91,6 +99,14 @@ The 120A Main Circuit Breaker serves two roles on the robot: the main robot powe
   :width: 500
 
 The Snap Action circuit breakers, [MX5 series](https://www.snapaction.net/assets/img/MX5-Spec-Sheet-Revision-2023.pdf) and [VB3 Series](https://www.snapaction.net/assets/img/VB3-Spec-Sheet-Revision-2023.pdf), are used with the Power Distribution Panel to limit current to branch circuits. The ratings on these circuit breakers are for continuous current, temporary peak values can be considerably higher.
+
+## Rev ATO Circuit Breakers
+
+.. image:: images/control-system-hardware/ato-breaker.png
+  :alt: Rev ATO Circuit Breakers
+  :width: 500
+
+The [Rev ATO Circuit Breakers](https://www.revrobotics.com/content/docs/REV-11-1860-1863-DS.pdf) are used with the Power Distribution Panel, Power Distribution Hub and Power Distribution Panel 2.0 to limit current to branch circuits. They come in [40A](https://www.revrobotics.com/rev-11-1863/), [30A](https://www.revrobotics.com/rev-11-1862/), [20A](https://www.revrobotics.com/rev-11-1861/) and [10A](https://www.revrobotics.com/rev-11-1860/) variants. The ratings on these circuit breakers are for continuous current, temporary peak values can be considerably higher.
 
 ## Robot Battery
 
@@ -138,23 +154,31 @@ The :ref:`CTRE Pneumatics Control Module <docs/software/can-devices/pneumatics-c
   :alt: REV Pneumatic Hub
   :width: 500
 
-The [REV Pneumatic Hub](https://docs.revrobotics.com/rev-11-1852/) is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types. The user selectable output voltage is fully regulated, allowing even 12V solenoids to stay active when the robot battery drops as low as 4.75V.
+The [REV Pneumatic Hub](https://docs.revrobotics.com/ion-control-system/ph/overview) is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types. The user selectable output voltage is fully regulated, allowing even 12V solenoids to stay active when the robot battery drops as low as 4.75V.
 
 Digital and analog pressure sensor ports are built into the device, increasing the flexibility and feedback functionality of the pneumatic system. The USB-C connection on the Hub works with the REV Hardware Client, allowing users to test pneumatic systems without a need for an additional robot controller.
 
 ## Motor Controllers
 
-There are a variety of different :ref:`motor controllers <docs/software/hardware-apis/index:Hardware APIs>` which work with the FRC Control System and are approved for use. These devices are used to provide variable voltage control of the brushed and brushless DC motors used in FRC. They are listed here in order of [usage](https://www.firstinspires.org/robotics/frc/blog/2021-beta-testing-usage-report).
+There are a variety of different :ref:`motor controllers <docs/software/hardware-apis/index:Hardware APIs>` which work with the FRC Control System and are approved for use. These devices are used to provide variable voltage control of the brushed and brushless DC motors used in FRC. They are listed here in order of [usage](https://community.firstinspires.org/control-system-beta-testing-and-usage-reporting) placement is estimated for devices where data is unavailable.
 
 .. note:: 3rd Party CAN control is not supported from WPILib. See this section on :ref:`docs/software/can-devices/third-party-devices:Third-Party CAN Devices` for more information.
 
-### Talon SRX
+### SPARK MAX Motor Controller
 
-.. image:: images/control-system-hardware/talonsrx-motor-controller.png
-  :alt: Talon SRX
-  :width: 500
+.. image:: images/control-system-hardware/spark-max-motor-controller.png
+  :alt: SPARK MAX Motor Controller
+  :width: 400
 
-The [Talon SRX Motor Controller](https://store.ctr-electronics.com/talon-srx/) is a "smart motor controller" from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or :term:`PWM` interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the [Talon SRX User's Guide](https://ctre.download/files/user-manual/Talon%20SRX%20User's%20Guide.pdf).
+The [SPARK MAX Motor Controller](https://www.revrobotics.com/rev-11-2158/) is an advanced brushed and brushless DC motor controller from REV Robotics. When using CAN bus or USB control, the SPARK MAX uses input from limit switches, encoders, and other sensors, including the integrated encoder of the REV NEO Brushless Motor, to perform advanced control modes. The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only). For more information, see the [SPARK MAX Documentation](https://docs.revrobotics.com/brushless/spark-max/overview).
+
+### TalonFX Motor Controller
+
+.. image:: images/control-system-hardware/talonfx.png
+  :alt: TalonFX Motor Controller
+  :width: 400
+
+The TalonFX Motor Controller is a brushless motor controller from Cross The Road Electronics which is integrated into the Falcon 500, Kraken X60 and Kraken X44 brushless motors.  It features an integrated encoder and all of the smart features of the Talon SRX and more! For more information see the [TalonFX Hardware Reference](https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/).
 
 ### Victor SPX
 
@@ -164,21 +188,13 @@ The [Talon SRX Motor Controller](https://store.ctr-electronics.com/talon-srx/) i
 
 The [Victor SPX Motor Controller](https://store.ctr-electronics.com/victor-spx/) is a CAN or PWM controlled motor controller from Cross The Road Electronics/VEX Robotics. The device is connectorized to allow easy connection to the roboRIO PWM connectors or a CAN bus. The case is sealed to prevent debris from entering the controller. For more information, see the [Victor SPX User Guide](https://ctre.download/files/user-manual/Victor%20SPX%20User's%20Guide.pdf).
 
-### SPARK MAX Motor Controller
+### Talon SRX
 
-.. image:: images/control-system-hardware/spark-max-motor-controller.png
-  :alt: SPARK MAX Motor Controller
-  :width: 400
-
-The [SPARK MAX Motor Controller](https://www.revrobotics.com/rev-11-2158/) is an advanced brushed and brushless DC motor controller from REV Robotics. When using CAN bus or USB control, the SPARK MAX uses input from limit switches, encoders, and other sensors, including the integrated encoder of the REV NEO Brushless Motor, to perform advanced control modes. The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only). For more information, see the [SPARK MAX User's Manual](https://docs.revrobotics.com/sparkmax/).
-
-### TalonFX Motor Controller
-
-.. image:: images/control-system-hardware/talonfx.png
-  :alt: TalonFX Motor Controller
+.. image:: images/control-system-hardware/talonsrx-motor-controller.png
+  :alt: Talon SRX
   :width: 500
 
-The [TalonFX Motor Controller](https://store.ctr-electronics.com/falcon-500-powered-by-talon-fx/)  is integrated into the Falcon 500 brushless motor.  It features an integrated encoder and all of the smart features of the Talon SRX and more!  For more information see the [Falcon 500 User Guide](https://ctre.download/files/user-manual/Falcon%20500%20v3%20User's%20Guide.pdf).
+The [Talon SRX Motor Controller](https://store.ctr-electronics.com/talon-srx/) is a "smart motor controller" from Cross The Road Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus or :term:`PWM` interface. When using the CAN bus control, this device can take inputs from limit switches and potentiometers, encoders, or similar sensors in order to perform advanced control. For more information see the [Talon SRX User's Guide](https://ctre.download/files/user-manual/Talon%20SRX%20User's%20Guide.pdf).
 
 ### SPARK Motor Controller
 
@@ -200,6 +216,14 @@ The [SPARK Motor Controller](https://www.revrobotics.com/content/docs/REV-11-120
 
 The [Victor SP Motor Controller](https://web.archive.org/web/20220926211100/https://store.ctr-electronics.com/content/user-manual/Victor-SP-Quick-Start-Guide.pdf) is a PWM motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP has an electrically isolated metal housing for heat dissipation, making the use of the fan optional. The case is sealed to prevent debris from entering the controller. The controller is approximately half the size of previous models.
 
+### SPARK Flex Motor Controller
+
+.. image:: images/control-system-hardware/spark-flex.png
+  :alt: SPARK Flex Motor Controller
+  :width: 400
+
+The [SPARK Flex Motor Controller](https://www.revrobotics.com/rev-11-2159/) is a smart brushed and brushless DC motor controller from Rev Robotics. It is designed for semi-permanent docking to NEO Vortex brushless motors, but can be used with other brushed and brushless motors through the use of an adapter dock. When using CAN bus or USB control, the SPARK Flex uses input from limit switches, encoders, and other sensors, including the integrated encoder of NEO Vortex, Neo 1.0/1.1 and NEO 550 brushless motors, to perform advanced control modes. The SPARK Flex can be controlled over PWM, CAN or USB (for configuration/testing only). For more information, see the [SPARK Flex Documentation](https://docs.revrobotics.com/brushless/spark-flex/overview).
+
 ### Talon Motor Controller
 
 .. image:: images/control-system-hardware/talon-motor-controller.png
@@ -219,15 +243,13 @@ The [Talon Motor Controller](https://files.andymark.com/Talon_User_Manual_1_3.pd
 
 The [Victor 884](https://content.vexrobotics.com/docs/ifi-v884-users-manual-9-25-06.pdf) and [Victor 888](https://content.vexrobotics.com/docs/217-2769-Victor888UserManual.pdf) motor controllers from VEX Robotics are variable speed PWM motor controllers for use in FRC. The Victor 888 replaces the Victor 884, which is also usable in FRC.
 
-### Jaguar Motor Controller
+### Venom Motor Controller
 
-.. image:: images/control-system-hardware/jaguar-motor-controller.png
-  :alt: Jaguar Motor Controller
+.. image:: images/control-system-hardware/venom.jpg
+  :alt: Venom Motor Controller
   :width: 500
 
-.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
-
-The [Jaguar Motor Controller](https://www.ti.com/lit/an/spma033a/spma033a.pdf?ts=1607574399581) from VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a variable speed motor controller for use in FRC. For FRC, the Jaguar may only be controlled using the PWM interface.
+The [Venom Motor Controller](https://www.playingwithfusion.com/productview.php?pdid=99) from Playing With Fusion is integrated into a motor based on the original :term:`CIM`.  Speed, current, temperature, and position are all measured onboard, enabling advanced control modes without complicated sensing and wiring schemes.
 
 ### DMC-60 and DMC-60C Motor Controller
 
@@ -241,13 +263,15 @@ The DMC-60 is a PWM motor controller from Digilent. The DMC-60 features integrat
 
 The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller. Due to the manufacturer discontinuing this product, the DMC-60C is only usable with PWM. For more information see the [DMC-60C Product Page](https://reference.digilentinc.com/dmc-60c/start/)
 
-### Venom Motor Controller
+### Jaguar Motor Controller
 
-.. image:: images/control-system-hardware/venom.jpg
-  :alt: Venom Motor Controller
+.. image:: images/control-system-hardware/jaguar-motor-controller.png
+  :alt: Jaguar Motor Controller
   :width: 500
 
-The [Venom Motor Controller](https://www.playingwithfusion.com/productview.php?pdid=99) from Playing With Fusion is integrated into a motor based on the original :term:`CIM`.  Speed, current, temperature, and position are all measured onboard, enabling advanced control modes without complicated sensing and wiring schemes.
+.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
+
+The [Jaguar Motor Controller](https://www.ti.com/lit/an/spma033a/spma033a.pdf?ts=1607574399581) from VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a variable speed motor controller for use in FRC. For FRC, the Jaguar may only be controlled using the PWM interface.
 
 ### Nidec Dynamo BLDC Motor with Controller
 
@@ -256,6 +280,30 @@ The [Venom Motor Controller](https://www.playingwithfusion.com/productview.php?p
   :width: 500
 
 The [Nidec Dynamo BLDC Motor with Controller](https://www.andymark.com/products/dynamo-brushless-motor-controller) is the first brushless motor and controller legal in FRC.  This motor's controller is integrated into the back of the motor.  The [motor data sheet](https://cdn.andymark.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e) provides more device specifics.
+
+### Thrifty Nova Motor Controller
+
+.. image:: images/control-system-hardware/nova.png
+  :alt: Thrifty Nova Motor Controller
+  :width: 400
+
+The [Thrifty Nova Motor Controller](https://www.thethriftybot.com/products/thrifty-nova) is a brushless DC motor controller from The Thrifty Bot with CAN and USB connectivity. It can receive sensor inputs from NEO and NEO 550 brushless motors as well as other sensors with the use of expansion boards. For more information, see the [Thrifty Nova Documentation](https://www.thethriftybot.com/products/thrifty-nova).
+
+### Talon FXS Motor Controller
+
+.. image:: images/control-system-hardware/talonfxs.png
+  :alt: Talon FXS Motor Controller
+  :width: 500
+
+The [Talon FXS Motor Controller](https://store.ctr-electronics.com/products/talon-fxs) is a smart brushed and brushless DC motor controller from Cross The Road Electronics.
+
+### Koors 40 Brushed DC Motor Controller
+
+.. image:: images/control-system-hardware/koors-40.png
+  :alt: Koors 40 Brushed DC Motor Controller
+  :width: 400
+
+The [Koors 40 Brushed DC Motor Controller](https://www.andymark.com/products/koors-40-brushed-dc-motor-controller) is an inexpensive PWM brushed DC motor controller from AndyMark with features such as Ground Loss Protection for PWM, Thermal and Overcurrent Protection, and Reverse Polarity Protection.
 
 ### SD540B and SD540C Motor Controllers
 
@@ -275,6 +323,14 @@ The SD540B and SD540C Motor Controllers from Mindsensors are controlled using PW
 
 The Spike H-Bridge Relay from VEX Robotics is a device used for controlling power to motors or other custom robot electronics. When connected to a motor, the Spike provides On/Off control in both the forward and reverse directions. The Spike outputs are independently controlled so it can also be used to provide power to up to 2 custom electronic circuits. The Spike H-Bridge Relay should be connected to a relay output of the roboRIO and powered from the Power Distribution Panel. For more information, see the [Spike User’s Guide](https://content.vexrobotics.com/docs/spike-blue-guide-sep05.pdf).
 
+## Servo Hub
+
+.. image:: images/control-system-hardware/servo-hub.png
+  :alt: Servo Hub
+  :width: 400
+
+The [Servo Hub](https://www.revrobotics.com/rev-11-1855/) from Rev Robotics can control up to 6 servos. It can output a maximum of 15A across all channels and. The Servo Hub supports USB, RS485 and CAN control.
+
 ## Servo Power Module
 
 .. image:: images/control-system-hardware/servo-power-module.png
@@ -293,4 +349,4 @@ The Microsoft Lifecam HD3000 is a USB webcam that can be plugged directly into t
 
 ## Image Credits
 
-Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Talon FX, Victor 888, Victor SP, Victor SPX, and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK MAX, Power Distribution Hub, and Pneumatic Hub courtesy of REV Robotics. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. Image of the VH-109 radio courtesy of Vivid-Hosting. All other photos courtesy of AndyMark Inc.
+Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, Victor SPX, and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK MAX, SPARK Flex, Servo Hub, ATO Breakers, Power Distribution Hub, and Pneumatic Hub courtesy of REV Robotics. Images of TalonFX, TalonFXS and Power Distribution Panel 2.0 courtesy of Cross The Road Electronics, LLC. Image of Thrifty Nova courtesy of The Thrifty Bot. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. Image of the VH-109 radio courtesy of Vivid-Hosting. All other photos courtesy of AndyMark Inc.

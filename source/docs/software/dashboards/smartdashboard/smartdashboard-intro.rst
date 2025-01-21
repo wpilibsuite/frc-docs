@@ -14,6 +14,8 @@ The SmartDashboard is a Java program that will display robot data in real time. 
 
 The displayed data is automatically formatted in real-time as the data is sent from the robot, but you can change the format or the display widget types and then save the new screen layouts to be used again later. And with all these options, it is still extremely simple to use. To display some data on the dashboard, simply call one of the SmartDashboard methods with the data and its name and the value will automatically appear on the dashboard screen.
 
+.. warning:: SmartDashboard is deprecated and will be removed for 2027 due to its usage of Network Tables v3. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
+
 ## Installing the SmartDashboard
 
 .. image:: images/smartdashboard-intro/smartdashboard-driverstation.png

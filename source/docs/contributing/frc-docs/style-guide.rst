@@ -101,17 +101,17 @@ Follow the [WPILib style guide](https://github.com/wpilibsuite/styleguide/) for 
 When possible, instead of using code blocks, an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
 
 ```ReST
-.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
    :language: java
    :lines: 19-25
    :lineno-match:
 
-.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.2.1/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
    :language: c++
    :lines: 50-60
    :lineno-match:
 
-.. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/GettingStarted/robot.py
+.. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/GettingStarted/robot.py
    :language: python
    :lines: 12-29
    :lineno-match:
@@ -126,7 +126,7 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
 
 ````ReST
 .. tab-set-code::
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
       :language: java
       :lines: 19-25
       :lineno-match:
@@ -209,7 +209,7 @@ Hi there, `this is a link`_ and it's pretty cool!
 Links to the RobotPY API documentation should use the following sphinx [python syntax](https://www.sphinx-doc.org/en/master/usage/domains/python.html) (example linking to the DriverStation API docs).
 
 ```ReST
-:external:py:class:`Python <robotpy:wpilib.DriverStation>`
+:py:class:`Python <robotpy:wpilib.DriverStation>`
 ```
 
 This expands to be equivalent to:
