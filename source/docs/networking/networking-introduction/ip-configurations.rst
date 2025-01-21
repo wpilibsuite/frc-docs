@@ -45,6 +45,8 @@ When configured for an event, the Team Radio runs a DHCP server with a pool for 
 -  IP camera (if used) - DHCP ``10.TE.AM.Y`` assigned by Robot Radio
 -  Other devices (if used) - DHCP ``10.TE.AM.Z`` assigned by Robot Radio
 
+.. note:: If the roboRIO is not being assigned a DHCP IP address of ``10.TE.AM.2``, ensure you've :ref:`Set the roboRIO team number <docs/zero-to-robot/step-3/roborio2-imaging:Setting the roboRIO Team Number>`
+
 ### On the Field Static Configuration
 
 It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are ``10.TE.AM.1`` for the VH-109 radio, ``10.TE.AM.4`` for the field router, and anything ``10.TE.AM.20`` or greater which may be assigned to a device configured for DHCP or else reserved. The roboRIO network configuration can be set from the webdashboard.
@@ -72,6 +74,8 @@ It is also possible to configure static IPs on your devices to accommodate devic
    ``10.TE.AM.X``, assigned by Robot Radio
 -  IP camera (if used) - DHCP, ``10.TE.AM.Y``, assigned by Robot Radio
 -  Other devices (if used) - DHCP, ``10.TE.AM.Z``, assigned by Robot Radio
+
+.. note:: If the roboRIO is not being assigned a DHCP IP address of ``10.TE.AM.2``, ensure you've :ref:`Set the roboRIO team number <docs/zero-to-robot/step-3/roborio2-imaging:Setting the roboRIO Team Number>`
 
 ### In the Pits Static Configuration
 
