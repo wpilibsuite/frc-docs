@@ -34,11 +34,11 @@ This example shows how to utilize Preferences to change the setpoint of a PID co
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/ArmSimulation/constants.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/ArmSimulation/constants.py
          :language: python
          :lines: 18-23
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/ArmSimulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/ArmSimulation/subsytems/arm.py
          :language: python
          :lines: 20-23,37-41
 
@@ -69,7 +69,7 @@ If using the Command Framework, this type of code could be placed in the constru
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/ArmSimulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/ArmSimulation/subsytems/arm.py
          :language: python
          :lines: 43-50
 
@@ -102,10 +102,10 @@ Depending on the data that is stored in preferences, you can use it when you rea
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/ArmSimulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/ArmSimulation/robot.py
          :language: python
          :lines: 22-28
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/36c64f286a38478f5e04d60321c57b0a9d1c5f17/ArmSimulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/ArmSimulation/subsytems/arm.py
          :language: python
          :lines: 52-57
 
