@@ -11,15 +11,20 @@ WPILib has extended robot simulation to introduce a graphical user interface (GU
 .. image:: images/vscode-run-simulation.png
    :alt: Running simulation via VS Code
 
-You can simply launch the GUI via the **Run Simulation** command palette option.
+You can simply launch the GUI via the :guilabel:`Simulate Robot Code` command palette option.
 
 .. image:: images/vscode-pick-extension.png
    :alt: Picking Sim GUI simulation extension
 
-And the ``Sim GUI`` option should popup in a new dialog and will be selected by default. Press :guilabel:`Ok`. This will now launch the Simulation GUI!
+And the :guilabel:`Sim GUI` option should popup in a new dialog and will be selected by default. Press :guilabel:`Ok`. This will now launch the Simulation GUI.
 
 .. image:: images/sim-gui.png
    :alt: The simulation graphical user interface
+
+.. warning:: You may see a run button next to the WPILib button. This button does not set up simulation appropriately and should not be used. Instead, the menu item shown above :guilabel:`WPILib: Simulate Robot Code` should be used.
+
+   .. image:: images/vscode-run-bad.png
+      :alt: Run button to the left of the WPIlib Button
 
 ## Using the GUI
 
