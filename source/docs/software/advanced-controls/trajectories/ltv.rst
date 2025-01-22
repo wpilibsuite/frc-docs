@@ -5,7 +5,7 @@ The LTV Unicycle Controller ([C++](https://github.wpilib.org/allwpilib/docs/rele
 
 ## Constructing the LTV Unicycle Controller Object
 
-The LTV Unicycle controller should be initialized with four parameters. `qelems` is a vector of the maximum desired error tolerance in the X and Y directions and heading. `relems` is a vector of the desired control effort in linear velocity and angular velocity. `dt` represents the timestep used in calculations (the default loop rate of 20 ms is a reasonable value) and `maxVelocity` should be the max velocity your robot can achieve. See :ref:`The State Space control LQR Tuning <docs/software/advanced-controls/state-space/state-space-intro:LQR: tuning>` for more information on the effect of `relems` and `qelems` on the controller.
+The LTV Unicycle controller should be initialized with four parameters. `qelems` is a vector of the maximum desired error tolerance in the X and Y directions and heading. `relems` is a vector of the desired control effort in linear velocity and angular velocity. `dt` represents the timestep used in calculations (the default loop rate of 20 ms is a reasonable value) and `maxVelocity` should be the max velocity your robot can achieve. See :ref:`The State Space control LQR Tuning <docs/software/advanced-controls/state-space/state-space-intro:LQR: tuning>` for more information on the effect of `qelems` and `relems` on the controller.
 
 The code example below initializes the LTV Unicycle Controller with `qelems` of 0.0625 m in X, 0.125 m in Y, and 2 radians in heading; `relems` of 1 m/s of linear velocity, and 2 rad/sec angular velocity; `dt` of 20 ms; and `maxVelocity` of 9 m/s.
 
