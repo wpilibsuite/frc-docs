@@ -58,7 +58,7 @@ The returned adjusted speeds can be converted to usable speeds using the kinemat
 .. tab-set-code::
 
    ```java
-   ChassisSpeeds adjustedSpeeds = controller.calculate(currentRobotPose, referencel);
+   ChassisSpeeds adjustedSpeeds = controller.calculate(currentRobotPose, reference);
    DifferentialDriveWheelSpeeds wheelSpeeds = kinematics.toWheelSpeeds(adjustedSpeeds);
    double left = wheelSpeeds.leftMetersPerSecond;
    double right = wheelSpeeds.rightMetersPerSecond;
