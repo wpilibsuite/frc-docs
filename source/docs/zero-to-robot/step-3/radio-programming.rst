@@ -146,7 +146,7 @@ Navigate to :guilabel:`http://192.168.69.1/`
 
 ### Setting Up an Entire Field
 
-See the documentation on using the [VH-113 Access Point](https://frc-radio.vivid-hosting.net/getting-started/usage/practicing-at-home#vh-113-access-point).
+See the documentation on using the [VH-113 Access Point](https://frc-radio.vivid-hosting.net/overview/practicing-at-home#vh-113-full-field).
 
 ### How do I run an Offseason Event?
 
