@@ -28,7 +28,7 @@ A basic client program looks like the following example.
                 WPIMathJNI.Helper.setExtractOnStaticLoad(false);
                 CameraServerJNI.Helper.setExtractOnStaticLoad(false);
                 CombinedRuntimeLoader.loadLibraries(Program.class, "wpiutiljni", "wpimathjni", "ntcorejni",
-                    "cscorejnicvstatic");
+                    Core.NATIVE_LIBRARY_NAME, "cscorejni");
                 new Program().run();
             }
             public void run() {
@@ -37,7 +37,7 @@ A basic client program looks like the following example.
                 DoubleSubscriber xSub = table.getDoubleTopic("x").subscribe(0.0);
                 DoubleSubscriber ySub = table.getDoubleTopic("y").subscribe(0.0);
                 inst.startClient4("example client");
-                inst.setServer("localhost"); // where TEAM=190, 294, etc, or use inst.setServer("hostname") or similar
+                inst.setServerTeam(TEAM); // where TEAM=190, 294, etc, or use inst.setServer("hostname") or similar
                 inst.startDSClient(); // recommended if running on DS computer; this gets the robot IP from the DS
                 while (true) {
                     try {
@@ -173,7 +173,7 @@ Example build.gradle files are provided in the [StandaloneAppSamples Repository]
     .. tab-item:: Java
      :sync: Java
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/6a5b6352807a8759bd0f012e57695c47f7ef7324/Java/build.gradle
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/9020718b022ba220a2c5cc04ad12714d06e7a141/Java/build.gradle
           :language: groovy
           :linenos:
           :emphasize-lines: 5
@@ -183,7 +183,7 @@ Example build.gradle files are provided in the [StandaloneAppSamples Repository]
 
        Uncomment the appropriate platform as highlighted.
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/6a5b6352807a8759bd0f012e57695c47f7ef7324/Cpp/build.gradle
+       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/9020718b022ba220a2c5cc04ad12714d06e7a141/Cpp/build.gradle
           :language: groovy
           :linenos:
           :emphasize-lines: 3, 14-15, 20-22
