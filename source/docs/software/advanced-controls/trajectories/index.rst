@@ -11,6 +11,7 @@ This section describes WPILib support for generating parameterized spline trajec
    constraints
    manipulating-trajectories
    transforming-trajectories
+   ltv
    ramsete
    holonomic
    troubleshooting
