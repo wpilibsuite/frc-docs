@@ -58,6 +58,7 @@ extensions = [
     "sphinx_toolbox.collapse",
     "sphinx_copybutton",
     "sphinx_contributors",
+    "sphinx_last_updated_by_git",
 ]
 
 local_extensions = [
