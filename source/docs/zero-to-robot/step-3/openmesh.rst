@@ -29,9 +29,9 @@ The FRC Radio Configuration Utility requires administrator privileges to configu
 
 Download the latest FRC Radio Configuration Utility Installer from the following links:
 
-[FRC Radio Configuration 24.0.1](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip)
+[FRC Radio Configuration 25.0.0](https://firstfrc.blob.core.windows.net/frc2025/Radio/FRC_Radio_Configuration_25_0_0.zip)
 
-[FRC Radio Configuration 24.0.1 Israel Version](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip)
+[FRC Radio Configuration 25.0.0 Israel Version](https://firstfrc.blob.core.windows.net/frc2025/Radio/FRC_Radio_Configuration_25_0_0_IL.zip)
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
