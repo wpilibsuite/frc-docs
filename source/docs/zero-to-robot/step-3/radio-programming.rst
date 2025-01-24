@@ -31,7 +31,7 @@ Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Set
 
 .. note:: Newer versions of the radio firmware will have the version listed at the bottom.  If you do not see the version listed you have firmware prior to 1.2.0.
 
-You can skip this section if already at version 1.2.6 or later.
+You can skip this section if already at version 1.2.8 or later.
 
 1. On the Vivid-Hosting [firmware releases](https://frc-radio.vivid-hosting.net/miscellaneous/firmware-releases) page download the proper firmware for the current firmware version you have.  Always choose the `Radio Variant`.
 
