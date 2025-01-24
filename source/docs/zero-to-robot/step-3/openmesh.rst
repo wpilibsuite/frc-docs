@@ -29,13 +29,13 @@ The FRC Radio Configuration Utility requires administrator privileges to configu
 
 Download the latest FRC Radio Configuration Utility Installer from the following links:
 
-[FRC Radio Configuration 24.0.1](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip)
+[FRC Radio Configuration 25.0.0](https://firstfrc.blob.core.windows.net/frc2025/Radio/FRC_Radio_Configuration_25_0_0.zip)
 
-[FRC Radio Configuration 24.0.1 Israel Version](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip)
+[FRC Radio Configuration 25.0.0 Israel Version](https://firstfrc.blob.core.windows.net/frc2025/Radio/FRC_Radio_Configuration_25_0_0_IL.zip)
 
 .. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
 
-.. note:: Teams planning on using the radio tool on a machine without the **2024** WPILib suite installed, will need a copy of Java installed. This can be downloaded [here](https://adoptium.net/temurin/releases/?version=17&os=windows).
+.. note:: Teams planning on using the radio tool on a machine without the **2025** WPILib suite installed, will need a copy of Java installed. This can be downloaded [here](https://adoptium.net/temurin/releases/?version=17&os=windows).
 
 Before you begin using the software:
 
