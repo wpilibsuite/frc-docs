@@ -50,6 +50,12 @@ Often a team may want to test their code without having an actual robot availabl
       Default robotPeriodic() method... Override me!
       ```
 
+      If you would would like to prevent the pop up and only use build.gradle to configure your simulation settings you can add the following in your vscode settings.json file.
+
+      ```json
+      "wpilib.skipSelectSimulateExtension": true
+      ```
+
       .. warning:: You may see a run button next to the WPILib button. This button does not set up simulation appropriately and should not be used. Instead, the menu item shown above :guilabel:`WPILib: Simulate Robot Code` should be used.
 
          .. image:: images/vscode-run-bad.png
