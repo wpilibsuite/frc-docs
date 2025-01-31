@@ -30,6 +30,7 @@ Locate the following control system components and tools
   - 1x 30A Circuit breaker
   - 6 AWG (16 :math:`mm^2`) Red wire
   - 18 AWG (1 :math:`mm^2`) Red/Black wire
+  - (Optional) REV PoE Injector cable or similar
   - 12 Wago 221 inline splicing connector with lever
   - 2x Anderson SB50 battery connectors
   - 6 AWG (16 :math:`mm^2`) Terminal lugs
@@ -245,11 +246,18 @@ Using 18AWG wire, connect a non-switchable fused channel (20-22) with a 10A fuse
 ## Ethernet Cables
 
 .. image:: images/how-to-wire-a-simple-robot/radio-ethernet-kitbot.jpg
-  :alt: Picture of the KitBot showing radio ethernet cable.
+  :alt: Picture of the KitBot showing radio ethernet cable with PoE injector.
 
-Requires: 1x Ethernet cables
+Requires: 1x Ethernet cable, (Optional) 1x REV PoE injector or similar
 
-Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the port on the VH-109 radio labeled RIO.
+Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the socket of the REV PoE injector. Either remove or individually insulate the red and black power wires of the injector (the injector is not long enough to reach the PDH with the KitBot wiring layout). Connect the plug end of the REV PoE injector into the port on the VH-109 labeled RIO.
+
+.. collapse:: Alternative
+
+    .. image:: images/how-to-wire-a-simple-robot/radio-ethernet-kitbot-alt.jpg
+        :alt: Picture of the KitBot showing radio ethernet cable plugged into VH-109 AUX port.
+
+    Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the port on the VH-109 radio labeled AUX2.
 
 
 ## Robot Signal Light
