@@ -377,7 +377,7 @@ After making the connection check to be sure that it is clean and secure:
 
 .. note:: The radio can additionally be powered by :term:`PoE` to create a more redundant connection.
 
-.. warning:: If powering the radio this way, the roboRIO must be connected via a PoE injector, modified ethernet cable, or to one of the `AUX` ports of the VH-109.
+.. warning:: If powering the radio this way, the roboRIO must be connected via a PoE injector, modified ethernet cable, or to one of the `AUX` ports of the VH-109 with the corresponding DIP switch in the off (default) position.
 
 ## Pneumatics Power (Optional)
 
@@ -431,7 +431,7 @@ Requires: an Ethernet cable
 
 .. note:: If using :term:`PoE` you may need a second Ethernet cable or longer power wires.
 
-.. warning:: If the VH-109 is powered using the 12V input terminals, the roboRIO should be connected to the VH-109 through a PoE injector, a modified ethernet cable, or to one of the `AUX` ports on the VH-109 instead of the `RIO` port.
+.. warning:: If the VH-109 is powered using the 12V input terminals, the roboRIO should be connected to the VH-109 through a PoE injector, a modified ethernet cable, or to one of the `AUX` ports on the VH-109 instead of the `RIO` port with the corresponding DIP switch in the off (default) position.
 
 .. warning:: DO NOT connect the Rev passive :term:`PoE` injector cable directly to the roboRIO. The roboRIO MUST connect to the socket end of the cable using an additional Ethernet cable as shown in the next step.
 

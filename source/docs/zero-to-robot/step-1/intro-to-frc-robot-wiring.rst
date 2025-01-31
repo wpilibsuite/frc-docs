@@ -257,7 +257,7 @@ Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the 
     .. image:: images/how-to-wire-a-simple-robot/radio-ethernet-kitbot-alt.jpg
         :alt: Picture of the KitBot showing radio ethernet cable plugged into VH-109 AUX port.
 
-    Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the port on the VH-109 radio labeled AUX2.
+    Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the port on the VH-109 radio labeled AUX2. The corresponding DIP switch on the radio must be in the off (default) position.
 
 
 ## Robot Signal Light
