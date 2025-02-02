@@ -111,18 +111,18 @@ The navX uses the :code:`AHRS` class.  See the [navX documentation](https://pdoc
 
     ```java
     // navX MXP using SPI
-    AHRS gyro = new AHRS(SPI.Port.kMXP);
+    AHRS gyro = new AHRS(NavXComType.kMXP_SPI);
     ```
 
     ```c++
     // navX MXP using SPI
-    AHRS gyro{SPI::Port::kMXP};
+    studica::AHRS navx{studica::AHRS::NavXComType::kMXP_SPI};
     ```
 
     ```python
     import navx
     # navX MXP using SPI
-    self.gyro = navx.AHRS(SPI.Port.kMXP)
+    self.gyro = navx.AHRS(NavXComType.kMXP_SPI)
     ```
 
 ## Pigeon 2
