@@ -16,9 +16,9 @@ The WPILib feedforward classes closely match the available mechanism characteriz
 
 WPILib currently provides the following three helper classes for feedforward control:
 
-* `SimpleMotorFeedforward`_ (Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html), :external:py:class:`Python <wpimath.controller.SimpleMotorFeedforwardMeters>`)
-* `ArmFeedforward`_ (Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ArmFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_arm_feedforward.html), :external:py:class:`Python <wpimath.controller.ArmFeedforward>`)
-* `ElevatorFeedforward`_ (Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ElevatorFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_elevator_feedforward.html), :external:py:class:`Python <wpimath.controller.ElevatorFeedforward>`)
+* `SimpleMotorFeedforward`_ [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html), :external:py:class:`Python <wpimath.controller.SimpleMotorFeedforwardMeters>`)
+* `ArmFeedforward`_ [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ArmFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_arm_feedforward.html), :external:py:class:`Python <wpimath.controller.ArmFeedforward>`)
+* `ElevatorFeedforward`_ [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ElevatorFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_elevator_feedforward.html), :external:py:class:`Python <wpimath.controller.ElevatorFeedforward>`)
 
 ## SimpleMotorFeedforward
 
