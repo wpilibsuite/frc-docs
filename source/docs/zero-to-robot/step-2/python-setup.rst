@@ -105,7 +105,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
       We publish prebuilt wheels on artifactory, which can be downloaded by giving the ``--extra-index-url`` option to pip:
 
       ```sh
-      python3 -m pip install --extra-index-url=https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2024/simple robotpy
+      python3 -m pip install --extra-index-url=https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2025/simple robotpy
       ```
 
       **source install**
@@ -116,7 +116,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
       .. warning:: Mixing our pre-built wheels with source installs may cause runtime errors. This is due to internal ABI incompatibility between compiler versions.
 
-         Our ARM wheels are built for Debian 11 with GCC 10.
+         Our ARM wheels are built for Debian 11 with GCC 12.
 
       If you need to build with a specific compiler version, you can specify them using the :envvar:`CC` and :envvar:`CXX` environment variables:
 
