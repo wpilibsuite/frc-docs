@@ -223,7 +223,7 @@ Use commands. The command framework is specifically built for managing when acti
          * @param pattern the LED pattern to run
          */
         public Command runPattern(LEDPattern pattern) {
-          return run(() -> pattern.apply(m_buffer));
+          return run(() -> pattern.applyTo(m_buffer));
         }
       }
       ```
