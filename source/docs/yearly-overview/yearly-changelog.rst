@@ -52,7 +52,7 @@ Supported Operating Systems and Architectures:
 - Add a functional interface for MecanumDriveMotorVoltages and deprecate old interface
 - Add ``Koors40`` Motor Controller
 - 2025.2.1: Add 2025 field image and april tag map
-- 2025.3.1: Add april tag map for AndyMark field. See Team Update 12 for more information.
+- 2025.3.1: Add april tag map for AndyMark field. See [Team Update 12](https://firstfrc.blob.core.windows.net/frc2025/Manual/TeamUpdates/TeamUpdate12.pdf) for more information.
 
 #### Commands
 
