@@ -52,6 +52,7 @@ Supported Operating Systems and Architectures:
 - Add a functional interface for MecanumDriveMotorVoltages and deprecate old interface
 - Add ``Koors40`` Motor Controller
 - 2025.2.1: Add 2025 field image and april tag map
+- 2025.3.1: Add april tag map for AndyMark field. See Team Update 12 for more information.
 
 #### Commands
 
@@ -103,6 +104,7 @@ Supported Operating Systems and Architectures:
 - ``Compressor``: Add more Sendable data
 - Fix ``PowerDistribution.GetAllCurrents()``
 - Fix ``AsynchronousInterrupt``
+- 2025.3.1: AddressableLED: add support for other color orders
 
 #### Math
 
@@ -127,6 +129,9 @@ Supported Operating Systems and Architectures:
 - Add time-varying RKDP
 - Add 2D to 3D geometry constructors
 - 2025.2.1: Implement Translation3d.RotateAround
+- 2025.3.1: Add Pose2d and Pose3d RotateAround
+- 2025.3.1: Fix infinite loop in ArmFeedforward::Calculate(xₖ, vₖ, vₖ₊₁)
+- 2025.3.1: Add setters for Feedforward gains
 
 ### Simulation
 
@@ -153,6 +158,7 @@ Supported Operating Systems and Architectures:
 - Add resistance units
 - Use div instead of divide
 - Add absolute value and copy sign functionality
+- 2025.3.1: Add Measure.per overloads for all known unit types
 
 ### CameraServer
 
@@ -179,14 +185,11 @@ Supported Operating Systems and Architectures:
 
 ## Shuffleboard
 
-- The live network table preview has been removed due to the high frequency of node redraws. Spot checking data will now need to be done by dragging a data widget into a tab. Generic table data should still be displayable with the generic tree table widget. The NT source preview now displays the data type of a topic instead of its current value.
-- The subscribe-to-all-NT-data behavior has been changed to only subscribe to topic information. This should cut down on bandwidth and some CPU usage
-- The widget gallery has been removed with no replacement. Drawing the large number of dummy widgets took a surprising CPU load and occasionally caused problems at startup when third party widgets from plugins would crash
-- Fix widgets getting permanently disabled after network disconnects
 - Expose orientation property for NumberSlider
 - Add :doc:`persistent alerts widget </docs/software/telemetry/persistent-alerts>`
 - Correct FieldData de/serialization
 - 2025.2.1: Add 2025 field image
+- 2025.3.1: After many reports of a variety of issues, many of the resource optimations have been reverted. Performance should be similar to 2024 Shuffleboard.
 
 ## SmartDashboard
 
@@ -212,6 +215,7 @@ Supported Operating Systems and Architectures:
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
 - Add method to delete files on roboRIO that have been deleted in the deploy directory. :ref:`Set deleteOldFiles to true <docs/software/advanced-gradlerio/compiler-args:Deleting Unused Deploy Files>` in the frcStaticFileDeploy block
 - Gradle now consolidates Java compile errors at the bottom of the terminal to aid discoverability https://docs.gradle.org/8.11/release-notes.html#error-warning
+- 2025.3.1: Warn if multiple versions of the same vendordep is found
 
 ## WPILib All in One Installer
 
