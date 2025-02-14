@@ -21,7 +21,7 @@ WPILib is designed to install to different folders for different years, so that 
 
 .. only:: not prbuild
 
-   .. wpilibrelease:: v2025.2.1
+   .. wpilibrelease:: v2025.3.1
 
 [You can download the latest release of the installer from GitHub](https://github.com/wpilibsuite/allwpilib/releases/latest/).
 
