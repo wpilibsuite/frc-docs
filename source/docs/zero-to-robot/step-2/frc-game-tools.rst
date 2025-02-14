@@ -16,7 +16,7 @@ The LabVIEW runtime components required for the Driver Station and Imaging Tool 
 
 - Windows 10 or higher (Windows 10, 11).
 
-.. important:: FRC Game Tools requires an x86 CPU due to its dependency on LabVIEW. Use devices with an Intel or AMD CPU, not Snapdragon.
+.. important:: FRC Game Tools requires an x86 CPU due to its dependency on LabVIEW. Do not use a device with an ARM CPU.
 
 ## Download Game Tools
 
