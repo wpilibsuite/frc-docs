@@ -31,7 +31,7 @@ Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Set
 
 .. note:: Newer versions of the radio firmware will have the version listed at the bottom.  If you do not see the version listed you have firmware prior to 1.2.0.
 
-You can skip this section if already at version 1.2.8 or later.
+You can skip this section if already at version 1.3.0 or later.
 
 1. On the Vivid-Hosting [firmware releases](https://frc-radio.vivid-hosting.net/miscellaneous/firmware-releases) page download the proper firmware for the current firmware version you have.  Always choose the `Radio Variant`.
 
@@ -64,7 +64,7 @@ This section is used for configuring the VH-109 radio outside of competition. At
 
 ## Access Point Radio Configuration
 
-Follow all of the same steps as the robot radio configuration instead choosing :guilabel:`Access Point Mode` at the top of the configuration page.
+On the Access Point Radio, follow all of the same steps as the robot radio configuration instead choosing :guilabel:`Access Point Mode` at the top of the configuration page. Ensure you use the exact same settings for tean number, suffix, and WPA/SAE keys.
 
 ## Alternative Setup Discussion
 
