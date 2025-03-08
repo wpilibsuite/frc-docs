@@ -20,7 +20,7 @@ The following program starts automatic capture of a USB camera like the Microsof
 
    .. rli:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/QuickVision/robot.py
       :language: python
-      :lines: 8-17
+      :lines: 8-20
       :linenos:
 
 
