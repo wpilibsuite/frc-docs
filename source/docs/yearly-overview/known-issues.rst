@@ -6,6 +6,12 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 ## Open Issues
 
+### Elastic camera streams are very laggy
+
+**Issue:** Camera streams displayed in Elastic are laggy and have low FPS.
+
+**Workaround:** This is an issue that was fixed in Elastic 2025.0.2. Update Elastic by running the latest WPILib installer or Elastic installer.
+
 ### LabVIEW Getting Started page reports 2024
 
 **Issue:** The LabVIEW Getting Started page shows 2024 instead of 2025.
