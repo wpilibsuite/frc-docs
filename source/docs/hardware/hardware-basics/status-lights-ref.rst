@@ -667,3 +667,8 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 +---------------------+                 +                                    +-----------------------------------------------------------------------+-----------------------------------------------------------------+
 | Rapid Green Blink   |                 |                                    | Magnet in range (between 45mT - 75mT)                                 |                                                                 |
 +---------------------+-----------------+------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------------------+
+
+## CANivore
+
+.. image:: images/status-lights/canivore-status-light.png
+  :alt: Table showing canivore status lights
