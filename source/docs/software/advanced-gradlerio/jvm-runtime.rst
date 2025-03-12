@@ -38,7 +38,7 @@ Ensure you've :doc:`installed WPILib </docs/zero-to-robot/step-2/wpilib-setup>` 
 To ensure that Gradle uses the WPILib JDK, you must set :code:`org.gradle.java.home` to the WPILib JDK. This can be done by passing a parameter to gradle (where YEAR is the current WPILib installation):
 
 ```console
-gradlew -Dorg.gradle.java.home="C:\\Users\\Public\\wpilib\\YEAR\\jdk" ...
+gradlew -D org.gradle.java.home="C:\\Users\\Public\\wpilib\\YEAR\\jdk" ...
 ```
 
 ### gradle.properties
