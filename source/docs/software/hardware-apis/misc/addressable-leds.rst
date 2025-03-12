@@ -487,7 +487,7 @@ Slightly different from the basic color patterns, the progress mask pattern gene
       ```C++
       // Create an LED pattern that displays a black-and-white mask that displays the current height of an elevator
       // mechanism. This can be combined with other patterns to change the displayed color to something other than white.
-      LEDPattern pattern = LEDPattern::ProgressMaskLayer([&]() { m_elevator.GetHeight() / m_elevator.GetMaxHeight() });
+      LEDPattern pattern = LEDPattern::ProgressMaskLayer([&]() { return m_elevator.GetHeight() / m_elevator.GetMaxHeight(); });
 
       // Apply the LED pattern to the data buffer
       pattern.ApplyTo(m_ledBuffer);
