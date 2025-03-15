@@ -4,7 +4,7 @@ The XRP, powered by [Worcester Polytechnic Institute](http://wpi.edu), is a smal
 
 The XRP provides a similar use case as the :doc:`Romi </docs/romi-robot/index>` with similar functionality, albeit using a lower power processor and is overall lower in cost.
 
-.. image:: images/xrp.png
+.. image:: images/xrp25.png
    :alt: XRP Robot
 
 .. toctree::
