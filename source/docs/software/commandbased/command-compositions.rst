@@ -51,7 +51,7 @@ The ``repeatedly()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/
 
    ```python
    # Will run forever unless externally interrupted, restarting every time command.IsFinished() returns true
-   repeats = commands2.cmd.repeatedly()
+   repeatingCommand = nonRepeatingCommand.repeatedly()
    ```
 
 ### Sequence
