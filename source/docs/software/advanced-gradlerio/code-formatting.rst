@@ -166,7 +166,7 @@ Spotless will attempt to apply line endings per-OS, which means Git diffs will b
 
 - [Python 3.9 or higher](https://www.python.org/)
 
-You can install [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst) by typing ``pip3 install wpiformat`` into a terminal or command prompt.
+You can install [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.md) by typing ``pip3 install wpiformat`` into a terminal or command prompt.
 
 ### Usage
 
