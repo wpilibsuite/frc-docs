@@ -157,6 +157,7 @@ linkcheck_ignore = [
     r".*knowledge.ni.com.*",
     r".*reduxrobotics.com.*",
     r".*digilent.com.*",
+    r".*digilentinc.com.*",
     r".*electrodragon.com.*",
 ]
 
