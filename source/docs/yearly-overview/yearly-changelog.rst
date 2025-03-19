@@ -84,6 +84,7 @@ Supported Operating Systems and Architectures:
 - DataLog: Add last value and change detection
 - DataLogManager: Fix behavior when low on space
 - Epilogue: Autogenerate nicer data names by default, not just raw element names
+- 2025.3.2: Epilogue: Make nonloggable type warnings configurable
 
 #### Hardware interfaces
 
@@ -132,6 +133,13 @@ Supported Operating Systems and Architectures:
 - 2025.3.1: Add Pose2d and Pose3d RotateAround
 - 2025.3.1: Fix infinite loop in ArmFeedforward::Calculate(xₖ, vₖ, vₖ₊₁)
 - 2025.3.1: Add setters for Feedforward gains
+- 2025.3.2: Make LinearSystemSim setState() update output
+- 2025.3.2: Fix another infinite loop in ArmFeedforward
+- 2025.3.2: Add Translation2d/Translation3d slew rate limiter
+- 2025.3.2: Fix feedforward returning NaN when kᵥ = 0
+- 2025.3.2: Add Debouncer type and time setters
+- 2025.3.2: Fix singularities in Ellipse2d::Nearest()
+- 2025.3.2: Fix UnscentedKalmanFilter and improve math docs
 
 ### Simulation
 
@@ -208,6 +216,7 @@ Supported Operating Systems and Architectures:
 - Fix minimum widget width
 - 2025.2.1: Add 2025 field image
 - 2025.2.1: Make picking a Field2d field JSON more obvious
+- 2025.3.2: Update default field to 2025 for Field2D
 
 ## GradleRIO
 
@@ -216,6 +225,7 @@ Supported Operating Systems and Architectures:
 - Add method to delete files on roboRIO that have been deleted in the deploy directory. :ref:`Set deleteOldFiles to true <docs/software/advanced-gradlerio/compiler-args:Deleting Unused Deploy Files>` in the frcStaticFileDeploy block
 - Gradle now consolidates Java compile errors at the bottom of the terminal to aid discoverability https://docs.gradle.org/8.11/release-notes.html#error-warning
 - 2025.3.1: Warn if multiple versions of the same vendordep is found
+- 2025.3.2: Disable code reboot while killing robot process, which was causing high CPU usage every other code reboot for some teams
 
 ## WPILib All in One Installer
 
@@ -246,6 +256,7 @@ Supported Operating Systems and Architectures:
 - Fix crash when all data is filtered out during analysis
 - Remove obsolete WPILib & CTRE presets, rename CTRE presets
 - Clamp feedback measurement delay to zero or higher
+- 2025.3.2: Refactor feedback analysis
 
 ## PathWeaver
 
