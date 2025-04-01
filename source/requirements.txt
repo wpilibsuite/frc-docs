@@ -91,7 +91,7 @@ sphinxcontrib-svg2pdfconverter==1.2.2 ; python_version >= "3.9" and python_versi
 sphinxcontrib-video==0.3.1 ; python_version >= "3.9" and python_version < "3.13"
 sphinxext-delta==0.3.1 ; python_version >= "3.9" and python_version < "3.13"
 sphinxext-mimic==0.1.1 ; python_version >= "3.9" and python_version < "3.13"
-sphinxext-opengraph==0.9.0 ; python_version >= "3.9" and python_version < "3.13"
+sphinxext-opengraph@git+https://github.com/wpilibsuite/sphinxext-opengraph.git@8c7a7cfa238684b3babd1d506d48177c067aabb7 ; python_version >= "3.9" and python_version < "3.13"
 sphinxext-photofinish==0.1.11 ; python_version >= "3.9" and python_version < "3.13"
 sphinxext-presentations==0.3.1 ; python_version >= "3.9" and python_version < "3.13"
 sphinxext-rediraffe==0.2.7 ; python_version >= "3.9" and python_version < "3.13"
