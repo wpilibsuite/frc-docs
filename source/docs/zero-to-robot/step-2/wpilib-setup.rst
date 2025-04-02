@@ -123,7 +123,7 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
 - Create VS Code archives to share with other computers/OSes for offline install
 
-  - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
+  - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing with the installer for future offline installs.
 
 Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~150MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
