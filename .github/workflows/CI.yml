@@ -94,15 +94,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Get changed files using git
+      - name: Get changed files using git (comparing with main)
         id: changed-files
         run: |
-          # If running on a PR, GITHUB_BASE_REF is set; otherwise, compare against the previous commit.
-          if [ -n "${GITHUB_BASE_REF}" ]; then
-            base_ref="${GITHUB_BASE_REF}"
-          else
-            base_ref=$(git rev-parse HEAD~1)
-          fi
+          # Ensure the main branch is fetched
+          git fetch origin main
+          base_ref="origin/main"
           echo "Using base ref: ${base_ref}"
           changed_files=$(git diff --name-only "$base_ref" HEAD)
           echo "Changed files: $changed_files"
