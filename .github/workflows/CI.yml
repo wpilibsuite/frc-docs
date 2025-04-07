@@ -88,37 +88,40 @@ jobs:
       run: |
         sphinx-build -D language=es -b html . _build/html
 
-  #link-check-diff:
-  #  # This job is sourced from https://github.com/aiven/devportal/blob/main/.github/workflows/linkcheck-changed-files.yaml
-  #  # It is CC 4.0 I licensed: https://creativecommons.org/licenses/by/4.0/
-  #  # Changes have been made.
-  #  runs-on: ubuntu-22.04
-  #  steps:
-  #    - uses: actions/checkout@v4
-  #      with:
-  #        fetch-depth: 0
-  #    - name: Get changed files
-  #      id: changed-files
-  #      uses: tj-actions/changed-files@v41
-  #    - uses: actions/setup-python@v5
-  #      with:
-  #        python-version: 3.9
-  #    - name: Install Dependencies
-  #      run: pip install -r source/requirements.txt
-  #    - name: Run linkcheck on .rst files
-  #      run: |
-  #        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-  #          if [ "${file: -4}" == ".rst" ]
-  #            then
-  #              var="$var $file"
-  #          fi
-  #        done
-  #        if [ -z "$var" ]
-  #        then
-  #              echo "No *.rst changed files to check."
-  #        else
-  #              make BUILDER_ARGS="$var" linkcheck
-  #        fi
+  link-check-diff:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Get changed files using git (comparing with main)
+        id: changed-files
+        run: |
+          # Ensure the main branch is fetched
+          git fetch origin main
+          base_ref="origin/main"
+          echo "Using base ref: ${base_ref}"
+          changed_files=$(git diff --name-only "$base_ref" HEAD)
+          echo "Changed files: $changed_files"
+          # Set the output variable using the new GITHUB_OUTPUT file method
+          echo "all_changed_files=$changed_files" >> $GITHUB_OUTPUT
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.9
+      - name: Install Dependencies
+        run: pip install -r source/requirements.txt
+      - name: Run linkcheck on .rst files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if [ "${file: -4}" == ".rst" ]; then
+              var="$var $file"
+            fi
+          done
+          if [ -z "$var" ]; then
+            echo "No *.rst changed files to check."
+          else
+            make BUILDER_ARGS="$var" linkcheck
+          fi
         
   check-linting:
     runs-on: ubuntu-22.04
