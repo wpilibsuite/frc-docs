@@ -2,6 +2,8 @@
 
 Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch.
 
+.. tip:: All information here is also applicable to creating robot programs using the standalone utility found in your `$HOME/wpilib/2025/utility/wpilibutility`.
+
 ## Choosing a Base Class
 
 To start a project using one of the WPILib robot program templates, users must first choose a base class for their robot.  Users subclass these base classes to create their primary :code:`Robot` class, which controls the main flow of the robot program.  There are various choices available for the base class:
