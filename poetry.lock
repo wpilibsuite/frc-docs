@@ -2283,17 +2283,21 @@ sphinx = ">=3.0"
 
 [[package]]
 name = "sphinxext-opengraph"
-version = "0.9.0"
+version = "0.10.0"
 description = "Sphinx Extension to enable OGP support"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "sphinxext-opengraph-0.9.0.tar.gz", hash = "sha256:4e57e25b6d56f47b9c06a5a5d68a2a00ed3577c8a39e459b52118c6bfe5e8c8b"},
-    {file = "sphinxext_opengraph-0.9.0-py3-none-any.whl", hash = "sha256:ab1eb2ffb531fb85b695e719dba7b0245b0643f6b6c0d1cc258d15a81e72a9f1"},
+    {file = "sphinxext_opengraph-0.10.0-py3-none-any.whl", hash = "sha256:8afd33f96a02d9506d9dc8f284840888ca8948482ac93015a68d88493df43712"},
+    {file = "sphinxext_opengraph-0.10.0.tar.gz", hash = "sha256:5781149c1dfc306c3701661acdd02c512c2e6f21d2253487bf0b39639017fc24"},
 ]
 
 [package.dependencies]
-sphinx = ">=4.0"
+Sphinx = ">=6.0"
+
+[package.extras]
+rtd = ["furo (>=2024)", "sphinx (>=8.1.0,<8.2.0)", "sphinx-design"]
+social-cards = ["matplotlib (>=3)"]
 
 [[package]]
 name = "sphinxext-photofinish"
@@ -2570,4 +2574,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "3596e44825e1c691f494b1e65d2a1d9e103a208c0d08bc84b66f3cd9605d585d"
+content-hash = "15364032486e4e63bcc64f77af5d81898fc51b8fce33612ef7ae764a0a9ec435"
