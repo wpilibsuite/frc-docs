@@ -2234,13 +2234,13 @@ cairosvg = ["cairosvg (>=1.0)"]
 
 [[package]]
 name = "sphinxcontrib-video"
-version = "0.3.1"
+version = "0.4.1"
 description = "Allows embedding of HTML5 videos in sphinx"
 optional = false
 python-versions = ">=3.6.9"
 files = [
-    {file = "sphinxcontrib_video-0.3.1-py3-none-any.whl", hash = "sha256:953450be3491241c7de889eeba15cd08fc4abab558963694154446b1167264c7"},
-    {file = "sphinxcontrib_video-0.3.1.tar.gz", hash = "sha256:d574467ebc36cb71af0326048dc96bb8dc7c73608f056de90f0df178fd80ac31"},
+    {file = "sphinxcontrib_video-0.4.1-py3-none-any.whl", hash = "sha256:d63ec68983dac36960557973281a616b5d9e68838369763313fc80533b1ad774"},
+    {file = "sphinxcontrib_video-0.4.1.tar.gz", hash = "sha256:75a033e71b7de124cc5902430b7ba818a1c6c377be6401d07e9f2329a95d5ca4"},
 ]
 
 [package.dependencies]
@@ -2248,7 +2248,7 @@ sphinx = "*"
 
 [package.extras]
 dev = ["mypy", "nox", "pre-commit"]
-doc = ["pydata-sphinx-theme", "sphinx-design"]
+doc = ["pydata-sphinx-theme", "sphinx (<8)", "sphinx-design"]
 test = ["beautifulsoup4", "defusedxml", "pytest", "pytest-cov", "pytest-regressions"]
 
 [[package]]
@@ -2574,4 +2574,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "15364032486e4e63bcc64f77af5d81898fc51b8fce33612ef7ae764a0a9ec435"
+content-hash = "10fedf0cf651b35d6010cc7f1178403b236834d14ad10e11370199381ccf3d5f"
