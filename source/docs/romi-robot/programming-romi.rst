@@ -20,6 +20,10 @@ This will bring up the "New Project Creator Window". From here, click on "Select
 
 .. image:: images/programming-romi/romi-vscode-select-example.png
 
+Select the programming language you want to use:
+
+.. image:: images/programming-romi/romi-vscode-select-language.png
+
 Next, a list of examples will appear. Scroll through the list to find the "RomiReference" example:
 
 .. image:: images/programming-romi/romi-vscode-reference-example.png

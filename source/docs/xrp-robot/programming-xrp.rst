@@ -20,6 +20,10 @@ This will bring up the "New Project Creator Window". From here, click on "Select
 
 .. image:: images/programming-xrp/xrp-vscode-select-example.png
 
+Select the programming language you want to use:
+
+.. image:: images/programming-xrp/xrp-vscode-select-language.png
+
 Next, a list of examples will appear. Scroll through the list to find the "XRP Reference" example:
 
 .. image:: images/programming-xrp/xrp-vscode-reference-example.png
