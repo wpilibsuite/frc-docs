@@ -18,7 +18,7 @@ The following program starts automatic capture of a USB camera like the Microsof
       :language: c++
       :lines: 7-8, 16-18, 20, 25-31
 
-   .. rli:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/QuickVision/robot.py
+   .. rli:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/QuickVision/robot.py
       :language: python
       :lines: 8-20
       :linenos:
@@ -69,14 +69,14 @@ In the following example a thread created in ``Robot`` constructor gets the Came
 
       Here's what your ``robot.py`` needs to contain to launch the image processing process:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/IntermediateVision/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/IntermediateVision/robot.py
          :language: python
          :lines: 8-17
          :linenos:
 
       The ``launch("vision.py")`` function says to launch ``vision.py`` and call the ``run`` function in that file. Here's what is in ``vision.py``:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/IntermediateVision/vision.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/IntermediateVision/vision.py
          :language: python
          :lines: 12-55
          :linenos:

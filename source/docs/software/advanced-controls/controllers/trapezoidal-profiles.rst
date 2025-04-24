@@ -172,7 +172,7 @@ A more complete example of ``TrapezoidProfile`` usage is provided in the Elevato
     :lines: 5-
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/ElevatorTrapezoidProfile/robot.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/ElevatorTrapezoidProfile/robot.py
     :language: python
     :lines: 8-
     :lineno-match:
