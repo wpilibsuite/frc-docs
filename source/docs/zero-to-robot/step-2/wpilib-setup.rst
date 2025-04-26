@@ -1,6 +1,5 @@
 # WPILib Installation Guide
-
-This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can skip to :doc:`python-setup`. Additionally, the below tutorial shows Windows 11, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
+This guide will walk you through installing the WPILib development environment on your computer. This includes the WPILib tools, Visual Studio Code, and all dependencies needed to develop and deploy code to the roboRIO. WPILib Installation is required for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can do a full install per these instructions to get a Visual Studio Code environment with some python extensions, or do a tools only installation to install dashboards such as Shuffleboard and Elastic. Python teams additionally need to follow the :doc:`python-setup`.
 
 ## Prerequisites
 
@@ -14,6 +13,8 @@ Supported Operating Systems and Architectures:
 .. note:: [Windows 10 support from Microsoft will end in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
 
 .. note:: C++ compilation is memory intensive. A minimum of 32 GB of RAM is recommended for C++ teams.
+
+This tutorial shows Windows 11, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
@@ -95,8 +96,8 @@ Upon opening the installer, you'll be presented with the below screen. Go ahead 
 
 This showcases a list of options included with the WPILib installation.
 
-- :guilabel:`Tools Only` installs just the WPILib tools (Pathweaver, Shuffleboard, RobotBuilder, SysId, Glass, and OutlineViewer) and JDK.
-- :guilabel:`Everything` installs the full development environment (VS Code, extensions, all dependencies), WPILib tools, and JDK.
+- :guilabel:`Tools Only` installs just the WPILib tools (:doc:`SmartDashboard </docs/software/dashboards/smartdashboard/index>`, :doc:`Shuffleboard </docs/software/dashboards/shuffleboard/index>`, :doc:`RobotBuilder </docs/software/wpilib-tools/robotbuilder/index>`, :doc:`OutlineViewer </docs/software/wpilib-tools/outlineviewer/index>`, :doc:`PathWeaver </docs/software/pathplanning/pathweaver/index>`, :doc:`Glass </docs/software/dashboards/glass/index>`, :doc:`SysId </docs/software/advanced-controls/system-identification/index>`, :ref:`Data Log Tool <docs/software/telemetry/datalog-download:Managing Data Logs with the DataLogTool>`, :doc:`roboRIO Team Number Setter </docs/software/wpilib-tools/roborio-team-number-setter/index>`, :doc:`AdvantageScope </docs/software/dashboards/advantagescope>`, :doc:`Elastic </docs/software/dashboards/elastic>`, :doc:`WPIcal </docs/software/wpilib-tools/wpical/index>`) and JDK.
+- :guilabel:`Everything` installs the full development environment (VS Code, extensions, all dependencies, C++ compiler and JDK), WPILib tools, and documentation
 
 You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access. :guilabel:`Install for all Users` is not an option for macOS and Linux.
 
