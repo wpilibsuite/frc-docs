@@ -37,17 +37,13 @@ A quadrature encoder can be instantiated as follows:
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an encoder on DIO pins 0 and 1
-    // Defaults to 4X decoding and non-inverted
-    Encoder encoder = new Encoder(0, 1);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 16-18
 
-    ```c++
-    // Initializes an encoder on DIO pins 0 and 1
-    // Defaults to 4X decoding and non-inverted
-    frc::Encoder encoder{0, 1};
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 56-58
 
 #### Decoding Type
 
@@ -61,17 +57,13 @@ The WPILib :code:`Encoder` class can decode encoder signals in three different m
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an encoder on DIO pins 0 and 1
-    // 2X encoding and non-inverted
-    Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 20-22
 
-    ```c++
-    // Initializes an encoder on DIO pins 0 and 1
-    // 2X encoding and non-inverted
-    frc::Encoder encoder{0, 1, false, frc::Encoder::EncodingType::k2X};
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 60-62
 
 ### Configuring Quadrature Encoder Parameters
 
@@ -83,35 +75,13 @@ The :code:`Encoder` class offers a number of configuration methods:
 
 .. tab-set-code::
 
-    ```java
-    // Configures the encoder to return a distance of 4 for every 256 pulses
-    // Also changes the units of getRate
-    encoder.setDistancePerPulse(4.0/256.0);
-    // Configures the encoder to consider itself stopped after .1 seconds
-    encoder.setMaxPeriod(0.1);
-    // Configures the encoder to consider itself stopped when its rate is below 10
-    encoder.setMinRate(10);
-    // Reverses the direction of the encoder
-    encoder.setReverseDirection(true);
-    // Configures an encoder to average its period measurement over 5 samples
-    // Can be between 1 and 127 samples
-    encoder.setSamplesToAverage(5);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 26-37
 
-    ```c++
-    // Configures the encoder to return a distance of 4 for every 256 pulses
-    // Also changes the units of getRate
-    encoder.SetDistancePerPulse(4.0/256.0);
-    // Configures the encoder to consider itself stopped after .1 seconds
-    encoder.SetMaxPeriod(0.1);
-    // Configures the encoder to consider itself stopped when its rate is below 10
-    encoder.SetMinRate(10);
-    // Reverses the direction of the encoder
-    encoder.SetReverseDirection(true);
-    // Configures an encoder to average its period measurement over 5 samples
-    // Can be between 1 and 127 samples
-    encoder.SetSamplesToAverage(5);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 20-32
 
 ### Reading information from Quadrature Encoders
 
@@ -125,15 +95,13 @@ Users can obtain the total distance traveled by the encoder with the :code:`getD
 
 .. tab-set-code::
 
-    ```java
-    // Gets the distance traveled
-    encoder.getDistance();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 44-45
 
-    ```c++
-    // Gets the distance traveled
-    encoder.GetDistance();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 36-37
 
 #### Rate
 
@@ -143,15 +111,13 @@ Users can obtain the current rate of change of the encoder with the :code:`getRa
 
 .. tab-set-code::
 
-    ```java
-    // Gets the current rate of the encoder
-    encoder.getRate();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 47-48
 
-    ```c++
-    // Gets the current rate of the encoder
-    encoder.GetRate();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 39-40
 
 #### Stopped
 
@@ -159,15 +125,13 @@ Users can obtain whether the encoder is stationary with the :code:`getStopped()`
 
 .. tab-set-code::
 
-    ```java
-    // Gets whether the encoder is stopped
-    encoder.getStopped();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 50-51
 
-    ```c++
-    // Gets whether the encoder is stopped
-    encoder.GetStopped();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 42-43
 
 #### Direction
 
@@ -175,15 +139,13 @@ Users can obtain the direction in which the encoder last moved with the :code:`g
 
 .. tab-set-code::
 
-    ```java
-    // Gets the last direction in which the encoder moved
-    encoder.getDirection();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 53-54
 
-    ```c++
-    // Gets the last direction in which the encoder moved
-    encoder.GetDirection();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 45-46
 
 #### Period
 
@@ -191,15 +153,13 @@ Users can obtain the period of the encoder pulses (in seconds) with the :code:`g
 
 .. tab-set-code::
 
-    ```java
-    // Gets the current period of the encoder
-    encoder.getPeriod();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 56-57
 
-    ```c++
-    // Gets the current period of the encoder
-    encoder.GetPeriod();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 48-49
 
 ### Resetting a Quadrature Encoder
 
@@ -207,15 +167,13 @@ To reset a quadrature encoder to a distance reading of zero, call the :code:`res
 
 .. tab-set-code::
 
-    ```java
-    // Resets the encoder to read a distance of zero
-    encoder.reset();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 59-60
 
-    ```c++
-    // Resets the encoder to read a distance of zero
-    encoder.Reset();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 51-52
 
 ## Duty Cycle Encoders - The :code:`DutyCycleEncoder` class
 
