@@ -197,15 +197,13 @@ A duty cycle encoder can be instantiated as follows:
 
 .. tab-set-code::
 
-    ```java
-    // Initializes a duty cycle encoder on DIO pins 0
-    DutyCycleEncoder encoder = new DutyCycleEncoder(0);
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+      :language: java
+      :lines: 15-16
 
-    ```c++
-    // Initializes a duty cycle encoder on DIO pins 0
-    frc::DutyCycleEncoder encoder{0};
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 27-28
 
 ### Configuring Duty Cycle Encoder Range and Zero
 
@@ -217,19 +215,13 @@ The zero position is useful for ensuring that the measured rotation corresponds 
 
 .. tab-set-code::
 
-    ```java
-    // Initializes a duty cycle encoder on DIO pins 0 to return a value of 4 for
-    // a full rotation, with the encoder reporting 0 half way through rotation (2
-    // out of 4)
-    DutyCycleEncoder encoder = new DutyCycleEncoder(0, 4.0, 2.0);
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+      :language: java
+      :lines: 18-21
 
-    ```c++
-    // Initializes a duty cycle encoder on DIO pins 0 to return a value of 4 for
-    // a full rotation, with the encoder reporting 0 half way through rotation (2
-    // out of 4)
-    frc::DutyCycleEncoder encoder{0, 4.0, 2.0};
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 30-33
 
 ### Reading Rotation from Duty Cycle Encoders
 
@@ -239,15 +231,13 @@ Users can obtain the rotation measured by the encoder with the :code:`get()` met
 
 .. tab-set-code::
 
-    ```java
-    // Gets the rotation
-    encoder.get();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+      :language: java
+      :lines: 28-29
 
-    ```c++
-    // Gets the rotation
-    encoder.Get();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 19-20
 
 ### Detecting a Duty Cycle Encoder is Connected
 
@@ -255,15 +245,13 @@ As duty cycle encoders output a continuous set of pulses, it is possible to dete
 
 .. tab-set-code::
 
-    ```java
-    // Gets if the encoder is connected
-    encoder.isConnected();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+      :language: java
+      :lines: 31-32
 
-    ```c++
-    // Gets if the encoder is connected
-    encoder.IsConnected();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 22-23
 
 ## Analog Encoders - The :code:`AnalogEncoder` Class
 
