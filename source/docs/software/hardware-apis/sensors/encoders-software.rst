@@ -269,15 +269,13 @@ An analog encoder can be instantiated as follows:
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an analog encoder on Analog Input pin 0
-    AnalogEncoder encoder = new AnalogEncoder(0);
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
+      :language: java
+      :lines: 15-16
 
-    ```c++
-    // Initializes an analog encoder on Analog Input pin 0
-    frc::AnalogEncoder encoder{0};
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 24-25
 
 ### Configuring Analog Encoder Range and Zero
 
@@ -289,19 +287,13 @@ The zero position is useful for ensuring that the measured rotation corresponds 
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an analog encoder on DIO pins 0 to return a value of 4 for
-    // a full rotation, with the encoder reporting 0 half way through rotation (2
-    // out of 4)
-    AnalogEncoder encoder = new AnalogEncoder(0, 4.0, 2.0);
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
+      :language: java
+      :lines: 18-21
 
-    ```c++
-    // Initializes an analog encoder on DIO pins 0 to return a value of 4 for
-    // a full rotation, with the encoder reporting 0 half way through rotation (2
-    // out of 4)
-    frc::AnalogEncoder encoder{0, 4.0, 2.0};
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 27-30
 
 ### Reading Rotation from Analog Encoders
 
@@ -311,15 +303,13 @@ Users can obtain the rotation measured by the encoder with the :code:`get()` met
 
 .. tab-set-code::
 
-    ```java
-    // Gets the rotation
-    encoder.get();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
+      :language: java
+      :lines: 28-29
 
-    ```c++
-    // Gets the rotation
-    encoder.Get();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 19-20
 
 ## Using Encoders in Code
 
@@ -333,69 +323,14 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
 
 .. tab-set-code::
 
-    ```java
-    // Creates an encoder on DIO ports 0 and 1
-    Encoder encoder = new Encoder(0, 1);
-    // Initialize motor controllers and drive
-    Spark leftLeader = new Spark(0);
-    Spark leftFollower = new Spark(1);
-    Spark rightLeader = new Spark(2);
-    Spark rightFollower = new Spark(3);
-    DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoderdrive/Robot.java
+      :language: java
+      :lines: 17-47
 
-    public Robot() {
-        // Configures the encoder's distance-per-pulse
-        // The robot moves forward 1 foot per encoder rotation
-        // There are 256 pulses per encoder rotation
-        encoder.setDistancePerPulse(1./256.);
-        // Invert the right side of the drivetrain. You might have to invert the other side
-        rightLeader.setInverted(true);
-        // Configure the followers to follow the leaders
-        leftLeader.addFollower(leftFollower);
-        rightLeader.addFollower(rightFollower);
-    }
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/EncoderDrive/cpp/Robot.cpp
+      :language: c++
+      :lines: 41-49, 18-38
 
-    @Override
-    public void autonomousPeriodic() {
-        // Drives forward at half speed until the robot has moved 5 feet, then stops:
-        if(encoder.getDistance() < 5) {
-            drive.tankDrive(0.5, 0.5);
-        } else {
-            drive.tankDrive(0, 0);
-        }
-    }
-    ```
-
-    ```c++
-     // Creates an encoder on DIO ports 0 and 1.
-    frc::Encoder encoder{0, 1};
-    // Initialize motor controllers and drive
-    frc::Spark leftLeader{0};
-    frc::Spark leftFollower{1};
-    frc::Spark rightLeader{2};
-    frc::Spark rightFollower{3};
-    frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
-                                 [&](double output) { rightLeader.Set(output); }};
-        Robot::Robot() {
-        // Configures the encoder's distance-per-pulse
-        // The robot moves forward 1 foot per encoder rotation
-        // There are 256 pulses per encoder rotation
-        encoder.SetDistancePerPulse(1.0/256.0);
-        // Invert the right side of the drivetrain. You might have to invert the other side
-        rightLeader.SetInverted(true);
-        // Configure the followers to follow the leaders
-        leftLeader.AddFollower(leftFollower);
-        rightLeader.AddFollower(rightFollower);
-    }
-    void Robot::AutonomousPeriodic() {
-        // Drives forward at half speed until the robot has moved 5 feet, then stops:
-        if(encoder.GetDistance() < 5) {
-            drive.TankDrive(0.5, 0.5);
-        } else {
-            drive.TankDrive(0, 0);
-        }
-    }
-    ```
 
 ### Homing a Mechanism
 
@@ -405,37 +340,11 @@ Since quadrature encoders measure *relative* distance, it is often important to 
 
 .. tab-set-code::
 
-    ```java
-    Encoder encoder = new Encoder(0, 1);
-    Spark spark = new Spark(0);
-    // Limit switch on DIO 2
-    DigitalInput limit = new DigitalInput(2);
-    public void autonomousPeriodic() {
-        // Runs the motor backwards at half speed until the limit switch is pressed
-        // then turn off the motor and reset the encoder
-        if(!limit.get()) {
-            spark.set(-0.5);
-        } else {
-            spark.set(0);
-            encoder.reset();
-        }
-    }
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoderhoming/Robot.java
+      :language: java
+      :lines: 17-34
 
-    ```c++
-    frc::Encoder encoder{0,1};
-    frc::Spark spark{0};
-    // Limit switch on DIO 2
-    frc::DigitalInput limit{2};
-    void AutonomousPeriodic() {
-        // Runs the motor backwards at half speed until the limit switch is pressed
-        // then turn off the motor and reset the encoder
-        if(!limit.Get()) {
-            spark.Set(-0.5);
-        } else {
-            spark.Set(0);
-            encoder.Reset();
-        }
-    }
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/EncoderHoming/cpp/Robot.cpp
+      :language: c++
+      :lines: 30-33, 18-27
 
