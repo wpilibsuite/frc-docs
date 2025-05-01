@@ -64,7 +64,7 @@ This section is used for configuring the VH-109 radio outside of competition. At
 
 ## Access Point Radio Configuration
 
-On the Access Point Radio, follow all of the same steps as the robot radio configuration instead choosing :guilabel:`Access Point Mode` at the top of the configuration page. Ensure you use the exact same settings for tean number, suffix, and WPA/SAE keys.
+On the Access Point Radio, follow all of the same steps as the robot radio configuration instead choosing :guilabel:`Access Point Mode` at the top of the configuration page. Ensure you use the exact same settings for team number, suffix, and WPA/SAE keys.
 
 ## Alternative Setup Discussion
 
