@@ -37,7 +37,7 @@ We are adding a few arguments here. In order:
 * Set the remote debugging port to 1198
 * Allow listening from remote targets
 * Disable SSL authentication being required
-* Set the hostname to the roboRIOs team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`)
+* Set the hostname to the roboRIOs team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Address Notation>`)
 
 .. important:: The hostname when connected via USB-B should be ``172.22.11.2``.
 
