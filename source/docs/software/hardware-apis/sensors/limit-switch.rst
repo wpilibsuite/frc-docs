@@ -8,62 +8,11 @@ Limit switches can have "normally open" or "normally closed" outputs.  This will
 
 .. tab-set-code::
 
-   ```java
-   DigitalInput toplimitSwitch = new DigitalInput(0);
-   DigitalInput bottomlimitSwitch = new DigitalInput(1);
-   PWMVictorSPX motor = new PWMVictorSPX(0);
-   Joystick joystick = new Joystick(0);
-   @Override
-   public void teleopPeriodic() {
-       setMotorSpeed(joystick.getRawAxis(2));
-   }
-   public void setMotorSpeed(double speed) {
-       if (speed > 0) {
-           if (toplimitSwitch.get()) {
-               // We are going up and top limit is tripped so stop
-               motor.set(0);
-           } else {
-               // We are going up but top limit is not tripped so go at commanded speed
-               motor.set(speed);
-           }
-       } else {
-           if (bottomlimitSwitch.get()) {
-               // We are going down and bottom limit is tripped so stop
-               motor.set(0);
-           } else {
-               // We are going down but bottom limit is not tripped so go at commanded speed
-               motor.set(speed);
-           }
-       }
-   }
-   ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/limitswitch/Robot.java
+      :language: java
+      :lines: 17-50
 
-   ```c++
-   frc::DigitalInput toplimitSwitch {0};
-   frc::DigitalInput bottomlimitSwitch {1};
-   frc::PWMVictorSPX motor {0};
-   frc::Joystick joystick {0};
-   void TeleopPeriodic() {
-       SetMotorSpeed(joystick.GetRawAxis(2));
-   }
-   void SetMotorSpeed(double speed) {
-       if (speed > 0) {
-           if (toplimitSwitch.Get()) {
-               // We are going up and top limit is tripped so stop
-               motor.Set(0);
-           } else {
-               // We are going up but top limit is not tripped so go at commanded speed
-               motor.Set(speed);
-           }
-       } else {
-           if (bottomlimitSwitch.Get()) {
-               // We are going down and bottom limit is tripped so stop
-               motor.Set(0);
-           } else {
-               // We are going down but bottom limit is not tripped so go at commanded speed
-               motor.Set(speed);
-           }
-       }
-   }
-   ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibcExamples/src/main/cpp/snippets/LimitSwitch/cpp/Robot.cpp
+      :language: c++
+      :lines: 40-43, 17-37
 
