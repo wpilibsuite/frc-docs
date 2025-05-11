@@ -40,16 +40,3 @@ frcJava(getArtifactClass('FRCJavaArtifact')) {
   jvmArgs.add("-XX:+DisableExplicitGC")
 }
 ```
-
-## Deleting Unused Deploy Files
-
-By default the `src/main/deploy` directory in your project is transferred to the roboRIO when code is deployed.  It is initiated by this section of the `build.gradle` file.
-
-.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/refs/tags/v2025.1.1-beta-3/vscode-wpilib/resources/gradle/java/build.gradle
-   :language: groovy
-   :lines: 32-38
-   :lineno-match:
-
-This will overwrite any duplicate files found in the `/home/lvuser/deploy` directory on the RIO and copy over any additional not present there.  If `deleteOldFiles` is false it will not remove any files no longer present in the project deploy directory.  Changing it to `true` helps prevent programs like :doc:`Choreo </docs/software/pathplanning/choreo/index>` and [PathPlanner](https://github.com/mjansen4857/pathplanner) from getting confused by files that were deleted locally but still exist on the roboRIO.
-
-If you want to manage the roboRIO files directly, the :doc:`FTP documentation </docs/software/roborio-info/roborio-ftp>` provides one method to do so.

@@ -12,7 +12,7 @@
 
 Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This site contains everything you need to know for programming a competition robot!
 
-Community translations can be found in a variety of languages in the bottom-left menu.
+Community translations can be found in a variety of languages in the menu towards the bottom-right of the screen.
 
 .. grid:: 1 2 2 2
    :gutter: 3

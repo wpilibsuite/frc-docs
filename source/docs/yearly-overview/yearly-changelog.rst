@@ -222,7 +222,7 @@ Supported Operating Systems and Architectures:
 
 - Use Gradle 8.11
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
-- Add method to delete files on roboRIO that have been deleted in the deploy directory. :ref:`Set deleteOldFiles to true <docs/software/advanced-gradlerio/compiler-args:Deleting Unused Deploy Files>` in the frcStaticFileDeploy block
+- Add method to delete files on roboRIO that have been deleted in the deploy directory. :ref:`Set deleteOldFiles to true <docs/software/basic-programming/deploy-directory:Deleting Unused Deploy Files>` in the frcStaticFileDeploy block
 - Gradle now consolidates Java compile errors at the bottom of the terminal to aid discoverability https://docs.gradle.org/8.11/release-notes.html#error-warning
 - 2025.3.1: Warn if multiple versions of the same vendordep is found
 - 2025.3.2: Disable code reboot while killing robot process, which was causing high CPU usage every other code reboot for some teams

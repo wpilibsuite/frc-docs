@@ -86,12 +86,12 @@ The ``LinearSystem`` class contains methods for easily creating state-space syst
 
    .. tab-item:: Python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/StateSpaceFlywheelSysId/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/StateSpaceFlywheelSysId/robot.py
          :language: python
          :lines: 23-27
          :lineno-match:
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/StateSpaceFlywheelSysId/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/StateSpaceFlywheelSysId/robot.py
          :language: python
          :lines: 37-48
          :lineno-match:
@@ -133,12 +133,12 @@ The ``LinearSystem`` class contains methods to easily create a model of a flywhe
    .. tab-item:: Python
       :sync: python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/StateSpaceFlywheel/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/StateSpaceFlywheel/robot.py
          :language: python
          :lines: 22-26
          :lineno-match:
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/StateSpaceFlywheel/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/StateSpaceFlywheel/robot.py
          :language: python
          :lines: 38-47
          :lineno-match:
@@ -182,7 +182,7 @@ Because the feedback controller computes error using the :term:`x-hat` estimated
    .. tab-item:: Python
       :sync: python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/StateSpaceFlywheel/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/StateSpaceFlywheel/robot.py
          :language: python
          :lines: 49-55
          :lineno-match:
@@ -223,7 +223,7 @@ Much like ``SimpleMotorFeedforward`` can be used to generate feedforward voltage
    .. tab-item:: Python
       :sync: python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/StateSpaceFlywheel/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/StateSpaceFlywheel/robot.py
          :language: python
          :lines: 57-67
          :lineno-match:
@@ -258,7 +258,7 @@ LinearSystemLoop combines our system, controller, and observer that we created e
    .. tab-item:: Python
       :sync: python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/StateSpaceFlywheel/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/StateSpaceFlywheel/robot.py
          :language: python
          :lines: 69-72
          :lineno-match:
@@ -291,7 +291,7 @@ Once we have our ``LinearSystemLoop``, the only thing left to do is actually run
    .. tab-item:: Python
       :sync: python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/4e7b525b47246e55ad617a66f2c3d9fda34484a3/StateSpaceFlywheel/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/StateSpaceFlywheel/robot.py
          :language: python
          :lines: 88-110
          :lineno-match:

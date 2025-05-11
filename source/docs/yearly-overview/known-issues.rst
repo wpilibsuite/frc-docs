@@ -137,7 +137,7 @@ There are two known workarounds:
 - Smartdashbard will crash on start-up
 - Robot Simulation will crash on start-up
 
-**Solution:** Install the [Media Feature Pack](https://www.microsoft.com/en-us/software-download/mediafeaturepack)
+**Solution:** Install the [Media Feature Pack](https://support.microsoft.com/en-us/topic/media-feature-pack-list-for-windows-n-editions-c1c6fffa-d052-8338-7a79-a4bb980a700a)
 
 ### Python - CameraServer/cscore runs out of memory on roboRIO 1
 

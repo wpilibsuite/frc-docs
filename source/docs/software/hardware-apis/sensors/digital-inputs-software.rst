@@ -14,15 +14,13 @@ A :code:`DigitalInput` can be initialized as follows:
 
 .. tab-set-code::
 
-    ```java
-    // Initializes a DigitalInput on DIO 0
-    DigitalInput input = new DigitalInput(0);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/digitalinput/Robot.java
+      :language: java
+      :lines: 15-16
 
-    ```c++
-    // Initializes a DigitalInput on DIO 0
-    frc::DigitalInput input{0};
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibcExamples/src/main/cpp/snippets/DigitalInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 21-22
 
 ### Reading the value of the DigitalInput
 
@@ -30,15 +28,13 @@ The state of the :code:`DigitalInput` can be polled with the :code:`get` method:
 
 .. tab-set-code::
 
-    ```java
-    // Gets the value of the digital input.  Returns true if the circuit is open.
-    input.get();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/digitalinput/Robot.java
+      :language: java
+      :lines: 20-21
 
-    ```c++
-    // Gets the value of the digital input.  Returns true if the circuit is open.
-    input.Get();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibcExamples/src/main/cpp/snippets/DigitalInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 15-17
 
 ## Creating a DigitalInput from an AnalogInput
 
@@ -50,25 +46,13 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an AnalogTrigger on port 0
-    AnalogTrigger trigger0 = new AnalogTrigger(0);
-    // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
-    AnalogInput input = new AnalogInput(1);
-    input.setAverageBits(2);
-    // Initializes an AnalogTrigger using the above input
-    AnalogTrigger trigger1 = new AnalogTrigger(input);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogtrigger/Robot.java
+      :language: java
+      :lines: 16-22
 
-    ```c++
-    // Initializes an AnalogTrigger on port 0
-    frc::AnalogTrigger trigger0{0};
-    // Initializes an AnalogInput on port 1 and enables 2-bit oversampling
-    frc::AnalogInput input{1};
-    input.SetAverageBits(2);
-    // Initializes an AnalogTrigger using the above input
-    frc::AnalogTrigger trigger1{input};
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibcExamples/src/main/cpp/snippets/AnalogTrigger/cpp/Robot.cpp
+      :language: c++
+      :lines: 27-33
 
 ### Setting the trigger points
 
@@ -78,19 +62,13 @@ To convert the analog signal to a digital one, it is necessary to specify at wha
 
 .. tab-set-code::
 
-    ```java
-    // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
-    trigger.setLimitsRaw(1000, 3500);
-    // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
-    trigger.setLimitsVoltage(1.5, 4);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogtrigger/Robot.java
+      :language: java
+      :lines: 26-31
 
-    ```c++
-    // Sets the trigger to enable at a raw value of 3500, and disable at a value of 1000
-    trigger.SetLimitsRaw(1000, 3500);
-    // Sets the trigger to enable at a voltage of 4 volts, and disable at a value of 1.5 volts
-    trigger.SetLimitsVoltage(1.5, 4);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibcExamples/src/main/cpp/snippets/AnalogTrigger/cpp/Robot.cpp
+      :language: c++
+      :lines: 16-23
 
 ## Using DigitalInputs in code
 
@@ -98,38 +76,7 @@ As almost all switches on the robot will be used through a :code:`DigitalInput`.
 
 ### Limiting the motion of a mechanism
 
-Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| should be given some form of "limit switch" to prevent them from damaging themselves at the end of their range of motions.  A short example is given below:
-
-.. tab-set-code::
-
-    ```java
-    Spark spark = new Spark(0);
-    // Limit switch on DIO 2
-    DigitalInput limit = new DigitalInput(2);
-    public void autonomousPeriodic() {
-        // Runs the motor forwards at half speed, unless the limit is pressed
-        if(!limit.get()) {
-            spark.set(.5);
-        } else {
-            spark.set(0);
-        }
-    }
-    ```
-
-    ```c++
-    // Motor for the mechanism
-    frc::Spark spark{0};
-    // Limit switch on DIO 2
-    frc::DigitalInput limit{2};
-    void AutonomousPeriodic() {
-        // Runs the motor forwards at half speed, unless the limit is pressed
-        if(!limit.Get()) {
-            spark.Set(.5);
-        } else {
-            spark.Set(0);
-        }
-    }
-    ```
+Nearly all motorized mechanisms (such as arms and elevators) in FRC\ |reg| should be given some form of "limit switch" to prevent them from damaging themselves at the end of their range of motions. For an example of this, see :doc:`/docs/software/hardware-apis/sensors/limit-switch`.
 
 ### Homing a mechanism
 

@@ -37,17 +37,13 @@ A quadrature encoder can be instantiated as follows:
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an encoder on DIO pins 0 and 1
-    // Defaults to 4X decoding and non-inverted
-    Encoder encoder = new Encoder(0, 1);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 16-18
 
-    ```c++
-    // Initializes an encoder on DIO pins 0 and 1
-    // Defaults to 4X decoding and non-inverted
-    frc::Encoder encoder{0, 1};
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 56-58
 
 #### Decoding Type
 
@@ -61,17 +57,13 @@ The WPILib :code:`Encoder` class can decode encoder signals in three different m
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an encoder on DIO pins 0 and 1
-    // 2X encoding and non-inverted
-    Encoder encoder = new Encoder(0, 1, false, Encoder.EncodingType.k2X);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 20-22
 
-    ```c++
-    // Initializes an encoder on DIO pins 0 and 1
-    // 2X encoding and non-inverted
-    frc::Encoder encoder{0, 1, false, frc::Encoder::EncodingType::k2X};
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 60-62
 
 ### Configuring Quadrature Encoder Parameters
 
@@ -83,35 +75,13 @@ The :code:`Encoder` class offers a number of configuration methods:
 
 .. tab-set-code::
 
-    ```java
-    // Configures the encoder to return a distance of 4 for every 256 pulses
-    // Also changes the units of getRate
-    encoder.setDistancePerPulse(4.0/256.0);
-    // Configures the encoder to consider itself stopped after .1 seconds
-    encoder.setMaxPeriod(0.1);
-    // Configures the encoder to consider itself stopped when its rate is below 10
-    encoder.setMinRate(10);
-    // Reverses the direction of the encoder
-    encoder.setReverseDirection(true);
-    // Configures an encoder to average its period measurement over 5 samples
-    // Can be between 1 and 127 samples
-    encoder.setSamplesToAverage(5);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 26-37
 
-    ```c++
-    // Configures the encoder to return a distance of 4 for every 256 pulses
-    // Also changes the units of getRate
-    encoder.SetDistancePerPulse(4.0/256.0);
-    // Configures the encoder to consider itself stopped after .1 seconds
-    encoder.SetMaxPeriod(0.1);
-    // Configures the encoder to consider itself stopped when its rate is below 10
-    encoder.SetMinRate(10);
-    // Reverses the direction of the encoder
-    encoder.SetReverseDirection(true);
-    // Configures an encoder to average its period measurement over 5 samples
-    // Can be between 1 and 127 samples
-    encoder.SetSamplesToAverage(5);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 20-32
 
 ### Reading information from Quadrature Encoders
 
@@ -125,15 +95,13 @@ Users can obtain the total distance traveled by the encoder with the :code:`getD
 
 .. tab-set-code::
 
-    ```java
-    // Gets the distance traveled
-    encoder.getDistance();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 44-45
 
-    ```c++
-    // Gets the distance traveled
-    encoder.GetDistance();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 36-37
 
 #### Rate
 
@@ -143,15 +111,13 @@ Users can obtain the current rate of change of the encoder with the :code:`getRa
 
 .. tab-set-code::
 
-    ```java
-    // Gets the current rate of the encoder
-    encoder.getRate();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 47-48
 
-    ```c++
-    // Gets the current rate of the encoder
-    encoder.GetRate();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 39-40
 
 #### Stopped
 
@@ -159,15 +125,13 @@ Users can obtain whether the encoder is stationary with the :code:`getStopped()`
 
 .. tab-set-code::
 
-    ```java
-    // Gets whether the encoder is stopped
-    encoder.getStopped();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 50-51
 
-    ```c++
-    // Gets whether the encoder is stopped
-    encoder.GetStopped();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 42-43
 
 #### Direction
 
@@ -175,15 +139,13 @@ Users can obtain the direction in which the encoder last moved with the :code:`g
 
 .. tab-set-code::
 
-    ```java
-    // Gets the last direction in which the encoder moved
-    encoder.getDirection();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 53-54
 
-    ```c++
-    // Gets the last direction in which the encoder moved
-    encoder.GetDirection();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 45-46
 
 #### Period
 
@@ -191,15 +153,13 @@ Users can obtain the period of the encoder pulses (in seconds) with the :code:`g
 
 .. tab-set-code::
 
-    ```java
-    // Gets the current period of the encoder
-    encoder.getPeriod();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 56-57
 
-    ```c++
-    // Gets the current period of the encoder
-    encoder.GetPeriod();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 48-49
 
 ### Resetting a Quadrature Encoder
 
@@ -207,15 +167,13 @@ To reset a quadrature encoder to a distance reading of zero, call the :code:`res
 
 .. tab-set-code::
 
-    ```java
-    // Resets the encoder to read a distance of zero
-    encoder.reset();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+      :language: java
+      :lines: 59-60
 
-    ```c++
-    // Resets the encoder to read a distance of zero
-    encoder.Reset();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 51-52
 
 ## Duty Cycle Encoders - The :code:`DutyCycleEncoder` class
 
@@ -239,15 +197,13 @@ A duty cycle encoder can be instantiated as follows:
 
 .. tab-set-code::
 
-    ```java
-    // Initializes a duty cycle encoder on DIO pins 0
-    DutyCycleEncoder encoder = new DutyCycleEncoder(0);
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+      :language: java
+      :lines: 15-16
 
-    ```c++
-    // Initializes a duty cycle encoder on DIO pins 0
-    frc::DutyCycleEncoder encoder{0};
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 27-28
 
 ### Configuring Duty Cycle Encoder Range and Zero
 
@@ -259,19 +215,13 @@ The zero position is useful for ensuring that the measured rotation corresponds 
 
 .. tab-set-code::
 
-    ```java
-    // Initializes a duty cycle encoder on DIO pins 0 to return a value of 4 for
-    // a full rotation, with the encoder reporting 0 half way through rotation (2
-    // out of 4)
-    DutyCycleEncoder encoder = new DutyCycleEncoder(0, 4.0, 2.0);
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+      :language: java
+      :lines: 18-21
 
-    ```c++
-    // Initializes a duty cycle encoder on DIO pins 0 to return a value of 4 for
-    // a full rotation, with the encoder reporting 0 half way through rotation (2
-    // out of 4)
-    frc::DutyCycleEncoder encoder{0, 4.0, 2.0};
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 30-33
 
 ### Reading Rotation from Duty Cycle Encoders
 
@@ -281,15 +231,13 @@ Users can obtain the rotation measured by the encoder with the :code:`get()` met
 
 .. tab-set-code::
 
-    ```java
-    // Gets the rotation
-    encoder.get();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+      :language: java
+      :lines: 28-29
 
-    ```c++
-    // Gets the rotation
-    encoder.Get();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 19-20
 
 ### Detecting a Duty Cycle Encoder is Connected
 
@@ -297,15 +245,13 @@ As duty cycle encoders output a continuous set of pulses, it is possible to dete
 
 .. tab-set-code::
 
-    ```java
-    // Gets if the encoder is connected
-    encoder.isConnected();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+      :language: java
+      :lines: 31-32
 
-    ```c++
-    // Gets if the encoder is connected
-    encoder.IsConnected();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 22-23
 
 ## Analog Encoders - The :code:`AnalogEncoder` Class
 
@@ -323,15 +269,13 @@ An analog encoder can be instantiated as follows:
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an analog encoder on Analog Input pin 0
-    AnalogEncoder encoder = new AnalogEncoder(0);
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
+      :language: java
+      :lines: 15-16
 
-    ```c++
-    // Initializes an analog encoder on Analog Input pin 0
-    frc::AnalogEncoder encoder{0};
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 24-25
 
 ### Configuring Analog Encoder Range and Zero
 
@@ -343,19 +287,13 @@ The zero position is useful for ensuring that the measured rotation corresponds 
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an analog encoder on DIO pins 0 to return a value of 4 for
-    // a full rotation, with the encoder reporting 0 half way through rotation (2
-    // out of 4)
-    AnalogEncoder encoder = new AnalogEncoder(0, 4.0, 2.0);
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
+      :language: java
+      :lines: 18-21
 
-    ```c++
-    // Initializes an analog encoder on DIO pins 0 to return a value of 4 for
-    // a full rotation, with the encoder reporting 0 half way through rotation (2
-    // out of 4)
-    frc::AnalogEncoder encoder{0, 4.0, 2.0};
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 27-30
 
 ### Reading Rotation from Analog Encoders
 
@@ -365,15 +303,13 @@ Users can obtain the rotation measured by the encoder with the :code:`get()` met
 
 .. tab-set-code::
 
-    ```java
-    // Gets the rotation
-    encoder.get();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
+      :language: java
+      :lines: 28-29
 
-    ```c++
-    // Gets the rotation
-    encoder.Get();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+      :language: c++
+      :lines: 19-20
 
 ## Using Encoders in Code
 
@@ -387,69 +323,14 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
 
 .. tab-set-code::
 
-    ```java
-    // Creates an encoder on DIO ports 0 and 1
-    Encoder encoder = new Encoder(0, 1);
-    // Initialize motor controllers and drive
-    Spark leftLeader = new Spark(0);
-    Spark leftFollower = new Spark(1);
-    Spark rightLeader = new Spark(2);
-    Spark rightFollower = new Spark(3);
-    DifferentialDrive drive = new DifferentialDrive(leftLeader::set, rightLeader::set);
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoderdrive/Robot.java
+      :language: java
+      :lines: 17-47
 
-    public Robot() {
-        // Configures the encoder's distance-per-pulse
-        // The robot moves forward 1 foot per encoder rotation
-        // There are 256 pulses per encoder rotation
-        encoder.setDistancePerPulse(1./256.);
-        // Invert the right side of the drivetrain. You might have to invert the other side
-        rightLeader.setInverted(true);
-        // Configure the followers to follow the leaders
-        leftLeader.addFollower(leftFollower);
-        rightLeader.addFollower(rightFollower);
-    }
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/EncoderDrive/cpp/Robot.cpp
+      :language: c++
+      :lines: 41-49, 18-38
 
-    @Override
-    public void autonomousPeriodic() {
-        // Drives forward at half speed until the robot has moved 5 feet, then stops:
-        if(encoder.getDistance() < 5) {
-            drive.tankDrive(0.5, 0.5);
-        } else {
-            drive.tankDrive(0, 0);
-        }
-    }
-    ```
-
-    ```c++
-     // Creates an encoder on DIO ports 0 and 1.
-    frc::Encoder encoder{0, 1};
-    // Initialize motor controllers and drive
-    frc::Spark leftLeader{0};
-    frc::Spark leftFollower{1};
-    frc::Spark rightLeader{2};
-    frc::Spark rightFollower{3};
-    frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
-                                 [&](double output) { rightLeader.Set(output); }};
-        Robot::Robot() {
-        // Configures the encoder's distance-per-pulse
-        // The robot moves forward 1 foot per encoder rotation
-        // There are 256 pulses per encoder rotation
-        encoder.SetDistancePerPulse(1.0/256.0);
-        // Invert the right side of the drivetrain. You might have to invert the other side
-        rightLeader.SetInverted(true);
-        // Configure the followers to follow the leaders
-        leftLeader.AddFollower(leftFollower);
-        rightLeader.AddFollower(rightFollower);
-    }
-    void Robot::AutonomousPeriodic() {
-        // Drives forward at half speed until the robot has moved 5 feet, then stops:
-        if(encoder.GetDistance() < 5) {
-            drive.TankDrive(0.5, 0.5);
-        } else {
-            drive.TankDrive(0, 0);
-        }
-    }
-    ```
 
 ### Homing a Mechanism
 
@@ -459,37 +340,11 @@ Since quadrature encoders measure *relative* distance, it is often important to 
 
 .. tab-set-code::
 
-    ```java
-    Encoder encoder = new Encoder(0, 1);
-    Spark spark = new Spark(0);
-    // Limit switch on DIO 2
-    DigitalInput limit = new DigitalInput(2);
-    public void autonomousPeriodic() {
-        // Runs the motor backwards at half speed until the limit switch is pressed
-        // then turn off the motor and reset the encoder
-        if(!limit.get()) {
-            spark.set(-0.5);
-        } else {
-            spark.set(0);
-            encoder.reset();
-        }
-    }
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoderhoming/Robot.java
+      :language: java
+      :lines: 17-34
 
-    ```c++
-    frc::Encoder encoder{0,1};
-    frc::Spark spark{0};
-    // Limit switch on DIO 2
-    frc::DigitalInput limit{2};
-    void AutonomousPeriodic() {
-        // Runs the motor backwards at half speed until the limit switch is pressed
-        // then turn off the motor and reset the encoder
-        if(!limit.Get()) {
-            spark.Set(-0.5);
-        } else {
-            spark.Set(0);
-            encoder.Reset();
-        }
-    }
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/EncoderHoming/cpp/Robot.cpp
+      :language: c++
+      :lines: 30-33, 18-27
 
