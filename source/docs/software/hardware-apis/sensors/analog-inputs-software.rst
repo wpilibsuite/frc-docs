@@ -18,15 +18,13 @@ An :code:`AnalogInput` may be initialized as follows:
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an AnalogInput on port 0
-    AnalogInput analog = new AnalogInput(0);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+      :language: java
+      :lines: 17-18
 
-    ```c++
-    // Initializes an AnalogInput on port 0
-    frc::AnalogInput analog{0};
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 63-64
 
 ### Oversampling and Averaging
 
@@ -41,19 +39,13 @@ When oversampling is enabled, the FPGA will add multiple consecutive samples tog
 
 .. tab-set-code::
 
-    ```java
-    // Sets the AnalogInput to 4-bit oversampling.  16 samples will be added together.
-    // Thus, the reported values will increase by about a factor of 16, and the update
-    // rate will decrease by a similar amount.
-    analog.setOversampleBits(4);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+      :language: java
+      :lines: 25-28
 
-    ```c++
-    // Sets the AnalogInput to 4-bit oversampling.  16 samples will be added together.
-    // Thus, the reported values will increase by about a factor of 16, and the update
-    // rate will decrease by a similar amount.
-    analog.SetOversampleBits(4);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 15-19
 
 #### Averaging
 
@@ -61,17 +53,13 @@ Averaging behaves much like oversampling, except the accumulated values are divi
 
 .. tab-set-code::
 
-    ```java
-    // Sets the AnalogInput to 4-bit averaging.  16 samples will be averaged together.
-    // The update rate will decrease by a factor of 16.
-    analog.setAverageBits(4);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+      :language: java
+      :lines: 30-32
 
-    ```c++
-    // Sets the AnalogInput to 4-bit averaging.  16 samples will be averaged together.
-    // The update rate will decrease by a factor of 16.
-    analog.SetAverageBits(4);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 21-23
 
 .. note:: When oversampling and averaging are used at the same time, the oversampling is applied *first,* and then the oversampled values are averaged.  Thus, 2-bit oversampling and 2-bit averaging used at the same time will increase the scale of the returned values by approximately a factor of 2, and decrease the update rate by approximately a factor of 4.
 
@@ -85,13 +73,13 @@ The :code:`getValue` method returns the raw instantaneous measured value from th
 
 .. tab-set-code::
 
-    ```java
-    analog.getValue();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+      :language: java
+      :lines: 37-40
 
-    ```c++
-    analog.GetValue();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 25-28
 
 #### getVoltage
 
@@ -99,13 +87,13 @@ The :code:`getVoltage` method returns the instantaneous measured voltage from th
 
 .. tab-set-code::
 
-    ```java
-    analog.getVoltage();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+      :language: java
+      :lines: 42-44
 
-    ```c++
-    analog.GetVoltage();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 30-32
 
 #### getAverageValue
 
@@ -113,13 +101,13 @@ The :code:`getAverageValue` method returns the averaged value from the analog in
 
 .. tab-set-code::
 
-    ```java
-    analog.getAverageValue();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+      :language: java
+      :lines: 46-48
 
-    ```c++
-    analog.GetAverageValue();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 34-36
 
 #### getAverageVoltage
 
@@ -127,13 +115,13 @@ The :code:`getAverageVoltage` method returns the averaged voltage from the analo
 
 .. tab-set-code::
 
-    ```java
-    analog.getAverageVoltage();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+      :language: java
+      :lines: 46-48
 
-    ```c++
-    analog.GetAverageVoltage();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 38-40
 
 ### Accumulator
 
@@ -143,35 +131,13 @@ Analog input channels 0 and 1 additionally support an accumulator, which integra
 
 .. tab-set-code::
 
-    ```java
-    // Sets the initial value of the accumulator to 0
-    // This is the "starting point" from which the value will change over time
-    analog.setAccumulatorInitialValue(0);
-    // Sets the "center" of the accumulator to 0.  This value is subtracted from
-    // all measured values prior to accumulation.
-    analog.setAccumulatorCenter(0);
-    // Returns the number of accumulated samples since the accumulator was last started/reset
-    analog.getAccumulatorCount();
-    // Returns the value of the accumulator.  Return type is long.
-    analog.getAccumulatorValue();
-    // Resets the accumulator to the initial value
-    analog.resetAccumulator();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+      :language: java
+      :lines: 42-44
 
-    ```c++
-    // Sets the initial value of the accumulator to 0
-    // This is the "starting point" from which the value will change over time
-    analog.SetAccumulatorInitialValue(0);
-    // Sets the "center" of the accumulator to 0.  This value is subtracted from
-    // all measured values prior to accumulation.
-    analog.SetAccumulatorCenter(0);
-    // Returns the number of accumulated samples since the accumulator was last started/reset
-    analog.GetAccumulatorCount();
-    // Returns the value of the accumulator.  Return type is long.
-    analog.GetAccumulatorValue();
-    // Resets the accumulator to the initial value
-    analog.ResetAccumulator();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 42-54
 
 #### Obtaining synchronized count and value
 
@@ -179,23 +145,13 @@ Sometimes, it is necessarily to obtain matched measurements of the count and the
 
 .. tab-set-code::
 
-    ```java
-    // Instantiate an AccumulatorResult object to hold the matched measurements
-    AccumulatorResult result = new AccumulatorResult();
-    // Fill the AccumulatorResult with the matched measurements
-    analog.getAccumulatorOutput(result);
-    // Read the values from the AccumulatorResult
-    long count = result.count;
-    long value = result.value;
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+      :language: java
+      :lines: 20-21, 67-71
 
-    ```c++
-    // The count and value variables to fill
-    int_64t count;
-    int_64t value;
-    // Fill the count and value variables with the matched measurements
-    analog.GetAccumulatorOutput(count, value);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+      :language: c++
+      :lines: 66-68, 58-59
 
 ## Using analog inputs in code
 
