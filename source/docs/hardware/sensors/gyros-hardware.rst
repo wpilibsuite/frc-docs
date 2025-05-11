@@ -8,9 +8,9 @@ Gyroscopes (or "gyros", for short) are devices that measure rate-of-rotation.  T
 
 Several popular FRC\ |reg| devices known as :ref:`IMUs <docs/hardware/sensors/accelerometers-hardware:IMUs (Inertial Measurement Units)>` (Inertial Measurement Units) combine 3-axis gyros, accelerometers and other position sensors into one device. Some  popular examples are:
 
-  - [Analog Devices ADIS16448 and ADIS 16470 IMUs](https://www.analog.com/en/landing-pages/001/first.html)
-  - [CTRE Pigeon IMU](https://store.ctr-electronics.com/gadgeteer-pigeon-imu/)
-  - [Kauai Labs NavX](https://pdocs.kauailabs.com/navx-mxp/)
+- [Analog Devices ADIS16448 and ADIS 16470 IMUs](https://www.analog.com/en/landing-pages/001/first.html)
+- [CTRE Pigeon IMU](https://store.ctr-electronics.com/gadgeteer-pigeon-imu/)
+- [Kauai Labs NavX](https://pdocs.kauailabs.com/navx-mxp/)
 
 ## Types of Gyros
 

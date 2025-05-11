@@ -14,19 +14,15 @@ In order to create an empty, blank window for our widget, we need to create a ``
 There are many different types of Pane, they are as noted:
 
 - Stack Pane
-
    - Stack Panes allow elements to be overlaid. Also, StackPanes by default center child nodes.
 
 - Grid Pane
-
    - Grid Panes are extremely useful defining child elements using a coordinate system by creating a flexible grid of rows and columns on the pane.
 
 - Flow Pane
-
    - Flow Panes wrap all child nodes at a boundary set. Child nodes can flow vertically (wrapped at the height boundary for the pane) or horizontally (wrapped at the width boundary of the pane).
 
 - Anchor Pane
-
    - Anchor Panes allow child elements to be placed in the top, bottom, left side, right side, or center of the pane.
 
 Layout panes are also extremely useful for placing child nodes in one horizontal row using a [HBox](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html) or one vertical column using a [VBox](https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html).
