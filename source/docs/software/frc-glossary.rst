@@ -152,7 +152,7 @@
       Kit of Parts - the collection of items listed on the Kickoff Kit checklists, distributed to the team via FIRST Choice, or paid for completely (except shipping) with a Product Donation Voucher (PDV).
 
    KOP chassis
-      The KOP contains a drive base (chassis) distributed to every team (that did not opt out) as part of the :term:`KOP`. For the 2024 season, the KOP chassis is the [AM14U5](https://www.andymark.com/products/am14u5-6-wheel-drop-center-robot-drive-base-first-kit-of-parts-chassis).
+      The KOP contains a drive base (chassis) distributed to every team (that did not opt out) as part of the :term:`KOP`. For the 2025 season, the KOP chassis is the [AM14U6](https://www.andymark.com/products/am14u6-6-wheel-drop-center-robot-drive-base-2025-frc-kit-of-parts-drive-base).
 
    LabVIEW
       One of the four officially supported programming languages.
@@ -201,6 +201,9 @@
 
    PH
       Pneumatic Hub - is a standalone module that is capable of switching both 12V and 24V pneumatic solenoid valves. The Pneumatic Hub features 16 solenoid channels which allow for up to 16 single-acting solenoids, 8 double-acting solenoids, or a combination of the two types.
+
+   PoE
+      Power Over Ethernet - method of powering a device by an Ethernet cord that also carries power.  FRC uses passive PoE usually 12-24V that is always being supplied, this can damage a device not expecting the provided voltage.  The most common industry standard is active PoE which uses 48V but first verifies that the device is expecting the power.
 
    property
       In :term:`NetworkTables`, named information (metadata) about a :term:`topic` stored and updated separately from the topic's data. A topic may have any number of properties. A property's value can be any data type that can be represented in JSON.

@@ -27,6 +27,9 @@ class BaseVisualization {
 
     window.addEventListener("resize", this.updateSize.bind(this));
     window.addEventListener("load", this.updateSize.bind(this));
+
+    this.position = 0;
+    this.positionPrev = 0;
   }
 
   updateSize() {
@@ -43,8 +46,8 @@ class BaseVisualization {
     this.timeS = timeS;
   }
 
-  setCurPos(positionRad) {
-    this.positionRad = positionRad;
+  setCurPos(position) {
+    this.position = position;
   }
 
   setCurSetpoint(setpoint) {

@@ -38,8 +38,7 @@ then passing the returned data back to the private IP that requested it. This al
    :alt: Devices on the private network send their traffic through the NAT device to communicate to the outside network and vice versa.
 
 .. note::
-   For the FRC\ |reg| networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`).
-
+   For the FRC\ |reg| networks, we will use the ``10.0.0.0`` range. This range allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using the Class B or C networks would only allow a subset of teams to follow the format.
 
 ## How are these addresses assigned?
 
@@ -78,7 +77,7 @@ In the pits, a team may encounter issues with mixing Static and DHCP devices for
 .. image:: diagrams/mixing-static-dynamic.drawio.svg
    :alt: How you can't mix link-local and static IP configurations.
 
-.. warning:: When connected via USB to the roboRIO, a :ref:`docs/networking/networking-utilities/portforwarding:Port Forwarding` configuration is required to access devices connected to the OpenMesh radio (on the green network shown above).
+.. warning:: When connected via USB to the roboRIO, a :ref:`docs/networking/networking-utilities/portforwarding:Port Forwarding` configuration is required to access devices connected to the VH-109 radio (on the green network shown above).
 
 ### Available Network Ports
 
@@ -155,7 +154,7 @@ If using the USB interface, no network setup is required, but you do need the :d
 
 ## Ethernet/Wireless
 
-The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` will enable the DHCP server on the OpenMesh radio in the home use case (AP mode), if you are putting the OpenMesh in bridge mode and using a router, you can enable DHCP addressing on the router. The bridge is set to the same team-based IP address as before (``10.TE.AM.1``) and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, :term:`FMS` will also hand out addresses in the same IP range.
+The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` will enable the DHCP server on the VH-109 radios. Both Robot Radio (``10.TE.AM.1``) and AP Radio (``10.TE.AM.4``) will have the team-based IP address and will hand out DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the field, :term:`FMS` will also hand out addresses in the same IP range.
 
 ## Summary
 

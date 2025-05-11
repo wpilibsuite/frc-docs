@@ -4,7 +4,7 @@ The CTRE Power Distribution Panel (:term:`PDP`) and Rev Power Distribution Hub (
 
 ## Creating a Power Distribution Object
 
-To use the either Power Distribution module, create an instance of the :code:`PowerDistribution` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/wpilibj/PowerDistribution.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_power_distribution.html), :external:py:class:`Python <wpilib.PowerDistribution>`). With no arguments, the Power Distribution object will be detected, and must use CAN ID of 0 for CTRE or 1 for REV. If the CAN ID is non-default, additional constructors are available to specify the CAN ID and type.
+To use the either Power Distribution module, create an instance of the :code:`PowerDistribution` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/PowerDistribution.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_power_distribution.html), :external:py:class:`Python <wpilib.PowerDistribution>`). With no arguments, the Power Distribution object will be detected, and must use CAN ID of 0 for CTRE or 1 for REV. If the CAN ID is non-default, additional constructors are available to specify the CAN ID and type.
 
 .. tab-set-code::
 
@@ -34,15 +34,15 @@ Note: it is not necessary to create a PowerDistribution object unless you need t
 .. tab-set-code::
 
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
          :language: java
          :lines: 31-34
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
          :language: c++
          :lines: 28-31
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/CANPDP/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/CANPDP/robot.py
          :language: python
          :lines: 34-37
 
@@ -53,15 +53,15 @@ Monitoring the bus voltage can be useful for (among other things) detecting when
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
       :language: java
       :lines: 36-38
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
       :language: c++
       :lines: 33-35
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/CANPDP/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/CANPDP/robot.py
       :language: python
       :lines: 39-41
 
@@ -72,15 +72,15 @@ Monitoring the temperature can be useful for detecting if the robot has been dra
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
       :language: java
       :lines: 40-52
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
       :language: c++
       :lines: 37-49
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/CANPDP/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/CANPDP/robot.py
          :language: python
          :lines: 43-55
 
@@ -93,15 +93,15 @@ The PDP/PDH also allows users to monitor the current drawn by the individual dev
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/canpdp/Robot.java
       :language: java
       :lines: 25-29
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/CANPDP/cpp/Robot.cpp
       :language: c++
       :lines: 22-26
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/CANPDP/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/CANPDP/robot.py
       :language: python
       :lines: 28-32
 

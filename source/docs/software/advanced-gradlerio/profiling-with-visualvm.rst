@@ -10,9 +10,9 @@ To begin, [download VisualVM](https://visualvm.github.io/download.html) and unpa
 
 GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a roboRIO). To begin, locate the ``frcJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1-beta-1/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.3.1/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
-   :lines: 15-40
+   :lines: 15-42
    :lineno-match:
    :emphasize-lines: 15-16
 
@@ -37,7 +37,7 @@ We are adding a few arguments here. In order:
 * Set the remote debugging port to 1198
 * Allow listening from remote targets
 * Disable SSL authentication being required
-* Set the hostname to the roboRIOs team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Notation>`)
+* Set the hostname to the roboRIOs team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Address Notation>`)
 
 .. important:: The hostname when connected via USB-B should be ``172.22.11.2``.
 

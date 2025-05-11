@@ -133,7 +133,7 @@ Now let's look at various parts of the code.
          .. tab-item:: Java
             :sync: java
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
                :language: java
                :lines: 7-12
                :linenos:
@@ -141,14 +141,14 @@ Now let's look at various parts of the code.
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 5-9
                :lineno-match:
 
          .. tab-item:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/GettingStarted/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
                :language: python
                :lines: 8-9
                :lineno-match:
@@ -253,7 +253,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: Java
             :sync: java
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
                :language: java
                :lines: 19-25
                :lineno-match:
@@ -261,7 +261,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 50-60
                :lineno-match:
@@ -296,12 +296,12 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 12-13
                :lineno-match:
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 17-23
                :lineno-match:
@@ -362,12 +362,12 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 12-13
                :lineno-match:
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 17-23
                :lineno-match:
@@ -413,12 +413,12 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 12-13
                :lineno-match:
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 17-23
                :lineno-match:
@@ -458,7 +458,7 @@ The sample robot in our examples will have an Xbox Controller on USB port 0 for 
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
          :language: java
          :lines: 27-28,32-36
          :linenos:
@@ -467,7 +467,7 @@ The sample robot in our examples will have an Xbox Controller on USB port 0 for 
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
          :lines: 12-13,17-24
          :linenos:
@@ -486,17 +486,17 @@ The ``Robot`` constructor for our sample program inverts the right side of the d
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
       :language: java
       :lines: 38-54
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :lines: 25-36
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
       :language: python
       :lines: 31-43
       :lineno-match:
@@ -509,17 +509,17 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
       :language: java
       :lines: 56-64
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :lines: 38-45
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
       :language: python
       :lines: 45-52
       :lineno-match:
@@ -530,17 +530,17 @@ Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` 
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
       :language: java
       :lines: 66-73
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :lines: 45-48
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
       :language: python
       :lines: 54-58
       :lineno-match:

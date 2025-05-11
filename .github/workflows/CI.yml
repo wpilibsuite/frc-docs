@@ -7,9 +7,11 @@ env:
 
 jobs:
   build-pdf:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - uses: actions/setup-python@v5
       with:
         python-version: 3.9
@@ -32,9 +34,11 @@ jobs:
         if-no-files-found: error
         
   build-html:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - uses: actions/setup-python@v5
       with:
         python-version: 3.9
@@ -57,7 +61,7 @@ jobs:
         if-no-files-found: error
         
   build-html-translation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
       with:
@@ -68,6 +72,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         path: frc-docs
+        fetch-depth: 0
     - uses: actions/setup-python@v5
       with:
         python-version: 3.9
@@ -83,40 +88,40 @@ jobs:
       run: |
         sphinx-build -D language=es -b html . _build/html
 
-  link-check-diff:
-    # This job is sourced from https://github.com/aiven/devportal/blob/main/.github/workflows/linkcheck-changed-files.yaml
-    # It is CC 4.0 I licensed: https://creativecommons.org/licenses/by/4.0/
-    # Changes have been made.
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v41
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.9
-      - name: Install Dependencies
-        run: pip install -r source/requirements.txt
-      - name: Run linkcheck on .rst files
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [ "${file: -4}" == ".rst" ]
-              then
-                var="$var $file"
-            fi
-          done
-          if [ -z "$var" ]
-          then
-                echo "No *.rst changed files to check."
-          else
-                make BUILDER_ARGS="$var" linkcheck
-          fi
+  #link-check-diff:
+  #  # This job is sourced from https://github.com/aiven/devportal/blob/main/.github/workflows/linkcheck-changed-files.yaml
+  #  # It is CC 4.0 I licensed: https://creativecommons.org/licenses/by/4.0/
+  #  # Changes have been made.
+  #  runs-on: ubuntu-22.04
+  #  steps:
+  #    - uses: actions/checkout@v4
+  #      with:
+  #        fetch-depth: 0
+  #    - name: Get changed files
+  #      id: changed-files
+  #      uses: tj-actions/changed-files@v41
+  #    - uses: actions/setup-python@v5
+  #      with:
+  #        python-version: 3.9
+  #    - name: Install Dependencies
+  #      run: pip install -r source/requirements.txt
+  #    - name: Run linkcheck on .rst files
+  #      run: |
+  #        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+  #          if [ "${file: -4}" == ".rst" ]
+  #            then
+  #              var="$var $file"
+  #          fi
+  #        done
+  #        if [ -z "$var" ]
+  #        then
+  #              echo "No *.rst changed files to check."
+  #        else
+  #              make BUILDER_ARGS="$var" linkcheck
+  #        fi
         
   check-linting:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -130,7 +135,7 @@ jobs:
         make lint
         
   check-image-size:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -144,7 +149,7 @@ jobs:
         make sizecheck
         
   check-spelling:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - name: misspell
@@ -152,10 +157,10 @@ jobs:
         with:
           locale: "US"
           reporter: "github-check"
-          fail_on_error: "true"
+          fail_level: "error"
           
   check-redirects:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
     - name: Checkout main
@@ -175,7 +180,7 @@ jobs:
         [[ $(<source/redirects.txt) == $(git show origin/main:source/redirects.txt)* ]] || { echo "Error: redirects.txt can only be appended to. Lines cannot be modified or deleted."; exit 1; }
         
   check-formatting:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5

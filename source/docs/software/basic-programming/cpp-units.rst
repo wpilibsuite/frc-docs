@@ -74,7 +74,7 @@ To create an instance of a specific unit, we create an instance of its container
 
 ```c++
 // The variable speed has a value of 5 meters per second.
-units::meter_per_second_t speed{5.0};
+units::meters_per_second_t speed{5.0};
 ```
 
 Alternatively, the units library has [type literals](https://en.cppreference.com/w/cpp/language/user_literal) defined for some of the more common container types.  These can be used in conjunction with type inference via ``auto`` to define a unit more succinctly:
@@ -114,7 +114,7 @@ auto sum = 5_m + 7_s;
 
 Multiplication may be performed on any pair of container types, and yields the container type of a compound unit:
 
-.. note:: When a calculation yields a compound unit type, this type will only be checked for validity at the point of operation if the result type is specified explicitly.  If ``auto`` is used, this check will not occur.  For example, when we divide distance by time, we may want to ensure the result is, indeed, a velocity (i.e. ``units::meter_per_second_t``). If the return type is declared as ``auto``, this check will not be made.
+.. note:: When a calculation yields a compound unit type, this type will only be checked for validity at the point of operation if the result type is specified explicitly.  If ``auto`` is used, this check will not occur.  For example, when we divide distance by time, we may want to ensure the result is, indeed, a velocity (i.e. ``units::meters_per_second_t``). If the return type is declared as ``auto``, this check will not be made.
 
 ```c++
 // Multiply two meter_t values, result is square_meter_t
@@ -123,7 +123,7 @@ auto product = 5_m * 7_m; // product is 35_sq_m
 
 ```c++
 // Divide a meter_t value by a second_t, result is a meter_per_second_t
-units::meter_per_second_t speed = 6_m / 0.5_s; // speed is 12_mps
+units::meters_per_second_t speed = 6_m / 0.5_s; // speed is 12_mps
 ```
 
 ### ``<cmath>`` Functions

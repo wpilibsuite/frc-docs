@@ -16,18 +16,27 @@ The LabVIEW runtime components required for the Driver Station and Imaging Tool 
 
 - Windows 10 or higher (Windows 10, 11).
 
-- Download the [FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107) from NI.
+.. important:: FRC Game Tools requires an x86 CPU due to its dependency on LabVIEW. Do not use a device with an ARM CPU.
+
+## Download Game Tools
+
+Navigate to the  [FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) from NI.
+
+.. image:: images/labview/ni-login.png
+   :alt: The login button for the NI installer.
+
+Log-in or create an National Instruments account.
 
 .. image:: images/labview/offline-installer.png
    :alt: The Download button for the NI installer with the offline installer link below it.
 
-If you wish to install on other machines offline, click :guilabel:`Individual Offline Installers` before clicking :guilabel:`Download` to download the full installer.
+If you wish to install on other machines offline, click :guilabel:`Install Offline` or else choose :guilabel:`Download` to download the online installer which will download while installing.
 
 ## Uninstall Old Versions (Recommended)
 
 .. important:: LabVIEW teams have already completed this step, do not repeat it. LabVIEW teams should skip to the :ref:`docs/zero-to-robot/step-2/frc-game-tools:installation` section.
 
-Before installing the new version of the FRC Game Tools it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2024 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "NI Software", and select :guilabel:`Uninstall`.
+Before installing the new version of the FRC Game Tools it is recommended to remove any old versions. The new version will likely co-exist with the old version (note that the DS will overwrite old versions), but all testing has been done with FRC 2025 only.  Then click Start >> Add or Remove Programs. Locate the entry labeled "NI Software", and select :guilabel:`Uninstall`.
 
 .. note:: It is only necessary to uninstall previous versions when installing a new year's tools (or when a beta is installed). For example, uninstall the 2021 tools before installing the 2022 tools. It is not necessary to uninstall before upgrading to a new update of the 2022 game tools.
 

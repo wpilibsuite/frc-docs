@@ -6,7 +6,7 @@ A common use for filters in FRC\ |reg| is to soften the behavior of control inpu
 
 A slew rate limiter can be thought of as a sort of primitive motion profile.  In fact, the slew rate limiter is the first-order equivalent of the :ref:`Trapezoidal Motion Profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` supported by WPILib - it is precisely the limiting case of trapezoidal motion when the acceleration constraint is allowed to tend to infinity.  Accordingly, the slew rate limiter is a good choice for applying a de-facto motion profile to a stream of velocity setpoints (or voltages, which are usually approximately proportional to velocity).  For input streams that control positions, it is usually better to use a proper trapezoidal profile.
 
-Slew rate limiting is supported in WPILib through the ``SlewRateLimiter`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/filter/SlewRateLimiter.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_slew_rate_limiter.html), :external:py:class:`Python <wpimath.filter.SlewRateLimiter>`).
+Slew rate limiting is supported in WPILib through the ``SlewRateLimiter`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/SlewRateLimiter.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_slew_rate_limiter.html), :external:py:class:`Python <wpimath.filter.SlewRateLimiter>`).
 
 ## Creating a SlewRateLimiter
 

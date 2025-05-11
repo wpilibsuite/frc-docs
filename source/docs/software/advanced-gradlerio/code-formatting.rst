@@ -25,7 +25,7 @@ spotless {
    java {
       target fileTree('.') {
             include '**/*.java'
-            exclude '**/build/**', '**/build-*/**'
+            exclude '**/build/**', '**/build-*/**', '**/bin/**'
       }
       toggleOffOn()
       googleJavaFormat()
@@ -77,7 +77,7 @@ on: [push]
 jobs:
   spotless:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -164,9 +164,9 @@ Spotless will attempt to apply line endings per-OS, which means Git diffs will b
 
 ### Requirements
 
-- [Python 3.6 or higher](https://www.python.org/)
+- [Python 3.9 or higher](https://www.python.org/)
 
-You can install [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst) by typing ``pip3 install wpiformat`` into a terminal or command prompt.
+You can install [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.md) by typing ``pip3 install wpiformat`` into a terminal or command prompt.
 
 ### Usage
 
@@ -196,6 +196,6 @@ modifiableFileExclude {
 
 You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``, as shown in the example GitHub Actions workflow below:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.1.1-beta-2/.github/workflows/lint-format.yml
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/.github/workflows/lint-format.yml
    :language: yaml
-   :lines: 1-5, 13-34
+   :lines: 1-5, 13, 21-43

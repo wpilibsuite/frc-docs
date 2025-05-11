@@ -963,13 +963,13 @@ type = ["pytest-mypy"]
 
 [[package]]
 name = "jinja2"
-version = "3.1.4"
+version = "3.1.5"
 description = "A very fast and expressive template engine."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "jinja2-3.1.4-py3-none-any.whl", hash = "sha256:bc5dd2abb727a5319567b7a813e6a2e7318c39f4f487cfe6c89c6f9c7d25197d"},
-    {file = "jinja2-3.1.4.tar.gz", hash = "sha256:4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"},
+    {file = "jinja2-3.1.5-py3-none-any.whl", hash = "sha256:aba0f4dc9ed8013c424088f68a5c226f7d6097ed89b246d7749c2ec4175c6adb"},
+    {file = "jinja2-3.1.5.tar.gz", hash = "sha256:8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"},
 ]
 
 [package.dependencies]
@@ -1892,6 +1892,24 @@ numpy = ["nptyping (>=2.5)"]
 testing = ["covdefaults (>=2.3)", "coverage (>=7.4.4)", "defusedxml (>=0.7.1)", "diff-cover (>=9)", "pytest (>=8.1.1)", "pytest-cov (>=5)", "sphobjinv (>=2.3.1)", "typing-extensions (>=4.11)"]
 
 [[package]]
+name = "sphinx-contributors"
+version = "0.2.7"
+description = "Contributors extension for Sphinx."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "sphinx_contributors-0.2.7-py3-none-any.whl", hash = "sha256:f409295eb22f05606528ff3a9b93b4ae076d93d3153de13ff47bfcdd1c792463"},
+    {file = "sphinx_contributors-0.2.7.tar.gz", hash = "sha256:aace731366096f2104a06eca77b9354b11768ddec149d699520c254f09cbb4f4"},
+]
+
+[package.dependencies]
+sphinx = ">=3"
+
+[package.extras]
+doc = ["furo"]
+test = ["pre-commit", "pytest"]
+
+[[package]]
 name = "sphinx-copybutton"
 version = "0.5.2"
 description = "Add a copy button to each of your code cells."
@@ -1969,6 +1987,20 @@ jinja2 = ">=2.10"
 markupsafe = ">=1"
 
 [[package]]
+name = "sphinx-last-updated-by-git"
+version = "0.3.8"
+description = "Get the \"last updated\" time for each Sphinx page from Git"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "sphinx_last_updated_by_git-0.3.8-py3-none-any.whl", hash = "sha256:6382c8285ac1f222483a58569b78c0371af5e55f7fbf9c01e5e8a72d6fdfa499"},
+    {file = "sphinx_last_updated_by_git-0.3.8.tar.gz", hash = "sha256:c145011f4609d841805b69a9300099fc02fed8f5bb9e5bcef77d97aea97b7761"},
+]
+
+[package.dependencies]
+sphinx = ">=1.8"
+
+[[package]]
 name = "sphinx-notfound-page"
 version = "1.0.4"
 description = "Sphinx extension to build a 404 page with absolute URLs"
@@ -2004,13 +2036,13 @@ Sphinx = ">=7.0.0,<8.0.0"
 
 [[package]]
 name = "sphinx-rtd-theme"
-version = "3.0.0"
+version = "3.0.2"
 description = "Read the Docs theme for Sphinx"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "sphinx_rtd_theme-3.0.0-py2.py3-none-any.whl", hash = "sha256:1ffe1539957775bfa0a7331370de7dc145b6eac705de23365dc55c5d94bb08e7"},
-    {file = "sphinx_rtd_theme-3.0.0.tar.gz", hash = "sha256:905d67de03217fd3d76fbbdd992034ac8e77044ef8063a544dda1af74d409e08"},
+    {file = "sphinx_rtd_theme-3.0.2-py2.py3-none-any.whl", hash = "sha256:422ccc750c3a3a311de4ae327e82affdaf59eb695ba4936538552f3b00f4ee13"},
+    {file = "sphinx_rtd_theme-3.0.2.tar.gz", hash = "sha256:b7457bc25dda723b20b086a670b9953c859eab60a2a03ee8eb2bb23e176e5f85"},
 ]
 
 [package.dependencies]
@@ -2202,13 +2234,13 @@ cairosvg = ["cairosvg (>=1.0)"]
 
 [[package]]
 name = "sphinxcontrib-video"
-version = "0.2.1"
+version = "0.4.1"
 description = "Allows embedding of HTML5 videos in sphinx"
 optional = false
 python-versions = ">=3.6.9"
 files = [
-    {file = "sphinxcontrib_video-0.2.1-py3-none-any.whl", hash = "sha256:ebc31be0bb96e1aee260efe6b3806b81f9db20535c55b2f4ba355404f38d067d"},
-    {file = "sphinxcontrib_video-0.2.1.tar.gz", hash = "sha256:b813be3b602aa14b537ed18e8a52a876d0818ccfc9c4c7c8e4822227f677ce48"},
+    {file = "sphinxcontrib_video-0.4.1-py3-none-any.whl", hash = "sha256:d63ec68983dac36960557973281a616b5d9e68838369763313fc80533b1ad774"},
+    {file = "sphinxcontrib_video-0.4.1.tar.gz", hash = "sha256:75a033e71b7de124cc5902430b7ba818a1c6c377be6401d07e9f2329a95d5ca4"},
 ]
 
 [package.dependencies]
@@ -2216,24 +2248,24 @@ sphinx = "*"
 
 [package.extras]
 dev = ["mypy", "nox", "pre-commit"]
-doc = ["pydata-sphinx-theme (==0.13.0rc3)", "sphinx-design"]
-test = ["beautifulsoup4", "pytest", "pytest-cov", "pytest-regressions"]
+doc = ["pydata-sphinx-theme", "sphinx (<8)", "sphinx-design"]
+test = ["beautifulsoup4", "defusedxml", "pytest", "pytest-cov", "pytest-regressions"]
 
 [[package]]
 name = "sphinxext-delta"
-version = "0.2.0"
+version = "0.3.1"
 description = "Sphinx extension for listing changed Sphinx articles"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 files = [
-    {file = "sphinxext-delta-0.2.0.tar.gz", hash = "sha256:1a2886d52ce6d90803296e32689932233a845cc2a5f11784116c810b78a46877"},
-    {file = "sphinxext_delta-0.2.0-py3-none-any.whl", hash = "sha256:ca9df9cb96ec8854a115eeedc348e5645a87daed1b672eb916d11a10a77b7383"},
+    {file = "sphinxext_delta-0.3.1-py3-none-any.whl", hash = "sha256:23f96cf5013fdb5cdd3edb1325dcca2c8a1e2792b70220a3731f218ca3bd253e"},
+    {file = "sphinxext_delta-0.3.1.tar.gz", hash = "sha256:02ce0044144b12f818051ee2545500cfda4e0f8ef4384f4bfa227c85f8b09d2f"},
 ]
 
 [package.dependencies]
 requests = "*"
 six = "*"
-sphinx = ">=2.0"
+sphinx = ">=5.0"
 
 [[package]]
 name = "sphinxext-mimic"
@@ -2251,17 +2283,21 @@ sphinx = ">=3.0"
 
 [[package]]
 name = "sphinxext-opengraph"
-version = "0.9.0"
+version = "0.10.0"
 description = "Sphinx Extension to enable OGP support"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "sphinxext-opengraph-0.9.0.tar.gz", hash = "sha256:4e57e25b6d56f47b9c06a5a5d68a2a00ed3577c8a39e459b52118c6bfe5e8c8b"},
-    {file = "sphinxext_opengraph-0.9.0-py3-none-any.whl", hash = "sha256:ab1eb2ffb531fb85b695e719dba7b0245b0643f6b6c0d1cc258d15a81e72a9f1"},
+    {file = "sphinxext_opengraph-0.10.0-py3-none-any.whl", hash = "sha256:8afd33f96a02d9506d9dc8f284840888ca8948482ac93015a68d88493df43712"},
+    {file = "sphinxext_opengraph-0.10.0.tar.gz", hash = "sha256:5781149c1dfc306c3701661acdd02c512c2e6f21d2253487bf0b39639017fc24"},
 ]
 
 [package.dependencies]
-sphinx = ">=4.0"
+Sphinx = ">=6.0"
+
+[package.extras]
+rtd = ["furo (>=2024)", "sphinx (>=8.1.0,<8.2.0)", "sphinx-design"]
+social-cards = ["matplotlib (>=3)"]
 
 [[package]]
 name = "sphinxext-photofinish"
@@ -2538,4 +2574,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "8d3c871086df49f5e55d38faefd236aaccd58faef6f24078bb526e3da27ed218"
+content-hash = "10fedf0cf651b35d6010cc7f1178403b236834d14ad10e11370199381ccf3d5f"

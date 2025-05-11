@@ -33,12 +33,15 @@ Often a team may want to test their code without having an actual robot availabl
 
       **Running Robot Simulation**
 
-      Basic robot simulation can be run using VS Code. This can be done without using any commands by using VS Code's command palette.
+      Basic robot simulation can be run using VS Code. This can be done by using VS Code's command palette :guilabel:`WPILib: Simulate Robot Code` as shown below.
 
       .. image:: images/vscode-run-simulation.png
          :alt: Running robot simulation through VS Code
 
-      Your console output in Visual Studio Code should look like the below. However, teams probably will want to actually *test* their code versus just running the simulation. This can be done using :doc:`WPILib's Simulation GUI <simulation-gui>`.
+      .. image:: images/vscode-pick-extension.png
+         :alt: Picking Sim GUI simulation extension
+
+     The :guilabel:`Sim GUI` option will be selected by default. This will launch the :doc:`Simulation GUI <simulation-gui>`. You can also launch simulation without a GUI by unchecking :guilabel:`Sim GUI` in which case your console output in Visual Studio Code should look like the below.
 
       ```console
       ********** Robot program starting **********
@@ -47,7 +50,18 @@ Often a team may want to test their code without having an actual robot availabl
       Default robotPeriodic() method... Override me!
       ```
 
-      .. important:: Simulation can also be run outside of VS Code using ``./gradlew simulateJava`` for Java or ``./gradlew simulateNative`` for C++.
+      If you would would like to prevent the pop up and only use build.gradle to configure your simulation settings you can add the following in your vscode settings.json file.
+
+      ```json
+      "wpilib.skipSelectSimulateExtension": true
+      ```
+
+      .. warning:: You may see a run button next to the WPILib button. This button does not set up simulation appropriately and should not be used. Instead, the menu item shown above :guilabel:`WPILib: Simulate Robot Code` should be used.
+
+         .. image:: images/vscode-run-bad.png
+            :alt: Run button to the left of the WPIlib Button
+
+      .. note:: Simulation can also be run outside of VS Code using ``./gradlew simulateJava`` for Java or ``./gradlew simulateNative`` for C++.
 
       .. note:: Some vendors support attaching hardware to your PC and using the hardware in desktop simulation (e.g. CANivore). See :doc:`vendor documentation </docs/software/vscode-overview/wpilib-commands-vscode>` for more information about the command `WPILib: Hardware Sim Robot Code`.
 

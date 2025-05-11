@@ -50,5 +50,5 @@ Each of the following will instruct the deploy process to install packages to th
 requires = ["numpy"]
 ```
 
-The packages that can be installed are stored on the [WPILib Artifactory server](https://wpilib.jfrog.io/ui/native/wpilib-python-release-2024/).
+The packages that can be installed are stored on the [WPILib Artifactory server](https://wpilib.jfrog.io/ui/native/wpilib-python-release-2025/).
 If you find that you need a package that isn't available on artifactory, consult the [roborio-wheels](https://github.com/robotpy/roborio-wheels) repository.

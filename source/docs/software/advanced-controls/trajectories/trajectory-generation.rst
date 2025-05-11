@@ -61,7 +61,7 @@ Here is an example of generating a trajectory using clamped cubic splines for th
          :language: python
          :lines: 5-20
 
-.. note:: The Java code utilizes the [Units](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/util/Units.html) utility, for easy unit conversions.
+.. note:: The Java code utilizes the [Units](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/util/Units.html) utility, for easy unit conversions.
 
 .. note:: Generating a typical trajectory takes about 10 ms to 25 ms. This isn't long, but it's still highly recommended to generate all trajectories on startup in the ``Robot`` constructor.
 

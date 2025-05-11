@@ -92,13 +92,13 @@ The redirect checker makes sure that there are valid redirects for all files. Th
 
 Type the command ``.\make html`` to generate HTML content. The content is located in the ``build/html`` directory at the root of the repository.
 
-## Building PDF
+### Building PDF
 
 .. warning:: Please note that PDF build on Windows may result in distorted images for SVG content. This is due to a lack of librsvg2-bin support on Windows.
 
 Type the command ``.\make latexpdf`` to generate PDF content. The PDF is located in the ``build/latex`` directory at the root of the repository.
 
-## Building EPUB
+### Building EPUB
 
 Type the command ``.\make epub`` to generate EPUB content. The EPUB is located in the ``build/epub`` directory at the root of the repository.
 

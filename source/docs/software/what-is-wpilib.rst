@@ -2,7 +2,17 @@
 
 # What is WPILib?
 
-The WPI Robotics Library (WPILib) is the standard :term:`software library` provided for teams to write code for their FRC\ |reg| robots. WPILib contains a set of useful classes and subroutines for interfacing with various parts of the FRC control system (such as sensors, motor controllers, and the driver station), as well as an assortment of other utility functions.
+.. figure:: /assets/wpilib-generic.svg
+   :alt: The logo for the WPI Robotics Library.
+   :target: http://wpilib.org
+   :width: 500
+
+The WPI Robotics Library ([WPILib](https://wpilib.org)) is the standard :term:`software library` provided for teams to write code for their FRC\ |reg| robots. WPILib contains a set of useful classes and subroutines for interfacing with various parts of the FRC control system (such as sensors, motor controllers, and the driver station), as well as an assortment of other utility functions.
+
+.. image:: /assets/wpi-logo.png
+   :alt: The Worcester Polytechnic Institute (WPI) logo.
+   :target: http://wpi.edu
+   :width: 500
 
 ## Supported languages
 
@@ -24,8 +34,8 @@ The Java and C++ source code can be found in the WPILibJ and WPILibC source dire
 
 While users are strongly encouraged to read the source code to resolve detailed questions about library functionality, more-concise documentation can be found on the official documentation pages for WPILibJ and WPILibC and RobotPy:
 
- - [Java documentation](https://github.wpilib.org/allwpilib/docs/development/java/)
+ - [Java documentation](https://github.wpilib.org/allwpilib/docs/release/java/)
 
- - [C++ documentation](https://github.wpilib.org/allwpilib/docs/development/cpp/)
+ - [C++ documentation](https://github.wpilib.org/allwpilib/docs/release/cpp/)
 
  - [Python documentation](https://robotpy.readthedocs.io/projects/robotpy/en/stable/)

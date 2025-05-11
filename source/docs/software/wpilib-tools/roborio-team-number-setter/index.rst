@@ -17,6 +17,8 @@ Enter your team number in the :guilabel:`Team Number` field and select :guilabel
 
 The :doc:`roboRIO's webserver </docs/software/roborio-info/roborio-web-dashboard>` provides some debugging and enables some configuration. However, it also takes memory away from the robot program. You can disable it by clicking on the :guilabel:`Disable Web Server` button. If you'd like to enable it again, you can click :guilabel:`Enable Web Server`.
 
+.. warning:: the Imaging Tool will not be able to connect to the roboRIO when the Web Server is disabled.
+
 ## roboRIO Identification
 
 Clicking the :guilabel:`Blink` button will cause the roboRIO's Radio LED to blink a few times to help identify the roboRIO.

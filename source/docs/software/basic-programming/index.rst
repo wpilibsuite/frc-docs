@@ -9,6 +9,7 @@
    joystick
    coordinate-system
    robot-preferences
+   deploy-directory
    using-test-mode
    reading-stacktraces
    functions-as-data

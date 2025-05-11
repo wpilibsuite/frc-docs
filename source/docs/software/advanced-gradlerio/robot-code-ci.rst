@@ -29,9 +29,9 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     # This grabs the WPILib docker container
-    container: wpilib/roborio-cross-ubuntu:2024-22.04
+    container: wpilib/roborio-cross-ubuntu:2025-22.04
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -79,9 +79,9 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     # This grabs the WPILib docker container
-    container: wpilib/roborio-cross-ubuntu:2024-22.04
+    container: wpilib/roborio-cross-ubuntu:2025-22.04
 ```
 
 Each Action workflow is made of a one or more jobs that run either sequentially (one after another) or in parallel (at the same time). In our workflow, there is only one "build" job.

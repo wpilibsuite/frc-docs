@@ -3,28 +3,28 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2025.1.1-beta-2"
+      "latestVersion": "v2025.3.2"
     },
     {
       "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2025.1.1-beta-2"
+      "latestVersion": "v2025.3.2"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/robotpy/examples/",
       "versionScheme": "\\d{4}\\.\\d\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "d89b0587a1e1111239728140466c7dc4324d4005"
+      "latestVersion": "242924b3843fdcc6efc2cefa8eac7bfff8b6bc48"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2025.1.1-beta-1"
+      "latestVersion": "v2025.3.1"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion":"6a5b6352807a8759bd0f012e57695c47f7ef7324"
+      "latestVersion": "9020718b022ba220a2c5cc04ad12714d06e7a141"
     }
   ],
-  "ignoredFiles": ["source/docs/software/commandbased/command-scheduler.rst", "source/docs/software/hardware-apis/pneumatics/pressure.rst", "source/docs/software/hardware-apis/pneumatics/solenoids.rst", "source/docs/software/advanced-controls/state-space/state-space-pose-estimators.rst", "source/docs/software/commandbased/subsystems.rst", "source/docs/software/telemetry/writing-sendable-classes.rst", "source/docs/software/advanced-controls/trajectories/troubleshooting.rst", "source/docs/software/hardware-apis/motors/wpi-drive-classes.rst", "source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst", "source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst", "source/docs/software/pathplanning/trajectory-tutorial/entering-constants.rst", "source/docs/software/convenience-features/event-based.rst", "source/docs/software/dashboards/glass/field2d-widget.rst", "source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst", "source/docs/software/hardware-apis/misc/addressable-leds.rst"]
+  "ignoredFiles": ["source/docs/software/commandbased/command-scheduler.rst", "source/docs/software/hardware-apis/pneumatics/pressure.rst", "source/docs/software/hardware-apis/pneumatics/solenoids.rst", "source/docs/software/advanced-controls/state-space/state-space-pose-estimators.rst", "source/docs/software/commandbased/subsystems.rst", "source/docs/software/telemetry/writing-sendable-classes.rst", "source/docs/software/advanced-controls/trajectories/troubleshooting.rst", "source/docs/software/hardware-apis/motors/wpi-drive-classes.rst", "source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst", "source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst", "source/docs/software/pathplanning/trajectory-tutorial/entering-constants.rst", "source/docs/software/convenience-features/event-based.rst", "source/docs/software/dashboards/glass/field2d-widget.rst", "source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst"]
 }

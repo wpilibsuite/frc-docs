@@ -1,6 +1,6 @@
 # WPILib Installation Guide
 
-This guide is intended for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can skip to :doc:`python-setup`. Additionally, the below tutorial shows Windows 11, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
+This guide will walk you through installing the WPILib development environment on your computer. This includes the WPILib tools, Visual Studio Code, and all dependencies needed to develop and deploy code to the roboRIO. WPILib Installation is required for Java and C++ teams. LabVIEW teams can skip to :doc:`labview-setup`. Python teams can do a full install per these instructions to get a Visual Studio Code environment with some python extensions, or do a tools only installation to install dashboards such as Shuffleboard and Elastic. Python teams additionally need to follow the :doc:`python-setup`.
 
 ## Prerequisites
 
@@ -11,13 +11,19 @@ Supported Operating Systems and Architectures:
 
 .. warning:: The following OSes are no longer supported: macOS 12 or earlier, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
-.. note:: [Windows 10 support from Microsoft will end in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
+.. note:: [Windows 10 support from Microsoft will end in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11, or switch to one of the supported Linux distributions listed.
+
+.. note:: C++ compilation is memory intensive. A minimum of 32 GB of RAM is recommended for C++ teams.
+
+This tutorial shows Windows 11, but the steps are identical for all operating systems. Notes differentiating operating systems will be shown.
 
 WPILib is designed to install to different folders for different years, so that it is not necessary to uninstall a previous version before installing this year's WPILib.
 
 ## Downloading
 
-.. wpilibrelease:: v2025.1.1-beta-2
+.. only:: not prbuild
+
+   .. wpilibrelease:: v2025.3.2
 
 [You can download the latest release of the installer from GitHub](https://github.com/wpilibsuite/allwpilib/releases/latest/).
 
@@ -56,6 +62,8 @@ When you download the WPILib installer, it is distributed as a disk image file `
    .. tab-item:: macOS
       :sync: macos
 
+      .. note:: Ensure you've ejected any previous WPILibInstaller images from the desktop before starting installation
+
       macOS users can double click on the downloaded ``dmg`` and then select ``WPILibInstaller`` to launch the application.
 
       .. image:: images/wpilib-setup/macos-launch.png
@@ -89,8 +97,8 @@ Upon opening the installer, you'll be presented with the below screen. Go ahead 
 
 This showcases a list of options included with the WPILib installation.
 
-- :guilabel:`Tools Only` installs just the WPILib tools (Pathweaver, Shuffleboard, RobotBuilder, SysId, Glass, and OutlineViewer) and JDK.
-- :guilabel:`Everything` installs the full development environment (VS Code, extensions, all dependencies), WPILib tools, and JDK.
+- :guilabel:`Tools Only` installs just the WPILib tools (:doc:`SmartDashboard </docs/software/dashboards/smartdashboard/index>`, :doc:`Shuffleboard </docs/software/dashboards/shuffleboard/index>`, :doc:`RobotBuilder </docs/software/wpilib-tools/robotbuilder/index>`, :doc:`OutlineViewer </docs/software/wpilib-tools/outlineviewer/index>`, :doc:`PathWeaver </docs/software/pathplanning/pathweaver/index>`, :doc:`Glass </docs/software/dashboards/glass/index>`, :doc:`SysId </docs/software/advanced-controls/system-identification/index>`, :ref:`Data Log Tool <docs/software/telemetry/datalog-download:Managing Data Logs with the DataLogTool>`, :doc:`roboRIO Team Number Setter </docs/software/wpilib-tools/roborio-team-number-setter/index>`, :doc:`AdvantageScope </docs/software/dashboards/advantagescope>`, :doc:`Elastic </docs/software/dashboards/elastic>`, :doc:`WPIcal </docs/software/wpilib-tools/wpical/index>`) and JDK.
+- :guilabel:`Everything` installs the full development environment (VS Code, extensions, all dependencies, C++ compiler and JDK), WPILib tools, and documentation
 
 You will notice two buttons, :guilabel:`Install for this User` and :guilabel:`Install for all Users`. :guilabel:`Install for this User` only installs it on the current user account, and does not require administrator privileges. However, :guilabel:`Install for all Users` installs the tools for all system accounts and *will* require administrator access. :guilabel:`Install for all Users` is not an option for macOS and Linux.
 
@@ -117,9 +125,11 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
 - Create VS Code archives to share with other computers/OSes for offline install
 
-  - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing the copy of the installer.
+  - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing with the installer for future offline installs.
 
 Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~150MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
+
+.. note:: teams upgrading from Beta will already have a version of VS Code installed. However, it's still recommended to select :guilabel:`Download for this computer only` to ensure the latest recommended version of VS Code is installed
 
 .. image:: images/wpilib-setup/installer-installing.png
    :alt: Installer progress bar
@@ -160,6 +170,13 @@ Some operating systems require some final action to complete installation.
       $ sudo systemctl reload apparmor.service
       ```
 
+      The above will fix the following error:
+
+      ```console
+      The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that ~/wpilib/2025/advantagescope/chrome-sandbox is owned by root and has mode 4755.
+      ```
+
+
 .. note:: Installing desktop tools and rebooting will create a folder on the desktop called ``YYYY WPILib Tools``, where ``YYYY`` is the current year. Desktop tool shortcuts are not available on Linux and macOS.
 
 ## Additional C++ Installation for Simulation
@@ -183,13 +200,16 @@ The Offline Installer installs the following components:
 
 - **Java JDK/JRE** - A specific version of the Java JDK/JRE that is used to build Java robot code and to run any of the Java based Tools (Dashboards, etc.). This exists side by side with any existing JDK installs and does not overwrite the JAVA_HOME variable
 
-- **WPILib Tools** - SmartDashboard, Shuffleboard, RobotBuilder, OutlineViewer, PathWeaver, Glass, SysId, Data Log Tool, roboRIO Team Number Setter, AdvantageScope
+- **WPILib Tools** - :doc:`SmartDashboard </docs/software/dashboards/smartdashboard/index>`, :doc:`Shuffleboard </docs/software/dashboards/shuffleboard/index>`, :doc:`RobotBuilder </docs/software/wpilib-tools/robotbuilder/index>`, :doc:`OutlineViewer </docs/software/wpilib-tools/outlineviewer/index>`, :doc:`PathWeaver </docs/software/pathplanning/pathweaver/index>`, :doc:`Glass </docs/software/dashboards/glass/index>`, :doc:`SysId </docs/software/advanced-controls/system-identification/index>`, :ref:`Data Log Tool <docs/software/telemetry/datalog-download:Managing Data Logs with the DataLogTool>`, :doc:`roboRIO Team Number Setter </docs/software/wpilib-tools/roborio-team-number-setter/index>`, :doc:`AdvantageScope </docs/software/dashboards/advantagescope>`, :doc:`Elastic </docs/software/dashboards/elastic>`, :doc:`WPIcal </docs/software/wpilib-tools/wpical/index>`
 
 - **WPILib Dependencies** - OpenCV, etc.
 
 - **VS Code Extensions** - WPILib and Java/C++/Python extensions for robot code development in VS Code
 
 - **Documentation** - Offline copies of this frc-docs documentation and Java/C++/Python APIs
+
+.. note:: It's not recommended to use the VS Code Backup and Settings Sync feature to sync settings between a regular VS Code installation and the FRC VS Code installation. This could lead to either installation being broken.
+
 
 ## Uninstalling
 

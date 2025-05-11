@@ -529,6 +529,8 @@ In the example, the left motor controllers are plugged into :term:`PWM` ports ``
    };
    ```
 
+Another way this error can manifest for teams using the Command framework is if a Subsystem is instantiated twice, which causes the hardware in the subsystem to be instantiated twice.
+
 ### gradlew is not recognized...
 
 ``gradlew is not recognized as an internal or external command`` is a common error that can occur when the project or directory that you are currently in does not contain a ``gradlew`` file. This usually occurs when you open the wrong directory.

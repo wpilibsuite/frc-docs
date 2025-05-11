@@ -14,11 +14,13 @@ Due to internal GradleRIO changes, it is necessary to update projects from previ
 
 These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
 
-- The Dependency Manager in VS Code will help teams :doc:`install their vendordeps </docs/software/vscode-overview/3rd-party-libraries>`.
+- The Dependency Manager in VS Code will help teams :doc:`discover and install vendordeps </docs/software/vscode-overview/3rd-party-libraries>`.
+- Added :doc:`Elastic Dashboard </docs/software/dashboards/elastic>` a driver focused dashboard.
 - Added :doc:`annotation based logging (Epilogue) </docs/software/telemetry/robot-telemetry-with-annotations>` for Java
+- Added :doc:`WPIcal </docs/software/wpilib-tools/wpical/index>` tool for calibrating FRC Apriltags to correct for field setup error
 - The :doc:`Java units library </docs/software/basic-programming/java-units>` has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add :doc:`persistent alerts API </docs/software/telemetry/persistent-alerts>`. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
-- Add LED pattern API for easily animating addressable LEDs
+- Add :ref:`LED pattern API <docs/software/hardware-apis/misc/addressable-leds:LED Patterns>` for easily animating addressable LEDs
 - Java 17 must be used as Java Source and Target compatibility have been bumped to Java 17. Java 17 has been used since 2023.
 
 Supported Operating Systems and Architectures:
@@ -34,7 +36,6 @@ Supported Operating Systems and Architectures:
 
 ### General Library
 
-- The units library has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
 - Add persistent alerts API. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
 - Add LED pattern API for easily animating addressable LEDs
 - Breaking: Remove deprecated ``Gyro`` and ``Accelerometer`` interface
@@ -45,6 +46,13 @@ Supported Operating Systems and Architectures:
 - Implement ``Sendable`` for HID classes
 - Include sendable type information in topic metadata
 - ``GenericHID.setRumble``: Fix Java integer overflow
+- Rename SysId example to SysIdRoutine
+- Add ``Timer.isRunning`` method
+- Add Java unit support for RobotController
+- Add a functional interface for MecanumDriveMotorVoltages and deprecate old interface
+- Add ``Koors40`` Motor Controller
+- 2025.2.1: Add 2025 field image and april tag map
+- 2025.3.1: Add april tag map for AndyMark field. See [Team Update 12](https://firstfrc.blob.core.windows.net/frc2025/Manual/TeamUpdates/TeamUpdate12.pdf) for more information.
 
 #### Commands
 
@@ -53,7 +61,6 @@ Supported Operating Systems and Architectures:
 - Breaking: Remove deprecated C++ method ``TransferOwnership``
 - Deprecate ``PIDCommand``, ``PIDSubsystem``, ``ProfiledPIDCommand``, ``ProfiledPIDSubsystem``, ``TrapezoidProfileSubsystem``
 - Deprecate ``TrapezoidProfileCommand``. Use :doc:`TrapezoidProfile Directly </docs/software/commandbased/profile-subsystems-commands>`
-- Deprecate proxy supplier constructor
 - Cache controller ``BooleanEvents`` / ``Triggers`` and directly construct ``Triggers``, fixing issues if ``BooleanEvents`` / ``Triggers`` are created in loops
 - Add deadband trigger methods to ``CommandGenericHID``
 - Make requirements private
@@ -61,12 +68,14 @@ Supported Operating Systems and Architectures:
 - Add ``StartRun`` command factory
 - Rename ``deadlineWith`` to ``deadlineFor``
 - Fix double composition error message truncation
+- Add ``withDeadline`` modifier
 
 #### NetworkTables
 
 - Server round robin message processing
 - Client: only connect to IPv4 addresses
 - Deprecate setNetworkTablesFlushEnabled
+- Set NetworkTables 3 client network identity
 
 #### Data Logging
 
@@ -74,9 +83,12 @@ Supported Operating Systems and Architectures:
 - Logging the console can be enabled with ``DatalogManager.logConsoleOutput``
 - DataLog: Add last value and change detection
 - DataLogManager: Fix behavior when low on space
+- Epilogue: Autogenerate nicer data names by default, not just raw element names
+- 2025.3.2: Epilogue: Make nonloggable type warnings configurable
 
 #### Hardware interfaces
 
+- Breaking: Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder`` to simplify and remove rollover detection that was broken
 - Add ``getVoltage`` to ``PWMMotorController``
 - Add support for Sharp IR sensors
 - Fix edge cases of CAN ID validation and reporting for CTRE and REV devices
@@ -92,8 +104,8 @@ Supported Operating Systems and Architectures:
 - Propagate ``PWMMotorController`` ``stopMotor()`` and ``disable()`` to followers
 - ``Compressor``: Add more Sendable data
 - Fix ``PowerDistribution.GetAllCurrents()``
-- Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder``
 - Fix ``AsynchronousInterrupt``
+- 2025.3.1: AddressableLED: add support for other color orders
 
 #### Math
 
@@ -113,6 +125,21 @@ Supported Operating Systems and Architectures:
 - Add geometry classes for ``Rectangle2d`` and ``Ellipse2d``
 - Add reset methods to ``Odometry`` and ``PoseEstimator``
 - Add ArmFeedforward calculate() overload that takes current and next velocity instead of acceleration
+- Fix C++ pose estimator poseEstimate initialization
+- Fix PIDController error tolerance getters
+- Add time-varying RKDP
+- Add 2D to 3D geometry constructors
+- 2025.2.1: Implement Translation3d.RotateAround
+- 2025.3.1: Add Pose2d and Pose3d RotateAround
+- 2025.3.1: Fix infinite loop in ArmFeedforward::Calculate(xₖ, vₖ, vₖ₊₁)
+- 2025.3.1: Add setters for Feedforward gains
+- 2025.3.2: Make LinearSystemSim setState() update output
+- 2025.3.2: Fix another infinite loop in ArmFeedforward
+- 2025.3.2: Add Translation2d/Translation3d slew rate limiter
+- 2025.3.2: Fix feedforward returning NaN when kᵥ = 0
+- 2025.3.2: Add Debouncer type and time setters
+- 2025.3.2: Fix singularities in Ellipse2d::Nearest()
+- 2025.3.2: Fix UnscentedKalmanFilter and improve math docs
 
 ### Simulation
 
@@ -122,6 +149,9 @@ Supported Operating Systems and Architectures:
 - Fix interrupt edges being flipped in sim
 - Don't send joystick data during auto
 - Initialize DIO to true in sim
+- Clamp battery voltage to 0
+- Fix: Update FMS widget when real DS is connected
+- Fix DS GUI System Joysticks window auto-hiding
 
 ### Romi/XRP
 
@@ -130,10 +160,29 @@ Supported Operating Systems and Architectures:
 - XRP: Add ``GetLED`` to ``OnBoardIO``
 - XRP & Romi: Changed applicable C++ methods to use units library
 
+### Java units
+
+- The units library has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
+- Add resistance units
+- Use div instead of divide
+- Add absolute value and copy sign functionality
+- 2025.3.1: Add Measure.per overloads for all known unit types
+
+### CameraServer
+
+- Update to OpenCV 4.10.0
+- Wake up even if no frames received
+- Fix wakeup on sink destruction
+- HttpCamera: Send width/height/fps stream settings
+- HttpCamera: Auto-detect mode from stream if not set
+- Sink: add ability to get most recent frame instead of waiting
+- 2025.2.1: Use frame time in Linux UsbCameraImpl
+
 ### Util
 
 - Breaking: Remove ``RuntimeLoader``
 - Deprecate ``RuntimeDetector``
+- Add a simple web server for serving files. Example: ``WebServer.start(5800, Filesystem.getDeployDirectory());``
 
 ## Branding
 
@@ -144,17 +193,17 @@ Supported Operating Systems and Architectures:
 
 ## Shuffleboard
 
-- The live network table preview has been removed due to the high frequency of node redraws. Spot checking data will now need to be done by dragging a data widget into a tab. Generic table data should still be displayable with the generic tree table widget. The NT source preview now displays the data type of a topic instead of its current value.
-- The subscribe-to-all-NT-data behavior has been changed to only subscribe to topic information. This should cut down on bandwidth and some CPU usage
-- The widget gallery has been removed with no replacement. Drawing the large number of dummy widgets took a surprising CPU load and occasionally caused problems at startup when third party widgets from plugins would crash
-- Fix widgets getting permanently disabled after network disconnects
 - Expose orientation property for NumberSlider
 - Add :doc:`persistent alerts widget </docs/software/telemetry/persistent-alerts>`
 - Correct FieldData de/serialization
+- 2025.2.1: Add 2025 field image
+- 2025.3.1: After many reports of a variety of issues, many of the resource optimations have been reverted. Performance should be similar to 2024 Shuffleboard.
 
 ## SmartDashboard
 
 .. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
+
+.. warning:: SmartDashboard is deprecated and will be removed for 2027 due to its usage of Network Tables v3. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
 
 - No changes other than build updates were made to SmartDashboard
 
@@ -162,28 +211,41 @@ Supported Operating Systems and Architectures:
 
 - Save input after clicking away
 - Check for struct descriptor size 0
+- Align Field2d border and image padding for custom images
+- Add Alerts widget
+- Fix minimum widget width
+- 2025.2.1: Add 2025 field image
+- 2025.2.1: Make picking a Field2d field JSON more obvious
+- 2025.3.2: Update default field to 2025 for Field2D
 
 ## GradleRIO
 
-- Use Gradle 8.10.2
+- Use Gradle 8.11
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
-- Add method to delete files on roboRIO that have been deleted in the deploy directory. :ref:`Set deleteOldFiles to true <docs/software/advanced-gradlerio/compiler-args:Deleting Unused Deploy Files>` in the frcStaticFileDeploy block
+- Add method to delete files on roboRIO that have been deleted in the deploy directory. :ref:`Set deleteOldFiles to true <docs/software/basic-programming/deploy-directory:Deleting Unused Deploy Files>` in the frcStaticFileDeploy block
+- Gradle now consolidates Java compile errors at the bottom of the terminal to aid discoverability https://docs.gradle.org/8.11/release-notes.html#error-warning
+- 2025.3.1: Warn if multiple versions of the same vendordep is found
+- 2025.3.2: Disable code reboot while killing robot process, which was causing high CPU usage every other code reboot for some teams
 
 ## WPILib All in One Installer
 
-- Update to VS Code 1.94.2
-- VS Code extension updates: cpptools 1.22, javaext 1.36
+- Update to VS Code 1.96.2
+- VS Code extension updates: cpptools 1.23.2, javaext 1.38
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
 - Only install scripts if they are used by a specific platform
 - Make shortcuts use the app icon
-- Add AppArmor file for electron apps for Ubuntu 24.04
-- Fix icon in dock on Ubuntu 24.04
+- Add AppArmor file for electron apps for Ubuntu 24.04, which must be :ref:`manually installed <docs/zero-to-robot/step-2/wpilib-setup:Post-Installation>`
 
 ## Visual Studio Code Extension
 
 - Add :doc:`Dependency Manager extension </docs/software/vscode-overview/3rd-party-libraries>` for easier finding and updating of 3rd party libraries
 - Add gradle clean command
 - Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
+- Add option to importer to import XRP project
+- Importer: Update for Java Units changes
+- Extract WPILib Utility on mac
+- Define java.configuration.runtimes in settings.json to ensure WPILib JDK is used
+- Improve intellisense by hiding items not likely to be used in Robot Programs
 
 ## RobotBuilder
 
@@ -193,15 +255,26 @@ Supported Operating Systems and Architectures:
 
 - Fix crash when all data is filtered out during analysis
 - Remove obsolete WPILib & CTRE presets, rename CTRE presets
+- Clamp feedback measurement delay to zero or higher
+- 2025.3.2: Refactor feedback analysis
 
 ## PathWeaver
 
-- No changes other than build updates were made to PathWeaver
+.. warning:: PathWeaver is deprecated and will be removed for 2027. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support.
+
+- Fix finding deploy directory when outputdir blank
+- 2025.2.1: Add 2025 field image
 
 ## AdvantageScope
 
 - Update to [2025 AdvantageScope](https://docs.advantagescope.org/whats-new)
 
-## Choreo
+## Elastic
 
-Choreo is bundled in the installer! Choreo is an application for creating time optimal autonomous trajectories. :doc:`Read more here </docs/software/wpilib-tools/choreo/index>`.
+Elastic is bundled in the installer! Elastic is a simple and modern dashboard. :doc:`Read more here </docs/software/dashboards/elastic>`.
+
+## WPIcal
+
+WPIcal is new WPILib tool for calibrating FRC Apriltags to correct for field setup error. :doc:`Read more here </docs/software/wpilib-tools/wpical/index>`.
+
+- 2025.2.1: Add JSON combiner which allows users to combine multiple AprilTag layouts

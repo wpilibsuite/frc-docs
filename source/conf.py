@@ -24,9 +24,9 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 # -- Project information -----------------------------------------------------
 
 project = "FIRST Robotics Competition"
-copyright = "2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
+copyright = "2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
-version = "2024"
+version = "2025"
 
 
 # -- General configuration ---------------------------------------------------
@@ -57,6 +57,8 @@ extensions = [
     "sphinx-prompt",
     "sphinx_toolbox.collapse",
     "sphinx_copybutton",
+    "sphinx_contributors",
+    "sphinx_last_updated_by_git",
 ]
 
 local_extensions = [
@@ -154,11 +156,15 @@ linkcheck_ignore = [
     r".*allaboutcircuits.com.*",
     r".*knowledge.ni.com.*",
     r".*reduxrobotics.com.*",
+    r".*digilent.com.*",
+    r".*digilentinc.com.*",
+    r".*electrodragon.com.*",
 ]
 
 linkcheck_anchors_ignore_for_url = [
     r".*github.com.*",
     r".*ni.com/en/support/downloads/drivers/download.frc-game-tools.html.*",
+    r".*ni.com/en/support/downloads/software-products/download.package-manager.html.*",
 ]
 
 # Sets linkcheck timeout in seconds
@@ -181,6 +187,8 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     "docs/yearly-overview/2020-Game-Data.rst",
+    "docs/software/wpilib-tools/robotbuilder/resources/**",
+    "docs/beta/*",
 ]
 
 # Specify the master doc file, AKA our homepage
@@ -193,6 +201,7 @@ IMAGE_SIZE_EXCLUSIONS = [
     "docs/software/vision-processing/introduction/diagrams/vision-code-on-a-coprocessor.drawio.svg",
     "docs/controls-overviews/images/frc-control-system-layout.svg",
     "docs/controls-overviews/images/frc-control-system-layout-rev.svg",
+    "docs/controls-overviews/images/frc-control-system-layout-basic.svg",
 ]
 
 # Required to display LaTeX in hover content
@@ -257,6 +266,9 @@ def setup(app):
     # Add 2014 archive link to rtd versions menu
     app.add_js_file("js/version-2014.js")
 
+    if on_pr():
+        app.tags.add("prbuild")
+
 
 html_context = {
     "display_github": True,  # Integrate GitHub
@@ -265,15 +277,6 @@ html_context = {
     "github_version": "main",  # Version, set to main so edit on github makes PRs to main
     "conf_py_path": "/source/",  # Path in the checkout to the docs root
 }
-
-# Override github_version to commit ID for PRs so Delta extension shows PR changed files
-if os.getenv("READTHEDOCS_VERSION_TYPE") == "external":
-    html_context["github_version"] = os.environ.get("READTHEDOCS_GIT_IDENTIFIER")
-
-# Set commit and current_version, used by delta extension, when on RTD
-if os.getenv("READTHEDOCS") == "True":
-    html_context["commit"] = os.environ.get("READTHEDOCS_GIT_COMMIT_HASH")[:8]
-    html_context["current_version"] = os.environ.get("READTHEDOCS_VERSION_NAME")
 
 # -- Options for latex generation --------------------------------------------
 
@@ -329,7 +332,7 @@ def new_send(self, data):
         )
 
         new_data = data
-        if b"api.github.com" in headers[b"host"]:
+        if headers[b"host"].endswith(b"api.github.com"):
             if b"authorization" not in headers:
                 if github_token := os.environ.get("GITHUB_TOKEN", None):
                     new_data = (
@@ -365,3 +368,10 @@ intersphinx_mapping = {
 # See also:
 # https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#confval-intersphinx_disabled_reftypes
 intersphinx_disabled_reftypes = ["*"]
+
+
+def on_pr() -> bool:
+    return (
+        os.getenv("READTHEDOCS_VERSION_TYPE") == "external"
+        or os.getenv("GITHUB_EVENT_NAME") == "pull_request"
+    )

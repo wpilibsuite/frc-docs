@@ -16,9 +16,7 @@ This documentation can be downloaded for offline viewing. The link to download t
 
 ### All Teams
 
--  [2024 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#500107) (Note: Click on link for "Individual Offline Installers")
-
--  [2024 FRC Radio Configuration Utility](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip) or [2024 FRC Radio Configuration Utility Israel Version](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip)
+-  [2025 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) (Note: Click on link for "Install Offline")
 
 ### LabVIEW Teams
 
@@ -35,7 +33,7 @@ Once on the GitHub releases page, scroll to the download section in the middle o
 
 Then click on the correct binary for your OS and architecture to begin the download.
 
-.. note:: After downloading the Java/C++ WPILib installer, run it once while connected to the internet and select :guilabel:`Install for this User` then :guilabel:`Create VS Code zip to share with other computers/OSes for offline install` and save the downloaded VS Code zip file for future offline installations.
+.. note:: After downloading the Java/C++ WPILib installer, run it once while connected to the internet and select :guilabel:`Install for this User` then :guilabel:`Create VS Code zip to share with other computers/OSes for offline install` and save the downloaded VS Code archives for future offline installations.
 
 ## 3rd Party Libraries/Software
 

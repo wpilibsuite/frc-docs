@@ -2,198 +2,156 @@
 
 # Programming your Radio
 
-This guide will show you how to use the FRC\ |reg| Radio Configuration Utility software to configure your robot's wireless bridge for use outside of FRC events.
+This guide will show you how to do a basic setup for controlling your robot "at home" using the VH-109 FRC\ |reg| Radio.  For complete documentation and information please see the [Vivid-Hosting radio site](https://frc-radio.vivid-hosting.net/).
+
+.. note:: If looking for how to use the OpenMesh (OM5P) Radio please see :ref:`docs/zero-to-robot/step-3/openmesh:Using the OpenMesh OM5P Radio`
 
 ## Prerequisites
 
-The FRC Radio Configuration Utility requires administrator privileges to configure the network settings on your machine. The program should request the necessary privileges automatically (may require a password if run from a non-administrator account), but if you are having trouble, try running it from an administrator account.
+The recommended setup requires: 2 VH-109 radios, 1 VH-117 :term:`PoE` Wall Adapter, and 1 Radio Heatsink.  Available [here](https://wcproducts.com/products/frc-radio).
 
-Download the latest FRC Radio Configuration Utility Installer from the following links:
+Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Setup Discussion` if you do not currently have this hardware.
 
-[FRC Radio Configuration 24.0.1](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1.zip)
+.. image:: images/radio-programming/VH-109-2-radios.drawio.svg
+   :alt: Connectivity diagram of VH-109 on robot connected to VH-109 on Driver station, powered by VH-117 POE wall adapter, with DS and programming laptops connected to it
+   :width: 500
 
-[FRC Radio Configuration 24.0.1 Israel Version](https://firstfrc.blob.core.windows.net/frc2024/Radio/FRC_Radio_Configuration_24_0_1_IL.zip)
+## Getting to the Web Configuration Page
 
-.. note:: The _IL version is for Israel teams and contains a version of the OM5PAC firmware with restricted channels for use in Israel.
+1. Connect the radio directly to your computer using an Ethernet cable in the :guilabel:`DS` port.
 
-.. note::. Teams planning on using the radio tool on a machine without the WPILib suite installed, will need a copy of Java installed. This can be downloaded [here](https://adoptium.net/temurin/releases/?version=17).
+2. Ensure the radio has power either through the Weidmuller connectors or :term:`PoE`.
 
-Before you begin using the software:
+3. Open a web browser and navigate to :guilabel:`http://radio.local/`.  See :ref:`docs/zero-to-robot/step-3/radio-programming:Troubleshooting` if the connection doesn't work.
 
-1. :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`
-2. Plug directly from your computer into the wireless bridge ethernet port closest to the power jack. Make sure no other devices are connected to your computer via ethernet. If powering the radio via PoE, plug an Ethernet cable from the PC into the socket side of the PoE adapter (where the roboRIO would plug in). If you experience issues configuring through the PoE adapter, you may try connecting the PC to the alternate port on the radio.
+## Radio Firmware Update
 
-.. warning:: The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
+.. image:: images/radio-programming/radio-firmware.png
+  :alt: The Firmware Upload section of the radio configuration page
 
-## Application Notes
+.. note:: Newer versions of the radio firmware will have the version listed at the bottom.  If you do not see the version listed you have firmware prior to 1.2.0.
 
-By default, the Radio Configuration Utility will program the radio to enforce the 4Mbps bandwidth limit on traffic exiting the radio over the wireless interface. In the home configuration (AP mode) this is a total, not a per client limit. This means that streaming video to multiple clients is not recommended.
+You can skip this section if already at version 1.3.0 or later.
 
-The Utility has been tested on Windows 7, 8 and 10. It may work on other operating systems, but has not been tested.
+1. On the Vivid-Hosting [firmware releases](https://frc-radio.vivid-hosting.net/miscellaneous/firmware-releases) page download the proper firmware for the current firmware version you have.  Always choose the `Radio Variant`.
 
-### Programmed Configuration
+2. Copy the SHA-256 key below the firmware you downloaded.
 
-.. image:: /docs/hardware/hardware-basics/images/status-lights/openmesh-radio-status-lights.png
-  :alt: Lists the names of each of the status lights on the two legal radios.
+3. Paste that key into the :guilabel:`Checksum` box of the :guilabel:`Firmware Upload` section at the bottom of the configuration page we navigated to above.
 
-The Radio Configuration Utility programs a number of configuration settings into the radio when run. These settings apply to the radio in all modes (including at events). These include:
+4. Click :guilabel:`Browse...` and select the firmware file you downloaded.
 
-- Set a static IP of ``10.TE.AM.1``
-- Set an alternate IP on the wired side of ``192.168.1.1`` for future programming
-- Bridge the wired ports so they may be used interchangeably
-- The LED configuration noted in the graphic above.
-- 4Mb/s bandwidth limit on the outbound side of the wireless interface (may be disabled for home use)
-- QoS rules for internal packet prioritization (affects internal buffer and which packets to discard if bandwidth limit is reached). These rules are:
+5. Click the :guilabel:`Upload` button.
 
-  - Robot Control and Status (UDP ``1110``, ``1115``, ``1150``)
-  - Robot TCP & :term:`NetworkTables` (TCP ``1735``, ``1740``)
-  - Bulk (All other traffic). (disabled if BW limit is disabled)
+.. warning:: The radio will take approximately 2-3 minutes to complete firmware updates. Do not remove power during this process. Damage to the radio can occur.  When the PWR light is solid and the SYS light is slowly blinking at 1 Hz, the firmware upgrade process is complete.
 
-- :term:`DHCP` server enabled. Serves out:
+## Robot Radio Configuration (All Teams)
 
-  - ``10.TE.AM.11`` - ``10.TE.AM.111`` on the wired side
-  - ``10.TE.AM.138`` - ``10.TE.AM.237`` on the wireless side
-  - Subnet mask of ``255.255.255.0``
-  - Broadcast address ``10.TE.AM.255``
+.. image:: images/radio-programming/configuration-page.png
+  :alt: The top section of the radio configuration page
 
-- DNS server enabled. DNS server IP and domain suffix (``.lan``) are served as part of the DHCP.
+This section is used for configuring the VH-109 radio outside of competition. At competition, configuration will be done by a provided computer and manual configuration using this page **should not be used**.
 
-At home only:
+1. Select :guilabel:`Robot Radio Mode`
 
-- SSID may have a "Robot Name" appended to the team number to distinguish multiple networks.
-- Firewall option may be enabled to mimic the field firewall rules (open ports may be found in the Game Manual)
+2. Enter the team number
 
-.. warning:: It is not possible to modify the configuration manually.
+3. Enter the suffix, if desired.  This will help identify your robot and distinguish it from other networks.
 
-## Install the Software
+4. Enter the 6 GHz WPA/SAE key.  This key will need to match the key on the Access Point you configure.
 
-.. image:: images/radio-programming/radio-installer.png
-  :alt: The radio configuration installer .exe file in windows explorer.
+5. Enter the 2.4 GHz WPA/SAE key.  This is the password team members will type in when connecting to the 2.4 GHz network, if available.
 
-Double click on ``FRC_Radio_Configuration_VERSION.exe`` to launch the installer. Follow the prompts to complete the installation.
+## Access Point Radio Configuration
 
-Part of the installation prompts will include installing Npcap if it is not already present. The Npcap installer contains a number of checkboxes to configure the install. You should leave the options as the defaults.
+On the Access Point Radio, follow all of the same steps as the robot radio configuration instead choosing :guilabel:`Access Point Mode` at the top of the configuration page. Ensure you use the exact same settings for team number, suffix, and WPA/SAE keys.
 
-## Launch the software
+## Alternative Setup Discussion
 
-.. image:: images/radio-programming/radio-launch.png
-  :alt: The FRC Radio Configuration Utility in the start menu.
+### Optimal Setup: Two VH-109 Radios
 
-Use the Start menu or desktop shortcut to launch the program.
+For the best experience and to closely simulate field conditions, it is strongly recommended that your team uses two VH-109 radios during testing and preparation. This dual-radio setup mirrors the competition environment, ensuring your robot operates under realistic network conditions. Additionally, having two radios allows you to fully leverage the high-speed, low-latency communication provided by the 6GHz band, which is crucial for optimal robot performance in high-stakes scenarios.
 
-.. note:: If you need to locate the program, it is installed to ``C:\Program Files (x86)\FRC Radio Configuration Utility``. For 32-bit machines the path is ``C:\Program Files\FRC Radio Configuration Utility``
+When mounting the access point radio, ensure it is mounted high where it has a clear line of sight to the robot.
 
-## Allow the program to make changes, if prompted
+### Only 1 VH-109 radio
 
-.. image:: images/radio-programming/allow-changes.png
-  :alt: User Account Control dialog that pops up when running the config utility.
+If your team has access to only one VH-109 radio, there are still viable options to continue testing and preparing for competition. However, these setups require additional considerations:
 
-A prompt may appear about allowing the configuration utility to make changes to the computer. Click :guilabel:`Yes` if the prompt appears.
+#### Use an Old Radio for Testing
 
-## Select the network interface
+If your team still has an older radio from a previous season, it can serve as a temporary substitute for the VH-109 on your robot. In this case, you should:
 
-.. image:: images/radio-programming/select-network-connection.png
-  :alt: Each of the Parts of the Network Interfaces selection pop up.
+- Reserve a spot on your robot specifically for the VH-109 radio to ensure seamless integration during competition.
+- Provide the older radio regulated power with a REV Radio Power Module or a CTRE Voltage Regulator Module.
+- Be prepared to connect devices via a network switch if the older radio does not provide enough Ethernet ports. This may add complexity but ensures all devices are networked properly during testing.
 
-Use the pop-up window to select the which ethernet interface the configuration utility will use to communicate with the wireless bridge. On Windows machines, ethernet interfaces are typically named "Local Area Connection". The configuration utility can not program a bridge over a wireless connection.
+Advantages:
 
-1. If no ethernet interfaces are listed, click :guilabel:`Refresh` to re-scan for available interfaces.
-2. Select the interface you want to use from the drop-down list.
-3. Click :guilabel:`OK`.
+- Connection strength similar to previous years.
 
-## Open Mesh Firmware Note
+Disadvantages:
 
-For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC radio, the radio must be running an FRC specific build of the OpenWRT firmware.
+- Requires additional hardware (e.g., the old radio and maybe a network switch).
+- The older radio may not offer the same performance as the VH-109, potentially affecting test results.
 
-If you do not need to update or re-load the firmware, skip the next step.
+#### Enable 2.4GHz Wifi on the VH-109
 
-.. warning:: Radios used in 2019-2023 **do not** need to be updated before configuring, the 2024 tool uses the same 2019 firmware.
+The VH-109 radio includes a standalone mode that can be activated using DIP switch 3. In this configuration, the radio hosts its own 2.4GHz network, enabling direct connections without additional hardware.
 
-## Loading FRC Firmware to Open Mesh Radio
+To enable standalone mode:
 
-.. image:: images/radio-programming/openmesh-firmware.png
-  :alt: Highlighting the radio dropdown and the Load Firmware button on the main configuration utility screen.
+1. Locate the DIP switches on the VH-109 radio, removing the sticker if required.
+2. Flip DIP switch 3 to the "ON" position.
+3. Connect devices directly to the 2.4GHz network hosted by the radio, using the 2.4 GHz WPA/SAE key from configuration.
 
-If you need to load the FRC firmware (or reset the radio), you can do so using the FRC Radio Configuration Utility.
+Advantages:
 
-1. Follow the instructions above to install the software, launch the program and select the Ethernet interface.
-2. Make sure the Open Mesh radio is selected in the Radio dropdown.
-3. Make sure the radio is connected to the PC via Ethernet.
-4. Unplug the power from the radio. (If using a PoE cable, this will also be unplugging the Ethernet to the PC, this is fine)
-5. Press the Load Firmware button
-6. When prompted, plug in the radio power. The software should detect the radio, load the firmware and prompt you when complete.
+- Simple setup with no need for additional hardware.
+- Allows immediate use of the VH-109 without extra configuration.
 
-.. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`Disabling Network Adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>` for more info.
+Disadvantages:
 
-   Teams may also see this error with Operating Systems configured for languages other than US English. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on [this page](https://www.java.com/en/download/help/locale.html).
+- The 2.4GHz band is more prone to congestion and interference, especially in crowded environments.
+- Range and accessibility may be limited compared to the 6GHz band.
 
-## Select Radio and Operating Mode
+### No VH-117 :term:`PoE` Wall Adapter
 
-.. image:: images/radio-programming/select-bridge-model-mode.png
-  :alt: Highlights the Radio and Mode dropdown boxes.
+You can power the access point radio with a 12V wall plug connecting wires to the Weidmuller ports.  We recommend trying to find one with a [switch](https://a.co/d/cUsD25n) to simplify turning on and off the radio.  The primary concern will be cord length which will likely not be long enough to run from your wall outlet so you will need to bring the power closer with an extension cord.
 
-1. Select which radio you are configuring using the drop-down list.
-2. Select which operating mode you want to configure. For most cases, the default selection of 2.4GHz Access Point will be sufficient. If your computers support it, the 5GHz AP mode is recommended, as 5GHz is less congested in many environments.
+### No Radio Heatsink
 
-## Select Options
-
-.. image:: images/radio-programming/select-options.png
-  :alt: Setting the robot name will change the SSID.  The checkboxes make the radio more similar to competition operation.
-
-The default values of the options have been selected to match the use case of most teams, however, you may wish to customize these options to your specific scenario:
-
-1. **Robot Name:** This is a string that gets appended to the SSID used by the radio. This allows you to have multiple networks with the same team number and still be able to distinguish them.
-2. **Firewall:** If this box is checked, the radio firewall will be configured to attempt to mimic the port blocking behavior of the firewall present on the FRC field. For a list of open ports, please see the FRC Game Manual.
-3. **BW Limit:** If this box is checked, the radio enforces a 4 Mbps bandwidth limit like it does when programmed at events. Note that this is a total limit, not per client, so streaming video to multiple clients simultaneously may cause undesired behavior.
-
-.. note:: Firewall and BW Limit only apply to the Open Mesh radios. These options have no effect on D-Link radios.
-
-.. warning:: The "Firewall" option configures the radio to emulate the field firewall. This means that you will not be able to deploy code wirelessly with this option enabled. This is useful for simulating blocked ports that may exist at competitions.
-
-## Starting the Configuration Process
-
-.. image:: images/radio-programming/start-config.png
-  :alt: At the bottom of the screen is instructions for completing the configuration process.
-
-Follow the on-screen instructions for preparing your wireless bridge, entering the settings the bridge will be configured with, and starting the configuration process. These on-screen instructions update to match the bridge model and operating mode chosen.
-
-## Configuration Progress
-
-.. image:: images/radio-programming/config-in-progress.png
-  :alt: The progress bar dialog while the configuration is working.
-
-Throughout the configuration process, the window will indicate:
-
-1. The step currently being executed.
-2. The overall progress of the configuration process.
-3. All steps executed so far.
-
-## Configuration Completed
-
-.. image:: images/radio-programming/config-completed.png
-  :alt: A pop up dialog indicating the programming was successful.
-
-Once the configuration is complete:
-
-1. Press :guilabel:`OK` on the dialog window.
-2. Press :guilabel:`OK` on the main window to return to the settings screen.
-
-## Configuration Errors
-
-.. image:: images/radio-programming/config-errors.png
-  :alt: A error dialog pop up.
-
-If an error occurs during the configuration process, follow the instructions in the error message to correct the problem.
+The access point radio will get hot after being on for a longer than a full match.  This will cause latency to increase.
 
 ## Troubleshooting
 
-- :ref:`Disable all other network adapters <docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters>`.
-- Make sure you wait long enough that the power light has stayed solid for 10 seconds.
-- Make sure you have the correct network interface, and only one interface is listed in the drop-down.
-- Make sure your firewall is turned off.
-- Plug directly from your computer into the wireless bridge and make sure no other devices are connected to your computer via ethernet.
-- Ensure the ethernet is plugged into the port closest to the power jack on the wireless bridge.
-- If using an Operating System configured for languages other than US English, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on [this page](https://www.java.com/en/download/help/locale.html).
-- Due to Unicode incompatibilities, non-US Teams may face a configuration failure because of incorrect network interface reading. In that case, change the network adapter name to another name in English and retry.
-- Some users have reported success after installing [npcap 1.60](https://npcap.com/). If this doesn't resolve the issue, it's recommended to uninstall npcap and the radio tool and then reinstall the radio tool in order to get back to a known configuration.
-- If all else fails, try a different computer.
+### Cannot Reach the Configuration Page at radio.local
+
+Disconnect other network connections such as Wi-Fi.
+
+Download and use the [Network Assistant](https://frc-radio.vivid-hosting.net/miscellaneous/network-assistant-tool).  See the instructions below the download for how to use.
+
+Disable :doc:`firewalls </docs/networking/networking-introduction/windows-firewall-configuration>`.
+
+Ensure :doc:`Game Tools </docs/zero-to-robot/step-2/frc-game-tools>` or another :ref:`mdns responder <docs/networking/networking-introduction/networking-basics:mDNS - Providers>` is installed.
+
+Set a [static ip address](https://www.trendnet.com/press/resource-library/how-to-set-static-ip-address) with these parameters:
+
+- IP Address: 192.168.69.2
+- Subnet Mask: 255.255.255.0
+- Gateway: Leave Blank
+- DNS: 192.168.69.1 or Leave Blank
+
+Navigate to :guilabel:`http://192.168.69.1/`
+
+### Setting Up an Entire Field
+
+See the documentation on using the [VH-113 Access Point](https://frc-radio.vivid-hosting.net/overview/practicing-at-home#vh-113-full-field).
+
+### How do I run an Offseason Event?
+
+Use the [Vivid-Hosting radio kiosk](https://frc-radio.vivid-hosting.net/miscellaneous/offseason-kiosk-programmer).
+
+### Additional Radio Problems
+
+Contact WCP support at: [support@westcoastproducts.com](mailto:support@westcoastproducts.com)

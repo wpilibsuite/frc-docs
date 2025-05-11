@@ -2,7 +2,7 @@
 
 A debouncer is a filter used to eliminate unwanted quick on/off cycles (termed "bounces," originally from the physical vibrations of a switch as it is thrown). These cycles are usually due to a sensor error like noise or reflections and not the actual event the sensor is trying to record.
 
-Debouncing is implemented in WPILib by the ``Debouncer`` class ([Java](https://github.wpilib.org/allwpilib/docs/development/java/edu/wpi/first/math/filter/Debouncer.html), [C++](https://github.wpilib.org/allwpilib/docs/development/cpp/classfrc_1_1_debouncer.html), :external:py:class:`Python <wpimath.filter.Debouncer>`), which filters a boolean stream so that the output only changes if the input sustains a change for some nominal time period.
+Debouncing is implemented in WPILib by the ``Debouncer`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/Debouncer.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_debouncer.html), :external:py:class:`Python <wpimath.filter.Debouncer>`), which filters a boolean stream so that the output only changes if the input sustains a change for some nominal time period.
 
 ## Modes
 

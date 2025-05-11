@@ -8,7 +8,7 @@ The FRC\ |reg| software consists of a wide variety of mandatory and optional com
 
 The primary supported OS for FRC components is Windows. All required FRC software components have been tested on Windows 10 & 11.
 
-Many of the tools for C++/Java/Python programming are also supported and tested on macOS and Linux. Teams programming in C++/Java/Python should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station, Radio Configuration Utility, and roboRIO Imaging Tool.
+Many of the tools for C++/Java/Python programming are also supported and tested on macOS and Linux. Teams programming in C++/Java/Python should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station and roboRIO Imaging Tool.
 
 ## LabVIEW FRC (Windows Only)
 
@@ -61,6 +61,20 @@ Shuffleboard has the same features as SmartDashboard. It also improves on the se
 
 :ref:`Glass <docs/software/dashboards/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantages are the field view, pose visualization and advanced signal plotting tools.
 
+### AdvantageScope
+
+.. image:: /docs/software/dashboards/images/advantagescope.png
+   :alt: Screenshot of an AdvantageScope window displaying a line graph, a list of fields, and a series of miscellaneous tabs.
+
+AdvantageScope is a data visualization tool for :ref:`NetworkTables <docs/software/networktables/networktables-intro:What is NetworkTables>`, :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`, and :ref:`Driver Station logs <docs/software/driverstation/driver-station-log-viewer:Driver Station Log File Viewer>`. It is a programmer's tool (rather than a competition dashboard) and can be used to debug real or simulated robot code from a log file or live over the network. For more information see the :doc:`AdvantageScope section </docs/software/dashboards/advantagescope>`.
+
+### Elastic
+
+.. image:: /docs/software/dashboards/images/elastic.png
+   :alt: Screenshot of an Elastic showing field trajectory, match time, and several other widgets
+
+Elastic is a simple and modern dashboard made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing. It was built with the goal of being a drag & drop dashboard with an easy setup and elegant UI designed for a high pressure competition environment. For more information see the :doc:`Elastic section </docs/software/dashboards/elastic>`.
+
 ## LiveWindow
 
 .. image:: images/control-system-software/livewindow-smartdashboard.png
@@ -74,13 +88,6 @@ LiveWindow is a feature of SmartDashboard and Shuffleboard, designed for use wit
    :alt: roboRIO Imaging Tool after it has found a connected roboRIO.
 
 This tool is used to format and setup a roboRIO for use in FRC. Installation instructions can be found :ref:`here <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`. Additional instructions on imaging your roboRIO using this tool can be found :doc:`here </docs/zero-to-robot/step-3/imaging-your-roborio>`.
-
-## FRC Radio Configuration Utility (Windows Only)
-
-.. image:: images/control-system-software/frc-radio-configuration-utility.png
-   :alt: Initial screen of the FRC Radio Configuration Utility.
-
-The FRC Radio Configuration Utility is a tool used to configure the standard radio for practice use at home. This tool sets the appropriate network settings to mimic the experience of the FRC playing field. The FRC Radio Configuration Utility is installed by a standalone installer that can be found :ref:`here <docs/zero-to-robot/step-3/radio-programming:Programming your Radio>`.
 
 ## FRC Driver Station Log Viewer (Windows Only)
 
@@ -115,7 +122,7 @@ The FRC Robot Simulator is a component of the LabVIEW programming environment th
 .. image:: images/control-system-software/pathweaver.png
    :alt: PathWeaver UI with a project for FRC Deep Space plotting a trajectory to the back of the rocket.
 
-PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines.  These paths have smooth curves allowing the team to quickly navigate their robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
+PathWeaver allows teams to quickly generate and configure paths for advanced autonomous routines for differential drivetrains.  These paths have smooth curves allowing the team to quickly navigate their robot between points on the field.  For more information see the :ref:`PathWeaver section <docs/software/pathplanning/pathweaver/introduction:Introduction to PathWeaver>`.
 
 ## System Identification
 
@@ -137,3 +144,10 @@ OutlineViewer is a utility used to view, modify and add to all of the contents o
    :alt: roboRIO Team Number Setter tool.
 
 The roboRIO Team Number Setter is a cross-platform utility that can be used to set the team number on the roboRIO. It is an alternative to the roboRIO imaging tool for setting the team number.  For more information see the :ref:`roboRIO Team Number Setter section <docs/software/wpilib-tools/roborio-team-number-setter/index:roboRIO Team Number Setter>`.
+
+## WPIcal
+
+.. image:: /docs/software/wpilib-tools/wpical/images/WPIcal.png
+   :alt: WPIcal tool.
+
+WPIcal is a cross-platform utility that can be used to calibrate the Apriltags on FRC fields to correct for field setup error.  For more information see the :ref:`WPIcal section <docs/software/wpilib-tools/wpical/index:WPIcal>`.

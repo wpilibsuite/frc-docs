@@ -11,6 +11,9 @@ build:
     python: "3.9"
   apt_packages:
     - librsvg2-bin
+  jobs:
+    post_checkout:
+      - git fetch --unshallow || true
  
 formats:
   - htmlzip

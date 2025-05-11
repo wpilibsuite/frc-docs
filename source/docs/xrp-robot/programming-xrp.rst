@@ -6,7 +6,7 @@ Writing a program for the XRP is very similar to writing a program for a regular
 
 Creating a new program for an XRP is like creating a normal FRC program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps.
 
-WPILib comes with two templates for XRP projects, including one based on TimedRobot, and a Command-Based project template. Additionally, an example project is provided which showcases some of the built-in functionality of the XRP, and shows how to use the vendordep exposed XRP classes. This article will walk through creating a project from this example.
+[WPILib](http://wpilib.org), created by [Worcester Polytechnic Institute](http://wpi.edu), comes with two templates for XRP projects, including one based on TimedRobot, and a Command-Based project template. Additionally, an example project is provided which showcases some of the built-in functionality of the XRP, and shows how to use the vendordep exposed XRP classes. This article will walk through creating a project from this example.
 
 .. note:: In order to program the XRP using C++, a compatible C++ desktop compiler must be installed. See :ref:`Robot Simulation - Additional C++ Dependency <cpp_sim_additional_dependency>`.
 
@@ -34,7 +34,7 @@ One aspect where an XRP project differs from a regular FRC robot project is that
 
 To run an XRP program, first, ensure that your XRP is powered on. Next, connect to ``XRP-<IDENT>`` WiFi network broadcast by the XRP. If you changed the XRP network settings (for example, to connect it to your own network), you may change the IP address that your program uses to connect to the XRP. To do this, open the ``build.gradle`` file and update the ``wpi.sim.envVar`` line to the appropriate IP address.
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.1.1-beta-1/vscode-wpilib/resources/gradle/javaxrp/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.3.1/vscode-wpilib/resources/gradle/javaxrp/build.gradle
    :language: groovy
    :lines: 44-47
    :lineno-match:

@@ -30,14 +30,14 @@ In the dialog box that appears, select all entries. The easiest way to do this i
 
 ## Getting LabVIEW installer
 
-Download the [LabVIEW for FRC 2024 installer](https://www.ni.com/en-us/support/downloads/software-products/download.labview-software-for-frc.html) from NI. Be sure to select the correct version from the drop-down.
+Download the [LabVIEW for FRC 2025 installer](https://www.ni.com/en-us/support/downloads/software-products/download.labview-software-for-frc.html) from NI. Be sure to select the correct version from the drop-down.
 
 .. image:: images/labview/offline-installer.png
    :alt: The Download button for the NI installer with the offline installer link below it.
 
-If you wish to install on other machines offline, do not click the Download button, click **Individual Offline Installers** and then click Download, to download the full installer.
+If you wish to install on other machines offline, do not click the Download button, click :guilabel:`Offline Install` and then click Download, to download the full installer.
 
-.. note:: This is a large download (~10GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
+.. note:: This is a large download (~11GB). It is recommended to use a fast internet connection and to use the NI Downloader to allow the download to resume if interrupted.
 
 ## Installing LabVIEW
 
