@@ -67,13 +67,22 @@ def redown(text: str) -> str:
 
         ret = ""
         ret += start
-        ret += btindent + f".. code-block:: {lang}\n\n"
+        ret += btindent + f".. code-block:: {lang}\n"
         cindent = 3 * " "
+        firstCode = False
 
         for line in code.splitlines(keepends=True):
-            if line.strip() == "":
+            if line.strip().startswith(":") and not firstCode:
+                ret += cindent + line
+            elif line.strip() == "":
+                if not firstCode:
+                    firstCode = True
+                    ret += "\n"
                 ret += "\n"
             else:
+                if not firstCode:
+                    firstCode = True
+                    ret += "\n"
                 ret += cindent + line
 
         return ret
