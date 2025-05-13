@@ -16,19 +16,14 @@ An AnalogPotentiometer can be initialized as follows:
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an AnalogPotentiometer on analog port 0
-    // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
-    // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-    AnalogPotentiometer pot = new AnalogPotentiometer(0, 180, 30);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/55a97f0c11b072d18809e160a6f2bfc64f228e8d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogpotentiometer/Robot.java
+      :language: java
+      :lines: 16-21
 
-    ```c++
-    // Initializes an AnalogPotentiometer on analog port 0
-    // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
-    // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-    frc::AnalogPotentiometer pot{0, 180, 30};
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/55a97f0c11b072d18809e160a6f2bfc64f228e8d/wpilibcExamples/src/main/cpp/snippets/AnalogPotentiometer/cpp/Robot.cpp
+      :language: c++
+      :lines: 26-30
+
 
 ### Customizing the underlying AnalogInput
 
@@ -38,25 +33,13 @@ If the user would like to apply custom settings to the underlying :code:`AnalogI
 
 .. tab-set-code::
 
-    ```java
-    // Initializes an AnalogInput on port 0, and enables 2-bit averaging
-    AnalogInput input = new AnalogInput(0);
-    input.setAverageBits(2);
-    // Initializes an AnalogPotentiometer with the given AnalogInput
-    // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
-    // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-    AnalogPotentiometer pot = new AnalogPotentiometer(input, 180, 30);
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/55a97f0c11b072d18809e160a6f2bfc64f228e8d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogpotentiometer/Robot.java
+      :language: java
+      :lines: 23-30
 
-    ```c++
-    // Initializes an AnalogInput on port 0, and enables 2-bit averaging
-    frc::AnalogInput input{0};
-    input.SetAverageBits(2);
-    // Initializes an AnalogPotentiometer with the given AnalogInput
-    // The full range of motion (in meaningful external units) is 0-180 (this could be degrees, for instance)
-    // The "starting point" of the motion, i.e. where the mechanism is located when the potentiometer reads 0v, is 30.
-    frc::AnalogPotentiometer pot{input, 180, 30};
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/55a97f0c11b072d18809e160a6f2bfc64f228e8d/wpilibcExamples/src/main/cpp/snippets/AnalogPotentiometer/cpp/Robot.cpp
+      :language: c++
+      :lines: 32-38
 
 ### Reading values from the AnalogPotentiometer
 
@@ -64,13 +47,13 @@ The scaled value can be read by simply calling the :code:`get` method:
 
 .. tab-set-code::
 
-    ```java
-    pot.get();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/55a97f0c11b072d18809e160a6f2bfc64f228e8d/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogpotentiometer/Robot.java
+      :language: java
+      :lines: 40-41
 
-    ```c++
-    pot.Get();
-    ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/55a97f0c11b072d18809e160a6f2bfc64f228e8d/wpilibcExamples/src/main/cpp/snippets/AnalogPotentiometer/cpp/Robot.cpp
+      :language: c++
+      :lines: 21-22
 
 ## Using AnalogPotentiometers in code
 
