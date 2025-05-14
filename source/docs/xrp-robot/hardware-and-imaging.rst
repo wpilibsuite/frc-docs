@@ -24,24 +24,24 @@ The XRP firmware must be downloaded and written to the Pico W. Click on ``Assets
 
 [XRP-WPILib Firmware](https://github.com/wpilibsuite/xrp-wpilib-firmware/releases)
 
+Choose the file based on the model of XRP you have. Beta versions of the XRP have 'Beta' in the name of the file. V1 releases do not have include Beta. If you choose the wrong one it will simply not be installed, just return and download the correct one.
+
 ### Imaging
 
 To image the XRP, perform the following steps:
 
-1. Extract the contents of the firmware ZIP file. You should end up with a ``.uf2`` file.
+1. Plug the XRP into your computer with a Micro-USB cable. You should see a red power LED that lights up.
 
-2. Plug the XRP into your computer with a Micro-USB cable. You should see a red power LED that lights up.
-
-3. While holding the ``BOOTSEL`` button (the white button on the green Pico W, near the USB connector), quickly press the reset button (circled below), and then release the ``BOOTSEL`` button.
+2. While holding the ``BOOTSEL`` button (the white button on the green Pico W, near the USB connector), quickly press the reset button (circled below), and then release the ``BOOTSEL`` button.
 
 .. image:: images/hardware-and-imaging/xrp-reset-button.png
    :alt: XRP Reset button
 
-4. The board will temporarily disconnect from your computer, and then reconnect as a USB storage device named ``RPI-RP2``.
+3. The board will temporarily disconnect from your computer, and then reconnect as a USB storage device named ``RPI-RP2``.
 
-5. Drag the ``.uf2`` firmware file into the ``RPI-RP2`` drive, and it will automatically update the firmware.
+4. Drag the ``.uf2`` firmware file into the ``RPI-RP2`` drive, and it will automatically update the firmware.
 
-6. Once complete, the ``RPI-RP2`` USB storage device will disconnect. At this point, you can disconnect the XRP board from your computer and run it off battery power.
+5. Once complete, the ``RPI-RP2`` USB storage device will disconnect. At this point, you can disconnect the XRP board from your computer and run it off battery power.
 
 ### First Boot
 
