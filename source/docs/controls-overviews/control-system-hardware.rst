@@ -170,7 +170,7 @@ There are a variety of different :ref:`motor controllers <docs/software/hardware
   :alt: SPARK MAX Motor Controller
   :width: 400
 
-The [SPARK MAX Motor Controller](https://www.revrobotics.com/rev-11-2158/) is an advanced brushed and brushless DC motor controller from REV Robotics. When using CAN bus or USB control, the SPARK MAX uses input from limit switches, encoders, and other sensors, including the integrated encoder of the REV NEO Brushless Motor, to perform advanced control modes. The SPARK MAX can be controlled over PWM, CAN or USB (for configuration/testing only). For more information, see the [SPARK MAX Documentation](https://docs.revrobotics.com/brushless/spark-max/overview).
+The [SPARK MAX Motor Controller](https://www.revrobotics.com/rev-11-2158/) is an advanced brushed and brushless DC motor controller from REV Robotics. When using CAN bus or USB control, the SPARK MAX uses input from limit switches, encoders, and other sensors, including the integrated encoder of the REV NEO Brushless Motor, to perform advanced control modes. The SPARK MAX can be controlled over PWM, CAN, or USB (for configuration/testing only). For more information, see the [SPARK MAX Documentation](https://docs.revrobotics.com/brushless/spark-max/overview).
 
 ### TalonFX Motor Controller
 
@@ -222,7 +222,7 @@ The [Victor SP Motor Controller](https://web.archive.org/web/20220926211100/http
   :alt: SPARK Flex Motor Controller
   :width: 400
 
-The [SPARK Flex Motor Controller](https://www.revrobotics.com/rev-11-2159/) is a smart brushed and brushless DC motor controller from Rev Robotics. It is designed for semi-permanent docking to NEO Vortex brushless motors, but can be used with other brushed and brushless motors through the use of an adapter dock. When using CAN bus or USB control, the SPARK Flex uses input from limit switches, encoders, and other sensors, including the integrated encoder of NEO Vortex, Neo 1.0/1.1 and NEO 550 brushless motors, to perform advanced control modes. The SPARK Flex can be controlled over PWM, CAN or USB (for configuration/testing only). For more information, see the [SPARK Flex Documentation](https://docs.revrobotics.com/brushless/spark-flex/overview).
+The [SPARK Flex Motor Controller](https://www.revrobotics.com/rev-11-2159/) is a smart brushed and brushless DC motor controller from Rev Robotics. It is designed for semi-permanent docking to NEO Vortex brushless motors, but can be used with other brushed and brushless motors through the use of an adapter dock. When using CAN bus or USB control, the SPARK Flex uses input from limit switches, encoders, and other sensors, including the integrated encoder of NEO Vortex, Neo 1.0/1.1 and NEO 550 brushless motors, to perform advanced control modes. The SPARK Flex can be controlled over PWM, CAN, or USB (for configuration/testing only). For more information, see the [SPARK Flex Documentation](https://docs.revrobotics.com/brushless/spark-flex/overview).
 
 ### Talon Motor Controller
 
@@ -303,7 +303,7 @@ The [Talon FXS Motor Controller](https://store.ctr-electronics.com/products/talo
   :alt: Koors 40 Brushed DC Motor Controller
   :width: 400
 
-The [Koors 40 Brushed DC Motor Controller](https://www.andymark.com/products/koors-40-brushed-dc-motor-controller) is an inexpensive PWM brushed DC motor controller from AndyMark with features such as Ground Loss Protection for PWM, Thermal and Overcurrent Protection, and Reverse Polarity Protection.
+The [Koors 40 Brushed DC Motor Controller](https://www.andymark.com/products/koors-40-brushed-dc-motor-controller) is an inexpensive PWM brushed DC motor controller from AndyMark with features such as Ground Loss Protection for PWM, Thermal, and Overcurrent Protection, and Reverse Polarity Protection.
 
 ### SD540B and SD540C Motor Controllers
 
@@ -349,4 +349,4 @@ The Microsoft Lifecam HD3000 is a USB webcam that can be plugged directly into t
 
 ## Image Credits
 
-Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, Victor SPX, and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK MAX, SPARK Flex, Servo Hub, ATO Breakers, Power Distribution Hub, and Pneumatic Hub courtesy of REV Robotics. Images of TalonFX, TalonFXS and Power Distribution Panel 2.0 courtesy of Cross The Road Electronics, LLC. Image of Thrifty Nova courtesy of The Thrifty Bot. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. Image of the VH-109 radio courtesy of Vivid-Hosting. All other photos courtesy of AndyMark Inc.
+Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, Victor SPX, and Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK MAX, SPARK Flex, Servo Hub, ATO Breakers, Power Distribution Hub, and Pneumatic Hub courtesy of REV Robotics. Images of TalonFX, TalonFXS, and Power Distribution Panel 2.0 courtesy of Cross The Road Electronics, LLC. Image of Thrifty Nova courtesy of The Thrifty Bot. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. Image of the VH-109 radio courtesy of Vivid-Hosting. All other photos courtesy of AndyMark Inc.

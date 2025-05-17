@@ -16,7 +16,7 @@ This page describes wiring pneumatics with the REV Pneumatic Hub (:term:`PH`). F
 
 A single PH will support most pneumatics applications, providing an output for the compressor, input for a pressure switch, and outputs for up to 16 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the :term:`CAN` bus and powered via 12V from the PDP/PDH.
 
-For complicated robot designs requiring more channels or multiple solenoid voltages, additional PHs or PCMs can be added to the control system.
+For complicated robot designs requiring more channels or multiple solenoid voltages, additional PHs, or PCMs can be added to the control system.
 
 ## PCM Power and Control Wiring
 

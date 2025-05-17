@@ -13,7 +13,7 @@ The capabilities of AdvantageScope include:
 - Automatic synchronization of data sources, including log files, match videos, and [Zebra MotionWorks](https://www.firstinspires.org/robotics/frc/blog/2023-zebra-motionworks-for-first-robotics-competition-at-the-first-championship) tracking
 - Specialized displays for joysticks, swerve module states, and console text
 - Analysis of numeric fields using histograms and statistical measures
-- Multiple export options, including CSV and WPILib data logs
+- Multiple export options, including CSV, and WPILib data logs
 
 .. image:: images/advantagescope.png
    :alt: Screenshot of an AdvantageScope window displaying a line graph, a list of fields, and a series of miscellaneous tabs.
