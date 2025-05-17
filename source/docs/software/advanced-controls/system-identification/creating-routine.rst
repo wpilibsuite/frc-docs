@@ -41,8 +41,8 @@ The callbacks can either be created in-place via Lambda expressions or can be th
 
   ```python
   routine =  commands2.sysid.SysIdRoutine(
-    commands2.sysid.SysIdRoutine.Config(),
-    commands2.sysid.SysIdRoutine.Mechanism(self.voltageDrive, self.logMotors, self),
+      commands2.sysid.SysIdRoutine.Config(),
+      commands2.sysid.SysIdRoutine.Mechanism(self.voltageDrive, self.logMotors, self),
   )
   ```
 
