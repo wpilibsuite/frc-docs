@@ -52,7 +52,7 @@ Often debugging or monitoring the status of a robot involves writing a number of
 
 You can write Boolean, Numeric, or String values to Shuffleboard by simply calling the correct method for the type and including the name and the value of the data, no additional code is required.
 
--  Numeric types such as char, int, long, float or double call SmartDashboard.putNumber("dashboard-name", value).
+-  Numeric types such as char, int, long, float, or double call SmartDashboard.putNumber("dashboard-name", value).
 -  String types call SmartDashboard.putString("dashboard-name", value)
 -  Boolean types call SmartDashboard.putBoolean("dashboard-name", value)
 

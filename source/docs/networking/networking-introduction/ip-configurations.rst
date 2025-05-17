@@ -1,6 +1,6 @@
 # IP Configurations
 
-This document describes the IP configuration used at events, both on the fields and in the pits, potential issues and workaround configurations.
+This document describes the IP configuration used at events, both on the fields and in the pits, potential issues, and workaround configurations.
 
 ## TE.AM IP Address Notation
 

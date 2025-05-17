@@ -26,7 +26,7 @@ In the following example "wpilib" is typed into the search box after activating 
 
 |WPILib Commands|
 
-The WPILib extension provides the FRC\ |reg| specific functionality related to creating projects and project components, building and downloading code to the roboRIO and more. You can access the WPILib commands one of two ways:
+The WPILib extension provides the FRC\ |reg| specific functionality related to creating projects and project components, building, and downloading code to the roboRIO and more. You can access the WPILib commands one of two ways:
 
 - By typing "WPILib" into the Command Palette
 - By clicking on the WPILib icon in the top right of most windows. This will open the Command Palette with "WPILib" pre-entered
