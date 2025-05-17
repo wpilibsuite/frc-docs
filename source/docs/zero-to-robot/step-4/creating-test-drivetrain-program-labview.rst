@@ -2,7 +2,7 @@
 
 # Creating your Test Drivetrain Program (LabVIEW)
 
-.. note:: This document covers how to create, build and load a basic FRC\ |reg| LabVIEW program for a drivetrain onto a roboRIO. Before beginning, make sure that you have installed LabVIEW for FRC and the FRC Game Tools and that you have configured and imaged your roboRIO as described in the :ref:`Zero-to-Robot tutorial <docs/zero-to-robot/introduction:Introduction>`.
+.. note:: This document covers how to create, build, and load a basic FRC\ |reg| LabVIEW program for a drivetrain onto a roboRIO. Before beginning, make sure that you have installed LabVIEW for FRC and the FRC Game Tools and that you have configured and imaged your roboRIO as described in the :ref:`Zero-to-Robot tutorial <docs/zero-to-robot/introduction:Introduction>`.
 
 ## Creating a Project
 

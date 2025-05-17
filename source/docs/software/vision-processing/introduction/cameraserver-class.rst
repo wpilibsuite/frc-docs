@@ -44,7 +44,7 @@ The cscore library provides the lower level implementation to:
 
 - Get images from USB and HTTP cameras
 - Change camera settings (e.g. contrast and brightness)
-- Change camera video modes (pixel format, resolution and frame rate)
+- Change camera video modes (pixel format, resolution, and frame rate)
 - Act as a web server and serve images as a standard MJPEG stream
 - Convert images to/from OpenCV ``Mat`` objects for image processing
 

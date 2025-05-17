@@ -63,7 +63,7 @@ Community translations can be found in a variety of languages in the menu toward
 
       ^^^
 
-      The Zero-to-Robot tutorial will guide you through preparation, wiring and programming a basic robot!
+      The Zero-to-Robot tutorial will guide you through preparation, wiring, and programming a basic robot!
 
       +++
 

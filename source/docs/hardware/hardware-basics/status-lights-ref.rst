@@ -596,7 +596,7 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 | Right/Forward Signal  | Solid Green    |
 +-----------------------+----------------+
 
-- 6V Power LED off, dim or flickering with power applied = Over-current shutdown
+- 6V Power LED off, dim, or flickering with power applied = Over-current shutdown
 
 ## Spike relay configured as a motor, light, or solenoid switch
 

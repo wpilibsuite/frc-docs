@@ -126,7 +126,7 @@ The running application can be changed by selecting one of the choices in the dr
 
 .. figure:: images/the-raspberry-pi-frc-console/application-2.png
 
-When selecting one of the Upload options, a file chooser is presented where the jar, executable or Python program can be
+When selecting one of the Upload options, a file chooser is presented where the jar, executable, or Python program can be
 selected and uploaded to the rPi. In the following picture an Uploaded Java jar is chosen and the "Choose File" button will
 select a file and clicking on the "Save" button will upload the selected file.
 

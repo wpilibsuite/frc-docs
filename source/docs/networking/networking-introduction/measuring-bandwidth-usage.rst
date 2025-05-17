@@ -59,7 +59,7 @@ In the ``Maximum Box`` under ``Vertical Scale`` enter 524288 (this is 4 Megabits
 .. image:: images/measuring-bandwidth-usage/graph.png
    :alt: Observing the bandwidth usage on the chart screen.
 
-You may now connect to your robot as normal over the selected interface (if you haven't done so already). The graph will show the total bandwidth usage of the connection, with the bandwidth cap at the top of the graph. The Last, Average, Min and Max values are also displayed at the bottom of the graph. Note that these values are in Bytes/Second meaning the cap is 524,288. With just the Driver Station open you should see a flat line at ~100000 Bytes/Second.
+You may now connect to your robot as normal over the selected interface (if you haven't done so already). The graph will show the total bandwidth usage of the connection, with the bandwidth cap at the top of the graph.  he Last, Average, Min, and Max values are also displayed at the bottom of the graph. Note that these values are in Bytes/Second meaning the cap is 524,288. With just the Driver Station open you should see a flat line at ~100000 Bytes/Second.
 
 ## Measuring Bandwidth Usage using Wireshark
 

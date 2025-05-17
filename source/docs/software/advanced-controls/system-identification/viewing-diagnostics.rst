@@ -51,7 +51,7 @@ However, if your robot or mechanism has low mass compared to the motor power, th
 
 ## Common Failure Modes
 
-When something has gone wrong with the identification, diagnostic plots and console output provide crucial clues as to *what* has gone wrong.  This section describes some common failures encountered while running the system identification tool, the identifying features of their diagnostic plots, and the steps that can be taken to fix them.
+When something has gone wrong with the identification, diagnostic plots, and console output provide crucial clues as to *what* has gone wrong.  This section describes some common failures encountered while running the system identification tool, the identifying features of their diagnostic plots, and the steps that can be taken to fix them.
 
 ### Improperly Set Motion Threshold
 
