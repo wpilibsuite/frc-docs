@@ -6,7 +6,7 @@ Task 2: Configure roboRIO & Benchtop Test
 Task:
 
 1. Image and configure your roboRIO controller.
-2.  Create, build, load, and run a basic robot program (template of your choosing) on the roboRIO benchtop setup.
+2. Create, build, load, and run a basic robot program (template of your choosing) on the roboRIO benchtop setup.
 
 Overview
 --------
