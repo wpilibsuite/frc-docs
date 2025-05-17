@@ -39,6 +39,13 @@ The callbacks can either be created in-place via Lambda expressions or can be th
   );
   ```
 
+  ```python
+  routine =  commands2.sysid.SysIdRoutine(
+      commands2.sysid.SysIdRoutine.Config(),
+      commands2.sysid.SysIdRoutine.Mechanism(self.voltageDrive, self.logMotors, self),
+  )
+  ```
+
 ### Mechanism Callbacks
 
 The ``Mechanism`` callbacks are essentially just plumbing between the routine and your motors and sensors.
@@ -63,6 +70,14 @@ To be able to run the tests, SysIdRoutine exposes test "factories", or functions
   public Command sysIdDynamic(SysIdRoutine.Direction direction) {
     return routine.dynamic(direction);
   }
+  ```
+
+  ```python
+  def sysIdQuasistatic(self, direction:commands2.sysid.SysIdRoutine.Direction) -> commands2.Command:
+    return commands2.sysid.SysIdRoutine.quasistatic(direction)
+
+  def sysIdDynamic(self, direction:commands2.sysid.SysIdRoutine.Direction) -> commands2.Command:
+    return commands2.sysid.SysIdRoutine.dynamic(direction)
   ```
 
 Either bind the factory methods to either controller buttons or create an autonomous routine with them. It is recommended to bind them to buttons that the user must hold down for the duration of the test so that the user can stop the routine quickly if it exceeds safe limits.
