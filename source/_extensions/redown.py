@@ -14,6 +14,7 @@ import re
 from pathlib import Path
 from sphinx.application import Sphinx
 from dataclasses import dataclass
+from sphinx.directives.code import CodeBlock
 
 
 LINK_CORE = r"""
@@ -73,7 +74,15 @@ def redown(text: str) -> str:
 
         for line in code.splitlines(keepends=True):
             if line.strip().startswith(":") and not firstCode:
-                ret += cindent + line
+                colon_start = line.find(":")
+                colon_end = line.rfind(":")
+                if colon_start != -1 and colon_end != -1 and colon_start < colon_end:
+                    option = line[colon_start + 1 : colon_end].strip()
+                    if option in CodeBlock.option_spec:
+                        ret += cindent + line
+                    else:
+                        ret += "\n" + cindent + line
+                        firstCode = True
             elif line.strip() == "":
                 if not firstCode:
                     firstCode = True
