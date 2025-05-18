@@ -2,7 +2,7 @@
 
 Code formatters exist to ensure that the style of code written is consistent throughout the entire codebase. This is used in many major projects; from Android to OpenCV. Teams may wish to add a formatter throughout their robot code to ensure that the codebase maintains readability and consistency throughout.
 
-For this article, we will highlight using [Spotless](https://github.com/diffplug/spotless) for Java teams and [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst) for C++ teams.
+For this article, we will highlight using [Spotless](https://github.com/diffplug/spotless) for Java teams and [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.md) for C++ teams.
 
 ## Spotless
 
