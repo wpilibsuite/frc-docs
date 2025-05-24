@@ -20,11 +20,13 @@ The XRP uses a Raspberry Pi Pico W as its main processor. A special firmware wil
 
 ### Download
 
+There are different firmware versions for each version of the XRP robot. Use [this link](https://docs.sparkfun.com/SparkFun_XRP_Controller/introduction/) to identify which one you have.
+
 The XRP firmware must be downloaded and written to the Pico W. Click on ``Assets`` at the bottom of the description to see the available image files:
 
 [XRP-WPILib Firmware](https://github.com/wpilibsuite/xrp-wpilib-firmware/releases)
 
-Choose the file based on the model of XRP you have. Beta versions of the XRP have 'Beta' in the name of the file. V1 releases do not have include Beta. If you choose the wrong one it will simply not be installed, just return and download the correct one.
+Beta versions of the XRP have 'Beta' in the name of the file. V1 releases do not. If you choose the wrong one it will simply not be installed, just return and download the correct one.
 
 ### Imaging
 
