@@ -29,7 +29,7 @@ Below is an example of an image that might be grabbed from CameraServer.
 
 ## Sending frames to CameraServer
 
-Sometimes, you may want to send processed video frames back to the CameraServer instance for debugging purposes, or viewing in a dashboard application like Shuffleboard.
+Sometimes, you may want to send processed video frames back to the CameraServer instance for debugging purposes, or viewing in a dashboard application like Elastic.
 
 .. tab-set-code::
 

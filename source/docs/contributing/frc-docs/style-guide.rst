@@ -8,7 +8,7 @@ This document contains the various MD and RST/Sphinx specific guidelines for the
 
 Use only lowercase alphanumeric characters and ``-`` (minus) symbol.
 
-For documents that will have an identical software/hardware name, append "Hardware" or "Software" to the end of the document name. IE, ``ultrasonics-hardware.rst``
+For documents that will have an identical software/hardware name, append "Hardware" or "Software" to the end of the document name. IE, ``encoders-hardware.rst``
 
 Suffix filenames with the ``.rst`` extension.
 
@@ -181,13 +181,13 @@ Internal Links will be auto-generated based on the ReStructuredText filename and
 
 For example, here are several ways to link to sections and documents.
 
-Use this format to reference a document section. You must use the absolute path of the document. ``:ref:`docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics``` renders to :ref:`docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics`.
+Use this format to reference a document section. You must use the absolute path of the document. ``:ref:`docs/hardware/sensors/encoders-hardware:Quadrature Encoders``` renders to :ref:`docs/hardware/sensors/encoders-hardware:Quadrature Encoders`.
 
 Use this format to reference a section of the same document. Note the single underscore. ```Images`_`` renders to `Images`_.
 
-Use this format to reference the top-level of a document. You can use relative paths ``:doc:`build-instructions``` renders to :doc:`build-instructions` Or to use absolute paths, put a forward slash at the beginning of the path ``:doc:`/docs/software/hardware-apis/sensors/ultrasonics-software``` renders to :doc:`/docs/software/hardware-apis/sensors/ultrasonics-software`. Note that the text rendered is the main section title of the target page regardless of the target filename.
+Use this format to reference the top-level of a document. You can use relative paths ``:doc:`build-instructions``` renders to :doc:`build-instructions` Or to use absolute paths, put a forward slash at the beginning of the path ``:doc:`/docs/hardware/sensors/encoders-hardware``` renders to :doc:`/docs/hardware/sensors/encoders-hardware`. Note that the text rendered is the main section title of the target page regardless of the target filename.
 
-When using ``:ref:`` or ``:doc:`` you may customize the displayed text by surrounding the actual link with angle brackets ``<>`` and adding the custom text between the first backtick ````` and the first angle bracket ``<``. For example ``:ref:`custom text <docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics>``` renders to :ref:`custom text <docs/software/hardware-apis/sensors/ultrasonics-software:Analog ultrasonics>`.
+When using ``:ref:`` or ``:doc:`` you may customize the displayed text by surrounding the actual link with angle brackets ``<>`` and adding the custom text between the first backtick ````` and the first angle bracket ``<``. For example ``:ref:`custom text <docs/hardware/sensors/encoders-hardware:Quadrature Encoders>``` renders to :ref:`custom text <docs/hardware/sensors/encoders-hardware:Quadrature Encoders>`.
 
 ### External Links
 

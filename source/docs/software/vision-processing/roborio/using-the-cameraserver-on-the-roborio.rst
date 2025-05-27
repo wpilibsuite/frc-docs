@@ -90,4 +90,4 @@ In the following example a thread created in ``Robot`` constructor gets the Came
       robotpy_extras = ["cscore"]
       ```
 
-Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on SmartDashboard or Shuffleboard, select that named stream. In this case that is "Rectangle".
+Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on Elastic, select that named stream. In this case that is "Rectangle".

@@ -2,7 +2,7 @@
 
 :term:`NetworkTables` is an implementation of a [publish-subscribe messaging system](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern). Values are published to named "topics" either on the robot, driver station, or potentially an attached coprocessor, and the values are automatically distributed to all subscribers to the topic. For example, a driver station laptop might receive camera images over the network, perform some vision processing algorithm, and come up with some values to sent back to the robot. The values might be an X, Y, and Distance. By writing these results to NetworkTables topics called "X", "Y", and "Distance" they can be read by the robot shortly after being written. Then the robot can act upon them. Similarly, the robot program can write sensor values to topics and those can be read and plotted in real time on a dashboard application.
 
-NetworkTables can be used by programs on the robot in Java, C++, or LabVIEW, and is built into each version of WPILib.
+NetworkTables can be used by programs on the robot in Java, C++, or Python, and is built into each version of WPILib.
 
 .. note:: NetworkTables has changed substantially in 2023. For more information on migrating pre-2023 code to use the new features, see :ref:`docs/software/networktables/nt4-migration-guide:migrating from networktables 3.0 to networktables 4.0`.
 

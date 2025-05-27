@@ -47,7 +47,7 @@ Poor trajectory tracking performance can be difficult to troubleshoot. Although 
 
 Because it can be so hard to locate the layer of the trajectory generator and followers that is misbehaving, a systematic, layer-by-layer approach is recommended for general poor tracking performance (e.g. the robot is off by few feet or more than twenty degrees). The below steps are listed in the order that you should do them in; it is important to follow this order so that you can isolate the effects of different steps from each other.
 
-.. note:: The below examples put diagnostic values onto :term:`NetworkTables`. The easiest way to graph these values is to :ref:`use Shuffleboard's graphing capabilities <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-graphs:Working With Graphs>`.
+.. note:: The below examples put diagnostic values onto :term:`NetworkTables`. The easiest way to graph these values is to :doc:`use AdvantageScope's graphing capabilities </docs/software/dashboards/advantagescope>`.
 
 ### Verify Odometry
 If your odometry is bad, then your Ramsete controller may misbehave, because it modifies your robot's target velocities based on where your odometry thinks the robot is.
@@ -134,7 +134,7 @@ If your feedforwards are bad then the P controllers for each side of the robot w
    );
    ```
 
-3. Finally, we need to log desired wheel velocity and actual wheel velocity (you should put actual and desired velocities on the same graph if you're using Shuffleboard, or if your graphing software has that capability):
+3. Finally, we need to log desired wheel velocity and actual wheel velocity (you should put actual and desired velocities on the same graph if you're using AdvantageScope, or if your graphing software has that capability):
 
 .. tab-set-code::
 

@@ -25,10 +25,6 @@ Browse to ``C:\Users\Public\Documents\FRC`` and double click on ``FRC DS Data St
 
 Locate the line beginning with ``DashboardCmdLine``. Modify it to point to the dashboard to launch when the driver station starts
 
-### LabVIEW Custom Dashboard
-
-Replace the string after ``=`` with ``"C:\\PATH\\TO\\DASHBOARD.exe"`` where the path specified is the path to the dashboard ``exe`` file. Save the ``FRC DS Data Storage`` file.
-
 ### Java Dashboard
 
 Replace the string after ``=`` with ``java -jar "C:\\PATH\\TO\\DASHBOARD.jar"`` where the path specified is the path to the dashboard ``jar`` file. Save the ``FRC DS Data Storage`` file.
