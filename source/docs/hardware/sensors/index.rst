@@ -10,7 +10,6 @@
    proximity-switches
    encoders-hardware
    gyros-hardware
-   ultrasonics-hardware
    accelerometers-hardware
    lidar
    triangulating-rangefinders

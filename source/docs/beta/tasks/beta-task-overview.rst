@@ -18,7 +18,7 @@ Task 1 - Install Software (Targeted Completion 10/28/2024)
 
 The purpose of Task 1 is to complete installation of the new Control System software. This task consists of 1 Objective
 
-1. Install the necessary software for your assigned Beta Test language (LabVIEW or VSCode + plugins, NI FRC Game Tools, and any vendor libraries using the :doc:`Dependency Manager </docs/software/vscode-overview/3rd-party-libraries>` e.g. CTRE Phoenix, REVLib, etc)
+1. Install the necessary software for your assigned Beta Test language (VSCode + plugins, NI FRC Game Tools, and any vendor libraries using the :doc:`Dependency Manager </docs/software/vscode-overview/3rd-party-libraries>` e.g. CTRE Phoenix, REVLib, etc)
 
 Task 2 - Basic Benchtop Test (Targeted Completion 11/4/2024)
 ------------------------------------------------------------

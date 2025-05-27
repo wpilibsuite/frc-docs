@@ -4,7 +4,6 @@ Recording and viewing :term:`telemetry` data is a crucial part of the engineerin
 
 By default, no telemetry data is recorded (saved) on the robot.  However, recording data on the robot can provide benefits over recording on a dashboard, namely that more data can be recorded (there are no bandwidth limitations), and all the recorded data can be very accurately timestamped.  WPILib has integrated support for on-robot recording of telemetry data via the ``DataLogManager`` and ``DataLog`` classes and provides a tool for downloading data log files and converting them to CSV. The Java library also provides a convenient :doc:`annotation <robot-telemetry-with-annotations>` to autogenerate telemetry logging code based on your project.
 
-.. note:: In addition to on-robot recording of telemetry data, teams can record their telemetry data on their driver station computer with :ref:`Shuffleboard recordings <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-recording:Recording and Playback>`.
 
 ## Adding Telemetry to Robot Code
 

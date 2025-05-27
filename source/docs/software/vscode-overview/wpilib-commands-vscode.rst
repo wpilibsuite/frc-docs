@@ -24,7 +24,7 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Deploy Robot Code** - Build and deploy robot code to roboRIO
 - **WPILib: Hardware Sim Robot Code** - This builds the current robot code project on your PC and starts it running in simulation using hardware attached to the comupter rather then pure software simulation. Requires vendor support.
 - **WPILib: Import a WPILib 2020-202r Gradle Project** - Open a wizard to help you create a new project from a existing VS Code Gradle project from 2020-2022. Further documentation is at :doc:`importing gradle project </docs/software/vscode-overview/importing-last-years-robot-code>`
-- **WPILib: Install tools from GradleRIO** - Install the WPILib Java tools (e.g. SmartDashboard, Shuffleboard, etc.). Note that this is done by default by the offline installer
+- **WPILib: Install tools from GradleRIO** - Install the WPILib Java tools (e.g. Glass, OutlineViewer, etc.). Note that this is done by default by the offline installer
 - **WPILib: Manage Vendor Libraries** - Install/update 3rd party libraries
 - **WPILib: Open API Documentation** - Opens either the WPILib Javadocs or C++ Doxygen documentation
 - **WPILib: Open Project Information** - Opens a widget with project information (Project version, extension version, etc.)
@@ -38,5 +38,5 @@ To access these commands, press Ctrl+Shift+P to open the Command Palette, then b
 - **WPILib: Show Log Folder** - Shows the folder where the WPILib extension stores internal logs. This may be useful when debugging/reporting an extension issue to the WPILib developers
 - **WPILib: Simulate Robot Code** - This builds the current robot code project on your PC and starts it running in simulation. This requires Desktop Support to be set to Enabled.
 - **WPILib: Start RioLog** - This starts the RioLog display used to view console output from a robot program
-- **WPILib: Start Tool** - This allows you to launch WPILib tools (e.g. SmartDashboard, Shuffleboard, etc.) from inside VS Code
+- **WPILib: Start Tool** - This allows you to launch WPILib tools (e.g. Glass, OutlineViewer, etc.) from inside VS Code
 - **WPILib: Test Robot Code** - This builds the current robot code project and runs any created tests. This requires Desktop Support to be set to Enabled.

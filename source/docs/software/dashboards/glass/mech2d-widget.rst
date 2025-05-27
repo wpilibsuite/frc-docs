@@ -65,8 +65,6 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
       :lines: 46-47
       :lineno-match:
 
-.. note:: The ``Mechanism2d`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`. In this case, the ``SmartDashboard`` API was used, meaning that the :guilabel:`Mechanism2d` widget will appear under the ``SmartDashboard`` table name.
-
 To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()`` on the ``MechanismLigament2d`` object. When manipulating ligament length based off of sensor measurements, make sure to add the minimum length to prevent 0-length (and therefore invisible) ligaments.
 
 .. tab-set-code::

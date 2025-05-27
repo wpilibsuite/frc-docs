@@ -4,7 +4,7 @@ WPILib provides a way to manage simulation device data in the form of the SimDev
 
 ## Simulating Core WPILib Device Classes
 
-Core WPILib device classes (i.e ``Encoder``, ``Ultrasonic``, etc.) have simulation classes named ``EncoderSim``, ``UltrasonicSim``, and so on. These classes allow interactions with the device data that wouldn't be possible or valid outside of simulation. Constructing them outside of simulation likely won't interfere with your code, but calling their functions and the like is undefined behavior - in the best case they will do nothing, worse cases might crash your code! Place functional simulation code in simulation-only functions (such as ``simulationPeriodic()``) or wrap them with ``RobotBase.isReal()``/ ``RobotBase::IsReal()`` checks (which are ``constexpr`` in C++).
+Core WPILib device classes (i.e ``Encoder``, ``Joystick``, etc.) have simulation classes named ``EncoderSim``, ``JoystickSim``, and so on. These classes allow interactions with the device data that wouldn't be possible or valid outside of simulation. Constructing them outside of simulation likely won't interfere with your code, but calling their functions and the like is undefined behavior - in the best case they will do nothing, worse cases might crash your code! Place functional simulation code in simulation-only functions (such as ``simulationPeriodic()``) or wrap them with ``RobotBase.isReal()``/ ``RobotBase::IsReal()`` checks (which are ``constexpr`` in C++).
 
 .. note:: This example will use the ``EncoderSim`` class as an example. Use of other simulation classes will be almost identical.
 
