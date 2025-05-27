@@ -154,9 +154,6 @@
    KOP chassis
       The KOP contains a drive base (chassis) distributed to every team (that did not opt out) as part of the :term:`KOP`. For the 2025 season, the KOP chassis is the [AM14U6](https://www.andymark.com/products/am14u6-6-wheel-drop-center-robot-drive-base-2025-frc-kit-of-parts-drive-base).
 
-   LabVIEW
-      One of the four officially supported programming languages.
-
    LED
       Light-Emitting Diode - a semiconductor device that emits light when current flows through it.  Used on multiple robot parts to convey the status of the device.
 

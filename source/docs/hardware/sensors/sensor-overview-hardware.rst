@@ -25,7 +25,6 @@ Sensors can provide feedback on a variety of different aspects of the robot's st
 
 - Distance sensors
 
-    * :doc:`Ultrasonic sensors <ultrasonics-hardware>`
     * :doc:`Triangulating rangefinders <triangulating-rangefinders>`
     * :doc:`LIDAR <lidar>`
 
