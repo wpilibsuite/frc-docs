@@ -6,8 +6,6 @@ This article contains instructions/links to components you will want to gather i
 
 .. tip:: This document compiles all the download links from the following documents to make it easier to install on offline computers or on multiple computers. If you are you installing on a single computer that is connected to the internet, you can skip this page.
 
-.. note:: The order in which these tools are installed does not matter for Java and C++ teams.  LabVIEW should be installed before the FRC Game Tools or 3rd Party Libraries.
-
 ## Documentation
 
 This documentation can be downloaded for offline viewing. The link to download the PDF can be found [here](https://buildmedia.readthedocs.org/media/pdf/frc-docs/stable/frc-docs.pdf).
@@ -17,10 +15,6 @@ This documentation can be downloaded for offline viewing. The link to download t
 ### All Teams
 
 -  [2025 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) (Note: Click on link for "Install Offline")
-
-### LabVIEW Teams
-
--  [LabVIEW Base Installer](https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html) (Note: Click on link for "Individual Offline Installers")
 
 ### Java/C++ Teams
 
