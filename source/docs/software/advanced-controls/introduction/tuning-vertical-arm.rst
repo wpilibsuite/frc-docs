@@ -8,8 +8,8 @@ Vertical arms are commonly used to lift gamepieces from the ground up to a scori
 
 Our "vertical arm" consists of:
 
-  * A mass on a stick, under the force of gravity, pivoting around an axle.
-  * A motor and gearbox driving the axle to which the mass-on-a-stick is attached
+* A mass on a stick, under the force of gravity, pivoting around an axle.
+* A motor and gearbox driving the axle to which the mass-on-a-stick is attached
 
 For the purposes of this tutorial, this plant is modeled with the same equation used by WPILib's :ref:`docs/software/advanced-controls/controllers/feedforward:ArmFeedforward`, with additional adjustment for sensor delay and gearbox inefficiency.  The simulation assumes the plant is controlled by feedforward and feedback controllers, composed in this fashion:
 
