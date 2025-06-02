@@ -2346,13 +2346,13 @@ sphinx = ">=2.0"
 
 [[package]]
 name = "sphinxext-remoteliteralinclude"
-version = "0.5.0"
+version = "0.6.0"
 description = "Extending literalinclude to include remote URLs"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "sphinxext-remoteliteralinclude-0.5.0.tar.gz", hash = "sha256:76e08941aa1892e83439728b0f8603b0ad0231d0f5bc368181add0c5d9909444"},
-    {file = "sphinxext_remoteliteralinclude-0.5.0-py3-none-any.whl", hash = "sha256:d8be8fbff4a23b8412cf3a2270e6a4358ae705c585dc4e3251b34423f93b6c23"},
+    {file = "sphinxext-remoteliteralinclude-0.6.0.tar.gz", hash = "sha256:4752def3f2f5bca208a674f8be8bd7a07c033a10d8eaee8286639b3a986943e9"},
+    {file = "sphinxext_remoteliteralinclude-0.6.0-py3-none-any.whl", hash = "sha256:6e73050afd5aeb3c5a0827a0fb3811f868cf9e7ad836e457beb5a7cffab4fb1f"},
 ]
 
 [package.dependencies]
@@ -2574,4 +2574,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "10fedf0cf651b35d6010cc7f1178403b236834d14ad10e11370199381ccf3d5f"
+content-hash = "c11a9e04c9e655b199e0ead1a7b28f9d5feafba829e5fe76c8f79ff9dbac0768"
