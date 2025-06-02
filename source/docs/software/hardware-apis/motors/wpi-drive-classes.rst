@@ -184,18 +184,18 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
     .. tab-item:: Python
      :sync: Python
 
-       .. note:: MotorControllerGroup is :term:`deprecated` in 2024. Can you help update this example?
-
        ```python
        def robotInit(self):
-           frontLeft = wpilib.Spark(1)
-           rearLeft = wpilib.Spark(2)
-           left = wpilib.MotorControllerGroup(frontLeft, rearLeft)
-           left.setInverted(True) # if you want to invert the entire side you can do so here
-           frontRight = wpilib.Spark(3)
-           rearRight = wpilib.Spark(4)
-           right = wpilib.MotorControllerGroup(frontLeft, rearLeft)
-           self.drive = wpilib.drive.DifferentialDrive(left, right)
+           leftLeader = wpilib.Spark(1)
+           leftFollower = wpilib.Spark(2)
+           leftLeader.addFollower(leftFollower)
+           leftLeader.setInverted(
+               True
+           )  # if you want to invert the entire side you can do so here
+           rightLeader = wpilib.Spark(3)
+           rightFollower = wpilib.Spark(4)
+           rightLeader.addFollower(rightFollower)
+           self.drive = wpilib.drive.DifferentialDrive(leftLeader, rightLeader)
        ```
 
 ### Drive Modes
