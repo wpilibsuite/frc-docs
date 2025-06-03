@@ -18,11 +18,11 @@ The digital inputs on the roboRIO have pull-up resistors that will make the inpu
 
 There are several types of proximity switches that are commonly used in FRC\ |reg|:
 
- - `Mechanical Proximity Switches ("limit switches")`_
- - `Magnetic Proximity Switches`_
- - `Inductive Proximity Switches`_
- - `Photoelectric Proximity Switches`_
- - `Time-of-flight Proximity Switches`_
+- `Mechanical Proximity Switches ("limit switches")`_
+- `Magnetic Proximity Switches`_
+- `Inductive Proximity Switches`_
+- `Photoelectric Proximity Switches`_
+- `Time-of-flight Proximity Switches`_
 
 ### Mechanical Proximity Switches ("limit switches")
 

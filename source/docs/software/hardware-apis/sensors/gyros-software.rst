@@ -258,29 +258,31 @@ The following example shows how to stabilize heading using a simple P loop close
 
     ```python
     from wpilib import Spark
-    from wpilib import MotorControllerGroup
     from wpilib.drive import DifferentialDrive
+
+
     def robotInit(self):
         # Use gyro declaration from above here
         # The gain for a simple P loop
         self.kP = 1
         # Initialize motor controllers and drive
-        left1 = Spark(0)
-        left2 = Spark(1)
-        right1 = Spark(2)
-        right2 = Spark(3)
-        leftMotors = MotorControllerGroup(left1, left2)
-        rightMotors = MotorControllerGroup(right1, right2)
-        self.drive = DifferentialDrive(leftMotors, rightMotors)
-        rightMotors.setInverted(true)
+        leftLeader = Spark(0)
+        leftFollower = Spark(1)
+        rightLeader = Spark(2)
+        rightFollower = Spark(3)
+        leftLeader.addFollower(leftFollower)
+        rightLeader.addFollower(rightFollower)
+        self.drive = DifferentialDrive(leftLeader, rightLeader)
+        rightLeader.setInverted(True)
+
+
     def autonomousPeriodic(self):
         # Setpoint is implicitly 0, since we don't want the heading to change
         error = -self.gyro.getRate()
         # Drives forward continuously at half speed, using the gyro to stabilize the heading
-        self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
-    ```
+        self.drive.tankDrive(0.5 + self.kP * error, 0.5 - self.kP * error)
 
-.. note:: MotorControllerGroup is :term:`deprecated` in 2024. Can you help update the Python example?
+    ```
 
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the turn rate for heading stabilization, PI loops are particularly effective.
 
@@ -353,28 +355,34 @@ The following example shows how to stabilize heading using a simple P loop close
 
     ```python
     from wpilib import Spark
-    from wpilib import MotorControllerGroup
     from wpilib.drive import DifferentialDrive
+
+
     def robotInit(self):
         # Use gyro declaration from above here
         # The gain for a simple P loop
         self.kP = 1
         # Initialize motor controllers and drive
-        left1 = Spark(0)
-        left2 = Spark(1)
-        right1 = Spark(2)
-        right2 = Spark(3)
-        leftMotors = MotorControllerGroup(left1, left2)
-        rightMotors = MotorControllerGroup(right1, right2)
-        self.drive = DifferentialDrive(leftMotors, rightMotors)
-        rightMotors.setInverted(true)
+        leftLeader = Spark(0)
+        leftFollower = Spark(1)
+        rightLeader = Spark(2)
+        rightFollower = Spark(3)
+        leftLeader.addFollower(leftFollower)
+        rightLeader.addFollower(rightFollower)
+        self.drive = DifferentialDrive(leftLeader, leftFollower)
+        rightLeader.setInverted(True)
+
+
     def autonomousInit(self):
         # Set setpoint to current heading at start of auto
         self.heading = self.gyro.getAngle()
-        def autonomousPeriodic(self):
+
+
+    def autonomousPeriodic(self):
         error = self.heading - self.gyro.getAngle()
         # Drives forward continuously at half speed, using the gyro to stabilize the heading
-        self.drive.tankDrive(.5 + self.kP * error, .5 - self.kP * error)
+        self.drive.tankDrive(0.5 + self.kP * error, 0.5 - self.kP * error)
+
     ```
 
 More-advanced implementations can use a more-complicated control loop.  When closing the loop on the heading for heading stabilization, PD loops are particularly effective.
@@ -438,26 +446,30 @@ Much like with heading stabilization, this is often accomplished with a PID loop
 
     ```python
     from wpilib import Spark
-    from wpilib import MotorControllerGroup
     from wpilib.drive import DifferentialDrive
+
+
     def robotInit(self):
         # Use gyro declaration from above here
         # The gain for a simple P loop
         self.kP = 0.05
         # Initialize motor controllers and drive
-        left1 = Spark(0)
-        left2 = Spark(1)
-        right1 = Spark(2)
-        right2 = Spark(3)
-        leftMotors = MotorControllerGroup(left1, left2)
-        rightMotors = MotorControllerGroup(right1, right2)
-        self.drive = DifferentialDrive(leftMotors, rightMotors)
-        rightMotors.setInverted(true)
+        leftLeader = Spark(0)
+        leftFollower = Spark(1)
+        rightLeader = Spark(2)
+        rightFollower = Spark(3)
+        leftLeader.addFollower(leftFollower)
+        rightLeader.addFollower(rightFollower)
+        self.drive = DifferentialDrive(leftLeader, rightLeader)
+        rightLeader.setInverted(True)
+
+
     def autonomousPeriodic(self):
         # Find the heading error; setpoint is 90
         error = 90 - self.gyro.getAngle()
         # Drives forward continuously at half speed, using the gyro to stabilize the heading
         self.drive.tankDrive(self.kP * error, -self.kP * error)
+
     ```
 
 As before, more-advanced implementations can use more-complicated control loops.

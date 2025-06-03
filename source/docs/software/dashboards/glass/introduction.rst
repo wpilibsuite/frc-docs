@@ -22,8 +22,8 @@ An example of the ``Dark`` style setting is below:
 
 Application data for Glass, including widget sizes and positions as well as other custom information for widgets is stored in a ``glass.ini`` file. The location of this file varies based on your operating system:
 
- - On Windows, the configuration file is located in ``%APPDATA%``.
- - On macOS, the configuration file is located in ``~/Library/Preferences``.
- - On Linux, the configuration file is located in ``$XDG_CONFIG_HOME`` or ``~/.config`` if the former does not exist.
+- On Windows, the configuration file is located in ``%APPDATA%``.
+- On macOS, the configuration file is located in ``~/Library/Preferences``.
+- On Linux, the configuration file is located in ``$XDG_CONFIG_HOME`` or ``~/.config`` if the former does not exist.
 
 The ``glass.ini`` configuration file can simply be deleted to restore Glass to a "clean slate".
