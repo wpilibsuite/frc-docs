@@ -80,7 +80,14 @@ versionwarning_messages = {
         <script>
             document.getElementById("versionwarning_href").setAttribute("href", location.href.replace("/latest/", "/stable/"))
         </script>
-        """
+        """,
+    "2027": """
+        The documentation you are currently viewing is for the SystemCore Alpha Test.
+        Please see the <a href="https://docs.wpilib.org" id="versionwarning_href">stable</a> version for the current release of WPILib.
+        <script>
+            document.getElementById("versionwarning_href").setAttribute("href", location.href.replace("/latest/", "/stable/"))
+        </script>
+        """,
 }
 
 
