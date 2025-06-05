@@ -95,3 +95,10 @@ aside.sidebar-drawer  {
     height: 1.25rem;
     width: 1.25rem;
 }
+
+/*
+* Widen the article body
+*/
+.content {
+    width: 900px;
+}
