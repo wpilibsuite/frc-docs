@@ -11,7 +11,7 @@ To start the Driver Station Timing Viewer, select the gear icon and then select 
 
 ## Viewing Timing
 
-The Timing viewer shows the timing of the driver station loops measuring the joysick, keyboard, and control and status network packets. When timing is good, all values should be close to 0 ms. This can help diagnose what is causing robot control issues.
+The Timing viewer shows the timing of the driver station loops measuring the joysick, keyboard, and control, and status network packets. When timing is good, all values should be close to 0 ms. This can help diagnose what is causing robot control issues.
 
 .. image:: images/view-timing/normal-view-timing.png
    :alt: Driver Station timing viewer with all timing measurements near 0 ms

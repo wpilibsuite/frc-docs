@@ -85,7 +85,7 @@ Monitoring the temperature can be useful for detecting if the robot has been dra
          :lines: 43-55
 
 
-Monitoring the total current, power and energy can be useful for controlling how much power is being drawn from the battery, both for preventing brownouts and ensuring that mechanisms have sufficient power available to perform the actions required. Power is the bus voltage multiplied by the current with the units Watts. Energy is the power summed over time with units Joules.
+Monitoring the total current, power, and energy can be useful for controlling how much power is being drawn from the battery, both for preventing brownouts and ensuring that mechanisms have sufficient power available to perform the actions required. Power is the bus voltage multiplied by the current with the units Watts. Energy is the power summed over time with units Joules.
 
 ## Reading Individual Channel Currents
 

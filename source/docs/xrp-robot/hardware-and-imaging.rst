@@ -1,4 +1,4 @@
-# XRP Hardware, Assembly and Imaging
+#  XRP Hardware, Assembly, and Imaging
 
 To get started with the XRP, you will need to have the necessary hardware.
 

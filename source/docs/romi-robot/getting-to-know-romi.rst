@@ -2,7 +2,7 @@
 
 ## Directional Conventions
 
-The front of the Romi is where the Raspberry Pi USB ports, GPIO pins and suspended caster wheel are.
+The front of the Romi is where the Raspberry Pi USB ports, GPIO pins, and suspended caster wheel are.
 
 .. image:: images/getting-to-know-romi/romi-front-view.png
    :alt: Romi Front View
@@ -99,7 +99,7 @@ The control board has 5 configurable GPIO pins (named EXT0 through EXT4) that al
 
 All 5 pins support the following modes: Digital IO, Analog In, and PWM (with the exception of EXT 0, which only supports Digital IO and PWM). The mode of the ports can be configured with :ref:`The Romi Web UI <docs/romi-robot/web-ui:External IO Configuration>`.
 
-The GPIO channels are exposed via a 3-pin, servo style interface, with connections for Ground, Power and Signal (with the Ground connection being closest to the edge of the board, and the signal being closest to the inside of the board).
+The GPIO channels are exposed via a 3-pin, servo style interface, with connections for Ground, Power, and Signal (with the Ground connection being closest to the edge of the board, and the signal being closest to the inside of the board).
 
 The power connections for the GPIO pins are initially left unconnected but can be hooked into the Romi's on-board 5V supply by using a jumper to connect the 5V pin to the power bus (as seen in the image above). Additionally, if more power than the Romi can provide is needed, the user can provide their own 5V power supply and connect it directly to power bus and ground pins.
 

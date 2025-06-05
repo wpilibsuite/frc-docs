@@ -50,7 +50,7 @@ The Graph Display contains the following information:
 5.  Event markers will be displayed on the graph indicating the time the event occurred. Errors will display in red; warnings will display in yellow. Hovering over an event marker will display information about the event in the Messages box at the bottom left of the screen.
 6.  Major events are shown as vertical lines across the graph display.
 
-To zoom in on a portion of the graph, click and drag around the desired viewing
+To zoom in on a portion of the graph, click, and drag around the desired viewing
 area. You can only zoom the time axis, you cannot zoom vertically.
 
 ## Event List
@@ -73,7 +73,7 @@ Three filters are currently available in the Log Viewer:
 .. image:: images/driver-station-log-viewer/identifyinglogs.png
    :alt: To identify a log from a match look for the "FMS Connected" message then the match number.
 
-A common task when working with the Driver Station Logs is to identify which logs came from competition matches. Logs which were taken during a match can now be identified using the :term:`FMS` Connected event which will display the match type (Practice, Qualification or Elimination), match number, and the current time according to the FMS server. In this example, you can see that the FMS server time and the time of the Driver Station computer are fairly close, approximately 7 seconds apart.
+A common task when working with the Driver Station Logs is to identify which logs came from competition matches. Logs which were taken during a match can now be identified using the :term:`FMS` Connected event which will display the match type (Practice, Qualification, or Elimination), match number, and the current time according to the FMS server. In this example, you can see that the FMS server time and the time of the Driver Station computer are fairly close, approximately 7 seconds apart.
 
 ## Identifying Common Connection Failures with the Log Viewer
 
