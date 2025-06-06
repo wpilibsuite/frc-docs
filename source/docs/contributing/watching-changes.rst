@@ -16,11 +16,15 @@ To provide context about the different ways to stay up to date, below are the st
 
 Occassionally, these events will happen out of order, most commonly when people use Discord to discuss a GitHub design document or pull request.
 
-## Discussing proposed changes
+## Different ways to be involved
+
+Below are some common ways people want to be interact with upcoming changes and how to do so.
+
+### Discussing proposed changes
 
 To provide feedback as soon as possible about proposed changes, you will need to be active where the initial discussion happens. This initial discussion usually happens in the Unofficial FIRST Robotics Competition Discord Server, but sometimes it happens in GitHub issues or directly in GitHub pull requests.
 
-## Viewing in-progress changes
+### Viewing in-progress changes
 
 Every change must be implemented through a GitHub pull request, so watching the pull requests will ensure you see all changes being made.
 
@@ -29,11 +33,11 @@ There are two useful tools for watching pull requests or issues:
 - The GitHub issues and pull requests pages provide a ``updated:>=YYYY-MM-DD`` filter that shows changes made since a particular date. If you record the last day you checked, you can ensure you catch up on all issues or pull requests.
 - The GitHub repository page provides a [watch feature](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository) that allows you to subscribe to notifications on that repository. To select just issues and/or pull requests, select the "Custom" option.
 
-## Seeing implemented changes
+### Seeing implemented changes
 
 To stay up to date on what changes have been made, you have two options based on how often you want to check. To see new changes as soon as possible, check the commit history of the active branches. Commits tend to be made in batches, so most days there are no new commits, making this very low effort. For an even lower effort method, you can check the release notes or yearly changelog.
 
-## Testing changes
+### Testing changes
 
 To test the new changes for the upcoming season, test out the beta versions. It is also possible to test out the changes before the beta period starts, but it takes more work. See [Using Development Builds](https://github.com/wpilibsuite/allwpilib/blob/main/DevelopmentBuilds.md) on the allwpilib repository for details.
 
