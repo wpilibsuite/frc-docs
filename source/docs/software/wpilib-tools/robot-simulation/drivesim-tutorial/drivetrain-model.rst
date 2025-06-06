@@ -6,13 +6,13 @@ In order to accurately determine how your physical drivetrain will respond to gi
 
 One way to creating a ``DifferentialDrivetrainSim`` instance is by using physical measurements of the drivetrain and robot -- either obtained through :term:`CAD` software or real-world measurements (the latter will usually yield better results as it will more closely match reality). This constructor takes the following parameters:
 
- - The type and number of motors on one side of the drivetrain.
- - The gear ratio between the motors and the wheels as output  :term:`torque` over input  :term:`torque` (this number is usually greater than 1 for drivetrains).
- - The moment of inertia of the drivetrain (this can be obtained from a :term:`CAD` model of your drivetrain. Usually, this is between 3 and 8 :math:`kg m^2`).
- - The mass of the drivetrain (it is recommended to use the mass of the entire robot itself, as it will more accurately model the acceleration characteristics of your robot for trajectory tracking).
- - The radius of the drive wheels.
- - The track width (distance between left and right wheels).
- - Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
+- The type and number of motors on one side of the drivetrain.
+- The gear ratio between the motors and the wheels as output  :term:`torque` over input  :term:`torque` (this number is usually greater than 1 for drivetrains).
+- The moment of inertia of the drivetrain (this can be obtained from a :term:`CAD` model of your drivetrain. Usually, this is between 3 and 8 :math:`kg m^2`).
+- The mass of the drivetrain (it is recommended to use the mass of the entire robot itself, as it will more accurately model the acceleration characteristics of your robot for trajectory tracking).
+- The radius of the drive wheels.
+- The track width (distance between left and right wheels).
+- Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
 
 You can calculate the measurement noise of your sensors by taking multiple data points of the state you are trying to measure and calculating the standard deviation using a tool like Python. For example, to calculate the standard deviation in your encoders' velocity estimate, you can move your robot at a constant velocity, take multiple measurements, and calculate their standard deviation from the known mean. If this process is too tedious, the values used in the example below should be a good representation of average noise from encoders.
 
@@ -65,12 +65,12 @@ You can also use the gains produced by :ref:`System Identification <docs/softwar
 
 This constructor takes the following parameters:
 
- - A linear system representing the drivetrain -- this can be created using the identification gains.
- - The track width (distance between the left and right wheels).
- - The type and number of motors on one side of the drivetrain.
- - The gear ratio between the motors and the wheels as output  :term:`torque` over input  :term:`torque` (this number is usually greater than 1 for drivetrains).
- - The radius of the drive wheels.
- - Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
+- A linear system representing the drivetrain -- this can be created using the identification gains.
+- The track width (distance between the left and right wheels).
+- The type and number of motors on one side of the drivetrain.
+- The gear ratio between the motors and the wheels as output  :term:`torque` over input  :term:`torque` (this number is usually greater than 1 for drivetrains).
+- The radius of the drive wheels.
+- Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
 
 You can calculate the measurement noise of your sensors by taking multiple data points of the state you are trying to measure and calculating the standard deviation using a tool like Python. For example, to calculate the standard deviation in your encoders' velocity estimate, you can move your robot at a constant velocity, take multiple measurements, and calculate their standard deviation from the known mean. If this process is too tedious, the values used in the example below should be a good representation of average noise from encoders.
 
@@ -140,11 +140,11 @@ You can calculate the measurement noise of your sensors by taking multiple data 
 
 The ``DifferentialDrivetrainSim`` class also has a static ``createKitbotSim()`` (Java) / ``CreateKitbotSim()`` (C++) method that can create an instance of the ``DifferentialDrivetrainSim`` using the standard Kit of Parts Chassis parameters. This method takes 5 arguments, two of which are optional:
 
- - The type and number of motors on one side of the drivetrain.
- - The gear ratio between the motors and the wheels as output  :term:`torque` over input :term:`torque` (this number is usually greater than 1 for drivetrains).
- - The diameter of the wheels installed on the drivetrain.
- - The moment of inertia of the drive base (optional).
- - Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
+- The type and number of motors on one side of the drivetrain.
+- The gear ratio between the motors and the wheels as output  :term:`torque` over input :term:`torque` (this number is usually greater than 1 for drivetrains).
+- The diameter of the wheels installed on the drivetrain.
+- The moment of inertia of the drive base (optional).
+- Standard deviations of measurement noise: this represents how much measurement noise you expect from your real sensors. The measurement noise is an array with 7 elements, with each element representing the standard deviation of measurement noise in x, y, heading, left velocity, right velocity, left position, and right position respectively. This option can be omitted in C++ or set to ``null`` in Java if measurement noise is not desirable.
 
 You can calculate the measurement noise of your sensors by taking multiple data points of the state you are trying to measure and calculating the standard deviation using a tool like Python. For example, to calculate the standard deviation in your encoders' velocity estimate, you can move your robot at a constant velocity, take multiple measurements, and calculate their standard deviation from the known mean. If this process is too tedious, the values used in the example below should be a good representation of average noise from encoders.
 

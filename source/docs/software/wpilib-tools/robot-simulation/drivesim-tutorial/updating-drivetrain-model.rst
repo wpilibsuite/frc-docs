@@ -5,9 +5,9 @@ Now that the drivetrain model has been made, it needs to be updated periodically
 
 There are three main steps to updating the model:
 
- 1. Set the :term:`input` of the drivetrain model. These are the motor voltages from the two sides of the drivetrain.
- 2. Advance the model forward in time by the nominal periodic timestep (Usually 20 ms). This updates all of the drivetrain's states (i.e. pose, encoder positions and velocities) as if 20 ms had passed.
- 3. Update simulated sensors with new positions, velocities, and angles to use in other places.
+1. Set the :term:`input` of the drivetrain model. These are the motor voltages from the two sides of the drivetrain.
+2. Advance the model forward in time by the nominal periodic timestep (Usually 20 ms). This updates all of the drivetrain's states (i.e. pose, encoder positions and velocities) as if 20 ms had passed.
+3. Update simulated sensors with new positions, velocities, and angles to use in other places.
 
 .. tab-set-code::
    ```java
