@@ -341,36 +341,36 @@ What might a functional command look like in practice? As before, below is a sim
 .. tab-set::
 
   .. tab-item:: Java
-     :sync: tabcode-java
+    :sync: tabcode-java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/GrabHatch.java
-        :language: java
-        :lines: 5-
-        :lineno-match:
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/GrabHatch.java
+      :language: java
+      :lines: 5-
+      :lineno-match:
 
   .. tab-item:: C++ (Header)
-     :sync: tabcode-c++
+    :sync: tabcode-c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
-        :language: c++
-        :lines: 5-
-        :lineno-match:
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.h
+      :language: c++
+      :lines: 5-
+      :lineno-match:
 
   .. tab-item:: C++ (Source)
-     :sync: tabcode-c++-source
+    :sync: tabcode-c++-source
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
-        :language: c++
-        :lines: 5-
-        :lineno-match:
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
+      :language: c++
+      :lines: 5-
+      :lineno-match:
 
   .. tab-item:: Python
-     :sync: tabcode-python
+    :sync: tabcode-python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/grabhatch.py
-        :language: python
-        :lines: 7-
-        :lineno-match:
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/grabhatch.py
+      :language: python
+      :lines: 7-
+      :lineno-match:
 
 Notice that the hatch subsystem used by the command is passed into the command through the command’s constructor. This is a pattern called :term:`dependency injection`, and allows users to avoid declaring their subsystems as global variables. This is widely accepted as a best-practice - the reasoning behind this is discussed in a :doc:`later section <structuring-command-based-project>`.
 
@@ -381,36 +381,36 @@ What about a more complicated case? Below is a drive command, from the same exam
 .. tab-set::
 
   .. tab-item:: Java
-     :sync: tabcode-java
+    :sync: tabcode-java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/DefaultDrive.java
-        :language: java
-        :lines: 5-
-        :lineno-match:
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/commands/DefaultDrive.java
+      :language: java
+      :lines: 5-
+      :lineno-match:
 
   .. tab-item:: C++ (Header)
-     :sync: tabcode-c++
+    :sync: tabcode-c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.h
-        :language: c++
-        :lines: 5-
-        :lineno-match:
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.h
+      :language: c++
+      :lines: 5-
+      :lineno-match:
 
   .. tab-item:: C++ (Source)
-     :sync: tabcode-c++-source
+    :sync: tabcode-c++-source
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
-        :language: c++
-        :lines: 5-
-        :lineno-match:
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
+      :language: c++
+      :lines: 5-
+      :lineno-match:
 
   .. tab-item:: Python
-     :sync: tabcode-python
+    :sync: tabcode-python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/defaultdrive.py
-        :language: python
-        :lines: 7-
-        :lineno-match:
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/defaultdrive.py
+      :language: python
+      :lines: 7-
+      :lineno-match:
 
 And then usage:
 

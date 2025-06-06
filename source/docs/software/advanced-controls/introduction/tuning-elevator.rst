@@ -22,10 +22,10 @@ Vertical elevators are commonly used to lift gamepieces from the ground up to a 
 
 Our "vertical elevator" consists of:
 
-  * A mass on a carriage, under the force of gravity, traveling up and down in a constrained vertical path
-  * A motor and gearbox driving a linear chain, to which the mass-on-a-carriage is attached
+* A mass on a carriage, under the force of gravity, traveling up and down in a constrained vertical path
+* A motor and gearbox driving a linear chain, to which the mass-on-a-carriage is attached
 
- The simulation assumes the plant (the elevator itself) is controlled by motion profiling, feedforward and feedback controllers, composed in this fashion:
+The simulation assumes the plant (the elevator itself) is controlled by motion profiling, feedforward and feedback controllers, composed in this fashion:
 
 .. image:: images/control-system-basics-ctrl-plus-plant-plus-profiler.drawio.svg
    :alt: Tuning Exercise Block Diagrams showing feedforward and feedback block, a profiler, controlling a plant.

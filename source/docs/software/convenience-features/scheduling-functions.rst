@@ -7,66 +7,66 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
 
 .. tab-set::
 
-    .. tab-item:: Java
-      :sync: Java
+  .. tab-item:: Java
+    :sync: Java
 
-        ```java
-        public class Robot extends TimedRobot {
-            private Joystick m_joystick = new Joystick(0);
-            private Encoder m_encoder = new Encoder(1, 2);
-            private Spark m_motor = new Spark(1);
-            private PIDController m_controller = new PIDController(1.0, 0.0, 0.5, 0.01);
-            public Robot() {
-                addPeriodic(() -> {
-                    m_motor.set(m_controller.calculate(m_encoder.getRate()));
-                }, 0.01, 0.005);
-            }
-            @Override
-            public teleopPeriodic() {
-                if (m_joystick.getRawButtonPressed(1)) {
-                    if (m_controller.getSetpoint() == 0.0) {
-                        m_controller.setSetpoint(30.0);
-                    } else {
-                        m_controller.setSetpoint(0.0);
-                    }
+    ```java
+    public class Robot extends TimedRobot {
+        private Joystick m_joystick = new Joystick(0);
+        private Encoder m_encoder = new Encoder(1, 2);
+        private Spark m_motor = new Spark(1);
+        private PIDController m_controller = new PIDController(1.0, 0.0, 0.5, 0.01);
+        public Robot() {
+            addPeriodic(() -> {
+                m_motor.set(m_controller.calculate(m_encoder.getRate()));
+            }, 0.01, 0.005);
+        }
+        @Override
+        public teleopPeriodic() {
+            if (m_joystick.getRawButtonPressed(1)) {
+                if (m_controller.getSetpoint() == 0.0) {
+                    m_controller.setSetpoint(30.0);
+                } else {
+                    m_controller.setSetpoint(0.0);
                 }
             }
         }
-        ```
+    }
+    ```
 
-    .. tab-item:: C++ (Header)
-       :sync: C++ (Header)
+  .. tab-item:: C++ (Header)
+    :sync: C++ (Header)
 
-        ```c++
-        class Robot : public frc::TimedRobot {
-         private:
-          frc::Joystick m_joystick{0};
-          frc::Encoder m_encoder{1, 2};
-          frc::Spark m_motor{1};
-          frc::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
-          Robot();
-          void TeleopPeriodic() override;
-        };
-        ```
+    ```c++
+    class Robot : public frc::TimedRobot {
+     private:
+      frc::Joystick m_joystick{0};
+      frc::Encoder m_encoder{1, 2};
+      frc::Spark m_motor{1};
+      frc::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
+      Robot();
+      void TeleopPeriodic() override;
+    };
+    ```
 
-    .. tab-item:: C++ (Source)
-      :sync: C++ (Source)
+  .. tab-item:: C++ (Source)
+    :sync: C++ (Source)
 
-        ```c++
-        void Robot::Robot() {
-          AddPeriodic([&] {
-            m_motor.Set(m_controller.Calculate(m_encoder.GetRate()));
-          }, 10_ms, 5_ms);
+    ```c++
+    void Robot::Robot() {
+      AddPeriodic([&] {
+        m_motor.Set(m_controller.Calculate(m_encoder.GetRate()));
+      }, 10_ms, 5_ms);
+    }
+    void Robot::TeleopPeriodic() {
+      if (m_joystick.GetRawButtonPressed(1)) {
+        if (m_controller.GetSetpoint() == 0.0) {
+          m_controller.SetSetpoint(30.0);
+        } else {
+          m_controller.SetSetpoint(0.0);
         }
-        void Robot::TeleopPeriodic() {
-          if (m_joystick.GetRawButtonPressed(1)) {
-            if (m_controller.GetSetpoint() == 0.0) {
-              m_controller.SetSetpoint(30.0);
-            } else {
-              m_controller.SetSetpoint(0.0);
-            }
-          }
-        }
-        ```
+      }
+    }
+    ```
 
 The ``teleopPeriodic()`` method in this example runs every 20 ms, and the controller update is run every 10 ms with an offset of 5 ms from when ``teleopPeriodic()`` runs so that their timeslots don't conflict (e.g., ``teleopPeriodic()`` runs at 0 ms, 20 ms, 40 ms, etc.; the controller runs at 5 ms, 15 ms, 25 ms, etc.).

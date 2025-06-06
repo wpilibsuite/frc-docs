@@ -116,28 +116,28 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
 .. tab-set::
 
     .. tab-item:: Java
-     :sync: Java
+        :sync: Java
 
         .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/tankdrive/Robot.java
             :language: java
             :lines: 17-18,22-23,24-26,30-35,38
 
     .. tab-item:: C++ (Header)
-     :sync: C++ (Header)
+        :sync: C++ (Header)
 
         .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/TankDrive/cpp/Robot.cpp
             :language: c++
             :lines: 15-19
 
     .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+         :sync: C++ (Source)
 
         .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/TankDrive/cpp/Robot.cpp
             :language: c++
             :lines: 24, 28-32
 
     .. tab-item:: Python
-     :sync: Python
+        :sync: Python
 
         .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/TankDrive/robot.py
            :language: python
@@ -151,7 +151,7 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
 .. tab-set::
 
     .. tab-item:: Java
-     :sync: Java
+        :sync: Java
 
         Class variables (e.g. in Robot.java or Subsystem):
 
@@ -166,14 +166,14 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
             :lines: 56-62
 
     .. tab-item:: C++ (Header)
-     :sync: C++ (Header)
+        :sync: C++ (Header)
 
         .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
             :language: c++
             :lines: 114, 118-126
 
     .. tab-item:: C++ (Source)
-     :sync: C++ (Source)
+        :sync: C++ (Source)
 
         In Robot or Subsystem constructor:
 
@@ -182,21 +182,21 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
             :lines: 23-29
 
     .. tab-item:: Python
-     :sync: Python
+        :sync: Python
 
-       ```python
-       def robotInit(self):
-           leftLeader = wpilib.Spark(1)
-           leftFollower = wpilib.Spark(2)
-           leftLeader.addFollower(leftFollower)
-           leftLeader.setInverted(
-               True
-           )  # if you want to invert the entire side you can do so here
-           rightLeader = wpilib.Spark(3)
-           rightFollower = wpilib.Spark(4)
-           rightLeader.addFollower(rightFollower)
-           self.drive = wpilib.drive.DifferentialDrive(leftLeader, rightLeader)
-       ```
+        ```python
+        def robotInit(self):
+            leftLeader = wpilib.Spark(1)
+            leftFollower = wpilib.Spark(2)
+            leftLeader.addFollower(leftFollower)
+            leftLeader.setInverted(
+                True
+            )  # if you want to invert the entire side you can do so here
+            rightLeader = wpilib.Spark(3)
+            rightFollower = wpilib.Spark(4)
+            rightLeader.addFollower(rightFollower)
+            self.drive = wpilib.drive.DifferentialDrive(leftLeader, rightLeader)
+        ```
 
 ### Drive Modes
 .. note::
@@ -272,9 +272,9 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
 
 The MecanumDrive class contains two different default modes of driving your robot's motors.
 
-  - driveCartesian: Angles are measured clockwise from the positive X axis. The robot's speed is independent from its angle or rotation rate.
+- driveCartesian: Angles are measured clockwise from the positive X axis. The robot's speed is independent from its angle or rotation rate.
 
-  - drivePolar: Angles are measured counter-clockwise from straight ahead. The speed at which the robot drives (translation) is independent from its angle or rotation rate.
+- drivePolar: Angles are measured counter-clockwise from straight ahead. The speed at which the robot drives (translation) is independent from its angle or rotation rate.
 
 .. tab-set-code::
 

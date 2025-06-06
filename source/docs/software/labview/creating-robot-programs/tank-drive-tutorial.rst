@@ -20,9 +20,9 @@
 
 5. Double click the "Teleop" vi inside of the Teleop Enabled case structure.  Look at its block diagram.  You will want to make two changes here:
 
-  - Replace Arcade Drive with the tank drive.vi.  This can be found by right clicking on the block diagram >> WPI Robotics Library >> Robot Drive >>  and clicking the Tank Drive VI.
+- Replace Arcade Drive with the tank drive.vi.  This can be found by right clicking on the block diagram >> WPI Robotics Library >> Robot Drive >>  and clicking the Tank Drive VI.
 
-  - Find the Index Array function that is after the Get Values.vi.  You will need to create two numeric constants and wire each into one of the index inputs.  You can determine what the values of each index should be by looking at the USB Devices tab in the FRC\ |reg| Driver Station.  Move the two joysticks to determine which number (index) they are tied to.  You will likely want to use the Y-axis index for each joystick.  This is because it is intuitive to push up on the joystick when you want the motors to go forward, and down when you when them to go in reverse.  If you select the X-axis index for each, then you will have to move the joystick left or right (x-axis directions) to get the robot motors to move.  In my setup, I’ve selected index 1 for my left motors Y-axis control and index 5 as the right motors Y-axis control.  You can see the adjustments in LabVIEW in the following image:
+- Find the Index Array function that is after the Get Values.vi.  You will need to create two numeric constants and wire each into one of the index inputs.  You can determine what the values of each index should be by looking at the USB Devices tab in the FRC\ |reg| Driver Station.  Move the two joysticks to determine which number (index) they are tied to.  You will likely want to use the Y-axis index for each joystick.  This is because it is intuitive to push up on the joystick when you want the motors to go forward, and down when you when them to go in reverse.  If you select the X-axis index for each, then you will have to move the joystick left or right (x-axis directions) to get the robot motors to move.  In my setup, I’ve selected index 1 for my left motors Y-axis control and index 5 as the right motors Y-axis control.  You can see the adjustments in LabVIEW in the following image:
 
 .. image:: images/tank-drive-tutorial/block-diagram-2.png
 
@@ -32,7 +32,7 @@
 
 8. The second thing to confirm in this VI is that the "Open 2 Motor.vi" has the correct motor controller selected (Talon, Jaguar, Victor, etc.).
 
-  For example, I am using Jaguar motor controllers and my motors are wired into PWM 8 and 9.  The image below shows the changes I need to make:
+For example, I am using Jaguar motor controllers and my motors are wired into PWM 8 and 9.  The image below shows the changes I need to make:
 
 .. image:: images/tank-drive-tutorial/block-diagram-3.png
 

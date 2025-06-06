@@ -46,7 +46,7 @@ The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instanc
 
 The :guilabel:`Sendable Chooser` widget will appear in the :guilabel:`NetworkTables` menu and underneath the main table name that the instance was sent over. From the example above, the main table name would be :guilabel:`SmartDashboard`.
 
- .. image:: images/sendable-chooser.png
+.. image:: images/sendable-chooser.png
 
 ## PID Controller Widget
 

@@ -13,7 +13,7 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
 .. tab-set::
 
     .. tab-item:: Java
-     :sync: Java
+        :sync: Java
 
         ```java
         // get the default NetworkTable instance
@@ -25,7 +25,7 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
         ```
 
     .. tab-item:: C++
-     :sync: C++
+        :sync: C++
 
         ```c++
         // get the default NetworkTable instance
@@ -37,7 +37,7 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
         ```
 
     .. tab-item:: C++ (Handle-based)
-     :sync: C++ (Handle-based)
+        :sync: C++ (Handle-based)
 
         ```c++
         // get the default NetworkTable instance
@@ -49,7 +49,7 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
         ```
 
     .. tab-item:: C
-       :sync: C
+        :sync: C
 
         ```c
         // get the default NetworkTable instance
@@ -61,7 +61,7 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
         ```
 
     .. tab-item:: Python
-     :sync: Python
+        :sync: Python
 
 
         ```python

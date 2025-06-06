@@ -33,11 +33,11 @@ To follow this tutorial, you will need ready access to the following materials:
 
 1. A differential-drive robot (such as the [AndyMark AM14U5](https://www.andymark.com/products/am14u5-6-wheel-drop-center-robot-drive-base-first-kit-of-parts-chassis)), equipped with:
 
-  * Quadrature encoders for measuring the wheel rotation of each side of the drive.
-  * A gyroscope for measuring robot heading.
+* Quadrature encoders for measuring the wheel rotation of each side of the drive.
+* A gyroscope for measuring robot heading.
 
 2. A driver-station computer configured with:
 
-  * :ref:`FRC Driver Station <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
-  * :ref:`WPILib <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
-  * :ref:`The System Identification Toolsuite <docs/software/advanced-controls/system-identification/introduction:Installing SysId>`.
+* :ref:`FRC Driver Station <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
+* :ref:`WPILib <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
+* :ref:`The System Identification Toolsuite <docs/software/advanced-controls/system-identification/introduction:Installing SysId>`.

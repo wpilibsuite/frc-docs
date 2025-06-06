@@ -26,16 +26,16 @@ WPILib is an open-source library - the C++ and Java source code is in the [allwp
 
 The Java and C++ source code can be found in the WPILibJ and WPILibC source directories:
 
- - [Java source code](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibj/src/main/java/edu/wpi/first/wpilibj)
+- [Java source code](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibj/src/main/java/edu/wpi/first/wpilibj)
 
- - [C++ source code](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibc/src/main/native/cpp)
+- [C++ source code](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibc/src/main/native/cpp)
 
- - [Python source code](https://github.com/robotpy/mostrobotpy)
+- [Python source code](https://github.com/robotpy/mostrobotpy)
 
 While users are strongly encouraged to read the source code to resolve detailed questions about library functionality, more-concise documentation can be found on the official documentation pages for WPILibJ and WPILibC and RobotPy:
 
- - [Java documentation](https://github.wpilib.org/allwpilib/docs/release/java/)
+- [Java documentation](https://github.wpilib.org/allwpilib/docs/release/java/)
 
- - [C++ documentation](https://github.wpilib.org/allwpilib/docs/release/cpp/)
+- [C++ documentation](https://github.wpilib.org/allwpilib/docs/release/cpp/)
 
- - [Python documentation](https://robotpy.readthedocs.io/projects/robotpy/en/stable/)
+- [Python documentation](https://robotpy.readthedocs.io/projects/robotpy/en/stable/)

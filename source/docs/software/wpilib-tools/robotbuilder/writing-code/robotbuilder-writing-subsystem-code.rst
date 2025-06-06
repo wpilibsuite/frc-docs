@@ -15,11 +15,11 @@ The claw at the end of a robot arm is a subsystem operated by a single VictorSPX
    .. tab-item:: Java
       :sync: java
 
-       .. literalinclude:: ../resources/RBGearsBot2025Java/src/main/java/frc/robot/subsystems/Claw.java
-          :language: Java
-          :lines: 11-
-          :emphasize-lines: 63-77
-          :lineno-match:
+      .. literalinclude:: ../resources/RBGearsBot2025Java/src/main/java/frc/robot/subsystems/Claw.java
+         :language: Java
+         :lines: 11-
+         :emphasize-lines: 63-77
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: c++

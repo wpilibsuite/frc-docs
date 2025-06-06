@@ -95,17 +95,17 @@ Cable ties plus reclosable fastener make a great pair for securing robot electro
 
   1. Secure each item down with recloseable fastener. One easy way to do this is to secure the two sides of the fastener together, peel one backing, secure the fastener(s) to the component, then peel the other backing and carefully press the component into place on the board. To ensure you have enough fastener for both electronics and the protective panels, some recommended lengths are provided below:
 
-    - SPARK MAX: 2x 1 in. pieces each
-    - roboRIO: 4x 1 in. pieces
-    - PDH: 3x 2 in. pieces (or 4x 1 in.)
-    - 120A Breaker: 2x 2 in. pieces
+     - SPARK MAX: 2x 1 in. pieces each
+     - roboRIO: 4x 1 in. pieces
+     - PDH: 3x 2 in. pieces (or 4x 1 in.)
+     - 120A Breaker: 2x 2 in. pieces
 
   2. Mark hole locations for drilling ziptie holes
 
-    - SPARK MAX: 2x holes centered between each SPARK MAX (1 aligned with each ziptie notch) plus 2x just outside each outer controller. 2 cable ties will pass through each hole.
-    - PDH: 1 hole directly underneath each device mounting hole (4x total), 1 holes just outside the device footprint near each mounting hole (4x total)
-    - roboRIO: 1 hole directly underneath each ziptie notch (4x total), 1 hole just outside the device footprint near each mounting hole (4x total)
-    - 120A breaker: 1 hole directly underneath each device mounting hole (2x total), 1 hole just outside the device footprint near each mounting hole (2x total)
+     - SPARK MAX: 2x holes centered between each SPARK MAX (1 aligned with each ziptie notch) plus 2x just outside each outer controller. 2 cable ties will pass through each hole.
+     - PDH: 1 hole directly underneath each device mounting hole (4x total), 1 holes just outside the device footprint near each mounting hole (4x total)
+     - roboRIO: 1 hole directly underneath each ziptie notch (4x total), 1 hole just outside the device footprint near each mounting hole (4x total)
+     - 120A breaker: 1 hole directly underneath each device mounting hole (2x total), 1 hole just outside the device footprint near each mounting hole (2x total)
 
   3. Remove components and drill holes. Using a "rocking" or "peeling" motion can often help remove components from recloseable fastener without removing the fastener adhesive.
   #. Place the components back down on the boards. You may wish to wait to actually secure components with cable ties until wiring is complete. Some cable ties may be able to double as wire management.
