@@ -25,6 +25,7 @@ To provide feedback as soon as possible about proposed changes, you will need to
 Every change must be implemented through a GitHub pull request, so watching the pull requests will ensure you see all changes being made.
 
 There are two useful tools for watching pull requests or issues:
+
 - The GitHub issues and pull requests pages provide a ``updated:>=YYYY-MM-DD`` filter that shows changes made since a particular date. If you record the last day you checked, you can ensure you catch up on all issues or pull requests.
 - The GitHub repository page provides a [watch feature](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository) that allows you to subscribe to notifications on that repository. To select just issues and/or pull requests, select the "Custom" option.
 
