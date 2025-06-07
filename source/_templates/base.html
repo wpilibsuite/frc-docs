@@ -1,0 +1,57 @@
+{% extends '!base.html' %} 
+{% block extrabody %}
+<div class="header-bar">
+  <div class="link-bar-container">
+    <div id="link-bar" class="collapse">
+      <ul>
+        <li id="manual-link">
+          <a
+            href="https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system"
+            >FRC Game Manual</a
+          >
+        </li>
+        <li id="qa-link">
+          <a href="https://frc-qa.firstinspires.org/">FRC Game Q&A</a>
+        </li>
+        <script id="headerscript">
+          if (new Date().getMonth() == 3 && new Date().getDate() == 1) {
+            document
+              .getElementById("headerscript")
+              .insertAdjacentHTML(
+                "afterend",
+                '<li id="water-link"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Water Game</a></li>'
+              );
+          }
+        </script>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %} 
+
+{%- block regular_scripts -%} 
+{% for path in script_files -%} 
+  {{ js_tag(path) }} 
+{% endfor -%} 
+{%- if READTHEDOCS %}
+<script>
+  if (typeof READTHEDOCS_DATA !== "undefined") {
+    if (!READTHEDOCS_DATA.features) {
+      READTHEDOCS_DATA.features = {};
+    }
+    READTHEDOCS_DATA.features.docsearch_disabled = false;
+  }
+</script>
+{%- endif %}
+
+<script defer>
+  const button = Object.assign(document.createElement("a"), {
+    href: "?present",
+    className: "present muted-link",
+  });
+  button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605" /></svg>`;
+  const container = document.querySelector(".content-icon-container");
+  container?.appendChild(button);
+</script>
+
+{%- endblock regular_scripts -%}

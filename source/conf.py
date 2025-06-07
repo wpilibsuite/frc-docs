@@ -62,7 +62,6 @@ extensions = [
 ]
 
 local_extensions = [
-    "_extensions.post_process",
     "_extensions.rtd_patch",
     "_extensions.localization",
     "_extensions.controls_js_sim",
@@ -70,6 +69,9 @@ local_extensions = [
     "_extensions.default_latex_image_settings",
     "_extensions.redown",
 ]
+
+if os.getenv("READTHEDOCS") == "True":
+    extensions.append("sphinx_build_compatibility.extension")
 
 extensions += local_extensions
 
@@ -216,7 +218,7 @@ mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "furo"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -234,10 +236,26 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
-    "collapse_navigation": False,
-    "sticky_navigation": False,
-    "titles_only": True,
-    # "flyout_display": "attached",
+    "light_css_variables": {
+        "color-sidebar-background": "#003974",
+        "color-sidebar-brand-text": "#ffffffcc",
+        "color-sidebar-link-text--top-level": "#d9d9d9",
+        "color-background-hover": "#023160",
+        "color-sidebar-link-text": "#acb1b9",
+        "color-sidebar-caption-text": "#81868d",
+    }
+}
+
+html_sidebars = {
+    "**": [
+        "sidebar/scroll-start.html",
+        "sidebar/brand.html",
+        "sidebar/search.html",
+        "sidebar/navigation.html",
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
+        "sidebar/variant-selector.html",
+    ]
 }
 
 user_options = [

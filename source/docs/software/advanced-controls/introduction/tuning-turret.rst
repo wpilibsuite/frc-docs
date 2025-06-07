@@ -48,7 +48,9 @@ Interact with the simulation below to examine how the turret system responds whe
          <div id="turret_feedforward_ctrls"></div>
       </div>
       <script>
-         turret_pidf = new TurretPIDF("turret_feedforward", "feedforward");
+         addEventListener("load", () => {
+            turret_pidf = new TurretPIDF("turret_feedforward", "feedforward");
+         });
       </script>
     </div>
 
@@ -91,7 +93,9 @@ Interact with the simulation below to examine how the turret system responds whe
          <div id="turret_feedback_ctrls"></div>
       </div>
       <script>
-         turret_pidf = new TurretPIDF("turret_feedback", "feedback");
+         addEventListener("load", () => {
+            turret_pidf = new TurretPIDF("turret_feedback", "feedback");
+         });
       </script>
     </div>
 
@@ -126,7 +130,9 @@ Interact with the simulation below to examine how the turret system responds und
          <div id="turret_feedforward_feedback_ctrls"></div>
       </div>
       <script>
-         turret_pidf = new TurretPIDF("turret_feedforward_feedback", "both");
+         addEventListener("load", () => {
+            turret_pidf = new TurretPIDF("turret_feedforward_feedback", "both");
+         });
       </script>
     </div>
 

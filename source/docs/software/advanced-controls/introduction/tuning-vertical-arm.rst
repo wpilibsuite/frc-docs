@@ -46,7 +46,9 @@ Interact with the simulation below to examine how the turret system responds whe
          <div id="arm_feedforward_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_feedforward", "feedforward");
+         addEventListener("load", () => {
+            arm_pidf = new VerticalArmPIDF("arm_feedforward", "feedforward");
+         });
       </script>
     </div>
 
@@ -89,7 +91,9 @@ Interact with the simulation below to examine how the vertical arm system respon
          <div id="arm_feedback_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_feedback", "feedback");
+         addEventListener("load", () => {
+            arm_pidf = new VerticalArmPIDF("arm_feedback", "feedback");
+         });
       </script>
     </div>
 
@@ -130,7 +134,9 @@ Interact with the simulation below to examine how the vertical arm system respon
          <div id="arm_feedforward_feedback_ctrls"></div>
       </div>
       <script>
-         arm_pidf = new VerticalArmPIDF("arm_feedforward_feedback", "both");
+         addEventListener("load", () => {
+            arm_pidf = new VerticalArmPIDF("arm_feedforward_feedback", "both");
+         });
       </script>
     </div>
 
