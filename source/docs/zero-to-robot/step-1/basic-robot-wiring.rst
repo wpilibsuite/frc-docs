@@ -54,7 +54,6 @@ Locate the following control system components and tools
 
 
 - Kit Materials:
-
       - Power Distribution Hub (:term:`PDH`) / Power Distribution Panel (:term:`PDP`)
       - roboRIO
       - Pneumatics Hub (:term:`PH`) / Pneumatics Control Module (:term:`PCM`)
@@ -78,7 +77,6 @@ Locate the following control system components and tools
       - 1/4" or 1/2" (6-12 mm) plywood
 
 - Tools Required:
-
       - Wago Tool or small flat-head screwdriver
       - Very small flat head screwdriver (eyeglass repair size)
       - Wire cutters, strippers, and crimpers
@@ -166,17 +164,17 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
    .. tab-item:: REV
       :sync: REV
 
-         .. image:: images/how-to-wire-a-simple-robot/circuit-breaker-REV.jpg
-           :alt: Show the circuit breaker wired to the PDH.
+      .. image:: images/how-to-wire-a-simple-robot/circuit-breaker-REV.jpg
+        :alt: Show the circuit breaker wired to the PDH.
 
 
-         Requires: 6 AWG (16 :math:`mm^2`) red wire, 1x 6 AWG (16 :math:`mm^2`) terminal lugs, 7/16" (11 mm) wrench
+      Requires: 6 AWG (16 :math:`mm^2`) red wire, 1x 6 AWG (16 :math:`mm^2`) terminal lugs, 7/16" (11 mm) wrench
 
-         Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) wrench, remove the nut from the "AUX" side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut and strip the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDH.
+      Secure one terminal lug to the end of the 6 AWG (16 :math:`mm^2`) red wire. Using the 7/16" (11 mm) wrench, remove the nut from the "AUX" side of the 120A main breaker and place the terminal over the stud. Loosely secure the nut (you may wish to remove it shortly to cut and strip the other end of the wire). Measure out the length of wire required to reach the positive terminal of the PDH.
 
-         1. Cut and strip the other end of the red wire.
-         2. Using the 7/16" (11 mm) wrench, secure the wire to the "AUX" side of the 120A main breaker.
-         3. Lift the lever on the positive (red) input terminal of the PDH, insert the wire, then close the terminal.
+      1. Cut and strip the other end of the red wire.
+      2. Using the 7/16" (11 mm) wrench, secure the wire to the "AUX" side of the 120A main breaker.
+      3. Lift the lever on the positive (red) input terminal of the PDH, insert the wire, then close the terminal.
 
    .. tab-item:: CTR
       :sync: CTR
@@ -227,25 +225,25 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
    .. tab-item:: REV
       :sync: REV
 
-         .. image:: images/how-to-wire-a-simple-robot/pdh-motor-power.jpg
-           :alt: Wiring power from the PDH to motor controllers.
+      .. image:: images/how-to-wire-a-simple-robot/pdh-motor-power.jpg
+        :alt: Wiring power from the PDH to motor controllers.
 
-         .. image:: images/how-to-wire-a-simple-robot/spark-power.jpg
-           :alt: Wiring power to a Spark Motor Controller with ring terminals.
+      .. image:: images/how-to-wire-a-simple-robot/spark-power.jpg
+        :alt: Wiring power to a Spark Motor Controller with ring terminals.
 
-         Requires: Wire Stripper
-         Terminal Controllers only: 10 or 12 AWG (4 - 6 :math:`mm^2`) wire , 10 or 12 AWG (4 - 6 :math:`mm^2`) fork/ring terminals, wire crimper
+      Requires: Wire Stripper
+      Terminal Controllers only: 10 or 12 AWG (4 - 6 :math:`mm^2`) wire , 10 or 12 AWG (4 - 6 :math:`mm^2`) fork/ring terminals, wire crimper
 
-         For SPARK MAX or other wire integrated motor controllers (top image):
+      For SPARK MAX or other wire integrated motor controllers (top image):
 
-         - Cut and strip the red and black power input wires, then insert into one of the Wago terminal pairs.
+      - Cut and strip the red and black power input wires, then insert into one of the Wago terminal pairs.
 
-         For terminal motor controllers (bottom image):
+      For terminal motor controllers (bottom image):
 
-         1. Cut red and black wire to appropriate length to reach from one of the Wago terminal pairs to the input side of the motor controller (with a little extra for the length that will be inserted into the terminals on each end)
-         2. Strip one end of each of the wires, then insert into the Wago terminals.
-         3. Strip the other end of each wire, and crimp on a ring or fork terminal
-         4. Attach the terminal to the motor controller input terminals (red to +, black to -)
+      1. Cut red and black wire to appropriate length to reach from one of the Wago terminal pairs to the input side of the motor controller (with a little extra for the length that will be inserted into the terminals on each end)
+      2. Strip one end of each of the wires, then insert into the Wago terminals.
+      3. Strip the other end of each wire, and crimp on a ring or fork terminal
+      4. Attach the terminal to the motor controller input terminals (red to +, black to -)
 
    .. tab-item:: CTR
       :sync: CTR
@@ -311,19 +309,19 @@ After making the connection check to be sure that it is clean and secure:
    .. tab-item:: REV
       :sync: REV
 
-         .. image:: images/how-to-wire-a-simple-robot/roborio-power-REV.jpg
-           :alt: Power coming from the PDH to the roboRIO.
+      .. image:: images/how-to-wire-a-simple-robot/roborio-power-REV.jpg
+        :alt: Power coming from the PDH to the roboRIO.
 
-         .. image:: images/how-to-wire-a-simple-robot/roborio-power-pdh.jpg
-           :alt: Power going into the roboRIO.
+      .. image:: images/how-to-wire-a-simple-robot/roborio-power-pdh.jpg
+        :alt: Power going into the roboRIO.
 
-         Requires: 10A mini fuse, Wire stripper, very small flat screwdriver, 18 AWG (1 :math:`mm^2`) Red and Black
+      Requires: 10A mini fuse, Wire stripper, very small flat screwdriver, 18 AWG (1 :math:`mm^2`) Red and Black
 
-         1. Insert the 10A fuse into the PDH in one of the non-switchable fused channels (20-22).
-         2. Strip ~5/16" (~8 mm) on both the red and black 18 AWG (1 :math:`mm^2`) wire and connect to the corresponding terminals on the PDH channel where the fuse was installed
-         3. Measure the required length to reach the power input on the roboRIO. Take care to leave enough length to route the wires around any other components such as the battery and to allow for any strain relief or cable management.
-         4. Cut and strip the wire.
-         5. Using a very small flat screwdriver connect the wires to the power input connector of the roboRIO (red to V, black to C). Also make sure that the power connector is screwed down securely to the roboRIO.
+      1. Insert the 10A fuse into the PDH in one of the non-switchable fused channels (20-22).
+      2. Strip ~5/16" (~8 mm) on both the red and black 18 AWG (1 :math:`mm^2`) wire and connect to the corresponding terminals on the PDH channel where the fuse was installed
+      3. Measure the required length to reach the power input on the roboRIO. Take care to leave enough length to route the wires around any other components such as the battery and to allow for any strain relief or cable management.
+      4. Cut and strip the wire.
+      5. Using a very small flat screwdriver connect the wires to the power input connector of the roboRIO (red to V, black to C). Also make sure that the power connector is screwed down securely to the roboRIO.
 
    .. tab-item:: CTR
       :sync: CTR
@@ -481,22 +479,22 @@ Requires: an Ethernet cable
    .. tab-item:: REV
       :sync: REV
 
-         .. image:: images/how-to-wire-a-simple-robot/ph-pdh-power.jpg
-           :alt: PH CAN connection.
+      .. image:: images/how-to-wire-a-simple-robot/ph-pdh-power.jpg
+        :alt: PH CAN connection.
 
-         .. image:: images/how-to-wire-a-simple-robot/ph.jpg
-           :alt: PH CAN connection.
+      .. image:: images/how-to-wire-a-simple-robot/ph.jpg
+        :alt: PH CAN connection.
 
-         Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
+      Requires: Wire stripper, small flat screwdriver (optional), yellow/green twisted CAN cable
 
-         .. note:: The PH is an optional component used for controlling pneumatics on the robot. If you are not using the PH, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDH (shown in this step).
+      .. note:: The PH is an optional component used for controlling pneumatics on the robot. If you are not using the PH, wire the CAN connection directly from the roboRIO (shown in the above step) to the PDH (shown in this step).
 
-         1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
-         2. Insert the wires into the appropriate CAN terminals on the PH.
-         3. Measure the length required to reach the CAN terminals of the PDH (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
-         4. Insert the wires into the appropriate color coded CAN terminals on the PDH. You may use either of the Yellow/Green terminal pairs on the PDH, there is no defined in or out.
+      1. Strip ~5/16" (~8 mm) off of each of the CAN wires.
+      2. Insert the wires into the appropriate CAN terminals on the PH.
+      3. Measure the length required to reach the CAN terminals of the PDH (either of the two available pairs). Cut and strip ~5/16" (~8 mm) off this end of the wires.
+      4. Insert the wires into the appropriate color coded CAN terminals on the PDH. You may use either of the Yellow/Green terminal pairs on the PDH, there is no defined in or out.
 
-         .. note:: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
+      .. note:: See the :ref:`CAN Wiring Basics<docs/hardware/hardware-basics/can-wiring-basics:Termination>` if you need to terminate the CAN bus somewhere other than the PDP.
 
    .. tab-item:: CTR
       :sync: CTR

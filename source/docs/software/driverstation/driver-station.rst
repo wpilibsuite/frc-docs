@@ -17,11 +17,11 @@ The FRC Driver Station can be launched by double-clicking the icon on the Deskto
 
 ## Driver Station Key Shortcuts
 
-  * :kbd:`F1` - Force a Joystick refresh.
-  * :kbd:`[` + :kbd:`]` + :kbd:`\\` - Enable the robot (the 3 keys above Enter on most keyboards)
-  * :kbd:`Enter` - Disable the Robot
-  * :kbd:`Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
-  * :kbd:`Backspace` - "A-Stop" the robot when in Practice Mode - Autonomous Enabled. The robot will be disabled until the Practice Mode reaches Teleop then will be automatically re-enabled. While disabled, the application background will flash orange indicating the robot will re-enable automatically.
+* :kbd:`F1` - Force a Joystick refresh.
+* :kbd:`[` + :kbd:`]` + :kbd:`\\` - Enable the robot (the 3 keys above Enter on most keyboards)
+* :kbd:`Enter` - Disable the Robot
+* :kbd:`Space` - Emergency Stop the robot. After an emergency stop is triggered the roboRIO will need to be rebooted before the robot can be enabled again.
+* :kbd:`Backspace` - "A-Stop" the robot when in Practice Mode - Autonomous Enabled. The robot will be disabled until the Practice Mode reaches Teleop then will be automatically re-enabled. While disabled, the application background will flash orange indicating the robot will re-enable automatically.
 
 .. only:: html
 
@@ -73,10 +73,10 @@ The Operations Tab is used to control the mode of the robot and provide addition
 
 1. Robot Mode - This section controls the Robot Mode.
 
-  - Teleoperated Mode causes the robot to run the code in the Teleoperated portion of the match.
-  - Autonomous Mode causes the robot to run the code in the Autonomous portion of the match.
-  - Practice Mode causes the robot to cycle through the same transitions as an FRC match after the Enable button is pressed (timing for practice mode can be found on the setup tab). When Practice Mode is in use, the DS will flash the background orange to indicate a pending enable (either the start of Autonomous or the start of Teleop after an A-Stop).
-  - :doc:`Test Mode </docs/software/basic-programming/using-test-mode>` is an additional mode where test code that doesn't run in a regular match can be tested.
+   - Teleoperated Mode causes the robot to run the code in the Teleoperated portion of the match.
+   - Autonomous Mode causes the robot to run the code in the Autonomous portion of the match.
+   - Practice Mode causes the robot to cycle through the same transitions as an FRC match after the Enable button is pressed (timing for practice mode can be found on the setup tab). When Practice Mode is in use, the DS will flash the background orange to indicate a pending enable (either the start of Autonomous or the start of Teleop after an A-Stop).
+   - :doc:`Test Mode </docs/software/basic-programming/using-test-mode>` is an additional mode where test code that doesn't run in a regular match can be tested.
 
 2. Enable/Disable - These controls enable and disable the robot. See also `Driver Station Key Shortcuts`_.
 3. Elapsed Time - Indicates the amount of time the robot has been enabled.
@@ -101,17 +101,17 @@ The Diagnostics Tab contains additional status indicators that teams can use to 
 5. Memory Stats - This section shows stats about the roboRIO memory.
 6. Connection Indicators - The top half of these indicators show connection status to various components.
 
-    - "Enet Link" indicates the computer has something connected to the ethernet port.
-    - "Robot Radio" indicates the ping status to the robot wireless bridge at 10.XX.YY.1.
-    - "Robot" indicates the ping status to the roboRIO using mDNS (with a fallback of a static 10.TE.AM.2 address).
-    - "FMS" indicates if the DS is receiving packets from FMS (this is NOT a ping indicator).
+   - "Enet Link" indicates the computer has something connected to the ethernet port.
+   - "Robot Radio" indicates the ping status to the robot wireless bridge at 10.XX.YY.1.
+   - "Robot" indicates the ping status to the roboRIO using mDNS (with a fallback of a static 10.TE.AM.2 address).
+   - "FMS" indicates if the DS is receiving packets from FMS (this is NOT a ping indicator).
 
 7. Network Indicators - The second section of indicators indicates status of network adapters and firewalls. These are provided for informational purposes; communication may be established even with one or more unlit indicators in this section.
 
-    - "Enet" indicates the IP address of the detected Ethernet adapter
-    - "WiFi" indicates if a wireless adapter has been detected as enabled
-    - "USB" indicates if a roboRIO USB connection has been detected
-    - "Firewall" indicates if any firewalls are detected as enabled. Enabled firewalls will show in orange (Dom = Domain, Pub = Public, Prv = Private)
+   - "Enet" indicates the IP address of the detected Ethernet adapter
+   - "WiFi" indicates if a wireless adapter has been detected as enabled
+   - "USB" indicates if a roboRIO USB connection has been detected
+   - "Firewall" indicates if any firewalls are detected as enabled. Enabled firewalls will show in orange (Dom = Domain, Pub = Public, Prv = Private)
 
 8. :guilabel:`Reboot roboRIO` - This button attempts to perform a remote reboot of the roboRIO (after clicking through a confirmation dialog).
 9. :guilabel:`Restart Robot Code` - This button attempts to restart the code running on the robot (but not restart the OS).

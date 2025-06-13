@@ -13,7 +13,7 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
 .. tab-set::
 
     .. tab-item:: Java
-       :sync: Java
+        :sync: Java
 
         ```java
         NetworkTableInstance inst = NetworkTableInstance.getDefault();
@@ -31,7 +31,7 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
         ```
 
     .. tab-item:: C++
-     :sync: C++
+        :sync: C++
 
         ```c++
         nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
@@ -49,7 +49,7 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
         ```
 
     .. tab-item:: C++ (Handle-based)
-     :sync: C++ (Handle-based)
+        :sync: C++ (Handle-based)
 
         ```c++
         NT_Instance inst = nt::GetDefaultInstance();
@@ -67,7 +67,7 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
         ```
 
     .. tab-item:: Python
-     :sync: Python
+        :sync: Python
 
 
         ```python

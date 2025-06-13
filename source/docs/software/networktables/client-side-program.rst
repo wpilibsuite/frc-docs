@@ -9,7 +9,7 @@ A basic client program looks like the following example.
 .. tab-set::
 
     .. tab-item:: Java
-       :sync: Java
+        :sync: Java
 
         ```java
         import edu.wpi.first.networktables.DoubleSubscriber;
@@ -55,7 +55,7 @@ A basic client program looks like the following example.
         ```
 
     .. tab-item:: C++
-     :sync: C++
+        :sync: C++
 
         ```c++
         #include <chrono>
@@ -83,7 +83,7 @@ A basic client program looks like the following example.
         ```
 
     .. tab-item:: C++ (Handle-based)
-     :sync: C++ (Handle-based)
+        :sync: C++ (Handle-based)
 
         ```c++
         #include <chrono>
@@ -110,7 +110,7 @@ A basic client program looks like the following example.
         ```
 
     .. tab-item:: C
-       :sync: C
+        :sync: C
 
         ```c
         #include <stdio.h>
@@ -136,7 +136,7 @@ A basic client program looks like the following example.
         ```
 
     .. tab-item:: Python
-     :sync: Python
+        :sync: Python
 
 
         ```python
@@ -171,22 +171,22 @@ Example build.gradle files are provided in the [StandaloneAppSamples Repository]
 .. tab-set::
 
     .. tab-item:: Java
-     :sync: Java
+        :sync: Java
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/9020718b022ba220a2c5cc04ad12714d06e7a141/Java/build.gradle
-          :language: groovy
-          :linenos:
-          :emphasize-lines: 5
+        .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/9020718b022ba220a2c5cc04ad12714d06e7a141/Java/build.gradle
+            :language: groovy
+            :linenos:
+            :emphasize-lines: 5
 
     .. tab-item:: C++
-     :sync: C++
+        :sync: C++
 
-       Uncomment the appropriate platform as highlighted.
+        Uncomment the appropriate platform as highlighted.
 
-       .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/9020718b022ba220a2c5cc04ad12714d06e7a141/Cpp/build.gradle
-          :language: groovy
-          :linenos:
-          :emphasize-lines: 3, 14-15, 20-22
+        .. rli:: https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/9020718b022ba220a2c5cc04ad12714d06e7a141/Cpp/build.gradle
+            :language: groovy
+            :linenos:
+            :emphasize-lines: 3, 14-15, 20-22
 
 ### Building Python
 
