@@ -7,7 +7,7 @@ The advantage of the robot program being the server is that it's at a known netw
 .. tab-set::
 
     .. tab-item:: Java
-       :sync: Java
+        :sync: Java
 
         ```java
         NetworkTableInstance inst = NetworkTableInstance.getDefault();
@@ -15,7 +15,7 @@ The advantage of the robot program being the server is that it's at a known netw
         ```
 
     .. tab-item:: C++
-     :sync: C++
+        :sync: C++
 
         ```c++
         nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
@@ -23,7 +23,7 @@ The advantage of the robot program being the server is that it's at a known netw
         ```
 
     .. tab-item:: C++ (Handle-based)
-     :sync: C++ (Handle-based)
+        :sync: C++ (Handle-based)
 
         ```c++
         NT_Inst inst = nt::GetDefaultInstance();
@@ -31,7 +31,7 @@ The advantage of the robot program being the server is that it's at a known netw
         ```
 
     .. tab-item:: C
-       :sync: C
+        :sync: C
 
         ```c
         NT_Inst inst = NT_GetDefaultInstance();
@@ -39,7 +39,7 @@ The advantage of the robot program being the server is that it's at a known netw
         ```
 
     .. tab-item:: Python
-     :sync: Python
+        :sync: Python
 
 
         ```python
@@ -53,7 +53,7 @@ The advantage of the robot program being the server is that it's at a known netw
 .. tab-set::
 
     .. tab-item:: Java
-     :sync: Java
+        :sync: Java
 
         ```java
         NetworkTableInstance inst = NetworkTableInstance.getDefault();
@@ -68,7 +68,7 @@ The advantage of the robot program being the server is that it's at a known netw
         ```
 
     .. tab-item:: C++
-     :sync: C++
+        :sync: C++
 
         ```c++
         nt::NetworkTableInstance inst = nt::NetworkTableInstance::GetDefault();
@@ -83,7 +83,7 @@ The advantage of the robot program being the server is that it's at a known netw
         ```
 
     .. tab-item:: C++ (Handle-based)
-     :sync: C++ (Handle-based)
+        :sync: C++ (Handle-based)
 
         ```c++
         NT_Inst inst = nt::GetDefaultInstance();
@@ -98,7 +98,7 @@ The advantage of the robot program being the server is that it's at a known netw
         ```
 
     .. tab-item:: C
-       :sync: C
+        :sync: C
 
         ```c
         NT_Inst inst = NT_GetDefaultInstance();
@@ -113,7 +113,7 @@ The advantage of the robot program being the server is that it's at a known netw
         ```
 
     .. tab-item:: Python
-     :sync: Python
+        :sync: Python
 
 
         ```python

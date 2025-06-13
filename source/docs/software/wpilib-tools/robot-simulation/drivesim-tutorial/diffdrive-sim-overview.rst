@@ -4,11 +4,11 @@
 
 The goal of this tutorial is to provide guidance on implementing simulation capabilities for a differential-drivetrain robot. By the end of this tutorial, you should be able to:
 
- 1. Understand the basic underlying concepts behind the WPILib simulation framework.
- 2. Create a drivetrain simulation model using your robot's physical parameters.
- 3. Use the simulation model to predict how your real robot will move given specific voltage inputs.
- 4. Tune feedback constants and squash common bugs (e.g. motor inversion) before having access to physical hardware.
- 5. Use the Simulation GUI to visualize robot movement on a virtual field.
+1. Understand the basic underlying concepts behind the WPILib simulation framework.
+2. Create a drivetrain simulation model using your robot's physical parameters.
+3. Use the simulation model to predict how your real robot will move given specific voltage inputs.
+4. Tune feedback constants and squash common bugs (e.g. motor inversion) before having access to physical hardware.
+5. Use the Simulation GUI to visualize robot movement on a virtual field.
 
 .. image:: images/simgui.png
 

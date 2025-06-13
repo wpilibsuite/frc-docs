@@ -4,13 +4,13 @@ Because :ref:`state-space notation <docs/software/advanced-controls/state-space/
 
 - In normal user code:
 
-   - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings
-   - Motor outputs are set
+  - PID or similar control algorithms generate voltage commands from encoder (or other sensor) readings
+  - Motor outputs are set
 
 - In simulation periodic code:
 
-   - The simulation's :term:`state` is updated using :term:`inputs <input>`, usually voltages from motors set from a PID loop
-   - Simulated encoder (or other sensor) readings are set for user code to use in the next timestep
+  - The simulation's :term:`state` is updated using :term:`inputs <input>`, usually voltages from motors set from a PID loop
+  - Simulated encoder (or other sensor) readings are set for user code to use in the next timestep
 
 ## WPILib's Simulation Classes
 

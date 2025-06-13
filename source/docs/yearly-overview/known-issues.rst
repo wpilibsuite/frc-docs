@@ -66,7 +66,7 @@ The proper value to look is as MemAvailable, rather then MemFree (which is what 
 
 **Workaround:** We are currently investigating the root cause, but FIRST volunteers have been made aware and the recommendation is to reboot the roboRIO when this occurs.
 
- .. note:: Pressing the physical :guilabel:`User` button on the roboRIO for 5 seconds can also cause the robot code to not start, but a reboot will not start the robot code. If the robot code does not start after rebooting, press the :guilabel:`User` button. Ensure that nothing on the robot is in contact with the :guilabel:`User` button.
+.. note:: Pressing the physical :guilabel:`User` button on the roboRIO for 5 seconds can also cause the robot code to not start, but a reboot will not start the robot code. If the robot code does not start after rebooting, press the :guilabel:`User` button. Ensure that nothing on the robot is in contact with the :guilabel:`User` button.
 
 ### Onboard I2C Causing System Lockups
 
@@ -113,8 +113,8 @@ Delete your Gradle cache located under ``~$USER_HOME/.gradle``. Windows machines
 **Workaround:**
 There are two known workarounds:
 
-  #. Copy and paste the Chinese characters into notepad, and the English text will be shown.
-  #. Temporarily change the Windows language to English.
+#. Copy and paste the Chinese characters into notepad, and the English text will be shown.
+#. Temporarily change the Windows language to English.
 
 ### C++ Intellisense - Files Open on Launch Don't Work Properly
 
@@ -122,12 +122,12 @@ There are two known workarounds:
 
 **Workaround:**
 
-  #. Close all  files in VS Code, but leave VS Code open
-  #. Delete c_cpp_properties.json file in the .vscode folder, if it exists
-  #. Run the "Refresh C++ Intellisense" command in VS Code.
-  #. In the bottom right you should see something that looks like a platform (linuxathena or windowsx86-64 etc). If it’s not linuxathena click it and set it to linuxathena (release)
-  #. Wait ~1 min
-  #. Open the main cpp file (not a header file). Intellisense should now be working
+#. Close all  files in VS Code, but leave VS Code open
+#. Delete c_cpp_properties.json file in the .vscode folder, if it exists
+#. Run the "Refresh C++ Intellisense" command in VS Code.
+#. In the bottom right you should see something that looks like a platform (linuxathena or windowsx86-64 etc). If it’s not linuxathena click it and set it to linuxathena (release)
+#. Wait ~1 min
+#. Open the main cpp file (not a header file). Intellisense should now be working
 
 ### Issues with WPILib Dashboards and Simulation on Windows N Editions
 
