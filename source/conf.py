@@ -26,7 +26,7 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 project = "FIRST Robotics Competition"
 copyright = "2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
-version = "2025"
+version = "2027"
 
 
 # -- General configuration ---------------------------------------------------
@@ -95,7 +95,7 @@ versionwarning_messages = {
 
 versionwarning_admonition_type = "warning"
 versionwarning_banner_title = "Warning!"
-versionwarning_body_selector = 'div[class="document"]'
+versionwarning_body_selector = 'article[role="main"]'
 
 # List of languages that frc-docs supports
 localization_languages = [
@@ -299,7 +299,7 @@ html_context = {
     "display_github": True,  # Integrate GitHub
     "github_user": "wpilibsuite",  # Username
     "github_repo": "frc-docs",  # Repo name
-    "github_version": "main",  # Version, set to main so edit on github makes PRs to main
+    "github_version": "2027",  # Version, set to 2027 so edit on github makes PRs to 2027 instead of main/stable
     "conf_py_path": "/source/",  # Path in the checkout to the docs root
 }
 
