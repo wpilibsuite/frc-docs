@@ -111,9 +111,9 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github
   .. tab-item:: Java
       :sync: tabcode-java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/subsystems/HatchSubsystem.java
         :language: java
-        :lines: 25-35
+        :lines: 26-36
         :lineno-match:
 
   .. tab-item:: C++ (Header)
@@ -416,9 +416,9 @@ And then usage:
 
 .. tab-set-code::
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/RobotContainer.java
     :language: java
-    :lines: 59-67
+    :lines: 57-65
     :lineno-match:
 
   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
@@ -435,9 +435,9 @@ Notice that this command does not override ``isFinished()``, and thus will never
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined/RobotContainer.java
       :language: java
-      :lines: 51-60
+      :lines: 49-58
       :lineno-match:
 
     .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
