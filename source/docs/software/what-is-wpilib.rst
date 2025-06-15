@@ -39,3 +39,12 @@ While users are strongly encouraged to read the source code to resolve detailed 
 - [C++ documentation](https://github.wpilib.org/allwpilib/docs/release/cpp/)
 
 - [Python documentation](https://robotpy.readthedocs.io/projects/robotpy/en/stable/)
+
+## Development Timeline
+
+WPILib development happens on branches for individual years, as opposed to one main branch. Development and support for both FRC and FTC happen during different periods to support both FRC and FTC needs. These periods overlap with each other between years, so the following timeline visualizes these overlapping periods to make it easy to understand.
+
+.. image:: /assets/dev_timeline.svg
+  :alt: A timeline showing the different periods of WPILib's development for the next 4 years and how the different periods overlap between different, starting with development from FRC Kickoff to September, FRC beta from September to the next FRC Kickoff, FRC Support from FRC Kickoff to Champs, Updates/FTC Beta from Champs to FTC Kickoff, and FTC Support from FTC Kickoff to the next Champs.
+
+For year N, WPILib will create a branch for year N - 1, and actively do development on it until around October, when it enters the beta testing period for FRC, which continues until FRC Kickoff for year N, which is when the first stable release is published. FRC will receive active support until the FIRST Championship ends, which then begins the FTC beta testing period, which lasts until FTC Kickoff in September of year N. FTC will then receive active support until the next FIRST Championship ends, and then the branch will no longer be supported.
