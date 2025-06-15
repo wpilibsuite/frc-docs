@@ -39,3 +39,8 @@ While users are strongly encouraged to read the source code to resolve detailed 
 - [C++ documentation](https://github.wpilib.org/allwpilib/docs/release/cpp/)
 
 - [Python documentation](https://robotpy.readthedocs.io/projects/robotpy/en/stable/)
+
+## Development Timeline
+
+.. image:: /assets/dev_timeline.svg
+  :alt: A timeline showing the different periods of WPILib's development for the next 5 years and how the different periods overlap between different, starting with development from FRC Kickoff to September, FRC beta from September to the next FRC Kickoff, FRC Support from FRC Kickoff to Champs, Updates/FTC Beta from Champs to FTC Kickoff, and FTC Support from FTC Kickoff to the next Champs.
