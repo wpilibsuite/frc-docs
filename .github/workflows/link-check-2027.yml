@@ -1,0 +1,26 @@
+name: Link Check 2027
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 8 * * *'
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
+jobs:
+  check-links-2027:
+    if: github.repository_owner == 'wpilibsuite'
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        ref: 2027
+    - uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+    - name: Install Dependencies
+      run: pip install -r source/requirements.txt
+    - name: Check Links
+      run: make linkcheck
