@@ -8,8 +8,6 @@ Sensors are an integral way of having your robot hardware and software communica
    sensor-overview-software
    accelerometers-software
    gyros-software
-   ultrasonics-software
-   counters
    encoders-software
    analog-inputs-software
    analog-potentiometers-software

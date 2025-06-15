@@ -25,8 +25,6 @@ The :guilabel:`Command Selector`  widget allows you to start and cancel a specif
    SmartDashboard.putData("My Command", command)
    ```
 
-.. note:: The ``MyCommand`` instance can also be sent using a lower-level NetworkTables API or using the :ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`. In this case, the ``SmartDashboard`` API was used, meaning that the :guilabel:`Command Selector` widget will appear under the ``SmartDashboard`` table name.
-
 .. image:: images/command-selector.png
    :alt: Command Selector widget showing that "MyCommand" is running with the option to cancel
 

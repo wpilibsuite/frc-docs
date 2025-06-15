@@ -30,7 +30,7 @@ The CameraServer consists of two layers, the high level WPILib **CameraServer cl
 
 ## CameraServer Class
 
-The CameraServer class (part of WPILib) provides a high level interface for adding cameras to your robot code. It also is responsible for publishing information about the cameras and camera servers to NetworkTables so that Driver Station dashboards such as the LabVIEW Dashboard and Shuffleboard can list the cameras and determine where their streams are located. It uses a singleton pattern to maintain a database of all created cameras and servers.
+The CameraServer class (part of WPILib) provides a high level interface for adding cameras to your robot code. It also is responsible for publishing information about the cameras and camera servers to NetworkTables so that Driver Station dashboards such as Elastic can list the cameras and determine where their streams are located. It uses a singleton pattern to maintain a database of all created cameras and servers.
 
 Some key functions in CameraServer are:
 

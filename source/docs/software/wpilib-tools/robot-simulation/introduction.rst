@@ -96,21 +96,7 @@ Often a team may want to test their code without having an actual robot availabl
 
 ## Running Robot Dashboards
 
-Shuffleboard, SmartDashboard, Glass, and AdvantageScope can be used with WPILib simulation when they are configured to connect to the local computer (i.e. ``localhost``).
-
-### Shuffleboard
-
-Shuffleboard is automatically configured to look for a NetworkTables instance from the robotRIO but **not from other sources**. To connect to a simulation, open Shuffleboard preferences from the :guilabel:`File` menu and select :guilabel:`NetworkTables` under :guilabel:`Plugins` on the left navigation bar. In the :guilabel:`Server` field, type in the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
-
-.. image:: images/shuffleboard-networktables.png
-   :alt: Shuffleboard connection settings set to localhost.
-
-### SmartDashboard
-
-SmartDashboard is automatically configured to look for a NetworkTables instance from the roboRIO, but **not from other sources**. To connect to a simulation, open SmartDashboard preferences under the :guilabel:`File` menu and in the :guilabel:`Team Number` field, enter the IP address or hostname of the NetworkTables host. For a standard simulation configuration, use ``localhost``.
-
-.. image:: /docs/software/dashboards/smartdashboard/images/smartdashboard-intro/smartdashboard-networktables.png
-   :alt: SmartDashboard team number set to localhost.
+Glass, Elastic, and AdvantageScope can be used with WPILib simulation when they are configured to connect to the local computer (i.e. ``localhost``).
 
 ### Glass
 

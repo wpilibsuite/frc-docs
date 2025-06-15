@@ -2,36 +2,6 @@
 
 This document will help explain how to recognize if the Dashboard is not connected to your robot, steps to troubleshoot this condition and a code modification you can make.
 
-## Recognizing LabVIEW Dashboard Connectivity
-
-.. image:: images/troubleshooting-dashboard-connectivity/labview-dashboard-connection.png
-   :alt: NT Connection LED on LabVIEW Dashboard front panel
-
-The LabVIEW Dashboard has a NetworkTables Connection indicator on the front panel.
-
-.. image:: images/troubleshooting-dashboard-connectivity/black-diamonds.png
-   :alt: Highlights black diamonds next to the variables indicating they are not synced to the robot.
-
-On the Variables tab of the Dashboard, the variables are shown with a black diamond when they are not synced with the robot. Once the Dashboard connects to the robot and these variables are synced, the diamond will disappear.
-
-## Recognizing SmartDashboard Connectivity
-.. image:: images/troubleshooting-dashboard-connectivity/smartdashboard-connection.png
-   :alt: The titlebar of SmartDashboard showing a connection to IP 172.22.11.2
-
-SmartDashboard indicates if it is connected or not in the title bar. It shows the IP address it is connected to. See :ref:`this page <docs/software/dashboards/smartdashboard/smartdashboard-intro:Configuring the Team Number>` for more on configuring the connection.
-
-.. image:: images/troubleshooting-dashboard-connectivity/connection-indicator.png
-   :alt: Click "View" then "Add..." then Connection indicator to place one on the SmartDashboard.
-
-For more visibility, you can also add a Connection Indicator widget. The connection indicator can be moved or re-sized if the Editable checkbox is checked.
-
-## Recognizing Shuffleboard Connectivity
-
-.. image:: images/troubleshooting-dashboard-connectivity/shuffleboard-connection.png
-   :alt: The bottom bar of Shuffleboard showing no connection
-
-Shuffleboard indicates if it is connected or not in the bottom right corner of the application as shown in the image above. See :ref:`page <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-preferences:Setting the Team Number>` for more on configuring the connection.
-
 ## Recognizing Glass Connectivity
 
 .. image:: images/troubleshooting-dashboard-connectivity/glass-connection.png
