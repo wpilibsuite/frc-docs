@@ -72,7 +72,7 @@ jobs:
 
       # Run Inspector
       - name: Inspect RLIs
-        uses: docker://ghcr.io/starlight220/inspector:v1.9
+        uses: docker://ghcr.io/starlight220/inspector:v1.11
         id: inspector
         with:
           root: ${{ github.workspace }}
