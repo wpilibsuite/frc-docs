@@ -309,5 +309,8 @@
 "docs/software/wpilib-tools/choreo/index.rst" "docs/software/pathplanning/choreo/index.rst"
 "docs/networking/networking-introduction/om5p-ac-radio-modification.rst" "docs/zero-to-robot/step-3/radio-programming.rst"
 "docs/software/driverstation/programming-radios-for-fms-offseason.rst" "docs/zero-to-robot/step-3/radio-programming.rst"
-"docs/software/hardware-apis/sensors/counters.rst" "docs/software/hardware-apis/sensors/index.rst
-"docs/software/hardware-apis/sensors/ultrasonics-software.rst" "docs/software/hardware-apis/sensors/index.rst
+"docs/software/hardware-apis/sensors/counters.rst" "docs/software/hardware-apis/sensors/index.rst"
+"docs/software/hardware-apis/sensors/ultrasonics-software.rst" "docs/software/hardware-apis/sensors/index.rst"
+"docs/hardware/sensors/ultrasonics-hardware.rst" "docs/hardware/sensors/sensor-overview-hardware.rst"
+"docs/software/telemetry/robot-telemetry-with-sendable.rst" "docs/software/telemetry/index.rst"
+"docs/software/telemetry/writing-sendable-classes.rst" "docs/software/telemetry/index.rst"
