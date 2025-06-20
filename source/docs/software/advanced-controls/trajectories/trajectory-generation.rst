@@ -37,7 +37,7 @@ For clamped cubic splines, this method accepts two ``Pose2d`` objects, one for t
 
 The more complex overload accepts "control vectors" for splines. This method is used when generating trajectories with Pathweaver, where you are able to control the magnitude of the tangent vector at each point. The ``ControlVector`` class consists of two ``double`` arrays. Each array represents one dimension (x or y), and its elements represent the derivatives at that point. For example, the value at element 0 of the ``x`` array represents the x coordinate (0th derivative), the value at element 1 represents the 1st derivative in the x dimension and so on.
 
-When using clamped cubic splines, the length of the array must be 2 (0th and 1st derivatives), whereas when using quintic splines, the length of the array should be 3 (0th, 1st, and 2nd derivative). Unless you know exactly what you are doing, the first and simpler method is HIGHLY recommended for manually generating trajectories. (i.e. when not using Pathweaver JSON files).
+When using clamped cubic splines, the length of the array must be 2 (0th and 1st derivatives), whereas when using quintic splines, the length of the array should be 3 (0th, 1st, and 2nd derivative). Unless you know exactly what you are doing, the first and simpler method is HIGHLY recommended for manually generating trajectories.
 
 Here is an example of generating a trajectory using clamped cubic splines for the 2018 game, FIRST Power Up:
 
