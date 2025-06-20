@@ -13,7 +13,7 @@ For information on installing the Driver Station software see :ref:`this documen
 
 The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Apps->FRC Driver Station.
 
-.. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch the other Dashboards: :ref:`SmartDashboard <docs/software/dashboards/smartdashboard/smartdashboard-intro:SmartDashboard Introduction>` and :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`. WPILib must be :ref:`installed <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` to use SmartDashboard and Shuffleboard.
+.. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch other dashboards, including ones not listed like :doc:`/docs/software/dashboards/elastic` by following the instructions in :doc:`/docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard`. WPILib must be :ref:`installed <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` to use Elastic.
 
 ## Driver Station Key Shortcuts
 
