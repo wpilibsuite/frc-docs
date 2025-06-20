@@ -2,7 +2,7 @@
 
 While users are free to use the command-based libraries however they like (and advanced users are encouraged to do so), new users may want some guidance on how to structure a basic command-based robot project.
 
-A standard template for a command-based robot project is included in the WPILib examples repository ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/templates/commandbased)). This section will walk users through the structure of this template.
+A standard template for a command-based robot project is included in the WPILib examples repository ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/templates/commandbased)). This section will walk users through the structure of this template.
 
 The root package/directory generally will contain four classes:
 
