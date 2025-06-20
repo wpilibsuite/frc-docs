@@ -89,6 +89,16 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
       | URCL                | Community |                   | robotpy-urcl              |
       +---------------------+-----------+-------------------+---------------------------+
 
+      When using ``requires``, you can specify a version by appending ``==<version>`` to the package name, e.g. ``robotpy-commands-v2==2024.0.0``. If you do not specify a version, the latest version will be installed.
+
+      To check what version of packages are currently installed, run the command ``pip list``.
+
+      Note that pinning versions may cause issues with incompatibilities between different components. Unpinning all versions, installing, then re-pinning to the latest set is a good practice when updating.
+
+      Pinning versions is a good practice to do after most robot code is written and validated, before and during a competition. However, outside of this window, remaining on the latest version of the components is recommended, as it will ensure you have the latest bug fixes and features.
+
+      See https://pip.pypa.io/en/stable/topics/repeatable-installs/ for more information on how to specify versions.
+
    .. tab-item:: Java/C++ (Legacy)
       :sync: javacpplegacy
 
