@@ -10,7 +10,7 @@ Upon start up (when power is applied to the XRP either via battery or USB), the 
 
 3. After this, the XRP is ready for use.
 
-## Hardware, Sensors and GPIO
+##  Hardware, Sensors, and GPIO
 
 The XRP has the following built-in hardware/peripherals:
 

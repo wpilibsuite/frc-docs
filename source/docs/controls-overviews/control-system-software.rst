@@ -59,7 +59,7 @@ Shuffleboard has the same features as SmartDashboard. It also improves on the se
 .. image:: images/control-system-software/glass.png
    :alt: Glass connected and showing NetworkTables, a Field2D window, and a plot of a couple signals.
 
-:ref:`Glass <docs/software/dashboards/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantages are the field view, pose visualization and advanced signal plotting tools.
+:ref:`Glass <docs/software/dashboards/glass/index:Glass>` is a Dashboard focused on being a programmer's tool for debugging.  The primary advantages are the field view, pose visualization, and advanced signal plotting tools.
 
 ### AdvantageScope
 
@@ -136,7 +136,7 @@ This tool helps teams automatically calculate constants that can be used to desc
 .. image:: images/control-system-software/outline-viewer.png
    :alt: OutlineViewer with the preferences dialog box.
 
-OutlineViewer is a utility used to view, modify and add to all of the contents of the NetworkTables for debugging purposes. LabVIEW teams can use the Variables tab of the LabVIEW Dashboard to accomplish this functionality.  For more information see the :ref:`Outline Viewer section <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>`.
+OutlineViewer is a utility used to view, modify, and add to all of the contents of the NetworkTables for debugging purposes. LabVIEW teams can use the Variables tab of the LabVIEW Dashboard to accomplish this functionality.  For more information see the :ref:`Outline Viewer section <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>`.
 
 ## roboRIO Team Number Setter
 

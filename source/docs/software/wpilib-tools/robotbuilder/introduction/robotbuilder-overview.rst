@@ -40,7 +40,7 @@ For more information see :doc:`Creating a Subsystem <robotbuilder-creating-subsy
 
 .. image:: images/robotbuilder-overview-3.png
 
-Each subsystem consists of a number of actuators, sensors and controllers that it uses to perform its operations. These sensors and actuators are added to the subsystem with which they are associated.  Each of the sensors and actuators comes from the RobotBuilder palette and is dragged to the appropriate subsystem. For each, there are usually other properties that must be set such as port numbers and other parameters specific to the component.
+Each subsystem consists of a number of actuators, sensors, and controllers that it uses to perform its operations. These sensors and actuators are added to the subsystem with which they are associated.  Each of the sensors and actuators comes from the RobotBuilder palette and is dragged to the appropriate subsystem. For each, there are usually other properties that must be set such as port numbers and other parameters specific to the component.
 
 In this example there is an Elevator subsystem that uses a motor and a potentiometer (motor and pot) that have been dragged to the Elevator subsystem.
 
@@ -73,7 +73,7 @@ For more information see :doc:`Testing with Smartdashboard <robotbuilder-testing
 
 .. image:: images/robotbuilder-overview-5.png
 
-The operator interface consists of joysticks, gamepads and other HID input devices. You can add operator interface components (joysticks, joystick buttons) to your program in RobotBuilder. It will automatically generate code that will initialize all of the components and allow them to be connected to commands.
+The operator interface consists of joysticks, gamepads, and other HID input devices. You can add operator interface components (joysticks, joystick buttons) to your program in RobotBuilder. It will automatically generate code that will initialize all of the components and allow them to be connected to commands.
 
 The operator interface components are dragged from the palette to the "Operator Interface" folder in the RobotBuilder program. First (1) add Joysticks to the program then put buttons under the associated joysticks (2) and give them meaningful names, like ShootButton.
 

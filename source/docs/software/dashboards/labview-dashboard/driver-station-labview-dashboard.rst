@@ -31,7 +31,7 @@ The left pane is used to display a video feed from acamera located on the robot.
 
 1. Camera Image Display
 2. Mode Selector - This drop-down allows you to select the type of camera display to use. The choices are Camera Off, USB Camera SW (software compression), USB Camera HW (hardware compression) and IP Camera. Note that the IP Camera setting will not work when your PC is connected to the roboRIO over USB.
-3. Camera Settings - This control allows you to change the resolution, framerate and compression of the image stream to the dashboard, click the control to pop-up the configuration.
+3. Camera Settings - This control allows you to change the resolution, framerate, and compression of the image stream to the dashboard, click the control to pop-up the configuration.
 4. Bandwidth Indicator - Indicates approximate bandwidth usage of the image stream. The indicator will display green for "safe" bandwidth usage, yellow when teams should use caution and red if the stream bandwidth is beyond levels that will work on the competition field.
 5. Framerate - Indicates the approximate received framerate of the image stream.
 
@@ -44,7 +44,7 @@ The left pane is used to display a video feed from acamera located on the robot.
 
 The center pane contains a section that provides feedback on the joysticks and drive commands when used with the LabVIEW framework and a section that displays the NetworkTables status and autonomous selector:
 
-1. Displays X,Y and Throttle information and button values for up to 2 joysticks when using the LabVIEW framework
+1. Displays X,Y, and Throttle information and button values for up to 2 joysticks when using the LabVIEW framework
 2. Displays values being sent to motor controllers when using LabVIEW framework
 3. Displays a connection indicator for the NetworkTables data from the robot
 4. Displays a Gyro value
@@ -63,7 +63,7 @@ The camera tab is used to display a video feed from a camera located on the robo
 
 1. Camera Image Display
 2. Mode Selector - This drop-down allows you to select the type of camera display to use. The choices are Camera Off, USB Camera SW (software compression), USB Camera HW (hardware compression) and IP Camera. Note that the IP Camera setting will not work when your PC is connected to the roboRIO over USB.
-3. Camera Settings - This control allows you to change the resolution, framerate and compression of the image stream to the dashboard, click the control to pop-up the configuration.
+3. Camera Settings - This control allows you to change the resolution, framerate, and compression of the image stream to the dashboard, click the control to pop-up the configuration.
 4. Bandwidth Indicator - Indicates approximate bandwidth usage of the image stream. The indicator will display green for "safe" bandwidth usage, yellow when teams should use caution and red if the stream bandwidth is beyond levels that will work on the competition field.
 5. Framerate - Indicates the approximate received framerate of the image stream.
 

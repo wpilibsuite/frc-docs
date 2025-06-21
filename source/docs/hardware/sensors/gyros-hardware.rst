@@ -6,7 +6,7 @@
 
 Gyroscopes (or "gyros", for short) are devices that measure rate-of-rotation.  These are particularly useful for stabilizing robot driving, or for measuring heading or tilt by integrating (adding-up) the rate measurements to get a measurement of total angular displacement.
 
-Several popular FRC\ |reg| devices known as :ref:`IMUs <docs/hardware/sensors/accelerometers-hardware:IMUs (Inertial Measurement Units)>` (Inertial Measurement Units) combine 3-axis gyros, accelerometers and other position sensors into one device. Some  popular examples are:
+Several popular FRC\ |reg| devices known as :ref:`IMUs <docs/hardware/sensors/accelerometers-hardware:IMUs (Inertial Measurement Units)>` (Inertial Measurement Units) combine 3-axis gyros, accelerometers, and other position sensors into one device. Some  popular examples are:
 
 - [Analog Devices ADIS16448 and ADIS 16470 IMUs](https://www.analog.com/en/landing-pages/001/first.html)
 - [CTRE Pigeon IMU](https://store.ctr-electronics.com/gadgeteer-pigeon-imu/)
@@ -37,7 +37,7 @@ Three-axis gyros measure rotation rate around all three spatial axes (typically 
 The [Analog Devices ADIS16470 IMU Board for FIRST Robotics](https://www.analog.com/en/landing-pages/001/first.html) that has been in FIRST Choice in recent years is a commonly used three-axis gyro.
 
 .. image:: images/gyros-hardware/drive-yaw-pitch-roll.svg
-  :alt: The 3 axis: yaw, pitch, and roll and how they relate to robot movement.
+  :alt: The 3 axis: yaw, pitch, and roll, and how they relate to robot movement.
   :width: 400
 
 .. note:: The coordinate system shown above is often used for three axis gyros, as it is a convention in avionics. Note that other coordinate systems are used in mathematics and referenced throughout WPILib. Please refer to the :ref:`Drive class axis diagram<docs/software/hardware-apis/motors/wpi-drive-classes:Axis Conventions>` for axis referenced in software.
