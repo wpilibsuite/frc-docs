@@ -139,8 +139,8 @@ def build_year(ax: Axes, year: int):
 
 
 def main():
-    plt.figure(figsize=(16, 12))
-    plt.title("WPILib Development Timeline")
+    plt.figure(figsize=(16, 9))
+    plt.title("WPILib Development Timeline", {"fontsize": "x-large"})
     ax = plt.gca()
     ax.set_autoscaley_on(False)
     ax.set_ylim(-0.5, -0.5 + (END_YEAR - START_YEAR))
@@ -156,18 +156,9 @@ def main():
     ax.spines["right"].set_visible(False)
     bars = []
     for i, year in enumerate(range(START_YEAR, END_YEAR, 1)):
-        build_dividers(
-            ax,
-            year,
-            0,
-            1 - (i * LINE_HEIGHT) - 1 / 40,
-        )
+        build_dividers(ax, year, 0, 1 - (i * LINE_HEIGHT) - 1 / 40)
         bars = build_year(ax, year)
-    ax.legend(
-        handles=bars,
-        loc="lower left",
-        fontsize="small",
-    )
+    ax.legend(handles=bars, loc="upper right", fontsize="x-large")
     script_path = Path(__file__).resolve().parent
     plt.savefig(Path(script_path, "../../assets/dev_timeline.svg"), bbox_inches="tight")
 
