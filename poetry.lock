@@ -2025,7 +2025,6 @@ files = [
 [package.dependencies]
 jinja2 = ">=2.10"
 markupsafe = ">=1"
-standard-imghdr = {version = "3.10.14", markers = "python_version >= \"3.13\""}
 
 [[package]]
 name = "sphinx-last-updated-by-git"
@@ -2384,17 +2383,6 @@ files = [
 [package.dependencies]
 gitpython = "*"
 sphinx = ">=2.0"
-
-[[package]]
-name = "standard-imghdr"
-version = "3.10.14"
-description = "Standard library imghdr redistribution. \"dead battery\"."
-optional = false
-python-versions = "*"
-files = [
-    {file = "standard_imghdr-3.10.14-py3-none-any.whl", hash = "sha256:cdf6883163349624dee9a81d2853a20260337c4cd41c04e99c082e01833a08e2"},
-    {file = "standard_imghdr-3.10.14.tar.gz", hash = "sha256:2598fe2e7c540dbda34b233295e10957ab8dc8ac6f3bd9eaa8d38be167232e52"},
-]
 
 [[package]]
 name = "stevedore"
