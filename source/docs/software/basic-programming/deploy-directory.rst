@@ -28,7 +28,7 @@ To access files from the deploy directory in your robot code, use the ``Filesyst
 
 By default the deploy directory in your project is transferred to the roboRIO when code is deployed.  It is initiated by this section of the ``build.gradle`` file.
 
-.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2025.3.2/vscode-wpilib/resources/gradle/java/build.gradle
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2027.0.0-alpha-1/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
    :lines: 32-38
    :lineno-match:
