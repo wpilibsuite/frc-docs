@@ -10,11 +10,9 @@ Accelerometers generally come in two types: single-axis and 3-axis.  A single-ax
 
 WPILib supports single-axis accelerometers through the `AnalogAccelerometer`_ class.
 
-Three-axis accelerometers often require more complicated communications protocols (such as SPI or I2C) in order to send multi-dimensional data.  WPILib has native support for the following 3-axis accelerometers:
+Three-axis accelerometers often require more complicated communications protocols (such as CAN or I2C) in order to send multi-dimensional data.  WPILib has native support for the following 3-axis accelerometers:
 
 - `ADXL345_I2C`_
-- `ADXL345_SPI`_
-- `ADXL362`_
 - `BuiltInAccelerometer`_
 
 ## AnalogAccelerometer
@@ -77,42 +75,6 @@ The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/r
     // Creates an ADXL345 accelerometer object on the MXP I2C port
     // with a measurement range from -8 to 8 G's
     frc::ADXL345_I2C accelerometer{I2C::Port::kMXP, frc::ADXL345_I2C::Range::kRange_8G};
-    ```
-
-### ADXL345_SPI
-
-The :code:`ADXL345_SPI` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL345_SPI.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l345___s_p_i.html)) provides support for the ADXL345 accelerometer over the SPI communications bus.
-
-.. tab-set-code::
-
-    ```java
-    // Creates an ADXL345 accelerometer object on the MXP SPI port
-    // with a measurement range from -8 to 8 G's
-    ADXL345_SPI accelerometer = new ADXL345_SPI(SPI.Port.kMXP, ADXL345_SPI.Range.k8G);
-    ```
-
-    ```c++
-    // Creates an ADXL345 accelerometer object on the MXP SPI port
-    // with a measurement range from -8 to 8 G's
-    frc::ADXL345_SPI accelerometer{SPI::Port::kMXP, frc::ADXL345_SPI::Range::kRange_8G};
-    ```
-
-### ADXL362
-
-The :code:`ADXL362` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL362.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l362.html)) provides support for the ADXL362 accelerometer over the SPI communications bus.
-
-.. tab-set-code::
-
-    ```java
-    // Creates an ADXL362 accelerometer object on the MXP SPI port
-    // with a measurement range from -8 to 8 G's
-    ADXL362 accelerometer = new ADXL362(SPI.Port.kMXP, ADXL362.Range.k8G);
-    ```
-
-    ```c++
-    // Creates an ADXL362 accelerometer object on the MXP SPI port
-    // with a measurement range from -8 to 8 G's
-    frc::ADXL362 accelerometer{SPI::Port::kMXP, frc::ADXL362::Range::kRange_8G};
     ```
 
 ### BuiltInAccelerometer

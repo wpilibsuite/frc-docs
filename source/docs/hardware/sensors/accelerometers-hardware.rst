@@ -43,6 +43,5 @@ The roboRIO has a built-in accelerometer, which does not need any external conne
 
 Several popular FRC devices (known as "inertial measurement units," or "IMUs") combine both an accelerometer and a gyroscope.  Popular FRC example include:
 
-- [Analog Devices ADIS16448 and ADIS 16470 IMUs](https://www.analog.com/en/landing-pages/001/first.html)
 - [CTRE Pigeon IMU](https://store.ctr-electronics.com/gadgeteer-pigeon-imu/)
 - [Kauai Labs NavX](https://pdocs.kauailabs.com/navx-mxp/)

@@ -36,7 +36,11 @@ SystemCore doesn't support Analog Outputs.
 SystemCore doesn't support Analog Gyros.
 
 ### SPI
-SystemCore doesn't support SPI.
+SystemCore doesn't support SPI. Several IMUs that WPILib had built-in support for also used SPI, and therefore also aren't supported on SystemCore. IMUs that were removed:
+* ADIS16448
+* ADIS16470
+* ADXL345
+* ADXRS450
 
 ### DigitalGlitchFilter
 SystemCore doesn't support DigitalGlitchFilter.
