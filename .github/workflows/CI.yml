@@ -7,6 +7,9 @@ env:
 
 jobs:
   build-pdf:
+    strategy:
+      matrix:
+        python-version: [3.11, 3.13]
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
@@ -14,7 +17,7 @@ jobs:
         fetch-depth: 0
     - uses: actions/setup-python@v5
       with:
-        python-version: 3.11
+        python-version: ${{ matrix.python-version }}
         cache: 'pip'
     - name: Install Python Dependencies
       run: |
@@ -29,11 +32,14 @@ jobs:
     - name: Archive PDF
       uses: actions/upload-artifact@v4
       with:
-        name: frc-docs-pdf
+        name: frc-docs-pdf-python${{ matrix.python-version }}
         path: build/latex/firstroboticscompetition.pdf
         if-no-files-found: error
         
   build-html:
+    strategy:
+      matrix:
+        python-version: [3.11, 3.13]
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
@@ -41,7 +47,7 @@ jobs:
         fetch-depth: 0
     - uses: actions/setup-python@v5
       with:
-        python-version: 3.11
+        python-version: ${{ matrix.python-version }}
         cache: 'pip'
     - name: Install Python Dependencies
       run: |
@@ -56,11 +62,14 @@ jobs:
     - name: Archive HTML
       uses: actions/upload-artifact@v4
       with:
-        name: frc-docs-html
+        name: frc-docs-html-python${{ matrix.python-version }}
         path: build/html/
         if-no-files-found: error
         
   build-html-translation:
+    strategy:
+      matrix:
+        python-version: [3.11, 3.13]
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
@@ -75,7 +84,7 @@ jobs:
         fetch-depth: 0
     - uses: actions/setup-python@v5
       with:
-        python-version: 3.11
+        python-version: ${{ matrix.python-version }}
         cache: 'pip'
     - name: Install Python Dependencies
       run: |
@@ -121,12 +130,15 @@ jobs:
   #        fi
         
   check-linting:
+    strategy:
+      matrix:
+        python-version: [3.11, 3.13]
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
-        python-version: 3.11
+        python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -135,12 +147,15 @@ jobs:
         make lint
         
   check-image-size:
+    strategy:
+      matrix:
+        python-version: [3.11, 3.13]
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
-        python-version: 3.11
+        python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -160,6 +175,9 @@ jobs:
           fail_level: "error"
           
   check-redirects:
+    strategy:
+      matrix:
+        python-version: [3.11, 3.13]
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
@@ -168,7 +186,7 @@ jobs:
         git fetch origin main --depth=1
     - uses: actions/setup-python@v5
       with:
-        python-version: 3.11
+        python-version: ${{ matrix.python-version }}
     - name: Install Dependencies
       run: |
         pip install -r source/requirements.txt
@@ -180,12 +198,15 @@ jobs:
         [[ $(<source/redirects.txt) == $(git show origin/main:source/redirects.txt)* ]] || { echo "Error: redirects.txt can only be appended to. Lines cannot be modified or deleted."; exit 1; }
         
   check-formatting:
+    strategy:
+      matrix:
+        python-version: [3.11, 3.13]
     runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
-        python-version: 3.11
+        python-version: ${{ matrix.python-version }}
     - name: Install Python Dependencies
       run: |
         pip install -r source/requirements.txt
