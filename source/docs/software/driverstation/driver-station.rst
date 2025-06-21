@@ -138,7 +138,7 @@ The USB Devices tab includes the information about the USB Devices connected to 
 
 1. USB Setup List - This contains a list of all compatible USB devices connected to the DS. Pressing a button on a device will highlight the name in green and put 2 \*s before the device name
 2. :guilabel:`Rescan` - This button will force a Rescan of the USB devices. While the robot is disabled, the DS will automatically scan for new devices and add them to the list. To force a complete re-scan or to re-scan while the robot is Enabled (such as when connected to FMS during a match) press F1 or use this button.
-3. Device indicators - These indicators show the current status of the Axes, buttons and POV of the joystick.
+3. Device indicators - These indicators show the current status of the Axes, buttons, and POV of the joystick.
 4. Rumble - For XInput devices (such as X-Box controllers) the Rumble control will appear. This can be used to test the rumble functionality of the device. The top bar is "Right Rumble" and the bottom bar is "Left Rumble". Clicking and holding anywhere along the bar will activate the rumble proportionally (left is no rumble = 0, right is full rumble = 1). This is a control only and will not indicate the Rumble value set in robot code.
 
 ### Re-Arranging and Locking Devices

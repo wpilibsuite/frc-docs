@@ -139,7 +139,7 @@ Overall installation progress will be tracked in this window
 
 You will be prompted whether to enable the NI update service. You can choose to not enable the update service.
 
-.. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (FRC Blog, Team Updates or E-mail Blasts).
+.. warning:: It is not recommended to install these updates unless directed by FRC through our usual communication channels (FRC Blog, Team Updates, or E-mail Blasts).
 
 ### NI Activation Wizard
 

@@ -9,7 +9,7 @@ When CameraServer opens a camera, it creates a webpage that you can use to view 
 .. image:: images/cameraserver-webserver/cameraserver-webserver-settings.png
   :alt: CameraServer webpage showing camera image and settings sliders.
 
-The web server will show a live camera image and has sliders to adjust various camera settings, such as brightness, contrast, sharpness and many other options. You can adjust the values and see the results live, and then use the ``VideoCamera`` class to set those in your robot code.
+The web server will show a live camera image and has sliders to adjust various camera settings, such as brightness, contrast, sharpness, and many other options. You can adjust the values and see the results live, and then use the ``VideoCamera`` class to set those in your robot code.
 
 ## Camera Video Modes
 

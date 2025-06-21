@@ -148,7 +148,7 @@
       A term encompassing a :term:`plant` and its interaction with a :term:`controller` and :term:`observer`, which are treated as a single entity. Mathematically speaking, a :term:`system` maps :term:`inputs <input>` to :term:`outputs <output>` through a linear combination of :term:`states <state>`.
 
    system identification
-        The process of capturing a :term:`system <system>`\'s :term:`dynamics` in a mathematical model using measured data. The SysId toolsuite uses system identification to find kS, kV and kA terms.
+        The process of capturing a :term:`system <system>`\'s :term:`dynamics` in a mathematical model using measured data. The SysId toolsuite uses system identification to find kS, kV, and kA terms.
 
    system response
       The behavior of a :term:`system` over time for a given :term:`input`.

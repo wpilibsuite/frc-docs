@@ -4,7 +4,7 @@
 
 ## Frequently Asked Questions
 
-#### How do I report issues, bugs or feature requests with Shuffleboard?
+#### How do I report issues, bugs, or feature requests with Shuffleboard?
 
 There is no active maintainer of Shuffleboard, but we are accepting pull requests. Bugs, issues, and feature requests can be added on the Shuffleboard GitHub page by creating an issue. Please try to look at existing issues before creating new ones to make sure you aren't duplicating something that has already been reported or work that is planned. You can find the issues on the [Shuffleboard GitHub page](https://github.com/wpilibsuite/shuffleboard).
 

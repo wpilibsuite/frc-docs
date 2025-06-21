@@ -59,7 +59,7 @@
       Control Systems Advisor - FRC volunteer position that assists teams with Robot Control System-related issues.
 
    CTRE
-      [Cross the Road Electronics LLC](https://store.ctr-electronics.com/) - is an engineering design, software development and electronics manufacturer based outside of Detroit in Macomb, MI. They primarily focus on high-performing, high-quality electronics communication,  motor control, and control system products for FIRST teams and the EV industry. CTR Electronics was founded in 2006 by two FRC mentors who met through their robotics team: Mike Copioli and Omar Zrien and is staffed largely by FRC alumni, and active volunteers & mentors.
+      [Cross the Road Electronics LLC](https://store.ctr-electronics.com/) - is an engineering design, software development, and electronics manufacturer based outside of Detroit in Macomb, MI. They primarily focus on high-performing, high-quality electronics communication,  motor control, and control system products for FIRST teams and the EV industry. CTR Electronics was founded in 2006 by two FRC mentors who met through their robotics team: Mike Copioli and Omar Zrien and is staffed largely by FRC alumni, and active volunteers & mentors.
 
    C++
       One of the four officially supported programming languages.
@@ -282,7 +282,7 @@
       A force applied at a distance from some axis of rotation
 
    trajectory
-      A trajectory is a smooth curve, with velocities and accelerations at each point along the curve, connecting two endpoints on the field.
+      A trajectory is a smooth curve, with velocities, and accelerations at each point along the curve, connecting two endpoints on the field.
 
    transitory
       In :term:`NetworkTables`, a :term:`topic` that will disappear after the last :term:`publisher` stops publishing.

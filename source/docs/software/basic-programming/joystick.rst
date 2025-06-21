@@ -11,7 +11,7 @@ The command based way to use the these classes is detailed in the section: :ref:
 .. image:: /docs/software/driverstation/images/driver-station/ds-usb-tab.png
    :alt: The 4th tab down on the left hand side is the USB devices tab.
 
-The :ref:`USB Devices Tab <docs/software/driverstation/driver-station:USB Devices Tab>` of the Driver Station is used to setup and configure the joystick for use with the robot.  Pressing a button on a joystick will cause its entry in the table to light up green.  Selecting the joystick will show the values of axes, buttons and the POV that can be used to determine the mapping between physical joystick features and axis or button numbers.
+The :ref:`USB Devices Tab <docs/software/driverstation/driver-station:USB Devices Tab>` of the Driver Station is used to setup and configure the joystick for use with the robot.  Pressing a button on a joystick will cause its entry in the table to light up green.  Selecting the joystick will show the values of axes, buttons, and the POV that can be used to determine the mapping between physical joystick features and axis or button numbers.
 
 .. image:: images/joystick/lights.jpg
    :alt: On the USB tab the indicators light up to show what is currently being pressed.
