@@ -193,6 +193,8 @@ Supported Operating Systems and Architectures:
 
 ## Shuffleboard
 
+.. warning:: Shuffleboard is deprecated and will be removed for 2027 due to its lack of a maintainer and resource utilization issues. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
+
 - Expose orientation property for NumberSlider
 - Add :doc:`persistent alerts widget </docs/software/telemetry/persistent-alerts>`
 - Correct FieldData de/serialization
@@ -248,6 +250,8 @@ Supported Operating Systems and Architectures:
 - Improve intellisense by hiding items not likely to be used in Robot Programs
 
 ## RobotBuilder
+
+.. warning:: RobotBuilder is deprecated and will be removed for 2027 due to its declining usage and burden of updating for the 2027 control system.
 
 - Remove robotInit in favor of Robot constructor
 
