@@ -380,7 +380,6 @@ Community translations can be found in a variety of languages in the menu toward
    docs/software/driverstation/index
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/outlineviewer/index
-   docs/software/wpilib-tools/roborio-team-number-setter/index
    docs/software/wpilib-tools/wpical/index
 
 .. toctree::

@@ -405,3 +405,4 @@
 "docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-code.rst" "docs/yearly-overview/removed-features.rst"
 "docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst" "docs/yearly-overview/removed-features.rst"
 "docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst" "docs/yearly-overview/removed-features.rst"
+"docs/software/wpilib-tools/roborio-team-number-setter/index.rst" "docs/yearly-overview/removed-features.rst"
