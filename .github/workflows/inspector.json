@@ -26,5 +26,24 @@
       "latestVersion": "9020718b022ba220a2c5cc04ad12714d06e7a141"
     }
   ],
-  "ignoredFiles": ["source/docs/software/commandbased/command-scheduler.rst", "source/docs/software/hardware-apis/pneumatics/pressure.rst", "source/docs/software/hardware-apis/pneumatics/solenoids.rst", "source/docs/software/advanced-controls/state-space/state-space-pose-estimators.rst", "source/docs/software/commandbased/subsystems.rst", "source/docs/software/telemetry/writing-sendable-classes.rst", "source/docs/software/advanced-controls/trajectories/troubleshooting.rst", "source/docs/software/hardware-apis/motors/wpi-drive-classes.rst", "source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst", "source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst", "source/docs/software/pathplanning/trajectory-tutorial/entering-constants.rst", "source/docs/software/convenience-features/event-based.rst", "source/docs/software/dashboards/glass/field2d-widget.rst", "source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst", "source/docs/software/hardware-apis/sensors/analog-inputs-software.rst", "source/docs/software/hardware-apis/sensors/digital-inputs-software.rst", "source/docs/software/hardware-apis/sensors/encoders-software.rst", "source/docs/software/hardware-apis/sensors/ultrasonics-software.rst"]
+  "ignoredFiles": [
+    "source/docs/software/commandbased/command-scheduler.rst",
+    "source/docs/software/hardware-apis/pneumatics/pressure.rst",
+    "source/docs/software/hardware-apis/pneumatics/solenoids.rst",
+    "source/docs/software/advanced-controls/state-space/state-space-pose-estimators.rst",
+    "source/docs/software/commandbased/subsystems.rst",
+    "source/docs/software/telemetry/writing-sendable-classes.rst",
+    "source/docs/software/advanced-controls/trajectories/troubleshooting.rst",
+    "source/docs/software/hardware-apis/motors/wpi-drive-classes.rst",
+    "source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst",
+    "source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst",
+    "source/docs/software/pathplanning/trajectory-tutorial/entering-constants.rst",
+    "source/docs/software/convenience-features/event-based.rst",
+    "source/docs/software/dashboards/glass/field2d-widget.rst",
+    "source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst",
+    "source/docs/software/hardware-apis/sensors/analog-inputs-software.rst",
+    "source/docs/software/hardware-apis/sensors/digital-inputs-software.rst",
+    "source/docs/software/hardware-apis/sensors/encoders-software.rst",
+    "source/docs/software/hardware-apis/sensors/ultrasonics-software.rst"
+  ]
 }
