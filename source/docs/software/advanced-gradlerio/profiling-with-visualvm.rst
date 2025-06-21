@@ -8,7 +8,7 @@ To begin, [download VisualVM](https://visualvm.github.io/download.html) and unpa
 
 ## Setting up Gradle
 
-GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a roboRIO). To begin, locate the ``frcJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
+GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a SystemCore). To begin, locate the ``frcJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
 
 .. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2027.0.0-alpha-1/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
@@ -37,7 +37,7 @@ We are adding a few arguments here. In order:
 * Set the remote debugging port to 1198
 * Allow listening from remote targets
 * Disable SSL authentication being required
-* Set the hostname to the roboRIOs team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Address Notation>`)
+* Set the hostname to the SystemCore's team number. Be sure to replace this. (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Address Notation>`)
 
 .. important:: The hostname when connected via USB-B should be ``172.22.11.2``.
 
@@ -100,7 +100,7 @@ To begin, ensure you are on the :guilabel:`Monitor` tab and click :guilabel:`Hea
    :alt: Location of heap dump button in VisualVM
    :width: 700
 
-This heap dump will be stored on the target system (roboRIO) and must be retrieved using SFTP. See :doc:`this article </docs/software/roborio-info/roborio-ftp>` for information on retrieving the dump from the roboRIO.
+This heap dump will be stored on the target system (SystemCore) and must be retrieved using SFTP. See :doc:`this article </docs/software/roborio-info/roborio-ftp>` for information on retrieving the dump from the SystemCore.
 
 Once downloaded, the dump can be analyzed with VisualVM.
 
