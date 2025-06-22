@@ -66,12 +66,6 @@ MemAvailable:     126956 kB
 
 The proper value to look is as MemAvailable, rather then MemFree (which is what the driver station is reporting).
 
-### Updating Properties on roboRIO 2.0 may be slow or hang
-
-**Issue:** Updating the properties on a roboRIO 2.0 without reformatting using the Imaging Tool (such as setting the team number) may be slow or hang.
-
-**Workaround:** After a few minutes of the tool waiting the roboRIO should be able to be rebooted and the new properties should be set.
-
 ### Simulation crashes on Mac after updating WPILib
 
 **Issue:** On macOS, after updating the project to use a newer version of WPILib, running simulation immediately crashes without the GUI appearing.
@@ -125,34 +119,3 @@ There are two known workarounds:
 - Robot Simulation will crash on start-up
 
 **Solution:** Install the [Media Feature Pack](https://support.microsoft.com/en-us/topic/media-feature-pack-list-for-windows-n-editions-c1c6fffa-d052-8338-7a79-a4bb980a700a)
-
-### Python - CameraServer/cscore runs out of memory on roboRIO 1
-
-**Issue:** When using CameraServer on a roboRIO 1, the image processing program will sometimes exit with a ``SIGABRT`` or "Error code 6" or a ``MemoryError``.
-
-**Solution:** You may be able to workaround this issue by disabling the NI webserver using the following robotpy-installer command:
-
-```shell
-python -m robotpy installer niweb disable
-```
-
-.. seealso:: [Github issue](https://github.com/robotpy/mostrobotpy/issues/61)
-
-## Fixed by Game Tools 2025 Patch 1
-
-### Game Tools install fails due to outdated NI Package Manager
-
-**Issue:** An offiline installation of NI Game Tools may fail due to outdated NI Package Manager
-
-.. image:: images/known-issues/game-tools-package-manager.png
-  :alt: Game Tools error message requireing update to NI Package Manager.
-
-**Workaround:** Install the latest [National Instruments Package Manager](https://www.ni.com/en/support/downloads/software-products/download.package-manager.html) (Note: Click on link for "Install Offline") and then restart Game Tools installation.
-
-## Fixed by Elastic 2025.0.2 (WPILib Installer 2025.3.1)
-
-### Elastic camera streams are very laggy
-
-**Issue:** Camera streams displayed in Elastic are laggy and have low FPS.
-
-**Workaround:** This is an issue that was fixed in Elastic 2025.0.2. Update Elastic by running the latest WPILib installer or Elastic installer.
