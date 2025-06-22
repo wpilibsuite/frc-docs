@@ -30,8 +30,6 @@ To communicate to peripheral devices over :term:`I2C`, each pin should be wired 
 
 The I2C bus can also be used through the `MXP expansion port`_. The I2C bus on the :term:`MXP` is independent. For example, a device on the main bus can have the same ID as a device on the MXP bus.
 
-.. warning:: Be sure to familiarize yourself on the following known issue before using the onboard I2C port: :ref:`docs/yearly-overview/known-issues:Onboard I2C Causing System Lockups`
-
 ## SPI
 
 .. image:: images/roborio/roborio-spi.svg
