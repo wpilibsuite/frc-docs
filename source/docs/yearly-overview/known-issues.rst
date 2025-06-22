@@ -12,21 +12,15 @@ The I2C numbering in WPILib is backwards from what the labels are on SystemCore.
 
 ### DutyCycle.getOutput crashes
 
-Attempting to call DutyCycle.getOutput() or DutyCycleEncoder.get() without calling setAssumedFrequency() will crash.
-This is because currently the HW does not report frequency, which doesn't allow us to compute a percentage output.
-This also means getFrequency() also will fail.
+Attempting to call DutyCycle.getOutput() or DutyCycleEncoder.get() without calling setAssumedFrequency() will crash. This is because currently the HW does not report frequency, which doesn't allow us to compute a percentage output. This also means getFrequency() also will fail.
 
-Use DutyCycle.getHighTime() or DutyCycleEncoder.setAssumedFrequency(), and use the value specified in the
-datasheet of the sensor to compute a percentage output.
+Use DutyCycle.getHighTime() or DutyCycleEncoder.setAssumedFrequency(), and use the value specified in the datasheet of the sensor to compute a percentage output.
 
 ### SystemCore won't get 10.TE.AM.2 address from Radio.
 
-Due to the change in Hostname, the radio will not hand out .2 to SystemCore. Use the IP address displayed on the screen
-if you need to know the IP address.
+Due to the change in Hostname, the radio will not hand out .2 to SystemCore. Use the IP address displayed on the SystemCore screen if you need to know the IP address.
 
-Generally, everything should work in this configuration. But if you run into issues where the DS cannot connect
-(And you're sure the team number is set, it's required to connect the DS and can be verified on the screen), you 
-can manually type the IP address into the team number selector in the DS.
+Generally, everything should work in this configuration. But if you run into issues where the DS cannot connect (And you're sure the team number is set, it's required to connect the DS and can be verified on the screen), you can manually type the IP address into the team number selector in the DS.
 
 ### Driver Station randomly disabled
 
