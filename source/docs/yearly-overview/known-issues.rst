@@ -6,14 +6,21 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 ## Open Issues
 
-### LabVIEW Getting Started page reports 2024
+### I2C numbering backwards
 
-**Issue:** The LabVIEW Getting Started page shows 2024 instead of 2025.
+The I2C numbering in WPILib is backwards from what the labels are on SystemCore. This will be fixed in Alpha 2 and later releases.
 
-.. image:: images/known-issues/labview-getting-started-2024.png
-  :alt: LabVIEW Getting Started window showing 2024
+### DutyCycle.getOutput crashes
 
-**Workaround:** This is an issue with the LabVIEW update. You can confirm that the proper version is installed by opening the Driver station and confirming the version in the titlebar is 25.0
+Attempting to call DutyCycle.getOutput() or DutyCycleEncoder.get() without calling setAssumedFrequency() will crash. This is because currently the HW does not report frequency, which doesn't allow us to compute a percentage output. This also means getFrequency() also will fail.
+
+Use DutyCycle.getHighTime() or DutyCycleEncoder.setAssumedFrequency(), and use the value specified in the datasheet of the sensor to compute a percentage output.
+
+### SystemCore won't get 10.TE.AM.2 address from Radio.
+
+Due to the change in Hostname, the radio will not hand out .2 to SystemCore. Use the IP address displayed on the SystemCore screen if you need to know the IP address.
+
+Generally, everything should work in this configuration. But if you run into issues where the DS cannot connect (And you're sure the team number is set, it's required to connect the DS and can be verified on the screen), you can manually type the IP address into the team number selector in the DS.
 
 ### Driver Station randomly disabled
 
@@ -34,7 +41,6 @@ Some teams have seen this happen only when the robot is operated wirelessly, but
    1. Ensure the DS Radio is mounted high, away from interference and humans walking between the DS radio and the robot.
    2. Use ethernet to connect the DS computer to the DS Radio
 5. Update the Wi-Fi drivers for the DS computer.
-
 
 Some teams have seen this happen due to software that is running on the driver station (such as Autodesk updater or Discord). Some potential mitigations:
 
@@ -59,31 +65,6 @@ MemAvailable:     126956 kB
 ```
 
 The proper value to look is as MemAvailable, rather then MemFree (which is what the driver station is reporting).
-
-### Driver Station Reporting No Code
-
-**Issue:** There is a rare occurrence in the roboRIO 2.0 that causes the roboRIO to not properly start the robot program. This causes the Driver Station to report a successful connection but no code, even though code is deployed on the roboRIO.
-
-**Workaround:** We are currently investigating the root cause, but FIRST volunteers have been made aware and the recommendation is to reboot the roboRIO when this occurs.
-
-.. note:: Pressing the physical :guilabel:`User` button on the roboRIO for 5 seconds can also cause the robot code to not start, but a reboot will not start the robot code. If the robot code does not start after rebooting, press the :guilabel:`User` button. Ensure that nothing on the robot is in contact with the :guilabel:`User` button.
-
-### Onboard I2C Causing System Lockups
-
-**Issue:** Use of the onboard I2C port on the roboRIO 1 or 2, in any language, can result in system lockups. The frequency of these lockups appears to be dependent on the specific hardware (i.e. different roboRIOs will behave differently) as well as how the bus is being used.
-
-**Workaround:** The only surefire mitigation is to use the MXP I2C port or another device to read the I2C data. Accessing the device less frequently and/or using a different roboRIO may significantly reduce the likelihood/frequency of lockups, it will be up to each team to assess their tolerance of the risk of lockup. This lockup can not be definitively identified on the field and a field fault will not be called for a match where this behavior is believed to occur. This lockup is a CPU/kernel hang, the roboRIO will completely stop responding and will not be accessible via the DS, webpage, or SSH. If you can access your roboRIO via any of these methods, you are experiencing a different issue.
-
-Several alternatives exist for accessing the REV color sensor without using the roboRIO I2C port. A similar approach could be used for other I2C sensors.
-
-- Use a [Raspberry Pi Pico](https://github.com/ThadHouse/picocolorsensor/). Supports up to 2 REV color sensors, sends data to the roboRIO via serial. The Pi Pico is low cost (less than $10) and readily available.
-- Use a [Raspberry Pi](https://github.com/PeterJohnson/rpi-colorsensor/). Supports 1-4 color sensors, sends data to the roboRIO via NetworkTables. Primarily useful for teams already using a Raspberry Pi as a coprocessor.
-
-### Updating Properties on roboRIO 2.0 may be slow or hang
-
-**Issue:** Updating the properties on a roboRIO 2.0 without reformatting using the Imaging Tool (such as setting the team number) may be slow or hang.
-
-**Workaround:** After a few minutes of the tool waiting the roboRIO should be able to be rebooted and the new properties should be set.
 
 ### Simulation crashes on Mac after updating WPILib
 
@@ -138,34 +119,3 @@ There are two known workarounds:
 - Robot Simulation will crash on start-up
 
 **Solution:** Install the [Media Feature Pack](https://support.microsoft.com/en-us/topic/media-feature-pack-list-for-windows-n-editions-c1c6fffa-d052-8338-7a79-a4bb980a700a)
-
-### Python - CameraServer/cscore runs out of memory on roboRIO 1
-
-**Issue:** When using CameraServer on a roboRIO 1, the image processing program will sometimes exit with a ``SIGABRT`` or "Error code 6" or a ``MemoryError``.
-
-**Solution:** You may be able to workaround this issue by disabling the NI webserver using the following robotpy-installer command:
-
-```shell
-python -m robotpy installer niweb disable
-```
-
-.. seealso:: [Github issue](https://github.com/robotpy/mostrobotpy/issues/61)
-
-## Fixed by Game Tools 2025 Patch 1
-
-### Game Tools install fails due to outdated NI Package Manager
-
-**Issue:** An offiline installation of NI Game Tools may fail due to outdated NI Package Manager
-
-.. image:: images/known-issues/game-tools-package-manager.png
-  :alt: Game Tools error message requireing update to NI Package Manager.
-
-**Workaround:** Install the latest [National Instruments Package Manager](https://www.ni.com/en/support/downloads/software-products/download.package-manager.html) (Note: Click on link for "Install Offline") and then restart Game Tools installation.
-
-## Fixed by Elastic 2025.0.2 (WPILib Installer 2025.3.1)
-
-### Elastic camera streams are very laggy
-
-**Issue:** Camera streams displayed in Elastic are laggy and have low FPS.
-
-**Workaround:** This is an issue that was fixed in Elastic 2025.0.2. Update Elastic by running the latest WPILib installer or Elastic installer.
