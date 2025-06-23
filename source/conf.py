@@ -159,6 +159,8 @@ linkcheck_ignore = [
     r".*digilent.com.*",
     r".*digilentinc.com.*",
     r".*electrodragon.com.*",
+    r".*filezilla-project.org.*",
+    r".*miktex.org.*",
 ]
 
 linkcheck_anchors_ignore_for_url = [
