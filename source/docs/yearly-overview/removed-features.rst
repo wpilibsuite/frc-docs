@@ -1,7 +1,7 @@
 # Removed features
 
 ## LabVIEW
-LabVIEW is not currently supported on SystemCore.
+LabVIEW is not currently supported on SystemCore. Old LabVIEW docs can be found [here](https://docs.wpilib.org/en/stable/docs/software/labview/index.html).
 
 ## NetworkTables 3
 Removed since NetworkTables 4 has been out for a few years and is a better protocol bandwidth-wise.
