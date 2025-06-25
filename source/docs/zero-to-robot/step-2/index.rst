@@ -6,7 +6,6 @@ An overview of the available control system software can be found :doc:`here </d
    :maxdepth: 1
 
    offline-installation-preparations
-   labview-setup
    frc-game-tools
    wpilib-setup
    python-setup

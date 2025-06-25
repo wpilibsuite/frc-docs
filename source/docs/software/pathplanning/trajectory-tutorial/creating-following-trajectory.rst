@@ -100,8 +100,6 @@ With our trajectory configuration in hand, we are now ready to generate our traj
       :lines: 60-69
       :lineno-match:
 
-.. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can also :ref:`import a PathWeaver JSON <docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`.
-
 ## Creating the RamseteCommand
 
 We will first reset our robot's pose to the starting pose of the trajectory. This ensures that the robot's location on the coordinate system and the trajectory's starting position are the same.

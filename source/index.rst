@@ -356,7 +356,6 @@ Community translations can be found in a variety of languages in the menu toward
    docs/software/vscode-overview/index
    docs/software/dashboards/index
    docs/software/telemetry/index
-   docs/software/labview/index
    docs/software/python/index
    docs/software/hardware-apis/index
    docs/software/can-devices/index
@@ -379,10 +378,8 @@ Community translations can be found in a variety of languages in the menu toward
    :hidden:
 
    docs/software/driverstation/index
-   docs/software/wpilib-tools/robotbuilder/index
    docs/software/wpilib-tools/robot-simulation/index
    docs/software/wpilib-tools/outlineviewer/index
-   docs/software/wpilib-tools/roborio-team-number-setter/index
    docs/software/wpilib-tools/wpical/index
 
 .. toctree::

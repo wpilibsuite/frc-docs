@@ -14,9 +14,7 @@ WPILib provides native support for:
 
 - :ref:`Accelerometers <docs/software/hardware-apis/sensors/accelerometers-software:Accelerometers - Software>`
 - :ref:`Gyroscopes <docs/software/hardware-apis/sensors/gyros-software:Gyroscopes - Software>`
-- :ref:`Ultrasonic rangefinders <docs/software/hardware-apis/sensors/ultrasonics-software:Ultrasonics - Software>`
 - :ref:`Potentiometers <docs/software/hardware-apis/sensors/analog-potentiometers-software:Analog Potentiometers - Software>`
-- :ref:`Counters <docs/software/hardware-apis/sensors/counters:Counters>`
 - :ref:`Quadrature encoders <docs/software/hardware-apis/sensors/encoders-software:Encoders - Software>`
 - :ref:`Limit switches <docs/software/hardware-apis/sensors/digital-inputs-software:Digital Inputs - Software>`
 

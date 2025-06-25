@@ -11,7 +11,6 @@ Both the digital and analog inputs are highly limited in the amount of data that
 The roboRIO supports many basic types of serial communications:
 
 - `I2C`_
-- `SPI`_
 - `RS-232`_
 - `USB Host`_
 - `CAN Bus`_
@@ -29,18 +28,6 @@ Additionally, the roboRIO supports communications with peripheral devices over t
 To communicate to peripheral devices over :term:`I2C`, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
 The I2C bus can also be used through the `MXP expansion port`_. The I2C bus on the :term:`MXP` is independent. For example, a device on the main bus can have the same ID as a device on the MXP bus.
-
-## SPI
-
-.. image:: images/roborio/roborio-spi.svg
-   :alt: Show the SPI port on the roboRIO.
-
-.. image:: images/serial-buses/spi-pinout.png
-   :alt: SPI roboRIO port pin specifications.
-
-To communicate to peripheral devices over :term:`SPI`, each pin should be wired to its corresponding pin on the device.  The SPI port supports communications to up to four devices (corresponding to the Chip Select (CS) 0-3 pins on the diagram above).
-
-The SPI bus can also be used through the `MXP expansion port`_. The MXP port provides independent clock, and input/output lines and an additional CS.
 
 ## RS-232
 

@@ -8,8 +8,6 @@ You should create and download a Test Program as described for your programming 
 
 :doc:`C++/Java/Python </docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python>`
 
-:doc:`LabVIEW </docs/zero-to-robot/step-4/creating-test-drivetrain-program-labview>`
-
 ## Tethered Operation
 
 Running your test program while tethered to the Driver Station via ethernet or USB cable will confirm the program was successfully deployed and that the driver station and roboRIO are properly configured.

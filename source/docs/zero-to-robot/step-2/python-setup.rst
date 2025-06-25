@@ -1,6 +1,6 @@
 # Python Installation Guide
 
-This guide is intended for Python teams. Java and C++ teams can skip to :doc:`wpilib-setup`. LabVIEW teams can skip to :doc:`labview-setup`.
+This guide is intended for Python teams. Java and C++ teams can skip to :doc:`wpilib-setup`.
 
 ## Prerequisites
 

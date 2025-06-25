@@ -13,7 +13,7 @@ For information on installing the Driver Station software see :ref:`this documen
 
 The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Apps->FRC Driver Station.
 
-.. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch the other Dashboards: :ref:`SmartDashboard <docs/software/dashboards/smartdashboard/smartdashboard-intro:SmartDashboard Introduction>` and :ref:`Shuffleboard <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour:Tour of Shuffleboard>`. WPILib must be :ref:`installed <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` to use SmartDashboard and Shuffleboard.
+.. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch other dashboards, including ones not listed like :doc:`/docs/software/dashboards/elastic` by following the instructions in :doc:`/docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard`. WPILib must be :ref:`installed <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` to use Elastic.
 
 ## Driver Station Key Shortcuts
 
@@ -76,7 +76,7 @@ The Operations Tab is used to control the mode of the robot and provide addition
    - Teleoperated Mode causes the robot to run the code in the Teleoperated portion of the match.
    - Autonomous Mode causes the robot to run the code in the Autonomous portion of the match.
    - Practice Mode causes the robot to cycle through the same transitions as an FRC match after the Enable button is pressed (timing for practice mode can be found on the setup tab). When Practice Mode is in use, the DS will flash the background orange to indicate a pending enable (either the start of Autonomous or the start of Teleop after an A-Stop).
-   - :doc:`Test Mode </docs/software/basic-programming/using-test-mode>` is an additional mode where test code that doesn't run in a regular match can be tested.
+   - Test Mode is an additional mode where test code that doesn't run in a regular match can be tested.
 
 2. Enable/Disable - These controls enable and disable the robot. See also `Driver Station Key Shortcuts`_.
 3. Elapsed Time - Indicates the amount of time the robot has been enabled.

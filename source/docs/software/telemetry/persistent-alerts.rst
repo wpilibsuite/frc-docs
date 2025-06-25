@@ -55,6 +55,4 @@ Optionally, a group name can also be provided to the ``Alert`` constructor. Aler
 
 ## Dashboard Usage
 
-Alerts are published to Network Tables using the key ``/SmartDashboard/<Group Name>``. Shuffleboard automatically populates data from this table to the "SmartDashboard" tab, or the widget can be manually created by dragging the alert table from the Network Tables tree to the main view as described :ref:`here <docs/software/dashboards/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying data from your robot>`.
-
-.. note:: In addition to Shuffleboard, the alerts API is supported by many third-party dashboards. Check the documentation of your preferred dashboard for details.
+Alerts are published to Network Tables using the key ``/SmartDashboard/<Group Name>``. The alerts API is supported by Elastic and many third-party dashboards. Check the documentation of your preferred dashboard for details.

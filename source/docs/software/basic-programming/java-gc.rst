@@ -73,28 +73,11 @@ If the JVM cannot allocate memory, the program will be terminated. As an embedde
 
 If you continue to run out of memory even after investigating with VisualVM and taking steps to minimize the number of allocated objects, a few different options are available to make additional memory available to the robot program.
 
-- Disabling the system web server
 - Setting sysctls (Linux kernel options)
 - Periodically calling the garbage collector
 - Setting up swap on a USB flash drive
 
 Implementing most of these options require :doc:`connecting with SSH </docs/software/roborio-info/roborio-ssh>` to the roboRIO and running commands. If run incorrectly, it may require a reimage to recover, so be careful when following the instructions.
-
-### Disabling the System Web Server
-
-The built-in NI system web server provides the webpage (the :doc:`roboRIO Web Dashboard </docs/software/roborio-info/roborio-web-dashboard>`) seen when using a web browser to connect to the roboRIO, e.g. to change IP address settings. It also is used by the Driver Station's data log download functionality. However, it consumes several MB of RAM, so disabling it will free up that memory for the robot program to use. There are several ways to disable the web server:
-
-The first and easiest is to use the :doc:`RoboRIO Team Number Setter </docs/software/wpilib-tools/roborio-team-number-setter/index>` tool. Versions 2024.2.1 and later of the tool have a button to disable or enable the web server. However, a few teams have reported that this does not work or does not persist between reboots. There are two alternate ways to disable the web server; both require connecting to the roboRIO with SSH and logging in as the ``admin`` user.
-
-1. Run ``/etc/init.d/systemWebServer stop; update-rc.d -f systemWebServer remove; sync``
-
-2. Run ``chmod a-x /usr/local/natinst/etc/init.d/systemWebServer; sync``
-
-To revert the alternate ways and re-enable the web server, take the corresponding step:
-
-1. Run ``update-rc.d -f systemWebServer defaults; /etc/init.d/systemWebServer start; sync``
-
-2. Run ``chmod a+x /usr/local/natinst/etc/init.d/systemWebServer; sync``
 
 ### Setting sysctls
 

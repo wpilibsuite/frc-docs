@@ -57,14 +57,13 @@ Want to ensure the driver station isn't a stopper for your team at the FIRST Rob
 2. Turn off the Wi-Fi adapter, either using the dedicated hardware Wi-Fi switch or by disabling it in the Adapter Settings control panel.
 3. Charge the driver station when it’s in the pit.
 4. Remove login passwords or ensure everyone on the drive team knows the password. You'd be surprised at how often drivers arrive at the field without knowing the password for the laptop.
-5. Ensure your LabView code is deployed permanently and set to "run as startup", using the instructions in the LabView Tutorial. If you must deploy code every time you turn the robot on, you’re doing it wrong.
-6. Limit web browsing to FRC related web sites. This minimizes the chance of getting malware during the competition.
-7. Don't plan on using internet access to do software updates. There likely won't be any in the venue, and hotel Wi-Fi varies widely in quality. If you do need updates, contact a Control System Advisor in the pit.
+5. Limit web browsing to FRC related web sites. This minimizes the chance of getting malware during the competition.
+6. Don't plan on using internet access to do software updates. There likely won't be any in the venue, and hotel Wi-Fi varies widely in quality. If you do need updates, contact a Control System Advisor in the pit.
 
 ## Before Each Match
 
 1. Make sure the laptop is on and logged in prior to the end of the match before yours.
-2. Close programs that aren’t needed during the match – e.g., Visual Studio Code or LabView – when you are competing.
+2. Close programs that aren’t needed during the match – e.g., Visual Studio Code – when you are competing.
 3. Bring your laptop charger to the field. Power is provided for you in each player station.
 4. Fasten your laptop with hook-and-loop tape to the player station shelf. You never know when your alliance partner will have an autonomous programming issue and blast the wall.
 5. Ensure joysticks and controllers are assigned to the correct USB ports.

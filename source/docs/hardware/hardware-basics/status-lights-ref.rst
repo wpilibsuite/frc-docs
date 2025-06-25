@@ -598,48 +598,6 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 
 - 6V Power LED off, dim, or flickering with power applied = Over-current shutdown
 
-## Spike relay configured as a motor, light, or solenoid switch
-
-.. image:: images/status-lights/spikeRelay1Light.png
-  :alt: Single LED in the corner.
-  :width: 600
-
-+-----------------------------------------+-----------------+---------------+-------------------------------------+
-| **Inputs**                              | **Outputs**     | **Indicator** | **Motor Function**                  |
-+---------------------+-------------------+--------+--------+               |                                     |
-| **Forward (White)** | **Reverse (Red)** | **M+** | **M-** |               |                                     |
-+---------------------+-------------------+--------+--------+---------------+-------------------------------------+
-| Off                 | Off               | GND    | GND    | Orange        | Off/Brake Condition (default)       |
-+---------------------+-------------------+--------+--------+---------------+-------------------------------------+
-| On                  | Off               | +12v   | GND    | Green         | Motor rotates in one direction      |
-+---------------------+-------------------+--------+--------+---------------+-------------------------------------+
-| Off                 | On                | GND    | +12v   | Red           | Motor rotates in opposite direction |
-+---------------------+-------------------+--------+--------+---------------+-------------------------------------+
-| On                  | On                | +12v   | +12v   | Off           | Off/Brake Condition                 |
-+---------------------+-------------------+--------+--------+---------------+-------------------------------------+
-
-.. note:: 'Brake Condition' refers to the dynamic stopping of the motor due to the shorting of the motor inputs. This condition is not optional when going to an off state.
-
-## Spike relay configured as for one or two solenoids
-
-.. image:: images/status-lights/spikeRelay2Light.png
-  :alt: Single LED in the corner.
-  :width: 600
-
-+-----------------------------------------+-----------------+---------------+--------------------------------+
-| **Inputs**                              | **Outputs**     | **Indicator** | **Motor Function**             |
-+---------------------+-------------------+--------+--------+               |                                |
-| **Forward (White)** | **Reverse (Red)** | **M+** | **M-** |               |                                |
-+---------------------+-------------------+--------+--------+---------------+--------------------------------+
-| Off                 | Off               | GND    | GND    | Orange        | Both Solenoids Off (default)   |
-+---------------------+-------------------+--------+--------+---------------+--------------------------------+
-| On                  | Off               | +12v   | GND    | Green         | Solenoid connected to M+ is ON |
-+---------------------+-------------------+--------+--------+---------------+--------------------------------+
-| Off                 | On                | GND    | +12v   | Red           | Solenoid connected to M- is ON |
-+---------------------+-------------------+--------+--------+---------------+--------------------------------+
-| On                  | On                | +12v   | +12v   | Off           | Both Solenoids ON              |
-+---------------------+-------------------+--------+--------+---------------+--------------------------------+
-
 ## CANCoder Encoder
 
 .. image:: images/status-lights/cancoder-status-lights.png

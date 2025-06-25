@@ -54,12 +54,3 @@ Pneumatics are a quick and easy way to make something that's in one state or ano
 
 - Pneumatics Control Module (P/N: am-2858, 217-4243)
 - Pneumatic Hub (P/N REV-11-1852)
-
-## Relays
-
-A relay controls power to a motor or custom electronics in an On/Off fashion.
-
-### FRC Legal Relay Modules
-- Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)
-- Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-SSR6M40-DC200D)
-- Power Distribution Hub (PDH) switched channel (P/N REV-11-1850)

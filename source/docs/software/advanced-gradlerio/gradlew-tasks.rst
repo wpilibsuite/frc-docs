@@ -23,9 +23,7 @@ This article aims to highlight the gradle commands supported by the WPILib team 
 
 ## GradleRIO tasks
 
-``./gradlew $TOOL$`` - Runs the tool ``$TOOL$`` (Replace ``$TOOL$`` with the name of the tool. IE, Glass, Shuffleboard, etc)
-
-``./gradlew $TOOL$Install`` - Installs the java tool ``$TOOL$`` (Replace ``$TOOL$`` with the name of the tool. IE, Shuffleboard, SmartDashboard, etc)
+``./gradlew $TOOL$`` - Runs the tool ``$TOOL$`` (Replace ``$TOOL$`` with the name of the tool. IE, Glass, OutlineViewer, etc)
 
 ``./gradlew InstallAllTools`` - Installs all available tools. This excludes the development environment such as Visual Studio Code. It's the users requirement to ensure the required dependencies (Java) is installed. Only recommended for advanced users!
 

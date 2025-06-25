@@ -51,8 +51,7 @@ The following items can be added from the Hardware menu, but are not shown by de
 4. **Encoders** - This will show any instantiated devices that extend or use the ``Encoder`` class.
 5. **PDPs** - This shows the Power Distribution Panel object.
 6. **PWM Outputs** - This is a list of instantiated :term:`PWM` devices. This will appear as many devices as you instantiate in robot code, as well as their outputs.
-7. **Relays** - This includes any relay devices. This includes VEX Spike relays.
-8. **Solenoids** - This is a list of "connected" solenoids. When you create a solenoid object and push outputs, these are shown here.
+7. **Solenoids** - This is a list of "connected" solenoids. When you create a solenoid object and push outputs, these are shown here.
 
 ### Adding a System Joystick to Joysticks
 

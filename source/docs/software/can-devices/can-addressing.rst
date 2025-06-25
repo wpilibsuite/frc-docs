@@ -178,7 +178,7 @@ For CAN Nodes to be accepted for use in the FRC System, they must:
 
 -  Support the minimum Broadcast message requirements as detailed in the Broadcast Messages section.
 -  If controlling actuators, utilize a scheme to assure that the robot is issuing commands, is enabled, and is still present.
--  Provide software library support for LabVIEW, C++, and Java or arrange with *FIRST*\ |reg| or FIRST's Control System Partners to provide such interfaces.
+-  Provide software library support for C++, and Java or arrange with *FIRST*\ |reg| or FIRST's Control System Partners to provide such interfaces.
 
 ## Universal Heartbeat
 
