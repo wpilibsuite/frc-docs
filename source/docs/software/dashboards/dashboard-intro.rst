@@ -14,7 +14,7 @@ This dashboard is designed for debugging code and analyzing data from the robot.
 
 ## Included Dashboards (oldest to newest)
 
-.. note:: SmartDashboard and Shuffleboard have a long history of aiding FRC teams. However, they do not have a person to maintain them so are not receiving bug fixes or improvements. Notably, Shuffleboard may experience performance issues on some machines under certain scenarios.  PRs from external contributors will be reviewed.
+.. note:: SmartDashboard and Shuffleboard have a long history of aiding FRC teams. However, they do not have a person to maintain them so are not receiving bug fixes or improvements. Notably, Shuffleboard may experience performance issues on some machines under certain scenarios.  PRs from external contributors will be reviewed. They are deprecated and will be removed for the 2027 season.
 
 :ref:`LabVIEW Dashboard <docs/software/dashboards/labview-dashboard/index:LabVIEW Dashboard>` (Driver / Programming) - easy to use and provides a lot of features straight out of the box like: camera streams, autonomous selection, and joystick feedback.  It can be customized using LabVIEW by creating a new Dashboard project.  While it :ref:`can be used <docs/software/dashboards/labview-dashboard/using-the-labview-dashboard-with-c++-java-code:Using the LabVIEW Dashboard with C++, Java, or Python Code>` by Java or C++ teams, they generally prefer SmartDashboard or Shuffleboard which can be customized in their respective language.
 

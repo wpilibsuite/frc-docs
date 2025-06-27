@@ -2,6 +2,8 @@
 
 # Tour of Shuffleboard
 
+.. warning:: Shuffleboard is deprecated and will be removed for 2027 due to its lack of a maintainer and resource utilization issues. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
+
 Shuffleboard is a dashboard for FRC\ |reg| based on newer technologies such as JavaFX that are available to Java programs. It is designed to be used for creating dashboards for C++, Java, and Python programs. If you've used SmartDashboard in the past then you are already familiar with many of the features of Shuffleboard since they fundamentally work the same way. But Shuffleboard has many features that aren't in SmartDashboard. Here are some of the highlights:
 
 -  Graphics is based on **JavaFX**, the Java graphics standard. Each of the components has an associated style sheet so it becomes possible to have different "skins" or "themes" for Shuffleboard. We supply default light and dark themes.
