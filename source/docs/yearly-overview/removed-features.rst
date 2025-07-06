@@ -66,7 +66,7 @@ SystemCore doesn't support Interrupts.
 ### Axis Camera
 Explicit support removed because it required special software support, and Usage Reporting indicated extremely few users. Usage is still possible with HttpCamera.
 
-### Nidec Brushless
+### Nidec Dynamo Brushless
 Support removed because per https://community.firstinspires.org/more-reefscape-by-the-numbers-new-legal-devices, zero teams used it, and it will be dropped from the legal list of parts.
 
 ## RamseteController/RamseteCommand
