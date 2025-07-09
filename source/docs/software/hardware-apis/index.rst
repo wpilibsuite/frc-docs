@@ -29,7 +29,6 @@ Motor controllers come in lots of shapes, sizes, and feature sets. This is the f
 - DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)
 - Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected to :term:`PWM` only
 - Koors40 Motor Controller (P/N am-5600)
-- Nidec Dynamo BLDC Motor with Controller to control integral actuator only (P/N 840205-000, am-3740)
 - SD540 Motor Controller (P/N: SD540x1, SD540x2, SD540x4, SD540Bx1, SD540Bx2, SD540Bx4, SD540C)
 - Spark Flex Motor Controller (P/N REV-11-2159, am-5276)
 - Spark Motor Controller (P/N: REV-11-1200, am-4260)

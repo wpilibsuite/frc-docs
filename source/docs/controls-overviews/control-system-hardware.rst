@@ -273,14 +273,6 @@ The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller. Due
 
 The [Jaguar Motor Controller](https://www.ti.com/lit/an/spma033a/spma033a.pdf?ts=1607574399581) from VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a variable speed motor controller for use in FRC. For FRC, the Jaguar may only be controlled using the PWM interface.
 
-### Nidec Dynamo BLDC Motor with Controller
-
-.. image:: images/control-system-hardware/nidec-dynamo.jpg
-  :alt: Nidec Dynamo BLDC Motor with Controller
-  :width: 500
-
-The [Nidec Dynamo BLDC Motor with Controller](https://www.andymark.com/products/dynamo-brushless-motor-controller) is the first brushless motor and controller legal in FRC.  This motor's controller is integrated into the back of the motor.  The [motor data sheet](https://cdn.andymark.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e) provides more device specifics.
-
 ### Thrifty Nova Motor Controller
 
 .. image:: images/control-system-hardware/nova.png
