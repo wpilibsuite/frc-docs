@@ -36,13 +36,13 @@ The goal of this document is to provide a brief overview of the hardware compone
 
         Diagram courtesy of FRC\ |reg| Team 3161 and Stefen Acepcion.
 
-## NI roboRIO
+## Limelight Systemcore
 
-.. image:: images/control-system-hardware/roborio.png
-  :alt: NI roboRIO
+.. image:: images/control-system-hardware/systemcore.png
+  :alt: Limelight Systemcore
   :width: 500
 
-The :ref:`NI-roboRIO <docs/software/roborio-info/roborio-introduction:roboRIO Introduction>` is the main robot controller used for FRC. The roboRIO serves as the "brain" for the robot running team-generated code that commands all of the other hardware.
+The :doc:`Limelight Systemore </docs/software/systemcore-info/systemcore-introduction>` is the main robot controller used for FRC. The Systemcore serves as the "brain" for the robot running team-generated code that commands all of the other hardware.
 
 ## CTRE Power Distribution Panel
 
@@ -50,7 +50,7 @@ The :ref:`NI-roboRIO <docs/software/roborio-info/roborio-introduction:roboRIO In
   :alt: CTRE Power Distribution Panel
   :width: 500
 
-The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the roboRIO, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the [PDP User Manual](https://ctre.download/files/user-manual/PDP%20User's%20Guide.pdf).
+The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distribution-module:Power Distribution Module>` (PDP) is designed to distribute power from a 12VDC battery to various robot components through auto-resetting circuit breakers and a small number of special function fused connections. The PDP provides 8 output pairs rated for 40A continuous current and 8 pairs rated for 30A continuous current. The PDP provides dedicated 12V connectors for the Systemcore, as well as connectors for the Voltage Regulator Module and Pneumatics Control Module. It also includes a CAN interface for logging current, temperature, and battery voltage. For more detailed information, see the [PDP User Manual](https://ctre.download/files/user-manual/PDP%20User's%20Guide.pdf).
 
 ## CTRE Power Distribution Panel 2.0
 
@@ -138,7 +138,7 @@ The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) ba
 
          AndyMark am-3583
 
-The Robot Signal Light (RSL) is required to be either Allen-Bradley 855PB-B12ME522 or AndyMark am-3583.  It is directly controlled by the roboRIO and will flash when enabled and stay solid while disabled.
+The Robot Signal Light (RSL) is required to be either Allen-Bradley 855PB-B12ME522 or AndyMark am-3583.  It is directly controlled by the Systemcore and will flash when enabled and stay solid while disabled.
 
 ## CTRE Pneumatics Control Module
 
@@ -186,7 +186,7 @@ The TalonFX Motor Controller is a brushless motor controller from Cross The Road
   :alt: Victor SPX
   :width: 500
 
-The [Victor SPX Motor Controller](https://store.ctr-electronics.com/victor-spx/) is a CAN or PWM controlled motor controller from Cross The Road Electronics/VEX Robotics. The device is connectorized to allow easy connection to the roboRIO PWM connectors or a CAN bus. The case is sealed to prevent debris from entering the controller. For more information, see the [Victor SPX User Guide](https://ctre.download/files/user-manual/Victor%20SPX%20User's%20Guide.pdf).
+The [Victor SPX Motor Controller](https://store.ctr-electronics.com/victor-spx/) is a CAN or PWM controlled motor controller from Cross The Road Electronics/VEX Robotics. The device is connectorized to allow easy connection to the Systemcore Smart I/O connectors or a CAN bus. The case is sealed to prevent debris from entering the controller. For more information, see the [Victor SPX User Guide](https://ctre.download/files/user-manual/Victor%20SPX%20User's%20Guide.pdf).
 
 ### Talon SRX
 
@@ -327,7 +327,7 @@ The [Servo Hub](https://www.revrobotics.com/rev-11-1855/) from Rev Robotics can 
   :alt: Servo Power Module
   :width: 300
 
-The Servo Power Module from Rev Robotics is capable of expanding the power available to servos beyond what the roboRIO integrated power supply is capable of. The Servo Power Module provides up to 90W of 6V power across 6 channels. All control signals are passed through directly from the roboRIO. For more information, see the [Servo Power Module webpage](https://www.revrobotics.com/rev-11-1144/).
+The Servo Power Module from Rev Robotics is capable of powering servos. The Servo Power Module provides up to 90W of 6V power across 6 channels. All control signals are passed through directly from the Systemcore. For more information, see the [Servo Power Module webpage](https://www.revrobotics.com/rev-11-1144/).
 
 ## Microsoft Lifecam HD3000
 
@@ -335,8 +335,8 @@ The Servo Power Module from Rev Robotics is capable of expanding the power avail
   :alt: Microsoft Lifecam HD3000
   :width: 300
 
-The Microsoft Lifecam HD3000 is a USB webcam that can be plugged directly into the roboRIO. The camera is capable of capturing up to 1280x720 video at 30 FPS. For more information about the camera, see the [Microsoft product page](https://www.microsoft.com/en/accessories/business/lifecam-hd-3000-for-business). For more information about using the camera with the roboRIO, see the :ref:`Vision Processing <docs/software/vision-processing/index:Vision Processing>` section of this documentation.
+The Microsoft Lifecam HD3000 is a USB webcam that can be plugged directly into the Systemcore. The camera is capable of capturing up to 1280x720 video at 30 FPS. For more information about the camera, see the [Microsoft product page](https://www.microsoft.com/en/accessories/business/lifecam-hd-3000-for-business). For more information about using the camera with the Systemcore, see the :ref:`Vision Processing <docs/software/vision-processing/index:Vision Processing>` section of this documentation.
 
 ## Image Credits
 
-Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, and Victor SPX courtesy of VEX Robotics, Inc. Image of SPARK MAX, SPARK Flex, Servo Hub, ATO Breakers, Power Distribution Hub, and Pneumatic Hub courtesy of REV Robotics. Images of TalonFX, TalonFXS, and Power Distribution Panel 2.0 courtesy of Cross The Road Electronics, LLC. Image of Thrifty Nova courtesy of The Thrifty Bot. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. Image of the VH-109 radio courtesy of Vivid-Hosting. All other photos courtesy of AndyMark Inc.
+Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, and Victor SPX courtesy of VEX Robotics, Inc. Image of SPARK MAX, SPARK Flex, Servo Hub, ATO Breakers, Power Distribution Hub, and Pneumatic Hub courtesy of REV Robotics. Images of TalonFX, TalonFXS, and Power Distribution Panel 2.0 courtesy of Cross The Road Electronics, LLC. Image of Thrifty Nova courtesy of The Thrifty Bot. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. Image of the VH-109 radio courtesy of Vivid-Hosting. Image of SystemCore courtesy of Limelight. All other photos courtesy of AndyMark Inc.

@@ -7,7 +7,7 @@ Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool a
 .. mimictoc::
    :maxdepth: 2
 
-   /docs/software/roborio-info/index
+   /docs/software/systemcore-info/index
    /docs/software/driverstation/index
    /docs/software/dashboards/index
    /docs/software/wpilib-tools/robot-simulation/index
