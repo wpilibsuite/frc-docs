@@ -257,3 +257,7 @@ zerohyph
 zhmetrics
 colortbl
 letltxmacro
+fontawesome5
+pict2e
+ellipse
+booktabs
