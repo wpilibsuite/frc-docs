@@ -14,7 +14,7 @@ The roboRIO's built-in digital input-output ports (or "DIO") ports function on 5
 
 .. warning:: **Never** directly connect the power pin to the ground pin on any port on the roboRIO!  This will trigger protection features on the roboRIO and may result in unexpected behavior.
 
-.. image:: images/roborio/roborio-dio.svg
+.. image:: images/systemcore/roborio-dio.svg
    :alt: roboRIO showing the DIO pins on the left side.
 
 The roboRIO has 10 built-in DIO ports (numbered 0-9), as seen in the image above.  Each port has three pins - signal ("S"), power ("V"), and ground ("|ground|").  The "power" and "ground" pins are used to power the peripheral sensors that connect to the DIO ports - there is a constant 5V potential difference between the "power" and the "ground" pins [3]_ - the "power" pin corresponds to the "high" state (5V), and the "ground" to "low" (0V).  The signal pin is the pin on which the signal is actually measured (or, when used as an output, the pin that sends the signal).
