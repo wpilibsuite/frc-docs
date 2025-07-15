@@ -51,7 +51,7 @@ For year N, WPILib will create a branch during year N - 1, and actively do devel
 
 ## Platform Support
 
-As a broad rule, WPILib only supports OSes that the OS developer still supports. In general, OS requirements are driven by OS developer support and C++ compiler feature support. Per [the WPILib roadmap](https://static1.squarespace.com/static/5d4b06a67cd3580001ded283/t/6631527dd3db35012eebacb3/1714508413721/WPILib+2024+Long+Term+Roadmap.pdf), we want to closely track future evolution of the supported languages, which often means new C++ features are adopted as soon as all supported platforms have compilers that support it. WPILib _may_ continue to build for unsupported platforms, but no official support will be guaranteed, and if newer C++ features are only available in newer OSes, we can choose to adopt them and older OSes with compilers that lack support will no longer be able to build WPILib.
+As a broad rule, WPILib only supports OSes that the OS developer still supports. In general, OS requirements are driven by OS developer support and C++ compiler feature support. Per [the WPILib roadmap](https://static1.squarespace.com/static/5d4b06a67cd3580001ded283/t/6631527dd3db35012eebacb3/1714508413721/WPILib+2024+Long+Term+Roadmap.pdf), we want to closely track future evolution of the supported languages, which often means new C++ features are adopted as soon as all supported platforms have compilers that support it. WPILib *may* continue to build for unsupported platforms, but no official support will be guaranteed, and if newer C++ features are only available in newer OSes, we can choose to adopt them and older OSes with compilers that lack support will no longer be able to build WPILib.
 
 ### Windows Support
 
@@ -67,9 +67,14 @@ For Linux, we follow the [Debian release cycle](https://wiki.debian.org/DebianRe
 
 ### Minimum required OS versions
 
++----------+--------+-------------------------+-------+-------+-------+
 | OS       | 2027   | 2028                    | 2029  | 2030  | 2031  |
-| -------- | ------ | ----------------------- | ----- | ----- | ----  |
++==========+========+=========================+=======+=======+=======+
 | Windows  | 11     | 11                      | 11    | 11    | 11    |
++----------+--------+-------------------------+-------+-------+-------+
 | Debian   | Trixie | Trixie                  | Forky | Forky | Duke  |
++----------+--------+-------------------------+-------+-------+-------+
 | Ubuntu   | 26.04  | 26.04                   | 28.04 | 28.04 | 30.04 |
++----------+--------+-------------------------+-------+-------+-------+
 | macOS    | 15     | 26 (Last Intel release) | 27    | 28    | 29    |
++----------+--------+-------------------------+-------+-------+-------+
