@@ -63,7 +63,7 @@ Apple generally keeps the last three macOS versions in support, and releases a n
 
 ### Linux Support
 
-For Linux, we follow the [Debian release cycle](https://wiki.debian.org/DebianReleases#Release_statistics). Debian releases a new version every two years. The version released two summers before a year's release will become the minimum required OS for that year. This also aligns with Ubuntu LTS releases, so the last two Ubuntu LTS versions will be supported, e.g., 2028 will support Ubuntu 26.04 LTS and 24.04 LTS at kickoff, Ubuntu 28.04 LTS will release in April, and therefore 2029 will support Ubuntu 28.04 and 26.04, dropping support for 24.04.
+For Linux, we follow the [Debian release cycle](https://wiki.debian.org/DebianReleases#Release_statistics). Debian releases a new version every two years. The version released two summers before a year's release will become the minimum required OS for that year. This also aligns with Ubuntu LTS releases, so only the last Ubuntu LTS will be supported at a given time.
 
 ### Minimum required OS versions
 
@@ -71,5 +71,5 @@ For Linux, we follow the [Debian release cycle](https://wiki.debian.org/DebianRe
 | -------- | ------ | ----------------------- | ----- | ----- | ----  |
 | Windows  | 11     | 11                      | 11    | 11    | 11    |
 | Debian   | Trixie | Trixie                  | Forky | Forky | Duke  |
-| Ubuntu   | 24.04  | 24.04                   | 26.04 | 26.04 | 28.04 |
+| Ubuntu   | 26.04  | 26.04                   | 28.04 | 28.04 | 30.04 |
 | macOS    | 15     | 26 (Last Intel release) | 27    | 28    | 29    |
