@@ -19,7 +19,7 @@ The Systemcore has 6 Smart I/O ports (numbered 0-5), as seen in the image above.
 
 All Smart I/O ports have built-in "pull-down" resistors between the power pins and the signal pins - these ensure that when the signal pin is "floating" (i.e. is not connected to any circuit), they consistently remain in a "low" state.
 
-.. warning:: The roboRIO had pull-up resistors instead of pull-down resistors, so the behavior of the Smart I/O ports is different from that of the roboRIO's digital input ports.  This means that sensors designed for the roboRIO's digital input ports may different wiring for the Smart I/O ports.
+.. warning:: The roboRIO had pull-up resistors instead of pull-down resistors, so the behavior of the Smart I/O ports is different from that of the roboRIO's digital input ports.  This means that sensors designed for the roboRIO's digital input ports may have different wiring for the Smart I/O ports.
 
 ### Connecting a simple switch to a DIO port
 

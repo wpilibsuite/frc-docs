@@ -8,7 +8,7 @@ An [analog signal](https://en.wikipedia.org/wiki/Analog_signal) is a signal whos
 
 In practice, there is no way to measure a "true" analog signal with a digital device such as a computer (like the Systemcore).  Accordingly, the analog inputs are actually measured as a 12-bit digital signal - however, this is quite a high resolution [1]_.
 
-Analog inputs are typically (but not always!) used for sensors whose measurements vary continuously over a range, such as :doc:`potentiometers <analog-potentiometers-hardware>`, as they can communicate by outputting a voltage proportional to their measurements.
+Analog inputs are typically used with sensors that produce continuously varying measurements. :doc:`Potentiometers <analog-potentiometers-hardware>` are a good example, as they can communicate by outputting a voltage proportional to their measurements.
 
 ## Connecting to Systemcore analog input ports
 
