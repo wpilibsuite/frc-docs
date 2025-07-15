@@ -20,6 +20,7 @@ All text content should be on the same line. If you need readability, use the wo
 
 Use the following case for these terms:
 
+- Systemcore (not SystemCore or systemcore)
 - roboRIO (not RoboRIO, roboRio, or RoboRio)
 - LabVIEW (not labview or LabView)
 - Visual Studio Code (VS Code) (not vscode, VScode, vs code, etc)

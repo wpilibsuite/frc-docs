@@ -47,7 +47,7 @@ Note: it is not necessary to create a PowerDistribution object unless you need t
          :lines: 34-37
 
 
-Monitoring the bus voltage can be useful for (among other things) detecting when the robot is near a brownout, so that action can be taken to avoid brownout in a controlled manner. See the :doc:`roboRIO Brownouts document</docs/software/roborio-info/roborio-brownouts>` for more information.
+Monitoring the bus voltage can be useful for (among other things) detecting when the robot is near a brownout, so that action can be taken to avoid brownout in a controlled manner. See the :doc:`roboRIO Brownouts document</docs/software/systemcore-info/roborio-brownouts>` for more information.
 
 ## Reading the Temperature
 

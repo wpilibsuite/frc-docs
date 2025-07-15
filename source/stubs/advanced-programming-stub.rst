@@ -12,7 +12,7 @@ Documentation that is suited toward veteran teams. This includes content such as
    /docs/software/kinematics-and-odometry/index
    /docs/software/networktables/index
    /docs/software/pathplanning/index
-   /docs/software/roborio-info/index
+   /docs/software/systemcore-info/index
    /docs/software/advanced-gradlerio/index
    /docs/software/advanced-controls/index
    /docs/software/convenience-features/index
