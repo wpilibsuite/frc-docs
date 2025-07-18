@@ -19,7 +19,7 @@ Additionally, the roboRIO supports communications with peripheral devices over t
 
 ## I2C
 
-.. image:: images/roborio/roborio-i2c.svg
+.. image:: images/systemcore/roborio-i2c.svg
    :alt: The I2C port on the roboRIO.
 
 .. image:: images/serial-buses/i2c-pinout.png
@@ -31,7 +31,7 @@ The I2C bus can also be used through the `MXP expansion port`_. The I2C bus on t
 
 ## RS-232
 
-.. image:: images/roborio/roborio-rs-232.svg
+.. image:: images/systemcore/roborio-rs-232.svg
    :alt: Location of the RS-232 port on the roboRIO.
 
 .. image:: images/serial-buses/rs232-pinout.png
@@ -51,7 +51,7 @@ One of the USB ports on the roboRIO is a USB-B, or USB client port.  This can be
 
 ## USB Host
 
-.. image:: images/roborio/roborio-usb-host.svg
+.. image:: images/systemcore/roborio-usb-host.svg
    :alt: Location of the two USB ports on the roboRIO at top center.
 
 Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can be connected to devices, such as cameras or sensors, with a standard USB cable.
@@ -59,7 +59,7 @@ Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can be 
 
 ## MXP Expansion Port
 
-.. image:: images/roborio/roborio-mxp.svg
+.. image:: images/systemcore/roborio-mxp.svg
    :alt: Location of the MXP port on the roboRIO directly above the NI logo.
 
 .. image:: images/serial-buses/mxp-pinout.png
@@ -71,7 +71,7 @@ Many peripheral devices attach directly to the MXP port for convenience, requiri
 
 ## CAN Bus
 
-.. image:: images/roborio/roborio-can.svg
+.. image:: images/systemcore/roborio-can.svg
    :alt: Show the location of the CAN bus terminals in the top left corner of the roboRIO.
 
 Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers). One of the advantages of using the CAN bus protocol is that devices can be daisy-chained, as shown below. If power is removed from any device in the chain, data signals will still be able to reach all devices in the chain.

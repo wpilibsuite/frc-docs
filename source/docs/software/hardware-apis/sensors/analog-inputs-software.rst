@@ -2,15 +2,17 @@
 
 .. note:: This section covers analog inputs in software.  For a hardware guide to analog inputs, see :ref:`docs/hardware/sensors/analog-inputs-hardware:Analog Inputs - Hardware`.
 
-The roboRIO's FPGA supports up to 8 analog input channels that can be used to read the value of an analog voltage from a sensor.  Analog inputs may be used for any sensor that outputs a simple voltage.
+The Systemcore's Smart I/O supports up to 6 analog input channels that can be used to read the value of an analog voltage from a sensor.  Analog inputs may be used for any sensor that outputs a simple voltage.
 
-Analog inputs from the FPGA by default return a 12-bit integer proportional to the voltage, from 0 to 5 volts.
+Analog inputs return a 12-bit integer proportional to the voltage, from 0 to 3.3 volts.
+
+.. note:: Systemcore Analog Inputs are 3.3 volts, whereas the roboRIO was 5 volts.
 
 ## The AnalogInput class
 
 .. note:: It is often more convenient to use the :doc:`Analog Potentiometers <analog-potentiometers-software>` wrapper class than to use :code:`AnalogInput` directly, as it supports scaling to meaningful units.
 
-Support for reading the voltages on the FPGA analog inputs is provided through the :code:`AnalogInput` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogInput.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_input.html)).
+Support for reading the voltages on the Smart I/O ports is provided through the :code:`AnalogInput` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogInput.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_input.html)).
 
 ### Initializing an AnalogInput
 
@@ -18,32 +20,32 @@ An :code:`AnalogInput` may be initialized as follows:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
       :language: java
-      :lines: 17-18
+      :lines: 15-16
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
-      :lines: 63-64
+      :lines: 46-47
 
 ### Oversampling and Averaging
 
 .. image:: images/analog-inputs-software/oversampling-averaging.png
    :alt: The Analog to Digital converter reads the signal and passes it to oversampling, averaging, and an accumulator.
 
-The FPGA's analog input modules supports both oversampling and averaging.  These behaviors are highly similar, but differ in a few important ways.  Both may be used at the same time.
+The Smart I/O analog input supports both oversampling and averaging.  These behaviors are highly similar, but differ in a few important ways.  Both may be used at the same time.
 
 #### Oversampling
 
-When oversampling is enabled, the FPGA will add multiple consecutive samples together, and return the accumulated value.  Users may specify the number of *bits* of oversampling - for :math:`n` bits of oversampling, the number of samples added together is :math:`2^{n}`:
+When oversampling is enabled, the Smart I/O procesor will add multiple consecutive samples together, and return the accumulated value.  Users may specify the number of *bits* of oversampling - for :math:`n` bits of oversampling, the number of samples added together is :math:`2^{n}`:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
       :language: java
-      :lines: 25-28
+      :lines: 20-23
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 15-19
 
@@ -53,11 +55,11 @@ Averaging behaves much like oversampling, except the accumulated values are divi
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
       :language: java
-      :lines: 30-32
+      :lines: 25-27
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 21-23
 
@@ -73,11 +75,11 @@ The :code:`getValue` method returns the raw instantaneous measured value from th
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
       :language: java
-      :lines: 37-40
+      :lines: 32-35
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 25-28
 
@@ -87,11 +89,11 @@ The :code:`getVoltage` method returns the instantaneous measured voltage from th
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
       :language: java
-      :lines: 42-44
+      :lines: 37-39
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 30-32
 
@@ -101,11 +103,11 @@ The :code:`getAverageValue` method returns the averaged value from the analog in
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
       :language: java
-      :lines: 46-48
+      :lines: 41-43
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 34-36
 
@@ -115,43 +117,17 @@ The :code:`getAverageVoltage` method returns the averaged voltage from the analo
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
       :language: java
-      :lines: 46-48
+      :lines: 45-47
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
       :language: c++
       :lines: 38-40
 
 ### Accumulator
 
-.. note:: The accumulator methods do not currently support returning a value in units of volts - the returned value will always be an integer (specifically, a :code:`long`).
-
-Analog input channels 0 and 1 additionally support an accumulator, which integrates (adds up) the signal indefinitely, so that the returned value is the sum of all past measured values.  Oversampling and averaging are applied prior to accumulation.
-
-.. tab-set-code::
-
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
-      :language: java
-      :lines: 42-44
-
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
-      :language: c++
-      :lines: 42-54
-
-#### Obtaining synchronized count and value
-
-Sometimes, it is necessarily to obtain matched measurements of the count and the value.  This can be done using the :code:`getAccumulatorOutput` method:
-
-.. tab-set-code::
-
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analoginput/Robot.java
-      :language: java
-      :lines: 20-21, 67-71
-
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b96264f0421ea4ddce0d7b721d995e60db8ab5ad/wpilibcExamples/src/main/cpp/snippets/AnalogInput/cpp/Robot.cpp
-      :language: c++
-      :lines: 66-68, 58-59
+.. note:: Analog Input Accumulators are not supported on Systemcore.
 
 ## Using analog inputs in code
 
