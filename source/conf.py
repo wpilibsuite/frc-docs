@@ -142,8 +142,8 @@ hoverxref_role_types = {"term": "tooltip"}
 # TODO Directives omit a warning
 todo_emit_warnings = False
 
-# TODO Directives are not shown in output
-todo_include_todos = False
+# TODO Directives are shown in output
+todo_include_todos = True
 
 # Disable following anchors in URLS for linkcheck
 linkcheck_anchors = True

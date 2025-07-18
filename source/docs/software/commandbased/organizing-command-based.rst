@@ -186,6 +186,8 @@ Instance factory methods work great for single-subsystem commands.  However, com
   // TODO
   ```
 
+.. todo:: implement C++ version of the above code
+
 #### Non-Static Command Factories
 If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our ``AutoRoutines`` class and inject our subsystems through the constructor:
 
@@ -226,6 +228,8 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
   // TODO
   ```
 
+.. todo:: implement C++ version of the above code
+
 Then, elsewhere in our code, we can instantiate an single instance of this class and use it to produce several commands:
 
 .. tab-set-code::
@@ -243,6 +247,8 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
   ```c++
   // TODO
   ```
+
+.. todo:: implement C++ version of the above code
 
 #### Capturing State in Inline Commands
 
@@ -270,6 +276,8 @@ However, it is still possible to ergonomically write a stateful command composit
   ```c++
   // TODO
   ```
+
+.. todo:: implement C++ version of the above code
 
 This pattern works very well in Java so long as the captured state is "effectively final" - i.e., it is never reassigned.  This means that we cannot directly define and capture primitive types (e.g. `int`, `double`, `boolean`) - to circumvent this, we need to wrap any state primitives in a mutable container type (the same way `PIDController` wraps its internal `kP`, `kI`, and `kD` values).
 
@@ -307,6 +315,8 @@ Returning to our simple intake command from earlier, we could do this by creatin
   // TODO
   ```
 
+.. todo:: implement C++ version of the above code
+
 This, however, is just as cumbersome as the original repetitive code, if not more verbose. The only two lines that really matter in this entire file are the two calls to ``intake.set()``, yet there are over 20 lines of boilerplate code! Not to mention, doing this for a lot of robot actions quickly clutters up a robot project with dozens of small files. Nevertheless, this might feel more "natural," particularly for programmers who prefer to stick closely to an object-oriented model.
 
 This approach should be used for commands with internal state (not subsystem state!), as the class can have fields to manage said state. It may also be more intuitive to write commands with complex logic as classes, especially for those less experienced with command composition. As the command is detached from any specific subsystem class and the required subsystem objects are injected through the constructor, this approach deals well with commands involving multiple subsystems.
@@ -333,6 +343,8 @@ If we wish to write composite commands as their own classes, we may write a cons
   ```c++
   // TODO
   ```
+
+.. todo:: implement C++ version of the above code
 
 This is relatively short and minimizes boilerplate. It is also comfortable to use in a purely object-oriented paradigm and may be more acceptable to novice programmers. However, it has some downsides. For one, it is not immediately clear exactly what type of command group this is from the constructor definition: it is better to define this in a more inline and expressive way, particularly when nested command groups start showing up. Additionally, it requires a new file for every single command group, even when the groups are conceptually related.
 

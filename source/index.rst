@@ -452,4 +452,3 @@ Community translations can be found in a variety of languages in the menu toward
 
    Report a Documentation Issue <https://github.com/wpilibsuite/frc-docs/issues>
 
-.. todolist::
