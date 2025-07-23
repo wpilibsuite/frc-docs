@@ -53,7 +53,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java
          :language: java
          :lines: 54-63
          :lineno-match:
@@ -61,7 +61,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
          :language: c++
          :lines: 32-42
          :lineno-match:
