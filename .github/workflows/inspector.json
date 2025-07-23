@@ -39,6 +39,7 @@
     "source/docs/software/pathplanning/trajectory-tutorial/entering-constants.rst",
     "source/docs/software/convenience-features/event-based.rst",
     "source/docs/software/dashboards/glass/field2d-widget.rst",
-    "source/docs/software/hardware-apis/sensors/encoders-software.rst"
+    "source/docs/software/hardware-apis/sensors/encoders-software.rst",
+    "source/docs/software/hardware-apis/misc/addressable-leds.rst"
   ]
 }
