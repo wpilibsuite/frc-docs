@@ -3,12 +3,12 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2027.0.0-alpha-1"
+      "latestVersion": "v2027.0.0-alpha-2"
     },
     {
       "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2027.0.0-alpha-1"
+      "latestVersion": "v2027.0.0-alpha-2"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/robotpy/examples/",
@@ -18,7 +18,7 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2027.0.0-alpha-1"
+      "latestVersion": "v2027.0.0-alpha-2"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/",
@@ -39,6 +39,7 @@
     "source/docs/software/pathplanning/trajectory-tutorial/entering-constants.rst",
     "source/docs/software/convenience-features/event-based.rst",
     "source/docs/software/dashboards/glass/field2d-widget.rst",
-    "source/docs/software/hardware-apis/sensors/encoders-software.rst"
+    "source/docs/software/hardware-apis/sensors/encoders-software.rst",
+    "source/docs/software/hardware-apis/misc/addressable-leds.rst"
   ]
 }
