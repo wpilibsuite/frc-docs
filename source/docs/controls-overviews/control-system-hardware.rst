@@ -42,7 +42,7 @@ The goal of this document is to provide a brief overview of the hardware compone
   :alt: Limelight Systemcore
   :width: 500
 
-The :doc:`Limelight Systemore </docs/software/systemcore-info/systemcore-introduction>` is the main robot controller used for FRC. The Systemcore serves as the "brain" for the robot running team-generated code that commands all of the other hardware.
+The :doc:`Limelight Systemcore </docs/software/systemcore-info/systemcore-introduction>` is the main robot controller used for FRC. The Systemcore serves as the "brain" for the robot running team-generated code that commands all of the other hardware.
 
 ## CTRE Power Distribution Panel
 
