@@ -27,14 +27,15 @@ Motor Controller          2
 Relay Controller          3
 Gyro Sensor               4
 Accelerometer             5
-Ultrasonic Sensor         6
-Gear Tooth Sensor         7
+Distance Sensor           6
+Encoder                   7
 Power Distribution Module 8
 Pneumatics Controller     9
 Miscellaneous             10
 IO Breakout               11
 Servo Controller          12
-Reserved                  13-30
+Color Sensor              13
+Reserved                  14-30
 Firmware Update           31
 ========================= =====
 
@@ -65,7 +66,11 @@ The Thrifty Bot       13
 Redux Robotics        14
 AndyMark              15
 Vivid Hosting         16
-Reserved              17-255
+Vertos Robotics       17
+SWYFT Robotics        18
+Lumyn Labs            19
+Brushland Labs        20
+Reserved              21-255
 ===================== ==========
 
 #### API/Message Identifier
