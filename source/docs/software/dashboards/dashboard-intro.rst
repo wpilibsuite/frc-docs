@@ -32,4 +32,4 @@ This dashboard is designed for debugging code and analyzing data from the robot.
 
 [FRC Web Components](https://github.com/frc-web-components/frc-web-components) (Driver) - A web-based dashboard that can be installed as a standalone application, or as a JavaScript package for custom dashboard solutions.
 
-[QDash](https://github.com/Q-FRC/QDash) (Driver) - described as a reliable, high-performance, low-footprint dashboard. QDash has been specifically designed to use as few resources as possible without sacrificing features or aesthetics.
+[QDash](https://git.crueter.xyz/QFRC/QDash) (Driver) - described as a reliable, high-performance, low-footprint dashboard. QDash has been specifically designed to use as few resources as possible without sacrificing features or aesthetics.
