@@ -298,9 +298,9 @@ The MecanumDrive class contains two different default modes of driving your robo
 
     ```python
     def teleopPeriodic(self):
-        // Drive using the X, Y, and Z axes of the joystick.
+        # Drive using the X, Y, and Z axes of the joystick.
         self.robotDrive.driveCartesian(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
-        // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
+        # Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
         self.robotDrive.drivePolar(-self.stick.getY(), Rotation2d.fromDegrees(45), 0)
     ```
 
