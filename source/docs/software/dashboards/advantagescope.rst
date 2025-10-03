@@ -10,7 +10,7 @@ The capabilities of AdvantageScope include:
 
 - Display of numeric, textual, and boolean data in graphs and tables
 - Visualization of pose and mechanism data in 2D and 3D, including custom 3D robot models
-- Automatic synchronization of data sources, including log files, match videos, and [Zebra MotionWorks](https://www.firstinspires.org/robotics/frc/blog/2023-zebra-motionworks-for-first-robotics-competition-at-the-first-championship) tracking
+- Automatic synchronization of data sources, including various types of log files and match videos
 - Specialized displays for joysticks, swerve module states, and console text
 - Analysis of numeric fields using histograms and statistical measures
 - Multiple export options, including CSV, and WPILib data logs
