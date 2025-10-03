@@ -22,11 +22,11 @@ Equivalent imperative style:
 
 .. code-block:: java
 
-   Command auto = Command.noRequirements().executing(coroutine -> {
-     coroutine.await(drivetrain.driveToPose(pose1));
-     coroutine.await(arm.moveTo(position));
-     coroutine.await(gripper.release());
-   }).named("Auto Sequence");
+   Command auto = Command.requiring(drivetrain, arm, gripper).executing(coroutine -> {
+    coroutine.await(drivetrain.driveToPose(pose1));
+    coroutine.await(arm.moveTo(position));
+    coroutine.await(gripper.release());
+  }).named("Auto Sequence");
 
 ### Parallel
 
