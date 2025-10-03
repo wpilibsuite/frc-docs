@@ -327,4 +327,4 @@ Command compositions can also be written as a constructor-only subclass of the m
          :lines: 7-
          :lineno-match:
 
-The advantages and disadvantages of this subclassing approach in comparison to others are discussed in :ref:`docs/software/commandbased/organizing-command-based:Subclassing Command Groups`.
+The advantages and disadvantages of this subclassing approach in comparison to others are discussed in the :ref:`Organizing Command-Based <docs/software/commandbased/commands-v2/organizing-command-based:Organizing Command-Based Robot Projects>` article.

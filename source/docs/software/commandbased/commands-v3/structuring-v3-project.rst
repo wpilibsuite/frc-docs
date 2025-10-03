@@ -461,5 +461,5 @@ This structure scales well as your robot grows in complexity.
 ## See Also
 
 - :ref:`docs/software/commandbased/commands-v2/structuring-command-based-project:Structuring a Command-Based Robot Project` - v2 structure (very similar)
-- :ref:`docs/software/commandbased/commands-v2/organizing-command-based:Organizing Command-Based` - Additional organization tips
+- :ref:`docs/software/commandbased/commands-v2/organizing-command-based:Organizing Command-Based Robot Projects` - Additional organization tips
 - :ref:`docs/software/commandbased/commands-v3/mechanisms:Mechanisms` - Detailed mechanism documentation

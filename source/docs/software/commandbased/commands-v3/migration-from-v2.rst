@@ -7,7 +7,7 @@ This guide helps teams migrate existing Commands v2 code to Commands v3. It cove
 
 ## Should You Migrate?
 
-**WPILib recommends migrating to Commands v3 for Java teams.** Commands v3 is the future direction of command-based programming with ongoing development and new features including improved telemetry, enhanced triggers, and self-cancelling commands.
+**WPILib recommends migrating to Commands v3 for Java teams.** Commands v3 is the future direction of command-based programming with ongoing development and new features including improved telemetry, enhanced triggers, and self-canceling commands.
 
 **Migrate to v3 if:**
 

@@ -4,7 +4,7 @@
 
 A joystick can be used with the Driver Station program to control the robot.  Almost any "controller" that can be recognized by Windows can be used as a joystick.  Joysticks are accessed using the ``GenericHID`` class.  This class has three relevant subclasses for preconfigured joysticks.  You may also implement your own for other controllers by extending ``GenericHID``.  The first is ``Joystick`` which is useful for standard flight joysticks.  The second is ``XboxController`` which works for the Xbox 360, Xbox One, or Logitech F310 (in XInput mode).  Finally, the ``PS4Controller`` class is ideal for using that controller.  Each axis of the controller ranges from -1 to 1.
 
-The command based way to use the these classes is detailed in the section: :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`.
+The command based way to use the these classes is detailed in the section: :ref:`docs/software/commandbased/commands-v2/binding-commands-to-triggers:Binding Commands to Triggers`.
 
 ## Driver Station Joysticks
 
@@ -136,7 +136,7 @@ An axis can be used with ``.getRawAxis(int index)`` (if not using any of the cla
 
 ## Button Usage
 
-.. note:: Usage such as the following is for code not using the command-based framework. For button usage in the command-based framework, see :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`.
+.. note:: Usage such as the following is for code not using the command-based framework. For button usage in the command-based framework, see :ref:`docs/software/commandbased/commands-v2/binding-commands-to-triggers:Binding Commands to Triggers`.
 
 Unlike an axis, you will usually want to use the ``pressed`` and ``released`` methods to respond to button input.  These will return true if the button has been activated since the last check.  This is helpful for taking an action once when the event occurs but not having to continuously do it while the button is held down.
 

@@ -14,7 +14,7 @@ WPILib provides two versions of the command-based framework:
 
       ^^^
 
-      The next-generation command framework with imperative-style command writing using coroutines. Features improved telemetry, enhanced trigger system, and self-cancelling commands. This is the future of WPILib command-based programming.
+      The next-generation command framework with imperative-style command writing using coroutines. Features improved telemetry, enhanced trigger system, and self-canceling commands. This is the future of WPILib command-based programming.
 
       **Best for:** Java teams
 
@@ -50,7 +50,7 @@ WPILib provides two versions of the command-based framework:
          Commands v2 Documentation
 
 .. note::
-   **WPILib recommends Commands v3 for Java teams.** Commands v3 is the future direction of command-based programming in WPILib, with ongoing development and enhancements including improved telemetry, better trigger functionality, and self-cancelling commands. Java teams should migrate to v3 when ready. Commands v2 will continue to be maintained for teams using C++/Python or those not ready to migrate.
+   **WPILib recommends Commands v3 for Java teams.** Commands v3 is the future direction of command-based programming in WPILib, with ongoing development and enhancements including improved telemetry, better trigger functionality, and self-canceling commands. Java teams should migrate to v3 when ready. Commands v2 will continue to be maintained for teams using C++/Python or those not ready to migrate.
 
 ## Migrating Between Versions
 

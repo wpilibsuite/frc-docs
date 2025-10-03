@@ -241,7 +241,7 @@ Triggers work the same conceptually as v2: bind conditions or controller buttons
   }
   ```
 
-See also: :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`.
+See also: :ref:`docs/software/commandbased/commands-v2/binding-commands-to-triggers:Binding Commands to Triggers`.
 
 ## Safety and Gotchas
 
@@ -265,12 +265,12 @@ If you prefer the v2 composition style, you can keep using sequences and paralle
 
 - Give commands clear names with ``.named("...")``; group builders also support ``withAutomaticName()``.
 - ``Mechanism.getRunningCommands()`` helps you inspect what currently owns a mechanism.
-- The scheduler tracks all queued and running commands and can emit lifecycle events; see :ref:`docs/software/commandbased/command-scheduler:Command Scheduler` for details.
+- The scheduler tracks all queued and running commands and can emit lifecycle events; see :ref:`docs/software/commandbased/commands-v2/command-scheduler:The Command Scheduler` for details.
 
 ## Further Reading
 
-- :ref:`docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?`
-- :ref:`docs/software/commandbased/commands:Commands`
-- :ref:`docs/software/commandbased/command-compositions:Command Compositions`
-- :ref:`docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers`
-- :ref:`docs/software/commandbased/command-scheduler:Command Scheduler`
+- :ref:`docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?`
+- :ref:`docs/software/commandbased/commands-v2/commands:Commands`
+- :ref:`docs/software/commandbased/commands-v2/command-compositions:Command Compositions`
+- :ref:`docs/software/commandbased/commands-v2/binding-commands-to-triggers:Binding Commands to Triggers`
+- :ref:`docs/software/commandbased/commands-v2/command-scheduler:The Command Scheduler`

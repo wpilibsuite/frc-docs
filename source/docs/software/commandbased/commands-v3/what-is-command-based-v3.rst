@@ -219,7 +219,7 @@ See :ref:`docs/software/commandbased/commands-v3/command-compositions-v3:Command
 **Use Commands v3 if:**
 
 - You're a Java team
-- You want improved telemetry, enhanced triggers, and self-cancelling commands
+- You want improved telemetry, enhanced triggers, and self-canceling commands
 - You prefer writing sequential code over chaining decorators
 - You want to use the actively developed command framework
 

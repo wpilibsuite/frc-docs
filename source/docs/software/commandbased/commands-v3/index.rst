@@ -4,7 +4,7 @@ This section serves as an introduction to and reference for the WPILib Commands 
 
 Commands v3 is the next-generation command-based framework for Java that introduces imperative-style command writing using coroutines. Instead of building complex chains of lambda expressions and decorators, you can write command logic as straightforward sequential code with loops, conditionals, and explicit control flow.
 
-**WPILib recommends Commands v3 for Java teams.** Commands v3 is actively being developed with new features including improved telemetry, enhanced trigger functionality, and self-cancelling commands.
+**WPILib recommends Commands v3 for Java teams.** Commands v3 is actively being developed with new features including improved telemetry, enhanced trigger functionality, and self-canceling commands.
 
 .. warning::
    Commands v3 is **Java-only** and does not support C++ or Python.
@@ -17,7 +17,7 @@ Commands v3 is the next-generation command-based framework for Java that introdu
 **Use Commands v3 if:**
 
 - You're a Java team
-- You want improved telemetry, enhanced triggers, and self-cancelling commands
+- You want improved telemetry, enhanced triggers, and self-canceling commands
 - You prefer imperative control flow (loops, if-statements) over declarative composition
 - You want to use the actively developed command framework
 
