@@ -2,7 +2,7 @@
 
 This page describes wiring pneumatics with the REV Pneumatic Hub (:term:`PH`). For instructions on wiring pneumatics with the CTRE Pneumatic Control Module (:term:`PCM`) see :doc:`this page <wiring-pneumatics-pcm>`.
 
-.. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located [here](https://www.firstinspires.org/sites/default/files/uploads/resource_library/frc/technical-resources/frc_pneumatics_manual.pdf)
+.. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, refer to the [FIRST Pneumatics Manual](https://info.firstinspires.org/hubfs/web/program/frc/resources/pneumatics-manual.pdf).
 
 .. seealso:: For Pneumatic Hub configuration, firmware updates, and detailed technical specifications, see the [REV Pneumatic Hub Documentation](https://docs.revrobotics.com/ion-control-system/ph).
 
