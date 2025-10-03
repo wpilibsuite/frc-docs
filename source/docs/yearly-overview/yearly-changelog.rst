@@ -60,7 +60,7 @@ Supported Operating Systems and Architectures:
 - Remove deprecated ``TrapzoidProfileCommand`` API
 - Breaking: Remove deprecated C++ method ``TransferOwnership``
 - Deprecate ``PIDCommand``, ``PIDSubsystem``, ``ProfiledPIDCommand``, ``ProfiledPIDSubsystem``, ``TrapezoidProfileSubsystem``
-- Deprecate ``TrapezoidProfileCommand``. Use :doc:`TrapezoidProfile Directly </docs/software/commandbased/profile-subsystems-commands>`
+- Deprecate ``TrapezoidProfileCommand``. Use :doc:`TrapezoidProfile Directly </docs/software/commandbased/commands-v2/profile-subsystems-commands>`
 - Cache controller ``BooleanEvents`` / ``Triggers`` and directly construct ``Triggers``, fixing issues if ``BooleanEvents`` / ``Triggers`` are created in loops
 - Add deadband trigger methods to ``CommandGenericHID``
 - Make requirements private

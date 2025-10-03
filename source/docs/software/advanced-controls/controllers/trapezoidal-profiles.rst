@@ -4,7 +4,7 @@
 
 .. note:: This article covers the in-code generation of trapezoidal motion profiles.  Documentation describing the involved concepts in more detail is forthcoming.
 
-.. note:: For a guide on implementing the ``TrapezoidProfile`` class in the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework, see :doc:`/docs/software/commandbased/profile-subsystems-commands`.
+.. note:: For a guide on implementing the ``TrapezoidProfile`` class in the :ref:`command-based framework <docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?>` framework, see :doc:`/docs/software/commandbased/commands-v2/profile-subsystems-commands`.
 
 .. note:: The ``TrapezoidProfile`` class, used on its own, is most useful when composed with a custom controller (such as a "smart" motor controller with a built-in PID functionality).  To integrate it with a WPILib ``PIDController``, see :doc:`profiled-pidcontroller`.
 

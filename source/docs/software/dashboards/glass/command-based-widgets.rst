@@ -1,6 +1,6 @@
 # Widgets for the Command-Based Framework
 
-Glass also has several widgets that are specific to the :ref:`command-based framework <docs/software/commandbased/index:Command-Based Programming>`. These include widgets to schedule commands, view actively running commands on a specific subsystem, or view the state of the :ref:`command scheduler <docs/software/commandbased/command-scheduler:The Command Scheduler>`.
+Glass also has several widgets that are specific to the :ref:`command-based framework <docs/software/commandbased/index:Command-Based Programming>`. These include widgets to schedule commands, view actively running commands on a specific subsystem, or view the state of the :ref:`command scheduler <docs/software/commandbased/commands-v2/command-scheduler:The Command Scheduler>`.
 
 ## Command Selector Widget
 

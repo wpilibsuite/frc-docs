@@ -6,7 +6,7 @@
 
 .. note:: Before following this tutorial, it is helpful (but not strictly necessary) to have a baseline familiarity with WPILib's :ref:`PID control <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`, :ref:`feedforward <docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib>`, and :ref:`trajectory <docs/software/advanced-controls/trajectories/index:Trajectory Generation and Following with WPILib>` features.
 
-.. note:: The robot code in this tutorial uses the :ref:`command-based <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework.  The command-based framework is strongly recommended for beginning and intermediate teams.
+.. note:: The robot code in this tutorial uses the :ref:`command-based <docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?>` framework.  The command-based framework is strongly recommended for beginning and intermediate teams.
 
 The goal of this tutorial is to provide "end-to-end" instruction on implementing a trajectory-following autonomous routine for a differential-drive robot.  By following this tutorial, readers will learn how to:
 
