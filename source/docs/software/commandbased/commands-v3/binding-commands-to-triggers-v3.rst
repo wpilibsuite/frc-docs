@@ -370,7 +370,7 @@ External code can then bind to these mechanism triggers:
      shooter.shoot().named("Shoot When Ready")
    );
 
-### Best Practices
+### Best Practices for Command-Local Triggers
 
 1. **Use global bindings for persistent controls**: Button bindings in RobotContainer should be global
 2. **Use command-local bindings for temporary automation**: Auto routines that need phase-specific reactions
