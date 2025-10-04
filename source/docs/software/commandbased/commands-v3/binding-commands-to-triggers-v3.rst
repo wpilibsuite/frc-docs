@@ -244,6 +244,156 @@ First press: start command. Second press: cancel command. Third press: start aga
        .named("Auto Align")
      );
 
+## Command-Local Triggers (Nested Triggers)
+
+Commands v3 introduces **command-local trigger bindings**. Triggers created within a running command are automatically scoped to that command's lifetime and are deleted when the command exits.
+
+### Global vs Command-Local Bindings
+
+- **Global bindings**: Created outside any command (e.g., in RobotContainer). Active for the entire robot program.
+- **Command-local bindings**: Created inside a command body. Active only while that command runs.
+
+.. code-block:: java
+
+   Command autoWithLocalTriggers = Command.noRequirements().executing(coroutine -> {
+     // These triggers are command-local (nested)
+     // They will be automatically cleaned up when this command ends
+
+     Trigger intakeReady = new Trigger(() -> intake.hasGamePiece());
+     intakeReady.onTrue(
+       arm.moveTo(SCORE_HEIGHT).named("Raise Arm")
+     );
+
+     Trigger armAtHeight = new Trigger(() -> arm.atGoal());
+     armAtHeight.onTrue(
+       shooter.shoot().named("Shoot")
+     );
+
+     // Wait for scoring to complete
+     coroutine.waitUntil(() -> shooter.finished());
+
+     // When this command ends, intakeReady and armAtHeight bindings are removed
+   }).named("Auto Score With Local Triggers");
+
+### Use Cases for Command-Local Triggers
+
+Command-local triggers are useful for:
+
+1. **Temporary automation**: Enable automatic reactions only during a specific command
+2. **State-based behavior**: Different bindings for different autonomous phases
+3. **Clean resource management**: No need to manually unbind triggers
+4. **Modular command design**: Commands can set up their own trigger behaviors
+
+### Example: Phase-Based Autonomous
+
+.. code-block:: java
+
+   Command phaseBasedAuto = Command.noRequirements().executing(coroutine -> {
+
+     // PHASE 1: Drive to game piece with auto-intake
+     Trigger seeGamePiece = new Trigger(() -> vision.hasTarget());
+     seeGamePiece.whileTrue(
+       intake.run(coro -> {
+         intake.setSpeed(0.8);
+         coro.park();
+       })
+       .whenCanceled(() -> intake.stop())
+       .named("Auto Intake")
+     );
+
+     coroutine.await(drivetrain.driveToPose(gamePiecePose));
+     coroutine.waitUntil(() -> intake.hasGamePiece());
+     // seeGamePiece binding automatically removed here
+
+     // PHASE 2: Drive to score with auto-align
+     Trigger seeScoringTarget = new Trigger(() -> vision.hasTarget());
+     seeScoringTarget.whileTrue(
+       drivetrain.run(coro -> {
+         drivetrain.alignToTarget();
+         coro.yield();
+       })
+       .withPriority(15)  // Higher than normal drive
+       .named("Auto Align to Score")
+     );
+
+     coroutine.await(drivetrain.driveToPose(scorePose));
+     coroutine.await(shooter.shoot());
+     // seeScoringTarget binding automatically removed here
+
+   }).named("Phase Based Auto");
+
+In this example, each phase has its own set of trigger bindings that are only active during that phase. This prevents the auto-intake from running during scoring, and vice versa.
+
+### Mechanism Triggers
+
+Mechanisms can expose public trigger fields for common conditions. These are **global** triggers (not nested) since they're created at mechanism construction time.
+
+.. code-block:: java
+
+   public class Arm extends Mechanism {
+
+     // Public trigger for external binding
+     public final Trigger atGoal = new Trigger(() -> Math.abs(getAngle() - targetAngle) < TOLERANCE);
+
+     public final Trigger overheated = new Trigger(() -> getTemperature() > MAX_TEMP);
+
+     public Arm() {
+       // Mechanism can bind to its own triggers
+       overheated.onTrue(
+         run(coro -> {
+           stop();
+           System.err.println("ARM OVERHEATED!");
+         })
+         .withPriority(1000)
+         .named("Arm Emergency Stop")
+       );
+     }
+
+     // Commands can be returned
+     public Command moveTo(double angle) {
+       return run(coro -> {
+         targetAngle = angle;
+         while (!atGoal.getAsBoolean()) {
+           updatePID();
+           coro.yield();
+         }
+       }).named("Arm Move To " + angle);
+     }
+   }
+
+External code can then bind to these mechanism triggers:
+
+.. code-block:: java
+
+   // In RobotContainer or bindings setup
+   arm.atGoal.and(driver.a()).onTrue(
+     shooter.shoot().named("Shoot When Ready")
+   );
+
+### Best Practices
+
+1. **Use global bindings for persistent controls**: Button bindings in RobotContainer should be global
+2. **Use command-local bindings for temporary automation**: Auto routines that need phase-specific reactions
+3. **Expose common triggers from mechanisms**: Make useful triggers public for external binding
+4. **Don't manually unbind**: Let command scope handle cleanup automatically
+
+.. code-block:: java
+
+   // ✅ GOOD: Command-local binding (automatic cleanup)
+   Command auto = Command.noRequirements().executing(coro -> {
+     Trigger ready = new Trigger(() -> sensor.ready());
+     ready.onTrue(action());
+     coro.await(doWork());
+   }).named("Auto");
+
+   // ❌ LESS GOOD: Manual trigger management (more error-prone)
+   Command auto = Command.noRequirements().executing(coro -> {
+     Trigger ready = new Trigger(() -> sensor.ready());
+     Binding binding = ready.onTrue(action());
+     coro.await(doWork());
+     binding.cancel(); // Manual cleanup required
+   }).named("Auto");
+
 ## Debouncing
 
 Debouncing prevents trigger "bouncing" from noisy sensors:

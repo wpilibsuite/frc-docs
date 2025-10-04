@@ -8,16 +8,14 @@ A typical Commands v3 project follows this structure::
 
    src/main/java/frc/robot/
    ├── Robot.java                 # Main robot class
-   ├── RobotContainer.java        # Mechanisms and bindings
+   ├── Autos.java                 # Factory for auto routines (optional)
+   ├── Bindings.java              # Driver and operator controller bindings (optional)
    ├── Constants.java             # Robot-wide constants
-   ├── mechanisms/                # Mechanism classes
-   │   ├── Drivetrain.java
-   │   ├── Arm.java
-   │   ├── Intake.java
-   │   └── Shooter.java
-   └── commands/                  # Standalone command classes (optional)
-       ├── AutoCommands.java      # Factory for auto routines
-       └── ComplexCommand.java    # Reusable complex commands
+   └── mechanisms/                # Mechanism classes
+       ├── Drivetrain.java
+       ├── Arm.java
+       ├── Intake.java
+       └── Shooter.java
 
 ## Core Classes
 
@@ -47,7 +45,7 @@ The main robot class. Keep it minimal - just call the scheduler.
 
      @Override
      public void autonomousInit() {
-       robotContainer.getAutonomousCommand().schedule();
+       Scheduler.getDefault().schedule(robotContainer.getAutonomousCommand());
      }
 
      @Override
@@ -135,9 +133,9 @@ Robot-wide constants.
 
 Mechanisms extend ``Mechanism`` and contain:
 - Hardware declarations (motors, sensors, etc.)
-- Public methods for commands to use
+- Public sensor-reading methods
 - Command factory methods that return ``Command`` objects
-- ``periodic()`` for telemetry and state updates
+- Periodic hooks (in constructor) for telemetry and state updates
 
 .. code-block:: java
 
@@ -145,26 +143,33 @@ Mechanisms extend ``Mechanism`` and contain:
 
    import org.wpilib.commands3.Mechanism;
    import org.wpilib.commands3.Command;
-   import com.ctre.phoenix6.hardware.TalonFX;
+   import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
+   import edu.wpi.first.wpilibj.DigitalInput;
    import frc.robot.Constants;
+   import static edu.wpi.first.units.Units.Seconds;
 
    public class Intake extends Mechanism {
-     private final TalonFX motor = new TalonFX(Constants.INTAKE_MOTOR_ID);
+     private final PWMSparkMax motor = new PWMSparkMax(Constants.INTAKE_MOTOR_ID);
      private final DigitalInput beamBreak = new DigitalInput(0);
 
      public Intake() {
        setDefaultCommand(
-         runRepeatedly(() -> setSpeed(0))
+         runRepeatedly(() -> stop())
            .withPriority(Command.LOWEST_PRIORITY)
            .named("Intake[IDLE]")
        );
      }
 
-     // Public methods for commands
-     public void setSpeed(double speed) {
+     // Private methods for hardware control
+     private void setSpeed(double speed) {
        motor.set(speed);
      }
 
+     private void stop() {
+       motor.set(0);
+     }
+
+     // Public sensor methods
      public boolean hasGamePiece() {
        return !beamBreak.get(); // Beam break is inverted
      }
@@ -176,7 +181,7 @@ Mechanisms extend ``Mechanism`` and contain:
            setSpeed(Constants.INTAKE_SPEED);
            coroutine.yield();
          }
-         setSpeed(0);
+         stop();
        }).named("Grab");
      }
 
@@ -184,14 +189,8 @@ Mechanisms extend ``Mechanism`` and contain:
        return run(coroutine -> {
          setSpeed(-Constants.INTAKE_SPEED);
          coroutine.wait(Seconds.of(0.5));
-         setSpeed(0);
+         stop();
        }).named("Eject");
-     }
-
-     @Override
-     public void periodic() {
-       SmartDashboard.putBoolean("Intake/Has Game Piece", hasGamePiece());
-       SmartDashboard.putNumber("Intake/Speed", motor.get());
      }
    }
 
@@ -332,61 +331,147 @@ Use these constants:
 
 .. code-block:: java
 
-   Command eStop = drivetrain.run(coro -> drivetrain.stop())
+   Command eStop = drivetrain.run(coroutine -> drivetrain.stop())
      .withPriority(Priorities.EMERGENCY)
      .named("Emergency Stop");
 
 ## Telemetry
 
-Put telemetry in ``periodic()`` methods:
+Use Epilogue for automatic telemetry, or add a periodic hook in the constructor:
 
 .. code-block:: java
 
-   @Override
-   public void periodic() {
-     SmartDashboard.putNumber("Drivetrain/Left Distance", getLeftDistance());
-     SmartDashboard.putNumber("Drivetrain/Right Distance", getRightDistance());
-     SmartDashboard.putData("Drivetrain/Odometry", odometry);
+   import org.wpilib.commands3.Scheduler;
 
-     // Use mechanism name as prefix for organization
+   public Intake() {
+     // Set up telemetry
+     Scheduler.getDefault().addPeriodicHook(() -> {
+       SmartDashboard.putBoolean("Intake/Has Game Piece", hasGamePiece());
+     });
+
+     setDefaultCommand(/* ... */);
    }
+
+Scheduler-level telemetry can show what commands are currently requiring each mechanism.
 
 ## Testing
 
-Create test commands for individual mechanisms:
+Create test commands for individual mechanisms to verify functionality during development and at competitions. Test commands should exercise the mechanism's full range of motion and verify sensors work correctly.
 
 .. code-block:: java
+
+   package frc.robot.commands;
+
+   import org.wpilib.commands3.Command;
+   import frc.robot.mechanisms.*;
+   import frc.robot.Constants;
+   import static edu.wpi.first.units.Units.Seconds;
 
    public class TestCommands {
 
+     // Test drivetrain motors and encoders
      public static Command testDrivetrain(Drivetrain drivetrain) {
        return drivetrain.run(coroutine -> {
-         System.out.println("Testing drivetrain...");
+         System.out.println("=== Testing Drivetrain ===");
+
+         // Test forward
+         System.out.println("Testing forward motion...");
          drivetrain.tank(0.3, 0.3);
          coroutine.wait(Seconds.of(1.0));
+         System.out.println("Left encoder: " + drivetrain.getLeftDistance());
+         System.out.println("Right encoder: " + drivetrain.getRightDistance());
+
+         // Test backward
+         System.out.println("Testing backward motion...");
+         drivetrain.tank(-0.3, -0.3);
+         coroutine.wait(Seconds.of(1.0));
+
+         // Test rotation
+         System.out.println("Testing rotation...");
+         drivetrain.tank(0.3, -0.3);
+         coroutine.wait(Seconds.of(1.0));
+
          drivetrain.stop();
-         System.out.println("Drivetrain test complete");
+         System.out.println("✓ Drivetrain test complete");
        }).named("Test Drivetrain");
      }
 
+     // Test arm movement and limit switches
      public static Command testArm(Arm arm) {
        return arm.run(coroutine -> {
-         System.out.println("Testing arm...");
+         System.out.println("=== Testing Arm ===");
+
+         // Test movement to known positions
+         System.out.println("Moving to mid position...");
          coroutine.await(arm.moveTo(Constants.ARM_MID));
+         System.out.println("Arm angle: " + arm.getAngle() + " (target: " + Constants.ARM_MID + ")");
+
          coroutine.wait(Seconds.of(0.5));
+
+         System.out.println("Moving to high position...");
+         coroutine.await(arm.moveTo(Constants.ARM_HIGH));
+         System.out.println("Arm angle: " + arm.getAngle() + " (target: " + Constants.ARM_HIGH + ")");
+
+         coroutine.wait(Seconds.of(0.5));
+
+         System.out.println("Moving to low position...");
          coroutine.await(arm.moveTo(Constants.ARM_LOW));
-         System.out.println("Arm test complete");
+         System.out.println("Arm angle: " + arm.getAngle() + " (target: " + Constants.ARM_LOW + ")");
+
+         System.out.println("✓ Arm test complete");
        }).named("Test Arm");
+     }
+
+     // Test intake sensors and motors
+     public static Command testIntake(Intake intake) {
+       return intake.run(coroutine -> {
+         System.out.println("=== Testing Intake ===");
+
+         System.out.println("Running intake for 2 seconds...");
+         intake.setSpeed(0.5);
+         coroutine.wait(Seconds.of(2.0));
+         intake.stop();
+
+         System.out.println("Beam break sensor: " + (intake.hasGamePiece() ? "BLOCKED" : "CLEAR"));
+
+         System.out.println("Running intake reverse...");
+         intake.setSpeed(-0.5);
+         coroutine.wait(Seconds.of(2.0));
+         intake.stop();
+
+         System.out.println("✓ Intake test complete");
+       }).named("Test Intake");
+     }
+
+     private TestCommands() {
+       // Utility class - prevent instantiation
      }
    }
 
-Bind test commands to buttons:
+### Binding Test Commands
+
+Bind test commands to controller buttons (typically D-pad or back panel buttons):
 
 .. code-block:: java
 
-   // In RobotContainer.configureBindings()
-   driver.povUp().onTrue(TestCommands.testDrivetrain(drivetrain));
-   driver.povDown().onTrue(TestCommands.testArm(arm));
+   // In Bindings.java or RobotContainer.java
+   private void configureTestBindings() {
+     // Use D-pad for testing in practice mode
+     driver.povUp().onTrue(TestCommands.testDrivetrain(drivetrain));
+     driver.povRight().onTrue(TestCommands.testArm(arm));
+     driver.povDown().onTrue(TestCommands.testIntake(intake));
+     driver.povLeft().onTrue(TestCommands.testShooter(shooter));
+   }
+
+### Best Practices for Test Commands
+
+1. **Print clear output**: Use descriptive console messages to see what's being tested
+2. **Test full range**: Exercise the full range of motion and all sensors
+3. **Include safety checks**: Test limit switches and safety interlocks
+4. **Keep them simple**: Test one mechanism at a time
+5. **Run at reduced speed**: Use lower speeds to avoid damage if something is wrong
+6. **Log sensor values**: Print encoder positions, sensor states, etc.
+7. **Test at competitions**: Bind test commands to verify mechanisms before matches
 
 ## Common Mistakes to Avoid
 
@@ -396,7 +481,7 @@ Bind test commands to buttons:
 
    // ❌ BAD: Scheduling inside mechanism
    public void grab() {
-     run(coro -> { /* ... */ }).schedule();
+     Scheduler.getDefault().schedule(run(coro -> { /* ... */ });
    }
 
    // ✅ GOOD: Return a command
@@ -404,7 +489,7 @@ Bind test commands to buttons:
      return run(coro -> { /* ... */ }).named("Grab");
    }
 
-2. **Forgetting to call yield()**: Always yield inside loops
+2. **Forgetting to call yield()**: Always yield inside loops. A compiler plugin is in development to detect this.
 
 .. code-block:: java
 
@@ -423,27 +508,31 @@ Bind test commands to buttons:
 
 .. code-block:: java
 
-   // ❌ BAD: Missing name
+   // ❌ BAD: This is a compilation error - run() returns a builder
    Command cmd = mechanism.run(coro -> { /* ... */ });
 
-   // ✅ GOOD: Has name
+   // ✅ GOOD: Has name (and compiles)
    Command cmd = mechanism.run(coro -> { /* ... */ }).named("Action");
 
-4. **Exposing hardware objects**: Keep hardware private
+4. **Exposing hardware control methods**: Only commands and sensor-reading methods should be public
 
 .. code-block:: java
 
-   // ❌ BAD: Public motor
-   public TalonFX motor = new TalonFX(1);
-
-   // ✅ GOOD: Private hardware, public methods
-   private final TalonFX motor = new TalonFX(1);
-
+   // ❌ BAD: Public hardware control methods
    public void setSpeed(double speed) {
      motor.set(speed);
    }
 
-5. **Complex logic in RobotContainer**: Move complex commands to separate files
+   // ✅ GOOD: Private hardware control, public commands
+   private void setSpeed(double speed) {
+     motor.set(speed);
+   }
+
+   public Command grab() {
+     return run(coro -> { /* ... */ }).named("Grab");
+   }
+
+5. **Complex logic in RobotContainer**: Move complex commands to separate files. RobotContainer is not recommended in v3.
 
 ## Example: Complete Small Project
 

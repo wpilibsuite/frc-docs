@@ -46,13 +46,13 @@ Mechanisms extend the ``Mechanism`` base class from the ``org.wpilib.commands3``
        );
      }
 
-     // Public methods for commands to use
-     public void tank(double left, double right) {
+     // Private hardware control methods
+     private void tank(double left, double right) {
        leftLeader.set(left);
        rightLeader.set(right);
      }
 
-     public void stop() {
+     private void stop() {
        tank(0, 0);
      }
 
@@ -103,29 +103,37 @@ Mechanisms are typically instantiated once in your ``RobotContainer`` class:
      }
    }
 
-### The ``periodic()`` Method
+### Telemetry and Periodic Updates
 
-``periodic()`` is called automatically by the scheduler every loop (typically 50Hz). Use it for:
-
-- Updating odometry
-- Publishing telemetry to dashboards
-- Running sensor updates
-- Updating mechanism state
+Mechanisms often need to run periodic updates for telemetry, odometry, or sensor processing. In Commands v3, use **periodic hooks** instead of overriding a ``periodic()`` method:
 
 .. code-block:: java
 
-   @Override
-   public void periodic() {
-     // Update odometry
-     odometry.update(getHeading(), getLeftDistance(), getRightDistance());
+   import org.wpilib.commands3.Scheduler;
 
-     // Publish to dashboard
-     SmartDashboard.putNumber("Left Distance", getLeftDistance());
-     SmartDashboard.putNumber("Right Distance", getRightDistance());
-     SmartDashboard.putData("Odometry", odometry);
+   public Drivetrain() {
+     // Add periodic hook for updates
+     Scheduler.getDefault().addPeriodicHook(() -> {
+       // Update odometry
+       odometry.update(getHeading(), getLeftDistance(), getRightDistance());
+
+       // Publish to dashboard
+       SmartDashboard.putNumber("Left Distance", getLeftDistance());
+       SmartDashboard.putNumber("Right Distance", getRightDistance());
+       SmartDashboard.putData("Odometry", odometry);
+     });
+
+     // Set up default command
+     setDefaultCommand(
+       runRepeatedly(() -> tank(0, 0))
+         .withPriority(Command.LOWEST_PRIORITY)
+         .named("Drive[IDLE]")
+     );
    }
 
-**Do not** use ``periodic()`` for command logic. Commands should be written as separate methods that return ``Command`` objects.
+Alternatively, use **Epilogue** for automatic telemetry logging without manual hooks.
+
+**Do not** use periodic hooks for command logic. Commands should be written as separate methods that return ``Command`` objects.
 
 ## Default Commands
 
@@ -296,22 +304,24 @@ Here's a complete example of an Arm mechanism with several commands:
        );
      }
 
+     // Public sensor reading methods
      public double getAngle() {
        return encoder.getDistance();
      }
 
-     public void setVoltage(double volts) {
+     public boolean atGoal() {
+       return Math.abs(getAngle() - targetAngle) < 0.05; // 0.05 radians
+     }
+
+     // Private hardware control methods
+     private void setVoltage(double volts) {
        motor.setVoltage(volts);
      }
 
-     public void holdPosition() {
+     private void holdPosition() {
        double pidOutput = pid.calculate(getAngle(), targetAngle);
        double ffOutput = feedforward.calculate(targetAngle, 0);
        setVoltage(pidOutput + ffOutput);
-     }
-
-     public boolean atGoal() {
-       return Math.abs(getAngle() - targetAngle) < 0.05; // 0.05 radians
      }
 
      // Command: Move to specific angle
@@ -348,11 +358,20 @@ Here's a complete example of an Arm mechanism with several commands:
        }).named("Home Arm");
      }
 
-     @Override
-     public void periodic() {
-       SmartDashboard.putNumber("Arm Angle", getAngle());
-       SmartDashboard.putNumber("Arm Target", targetAngle);
-       SmartDashboard.putBoolean("Arm At Goal", atGoal());
+     public Arm() {
+       // Add telemetry via periodic hook
+       Scheduler.getDefault().addPeriodicHook(() -> {
+         SmartDashboard.putNumber("Arm Angle", getAngle());
+         SmartDashboard.putNumber("Arm Target", targetAngle);
+         SmartDashboard.putBoolean("Arm At Goal", atGoal());
+       });
+
+       // Set default command
+       setDefaultCommand(
+         runRepeatedly(() -> setVoltage(0))
+           .withPriority(Command.LOWEST_PRIORITY)
+           .named("Arm[IDLE]")
+       );
      }
    }
 
@@ -362,7 +381,7 @@ Here's a complete example of an Arm mechanism with several commands:
 
 2. **Use descriptive method names**: ``tank(left, right)`` is clearer than ``set(l, r)``
 
-3. **Publish telemetry in** ``periodic()``: Don't clutter command code with dashboard calls
+3. **Publish telemetry with periodic hooks or Epilogue**: Don't clutter command code with dashboard calls
 
 4. **Set default commands**: Idle behavior (like stopping motors) prevents unexpected movement
 

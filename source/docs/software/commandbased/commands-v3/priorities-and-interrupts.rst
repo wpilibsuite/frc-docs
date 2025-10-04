@@ -127,7 +127,7 @@ Critical safety commands should have very high priority.
 When a command is interrupted:
 
 1. Its coroutine is stopped immediately (at the next ``yield()`` point)
-2. Any ``whenInterrupted()`` or ``whenCanceled()`` decorators run
+2. Any ``whenCanceled()`` decorators run
 3. The new command starts
 
 .. code-block:: java
@@ -136,11 +136,10 @@ When a command is interrupted:
      mechanism.start();
      coroutine.park();
    })
-   .whenInterrupted(() -> System.out.println("Interrupted!"))
    .whenCanceled(() -> mechanism.stop())
    .named("Action");
 
-Note: ``whenCanceled()`` runs for both interruptions and normal cancellations.
+Note: ``whenCanceled()`` runs for both interruptions and manual cancellations.
 
 ## Examples
 
@@ -170,7 +169,7 @@ Let the driver override automated actions by holding a button.
      driver.rightBumper().whileTrue(manualOverride);
 
      // Schedule auto path
-     autoPath.schedule();
+     Scheduler.getDefault().schedule(autoPath);
    }
 
 When the driver presses the button, the higher-priority manual command interrupts the auto path.
@@ -195,7 +194,7 @@ Prevent dangerous actions unless a safety condition is met.
    }).withPriority(1000).named("Safety Interlock");
 
    // Schedule safety interlock at startup
-   safetyStop.schedule();
+   Scheduler.getDefault().schedule(safetyStop);
 
    // Normal shoot command can't run while safety is active
 
@@ -232,6 +231,8 @@ Prevent commands that could damage the mechanism.
 
    public class Arm extends Mechanism {
 
+     public final Trigger belowSafeAngle = new Trigger(() -> getAngle() < MIN_SAFE_ANGLE);
+
      // Protected low position (high priority)
      private Command protectLowPosition() {
        return run(coroutine -> {
@@ -242,20 +243,12 @@ Prevent commands that could damage the mechanism.
        }).withPriority(500).named("Arm Protection");
      }
 
-     public void periodic() {
-       // Automatically start protection if arm goes too low
-       if (getAngle() < MIN_SAFE_ANGLE) {
-         protectLowPosition().schedule();
-       }
+     public Arm() {
+       belowSafeAngle.onTrue(protectLowPosition());
      }
 
      // Normal movement command (priority 0)
      public Command moveTo(double angle) {
-       if (angle < MIN_SAFE_ANGLE) {
-         System.err.println("Cannot move to unsafe angle!");
-         return Command.none();
-       }
-
        return run(coroutine -> {
          // Move logic
        }).named("Arm Move");
@@ -337,7 +330,7 @@ If commands aren't running as expected:
      System.out.println("Running: " + cmd.getName() + " (priority " + cmd.getPriority() + ")");
    }
 
-3. **Test incrementally**: Start with simple priorities, add complexity gradually
+3. **Use scheduler telemetry**: Enable protobuf serialization or attach event listeners to see what commands are running and when scheduling attempts fail
 
 4. **Name commands clearly**: Use descriptive names to identify commands in logs
 

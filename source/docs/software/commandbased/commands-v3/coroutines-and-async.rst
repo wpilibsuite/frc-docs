@@ -344,9 +344,13 @@ The scheduler must run on a single thread. Commands v3 coroutines are not thread
    // ❌ BAD: Don't run scheduler from multiple threads
    executor.submit(() -> Scheduler.getDefault().run()); // Don't do this!
 
-### 4. Child Commands and Lifetimes
+### 4. Parent and Child Commands
 
-Commands started with ``await()`` or ``fork()`` are "child commands" of the parent. If the parent is canceled, all children are automatically canceled.
+Commands started with ``await()`` or ``fork()`` within a command body become "child commands" of the parent command that started them. This creates a **command hierarchy** with important lifecycle and interruption rules.
+
+#### Automatic Cancellation
+
+If the parent is canceled, all children are automatically canceled.
 
 .. code-block:: java
 
@@ -355,6 +359,91 @@ Commands started with ``await()`` or ``fork()`` are "child commands" of the pare
      coroutine.wait(Seconds.of(1.0));
      // If parent is canceled here, child is also canceled
    }).named("Parent");
+
+This ensures that child commands don't outlive their parents, preventing "orphaned" commands.
+
+#### Sibling Interruption Rules
+
+Child commands started by the same parent are called "siblings." Siblings can interrupt each other based on priority, but they **cannot interrupt their parent**.
+
+.. code-block:: java
+
+   Command parent = Command.noRequirements().executing(coroutine -> {
+     // Start two sibling commands
+     var child1 = coroutine.fork(
+       mechanism.run(coro -> { /* ... */ })
+         .withPriority(0)
+         .named("Child 1")
+     );
+
+     var child2 = coroutine.fork(
+       mechanism.run(coro -> { /* ... */ })
+         .withPriority(10)  // Higher priority
+         .named("Child 2")
+     );
+
+     // Child 2 can interrupt Child 1 (same mechanism, higher priority)
+     // But neither can interrupt Parent
+
+     coroutine.await(child1);
+     coroutine.await(child2);
+   }).named("Parent");
+
+#### Conflict Resolution with Ancestors
+
+When a child command requires a mechanism, the scheduler checks for conflicts. **Child commands skip conflict checks with their direct ancestors** (parent, grandparent, etc.), but conflicts with non-ancestors are checked normally using priority levels.
+
+This means:
+
+- A child can use the same mechanisms as its parent without conflict
+- A child still respects priorities when conflicting with unrelated commands
+- Higher-priority commands are protected from interruption by lower-priority nested commands
+
+.. code-block:: java
+
+   Command outer = drivetrain.run(coroutine -> {
+     // This command requires drivetrain
+
+     // Child can also use drivetrain without conflict
+     coroutine.await(
+       drivetrain.run(coro -> {
+         drivetrain.tank(0.5, 0.5);
+         coro.yield();
+       }).named("Child Movement")
+     );
+
+   }).named("Outer Movement");
+
+#### Use Cases for Parent/Child Hierarchies
+
+Parent/child commands are useful for:
+
+1. **Structured concurrency**: Ensure all subtasks finish when a complex command ends
+2. **Resource scoping**: Child commands inherit access to parent's mechanisms
+3. **Error propagation**: If a child encounters an error, the parent can handle it
+4. **Cancellation safety**: Canceling a complex operation automatically cancels all its parts
+
+.. code-block:: java
+
+   Command complexAuto = Command.noRequirements().executing(coroutine -> {
+     try {
+       // All these children will be canceled if complexAuto is canceled
+       coroutine.await(drivetrain.driveToPose(pose1));
+
+       // Run multiple actions in parallel
+       var intake = coroutine.fork(intake.grab());
+       var arm = coroutine.fork(arm.moveTo(position));
+       coroutine.await(intake);
+       coroutine.await(arm);
+
+       // Score
+       coroutine.await(shooter.shoot());
+
+     } catch (Exception e) {
+       // Handle errors from any child command
+       System.err.println("Auto failed: " + e);
+     }
+   }).named("Complex Auto");
 
 ### 5. Don't Block the Scheduler
 

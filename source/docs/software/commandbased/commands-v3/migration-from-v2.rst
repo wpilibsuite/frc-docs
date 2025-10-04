@@ -41,11 +41,11 @@ Commands v3 lives in a different package namespace:
    :header-rows: 1
    :widths: 50 50
 
-   * - Commands v2
-     - Commands v3
-   * - ``edu.wpi.first.wpilibj2.command.*``
+   * - Commands v2 (2027)
+     - Commands v3 (2027)
+   * - ``org.wpilib.commands2.*``
      - ``org.wpilib.commands3.*``
-   * - ``edu.wpi.first.wpilibj2.command.button.*``
+   * - ``org.wpilib.commands2.button.*``
      - ``org.wpilib.commands3.button.*``
 
 You'll need to update all imports in your migrated files.
@@ -99,7 +99,7 @@ In v3, "Subsystems" are now called "Mechanisms." They serve the same purpose: gr
        );
      }
 
-     public void tank(double left, double right) { /* ... */ }
+     private void tank(double left, double right) { /* ... */ }
    }
 
 ### CommandScheduler
@@ -151,11 +151,11 @@ The scheduler works similarly, but uses a different package:
 
 ### Command That Runs Continuously
 
-**v2 (RunCommand):**
+**v2:**
 
 .. code-block:: java
 
-   Command intake = new RunCommand(
+   Command intake = Commands.run(
      () -> intakeMech.setSpeed(0.8),
      intakeMech
    ).withName("Run Intake");
@@ -184,7 +184,7 @@ The scheduler works similarly, but uses a different package:
 
 .. code-block:: java
 
-   Command runIntake = new StartEndCommand(
+   Command runIntake = Commands.startEnd(
      () -> intake.on(),
      () -> intake.off(),
      intake
@@ -208,7 +208,7 @@ The scheduler works similarly, but uses a different package:
 
 .. code-block:: java
 
-   Command driveTenFeet = new RunCommand(
+   Command driveTenFeet = Commands.run(
        () -> drivetrain.tank(0.5, 0.5),
        drivetrain
      )
@@ -319,35 +319,44 @@ The scheduler works similarly, but uses a different package:
 
 ### Race Composition
 
+Race is useful when you want one command to run while another is active, and stop when the main command finishes. A common pattern is playing an LED pattern during an action.
+
 **v2:**
 
 .. code-block:: java
 
-   Command driveWithTimeout = Commands.race(
-     drivetrain.driveToPose(pose),
-     Commands.waitSeconds(3.0)
+   Command intakeWithLEDs = Commands.race(
+     intake.grab(),
+     leds.playPattern(LEDPattern.INTAKING)
    );
 
 **v3 (still works!):**
 
 .. code-block:: java
 
-   Command driveWithTimeout = drivetrain.driveToPose(pose)
-     .raceWith(Command.waitFor(Seconds.of(3.0)).named("Timeout"))
+   Command intakeWithLEDs = intake.grab()
+     .raceWith(leds.playPattern(LEDPattern.INTAKING))
      .withAutomaticName();
 
 **v3 (imperative alternative):**
 
 .. code-block:: java
 
-   import static edu.wpi.first.units.Units.Seconds;
-
-   Command driveWithTimeout = Command.noRequirements().executing(coroutine -> {
+   Command intakeWithLEDs = Command.noRequirements().executing(coroutine -> {
      coroutine.awaitAny(
-       drivetrain.driveToPose(pose),
-       Command.waitFor(Seconds.of(3.0)).named("Timeout")
+       intake.grab(),
+       leds.playPattern(LEDPattern.INTAKING)
      );
-   }).named("Drive With Timeout");
+   }).named("Intake With LEDs");
+
+.. note::
+   For timeouts specifically, use ``.withTimeout()`` instead of racing with a wait command:
+
+   .. code-block:: java
+
+      Command driveWithTimeout = drivetrain.driveToPose(pose)
+        .withTimeout(Seconds.of(3.0))
+        .named("Drive With Timeout");
 
 ### Conditional Commands
 
@@ -386,11 +395,8 @@ Triggers work similarly but use the v3 package:
 
    CommandXboxController controller = new CommandXboxController(0);
 
-   controller.a().onTrue(Commands.runOnce(() -> intake.extend()));
-   controller.b().whileTrue(new RunCommand(() -> intake.run(), intake));
-
-   new Trigger(() -> sensor.isTriggered())
-     .onTrue(Commands.print("Sensor triggered!"));
+   controller.a().onTrue(intake.runOnce(() -> intake.extend()));
+   controller.b().whileTrue(intake.run(() -> intake.run()));
 
 **v3:**
 
@@ -401,16 +407,8 @@ Triggers work similarly but use the v3 package:
 
    CommandXboxController controller = new CommandXboxController(0);
 
-   controller.a().onTrue(
-     intake.run(coro -> intake.extend()).named("Extend Intake")
-   );
-
-   controller.b().whileTrue(
-     intake.runRepeatedly(() -> intake.run()).named("Run Intake")
-   );
-
-   new Trigger(() -> sensor.isTriggered())
-     .onTrue(Command.print("Sensor triggered!"));
+   controller.a().onTrue(intake.runOnce(() -> intake.extend()));
+   controller.b().whileTrue(intake.run(() -> intake.run()));
 
 ## Common Patterns and Idioms
 
@@ -485,22 +483,9 @@ In v3, **you must call** ``coroutine.yield()`` inside any loop. If you don't, th
      }
    });
 
-### 2. Don't Yield Inside Synchronized Blocks
+### 2. Compiler Plugin for Non-Yielding Loops
 
-Calling ``yield()`` inside a ``synchronized`` block can cause deadlocks. Restructure your code to avoid this.
-
-.. code-block:: java
-
-   // ❌ BAD: Yielding inside synchronized
-   synchronized (lock) {
-     coroutine.yield(); // Don't do this!
-   }
-
-   // ✅ GOOD: Yield outside synchronized
-   synchronized (lock) {
-     // Quick critical section
-   }
-   coroutine.yield();
+A Gradle compiler plugin is in development to detect non-yielding loops and produce compile errors, making this easier to catch during development.
 
 ### 3. Explicit Naming Required
 

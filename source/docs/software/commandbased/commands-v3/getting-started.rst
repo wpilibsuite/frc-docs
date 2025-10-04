@@ -73,11 +73,15 @@ Mechanisms represent robot hardware groupings and act as exclusive resources. On
                        .named("Drive[IDLE]"));
     }
 
-    public void tank(double left, double right) { /* set motor outputs */ }
-    public void stop() { tank(0, 0); }
-    public void resetEncoders() { /* ... */ }
+    // Private hardware control
+    private void tank(double left, double right) { /* set motor outputs */ }
+    private void stop() { tank(0, 0); }
+    private void resetEncoders() { /* ... */ }
+
+    // Public sensor reading
     public double getDistanceMeters() { return 0.0; }
 
+    // Public command factory
     public Command driveForTime() {
       return run(coroutine -> {
         tank(0.5, 0.5);

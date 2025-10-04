@@ -18,15 +18,25 @@ Run commands one after another. The sequence finishes when the last command fini
      gripper.release()
    ).withAutomaticName();
 
-Equivalent imperative style:
+Equivalent imperative style (locks all mechanisms for the entire duration):
 
 .. code-block:: java
 
    Command auto = Command.requiring(drivetrain, arm, gripper).executing(coroutine -> {
-    coroutine.await(drivetrain.driveToPose(pose1));
-    coroutine.await(arm.moveTo(position));
-    coroutine.await(gripper.release());
-  }).named("Auto Sequence");
+     coroutine.await(drivetrain.driveToPose(pose1)); // arm and gripper are uncommanded
+     coroutine.await(arm.moveTo(position)); // drivetrain and gripper are uncommanded
+     coroutine.await(gripper.release()); // drivetrain and arm are uncommanded
+   }).named("Auto Sequence");
+
+Alternative imperative style (releases mechanisms between steps):
+
+.. code-block:: java
+
+   Command auto = Command.noRequirements().executing(coroutine -> {
+     coroutine.await(drivetrain.driveToPose(pose1)); // arm and gripper can do other things
+     coroutine.await(arm.moveTo(position)); // drivetrain and gripper can do other things
+     coroutine.await(gripper.release()); // drivetrain and arm can do other things
+   }).named("Auto Sequence");
 
 ### Parallel
 
@@ -52,24 +62,28 @@ Equivalent imperative style:
 
 ### Race
 
-Run commands simultaneously. Finishes when **any** command finishes (others are canceled).
+Run commands simultaneously. Finishes when **any** command finishes (others are canceled). Useful for running visual feedback (LEDs, rumble) during an action.
 
 .. code-block:: java
 
-   Command driveOrTimeout = drivetrain.driveToPose(pose)
-     .raceWith(Command.waitFor(Seconds.of(3.0)).named("Timeout"))
+   Command intakeWithLEDs = intake.grab()
+     .raceWith(leds.playPattern(LEDPattern.INTAKING))
      .withAutomaticName();
 
 Equivalent imperative style:
 
 .. code-block:: java
 
-   Command driveOrTimeout = Command.noRequirements().executing(coroutine -> {
+   Command intakeWithLEDs = Command.noRequirements().executing(coroutine -> {
      coroutine.awaitAny(
-       drivetrain.driveToPose(pose),
-       Command.waitFor(Seconds.of(3.0)).named("Timeout")
+       intake.grab(),
+       leds.playPattern(LEDPattern.INTAKING)
      );
-   }).named("Drive Or Timeout");
+     // When intake.grab() finishes, LEDs stop automatically
+   }).named("Intake With LEDs");
+
+.. note::
+   For timeouts, use ``.withTimeout()`` instead of racing with a wait command.
 
 ### Deadline
 

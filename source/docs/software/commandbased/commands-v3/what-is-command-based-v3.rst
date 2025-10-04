@@ -9,8 +9,6 @@ Commands v3 is WPILib's next-generation command-based framework for Java. It int
 
 Like Commands v2, Commands v3 is a :term:`design pattern` for organizing robot software. It's not the only way to write a robot program, but it's effective for creating clean, maintainable, and reusable code.
 
-The key difference: **v3 allows imperative control flow** in addition to v2's declarative composition style.
-
 ## Declarative vs Imperative: An Example
 
 Consider a command that extends a piston when a condition becomes true.
@@ -30,9 +28,7 @@ Consider a command that extends a piston when a condition becomes true.
 
    Command extendWhenReady = Command.noRequirements()
      .executing(coroutine -> {
-       while (!condition.get()) {
-         coroutine.yield(); // Wait for condition
-       }
+       coroutine.waitUntil(condition);
        piston.set(Value.kForward);
      })
      .named("Extend When Ready");
