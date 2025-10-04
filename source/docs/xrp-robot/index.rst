@@ -2,6 +2,8 @@
 
 The XRP, powered by [Worcester Polytechnic Institute](http://wpi.edu), is a small and inexpensive robot designed for learning about programming FRC robots. All the same tools used for programming full-sized FRC robots can be used to program the XRP. The XRP comes with two drive motors with integrated wheel encoders. It also includes an :term:`IMU` sensor that can be used for measuring headings and accelerations. Using it is as simple as writing a robot program, and running it on your computer. It will command the XRP to follow the steps in the program.
 
+.. tip:: A course that teaches programming using the XRP Robot is available via [FIRST Training](https://training.firstinspires.org/catalog?labels=%5B%22Topics%22%5D&values=%5B%22Programming%22%5D). [Part 1](https://training.firstinspires.org/courses/java-programming-part-1) takes users through setup of the hardware and software, methods, objects, conditionals, variables, and equations. [Part 2](https://training.firstinspires.org/courses/java-programming-part-2) covers command based programming, driving and inputs, advanced conditionals and logical operators, command groups, arrays and loops, and errors and troubleshooting.
+
 The XRP provides a similar use case as the :doc:`Romi </docs/romi-robot/index>` with similar functionality, albeit using a lower power processor and is overall lower in cost.
 
 .. image:: images/xrp25.png
