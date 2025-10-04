@@ -116,7 +116,7 @@ The [Rev ATO Circuit Breakers](https://www.revrobotics.com/content/docs/REV-11-1
 
 The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) battery, capable of meeting the high current demands of an FRC robot. For more information, see the :ref:`Robot Battery page. <docs/hardware/hardware-basics/robot-battery:Robot Battery Basics>`
 
-.. note:: Multiple battery part numbers may be legal, consult the [FRC Manual](https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system) for a complete list.
+.. note:: Multiple battery part numbers may be legal, consult the [FRC Manual](https://www.firstinspires.org/resources/library/frc/season-materials?view=calendar) for a complete list.
 
 ## Robot Signal Light
 
