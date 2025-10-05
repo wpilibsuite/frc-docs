@@ -54,6 +54,7 @@ See :ref:`docs/software/commandbased/commands-v2/index:Commands v2 Programming` 
    binding-commands-to-triggers-v3
    priorities-and-interrupts
    structuring-v3-project
+   testing-commands-v3
    migration-from-v2
 
 ## Quick Example

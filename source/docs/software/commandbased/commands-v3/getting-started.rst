@@ -52,7 +52,7 @@ Call the v3 scheduler every loop in ``robotPeriodic()``:
   ```
 
 .. note::
-   v3 lives in the ``org.wpilib.commands3`` package, while v2 lives in ``edu.wpi.first.wpilibj2.command``. You cannot mix schedulers or command types across versions. Migrate commands and the scheduler together.
+   v3 lives in the ``org.wpilib.commands3`` package, while v2 lives in ``org.wpilib.commands2``. You cannot mix schedulers or command types across versions. Migrate commands and the scheduler together.
 
 ## Mechanisms (Like v2 Subsystems)
 

@@ -107,7 +107,7 @@ Schedules multiple commands and continues when **any one** finishes. The rest ar
 
 ### Wait and Delay Methods
 
-#### ``wait(Measure<Time>)``
+#### ``wait(Time)``
 
 Pauses for a specified duration.
 
@@ -137,22 +137,25 @@ Pauses until a condition becomes true.
 
 #### ``fork(Command)``
 
-Starts a command in the background without waiting for it to finish. Returns a ``CoroutineFuture`` you can ``await()`` later.
+Starts a command in the background without waiting for it to finish. Does not return anything; use ``await()`` on the command later if needed.
 
 .. code-block:: java
 
    Command parallel = Command.noRequirements().executing(coroutine -> {
      // Start two actions in background
-     var intake = coroutine.fork(intake.grab());
-     var drive = coroutine.fork(drivetrain.driveToPose(pose));
+     Command intakeCmd = intake.grab();
+     Command driveCmd = drivetrain.driveToPose(pose);
+
+     coroutine.fork(intakeCmd);
+     coroutine.fork(driveCmd);
 
      // Do something else
      arm.moveTo(position);
      coroutine.yield();
 
      // Wait for both background tasks
-     coroutine.await(intake);
-     coroutine.await(drive);
+     coroutine.await(intakeCmd);
+     coroutine.await(driveCmd);
    }).named("Fork Example");
 
 Use ``fork()`` when you need fine-grained control over when to wait for background tasks.
@@ -200,24 +203,21 @@ Use ``fork()`` when you need fine-grained control over when to wait for backgrou
 
 ### Parallel Actions with Timeout
 
+Use ``.withTimeout()`` decorator instead of manually racing with wait commands:
+
 .. code-block:: java
 
    import static edu.wpi.first.units.Units.Seconds;
 
    Command parallelWithTimeout = Command.noRequirements().executing(coroutine -> {
-     coroutine.awaitAny(
-       // Main action
-       Command.noRequirements().executing(c -> {
-         c.awaitAll(
-           shooter.spinUp(),
-           hood.moveTo(angle),
-           turret.aim()
-         );
-       }).named("Spinup Group"),
-       // Timeout
-       Command.waitFor(Seconds.of(2.0)).named("Timeout")
+     coroutine.awaitAll(
+       shooter.spinUp(),
+       hood.moveTo(angle),
+       turret.aim()
      );
-   }).named("Parallel With Timeout");
+   })
+   .withTimeout(Seconds.of(2.0))
+   .named("Spinup With Timeout");
 
 ### State Machine Pattern
 
@@ -366,24 +366,26 @@ This ensures that child commands don't outlive their parents, preventing "orphan
 
 Child commands started by the same parent are called "siblings." Siblings can interrupt each other based on priority, but they **cannot interrupt their parent**.
 
+However, interrupting a child command will also interrupt its parent (and its parent's parent, all the way up the chain). One child interrupting another sibling will **not** interrupt their shared parent.
+
 .. code-block:: java
 
    Command parent = Command.noRequirements().executing(coroutine -> {
      // Start two sibling commands
-     var child1 = coroutine.fork(
-       mechanism.run(coro -> { /* ... */ })
-         .withPriority(0)
-         .named("Child 1")
-     );
+     Command child1 = mechanism.run(coro -> { /* ... */ })
+       .withPriority(0)
+       .named("Child 1");
 
-     var child2 = coroutine.fork(
-       mechanism.run(coro -> { /* ... */ })
-         .withPriority(10)  // Higher priority
-         .named("Child 2")
-     );
+     Command child2 = mechanism.run(coro -> { /* ... */ })
+       .withPriority(10)  // Higher priority
+       .named("Child 2");
+
+     coroutine.fork(child1);
+     coroutine.fork(child2);
 
      // Child 2 can interrupt Child 1 (same mechanism, higher priority)
      // But neither can interrupt Parent
+     // If an external command interrupts Child 1, Parent is also interrupted
 
      coroutine.await(child1);
      coroutine.await(child2);
@@ -431,10 +433,12 @@ Parent/child commands are useful for:
        coroutine.await(drivetrain.driveToPose(pose1));
 
        // Run multiple actions in parallel
-       var intake = coroutine.fork(intake.grab());
-       var arm = coroutine.fork(arm.moveTo(position));
-       coroutine.await(intake);
-       coroutine.await(arm);
+       Command intakeCmd = intake.grab();
+       Command armCmd = arm.moveTo(position);
+       coroutine.fork(intakeCmd);
+       coroutine.fork(armCmd);
+       coroutine.await(intakeCmd);
+       coroutine.await(armCmd);
 
        // Score
        coroutine.await(shooter.shoot());

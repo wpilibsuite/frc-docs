@@ -275,21 +275,48 @@ Create a separate class for autonomous command factories:
 
 .. code-block:: java
 
-   // ✅ GOOD: Clear, descriptive names
-   intake.grab().named("Grab")
-   arm.moveTo(angle).named("Arm to " + angle)
-   drivetrain.driveToPose(pose).named("Drive to " + pose)
+   // ✅ GOOD: Clear, descriptive names (in mechanism command factories)
+   public Command grab() {
+     return run(coroutine -> {
+       // grab logic
+     }).named("Grab");
+   }
+
+   public Command moveTo(double angle) {
+     return run(coroutine -> {
+       // move logic
+     }).named("Arm to " + angle);
+   }
 
    // ❌ BAD: Vague or missing names
-   intake.grab() // Missing name!
-   intake.grab().named("Command")
-   intake.grab().named("Intake1")
+   public Command grab() {
+     return run(coroutine -> {
+       // grab logic
+     }).named("Command"); // Too generic!
+   }
+
+   public Command grab() {
+     return run(coroutine -> {
+       // grab logic
+     }); // Compilation error - missing name!
+   }
 
 ### Methods
 
 - camelCase
-- Public methods: Actions that commands can perform (``setSpeed``, ``moveTo``)
-- Private methods: Internal helpers (``updatePID``, ``calculateFeedforward``)
+- **Public methods**: Command factories (return ``Command``) and sensor readers (return sensor values)
+- **Private methods**: Hardware control (``setSpeed``, ``setVoltage``) and internal helpers (``updatePID``, ``calculateFeedforward``)
+
+.. code-block:: java
+
+   // ✅ GOOD: Public command factories and sensor readers only
+   public Command grab() { return run(coroutine -> { /* ... */ }).named("Grab"); }
+   public boolean hasGamePiece() { return !beamBreak.get(); }
+   public double getAngle() { return encoder.getDistance(); }
+
+   // ❌ BAD: Public hardware control bypasses command system
+   public void setSpeed(double speed) { motor.set(speed); }
+   public void moveTo(double angle) { /* control logic */ }
 
 ### Constants
 
@@ -337,141 +364,89 @@ Use these constants:
 
 ## Telemetry
 
-Use Epilogue for automatic telemetry, or add a periodic hook in the constructor:
+Use **Epilogue** for automatic telemetry logging. Epilogue automatically logs all mechanism state without manual code.
+
+.. code-block:: java
+
+   import edu.wpi.first.epilogue.Logged;
+
+   @Logged
+   public class Intake extends Mechanism {
+     // All fields are automatically logged
+     private final PWMSparkMax motor = new PWMSparkMax(Constants.INTAKE_MOTOR_ID);
+     private final DigitalInput beamBreak = new DigitalInput(0);
+
+     public Intake() {
+       setDefaultCommand(/* ... */);
+     }
+
+     public boolean hasGamePiece() {
+       return !beamBreak.get();
+     }
+   }
+
+Alternatively, use the **Telemetry API** in a periodic hook for manual logging:
 
 .. code-block:: java
 
    import org.wpilib.commands3.Scheduler;
+   import edu.wpi.first.wpilibj.Telemetry;
 
    public Intake() {
-     // Set up telemetry
+     // Manual telemetry via periodic hook
      Scheduler.getDefault().addPeriodicHook(() -> {
-       SmartDashboard.putBoolean("Intake/Has Game Piece", hasGamePiece());
+       Telemetry.log("Intake/Has Game Piece", hasGamePiece());
+       Telemetry.log("Intake/Motor Speed", motor.get());
      });
 
      setDefaultCommand(/* ... */);
    }
 
+.. note::
+   ``SmartDashboard`` is removed in 2027. Use ``Telemetry.log()`` or Epilogue instead.
+
 Scheduler-level telemetry can show what commands are currently requiring each mechanism.
 
 ## Testing
 
-Create test commands for individual mechanisms to verify functionality during development and at competitions. Test commands should exercise the mechanism's full range of motion and verify sensors work correctly.
+Systematic testing verifies mechanism functionality and identifies issues before matches. Commands v3's imperative style makes it easy to write test commands that check sensor ranges, verify hardware, and report success/failure.
+
+For a comprehensive guide to building a hierarchical testing system with result reporting and range verification, see :ref:`docs/software/commandbased/commands-v3/testing-commands-v3:Testing Commands v3 Projects`.
+
+### Quick Example
 
 .. code-block:: java
 
    package frc.robot.commands;
 
    import org.wpilib.commands3.Command;
-   import frc.robot.mechanisms.*;
-   import frc.robot.Constants;
+   import frc.robot.mechanisms.Drivetrain;
    import static edu.wpi.first.units.Units.Seconds;
 
    public class TestCommands {
 
-     // Test drivetrain motors and encoders
      public static Command testDrivetrain(Drivetrain drivetrain) {
        return drivetrain.run(coroutine -> {
          System.out.println("=== Testing Drivetrain ===");
 
          // Test forward
-         System.out.println("Testing forward motion...");
          drivetrain.tank(0.3, 0.3);
          coroutine.wait(Seconds.of(1.0));
-         System.out.println("Left encoder: " + drivetrain.getLeftDistance());
-         System.out.println("Right encoder: " + drivetrain.getRightDistance());
-
-         // Test backward
-         System.out.println("Testing backward motion...");
-         drivetrain.tank(-0.3, -0.3);
-         coroutine.wait(Seconds.of(1.0));
-
-         // Test rotation
-         System.out.println("Testing rotation...");
-         drivetrain.tank(0.3, -0.3);
-         coroutine.wait(Seconds.of(1.0));
-
          drivetrain.stop();
-         System.out.println("✓ Drivetrain test complete");
+
+         double leftDist = drivetrain.getLeftDistance();
+         double rightDist = drivetrain.getRightDistance();
+
+         // Verify readings are in expected range
+         if (leftDist < 0.1 || leftDist > 3.0) {
+           System.err.println("❌ Left encoder reading unusual: " + leftDist + "m");
+           return;
+         }
+
+         System.out.println("✓ Drivetrain test passed");
        }).named("Test Drivetrain");
      }
-
-     // Test arm movement and limit switches
-     public static Command testArm(Arm arm) {
-       return arm.run(coroutine -> {
-         System.out.println("=== Testing Arm ===");
-
-         // Test movement to known positions
-         System.out.println("Moving to mid position...");
-         coroutine.await(arm.moveTo(Constants.ARM_MID));
-         System.out.println("Arm angle: " + arm.getAngle() + " (target: " + Constants.ARM_MID + ")");
-
-         coroutine.wait(Seconds.of(0.5));
-
-         System.out.println("Moving to high position...");
-         coroutine.await(arm.moveTo(Constants.ARM_HIGH));
-         System.out.println("Arm angle: " + arm.getAngle() + " (target: " + Constants.ARM_HIGH + ")");
-
-         coroutine.wait(Seconds.of(0.5));
-
-         System.out.println("Moving to low position...");
-         coroutine.await(arm.moveTo(Constants.ARM_LOW));
-         System.out.println("Arm angle: " + arm.getAngle() + " (target: " + Constants.ARM_LOW + ")");
-
-         System.out.println("✓ Arm test complete");
-       }).named("Test Arm");
-     }
-
-     // Test intake sensors and motors
-     public static Command testIntake(Intake intake) {
-       return intake.run(coroutine -> {
-         System.out.println("=== Testing Intake ===");
-
-         System.out.println("Running intake for 2 seconds...");
-         intake.setSpeed(0.5);
-         coroutine.wait(Seconds.of(2.0));
-         intake.stop();
-
-         System.out.println("Beam break sensor: " + (intake.hasGamePiece() ? "BLOCKED" : "CLEAR"));
-
-         System.out.println("Running intake reverse...");
-         intake.setSpeed(-0.5);
-         coroutine.wait(Seconds.of(2.0));
-         intake.stop();
-
-         System.out.println("✓ Intake test complete");
-       }).named("Test Intake");
-     }
-
-     private TestCommands() {
-       // Utility class - prevent instantiation
-     }
    }
-
-### Binding Test Commands
-
-Bind test commands to controller buttons (typically D-pad or back panel buttons):
-
-.. code-block:: java
-
-   // In Bindings.java or RobotContainer.java
-   private void configureTestBindings() {
-     // Use D-pad for testing in practice mode
-     driver.povUp().onTrue(TestCommands.testDrivetrain(drivetrain));
-     driver.povRight().onTrue(TestCommands.testArm(arm));
-     driver.povDown().onTrue(TestCommands.testIntake(intake));
-     driver.povLeft().onTrue(TestCommands.testShooter(shooter));
-   }
-
-### Best Practices for Test Commands
-
-1. **Print clear output**: Use descriptive console messages to see what's being tested
-2. **Test full range**: Exercise the full range of motion and all sensors
-3. **Include safety checks**: Test limit switches and safety interlocks
-4. **Keep them simple**: Test one mechanism at a time
-5. **Run at reduced speed**: Use lower speeds to avoid damage if something is wrong
-6. **Log sensor values**: Print encoder positions, sensor states, etc.
-7. **Test at competitions**: Bind test commands to verify mechanisms before matches
 
 ## Common Mistakes to Avoid
 

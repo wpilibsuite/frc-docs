@@ -85,16 +85,6 @@ Equivalent imperative style:
 .. note::
    For timeouts, use ``.withTimeout()`` instead of racing with a wait command.
 
-### Deadline
-
-Run commands simultaneously. Finishes when the **deadline command** finishes (others are canceled).
-
-.. code-block:: java
-
-   Command driveWithIntake = drivetrain.driveToPose(pose)
-     .deadlineWith(intake.run())
-     .withAutomaticName();
-
 ## Imperative Sequencing with Coroutines
 
 The imperative style is often clearer for complex logic. Use ``await()`` and related methods from the ``Coroutine`` object.
@@ -153,7 +143,7 @@ The imperative style is often clearer for complex logic. Use ``await()`` and rel
 
 ## Key Difference: Resource Locking
 
-**Declarative groups** lock all required mechanisms for the entire group duration:
+**Declarative groups** require all mechanisms for the entire group duration:
 
 .. code-block:: java
 
@@ -161,9 +151,9 @@ The imperative style is often clearer for complex logic. Use ``await()`` and rel
      drivetrain.driveToPose(pose1),
      arm.moveTo(position)
    ).withAutomaticName();
-   // Locks BOTH drivetrain AND arm for entire sequence
+   // Requires BOTH drivetrain AND arm for entire sequence
 
-**Imperative await()** only locks each mechanism while that command runs:
+**Imperative await()** only requires each mechanism while that command runs:
 
 .. code-block:: java
 
@@ -171,7 +161,7 @@ The imperative style is often clearer for complex logic. Use ``await()`` and rel
      coroutine.await(drivetrain.driveToPose(pose1));
      // Drivetrain released here!
      coroutine.await(arm.moveTo(position));
-     // Only arm is locked now
+     // Only arm is required now
    }).named("Sequential");
 
 This difference matters when other commands might want to use the drivetrain between steps.
@@ -211,7 +201,7 @@ End the command when a condition becomes true.
      .until(() -> drivetrain.getDistance() > 10.0)
      .named("Drive Until 10m");
 
-### ``withTimeout(Measure<Time>)``
+### ``withTimeout(Time)``
 
 End the command after a duration.
 
@@ -321,11 +311,19 @@ All commands need names. Use ``.named("...")`` or ``.withAutomaticName()``:
 
 .. code-block:: java
 
+   import edu.wpi.first.wpilibj.DriverStation;
+   import edu.wpi.first.wpilibj.DriverStation.Alliance;
+
    Command adaptive = Command.noRequirements().executing(coroutine -> {
-     if (gameData.getAlliance() == Alliance.Red) {
-       coroutine.await(redSideAuto());
+     if (DriverStation.getAlliance().isPresent()) {
+       if (DriverStation.getAlliance().get() == Alliance.Red) {
+         coroutine.await(redSideAuto());
+       } else {
+         coroutine.await(blueSideAuto());
+       }
      } else {
-       coroutine.await(blueSideAuto());
+       // Do nothing and exit because the alliance color isn't known yet
+       return;
      }
 
      // Common scoring sequence
@@ -336,7 +334,6 @@ All commands need names. Use ``.named("...")`` or ``.withAutomaticName()``:
 
      for (int i = 0; i < 3; i++) {
        coroutine.await(shooter.fire());
-       coroutine.wait(Seconds.of(0.5));
      }
    }).named("Adaptive Auto");
 

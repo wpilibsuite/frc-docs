@@ -22,7 +22,7 @@ A ``Trigger`` is an object that represents a boolean condition (like a button be
 
 ### From Controller Buttons
 
-The ``CommandXboxController`` class provides triggers for all buttons:
+The ``CommandXboxController`` class provides triggers for all buttons. Other controller types (``CommandPS4Controller``, ``CommandPS5Controller``, ``CommandJoystick``) are also supported; the Xbox controller is used here for example purposes.
 
 .. code-block:: java
 
@@ -69,9 +69,6 @@ Create triggers from any boolean condition:
    // From a lambda
    Trigger tooFast = new Trigger(() -> drivetrain.getSpeed() > MAX_SPEED);
 
-   // From a field (if it's a BooleanSupplier)
-   Trigger limitSwitch = new Trigger(limitSwitch::get);
-
 ### Combining Triggers
 
 Triggers can be combined with boolean logic:
@@ -84,7 +81,7 @@ Triggers can be combined with boolean logic:
 
    // Complex condition
    Trigger readyToShoot = new Trigger(() -> shooter.atSpeed())
-     .and(new Trigger(() -> turret.onTarget()))
+     .and(turret::onTarget)
      .and(driver.rightBumper());
 
 ## Binding Methods
@@ -219,7 +216,7 @@ First press: start command. Second press: cancel command. Third press: start aga
 .. code-block:: java
 
    Trigger canShoot = new Trigger(() -> shooter.atSpeed())
-     .and(new Trigger(() -> turret.onTarget()))
+     .and(turret::onTarget)
      .and(driver.rightBumper());
 
    canShoot.onTrue(
@@ -232,7 +229,7 @@ First press: start command. Second press: cancel command. Third press: start aga
 
    // Auto-align when we see a target
    new Trigger(() -> vision.hasTarget())
-     .and(new Trigger(() -> drivetrain.isIdle()))
+     .and(drivetrain::isIdle)
      .whileTrue(
        drivetrain.run(coro -> {
          while (!drivetrain.aligned()) {
@@ -506,7 +503,7 @@ Debouncing prevents trigger "bouncing" from noisy sensors:
 
 The v3 trigger API is nearly identical to v2. Key differences:
 
-1. **Package**: Import from ``org.wpilib.commands3.button`` (not ``edu.wpi.first.wpilibj2.command.button``)
+1. **Package**: Import from ``org.wpilib.commands3.button`` (not ``org.wpilib.commands2.button``)
 
 2. **Commands must be named**: All commands need ``.named("...")``
 
@@ -537,7 +534,7 @@ The v3 trigger API is nearly identical to v2. Key differences:
 
 ## Best Practices
 
-1. **Configure bindings in RobotContainer**: Keep all bindings in one place
+1. **Configure bindings in Bindings**: Keep all bindings in one place
 
 2. **Use descriptive names**: Name commands clearly for debugging
 

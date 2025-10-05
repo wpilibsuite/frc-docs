@@ -13,7 +13,7 @@ Like Commands v2, Commands v3 is a :term:`design pattern` for organizing robot s
 
 Consider a command that extends a piston when a condition becomes true.
 
-**Declarative (v2 style, still works in v3):**
+**Trigger style:**
 
 .. code-block:: java
 
@@ -22,7 +22,7 @@ Consider a command that extends a piston when a condition becomes true.
    new Trigger(() -> condition.get())
      .onTrue(pneumatics.run(coro -> piston.set(Value.kForward)).named("Extend"));
 
-**Imperative (v3 coroutine style):**
+**Coroutine style:**
 
 .. code-block:: java
 
@@ -32,6 +32,9 @@ Consider a command that extends a piston when a condition becomes true.
        piston.set(Value.kForward);
      })
      .named("Extend When Ready");
+
+   // Then schedule it or bind it to a trigger
+   someButton.onTrue(extendWhenReady);
 
 **Without command-based (manual state tracking):**
 
@@ -47,7 +50,7 @@ Consider a command that extends a piston when a condition becomes true.
      pressed = false;
    }
 
-The declarative v3 trigger style is concise for simple actions. The imperative v3 coroutine style shines when you have complex sequential logic, loops, or conditionals.
+The declarative trigger style is concise for simple actions. The imperative coroutine style shines when you have complex sequential logic, loops, or conditionals.
 
 ## Mechanisms and Commands
 

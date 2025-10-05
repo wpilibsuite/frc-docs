@@ -35,20 +35,29 @@ This guide helps teams migrate existing Commands v2 code to Commands v3. It cove
 
 ## Package Changes
 
-Commands v3 lives in a different package namespace:
+Commands v3 lives in a different package namespace. In 2027, Commands v2 is also moving to a new package:
 
 .. list-table::
    :header-rows: 1
-   :widths: 50 50
+   :widths: 40 30 30
 
-   * - Commands v2 (2027)
-     - Commands v3 (2027)
-   * - ``org.wpilib.commands2.*``
+   * - Package
+     - v2 (pre-2027)
+     - 2027
+   * - Commands v2
+     - ``edu.wpi.first.wpilibj2.command.*``
+     - ``org.wpilib.commands2.*``
+   * - Commands v2 button
+     - ``edu.wpi.first.wpilibj2.command.button.*``
+     - ``org.wpilib.commands2.button.*``
+   * - Commands v3
+     - N/A
      - ``org.wpilib.commands3.*``
-   * - ``org.wpilib.commands2.button.*``
+   * - Commands v3 button
+     - N/A
      - ``org.wpilib.commands3.button.*``
 
-You'll need to update all imports in your migrated files.
+You'll need to update all imports in your migrated files. In 2027, if you're migrating from v2 to v3, you'll be changing from ``org.wpilib.commands2`` to ``org.wpilib.commands3``.
 
 ## Core Concept Mapping
 
@@ -73,7 +82,7 @@ In v3, "Subsystems" are now called "Mechanisms." They serve the same purpose: gr
 
 .. code-block:: java
 
-   import edu.wpi.first.wpilibj2.command.SubsystemBase;
+   import org.wpilib.commands2.SubsystemBase;
 
    public class Drivetrain extends SubsystemBase {
      public Drivetrain() {
@@ -110,7 +119,7 @@ The scheduler works similarly, but uses a different package:
 
 .. code-block:: java
 
-   import edu.wpi.first.wpilibj2.command.CommandScheduler;
+   import org.wpilib.commands2.CommandScheduler;
 
    @Override
    public void robotPeriodic() {
@@ -390,8 +399,8 @@ Triggers work similarly but use the v3 package:
 
 .. code-block:: java
 
-   import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-   import edu.wpi.first.wpilibj2.command.button.Trigger;
+   import org.wpilib.commands2.button.CommandXboxController;
+   import org.wpilib.commands2.button.Trigger;
 
    CommandXboxController controller = new CommandXboxController(0);
 
@@ -509,7 +518,7 @@ Don't forget to update all imports! v2 and v3 cannot be mixed.
 .. code-block:: java
 
    // ❌ v2 import
-   import edu.wpi.first.wpilibj2.command.*;
+   import org.wpilib.commands2.*;
 
    // ✅ v3 import
    import org.wpilib.commands3.*;

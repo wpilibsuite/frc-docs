@@ -117,10 +117,9 @@ Mechanisms often need to run periodic updates for telemetry, odometry, or sensor
        // Update odometry
        odometry.update(getHeading(), getLeftDistance(), getRightDistance());
 
-       // Publish to dashboard
-       SmartDashboard.putNumber("Left Distance", getLeftDistance());
-       SmartDashboard.putNumber("Right Distance", getRightDistance());
-       SmartDashboard.putData("Odometry", odometry);
+       // Publish telemetry
+       Telemetry.log("Drivetrain/Left Distance", getLeftDistance());
+       Telemetry.log("Drivetrain/Right Distance", getRightDistance());
      });
 
      // Set up default command
@@ -361,9 +360,9 @@ Here's a complete example of an Arm mechanism with several commands:
      public Arm() {
        // Add telemetry via periodic hook
        Scheduler.getDefault().addPeriodicHook(() -> {
-         SmartDashboard.putNumber("Arm Angle", getAngle());
-         SmartDashboard.putNumber("Arm Target", targetAngle);
-         SmartDashboard.putBoolean("Arm At Goal", atGoal());
+         Telemetry.log("Arm/Angle", getAngle());
+         Telemetry.log("Arm/Target", targetAngle);
+         Telemetry.log("Arm/At Goal", atGoal());
        });
 
        // Set default command
@@ -420,7 +419,7 @@ If you're coming from Commands v2, here's a quick reference:
      - ``SubsystemBase``
      - ``Mechanism``
    * - Package
-     - ``edu.wpi.first.wpilibj2.command``
+     - ``org.wpilib.commands2``
      - ``org.wpilib.commands3``
    * - Set default
      - ``setDefaultCommand()``
