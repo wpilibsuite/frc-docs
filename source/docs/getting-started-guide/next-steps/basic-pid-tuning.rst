@@ -30,7 +30,7 @@ Common use cases:
 3. Add D to reduce oscillations
 4. Add I if needed for steady-state error
 
-For detailed tuning guidance, see :doc:`/docs/software/advanced-controls/introduction/tuning-pid-controller`.
+For detailed tuning guidance, see :doc:`/docs/software/advanced-controls/introduction/introduction-to-pid`.
 
 ## PID Components
 
