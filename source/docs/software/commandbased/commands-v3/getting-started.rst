@@ -119,8 +119,8 @@ Here’s a classic “drive a distance” example side-by-side. v3 lets you writ
 .. code-block:: java
 
   Command driveTenFeet =
-    Commands.runOnce(drivetrain::resetEncoders, drivetrain)
-      .andThen(new RunCommand(() -> drivetrain.tank(0.5, 0.5), drivetrain)
+    drivetrain.runOnce(drivetrain::resetEncoders)
+      .andThen(drivetrain.run(() -> drivetrain.tank(0.5, 0.5))
         .until(() -> drivetrain.getDistanceMeters() >= 3.048))
       .finallyDo(drivetrain::stop)
       .withName("Drive 10 ft");
@@ -136,7 +136,7 @@ Both versions do the same thing. The v3 version reads like the steps you’d wri
   command = Command.waitFor(Seconds.of(0.25)).named("Delay 250ms");
 
   // Wait until a condition is true
-  command = Command.waitUntil(() -> arm.atGoal()).named("Wait For Arm");
+  command = Command.waitUntil(arm::atGoal).named("Wait For Arm");
 
   // Await another command (schedule it if needed)
   Command score = Command.noRequirements().executing(coroutine -> {
@@ -159,8 +159,8 @@ Both versions do the same thing. The v3 version reads like the steps you’d wri
   // Drive repeatedly, but stop automatically when a condition trips
   Command driveUntilBeamBreak = drivetrain
     .runRepeatedly(() -> drivetrain.tank(0.4, 0.4))
-    .until(() -> sensors.beamBroken())
-    .named("Drive Until Beam");
+    .until(sensors::hasGamePiece)
+    .named("Drive Until Game Piece");
   ```
 
 ## Composing Commands (v3 and v2 Parallels)
@@ -235,9 +235,12 @@ Triggers work the same conceptually as v2: bind conditions or controller buttons
     public RobotContainer(Drivetrain drivetrain, Intake intake) {
       // on press: start; on release: cancel
       driver.rightBumper().whileTrue(
-        intake.run(coroutine -> { intake.on(); coroutine.park(); })
-              .whenCanceled(intake::off)
-              .named("Hold Intake"));
+        intake.run(coroutine -> {
+          intake.on();
+          coroutine.park();
+        })
+        .whenCanceled(intake::off)
+        .named("Hold Intake"));
 
       // Simple on-press action
       driver.a().onTrue(drivetrain.driveForTime());
