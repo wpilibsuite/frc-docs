@@ -28,7 +28,7 @@ Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboa
 #.  Supports Windows 11.  Given that it is at end of life, don't plan on driver station support for Windows 10 beyond the 2026 competitionyear.
 #.  AMD or Intel CPU. The Driver Station software does not work on machines with ARM CPUs.
 #.  Desired Wi-Fi hardware varies a bit based on whether you're buying an inexpensive used machine for a driver station, or something new.  6GHz Wi-Fi can be used in some of the practice driving configurations, but is not required for the recommended configuration.   See `recommended practice configuration <https://frc-radio.vivid-hosting.net/overview/practicing-at-home>`__ for details.
-    a. For used machines, you'll want a 2.4 and 5 GHz Wi-Fi radio, with 6GHz (Wi-Fi 6e) optional.  
+    a. For used machines, you'll want a 2.4 and 5 GHz Wi-Fi radio, with 6GHz (Wi-Fi 6e) optional.
     #. If you're spending money to buy a new machine to dedicate as a driver station, you'll want to ensure that 6GHz (Wi-Fi 6e) is supported.
 
 ## Building your driver station
