@@ -1,76 +1,96 @@
 .. include:: <isonum.txt>
 
-# Driver Station Best Practices
+# Driver Station (Operator Console) Best Practices
 
-This document was created by Steve Peterson, with contributions from Juan Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and follow-up posts can be found [here](https://www.chiefdelphi.com/t/paper-driver-station-best-practices/164429).
 
-Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop is an easy project for the time between stop build day and your competition. Read on to find lessons learned by many teams over thousands of matches.
+Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop and peripherals is an easy project. Read on to find lessons learned by many teams over thousands of matches.
 
-## Prior To Departing For The Competition
+## Selecting hardware
 
-1. Dedicate a laptop to be used solely as a driver station. Many teams do. A dedicated machine allows you manage the configuration for one goal – being ready to compete at the field. Dedicated means no other software except the FRC-provided Driver Station software and associated Dashboard installed or running.
-2. Use a business-class laptop for your driver station. Why? They're much more durable than the $300 Black Friday special at Best Buy. They'll survive being banged around at the competition. Business-class laptops have higher quality device drivers, and the drivers are maintained for a longer period than consumer laptops. This makes your investment last longer. Lenovo ThinkPad T series and Dell Latitude are two popular business-class brands you'll commonly see at competitions. There are thousands for sale every day on eBay. The laptop provided in recent rookie kits is a good entry level machine. Teams often graduate from it to bigger displays as they do more with vision and dashboards.
-3. Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboard software uses very few system resources, so you don't need to buy a new laptop -- instead, buy a cheap 4-5 year old used one. You might even get one donated by a used computer store in your area.
+Dedicate a laptop to be used solely for driving. Many teams do. A dedicated machine allows you manage the configuration for one goal – being ready to compete at the field. Dedicated means no other software except the FRC-provided Driver Station software and associated Dashboard installed or running.
 
-.. note:: Before buying a used laptop ensure it is compatible with [Windows 11](https://support.microsoft.com/en-us/windows/windows-11-system-requirements-86c11283-ea52-4782-9efd-7674389a7ba3). For example, only Intel 8th generation core processors and later are compatible.
+Use a business-class laptop for your driver station. Why? They're much more durable than the $300 Black Friday special at Best Buy. They'll survive being banged around at the competition. Business-class laptops have higher quality device drivers, and the drivers are maintained for a longer period than consumer laptops. This makes your investment last longer. Lenovo ThinkPad T series and Dell Latitude are two popular business-class brands you'll commonly see at competitions.
 
-4. Laptop recommended features
+Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboard software uses very few system resources, so you don't need to buy a new laptop -- instead, buy a cheap 4-5 year old used one.  There are thousands for sale every day on eBay. You might even get one donated by a used computer store.
 
-   a. RAM -- 8GB of RAM or greater
-   b. A display size of 13" or greater, with minimum resolution of 1440x1050.
-   c. Ports
+### Laptop recommended features
 
-      i. A built-in Ethernet port is highly preferred. Ensure that it's a full-sized port. The hinged Ethernet ports don't hold up to repeated use.
-      ii. Use an Ethernet port saver to make your Ethernet connection. This extends the life of the port on the laptop. This is particularly important if you have a consumer-grade laptop with a hinged Ethernet port.
-      iii. If the Ethernet port on your laptop is dodgy, either replace the laptop (recommended) or buy a USB Ethernet dongle from a reputable brand. Many teams find that USB Ethernet is less reliable than built-in Ethernet, primarily due to cheap hardware and bad drivers. The dongles given to rookies in the KOP have a reputation for working well.
-      iv. 2 USB ports minimum
+1.  8GB of RAM or greater
+#.  A display size of 14" or greater, with 1080p minimum resolution
+#.  Ports
 
-   d. A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
-   e. A solid-state disk (SSD), 256 GB or larger. If the laptop has a rotating disk, spend $50 and replace it with a SSD.
-   f. Updated to the current release of Windows 10 or 11.
-   g. A laptop that supports Wi-Fi 6E (6 GHz) is recommended for use with the [Wi-Fi 6E radio](https://frc-radio.vivid-hosting.net/).
+    a. A built-in Ethernet port is highly preferred. Ensure that it's a full-sized port. The hinged Ethernet ports don't hold up to repeated use.
+    #. If the Ethernet port on your laptop is dodgy, either replace the laptop (recommended) or buy a USB Ethernet dongle from a reputable brand (e.g., TP-Link UE330). Many teams find that USB Ethernet is less reliable than built-in Ethernet, primarily due to cheap hardware and bad drivers. The dongles given to rookies in the KOP have a reputation for working well.
+    #. 2 USB ports minimum.  These can be USB-A or USB-C ports, depending on the peripherals you're using.
 
-5. Install all Windows updates a week before the competition. This allows you time to ensure the updates will not interfere with driver station functions. To do so, open the Windows Update settings page and see that you're up-to-date. Install pending updates if not. Reboot and check again to make sure you’re up to date.
-6. Change "Active Hours" for Windows Updates to prevent updates from installing during competition hours. Navigate to Start -> Settings -> Update & Security -> Windows Update, then select Change active hours. If you’re traveling to a competition, take time zone differences into account. This will help ensure your driver station does not reboot or fail due to update installing on the field.
-7. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender on Windows 10 or 11. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low. Only install software on your driver station that's needed for driving. Your goal here is to eliminate variables that might interfere with proper operation. Remove any unneeded preinstalled software ("bloatware") that came with the machine. Don't use the laptop as your Steam machine for gaming back at the hotel the night before the event. Many teams go as far as having a separate programming laptop.
-8. Avoid managed Windows 10 or 11 installations from the school's IT department. These deployments are built for the school environment and often come with unwanted software that interferes with your robot's operation.
-9. Laptop battery / power
+#.  A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
+#.  A solid-state disk (SSD), 256 GB or larger. If the laptop has a rotating disk, spend $50 and replace it with an SSD.
+#.  Supports Windows 11.  Given that it is at end of life, don't plan on driver station support for Windows 10 beyond the 2026 competition year.
+#.  AMD or Intel CPU. The Driver Station software does not work on machines with ARM CPUs.
+#.  Desired Wi-Fi hardware varies a bit based on whether you're buying an inexpensive used machine for a driver station, or something new.  6GHz Wi-Fi can be used in some of the practice driving configurations, but is not required for the recommended configuration.   See `recommended practice configuration <https://frc-radio.vivid-hosting.net/overview/practicing-at-home>`__ for details.
+    a. For used machines, you'll want a 2.4 and 5 GHz Wi-Fi radio, with 6GHz (Wi-Fi 6e) optional.
+    #. If you're spending money to buy a new machine to dedicate as a driver station, you'll want to ensure that 6GHz (Wi-Fi 6e) is supported.
 
-   a. Turn off Put the computer to sleep in your power plan for both battery and powered operation.
-   b. Turn off Battery Saver and set Power Mode to Best Performance.
-   c. Turn off USB Selective Suspend:
+## Building your driver station
 
-      i. Right click on the battery/charging icon in the tray, then select Power Options.
-      ii. Edit the plan settings of your power plan.
-      iii. Click the Change advanced power settings link.
-      iv. Scroll down in the advanced settings and disable the USB selective suspend setting for both Battery and Plugged in.
+It's best if you combine your driver station laptop and all needed peripherals into a `single unit <https://www.chiefdelphi.com/t/show-me-your-operator-station-driver-station/435030>`__.
 
-   d. Ensure the laptop battery can hold a charge for at least an hour after making the changes above. This allows plenty of time for the robot and drive team to go through the queue and reach the alliance station without mains power.
+Use an Ethernet port saver to make your Ethernet connection. This extends the life of the port on the laptop. This is particularly important if you have a consumer-grade laptop with a hinged Ethernet port.
 
-10. Bring a trusted USB and Ethernet cable for use connecting to the roboRIO.
-11. Add retention/strain relief to prevent your joystick/gamepad controllers from falling on the floor and/or yanking on the USB ports. This helps prevent issues with intermittent controller connections.
-12. The Windows user account you use to drive must be a member of the Administrator group.
+Put hook tape on the bottom of the driver station.  The Game Manual has details on the correct location of the tape.
+
+When fastening down peripherals, it's best to use hook and loop tape.  This allows quick changes at the field when needed.
+
+Ensure that the USB ports on the laptop are accessible.
+
+## Setting up the laptop
+
+Once you've acquired your laptop, here's a list of things to do.
+
+#. If you're buying used, ensure you're starting from a fresh Windows install.
+#. Create one account to use both for software installation and driving.  This account must be a member of the Administrator group.
+#. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low.
+#. Only install software on your driver station that's needed for driving. Your goal here is to eliminate variables that might interfere with proper operation. Don't use the driver station as the programming laptop.  Remove any unneeded preinstalled software ("bloatware") that came with the machine. Don't use the laptop for gaming back at the hotel the night before the event.
+#. Avoid managed Windows 10 or 11 installations from the school's IT department. These deployments are built for the school environment and often come with unwanted software that interferes with your robot's operation.
+#. Make these power settings for both the Plugged in and On battery profiles, by navigating to Start -> Settings -> System -> Power and battery
+
+   a. Set "Make my device sleep after" to Never for both Plugged in and On battery
+   #. Turn off Energy Saver
+   #. Set Power Mode to Best Performance
+   #. Ensure the laptop battery can hold a charge for at least an hour after making the changes above. This allows plenty of time for the robot and drive team to go through the queue and reach the alliance station without mains power.
+
+## Prior to leaving for the competition
+
+Items in this section require internet connectivity and should be done prior to arriving at the event.
+
+1. Install all Windows updates, then test the driver station with your robot. Keep running Windows Update until no updates show as pending.
+#. Pause updates. Navigate to Start -> Settings -> Windows Update, then set Pause updates to cover the time of the competition.
+#. Change "Active Hours" for Windows Updates to prevent updates from installing during competition hours. This helps if you forget to pause updates.  Navigate to Start -> Settings -> Windows Update -> Advanced options, then select Active Hours. Be sure to take timezone differences at your competition location into account.
+#. Bring a trusted USB and Ethernet cable for use connecting to the roboRIO.
 
 ## At The Competition
 
 1. Turn off Windows firewall using :ref:`these instructions <docs/networking/networking-introduction/windows-firewall-configuration:Disabling Windows Firewall>`.
-2. Turn off the Wi-Fi adapter, either using the dedicated hardware Wi-Fi switch or by disabling it in the Adapter Settings control panel.
-3. Charge the driver station when it’s in the pit.
-4. Remove login passwords or ensure everyone on the drive team knows the password. You'd be surprised at how often drivers arrive at the field without knowing the password for the laptop.
-5. Limit web browsing to FRC related web sites. This minimizes the chance of getting malware during the competition.
-6. Don't plan on using internet access to do software updates. There likely won't be any in the venue, and hotel Wi-Fi varies widely in quality. If you do need updates, contact a Control System Advisor in the pit.
+#. Turn off the Wi-Fi adapter, either using the dedicated hardware Wi-Fi switch or by using the Wi-Fi control in Quick Settings.
+#. Charge the driver station when it’s in the pit.
+#. Ensure everyone on the drive team knows the password. You'd be surprised at how often drivers arrive at the field without knowing the password for the laptop.#. Limit web browsing to FRC related web sites. This minimizes the chance of getting malware during the competition.
+#. Don't plan on using internet access at the event to make software updates. There likely won't be any in the venue, and hotel Wi-Fi varies widely in quality. If you do need updates, contact a Control System Advisor in the pit.
 
 ## Before Each Match
 
 1. Make sure the laptop is on and logged in prior to the end of the match before yours.
-2. Close programs that aren’t needed during the match – e.g., Visual Studio Code – when you are competing.
-3. Bring your laptop charger to the field. Power is provided for you in each player station.
-4. Fasten your laptop with hook-and-loop tape to the player station shelf. You never know when your alliance partner will have an autonomous programming issue and blast the wall.
-5. Ensure joysticks and controllers are assigned to the correct USB ports.
+#. Close programs that aren’t needed during the match.
+#. Bring your laptop charger to the field. Power is provided in each player station.  Why?  Windows is less aggressive about power management when the laptop is plugged in, which means the driver station application behaves more predictably.
+#. Fasten your laptop with hook-and-loop tape to the player station shelf. You never know when your alliance partner will have an autonomous programming issue and blast the wall.
+#. Ensure joysticks and controllers are assigned to the correct USB ports.
 
    a. In the USB tab in the FRC Driver Station software, drag and drop to assign joysticks as needed.
-   b. Use the rescan button (F1) if joysticks / controllers do not appear green.
-   c. Use the rescan button (F1) during competition if joystick or controllers become unplugged and then are plugged back in or otherwise turn gray during competition.
+   #. Use the rescan button (F1) if joysticks / controllers do not appear green.
+   #. Use the rescan button (F1) during competition if joystick or controllers become unplugged and then are plugged back in or otherwise turn gray during competition.
 
-6. Ensure your :doc:`Dashboard is connected to the robot </docs/software/dashboards/troubleshooting-dashboard-connectivity>` after your driver station connects to the robot.
-7. Ensure driver station is fully visible and in focus during the match to avoid Windows de-priortizing it, and to ease troubleshooting.
+#. Ensure your :doc:`Dashboard is connected to the robot </docs/software/dashboards/troubleshooting-dashboard-connectivity>` after your driver station connects to the robot.
+#. Ensure driver station is fully visible and in focus during the match to avoid Windows depriortizing it, and to ease troubleshooting.
+
+# Credits
+
+The source document for this page was created by Steve Peterson, with contributions from Juan Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and follow-up posts can be found [here](https://www.chiefdelphi.com/t/paper-driver-station-best-practices/164429).
