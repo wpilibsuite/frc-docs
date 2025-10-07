@@ -16,7 +16,11 @@ First, let's define some terms:
 - **Entry**: a combined publisher and subscriber. The subscriber is always active, but the publisher is not created until a publish operation is performed (e.g. a value is "set", aka published, on the entry). This may be more convenient than maintaining a separate publisher and subscriber.
 - **Property**: named information (metadata) about a topic stored and updated separately from the topic's data. A topic may have any number of properties. A property's value can be any data type that can be represented in JSON.
 
-NetworkTables supports a range of data types, including :term:`boolean`, numeric, string, and arrays of those types. Supported numeric data types are single or double precision :term:`floating point`, or 64-bit integer. There is also the option of storing raw data (an array of bytes), which can be used for representing binary encoded structured data. Types are represented as strings for efficiency reasons. There is also an :term:`enumeration` for the most common types in the NetworkTables API.
+NetworkTables supports a range of data types, including :term:`boolean`, numeric, string, and arrays of those types. Supported numeric data types are single or double precision :term:`floating point`, or 64-bit integer. There is also the option of storing raw data (an array of bytes), which can be used for representing binary encoded structured data.
+
+NetworkTables also supports serialization of complex data types using **Struct** and **Protobuf** encoding formats. Struct serialization is designed for fixed-size data structures and provides fast, compact encoding. Protobuf serialization offers more flexibility for variable-size data. Many WPILib math and geometry classes (such as ``Pose2d``, ``Rotation2d``, ``Translation2d``, ``SwerveModuleState``, etc.) include built-in struct serializers and can be published and subscribed to directly via type-specific topics (``StructTopic``, ``StructArrayTopic``, ``ProtobufTopic``). Teams can also :doc:`implement custom struct or protobuf serializers <custom-serialization>` for their own data types.
+
+Types are represented as strings for efficiency reasons. There is also an :term:`enumeration` for the most common types in the NetworkTables API.
 
 Topics are created when the first publisher announces the topic and are removed when the last publisher stops publishing. It's possible to subscribe to a topic that has not yet been created/published.
 
