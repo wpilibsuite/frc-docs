@@ -35,10 +35,10 @@ Examples: Detecting cargo with logos, irregularly shaped objects, pieces that lo
 .. important:: Machine learning inference requires significant computational resources. While possible on devices like the Raspberry Pi, performance may be limited. For better ML performance, consider using hardware accelerators such as:
 
    - **Google Coral USB/M.2 Accelerator** - Works with coprocessors running PhotonVision or custom code
-   - **Limelight with built-in accelerator** - Integrated solution with ML support
    - **Orange Pi 5/5B with NPU** - Single-board computer with neural processing unit, compatible with PhotonVision
+   - **Hailo-8 Accelerator** - High-performance ML accelerator that can be added to compatible vision solutions
 
-   Many teams successfully use Google Coral accelerators with Orange Pi coprocessors running PhotonVision, or Limelights with integrated acceleration.
+   Many teams successfully use Google Coral accelerators with coprocessors like the Raspberry Pi or Orange Pi.
 
 ## Traditional Vision Method
 
