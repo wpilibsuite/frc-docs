@@ -1,5 +1,4 @@
 .. include:: <isonum.txt>
-.. contents:: Table of Contents
 
 # Driver Station (Operator Console) Best Practices
 
@@ -21,18 +20,20 @@ Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboa
 #.  Ports
 
     a. A built-in Ethernet port is highly preferred. Ensure that it's a full-sized port. The hinged Ethernet ports don't hold up to repeated use.
-    #. If the Ethernet port on your laptop is dodgy, either replace the laptop (recommended) or buy a USB Ethernet dongle from a reputable brand. Many teams find that USB Ethernet is less reliable than built-in Ethernet, primarily due to cheap hardware and bad drivers. The dongles given to rookies in the KOP have a reputation for working well.
+    #. If the Ethernet port on your laptop is dodgy, either replace the laptop (recommended) or buy a USB Ethernet dongle from a reputable brand (e.g., TP-Link UE330). Many teams find that USB Ethernet is less reliable than built-in Ethernet, primarily due to cheap hardware and bad drivers. The dongles given to rookies in the KOP have a reputation for working well.
     #. 2 USB ports minimum.  These can be USB-A or USB-C ports, depending on the peripherals you're using.
 
 #.  A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
 #.  A solid-state disk (SSD), 256 GB or larger. If the laptop has a rotating disk, spend $50 and replace it with a SSD.
-#.  Supports Windows 11.  While Windows 10 is still supported for driver station use, acquiring a machine that can't run Windows 11 isn't forward thinking.
+#.  Supports Windows 11.  Given that it is at end of life, don't plan on driver station support for Windows 10 beyond the 2026 competitionyear.
 #.  AMD or Intel CPU. The Driver Station software does not work on machines with ARM CPUs.
-#.  2.4 and 5 GHz Wi-Fi radio, with 6GHz optional.  6GHz Wi-Fi can be used in some of the practice driving configurations.   See `recommended practice configuration <https://frc-radio.vivid-hosting.net/overview/practicing-at-home>`__ for details.
+#.  Desired Wi-Fi hardware varies a bit based on whether you're buying an inexpensive used machine for a driver station, or something new.  6GHz Wi-Fi can be used in some of the practice driving configurations, but is not required for the recommended configuration.   See `recommended practice configuration <https://frc-radio.vivid-hosting.net/overview/practicing-at-home>`__ for details.
+    a. For used machines, you'll want a 2.4 and 5 GHz Wi-Fi radio, with 6GHz (Wi-Fi 6e) optional.  
+    #. If you're spending money to buy a new machine to dedicate as a driver station, you'll want to ensure that 6GHz (Wi-Fi 6e) is supported.
 
 ## Building your driver station
 
-It's best if you combine your driver station laptop and all needed peripherals into a `single unit <https://www.google.com/search?udm=2&q=frc+driver+station>`__.
+It's best if you combine your driver station laptop and all needed peripherals into a `single unit <https://www.chiefdelphi.com/t/show-me-your-operator-station-driver-station/435030>`__.
 
 Use an Ethernet port saver to make your Ethernet connection. This extends the life of the port on the laptop. This is particularly important if you have a consumer-grade laptop with a hinged Ethernet port.
 
@@ -81,7 +82,7 @@ Items in this section require internet connectivity and should be done prior to 
 
 1. Make sure the laptop is on and logged in prior to the end of the match before yours.
 #. Close programs that aren’t needed during the match.
-#. Bring your laptop charger to the field. Power is provided in each player station.
+#. Bring your laptop charger to the field. Power is provided in each player station.  Why?  Windows is less aggressive about power management when the laptop is plugged in, which means the driver station application behaves more predictably.
 #. Fasten your laptop with hook-and-loop tape to the player station shelf. You never know when your alliance partner will have an autonomous programming issue and blast the wall.
 #. Ensure joysticks and controllers are assigned to the correct USB ports.
 
