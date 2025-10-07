@@ -45,6 +45,19 @@ The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpili
     double accel = accelerometer.GetAcceleration();
     ```
 
+    ```python
+    from wpilib import AnalogAccelerometer
+
+    # Creates an analog accelerometer on analog input 0
+    accelerometer = AnalogAccelerometer(0)
+    # Sets the sensitivity of the accelerometer to 1 volt per G
+    accelerometer.setSensitivity(1)
+    # Sets the zero voltage of the accelerometer to 3 volts
+    accelerometer.setZero(3)
+    # Gets the current acceleration
+    accel = accelerometer.getAcceleration()
+    ```
+
 If users have a 3-axis analog accelerometer, they can use three instances of this class, one for each axis.
 
 There are getters for the acceleration along each cardinal direction (x, y, and z), as well as a setter for the range of accelerations the accelerometer will measure.
@@ -59,6 +72,11 @@ There are getters for the acceleration along each cardinal direction (x, y, and 
     ```c++
     // Sets the accelerometer to measure between -8 and 8 G's
     accelerometer.SetRange(BuiltInAccelerometer::Range::kRange_8G);
+    ```
+
+    ```python
+    # Sets the accelerometer to measure between -8 and 8 G's
+    accelerometer.setRange(BuiltInAccelerometer.Range.k8G)
     ```
 
 ### ADXL345_I2C
@@ -79,6 +97,14 @@ The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/r
     frc::ADXL345_I2C accelerometer{I2C::Port::kMXP, frc::ADXL345_I2C::Range::kRange_8G};
     ```
 
+    ```python
+    from wpilib import ADXL345_I2C, I2C
+
+    # Creates an ADXL345 accelerometer object on the MXP I2C port
+    # with a measurement range from -8 to 8 G's
+    accelerometer = ADXL345_I2C(I2C.Port.kMXP, ADXL345_I2C.Range.k8G)
+    ```
+
 ### ADXL345_SPI
 
 The :code:`ADXL345_SPI` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL345_SPI.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l345___s_p_i.html)) provides support for the ADXL345 accelerometer over the SPI communications bus.
@@ -95,6 +121,14 @@ The :code:`ADXL345_SPI` class ([Java](https://github.wpilib.org/allwpilib/docs/r
     // Creates an ADXL345 accelerometer object on the MXP SPI port
     // with a measurement range from -8 to 8 G's
     frc::ADXL345_SPI accelerometer{SPI::Port::kMXP, frc::ADXL345_SPI::Range::kRange_8G};
+    ```
+
+    ```python
+    from wpilib import ADXL345_SPI, SPI
+
+    # Creates an ADXL345 accelerometer object on the MXP SPI port
+    # with a measurement range from -8 to 8 G's
+    accelerometer = ADXL345_SPI(SPI.Port.kMXP, ADXL345_SPI.Range.k8G)
     ```
 
 ### ADXL362
@@ -115,6 +149,14 @@ The :code:`ADXL362` class ([Java](https://github.wpilib.org/allwpilib/docs/relea
     frc::ADXL362 accelerometer{SPI::Port::kMXP, frc::ADXL362::Range::kRange_8G};
     ```
 
+    ```python
+    from wpilib import ADXL362, SPI
+
+    # Creates an ADXL362 accelerometer object on the MXP SPI port
+    # with a measurement range from -8 to 8 G's
+    accelerometer = ADXL362(SPI.Port.kMXP, ADXL362.Range.k8G)
+    ```
+
 ### BuiltInAccelerometer
 
 The :code:`BuiltInAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_built_in_accelerometer.html)) provides access to the roboRIO's own built-in accelerometer:
@@ -131,6 +173,14 @@ The :code:`BuiltInAccelerometer` class ([Java](https://github.wpilib.org/allwpil
     // Creates an object for the built-in accelerometer
     // Range defaults to +- 8 G's
     frc::BuiltInAccelerometer accelerometer;
+    ```
+
+    ```python
+    from wpilib import BuiltInAccelerometer
+
+    # Creates an object for the built-in accelerometer
+    # Range defaults to +- 8 G's
+    accelerometer = BuiltInAccelerometer()
     ```
 
 ## Third-party accelerometers
@@ -182,6 +232,25 @@ For detecting collisions, it is often more robust to measure the jerk than the a
     }
     ```
 
+    ```python
+    from wpilib import BuiltInAccelerometer
+
+    prev_x_accel = 0.0
+    prev_y_accel = 0.0
+    accelerometer = BuiltInAccelerometer()
+
+    def robotPeriodic(self):
+        # Gets the current accelerations in the X and Y directions
+        x_accel = self.accelerometer.getX()
+        y_accel = self.accelerometer.getY()
+        # Calculates the jerk in the X and Y directions
+        # Divides by .02 because default loop timing is 20ms
+        x_jerk = (x_accel - self.prev_x_accel) / 0.02
+        y_jerk = (y_accel - self.prev_y_accel) / 0.02
+        self.prev_x_accel = x_accel
+        self.prev_y_accel = y_accel
+    ```
+
 Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html)) to reduce the noise:
 
 .. tab-set-code::
@@ -205,5 +274,18 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
         // Get the filtered X acceleration
         double filteredXAccel = xAccelFilter.Calculate(accelerometer.GetX());
     }
+    ```
+
+    ```python
+    from wpilib import BuiltInAccelerometer
+    from wpimath.filter import LinearFilter
+
+    accelerometer = BuiltInAccelerometer()
+    # Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
+    x_accel_filter = LinearFilter.movingAverage(10)
+
+    def robotPeriodic(self):
+        # Get the filtered X acceleration
+        filtered_x_accel = self.x_accel_filter.calculate(self.accelerometer.getX())
     ```
 

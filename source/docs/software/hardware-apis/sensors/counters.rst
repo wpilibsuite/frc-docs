@@ -54,6 +54,21 @@ In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on the
         counter.SetDownSourceEdge(true, true);
     ```
 
+    ```python
+    from wpilib import Counter
+
+    # Create a new Counter object in two-pulse mode
+    counter = Counter(Counter.Mode.k2Pulse)
+
+    def robotInit(self):
+        # Set up the input channels for the counter
+        self.counter.setUpSource(1)
+        self.counter.setDownSource(2)
+        # Set the decoding type to 2X
+        self.counter.setUpSourceEdge(True, True)
+        self.counter.setDownSourceEdge(True, True)
+    ```
+
 #### Semi-period mode
 
 In semi-period mode, the :code:`Counter` will count the duration of the pulses on a channel, either from a rising edge to the next falling edge, or from a falling edge to the next rising edge.  A counter can be initialized in semi-period mode with the following code:
@@ -82,6 +97,19 @@ In semi-period mode, the :code:`Counter` will count the duration of the pulses o
         counter.SetSemiPeriodMode(true);
     ```
 
+    ```python
+    from wpilib import Counter
+
+    # Create a new Counter object in two-pulse mode
+    counter = Counter(Counter.Mode.kSemiperiod)
+
+    def robotInit(self):
+        # Set up the input channel for the counter
+        self.counter.setUpSource(1)
+        # Set the encoder to count pulse duration from rising edge to falling edge
+        self.counter.setSemiPeriodMode(True)
+    ```
+
 To get the pulse width, call the :code:`getPeriod()` method:
 
 .. tab-set-code::
@@ -94,6 +122,11 @@ To get the pulse width, call the :code:`getPeriod()` method:
     ```c++
     // Return the measured pulse width in seconds
     counter.GetPeriod();
+    ```
+
+    ```python
+    # Return the measured pulse width in seconds
+    counter.getPeriod()
     ```
 
 #### Pulse-length mode
@@ -128,6 +161,21 @@ In pulse-length mode, the counter will count either up or down depending on the 
         counter.SetPulseLengthMode(.05)
     ```
 
+    ```python
+    from wpilib import Counter
+
+    # Create a new Counter object in two-pulse mode
+    counter = Counter(Counter.Mode.kPulseLength)
+
+    def robotInit(self):
+        # Set up the input channel for the counter
+        self.counter.setUpSource(1)
+        # Set the decoding type to 2X
+        self.counter.setUpSourceEdge(True, True)
+        # Set the counter to count down if the pulses are longer than .05 seconds
+        self.counter.setPulseLengthMode(.05)
+    ```
+
 #### External direction mode
 
 In external direction mode, the counter counts either up or down depending on the level on the second channel. If the direction source is low, the counter will increase; if the direction source is high, the counter will decrease (to reverse this, see the next section). A counter can be initialized in this mode as follows:
@@ -156,6 +204,20 @@ In external direction mode, the counter counts either up or down depending on th
         counter.SetDownSource(2);
         // Set the decoding type to 2X
         counter.SetUpSourceEdge(true, true);
+    ```
+
+    ```python
+    from wpilib import Counter
+
+    # Create a new Counter object in two-pulse mode
+    counter = Counter(Counter.Mode.kExternalDirection)
+
+    def robotInit(self):
+        # Set up the input channels for the counter
+        self.counter.setUpSource(1)
+        self.counter.setDownSource(2)
+        # Set the decoding type to 2X
+        self.counter.setUpSourceEdge(True, True)
     ```
 
 ### Configuring counter parameters
@@ -198,6 +260,21 @@ Apart from the mode-specific configurations, the :code:`Counter` class offers a 
     counter.SetSamplesToAverage(5);
     ```
 
+    ```python
+    # Configures the counter to return a distance of 4 for every 256 pulses
+    # Also changes the units of getRate
+    counter.setDistancePerPulse(4./256.)
+    # Configures the counter to consider itself stopped after .1 seconds
+    counter.setMaxPeriod(.1)
+    # Configures the counter to consider itself stopped when its rate is below 10
+    counter.setMinRate(10)
+    # Reverses the direction of the counter
+    counter.setReverseDirection(True)
+    # Configures an counter to average its period measurement over 5 samples
+    # Can be between 1 and 127 samples
+    counter.setSamplesToAverage(5)
+    ```
+
 ## Reading information from counters
 
 Regardless of mode, there is some information that the :code:`Counter` class always exposes to users:
@@ -218,6 +295,11 @@ Users can obtain the current count with the :code:`get()` method:
     counter.Get();
     ```
 
+    ```python
+    # returns the current count
+    counter.get()
+    ```
+
 ### Distance
 
 .. note:: Counters measure *relative* distance, not absolute; the distance value returned will depend on the position of the encoder when the robot was turned on or the encoder value was last :ref:`reset <docs/software/hardware-apis/sensors/counters:Resetting a Counter>`.
@@ -234,6 +316,11 @@ If the :ref:`distance per pulse <docs/software/hardware-apis/sensors/counters:Co
     ```c++
     // returns the current distance
     counter.GetDistance();
+    ```
+
+    ```python
+    # returns the current distance
+    counter.getDistance()
     ```
 
 #### Rate
@@ -254,6 +341,11 @@ Users can obtain the current rate of change of the counter with the :code:`getRa
     counter.GetRate();
     ```
 
+    ```python
+    # Gets the current rate of the counter
+    counter.getRate()
+    ```
+
 ### Stopped
 
 Users can obtain whether the counter is stationary with the :code:`getStopped()` method:
@@ -270,6 +362,11 @@ Users can obtain whether the counter is stationary with the :code:`getStopped()`
     counter.GetStopped();
     ```
 
+    ```python
+    # Gets whether the counter is stopped
+    counter.getStopped()
+    ```
+
 #### Direction
 
 Users can obtain the direction in which the counter last moved with the :code:`getDirection()` method:
@@ -284,6 +381,11 @@ Users can obtain the direction in which the counter last moved with the :code:`g
     ```c++
     // Gets the last direction in which the counter moved
     counter.GetDirection();
+    ```
+
+    ```python
+    # Gets the last direction in which the counter moved
+    counter.getDirection()
     ```
 
 ### Period
@@ -304,6 +406,11 @@ Users can obtain the duration (in seconds) of the most-recent period with the :c
     counter.GetPeriod();
     ```
 
+    ```python
+    # returns the current period in seconds
+    counter.getPeriod()
+    ```
+
 ## Resetting a counter
 
 To reset a counter to a distance reading of zero, call the :code:`reset()` method.  This is useful for ensuring that the measured distance corresponds to the actual desired physical measurement.
@@ -318,6 +425,11 @@ To reset a counter to a distance reading of zero, call the :code:`reset()` metho
     ```c++
     // Resets the encoder to read a distance of zero
     counter.Reset();
+    ```
+
+    ```python
+    # Resets the encoder to read a distance of zero
+    counter.reset()
     ```
 
 ## Using counters in code
