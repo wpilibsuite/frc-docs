@@ -16,7 +16,7 @@ Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboa
 ### Laptop recommended features
 
 1.  8GB of RAM or greater
-#.  A display size of 13" or greater, with 1080p minimum resolution
+#.  A display size of 14" or greater, with 1080p minimum resolution
 #.  Ports
 
     a. A built-in Ethernet port is highly preferred. Ensure that it's a full-sized port. The hinged Ethernet ports don't hold up to repeated use.
