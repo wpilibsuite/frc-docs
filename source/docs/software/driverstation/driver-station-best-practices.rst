@@ -24,7 +24,7 @@ Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboa
     #. 2 USB ports minimum.  These can be USB-A or USB-C ports, depending on the peripherals you're using.
 
 #.  A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
-#.  A solid-state disk (SSD), 256 GB or larger. If the laptop has a rotating disk, spend $50 and replace it with a SSD.
+#.  A solid-state disk (SSD), 256 GB or larger. If the laptop has a rotating disk, spend $50 and replace it with an SSD.
 #.  Supports Windows 11.  Given that it is at end of life, don't plan on driver station support for Windows 10 beyond the 2026 competition year.
 #.  AMD or Intel CPU. The Driver Station software does not work on machines with ARM CPUs.
 #.  Desired Wi-Fi hardware varies a bit based on whether you're buying an inexpensive used machine for a driver station, or something new.  6GHz Wi-Fi can be used in some of the practice driving configurations, but is not required for the recommended configuration.   See `recommended practice configuration <https://frc-radio.vivid-hosting.net/overview/practicing-at-home>`__ for details.
