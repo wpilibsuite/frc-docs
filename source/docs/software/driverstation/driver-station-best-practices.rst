@@ -91,7 +91,7 @@ Items in this section require internet connectivity and should be done prior to 
    #. Use the rescan button (F1) during competition if joystick or controllers become unplugged and then are plugged back in or otherwise turn gray during competition.
 
 #. Ensure your :doc:`Dashboard is connected to the robot </docs/software/dashboards/troubleshooting-dashboard-connectivity>` after your driver station connects to the robot.
-#. Ensure driver station is fully visible and in focus during the match to avoid Windows de-priortizing it, and to ease troubleshooting.
+#. Ensure driver station is fully visible and in focus during the match to avoid Windows depriortizing it, and to ease troubleshooting.
 
 # Credits
 
