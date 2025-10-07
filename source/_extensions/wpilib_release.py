@@ -83,7 +83,32 @@ class WpilibRelease(SphinxDirective):
       <script>
         addEventListener('DOMContentLoaded', async (event) => {{
             let dlbutton = document.getElementsByClassName("wpilibrelease-dl-button")[0];
-            let ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'mobile', 'platform', 'platformVersion']);
+            let platform, architecture;
+
+            // Try modern API first (Chromium-based browsers)
+            if (navigator.userAgentData) {{
+                let ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness', 'mobile', 'platform', 'platformVersion']);
+                platform = ua['platform'];
+                architecture = ua['architecture'];
+            }} else {{
+                // Fallback to userAgent parsing (Firefox, Safari)
+                let userAgent = navigator.userAgent;
+                if (userAgent.includes('Windows')) {{
+                    platform = 'Windows';
+                }} else if (userAgent.includes('Mac')) {{
+                    platform = 'macOS';
+                    // Check for Apple Silicon
+                    // Safari doesn't expose architecture directly, but we can infer it
+                    // Intel Macs report "Intel Mac OS X", Apple Silicon just "Mac OS X" or has no Intel marker
+                    if (userAgent.includes('Intel Mac OS X') || navigator.oscpu?.includes('Intel')) {{
+                        architecture = 'x86';
+                    }} else {{
+                        // Assume ARM for newer Macs without Intel marker
+                        architecture = 'arm64';
+                    }}
+                }}
+            }}
+
             let baseUrl;
             try {{
                 await fetch("https://packages.wpilib.workers.dev/", {{ mode: "no-cors" }});
@@ -91,14 +116,14 @@ class WpilibRelease(SphinxDirective):
             }} catch (e) {{
                 baseUrl = "{artifactory_folder}";
             }}
-            if (ua['platform'] == 'Windows') {{
+            if (platform == 'Windows') {{
                 dlbutton.href = `${{baseUrl}}{win_download_url_part}`;
                 dlbutton.text = 'Download for Windows - {win_size}';
-            }} else if (ua['platform'] == 'macOS') {{
-                if (ua['architecture'] == 'x86') {{
+            }} else if (platform == 'macOS') {{
+                if (architecture == 'x86') {{
                     dlbutton.href = `${{baseUrl}}{mac_intel_download_url_part}`;
                     dlbutton.text = 'Download for macOS Intel - {mac_intel_size}';
-                }} else if (ua['architecture'].includes('arm')) {{
+                }} else if (architecture?.includes('arm')) {{
                     dlbutton.href = `${{baseUrl}}{mac_arm_download_url_part}`;
                     dlbutton.text = 'Download for macOS Arm | Apple Silicon - {mac_arm_size}';
                 }}
