@@ -30,7 +30,15 @@ Machine learning models are better suited when:
 
 Examples: Detecting cargo with logos, irregularly shaped objects, pieces that look very different when viewed from different angles
 
-.. note:: Most common FRC vision processing vendors (PhotonVision, Limelight, etc.) offer support for both traditional vision pipelines and machine learning models. The choice of method should be based on your specific game piece characteristics, not the limitations of your hardware.
+.. note:: Most common FRC vision processing solutions (`PhotonVision <https://docs.photonvision.org>`__, `Limelight <https://docs.limelightvision.io>`__, etc.) offer support for both traditional vision pipelines and machine learning models.
+
+.. important:: Machine learning inference requires significant computational resources. While possible on devices like the Raspberry Pi, performance may be limited. For better ML performance, consider using hardware accelerators such as:
+
+   - **Google Coral USB/M.2 Accelerator** - Works with coprocessors running PhotonVision or custom code
+   - **Limelight with built-in accelerator** - Integrated solution with ML support
+   - **Orange Pi 5/5B with NPU** - Single-board computer with neural processing unit, compatible with PhotonVision
+
+   Many teams successfully use Google Coral accelerators with Orange Pi coprocessors running PhotonVision, or Limelights with integrated acceleration.
 
 ## Traditional Vision Method
 
@@ -155,6 +163,40 @@ If your game piece is always oriented the same way, you can create a lookup tabl
 3. Create a lookup table or fit a curve to the data
 
 Note that area varies with the inverse square of distance, so small measurement errors at large distances can cause significant inaccuracy.
+
+## Choosing a Camera
+
+Selecting the right camera is crucial for reliable game piece detection. Key considerations include:
+
+### Field of View (FOV)
+
+- **Wide FOV (>100°)**: Better for detecting game pieces at close range and wide areas, but objects appear smaller at distance
+- **Narrow FOV (60-90°)**: Better for detecting distant objects with more detail, but limited peripheral vision
+- Consider your robot's typical operating distance and whether you need to see multiple game pieces simultaneously
+
+### Resolution
+
+- **Higher resolution (1920x1080 or more)**: Provides more detail for distant detection and better pose estimation, but requires more processing power
+- **Lower resolution (640x480 to 1280x720)**: Faster processing, sufficient for many traditional vision tasks
+- Balance resolution with frame rate - a 720p camera at 60 FPS may outperform a 1080p camera at 15 FPS
+
+### Frame Rate
+
+- **Higher frame rate (60+ FPS)**: Reduces motion blur, crucial for detecting pieces while moving
+- **Lower frame rate (15-30 FPS)**: Sufficient for stationary detection, uses less bandwidth
+
+### Exposure Control
+
+- **Manual exposure control**: Essential for consistent detection under varying lighting
+- **Global shutter vs rolling shutter**: Global shutter is preferable for fast-moving robots to avoid image distortion
+
+### Common Camera Options
+
+- **USB cameras**: Widely compatible, easy to set up with coprocessors
+- **CSI cameras**: Lower latency on Raspberry Pi and similar boards, but limited cable length
+- **IP cameras**: Can work over Ethernet, useful for multiple camera setups
+
+For specific camera recommendations and compatibility, consult the documentation for your chosen vision processing solution (PhotonVision, Limelight, etc.).
 
 ## Best Practices
 
