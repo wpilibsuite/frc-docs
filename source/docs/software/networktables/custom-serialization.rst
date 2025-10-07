@@ -245,7 +245,50 @@ Here's a complete example of a custom ``RobotState`` class with struct serializa
        };
        ```
 
+    .. tab-item:: Python
+       :sync: Python
+
+       Define your custom struct using the ``make_wpistruct`` decorator with a dataclass:
+
+       ```python
+       import dataclasses
+       import wpiutil.wpistruct
+
+       @wpiutil.wpistruct.make_wpistruct
+       @dataclasses.dataclass
+       class RobotState:
+           x_position: float
+           y_position: float
+           angle: float
+           is_enabled: bool
+       ```
+
+       Use it with NetworkTables:
+
+       ```python
+       from ntcore import NetworkTableInstance
+
+       class MyRobot:
+           def robotInit(self):
+               # Get a struct topic and publisher
+               inst = NetworkTableInstance.getDefault()
+               self.state_topic = inst.getStructTopic("robot_state", RobotState)
+               self.state_publisher = self.state_topic.publish()
+
+           def robotPeriodic(self):
+               # Publish the current robot state
+               state = RobotState(
+                   x_position=self.drivetrain.get_x(),
+                   y_position=self.drivetrain.get_y(),
+                   angle=self.drivetrain.get_angle(),
+                   is_enabled=self.isEnabled()
+               )
+               self.state_publisher.set(state)
+       ```
+
 ## Implementing Protobuf Serialization
+
+.. note:: Protobuf serialization is not currently supported in Python. Python users should use struct serialization for custom data types.
 
 Protobuf serialization requires defining a ``.proto`` file and generating code from it. This is more complex but handles variable-sized data.
 
@@ -451,6 +494,21 @@ Both struct and protobuf serialized types can be logged with DataLog:
        stateLogger.Append(state);
        ```
 
+    .. tab-item:: Python
+       :sync: Python
+
+       ```python
+       from wpiutil.log import DataLogManager, StructLogEntry
+
+       # Create a struct log entry
+       log = DataLogManager.getLog()
+       state_logger = StructLogEntry.create(log, "robot_state", RobotState)
+
+       # Log data
+       state = RobotState(x_position=1.0, y_position=2.0, angle=90.0, is_enabled=True)
+       state_logger.append(state)
+       ```
+
 ## Using Custom Serialization with Epilogue
 
 Custom serialized types can be automatically logged using :doc:`Epilogue annotations </docs/software/telemetry/robot-telemetry-with-annotations>`:
@@ -476,7 +534,23 @@ Custom serialized types can be automatically logged using :doc:`Epilogue annotat
        }
        ```
 
-For Epilogue to recognize your custom type, ensure your class implements ``StructSerializable`` or ``ProtobufSerializable`` and has a static ``struct`` or ``proto`` field.
+    .. tab-item:: Python
+       :sync: Python
+
+       ```python
+       from wpilib import TimedRobot
+
+       class Drivetrain:
+           def __init__(self):
+               self.state = RobotState(x_position=0.0, y_position=0.0, angle=0.0, is_enabled=False)
+
+           def get_state(self):
+               return self.state
+
+           # Epilogue will automatically log the RobotState using struct serialization
+       ```
+
+For Epilogue to recognize your custom type, ensure your class implements ``StructSerializable`` or ``ProtobufSerializable`` and has a static ``struct`` or ``proto`` field (Java), or is decorated with ``@wpiutil.wpistruct.make_wpistruct`` (Python).
 
 ## Additional Resources
 
