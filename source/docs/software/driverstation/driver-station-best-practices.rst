@@ -4,7 +4,7 @@
 # Driver Station (Operator Console) Best Practices
 
 
-Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop and related equipment is an easy project. Read on to find lessons learned by many teams over thousands of matches.
+Want to ensure the driver station isn't a stopper for your team at the FIRST Robotics Competition (FRC) field? Building and configuring a solid driver station laptop and peripherals is an easy project. Read on to find lessons learned by many teams over thousands of matches.
 
 ## Selecting hardware
 
@@ -28,11 +28,11 @@ Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboa
 #.  A solid-state disk (SSD), 256 GB or larger. If the laptop has a rotating disk, spend $50 and replace it with a SSD.
 #.  Supports Windows 11.  While Windows 10 is still supported for driver station use, acquiring a machine that can't run Windows 11 isn't forward thinking.
 #.  AMD or Intel CPU. The Driver Station software does not work on machines with ARM CPUs.
-#.  2.4 and 5 GHz Wi-Fi radio, with 6GHz optional.  The `recommended practice configuration <https://frc-radio.vivid-hosting.net/overview/practicing-at-home#vh-109-as-an-access-point-recommended>`__ does not require a 6GHz radio in the driver station laptop.
+#.  2.4 and 5 GHz Wi-Fi radio, with 6GHz optional.  6GHz Wi-Fi can be used in some of the practice driving configurations.   See `recommended practice configuration <https://frc-radio.vivid-hosting.net/overview/practicing-at-home>`__ for details.
 
 ## Building your driver station
 
-It's best if you combine your driver station laptop and all needed peripherals into a single unit.  Use this link for ideas: https://www.google.com/search?udm=2&q=frc+driver+station 
+It's best if you combine your driver station laptop and all needed peripherals into a `single unit <https://www.google.com/search?udm=2&q=frc+driver+station>`__.
 
 Use an Ethernet port saver to make your Ethernet connection. This extends the life of the port on the laptop. This is particularly important if you have a consumer-grade laptop with a hinged Ethernet port.
 
@@ -48,7 +48,7 @@ Once you've acquired your laptop, here's a list of things to do.
 
 #. If you're buying used, ensure you're starting from a fresh Windows install.
 #. Create one account to use both for software installation and driving.  This account must be a member of the Administrator group.
-#. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low. 
+#. Remove any 3rd party antivirus or antimalware software. Instead, use Windows Defender. Since you're only connecting to the internet for Windows and FRC software updating, the risk is low.
 #. Only install software on your driver station that's needed for driving. Your goal here is to eliminate variables that might interfere with proper operation. Don't use the driver station as the programming laptop.  Remove any unneeded preinstalled software ("bloatware") that came with the machine. Don't use the laptop for gaming back at the hotel the night before the event.
 #. Avoid managed Windows 10 or 11 installations from the school's IT department. These deployments are built for the school environment and often come with unwanted software that interferes with your robot's operation.
 #. Make these power settings for both the Plugged in and On battery profiles, by navigating to Start -> Settings -> System -> Power and battery
