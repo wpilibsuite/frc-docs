@@ -74,7 +74,7 @@ Items in this section require internet connectivity and should be done prior to 
 #. Turn off the Wi-Fi adapter, either using the dedicated hardware Wi-Fi switch or by using the Wi-Fi control in Quick Settings.
 #. Charge the driver station when it’s in the pit.
 #. Ensure everyone on the drive team knows the password. You'd be surprised at how often drivers arrive at the field without knowing the password for the laptop.
-#. LabView users: Ensure your LabView code is deployed permanently and set to "run as startup", using the instructions in the LabView Tutorial. If you must deploy code every time you turn the robot on, you’re doing it wrong.
+#. LabVIEW users: Ensure your LabVIEW code is deployed permanently and set to "run as startup", using the instructions in the LabVIEW Tutorial. If you must deploy code every time you turn the robot on, you’re doing it wrong.
 #. Limit web browsing to FRC related web sites. This minimizes the chance of getting malware during the competition.
 #. Don't plan on using internet access at the event to make software updates. There likely won't be any in the venue, and hotel Wi-Fi varies widely in quality. If you do need updates, contact a Control System Advisor in the pit.
 
