@@ -288,6 +288,7 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 
 These motor controllers use Phoenix 5. For the most up-to-date information, see the `CTRE Phoenix 5 Documentation <https://v5.docs.ctr-electronics.com/en/stable/ch13_MC.html>`__.
 
+
 ### Status LEDs During Normal Operation
 
 +------------------------------+----------------+--------------------------------------------+
@@ -341,6 +342,7 @@ These motor controllers use Phoenix 5. For the most up-to-date information, see 
 ## Talon FX Motor Controller
 
 The Talon FX uses Phoenix 6. For the most up-to-date information, see the `CTRE Phoenix 6 Documentation <https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/index.html#status-light-reference>`__.
+
 
 ### Status LEDs
 
