@@ -85,9 +85,10 @@ Items in this section require internet connectivity and should be done prior to 
 #. Close programs that aren’t needed during the match.
 #. Bring your laptop charger to the field. Power is provided in each player station.  Why?  Windows is less aggressive about power management when the laptop is plugged in, which means the driver station application behaves more predictably.
 #. Fasten your laptop with hook-and-loop tape to the player station shelf. You never know when your alliance partner will have an autonomous programming issue and blast the wall.
-#. Ensure joysticks and controllers are assigned to the correct USB ports.
+#. Ensure joysticks and controllers are functioning.
 
    a. In the USB tab in the FRC Driver Station software, drag and drop to assign joysticks as needed.
+   #. Verify that buttons are working and joysticks return to zero position.
    #. Use the rescan button (F1) if joysticks / controllers do not appear green.
    #. Use the rescan button (F1) during competition if joystick or controllers become unplugged and then are plugged back in or otherwise turn gray during competition.
 
