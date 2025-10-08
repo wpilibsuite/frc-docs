@@ -21,19 +21,21 @@ Sending simple data (numbers, strings, booleans, and arrays of these) is done by
    Shuffleboard.getTab("Tab Title").add("Pi", 3.14)
    ```
 
-If data needs to be updated (for example, the output of some calculation done on the robot), call ``getEntry()`` after defining the value, then update it when needed or in a ``periodic`` function
+If data needs to be updated (for example, the output of some calculation done on the robot), use the type-specific methods (``addNumber``, ``addString``, ``addBoolean``) with a lambda function (Java) or callable (Python) that returns the current value. Shuffleboard will automatically call this function periodically to get the latest value.
 
 .. tab-set-code::
 
    ```java
    class VisionCalculator {
       private ShuffleboardTab tab = Shuffleboard.getTab("Vision");
-      private GenericEntry distanceEntry =
-         tab.add("Distance to target", 0)
-            .getEntry();
+      private double distanceToTarget = 0;
+
+      public VisionCalculator() {
+         tab.addNumber("Distance to target", () -> distanceToTarget);
+      }
+
       public void calculate() {
-         double distance = ...;
-         distanceEntry.setDouble(distance);
+         distanceToTarget = /* calculate distance */;
       }
    }
    ```
@@ -42,11 +44,13 @@ If data needs to be updated (for example, the output of some calculation done on
    from wpilib.shuffleboard import Shuffleboard
    def robotInit(self):
       tab = Shuffleboard.getTab("Vision")
-      self.distanceEntry = tab.add("Distance to target", 0).getEntry()
+      tab.addNumber("Distance to target", lambda: self.distanceToTarget)
+      self.distanceToTarget = 0
    def teleopPeriodic(self):
-      distance = self.encoder.getDistance()
-      self.distanceEntry.setDouble(distance)
+      self.distanceToTarget = self.encoder.getDistance()
    ```
+
+.. important:: The NetworkTables entry API (using ``getEntry()`` and ``setDouble()``/``setString()``/etc.) should only be used for reading data *from* Shuffleboard, such as values from sliders, text fields, or number inputs. For sending data *to* Shuffleboard, prefer the lambda/callable approach shown above.
 
 ## Making choices persist between reboots
 
