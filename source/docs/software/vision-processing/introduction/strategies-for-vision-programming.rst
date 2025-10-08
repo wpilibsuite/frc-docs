@@ -40,7 +40,7 @@ The video stream can be displayed on Shuffleboard or SmartDashboard.
 .. image:: diagrams/vision-code-on-a-coprocessor.drawio.svg
    :alt: Coprocessor is on same network as the roboRIO so it off loads the compute without having the latency of going to the Driver Station and back.
 
-Coprocessors such as the Raspberry Pi or Orange Pi are ideal for supporting vision code (see :ref:`docs/software/vision-processing/wpilibpi/using-the-raspberry-pi-for-frc:Using the Raspberry Pi for FRC`). The advantage is that they can run full speed and not interfere with the robot program. In this case, the camera is probably connected to the coprocessor or (in the case of Ethernet cameras) an Ethernet switch on the robot.
+Coprocessors such as the Raspberry Pi or Orange Pi are ideal for supporting vision code (see :ref:`docs/software/vision-processing/wpilibpi/using-the-raspberry-pi-for-frc:Using the Raspberry Pi for FRC`). The advantage is that they can run full speed and not interfere with the robot program. The camera is typically connected directly to the coprocessor via USB or CSI.
 
 Many teams use `PhotonVision <https://docs.photonvision.org>`__, an open-source vision processing solution that runs on coprocessors and provides a user-friendly interface for configuring pipelines, calibrating cameras, and tuning detection parameters. PhotonVision supports both traditional vision processing and machine learning, and integrates seamlessly with WPILib through NetworkTables.
 

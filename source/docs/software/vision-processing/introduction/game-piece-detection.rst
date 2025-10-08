@@ -170,8 +170,8 @@ Selecting the right camera is crucial for reliable game piece detection. Key con
 
 ### Field of View (FOV)
 
-- **Wide FOV (>100°)**: Better for detecting game pieces at close range and wide areas, but objects appear smaller at distance
-- **Narrow FOV (60-90°)**: Better for detecting distant objects with more detail, but limited peripheral vision
+- **Wide FOV (>100°)**: Better for detecting game pieces at close range and wide areas, but objects appear smaller at distance. Wide-angle lenses introduce more distortion, especially at the edges of the frame, which can reduce measurement accuracy. Calibration is essential for wide FOV cameras.
+- **Narrow FOV (60-90°)**: Better for detecting distant objects with more detail, but limited peripheral vision. Less lens distortion than wide-angle cameras.
 - Consider your robot's typical operating distance and whether you need to see multiple game pieces simultaneously
 
 ### Resolution
