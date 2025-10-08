@@ -47,6 +47,33 @@ Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
     :lines: 93-106
     :lineno-match:
 
+## Obtaining Vision Measurements
+
+To use ``AddVisionMeasurement()``, you need to obtain a robot pose estimate from your vision system. The most common approach is using AprilTags detected by vision coprocessors. The general process is:
+
+1. **Detect AprilTags**: Use a vision solution like PhotonVision or Limelight to detect AprilTags on the field
+2. **Get Tag Pose**: Look up the known field position of the detected tag from the ``AprilTagFieldLayout``
+3. **Calculate Robot Pose**: Use the camera-to-tag transform and camera-to-robot transform to calculate where the robot is on the field
+4. **Apply Measurement**: Pass the calculated pose, timestamp, and standard deviations to ``AddVisionMeasurement()``
+
+Most vision libraries provide utilities to simplify this process:
+
+- **PhotonVision**: The PhotonLib library includes ``PhotonPoseEstimator`` which handles the transforms and provides robot poses directly. See the `PhotonVision documentation <https://docs.photonvision.org/en/latest/docs/programming/photonlib/robot-pose-estimator.html>`_ for details.
+- **Limelight**: Limelight provides MegaTag which outputs robot poses through NetworkTables. See the `Limelight documentation <https://docs.limelightvision.io/docs/docs-limelight/apis/complete-networktables-api#apriltag-and-3d-data>`_ for the ``botpose`` fields.
+
+.. important:: When using vision measurements, it's critical to:
+
+   - Use the **timestamp** from when the image was captured, not when it was processed
+   - Scale the **standard deviations** based on factors like distance from tags, number of tags seen, and tag ambiguity
+   - Reject measurements with high ambiguity or when no tags are detected
+
+For teams implementing their own vision solution, you'll need to:
+
+1. Obtain the camera-to-tag transform using methods like ``cv::solvePnP`` (OpenCV) or similar
+2. Apply the camera-to-robot transform (fixed based on camera mounting)
+3. Transform from the tag's field position to get the robot's field position
+4. Handle latency by using the image capture timestamp
+
 ## Tuning Pose Estimators
 
 All pose estimators offer user-customizable standard deviations for model and measurements (defaults are used if you don't provide them). Standard deviation is a measure of how spread out the noise is for a random signal. Giving a state a smaller standard deviation means it will be trusted more during data fusion.
