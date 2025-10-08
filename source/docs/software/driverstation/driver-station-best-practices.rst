@@ -20,7 +20,7 @@ Consider used laptops rather than new. The FRC\ |reg| Driver Station and dashboa
 #.  Ports
 
     a. A built-in Ethernet port is highly preferred. Ensure that it's a full-sized port. The hinged Ethernet ports don't hold up to repeated use.
-    #. If the Ethernet port on your laptop is dodgy, either replace the laptop (recommended) or buy a USB Ethernet dongle from a reputable brand (e.g., TP-Link UE330). Many teams find that USB Ethernet is less reliable than built-in Ethernet, primarily due to cheap hardware and bad drivers. The dongles given to rookies in the KOP have a reputation for working well.
+    #. If the Ethernet port on your laptop is dodgy, either replace the laptop (recommended) or buy a USB Ethernet dongle from a reputable brand.  See `Recommended USB Ethernet adapters`_ for a list. Many teams find that USB Ethernet is less reliable than built-in Ethernet, primarily due to cheap hardware and bad drivers. The dongles given to rookies in the KOP have a reputation for working well.
     #. 2 USB ports minimum.  These can be USB-A or USB-C ports, depending on the peripherals you're using.
 
 #.  A keyboard. It’s hard to quickly do troubleshooting on touch-only computers at the field.
@@ -94,6 +94,15 @@ Items in this section require internet connectivity and should be done prior to 
 
 #. Ensure your :doc:`Dashboard is connected to the robot </docs/software/dashboards/troubleshooting-dashboard-connectivity>` after your driver station connects to the robot.
 #. Ensure driver station is fully visible and in focus during the match to avoid Windows depriortizing it, and to ease troubleshooting.
+
+## Recommended USB Ethernet adapters
+
+Members of the FRC community report good results with these USB Ethernet adapters.
+
+* Henrety USB C to Ethernet Adapter
+* Siig SuperSpeed USB 3.0 LAN Hub
+* TP-Link UE330
+* uni USB to Ethernet Adapter with hub (both USB-A and USB-C styles)
 
 ## Credits
 
