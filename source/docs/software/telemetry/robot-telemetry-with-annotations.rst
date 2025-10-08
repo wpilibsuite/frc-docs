@@ -45,7 +45,7 @@ Currently, annotation logging supports the following data types:
 * Any type (class, interface, or enum) with a custom logger defined with a ``@CustomLoggerFor`` annotation (intended to be used for logging of third-party classes)
 * All primitive types (``byte``, ``char``, ``short``, ``int``, ``long``, ``float``, ``double``, and ``boolean``) (note: this excludes wrapper types like ``Byte``, ``Integer``, and ``Boolean``)
 * Strings
-* Any type that inherits from ``StructSerializable``, such as WPILib math types or custom user-defined types
+* Any type that inherits from ``StructSerializable``, such as WPILib math types or custom user-defined types (see :doc:`/docs/software/networktables/custom-serialization` for how to create custom struct serializers)
 * Any ``edu.wpi.first.units.Measure`` (logged as a double in terms of the base unit)
 * ``byte[]``, ``int[]``, ``long[]``, ``float[]``, ``double[]``, and ``boolean[]`` primitive arrays
 * ``String[]`` arrays
