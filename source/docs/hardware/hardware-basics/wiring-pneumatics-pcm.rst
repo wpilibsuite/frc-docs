@@ -4,6 +4,8 @@ This page describes wiring pneumatics with the CTRE Pneumatic Control Module (PC
 
 .. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, refer to the [FIRST Pneumatics Manual](https://info.firstinspires.org/hubfs/web/program/frc/resources/pneumatics-manual.pdf).
 
+.. seealso:: For Pneumatic Control Module configuration, firmware updates using Phoenix Tuner, and detailed technical specifications, see the [CTRE PCM Documentation](https://v5.docs.ctr-electronics.com/en/stable/ch08_BringUpPCM.html).
+
 ## Wiring Overview
 
 A single PCM will support most pneumatics applications, providing an output for the compressor, input for the pressure switch, and outputs for up to 8 solenoid channels (12V or 24V selectable). The module is connected to the roboRIO over the :term:`CAN` bus and powered via 12V from the PDP or PDH.
