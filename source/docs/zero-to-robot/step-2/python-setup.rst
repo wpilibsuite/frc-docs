@@ -155,7 +155,9 @@ If you already have a RobotPy robot project, you can use that to download the pi
       python3 -m robotpy init
       ```
 
-This will create a ``robot.py`` and ``pyproject.toml`` file. The ``pyproject.toml`` file should be customized and details the requirements needed to run your robot code, among other things.
+This will create a ``robot.py`` and ``pyproject.toml`` file. The ``robot.py`` file contains a basic robot program template. The ``pyproject.toml`` file should be customized and details the requirements needed to run your robot code, among other things.
+
+.. important:: The ``robotpy deploy`` command requires that you have written working robot code in ``robot.py`` or created a robot project structure. You cannot deploy to the roboRIO until you have implemented your robot program. See the :doc:`RobotPy Programming Guide </docs/software/python/index>` for information on writing robot code.
 
 .. seealso:: The default ``pyproject.toml`` created for you only contains the version of RobotPy installed on your computer. If you want to enable vendor packages or install other python packages from PyPI, see our :doc:`pyproject.toml documentation </docs/software/python/pyproject_toml>`
 
