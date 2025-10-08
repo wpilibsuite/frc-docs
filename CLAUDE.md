@@ -1,0 +1,4 @@
+- when asked to handle an issue you will need to create a new branch with which to work from
+- When creating a PR no need to do created by claude code
+- Please don't include the test plan in the PR
+- Please always check when modifying files that we are updating the redirects and searching for links to any files that may be affected by changes we made
