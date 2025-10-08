@@ -1,6 +1,6 @@
 # Combining Motion Profiling and PID Control with ProfiledPIDController
 
-.. note:: For a guide on implementing the ``ProfiledPIDController`` class in the :ref:`command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` framework, see :ref:`docs/software/commandbased/profilepid-subsystems-commands:Combining Motion Profiling and PID in Command-Based`.
+.. note:: For a guide on implementing the ``ProfiledPIDController`` class in the :ref:`command-based framework <docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?>` framework, see :ref:`docs/software/commandbased/commands-v2/profilepid-subsystems-commands:Combining Motion Profiling and PID in Command-Based`.
 
 In the previous article, we saw how to use the ``TrapezoidProfile`` class to create and use a trapezoidal motion profile.  The example code from that article demonstrates manually composing the ``TrapezoidProfile`` class with the external PID control feature of a "smart" motor controller.
 

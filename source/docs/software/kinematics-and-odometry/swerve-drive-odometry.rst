@@ -97,7 +97,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
 ## Updating the robot pose
 The ``update`` method of the odometry class updates the robot position on the field. The update method takes in the gyro angle of the robot, along with an array of ``SwerveModulePosition`` objects. It is important that the order in which you pass the ``SwerveModulePosition`` objects is the same as the order in which you created the kinematics object.
 
-This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
+This ``update`` method must be called periodically, preferably in the ``periodic()`` method of a :ref:`Subsystem <docs/software/commandbased/commands-v2/subsystems:Subsystems>`. The ``update`` method returns the new updated pose of the robot.
 
 .. tab-set-code::
 
