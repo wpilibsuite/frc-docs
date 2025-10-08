@@ -81,7 +81,9 @@ First, the scheduler runs the ``periodic()`` method of each registered ``Subsyst
 
 .. note:: For more information on how trigger bindings work, see :doc:`binding-commands-to-triggers`
 
-Secondly, the scheduler polls the state of all registered triggers to see if any new commands that have been bound to those triggers should be scheduled.  If the conditions for scheduling a bound command are met, the command is scheduled and its ``Initialize()`` method is run.
+Secondly, the scheduler polls the state of all registered triggers to see if any new commands that have been bound to those triggers should be scheduled.  If the conditions for scheduling a bound command are met, the command is scheduled and its ``initialize()`` method is run.
+
+.. important:: If a newly-scheduled command has requirement conflicts with a currently-running command, the currently-running command is interrupted first. Critically, the ``end(true)`` method of the interrupted command is called **before** the ``initialize()`` method of the new command. This ordering is important for patterns like using a subsystem as a finite state machine, where commands represent states and the ``end()`` method performs state exit actions while ``initialize()`` performs state entry actions.
 
 .. tab-set::
 
