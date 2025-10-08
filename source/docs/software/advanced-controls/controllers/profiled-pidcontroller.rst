@@ -86,55 +86,45 @@ The returned setpoint might then be used as in the following example:
 
   ```java
   double lastSpeed = 0;
-  double lastTime = Timer.getFPGATimestamp();
     // Controls a simple motor's position using a SimpleMotorFeedforward
   // and a ProfiledPIDController
   public void goToPosition(double goalPosition) {
     double pidVal = controller.calculate(encoder.getDistance(), goalPosition);
-    double acceleration = (controller.getSetpoint().velocity - lastSpeed) / (Timer.getFPGATimestamp() - lastTime);
     motor.setVoltage(
         pidVal
-        + feedforward.calculate(controller.getSetpoint().velocity, acceleration));
+        + feedforward.calculateWithVelocities(lastSpeed, controller.getSetpoint().velocity));
     lastSpeed = controller.getSetpoint().velocity;
-    lastTime = Timer.getFPGATimestamp();
   }
   ```
 
   ```c++
   units::meters_per_second_t lastSpeed = 0_mps;
-  units::second_t lastTime = frc2::Timer::GetFPGATimestamp();
     // Controls a simple motor's position using a SimpleMotorFeedforward
   // and a ProfiledPIDController
   void GoToPosition(units::meter_t goalPosition) {
     auto pidVal = controller.Calculate(units::meter_t{encoder.GetDistance()}, goalPosition);
-    auto acceleration = (controller.GetSetpoint().velocity - lastSpeed) /
-        (frc2::Timer::GetFPGATimestamp() - lastTime);
     motor.SetVoltage(
          pidVal +
-        feedforward.Calculate(controller.GetSetpoint().velocity, acceleration));
+        feedforward.Calculate(lastSpeed, controller.GetSetpoint().velocity));
     lastSpeed = controller.GetSetpoint().velocity;
-    lastTime = frc2::Timer::GetFPGATimestamp();
   }
   ```
 
   ```python
-  from wpilib import Timer
-  from wpilib.controller import ProfiledPIDController
-  from wpilib.controller import SimpleMotorFeedforward
+  from wpimath.controller import ProfiledPIDController, SimpleMotorFeedforward
+
   def __init__(self):
       # Assuming encoder, motor, controller are already defined
       self.lastSpeed = 0
-      self.lastTime = Timer.getFPGATimestamp()
       # Assuming feedforward is a SimpleMotorFeedforward object
       self.feedforward = SimpleMotorFeedforward(ks=0.0, kv=0.0, ka=0.0)
+
   def goToPosition(self, goalPosition: float):
       pidVal = self.controller.calculate(self.encoder.getDistance(), goalPosition)
-      acceleration = (self.controller.getSetpoint().velocity - self.lastSpeed) / (Timer.getFPGATimestamp() - self.lastTime)
       self.motor.setVoltage(
           pidVal
-          + self.feedforward.calculate(self.controller.getSetpoint().velocity, acceleration))
-      self.lastSpeed = controller.getSetpoint().velocity
-      self.lastTime = Timer.getFPGATimestamp()
+          + self.feedforward.calculateWithVelocities(self.lastSpeed, self.controller.getSetpoint().velocity))
+      self.lastSpeed = self.controller.getSetpoint().velocity
   ```
 
 ## Complete Usage Example
