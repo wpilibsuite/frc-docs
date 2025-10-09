@@ -81,13 +81,13 @@ In the following example a thread created in ``Robot`` constructor gets the Came
          :lines: 12-55
          :linenos:
 
-      You need to update ``pyproject.toml`` contents to include cscore in the robotpy-extras key (this only shows the portions you need to update):
+      You need to update ``pyproject.toml`` contents to include cscore in the components key (this only shows the portions you need to update):
 
       ```toml
       [tool.robotpy]
       ...
-      # Add cscore to the robotpy-extras list
-      robotpy_extras = ["cscore"]
+      # Add cscore to the components list
+      components = ["cscore"]
       ```
 
 Notice that in these examples, the ``PutVideo()`` method writes the video to a named stream. To view that stream on SmartDashboard or Shuffleboard, select that named stream. In this case that is "Rectangle".

@@ -18,7 +18,7 @@ The ``pyproject.toml`` file looks something like this:
 robotpy_version = "2024.2.1.0"
 # Which extra RobotPy components should be installed
 # -> equivalent to `pip install robotpy[extra1, ...]
-robotpy_extras = [
+components = [
     # "all"
     # "apriltag"
     # "commands2"
@@ -40,7 +40,7 @@ Each of the following will instruct the deploy process to install packages to th
 
 ``robotpy_version`` is the version of the ``robotpy`` PyPI package that this robot code depends on.
 
-``robotpy_extras`` defines extra RobotPy components that can be installed, as only the core RobotPy libraries are installed by default.
+``components`` defines extra RobotPy components that can be installed, as only the core RobotPy libraries are installed by default.
 
 ``requires`` is a list of strings, and each item is equivalent to a line of a [requirements.txt](https://pip.pypa.io/en/stable/reference/requirements-file-format/) file. You can install any pure python packages on the roboRIO and they will likely work, but any packages that have binary dependencies must be cross-compiled for the roboRIO. For example, if you needed to use ``numpy`` in your robot code:
 
