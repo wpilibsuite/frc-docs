@@ -48,7 +48,7 @@ Another way to debug your program is to use print statements in your code and vi
 
 ## Common Causes of Loop Overruns
 
-Loop overruns occur when the robot's periodic methods (``robotPeriodic()``, ``teleopPeriodic()``, etc.) take longer than 20ms to complete. When this happens, the Driver Station will display a warning and the robot code may behave unpredictably. Here are common causes:
+Loop overruns occur when the robot's periodic methods (``robotPeriodic()``, ``teleopPeriodic()``, etc.) take longer than 20ms to complete. When this happens, the Driver Station will display a warning like ``Loop time of 0.03s overrun`` and the robot code may behave unpredictably. Here are common causes:
 
 ### Blocking Operations
 
@@ -65,7 +65,7 @@ Loop overruns occur when the robot's periodic methods (``robotPeriodic()``, ``te
 ### Excessive Logging or Print Statements
 
 - **System.out.println() in loops**: Console output is slow, especially when called frequently
-- **Verbose NetworkTables updates**: Updating many NetworkTables entries every loop iteration
+- **Getting data to publish to NetworkTables**: While NetworkTables updates themselves are fast, retrieving complex data (e.g., vision processing results, large arrays) to publish can be slow
 - **Excessive Shuffleboard updates**: Sending large amounts of data to the dashboard
 
 ### Hardware/Sensor Issues
@@ -80,7 +80,7 @@ Loop overruns occur when the robot's periodic methods (``robotPeriodic()``, ``te
 - Profile your code to identify slow sections (see :ref:`docs/software/advanced-gradlerio/profiling-with-visualvm:profiling with visualvm`)
 - Remove or reduce print statements, especially in frequently-called code
 - Cache values that are expensive to compute rather than recalculating every loop
-- Use the Driver Station log to identify which periodic method is causing overruns
+- **Check the Driver Station log** to identify which periodic method is causing overruns. The log will show timestamps and which robot mode was active when the overrun occurred. Look for patterns - if overruns only happen during teleop, check ``teleopPeriodic()`` and subsystems used during teleop. If they occur consistently, check ``robotPeriodic()`` for code that runs regardless of mode.
 
 ## Learn More
 
