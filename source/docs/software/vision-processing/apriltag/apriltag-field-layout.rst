@@ -44,7 +44,7 @@ WPILib provides official field layouts for each game year as JSON files. The eas
 
 ## Setting the Origin
 
-One of the most common sources of confusion is the **origin location**. FRC fields are symmetric, with identical tag layouts on both the red and blue alliance sides. The field layout needs to know which alliance you're on to give you correct positions.
+One of the most common sources of confusion is the **origin location**. FRC fields have tag layouts for both alliances. Some years the field has rotational symmetry (where the field can be rotated 180 degrees and tags are in the same positions), while other years have mirror symmetry. The field layout needs to know which alliance you're on to give you correct positions.
 
 .. important:: Always call ``setOrigin()`` with your alliance color before using vision measurements! Forgetting this will cause pose estimates to be wildly incorrect.
 
@@ -60,6 +60,9 @@ One of the most common sources of confusion is the **origin location**. FRC fiel
       fieldLayout.setOrigin(alliance.get() == DriverStation.Alliance.Blue ?
          OriginPosition.kBlueAllianceWallRightSide :
          OriginPosition.kRedAllianceWallRightSide);
+   } else {
+      // Default to blue alliance if not connected to FMS
+      fieldLayout.setOrigin(OriginPosition.kBlueAllianceWallRightSide);
    }
    ```
 
@@ -72,6 +75,9 @@ One of the most common sources of confusion is the **origin location**. FRC fiel
       fieldLayout.SetOrigin(alliance.value() == frc::DriverStation::Alliance::kBlue ?
          frc::AprilTagFieldLayout::OriginPosition::kBlueAllianceWallRightSide :
          frc::AprilTagFieldLayout::OriginPosition::kRedAllianceWallRightSide);
+   } else {
+      // Default to blue alliance if not connected to FMS
+      fieldLayout.SetOrigin(frc::AprilTagFieldLayout::OriginPosition::kBlueAllianceWallRightSide);
    }
    ```
 
@@ -86,6 +92,9 @@ One of the most common sources of confusion is the **origin location**. FRC fiel
                 if alliance == DriverStation.Alliance.kBlue
                 else AprilTagFieldLayout.OriginPosition.kRedAllianceWallRightSide)
       field_layout.setOrigin(origin)
+   else:
+      # Default to blue alliance if not connected to FMS
+      field_layout.setOrigin(AprilTagFieldLayout.OriginPosition.kBlueAllianceWallRightSide)
    ```
 
 ## Using the Field Layout
