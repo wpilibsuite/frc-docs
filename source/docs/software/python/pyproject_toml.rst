@@ -40,7 +40,7 @@ Each of the following will instruct the deploy process to install packages to th
 
 ``robotpy_version`` is the version of the ``robotpy`` PyPI package that this robot code depends on.
 
-``components`` defines extra RobotPy components that can be installed, as only the core RobotPy libraries are installed by default.
+``components`` defines which optional core WPILib packages should be installed (equivalent to ``pip install robotpy[component1, ...]``). Only core WPILib packages built by mostrobotics can be specified here; vendor packages must be listed in ``requires``.
 
 ``requires`` is a list of strings, and each item is equivalent to a line of a [requirements.txt](https://pip.pypa.io/en/stable/reference/requirements-file-format/) file. You can install any pure python packages on the roboRIO and they will likely work, but any packages that have binary dependencies must be cross-compiled for the roboRIO. For example, if you needed to use ``numpy`` in your robot code:
 

@@ -42,10 +42,10 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
    .. tab-item:: Python
       :sync: python
 
-      All RobotPy project dependencies are specified in ``pyproject.toml``. You can add additional vendor-specific dependencies either by:
+      All RobotPy project dependencies are specified in ``pyproject.toml``. You can add additional dependencies by:
 
-      * Adding the component name to ``components``
-      * Adding the PyPI package name to ``requires``
+      * Adding WPILib component names to ``components`` (for core WPILib packages only)
+      * Adding PyPI package names to ``requires`` (for vendor packages and other dependencies)
 
       .. seealso:: :doc:`/docs/software/python/pyproject_toml`
 
@@ -65,29 +65,29 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
       | XRP      | xrp        | robotpy-xrp         |
       +----------+------------+---------------------+
 
-      Optional vendor-specific components (not all are available at the beginning of the season):
+      Vendor packages (not all are available at the beginning of the season):
 
-      +---------------------+-----------+-------------+---------------------------+
-      |                     | Origin    | components  | requires                  |
-      +=====================+===========+=============+===========================+
-      | ChoreoLib           | Vendor    |             | sleipnirgroup-choreolib   |
-      +---------------------+-----------+-------------+---------------------------+
-      | CTRE Phoenix 6      | Vendor    | phoenix6    | phoenix6                  |
-      +---------------------+-----------+-------------+---------------------------+
-      | CTRE Phoenix 5      | Community | phoenix5    | robotpy-ctre              |
-      +---------------------+-----------+-------------+---------------------------+
-      | PathPlannerLib      | Vendor    | pathplannerlib | robotpy-pathplannerlib |
-      +---------------------+-----------+-------------+---------------------------+
-      | PhotonVision        | Vendor    | photonvision | photonlibpy              |
-      +---------------------+-----------+-------------+---------------------------+
-      | Playing With Fusion | Community | playingwithfusion | robotpy-playingwithfusion |
-      +---------------------+-----------+-------------+---------------------------+
-      | REVLib              | Community | rev         | robotpy-rev               |
-      +---------------------+-----------+-------------+---------------------------+
-      | Studica             | Community | navx        | robotpy-navx              |
-      +---------------------+-----------+-------------+---------------------------+
-      | URCL                | Community |             | robotpy-urcl              |
-      +---------------------+-----------+-------------+---------------------------+
+      +---------------------+-----------+---------------------------+
+      |                     | Origin    | requires                  |
+      +=====================+===========+===========================+
+      | ChoreoLib           | Vendor    | sleipnirgroup-choreolib   |
+      +---------------------+-----------+---------------------------+
+      | CTRE Phoenix 6      | Vendor    | phoenix6                  |
+      +---------------------+-----------+---------------------------+
+      | CTRE Phoenix 5      | Community | robotpy-ctre              |
+      +---------------------+-----------+---------------------------+
+      | PathPlannerLib      | Vendor    | robotpy-pathplannerlib    |
+      +---------------------+-----------+---------------------------+
+      | PhotonVision        | Vendor    | photonlibpy               |
+      +---------------------+-----------+---------------------------+
+      | Playing With Fusion | Community | robotpy-playingwithfusion |
+      +---------------------+-----------+---------------------------+
+      | REVLib              | Community | robotpy-rev               |
+      +---------------------+-----------+---------------------------+
+      | Studica             | Community | robotpy-navx              |
+      +---------------------+-----------+---------------------------+
+      | URCL                | Community | robotpy-urcl              |
+      +---------------------+-----------+---------------------------+
 
       When using ``requires``, you can specify a version by appending ``==<version>`` to the package name, e.g. ``robotpy-commands-v2==2024.0.0``. If you do not specify a version, the latest version will be installed.
 
@@ -155,4 +155,4 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
    .. tab-item:: Python
       :sync: python
 
-      Third party libraries are packaged into Python wheels and uploaded to PyPI (if pure python) and/or WPILib's artifactory. Users can enable them as dependencies either by adding the component name to ``components`` (recommended) or by adding an explicit dependency for the PyPI package in ``requires``. The dependencies are downloaded when ``robotpy sync`` is executed, and installed on the roboRIO when ``robotpy deploy`` is executed.
+      Third party libraries are packaged into Python wheels and uploaded to PyPI (if pure python) and/or WPILib's artifactory. Core WPILib packages can be installed by adding the component name to ``components``, while vendor packages must be added to ``requires`` with their PyPI package name. The dependencies are downloaded when ``robotpy sync`` is executed, and installed on the roboRIO when ``robotpy deploy`` is executed.

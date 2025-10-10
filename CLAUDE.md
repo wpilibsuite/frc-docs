@@ -1,0 +1,1 @@
+- never work on an issue that already has a PR fixing it
