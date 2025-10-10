@@ -188,7 +188,7 @@ Selecting the right camera is crucial for reliable game piece detection. Key con
 ### Exposure Control
 
 - **Manual exposure control**: Essential for consistent detection under varying lighting
-- **Global shutter vs rolling shutter**: Global shutter is preferable for fast-moving robots to avoid image distortion
+- **Global shutter vs rolling shutter**: Global shutter cameras capture the entire frame at once, avoiding distortion when moving quickly, making them preferable for fast-moving robots. However, rolling shutter cameras are significantly more common and less expensive. If a camera's specifications don't explicitly mention "global shutter," it's almost certainly rolling shutter. For most FRC applications, rolling shutter cameras work adequately, especially when using ring lights and avoiding excessive robot motion during image capture
 
 ### Common Camera Options
 
