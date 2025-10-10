@@ -522,6 +522,117 @@ For more information, see :doc:`/docs/software/vision-processing/index`.
 
 For more information, see :doc:`/docs/software/hardware-apis/sensors/gyros-software`.
 
+## Design Decision Questions
+
+These questions address common "which should I choose" decisions teams face. Answers focus on objective technical facts rather than subjective preferences.
+
+### Should I use Command-Based programming?
+
+**Command-Based provides:**
+- Structured framework for organizing robot code
+- Built-in scheduling and command composition
+- Better code reusability across mechanisms
+- Easier to add autonomous routines
+- Industry-standard design patterns
+
+**When not to use Command-Based:**
+- Very simple robots (single mechanism)
+- Team is more comfortable with timed/state machine approaches
+- Limited programming experience and time
+
+Most competitive teams use Command-Based for its organizational benefits. See :doc:`/docs/software/commandbased/what-is-command-based` for details.
+
+### PID on motor controller vs on roboRIO?
+
+**On Motor Controller (Phoenix, REVLib):**
+- Lower latency (faster control loop)
+- Offloads computation from roboRIO
+- Works even if roboRIO code crashes
+- More limited tuning/debugging visibility
+- Requires CAN bus for configuration
+
+**On roboRIO (WPILib PIDController):**
+- Full control over implementation
+- Easy to log and debug
+- Can combine multiple sensors
+- More flexible filtering and setpoint generation
+- Subject to roboRIO loop timing
+
+**Recommendation:** Use motor controller PID for simple position/velocity control of individual mechanisms. Use roboRIO for complex control strategies that need multiple sensors or custom logic.
+
+### Which trajectory follower should I use?
+
+**Ramsete (Differential Drive):**
+- Designed specifically for tank/differential drives
+- Handles non-holonomic constraints
+- Well-tested and documented
+- See :doc:`/docs/software/pathplanning/trajectory-tutorial/index`
+
+**Holonomic Controller (Swerve/Mecanum):**
+- For holonomic drivetrains only
+- Simpler math than non-holonomic control
+- See :doc:`/docs/software/advanced-controls/trajectories/holonomic`
+
+**PathPlanner/Choreo:**
+- Higher-level path planning tools
+- Generate trajectories with WPILib followers
+- Add waypoints, constraints, event markers
+- PathPlanner: https://pathplanner.dev
+- Choreo: :doc:`/docs/software/pathplanning/choreo/index`
+
+**Note:** Ramsete documentation is being replaced with guidance toward PathPlanner and Choreo as modern alternatives. See Issue #2651.
+
+### Which dashboard should I use?
+
+**Shuffleboard:**
+- Official WPILib dashboard
+- Customizable layouts with tabs
+- NetworkTables integration
+- Plugin support
+- See :doc:`/docs/software/dashboards/shuffleboard/index`
+
+**Glass:**
+- Lightweight, focused on visualization
+- Built-in pose plotting and mechanism visualization
+- Lower resource usage than Shuffleboard
+- See :doc:`/docs/software/dashboards/glass/index`
+
+**SmartDashboard:**
+- Legacy dashboard, still functional
+- Simple key-value display
+- Minimal features compared to newer options
+- Consider upgrading to Shuffleboard or Glass
+
+**Third-Party:**
+- AdvantageScope: Log file analysis and replay
+- Elastic: Web-based dashboard
+- QDriverStation: Cross-platform driver station
+
+**Recommendation:** Use Shuffleboard for general purposes, Glass for pose visualization, AdvantageScope for match analysis.
+
+### Java, C++, or Python?
+
+**Java:**
+- Most common FRC language (~70% of teams)
+- Best documentation and examples
+- Robust ecosystem and tooling
+- Garbage collection simplifies memory management
+
+**C++:**
+- Highest performance (rarely matters in FRC)
+- No garbage collection pauses
+- More complex memory management
+- Preferred by teams with C++ mentors
+
+**Python (RobotPy):**
+- Fastest to write and prototype
+- Simple syntax, good for beginners
+- Smaller community and fewer examples
+- Some vendor libraries have limited support
+- See https://robotpy.readthedocs.io
+
+**Recommendation:** Choose based on mentor/student experience. Java is the "safe" choice with the most support. All three languages have access to the same WPILib features.
+
 ## Additional Resources
 
 For more support options, see :doc:`support-resources`.
