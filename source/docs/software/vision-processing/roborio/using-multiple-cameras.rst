@@ -96,8 +96,8 @@ If you're interested in just switching what the driver sees, and are using Smart
     ```toml
     [tool.robotpy]
     ...
-    # Add cscore to the robotpy-extras list
-    robotpy_extras = ["cscore"]
+    # Add cscore to the components list
+    components = ["cscore"]
     ```
 
 If you're using some other dashboard, you can change the camera used by the camera server dynamically. If you open a stream viewer nominally to camera1, the robot code will change the stream contents to either camera1 or camera2 based on the joystick trigger.
@@ -259,8 +259,8 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     ```toml
     [tool.robotpy]
     ...
-    # Add cscore to the robotpy-extras list
-    robotpy_extras = ["cscore"]
+    # Add cscore to the components list
+    components = ["cscore"]
     ```
 
 .. note::
