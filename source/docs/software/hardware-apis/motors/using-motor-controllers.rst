@@ -10,7 +10,7 @@ PWM motor controllers can be controlled in the same way as a CAN motor controlle
 
 ### Basic Usage
 
-These examples show how to create and control a motor controller. In a real robot program, you would typically declare motor controllers as member variables in your robot class (Command-Based) or subsystem, then use them in methods/commands.
+These examples show how to create and control a motor controller. In a real robot program, you would typically declare motor controllers as member variables in your robot class or subsystem (Command-Based), then use them in methods/commands.
 
 .. tab-set-code::
 
