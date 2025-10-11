@@ -2,7 +2,7 @@
 
 With our drive subsystem written, it is now time to generate a trajectory and write an autonomous command to follow it.
 
-As per the :ref:`standard command-based project structure <docs/software/commandbased/structuring-command-based-project:Structuring a Command-Based Robot Project>`, we will do this in the ``getAutonomousCommand`` method of the ``RobotContainer`` class.  The full method from the RamseteCommand Example Project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand)) can be seen below.  The rest of the article will break down the different parts of the method in more detail.
+As per the :ref:`standard command-based project structure <docs/software/commandbased/commands-v2/structuring-command-based-project:Structuring a Command-Based Robot Project>`, we will do this in the ``getAutonomousCommand`` method of the ``RobotContainer`` class.  The full method from the RamseteCommand Example Project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand)) can be seen below.  The rest of the article will break down the different parts of the method in more detail.
 
 .. tab-set::
 

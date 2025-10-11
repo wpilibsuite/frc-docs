@@ -68,7 +68,7 @@ Creating one ``StartEndCommand`` instance and putting it in a variable won't wor
 
 #### Instance Command Factory Methods
 
-One way to solve this quandary is using the "factory method" design pattern: a function that returns a new object every invocation, according to some specification. Using :ref:`command composition <docs/software/commandbased/command-compositions:Command Compositions>`, a factory method can construct a complex command object with merely a few lines of code.
+One way to solve this quandary is using the "factory method" design pattern: a function that returns a new object every invocation, according to some specification. Using :ref:`command composition <docs/software/commandbased/commands-v2/command-compositions:Command Compositions>`, a factory method can construct a complex command object with merely a few lines of code.
 
 For example, a command like the intake-running command is conceptually related to exactly one subsystem: the ``Intake``. As such, it makes sense to put a ``runIntakeCommand`` method as an instance method of the ``Intake`` class:
 

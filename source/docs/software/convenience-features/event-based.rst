@@ -117,7 +117,7 @@ Often times it is desired to bind an action not to the *current* state of a cond
 
 ### Downcasting ``BooleanEvent`` Objects
 
-To convert ``BooleanEvent`` objects to other types, most commonly the ``Trigger`` subclass used for :ref:`binding commands to conditions <docs/software/commandbased/binding-commands-to-triggers:Binding Commands to Triggers>`, the generic ``castTo()``/``CastTo()`` decorator exists:
+To convert ``BooleanEvent`` objects to other types, most commonly the ``Trigger`` subclass used for :ref:`binding commands to conditions <docs/software/commandbased/commands-v2/binding-commands-to-triggers:Binding Commands to Triggers>`, the generic ``castTo()``/``CastTo()`` decorator exists:
 
 .. tab-set-code::
 
