@@ -30,6 +30,8 @@ Next, a list of examples will appear. Scroll through the list to find the "XRP R
 
 Fill out the rest of the fields in the "New Project Creator" and click "Generate Project" to create the new robot project.
 
+.. note:: **Enable Desktop Support** - This option can be left checked or unchecked for Java and Python XRP projects, as it has no effect. For C++ XRP projects, it must be checked to enable simulation support (which the XRP requires to run).
+
 ### Running an XRP Program
 
 Once the robot project is generated, it is essentially ready to run. The project has a pre-built ``Drivetrain`` class and associated default command that lets you drive the XRP around using a joystick.
