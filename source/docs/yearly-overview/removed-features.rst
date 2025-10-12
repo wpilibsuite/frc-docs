@@ -85,11 +85,11 @@ PIDCommand, ProfiledPIDCommand, TrapezoidProfileCommand, and their subsystem cou
 ## Mutable Java units
 Mutable Java units can cause many confusing issues if used incorrectly, and only exist because of the roboRIO's lack of RAM. Systemcore has enough RAM to handle immutable units.
 
-## robotInit
+## ``robotInit()``
 Use a constructor instead.
 
-## MathUtil.clamp()
-Use Math.clamp() instead.
+## ``MathUtil.clamp()``
+Use ``Math.clamp()`` instead.
 
-## Pose2/3d.exp(Twist2/3d)
-Replaced with Pose2/3d.plus(Twist2/3d.exp())
+## ``Pose2/3d.exp(Twist2/3d)``
+Use ``Pose2/3d.plus(Twist2/3d.exp())`` instead.
