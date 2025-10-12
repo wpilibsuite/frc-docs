@@ -229,7 +229,7 @@ The ``onlyIf()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/beta
 
    ```java
    // Command will only run if the game piece is present
-   button.onTrue(command.onlyIf(() -> intake.hasGamePiece()));
+   button.onTrue(command.onlyIf(intake::hasGamePiece));
    ```
 
    ```c++
@@ -239,7 +239,7 @@ The ``onlyIf()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/beta
 
    ```python
    # Command will only run if the game piece is present
-   button.onTrue(command.onlyIf(lambda: intake.hasGamePiece()))
+   button.onTrue(command.onlyIf(intake.hasGamePiece))
    ```
 
 The ``onlyWhile()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#onlyWhile(java.util.function.BooleanSupplier)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command_ptr.html), :external:py:meth:`Python <commands2.Command.onlyWhile>`) composes a command with a condition that is continuously checked during execution. If the condition becomes false while the command is running, the command will be interrupted. This is backed by a ``ParallelRaceGroup`` with a ``WaitUntilCommand``.
