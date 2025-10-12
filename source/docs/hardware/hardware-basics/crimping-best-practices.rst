@@ -74,10 +74,6 @@ Anderson Powerpole connectors are the primary power connectors used in FRC robot
 4. **Crimp** - Squeeze the ratcheting handle until it releases automatically
 5. **Inspect** - The crimp barrel should be compressed evenly with no gaps
 
-.. image:: images/crimping/powerpole-15-30-crimp.png
-   :alt: Diagram showing proper orientation of 15/30 amp Powerpole contact in crimper
-   :width: 400
-
 ### Crimping 45 Amp Contacts
 
 45 amp contacts have a U-shaped barrel that requires different technique:
