@@ -280,16 +280,19 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 | Black Solid | Solenoid Off |
 +-------------+--------------+
 
-## Talon SRX & Victor SPX & Talon FX Motor Controllers
+## Talon SRX & Victor SPX Motor Controllers
 
 .. image:: images/status-lights/talon-srx-status-lights.png
   :alt: Status LEDs on either side of the center of the Talon SRX.
   :width: 600
 
-### Status LEDs During Normal Operation
+These motor controllers use Phoenix 5. For the most up-to-date information, see the `CTRE Phoenix 5 Documentation <https://v5.docs.ctr-electronics.com/en/stable/ch13_MC.html>`__.
+
+
+### Talon SRX/Victor SPX Status LEDs During Normal Operation
 
 +------------------------------+----------------+--------------------------------------------+
-| LEDs                         | Colors         | Talon SRX State                            |
+| LEDs                         | Colors         | Device State                               |
 +==============================+================+============================================+
 | Both                         | Blinking Green | Forward throttle is applied.               |
 |                              |                | Blink rate is proportional to Duty Cycle.  |
@@ -297,7 +300,7 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 | Both                         | Blinking Red   | Reverse throttle is applied.               |
 |                              |                | Blink rate is proportional to Duty Cycle.  |
 +------------------------------+----------------+--------------------------------------------+
-| None                         | None           | No power is being applied to Talon SRX     |
+| None                         | None           | No power is being applied                  |
 +------------------------------+----------------+--------------------------------------------+
 | LEDs Alternate               | Off/Orange     | CAN bus detected, robot disabled           |
 +------------------------------+----------------+--------------------------------------------+
@@ -313,13 +316,11 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 +------------------------------+----------------+--------------------------------------------+
 | LED1 Only (closest to M+/V+) | Green/Orange   | In Boot-loader                             |
 +------------------------------+----------------+--------------------------------------------+
-| LEDs Strobe towards (M+)     | Off/Orange     | Thermal Fault / Shutoff (Talon FX Only)    |
-+------------------------------+----------------+--------------------------------------------+
 
-### Status LEDs During Calibration
+### Talon SRX/Victor SPX Status LEDs During Calibration
 
 +------------------------+------------------------+
-| Status LEDs Blink Code | Talon SRX State        |
+| Status LEDs Blink Code | Device State           |
 +========================+========================+
 | Flashing Red/Green     | Calibration Mode       |
 +------------------------+------------------------+
@@ -328,15 +329,61 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 | Blinking Red           | Failed Calibration     |
 +------------------------+------------------------+
 
-### B/C CAL Blink Codes
+### Talon SRX/Victor SPX B/C CAL Blink Codes
 
-+----------------------+-----------------+
-| B/C CAL Button Color | Talon SRX State |
-+======================+=================+
-| Solid Red            | Brake Mode      |
-+----------------------+-----------------+
-| Off                  | Coast Mode      |
-+----------------------+-----------------+
++----------------------+--------------+
+| B/C CAL Button Color | Device State |
++======================+==============+
+| Solid Red            | Brake Mode   |
++----------------------+--------------+
+| Off                  | Coast Mode   |
++----------------------+--------------+
+
+## Talon FX Motor Controller
+
+The Talon FX uses Phoenix 6. For the most up-to-date information, see the `CTRE Phoenix 6 Documentation <https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/index.html#status-light-reference>`__.
+
+
+### Talon FX Status LEDs
+
++------------------------------+-------------------------------------+
+| LED State                    | Meaning                             |
++==============================+=====================================+
+| LEDs Off                     | No Power                            |
++------------------------------+-------------------------------------+
+| Blinking Alternating Red     | No valid CAN/PWM signal             |
++------------------------------+-------------------------------------+
+| Blinking Alternating Orange  | CAN detected but no Phoenix running |
++------------------------------+-------------------------------------+
+| Blinking Simultaneous Orange | Valid CAN signal, device disabled   |
++------------------------------+-------------------------------------+
+| Both Solid Orange            | Enabled with neutral output         |
++------------------------------+-------------------------------------+
+| Blinking Simultaneous Red    | Driving in reverse                  |
++------------------------------+-------------------------------------+
+| Blinking Simultaneous Green  | Driving forward                     |
++------------------------------+-------------------------------------+
+| Offset Alternating Red/Off   | Device limit reached                |
++------------------------------+-------------------------------------+
+| Offset Orange/Off            | Thermal cutoff                      |
++------------------------------+-------------------------------------+
+| Alternate Red/Green          | Pro-only command while unlicensed   |
++------------------------------+-------------------------------------+
+| Alternate Red/Orange         | Damaged Hardware                    |
++------------------------------+-------------------------------------+
+| Single LED alternates        | Device in bootloader                |
+| Green/Orange                 |                                     |
++------------------------------+-------------------------------------+
+
+### Talon FX B/C CAL Blink Codes
+
++----------------------+--------------+
+| B/C CAL Button Color | Device State |
++======================+==============+
+| Solid Red            | Brake Mode   |
++----------------------+--------------+
+| Off                  | Coast Mode   |
++----------------------+--------------+
 
 ## SPARK-MAX Motor Controller
 
