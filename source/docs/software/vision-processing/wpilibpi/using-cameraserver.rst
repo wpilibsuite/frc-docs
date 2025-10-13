@@ -13,9 +13,10 @@ The WPILibPi image comes with all the necessary libraries to make your own visio
    CameraServer.enableLogging()
    camera = CameraServer.startAutomaticCapture()
    camera.setResolution(width, height)
-   sink = cs.getVideo()
+   sink = CameraServer.getVideo()
+   input_img = np.zeros(shape=(height, width, 3), dtype=np.uint8)
    while True:
-      time, input_img = cvSink.grabFrame(input_img)
+      time, input_img = sink.grabFrame(input_img)
       if time == 0: # There is an error
          continue
    ```
@@ -37,12 +38,13 @@ Sometimes, you may want to send processed video frames back to the CameraServer 
    #
    # CameraServer initialization code here
    #
-   output = cs.putVideo("Name", width, height)
+   output = CameraServer.putVideo("Name", width, height)
+   input_img = np.zeros(shape=(height, width, 3), dtype=np.uint8)
    while True:
-      time, input_img = cvSink.grabFrame(input_img)
-         if time == 0: # There is an error
-            output.notifyError(sink.getError())
-            continue
+      time, input_img = sink.grabFrame(input_img)
+      if time == 0: # There is an error
+         output.notifyError(sink.getError())
+         continue
       #
       # Insert processing code here
       #
