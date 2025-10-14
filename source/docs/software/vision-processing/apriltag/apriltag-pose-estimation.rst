@@ -300,5 +300,5 @@ This approach requires solid understanding of 3D geometry and coordinate transfo
 - :doc:`apriltag-field-layout` - Understanding and using AprilTag field layouts
 - :doc:`/docs/software/advanced-controls/state-space/state-space-pose-estimators` - Using pose estimators with vision measurements
 - :doc:`/docs/software/basic-programming/coordinate-system` - Understanding the FRC coordinate system
-- `PhotonVision Documentation <https://docs.photonvision.org/>`_ - Complete PhotonVision documentation
-- `Limelight Documentation <https://docs.limelightvision.io/>`_ - Complete Limelight documentation
+- `PhotonVision Documentation <https://docs.photonvision.org/>`__ - Complete PhotonVision documentation
+- `Limelight Documentation <https://docs.limelightvision.io/>`__ - Complete Limelight documentation
