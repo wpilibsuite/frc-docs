@@ -31,7 +31,7 @@ WPILib provides official field layouts for each game year as JSON files. The eas
    #include <frc/apriltag/AprilTagFields.h>
 
    // Load the official field layout for the current year
-   frc::AprilTagFieldLayout fieldLayout = frc::LoadAprilTagLayoutField(frc::AprilTagField::k2024Crescendo);
+   frc::AprilTagFieldLayout fieldLayout = frc::AprilTagFieldLayout::LoadField(frc::AprilTagField::k2024Crescendo);
    ```
 
    ```python
