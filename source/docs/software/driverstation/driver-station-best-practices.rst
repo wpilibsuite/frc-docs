@@ -104,6 +104,12 @@ Members of the FRC community report good results with these USB Ethernet adapter
 * TP-Link UE330
 * uni USB to Ethernet Adapter with hub (both USB-A and USB-C styles)
 
+Don't be confused and use a USB RJ-45 extender.  These are reported to fry USB ports.
+
+.. image:: images/driver-station-best-practices/usb-rj45-bad.png
+    :scale: 25%
+    :alt: An adapter with a USB-A male connector and an RJ-45 connector, labeled USB RJ-45 extension adapter, overlaid with BAD in red text.
+
 ## Credits
 
 The source document for this page was created by Steve Peterson, with contributions from Juan Chong, James Cole-Henry, Rick Kosbab, Greg McKaskle, Chris Picone, Chris Roadfeldt, Joe Ross, and Ryan Sjostrand. The original post and follow-up posts can be found [here](https://www.chiefdelphi.com/t/paper-driver-station-best-practices/164429).
