@@ -48,13 +48,15 @@ One of the most common sources of confusion is the **origin location**. FRC fiel
 
 .. important:: Always call ``setOrigin()`` with your alliance color before using vision measurements! Forgetting this will cause pose estimates to be wildly incorrect.
 
+.. note:: Alliance color is not available during ``robotInit()``. Call ``setOrigin()`` in a periodic method (like ``robotPeriodic()``) or in ``autonomousInit()``/``teleopInit()``. See :doc:`/docs/software/basic-programming/alliancecolor` for more information about getting alliance color safely.
+
 .. tab-set-code::
 
    ```java
    import edu.wpi.first.wpilibj.DriverStation;
    import edu.wpi.first.apriltag.AprilTagFieldLayout.OriginPosition;
 
-   // In robotInit() or robotPeriodic():
+   // In robotPeriodic(), autonomousInit(), or teleopInit():
    var alliance = DriverStation.getAlliance();
    if (alliance.isPresent()) {
       fieldLayout.setOrigin(alliance.get() == DriverStation.Alliance.Blue ?
@@ -69,7 +71,7 @@ One of the most common sources of confusion is the **origin location**. FRC fiel
    ```c++
    #include <frc/DriverStation.h>
 
-   // In RobotInit() or RobotPeriodic():
+   // In RobotPeriodic(), AutonomousInit(), or TeleopInit():
    auto alliance = frc::DriverStation::GetAlliance();
    if (alliance) {
       fieldLayout.SetOrigin(alliance.value() == frc::DriverStation::Alliance::kBlue ?
@@ -85,7 +87,7 @@ One of the most common sources of confusion is the **origin location**. FRC fiel
    from wpilib import DriverStation
    from wpilib import AprilTagFieldLayout
 
-   # In robotInit() or robotPeriodic():
+   # In robotPeriodic(), autonomousInit(), or teleopInit():
    alliance = DriverStation.getAlliance()
    if alliance is not None:
       origin = (AprilTagFieldLayout.OriginPosition.kBlueAllianceWallRightSide
@@ -171,36 +173,87 @@ Most vision processing libraries (PhotonVision, Limelight) need the field layout
 
 ## Loading Custom Layouts
 
-For testing or custom applications, you can load field layouts from a JSON file:
+For testing or custom applications, you can create and load custom field layouts from JSON files.
+
+### Creating Custom Layout Files
+
+Custom layout files should be placed in your project's ``src/main/deploy`` directory (Java/C++) or ``deploy`` directory (Python). This ensures they are deployed to the roboRIO with your robot code.
+
+You can create custom layouts by:
+
+1. **Manually editing JSON**: Copy an existing layout from the `WPILib repository <https://github.com/wpilibsuite/allwpilib/tree/main/apriltag/src/main/native/resources/edu/wpi/first/apriltag>`_ and modify the tag positions
+2. **Using WPICalibrator**: The `WPILibPi Raspberry Pi image <https://github.com/wpilibsuite/WPILibPi>`_ includes tools for measuring tag positions
+3. **Programmatically**: Create layouts in code for testing
+
+### JSON Format
+
+The JSON file should contain:
+
+- ``field``: Object with ``length`` and ``width`` in meters
+- ``tags``: Array of tag objects, each with:
+
+  - ``ID``: Integer tag ID
+  - ``pose``: Object with ``translation`` (x, y, z in meters) and ``rotation`` (quaternion w, x, y, z)
+
+Example:
+
+.. code-block:: json
+
+   {
+     "field": {
+       "length": 16.54,
+       "width": 8.21
+     },
+     "tags": [
+       {
+         "ID": 1,
+         "pose": {
+           "translation": { "x": 1.0, "y": 2.0, "z": 0.5 },
+           "rotation": { "quaternion": { "W": 1.0, "X": 0.0, "Y": 0.0, "Z": 0.0 } }
+         }
+       }
+     ]
+   }
+
+### Loading Custom Layouts
 
 .. tab-set-code::
 
    ```java
-   // Load from a custom JSON file
-   AprilTagFieldLayout customLayout = new AprilTagFieldLayout("path/to/layout.json");
+   import edu.wpi.first.wpilibj.Filesystem;
+
+   // Load from deploy directory
+   String path = Filesystem.getDeployDirectory().toPath().resolve("custom_layout.json").toString();
+   AprilTagFieldLayout customLayout = new AprilTagFieldLayout(path);
    ```
 
    ```c++
-   // Load from a custom JSON file
-   frc::AprilTagFieldLayout customLayout{"path/to/layout.json"};
+   #include <frc/Filesystem.h>
+
+   // Load from deploy directory
+   std::string path = frc::filesystem::GetDeployDirectory() + "/custom_layout.json";
+   frc::AprilTagFieldLayout customLayout{path};
    ```
 
    ```python
-   # Load from a custom JSON file
-   custom_layout = AprilTagFieldLayout("path/to/layout.json")
-   ```
+   import wpilib
 
-The JSON format matches the official field layouts. You can find examples in the `WPILib repository <https://github.com/wpilibsuite/allwpilib/tree/main/apriltag/src/main/native/resources/edu/wpi/first/apriltag>`_.
+   # Load from deploy directory
+   path = wpilib.deployDirectory + "/custom_layout.json"
+   custom_layout = AprilTagFieldLayout(path)
+   ```
 
 ## Common Pitfalls
 
 1. **Forgetting to set origin**: This is the #1 cause of incorrect pose estimates. Always call ``setOrigin()`` based on your alliance!
 2. **Using wrong year's layout**: Make sure you're loading the layout for the current game year
 3. **Not handling optional values**: Tag pose lookups return ``Optional`` / ``std::optional`` / ``None`` - always check before using!
-4. **Coordinate system confusion**: The field layout uses field-relative coordinates (blue alliance origin), not robot-relative
+4. **Coordinate system confusion**: The field layout uses field-relative coordinates. See :doc:`/docs/software/basic-programming/coordinate-system` for details on the FRC coordinate system.
 
 ## See Also
 
+- :doc:`/docs/software/basic-programming/coordinate-system` - Understanding the FRC coordinate system
+- :doc:`/docs/software/basic-programming/alliancecolor` - Getting alliance color safely
 - :doc:`Pose Estimators </docs/software/advanced-controls/state-space/state-space-pose-estimators>` - How to use vision measurements with pose estimation
 - :doc:`AprilTag Introduction <apriltag-intro>` - Understanding AprilTag detection
 - `AprilTagFieldLayout API Docs (Java) <https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/apriltag/AprilTagFieldLayout.html>`_
