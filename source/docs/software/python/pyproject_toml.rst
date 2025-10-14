@@ -16,24 +16,27 @@ The ``pyproject.toml`` file looks something like this:
 [tool.robotpy]
 # Version of robotpy this project depends on
 robotpy_version = "2024.2.1.0"
-# Which extra RobotPy components should be installed
+# Which core WPILib components should be installed
 # -> equivalent to `pip install robotpy[extra1, ...]
 components = [
     # "all"
     # "apriltag"
     # "commands2"
     # "cscore"
-    # "navx"
-    # "pathplannerlib"
-    # "phoenix5"
-    # "phoenix6"
-    # "playingwithfusion"
-    # "rev"
     # "romi"
     # "sim"
+    # "xrp"
 ]
-# Other pip packages to install
-requires = []
+# Other pip packages to install (including vendor packages)
+requires = [
+    # Vendor packages (examples):
+    # "robotpy-navx"
+    # "robotpy-pathplannerlib"
+    # "robotpy-ctre"  # Phoenix 5
+    # "phoenix6"
+    # "robotpy-playingwithfusion"
+    # "robotpy-rev"
+]
 ```
 
 Each of the following will instruct the deploy process to install packages to the roboRIO:

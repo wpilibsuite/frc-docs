@@ -44,31 +44,33 @@ Vendor dependencies are installed on a per-project basis (so each robot project 
 
       All RobotPy project dependencies are specified in ``pyproject.toml``. You can add additional dependencies by:
 
-      * Adding WPILib component names to ``components`` (for core WPILib packages only)
-      * Adding PyPI package names to ``requires`` (for vendor packages and other dependencies)
+      * Adding WPILib component names to ``components`` (for core WPILib packages built by WPILib only)
+      * Adding PyPI package names to ``requires`` (for all vendor packages and other dependencies)
+
+      .. important:: Only core WPILib packages can be specified in ``components``. All vendor packages must be listed in ``requires``.
 
       .. seealso:: :doc:`/docs/software/python/pyproject_toml`
 
-      Optional WPILib components:
+      Optional WPILib components (use ``components``):
 
-      +----------+------------+---------------------+
-      |          | components | requires            |
-      +==========+============+=====================+
-      | Apriltag | apriltag   | robotpy-apriltag    |
-      +----------+------------+---------------------+
-      | Commands | commands2  | robotpy-commands-v2 |
-      +----------+------------+---------------------+
-      | cscore   | cscore     | robotpy-cscore      |
-      +----------+------------+---------------------+
-      | Romi     | romi       | robotpy-romi        |
-      +----------+------------+---------------------+
-      | XRP      | xrp        | robotpy-xrp         |
-      +----------+------------+---------------------+
+      +----------+------------+
+      |          | components |
+      +==========+============+
+      | Apriltag | apriltag   |
+      +----------+------------+
+      | Commands | commands2  |
+      +----------+------------+
+      | cscore   | cscore     |
+      +----------+------------+
+      | Romi     | romi       |
+      +----------+------------+
+      | XRP      | xrp        |
+      +----------+------------+
 
-      Vendor packages (not all are available at the beginning of the season):
+      Vendor packages (use ``requires``, not all are available at the beginning of the season):
 
       +---------------------+-----------+---------------------------+
-      |                     | Origin    | requires                  |
+      |                     | Origin    | PyPI Package Name         |
       +=====================+===========+===========================+
       | ChoreoLib           | Vendor    | sleipnirgroup-choreolib   |
       +---------------------+-----------+---------------------------+
