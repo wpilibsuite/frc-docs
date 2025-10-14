@@ -23,7 +23,7 @@ WPILib provides official field layouts for each game year as JSON files. The eas
    import edu.wpi.first.apriltag.AprilTagFields;
 
    // Load the official field layout for the current year
-   AprilTagFieldLayout fieldLayout = AprilTagFieldLayout.loadField(AprilTagFields.k2024Crescendo);
+   AprilTagFieldLayout fieldLayout = AprilTagFieldLayout.loadField(AprilTagFields.k2025ReefscapeWelded);
    ```
 
    ```c++
@@ -31,7 +31,7 @@ WPILib provides official field layouts for each game year as JSON files. The eas
    #include <frc/apriltag/AprilTagFields.h>
 
    // Load the official field layout for the current year
-   frc::AprilTagFieldLayout fieldLayout = frc::AprilTagFieldLayout::LoadField(frc::AprilTagField::k2024Crescendo);
+   frc::AprilTagFieldLayout fieldLayout = frc::AprilTagFieldLayout::LoadField(frc::AprilTagField::k2025ReefscapeWelded);
    ```
 
    ```python
@@ -39,8 +39,10 @@ WPILib provides official field layouts for each game year as JSON files. The eas
    from wpilib import AprilTagField
 
    # Load the official field layout for the current year
-   field_layout = AprilTagFieldLayout.loadField(AprilTagField.k2024Crescendo)
+   field_layout = AprilTagFieldLayout.loadField(AprilTagField.k2025ReefscapeWelded)
    ```
+
+.. note:: For 2025 Reefscape, there are two field layout options: ``k2025ReefscapeWelded`` (for welded tube fields) and ``k2025ReefscapeAndyMark`` (for AndyMark tube fields). Use the one that matches your practice field or the official field you're competing on.
 
 ## Setting the Origin
 
