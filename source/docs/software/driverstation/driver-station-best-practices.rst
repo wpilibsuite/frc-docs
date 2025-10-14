@@ -72,6 +72,8 @@ Once you've acquired your laptop, here's a list of things to do.
    #. Set Power Mode to Best Performance
    #. Ensure the laptop battery can hold a charge for at least an hour after making the changes above. This allows plenty of time for the robot and drive team to go through the queue and reach the alliance station without mains power.
 
+#. If you are running a non-English version of Windows, set the user to English prior to doing any software installation.  If your laptop has a non-English Single Language Edition, you should install an edition of Windows that is supported by the FRC Driver Station application and supports English.
+
 ## Prior to leaving for the competition
 
 Items in this section require internet connectivity and should be done prior to arriving at the event.
