@@ -4,7 +4,10 @@ This page describes wiring pneumatics with the CTRE Pneumatic Control Module (PC
 
 .. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, refer to the [FIRST Pneumatics Manual](https://info.firstinspires.org/hubfs/web/program/frc/resources/pneumatics-manual.pdf).
 
-.. seealso:: For Pneumatic Control Module configuration, firmware updates using Phoenix Tuner, and detailed technical specifications, see the [CTRE PCM Documentation](https://v5.docs.ctr-electronics.com/en/stable/ch09_BringUpPCM.html).
+.. seealso:: For Pneumatic Control Module configuration and firmware updates using Phoenix Tuner, see the CTRE documentation:
+
+   - [CAN Bus Setup](https://v5.docs.ctr-electronics.com/en/stable/ch08_BringUpCAN.html) - Device IDs, firmware updates, and troubleshooting
+   - [PCM Bring-Up](https://v5.docs.ctr-electronics.com/en/stable/ch09_BringUpPCM.html) - Testing solenoids and compressor operation
 
 ## Wiring Overview
 
