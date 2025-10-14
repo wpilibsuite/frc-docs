@@ -217,7 +217,7 @@ Example:
      ]
    }
 
-### Loading Custom Layouts
+### Loading from Deploy Directory
 
 .. tab-set-code::
 
