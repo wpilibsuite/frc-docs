@@ -129,7 +129,8 @@ The elements of the New Project Creator Window are explained below:
 8. **Enable Desktop Support**: Enables unit test and simulation support.
 
    - **Java**: This option has no effect and can be left checked or unchecked
-   - **C++**: Checking this option enables desktop compilation, which is required for simulation, unit tests, and certain development workflows (like Romi or XRP projects)
+   - **C++**: Checking this option enables desktop compilation, which is required for simulation and unit tests
+   - **Romi/XRP**: This option has no effect for Romi and XRP templates and can be left checked or unchecked
 
    .. note:: While WPILib fully supports desktop builds, some third-party vendor libraries may not. If a library doesn't support desktop compilation, your C++ code may not compile or may crash when running simulation. In such cases, you may need to conditionally compile code that uses those libraries (see :doc:`/docs/software/wpilib-tools/robot-simulation/introduction`).
 
