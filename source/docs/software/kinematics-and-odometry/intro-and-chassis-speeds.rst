@@ -25,15 +25,6 @@ Teams should use WPILib's kinematics and odometry classes for several important 
 
 **Self-correction**: Combined with vision systems (like AprilTag detection), odometry can be continuously updated to correct for drift and maintain accuracy throughout a match.
 
-### Field-Oriented Control
-
-For holonomic drivetrains (swerve and mecanum), field-oriented control dramatically improves driver experience:
-
-- Driver joystick inputs remain consistent regardless of robot orientation
-- Pushing forward on the joystick always moves toward the opposite alliance station
-- Robot can face any direction while moving in any direction
-- Significantly reduces driver cognitive load during teleoperation
-
 ### Trajectory Generation and Following
 
 Kinematics integrates with WPILib's trajectory generation to create smooth, dynamically-constrained paths:
@@ -52,69 +43,29 @@ Kinematics integrates with WPILib's trajectory generation to create smooth, dyna
 
 **Match strategy**: Plan routes that avoid defense, optimize cycle times, coordinate with alliance partners
 
-## When to use each drivetrain type
+## Example Code
 
-### Differential Drive
+For drivetrain-specific implementation examples:
 
-**Best for:**
-- Traditional tank drive, "West Coast Drive", or skid-steer robots
-- 6-wheel or 8-wheel configurations with traction wheels
-- Teams new to advanced control systems
-- When pushing power and traction are priorities
-
-**Characteristics:**
-- Cannot strafe (move sideways)
-- Must turn to change direction
-- High traction and pushing power
-- Simpler mechanical design
-- Non-holonomic (requires Ramsete controller for path following)
-
-**Example code**: See the RamseteCommand example in :doc:`/docs/software/examples-tutorials/wpilib-examples`
-
-### Swerve Drive
-
-**Best for:**
-- Maximum maneuverability and control
-- Competitive teams with advanced programming and build experience
-- When field-oriented control is desired
-- Robots that need to move and rotate independently
-
-**Characteristics:**
-- Holonomic (can move in any direction while facing any direction)
-- Highest mobility and control
-- Most complex mechanically and in software
-- Requires precise module control and calibration
-- Can use high-traction wheels
-
-**Example code**: See the SwerveBot and SwerveControllerCommand examples in :doc:`/docs/software/examples-tutorials/wpilib-examples`
-
-### Mecanum Drive
-
-**Best for:**
-- Teams wanting holonomic drive with simpler mechanics than swerve
-- Robots that benefit from strafing but don't need maximum pushing power
-- When compactness is important
-
-**Characteristics:**
-- Holonomic (can strafe)
-- Simpler than swerve mechanically
-- Lower pushing power due to mecanum wheel design
-- Wheels more prone to wear and slipping
-- Slower when strafing than when driving forward (due to 45° roller angle)
-- Requires careful weight distribution to keep all wheels on ground
-
-**Example code**: See the MecanumBot and MecanumControllerCommand examples in :doc:`/docs/software/examples-tutorials/wpilib-examples`
+- **Differential Drive**: See the `CTRE Swerve & Swerve Drivetrain examples <https://github.com/CrossTheRoadElec/Phoenix6-Examples/tree/main/java>`__ which also include differential drive path following
+- **Swerve Drive**:
+  - `REV MAXSwerve Template <https://github.com/REVrobotics/MAXSwerve-Java-Template>`__ - Complete swerve template from REV Robotics
+  - `YAGSL (Yet Another Generic Swerve Library) <https://github.com/BroncBotz3481/YAGSL>`__ - Vendor-agnostic swerve library
+  - `CTRE Swerve examples <https://github.com/CrossTheRoadElec/Phoenix6-Examples/tree/main/java/SwerveWithPathPlanner>`__ - Swerve with PathPlanner integration
+- **Mecanum Drive**: See mecanum-specific examples in vendor documentation
 
 ## Important considerations
 
-**Odometry drift**: Position estimates accumulate error over time, especially during physical contact with other robots. This is normal and expected. Vision-based corrections (using AprilTags) help maintain accuracy.
+**Odometry drift**: Position estimates accumulate error over time, especially during physical contact with other robots and field elements. This is normal and expected. Vision-based corrections (using AprilTags) help maintain accuracy.
 
 **Sensor requirements**: All kinematics implementations require:
-- Encoders for measuring wheel/module speeds and positions
+- Encoders for measuring wheel speeds
 - Gyroscope for measuring robot angle (critical for accurate odometry)
-- For swerve: absolute encoders for module angles
+- For swerve: absolute encoders for measuring module angles
 
-**Autonomous period accuracy**: Odometry is typically very accurate during autonomous (15 seconds) because there's less robot-to-robot contact. Estimates may drift more during teleoperation.
+**Mecanum odometry accuracy**: Mecanum drive odometry can be less accurate than differential or swerve due to wheel slipping. The accuracy depends on movement complexity, robot speed, and weight distribution. For improved accuracy, consider using dead wheels (omni wheels that don't provide drive power but only measure movement) or combining with vision-based corrections.
+
+**Autonomous period accuracy**: Odometry is typically very accurate during autonomous (15 seconds) because there's less robot-to-robot contact. Estimates may drift more during the Teleoperated Period.
 
 **Coordinate system**: WPILib uses a specific coordinate system. See :doc:`/docs/software/basic-programming/coordinate-system` for details.
 
