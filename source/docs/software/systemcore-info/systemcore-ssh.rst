@@ -4,10 +4,7 @@
 
 .. note:: This document contains advanced topics not required for typical FRC\ |reg| programming
 
-The roboRIO image contains a number of accounts, this article will highlight the two used  for FRC and provide some detail about their purpose. It will also describe how to connect  to the roboRIO over SSH.
-
-## roboRIO User Accounts
-The roboRIO image contains a number of user accounts, but there are two of primary interest for FRC.
+The Systemcore image contains a number of accounts, this article will highlight the main on used for FRC and provide some detail about its purpose. It will also describe how to connect to the Systemcore over SSH.
 
 ### systemcore
 The "systemcore" account has root access to the system and can be used to manipulate OS files or settings. Teams should take caution when using this account as it allows for the modification of settings and files that may corrupt the operating system of the Systemcore. The credentials for this account are:
@@ -19,7 +16,7 @@ The "systemcore" account has root access to the system and can be used to manipu
 .. danger:: Changing the default ssh passwords for the "systemcore" account will prevent C++, Java, and Python teams from uploading code.
 
 ## SSH
-SSH (Secure SHell) is a protocol used for secure data communication. When broadly referred to regarding a Linux system (such as the one running on the roboRIO) it generally refers to accessing the command line console using the SSH protocol. This can be used to execute commands on the remote system. OpenSSH is included by default on Windows, macOS, and Linux.
+SSH (Secure SHell) is a protocol used for secure data communication. When broadly referred to regarding a Linux system (such as the one running on the Systemcore) it generally refers to accessing the command line console using the SSH protocol. This can be used to execute commands on the remote system. OpenSSH is included by default on Windows, macOS, and Linux.
 
 ### Connect via SSH
 
