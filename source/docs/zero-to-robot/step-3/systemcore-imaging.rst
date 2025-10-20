@@ -1,9 +1,5 @@
 # Imaging your Systemcore
 
-.. note:: The imaging instructions for the NI roboRIO 1.0 are :ref:`here <docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO 1>`.
-
-The Systemcore boots from a microSD card configured with an appropriate boot image containing the NI Linux Real-Time OS, drivers, and libraries specific to FRC. The microSD card must be imaged with a laptop and an SD burner application per the instructions on this page.
-
 .. important:: Imaging the Systemcore with the roboRIO Imaging Tool is not supported.
 
 .. raw:: html
@@ -27,8 +23,8 @@ Supported image files are named ``limelightsystemcorecm5-limelightosr-YEAR-VERSI
 - Download and install [Limelight hardware manager](https://docs.limelightvision.io/docs/resources/downloads).
 - Make sure you install version 2.0.0 or higher
 - Launch
-- :guilabel:`Flash from file` -> locate the image file you want to copy to the microSD card
-- :guilabel:`Select target` -> select the destination microSD device
+- :guilabel:`Flash from file` -> locate the image file you want to copy to the Systemcore
+- :guilabel:`Select target` -> select the destination Systemcore
 - Press :guilabel:`Flash`
 
 ### Setting the Systemcore Team Number

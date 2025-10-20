@@ -3,7 +3,6 @@
 .. toctree::
    :maxdepth: 1
 
-   roborio2-imaging
-   imaging-your-roborio
+   systemcore-imaging
    radio-programming
    openmesh

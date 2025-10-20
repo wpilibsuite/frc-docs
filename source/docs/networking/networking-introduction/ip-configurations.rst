@@ -50,7 +50,7 @@ When configured for an event, the Team Radio runs a DHCP server with a pool for 
    ``10.TE.AM.X``, assigned by Robot Radio
 -  Other devices (if used) - DHCP, ``10.TE.AM.Y``, assigned by Robot Radio
 
-.. note:: If the roboRIO is not being assigned a DHCP IP address of ``10.TE.AM.2``, ensure you've :ref:`Set the roboRIO team number <docs/zero-to-robot/step-3/roborio2-imaging:Setting the roboRIO Team Number>`
+.. note:: If the roboRIO is not being assigned a DHCP IP address of ``10.TE.AM.2``, ensure you've :ref:`Set the roboRIO team number <docs/zero-to-robot/step-3/systemcore-imaging:Setting the Systemcore Team Number>`
 
 ### At Home DHCP Configuration
 
@@ -61,7 +61,7 @@ When configured for an event, the Team Radio runs a DHCP server with a pool for 
    ``10.TE.AM.X``, assigned by Robot Radio
 -  Other devices (if used) - DHCP, ``10.TE.AM.Y``, assigned by Robot Radio
 
-.. note:: If the roboRIO is not being assigned a DHCP IP address of ``10.TE.AM.2``, ensure you've :ref:`Set the roboRIO team number <docs/zero-to-robot/step-3/roborio2-imaging:Setting the roboRIO Team Number>`
+.. note:: If the roboRIO is not being assigned a DHCP IP address of ``10.TE.AM.2``, ensure you've :ref:`Set the roboRIO team number <docs/zero-to-robot/step-3/systemcore-imaging:Setting the Systemcore Team Number>`
 
 ## Static Configuration
 
