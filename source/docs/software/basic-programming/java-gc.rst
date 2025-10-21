@@ -55,7 +55,7 @@ This will cause the JVM to write heap dumps to a file named ``frc-usercode.hprof
 
 .. warning:: Configuring the JVM this way requires that the flash drive remain connected to the roboRIO while your code is running.
 
-Larger SD cards may provide enough onboard storage to allow the use of these options on the roboRIO 2 without a USB flash drive. To do this, set the ``-XX:HeapDumpPath`` option to reference a path on the SD card, and use :doc:`FTP/SFTP to transfer the heap dump to a computer </docs/software/systemcore-info/roborio-ftp>` before deleting it from the SD card.
+Larger SD cards may provide enough onboard storage to allow the use of these options on the roboRIO 2 without a USB flash drive. To do this, set the ``-XX:HeapDumpPath`` option to reference a path on the SD card, and use :doc:`FTP/SFTP to transfer the heap dump to a computer </docs/software/systemcore-info/systemcore-ftp>` before deleting it from the SD card.
 
 Note that the JVM will **not** overwrite heap dumps with the exact path and filename specified by ``-XX:HeapDumpPath`` if they already exist, nor will it dump the process heap to a file with a different name. If a path to a directory is supplied instead of a path to a file, the JVM will instead write out heap dumps with unique filenames within the specified directory, with the name ``java_pidNNNN.hprof``, where ``NNNN`` is the process ID of the JVM that ran out of memory. Note that this can cause large files to build up on disk if they are not cleaned out, so if you configure the JVM this way, be sure to frequently copy heap dumps to a computer and delete them from the flash drive/SD card afterward.
 

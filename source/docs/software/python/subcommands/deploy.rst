@@ -34,7 +34,7 @@ When you execute the ``robotpy deploy`` subcommand, it will do the following:
 * Install python packages on the roboRIO as specified by your ``pyproject.toml`` (if not already present)
 * Copy the entire robot project directory to the roboRIO and execute it
 
-.. warning:: Avoid powering off the robot while deploying robot code. Interrupting the deployment process can corrupt the roboRIO filesystem and prevent your code from working until the roboRIO is :doc:`re-imaged </docs/zero-to-robot/step-3/imaging-your-roborio>`.
+.. warning:: Avoid powering off the robot while deploying robot code. Interrupting the deployment process can corrupt the roboRIO filesystem and prevent your code from working until the roboRIO is :doc:`re-imaged </docs/zero-to-robot/step-3/systemcore-imaging>`.
 
 When successful, you will see a ``SUCCESS: Deploy was successful!`` message.
 

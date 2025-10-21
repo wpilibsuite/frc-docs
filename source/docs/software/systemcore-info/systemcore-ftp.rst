@@ -10,7 +10,7 @@ There are a number of freely available programs for SFTP. This article will disc
 
 ### Connecting to the roboRIO
 
-.. image:: images/roborio-connect.png
+.. image:: images/sftp-connect.png
    :alt: Each part of the connection information at the top of FileZilla.
 
 To connect to your roboRIO:
