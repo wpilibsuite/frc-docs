@@ -27,7 +27,7 @@ The command-based HID classes contain factory methods returning a ``Trigger`` fo
   ```
 
   ```python
-  from wpilib import CommandXboxController
+  from commands2.button import CommandXboxController
 
   example_command_controller = CommandXboxController(1)  # Creates a CommandXboxController on port 1
   x_button = example_command_controller.x()  # Creates a new Trigger object for the `X` button on example_command_controller
@@ -51,7 +51,7 @@ Alternatively, the :ref:`regular HID classes <docs/software/basic-programming/jo
 
   ```python
   from wpilib import XboxController
-  from wpilib.buttons import JoystickButton
+  from commands2.button import JoystickButton
 
   example_controller = XboxController(2)  # Creates an XboxController on port 2
   y_button = JoystickButton(example_controller, XboxController.Button.kY)  # Creates a new JoystickButton object for the `Y` button on example_controller
@@ -75,10 +75,10 @@ While binding to HID buttons is by far the most common use case, users may want 
 
   ```python
   from wpilib import DigitalInput
-  from commands2 import Trigger
+  from commands2.button import Trigger
 
   limit_switch = DigitalInput(3)  # Limit switch on DIO 3
-  example_trigger = Trigger(limit_switch.get)
+  example_trigger = Trigger(lambda: limit_switch.get())
   ```
 
 ## Trigger Bindings
