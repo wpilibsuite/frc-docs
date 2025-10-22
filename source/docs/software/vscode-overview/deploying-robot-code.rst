@@ -12,7 +12,7 @@ To build and deploy a robot project, do one of:
 
 Deploy robot code by selecting "Deploy Robot Code" from any of the three locations from the previous instructions. That will build (if necessary) and deploy the robot program to the roboRIO.
 
-.. warning:: Avoid powering off the robot while deploying robot code. Interrupting the deployment process can corrupt the roboRIO filesystem and prevent your code from working until the roboRIO is :doc:`re-imaged </docs/zero-to-robot/step-3/imaging-your-roborio>`.
+.. warning:: Avoid powering off the robot while deploying robot code. Interrupting the deployment process can corrupt the roboRIO filesystem and prevent your code from working until the roboRIO is :doc:`re-imaged </docs/zero-to-robot/step-3/systemcore-imaging>`.
 
 If successful, we will see a "Build Successful" message (1) and the RioLog will open with the console output from the robot program as it runs (2).
 

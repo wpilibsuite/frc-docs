@@ -77,7 +77,7 @@ If you continue to run out of memory even after investigating with VisualVM and 
 - Periodically calling the garbage collector
 - Setting up swap on a USB flash drive
 
-Implementing most of these options require :doc:`connecting with SSH </docs/software/systemcore-info/roborio-ssh>` to the roboRIO and running commands. If run incorrectly, it may require a reimage to recover, so be careful when following the instructions.
+Implementing most of these options require :doc:`connecting with SSH </docs/software/systemcore-info/systemcore-ssh>` to the roboRIO and running commands. If run incorrectly, it may require a reimage to recover, so be careful when following the instructions.
 
 ### Setting sysctls
 

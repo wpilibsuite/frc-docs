@@ -56,7 +56,7 @@ If you identify software that interferes with driver station, please post it to 
 
 **Issue:** The Driver Station diagnostic screen reports free RAM that is misleadingly low. This is due to Linux's use of memory caches. Linux will cache data in memory, but then relinquish when the robot programs requests more memory. The Driver Station only reports memory that isn't used by caches.
 
-**Workaround:** The true memory available to the robot program is available in the file ``/proc/meminfo``. :doc:`Use ssh to connect to the robot </docs/software/systemcore-info/roborio-ssh>`, and run ``cat /proc/meminfo``.
+**Workaround:** The true memory available to the robot program is available in the file ``/proc/meminfo``. :doc:`Use ssh to connect to the robot </docs/software/systemcore-info/systemcore-ssh>`, and run ``cat /proc/meminfo``.
 
 ```text
 MemTotal:         250152 kB
