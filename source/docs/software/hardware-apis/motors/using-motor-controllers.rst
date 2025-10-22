@@ -4,57 +4,9 @@ Motor controllers come in two main flavors: :term:`CAN` and :term:`PWM`. A CAN c
 
 ## Using PWM Motor Controllers
 
-PWM motor controllers can be controlled in the same way as a CAN motor controller. For a more detailed background on *how* they work, see :doc:`pwm-controllers`. To use a PWM motor controller, simply use the appropriate motor controller class provided by WPILib and supply it the port the motor controller(s) are plugged into on the roboRIO.  All approved motor controllers have WPILib classes provided for them.
+For a more detailed background on *how* PWM motor controllers work, see :doc:`pwm-controllers`. To use a PWM motor controller, simply use the appropriate motor controller class provided by WPILib and supply it the port the motor controller(s) are plugged into on the roboRIO.  All approved motor controllers have WPILib classes provided for them.
 
 .. note:: The ``Spark`` and ``VictorSP`` classes are used here as an example; other PWM motor controller classes have exactly the same API.
-
-### Basic Usage
-
-These examples show how to create and control a motor controller. In a real robot program, you would typically declare motor controllers as member variables in your robot class or subsystem (Command-Based), then use them in methods/commands.
-
-.. tab-set-code::
-
-   ```java
-   // Create a Spark motor controller on PWM port 0
-   Spark intakeMotor = new Spark(0);
-
-   // Set the motor to 75% output in reverse
-   intakeMotor.set(-0.75);
-
-   // Create a VictorSP motor controller on PWM port 1
-   VictorSP shooterMotor = new VictorSP(1);
-
-   // Set the motor to 60% output forward
-   shooterMotor.set(0.6);
-   ```
-
-   ```c++
-   // Create a Spark motor controller on PWM port 0
-   frc::Spark intakeMotor{0};
-
-   // Set the motor to 75% output in reverse
-   intakeMotor.Set(-0.75);
-
-   // Create a VictorSP motor controller on PWM port 1
-   frc::VictorSP shooterMotor{1};
-
-   // Set the motor to 60% output forward
-   shooterMotor.Set(0.6);
-   ```
-
-   ```python
-   # Create a Spark motor controller on PWM port 0
-   intake_motor = wpilib.Spark(0)
-
-   # Set the motor to 75% output in reverse
-   intake_motor.set(-0.75)
-
-   # Create a VictorSP motor controller on PWM port 1
-   shooter_motor = wpilib.VictorSP(1)
-
-   # Set the motor to 60% output forward
-   shooter_motor.set(0.6)
-   ```
 
 .. important:: The ``set()`` method accepts values from **-1.0 to 1.0**, where:
 
@@ -145,22 +97,20 @@ Motor controllers should be declared as member variables in your ``Robot`` class
    ```c++
    class Robot : public frc::TimedRobot {
     public:
-     void RobotInit() override {
-       m_intakeMotor = std::make_unique<frc::Spark>(0);
-     }
+     Robot() : m_intakeMotor{0}, m_joystick{0} {}
 
      void TeleopPeriodic() override {
        // Run intake when button is pressed
        if (m_joystick.GetRawButton(1)) {
-         m_intakeMotor->Set(0.8);
+         m_intakeMotor.Set(0.8);
        } else {
-         m_intakeMotor->Set(0.0);
+         m_intakeMotor.Set(0.0);
        }
      }
 
     private:
-     std::unique_ptr<frc::Spark> m_intakeMotor;
-     frc::Joystick m_joystick{0};
+     frc::Spark m_intakeMotor;
+     frc::Joystick m_joystick;
    };
    ```
 
@@ -192,4 +142,4 @@ For drivetrain usage, see :doc:`wpi-drive-classes`. For more complete examples, 
 
 ## CAN Motor Controllers
 
-A handful of CAN motor controllers are available through vendors such as CTR Electronics, REV Robotics, and Playing with Fusion. See :doc:`/docs/software/can-devices/third-party-devices`, :doc:`/docs/software/vscode-overview/3rd-party-libraries`, and :doc:`/docs/software/examples-tutorials/third-party-examples` for more information.
+CAN motor controllers are available through vendors such as CTR Electronics (Talon FX), REV Robotics (SPARK MAX/FLEX), Redux Robotics, and others. See :doc:`/docs/software/can-devices/third-party-devices`, :doc:`/docs/software/vscode-overview/3rd-party-libraries`, and :doc:`/docs/software/examples-tutorials/third-party-examples` for more information.
