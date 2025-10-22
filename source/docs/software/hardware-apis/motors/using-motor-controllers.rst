@@ -76,10 +76,12 @@ Motor controllers should be declared as member variables in your ``Robot`` class
    ```java
    public class Robot extends TimedRobot {
      private Spark m_intakeMotor;
+     private Joystick m_joystick;
 
      @Override
      public void robotInit() {
        m_intakeMotor = new Spark(0);
+       m_joystick = new Joystick(0);
      }
 
      @Override
