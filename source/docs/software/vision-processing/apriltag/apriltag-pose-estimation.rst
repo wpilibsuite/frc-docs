@@ -297,7 +297,6 @@ This approach requires solid understanding of 3D geometry and coordinate transfo
 
 ## See Also
 
-- :doc:`apriltag-field-layout` - Understanding and using AprilTag field layouts
 - :doc:`/docs/software/advanced-controls/state-space/state-space-pose-estimators` - Using pose estimators with vision measurements
 - :doc:`/docs/software/basic-programming/coordinate-system` - Understanding the FRC coordinate system
 - `PhotonVision Documentation <https://docs.photonvision.org/>`__ - Complete PhotonVision documentation
