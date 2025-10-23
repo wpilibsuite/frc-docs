@@ -105,6 +105,8 @@ To enable standalone mode:
 2. Flip DIP switch 3 to the "ON" position.
 3. Connect devices directly to the 2.4GHz network hosted by the radio, using the 2.4 GHz WPA/SAE key from configuration.
 
+.. warning:: Due to poor performance, Vivid-Hosting does not recommend using this method for practicing at home. You should only use this method in extreme cases. School campuses tend to have noisy 2.4GHz environments, which can significantly degrade wireless performance.
+
 Advantages:
 
 - Simple setup with no need for additional hardware.
