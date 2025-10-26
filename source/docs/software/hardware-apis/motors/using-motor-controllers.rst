@@ -144,4 +144,4 @@ For drivetrain usage, see :doc:`wpi-drive-classes`. For more complete examples, 
 
 ## CAN Motor Controllers
 
-CAN motor controllers are available through vendors such as CTR Electronics (Talon FX), REV Robotics (SPARK MAX/FLEX), Redux Robotics, and others. See :doc:`/docs/software/can-devices/third-party-devices`, :doc:`/docs/software/vscode-overview/3rd-party-libraries`, and :doc:`/docs/software/examples-tutorials/third-party-examples` for more information.
+CAN motor controllers are available through vendors such as CTR Electronics (Talon FX), REV Robotics (SPARK MAX/FLEX), and others. See :doc:`/docs/software/can-devices/third-party-devices`, :doc:`/docs/software/vscode-overview/3rd-party-libraries`, and :doc:`/docs/software/examples-tutorials/third-party-examples` for more information.
