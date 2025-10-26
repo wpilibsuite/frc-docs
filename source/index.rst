@@ -253,7 +253,7 @@ Community translations can be found in a variety of languages in the menu toward
 
       ^^^
 
-      Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
+      Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool, and more.
 
       +++
 

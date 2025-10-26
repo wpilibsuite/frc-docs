@@ -2,7 +2,7 @@
 
 # Software Tools
 
-Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
+Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool, and more.
 
 .. mimictoc::
    :maxdepth: 2
