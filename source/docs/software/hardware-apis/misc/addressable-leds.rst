@@ -4,6 +4,15 @@ LED strips have been commonly used by teams for several years for a variety of r
 
 .. note:: LEDs can be controlled through this API while the robot is disabled.
 
+.. important:: The roboRIO can only control **one** ``AddressableLED`` object at a time through its PWM ports. Attempting to create multiple ``AddressableLED`` objects will result in a HAL allocation error. If you need to control multiple physical LED strips, you have several options:
+
+   - **Daisy-chain strips in series**: Connect multiple LED strips end-to-end as a single long strip, then use :ref:`buffer views <docs/software/hardware-apis/misc/addressable-leds:Controlling Sections of an LED Strip>` to control different sections independently
+   - **Use PWM Y-cables**: If you need identical patterns on multiple strips, use PWM Y-cables to send the same signal to multiple strips simultaneously
+
+.. seealso:: For detailed information about powering and best practices for addressable LEDs, see the [Adafruit NeoPixel Überguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels).
+
+.. warning:: WS2812B LEDs are designed for 5V, but roboRIO PWM/Servo ports output 6V. While the LEDs will function, this may reduce their lifespan. Consider using a voltage regulator or level shifter if longevity is a concern.
+
 ## Instantiating the AddressableLED Object
 
 You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header on the roboRIO. Then you set the number of LEDs located on your LED strip, which can be done with the ``setLength()`` function.
