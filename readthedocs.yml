@@ -14,7 +14,10 @@ build:
   jobs:
     post_checkout:
       - git fetch --unshallow || true
- 
+    build:
+      htmlzip:
+        - python -m sphinx -T -E -W --keep-going -b readthedocssinglehtmllocalmedia -d _build/doctrees -D language=$READTHEDOCS_LANGUAGE . $READTHEDOCS_OUTPUT/htmlzip
+
 formats:
   - htmlzip
   - pdf
