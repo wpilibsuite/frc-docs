@@ -14,14 +14,12 @@ build:
   jobs:
     post_checkout:
       - git fetch --unshallow || true
-    post_build:
-      - mkdir --parents _readthedocs/htmlzip
-      - python -m sphinx -T -W --keep-going -b readthedocssinglehtmllocalmedia -d _build/doctrees -D language=$READTHEDOCS_LANGUAGE source $READTHEDOCS_OUTPUT/out
-      - cd $READTHEDOCS_OUTPUT ; zip --recurse-path --symlinks htmlzip/$READTHEDOCS_PROJECT.zip out
-    #build:
-    #  htmlzip:
-    #    - python -m sphinx -T -E -W --keep-going -b readthedocssinglehtmllocalmedia -d _build/doctrees -D language=$READTHEDOCS_LANGUAGE source $READTHEDOCS_OUTPUT/htmlzip
- 
+    build:
+      htmlzip:
+        - mkdir --parents _readthedocs/htmlzip
+        - python -m sphinx -T -W --keep-going -b readthedocssinglehtmllocalmedia -d _build/doctrees -D language=$READTHEDOCS_LANGUAGE source $READTHEDOCS_OUTPUT/out
+        - cd $READTHEDOCS_OUTPUT ; zip --recurse-path --symlinks htmlzip/$READTHEDOCS_PROJECT.zip out
+
 formats:
   - htmlzip
   - pdf
