@@ -17,9 +17,9 @@ build:
     build:
       htmlzip:
         - mkdir --parents _readthedocs/htmlzip
-        # Output to an intermediate directory because RTD doesn't like extra content in the directory
-        - python -m sphinx -T -W --keep-going -b readthedocssinglehtmllocalmedia -d _build/doctrees -D language=$READTHEDOCS_LANGUAGE source $READTHEDOCS_OUTPUT/tmphtmlzip
-        - cd $READTHEDOCS_OUTPUT ; zip --recurse-path --symlinks htmlzip/$READTHEDOCS_PROJECT.zip tmphtmlzip
+        # Output to an intermediate directory because RTD doesn't like extra content in the directory. $READTHEDOCS_PROJECT is chosen to so that frc-docs-latest is the root directory of the zip
+        - python -m sphinx -T -W --keep-going -b readthedocssinglehtmllocalmedia -d _build/doctrees -D language=$READTHEDOCS_LANGUAGE source $READTHEDOCS_OUTPUT/$READTHEDOCS_PROJECT
+        - cd $READTHEDOCS_OUTPUT ; zip --recurse-path --symlinks htmlzip/$READTHEDOCS_PROJECT.zip $READTHEDOCS_PROJECT
 
 formats:
   - htmlzip
