@@ -600,7 +600,7 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 
 ## REV Robotics Servo Hub
 
-[REV Servo Hub Status LED Patterns](https://docs.revrobotics.com/servo-hub/status-led)
+[REV Servo Hub Status LED Patterns](https://docs.revrobotics.com/rev-crossover-products/servo/servo-hub/servo-hub-status-led-patterns)
 
 ### General Status LED
 
