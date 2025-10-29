@@ -4,6 +4,8 @@ This page describes wiring pneumatics with the REV Pneumatic Hub (:term:`PH`). F
 
 .. hint:: For pneumatics safety & mechanical requirements, consult this year's Robot Construction rules. For mechanical design guidelines, the FIRST Pneumatics Manual is located [here](https://www.firstinspires.org/sites/default/files/uploads/resource_library/frc/technical-resources/frc_pneumatics_manual.pdf)
 
+.. seealso:: For Pneumatic Hub configuration, firmware updates, and detailed technical specifications, see the [REV Pneumatic Hub Documentation](https://docs.revrobotics.com/ion-control-system/ph).
+
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
