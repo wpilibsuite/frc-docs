@@ -18,7 +18,7 @@ The system tab can also display a lot of other information that is not used by t
 
 .. figure:: images/system-options.png
 
-## Update page
+## Update & configure page
 
 This page is the one used for changing the Systemcore team number, ip address and other internet settings
 
