@@ -31,5 +31,5 @@ Supported image files are named ``limelightsystemcorecm5-limelightosr-YEAR-VERSI
 
 The image writing process above does not set a team number. To fix this, teams will need to remove the USB-C cable from the systemcore, and power-cycle the robot. Then, in the web UI located at robot.local in your browser, go to :guilabel:`Edit Startup Settings`. Next, fill out the :guilabel:`Team Number` box and hit :guilabel:`Apply`.
 
-.. figure:: images/roborio2-imaging/teamnumber.png //TODO
-   :alt: The edit Startup Settings portion of the imaging utility allow a team to renumber their robot. //TODO
+.. figure:: images/teamnumber.png
+   :alt: The Configure & Update portion of the web UI allows a team to renumber their robot.
