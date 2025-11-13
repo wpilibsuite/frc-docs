@@ -62,7 +62,7 @@ In contrast, without using command-based, the user would need to check the butto
 
 The command-based pattern is based around two core abstractions: **commands**, and **subsystems.**
 
-**Commands** represent actions the robot can take. Commands run when scheduled, until they are interrupted or their end condition is met. Commands are very recursively composable: commands can be composed to accomplish more-complicated tasks. See :ref:`docs/software/commandbased/commands:Commands` for more info.
+**Commands** represent actions the robot can take. Commands run when scheduled, until they are interrupted or their end condition is met. Commands are very recursively composable: commands can be composed to accomplish more-complicated tasks. See :ref:`docs/software/commandbased/commands-v2/commands:Commands` for more info.
 
 **Subsystems** represent independently-controlled collections of robot hardware (such as motor controllers, sensors, pneumatic actuators, etc.) that operate together. Subsystems back the resource-management system of command-based: only one command can use a given subsystem at the same time. Subsystems allow users to "hide" the internal complexity of their actual hardware from the rest of their code - this both simplifies the rest of the robot code, and allows changes to the internal details of a subsystem's hardware without also changing the rest of the robot code.
 

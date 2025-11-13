@@ -101,7 +101,7 @@ The FRC Driver Station Log Viewer is used to view logs created by the FRC Driver
 .. image:: images/control-system-software/robot-builder.png
    :alt: RobotBuilder building a robot with two subsystems.
 
-RobotBuilder is a tool designed to aid in setup and structuring of a Command Based robot project for C++ or Java (Python not currently supported). RobotBuilder allows you to enter in the various components of your robot subsystems and operator interface and define what your commands are in a graphical tree structure.  RobotBuilder will then generate structural template code to get you started.  More information about RobotBuilder can be found :ref:`here <docs/software/wpilib-tools/robotbuilder/index:RobotBuilder>`. More information about the Command Based programming architecture can be found :ref:`here <docs/software/commandbased/index:Command-Based Programming>`.
+RobotBuilder is a tool designed to aid in setup and structuring of a Command Based robot project for C++ or Java (Python not currently supported). RobotBuilder allows you to enter in the various components of your robot subsystems and operator interface and define what your commands are in a graphical tree structure.  RobotBuilder will then generate structural template code to get you started.  More information about RobotBuilder can be found :ref:`here <docs/software/wpilib-tools/robotbuilder/index:RobotBuilder>`. More information about the Command Based programming architecture can be found :ref:`here <docs/software/commandbased/commands-v2/index:Command-Based Programming>`.
 
 ## Robot Simulation
 
