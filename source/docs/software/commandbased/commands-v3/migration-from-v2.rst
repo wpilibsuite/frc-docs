@@ -1,4 +1,4 @@
-# Migration from Commands v2 to v3
+# Migrating from Commands v2 to v3
 
 .. todo::
    This article guides teams through migrating an existing Commands v2 codebase to v3. Migration can be done incrementally, and this article should help teams plan their migration strategy, understand the key differences, and avoid common pitfalls. This is a critical resource for established teams.
