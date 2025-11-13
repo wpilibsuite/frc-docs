@@ -4,7 +4,7 @@ WPILib supports a robot programming methodology called "command-based" programmi
 
 "Command-based" programming is one possible :term:`design pattern` for robot software. It is not the only way to write a robot program, but it is a very effective one. Command-based robot code tends to be clean, extensible, and (with some tricks) easy to reuse from year to year.
 
-The command-based paradigm is also an example of :term:`declarative programming`. The command-based library allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in the command-based program, a user can specify that "the robot should perform an action when a condition is true" (note the use of a :ref:`lambda <docs/software/commandbased/index:Lambda Expressions (Java)>`):
+The command-based paradigm is also an example of :term:`declarative programming`. The command-based library allow users to define desired robot behaviors while minimizing the amount of iteration-by-iteration robot logic that they must write. For example, in the command-based program, a user can specify that "the robot should perform an action when a condition is true" (note the use of a :ref:`lambda <docs/software/commandbased/commands-v2/index:Lambda Expressions (Java)>`):
 
 .. tab-set-code::
 
@@ -62,7 +62,7 @@ In contrast, without using command-based, the user would need to check the butto
 
 The command-based pattern is based around two core abstractions: **commands**, and **subsystems.**
 
-**Commands** represent actions the robot can take. Commands run when scheduled, until they are interrupted or their end condition is met. Commands are very recursively composable: commands can be composed to accomplish more-complicated tasks. See :ref:`docs/software/commandbased/commands:Commands` for more info.
+**Commands** represent actions the robot can take. Commands run when scheduled, until they are interrupted or their end condition is met. Commands are very recursively composable: commands can be composed to accomplish more-complicated tasks. See :ref:`docs/software/commandbased/commands-v2/commands:Commands` for more info.
 
 **Subsystems** represent independently-controlled collections of robot hardware (such as motor controllers, sensors, pneumatic actuators, etc.) that operate together. Subsystems back the resource-management system of command-based: only one command can use a given subsystem at the same time. Subsystems allow users to "hide" the internal complexity of their actual hardware from the rest of their code - this both simplifies the rest of the robot code, and allows changes to the internal details of a subsystem's hardware without also changing the rest of the robot code.
 
