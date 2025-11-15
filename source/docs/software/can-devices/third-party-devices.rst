@@ -93,6 +93,22 @@ Playing With Fusion (PWF) offers the Venom integrated motor/controller as well a
     - API Documentation ([Java](https://www.playingwithfusion.com/frc/2020/javadoc/com/playingwithfusion/package-summary.html), [C++](https://www.playingwithfusion.com/frc/2020/cppdoc/html/annotated.html))
     - [Technical Manual](https://www.playingwithfusion.com/include/getfile.php?fileid=7091)
 
+## Redux Robotics
+
+.. warning:: Redux Robotics is shutting down. While their devices remain legal for FRC use and software support will be provided for the 2026 season, no new hardware will be available.
+
+Redux Robotics offers the HELIUM Canandmag :term:`CAN` + :term:`PWM` magnetic encoder and the BORON Canandgyro :term:`CAN`-enabled gyro.
+
+### Redux Sensors
+
+- **HELIUM Canandmag**
+    - API Documentation ([Java](https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandmag/package-summary), [C++](https://apidocs.reduxrobotics.com/current/cpp/namespaceredux_1_1sensors_1_1canandmag))
+    - [Technical Manual](https://docs.reduxrobotics.com/canandmag)
+
+- **BORON Canandgyro**
+    - API Documentation ([Java](https://apidocs.reduxrobotics.com/current/java/com/reduxrobotics/sensors/canandgyro/package-summary), [C++](https://apidocs.reduxrobotics.com/current/cpp/namespaceredux_1_1sensors_1_1canandgyro))
+    - [Technical Manual](https://docs.reduxrobotics.com/canandgyro/)
+
 ## Grapple Robotics
 
 Grapple Robotics currently offers the LaserCAN :term:`CAN`-enabled range finding sensor
