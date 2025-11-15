@@ -68,6 +68,14 @@ The [CTRE Power Distribution Panel 2.0](https://store.ctr-electronics.com/produc
 
 The [REV Power Distribution Hub](https://docs.revrobotics.com/ion-control-system/pdh/overview) (PDH) is designed to distribute power from a 12VDC battery to various robot components.  The PDH features 20 high-current (40A max) channels, 3 low-current (15A max), and 1 switchable low-current channel. The Power Distribution Hub features toolless latching WAGO terminals, an LED voltage display, and the ability to connect over CAN or USB-C to the REV Hardware Client for real-time telemetry.
 
+## AndyMark Power Distribution Board
+
+.. image:: images/control-system-hardware/andymark-ampd.jpg
+  :alt: AndyMark Power Distribution Board
+  :width: 500
+
+The [AndyMark Power Distribution Board](https://andymark.com/am-5754) (AMPD) is designed to distribute power from a 12VDC battery to various robot components. The AMPD features 24 fully insulated 40A ports that work with ATO/ATC breakers. With toolless lever connectors and 22.5 degree angled outputs for clean wiring, the AMPD is designed to simplify robot wiring.
+
 ## CTRE Voltage Regulator Module
 
 .. image:: images/control-system-hardware/voltage-regulator-module.png
@@ -107,6 +115,14 @@ The Snap Action circuit breakers, [MX5 series](https://www.snapaction.net/assets
   :width: 500
 
 The [Rev ATO Circuit Breakers](https://www.revrobotics.com/content/docs/REV-11-1860-1863-DS.pdf) are used with the Power Distribution Panel, Power Distribution Hub and Power Distribution Panel 2.0 to limit current to branch circuits. They come in [40A](https://www.revrobotics.com/rev-11-1863/), [30A](https://www.revrobotics.com/rev-11-1862/), [20A](https://www.revrobotics.com/rev-11-1861/) and [10A](https://www.revrobotics.com/rev-11-1860/) variants. The ratings on these circuit breakers are for continuous current, temporary peak values can be considerably higher.
+
+## CTRE Power Distribution Panel Breakers
+
+.. image:: images/control-system-hardware/ctre-pdp-breaker.png
+  :alt: CTRE Power Distribution Panel Breakers
+  :width: 500
+
+The [CTRE Power Distribution Panel Breakers](https://store.ctr-electronics.com/products/auto-resetting-ato-breakers) are auto-reset circuit breakers designed for use with CTRE Power Distribution Panels. They come in 40A, 30A, 20A, and 10A variants. These custom ATO-sized breakers automatically reset after tripping, providing consistent performance even after hundreds of trips.
 
 ## Robot Battery
 
@@ -178,7 +194,7 @@ The [SPARK MAX Motor Controller](https://www.revrobotics.com/rev-11-2158/) is an
   :alt: TalonFX Motor Controller
   :width: 400
 
-The TalonFX Motor Controller is a brushless motor controller from Cross The Road Electronics which is integrated into the Falcon 500, Kraken X60 and Kraken X44 brushless motors.  It features an integrated encoder and all of the smart features of the Talon SRX and more! For more information see the [TalonFX Hardware Reference](https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/).
+The TalonFX Motor Controller is a brushless motor controller from Cross The Road Electronics which is integrated into the Falcon 500, Kraken X60, and Kraken X44 brushless motors.  It features an integrated encoder and all of the smart features of the Talon SRX and more! For more information see the [TalonFX Hardware Reference](https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/).
 
 ### Victor SPX
 
@@ -233,16 +249,6 @@ The [SPARK Flex Motor Controller](https://www.revrobotics.com/rev-11-2159/) is a
 
 The [Talon Motor Controller](https://files.andymark.com/Talon_User_Manual_1_3.pdf) from Cross the Road Electronics is a PWM controlled brushed DC motor controller with passive cooling.
 
-### Victor 888 Motor Controller / Victor 884 Motor Controller
-
-.. image:: images/control-system-hardware/victor-888-motor-controller.png
-  :alt: Victor 888 Motor Controller
-  :width: 400
-
-.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
-
-The [Victor 884](https://content.vexrobotics.com/docs/ifi-v884-users-manual-9-25-06.pdf) and [Victor 888](https://content.vexrobotics.com/docs/217-2769-Victor888UserManual.pdf) motor controllers from VEX Robotics are variable speed PWM motor controllers for use in FRC. The Victor 888 replaces the Victor 884, which is also usable in FRC.
-
 ### Venom Motor Controller
 
 .. image:: images/control-system-hardware/venom.jpg
@@ -251,27 +257,6 @@ The [Victor 884](https://content.vexrobotics.com/docs/ifi-v884-users-manual-9-25
 
 The [Venom Motor Controller](https://www.playingwithfusion.com/productview.php?pdid=99) from Playing With Fusion is integrated into a motor based on the original :term:`CIM`.  Speed, current, temperature, and position are all measured onboard, enabling advanced control modes without complicated sensing and wiring schemes.
 
-### DMC-60 and DMC-60C Motor Controller
-
-.. image:: images/control-system-hardware/dmc-60c-motor-controller.png
-  :alt: DMC-60C Motor Controller
-  :width: 500
-
-.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
-
-The DMC-60 is a PWM motor controller from Digilent. The DMC-60 features integrated thermal sensing and protection including current-foldback to prevent overheating and damage, and four multi-color LEDs to indicate speed, direction, and status for easier debugging. For more information, see the [DMC-60 reference manual](https://reference.digilentinc.com/_media/dmc-60/dmc60_rm.pdf)
-
-The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller. Due to the manufacturer discontinuing this product, the DMC-60C is only usable with PWM. For more information see the [DMC-60C Product Page](https://reference.digilentinc.com/dmc-60c/start/)
-
-### Jaguar Motor Controller
-
-.. image:: images/control-system-hardware/jaguar-motor-controller.png
-  :alt: Jaguar Motor Controller
-  :width: 500
-
-.. warning:: While this motor controller is still legal for FRC use, the manufacturer has discontinued this product.
-
-The [Jaguar Motor Controller](https://www.ti.com/lit/an/spma033a/spma033a.pdf?ts=1607574399581) from VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a variable speed motor controller for use in FRC. For FRC, the Jaguar may only be controlled using the PWM interface.
 
 ### Thrifty Nova Motor Controller
 
@@ -296,14 +281,6 @@ The [Talon FXS Motor Controller](https://store.ctr-electronics.com/products/talo
   :width: 400
 
 The [Koors 40 Brushed DC Motor Controller](https://www.andymark.com/products/koors-40-brushed-dc-motor-controller) is an inexpensive PWM brushed DC motor controller from AndyMark with features such as Ground Loss Protection for PWM, Thermal, and Overcurrent Protection, and Reverse Polarity Protection.
-
-### SD540B and SD540C Motor Controllers
-
-.. image:: images/control-system-hardware/sd540b-pwm.png
-  :alt: SD540B Motor Controller
-  :width: 500
-
-The SD540B and SD540C Motor Controllers from Mindsensors are controlled using PWM. CAN control is no longer available for the SD540C due to lack of manufacturer support. Limit switches may be wired directly to the SD540 to limit motor travel in one or both directions.  For more information see the [Mindsensors FRC page](http://www.mindsensors.com/68-frc)
 
 ## Servo Hub
 
@@ -331,4 +308,4 @@ The Microsoft Lifecam HD3000 is a USB webcam that can be plugged directly into t
 
 ## Image Credits
 
-Image of DMC-60 courtesy of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor Controller, Talon SRX, Victor 888, Victor SP, and Victor SPX courtesy of VEX Robotics, Inc. Image of SPARK MAX, SPARK Flex, Servo Hub, ATO Breakers, Power Distribution Hub, and Pneumatic Hub courtesy of REV Robotics. Images of TalonFX, TalonFXS, and Power Distribution Panel 2.0 courtesy of Cross The Road Electronics, LLC. Image of Thrifty Nova courtesy of The Thrifty Bot. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. Image of the VH-109 radio courtesy of Vivid-Hosting. Image of SystemCore courtesy of Limelight. All other photos courtesy of AndyMark Inc.
+Images of Talon SRX, Victor 888, Victor SP, and Victor SPX courtesy of VEX Robotics, Inc. Image of SPARK MAX, SPARK Flex, Servo Hub, ATO Breakers, Power Distribution Hub, and Pneumatic Hub courtesy of REV Robotics. Images of TalonFX, TalonFXS, Power Distribution Panel 2.0, and Power Distribution Panel Breakers courtesy of Cross The Road Electronics, LLC. Image of Thrifty Nova courtesy of The Thrifty Bot. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy of *FIRST*\ |reg|. Image of the VH-109 radio courtesy of Vivid-Hosting. Image of SystemCore courtesy of Limelight. All other photos courtesy of AndyMark Inc.
