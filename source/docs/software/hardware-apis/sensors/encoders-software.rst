@@ -61,7 +61,7 @@ The WPILib :code:`Encoder` class can decode encoder signals in three different m
       :language: java
       :lines: 20-22
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/b2486633862f86092354df5c1bd92f5db457afcb/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 57-59
 
@@ -219,7 +219,7 @@ The zero position is useful for ensuring that the measured rotation corresponds 
       :language: java
       :lines: 18-21
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
       :language: c++
       :lines: 28-31
 
@@ -307,9 +307,9 @@ Users can obtain the rotation measured by the encoder with the :code:`get()` met
       :language: java
       :lines: 28-29
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
       :language: c++
-      :lines: 19-20
+      :lines: 17-18
 
 ## Using Encoders in Code
 
@@ -327,9 +327,9 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
       :language: java
       :lines: 17-47
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/EncoderDrive/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/EncoderDrive/cpp/Robot.cpp
       :language: c++
-      :lines: 41-49, 18-38
+      :lines: 39-47, 16-36
 
 
 ### Homing a Mechanism
@@ -344,7 +344,7 @@ Since quadrature encoders measure *relative* distance, it is often important to 
       :language: java
       :lines: 17-34
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/40ce42712fb6b4f2ee8b5a6d6cc31fdd262eedec/wpilibcExamples/src/main/cpp/snippets/EncoderHoming/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/EncoderHoming/cpp/Robot.cpp
       :language: c++
-      :lines: 30-33, 18-27
+      :lines: 28-31, 16-25
 
