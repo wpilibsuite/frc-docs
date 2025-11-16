@@ -20,7 +20,7 @@ One of the most common control algorithms used in FRC\ |reg| is the :term:`PID` 
    .. tab-item:: C++
       :sync: C++ (Header)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Shooter.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/subsystems/Shooter.h
          :language: c++
          :lines: 5-
          :lineno-match:

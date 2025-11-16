@@ -46,7 +46,7 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogtrigger/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogtrigger/Robot.java
       :language: java
       :lines: 16-22
 
