@@ -23,10 +23,10 @@ The purpose of Task 1 is to complete installation of the new Control System soft
 Task 2 - Basic Benchtop Test (Targeted Completion 11/4/2024)
 ------------------------------------------------------------
 
-The purpose of Task 2 is to get the base new Control System software set up and running. This helps minimize complexity to ease debugging of any issues that do occur. In this task you will set up the development environment for your programming language, configure the roboRIO, load and debug a simple program. This Task consists of 2 Objectives:
+The purpose of Task 2 is to get the base new Control System software set up and running. This helps minimize complexity to ease debugging of any issues that do occur. In this task you will set up the development environment for your programming language, configure the roboRIO, load, and debug a simple program. This Task consists of 2 Objectives:
 
 1. Configure the roboRIO
-2. Create, Build and Load Default Program
+2. Create, Build, and Load Default Program
 
 Task 3 - Port Previous Robot Code (Targeted Completion 11/18/2024)
 ------------------------------------------------------------------
