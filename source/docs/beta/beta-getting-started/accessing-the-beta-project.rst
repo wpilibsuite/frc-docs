@@ -3,7 +3,7 @@
 Accessing the Beta Project
 ==========================
 
-The 2025 Beta project is located at: https://github.com/wpilibsuite/2025Beta.
+The 2026 Beta project is located at: https://github.com/wpilibsuite/2026Beta.
 
 .. image:: images/accessing-the-beta-project/project-home.png
    :alt: The project homepage.

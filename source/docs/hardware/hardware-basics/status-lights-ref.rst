@@ -280,16 +280,19 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 | Black Solid | Solenoid Off |
 +-------------+--------------+
 
-## Talon SRX & Victor SPX & Talon FX Motor Controllers
+## Talon SRX & Victor SPX Motor Controllers
 
 .. image:: images/status-lights/talon-srx-status-lights.png
   :alt: Status LEDs on either side of the center of the Talon SRX.
   :width: 600
 
-### Status LEDs During Normal Operation
+These motor controllers use Phoenix 5. For the most up-to-date information, see the `CTRE Phoenix 5 Documentation <https://v5.docs.ctr-electronics.com/en/stable/ch13_MC.html>`__.
+
+
+### Talon SRX/Victor SPX Status LEDs During Normal Operation
 
 +------------------------------+----------------+--------------------------------------------+
-| LEDs                         | Colors         | Talon SRX State                            |
+| LEDs                         | Colors         | Device State                               |
 +==============================+================+============================================+
 | Both                         | Blinking Green | Forward throttle is applied.               |
 |                              |                | Blink rate is proportional to Duty Cycle.  |
@@ -297,7 +300,7 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 | Both                         | Blinking Red   | Reverse throttle is applied.               |
 |                              |                | Blink rate is proportional to Duty Cycle.  |
 +------------------------------+----------------+--------------------------------------------+
-| None                         | None           | No power is being applied to Talon SRX     |
+| None                         | None           | No power is being applied                  |
 +------------------------------+----------------+--------------------------------------------+
 | LEDs Alternate               | Off/Orange     | CAN bus detected, robot disabled           |
 +------------------------------+----------------+--------------------------------------------+
@@ -313,13 +316,11 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 +------------------------------+----------------+--------------------------------------------+
 | LED1 Only (closest to M+/V+) | Green/Orange   | In Boot-loader                             |
 +------------------------------+----------------+--------------------------------------------+
-| LEDs Strobe towards (M+)     | Off/Orange     | Thermal Fault / Shutoff (Talon FX Only)    |
-+------------------------------+----------------+--------------------------------------------+
 
-### Status LEDs During Calibration
+### Talon SRX/Victor SPX Status LEDs During Calibration
 
 +------------------------+------------------------+
-| Status LEDs Blink Code | Talon SRX State        |
+| Status LEDs Blink Code | Device State           |
 +========================+========================+
 | Flashing Red/Green     | Calibration Mode       |
 +------------------------+------------------------+
@@ -328,15 +329,61 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 | Blinking Red           | Failed Calibration     |
 +------------------------+------------------------+
 
-### B/C CAL Blink Codes
+### Talon SRX/Victor SPX B/C CAL Blink Codes
 
-+----------------------+-----------------+
-| B/C CAL Button Color | Talon SRX State |
-+======================+=================+
-| Solid Red            | Brake Mode      |
-+----------------------+-----------------+
-| Off                  | Coast Mode      |
-+----------------------+-----------------+
++----------------------+--------------+
+| B/C CAL Button Color | Device State |
++======================+==============+
+| Solid Red            | Brake Mode   |
++----------------------+--------------+
+| Off                  | Coast Mode   |
++----------------------+--------------+
+
+## Talon FX Motor Controller
+
+The Talon FX uses Phoenix 6. For the most up-to-date information, see the `CTRE Phoenix 6 Documentation <https://v6.docs.ctr-electronics.com/en/stable/docs/hardware-reference/talonfx/index.html#status-light-reference>`__.
+
+
+### Talon FX Status LEDs
+
++------------------------------+-------------------------------------+
+| LED State                    | Meaning                             |
++==============================+=====================================+
+| LEDs Off                     | No Power                            |
++------------------------------+-------------------------------------+
+| Blinking Alternating Red     | No valid CAN/PWM signal             |
++------------------------------+-------------------------------------+
+| Blinking Alternating Orange  | CAN detected but no Phoenix running |
++------------------------------+-------------------------------------+
+| Blinking Simultaneous Orange | Valid CAN signal, device disabled   |
++------------------------------+-------------------------------------+
+| Both Solid Orange            | Enabled with neutral output         |
++------------------------------+-------------------------------------+
+| Blinking Simultaneous Red    | Driving in reverse                  |
++------------------------------+-------------------------------------+
+| Blinking Simultaneous Green  | Driving forward                     |
++------------------------------+-------------------------------------+
+| Offset Alternating Red/Off   | Device limit reached                |
++------------------------------+-------------------------------------+
+| Offset Orange/Off            | Thermal cutoff                      |
++------------------------------+-------------------------------------+
+| Alternate Red/Green          | Pro-only command while unlicensed   |
++------------------------------+-------------------------------------+
+| Alternate Red/Orange         | Damaged Hardware                    |
++------------------------------+-------------------------------------+
+| Single LED alternates        | Device in bootloader                |
+| Green/Orange                 |                                     |
++------------------------------+-------------------------------------+
+
+### Talon FX B/C CAL Blink Codes
+
++----------------------+--------------+
+| B/C CAL Button Color | Device State |
++======================+==============+
+| Solid Red            | Brake Mode   |
++----------------------+--------------+
+| Off                  | Coast Mode   |
++----------------------+--------------+
 
 ## SPARK-MAX Motor Controller
 
@@ -399,180 +446,10 @@ Brake/Coast/Cal Button/LED - Red if the controller is in brake mode, off if the 
 |           |          | calibration, and red several times indicates unsuccessful calibration. |
 +-----------+----------+------------------------------------------------------------------------+
 
-## Victor888 Motor Controller
-
-.. image:: images/status-lights/victor888-status-light.svg
-  :alt: Victor888 motor controller with a single multicolor LED in the bottom right corner.
-  :width: 600
-
-+-----------+----------+--------------------------+
-| Green     | Solid    | Full forward output      |
-|           +----------+--------------------------+
-|           | Blinking | Successful calibration   |
-+-----------+----------+--------------------------+
-| Red       | Solid    | Full reverse output      |
-|           +----------+--------------------------+
-|           | Blinking | Unsuccessful calibration |
-+-----------+----------+--------------------------+
-| Orange    | Solid    | Neutral/brake            |
-+-----------+----------+--------------------------+
-| Red/Green | Blinking | Calibration mode         |
-+-----------+----------+--------------------------+
-
-## Jaguar Motor Controller
-
-.. image:: images/status-lights/jaguar-status-light.png
-  :alt: Jaguar motor controller with a single multicolor LED in the bottom center.
-  :width: 400
-
-+------------------------------+------------------------------------------------+
-| LED State                    | Module Status                                  |
-+==============================+================================================+
-| Normal Operating Conditions                                                   |
-+------------------------------+------------------------------------------------+
-| Solid Yellow                 | Neutral (speed set to 0)                       |
-+------------------------------+------------------------------------------------+
-| Fast Flashing Green          | Forward                                        |
-+------------------------------+------------------------------------------------+
-| Fast Flashing Red            | Reverse                                        |
-+------------------------------+------------------------------------------------+
-| Solid Green                  | Full-speed forward                             |
-+------------------------------+------------------------------------------------+
-| Solid Red                    | Full-speed reverse                             |
-+------------------------------+------------------------------------------------+
-| Fault Conditions                                                              |
-+------------------------------+------------------------------------------------+
-| Slow Flashing Yellow         | Loss of servo or Network link                  |
-+------------------------------+------------------------------------------------+
-| Fast Flashing Yellow         | Invalid CAN ID                                 |
-+------------------------------+------------------------------------------------+
-| Slow Flashing Red            | Voltage, Temperature, or                       |
-|                              | Limit Switch fault condition                   |
-+------------------------------+------------------------------------------------+
-| Slow Flashing Red and Yellow | Current fault condition                        |
-+------------------------------+------------------------------------------------+
-| Calibration or CAN Conditions                                                 |
-+------------------------------+------------------------------------------------+
-| Flashing Red and Green       | Calibration mode active                        |
-+------------------------------+------------------------------------------------+
-| Flashing Red and Yellow      | Calibration mode failure                       |
-+------------------------------+------------------------------------------------+
-| Flashing Green and Yellow    | Calibration mode success                       |
-+------------------------------+------------------------------------------------+
-| Slow Flashing Green          | CAN ID assignment mode                         |
-+------------------------------+------------------------------------------------+
-| Fast Flashing Yellow         | Current CAN ID (count flashes to determine ID) |
-+------------------------------+------------------------------------------------+
-| Flashing Yellow              | CAN ID invalid (that is, Set to 0)             |
-|                              | awaiting valid ID assignment                   |
-+------------------------------+------------------------------------------------+
-
-## Digilent DMC-60
-
-.. image:: images/status-lights/dmc60c-status-lights.png
-  :alt: The 5 LEDs in each of the corners plus the center.
-
-The DMC60C contains four RGB (Red, Green, and Blue) LEDs and one Brake/Coast CAL LED. The four RGB LEDs are located in the corners and are used to indicate status during normal operation, as well as when a fault occurs. The Brake/Coast CAL LED is located in the center of the triangle, which is located at the center of the housing, and is used to indicate the current Brake/Coast setting. When the center LED is off, the device is operating in coast mode. When the center LED is illuminated, the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle, and then releasing the button.
-
-At power-on, the RGB LEDs illuminate Blue, continually getting brighter. This lasts for approximately five seconds. During this time, the motor controller will not respond to an input signal, nor will the output drivers be enabled. After the initial power-on has completed, the device begins normal operation and what gets displayed on the RGB LEDs is a function of the input signal being applied, as well as the current fault state. Assuming that no faults have occurred, the RGB LEDs function as follows:
-
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| PWM Signal Applied         | LED State                                                                                                     |
-+============================+===============================================================================================================+
-| No Input Signal or         | Alternate between top (LED1 and LED2) and bottom (LED3 and LED4) LEDs being illuminated Red and Off.          |
-| Invalid Input Pulse Width  |                                                                                                               |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-| Neutral Input Pulse Width  | All 4 LEDs illuminated Orange.                                                                                |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-|                            | LEDs blink Green in a clockwise circular pattern (LED1 → LED2 → LED3 → LED4 → LED1).                          |
-| Positive Input Pulse Width | The LED update rate is proportional to the duty cycle of the output and increases with increased duty cycle.  |
-|                            | At 100% duty cycle, all 4 LEDs are illuminated Green.                                                         |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-|                            | LEDs blink Red in a counter-clockwise circular pattern (LED1 → LED4 → LED3 → LED2 → LED1).                    |
-| Negative Input Pulse Width | The LED update rate is proportional to the duty cycle of the output and increases with increased duty cycle.  |
-|                            | At 100% duty cycle, all 4 LEDs are illuminated Red.                                                           |
-+----------------------------+---------------------------------------------------------------------------------------------------------------+
-
-+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| CAN Bus Control State                                                                     | LED State                                                                                                                                                          |
-+===========================================================================================+====================================================================================================================================================================+
-| No Input Signal or CAN bus error detected                                                 | Alternate between top (LED1 and LED2) and bottom (LED3 and LED4) LEDs being illuminated Red and Off.                                                               |
-+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| No CAN Control Frame received within the last 100ms or                                    | Alternate between top (LED1 and LED2) and bottom (LED3 and LED4) LEDs being illuminated Orange and Off.                                                            |
-| the last control frame specified modeNoDrive (Output Disabled)                            |                                                                                                                                                                    |
-+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Valid CAN Control Frame received within the last 100ms.                                   | All 4 LEDs illuminated solid Orange.                                                                                                                               |
-| The specified control mode resulted in a Neutral Duty Cycle being applied to Motor Output |                                                                                                                                                                    |
-+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Valid CAN Control Frame received within the last 100ms.                                   | LEDs blink Green in a clockwise circular pattern (LED1 → LED2 → LED3 → LED4 → LED1).                                                                               |
-| The specified control mode resulted in a Positive Duty Cycle being Motor Output           | The LED update rate is proportional to the duty cycle of the output and increases with increased duty cycle. At 100% duty cycle, all 4 LEDs are illuminated Green. |
-+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Valid CAN Control Frame received within the last 100ms.                                   | LEDs blink Red in a counter-clockwise circular pattern (LED1 → LED4 → LED3 → LED2 → LED1).                                                                         |
-| The specified control mode resulted in a Negative Duty Cycle being Motor Output           | The LED update rate is proportional to the duty cycle of the output and increases with increased duty cycle. At 100% duty cycle, all 4 LEDs are illuminated Red.   |
-+-------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-### Fault Color Indicators
-
-When a fault condition is detected, the output duty cycle is reduced to 0% and a fault is signaled. The output then remains disabled for 3 seconds. During this time the onboard LEDs (LED1-4) are used to indicate the fault condition. The fault condition is indicated by toggling between the top (LED1 and LED2) and bottom (LED3 and LED4) LEDs being illuminated Red and off. The color of the bottom LEDs depends on which faults are presently active. The table below describes how the color of the bottom LEDs maps to the presently active faults.
-
-+-------------+------------------+---------------+
-| Color       | Over Temperature | Under Voltage |
-+=============+==================+===============+
-| Green       | On               | Off           |
-+-------------+------------------+---------------+
-| Blue        | Off              | On            |
-+-------------+------------------+---------------+
-| Cyan / Aqua | On               | On            |
-+-------------+------------------+---------------+
-
-### Break/Coast Mode
-
-When the center LED is off the device is operating in coast mode. When the center LED is illuminated the device is operating in brake mode. The Brake/Coast mode can be toggled by pressing down on the center of the triangle and then releasing the button.
-
 ## Venom Motor Controller
 
 .. image:: images/status-lights/venom.png
   :alt: The LED blink codes for the Venom.
-
-## Mindsensors SD540B (PWM)
-
-.. image:: images/status-lights/sd540b-status-lights.png
-  :alt: The two LEDs on the top one at each end and the LED on the side next to the connector.
-  :width: 600
-
-+----------------+-------+---------------------------------+
-| Power LED      | Off   | Power is not supplied           |
-|                +-------+---------------------------------+
-|                | Red   | Power is supplied               |
-+----------------+-------+---------------------------------+
-| Motor LED      | Red   | Forward direction               |
-|                +-------+---------------------------------+
-|                | Green | Reverse direction               |
-+----------------+-------+---------------------------------+
-| PWM Signal LED | Red   | No valid PWM signal is detected |
-|                +-------+---------------------------------+
-|                | Green | Valid PWM signal is detected    |
-+----------------+-------+---------------------------------+
-
-## Mindsensors SD540C (CAN Bus)
-
-.. image:: images/status-lights/sd540c-status-lights.png
-  :alt: The two LEDs on the top one at each end and the LED on the side next to the connector.
-  :width: 600
-
-+----------------+------------------+---------------------------------------------------------+
-| Power LED      | Off              | Power is not supplied                                   |
-|                +------------------+---------------------------------------------------------+
-|                | Red              | Power is supplied                                       |
-+----------------+------------------+---------------------------------------------------------+
-| Motor LED      | Red              | Forward direction                                       |
-|                +------------------+---------------------------------------------------------+
-|                | Green            | Reverse direction                                       |
-+----------------+------------------+---------------------------------------------------------+
-| CAN Signal LED | Blinking quickly | No CAN devices are connected                            |
-|                +------------------+---------------------------------------------------------+
-|                | Off              | Connected to the roboRIO and the driver station is open |
-+----------------+------------------+---------------------------------------------------------+
 
 ## REV Robotics Servo Power Module
 
@@ -582,7 +459,7 @@ When the center LED is off the device is operating in coast mode. When the cente
 
 ### Status LEDs
 
-Each channel has a corresponding status LED that will indicate the sensed state of the connected :term:`PWM` signal. The table below describes each state’s corresponding LED pattern.
+Each channel has a corresponding status LED that will indicate the sensed state of the connected :term:`PWM` signal. The table below describes each state's corresponding LED pattern.
 
 +-----------------------+----------------+
 | State                 | Pattern        |
@@ -597,6 +474,31 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 +-----------------------+----------------+
 
 - 6V Power LED off, dim, or flickering with power applied = Over-current shutdown
+
+## REV Robotics Servo Hub
+
+[REV Servo Hub Status LED Patterns](https://docs.revrobotics.com/rev-crossover-products/servo/servo-hub/servo-hub-status-led-patterns)
+
+### General Status LED
+
++-------------------------+----------------------------------------------------------------+
+| LED Color               | Status                                                         |
++=========================+================================================================+
+| Magenta Blinking        | Powered on but not connected to a controller or                |
+|                         | the REV Hardware Client                                        |
++-------------------------+----------------------------------------------------------------+
+| Blue Solid              | Connected to REV Hardware Client                               |
++-------------------------+----------------------------------------------------------------+
+| Solid Cyan              | Connected to a roboRIO or CAN controller                       |
++-------------------------+----------------------------------------------------------------+
+| Green Solid             | Connected to a Control Hub or RS-485 controller                |
++-------------------------+----------------------------------------------------------------+
+| Orange/Cyan Blinking    | Battery voltage is lower than 5.5V                             |
++-------------------------+----------------------------------------------------------------+
+| Orange/Yellow Blinking  | CAN fault detected                                             |
++-------------------------+----------------------------------------------------------------+
+| Orange/Magenta Blinking | Overcurrent fault                                              |
++-------------------------+----------------------------------------------------------------+
 
 ## Spike relay configured as a motor, light, or solenoid switch
 

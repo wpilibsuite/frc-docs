@@ -24,7 +24,7 @@ Community translations can be found in a variety of languages in the menu toward
 
       ^^^
 
-      If you are a returning team, please check out the overview of changes from 2024 to 2025, known issues, and quick start guide for updating.
+      If you are a returning team, please check out the overview of changes from 2025 to 2026, known issues, and quick start guide for updating.
 
       +++
 
@@ -253,7 +253,7 @@ Community translations can be found in a variety of languages in the menu toward
 
       ^^^
 
-      Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
+      Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool, and more.
 
       +++
 
@@ -325,6 +325,15 @@ Community translations can be found in a variety of languages in the menu toward
          :outline:
 
          View article
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+   :caption: FRC Beta Test
+   :hidden:
+
+   docs/beta/beta-getting-started/index
+   docs/beta/tasks/index
 
 .. toctree::
    :maxdepth: 1

@@ -17,7 +17,7 @@ Create a subsystem called Drive Train. Its responsibility will be to handle the 
 Inside the Drive Train, create a Differential Drive object. The Differential Drive object can contain a left motor controller and a right motor controller.
 
 .. image:: images/driving-with-joysticks-speed-controller.png
-   :alt: Dragging motor controller from pallete to tree
+   :alt: Dragging motor controller from palette to tree
 
 Create two Motor Controllers in the Differential Drive, and two more outside the Differential Drive, inside the Drive Train subsystem.
 

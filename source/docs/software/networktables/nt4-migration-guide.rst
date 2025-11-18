@@ -160,6 +160,8 @@ Force set operations have been removed, as it's no longer possible to change a t
 
 The separate connection, value, and log listeners/events have been unified into a single listener/event. The NetworkTable-level listeners have also been removed. Listeners in many cases can be replaced with subscriber ``readQueue()`` calls, but if listeners are still required, they can be used via ``NetworkTableInstance`` (see :ref:`docs/software/networktables/listening-for-change:listening for changes` for more information).
 
+While NetworkTable-level listeners were removed, table-specific listening functionality can be achieved by using ``NetworkTableInstance.addListener()`` with a topic name prefix filter. By passing an array of topic name prefixes (such as ``["/datatable/"]``), the listener will only receive events for topics within that table. This is demonstrated in the :ref:`docs/software/networktables/listening-for-change:using networktableinstance to listen for changes` section.
+
 ## Client/Server Operations
 
 Starting a NetworkTable server now requires specifying both the NT3 port and the NT4 port. For a NT4-only server, the NT3 port can be specified as 0.
