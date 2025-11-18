@@ -6,7 +6,7 @@ Task 2: Configure roboRIO & Benchtop Test
 Task:
 
 1. Image and configure your roboRIO controller.
-2. Create, build, load and run a basic robot program (template of your choosing) on the roboRIO benchtop setup.
+2. Create, build, load, and run a basic robot program (template of your choosing) on the roboRIO benchtop setup.
 
 Overview
 --------
@@ -15,7 +15,7 @@ Before using the roboRIO controller with the Beta software, it must be imaged wi
 
 .. note:: The image version in the documentation may not be updated yet. You should use the latest image available after installing the latest Beta Update.
 
-Next verify the ability to create and download a basic robot program from the chosen template in the assigned programming language. This will verify that the development environment is set up correctly and working properly before moving on to a more complex system. For this task you should create, build and download a basic program to the roboRIO to run at startup, then verify that you are able to communicate with and enable the program using the Driver Station. Instructions can be found on the :ref:`docs/zero-to-robot/step-4/index:Step 4: Programming your Robot` page.
+Next verify the ability to create and download a basic robot program from the chosen template in the assigned programming language. This will verify that the development environment is set up correctly and working properly before moving on to a more complex system. For this task you should create, build, and download a basic program to the roboRIO to run at startup, then verify that you are able to communicate with and enable the program using the Driver Station. Instructions can be found on the :ref:`docs/zero-to-robot/step-4/index:Step 4: Programming your Robot` page.
 
 Desired Feedback
 ----------------
