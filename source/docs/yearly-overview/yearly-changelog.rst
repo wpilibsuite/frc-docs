@@ -1,14 +1,14 @@
 .. include:: <isonum.txt>
 
-# New for 2025
+# New for 2026
 
-A number of improvements have been made to FRC\ |reg| Control System software for 2025. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories.
+A number of improvements have been made to FRC\ |reg| Control System software for 2026. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories.
 
 It's recommended to also review the list of :doc:`known issues <known-issues>`.
 
 ## Importing Projects from Previous Years
 
-Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2025 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2024 projects must be :doc:`imported </docs/software/vscode-overview/importing-last-years-robot-code>` to be compatible.
+Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2026 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2024 projects must be :doc:`imported </docs/software/vscode-overview/importing-last-years-robot-code>` to be compatible.
 
 ## Major Changes (Java/C++)
 
@@ -21,7 +21,7 @@ Supported Operating Systems and Architectures:
 
 .. warning:: The following OSes are no longer supported: macOS 12 or earlier, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
-.. note:: [Windows 10 support from Microsoft will end in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
+.. note:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
 
 ## WPILib
 

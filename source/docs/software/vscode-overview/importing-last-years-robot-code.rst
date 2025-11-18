@@ -6,7 +6,7 @@ Due to changes in the project, it is necessary to update the build files for a p
 
 To make it easy for teams to import previous years gradle projects into the current year's framework, WPILib includes a wizard for importing previous years projects into VS Code. This will generate the necessary gradle components and load the project into VS Code. In place upgrades are not supported.
 
-.. important:: The import process copies your project source files from the current directory to a new directory and completely regenerates the gradle files. Additionally, it updates the code for the package changes made in 2025. If you made non-standard updates to the ``build.gradle``, you will need to make those changes again. For this reason, in place upgrades are not supported. It is also necessary to import vendor libraries again, since last year's vendor libraries must be updated to be compatible with this year's projects.
+.. important:: The import process copies your project source files from the current directory to a new directory and completely regenerates the gradle files. If you made non-standard updates to the ``build.gradle``, you will need to make those changes again. For this reason, in place upgrades are not supported. It is also necessary to import vendor libraries again, since last year's vendor libraries must be updated to be compatible with this year's projects.
 
 ### Launching the Import Wizard
 
@@ -14,7 +14,7 @@ To make it easy for teams to import previous years gradle projects into the curr
 
 When you open a previous year's project, you will be prompted to import that project. Click :guilabel:`yes`.
 
-Alternately, you can chose to import it from the menu. Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib icon to locate the WPILib commands. Begin typing "Import a WPILib 2020-2024 Gradle project" and select it from the dropdown as shown below.
+Alternately, you can chose to import it from the menu. Press :kbd:`Ctrl+Shift+P` and type "WPILib" or click the WPILib icon to locate the WPILib commands. Begin typing "Import a WPILib 2020-2025 Gradle project" and select it from the dropdown as shown below.
 
 .. image:: images/importing-previous-project/ImportGradleMenu.png
 
