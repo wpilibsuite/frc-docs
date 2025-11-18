@@ -47,7 +47,7 @@ Launching VisualVM is done via the commandline with a few parameters. First, we 
 
 ```bash
 cd "C:\Users\Public\wpilib\visualvm_2110\bin"
-./visualvm --jdkhome "C:\Users\Public\wpilib\2025\jdk"
+./visualvm --jdkhome "C:\Users\Public\wpilib\2026\jdk"
 ```
 
 .. important:: The exact path ``visualvm_2110`` may vary and depends on the version of VisualVM downloaded.
