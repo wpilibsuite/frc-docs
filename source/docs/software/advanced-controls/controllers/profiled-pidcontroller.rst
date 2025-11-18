@@ -84,14 +84,14 @@ The returned setpoint might then be used as in the following example:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/17344d8891d0121dabac876730496828554a03bc/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/profiledpidfeedforward/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1-beta-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/profiledpidfeedforward/Robot.java
       :language: java
-      :lines: 33-39
+      :lines: 37-44
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/17344d8891d0121dabac876730496828554a03bc/wpilibcExamples/src/main/cpp/snippets/ProfiledPIDFeedforward/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1-beta-1/wpilibcExamples/src/main/cpp/snippets/ProfiledPIDFeedforward/cpp/Robot.cpp
       :language: c++
-      :lines: 23-30
+      :lines: 25-32
       :lineno-match:
 
    .. code-block:: python
