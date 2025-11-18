@@ -22,12 +22,12 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
 
 .. tab-set-code::
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
       :language: java
       :lines: 7-53
       :lineno-match:
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
       :language: c++
       :lines: 5-29
       :lineno-match:
@@ -126,7 +126,13 @@ The elements of the New Project Creator Window are explained below:
 5. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
 6. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
 7. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
-8. **Enable Desktop Support**: Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it.
+8. **Enable Desktop Support**: Enables unit test and simulation support (see :doc:`/docs/software/wpilib-tools/robot-simulation/introduction`).
+
+   - **Java**: This option has no effect and can be left checked or unchecked
+   - **C++**: Checking this option enables desktop compilation, which is required for simulation and unit tests
+   - **Romi/XRP**: This option has no effect for Romi and XRP templates and can be left checked or unchecked
+
+   .. note:: While WPILib fully supports desktop builds, some third-party vendor libraries may not. If a library doesn't support desktop compilation, your C++ code may not compile or may crash when running simulation.
 
 Once all the above have been configured, click "Generate Project" and the robot project will be created.
 

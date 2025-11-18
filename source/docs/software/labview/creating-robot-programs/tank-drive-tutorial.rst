@@ -30,9 +30,9 @@
 
 7. The first thing to confirm in this VI is that your left and right motors are connected to the same PWM lines in LabVIEW as they are on your PDP (Power Distribution Panel).
 
-8. The second thing to confirm in this VI is that the "Open 2 Motor.vi" has the correct motor controller selected (Talon, Jaguar, Victor, etc.).
+8. The second thing to confirm in this VI is that the "Open 2 Motor.vi" has the correct motor controller selected (Talon, Victor, Spark, etc.).
 
-For example, I am using Jaguar motor controllers and my motors are wired into PWM 8 and 9.  The image below shows the changes I need to make:
+For example, the image below shows motors wired into PWM 8 and 9:
 
 .. image:: images/tank-drive-tutorial/block-diagram-3.png
 

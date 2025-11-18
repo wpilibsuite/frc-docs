@@ -11,29 +11,29 @@ For each sensor or actuator that is created, set the subsystem name and display 
     ```java
     Ultrasonic ultrasonic = new Ultrasonic(1, 2);
     SendableRegistry.setName(ultrasonic, "Arm", "Ultrasonic");
-    Jaguar elbow = new Jaguar(1);
+    Spark elbow = new Spark(1);
     SendableRegistry.setName(elbow, "Arm", "Elbow");
-    Victor wrist = new Victor(2);
+    VictorSP wrist = new VictorSP(2);
     SendableRegistry.setName(wrist, "Arm", "Wrist");
     ```
 
     ```c++
     frc::Ultrasonic ultrasonic{1, 2};
     SendableRegistry::SetName(ultrasonic, "Arm", "Ultrasonic");
-    frc::Jaguar elbow{1};
+    frc::Spark elbow{1};
     SendableRegistry::SetName(elbow, "Arm", "Elbow");
-    frc::Victor wrist{2};
+    frc::VictorSP wrist{2};
     SendableRegistry::SetName(wrist, "Arm", "Wrist");
     ```
 
     ```python
-    from wpilib import Jaguar, Ultrasonic, Victor
+    from wpilib import Spark, Ultrasonic, VictorSP
     from wpiutil import SendableRegistry
         ultrasonic = Ultrasonic(1, 2)
     SendableRegistry.setName(ultrasonic, "Arm", "Ultrasonic")
-    elbow = Jaguar(1)
+    elbow = Spark(1)
     SendableRegistry.setName(elbow, "Arm", "Elbow")
-    wrist = Victor(2)
+    wrist = VictorSP(2)
     SendableRegistry.setName(wrist, "Arm", "Wrist")
     ```
 
@@ -44,29 +44,29 @@ If your objects are in a ``Subsystem``, this can be simplified using the addChil
     ```java
     Ultrasonic ultrasonic = new Ultrasonic(1, 2);
     addChild("Ultrasonic", ultrasonic);
-    Jaguar elbow = new Jaguar(1);
+    Spark elbow = new Spark(1);
     addChild("Elbow", elbow);
-    Victor wrist = new Victor(2);
+    VictorSP wrist = new VictorSP(2);
     addChild("Wrist", wrist);
     ```
 
     ```c++
     frc::Ultrasonic ultrasonic{1, 2};
     AddChild("Ultrasonic", ultrasonic);
-    frc::Jaguar elbow{1};
+    frc::Spark elbow{1};
     AddChild("Elbow", elbow);
-    frc::Victor wrist{2};
+    frc::VictorSP wrist{2};
     AddChild("Wrist", wrist);
     ```
 
     ```python
-    from wpilib import Jaguar, Ultrasonic, Victor
+    from wpilib import Spark, Ultrasonic, VictorSP
     from commands2 import SubsystemBase
         ultrasonic = Ultrasonic(1, 2)
     SubsystemBase.addChild("Ultrasonic", ultrasonic)
-    elbow = Jaguar(1)
+    elbow = Spark(1)
     SubsystemBase.addChild("Elbow", elbow)
-    wrist = Victor(2)
+    wrist = VictorSP(2)
     SubsystemBase.addChild("Wrist", wrist)
     ```
 

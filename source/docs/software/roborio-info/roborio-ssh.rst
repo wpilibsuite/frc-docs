@@ -24,26 +24,28 @@ The "lvuser" account is the account used to run user code for all three language
 .. danger:: Changing the default ssh passwords for either "lvuser" or "admin" will prevent C++, Java, and Python teams from uploading code.
 
 ## SSH
-SSH (Secure SHell) is a protocol used for secure data communication. When broadly referred to regarding a Linux system (such as the one running on the roboRIO) it generally refers to accessing the command line console using the SSH protocol. This can be used to execute commands on the remote system. A free client which can be used for SSH is PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+SSH (Secure SHell) is a protocol used for secure data communication. When broadly referred to regarding a Linux system (such as the one running on the roboRIO) it generally refers to accessing the command line console using the SSH protocol. This can be used to execute commands on the remote system. OpenSSH is included by default on Windows, macOS, and Linux.
 
-### Open Putty
+### Connect via SSH
 
-.. image:: images/open-putty.png
-   :alt: Putty UI highlighting the Host Name field, the SSH radio button and the Open button.
+To connect to the roboRIO, open a terminal or command prompt and run:
 
-Open Putty (clicking OK at any security prompt). Then set the following settings:
+.. code-block:: shell
 
-1. Host Name: roboRIO-TEAM-frc.local (where TEAM is your team number, example shows team 40)
+   ssh admin@roboRIO-TEAM-frc.local
 
-2. Connection Type: SSH
+Replace ``TEAM`` with your team number (e.g., ``ssh admin@roboRIO-40-frc.local`` for team 40).
 
-Other settings can be left at defaults. Click Open to open the connection. If you see a prompt about SSH keys, click OK.
+If you are connected over USB you can use ``172.22.11.2`` as the hostname:
 
-If you are connected over USB you can use 172.22.11.2 as the hostname. If your roboRIO is set to a static IP you can use that IP as the hostname if connected over Ethernet/wireless.
+.. code-block:: shell
+
+   ssh admin@172.22.11.2
+
+If your roboRIO is set to a static IP you can use that IP as the hostname if connected over Ethernet/wireless.
 
 ### Log In
 
-.. image:: images/log-in.png
-   :alt: PuTTY terminal window logged in to the roboRIO.
+When you see the password prompt, press enter (the password for both accounts is blank). You can also connect as the ``lvuser`` account by replacing ``admin`` with ``lvuser`` in the commands above.
 
-When you see the prompt, enter the desired username (see above for description) then press enter. At the password prompt press enter (password for both accounts is blank).
+If you see a prompt about host authenticity when connecting for the first time, type ``yes`` and press enter to continue.

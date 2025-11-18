@@ -4,6 +4,15 @@ LED strips have been commonly used by teams for several years for a variety of r
 
 .. note:: LEDs can be controlled through this API while the robot is disabled.
 
+.. important:: The roboRIO can only control **one** ``AddressableLED`` object at a time through its PWM ports. Attempting to create multiple ``AddressableLED`` objects will result in a HAL allocation error. If you need to control multiple physical LED strips, you have several options:
+
+   - **Daisy-chain strips in series**: Connect multiple LED strips end-to-end as a single long strip, then use :ref:`buffer views <docs/software/hardware-apis/misc/addressable-leds:Controlling Sections of an LED Strip>` to control different sections independently
+   - **Use PWM Y-cables**: If you need identical patterns on multiple strips, use PWM Y-cables to send the same signal to multiple strips simultaneously
+
+.. seealso:: For detailed information about powering and best practices for addressable LEDs, see the [Adafruit NeoPixel Überguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels).
+
+.. warning:: WS2812B LEDs are designed for 5V, but roboRIO PWM/Servo ports output 6V. While the LEDs will function, this may reduce their lifespan. Consider using a voltage regulator or level shifter if longevity is a concern.
+
 ## Instantiating the AddressableLED Object
 
 You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header on the roboRIO. Then you set the number of LEDs located on your LED strip, which can be done with the ``setLength()`` function.
@@ -19,7 +28,7 @@ After the length of the strip has been set, you'll have to create an ``Addressab
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 32-47
          :lineno-match:
@@ -27,13 +36,13 @@ After the length of the strip has been set, you'll have to create an ``Addressab
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: c++
          :lines: 12-12, 18-27
          :linenos:
          :lineno-start: 12
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 7-13
          :lineno-match:
@@ -134,7 +143,7 @@ The base rainbow pattern will look like this:
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 21-31
          :lineno-match:
@@ -142,7 +151,7 @@ The base rainbow pattern will look like this:
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
          :language: c++
          :lines: 27-37
          :lineno-match:
@@ -154,7 +163,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
          :language: java
          :lines: 50-56
          :lineno-match:
@@ -162,7 +171,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.3.2/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
          :language: c++
          :lines: 15-20
          :lineno-match:

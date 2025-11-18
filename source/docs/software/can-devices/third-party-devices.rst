@@ -95,7 +95,9 @@ Playing With Fusion (PWF) offers the Venom integrated motor/controller as well a
 
 ## Redux Robotics
 
-Redux Robotics currently offers the HELIUM Canandmag :term:`CAN` + :term:`PWM` magnetic encoder and the BORON Canandgyro :term:`CAN`-enabled gyro.
+.. warning:: Redux Robotics is shutting down. While their devices remain legal for FRC use and software support will be provided for the 2026 season, no new hardware will be available.
+
+Redux Robotics offers the HELIUM Canandmag :term:`CAN` + :term:`PWM` magnetic encoder and the BORON Canandgyro :term:`CAN`-enabled gyro.
 
 ### Redux Sensors
 

@@ -24,7 +24,7 @@ The other source of documentation will be the Wiki section of the GitHub project
 
 Please read through the documentation in this section to understand the tasks associated with the Beta Test.
 
-Run your robot with current (2024) software and note the Free RAM on the DS diagnostics tab (for later comparison in task 3).
+Run your robot with current (2025) software and note the Free RAM on the DS diagnostics tab (for later comparison in task 3).
 
 Desired Feedback
 ----------------

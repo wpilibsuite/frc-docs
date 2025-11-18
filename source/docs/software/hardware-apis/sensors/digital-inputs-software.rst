@@ -14,11 +14,11 @@ A :code:`DigitalInput` can be initialized as follows:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/digitalinput/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/digitalinput/Robot.java
       :language: java
       :lines: 15-16
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibcExamples/src/main/cpp/snippets/DigitalInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/DigitalInput/cpp/Robot.cpp
       :language: c++
       :lines: 21-22
 
@@ -28,11 +28,11 @@ The state of the :code:`DigitalInput` can be polled with the :code:`get` method:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/digitalinput/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/digitalinput/Robot.java
       :language: java
       :lines: 20-21
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibcExamples/src/main/cpp/snippets/DigitalInput/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/DigitalInput/cpp/Robot.cpp
       :language: c++
       :lines: 15-17
 
@@ -46,11 +46,11 @@ An :code:`AnalogTrigger` may be initialized as follows.  As with :code:`AnalogPo
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogtrigger/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogtrigger/Robot.java
       :language: java
       :lines: 16-22
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibcExamples/src/main/cpp/snippets/AnalogTrigger/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogTrigger/cpp/Robot.cpp
       :language: c++
       :lines: 27-33
 
@@ -62,11 +62,11 @@ To convert the analog signal to a digital one, it is necessary to specify at wha
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogtrigger/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogtrigger/Robot.java
       :language: java
       :lines: 26-31
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/02de5f710e2579f2079a28944e90b48b34d91cac/wpilibcExamples/src/main/cpp/snippets/AnalogTrigger/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.0.0-alpha-1/wpilibcExamples/src/main/cpp/snippets/AnalogTrigger/cpp/Robot.cpp
       :language: c++
       :lines: 16-23
 
