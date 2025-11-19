@@ -14,19 +14,6 @@
    - Best practices for base class design
    - Examples of useful base class patterns (describe scenarios, not full implementations)
 
-## Dynamic Command Generation
-
-.. todo::
-   Explain patterns for generating commands dynamically at runtime. Cover:
-   - When dynamic command generation is needed
-   - Creating commands from parameters/configuration
-   - Path planning and generated trajectories as commands
-   - Loading command sequences from files or network
-   - Command builders and fluent APIs
-   - Performance considerations for dynamic generation
-   - Memory management for dynamically created commands
-   - Examples of dynamic generation scenarios
-
 ## Performance Optimization
 
 .. todo::
@@ -48,7 +35,6 @@
    - State machines implemented with async/await
    - Error handling and recovery with async commands
    - Cancellation and timeout patterns
-   - Resource pooling and management
    - Coordinating multiple mechanisms with complex dependencies
    - Real-time responsive commands with background processing
    - Describe complex scenarios and how to implement them with v3 features
@@ -60,11 +46,10 @@
    - Commands that never yield (infinite loops without yield)
    - Forked commands and lifecycle management
    - Nested trigger scopes and cleanup
-   - Priority conflicts and circular dependencies
+   - Priority conflicts
    - Requirements conflicts with complex command compositions
    - Thread safety considerations (if any)
    - Limitations of the coroutine model
    - Breaking scheduler assumptions
-   - Memory leaks and resource exhaustion
    - Common mistakes and how to avoid them
    - What NOT to do in v3 commands

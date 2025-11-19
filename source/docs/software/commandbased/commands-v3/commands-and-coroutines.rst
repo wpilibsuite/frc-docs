@@ -21,9 +21,8 @@
    Provide an overview of what coroutines are and how v3 uses them. Cover:
    - High-level explanation of coroutines for teams unfamiliar with the concept
    - How coroutines enable sequential command logic without state machines
-   - The generator/yield paradigm
+   - The yield paradigm
    - How the scheduler executes coroutine commands
-   - Comparison to v2's initialize/execute/end/isFinished pattern
    - Benefits of the coroutine approach
 
 ## yield()
@@ -34,6 +33,7 @@
    - When to use yield() vs. other control flow primitives
    - How yield() relates to the scheduler loop timing
    - Common patterns using yield() (e.g., running for multiple cycles)
+   - Note: The compiler plugin checks for `yield` in while-loops (this check does not apply to other loop types)
    - Performance implications
    - Examples of yield() usage patterns (describe what examples should show)
 
@@ -44,6 +44,7 @@
    - What park() does: pause indefinitely until command is interrupted
    - When to use park() (e.g., commands that should run until interrupted)
    - How park() differs from yield() in a loop
+   - Note: The compiler plugin checks for unreachable code after a `park()` call
    - Interaction with command interruption and priorities
    - Common use cases for park()
    - Examples of park() usage patterns (describe what examples should show)
@@ -70,15 +71,13 @@
    - What happens when a command completes normally
    - What happens when a command is interrupted
    - Cleanup and resource management
-   - How lifecycle differs from v2 commands
 
 ## Command Properties
 
 .. todo::
    Explain the various properties that can be set on commands. Cover:
-   - How to set command properties (method chaining, decorators, etc.)
    - Available properties: name, priority, interruptible, runsWhenDisabled, etc.
+   - How to set command properties (method chaining, decorators, etc.)
    - When properties are evaluated vs. applied
    - How properties affect scheduler behavior
    - Best practices for setting properties
-   - Where properties should be set (factory vs. call site)

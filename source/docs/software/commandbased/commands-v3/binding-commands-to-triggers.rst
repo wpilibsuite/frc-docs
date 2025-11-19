@@ -12,7 +12,6 @@
    - When trigger bindings are evaluated by the scheduler
    - Available trigger sources (buttons, joysticks, sensors, custom)
    - High-level syntax for creating and binding triggers
-   - How v3 triggers compare to v2 triggers
 
 ## Button Bindings
 
@@ -49,6 +48,7 @@
    - Edge detection (rising/falling edges)
    - Trigger filtering and transformation
    - When composition is evaluated
+   - Note: This section may need updates if https://github.com/wpilibsuite/allwpilib/pull/8366 is merged
    - Examples of trigger composition patterns (describe what examples should show)
 
 ## Inner Trigger Scopes
