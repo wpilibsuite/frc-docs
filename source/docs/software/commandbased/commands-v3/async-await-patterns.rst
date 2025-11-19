@@ -14,6 +14,19 @@
    - High-level mental model for how it works with the scheduler
    - Relationship to coroutines and yield()
 
+## awaitAll()
+
+.. todo::
+   Explain the awaitAll() function in detail. Cover:
+   - What awaitAll(commands) does: wait for multiple commands in parallel
+   - How awaitAll() differs from await() in a loop
+   - When all commands must complete vs. early termination scenarios
+   - Requirements management across multiple parallel commands
+   - Error and interruption handling
+   - Performance implications of parallel execution
+   - Easier to explain as a blocking version of fork()
+   - Examples of awaitAll() patterns (describe what examples should show)
+
 ## await()
 
 .. todo::
@@ -26,25 +39,14 @@
    - Return values and status from awaited commands
    - Examples of await() patterns (describe what examples should show)
 
-## awaitAll()
-
-.. todo::
-   Explain the awaitAll() function in detail. Cover:
-   - What awaitAll(commands) does: wait for multiple commands in parallel
-   - How awaitAll() differs from await() in a loop
-   - When all commands must complete vs. early termination scenarios
-   - Requirements management across multiple parallel commands
-   - Error and interruption handling
-   - Performance implications of parallel execution
-   - Examples of awaitAll() patterns (describe what examples should show)
-
 ## awaitAny()
 
 .. todo::
    Explain the awaitAny() function in detail. Cover:
    - What awaitAny(commands) does: wait until any command completes
    - Race condition semantics: which command "wins"
-   - What happens to other commands when one completes
+   - **Important**: awaitAny() cancels all other still-running commands when one completes
+   - Both await functions are blocking
    - Use cases for awaitAny() (timeouts, alternative paths, etc.)
    - How interruption is handled
    - Differences from race groups in composition

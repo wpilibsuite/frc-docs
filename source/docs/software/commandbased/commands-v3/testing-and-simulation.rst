@@ -1,14 +1,13 @@
 # Testing and Simulation
 
 .. todo::
-   This article covers testing commands and mechanisms using both unit tests and simulation. Testing is crucial for reliable robot code, and v3's design makes testing easier than v2. This article should encourage teams to adopt testing practices and show them how.
+   This article covers testing commands and mechanisms using both unit tests and simulation. Testing is crucial for reliable robot code, and v3's design facilitates testing. This article should encourage teams to adopt testing practices and show them how.
 
 ## Why Test Commands
 
 .. todo::
    Make the case for testing command-based code. Cover:
    - Benefits of testing: catch bugs early, enable refactoring, document behavior
-   - Why v3 makes testing easier than v2
    - What aspects of command code can/should be tested
    - Testing pyramid: unit tests, integration tests, simulation tests
    - When to write tests (TDD, after implementation, before competition)

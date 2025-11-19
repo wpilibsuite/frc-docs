@@ -1,38 +1,37 @@
 # Telemetry and Debugging
 
 .. todo::
-   This article covers using v3's enhanced telemetry features and debugging tools to understand and troubleshoot robot behavior. Good telemetry is essential for rapid iteration during competition, and v3 provides improved tools compared to v2.
+   This article covers using v3's telemetry features and debugging tools to understand and troubleshoot robot behavior. Good telemetry is essential for rapid iteration during competition.
 
-## v3 Telemetry Improvements
+## Telemetry Features
 
 .. todo::
-   Overview of telemetry enhancements in v3. Cover:
-   - What telemetry improvements v3 provides over v2
-   - Built-in command scheduler telemetry
+   Overview of telemetry features in v3. Cover:
+   - Telemetry API and Epilogue compatibility (protobuf serialization)
    - Mechanism state visibility
+   - Scheduler events
+     - Detail the subtypes of `SchedulerEvent` and when they are emitted
+     - Add event listeners to listen for them
    - Command lifecycle events
    - Priority and interruption logging
-   - Performance metrics (cycle time, CPU usage)
    - How telemetry integrates with the scheduler
 
-## Dashboard Integration
+## Data Logging and Analysis
 
 .. todo::
-   Explain how to integrate v3 telemetry with dashboards. Cover:
-   - Supported dashboard tools (Shuffleboard, Glass, etc.)
-   - Automatic command scheduler widget/visualization
+   Explain how v3 telemetry works with data logging and analysis tools. Cover:
+   - Protobuf serialization for telemetry data
+   - Integration with AdvantageScope for post-match analysis
+   - Tracking command lifetimes and triggering events
+   - Live or post-match analysis workflows
    - Publishing Mechanism state to Network Tables
-   - Publishing command properties and status
-   - Creating custom dashboard layouts for v3 projects
-   - Live tuning parameters through the dashboard
-   - Remote command triggering from dashboard
-   - Best practices for dashboard organization
+   - Best practices for data logging
 
 ## Debugging Techniques
 
 .. todo::
    Provide techniques for debugging v3 command-based code. Cover:
-   - Using dashboard telemetry to diagnose issues
+   - Using telemetry data to diagnose issues
    - Logging command lifecycle events
    - Tracing command execution flow
    - Debugging priority conflicts
@@ -40,7 +39,7 @@
    - Debugging trigger bindings that don't fire
    - Debugging commands that don't end/interrupt properly
    - Using simulation for debugging
-   - Breakpoint debugging in IDEs with v3
+   - Breakpoint debugging in IDEs (only in simulation or unit tests, not on running robots)
    - Common debugging patterns and workflows
 
 ## Logging Best Practices

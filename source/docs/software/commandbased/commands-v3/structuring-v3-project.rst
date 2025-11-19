@@ -8,25 +8,33 @@
 .. todo::
    Describe the recommended file and package organization for v3 projects. Cover:
    - Top-level package structure
-   - Where Mechanisms should live
+   - Where Mechanisms should live (mechanisms/ directory with subdirectories per mechanism)
    - Where command functions/classes should be organized
    - Organization of constants and configuration
    - Separation of concerns between different code areas
-   - How v3 structure differs from v2 structure
-   - Example directory tree showing recommended organization
+   - Example directory tree:
+     - Autos.java
+     - ControllerBindings.java
+     - Main.java
+     - Robot.java
+     - mechanisms/
+       - drive/
+         - DriveConstants.java
+         - Drive.java
+       - elevator/
+         - ElevatorConstants.java
+         - Elevator.java
 
-## RobotContainer Design
+## Robot.java and Controller Bindings
 
 .. todo::
-   Explain the role and design of the RobotContainer class. Cover:
-   - What RobotContainer is responsible for in v3
-   - How to structure RobotContainer for maintainability
-   - Mechanism instantiation and initialization
+   Explain the organization of Robot.java and controller bindings. Cover:
+   - Robot.java is the main organization point (not using RobotContainer pattern)
+   - Mechanism instantiation and initialization in Robot.java
+   - ControllerBindings.java for organizing button bindings
+   - Autos.java for autonomous routine organization
    - Controller/joystick setup
-   - Button binding organization
-   - Autonomous routine selection
-   - Patterns for large RobotContainer classes (splitting into methods or subclasses)
-   - Example RobotContainer structure (describe sections, not full implementation)
+   - Patterns for clean organization without RobotContainer
 
 ## Robot.java Setup
 
@@ -37,7 +45,6 @@
    - How v3 uses the scheduler in periodic loops
    - Autonomous vs. teleop initialization
    - Test mode setup for v3
-   - Simulation support hooks
    - What should NOT go in Robot.java (antipatterns)
    - Example Robot.java structure for v3
 
@@ -76,6 +83,7 @@
    - Integration test organization
    - Test utilities and fixtures
    - Mocking Mechanisms and hardware for command tests
+   - **Mechanism testing**: Mechanisms can accept a `Scheduler` parameter in their constructor to avoid shared state in tests
    - Simulation test setup
    - CI/CD integration considerations
    - Example test directory structure

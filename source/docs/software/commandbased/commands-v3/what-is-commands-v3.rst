@@ -6,24 +6,23 @@
 
 .. todo::
    - Recap the command-based pattern (commands + mechanisms for resource management)
-   - Explain what's fundamentally different in v3 vs v2
-   - Why imperative style was chosen over declarative composition
-   - Brief history: evolution from v1 → v2 → v3
+   - Explain the imperative programming style
+   - How v3 enables writing robot code that looks like simple sequential programs
 
-## The Problem v3 Solves
+## Learning Curve and On-Ramp
 
 .. todo::
-   **Learning Curve Issues:**
-   - v2 requires understanding functional composition, decorators, and lambda chaining
-   - New programmers struggle with splitting logic across initialize/execute/isFinished
-   - Common mistake: writing blocking loops in execute() that stall the scheduler
+   **Imperative On-Ramp:**
+   - Commands v3 allows teams to transition from basic imperative code to the command framework
+   - Simple sequential code can be lifted into commands with minimal changes
+   - Example: A basic drive-in-a-square routine can be wrapped in command functions
+   - Changing `Thread.sleep()` to `coroutine.wait()` and direct calls to `coroutine.await()`
+   - This provides a gentle learning curve for teams new to command-based programming
 
    **Code Readability:**
-   - Complex behaviors require deeply nested decorator chains
-   - Hard to see the sequential flow of actions
-   - Difficult to add conditional logic mid-sequence
-
-   **Example comparison:** Show a complex autonomous routine in v2 (decorator chains) vs v3 (sequential imperative code) to illustrate the readability difference.
+   - Write robot actions as sequential steps
+   - Use familiar control flow: loops, if-statements, and function calls
+   - Easy to add delays, loops, and conditions within command logic
 
 ## Core Concepts
 
@@ -39,7 +38,6 @@
 
 .. todo::
    - What are coroutines (functions that can pause and resume)
-   - How Java's ``Continuation`` API enables this (internal implementation detail)
    - Cooperative vs preemptive multitasking
    - Commands must voluntarily yield control
    - The scheduler cannot forcibly suspend commands
@@ -47,58 +45,38 @@
 ### Mechanisms as Exclusive Resources
 
 .. todo::
-   - Mechanisms represent hardware groupings (like v2 Subsystems)
+   - Mechanisms represent hardware groupings
    - Only one command can require a mechanism at a time
    - Automatic resource conflict detection and resolution
-   - Comparison to v2 Subsystems with key differences
 
 ### Command Priorities
 
 .. todo::
-   - Priority levels replace v2's binary interrupt behavior
+   - Priority levels for controlling command interruption
    - Higher priority commands can interrupt lower priority ones
    - Enables nuanced control (e.g., LED priority ladder for different robot states)
    - Default priorities and when to override them
 
-## Key Improvements Over v2
+## Additional Features
 
-### 1. Natural Sequential Syntax
-
-.. todo::
-   - Write steps in order like a recipe
-   - No need to chain decorators for sequential actions
-   - Easy to add delays, loops, and conditions mid-command
-   - Example: Drive to position with adjustments
-
-### 2. Mandatory Command Naming
+### Mandatory Command Naming
 
 .. todo::
    - All commands must have descriptive names
    - Improves telemetry and debugging
-   - Eliminates vague "SequentialCommandGroup" labels
    - Automatic naming for compositions (e.g., "Step 1 -> Step 2 -> Step 3")
 
-### 3. Eliminated Uncommanded Behavior
-
-.. todo::
-   - v2 issue: nested commands finishing at different times leaves subsystems uncommanded
-   - v2 solution: proxy commands (boilerplate heavy)
-   - v3 solution: child commands use mechanisms without parent requiring them
-   - Child commands cannot interrupt parents
-
-### 4. Enhanced Telemetry
+### Enhanced Telemetry
 
 .. todo::
    - Per-instance command tracking (each execution has unique ID)
    - Clear command hierarchy visualization
-   - Performance metrics per command execution
    - Better dashboard integration
 
-### 5. Inner Trigger Scopes
+### Inner Trigger Scopes
 
 .. todo::
    - Triggers defined inside command bodies are scoped to that command's lifetime
-   - No need for global trigger libraries with conditional checks
    - Cleaner code organization
    - Example: Temporary button binding during a specific command
 
@@ -109,20 +87,6 @@
    - **Not multi-threaded**: Single-threaded execution only
    - **No unrestricted coroutine usage**: Coroutines only work within command context
    - **Cannot replace periodic loops**: Still need periodic methods for continuous updates
-
-## Comparison: v2 vs v3
-
-.. todo::
-   **When to use v2:**
-   - Need C++/Python support
-   - Team comfortable with functional programming
-   - Existing codebase works well
-
-   **When to use v3:**
-   - Java-only team
-   - Prefer imperative style
-   - Want latest features
-   - Starting fresh for 2027
 
 ## Next Steps
 

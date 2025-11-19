@@ -8,11 +8,10 @@
 .. todo::
    Describe how to create a Mechanism class. Cover:
    - Basic Mechanism class structure and constructor
-   - How Mechanisms differ philosophically from v2 Subsystems
    - When to create a Mechanism vs. other organizational patterns
    - Naming conventions for Mechanism classes
    - Where Mechanism classes should live in the project structure
-   - How to register Mechanisms with the command scheduler (if needed)
+   - Note: Mechanisms are automatically registered with the scheduler in the base class constructor
 
 ## Encapsulation Best Practices
 
@@ -40,8 +39,10 @@
 
 .. todo::
    Describe periodic update patterns in Mechanisms. Cover:
-   - Whether Mechanisms have a periodic() method like v2 Subsystems
-   - If not, how to handle periodic updates in v3
+   - Mechanisms don't have a built-in periodic() method
+   - Manual periodic functions can be plumbed if needed using `Scheduler.addPeriodic()`
+   - Alternatively, call periodic functions manually in `robotPeriodic()`
+   - Example patterns for sensor refresh methods
    - When to use periodic updates vs. command-based updates
    - Performance considerations for periodic operations
    - Common patterns like updating telemetry, processing sensor data, safety checks

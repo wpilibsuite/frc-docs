@@ -1,15 +1,14 @@
 # Migrating from Commands v2 to v3
 
 .. todo::
-   This article guides teams through migrating an existing Commands v2 codebase to v3. Migration can be done incrementally, and this article should help teams plan their migration strategy, understand the key differences, and avoid common pitfalls. This is a critical resource for established teams.
+   This article guides teams through migrating an existing Commands v2 codebase to v3. This article should help teams plan their migration strategy, understand the key differences, and avoid common pitfalls. This is a critical resource for established teams.
 
 ## Migration Strategy
 
 .. todo::
    Provide high-level guidance on planning a v2-to-v3 migration. Cover:
    - Should teams migrate? (pros/cons, when to migrate vs. stay on v2)
-   - Migration approaches: full rewrite vs. incremental migration
-   - Incremental migration: v2 and v3 can coexist in the same project
+   - Migration approach: full rewrite recommended
    - What to migrate first (start with simple mechanisms/commands)
    - Testing strategy during migration
    - Timeline considerations (offseason vs. competition season)
@@ -25,7 +24,7 @@
    - Deprecated v2 APIs and their v3 equivalents
    - How to add v3 dependencies to build.gradle/pom.xml
    - Version compatibility and requirements
-   - Vendor library compatibility with v3
+   - Note: Vendor library compatibility with v3 is up to individual vendors
 
 ## Concept Mapping
 
