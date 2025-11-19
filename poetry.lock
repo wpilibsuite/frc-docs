@@ -2356,20 +2356,6 @@ sphinx = ">=2.0"
 tinycss2 = ">=1.1.1"
 
 [[package]]
-name = "sphinxext-presentations"
-version = "0.3.1"
-description = "Sphinx Extension that turns documentation into presentations."
-optional = false
-python-versions = ">=3.6"
-files = [
-    {file = "sphinxext_presentations-0.3.1-py3-none-any.whl", hash = "sha256:978c9dd6dd54f5a5f0c85f6f2ab0a43c4d96fadca93288102323ff84a353de6d"},
-    {file = "sphinxext_presentations-0.3.1.tar.gz", hash = "sha256:0698f7fdf30b484ec7d37e4f3e752c004481c21e9ce9e6144265217bfb742e00"},
-]
-
-[package.dependencies]
-sphinx = ">=2.0"
-
-[[package]]
 name = "sphinxext-rediraffe"
 version = "0.2.7"
 description = "Sphinx Extension that redirects non-existent pages to working pages."
@@ -2584,4 +2570,4 @@ test = ["pytest"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.14"
-content-hash = "31919138c7bab7eb03cc64f04761c8f53c2e5ff583251a0118629f29d8cda479"
+content-hash = "36342e16567136abcdd5c1b5edfd73e8a77347ee694af38d2d439d6104058ab4"
