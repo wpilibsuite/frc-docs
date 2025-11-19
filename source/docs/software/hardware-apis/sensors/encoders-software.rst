@@ -249,7 +249,7 @@ As duty cycle encoders output a continuous set of pulses, it is possible to dete
       :language: java
       :lines: 31-32
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/0695a4db8912a65f175c814c30075cc3e87b313f/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1-beta-1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
       :language: c++
       :lines: 20-21
 
