@@ -629,7 +629,7 @@ When the center LED is off the device is operating in coast mode. When the cente
 
 ### Status LEDs
 
-Each channel has a corresponding status LED that will indicate the sensed state of the connected :term:`PWM` signal. The table below describes each state’s corresponding LED pattern.
+Each channel has a corresponding status LED that will indicate the sensed state of the connected :term:`PWM` signal. The table below describes each state's corresponding LED pattern.
 
 +-----------------------+----------------+
 | State                 | Pattern        |
@@ -644,6 +644,31 @@ Each channel has a corresponding status LED that will indicate the sensed state 
 +-----------------------+----------------+
 
 - 6V Power LED off, dim, or flickering with power applied = Over-current shutdown
+
+## REV Robotics Servo Hub
+
+[REV Servo Hub Status LED Patterns](https://docs.revrobotics.com/rev-crossover-products/servo/servo-hub/servo-hub-status-led-patterns)
+
+### General Status LED
+
++-------------------------+----------------------------------------------------------------+
+| LED Color               | Status                                                         |
++=========================+================================================================+
+| Magenta Blinking        | Powered on but not connected to a controller or                |
+|                         | the REV Hardware Client                                        |
++-------------------------+----------------------------------------------------------------+
+| Blue Solid              | Connected to REV Hardware Client                               |
++-------------------------+----------------------------------------------------------------+
+| Solid Cyan              | Connected to a roboRIO or CAN controller                       |
++-------------------------+----------------------------------------------------------------+
+| Green Solid             | Connected to a Control Hub or RS-485 controller                |
++-------------------------+----------------------------------------------------------------+
+| Orange/Cyan Blinking    | Battery voltage is lower than 5.5V                             |
++-------------------------+----------------------------------------------------------------+
+| Orange/Yellow Blinking  | CAN fault detected                                             |
++-------------------------+----------------------------------------------------------------+
+| Orange/Magenta Blinking | Overcurrent fault                                              |
++-------------------------+----------------------------------------------------------------+
 
 ## CANCoder Encoder
 
