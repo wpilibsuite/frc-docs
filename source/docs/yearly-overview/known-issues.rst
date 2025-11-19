@@ -150,22 +150,3 @@ python -m robotpy installer niweb disable
 ```
 
 .. seealso:: [Github issue](https://github.com/robotpy/mostrobotpy/issues/61)
-
-## Fixed by Game Tools 2025 Patch 1
-
-### Game Tools install fails due to outdated NI Package Manager
-
-**Issue:** An offiline installation of NI Game Tools may fail due to outdated NI Package Manager
-
-.. image:: images/known-issues/game-tools-package-manager.png
-  :alt: Game Tools error message requireing update to NI Package Manager.
-
-**Workaround:** Install the latest [National Instruments Package Manager](https://www.ni.com/en/support/downloads/software-products/download.package-manager.html) (Note: Click on link for "Install Offline") and then restart Game Tools installation.
-
-## Fixed by Elastic 2025.0.2 (WPILib Installer 2025.3.1)
-
-### Elastic camera streams are very laggy
-
-**Issue:** Camera streams displayed in Elastic are laggy and have low FPS.
-
-**Workaround:** This is an issue that was fixed in Elastic 2025.0.2. Update Elastic by running the latest WPILib installer or Elastic installer.
