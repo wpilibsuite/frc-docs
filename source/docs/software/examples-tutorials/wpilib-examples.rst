@@ -55,7 +55,7 @@ These examples demonstrate sensor reading and data processing using WPILib.  Mec
 
 ## Command-Based Examples
 
-These examples demonstrate the use of the :ref:`Command-Based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>`.
+These examples demonstrate the use of the :ref:`Command-Based framework <docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?>`.
 
 * **DriveDistanceOffboard** ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard), [Python](https://github.com/robotpy/examples/tree/main/DriveDistanceOffboard)): Demonstrates the use of a ``TrapezoidProfileCommand`` in conjunction with a "smart motor controller" to drive forward by a set distance with a trapezoidal motion profile.
 * **Rapid React Command Bot** ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot)): This project uses the latest command based best practices and the Epilogue logging system.  It is capable of playing the FRC 2022 game Rapid React.

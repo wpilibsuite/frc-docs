@@ -10,7 +10,7 @@ Typically, code that calls a function is coupled to (depends on) the definition 
 
 For example, WPILib offers several ways for users to execute certain code whenever a joystick button is pressed - one of the easiest and cleanest ways to do this is to allow the user to *pass a function* to one of the WPILib joystick methods.  This way, the user only has to write the code that deals with the interesting and team-specific things (e.g., "move my robot arm") and not the boring, error-prone, and universal thing ("properly read button inputs from a standard joystick").
 
-For another example, the :ref:`Command-based framework <docs/software/commandbased/what-is-command-based:What Is "Command-Based" Programming?>` is built on ``Command`` objects that refer to methods defined on various ``Subsystem`` classes.  Many of the included ``Command`` types (such as ``InstantCommand`` and ``RunCommand``) work with *any* function - not just functions associated with a single ``Subsystem``.  To support building commands generically, we need to support passing functions from a ``Subsystem`` (which interacts with the hardware) to a ``Command`` (which interacts with the scheduler).
+For another example, the :ref:`Command-based framework <docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?>` is built on ``Command`` objects that refer to methods defined on various ``Subsystem`` classes.  Many of the included ``Command`` types (such as ``InstantCommand`` and ``RunCommand``) work with *any* function - not just functions associated with a single ``Subsystem``.  To support building commands generically, we need to support passing functions from a ``Subsystem`` (which interacts with the hardware) to a ``Command`` (which interacts with the scheduler).
 
 In these cases, we want to be able to pass a single function as a piece of data, as if it were a variable - it doesn't make sense to ask the user to provide an entire class, when we really just want them to give us a single appropriately-shaped function.
 
@@ -24,7 +24,7 @@ Java represents functions-as-data as instances of [functional interfaces](https:
 
 This might sound complicated, but in the context of WPILib we don't really need to worry much about using the functional interfaces themselves - the code that does that is internal to WPILib.  Instead, all we need to know is how to pass a function that we've written to a method that takes a functional interface as a parameter.  For a simple example, consider the signature of ``Commands.runOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
-.. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
+.. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands-v2/commands:getRequirements>`, and will not be discussed here.
 ```java
 public static Command runOnce(Runnable action, Subsystem... requirements)
 ```
@@ -104,7 +104,7 @@ In WPILibC, function types are represented with the ``std::function`` class (htt
 
 This sounds a lot more complicated than it is to use in practice.  Let's look at the call signature of ``cmd::RunOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
-.. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands:getRequirements>`, and will not be discussed here.
+.. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands-v2/commands:getRequirements>`, and will not be discussed here.
 
 ```c++
 CommandPtr RunOnce(

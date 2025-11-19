@@ -2,7 +2,7 @@
 
 .. note:: In C++, it is important that the feedforward constants be entered as the correct unit type.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-Now that we have our system constants, it is time to place them in our code.  The recommended place for this is the ``Constants`` file of the :ref:`standard command-based project structure <docs/software/commandbased/structuring-command-based-project:Constants>`.
+Now that we have our system constants, it is time to place them in our code.  The recommended place for this is the ``Constants`` file of the :ref:`standard command-based project structure <docs/software/commandbased/commands-v2/structuring-command-based-project:Constants>`.
 
 The relevant parts of the constants file from the RamseteCommand Example Project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand)) can be seen below.
 

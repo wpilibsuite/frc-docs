@@ -98,7 +98,7 @@ As a rule, command compositions are ``kCancelIncoming`` if all their components 
 
 ## Included Command Types
 
-The command-based library includes many pre-written command types. Through the use of :ref:`lambdas <docs/software/commandbased/index:Lambda Expressions (Java)>`, these commands can cover almost all use cases and teams should rarely need to write custom command classes. Many of these commands are provided via static factory functions in the ``Commands`` utility class (Java), in the ``frc2::cmd`` namespace defined in the ``Commands.h`` header (C++), or in the ``commands2.cmd`` namespace (Python). In Java and C++, classes inheriting from ``Subsystem`` also have instance methods that implicitly require ``this``.
+The command-based library includes many pre-written command types. Through the use of :ref:`lambdas <docs/software/commandbased/commands-v2/index:Lambda Expressions (Java)>`, these commands can cover almost all use cases and teams should rarely need to write custom command classes. Many of these commands are provided via static factory functions in the ``Commands`` utility class (Java), in the ``frc2::cmd`` namespace defined in the ``Commands.h`` header (C++), or in the ``commands2.cmd`` namespace (Python). In Java and C++, classes inheriting from ``Subsystem`` also have instance methods that implicitly require ``this``.
 
 ### Running Actions
 
@@ -306,7 +306,7 @@ To wait until a certain condition becomes ``true``, the library offers the ``Com
 
 There are commands for various control setups:
 
-- ``TrapezoidProfile`` tracks a trapezoid motion profile. For more info, see :doc:`/docs/software/commandbased/profile-subsystems-commands`.
+- ``TrapezoidProfile`` tracks a trapezoid motion profile. For more info, see :doc:`/docs/software/commandbased/commands-v2/profile-subsystems-commands`.
 
 - ``MecanumControllerCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/MecanumControllerCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_mecanum_controller_command.html)) is useful for controlling mecanum drivetrains. See API docs and the **MecanumControllerCommand** ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumcontrollercommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/MecanumControllerCommand)) example project for more info.
 
