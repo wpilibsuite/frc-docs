@@ -12,18 +12,7 @@
    - Where command functions/classes should be organized
    - Organization of constants and configuration
    - Separation of concerns between different code areas
-   - Example directory tree:
-     - Autos.java
-     - ControllerBindings.java
-     - Main.java
-     - Robot.java
-     - mechanisms/
-       - drive/
-         - DriveConstants.java
-         - Drive.java
-       - elevator/
-         - ElevatorConstants.java
-         - Elevator.java
+   - Example directory tree: Autos.java, ControllerBindings.java, Main.java, Robot.java, mechanisms/ (with subdirectories per mechanism like drive/ containing DriveConstants.java and Drive.java, elevator/ containing ElevatorConstants.java and Elevator.java)
 
 ## Robot.java and Controller Bindings
 

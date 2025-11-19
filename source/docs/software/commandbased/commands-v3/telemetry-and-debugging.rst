@@ -9,9 +9,7 @@
    Overview of telemetry features in v3. Cover:
    - Telemetry API and Epilogue compatibility (protobuf serialization)
    - Mechanism state visibility
-   - Scheduler events
-     - Detail the subtypes of `SchedulerEvent` and when they are emitted
-     - Add event listeners to listen for them
+   - Scheduler events: Detail the subtypes of `SchedulerEvent` and when they are emitted. Add event listeners to listen for them.
    - Command lifecycle events
    - Priority and interruption logging
    - How telemetry integrates with the scheduler

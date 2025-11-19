@@ -32,13 +32,7 @@
    Explain parallel command groups in detail. Cover:
    - What parallel groups do: run multiple commands simultaneously
    - How to create a parallel group
-   - Note: All composition groups (parallel, race, deadline) are implemented as parallel groups with different configurations:
-     - Parallel groups have _n_ required commands and _m_ optional commands
-     - The group exits once all _n_ required commands have exited
-     - "Traditional" parallel groups: _m_ = 0 (every command is required)
-     - Race groups: _n_ = 0 (every command is optional, exits when any finishes)
-     - Deadline groups: both _n_ and _m_ are nonzero (mix of required and optional)
-     - Note: v2 deadlines were special case where _n_ = 1 and _m_ ≥ 1; v3 deadlines are generalized
+   - Note: All composition groups (parallel, race, deadline) are implemented as parallel groups with different configurations: Parallel groups have _n_ required commands and _m_ optional commands. The group exits once all _n_ required commands have exited. "Traditional" parallel groups: _m_ = 0 (every command is required). Race groups: _n_ = 0 (every command is optional, exits when any finishes). Deadline groups: both _n_ and _m_ are nonzero (mix of required and optional). Note: v2 deadlines were special case where _n_ = 1 and _m_ ≥ 1; v3 deadlines are generalized.
    - Requirements handling with overlapping requirements
    - What happens if one command is interrupted
    - Common use cases for parallel groups
