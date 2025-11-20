@@ -21,8 +21,8 @@ jobs:
         pip install -r source/requirements.txt
     - name: Install LaTeX
       run: |
-        sudo apt-fast -y update
-        sudo apt-fast install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
+        sudo apt-get -y update
+        sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
     - name: Build PDF
       run: |
         make latexpdf
@@ -48,8 +48,8 @@ jobs:
         pip install -r source/requirements.txt
     - name: Install librsvg2
       run: |
-        sudo apt-fast -y update
-        sudo apt-fast install -y librsvg2-bin
+        sudo apt-get -y update
+        sudo apt-get install -y librsvg2-bin
     - name: Build HTML
       run: |
         make html
@@ -82,8 +82,8 @@ jobs:
         pip install -r frc-docs/source/requirements.txt
     - name: Install librsvg2
       run: |
-        sudo apt-fast -y update
-        sudo apt-fast install -y librsvg2-bin
+        sudo apt-get -y update
+        sudo apt-get install -y librsvg2-bin
     - name: Build HTML
       run: |
         sphinx-build -D language=es -b html . _build/html
