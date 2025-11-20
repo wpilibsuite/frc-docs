@@ -206,7 +206,7 @@ jobs:
       run: |
         uv run black --check .
         
-  check-requirements:
+  check-dependencies:
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
@@ -215,6 +215,9 @@ jobs:
         python-version: "3.10"
     - name: Install uv
       uses: astral-sh/setup-uv@v7
+    - name: Check lockfile
+      run: |
+        uv lock --check
     - name: Export requirements
       run: |
         uv export --frozen --no-dev --no-editable -o source/requirements.txt
