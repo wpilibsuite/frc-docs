@@ -7,7 +7,7 @@ env:
 
 jobs:
   build-pdf:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
       with:
@@ -22,8 +22,8 @@ jobs:
         uv sync
     - name: Install LaTeX
       run: |
-        sudo apt-fast -y update
-        sudo apt-fast install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
+        sudo apt-get -y update
+        sudo apt-get install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
     - name: Build PDF
       run: |
         uv run make latexpdf
@@ -35,7 +35,7 @@ jobs:
         if-no-files-found: error
         
   build-html:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
       with:
@@ -47,8 +47,8 @@ jobs:
       uses: astral-sh/setup-uv@v7
     - name: Install librsvg2
       run: |
-        sudo apt-fast -y update
-        sudo apt-fast install -y librsvg2-bin
+        sudo apt-get -y update
+        sudo apt-get install -y librsvg2-bin
     - name: Install Python Dependencies
       run: |
         uv sync
@@ -63,7 +63,7 @@ jobs:
         if-no-files-found: error
         
   build-html-translation:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
       with:
@@ -82,8 +82,8 @@ jobs:
       uses: astral-sh/setup-uv@v7
     - name: Install librsvg2
       run: |
-        sudo apt-fast -y update
-        sudo apt-fast install -y librsvg2-bin
+        sudo apt-get -y update
+        sudo apt-get install -y librsvg2-bin
     - name: Install Python Dependencies
       run: |
         uv sync --project frc-docs
@@ -95,7 +95,7 @@ jobs:
   #  # This job is sourced from https://github.com/aiven/devportal/blob/main/.github/workflows/linkcheck-changed-files.yaml
   #  # It is CC 4.0 I licensed: https://creativecommons.org/licenses/by/4.0/
   #  # Changes have been made.
-  #  runs-on: ubuntu-22.04
+  #  runs-on: ubuntu-24.04
   #  steps:
   #    - uses: actions/checkout@v4
   #      with:
@@ -124,7 +124,7 @@ jobs:
   #        fi
         
   check-linting:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -140,7 +140,7 @@ jobs:
         uv run make lint
         
   check-image-size:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -156,7 +156,7 @@ jobs:
         uv run make sizecheck
         
   check-spelling:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - name: misspell
@@ -169,7 +169,7 @@ jobs:
             **/*.svg
           
   check-redirects:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - name: Checkout main
@@ -191,7 +191,7 @@ jobs:
         [[ $(<source/redirects.txt) == $(git show origin/main:source/redirects.txt)* ]] || { echo "Error: redirects.txt can only be appended to. Lines cannot be modified or deleted."; exit 1; }
         
   check-formatting:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
@@ -207,7 +207,7 @@ jobs:
         uv run black --check .
         
   check-requirements:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
