@@ -37,7 +37,7 @@ Replace the string after ``=`` with ``java -jar "C:\\PATH\\TO\\DASHBOARD.jar"`` 
 
 ### Dashboard from WPILib installer
 
-Replace the string after ``=`` with ``wscript C:\\Users\\Public\\wpilib\\YYYY\\tools\\DASHBOARD.vbs`` where ``YYYY`` is the year and ``DASHBOARD.vbs`` is ``Shuffleboard.vbs``, ``Smartdashboard.vbs``, or ``Elastic.vbs``. For example ``DashboardCmdLine = "wscript C:\\Users\\Public\\wpilib\\2025\\tools\\Elastic.vbs"``. Save the ``FRC DS Data Storage`` file.
+Replace the string after ``=`` with ``C:\\Users\\Public\\wpilib\\YYYY\\tools\\DASHBOARD.exe`` where ``YYYY`` is the year and ``DASHBOARD.exe`` is ``Shuffleboard.exe``, ``Smartdashboard.exe``, or ``Elastic.exe``. For example ``DashboardCmdLine = "wscript C:\\Users\\Public\\wpilib\\2026\\tools\\Elastic.exe"``. Save the ``FRC DS Data Storage`` file.
 
 ## Launch Driver Station
 
