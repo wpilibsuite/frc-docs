@@ -11,14 +11,14 @@ env:
 jobs:
   check-links:
     if: github.repository_owner == 'wpilibsuite'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - uses: actions/setup-python@v5
       with:
-        python-version: 3.11
+        python-version: 3.14
     - name: Install Dependencies
       run: pip install -r source/requirements.txt
     - name: Check Links
