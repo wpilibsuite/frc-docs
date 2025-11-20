@@ -205,3 +205,22 @@ jobs:
     - name: Format
       run: |
         uv run black --check .
+        
+  check-requirements:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+    - name: Install uv
+      uses: astral-sh/setup-uv@v7
+    - name: Export requirements
+      run: |
+        uv export --frozen --no-dev --no-editable -o source/requirements.txt
+    - name: Check for changes
+      run: |
+        if ! git diff --exit-code source/requirements.txt; then
+          echo "Error: source/requirements.txt is out of date. Please run 'uv export --frozen --no-dev --no-editable -o source/requirements.txt' and commit the changes."
+          exit 1
+        fi
