@@ -1,179 +1,99 @@
-# Step 4: Creating and Following a Trajectory
+# Step 4: Using Path Planning Tools
 
-With our drive subsystem written, it is now time to generate a trajectory and write an autonomous command to follow it.
+With your drive subsystem configured with odometry and characterized feedforward values, you're now ready to implement autonomous path following using a third-party path planning tool.
 
-As per the :ref:`standard command-based project structure <docs/software/commandbased/structuring-command-based-project:Structuring a Command-Based Robot Project>`, we will do this in the ``getAutonomousCommand`` method of the ``RobotContainer`` class.  The full method from the RamseteCommand Example Project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand)) can be seen below.  The rest of the article will break down the different parts of the method in more detail.
+.. warning:: RamseteCommand has been deprecated and removed from WPILib. This page has been updated to guide teams toward modern path planning solutions.
 
-.. tab-set::
+## Choosing a Path Planning Tool
 
-  .. tab-item:: Java
-    :sync: Java
+WPILib no longer provides built-in command-based trajectory following. Instead, teams should use one of these proven third-party tools:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
-      :language: java
-      :lines: 74-135
-      :lineno-match:
+### PathPlanner
 
-  .. tab-item:: C++ (Source)
-    :sync: C++ (Source)
+`PathPlanner <https://pathplanner.dev/>`__ is a popular graphical path planning tool with extensive features:
 
+**Key Features:**
+- Graphical path editor with Bézier curves
+- Built-in automatic pathfinding (AD* algorithm)
+- Event markers for triggering actions during paths
+- Hot-reload paths without code redeployment
+- Full command-based autonomous routine builder
+- Real-time telemetry and path preview
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 45-94
-      :lineno-match:
+**Getting Started with PathPlanner:**
 
-## Configuring the Trajectory Constraints
+1. **Install PathPlannerLib** as a vendor dependency:
 
-First, we must set some configuration parameters for the trajectory which will ensure that the generated trajectory is followable.
+   - In VS Code, open the Command Palette (Ctrl+Shift+P / Cmd+Shift+P)
+   - Select "WPILib: Manage Vendor Libraries"
+   - Choose "Install new libraries (online)"
+   - Enter the URL: ``https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json``
 
-### Creating a Voltage Constraint
+2. **Configure AutoBuilder** in your drive subsystem constructor:
 
-The first piece of configuration we will need is a voltage constraint.  This will ensure that the generated trajectory never commands the robot to go faster than it is capable of achieving with the given voltage supply:
+   Your drive subsystem needs these methods:
 
-.. tab-set::
+   - ``getPose()`` - Returns the current robot pose
+   - ``resetPose(Pose2d pose)`` - Resets odometry to a specific pose
+   - ``getRobotRelativeSpeeds()`` - Returns current ChassisSpeeds
+   - ``driveRobotRelative(ChassisSpeeds speeds)`` - Drives the robot
 
-  .. tab-item:: Java
-    :sync: Java
+3. **Set up the path following controller:**
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
-      :language: java
-      :lines: 80-88
-      :lineno-match:
+   - For differential drive: Use ``PPLTVController``
+   - For swerve drive: Use ``PPHolonomicDriveController``
 
-  .. tab-item:: C++ (Source)
-    :sync: C++ (Source)
+4. **Learn more:** See the complete `PathPlanner documentation <https://pathplanner.dev/pplib-getting-started.html>`__
 
+### Choreo
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 46-50
-      :lineno-match:
+`Choreo <https://choreo.autos/>`__ is a time-optimized trajectory planner designed to maximize robot performance:
 
-Notice that we set the maximum voltage to 10V, rather than the nominal battery voltage of 12V.  This gives us some "headroom" to deal with "voltage sag" during operation.
+**Key Features:**
+- Time-optimized trajectories that respect robot dynamics
+- Graphical interface with real-time playback
+- Support for waypoints, constraints, and obstacles
+- Cross-platform (Windows, macOS, Linux)
+- Open source (BSD-3-Clause license)
+- Designed to push robots to their physical limits safely
 
-### Creating the Configuration
+**Getting Started with Choreo:**
 
-Now that we have our voltage constraint, we can create our ``TrajectoryConfig`` instance, which wraps together all of our path constraints:
+1. **Install ChoreoLib** as a vendor dependency:
 
-.. tab-set::
+   - In VS Code, open the Command Palette (Ctrl+Shift+P / Cmd+Shift+P)
+   - Select "WPILib: Manage Vendor Libraries"
+   - Choose "Install new libraries (online)"
+   - Enter the URL: ``https://lib.choreo.autos/dep/ChoreoLib2025.json``
 
-  .. tab-item:: Java
-    :sync: Java
+2. **Implement trajectory following** in your drive subsystem:
 
+   Unlike PathPlanner, Choreo leaves the trajectory following implementation to you. You'll need:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
-      :language: java
-      :lines: 90-98
-      :lineno-match:
+   - A method to get the robot's current pose
+   - PID controllers for position and heading correction
+   - A way to drive field-relatively (swerve) or calculate wheel speeds (differential)
 
-  .. tab-item:: C++ (Source)
-    :sync: C++ (Source)
+3. **Learn more:** See the complete `Choreo documentation <https://choreo.autos/>`__
 
+## What Happened to WPILib Trajectory Following?
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 52-58
-      :lineno-match:
+Prior to 2025, WPILib included ``RamseteCommand`` for trajectory following on differential drives. This has been deprecated and removed because:
 
-## Generating the Trajectory
+1. **Third-party tools are more capable** - PathPlanner and Choreo offer graphical interfaces, better tuning, and more features
+2. **Easier to use** - Teams can design paths visually instead of specifying waypoints in code
+3. **Better maintained** - These tools are actively developed by the FRC community
+4. **Industry standard** - Most competitive teams use these tools
 
-With our trajectory configuration in hand, we are now ready to generate our trajectory.  For this example, we will be generating a "clamped cubic" trajectory - this means we will specify full robot poses at the endpoints, and positions only for interior waypoints (also known as "knot points").  As elsewhere, all distances are in meters.
+The underlying WPILib trajectory generation and following classes (``TrajectoryGenerator``, ``LTVUnicycleController``) are still available for teams who want to implement custom solutions, but command-based wrappers have been removed.
 
-.. tab-set::
+## Next Steps
 
-  .. tab-item:: Java
-    :sync: Java
+After completing the previous tutorial steps (characterization, odometry setup, drive subsystem creation), you should:
 
+1. Choose PathPlanner or Choreo based on your team's needs
+2. Follow that tool's documentation to install and configure it
+3. Design your autonomous paths using the graphical interface
+4. Test your autonomous routines incrementally, starting with simple paths
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
-      :language: java
-      :lines: 100-110
-      :lineno-match:
-
-  .. tab-item:: C++ (Source)
-    :sync: C++ (Source)
-
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 60-69
-      :lineno-match:
-
-.. note:: Instead of generating the trajectory on the roboRIO as outlined above, one can also :ref:`import a PathWeaver JSON <docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`.
-
-## Creating the RamseteCommand
-
-We will first reset our robot's pose to the starting pose of the trajectory. This ensures that the robot's location on the coordinate system and the trajectory's starting position are the same.
-
-.. tab-set::
-
-  .. tab-item:: Java
-    :sync: Java
-
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
-      :language: java
-      :lines: 129-131
-      :lineno-match:
-
-  .. tab-item:: C++ (Source)
-    :sync: C++ (Source)
-
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 84-86
-      :lineno-match:
-
-
-It is very important that the initial robot pose match the first pose in the trajectory.  For the purposes of our example, the robot will be reliably starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use, however, it is probably not desirable to base your coordinate system on the robot position, and so the starting position for both the robot and the trajectory should be set to some other value.  If you wish to use a trajectory that has been defined in robot-centric coordinates in such a situation, you can transform it to be relative to the robot's current pose using the ``transformBy`` method ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/Trajectory.html#transformBy(edu.wpi.first.math.geometry.Transform2d)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_trajectory.html#a8edfbd82347bbf32ddfb092679336cd8)).  For more information about transforming trajectories, see :ref:`docs/software/advanced-controls/trajectories/transforming-trajectories:Transforming Trajectories`.
-
-Now that we have a trajectory, we can create a command that, when executed, will follow that trajectory.  To do this, we use the ``RamseteCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html))
-
-.. tab-set::
-
-  .. tab-item:: Java
-    :sync: Java
-
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/RobotContainer.java
-      :language: java
-      :lines: 112-127
-      :lineno-match:
-
-  .. tab-item:: C++ (Source)
-    :sync: C++ (Source)
-
-
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/RobotContainer.cpp
-      :language: c++
-      :lines: 71-82
-      :lineno-match:
-
-This declaration is fairly substantial, so we'll go through it argument-by-argument:
-
-1. The trajectory: This is the trajectory to be followed; accordingly, we pass the command the trajectory we just constructed in our earlier steps.
-2. The pose supplier: This is a method reference (or lambda) to the :ref:`drive subsystem method that returns the pose <docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem:Odometry Accessor Method>`.  The RAMSETE controller needs the current pose measurement to determine the required wheel outputs.
-3. The RAMSETE controller: This is the ``RamseteController`` object ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/RamseteController.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_ramsete_controller.html)) that will perform the path-following computation that translates the current measured pose and trajectory state into a chassis speed setpoint.
-4. The drive feedforward: This is a ``SimpleMotorFeedforward`` object ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html)) that will automatically perform the correct feedforward calculation with the feedforward gains (``kS``, ``kV``, and ``kA``) that we obtained from the drive identification tool.
-5. The drive kinematics: This is the ``DifferentialDriveKinematics`` object ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/DifferentialDriveKinematics.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_differential_drive_kinematics.html)) that we constructed earlier in our constants file, and will be used to convert chassis speeds to wheel speeds.
-6. The wheel speed supplier: This is a method reference (or lambda) to the :ref:`drive subsystem method that returns the wheel speeds <docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem:Encoder Accessor Method>`
-7. The left-side PIDController: This is the ``PIDController`` object ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_i_d_controller.html)) that will track the left-side wheel speed setpoint, using the P gain that we obtained from the drive identification tool.
-8. The right-side PIDController: This is the ``PIDController`` object ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_i_d_controller.html)) that will track the right-side wheel speed setpoint, using the P gain that we obtained from the drive identification tool.
-9. The output consumer: This is a method reference (or lambda) to the :ref:`drive subsystem method that passes the voltage outputs to the drive motors <docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem:Voltage-Based Drive Method>`.
-10. The robot drive: This is the drive subsystem itself, included to ensure the command does not operate on the drive at the same time as any other command that uses the drive.
-
-Finally, note that we append a final "stop" command in sequence after the path-following command, to ensure that the robot stops moving at the end of the trajectory.
-
-## Video
-
-If all has gone well, your robot's autonomous routine should look something like this:
-
-.. raw:: html
-
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;"> <iframe src="https://www.youtube-nocookie.com/embed/yVmJDOE3M2Y" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe> </div>
-
-.. raw:: html
-
-  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;"> <iframe src="https://www.youtube-nocookie.com/embed/FLn1bFqlkL0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe> </div>
+Both tools have active communities on Chief Delphi and provide example code to help you get started.
