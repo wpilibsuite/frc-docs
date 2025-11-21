@@ -1,16 +1,16 @@
-name: Publish Stable
+name: Publish Stable to Year
 on:
   push:
     branches:
-      - main
+      - stable
   workflow_dispatch:
 
 jobs:
   publish:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     if: ${{ github.repository_owner == 'wpilibsuite' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: Merge
@@ -19,24 +19,22 @@ jobs:
           git config user.email github-actions@github.com
           git config pull.ff only
 
-          git fetch origin main
-          (git checkout main && git pull) || git checkout -b main origin/main
-
           git fetch origin stable
           (git checkout stable && git pull) || git checkout -b stable origin/stable
-
-          if git merge-base --is-ancestor main stable; then
-            echo "No merge is necessary"
-            exit 0
-          fi;
 
           git fetch origin ${{ secrets.STABLE_YEAR }}
           (git checkout ${{ secrets.STABLE_YEAR }} && git pull) || git checkout -b ${{ secrets.STABLE_YEAR }} origin/${{ secrets.STABLE_YEAR }}
 
-          git merge --ff-only main
-          git merge --ff-only ${{ secrets.STABLE_YEAR }}
+          if git merge-base --is-ancestor stable ${{ secrets.STABLE_YEAR }}; then
+            echo "No merge is necessary"
+            exit 0
+          fi;
+
+          git merge --ff-only stable
 
       - name: Push
+        if: env.PUBLISH_STABLE == 'true' || github.event.action == 'workflow_dispatch'
+        env:
+          PUBLISH_STABLE: ${{ secrets.PUBLISH_STABLE }}
         run: |
-          git push origin stable
           git push origin ${{ secrets.STABLE_YEAR }}
