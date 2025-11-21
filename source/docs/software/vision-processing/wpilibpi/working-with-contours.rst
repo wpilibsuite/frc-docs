@@ -61,7 +61,7 @@ Now that you've found the contour(s) that you want, you now want to get informat
    _, _, rotation = cv2.fitEllipse(contour)
    ```
 
-For more information on how you can use these values, see :ref:`docs/software/vision-processing/introduction/identifying-and-processing-the-targets:Measurements`
+For more information on how you can use these values, see :ref:`docs/software/vision-processing/introduction/game-piece-detection:Converting Image Coordinates to Robot Coordinates`
 
 ## Publishing to NetworkTables
 

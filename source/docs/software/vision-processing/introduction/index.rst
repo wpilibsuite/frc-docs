@@ -5,7 +5,5 @@
 
    what-is-vision
    strategies-for-vision-programming
-   target-info-and-retroreflection
-   identifying-and-processing-the-targets
+   game-piece-detection
    cameraserver-class
-   2017-vision-examples
