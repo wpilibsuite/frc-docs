@@ -449,6 +449,7 @@ Community translations can be found in a variety of languages in the menu toward
 
    docs/contributing/frc-docs/index
    docs/contributing/wpilib/index
+   docs/contributing/watching-changes
 
 .. toctree::
    :maxdepth: 1
