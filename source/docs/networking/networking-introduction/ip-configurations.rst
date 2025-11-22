@@ -34,8 +34,17 @@ This section describes networking when using :term:`DHCP` to assign IP addresses
 
 ### On the Field DHCP Configuration
 
-The Field Network runs a DHCP server with pools for each team that will hand out addresses in the range of ``10.TE.AM.20`` to ``10.TE.AM.199`` with a subnet mask of ``255.255.255.0``, and a default gateway of ``10.TE.AM.4``.
-When configured for an event, the Team Radio runs a DHCP server with a pool for devices onboard the robot that will hand out addresses in the range of ``10.TE.AM.200`` to ``10.TE.AM.219`` with a subnet mask of ``255.255.255.0``, and a gateway of ``10.TE.AM.1``.
+Both the Field Network and Robot Radio run DHCP servers with non-overlapping pools. The Field Network DHCP server provides an IP address for the Driver Station, and the Robot Radio provides IP addresses for devices onboard the robot. The IP ranges, subnet mask, and default gateway are listed in the table below.
+
++-----------------+-------------------------------------+-------------------------------------------------------------+
+|                 | Field Network                       | Robot Radio                                                 |
++=================+=====================================+=============================================================+
+| DHCP Range      | ``10.TE.AM.20`` to ``10.TE.AM.199`` | ``10.TE.AM.200`` to ``10.TE.AM.219``                        |
++-----------------+-------------------------------------+-------------------------------------------------------------+
+| Subnet Mask     | ``255.255.255.0``                   | ``255.255.255.0``                                           |
++-----------------+-------------------------------------+-------------------------------------------------------------+
+| Default Gateway | ``10.TE.AM.4``                      | ``10.TE.AM.4`` (``10.TE.AM.1`` if using the OpenMesh radio) |
++-----------------+-------------------------------------+-------------------------------------------------------------+
 
 -  Vivid-Hosting VH-109 Robot Radio - Static ``10.TE.AM.1`` programmed by Kiosk
 -  roboRIO - DHCP ``10.TE.AM.2`` assigned by the Robot Radio
