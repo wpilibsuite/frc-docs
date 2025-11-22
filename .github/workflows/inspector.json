@@ -27,11 +27,11 @@
     }
   ],
   "ignoredFiles": [
-    "source/docs/software/commandbased/command-scheduler.rst",
+    "source/docs/software/commandbased/commands-v2/command-scheduler.rst",
     "source/docs/software/hardware-apis/pneumatics/pressure.rst",
     "source/docs/software/hardware-apis/pneumatics/solenoids.rst",
     "source/docs/software/advanced-controls/state-space/state-space-pose-estimators.rst",
-    "source/docs/software/commandbased/subsystems.rst",
+    "source/docs/software/commandbased/commands-v2/subsystems.rst",
     "source/docs/software/advanced-controls/trajectories/troubleshooting.rst",
     "source/docs/software/hardware-apis/motors/wpi-drive-classes.rst",
     "source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst",
