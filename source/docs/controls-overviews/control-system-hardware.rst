@@ -114,7 +114,7 @@ The Snap Action circuit breakers, [MX5 series](https://www.snapaction.net/assets
   :alt: Rev ATO Circuit Breakers
   :width: 500
 
-The [Rev ATO Circuit Breakers](https://www.revrobotics.com/content/docs/REV-11-1860-1863-DS.pdf) are used with the Power Distribution Panel, Power Distribution Hub, and Power Distribution Panel 2.0 to limit current to branch circuits. They come in [40A](https://www.revrobotics.com/rev-11-1863/), [30A](https://www.revrobotics.com/rev-11-1862/), [20A](https://www.revrobotics.com/rev-11-1861/), and [10A](https://www.revrobotics.com/rev-11-1860/) variants. The ratings on these circuit breakers are for continuous current, temporary peak values can be considerably higher.
+The [Rev ATO Circuit Breakers](https://www.revrobotics.com/content/docs/REV-11-1860-1863-DS.pdf) are used with the Power Distribution Panel, Power Distribution Hub, and Power Distribution Panel 2.0 to limit current to branch circuits. They come in [40A, 30A, 20A, and 10A](https://www.revrobotics.com/auto-resetting-breakers/) variants. The ratings on these circuit breakers are for continuous current, temporary peak values can be considerably higher.
 
 ## CTRE Power Distribution Panel Breakers
 
