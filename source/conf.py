@@ -172,7 +172,6 @@ linkcheck_anchors_ignore_for_url = [
 # Sets linkcheck timeout in seconds
 linkcheck_timeout = 30
 linkcheck_retries = 3
-linkcheck_workers = 1
 linkcheck_report_timeouts_as_broken = False
 
 # Specify a standard user agent, as Sphinx default is blocked on some sites
