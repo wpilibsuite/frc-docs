@@ -86,7 +86,7 @@ The returned setpoint might then be used as in the following example:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3f88c287d6007f6be9fc5409aa9c42d41a504005/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/profiledpidfeedforward/Robot.java
       :language: java
-      :lines: 37-44
+      :lines: 37-42
       :lineno-match:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3f88c287d6007f6be9fc5409aa9c42d41a504005/wpilibcExamples/src/main/cpp/snippets/ProfiledPIDFeedforward/cpp/Robot.cpp
