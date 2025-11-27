@@ -24,23 +24,18 @@ A motor controller is responsible on your robot for making motors move. For brus
 
 ### FRC Legal Motor Controllers
 
-Motor controllers come in lots of shapes, sizes, and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of 2025:
+Motor controllers come in lots of shapes, sizes, and feature sets. This is the full list of FRC\ |reg| Legal motor controllers as of 2026:
 
-- DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)
-- Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected to :term:`PWM` only
 - Koors40 Motor Controller (P/N am-5600)
-- SD540 Motor Controller (P/N: SD540x1, SD540x2, SD540x4, SD540Bx1, SD540Bx2, SD540Bx4, SD540C)
 - Spark Flex Motor Controller (P/N REV-11-2159, am-5276)
 - Spark Motor Controller (P/N: REV-11-1200, am-4260)
 - Spark MAX Motor Controller (P/N: REV-11-2158, am-4261)
-- Talon FX Motor Controller (P/N 217-6515, 19-708850, am-6515, am-6515_Short, WCP-0940) for controlling integral Falcon 500 or Kraken X60 only,
+- Talon FX Motor Controller (P/N 217-6515, 19-708850, am-6515, am-6515_Short, WCP-0940) for controlling integral Falcon 500, Kraken X60, or Kraken X44 only
 - Talon FXS Motor Controller (P/N 24-708883, WCP-1692)
 - Talon Motor Controller (P/N: CTRE_Talon, CTRE_Talon_SR, and am-2195)
 - Talon SRX Motor Controller (P/N: 217-8080, am-2854, 14-838288)
 - Thrifty Nova (P/N TTB-0100)
 - Venom Motor with Controller (P/N BDC-10001) for controlling integral motor only​
-- Victor 884 Motor Controller (P/N: VICTOR-884-12/12)
-- Victor 888 Motor Controller (P/N: 217-2769)
 - Victor SP Motor Controller (P/N: 217-9090, am-2855, 14-868380)
 - Victor SPX Motor Controller (P/N: 217-9191, 17-868388, am-3748)
 
