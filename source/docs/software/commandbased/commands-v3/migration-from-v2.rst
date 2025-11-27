@@ -26,6 +26,14 @@
    - Version compatibility and requirements
    - Note: Vendor library compatibility with v3 is up to individual vendors
 
+## History: Evolution of Command-Based Programming
+
+.. todo::
+   Provide context on how the command-based framework has evolved. Cover:
+   - Brief history: v1 (original command-based) → v2 (functional composition) → v3 (coroutines)
+   - Why each version was created and what problems it solved
+   - How v3 addresses the learning curve issues with v2's declarative composition
+
 ## Concept Mapping
 
 .. todo::
@@ -38,7 +46,9 @@
    - Trigger bindings (changes in API)
    - Requirements → v3 requirements system
    - Default commands → v3 default commands
+   - Subsystem periodic() → Scheduler.addPeriodic() or manual calls in robotPeriodic()
    - What's new in v3 that has no v2 equivalent (priorities, fork, etc.)
+   - Binary interrupt behavior in v2 → Priority levels in v3
 
 ## Common Migration Patterns
 
@@ -65,6 +75,24 @@
    - Removed v2 features and why
    - Added v3 features not in v2
    - Present in table or comparison format for quick lookup
+
+## Telemetry and Debugging Changes
+
+.. todo::
+   Document changes in telemetry and debugging between v2 and v3. Cover:
+   - New telemetry features in v3 (scheduler events, command lifecycle events)
+   - Changes in how command state is exposed
+   - Migration of existing telemetry code
+   - New debugging capabilities unique to v3
+
+## Testing and Simulation Changes
+
+.. todo::
+   Document changes in testing approach between v2 and v3. Cover:
+   - Differences in unit testing commands
+   - Mechanisms can accept a Scheduler parameter in constructor to avoid shared state
+   - Simulation approach differences
+   - Migration of existing test code
 
 ## Migration Checklist
 

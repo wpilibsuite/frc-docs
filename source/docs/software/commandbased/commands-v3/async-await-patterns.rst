@@ -14,6 +14,32 @@
    - High-level mental model for how it works with the scheduler
    - Relationship to coroutines and yield()
 
+## fork()
+
+.. todo::
+   Explain the fork() function in detail. Cover:
+   - What fork(command) does: launch a command without waiting for it
+   - "Fire and forget" semantics
+   - Lifecycle of forked commands relative to parent
+   - Requirements and priority considerations
+   - Common use cases (background operations, side effects, etc.)
+   - Potential pitfalls and how to avoid them
+   - Examples of fork() patterns (describe what examples should show)
+
+## await()
+
+.. todo::
+   Explain the await() function in detail. Cover:
+   - What await(command) does: schedule a command and wait for it to complete
+   - Easier to explain as a blocking version of fork()
+   - How await() blocks the calling command until the child completes
+   - Requirements and priority handling with awaited commands
+   - What happens if the awaited command is interrupted
+   - What happens if the parent command is interrupted
+   - Return values and status from awaited commands
+   - When to use fork() vs. await()
+   - Examples of await() patterns (describe what examples should show)
+
 ## awaitAll()
 
 .. todo::
@@ -24,20 +50,7 @@
    - Requirements management across multiple parallel commands
    - Error and interruption handling
    - Performance implications of parallel execution
-   - Easier to explain as a blocking version of fork()
    - Examples of awaitAll() patterns (describe what examples should show)
-
-## await()
-
-.. todo::
-   Explain the await() function in detail. Cover:
-   - What await(command) does: schedule a command and wait for it to complete
-   - How await() blocks the calling command until the child completes
-   - Requirements and priority handling with awaited commands
-   - What happens if the awaited command is interrupted
-   - What happens if the parent command is interrupted
-   - Return values and status from awaited commands
-   - Examples of await() patterns (describe what examples should show)
 
 ## awaitAny()
 
@@ -52,24 +65,11 @@
    - Differences from race groups in composition
    - Examples of awaitAny() patterns (describe what examples should show)
 
-## fork()
-
-.. todo::
-   Explain the fork() function in detail. Cover:
-   - What fork(command) does: launch a command without waiting for it
-   - "Fire and forget" semantics
-   - When to use fork() vs. await()
-   - Lifecycle of forked commands relative to parent
-   - Requirements and priority considerations
-   - Common use cases (background operations, side effects, etc.)
-   - Potential pitfalls and how to avoid them
-   - Examples of fork() patterns (describe what examples should show)
-
 ## Practical Patterns
 
 .. todo::
    Showcase common practical patterns combining async/await functions. Cover:
-   - Timeout patterns using awaitAny() with wait()
+   - Timeout patterns: use awaitAny() with a timeout command alongside the main command - first to complete wins
    - Sequential operations with conditional logic
    - Parallel operations with synchronization points
    - Launching background tasks with fork()
