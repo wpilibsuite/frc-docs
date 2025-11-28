@@ -70,12 +70,12 @@ In the dialog box that appears, select all entries. The easiest way to do this i
 
       .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then install 7-Zip and use that to extract the iso.
 
-### NI Package Manager License
+### License Agreements
 
-.. image:: images/update-suite/ni-package-license.png
-   :alt: Accepting the License Agreement for NI Package Manager.
+.. image:: images/update-suite/license-agreements.png
+   :alt: Accept the NI software license agreement.
 
-If you see this screen, click :guilabel:`Next`. This screen confirms that you agree to NI Package Manager License agreement.
+Select :guilabel:`I accept…` then click :guilabel:`Next`
 
 ### Disable Windows Fast Startup
 
@@ -83,34 +83,6 @@ If you see this screen, click :guilabel:`Next`. This screen confirms that you ag
    :alt: Screen for disabling Windows fast startup.
 
 It is recommended to leave this screen as-is, as Windows Fast Startup can cause issues with the NI drivers required to image the roboRIO. Go ahead and click :guilabel:`Next`.
-
-### NI Package Manager Review
-
-.. image:: images/update-suite/labview_package_manager_review.png
-   :alt: Review screen that shows what is about to be installed.
-
-If you see this screen, click :guilabel:`Next`.
-
-### NI Package Manager Installation
-
-.. image:: images/update-suite/ni-package-install.png
-   :alt: Screen with progress bars indicating the amount of completion.
-
-Installation progress of the NI Package Manager will be tracked in this window.
-
-### Additional Software
-
-.. image:: images/update-suite/additional-software.png
-   :alt: Leave all of the additional packages selected.
-
-If you see this screen, click :guilabel:`Next`.
-
-### License Agreements
-
-.. image:: images/update-suite/license-agreements.png
-   :alt: Accept the NI software license agreement.
-
-Select :guilabel:`I accept…` then click :guilabel:`Next`
 
 ### Review Summary
 
