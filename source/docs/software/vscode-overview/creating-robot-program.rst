@@ -112,38 +112,48 @@ Once we've decided on a base class, we can create our new robot project.  Bring 
 .. image:: images/creating-robot-program/create-new-project.png
    :alt: Highlights the "WPILib: Create a new project" command.
 
-This will bring up the "New Project Creator Window:"
+This will bring up the "WPILIb New Project Creator"
 
 .. image:: images/creating-robot-program/new-project-creator.png
-   :alt: The new project creator screen.
+   :alt: The project type selector of the WPILib New Project Creator
 
-The elements of the New Project Creator Window are explained below:
+The **Project Type** chooses between an empty template project of one of the base classes, or a :doc:`WPILib example project </docs/software/examples-tutorials/wpilib-examples>`. Additionally, a template exists for :ref:`Command-based <docs/software/commandbased/commands-v2/what-is-command-based:What is "command-based" programming?>` projects, which are built on the :code:`TimedRobot` base class but include a number of additional features - this type of robot program is highly recommended for new teams.
 
-1. **Project Type**: The kind of project we wish to create.  This can be an example project, or one of the project templates provided by WPILib.  Templates exist for each of the robot base classes.  Additionally, a template exists for :ref:`Command-based <docs/software/commandbased/commands-v2/what-is-command-based:What is "command-based" programming?>` projects, which are built on the :code:`TimedRobot` base class but include a number of additional features - this type of robot program is highly recommended for new teams.
-2. **Language**: This is the language (C++ or Java) that will be used for this project.
-3. **Base Folder**: If this is a template project, this specifies the type of template that will be used.
-4. **Project Location**: This determines the folder in which the robot project will be located.
-5. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
-6. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
-7. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
-8. **Enable Desktop Support**: Enables unit test and simulation support (see :doc:`/docs/software/wpilib-tools/robot-simulation/introduction`).
+After making the selections, click :guilabel:`Next`.
 
-   - **Java**: This option has no effect and can be left checked or unchecked
-   - **C++**: Checking this option enables desktop compilation, which is required for simulation and unit tests
-   - **Romi/XRP**: This option has no effect for Romi and XRP templates and can be left checked or unchecked
+This will bring up the language and base selection window.
 
-   .. note:: While WPILib fully supports desktop builds, some third-party vendor libraries may not. If a library doesn't support desktop compilation, your C++ code may not compile or may crash when running simulation.
+.. image:: images/creating-robot-program/new-project-creator-language.png
+   :alt: The language and base page of the WPILib New Project Creator
 
-Once all the above have been configured, click "Generate Project" and the robot project will be created.
+1. **Language**: This is the language (C++ or Java) that will be used for this project.
+2. **Project Base**: This box is used to select the base class or example to generate the project from.
 
-.. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
+After making the selections, click :guilabel:`Next`.
+
+This will bring up the Project and Configuration window.
+
+.. image:: images/creating-robot-program/new-project-creator-location.png
+   :alt: The project and configuration page of the WPILib New Project Creator
+
+1. **Base Folder**: This determines the folder in which the robot project will be located.
+2. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
+3. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
+4. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
+5. **Enable Desktop Support**: Enables unit test and simulation support (see :doc:`/docs/software/wpilib-tools/robot-simulation/introduction`).
 
 .. warning:: Creating projects on OneDrive is not supported as OneDrive's caching interferes with the build system. Some Windows installations put the Documents and Desktop folders on OneDrive by default.
 
-An example after all options are selected is shown below.
+Once all the above have been configured, click :guilabel:`Next`.
+
+This will bring up the Review and Create window.
 
 .. image:: images/creating-robot-program/new-project-creator-configured.png
-   :alt: The new project creator screen filled out.
+   :alt: The review and create page of the WPILib New Project Creator
+
+Double check all the settings and click :guilabel:`Create Project`. If anything is not correct, click :guilabel:`Back` and make the necessary corrections.
+
+.. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
 
 ## Opening The New Project
 
