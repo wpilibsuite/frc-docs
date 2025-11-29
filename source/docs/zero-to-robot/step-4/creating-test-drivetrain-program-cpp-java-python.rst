@@ -16,27 +16,46 @@ Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
    :alt: Choose "WPILib: Create a new project".
 
-This will bring up the "New Project Creator Window:"
+This will bring up the "WPILIb New Project Creator"
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
-   :alt: The different parts of the new project creation window.
+   :alt: The project type selector of the WPILib New Project Creator
 
-The elements of the New Project Creator Window are explained below:
+The **Project Type** chooses between an empty template project, or a :doc:`WPILib example project </docs/software/examples-tutorials/wpilib-examples>`. For this example, select :guilabel:`Example` and then choose :guilabel:`Next`.
 
-1. **Project Type**: The kind of project we wish to create.  For this example, select **Example**
-2. **Language**: This is the language (C++ or Java) that will be used for this project.
-3. **Project Base**: This box is used to select the base class or example to generate the project from. For this example, select **Getting Started**
-4. **Base Folder**: This determines the folder in which the robot project will be located.
-5. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
-6. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked. project folder will be given if the Create New Folder box is checked.
-7. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
-8. **Enable Desktop Support**: Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it. For this example, do not check this box.
+This will bring up the language and base selection window.
 
-Once all the above have been configured, click "Generate Project" and the robot project will be created.
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-language.png
+   :alt: The language and base page of the WPILib New Project Creator
 
-.. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
+1. **Language**: This is the language (C++ or Java) that will be used for this project.
+2. **Project Base**: This box is used to select the base class or example to generate the project from. For this example, select **Getting Started**
+
+After making the selections, click :guilabel:`Next`.
+
+This will bring up the Project and Configuration window.
+
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-location.png
+   :alt: The project and configuration page of the WPILib New Project Creator
+
+1. **Base Folder**: This determines the folder in which the robot project will be located.
+2. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
+3. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
+4. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
+5. **Enable Desktop Support**: Enables unit test and simulation support (see :doc:`/docs/software/wpilib-tools/robot-simulation/introduction`). While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it. For this example, do not check this box.
 
 .. warning:: Creating projects on OneDrive is not supported as OneDrive's caching interferes with the build system. Some Windows installations put the Documents and Desktop folders on OneDrive by default.
+
+Once all the above have been configured, click :guilabel:`Next`.
+
+This will bring up the Review and Create window.
+
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-configured.png
+   :alt: The review and create page of the WPILib New Project Creator
+
+Double check all the settings and click :guilabel:`Create Project`. If anything is not correct, click :guilabel:`Back` and make the necessary corrections.
+
+.. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
 
 ## Opening The New Project
 
