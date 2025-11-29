@@ -13,7 +13,7 @@ The process of using AprilTags for pose estimation involves:
 
 ## Using Vision Libraries
 
-Most teams use existing vision processing libraries that handle the complex mathematics for you:
+Most teams use existing vision processing libraries that handle the complex mathematics for you. Before using these libraries in your robot code, you'll need to configure the vision coprocessor to detect AprilTags. See the `PhotonVision AprilTag documentation <https://docs.photonvision.org/en/latest/docs/apriltag-pipelines/index.html>`__ or `Limelight AprilTag documentation <https://docs.limelightvision.io/docs/docs-limelight/pipeline-apriltag/apriltag-introduction>`__ for setup instructions.
 
 ### PhotonVision
 
@@ -156,6 +156,7 @@ See the `Limelight documentation <https://docs.limelightvision.io/docs/docs-lime
 It's critical to use the **timestamp from when the image was captured**, not when it was processed. Vision processing introduces latency (typically 20-100ms), and the pose estimator needs the actual capture time to properly fuse the measurement with odometry data.
 
 Most vision libraries provide this timestamp:
+
 - PhotonVision: ``result.timestampSeconds``
 - Limelight: Calculate from ``tl`` (targeting latency) + ``cl`` (capture latency)
 
@@ -168,18 +169,25 @@ The accuracy of vision measurements varies based on several factors:
 - **Tag ambiguity**: Low-resolution or angled views reduce accuracy
 - **Camera quality**: Higher resolution cameras provide better accuracy
 
-You should scale the standard deviations passed to ``AddVisionMeasurement()`` based on these factors:
+You should scale the standard deviations passed to ``AddVisionMeasurement()`` based on these factors. A common approach is to use a small baseline standard deviation and scale it by the square of distance divided by tag count. The specific baseline values will depend on your camera setup and testing.
 
 .. tab-set-code::
 
    ```java
    // Example: Scale standard deviations based on distance and tag count
-   double distance = /* calculate distance to nearest tag */;
+   double avgDistance = /* calculate average distance to tags in meters */;
    int tagCount = /* number of tags seen */;
 
-   // More tags = more trust, greater distance = less trust
-   double xyStdDev = 0.5 * Math.pow(distance, 2) / tagCount;
-   double thetaStdDev = 999999.9; // Don't trust rotation from single tag
+   // Baseline standard deviations (for 1 tag at 1 meter)
+   // Tune these based on your specific camera setup
+   double xyStdDevBaseline = 0.02;  // meters
+   double thetaStdDevBaseline = 0.06;  // radians
+
+   // Scale based on distance squared and number of tags
+   double stdDevFactor = Math.pow(avgDistance, 2) / tagCount;
+   double xyStdDev = xyStdDevBaseline * stdDevFactor;
+   // Only trust rotation with multiple tags; single tag rotation is ambiguous
+   double thetaStdDev = tagCount > 1 ? thetaStdDevBaseline * stdDevFactor : Double.MAX_VALUE;
 
    poseEstimator.addVisionMeasurement(
       visionPose,
@@ -190,12 +198,20 @@ You should scale the standard deviations passed to ``AddVisionMeasurement()`` ba
 
    ```c++
    // Example: Scale standard deviations based on distance and tag count
-   double distance = /* calculate distance to nearest tag */;
+   double avgDistance = /* calculate average distance to tags in meters */;
    int tagCount = /* number of tags seen */;
 
-   // More tags = more trust, greater distance = less trust
-   double xyStdDev = 0.5 * std::pow(distance, 2) / tagCount;
-   double thetaStdDev = 999999.9; // Don't trust rotation from single tag
+   // Baseline standard deviations (for 1 tag at 1 meter)
+   // Tune these based on your specific camera setup
+   double xyStdDevBaseline = 0.02;  // meters
+   double thetaStdDevBaseline = 0.06;  // radians
+
+   // Scale based on distance squared and number of tags
+   double stdDevFactor = std::pow(avgDistance, 2) / tagCount;
+   double xyStdDev = xyStdDevBaseline * stdDevFactor;
+   // Only trust rotation with multiple tags; single tag rotation is ambiguous
+   double thetaStdDev = tagCount > 1 ? thetaStdDevBaseline * stdDevFactor
+                                     : std::numeric_limits<double>::max();
 
    poseEstimator.AddVisionMeasurement(
       visionPose,
@@ -206,12 +222,19 @@ You should scale the standard deviations passed to ``AddVisionMeasurement()`` ba
 
    ```python
    # Example: Scale standard deviations based on distance and tag count
-   distance = # calculate distance to nearest tag
+   avg_distance = # calculate average distance to tags in meters
    tag_count = # number of tags seen
 
-   # More tags = more trust, greater distance = less trust
-   xy_std_dev = 0.5 * (distance ** 2) / tag_count
-   theta_std_dev = 999999.9  # Don't trust rotation from single tag
+   # Baseline standard deviations (for 1 tag at 1 meter)
+   # Tune these based on your specific camera setup
+   xy_std_dev_baseline = 0.02  # meters
+   theta_std_dev_baseline = 0.06  # radians
+
+   # Scale based on distance squared and number of tags
+   std_dev_factor = (avg_distance ** 2) / tag_count
+   xy_std_dev = xy_std_dev_baseline * std_dev_factor
+   # Only trust rotation with multiple tags; single tag rotation is ambiguous
+   theta_std_dev = theta_std_dev_baseline * std_dev_factor if tag_count > 1 else float('inf')
 
    pose_estimator.addVisionMeasurement(
       vision_pose,
@@ -228,10 +251,10 @@ You should reject vision measurements in certain situations:
 
 - **No tags detected**: Only use measurements when tags are visible
 - **High ambiguity**: Reject measurements with low confidence (check tag ambiguity values)
-- **Unrealistic poses**: Reject measurements that are outside the field boundaries or far from your current estimate
+- **Unrealistic poses**: Reject measurements that are far outside the field boundaries or far from your current estimate
 - **During rapid motion**: Vision measurements may be less reliable during fast turns or acceleration
 
-Example rejection logic:
+The following example demonstrates rejecting poses outside field boundaries with a small tolerance to allow for measurement noise near field edges. Other rejection criteria (ambiguity checks, distance from current estimate, etc.) will depend on your specific vision library and requirements.
 
 .. tab-set-code::
 
@@ -240,11 +263,12 @@ Example rejection logic:
    if (result.isPresent()) {
       var estimatedPose = result.get();
 
-      // Check if pose is reasonable (within field boundaries)
-      if (estimatedPose.estimatedPose.getX() >= 0 &&
-          estimatedPose.estimatedPose.getX() <= fieldLayout.getFieldLength() &&
-          estimatedPose.estimatedPose.getY() >= 0 &&
-          estimatedPose.estimatedPose.getY() <= fieldLayout.getFieldWidth()) {
+      // Check if pose is reasonable (within field boundaries with tolerance)
+      double margin = 0.5;  // meters of tolerance for edge measurements
+      if (estimatedPose.estimatedPose.getX() >= -margin &&
+          estimatedPose.estimatedPose.getX() <= fieldLayout.getFieldLength() + margin &&
+          estimatedPose.estimatedPose.getY() >= -margin &&
+          estimatedPose.estimatedPose.getY() <= fieldLayout.getFieldWidth() + margin) {
 
          poseEstimator.addVisionMeasurement(
             estimatedPose.estimatedPose.toPose2d(),
@@ -257,11 +281,12 @@ Example rejection logic:
    ```c++
    auto result = photonPoseEstimator.Update();
    if (result) {
-      // Check if pose is reasonable (within field boundaries)
-      if (result->estimatedPose.X() >= 0_m &&
-          result->estimatedPose.X() <= fieldLayout.GetFieldLength() &&
-          result->estimatedPose.Y() >= 0_m &&
-          result->estimatedPose.Y() <= fieldLayout.GetFieldWidth()) {
+      // Check if pose is reasonable (within field boundaries with tolerance)
+      units::meter_t margin = 0.5_m;  // tolerance for edge measurements
+      if (result->estimatedPose.X() >= -margin &&
+          result->estimatedPose.X() <= fieldLayout.GetFieldLength() + margin &&
+          result->estimatedPose.Y() >= -margin &&
+          result->estimatedPose.Y() <= fieldLayout.GetFieldWidth() + margin) {
 
          poseEstimator.AddVisionMeasurement(
             result->estimatedPose.ToPose2d(),
@@ -274,9 +299,10 @@ Example rejection logic:
    ```python
    result = photon_pose_estimator.update()
    if result is not None:
-      # Check if pose is reasonable (within field boundaries)
-      if (0 <= result.estimatedPose.X() <= field_layout.getFieldLength() and
-          0 <= result.estimatedPose.Y() <= field_layout.getFieldWidth()):
+      # Check if pose is reasonable (within field boundaries with tolerance)
+      margin = 0.5  # meters of tolerance for edge measurements
+      if (-margin <= result.estimatedPose.X() <= field_layout.getFieldLength() + margin and
+          -margin <= result.estimatedPose.Y() <= field_layout.getFieldWidth() + margin):
 
          pose_estimator.addVisionMeasurement(
             result.estimatedPose.toPose2d(),
