@@ -16,8 +16,6 @@ The LabVIEW runtime components required for the Driver Station and Imaging Tool 
 
 - Windows 10 or higher (Windows 10, 11).
 
-.. important:: FRC Game Tools requires an x86 CPU due to its dependency on LabVIEW. Do not use a device with an ARM CPU.
-
 ## Download Game Tools
 
 Navigate to the  [FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) from NI.
@@ -69,6 +67,13 @@ In the dialog box that appears, select all entries. The easiest way to do this i
          :alt: The menu after right clicking on an .iso file to choose "Mount".
 
       .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then install 7-Zip and use that to extract the iso.
+
+### Additional Software
+
+.. image:: images/update-suite/additional-software.png
+   :alt: Leave all of the additional packages selected.
+
+If you see this screen, click :guilabel:`Next`.
 
 ### License Agreements
 
