@@ -5,7 +5,6 @@
 ## Prerequisites
 
 .. todo::
-   - Java 21+ requirement (for Continuation API support)
    - WPILib 2027+ installation
    - Basic Java knowledge (variables, methods, loops)
    - No prior command-based experience required (but helpful)
