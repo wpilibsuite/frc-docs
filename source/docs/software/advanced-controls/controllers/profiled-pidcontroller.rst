@@ -84,58 +84,31 @@ The returned setpoint might then be used as in the following example:
 
 .. tab-set-code::
 
-  ```java
-  double lastSpeed = 0;
-  double lastTime = Timer.getFPGATimestamp();
-    // Controls a simple motor's position using a SimpleMotorFeedforward
-  // and a ProfiledPIDController
-  public void goToPosition(double goalPosition) {
-    double pidVal = controller.calculate(encoder.getDistance(), goalPosition);
-    double acceleration = (controller.getSetpoint().velocity - lastSpeed) / (Timer.getFPGATimestamp() - lastTime);
-    motor.setVoltage(
-        pidVal
-        + feedforward.calculate(controller.getSetpoint().velocity, acceleration));
-    lastSpeed = controller.getSetpoint().velocity;
-    lastTime = Timer.getFPGATimestamp();
-  }
-  ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3f88c287d6007f6be9fc5409aa9c42d41a504005/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/profiledpidfeedforward/Robot.java
+      :language: java
+      :lines: 37-42
+      :lineno-match:
 
-  ```c++
-  units::meters_per_second_t lastSpeed = 0_mps;
-  units::second_t lastTime = frc2::Timer::GetFPGATimestamp();
-    // Controls a simple motor's position using a SimpleMotorFeedforward
-  // and a ProfiledPIDController
-  void GoToPosition(units::meter_t goalPosition) {
-    auto pidVal = controller.Calculate(units::meter_t{encoder.GetDistance()}, goalPosition);
-    auto acceleration = (controller.GetSetpoint().velocity - lastSpeed) /
-        (frc2::Timer::GetFPGATimestamp() - lastTime);
-    motor.SetVoltage(
-         pidVal +
-        feedforward.Calculate(controller.GetSetpoint().velocity, acceleration));
-    lastSpeed = controller.GetSetpoint().velocity;
-    lastTime = frc2::Timer::GetFPGATimestamp();
-  }
-  ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/3f88c287d6007f6be9fc5409aa9c42d41a504005/wpilibcExamples/src/main/cpp/snippets/ProfiledPIDFeedforward/cpp/Robot.cpp
+      :language: c++
+      :lines: 25-32
+      :lineno-match:
 
-  ```python
-  from wpilib import Timer
-  from wpilib.controller import ProfiledPIDController
-  from wpilib.controller import SimpleMotorFeedforward
-  def __init__(self):
-      # Assuming encoder, motor, controller are already defined
-      self.lastSpeed = 0
-      self.lastTime = Timer.getFPGATimestamp()
-      # Assuming feedforward is a SimpleMotorFeedforward object
-      self.feedforward = SimpleMotorFeedforward(ks=0.0, kv=0.0, ka=0.0)
-  def goToPosition(self, goalPosition: float):
-      pidVal = self.controller.calculate(self.encoder.getDistance(), goalPosition)
-      acceleration = (self.controller.getSetpoint().velocity - self.lastSpeed) / (Timer.getFPGATimestamp() - self.lastTime)
-      self.motor.setVoltage(
-          pidVal
-          + self.feedforward.calculate(self.controller.getSetpoint().velocity, acceleration))
-      self.lastSpeed = controller.getSetpoint().velocity
-      self.lastTime = Timer.getFPGATimestamp()
-  ```
+   .. code-block:: python
+
+      from wpilib.controller import ProfiledPIDController
+      from wpilib.controller import SimpleMotorFeedforward
+      def __init__(self):
+          # Assuming encoder, motor, controller are already defined
+          self.lastSpeed = 0
+          # Assuming feedforward is a SimpleMotorFeedforward object
+          self.feedforward = SimpleMotorFeedforward(ks=0.0, kv=0.0, ka=0.0)
+      def goToPosition(self, goalPosition: float):
+          pidVal = self.controller.calculate(self.encoder.getDistance(), goalPosition)
+          self.motor.setVoltage(
+              pidVal
+              + self.feedforward.calculate(self.lastSpeed, self.controller.getSetpoint().velocity))
+          self.lastSpeed = self.controller.getSetpoint().velocity
 
 ## Complete Usage Example
 
