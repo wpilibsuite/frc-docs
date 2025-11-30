@@ -1,6 +1,6 @@
 # Wire Crimping Best Practices
 
-Proper wire crimping is essential for creating reliable electrical connections on your FRC robot. Poor crimps can lead to intermittent brownouts, voltage drops, and connection failures that are difficult to diagnose. This guide covers best practices for crimping Anderson Powerpole connectors and other common FRC connectors.
+Proper wire crimping is essential for creating reliable electrical connections on your FRC robot. Poor crimps can lead to voltage drops, momentary disconnections, and connection failures that are difficult to diagnose. This guide covers best practices for crimping Anderson Powerpole connectors and other common FRC connectors.
 
 ## Why Proper Crimping Matters
 
@@ -8,10 +8,35 @@ A properly crimped connection provides:
 
 - **Low electrical resistance** - Minimizes voltage drop and heat generation
 - **Mechanical strength** - Prevents wires from pulling out under vibration
-- **Reliability** - Eliminates intermittent connections that cause brownouts
 - **Safety** - Reduces risk of shorts and electrical fires
 
 Poor crimps are a common source of mysterious electrical problems. A connection that works on the bench may fail under the vibration and stress of competition.
+
+## Connector Types Used in FRC
+
+Before learning how to crimp, it's important to understand the different connector types commonly used on FRC robots:
+
+### Anderson Powerpole Connectors
+
+Anderson Powerpole connectors are the primary power connectors used in FRC. They feature a genderless design that allows any connector to mate with any other connector of the same size. They come in three amperage ratings:
+
+- **15 amp (PP15-45)** - Used for smaller loads, typically signal wiring or low-current devices
+- **30 amp (PP15-45)** - Common for motor controllers and moderate current loads, uses the same housing as 15 amp
+- **45 amp (PP15-45)** - Used for higher current applications, uses the same housing as 15 and 30 amp
+
+All three contact sizes fit in the same PP15-45 housing. The contacts are what differ - they accept different wire gauges and have different current ratings.
+
+### Ferrules
+
+Wire ferrules are crimped metal sleeves placed on the end of stranded wire. They provide a solid, uniform tip that works well with screw terminals found on motor controllers (like the Spark MAX), the PDH, and other FRC electronics. Ferrules prevent strand fraying and ensure all wire strands make good contact.
+
+### Ring and Spade Terminals
+
+Ring terminals (closed loop) and spade terminals (open fork) are used for bolt-on connections such as battery terminals and chassis ground points. These terminals are crimped onto wire and then secured with a bolt or screw.
+
+### Wire-to-Board Connectors
+
+Many FRC components use small-pitch connectors like JST, Molex, or Dupont-style for signal wiring. These require specialized crimp contacts and precise wire stripping.
 
 ## Required Tools
 
@@ -19,14 +44,13 @@ Poor crimps are a common source of mysterious electrical problems. A connection 
 
 **Ratcheting Crimpers** (Highly Recommended)
 
-Ratcheting crimpers provide consistent, high-quality crimps by ensuring proper compression force every time. They prevent under-crimping or over-crimping by not releasing until the crimp cycle is complete.
+Ratcheting crimpers provide consistent, high-quality crimps by ensuring proper compression force every time. They prevent under-crimping or over-crimping by not releasing until the crimp cycle is complete. Recommended tools include:
 
-Recommended tools:
 - **TRIcrimp** - Designed specifically for Anderson Powerpole connectors (15, 30, and 45 amp)
 - **IWISS Powerpole Crimper** - Ratcheting tool for Anderson Powerpole connectors
 - **Anderson 1309G3** - Official Anderson Power Products crimping tool
 
-.. important:: Invest in a quality ratcheting crimper. While they cost more initially ($40-100), they produce vastly superior crimps compared to generic wire strippers with crimping dies. The FRC Tool Recommendations document lists approved options.
+.. important:: Invest in a quality ratcheting crimper. While they cost more initially ($40-100), they produce vastly superior crimps compared to generic wire strippers with crimping dies.
 
 **Manual Crimpers** (Budget Option)
 
@@ -93,7 +117,7 @@ After crimping, the contact must be properly seated in the plastic housing:
 3. **Push firmly** - Insert the contact and crimped wire until you hear/feel a click
 4. **Pull test** - Gently tug the wire to verify the contact is locked in place
 
-.. important:: Contacts that are not fully inserted can cause intermittent connections, brownouts, or complete disconnection. Always perform a pull test!
+.. important:: Contacts that are not fully inserted can cause intermittent connections or complete disconnection. Always perform a pull test!
 
 ### Common Powerpole Crimping Problems
 
@@ -176,36 +200,33 @@ Higher resistance indicates a poor crimp that should be redone.
 - Reusing contacts after a bad crimp (throw it away and start over)
 - Not doing pull tests or visual inspection
 
-## Other Connector Types
+## Crimping Other Connector Types
 
-While Anderson Powerpole connectors are the primary FRC power connectors, other connectors are also used:
+### Ferrule Crimping
 
-### Ferrules
+When crimping ferrules for screw terminal connections:
 
-Wire ferrules are crimped metal sleeves used on stranded wire ends for screw terminal connections (like motor controllers, PDH channels, etc.)
-
-**Best Practices:**
 - Use properly sized ferrules for your wire gauge
-- Ferrule crimpers provide better results than generic tools
+- Ferrule crimpers (square or hexagonal) provide better results than generic tools
 - Strip wire to match ferrule depth (usually 8-10mm)
+- Insert all wire strands into the ferrule before crimping
 - Crimp should compress ferrule evenly without deforming it
-- Check that no strands are outside the ferrule
+- Verify no strands are outside the ferrule after crimping
 
-### Ring and Spade Terminals
+### Ring and Spade Terminal Crimping
 
-Used for battery terminals and some ground connections.
+When crimping ring or spade terminals:
 
-**Best Practices:**
 - Use heat-shrink or insulated terminals to prevent shorts
-- Crimp both the conductor barrel and insulation support
-- Verify terminal size matches stud size (battery terminals are typically 1/4" or M6)
+- Crimp both the conductor barrel and insulation support wings
+- Verify terminal hole size matches the stud size (battery terminals are typically 1/4" or M6)
 - Apply anti-oxidant compound to copper-aluminum connections
+- See :doc:`robot-battery` for detailed battery terminal information
 
-### Wire-to-Board Connectors
+### Wire-to-Board Connector Crimping
 
-Many FRC components use JST, Molex, or Dupont-style connectors for signal wiring.
+When crimping small signal connectors (JST, Molex, Dupont-style):
 
-**Best Practices:**
 - Use the manufacturer's specified crimping tool when possible
 - Strip very precise lengths (typically 2-3mm for these small connectors)
 - Ensure contacts click fully into the housing
