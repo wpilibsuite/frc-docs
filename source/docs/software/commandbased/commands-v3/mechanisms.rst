@@ -9,6 +9,7 @@
    Describe how to create a Mechanism class. Cover:
    - Basic Mechanism class structure and constructor
    - When to create a Mechanism vs. other organizational patterns
+   - Example of something that doesn't need a Mechanism (e.g., a vision system that provides data but doesn't need exclusive access)
    - Naming conventions for Mechanism classes
    - Where Mechanism classes should live in the project structure
    - Note: Mechanisms are automatically registered with the scheduler in the base class constructor

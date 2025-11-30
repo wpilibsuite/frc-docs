@@ -50,6 +50,7 @@ See :ref:`docs/software/commandbased/commands-v2/index:Commands v2 Programming` 
    structuring-v3-project
    testing-and-simulation
    telemetry-and-debugging
+   troubleshooting
    migration-from-v2
    advanced-topics
 

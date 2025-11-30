@@ -17,6 +17,8 @@
 
 .. todo::
    Explain how to bind commands to physical buttons. Cover:
+   - CommandHID classes vs. regular HID classes (CommandXboxController vs. XboxController, etc.)
+   - When to use each type of controller class
    - Accessing button triggers from controllers/joysticks
    - Available binding methods: onTrue(), onFalse(), whileTrue(), whileFalse(), toggleOnTrue(), etc.
    - When each binding type activates and deactivates commands

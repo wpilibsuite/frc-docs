@@ -63,16 +63,3 @@
    - Type safety and units for constants
    - Example constants organization patterns
 
-## Testing Structure
-
-.. todo::
-   Describe how to structure test code for v3 projects. Cover:
-   - Where test files should live relative to main code
-   - Unit test organization (per-Mechanism, per-command, etc.)
-   - Integration test organization
-   - Test utilities and fixtures
-   - Mocking Mechanisms and hardware for command tests
-   - **Mechanism testing**: Mechanisms can accept a `Scheduler` parameter in their constructor to avoid shared state in tests
-   - Simulation test setup
-   - CI/CD integration considerations
-   - Example test directory structure

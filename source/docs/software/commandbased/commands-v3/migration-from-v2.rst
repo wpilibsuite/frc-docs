@@ -22,7 +22,7 @@
    - New v3 package names and locations
    - Renamed classes and methods
    - Deprecated v2 APIs and their v3 equivalents
-   - How to add v3 dependencies to build.gradle/pom.xml
+   - How to install the v3 vendordep
    - Version compatibility and requirements
    - Note: Vendor library compatibility with v3 is up to individual vendors
 

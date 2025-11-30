@@ -66,3 +66,15 @@
    - Snapshot testing for complex command sequences
    - Performance testing (cycle time, memory usage)
    - Describe useful testing utilities teams should build
+
+## Test Project Structure
+
+.. todo::
+   Describe how to structure test code for v3 projects. Cover:
+   - Where test files should live relative to main code
+   - Unit test organization (per-Mechanism, per-command, etc.)
+   - Integration test organization
+   - Test utilities and fixtures
+   - **Mechanism testing**: Mechanisms can accept a `Scheduler` parameter in their constructor to avoid shared state in tests
+   - CI/CD integration considerations
+   - Example test directory structure

@@ -58,6 +58,12 @@
 ## Writing Your First Command
 
 .. todo::
+   **What is a Command:**
+   - A command represents an action the robot can perform
+   - Commands run on the scheduler and can be scheduled, interrupted, or composed
+   - Commands can require Mechanisms (exclusive access to hardware)
+   - Commands have a lifecycle: scheduled → running → completed/interrupted
+
    **Drive For Distance Example:**
    - Use ``mechanism.run()`` factory method
    - Command body receives ``Coroutine`` parameter
@@ -105,25 +111,6 @@
    - Glass/Shuffleboard command widgets
    - Viewing running commands
    - Command status indicators
-
-## Common Mistakes and Fixes
-
-.. todo::
-   **Forgetting yield():**
-   - Symptom: robot freezes, becomes unresponsive
-   - Fix: add ``coroutine.yield()`` in every loop
-
-   **Using v2 and v3 together:**
-   - Symptom: import errors, scheduler conflicts
-   - Fix: choose one framework per project
-
-   **Calling yield() in synchronized blocks:**
-   - Symptom: exceptions, deadlocks
-   - Fix: restructure code to avoid locks or use different synchronization
-
-   **Wrong package imports:**
-   - Symptom: cannot find Mechanism, Coroutine classes
-   - Fix: use ``org.wpilib.commands3`` not ``commands2``
 
 ## Next Steps
 
