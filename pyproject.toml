@@ -35,3 +35,6 @@ dependencies = [
     "sphinxext-toptranslators==0.1.3",
     "frccontrol==2025.6",
 ]
+
+[tool.uv]
+fork-strategy = "fewest"
