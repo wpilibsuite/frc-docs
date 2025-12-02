@@ -17,9 +17,6 @@ jobs:
         python-version: "3.10"
     - name: Install uv
       uses: astral-sh/setup-uv@v7
-    - name: Install Python Dependencies
-      run: |
-        uv sync
     - name: Install LaTeX
       run: |
         sudo apt-get -y update
@@ -49,9 +46,6 @@ jobs:
       run: |
         sudo apt-get -y update
         sudo apt-get install -y librsvg2-bin
-    - name: Install Python Dependencies
-      run: |
-        uv sync
     - name: Build HTML
       run: |
         uv run make html
@@ -84,9 +78,6 @@ jobs:
       run: |
         sudo apt-get -y update
         sudo apt-get install -y librsvg2-bin
-    - name: Install Python Dependencies
-      run: |
-        uv sync --project frc-docs
     - name: Build HTML
       run: |
         uv run --project frc-docs sphinx-build -D language=es -b html . _build/html
@@ -199,9 +190,6 @@ jobs:
         python-version: "3.10"
     - name: Install uv
       uses: astral-sh/setup-uv@v7
-    - name: Install Python Dependencies
-      run: |
-        uv sync
     - name: Format
       run: |
         uv run black --check .
