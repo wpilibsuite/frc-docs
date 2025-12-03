@@ -74,7 +74,7 @@ Supported Operating Systems and Architectures:
 - Scale transforms instead of twists in PoseEstimator
 - C++: Fix ``ElevatorSim::GetCurrentDraw()``
 - Correct mil unit
-- Add miles per hour conversation methods to ``Units.java``
+- Add miles per hour conversion methods to ``Units.java``
 
 ### Simulation
 
