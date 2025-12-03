@@ -40,7 +40,7 @@ Install the missing MikTex packages by navigating to the frc-docs directory, the
 
 ```console
 $ sudo apt update
-$ sudo apt install python3 python3-pip
+$ sudo apt install python3
 $ sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
 ```
 
@@ -84,7 +84,7 @@ The redirect writer will automatically add renamed/moved files to the redirects 
 
 .. note:: if a file is both moved and substantially changed, the redirect writer will not add it to the ``redirects.txt`` file, and the ``redirects.txt`` file will need to be manually updated.
 
-The redirect checker makes sure that there are valid redirects for all files. This **will** fail the buildbot if it does not pass. To check, run ``uv run .\make.bat rediraffecheckdiff`` to verify all files are redirected. Additionally, an HTML build may need to be ran to ensure that all files redirect properly.
+The redirect checker makes sure that there are valid redirects for all files. This **will** fail CI if it does not pass. To check, run ``uv run .\make.bat rediraffecheckdiff`` to verify all files are redirected. Additionally, an HTML build may need to be ran to ensure that all files redirect properly.
 
 ### Building HTML
 
