@@ -118,7 +118,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
          Our ARM wheels are built for Debian 12 (Bookworm) with GCC 12.
 
-      If you need to build with a specific compiler version, you can specify them using the :envvar:`CC` and :envvar:`CXX` environment variables:
+      If you need to build with a specific compiler version, you can specify them using the ``CC`` and ``CXX`` environment variables:
 
       ```sh
       export CC=gcc-12 CXX=g++-12
