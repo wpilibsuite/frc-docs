@@ -6,6 +6,8 @@ This document contains information on how to build the HTML, PDF, and EPUB versi
 
 Ensure that [Git](https://git-scm.com/) is installed and that the frc-docs repository is cloned by using ``git clone https://github.com/wpilibsuite/frc-docs.git``.
 
+You will need to install [uv](https://docs.astral.sh/uv/), a Python package and project manager. Follow the [installation instructions](https://docs.astral.sh/uv/getting-started/installation/) for your operating system.
+
 ### Text Editors / IDE
 
 For development, we recommend that you use VS Code along with the [reStructuredText extension](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext). However, any text editor will work.
@@ -32,17 +34,13 @@ Ensure that Python is in your Path by selecting the **Add Python to PATH** toggl
 .. image:: images/python-path.png
     :alt: Showing where to click the box to add Python to PATH.
 
-Once Python is installed, open up Powershell. Then navigate to the frc-docs directory. Run the following command: ``pip install -r source/requirements.txt``
-
 Install the missing MikTex packages by navigating to the frc-docs directory, then running the following command from Powershell: ``miktex --verbose packages require --package-id-file miktex-packages.txt``
 
 ### Linux (Ubuntu)
 
 ```console
 $ sudo apt update
-$ sudo apt install python3 python3-pip
-$ python3 -m pip install -U pip setuptools wheel
-$ python3 -m pip install -r source/requirements.txt
+$ sudo apt install python3
 $ sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra latexmk texlive-lang-greek texlive-luatex texlive-xetex texlive-fonts-extra dvipng librsvg2-bin
 ```
 
@@ -68,60 +66,52 @@ PS C:\Users\Example\Documents\frc-docs>
 
 .. note:: Lint Check will not check line endings on Windows due to a bug with line endings. See [this issue](https://bugs.launchpad.net/doc8/+bug/1756704) for more information.
 
-It's encouraged to check any changes you make with the linter. This **will** fail the buildbot if it does not pass. To check, run ``.\make lint``
+It's encouraged to check any changes you make with the linter. This **will** fail CI if it does not pass. To check, run ``uv run .\make.bat lint``
 
 ### Link Check
 
-The link checker makes sure that all links in the documentation resolve. This **will** fail the buildbot if it does not pass. To check, run ``.\make linkcheck``
+The link checker makes sure that all links in the documentation resolve. This **will** fail CI if it does not pass. To check, run ``uv run .\make.bat linkcheck``
 
 ### Image Size Check
 
-Please run ``.\make sizecheck`` to verify that all images are below 500KB. This check **will** fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
+Please run ``uv run .\make.bat sizecheck`` to verify that all images are below 500KB. This check **will** fail CI if it fails. Exclusions are allowed on a case by case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the configuration file.
 
 ### Redirect Check
 
 Files that have been moved or renamed must have their new location (or replaced with 404) in the ``redirects.txt`` file in ``source``.
 
-The redirect writer will automatically add renamed/moved files to the redirects file. Run ``.\make rediraffewritediff``.
+The redirect writer will automatically add renamed/moved files to the redirects file. Run ``uv run .\make.bat rediraffewritediff``.
 
 .. note:: if a file is both moved and substantially changed, the redirect writer will not add it to the ``redirects.txt`` file, and the ``redirects.txt`` file will need to be manually updated.
 
-The redirect checker makes sure that there are valid redirects for all files. This **will** fail the buildbot if it does not pass. To check, run ``.\make rediraffecheckdiff`` to verify all files are redirected. Additionally, an HTML build may need to be ran to ensure that all files redirect properly.
+The redirect checker makes sure that there are valid redirects for all files. This **will** fail CI if it does not pass. To check, run ``uv run .\make.bat rediraffecheckdiff`` to verify all files are redirected. Additionally, an HTML build may need to be ran to ensure that all files redirect properly.
 
 ### Building HTML
 
-Type the command ``.\make html`` to generate HTML content. The content is located in the ``build/html`` directory at the root of the repository.
+Type the command ``uv run .\make.bat html`` to generate HTML content. The content is located in the ``build/html`` directory at the root of the repository.
 
 ### Building PDF
 
 .. warning:: Please note that PDF build on Windows may result in distorted images for SVG content. This is due to a lack of librsvg2-bin support on Windows.
 
-Type the command ``.\make latexpdf`` to generate PDF content. The PDF is located in the ``build/latex`` directory at the root of the repository.
+Type the command ``uv run .\make.bat latexpdf`` to generate PDF content. The PDF is located in the ``build/latex`` directory at the root of the repository.
 
 ### Building EPUB
 
-Type the command ``.\make epub`` to generate EPUB content. The EPUB is located in the ``build/epub`` directory at the root of the repository.
+Type the command ``uv run .\make.bat epub`` to generate EPUB content. The EPUB is located in the ``build/epub`` directory at the root of the repository.
 
 ## Adding Python Third-Party libraries
 
-.. important:: After modifying frc-docs dependencies in any way, ``requirements.txt`` must be regenerated by running ``poetry export -f requirements.txt --output source/requirements.txt --without-hashes`` from the root of the repo.
-
-frc-docs uses [Poetry](https://python-poetry.org/) to manage its dependencies to make sure builds are reproducible.
-
-.. note:: Poetry is **not** required to build and contribute to frc-docs content. It is *only* used for dependency management.
-
-### Installing Poetry
-
-Ensure that Poetry is installed. Run the following command: ``pip install poetry``.
+.. important:: After modifying frc-docs dependencies in any way, ``requirements.txt`` must be regenerated by running ``uv export --frozen --no-dev --no-editable -o source/requirements.txt`` from the root of the repo.
 
 ### Adding a Dependency
 
-Add the dependency to the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Make sure to specify an exact version. Then, run the following command: ``poetry lock --no-update``.
+Add the dependency to the ``dependencies`` array in ``pyproject.toml``. Make sure to specify an exact version. Then, run the following command: ``uv lock``.
 
 ### Updating a Top-Level Dependency
 
-Update the dependency's version in the ``[tool.poetry.dependencies]`` section of ``pyproject.toml``. Then, run the following command: ``poetry lock --no-update``.
+Update the dependency's version in the ``dependencies`` array in ``pyproject.toml``. Then, run the following command: ``uv lock``.
 
 ### Updating Hidden Dependencies
 
-Run the following command: ``poetry lock``.
+Run the following command: ``uv lock --upgrade``.
