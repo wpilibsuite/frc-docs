@@ -1,6 +1,6 @@
 # Addressable LEDs
 
-LED strips have been commonly used by teams for several years for a variety of reasons. They allow teams to debug robot functionality from the audience, provide a visual marker for their robot, and can simply add some visual appeal. These are also referred to as NeoPixels as well. WPILib has an API for controlling WS2812, WS2812B, WS2815, and other LEDs that share the same protocol (WS2811, SK6812, etc.) with their data pin connected to the SIGNAL pin of a SMART I/O connector.
+LED strips have been commonly used by teams for several years for a variety of reasons. They allow teams to debug robot functionality from the audience, provide a visual marker for their robot, and can simply add some visual appeal. These are also referred to as NeoPixels. WPILib has an API for controlling WS2812, WS2812B, WS2815, and other LEDs that share the same protocol (WS2811, SK6812, etc.) with their data pin connected to the SIGNAL pin of a SMART I/O connector.
 
 .. note:: LEDs can be controlled through this API while the robot is disabled.
 
@@ -8,7 +8,7 @@ LED strips have been commonly used by teams for several years for a variety of r
 
 .. note:: WS281x LEDs (with the exception of the WS2815, see below warning) are designed for **5V**, but Systemcore ports output **3.3V**. This may cause issues with some LED strips, and a logic level shifter is needed, such as the [Adafruit Pixel Shifter](https://www.adafruit.com/product/6066).
 
-.. note:: The 300-500 ohm data line resistor and large 1000uF capactitor across the power pins are highly recommended. Also, use a VRM to power the LEDs, with the *grounds* tied together.
+.. note:: The 300-500 Ohm data line resistor and large 1000μF capacitor across the power pins are highly recommended. Also, use a VRM to power the LEDs, with the *grounds* tied together.
 
 .. warning:: WS2815 LEDs (and maybe other products as well, **check the label**) are designed for **12V** but have **5V** data (see above note). The **backup line on the first strip** needs to be connected to **ground**, **not** connected to the data line despite what other guides may say.
 
