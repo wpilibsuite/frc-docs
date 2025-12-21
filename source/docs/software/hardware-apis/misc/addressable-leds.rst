@@ -1,7 +1,16 @@
 # Addressable LEDs
 
 LED strips have been commonly used by teams for several years for a variety of reasons. They allow teams to debug robot functionality from the audience, provide a visual marker for their robot, and can simply add some visual appeal. These are also referred to as NeoPixels. WPILib has an API for controlling WS2812, WS2812B, WS2815, and other LEDs that share the same protocol (WS2811, SK6812, etc.) with their data pin connected to the SIGNAL pin of a SMART I/O connector.
+.. note:: This library only supports WS2812B-compliant addressable LED products (strips, bars, matrixes,etc.)
 
+HUB-75 LED matrixes, DotStar LEDs, and other types of addressable LED products are not supported by this API. In addition to that, some WS2812B-compliant strips with different timings (WS2815, etc.) may not work.
+
+Timings:
+
+T0H: 375ns
+T0L: 875ns
+T1H: 750ns
+T1L: 500ns
 .. note:: LEDs can be controlled through this API while the robot is disabled.
 
 .. seealso:: For detailed information about powering and best practices for addressable LEDs, see the [Adafruit NeoPixel Überguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels).
