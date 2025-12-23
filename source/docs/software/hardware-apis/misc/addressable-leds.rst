@@ -15,7 +15,6 @@ Timings:
 - T0L: 875ns
 - T1H: 750ns
 - T1L: 500ns
-.. note:: This library only supports WS2812B-compliant addressable LED products (strips, bars, matrixes,etc.)
 
 
 ..important:: Unlike the roboRIO, the Systemcore supports multiple addressable LED products at once. LEDs can also be controlled using this API while the robot is disabled.
