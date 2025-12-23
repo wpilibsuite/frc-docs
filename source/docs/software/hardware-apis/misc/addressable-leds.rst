@@ -17,7 +17,7 @@ Timings:
 - T1L: 500ns
 
 
-..important:: Unlike the roboRIO, the Systemcore supports multiple addressable LED products at once. LEDs can also be controlled using this API while the robot is disabled.
+.. important:: Unlike the roboRIO, the Systemcore supports multiple addressable LED products at once. LEDs can also be controlled using this API while the robot is disabled.
 
 
 .. seealso:: For detailed information about powering and best practices for addressable LEDs, see the [Adafruit NeoPixel Überguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels).
