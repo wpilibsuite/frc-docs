@@ -11,7 +11,7 @@ They allow teams to debug robot functionality from the audience, provide a visua
 
 Unlike the roboRIO, the Systemcore supports multiple addressable LED products at once.
 
-	..important::
+..important:: Unlike the roboRIO, the Systemcore supports multiple addressable LED products at once.
 	Unlike the roboRIO, the Systemcore supports multiple addressable LED products at once.
 
 	HUB-75 LED matrixes, DotStar LEDs, and other types of addressable LED products are not supported by this API.
