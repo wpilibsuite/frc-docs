@@ -17,7 +17,7 @@ T1L: 500ns
 
 .. note:: WS281x LEDs (with the exception of the WS2815, see below warning) are designed for **5V**, but Systemcore ports output **3.3V**. This may cause issues with some LED strips, and a logic level shifter is needed, such as the [Adafruit Pixel Shifter](https://www.adafruit.com/product/6066).
 
-.. note:: The 300-500 Ohm data line resistor and large 1000μF capacitor across the power pins are highly recommended. Also, use a VRM to power the LEDs, with the *grounds* tied together.
+.. note:: The 300-500 Ohm data line resistor and large 1000μF capacitor across the power pins are recommended, especially with larger quantities of LEDs. Also, use an external 5V regulator to power the LEDs, with the **grounds** tied together.
 
 .. warning:: WS2815 LEDs (and maybe other products as well, **check the label**) are designed for **12V** but have **5V** data (see above note). The **backup line on the first strip** needs to be connected to **ground**, **not** connected to the data line despite what other guides may say.
 
