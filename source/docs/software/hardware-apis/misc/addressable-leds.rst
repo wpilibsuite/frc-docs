@@ -24,7 +24,6 @@ Timings:
 T0H: 375ns
 T0L: 875ns
 T1H: 750ns
-T1L: 500ns
 
 .. seealso:: For detailed information about powering and best practices for addressable LEDs, see the [Adafruit NeoPixel Überguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels).
 
