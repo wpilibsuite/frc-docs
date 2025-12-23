@@ -21,7 +21,6 @@ Timings:
 ..important:: Unlike the roboRIO, the Systemcore supports multiple addressable LED products at once. LEDs can also be controlled using this API while the robot is disabled.
 
 
-	In addition to that, some WS2812B-compliant LEDs with different timings (WS2815, etc.) may not work.
 
 Timings:
 
