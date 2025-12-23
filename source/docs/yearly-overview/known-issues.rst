@@ -6,15 +6,6 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 ## Open Issues
 
-### LabVIEW Getting Started page reports 2024
-
-**Issue:** The LabVIEW Getting Started page shows 2024 instead of 2025.
-
-.. image:: images/known-issues/labview-getting-started-2024.png
-  :alt: LabVIEW Getting Started window showing 2024
-
-**Workaround:** This is an issue with the LabVIEW update. You can confirm that the proper version is installed by opening the Driver station and confirming the version in the titlebar is 25.0
-
 ### Driver Station randomly disabled
 
 **Issue:** The Driver Station contains tighter safety mechanisms introduced in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.
