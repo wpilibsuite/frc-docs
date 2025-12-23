@@ -13,7 +13,7 @@ Timings:
 
 - T0H: 375ns
 - T0L: 875ns
-
+- T1H: 750ns
 - T1L: 500ns
 
 
