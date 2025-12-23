@@ -28,7 +28,7 @@ T1L: 500ns
 
 ## Instantiating the AddressableLED Object
 
-You first create an ``AddressableLED`` object that takes the SMART I/O port as an argument. Then you set the number of LEDs located on your LED strip, which can be done with the ``setLength()`` function.
+You first create an ``AddressableLED`` object that takes the SMART I/O port as an argument. Then you set the number of LEDs that are connected, which can be done with the ``setLength()`` function.
 
 .. warning:: It is important to note that setting the length of the LED header is an expensive task and it's **not** recommended to run this periodically.
 
