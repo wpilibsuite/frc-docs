@@ -20,7 +20,7 @@ Timings:
 
 ..important:: Unlike the roboRIO, the Systemcore supports multiple addressable LED products at once. LEDs can also be controlled using this API while the robot is disabled.
 
-	HUB-75 LED matrixes, DotStar LEDs, and other types of addressable LED products are not supported by this API.
+HUB-75 LED matrixes, DotStar LEDs, and other types of addressable LED products are not supported by this API.
 
 	In addition to that, some WS2812B-compliant LEDs with different timings (WS2815, etc.) may not work.
 
