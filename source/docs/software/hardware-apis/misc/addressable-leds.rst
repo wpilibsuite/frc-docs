@@ -1,6 +1,8 @@
 # Addressable LEDs
 
-Addressable LEDs have been commonly used by teams for several years for a variety of reasons. LED strips are the most common, but other form factors such as matrixes and bars are available as well.
+Addressable LEDs have been commonly used by teams for several years for a variety of reasons.
+
+LED strips are the most common, but other form factors such as matrixes and bars are available as well, so your code will work even if you are not using an LED strip.
 
 They allow teams to debug robot functionality from the audience, provide a visual marker for their robot, and can simply add some visual appeal. WPILib has an API for controlling WS2812, WS2812B, and potentially other LEDs that share the same protocol with their data pin connected to the SIGNAL pin of a SMART I/O connector. These types of addressable LEDs are also referred to as NeoPixels by other companies.
 
