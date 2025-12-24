@@ -8,7 +8,7 @@ dependencies = [
     "black>=25.0.0,<26.0.0",
     "doc8==2.0.0",
     "docutils==0.21.2",
-    "fonttools[woff]==4.43.0",
+    "fonttools[woff]==4.60.2",
     "jsmin==3.0.1",
     "markdown2==2.5.4",
     "sphinx==7.4.7",
