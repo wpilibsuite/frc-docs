@@ -40,15 +40,13 @@ For home usage, tag files may be printed off and placed around your practice are
 
 ## Software Support
 
-The main repository for the source code that detects and decodes AprilTags [is located here](https://github.com/wpilibsuite/apriltag/tree/main).
+WPILib includes AprilTag detection and decoding functionality through the [wpilibsuite/apriltag repository](https://github.com/wpilibsuite/apriltag/tree/main). This repository provides:
 
-WPILib has forked the repository to add new features for FRC. These include:
-
-1. Building the source code for common FRC targets, including the roboRIO and Raspberry Pi.
-2. Adding Java Native Interface (JNI) support to allow invoking its functionality from Java
+1. Pre-built binaries for common FRC targets, including the roboRIO and Raspberry Pi.
+2. Java Native Interface (JNI) support to allow invoking its functionality from Java
 3. Gradle & Maven publishing support
 
-.. todo:: Work in this library is still ongoing, this list may change in the future.
+The AprilTag library is integrated into WPILib and PhotonVision, making it easy to use AprilTags for robot localization and alignment.
 
 ## Processing Technique
 
