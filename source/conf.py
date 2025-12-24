@@ -169,6 +169,9 @@ linkcheck_ignore = [
     r".*electrodragon.com.*",
     r".*filezilla-project.org.*",
     r".*miktex.org.*",
+    r".*analog.com.*",
+    r".*opencv.org.*",
+    r".*strawberryperl.com.*",
 ]
 
 linkcheck_anchors_ignore_for_url = [
