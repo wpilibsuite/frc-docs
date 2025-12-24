@@ -28,7 +28,7 @@ Timings:
 
 .. warning:: WS2815 LEDs (and maybe other products as well, **check the label**) are designed for **12V** but have **5V** data (see above note). The **backup line on the first strip** needs to be connected to **ground**, **not** connected to the data line despite what other guides may say.
 Example wiring diagram:
-![Systemcore Addressable LED](https://github.com/user-attachments/assets/d780b026-7c02-465b-8afa-5c2de5bee539)
+.. image:: https://github.com/user-attachments/assets/2f1d7f05-f11b-4bed-bb91-267134f04f23)
 ## Instantiating the AddressableLED Object
 
 You first create an ``AddressableLED`` object that takes the SMART I/O port as an argument. Then you set the number of LEDs that are connected, which can be done with the ``setLength()`` function.
