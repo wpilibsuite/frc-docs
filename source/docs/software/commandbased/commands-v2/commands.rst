@@ -308,9 +308,6 @@ There are commands for various control setups:
 
 - ``TrapezoidProfile`` tracks a trapezoid motion profile. For more info, see :doc:`/docs/software/commandbased/commands-v2/profile-subsystems-commands`.
 
-- ``MecanumControllerCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/MecanumControllerCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_mecanum_controller_command.html)) is useful for controlling mecanum drivetrains. See API docs and the **MecanumControllerCommand** ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumcontrollercommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/MecanumControllerCommand)) example project for more info.
-
-- ``SwerveControllerCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SwerveControllerCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_swerve_controller_command.html)) is useful for controlling swerve drivetrains. See API docs and the **SwerveControllerCommand** ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervecontrollercommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/SwerveControllerCommand)) example project for more info.
 
 - ``RamseteCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html)) is useful for path following with differential drivetrains ("tank drive"). See API docs and the :ref:`Trajectory Tutorial<docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory:Creating the RamseteCommand>` for more info.
 
@@ -336,7 +333,7 @@ To write a custom command class, subclass the abstract ``Command`` class ([Java]
 
 ## Simple Command Example
 
-What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)) that uses the ``HatchSubsystem``:
+What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)) that uses the ``HatchSubsystem``:
 
 .. tab-set::
 

@@ -112,7 +112,7 @@ The returned setpoint might then be used as in the following example:
 
 ## Complete Usage Example
 
-A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp), [Python](https://github.com/robotpy/examples/tree/main/ElevatorProfiledPID)):
+A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp), [Python](https://github.com/robotpy/examples/tree/main/ElevatorProfiledPID)):
 
 .. tab-set-code::
 

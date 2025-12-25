@@ -94,6 +94,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important:: If at any time, you decide to reset your gyroscope or encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel distances.
 
-.. note:: A full example of a differential drive robot with odometry is available here: [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot) / [Python](https://github.com/robotpy/examples/tree/main/DifferentialDriveBot)
+.. note:: A full example of a differential drive robot with odometry is available here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot) / [Python](https://github.com/robotpy/examples/tree/main/DifferentialDriveBot)
 
 In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.
