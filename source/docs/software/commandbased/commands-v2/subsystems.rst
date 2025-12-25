@@ -67,7 +67,7 @@ Advanced users seeking more flexibility may simply create a class that implement
 
 ## Simple Subsystem Example
 
-What might a functional subsystem look like in practice? Below is a simple pneumatically-actuated hatch mechanism from the HatchBotTraditional example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional), [Python](https://github.com/robotpy/examples/tree/main/HatchbotTraditional)):
+What might a functional subsystem look like in practice? Below is a simple pneumatically-actuated hatch mechanism from the HatchBotTraditional example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional), [Python](https://github.com/robotpy/examples/tree/main/HatchbotTraditional)):
 
 .. tab-set::
 
@@ -105,7 +105,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
 Notice that the subsystem hides the presence of the DoubleSolenoid from outside code (it is declared ``private``), and instead publicly exposes two higher-level, descriptive robot actions: ``grabHatch()`` and ``releaseHatch()``. It is extremely important that "implementation details" such as the double solenoid be "hidden" in this manner; this ensures that code outside the subsystem will never cause the solenoid to be in an unexpected state. It also allows the user to change the implementation (for instance, a motor could be used instead of a pneumatic) without any of the code outside of the subsystem having to change with it.
 
-Alternatively, instead of writing ``void`` public methods that are called from commands, we can define the public methods as factories that return a command. Consider the following from the HatchBotInlined example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/HatchbotInlined), [Python](https://github.com/robotpy/examples/tree/main/HatchbotInlined)):
+Alternatively, instead of writing ``void`` public methods that are called from commands, we can define the public methods as factories that return a command. Consider the following from the HatchBotInlined example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/HatchbotInlined), [Python](https://github.com/robotpy/examples/tree/main/HatchbotInlined)):
 
 .. tab-set::
 

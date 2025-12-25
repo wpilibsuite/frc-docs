@@ -161,7 +161,7 @@ In order to get a good field calibration, it is important use follow these tips:
 
 
 ### Upload Ideal Field Map
-WPIcal uses an "ideal" field map JSON as an initial guess point for the optimization. It is recommended to upload the json file included with WPILib, which can be found here: `Field JSON <https://github.com/wpilibsuite/allwpilib/tree/2027/apriltag/src/main/native/resources/edu/wpi/first/apriltag>`_. If using a custom map, it must follow these rules:
+WPIcal uses an "ideal" field map JSON as an initial guess point for the optimization. It is recommended to upload the json file included with WPILib, which can be found here: `Field JSON <https://github.com/wpilibsuite/allwpilib/tree/2027/apriltag/src/main/native/resources/org/wpilib/vision/apriltag>`_. If using a custom map, it must follow these rules:
 
 * Translation components (in meters) are measured relative to the blue alliance origin.
 * Rotations are represented as Quaternions.

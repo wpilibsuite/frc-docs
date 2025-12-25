@@ -54,7 +54,7 @@ The ``drive`` callback exists so that you can pass the requested voltage directl
 
 The ``log`` callback reads sensors so that the routine can log the voltage, position, and velocity at each timestep.
 
-See the SysIdRoutine ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/sysidroutine), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/SysIdRoutine)) example project for example callbacks.
+See the SysIdRoutine ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/sysidroutine), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/SysIdRoutine)) example project for example callbacks.
 
 ### Test Factories
 

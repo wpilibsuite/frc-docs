@@ -75,7 +75,7 @@ Once the widget appears, you can resize and place it on the Glass workspace as y
 
 You can choose from an existing field layout using the :guilabel:`Image` drop-down. Or you can select a custom file by setting the :guilabel:`Image` to ``Custom`` and selecting :guilabel:`Choose JSON/image...`. You can choose to either select an image file or a PathWeaver JSON file as long as the image file is in the same directory.  Choosing the JSON file will automatically import the correct location of the field in the image and the correct size of the field.
 
-.. note:: You can retrieve the latest field image and JSON files from [here](https://github.com/wpilibsuite/allwpilib/tree/2027/fieldImages/src/main/native/resources/edu/wpi/first/fields).
+.. note:: You can retrieve the latest field image and JSON files from [here](https://github.com/wpilibsuite/allwpilib/tree/2027/fields/src/main/native/resources/org/wpilib/fields).
 
 .. image:: images/field2d-options.png
 

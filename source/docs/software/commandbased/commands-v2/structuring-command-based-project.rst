@@ -2,7 +2,7 @@
 
 While users are free to use the command-based libraries however they like (and advanced users are encouraged to do so), new users may want some guidance on how to structure a basic command-based robot project.
 
-A standard template for a command-based robot project is included in the WPILib examples repository ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/templates/commandbased)). This section will walk users through the structure of this template.
+A standard template for a command-based robot project is included in the WPILib examples repository ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/templates/commandbased)). This section will walk users through the structure of this template.
 
 The root package/directory generally will contain four classes:
 
@@ -12,7 +12,7 @@ The root directory will also contain two sub-packages/sub-directories: ``Subsyst
 
 ## Robot
 
-As ``Robot`` ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java), [C++ (Header)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/Robot.h), [C++ (Source)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp)) is responsible for the program’s control flow, and command-based is an declarative paradigm designed to minimize the amount of attention the user has to pay to explicit program control flow, the ``Robot`` class of a command-based project should be mostly empty. However, there are a few important things that must be included
+As ``Robot`` ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Robot.java), [C++ (Header)](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/templates/commandbased/include/Robot.h), [C++ (Source)](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp)) is responsible for the program’s control flow, and command-based is an declarative paradigm designed to minimize the amount of attention the user has to pay to explicit program control flow, the ``Robot`` class of a command-based project should be mostly empty. However, there are a few important things that must be included
 
 .. tab-set::
 
@@ -92,7 +92,7 @@ Advanced users are free to add additional code to the various init and periodic 
 
 ## RobotContainer
 
-This class ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java), [C++ (Header)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h), [C++ (Source)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp)) is where most of the setup for your command-based robot will take place. In this class, you will define your robot’s subsystems and commands, bind those commands to triggering events (such as buttons), and specify which command you will run in your autonomous routine. There are a few aspects of this class new users may want explanations for:
+This class ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/RobotContainer.java), [C++ (Header)](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.h), [C++ (Source)](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp)) is where most of the setup for your command-based robot will take place. In this class, you will define your robot’s subsystems and commands, bind those commands to triggering events (such as buttons), and specify which command you will run in your autonomous routine. There are a few aspects of this class new users may want explanations for:
 
 .. tab-set::
 
@@ -176,14 +176,14 @@ Finally, the ``getAutonomousCommand()`` method provides a convenient way for use
 
 ## Constants
 
-The ``Constants`` class ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Constants.java), [C++ (Header)](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/templates/commandbased/include/Constants.h)) (in C++ this is not a class, but simply a header file in which several namespaces are defined) is where globally-accessible robot constants (such as speeds, unit conversion factors, PID gains, and sensor/motor ports) can be stored. It is recommended that users separate these constants into individual inner classes corresponding to subsystems or robot modes, to keep variable names shorter.
+The ``Constants`` class ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/Constants.java), [C++ (Header)](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/templates/commandbased/include/Constants.h)) (in C++ this is not a class, but simply a header file in which several namespaces are defined) is where globally-accessible robot constants (such as speeds, unit conversion factors, PID gains, and sensor/motor ports) can be stored. It is recommended that users separate these constants into individual inner classes corresponding to subsystems or robot modes, to keep variable names shorter.
 
 In Java, all constants should be declared ``public static final`` so that they are globally accessible and cannot be changed.  In C++, all constants should be ``constexpr``.
 
 For more illustrative examples of what a ``constants`` class should look like in practice, see those of the various command-based example projects:
 
-* Hatchbot ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Constants.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/Constants.h))
-* RapidReactCommandBot ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/Constants.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/Constants.h))
+* Hatchbot ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional/Constants.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/Constants.h))
+* RapidReactCommandBot ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/rapidreactcommandbot/Constants.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/RapidReactCommandBot/include/Constants.h))
 
 In Java, it is recommended that the constants be used from other classes by statically importing the necessary inner class. An ``import static`` statement imports the static namespace of a class into the class in which you are working, so that any ``static`` constants can be referenced directly as if they had been defined in that class.  In C++, the same effect can be attained with ``using namespace``:
 
