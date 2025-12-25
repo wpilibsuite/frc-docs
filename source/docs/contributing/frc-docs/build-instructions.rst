@@ -112,6 +112,10 @@ Add the dependency to the ``dependencies`` array in ``pyproject.toml``. Make sur
 
 Update the dependency's version in the ``dependencies`` array in ``pyproject.toml``. Then, run the following command: ``uv lock``.
 
-### Updating Hidden Dependencies
+### Updating All Hidden Dependencies
 
 Run the following command: ``uv lock --upgrade``.
+
+### Updating a Specific Hidden Dependency
+
+Run the following command: ``uv lock --upgrade-package <package>``.
