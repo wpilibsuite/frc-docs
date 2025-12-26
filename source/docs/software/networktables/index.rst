@@ -10,6 +10,7 @@ This section outlines the details of using the NetworkTables (v4) API to communi
    networktables-intro
    tables-and-topics
    publish-and-subscribe
+   custom-serialization
    multiple-instances
    networktables-networking
    listening-for-change

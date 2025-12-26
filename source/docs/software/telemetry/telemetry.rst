@@ -12,7 +12,7 @@ WPILib supports several different ways to record and send telemetry data from ro
 
 At the most basic level, the :ref:`Riolog <docs/software/vscode-overview/viewing-console-output:Viewing Console Output>` provides support for viewing print statements from robot code.  This is useful for on-the-fly debugging of problematic code, but does not scale as console interfaces are not suitable for rich data streams.
 
-WPILib supports several :ref:`dashboards <docs/software/dashboards/index:Dashboards>` that allow users to more easily send rich telemetry data to the driver-station computer.  All WPILib dashboards communicate with the :ref:`NetworkTables <docs/software/networktables/networktables-intro:What is NetworkTables>` protocol, and so they are *to some degree* interoperable (telemetry logged with one dashboard will be visible on the others, but the specific widgets/formatting will generally not be compatible).  NetworkTables (and thus WPILib all dashboards) currently support the following data types:
+WPILib supports several :ref:`dashboards <docs/software/dashboards/index:Dashboards>` that allow users to more easily send rich telemetry data to the driver-station computer.  All WPILib dashboards communicate with the :ref:`NetworkTables <docs/software/networktables/networktables-intro:What is NetworkTables>` protocol, and so they are *to some degree* interoperable (telemetry logged with one dashboard will be visible on the others, but the specific widgets/formatting will generally not be compatible).  NetworkTables (and thus all WPILib dashboards) support the following primitive data types:
 
 * ``boolean``
 * ``boolean[]``
@@ -22,6 +22,8 @@ WPILib supports several :ref:`dashboards <docs/software/dashboards/index:Dashboa
 * ``string[]``
 * ``byte[]``
 
+In addition to these primitive types, NetworkTables supports serialization of complex data types using **Struct** and **Protobuf** formats. Struct serialization is designed for fixed-size data structures and provides the fastest and most compact encoding. Protobuf serialization offers more flexibility for variable-size data. Many WPILib classes (such as ``Pose2d``, ``Rotation2d``, ``SwerveModuleState``, and other geometry/math types) implement the ``StructSerializable`` interface and can be sent directly over NetworkTables. Teams can also :doc:`create custom struct and protobuf serializers </docs/software/networktables/custom-serialization>` for their own data types.
+
 Telemetry data can be sent to a WPILib dashboard using an associated WPILib method (for more details, see the documentation for the individual dashboard in question), or by :ref:`directly publishing to NetworkTables <docs/software/networktables/networktables-intro:what is networktables>`.
 
-While NetworkTables does not yet support serialization of complex data types (this is tentatively scheduled for 2024), *mutable* types from user code can be easily extended to interface directly with WPILib dashboards via the ``Sendable`` interface, whose usage is described in the next article.
+For *mutable* types from user code that need to interface directly with WPILib dashboards, the ``Sendable`` interface can be used, as described in the next article.
