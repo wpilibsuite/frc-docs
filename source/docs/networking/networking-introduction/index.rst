@@ -7,6 +7,9 @@ This section outlines basic robot configuration and usage relating to communicat
 
    networking-basics
    ip-configurations
+   fms-network-architecture
+   fms-ports-protocols
+   network-performance-optimization
    roborio-network-troubleshooting
    windows-firewall-configuration
    measuring-bandwidth-usage
