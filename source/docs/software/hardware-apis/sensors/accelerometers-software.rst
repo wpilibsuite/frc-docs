@@ -17,7 +17,7 @@ Three-axis accelerometers often require more complicated communications protocol
 
 ## AnalogAccelerometer
 
-The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_accelerometer.html)) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
+The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_analog_accelerometer.html)) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
 
 .. tab-set-code::
 
@@ -61,7 +61,7 @@ There are getters for the acceleration along each cardinal direction (x, y, and 
 
 ### ADXL345_I2C
 
-The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXL345_I2C.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_l345___i2_c.html)) provides support for the ADXL345 accelerometer over the I2C communications bus.
+The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/ADXL345_I2C.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_a_d_x_l345___i2_c.html)) provides support for the ADXL345 accelerometer over the I2C communications bus.
 
 .. tab-set-code::
 
@@ -79,21 +79,9 @@ The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/r
 
 ### BuiltInAccelerometer
 
-The :code:`BuiltInAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/BuiltInAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_built_in_accelerometer.html)) provides access to the roboRIO's own built-in accelerometer:
+.. note:: Systemcore does not support the the roboRIO's BuiltInAccelerometer class. Use the OnboardIMU class.
 
-.. tab-set-code::
-
-    ```java
-    // Creates an object for the built-in accelerometer
-    // Range defaults to +- 8 G's
-    BuiltInAccelerometer accelerometer = new BuiltInAccelerometer();
-    ```
-
-    ```c++
-    // Creates an object for the built-in accelerometer
-    // Range defaults to +- 8 G's
-    frc::BuiltInAccelerometer accelerometer;
-    ```
+.. todo:: Add OnboardIMU
 
 ## Third-party accelerometers
 
@@ -144,7 +132,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
     }
     ```
 
-Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_linear_filter.html)) to reduce the noise:
+Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_linear_filter.html)) to reduce the noise:
 
 .. tab-set-code::
 

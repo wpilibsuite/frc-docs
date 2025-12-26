@@ -6,7 +6,7 @@
 
 The Systemcore's Smart I/O supports up to 6 digital input channels.
 
-Digital inputs read one of two states - "high" or "low."  By default, the built-in ports on the RIO will read "low" due to internal pull-up resistors (for more information, see :ref:`docs/hardware/sensors/digital-inputs-hardware:Digital Inputs - Hardware`).  Accordingly, digital inputs are most-commonly used with switches of some sort.  Support for this usage is provided through the :code:`DigitalInput` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DigitalInput.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_digital_input.html)).
+Digital inputs read one of two states - "high" or "low."  By default, the built-in ports on the RIO will read "low" due to internal pull-up resistors (for more information, see :ref:`docs/hardware/sensors/digital-inputs-hardware:Digital Inputs - Hardware`).  Accordingly, digital inputs are most-commonly used with switches of some sort.  Support for this usage is provided through the :code:`DigitalInput` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/DigitalInput.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_digital_input.html)).
 
 .. warning:: The roboRIO had pull-up resistors instead of pull-down resistors, so the behavior of the Smart I/O ports is different from that of the roboRIO's digital input ports.  This means that sensors designed for the roboRIO's digital input ports may different wiring for the Smart I/O ports.
 
