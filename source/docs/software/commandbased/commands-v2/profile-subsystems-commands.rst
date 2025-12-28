@@ -9,7 +9,7 @@ When controlling a mechanism, is often desirable to move it smoothly between two
 
 .. note:: In C++, the ``TrapezoidProfile`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in values *must* have units consistent with the distance units, or a compile-time error will be thrown.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`.
 
-The following examples are taken from the DriveDistanceOffboard example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard)):
+The following examples are taken from the DriveDistanceOffboard example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard)):
 
 .. tab-set::
 
