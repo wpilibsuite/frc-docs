@@ -24,7 +24,7 @@ By default, the reStructuredText extension enables linting with all doc8 feature
 
 .. note:: MikTeX and ``rsvg-convert`` are not required for building HTML, they are only required for Windows PDF builds.
 
-- [Python 3.9](https://www.python.org/downloads/)
+- [Python 3.11-3.14](https://www.python.org/downloads/)
 - [Perl](https://strawberryperl.com/)
 - [MiKTeX](https://miktex.org/download) (Only needed for PDF builds)
 - [rsvg-convert](https://community.chocolatey.org/packages/rsvg-convert) (Only needed for PDF builds)
