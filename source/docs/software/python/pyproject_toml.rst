@@ -15,7 +15,7 @@ The ``pyproject.toml`` file looks something like this:
 #
 [tool.robotpy]
 # Version of robotpy this project depends on
-robotpy_version = "2024.2.1.0"
+robotpy_version = "2026.1.1b1"
 # Which extra RobotPy components should be installed
 # -> equivalent to `pip install robotpy[extra1, ...]
 robotpy_extras = [
@@ -23,12 +23,6 @@ robotpy_extras = [
     # "apriltag"
     # "commands2"
     # "cscore"
-    # "navx"
-    # "pathplannerlib"
-    # "phoenix5"
-    # "phoenix6"
-    # "playingwithfusion"
-    # "rev"
     # "romi"
     # "sim"
 ]
@@ -50,5 +44,5 @@ Each of the following will instruct the deploy process to install packages to th
 requires = ["numpy"]
 ```
 
-The packages that can be installed are stored on the [WPILib Artifactory server](https://wpilib.jfrog.io/ui/native/wpilib-python-release-2025/).
+Binary packages that can be installed are stored on the [WPILib Artifactory server](https://wpilib.jfrog.io/ui/native/wpilib-python-release-2026/).
 If you find that you need a package that isn't available on artifactory, consult the [roborio-wheels](https://github.com/robotpy/roborio-wheels) repository.
