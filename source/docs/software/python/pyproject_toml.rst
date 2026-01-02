@@ -25,6 +25,7 @@ robotpy_extras = [
     # "cscore",
     # "romi",
     # "sim",
+    # "xrp",
 ]
 # Other pip packages to install
 requires = []
