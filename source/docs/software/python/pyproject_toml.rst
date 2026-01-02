@@ -19,12 +19,12 @@ robotpy_version = "2026.1.1b1"
 # Which extra RobotPy components should be installed
 # -> equivalent to `pip install robotpy[extra1, ...]
 robotpy_extras = [
-    # "all"
-    # "apriltag"
-    # "commands2"
-    # "cscore"
-    # "romi"
-    # "sim"
+    # "all",
+    # "apriltag",
+    # "commands2",
+    # "cscore",
+    # "romi",
+    # "sim",
 ]
 # Other pip packages to install
 requires = []
