@@ -76,9 +76,11 @@ The NI roboRIO 2.0 adds the option for a software settable brownout level.  The 
 
 ## Measuring Current Draw using the PDP/PDH
 
-The FRC\ |reg| Driver Station works in conjunction with the roboRIO and PDP/PDH to extract logged data from the PDP/PDH and log it on your DS PC. A viewer for this data is still under development.
+The FRC\ |reg| Driver Station works in conjunction with the roboRIO and PDP/PDH to extract logged data from the PDP/PDH and log it on your DS PC which is visible in the :doc:`Driver Station Log Viewer </docs/software/driverstation/driver-station-log-viewer>`
 
-In the meantime, teams can use their robot code and manual logging, a LabVIEW front panel or the SmartDashboard to visualize current draw on their robot as mechanisms are developed. In LabVIEW, you can read the current on a PDP/PDH channel using the Get PD Currents VI found on the Power pallet. For C++ and Java teams, use the PowerDistribution class as described in the :doc:`Power Distribution </docs/software/can-devices/power-distribution-module>` article. Plotting this information over time (easiest with a LV Front Panel or with the SmartDashboard by using a Graph indicator can provide information to compare against and update your power budget or can locate mechanisms which do not seem to be performing as expected (due to incorrect load calculation, incorrect efficiency assumptions, or mechanism issues such as binding).
+Teams can also use their robot code and manual logging, a LabVIEW front panel or the SmartDashboard to visualize current draw on their robot as mechanisms are developed. In LabVIEW, you can read the current on a PDP/PDH channel using the Get PD Currents VI found on the Power pallet. For C++ and Java teams, use the PowerDistribution class as described in the :doc:`Power Distribution </docs/software/can-devices/power-distribution-module>` article. Plotting this information over time (easiest with a LV Front Panel or with the SmartDashboard by using a Graph indicator can provide information to compare against and update your power budget or can locate mechanisms which do not seem to be performing as expected (due to incorrect load calculation, incorrect efficiency assumptions, or mechanism issues such as binding).
+
+.. note:: Only the CTRE PDP and Rev PDH have built-in current logging. The CTRE PDP 2.0 and AndyMark AMPD do not have current measurment capabilities, and teams would need to implement their own method of :doc:`logging </docs/software/telemetry/index>` the current draw. Most CAN motor controllers have current sensors that can be used for this.
 
 ## Identifying Brownouts
 

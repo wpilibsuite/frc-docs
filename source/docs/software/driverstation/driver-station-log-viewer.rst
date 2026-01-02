@@ -53,6 +53,8 @@ The Graph Display contains the following information:
 To zoom in on a portion of the graph, click, and drag around the desired viewing
 area. You can only zoom the time axis, you cannot zoom vertically.
 
+.. note:: The CTRE PDP 2.0 and AndyMark AMPD do not have buit in current logging and current logs will not be availible in the graph display.
+
 ## Event List
 
 .. image:: images/driver-station-log-viewer/eventlist.png
