@@ -27,6 +27,7 @@ Timings:
 .. note:: The 300-500 Ohm data line resistor and large 1000μF capacitor across the power pins are recommended, especially with larger quantities of LEDs. Also, use an external 5V regulator to power the LEDs, with the **grounds** tied together.
 
 .. warning:: WS2815 LEDs (and maybe other products as well, **check the label**) are designed for **12V** but have **5V** data (see above note). The **backup line on the first strip** needs to be connected to **ground**, **not** connected to the data line despite what other guides may say.
+
 Example wiring diagram:
 .. image:: https://github.com/user-attachments/assets/2f1d7f05-f11b-4bed-bb91-267134f04f23)
 ## Instantiating the AddressableLED Object
