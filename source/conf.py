@@ -191,6 +191,7 @@ templates_path = ["_templates"]
 exclude_patterns = [
     "docs/yearly-overview/2020-Game-Data.rst",
     "docs/software/wpilib-tools/robotbuilder/resources/**",
+    "docs/beta/*",
 ]
 
 # Specify the master doc file, AKA our homepage
