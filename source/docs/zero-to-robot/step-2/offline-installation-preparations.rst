@@ -16,15 +16,15 @@ This documentation can be downloaded for offline viewing. The link to download t
 
 ### All Teams
 
--  [2025 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html#553883) (Note: Click on link for "Install Offline")
+-  2026 FRC Game Tools - Coming Soon
 
 ### LabVIEW Teams
 
--  [LabVIEW Base Installer](https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html) (Note: Click on link for "Individual Offline Installers")
+-  LabVIEW Base Installer - Coming Soon
 
 ### Java/C++ Teams
 
--  [Java/C++ WPILib Installer](https://github.com/wpilibsuite/allwpilib/releases/latest)
+-  Java/C++ WPILib Installer - Coming Soon
 
 Once on the GitHub releases page, scroll to the download section in the middle of the page.
 
