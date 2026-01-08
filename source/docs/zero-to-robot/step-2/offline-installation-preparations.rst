@@ -16,7 +16,7 @@ This documentation can be downloaded for offline viewing. The link to download t
 
 ### All Teams
 
--  2026 FRC Game Tools - Coming Soon
+-  [2026 FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html)
 
 ### LabVIEW Teams
 

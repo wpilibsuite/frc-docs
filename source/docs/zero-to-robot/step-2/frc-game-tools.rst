@@ -18,7 +18,7 @@ The LabVIEW runtime components required for the Driver Station and Imaging Tool 
 
 ## Download Game Tools
 
-Navigate to the FRC Game Tools (2026 Coming Soon) from NI.
+Navigate to the [FRC Game Tools](https://www.ni.com/en/support/downloads/drivers/download.frc-game-tools.html) page from NI.
 
 .. image:: images/labview/ni-login.png
    :alt: The login button for the NI installer.
