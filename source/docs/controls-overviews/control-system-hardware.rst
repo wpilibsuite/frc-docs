@@ -60,6 +60,8 @@ The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distrib
 
 The [CTRE Power Distribution Panel 2.0](https://store.ctr-electronics.com/products/pdp-2) (PDP 2.0) is designed to distribute power from a 12VDC battery to various robot components. The PDP 2.0 features 24 40A channels and can accoommodate ATO breakers. The PDP 2.0 is designed to maximize efficiency.
 
+.. note:: The PDP 2.0 does not have buit in current logging and current logs will not be available in the :doc:`Driver Station Log Viewer </docs/software/driverstation/driver-station-log-viewer>`
+
 ## REV Power Distribution Hub
 
 .. image:: images/control-system-hardware/power-distribution-hub.png
@@ -75,6 +77,8 @@ The [REV Power Distribution Hub](https://docs.revrobotics.com/ion-control-system
   :width: 500
 
 The [AndyMark Power Distribution Board](https://andymark.com/am-5754) (AMPD) is designed to distribute power from a 12VDC battery to various robot components. The AMPD features 24 fully insulated 40A ports that work with ATO/ATC breakers. With toolless lever connectors and 22.5 degree angled outputs for clean wiring, the AMPD is designed to simplify robot wiring.
+
+.. note:: The AMPD does not have buit in current logging and current logs will not be available in the :doc:`Driver Station Log Viewer </docs/software/driverstation/driver-station-log-viewer>`
 
 ## CTRE Voltage Regulator Module
 
