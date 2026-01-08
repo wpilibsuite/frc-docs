@@ -22,7 +22,7 @@ Here are some common examples of how teams use the ``deploy`` directory:
 
 ### Accessing Deploy Files in Code
 
-To access files from the deploy directory in your robot code, use the ``Filesystem`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Filesystem.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/_filesystem_8h.html)). The ``getDeployDirectory`` method returns the path to the deploy directory. This ensures that your code can locate the files regardless of whether the code is running on the roboRIO or in simulation on your computer.
+To access files from the deploy directory in your robot code, use the ``Filesystem`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Filesystem.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/_filesystem_8h.html)). The ``getDeployDirectory`` method returns the path to the deploy directory. This ensures that your code can locate the files regardless of whether the code is running on the roboRIO or in simulation on your computer.
 
 ## Deleting Unused Deploy Files
 
