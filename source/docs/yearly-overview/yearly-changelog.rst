@@ -75,6 +75,7 @@ Supported Operating Systems and Architectures:
 - C++: Fix ``ElevatorSim::GetCurrentDraw()``
 - Correct mil unit
 - Add miles per hour conversion methods to ``Units.java``
+- Fix ``ResetTranslation`` and ``ResetRotation`` in ``PoseEstimator`` and ``PoseEstimator3d`` causing the robot to teleport
 
 ### Simulation
 
@@ -85,6 +86,7 @@ Supported Operating Systems and Architectures:
 ### Java units
 
 - Add InchesPerSecondPerSecond unit
+- Rename ``AngularMomentumUnit.mult`` to ``per``
 
 ### CameraServer
 
@@ -144,6 +146,8 @@ Supported Operating Systems and Architectures:
 - Import Romi and XRP vendordeps
 - Hide the chat sidebar by default
 - Hide recommended vscode extensions to install
+- Move source backup in jar to backup directory and save more build files
+- Check for WPILib project before running most commands
 
 
 ## RobotBuilder
