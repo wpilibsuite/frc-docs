@@ -35,5 +35,9 @@ The WPILib extension provides the FRC\ |reg| specific functionality related to c
 
 For more information about specific WPILib extension commands, see the other articles in this chapter.
 
+### Configuring the extension
+
+The extension offers some configuration for how certain actions are performed. To see all the settings in the extension, open the Command Palette, type in "Open Settings (UI)", hit Enter, and put `@ext:wpilibsuite.vscode-wpilib` into the search box.
+
 .. |Welcome Screen| image:: images/vscode-basics/vscode-welcome-screen.png
 .. |WPILib Commands| image:: images/vscode-basics/wpilib-extension-commands.png
