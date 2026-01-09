@@ -24,7 +24,7 @@ This documentation can be downloaded for offline viewing. The link to download t
 
 ### Java/C++ Teams
 
--  Java/C++ WPILib Installer - Coming Soon
+-  [Java/C++ WPILib Installer](https://github.com/wpilibsuite/allwpilib/releases/latest)
 
 Once on the GitHub releases page, scroll to the download section in the middle of the page.
 
