@@ -4,7 +4,7 @@ This guide is intended for Python teams. Java and C++ teams can skip to :doc:`wp
 
 ## Prerequisites
 
-You must install a supported version of Python on a supported operating system. Every year we upgrade RobotPy to the latest available version of Python. In 2025 we support Python 3.9/3.10/3.11/3.12/3.13, but only 3.13 is available for the roboRIO.
+You must install a supported version of Python on a supported operating system. Every year we upgrade RobotPy to the latest available version of Python. In 2026 we support Python 3.10/3.11/3.12/3.13/3.14, but only 3.14 is available for the roboRIO.
 
 Supported Operating Systems and Architectures:
  * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
