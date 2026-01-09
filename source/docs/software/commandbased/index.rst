@@ -6,5 +6,7 @@ For a collection of example projects using the command-based framework, see :ref
 
 .. toctree::
    :maxdepth: 1
+   :caption: Command-Based Frameworks
 
    commands-v2/index
+   commands-v3/index
