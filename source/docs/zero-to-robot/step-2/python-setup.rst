@@ -105,7 +105,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
       We publish prebuilt wheels on artifactory, which can be downloaded by giving the ``--extra-index-url`` option to pip:
 
       ```sh
-      python3 -m pip install --extra-index-url=https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2025/simple robotpy
+      python3 -m pip install --extra-index-url=https://wpilib.jfrog.io/artifactory/api/pypi/wpilib-python-release-2026/simple robotpy
       ```
 
       **source install**
