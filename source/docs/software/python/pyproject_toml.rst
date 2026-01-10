@@ -37,6 +37,8 @@ Each of the following will instruct the deploy process to install packages to th
 
 ``components`` defines extra RobotPy components that can be installed, as only the core RobotPy libraries are installed by default.
 
+.. note:: ``components`` is equivalent to ``robotpy_extras`` in prior years
+
 ``requires`` is a list of strings, and each item is equivalent to a line of a [requirements.txt](https://pip.pypa.io/en/stable/reference/requirements-file-format/) file. You can install any pure python packages on the roboRIO and they will likely work, but any packages that have binary dependencies must be cross-compiled for the roboRIO. For example, if you needed to use ``numpy`` in your robot code:
 
 ```toml
