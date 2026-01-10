@@ -162,8 +162,8 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     ```toml
     [tool.robotpy]
     ...
-    # Add cscore to the robotpy-extras list
-    robotpy_extras = ["cscore"]
+    # Add cscore to the components list
+    components = ["cscore"]
     ```
 
 .. note::
