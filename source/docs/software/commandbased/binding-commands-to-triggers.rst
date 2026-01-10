@@ -26,6 +26,13 @@ The command-based HID classes contain factory methods returning a ``Trigger`` fo
   frc2::Trigger xButton = exampleCommandController.X() // Creates a new Trigger object for the `X` button on exampleCommandController
   ```
 
+  ```python
+  from commands2.button import CommandXboxController
+
+  example_command_controller = CommandXboxController(1)  # Creates a CommandXboxController on port 1
+  x_button = example_command_controller.x()  # Creates a new Trigger object for the `X` button on example_command_controller
+  ```
+
 ### JoystickButton
 
 Alternatively, the :ref:`regular HID classes <docs/software/basic-programming/joystick:Joysticks>` can be used and passed to create an instance of ``JoystickButton`` [Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_joystick_button.html)), a constructor-only subclass of ``Trigger``:
@@ -42,6 +49,14 @@ Alternatively, the :ref:`regular HID classes <docs/software/basic-programming/jo
   frc2::JoystickButton yButton(&exampleStick, frc::XboxController::Button::kY); // Creates a new JoystickButton object for the `Y` button on exampleController
   ```
 
+  ```python
+  from wpilib import XboxController
+  from commands2.button import JoystickButton
+
+  example_controller = XboxController(2)  # Creates an XboxController on port 2
+  y_button = JoystickButton(example_controller, XboxController.Button.kY)  # Creates a new JoystickButton object for the `Y` button on example_controller
+  ```
+
 ### Arbitrary Triggers
 
 While binding to HID buttons is by far the most common use case, users may want to bind commands to arbitrary triggering events. This can be done inline by passing a lambda to the constructor of ``Trigger``:
@@ -56,6 +71,14 @@ While binding to HID buttons is by far the most common use case, users may want 
   ```c++
   frc::DigitalInput limitSwitch{3}; // Limit switch on DIO 3
   frc2::Trigger exampleTrigger([&limitSwitch] { return limitSwitch.Get(); });
+  ```
+
+  ```python
+  from wpilib import DigitalInput
+  from commands2.button import Trigger
+
+  limit_switch = DigitalInput(3)  # Limit switch on DIO 3
+  example_trigger = Trigger(lambda: limit_switch.get())
   ```
 
 ## Trigger Bindings
@@ -146,6 +169,14 @@ It is useful to note that the command binding methods all return the trigger tha
       .OnFalse(BarCommand().ToPtr());
   ```
 
+  ```python
+  (example_button
+      # Binds a FooCommand to be scheduled when the button is pressed
+      .onTrue(FooCommand())
+      # Binds a BarCommand to be scheduled when that same button is released
+      .onFalse(BarCommand()))
+  ```
+
 ## Composing Triggers
 
 The ``Trigger`` class can be composed to create composite triggers through the ``and()``, ``or()``, and ``negate()`` methods (or, in C++, the ``&&``, ``||``, and ``!`` operators). For example:
@@ -166,6 +197,13 @@ The ``Trigger`` class can be composed to create composite triggers through the `
       .OnTrue(ExampleCommand().ToPtr());
   ```
 
+  ```python
+  # Binds an ExampleCommand to be scheduled when both the 'X' and 'Y' buttons of the driver gamepad are pressed
+  (example_command_controller.x()
+      .and_(example_command_controller.y())
+      .onTrue(ExampleCommand()))
+  ```
+
 ## Debouncing Triggers
 
 To avoid rapid repeated activation, triggers (especially those originating from digital inputs) can be debounced with the :ref:`WPILib Debouncer class <docs/software/advanced-controls/filters/debouncer:Debouncer>` using the `debounce` method:
@@ -184,5 +222,14 @@ To avoid rapid repeated activation, triggers (especially those originating from 
   exampleButton.Debounce(100_ms).OnTrue(ExampleCommand().ToPtr());
   // debounces exampleButton with a 100ms debounce time, both rising and falling edges
   exampleButton.Debounce(100_ms, Debouncer::DebounceType::Both).OnTrue(ExampleCommand().ToPtr());
+  ```
+
+  ```python
+  from wpimath.filter import Debouncer
+
+  # debounces example_button with a 0.1s debounce time, rising edges only
+  example_button.debounce(0.1).onTrue(ExampleCommand())
+  # debounces example_button with a 0.1s debounce time, both rising and falling edges
+  example_button.debounce(0.1, Debouncer.DebounceType.kBoth).onTrue(ExampleCommand())
   ```
 

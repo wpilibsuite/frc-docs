@@ -108,3 +108,16 @@ Solenoids can be switched from one output to the other (known as toggling) by us
    }
    ```
 
+   ```python
+   from wpilib import Solenoid, DoubleSolenoid, PneumaticsModuleType, XboxController
+
+   controller = XboxController(0)
+   example_single = Solenoid(PneumaticsModuleType.CTREPCM, 0)
+   example_double = DoubleSolenoid(PneumaticsModuleType.CTREPCM, 1, 2)
+   # Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
+   example_double.set(DoubleSolenoid.Value.kReverse)
+   if controller.getYButtonPressed():
+      example_single.toggle()
+      example_double.toggle()
+   ```
+
