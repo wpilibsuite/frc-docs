@@ -14,69 +14,90 @@ Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation!
 
 Community translations can be found in a variety of languages in the menu towards the bottom-right of the screen.
 
+## Choose Your Path
+
 .. grid:: 1 2 2 2
    :gutter: 3
 
    .. grid-item-card::
-      :class-header: sd-bg-success sd-text-white
+      :class-header: sd-bg-primary sd-text-white
 
-      **Returning Teams**
+      **I'm New Here**
 
       ^^^
 
-      If you are a returning team, please check out the overview of changes from 2024 to 2025, known issues, and quick start guide for updating.
+      Step-by-step guide for beginners to build and deploy your first robot quickly.
 
       +++
 
-      .. button-ref:: /docs/yearly-overview/yearly-changelog
+      .. button-ref:: /docs/getting-started-guide/index
          :color: primary
          :shadow:
          :align: center
          :expand:
-         :class: mb-1
-         :outline:
 
-         Changelog
+         Getting Started Guide
 
-      .. button-ref:: /docs/yearly-overview/known-issues
+   .. grid-item-card::
+      :class-header: sd-bg-info sd-text-white
+
+      **I Want Deep Technical Info**
+
+      ^^^
+
+      Comprehensive reference manual for experienced programmers and returning teams.
+
+      +++
+
+      .. button-ref:: /docs/user-manual/index
          :color: primary
          :shadow:
          :align: center
          :expand:
-         :outline:
 
-         Known Issues
+         WPILib User Manual
+
+   .. grid-item-card::
+      :class-header: sd-bg-success sd-text-white
+
+      **New Season - Let's Get Started**
+
+      ^^^
+
+      Quick start guide for returning teams: what's new, known issues, and migration guide.
+
+      +++
 
       .. button-ref:: /docs/yearly-overview/returning-quickstart
          :color: primary
          :shadow:
          :align: center
          :expand:
-         :outline:
 
-         Quick Start
+         Quick Start for Returning Teams
 
    .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
+      :class-header: sd-bg-warning sd-text-white
 
-      **New Teams**
+      **I Want to Learn by Doing**
 
       ^^^
 
-      The Zero-to-Robot tutorial will guide you through preparation, wiring, and programming a basic robot!
+      Hands-on tutorials and example projects for both FRC and FTC.
 
       +++
 
-      .. button-ref:: /docs/zero-to-robot/introduction
+      .. button-ref:: /docs/tutorials/index
          :color: primary
          :shadow:
          :align: center
          :expand:
-         :outline:
 
-         Go to Zero-to-Robot
+         Tutorials
 
-.. grid:: 1 2 2 2
+## Quick Access
+
+.. grid:: 1 2 3 3
    :gutter: 3
 
    .. grid-item-card::
@@ -118,68 +139,25 @@ Community translations can be found in a variety of languages in the menu toward
 
          Go to Software Overview
 
-.. grid:: 1 2 3 3
-   :gutter: 3
-
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
 
-      **Programming Basics**
+      **Tools**
 
       ^^^
 
-      Documentation that is useful throughout a team's programming process.
+      Essential tooling such as FRC Driver Station, Dashboards, PathPlanner and more.
 
       +++
 
-      .. button-ref:: stubs/programming-basics-stub
+      .. button-ref:: /docs/tools/index
          :color: primary
          :shadow:
          :align: center
          :expand:
          :outline:
 
-         View articles
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Advanced Programming**
-
-      ^^^
-
-      Documentation that is suited toward veteran teams. This includes content such as Path Planning and Kinematics.
-
-      +++
-
-      .. button-ref:: stubs/advanced-programming-stub
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View articles
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Hardware**
-
-      ^^^
-
-      Hardware tutorials and content available for teams.
-
-      +++
-
-      .. button-ref:: stubs/hardware-stub
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View articles
+         View Tools
 
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
@@ -249,94 +227,58 @@ Community translations can be found in a variety of languages in the menu toward
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
 
-      **Software Tools**
+      **Resources**
 
       ^^^
 
-      Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
+      FAQs, glossary, contributing, and additional resources.
 
       +++
 
-      .. button-ref:: stubs/software-tools-stub
+      .. button-ref:: /docs/resources/index
          :color: primary
          :shadow:
          :align: center
          :expand:
          :outline:
 
-         View articles
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Example Projects**
-
-      ^^^
-
-      This section showcases the available example projects that teams can reference in VS Code.
-
-      +++
-
-      .. button-ref:: docs/software/examples-tutorials/wpilib-examples
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View articles
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Status Light Quick Reference**
-
-      ^^^
-
-      Quick reference guide for the status lights on a variety of FRC hardware.
-
-      +++
-
-      .. button-ref:: docs/hardware/hardware-basics/status-lights-ref
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View article
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **3rd Party libraries**
-
-      ^^^
-
-      Tutorial on adding 3rd party libraries such as CTRE and REV to your robot project.
-
-      +++
-
-      .. button-ref:: docs/software/vscode-overview/3rd-party-libraries
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View article
+         View Resources
 
 .. toctree::
    :maxdepth: 1
    :titlesonly:
-   :caption: Zero to Robot
+   :caption: Getting Started
    :hidden:
 
-   docs/zero-to-robot/introduction
-   docs/zero-to-robot/step-1/index
-   docs/zero-to-robot/step-2/index
-   docs/zero-to-robot/step-3/index
-   docs/zero-to-robot/step-4/index
+   docs/getting-started-guide/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: User Manual
+   :hidden:
+
+   docs/user-manual/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tutorials
+   :hidden:
+
+   docs/tutorials/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tools
+   :hidden:
+
+   docs/tools/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Resources
+   :hidden:
+
+   docs/resources/index
 
 .. toctree::
    :maxdepth: 1
@@ -348,20 +290,10 @@ Community translations can be found in a variety of languages in the menu toward
 
 .. toctree::
    :maxdepth: 1
-   :caption: Programming Basics
+   :caption: Yearly Overview
    :hidden:
 
-   docs/software/what-is-wpilib
    docs/yearly-overview/index
-   docs/software/vscode-overview/index
-   docs/software/dashboards/index
-   docs/software/telemetry/index
-   docs/software/python/index
-   docs/software/hardware-apis/index
-   docs/software/can-devices/index
-   docs/software/basic-programming/index
-   docs/software/support/support-resources
-   docs/software/frc-glossary
 
 .. toctree::
    :maxdepth: 1
@@ -371,39 +303,6 @@ Community translations can be found in a variety of languages in the menu toward
    WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/2027/java/index.html>
    WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/2027/cpp/index.html>
    WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/stable/>
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software Tools
-   :hidden:
-
-   docs/software/driverstation/index
-   docs/software/wpilib-tools/robot-simulation/index
-   docs/software/wpilib-tools/outlineviewer/index
-   docs/software/wpilib-tools/wpical/index
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Advanced Programming
-   :hidden:
-
-   docs/software/vision-processing/index
-   docs/software/commandbased/index
-   docs/software/kinematics-and-odometry/index
-   docs/software/networktables/index
-   docs/software/pathplanning/index
-   docs/software/systemcore-info/index
-   docs/software/advanced-gradlerio/index
-   docs/software/advanced-controls/index
-   docs/software/convenience-features/index
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Examples and Tutorials
-   :hidden:
-
-   docs/software/examples-tutorials/wpilib-examples
-   docs/software/examples-tutorials/third-party-examples
 
 .. toctree::
    :maxdepth: 1
@@ -437,6 +336,13 @@ Community translations can be found in a variety of languages in the menu toward
 
    docs/contributing/frc-docs/index
    docs/contributing/wpilib/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Legacy Documentation
+   :hidden:
+
+   docs/legacy/index
 
 .. toctree::
    :maxdepth: 1
