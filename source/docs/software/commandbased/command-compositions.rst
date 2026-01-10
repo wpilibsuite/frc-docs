@@ -223,7 +223,73 @@ The ``unless()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/rele
    button.onTrue(command.unless(lambda: not intake.isDeployed()))
    ```
 
+The ``onlyIf()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#onlyIf(java.util.function.BooleanSupplier)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#a0c1b9e9e7cedd134145ee3d808bd92d2), :external:py:meth:`Python <commands2.Command.onlyIf>`) is similar to ``unless()`` but with inverted logic - the command will only run if the condition is true.
+
+.. tab-set-code::
+
+   ```java
+   // Command will only run if the game piece is present
+   button.onTrue(command.onlyIf(intake::hasGamePiece));
+   ```
+
+   ```c++
+   // Command will only run if the game piece is present
+   button.OnTrue(command.OnlyIf([&intake] { return intake.HasGamePiece(); }));
+   ```
+
+   ```python
+   # Command will only run if the game piece is present
+   button.onTrue(command.onlyIf(intake.hasGamePiece))
+   ```
+
+The ``onlyWhile()`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#onlyWhile(java.util.function.BooleanSupplier)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_command_ptr.html#ab4917ac5eb58bd08eb2412070d29ba1c), :external:py:meth:`Python <commands2.Command.onlyWhile>`) composes a command with a condition that is continuously checked during execution. If the condition becomes false while the command is running, the command will be interrupted. This is backed by a ``ParallelRaceGroup`` with a ``WaitUntilCommand``.
+
+.. tab-set-code::
+
+   ```java
+   // Command will run only while the mechanism is below the target position, stopping if it reaches or exceeds the target
+   button.onTrue(command.onlyWhile(() -> mechanism.getPosition() < targetPosition));
+   ```
+
+   ```c++
+   // Command will run only while the mechanism is below the target position, stopping if it reaches or exceeds the target
+   button.OnTrue(command.OnlyWhile([&mechanism, targetPosition] { return mechanism.GetPosition() < targetPosition; }));
+   ```
+
+   ```python
+   # Command will run only while the mechanism is below the target position, stopping if it reaches or exceeds the target
+   button.onTrue(command.onlyWhile(lambda: mechanism.getPosition() < targetPosition))
+   ```
+
 ``ProxyCommand`` described below also has a constructor overload ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_proxy_command.html), :external:py:class:`Python <commands2.ProxyCommand>`) that calls a command-returning lambda at schedule-time and runs the returned command by proxy.
+
+The ``Defer`` factory ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Commands.html#defer(java.util.function.Supplier,java.util.Set)), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/namespacefrc2_1_1cmd.html#ac177b5a1115cf55d575d5295c25ab7d1), Python), backed by the ``DeferredCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/DeferredCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_deferred_command.html), :external:py:class:`Python <commands2.DeferredCommand>`), defers command construction to schedule-time by calling a lambda that returns a command. Unlike ``ProxyCommand``, the deferred command runs inline within the composition, keeping everything within the composition instead of delegating to the scheduler. This should generally be preferred over the deferred ``ProxyCommand`` constructor.
+
+.. tab-set-code::
+
+   ```java
+   // Selects one of two commands based on current sensor state when scheduled
+   Commands.defer(
+      () -> sensor.get() ? Commands.print("Sensor true") : Commands.print("Sensor false"),
+      Set.of()
+   )
+   ```
+
+   ```c++
+   // Selects one of two commands based on current sensor state when scheduled
+   frc2::cmd::Defer(
+      [&sensor] { return sensor.Get() ? frc2::cmd::Print("Sensor true") : frc2::cmd::Print("Sensor false"); },
+      {}
+   )
+   ```
+
+   ```python
+   # Selects one of two commands based on current sensor state when scheduled
+   commands2.cmd.defer(
+      lambda: commands2.cmd.print_("Sensor true") if sensor.get() else commands2.cmd.print_("Sensor false"),
+      []
+   )
+   ```
 
 ### Scheduling Other Commands
 
