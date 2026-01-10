@@ -6,3 +6,4 @@
    known-issues
    yearly-changelog
    returning-quickstart
+   2026-game-data
