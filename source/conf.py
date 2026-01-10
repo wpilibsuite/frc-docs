@@ -24,9 +24,9 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 # -- Project information -----------------------------------------------------
 
 project = "FIRST Robotics Competition"
-copyright = "2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
+copyright = "2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
-version = "2025"
+version = "2026"
 
 
 # -- General configuration ---------------------------------------------------
