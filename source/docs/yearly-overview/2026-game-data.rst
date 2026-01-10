@@ -69,7 +69,7 @@ In C++, Java, and Python the Game Data is accessed by using the GetGameSpecificM
     //Code for no data received yet
   }
   ```
-  
+
   ```python
   data = wpilib.DriverStation.getGameSpecificMessage()
   if data:
