@@ -47,6 +47,8 @@ Add vision pose measurements occasionally by calling ``AddVisionMeasurement()``.
     :lines: 93-106
     :lineno-match:
 
+.. seealso:: For detailed information about obtaining vision measurements from AprilTags, see :doc:`/docs/software/vision-processing/apriltag/apriltag-pose-estimation`.
+
 ## Tuning Pose Estimators
 
 All pose estimators offer user-customizable standard deviations for model and measurements (defaults are used if you don't provide them). Standard deviation is a measure of how spread out the noise is for a random signal. Giving a state a smaller standard deviation means it will be trusted more during data fusion.
