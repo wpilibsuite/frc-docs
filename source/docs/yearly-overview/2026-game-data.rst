@@ -73,9 +73,19 @@ In C++, Java, and Python the Game Data is accessed by using the GetGameSpecificM
   ```python
   data = wpilib.DriverStation.getGameSpecificMessage()
   if data:
-     # Set the robot gamedata property and set a network tables value
-     self.gameData = data
-     self.sd.putString("gameData", self.gameData)
+      match data:
+          case "B":
+              # Blue case code
+              ...
+          case "R":
+              # Red case code
+              ...
+          case _:
+              # This is corrupt data
+              ...
+  else:
+      # Code for no data received yet
+      ...
   ```
 
 ### LabVIEW
