@@ -46,6 +46,42 @@ Another way to debug your program is to use print statements in your code and vi
 
 :doc:`NetworkTables </docs/software/networktables/networktables-intro>` can be used to share robot information with your debugging computer.  :term:`NetworkTables` can be viewed with your favorite Dashboard or :ref:`OutlineViewer <docs/software/wpilib-tools/outlineviewer/index:OutlineViewer>`.  One advantage of NetworkTables is that tools like :doc:`Shuffleboard </docs/software/dashboards/shuffleboard/getting-started/shuffleboard-tour>` can be used to graphically analyze the data.  These same tools can then be used with same data to later provide an operator interface for your drivers.
 
+## Common Causes of Loop Overruns
+
+Loop overruns occur when the robot's periodic methods (``robotPeriodic()``, ``teleopPeriodic()``, etc.) take longer than 20ms to complete. When this happens, the Driver Station will display a warning like ``Loop time of 0.03s overrun`` and the robot code may behave unpredictably. Here are common causes:
+
+### Blocking Operations
+
+- **Thread.sleep() or wait()**: Never use blocking sleep or wait calls in periodic methods
+- **Synchronous I/O**: Reading files, network operations, or other blocking I/O operations
+- **Busy-wait loops**: Loops that repeatedly check a condition without yielding (e.g., ``while(!sensor.isReady()) {}``)
+
+### Excessive Computation
+
+- **Complex calculations in periodic methods**: Move expensive calculations to separate threads or spread them across multiple loop iterations
+- **Large data structure operations**: Sorting, searching, or iterating over large arrays or lists
+- **Unoptimized algorithms**: O(n²) or worse algorithms running on large datasets
+
+### Excessive Logging or Print Statements
+
+- **System.out.println() in loops**: Console output is slow, especially when called frequently
+- **Getting data to publish to NetworkTables**: While NetworkTables updates themselves are fast, retrieving complex data (e.g., vision processing results, large arrays) to publish can be slow
+- **Excessive Shuffleboard updates**: Sending large amounts of data to the dashboard
+
+### Hardware/Sensor Issues
+
+- **Synchronous CAN calls**: Some motor controller methods may block waiting for a response
+- **I2C or SPI timeouts**: Faulty sensors or loose connections can cause communication timeouts
+- **USB device enumeration**: Plugging/unplugging USB devices during operation
+
+### Tips to Avoid Loop Overruns
+
+- Use :doc:`Notifier </docs/software/convenience-features/scheduling-functions>` for operations that need precise timing independent of the main loop
+- Profile your code to identify slow sections (see :ref:`docs/software/advanced-gradlerio/profiling-with-visualvm:profiling with visualvm`)
+- Remove or reduce print statements, especially in frequently-called code
+- Cache values that are expensive to compute rather than recalculating every loop
+- **Check the Driver Station log** to identify which periodic method is causing overruns. The log will show timestamps and which robot mode was active when the overrun occurred. Look for patterns - if overruns only happen during teleop, check ``teleopPeriodic()`` and subsystems used during teleop. If they occur consistently, check ``robotPeriodic()`` for code that runs regardless of mode.
+
 ## Learn More
 
 - To learn more about debugging with VS Code see this [link](https://code.visualstudio.com/docs/editor/debugging).
