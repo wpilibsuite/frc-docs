@@ -8,7 +8,7 @@ Compiler arguments allow us to change the behavior of our compiler. This include
 
 ### Platforms
 
-Different compilers and different platforms use a variety of different flags. Therefore to avoid breaking different platforms with compiler flags configure all flags per platform. The platforms that are supported are listed [here](https://github.com/wpilibsuite/native-utils/blob/v2025.9.0/src/main/java/edu/wpi/first/nativeutils/WPINativeUtilsExtension.java#L94-107)
+Different compilers and different platforms use a variety of different flags. Therefore to avoid breaking different platforms with compiler flags configure all flags per platform. The platforms that are supported are listed [here](https://github.com/wpilibsuite/native-utils/blob/v2026.0.1/src/main/java/edu/wpi/first/nativeutils/WPINativeUtilsExtension.java#L101-116)
 
 ### Configuring for a Platform
 

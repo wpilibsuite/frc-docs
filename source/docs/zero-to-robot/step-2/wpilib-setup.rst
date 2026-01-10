@@ -11,7 +11,7 @@ Supported Operating Systems and Architectures:
 
 .. warning:: The following OSes are no longer supported: macOS 12 or earlier, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
 
-.. note:: [Windows 10 support from Microsoft will end in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11, or switch to one of the supported Linux distributions listed.
+.. note:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11, or switch to one of the supported Linux distributions listed.
 
 .. note:: C++ compilation is memory intensive. A minimum of 32 GB of RAM is recommended for C++ teams.
 
@@ -139,7 +139,7 @@ After installation is complete, you will be presented with the finished screen.
 .. image:: images/wpilib-setup/installer-finish.png
    :alt: Installer finished screen.
 
-.. important:: WPILib installs a separate version of VS Code. It does not use an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2025``. Please launch the WPILib VS Code and not a system installed copy!
+.. important:: WPILib installs a separate version of VS Code. It does not use an already existing installation. Each year has it's own copy of the tools appended with the year. IE: ``WPILib VS Code 2026``. Please launch the WPILib VS Code and not a system installed copy!
 
 Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
 
@@ -173,7 +173,7 @@ Some operating systems require some final action to complete installation.
       The above will fix the following error:
 
       ```console
-      The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that ~/wpilib/2025/advantagescope/chrome-sandbox is owned by root and has mode 4755.
+      The SUID sandbox helper binary was found, but is not configured correctly. Rather than run without sandboxing I'm aborting now. You need to make sure that ~/wpilib/2026/advantagescope/chrome-sandbox is owned by root and has mode 4755.
       ```
 
 
