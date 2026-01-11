@@ -4,6 +4,7 @@
    :maxdepth: 1
 
    git-getting-started.rst
+   dimensional-analysis
    cpp-units
    java-units
    joystick
