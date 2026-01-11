@@ -309,3 +309,4 @@
 "docs/software/wpilib-tools/choreo/index.rst" "docs/software/pathplanning/choreo/index.rst"
 "docs/networking/networking-introduction/om5p-ac-radio-modification.rst" "docs/zero-to-robot/step-3/radio-programming.rst"
 "docs/software/driverstation/programming-radios-for-fms-offseason.rst" "docs/zero-to-robot/step-3/radio-programming.rst"
+"docs/yearly-overview/2026-Game-Data.rst" "docs/yearly-overview/2026-game-data.rst"
