@@ -7,6 +7,8 @@ The roboRIO Team Number Setter is a cross-platform utility that can be used to s
 
 In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Start Tool`, then select :guilabel:`roboRIOTeamNumberSetter`.
 
+.. note:: The desktop shortcut for the roboRIO Team Number Setter doesn't work in WPILib release 2026.1.1. However, the instructions above for starting the tool from VS Code and the start menu shortcut work. See :ref:`Known Issues <docs/yearly-overview/known-issues:roborio team number setter desktop shortcut broken on windows>`
+
 Connect to the roboRIO over USB to use the tool, as this is the simplest method when the team number hasn't been set.
 
 ## Setting Team Number
