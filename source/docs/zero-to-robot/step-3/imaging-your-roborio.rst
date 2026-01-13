@@ -52,7 +52,7 @@ After launching, the roboRIO Imaging Tool will scan for available roboRIOs and i
 
 roboRIO firmware must be at least v5.0 to work with the 2019 or later image. If your roboRIO is at least version 5.0 (as shown in the bottom left of the imaging tool) you do not need to update.
 
-.. note:: roboRIO firmware has had different version numbering schemes over the years. It isn't necessary to update the firmware if it has version 5, 6, 8, 22.5, 23.5 or variations of those version numbers (e.g. 8.8.0f0 is a variation of 8). The firmware is only utilized in :doc:`safe mode </docs/software/roborio-info/recovering-a-roborio-using-safe-mode>`, it is not used in normal operations.
+.. note:: roboRIO firmware has had different version numbering schemes over the years. It isn't necessary to update the firmware if it has version 5, 6, 8, 22.5, 23.5, 25.5 or variations of those version numbers (e.g. 8.8.0f0 is a variation of 8). The firmware is only utilized in :doc:`safe mode </docs/software/roborio-info/recovering-a-roborio-using-safe-mode>`, it is not used in normal operations.
 
 To update roboRIO firmware:
 
