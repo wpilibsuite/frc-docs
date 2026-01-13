@@ -30,7 +30,7 @@ In the dialog box that appears, select all entries. The easiest way to do this i
 
 ## Getting LabVIEW installer
 
-Download the LabVIEW for FRC 2026 installer(Coming Soon) from NI. Be sure to select the correct version from the drop-down.
+Download the [LabVIEW for FRC 2026 installer](https://www.ni.com/en-us/support/downloads/software-products/download.labview-software-for-frc.html) from NI. Be sure to select the correct version from the drop-down.
 
 .. image:: images/labview/offline-installer.png
    :alt: The Download button for the NI installer with the offline installer link below it.

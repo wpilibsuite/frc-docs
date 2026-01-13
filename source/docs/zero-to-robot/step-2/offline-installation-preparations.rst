@@ -20,7 +20,7 @@ This documentation can be downloaded for offline viewing. The link to download t
 
 ### LabVIEW Teams
 
--  LabVIEW Base Installer - Coming Soon
+-  [LabVIEW Base Installer](https://www.ni.com/en-us/support/downloads/drivers/download.labview-software-for-frc.html) (Note: Click on link for "Individual Offline Installers")
 
 ### Java/C++ Teams
 
