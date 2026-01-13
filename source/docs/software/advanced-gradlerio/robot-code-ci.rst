@@ -88,6 +88,8 @@ Each Action workflow is made of a one or more jobs that run either sequentially 
 
 We specify that we want the job to run on an Ubuntu virtual machine and in a virtualized [Docker container ](https://www.docker.com/resources/what-container) that contains the JDK, C++ compiler and roboRIO toolchains.
 
+.. note:: Since none of the dependencies changed between 2025 and 2026, the 2025 docker images are still correct to use for 2026.
+
 ```yaml
 # Steps represent a sequence of tasks that will be executed as part of the job
 steps:
