@@ -6,15 +6,6 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 ## Open Issues
 
-### roboRIO Team Number Setter desktop shortcut broken on Windows
-
-**Issue:** The :doc:`roboRIO Team Number Setter </docs/software/wpilib-tools/roborio-team-number-setter/index>` desktop shortcut is broken in the 2026.1.1 release, but the software is still installed.
-
-**Workaround:** There are several other ways to start the roboRIO Team Number Setter
-
-1. Use the icon in the Windows start menu
-2. Use the Visual Studio Code :guilabel:`Start Tool` feature
-
 ### Driver Station randomly disabled
 
 **Issue:** The Driver Station contains tighter safety mechanisms introduced in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.
@@ -150,3 +141,14 @@ python -m robotpy installer niweb disable
 ```
 
 .. seealso:: [Github issue](https://github.com/robotpy/mostrobotpy/issues/61)
+
+## Fixed in WPILib 2026.2.1
+
+### roboRIO Team Number Setter desktop shortcut broken on Windows
+
+**Issue:** The :doc:`roboRIO Team Number Setter </docs/software/wpilib-tools/roborio-team-number-setter/index>` desktop shortcut is broken in the 2026.1.1 release, but the software is still installed.
+
+**Workaround:** There are several other ways to start the roboRIO Team Number Setter
+
+1. Use the icon in the Windows start menu
+2. Use the Visual Studio Code :guilabel:`Start Tool` feature

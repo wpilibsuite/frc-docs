@@ -32,6 +32,7 @@ Supported Operating Systems and Architectures:
 - Add X44 and Minion to ``DCMotor``
 - Add a few method overloads that use units
 - Java: Add javac plugin for detecting common error cases at compile time
+- 2026.2.1: Add 2026 Apriltag maps and field images
 
 #### Commands
 
@@ -76,6 +77,8 @@ Supported Operating Systems and Architectures:
 - Correct mil unit
 - Add miles per hour conversion methods to ``Units.java``
 - Fix ``ResetTranslation`` and ``ResetRotation`` in ``PoseEstimator`` and ``PoseEstimator3d`` causing the robot to teleport
+- 2026.2.1: Fix Rotation3d interpolation and document extrinsic vs intrinsic
+- 2025.2.1: Add multi tap boolean stream filter and multi tap trigger modifier (double tap detector)
 
 ### Simulation
 
@@ -132,7 +135,8 @@ Supported Operating Systems and Architectures:
 - Show deprecated message on Windows 10
 - Use unique icons for tools
 - Fix platform detection for multiple vscode on apple silicon
-
+- 2026.2.1: Catch download failures and show URL
+- 2026.2.1: No longer install Python VS Code extensions
 
 ## Visual Studio Code Extension
 
@@ -148,7 +152,7 @@ Supported Operating Systems and Architectures:
 - Hide recommended vscode extensions to install
 - Move source backup in jar to backup directory and save more build files
 - Check for WPILib project before running most commands
-
+- 2026.2.1: Improve robustness of preferences file detection
 
 ## RobotBuilder
 
@@ -159,6 +163,7 @@ Supported Operating Systems and Architectures:
 ## SysId
 
 - Remove Phoenix5 CANcoder preset
+- 2026.2.1: Fix crash on partially empty raw data
 
 ## PathWeaver
 
@@ -173,6 +178,7 @@ Supported Operating Systems and Architectures:
 ## Elastic
 
 - Update to [2026 Elastic](https://github.com/Gold872/elastic-dashboard/releases/tag/v2026.0.0-beta-1)
+- 2026.2.1: Upgraded to [2026.1.1] (https://github.com/Gold872/elastic-dashboard/releases/tag/v2026.1.1)
 
 ## WPIcal
 
