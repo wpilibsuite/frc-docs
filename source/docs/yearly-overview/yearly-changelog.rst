@@ -128,7 +128,7 @@ Supported Operating Systems and Architectures:
 
 ## WPILib All in One Installer
 
-- Update to VS Code 1.05.2
+- Update to VS Code 1.05.1
 - VS Code extension updates: cpptools 1.23.2, javaext 1.38
 - Ignore settings sync of settings/extensions
 - Use processstarter for tools
