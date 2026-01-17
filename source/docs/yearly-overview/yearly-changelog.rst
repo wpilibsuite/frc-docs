@@ -177,8 +177,8 @@ Supported Operating Systems and Architectures:
 
 ## Elastic
 
-- Update to [2026 Elastic](https://github.com/Gold872/elastic-dashboard/releases/tag/v2026.0.0-beta-1)
-- 2026.2.1: Upgraded to [2026.1.1] (https://github.com/Gold872/elastic-dashboard/releases/tag/v2026.1.1)
+- Update to 2026.0.0 Elastic. [2026.0.0-beta-1 changelog](https://github.com/Gold872/elastic-dashboard/releases/tag/v2026.0.0-beta-1) [2026.0.0 changelog](https://github.com/Gold872/elastic-dashboard/releases/tag/v2026.0.0)
+- 2026.2.1: Upgraded to 2026.1.1 Elastic. [2026.1.1 changelog](https://github.com/Gold872/elastic-dashboard/releases/tag/v2026.1.1) [2026.1.0 changelog](https://github.com/Gold872/elastic-dashboard/releases/tag/v2026.1.0)
 
 ## WPIcal
 
