@@ -9,12 +9,12 @@ The following program starts automatic capture of a USB camera like the Microsof
 
 .. tab-set-code::
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
       :language: java
       :lines: 7-19
       :lineno-match:
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
       :language: c++
       :lines: 7-8, 16-18, 20, 25-31
 
@@ -33,7 +33,7 @@ In the following example a thread created in ``Robot`` constructor gets the Came
    .. tab-item:: Java
       :sync: tabcode-java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
          :language: java
          :lines: 7-65
          :lineno-match:
@@ -41,7 +41,7 @@ In the following example a thread created in ``Robot`` constructor gets the Came
    .. tab-item:: c++
       :sync: tabcode-c++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
          :language: c++
          :lines: 5-24, 26-27, 32, 36-69, 71-77
 

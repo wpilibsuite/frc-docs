@@ -37,11 +37,11 @@ A quadrature encoder can be instantiated as follows:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
       :language: java
       :lines: 16-18
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 53-55
 
@@ -57,11 +57,11 @@ The WPILib :code:`Encoder` class can decode encoder signals in three different m
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
       :language: java
       :lines: 20-22
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 57-59
 
@@ -75,11 +75,11 @@ The :code:`Encoder` class offers a number of configuration methods:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
       :language: java
       :lines: 26-37
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 17-29
 
@@ -95,11 +95,11 @@ Users can obtain the total distance traveled by the encoder with the :code:`getD
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
       :language: java
       :lines: 44-45
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 33-34
 
@@ -111,11 +111,11 @@ Users can obtain the current rate of change of the encoder with the :code:`getRa
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
       :language: java
       :lines: 47-48
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 36-37
 
@@ -125,11 +125,11 @@ Users can obtain whether the encoder is stationary with the :code:`getStopped()`
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
       :language: java
       :lines: 50-51
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 39-40
 
@@ -139,11 +139,11 @@ Users can obtain the direction in which the encoder last moved with the :code:`g
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
       :language: java
       :lines: 53-54
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 42-43
 
@@ -153,11 +153,11 @@ Users can obtain the period of the encoder pulses (in seconds) with the :code:`g
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
       :language: java
       :lines: 56-57
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 45-46
 
@@ -167,11 +167,11 @@ To reset a quadrature encoder to a distance reading of zero, call the :code:`res
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoder/Robot.java
       :language: java
       :lines: 59-60
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/Encoder/cpp/Robot.cpp
       :language: c++
       :lines: 48-49
 
@@ -197,11 +197,11 @@ A duty cycle encoder can be instantiated as follows:
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
       :language: java
       :lines: 15-16
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
       :language: c++
       :lines: 25-26
 
@@ -215,11 +215,11 @@ The zero position is useful for ensuring that the measured rotation corresponds 
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
       :language: java
       :lines: 18-21
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
       :language: c++
       :lines: 28-31
 
@@ -231,11 +231,11 @@ Users can obtain the rotation measured by the encoder with the :code:`get()` met
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
       :language: java
       :lines: 28-29
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
       :language: c++
       :lines: 17-18
 
@@ -245,11 +245,11 @@ As duty cycle encoders output a continuous set of pulses, it is possible to dete
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/dutycycleencoder/Robot.java
       :language: java
       :lines: 31-32
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/DutyCycleEncoder/cpp/Robot.cpp
       :language: c++
       :lines: 20-21
 
@@ -269,11 +269,11 @@ An analog encoder can be instantiated as follows:
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
       :language: java
       :lines: 15-16
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
       :language: c++
       :lines: 22-23
 
@@ -287,11 +287,11 @@ The zero position is useful for ensuring that the measured rotation corresponds 
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
       :language: java
       :lines: 18-21
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
       :language: c++
       :lines: 25-28
 
@@ -303,11 +303,11 @@ Users can obtain the rotation measured by the encoder with the :code:`get()` met
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/analogencoder/Robot.java
       :language: java
       :lines: 28-29
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/AnalogEncoder/cpp/Robot.cpp
       :language: c++
       :lines: 17-18
 
@@ -323,11 +323,11 @@ Encoders can be used on a robot drive to create a simple "drive to distance" rou
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoderdrive/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoderdrive/Robot.java
       :language: java
       :lines: 17-47
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/EncoderDrive/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/EncoderDrive/cpp/Robot.cpp
       :language: c++
       :lines: 39-47, 16-36
 
@@ -340,11 +340,11 @@ Since quadrature encoders measure *relative* distance, it is often important to 
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoderhoming/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/encoderhoming/Robot.java
       :language: java
       :lines: 17-34
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/snippets/EncoderHoming/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/snippets/EncoderHoming/cpp/Robot.cpp
       :language: c++
       :lines: 28-31, 16-25
 

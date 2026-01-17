@@ -16,7 +16,7 @@ The following examples are taken from the DriveDistanceOffboard example project 
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/subsystems/DriveSubsystem.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/drivedistanceoffboard/subsystems/DriveSubsystem.java
          :language: java
          :lines: 5-
          :lineno-match:
@@ -24,7 +24,7 @@ The following examples are taken from the DriveDistanceOffboard example project 
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/include/subsystems/DriveSubsystem.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/include/subsystems/DriveSubsystem.h
          :language: c++
          :lines: 5-
          :lineno-match:
@@ -32,7 +32,7 @@ The following examples are taken from the DriveDistanceOffboard example project 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/subsystems/DriveSubsystem.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/wpilibcExamples/src/main/cpp/examples/DriveDistanceOffboard/cpp/subsystems/DriveSubsystem.cpp
          :language: c++
          :lines: 5-
          :lineno-match:

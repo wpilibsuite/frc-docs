@@ -196,6 +196,6 @@ modifiableFileExclude {
 
 You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``, as shown in the example GitHub Actions workflow below:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.1.1/.github/workflows/lint-format.yml
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2026.2.1/.github/workflows/lint-format.yml
    :language: yaml
    :lines: 1-5, 13, 21-43
