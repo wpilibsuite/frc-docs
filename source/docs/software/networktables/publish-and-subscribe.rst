@@ -173,9 +173,9 @@ Publishing values is done via a ``set()`` operation. By default, this operation 
               self.dblPub = dblTopic.publish(ntcore.PubSubOptions(keepDuplicates=True))
               # publishEx provides additional options such as setting initial
               # properties and using a custom type string. Using a custom type string for
-              # types other than raw and string is not recommended. The properties string
+              # types other than raw and string is not recommended. The properties
               # must be a JSON map.
-              self.dblPub = dblTopic.publishEx("double", '{"myprop": 5}')
+              self.dblPub = dblTopic.publishEx("double", {"myprop": 5})
           def periodic(self):
               # publish a default value
               self.dblPub.setDefault(0.0)
@@ -772,7 +772,7 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
               # genericPublishEx provides the option of setting initial properties.
               self.pub = topic.genericPublishEx(
                   "double",
-                  '{"retained": true}',
+                  {"retained": true},
                   ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10),
               )
           def periodic(self):
