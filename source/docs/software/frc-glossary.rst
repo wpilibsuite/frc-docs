@@ -41,7 +41,7 @@
       A core concept in probability which states that when many independent variables are added up, the result tends to look like a "normal" (or Gaussian) distribution, regardless of whether the independent variables themselves are normally distributed. See [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) on Wikipedia for more info.
 
    CIM
-      CCL Industrial Motor, Limited - [Chiaphua Components Limited](https://www.cclmotors.com/website/eng/home) is the company that made the commonly used, relatively powerful, brushed motor.
+      CCL Industrial Motor, Limited - [Chiaphua Components Limited](https://www.cclmotors.com/) is the company that made the commonly used, relatively powerful, brushed motor.
 
    Classical Mechanics
       The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See [Classical Mechanics](https://en.wikipedia.org/wiki/Classical_mechanics) on Wikipedia for more info.
