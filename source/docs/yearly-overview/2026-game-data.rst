@@ -153,6 +153,55 @@ You could use this information to determine whether your own alliance's hub is c
   }
   ```
 
+  ```python
+  from wpilib import DriverStation
+
+
+  def is_hub_active() -> bool:
+      alliance = DriverStation.getAlliance()
+
+      # If we have no alliance, we cannot be enabled, therefore no hub.
+      if alliance is None:
+          return False
+
+      # Hub is always enabled in autonomous.
+      if DriverStation.isAutonomousEnabled():
+          return True
+
+      # If we're not teleop enabled, there is no hub.
+      if not DriverStation.isTeleopEnabled():
+          return False
+
+      # We're teleop enabled, compute.
+      match_time = DriverStation.getMatchTime()
+      game_data = DriverStation.getGameSpecificMessage()
+
+      match game_data:
+          case "R":
+              red_inactive_first = True
+          case "B":
+              red_inactive_first = False
+          case _:
+              # No or invalid game data, assume hub is active.
+              return True
+
+      # Shift 1 is active for blue if red won auto, or red if blue won auto.
+      shift1_active = not red_inactive_first if alliance == DriverStation.Alliance.kRed else red_inactive_first
+
+      if match_time > 130:
+          return True  # Transition shift, hub is active
+      elif match_time > 105:
+          return shift1_active
+      elif match_time > 80:
+          return not shift1_active
+      elif match_time > 55:
+          return shift1_active
+      elif match_time > 30:
+          return not shift1_active
+      else:
+          return True  # End game, hub always active
+  ```
+
 ### LabVIEW
 
 The Game Data in LabVIEW is accessed from the Game Specific Data VI. This VI can be found in the WPI Robotics Library -> Driver Station palette.
