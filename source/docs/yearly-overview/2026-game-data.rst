@@ -126,7 +126,10 @@ You could use this information to determine whether your own alliance's hub is c
     }
 
     // Shift was is active for blue if red won auto, or red if blue won auto.
-    boolean shift1Active = (alliance.get() == Alliance.Red) && !redInactiveFirst || (alliance.get() == Alliance.Blue) && redInactiveFirst;
+    boolean shift1Active = switch (alliance.get()) {
+      case Alliance.Red -> !redInactiveFirst;
+      case Alliance.Blue -> redInactiveFirst;
+    }
 
     if (matchTime > 130) {
       // Transition shift, hub is active.
