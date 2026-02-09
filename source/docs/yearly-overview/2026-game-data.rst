@@ -14,6 +14,13 @@ Data is sent to both alliances simultaneously after Fuel scored in Auto is finis
 
 The alliance will be provided as a single character representing the color of the alliance whose goal will go inactive first (i.e. 'R' = red, 'B' = blue). This alliance's goal will be active in Shifts 2 and 4.
 
+## Testing Game Specific Data
+
+You can test your Game Specific Data code without :term:`FMS` by using the Driver Station. Click on the Setup tab of the Driver Station, then enter the desired test string into the Game Data text field. The data will be transmitted to the robot in one of two conditions: Enable the robot in Teleop mode, or when the DS reaches the End Game time in a Practice Match (times are configurable on the Setup tab). It is recommended to run at least one match using the Practice functionality to verify that your code works correctly in a full match flow.
+
+.. image:: images/2020-Game-Data/ds-game-data.png
+  :alt: Game Data text box on the Driver Station.
+
 ## Accessing the Data
 
 The data is accessed using the Game Data methods or VIs in each language. Below are descriptions and examples of how to access the data from each of the three languages. As the data is provided to the Robot during the Teleop period, teams will likely want to query the data in Teleop periodic code.
@@ -210,10 +217,3 @@ LabVIEW teams will likely want to query the data in the Teleop or PeriodicTasks 
 
 .. image:: images/2020-Game-Data/labview-game-data-code2026.png
   :alt: Making a decision what to do about the game data received using a case structure.
-
-## Testing Game Specific Data
-
-You can test your Game Specific Data code without :term:`FMS` by using the Driver Station. Click on the Setup tab of the Driver Station, then enter the desired test string into the Game Data text field. The data will be transmitted to the robot in one of two conditions: Enable the robot in Teleop mode, or when the DS reaches the End Game time in a Practice Match (times are configurable on the Setup tab). It is recommended to run at least one match using the Practice functionality to verify that your code works correctly in a full match flow.
-
-.. image:: images/2020-Game-Data/ds-game-data.png
-  :alt: Game Data text box on the Driver Station.
