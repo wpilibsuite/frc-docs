@@ -95,7 +95,9 @@ In C++, Java, and Python the Game Data is accessed by using the GetGameSpecificM
       ...
   ```
 
-You could use this information to determine whether your own alliance's hub is currently active. For example:
+You can combine the Game Data with the current match time to determine whether your own alliance's hub is currently active. Note however the FMS doesn't send an official match time to robots, only an approximate match time.
+
+For example:
 
 .. tab-set-code::
 
