@@ -168,7 +168,6 @@ For example:
 
   def is_hub_active() -> bool:
       alliance = DriverStation.getAlliance()
-
       # If we have no alliance, we cannot be enabled, therefore no hub.
       if alliance is None:
           return False
@@ -177,7 +176,7 @@ For example:
       if DriverStation.isAutonomousEnabled():
           return True
 
-      # If we're not teleop enabled, there is no hub.
+      # At this point if we're not teleop enabled, there is no hub.
       if not DriverStation.isTeleopEnabled():
           return False
 
@@ -200,12 +199,16 @@ For example:
       if match_time > 130:
           return True  # Transition shift, hub is active
       elif match_time > 105:
+          # Shift 1
           return shift1_active
       elif match_time > 80:
+          # Shift 2
           return not shift1_active
       elif match_time > 55:
+          # Shift 3
           return shift1_active
       elif match_time > 30:
+          # Shift 4
           return not shift1_active
       else:
           return True  # End game, hub always active
