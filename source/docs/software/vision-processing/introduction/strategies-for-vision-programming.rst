@@ -51,3 +51,43 @@ Data can be sent from the vision program on the coprocessor to the robot using N
 There are a number of camera options supported by WPILib. Cameras have a number of parameters that affect operation; for example, frame rate and image resolution affect the quality of the received images, but when set too high impact processing time and, if sent to the driver station, may exceed the available bandwidth on the field.
 
 The CameraServer class in C++ and Java is used to interface with cameras connected to the robot. It retrieve frames for local processing through a Source object and sends the stream to your driver station for viewing or processing there.
+
+## Vision Simulation Performance Optimization
+
+When developing and testing vision code in simulation, performance considerations become important, especially on low-resource development machines like Chromebooks or older laptops.
+
+## Low-Resource Vision Simulation with Photonvision
+
+By default, PhotonCameraSim renders two simulated camera streams using OpenCV:
+
+- Raw stream - The unprocessed camera view
+- Processed stream - The camera view with vision processing overlays
+
+These streams are nice if you want to actually view the simulated images, but they can be computationally expensive on low-power laptops like Chromebooks, causing lag and reduced simulation performance.
+
+Lightweight Configuration
+
+The following configuration disables both streams while still allowing tag detection and pose simulation to work. It's not perfect, but it's much better performance-wise than the default configuration.
+
+.. code-block:: java
+
+     var cameraProperties = new SimCameraProperties();
+     cameraSim = new PhotonCameraSim(camera, cameraProperties, aprilTagLayout);
+     cameraSim.enableRawStream(false);        // disables raw image stream
+     cameraSim.enableProcessedStream(false);  // disables processed image stream
+
+**Use Case**
+
+This configuration is ideal for Chromebooks or low-spec machines where rendering the simulated camera images causes lag, but you still need vision data for testing.
+
+**What Still Works**
+
+- AprilTag detection
+- Pose estimation
+- NetworkTables data publishing
+- Robot positioning and targeting
+
+**What's Disabled**
+
+- Visual camera stream rendering
+- Real-time visual debugging of camera output
