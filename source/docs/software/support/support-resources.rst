@@ -9,7 +9,7 @@ In addition to the documentation here, there are a variety of other resources av
 In addition to this site there are a few other places teams may check for documentation:
 
 -  [NI FRC Community Documents Section](https://forums.ni.com/t5/FIRST-Robotics-Competition/bd-p/1014?profile.language=en&view=documents)
--  [FIRST Inspires Technical Resources Page](https://www.firstinspires.org/resource-library/frc/technical-resources)
+-  [FIRST Inspires Technical Resources Page](https://www.firstinspires.org/resources/library/frc/technical-resources)
 -  [CTRE Software & Resources Page](https://store.ctr-electronics.com/software/)
 -  [REV Robotics Documentation](https://docs.revrobotics.com/docs/)
 -  [Vivid Hosting](https://frc-radio.vivid-hosting.net/)
