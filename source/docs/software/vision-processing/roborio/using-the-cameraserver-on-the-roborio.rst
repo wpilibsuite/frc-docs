@@ -71,7 +71,7 @@ In the following example a thread created in ``Robot`` constructor gets the Came
 
       .. rli:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/IntermediateVision/robot.py
          :language: python
-         :lines: 8-17
+         :lines: 8-19
          :linenos:
 
       The ``launch("vision.py")`` function says to launch ``vision.py`` and call the ``run`` function in that file. Here's what is in ``vision.py``:
