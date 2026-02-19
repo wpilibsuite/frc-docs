@@ -5,14 +5,17 @@ Fire Control
 
 This section describes software approaches for aiming a robot's shooting mechanism at a goal.  Technical literature calls this "fire control", as it was first (and remains primarily) studied in the context of aiming artillery.
 
-Fire control problems can be solved in one of two ways:
+While it is possible to solve fire control problems directly from a mathematical model of the shooting mechanism and gamepiece, we do not cover that approach here.  Instead, we cover a simpler approach that is more general and easier to understand, and which can be applied to many different shooting mechanisms and gamepieces: recursion.
 
-1. Direct-solve
-2. Recursion
+Fire control by recursion follows the pattern of "lead-and-adjust":
+1. We start with a guess at the time of flight to the target.
+2. We use this guess to **lead** our shot by offsetting the target position by the predicted platform motion over the time of flight.
+3. Our new 'virtual target' will have its own time of flight, so we need to **adjust** our lead accordingly.
+4. We repeat this process until the time of flight stops changing; at this point, the shot solution has converged and shooting at the 'virtual target' should hit the real one.
 
-This sequence of articles only covers recursion, because direct-solve methods depend much more heavily on the specifics of the shooting mechanism and gamepiece.  Recursion is a general approach that can be applied to many different shooting mechanisms and gamepieces, and is relatively easy to understand, implement, and tune.
+Chances are, if you've ever thrown a ball at a moving target, you've already done this kind of "lead-and-adjust" in your head.
 
-Recursive approaches have another advantage: they are their own error analysis.  By watching how the recursion converges, we can see how accurate the solution is likely to be.  The interactive visualization in the dynamic shooting article allows you to explore this behavior graphically.
+In addition to conceptual simplicity, recursion has another advantage: it provides its own error analysis.  By watching how the recursion converges, we can see how accurate the solution is likely to be.  The interactive visualization in the dynamic shooting article allows you to explore this behavior graphically.
 
 .. toctree::
    :maxdepth: 1
