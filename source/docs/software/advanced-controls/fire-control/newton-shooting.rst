@@ -73,12 +73,37 @@ with :math:`d_x`, :math:`d_y`, and :math:`D` evaluated at :math:`\tau_n`.
 
 So the **residual** uses the empirical TOF (we converge to the correct table TOF); the **denominator** uses the theoretical :math:`1/v_p` (we get fast convergence without differentiating the table).  The constant-velocity assumption guides the step direction; the LUT fixes the target TOF.
 
+Picking an Initial Guess
+------------------------
+
+Our fixed-point recursion started with a guess of the time of flight to the target from a non-moving platform.  One benefit of the "naive" fixed-point recursion is that it is relatively insensitive to this initial guess; there's not much benefit to picking a better initial guess, because doing so would only help in regions where the convergence is garbage anyway.
+
+Newton's method is more powerful, but at a cost: it is more sensitive to the initial guess than the simpler fixed-point iteration.  If the initial guess is too far from the true solution, the iteration may converge to an inappropriate solution.  The time of flight error function above in fact has *two* roots (because there are two possible solutions to the shot-geometry problem); which one we converge to depends on the initial guess.
+
+For example, if we sprint towards the target at a speed greater than the projectile speed, the initial guess from our fixed-point recursion will force us to converge to a virtual target that is *behind* the platform.  This is a "correct" solution, but it is not the one we want.
+
+To avoid this, we need to pick an initial guess that is close to the true solution.  We can do this by using our constant-projectile-velocity model to direct-solve the case of motion directly towards or away from the target in terms of platform and projectile velocities:
+
+.. math::
+
+   \tau = \frac{D}{v_p + |\mathbf{v}|}
+
+We can use this formula for a general platform velocity by projecting the platform velocity onto the direction of the target: 
+
+.. math::
+
+   \tau = \frac{D}{v_p + |\mathbf{v}|\cos(\theta)}
+
+where :math:`\theta` is the angle between the platform velocity and the target.
+
+This gives us an initial guess that is close to the desired solution regardless of the platform velocity, and guarantees good convergence behavior across the entire region of reachable velocity space.
+
 Interactive Visualization
 -------------------------
 
 Use the visualization below to compare Newton's method to the fixed-point iteration.  The two **Simulation** modes let you drag the robot velocity vector and step through iterations for each solver; **Fractal (Newton)** and **Fractal (Fixed-Point)** show convergence heatmaps.
 
-.. note:: The color scale differs between methods: Newton typically converges in 2–5 iterations, while the fixed-point iteration may take hundreds.  The legend adjusts automatically.  In both fractals, the same geodesic (purple) and convergence envelope (blue) are overlaid.
+.. note:: The color scale differs between methods: Newton typically converges in 1-3 iterations, while the fixed-point iteration may take hundreds.  The legend adjusts automatically.  In both fractals, the same geodesic (purple) and convergence envelope (blue) are overlaid.
 
 .. raw:: html
 
