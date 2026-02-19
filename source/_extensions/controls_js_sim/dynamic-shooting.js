@@ -58,7 +58,7 @@ class DynamicShootingWidget {
     this.controlDrawDiv.style.position = "relative";
     this.controlDrawDiv.style.zIndex = "10";
 
-    // Row 1: Mode toggle only
+    // Row 1: Mode toggle (Simulation, Fractal iterations, Fractal interaction)
     const row1 = document.createElement("div");
     row1.style.cssText = "display: flex; align-items: center; justify-content: center; gap: 6px;";
     const simBtn = document.createElement("button");
@@ -67,14 +67,29 @@ class DynamicShootingWidget {
     simBtn.style.cssText = "padding: 2px 10px; font-size: 12px; cursor: pointer;";
     simBtn.onclick = function() { this.setMode("simulation"); }.bind(this);
     row1.appendChild(simBtn);
-    const fractBtn = document.createElement("button");
-    fractBtn.innerHTML = "Fractal";
-    fractBtn.setAttribute("id", divIdPrefix + "_mode_fractal");
-    fractBtn.style.cssText = "padding: 2px 10px; font-size: 12px; cursor: pointer;";
-    fractBtn.onclick = function() { this.setMode("fractal"); }.bind(this);
-    row1.appendChild(fractBtn);
+    const fractIterBtn = document.createElement("button");
+    fractIterBtn.innerHTML = "Fractal (Iterations)";
+    fractIterBtn.setAttribute("id", divIdPrefix + "_mode_fractal_iter");
+    fractIterBtn.style.cssText = "padding: 2px 10px; font-size: 12px; cursor: pointer;";
+    fractIterBtn.onclick = function() {
+      this.visualization.setFractalVariant("convergence");
+      this.setMode("fractal");
+      this.refreshModeButtons();
+    }.bind(this);
+    row1.appendChild(fractIterBtn);
+    const fractInterBtn = document.createElement("button");
+    fractInterBtn.innerHTML = "Fractal (Interaction)";
+    fractInterBtn.setAttribute("id", divIdPrefix + "_mode_fractal_inter");
+    fractInterBtn.style.cssText = "padding: 2px 10px; font-size: 12px; cursor: pointer;";
+    fractInterBtn.onclick = function() {
+      this.visualization.setFractalVariant("interaction");
+      this.setMode("fractal");
+      this.refreshModeButtons();
+    }.bind(this);
+    row1.appendChild(fractInterBtn);
     this.modeSimBtn = simBtn;
-    this.modeFractalBtn = fractBtn;
+    this.modeFractalIterBtn = fractIterBtn;
+    this.modeFractalInterBtn = fractInterBtn;
     this.controlDrawDiv.appendChild(row1);
 
     // Row 2: Iterations, speed, tolerance (same controls in both modes)
@@ -134,11 +149,18 @@ class DynamicShootingWidget {
     }.bind(this);
     controlBar.appendChild(nextButton);
 
+    this.refreshModeButtons = function() {
+      const mode = this.mode;
+      const variant = this.visualization.fractalVariant || "convergence";
+      this.modeSimBtn.style.fontWeight = mode === "simulation" ? "bold" : "normal";
+      this.modeFractalIterBtn.style.fontWeight = (mode === "fractal" && variant === "convergence") ? "bold" : "normal";
+      this.modeFractalInterBtn.style.fontWeight = (mode === "fractal" && variant === "interaction") ? "bold" : "normal";
+    }.bind(this);
+
     this.setMode = function(mode) {
       this.mode = mode;
       this.visualization.setMode(mode);
-      this.modeSimBtn.style.fontWeight = mode === "simulation" ? "bold" : "normal";
-      this.modeFractalBtn.style.fontWeight = mode === "fractal" ? "bold" : "normal";
+      this.refreshModeButtons();
       this.update();
     }.bind(this);
 

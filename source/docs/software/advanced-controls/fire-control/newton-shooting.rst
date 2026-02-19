@@ -105,14 +105,16 @@ A practical compromise: use the constant-velocity derivative :math:`1/v_p` as a 
 
 The convergence rate of this proxy-Newton approach sits between linear (fixed-point) and quadratic (exact Newton), with the gap depending on how much drag distorts :math:`\operatorname{tof}'(D)` from :math:`1/v_p`.  For FRC-class projectiles where drag is modest, the distortion is small and you get nearly the full Newton speedup for free.
 
-Contraction Rate and Preventing Bad Shots, Revisited
-----------------------------------------------------
+Shot Quality in Practice
+-------------------------
 
-It may seem at this point that we have "solved" the problem of the "mach cone" - by using Newton's method, we can converge to the correct solution in a few iterations, even in the troublesome region of sprinting directly towards the target.  But remember, Newton's method does not change the physics of the problem - it only changes the numerics.  The shot will still likely miss if the robot velocity is not estimated accurately enough.
+Newton's method converges to the correct solution in a few iterations even in the Mach cone region, but it does not change the physics: the shot is still fragile there if the robot velocity is wrong.  The fixed-point iteration's contraction rate gives you a *shot quality metric* that Newton alone does not.  Because the extra work is cheap, use both.
 
-So, while Newton's method gives us a very powerful tool for quickly finding the correct firing solution, it does so at the cost of erasing the convenient built-in "bad shot" warning system of the fixed-point iteration.  Fortunately, because these computations are exceedingly cheap, we can just do both:
+**In practice:**
 
-1. **Newton's method** (with proxy derivative) produces the *firing solution*.  It always converges quickly, even in the Mach cone region.
-2. **The fixed-point iteration**, by means of its contraction rate, produces a *firing solution quality metric* from the same initial guess.
+1. **Newton's method** (with proxy derivative) produces the *firing solution*.  Use it so the solver always converges quickly.
+2. **Fixed-point quality metric.**  Run a short fixed-point sequence (e.g. :math:`1 + n` steps with your iteration budget :math:`n`) from the same initial guess.  Form the ratio of the last two TOF steps to get the contraction factor :math:`|\phi'|` in :math:`[0,1]`.  This is nonparametric: you do not need to know your velocity or shooter error; it tells you how fragile the shot is.  When :math:`|\phi'| \approx 0` (e.g. along the geodesic), platform and shooter errors decouple; when :math:`|\phi'|` is large, they amplify and interact.
+3. **First-order platform miss.**  Combine with an estimate of velocity uncertainty :math:`|\delta\mathbf{v}|`: the leading miss from platform error is :math:`\tau \times |\delta\mathbf{v}|`.  Use your solved :math:`\tau`; no extra iterations needed.
+4. **Advisory UI.**  Display both metrics separately (and optionally a combined warning), not only a single fused value.  Show the first-order platform miss :math:`\tau \times |\delta\mathbf{v}|` (e.g. expected miss in meters) and the interaction indicator :math:`|\phi'|` (e.g. fragility 0–1) as distinct readouts.  When the operator is constrained to move fast, they may care mainly about the margins (first-order); in other situations both matter.  Suppress or warn when either exceeds a threshold, but let the operator see both values and override when the situation warrants (e.g. a marginal shot with little time left).  Prefer approach velocities along or near the geodesic when possible.
 
-This separates *solver convergence* from *shot quality*, turning convergence-based shot suppression from a hard limitation into an overridable advisory.  The driver retains authority over the risk/reward tradeoff: a marginal-confidence shot with ten seconds left and down by one is a shot you take.  The algorithm provides the information; the human makes the call.
+This separates *solver convergence* from *shot quality*, so convergence-based shot suppression becomes an overridable advisory.  The algorithm provides the information; the human makes the call.

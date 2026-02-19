@@ -33,9 +33,8 @@ class NewtonShootingVisualization extends DynamicShootingVisualization {
     const vp = this.projectileSpeed;
     const vx = robotVel.x;
     const vy = robotVel.y;
-
-    // Initial guess: straight-line TOF
-    let t = D0 / vp;
+    const vToward = (dx0 * vx + dy0 * vy) / D0;
+    let t = vp + vToward > 1e-10 ? D0 / (vp + vToward) : D0 / vp;
     let prevTOF = null;
 
     for (let iter = 0; iter < maxIter; iter++) {
@@ -99,8 +98,8 @@ class NewtonShootingVisualization extends DynamicShootingVisualization {
     const vy = robotVel.y;
     const vrMag = Math.sqrt(vx * vx + vy * vy);
     const tol = this.convergenceTolerance;
-
-    let t = D0 / vp;
+    const vToward = (dx0 * vx + dy0 * vy) / D0;
+    let t = vp + vToward > 1e-10 ? D0 / (vp + vToward) : D0 / vp;
 
     for (let k = 1; k <= maxIter; k++) {
       const X = dx0 - vx * t;
