@@ -22,15 +22,15 @@ As the robot moves, the *virtual target* shifts opposite to the robot's velocity
 
 with components :math:`d_x(\tau) = (g_x - r_x) - v_x \tau` and :math:`d_y(\tau) = (g_y - r_y) - v_y \tau`.  The distance to the virtual target is :math:`D(\tau) = \lvert\mathbf{d}(\tau)\rvert = \sqrt{d_x^2 + d_y^2}`.
 
-The firing table maps distance to time of flight; call this mapping :math:`\operatorname{tof}(D)`.  It may be the constant-velocity model :math:`\operatorname{tof}(D) = D / v_p`, or an empirical lookup table (LUT) that violates that assumption (e.g. due to drag).  The fixed-point iteration from the previous article is :math:`\tau_{n+1} = \operatorname{tof}\!\bigl(D(\tau_n)\bigr)` — we converge to the TOF that the table implies for the current geometry.
+The firing table maps distance to time of flight; call this mapping :math:`\tau(D)`.  It may be the constant-velocity model :math:`\tau(D) = D / v_p`, or an empirical lookup table (LUT) that violates that assumption (e.g. due to drag).  The fixed-point iteration from the previous article is :math:`\tau_{n+1} = \tau(D(\tau_n))` — we converge to the TOF that the table implies for the current geometry.
 
 To apply Newton's method, we rewrite the fixed-point condition as a root-finding problem.  Define the *TOF error*:
 
 .. math::
 
-   E(\tau) \;=\; \tau \;-\; \operatorname{tof}\!\bigl(D(\tau)\bigr)
+   E(\tau) \;=\; \tau \;-\; \tau\!\bigl(D(\tau)\bigr)
 
-At the solution, :math:`E(\tau^*) = 0` — the guessed TOF equals the TOF the table demands for the virtual distance :math:`D(\tau^*)`.  So **whatever** :math:`\operatorname{tof}` we use (constant-velocity or LUT), Newton will converge to *that* table's TOF if we use that same :math:`\operatorname{tof}` in the residual.  Newton's method iterates:
+At the solution, :math:`E(\tau^*) = 0` — the guessed TOF equals the TOF the table demands for the virtual distance :math:`D(\tau^*)`.  So **whatever** :math:`\tau(D)` we use (constant-velocity or LUT), Newton will converge to *that* table's TOF if we use that same :math:`\tau(D)` in the residual.  Newton's method iterates:
 
 .. math::
 
@@ -46,12 +46,12 @@ This is the rate at which the virtual target distance changes per unit change in
 
 .. math::
 
-   E'(\tau) \;=\; 1 \;-\; \operatorname{tof}'(D)\,\frac{dD}{d\tau}
-            \;=\; 1 \;+\; \operatorname{tof}'(D)\;\frac{d_x\, v_x + d_y\, v_y}{D}
+   E'(\tau) \;=\; 1 \;-\; \tau'(D)\,\frac{dD}{d\tau}
+            \;=\; 1 \;+\; \tau'(D)\;\frac{d_x\, v_x + d_y\, v_y}{D}
 
-(the two negatives — one from :math:`E = \tau - \operatorname{tof}`, one from :math:`dD/d\tau` — combine to a positive term.)  So in general we need :math:`\operatorname{tof}'(D)` to form the Newton step.
+(the two negatives — one from :math:`E = \tau - \tau(D)`, one from :math:`dD/d\tau` — combine to a positive term.)  So in general we need :math:`\tau'(D)` to form the Newton step.
 
-**Constant-velocity case.**  When :math:`\operatorname{tof}(D) = D/v_p`, we have :math:`\operatorname{tof}'(D) = 1/v_p` exactly.  Then:
+**Constant-velocity case.**  When :math:`\tau(D) = D/v_p`, we have :math:`\tau'(D) = 1/v_p` exactly.  Then:
 
 .. math::
 
@@ -65,11 +65,11 @@ and the Newton update is:
 
 with :math:`d_x`, :math:`d_y`, and :math:`D` evaluated at :math:`\tau_n`.
 
-**LUT / empirical table (middleground).**  When the firing table is empirical, :math:`\operatorname{tof}(D)` is given by the table (e.g. interpolated), so the *true* TOF for a given distance is :math:`\operatorname{tof}_{\mathrm{LUT}}(D)`.  We want the iteration to converge to that value — so we **use the LUT in the residual**: :math:`E(\tau) = \tau - \operatorname{tof}_{\mathrm{LUT}}(D(\tau))`.  The derivative, however, would require :math:`\operatorname{tof}_{\mathrm{LUT}}'(D)`, which we do not have (differentiating a noisy table is undesirable).  The practical middleground is to **keep the constant-velocity derivative** as a *proxy*: use the same :math:`E'(\tau)` as above (with :math:`1/v_p`), but in the Newton step use the LUT for the residual.  That is:
+**LUT / empirical table (middleground).**  When the firing table is empirical, :math:`\tau(D)` is given by the table (e.g. interpolated), so the *true* TOF for a given distance is :math:`\tau_{\mathrm{LUT}}(D)`.  We want the iteration to converge to that value — so we **use the LUT in the residual**: :math:`E(\tau) = \tau - \tau_{\mathrm{LUT}}(D(\tau))`.  The derivative, however, would require :math:`\tau_{\mathrm{LUT}}'(D)`, which we do not have (differentiating a noisy table is undesirable).  The practical middleground is to **keep the constant-velocity derivative** as a *proxy*: use the same :math:`E'(\tau)` as above (with :math:`1/v_p`), but in the Newton step use the LUT for the residual.  That is:
 
 .. math::
 
-   \tau_{n+1} \;=\; \tau_n \;-\; \frac{\tau_n - \operatorname{tof}_{\mathrm{LUT}}(D)}{\;1 \;+\; \dfrac{d_x\, v_x + d_y\, v_y}{v_p\; D}\;}
+   \tau_{n+1} \;=\; \tau_n \;-\; \frac{\tau_n - \tau_{\mathrm{LUT}}(D)}{\;1 \;+\; \dfrac{d_x\, v_x + d_y\, v_y}{v_p\; D}\;}
 
 So the **residual** uses the empirical TOF (we converge to the correct table TOF); the **denominator** uses the theoretical :math:`1/v_p` (we get fast convergence without differentiating the table).  The constant-velocity assumption guides the step direction; the LUT fixes the target TOF.
 
@@ -108,13 +108,13 @@ Where Newton does genuinely help is in preventing a *bad failure mode*: in a rea
 Proxy Derivatives for Empirical Tables
 ---------------------------------------
 
-As derived above, the *middleground* for empirical tables is: residual :math:`E(\tau) = \tau - \operatorname{tof}_{\mathrm{LUT}}(D(\tau))` (so the fixed point is the table's TOF), derivative :math:`E'(\tau) = 1 + (d_x v_x + d_y v_y)/(v_p D)` using the constant-velocity proxy :math:`\operatorname{tof}'(D) \approx 1/v_p` (so the table is never differentiated).  In the constant-velocity model, :math:`\operatorname{tof}'(D) = 1/v_p` is exact and Newton achieves quadratic convergence.  With a LUT, using :math:`1/v_p` as a proxy gives a quasi-Newton iteration that:
+As derived above, the *middleground* for empirical tables is: residual :math:`E(\tau) = \tau - \tau_{\mathrm{LUT}}(D(\tau))` (so the fixed point is the table's TOF), derivative :math:`E'(\tau) = 1 + (d_x v_x + d_y v_y)/(v_p D)` using the constant-velocity proxy :math:`\tau'(D) \approx 1/v_p` (so the table is never differentiated).  In the constant-velocity model, :math:`\tau'(D) = 1/v_p` is exact and Newton achieves quadratic convergence.  With a LUT, using :math:`1/v_p` as a proxy gives a quasi-Newton iteration that:
 
 - Converges faster than fixed-point (the proxy provides a damped Newton correction)
 - Does not require differentiating the firing table (no noise amplification)
-- Degrades gracefully: for drag, the true :math:`\operatorname{tof}'(D) > 1/v_p`, so the proxy undershoots the correction — a *stabilizing* error that slows convergence slightly but never causes divergence
+- Degrades gracefully: for drag, the true :math:`\tau'(D) > 1/v_p`, so the proxy undershoots the correction — a *stabilizing* error that slows convergence slightly but never causes divergence
 
-The convergence rate of this proxy-Newton approach sits between linear (fixed-point) and quadratic (exact Newton), with the gap depending on how much drag distorts :math:`\operatorname{tof}'(D)` from :math:`1/v_p`.  For FRC-class projectiles where drag is modest, the distortion is small and you get nearly the full Newton speedup for free.
+The convergence rate of this proxy-Newton approach sits between linear (fixed-point) and quadratic (exact Newton), with the gap depending on how much drag distorts :math:`\tau'(D)` from :math:`1/v_p`.  For FRC-class projectiles where drag is modest, the distortion is small and you get nearly the full Newton speedup for free.
 
 Shot Quality in Practice
 -------------------------
