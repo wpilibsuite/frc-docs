@@ -119,8 +119,6 @@ Use the visualization below to compare Newton's method to the fixed-point iterat
 
 Toggle between **Fractal (Newton)** and **Fractal (Fixed-Point)** to see the dramatic reduction in iteration count.  The fixed-point fractal's intricate banding structure — hundreds of iterations near the Mach cone boundary — collapses to a near-uniform 2–3 iterations under Newton's method.  The convergence envelope (blue) also expands significantly: Newton converges in regions where fixed-point iteration fails entirely within the same iteration budget.
 
-.. note:: In the Newton modes, the convergence envelope may show a narrow dip along the ray directly toward the target.  This is a *point singularity* of :math:`E'(\tau)`: when the robot speed toward the target exactly equals :math:`v_p`, the virtual target distance :math:`D(\tau)` momentarily passes through zero, causing :math:`E'` to diverge.  The envelope's ray-casting algorithm detects this as a convergence failure, but it is a measure-zero event — the heatmap's finite grid steps over it, and convergence recovers immediately on either side.  The singularity is an artifact of the envelope search, not a practical concern for the algorithm.  However, a robot moving directly towards the target at-or-above the projectile speed will collide with the target at or before the projectile lands.
-
 Convergence Does Not Equal Quality
 -----------------------------------
 
