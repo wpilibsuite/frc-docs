@@ -88,7 +88,7 @@ To avoid this, we need to pick an initial guess that is close to the true soluti
 
    \tau = \frac{D}{v_p + |\mathbf{v}|}
 
-We can use this formula for a general platform velocity by projecting the platform velocity onto the direction of the target: 
+We can use this formula for a general platform velocity by projecting the platform velocity onto the direction of the target:
 
 .. math::
 

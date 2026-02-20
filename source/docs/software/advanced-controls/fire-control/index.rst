@@ -23,3 +23,4 @@ In addition to conceptual simplicity, recursion has another advantage: it provid
    static-shooting
    dynamic-shooting
    newton-shooting
+   linear-drag
