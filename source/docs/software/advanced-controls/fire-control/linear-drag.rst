@@ -42,13 +42,13 @@ This effective time-of-flight is easy to compute, and can be applied to both the
 Fixed-Point Iteration with Linear Drag (TOF Recursion)
 ------------------------------------------------------
 
-The recursion is unchanged in form: we repeatedly look up the TOF for the current virtual distance and use that TOF to update the virtual target.  The only change is that the virtual target is now computed using :math:`\alpha(\tau)` instead of :math:`\tau`:
+The recursion is unchanged in form: we repeatedly look up the TOF for the current virtual distance and use that TOF to update the virtual target:
 
-1. Given a TOF guess :math:`\tau_n`, form :math:`\mathbf{d}(\tau_n) = (\mathbf{g} - \mathbf{r}) - \mathbf{v}\,\alpha(\tau_n)` and :math:`D(\tau_n) = \lvert\mathbf{d}(\tau_n)\rvert`.
-2. Look up the time of flight for that distance: :math:`\tau_{n+1} = \tau(D(\tau_n))` (or :math:`\tau_{\mathrm{LUT}}(D(\tau_n))` with your table).
-3. Repeat until converged.
+1. Given a TOF guess :math:`\tau_n`, form the effective time-of-flight :math:`\alpha(\tau_n)`
+2. Calculate the virtual target offset using the effective time-of-flight: :math:`\mathbf{v}\,\alpha(\tau_n)`
+3. Look up the time-of-flight for the distance to the virtual target in the look-up table, and repeat until converged.
 
-So the **fixed-point iteration** remains :math:`\tau_{n+1} = \tau(D(\tau_n))`; the geometry :math:`D(\tau)` now uses the drag-adjusted displacement :math:`\mathbf{v}\,\alpha(\tau)` instead of :math:`\mathbf{v}\,\tau`.  If your LUT was built under the same linear-drag assumption (or you use a constant-velocity table as an approximation), this recursion converges to the correct lead for that model.
+There's no need to modify the look-up table or change any other step in the recursion; the **only** change is to use the effective time-of-flight instead of the original time-of-flight when computing the virtual target offset.
 
 Newton's Method with Linear Drag
 --------------------------------
