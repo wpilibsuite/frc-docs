@@ -98,10 +98,14 @@ The Drag Constant :math:`k`
 
 Our linear drag adjustment in either case introduces a single new parameter: the drag constant :math:`k`.  This corresponds to the "time constant" of the linear drag decay: after time :math:`\tau = 1/k`, the velocity has decayed to :math:`e^{-1} \approx 0.368` of its initial value (and the displacement over that time is :math:`\mathbf{v}\,\alpha(1/k) = \mathbf{v}\,(1 - e^{-1})/k`).
 
-For FRC gamepieces, which travel at low speed and typically have a fair amount of linear drag, it is pretty easy to "eyeball" the drag constant by simply counting the seconds for a launched projectile to lose a bit more than half its initial velocity.  The reciprocal of this time is the drag constant :math:`k`.
+We can "eyeball" the drag constant by launching a gamepiece and counting the seconds for it to lose a bit more than half its initial velocity, and taking the reciprocal.  However, if we want to do something a bit more rigorous, we can do a variable-shot-distance experiment.
 
-Alternatively, you can simply tune the drag constant until the shots go in at high platform speeds (remember, the firing table should already account for the effect of drag on stationary shots, so you are tuning for the induced windage effect alone).
+Alternatively, we can launch a projectile at a sufficiently high velocity that the drag brings it to a (horizontal) stop (meaning that it is falling vertically when it hits the ground).  This is the "asymptote" case we discussed earlier, of :math:`\alpha(\tau) \to \frac{1}{k}` as :math:`\tau \to \infty`; noting that corresponding the displacement of this asymptote :math:`\frac{\mathbf{v}}{k}` depends only on the drag constant and the initial velocity, we can use the initial velocity and the measured shot distance :math:`d` to solve for the drag constant:
 
+.. math::
 
+   k = \frac{\mathbf{v}}{d}
 
+This is, of course, only as accurate as the measurements of the initial velocity and the shot distance.
 
+Or, ultimately, we can just tune the drag constant in the actual robot code until the shots go in at high platform speeds (remember, the firing table should already account for the effect of drag on stationary shots, so we are tuning for the induced windage effect alone).  This is perfectly acceptable, and is the simplest method if we are not able to measure the drag constant experimentally.
