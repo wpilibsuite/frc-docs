@@ -27,17 +27,17 @@ Under linear drag, displacement over time is not simply linear; it decays expone
 
    \Delta\mathbf{x} \;=\; \mathbf{v}\;\frac{1 - e^{-k \tau}}{k}
 
-So instead of :math:`\mathbf{v}\,\tau`, we have :math:`\mathbf{v}\,\alpha(\tau)` with an **adjustment factor**:
+So instead of :math:`\mathbf{v}\,\tau`, we have :math:`\mathbf{v}\,\alpha(\tau)` with an **effective time-of-flight**:
 
 .. math::
 
    \alpha(\tau) \;=\; \frac{1 - e^{-k \tau}}{k}
 
-Intuitively, as the platform moves, the projectile initially gets a boost from the platform, but drag decays that relative motion - so, for small :math:`\tau`, the displacement is approximately our original displacement :math:`\mathbf{v}\,\tau` as the velocity does not yet decay much; but for large :math:`\tau`, the displacement approaches an asymptote of :math:`\frac{\mathbf{v}}{k}` as the velocity induced by the platform's motion decays to zero.
+In the case of short flight times or low drag constants, :math:`\alpha(\tau) \approx \tau`, so the effective time-of-flight is approximately the original time-of-flight.  This is our original Galilean displacement.
 
-As :math:`k \to 0` (vacuum), :math:`\alpha(\tau) \to \tau`, and we recover simple Galilean displacement :math:`\mathbf{v}\,\tau`.
+As :math:`\tau` increases, :math:`\alpha(\tau)` approaches :math:`\frac{1}{k}`.  This asymptote represents the limit of the effect of the platform's motion on the projectile; once the platform-induced velocity has decayed to zero, further flight time does not cause any additional platform-induced displacement.
 
-This adjustment factor is easy to compute, and can be applied to both the fixed-point iteration and Newton's method.
+This effective time-of-flight is easy to compute, and can be applied to both the fixed-point iteration and Newton's method.
 
 Fixed-Point Iteration with Linear Drag (TOF Recursion)
 ------------------------------------------------------
