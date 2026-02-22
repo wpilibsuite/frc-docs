@@ -98,7 +98,7 @@ The Drag Constant :math:`k`
 
 Our linear drag adjustment in either case introduces a single new parameter: the drag constant :math:`k`.  This corresponds to the "time constant" of the linear drag decay: after time :math:`\tau = 1/k`, the velocity has decayed to :math:`e^{-1} \approx 0.368` of its initial value (and the displacement over that time is :math:`\mathbf{v}\,\alpha(1/k) = \mathbf{v}\,(1 - e^{-1})/k`).
 
-We can "eyeball" the drag constant by launching a gamepiece and counting the seconds for it to lose a bit more than half its initial velocity, and taking the reciprocal.  However, if we want to do something a bit more rigorous, we can do a variable-shot-distance experiment.
+We can "eyeball" the drag constant by launching a gamepiece and counting the seconds for it to lose a bit more than half its initial velocity, and taking the reciprocal.
 
 Alternatively, we can launch a projectile at a sufficiently high velocity that the drag brings it to a (horizontal) stop (meaning that it is falling vertically when it hits the ground).  This is the "asymptote" case we discussed earlier, of :math:`\alpha(\tau) \to \frac{1}{k}` as :math:`\tau \to \infty`; noting that corresponding the displacement of this asymptote :math:`\frac{\mathbf{v}}{k}` depends only on the drag constant and the initial velocity, we can use the initial velocity and the measured shot distance :math:`d` to solve for the drag constant:
 
