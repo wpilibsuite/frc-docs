@@ -50,7 +50,7 @@ Compute the TOF error.  The table says that distance :math:`D` corresponds to ti
 - **LUT:** look up :math:`\tau(D)` in your table (or interpolate); :math:`E = \tau_n - \tau_{\mathrm{LUT}}(D)`.  The residual uses the table so we converge to the table's TOF.
 
 Step 3 — Rate of change of distance with respect to :math:`\tau`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As we increase the TOF guess, the virtual target moves; :math:`d_x` and :math:`d_y` each change by :math:`-v_x` and :math:`-v_y` per unit :math:`\tau`.  So the rate at which :math:`D` changes is:
 
@@ -61,7 +61,7 @@ As we increase the TOF guess, the virtual target moves; :math:`d_x` and :math:`d
 (This is negative when the robot has a component of velocity toward the target — increasing :math:`\tau` shortens the distance.)  In vector form, the same quantity is :math:`\mathbf{d} \cdot (-\mathbf{v}) / D`.
 
 Step 4 — The error derivative :math:`E'`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By the chain rule, :math:`E' = 1 - \tau'(D)\,(dD/d\tau)`.  We need :math:`\tau'(D)`:
 

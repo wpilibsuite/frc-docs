@@ -345,7 +345,7 @@ class NewtonShootingWidget {
     this.fixedBtn.style.fontWeight =
       mode === "fixed-point" ? "bold" : "normal";
 
-    // Update visualisation mode and solver method
+    // Update visualization mode and solver method
     if (mode === "newton") {
       this.visualization.setSolverMethod("newton");
       this.visualization.setMode("fractal");

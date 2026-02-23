@@ -83,7 +83,7 @@ class NewtonShootingVisualization extends DynamicShootingVisualization {
     return iterations;
   }
 
-  // ── Optimised convergence counter (no allocations, for heatmap) ───────────
+  // ── Optimized convergence counter (no allocations, for heatmap) ───────────
 
   getNewtonIterationsToConvergence(robotVel, maxIter) {
     if (!this.robotPos || !this.targetPos) return maxIter;
