@@ -205,7 +205,7 @@ class DynamicShootingVisualization extends BaseVisualization {
     this.mode = "simulation";
     // Fractal/heatmap state (velocity-space view)
     this.heatmapData = null;
-    this.fractalVariant = "convergence"; // "convergence" | "interaction"
+    this.fractalVariant = "convergence"; // "convergence" | "stability"
     this.heatmapMaxVel = 20.0;
     this.heatmapGrid = 200;
     this.iterationCap = 1000;
@@ -308,11 +308,11 @@ class DynamicShootingVisualization extends BaseVisualization {
         const vx = bounds.vxMin + (i + 0.5) * stepX;
         const vy = bounds.vyMax - (j + 0.5) * stepY;
         if (!this.isInsideReachability(vx, vy)) {
-          row.push(variant === "interaction" ? NaN : -1);
+          row.push(variant === "stability" ? NaN : -1);
           continue;
         }
         const vel = { x: vx, y: vy };
-        if (variant === "interaction") {
+        if (variant === "stability") {
           const phi = this.getInteractionIndicator(vel);
           row.push(phi);
         } else {
@@ -481,7 +481,7 @@ class DynamicShootingVisualization extends BaseVisualization {
   
   // Run the dynamic shooting recursion algorithm iterations
   // Returns an array of iteration data objects.
-  // When allowEarlyTermination is false, never break on convergence (used for interaction heatmap).
+  // When allowEarlyTermination is false, never break on convergence (used for stability heatmap).
   runIterations(robotVel, maxIter, allowEarlyTermination = true) {
     const iterations = [];
     
@@ -577,7 +577,7 @@ class DynamicShootingVisualization extends BaseVisualization {
   // Contraction factor |φ'| from the last two fixed-point steps after n iterations.
   // Uses 1 + n (n = this.currentIteration) so the converged-shot trace aligns with the
   // iteration control.
-  // Returns value in [0, 1] (0 = geodesic-like, 1 = bad). Used for interaction heatmap.
+  // Returns value in [0, 1] (0 = geodesic-like, 1 = bad). Used for stability heatmap.
   getInteractionIndicator(robotVel) {
     const maxIter = 1 + this.currentIteration;
     const iterations = this.runIterations(robotVel, maxIter, false);
@@ -804,7 +804,7 @@ class DynamicShootingVisualization extends BaseVisualization {
     for (let j = 0; j < n; j++) {
       for (let i = 0; i < n; i++) {
         const v = this.heatmapData[j][i];
-        const color = variant === "interaction"
+        const color = variant === "stability"
           ? DynamicShootingVisualization.interactionToColor(v)
           : DynamicShootingVisualization.iterationToColor(v, cap);
         ctx.fillStyle = color != null ? color : bg;
@@ -1038,7 +1038,7 @@ class DynamicShootingVisualization extends BaseVisualization {
     ctx.fillStyle = "#000";
     ctx.font = "11px Arial";
     ctx.textAlign = "right";
-    if (variant === "interaction") {
+    if (variant === "stability") {
       ctx.fillStyle = "#1a1a1a";
       ctx.font = "11px Arial";
       ctx.fillText("0 good → 1 bad", x0 + barWidth, y0 - 12);

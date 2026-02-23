@@ -58,7 +58,7 @@ class DynamicShootingWidget {
     this.controlDrawDiv.style.position = "relative";
     this.controlDrawDiv.style.zIndex = "10";
 
-    // Row 1: Mode toggle (Simulation, Fractal iterations, Fractal interaction)
+    // Row 1: Mode toggle (Simulation, Fractal iterations, Fractal stability)
     const row1 = document.createElement("div");
     row1.style.cssText = "display: flex; align-items: center; justify-content: center; gap: 6px;";
     const simBtn = document.createElement("button");
@@ -78,11 +78,11 @@ class DynamicShootingWidget {
     }.bind(this);
     row1.appendChild(fractIterBtn);
     const fractInterBtn = document.createElement("button");
-    fractInterBtn.innerHTML = "Fractal (Interaction)";
+    fractInterBtn.innerHTML = "Fractal (Stability)";
     fractInterBtn.setAttribute("id", divIdPrefix + "_mode_fractal_inter");
     fractInterBtn.style.cssText = "padding: 2px 10px; font-size: 12px; cursor: pointer;";
     fractInterBtn.onclick = function() {
-      this.visualization.setFractalVariant("interaction");
+      this.visualization.setFractalVariant("stability");
       this.setMode("fractal");
       this.refreshModeButtons();
     }.bind(this);
@@ -154,7 +154,7 @@ class DynamicShootingWidget {
       const variant = this.visualization.fractalVariant || "convergence";
       this.modeSimBtn.style.fontWeight = mode === "simulation" ? "bold" : "normal";
       this.modeFractalIterBtn.style.fontWeight = (mode === "fractal" && variant === "convergence") ? "bold" : "normal";
-      this.modeFractalInterBtn.style.fontWeight = (mode === "fractal" && variant === "interaction") ? "bold" : "normal";
+      this.modeFractalInterBtn.style.fontWeight = (mode === "fractal" && variant === "stability") ? "bold" : "normal";
     }.bind(this);
 
     this.setMode = function(mode) {
