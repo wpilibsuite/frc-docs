@@ -154,13 +154,6 @@ The convergence rate of this proxy-Newton approach sits between linear (fixed-po
 Shot Quality in Practice
 -------------------------
 
-Newton's method converges to the correct solution in a few iterations even in the Mach cone region, but it does not change the physics: the shot is still fragile there if the robot velocity is wrong.  The fixed-point iteration's contraction rate gives you a *shot quality metric* that Newton alone does not.  Because the extra work is cheap, use both.
+Newton's method converges to the correct solution in a few iterations even in the Mach cone region, but it does not change the physics: the shot is still fragile there if the robot velocity is wrong.
 
-**In practice:**
-
-1. **Newton's method** (with proxy derivative) produces the *firing solution*.  Use it so the solver always converges quickly.
-2. **Fixed-point quality metric.**  Run a short fixed-point sequence (e.g. :math:`1 + n` steps with your iteration budget :math:`n`) from the same initial guess.  Form the ratio of the last two TOF steps to get the contraction factor :math:`|\phi'|` in :math:`[0,1]`.  This is nonparametric: you do not need to know your velocity or shooter error; it tells you how fragile the shot is.  When :math:`|\phi'| \approx 0` (e.g. along the geodesic), platform and shooter errors decouple; when :math:`|\phi'|` is large, they amplify and interact.
-3. **First-order platform miss.**  Combine with an estimate of velocity uncertainty :math:`|\delta\mathbf{v}|`: the leading miss from platform error is :math:`\tau \times |\delta\mathbf{v}|`.  Use your solved :math:`\tau`; no extra iterations needed.
-4. **Advisory UI.**  Display both metrics separately (and optionally a combined warning), not only a single fused value.  Show the first-order platform miss :math:`\tau \times |\delta\mathbf{v}|` (e.g. expected miss in meters) and the interaction indicator :math:`|\phi'|` (e.g. fragility 0–1) as distinct readouts.  When the operator is constrained to move fast, they may care mainly about the margins (first-order); in other situations both matter.  Suppress or warn when either exceeds a threshold, but let the operator see both values and override when the situation warrants (e.g. a marginal shot with little time left).  Prefer approach velocities along or near the geodesic when possible.
-
-This separates *solver convergence* from *shot quality*, so convergence-based shot suppression becomes an overridable advisory.  The algorithm provides the information; the human makes the call.
+Therefore, the shot quality metrics discussed in the previous article are still important to consider when making a shot, and it can be useful to run a few iterations of fixed-point iteration to get a sense of the shot stability, *even when your shot solution comes from Newton's method*.
