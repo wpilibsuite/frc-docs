@@ -14,64 +14,76 @@ We first introduce notation.  Let:
 - :math:`v_p` — projectile speed (constant)
 - :math:`\tau` — time of flight (the unknown we solve for)
 
-As the robot moves, the *virtual target* shifts opposite to the robot's velocity.  The displacement from the robot to the virtual target at a given TOF guess :math:`\tau` is:
-
-.. math::
-
-   \mathbf{d}(\tau) \;=\; (\mathbf{g} - \mathbf{r}) \;-\; \mathbf{v}\,\tau
-
-with components :math:`d_x(\tau) = (g_x - r_x) - v_x \tau` and :math:`d_y(\tau) = (g_y - r_y) - v_y \tau`.  The distance to the virtual target is :math:`D(\tau) = \lvert\mathbf{d}(\tau)\rvert = \sqrt{d_x^2 + d_y^2}`.
-
-The firing table maps distance to time of flight; call this mapping :math:`\tau(D)`.  It may be the constant-velocity model :math:`\tau(D) = D / v_p`, or an empirical lookup table (LUT) that violates that assumption (e.g. due to drag).  The fixed-point iteration from the previous article is :math:`\tau_{n+1} = \tau(D(\tau_n))` — we converge to the TOF that the table implies for the current geometry.
-
-To apply Newton's method, we rewrite the fixed-point condition as a root-finding problem.  Define the *TOF error*:
-
-.. math::
-
-   E(\tau) \;=\; \tau \;-\; \tau\!\bigl(D(\tau)\bigr)
-
-At the solution, :math:`E(\tau^*) = 0` — the guessed TOF equals the TOF the table demands for the virtual distance :math:`D(\tau^*)`.  So **whatever** :math:`\tau(D)` we use (constant-velocity or LUT), Newton will converge to *that* table's TOF if we use that same :math:`\tau(D)` in the residual.  Newton's method iterates:
+As the robot moves, the *virtual target* shifts opposite to the robot's velocity.  The firing table maps distance to time of flight; call this mapping :math:`\tau(D)`.  It may be the constant-velocity model :math:`\tau(D) = D / v_p`, or an empirical lookup table (LUT).  The fixed-point iteration is :math:`\tau_{n+1} = \tau(D(\tau_n))` — we converge to the TOF that the table implies for the current geometry.  To use Newton's method instead, we define the *TOF error* :math:`E(\tau) = \tau - \tau(D(\tau))` and iterate:
 
 .. math::
 
    \tau_{n+1} \;=\; \tau_n \;-\; \frac{E(\tau_n)}{E'(\tau_n)}
 
-The derivative :math:`E'` requires the chain rule through the distance function.  Differentiating :math:`D` with respect to :math:`\tau`:
+The rest of this section is a recipe for computing :math:`E` and :math:`E'` at the current guess :math:`\tau_n`, so you can plug them into the equation above.
+
+Step 1 — Geometry at the current guess
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+At the current TOF guess :math:`\tau_n`, compute the displacement to the virtual target and its distance:
 
 .. math::
 
-   \frac{dD}{d\tau} \;=\; \frac{\mathbf{d} \cdot (-\mathbf{v})}{D} \;=\; -\,\frac{d_x\, v_x + d_y\, v_y}{D}
+   d_x \;=\; (g_x - r_x) \;-\; v_x\,\tau_n
+   \qquad
+   d_y \;=\; (g_y - r_y) \;-\; v_y\,\tau_n
+   \qquad
+   D \;=\; \sqrt{d_x^2 + d_y^2}
 
-This is the rate at which the virtual target distance changes per unit change in TOF guess; it is negative when the robot velocity has a component toward the target (increasing :math:`\tau` moves the virtual target closer).  By the chain rule, the error derivative is:
+(Equivalently, :math:`\mathbf{d} = (\mathbf{g} - \mathbf{r}) - \mathbf{v}\,\tau_n` and :math:`D = \lvert\mathbf{d}\rvert`.)
 
-.. math::
+Step 2 — The error (residual)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   E'(\tau) \;=\; 1 \;-\; \tau'(D)\,\frac{dD}{d\tau}
-            \;=\; 1 \;+\; \tau'(D)\;\frac{d_x\, v_x + d_y\, v_y}{D}
-
-(the two negatives — one from :math:`E = \tau - \tau(D)`, one from :math:`dD/d\tau` — combine to a positive term.)  So in general we need :math:`\tau'(D)` to form the Newton step.
-
-**Constant-velocity case.**  When :math:`\tau(D) = D/v_p`, we have :math:`\tau'(D) = 1/v_p` exactly.  Then:
-
-.. math::
-
-   E'(\tau) \;=\; 1 \;+\; \frac{d_x\, v_x + d_y\, v_y}{v_p\; D}
-
-and the Newton update is:
+Compute the TOF error.  The table says that distance :math:`D` corresponds to time of flight :math:`\tau(D)`; we want that to equal our guess, so the error is:
 
 .. math::
 
-   \tau_{n+1} \;=\; \tau_n \;-\; \frac{\tau_n - D / v_p}{\;1 \;+\; \dfrac{d_x\, v_x + d_y\, v_y}{v_p\; D}\;}
+   E \;=\; \tau_n \;-\; \tau(D)
 
-with :math:`d_x`, :math:`d_y`, and :math:`D` evaluated at :math:`\tau_n`.
+- **Constant-velocity:** :math:`\tau(D) = D/v_p`, so :math:`E = \tau_n - D/v_p`.
+- **LUT:** look up :math:`\tau(D)` in your table (or interpolate); :math:`E = \tau_n - \tau_{\mathrm{LUT}}(D)`.  The residual uses the table so we converge to the table's TOF.
 
-**LUT / empirical table (middleground).**  When the firing table is empirical, :math:`\tau(D)` is given by the table (e.g. interpolated), so the *true* TOF for a given distance is :math:`\tau_{\mathrm{LUT}}(D)`.  We want the iteration to converge to that value — so we **use the LUT in the residual**: :math:`E(\tau) = \tau - \tau_{\mathrm{LUT}}(D(\tau))`.  The derivative, however, would require :math:`\tau_{\mathrm{LUT}}'(D)`, which we do not have (differentiating a noisy table is undesirable).  The practical middleground is to **keep the constant-velocity derivative** as a *proxy*: use the same :math:`E'(\tau)` as above (with :math:`1/v_p`), but in the Newton step use the LUT for the residual.  That is:
+Step 3 — Rate of change of distance with respect to :math:`\tau`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As we increase the TOF guess, the virtual target moves; :math:`d_x` and :math:`d_y` each change by :math:`-v_x` and :math:`-v_y` per unit :math:`\tau`.  So the rate at which :math:`D` changes is:
 
 .. math::
 
-   \tau_{n+1} \;=\; \tau_n \;-\; \frac{\tau_n - \tau_{\mathrm{LUT}}(D)}{\;1 \;+\; \dfrac{d_x\, v_x + d_y\, v_y}{v_p\; D}\;}
+   \frac{dD}{d\tau} \;=\; -\frac{d_x\, v_x + d_y\, v_y}{D}
 
-So the **residual** uses the empirical TOF (we converge to the correct table TOF); the **denominator** uses the theoretical :math:`1/v_p` (we get fast convergence without differentiating the table).  The constant-velocity assumption guides the step direction; the LUT fixes the target TOF.
+(This is negative when the robot has a component of velocity toward the target — increasing :math:`\tau` shortens the distance.)  In vector form, the same quantity is :math:`\mathbf{d} \cdot (-\mathbf{v}) / D`.
+
+Step 4 — The error derivative :math:`E'`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By the chain rule, :math:`E' = 1 - \tau'(D)\,(dD/d\tau)`.  We need :math:`\tau'(D)`:
+
+- **Constant-velocity:** :math:`\tau(D) = D/v_p` gives :math:`\tau'(D) = 1/v_p` exactly.
+- **LUT:** we do not differentiate the table.  Use the constant-velocity proxy :math:`\tau'(D) \approx 1/v_p`; the residual still uses the LUT so we converge to the correct TOF.
+
+With :math:`\tau'(D) = 1/v_p` (exact or proxy), the two minus signs combine and:
+
+.. math::
+
+   E' \;=\; 1 \;+\; \frac{d_x\, v_x + d_y\, v_y}{v_p\, D}
+
+Step 5 — Newton update
+^^^^^^^^^^^^^^^^^^^^^^
+
+Using the values of :math:`E` and :math:`E'` from the steps above:
+
+.. math::
+
+   \tau_{n+1} \;=\; \tau_n \;-\; \frac{E}{E'}
+
+Repeat from Step 1 with :math:`\tau_{n+1}` as the new guess until converged.
 
 Picking an Initial Guess
 ------------------------
