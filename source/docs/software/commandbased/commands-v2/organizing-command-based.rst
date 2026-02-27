@@ -45,18 +45,18 @@ This is sufficient for commands that are only used once. However, for a command 
   // RobotContainer.java
   intakeButton.whileTrue(Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake));
   Command intakeAndShoot = Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake)
-      .alongWith(new RunShooter(shooter));
+    .alongWith(new RunShooter(shooter));
   Command autonomousCommand = Commands.sequence(
-      Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0),
-      Commands.waitSeconds(3.0),
-      Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0)
+    Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0),
+    Commands.waitSeconds(3.0),
+    Commands.startEnd(() -> intake.set(1.0), () -> intake.set(0.0), intake).withTimeout(5.0)
   );
   ```
 
   ```c++
   intakeButton.WhileTrue(frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake}));
   frc2::CommandPtr intakeAndShoot = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake})
-      .AlongWith(RunShooter(&shooter).ToPtr());
+    .AlongWith(RunShooter(&shooter).ToPtr());
   frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
     frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake}).WithTimeout(5.0_s),
     frc2::cmd::Wait(3.0_s),
@@ -106,9 +106,9 @@ Using this new factory method in command groups and button bindings is highly ex
   intakeButton.whileTrue(intake.runIntakeCommand());
   Command intakeAndShoot = intake.runIntakeCommand().alongWith(new RunShooter(shooter));
   Command autonomousCommand = Commands.sequence(
-      intake.runIntakeCommand().withTimeout(5.0),
-      Commands.waitSeconds(3.0),
-      intake.runIntakeCommand().withTimeout(5.0)
+    intake.runIntakeCommand().withTimeout(5.0),
+    Commands.waitSeconds(3.0),
+    intake.runIntakeCommand().withTimeout(5.0)
   );
   ```
 
@@ -128,7 +128,7 @@ Adding a parameter to the ``runIntakeCommand`` method to provide the exact perce
 
   ```java
   public Command runIntakeCommand(double percent) {
-      return new StartEndCommand(() -> this.set(percent), () -> this.set(0.0), this);
+    return new StartEndCommand(() -> this.set(percent), () -> this.set(0.0), this);
   }
   ```
 
@@ -145,15 +145,15 @@ For instance, this code creates a command group that runs the intake forwards fo
 
   ```java
   Command intakeRunSequence = intake.runIntakeCommand(1.0).withTimeout(2.0)
-      .andThen(Commands.waitSeconds(2.0))
-      .andThen(intake.runIntakeCommand(-1.0).withTimeout(5.0));
+    .andThen(Commands.waitSeconds(2.0))
+    .andThen(intake.runIntakeCommand(-1.0).withTimeout(5.0));
   ```
 
   ```c++
   frc2::CommandPtr intakeRunSequence = intake.RunIntakeCommand(1.0).WithTimeout(2.0_s)
-      .AndThen(frc2::cmd::Wait(2.0_s))
-      .AndThen(intake.RunIntakeCommand(-1.0).WithTimeout(5.0_s));
-    ```
+    .AndThen(frc2::cmd::Wait(2.0_s))
+    .AndThen(intake.RunIntakeCommand(-1.0).WithTimeout(5.0_s));
+  ```
 
 This approach is recommended for commands that are conceptually related to only a single subsystem, and is very concise. However, it doesn't fare well with commands related to more than one subsystem: passing in other subsystem objects is unintuitive and can cause race conditions and circular dependencies, and thus should be avoided. Therefore, this approach is best suited for single-subsystem commands, and should be used only for those cases.
 
@@ -167,23 +167,37 @@ Instance factory methods work great for single-subsystem commands.  However, com
 
   ```java
   public class AutoRoutines {
-      public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
-          return Commands.sequence(
-              Commands.parallel(
-                  drivetrain.driveCommand(0.5, 0.5),
-                  intake.runIntakeCommand(1.0)
-              ).withTimeout(5.0),
-              Commands.parallel(
-                drivetrain.stopCommand();
-                intake.stopCommand();
-              )
-          );
-      }
+    public static Command driveAndIntake(Drivetrain drivetrain, Intake intake) {
+      return Commands.sequence(
+        Commands.parallel(
+          drivetrain.driveCommand(0.5, 0.5),
+          intake.runIntakeCommand(1.0)
+        ).withTimeout(5.0),
+        Commands.parallel(
+          drivetrain.stopCommand();
+          intake.stopCommand();
+        )
+      );
+    }
   }
   ```
 
   ```c++
-  // TODO
+  class AutoRoutines {
+   public:
+    static frc2::CommandPtr driveAndIntake(Drivetrain &drivetrain, Intake &intake) {
+      return frc2::cmd::Sequence(
+        frc2::cmd::Parallel(
+          drivetrain.driveCommand(0.5, 0.5),
+          intake.runIntakeCommand(1.0)
+        ).WithTimeout(5.0_s),
+        frc2::cmd::Parallel(
+          drivetrain.stopCommand(),
+          intake.stopCommand()
+        )
+      );
+    }
+  };
   ```
 
 .. todo:: implement C++ version of the above code
@@ -195,37 +209,66 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
 
   ```java
   public class AutoRoutines {
-      private Drivetrain drivetrain;
-      private Intake intake;
-      public AutoRoutines(Drivetrain drivetrain, Intake intake) {
-          this.drivetrain = drivetrain;
-          this.intake = intake;
-      }
-      public Command driveAndIntake() {
-          return Commands.sequence(
-              Commands.parallel(
-                  drivetrain.driveCommand(0.5, 0.5),
-                  intake.runIntakeCommand(1.0)
-              ).withTimeout(5.0),
-              Commands.parallel(
-                  drivetrain.stopCommand();
-                  intake.stopCommand();
-              )
-          );
-      }
-      public Command driveThenIntake() {
-          return Commands.sequence(
-              drivetrain.driveCommand(0.5, 0.5).withTimeout(5.0),
-              drivetrain.stopCommand(),
-              intake.runIntakeCommand(1.0).withTimeout(5.0),
-              intake.stopCommand()
-          );
-      }
+    private Drivetrain drivetrain;
+    private Intake intake;
+    public AutoRoutines(Drivetrain drivetrain, Intake intake) {
+      this.drivetrain = drivetrain;
+      this.intake = intake;
+    }
+    public Command driveAndIntake() {
+      return Commands.sequence(
+        Commands.parallel(
+          drivetrain.driveCommand(0.5, 0.5),
+          intake.runIntakeCommand(1.0)
+        ).withTimeout(5.0),
+        Commands.parallel(
+          drivetrain.stopCommand();
+          intake.stopCommand();
+        )
+      );
+    }
+    public Command driveThenIntake() {
+      return Commands.sequence(
+        drivetrain.driveCommand(0.5, 0.5).withTimeout(5.0),
+        drivetrain.stopCommand(),
+        intake.runIntakeCommand(1.0).withTimeout(5.0),
+        intake.stopCommand()
+      );
+    }
   }
   ```
 
   ```c++
-  // TODO
+  class AutoRoutines {
+   public:
+    AutoRoutines(Drivetrain &drivetrain, Intake &intake) {
+      m_drivetrain = drivetrain;
+      m_intake = intake;
+    }
+    frc2::CommandPtr driveAndIntake() {
+      return frc2::cmd::Sequence(
+        frc2::cmd::Parallel(
+          m_drivetrain.driveCommand(0.5, 0.5),
+          m_intake.runIntakeCommand(1.0)
+        ).WithTimeout(5.0_s),
+        frc2::cmd::Parallel(
+          m_drivetrain.stopCommand(),
+          m_intake.stopCommand()
+        )
+      );
+    }
+    frc2::CommandPtr driveThenIntake() {
+      return frc2::cmd::Sequence(
+        m_drivetrain.driveCommand(0.5, 0.5).WithTimeout(5.0_s),
+        m_drivetrain.stopCommand(),
+        m_intake.runIntakeCommand(1.0).WithTimeout(5.0_s),
+        m_intake.stopCommand()
+      );
+    }
+   private:
+    Drivetrain m_drivetrain;
+    Intake m_intake;
+  };
   ```
 
 .. todo:: implement C++ version of the above code
@@ -245,7 +288,13 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
   ```
 
   ```c++
-  // TODO
+  AutoRoutines autoRoutines = AutoRoutines(m_drivetrain, m_intake);
+  frc2::CommandPtr driveAndIntake = autoRoutines.driveAndIntake();
+  frc2::CommandPtr driveThenIntake = autoRoutines.driveThenIntake();
+  frc2::CommandPtr drivingAndIntakingSequence = frc2::cmd::Sequence(
+    autoRoutines.driveAndIntake(),
+    autoRoutines.driveThenIntake()
+  );
   ```
 
 .. todo:: implement C++ version of the above code
@@ -262,14 +311,14 @@ However, it is still possible to ergonomically write a stateful command composit
 
   ```java
   public Command turnToAngle(double targetDegrees) {
-      // Create a controller for the inline command to capture
-      PIDController controller = new PIDController(Constants.kTurnToAngleP, 0, 0);
-      // We can do whatever configuration we want on the created state before returning from the factory
-      controller.setPositionTolerance(Constants.kTurnToAngleTolerance);
-      // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
-      return run(() -> arcadeDrive(0,-controller.calculate(gyro.getHeading(), targetDegrees)))
-          .until(controller::atSetpoint)
-          .andThen(runOnce(() -> arcadeDrive(0, 0)));
+    // Create a controller for the inline command to capture
+    PIDController controller = new PIDController(Constants.kTurnToAngleP, 0, 0);
+    // We can do whatever configuration we want on the created state before returning from the factory
+    controller.setPositionTolerance(Constants.kTurnToAngleTolerance);
+    // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
+    return run(() -> arcadeDrive(0,-controller.calculate(gyro.getHeading(), targetDegrees)))
+      .until(controller::atSetpoint)
+      .andThen(runOnce(() -> arcadeDrive(0, 0)));
   }
   ```
 
@@ -293,26 +342,42 @@ Returning to our simple intake command from earlier, we could do this by creatin
 
   ```java
   public class RunIntakeCommand extends Command {
-      private Intake m_intake;
-      public RunIntakeCommand(Intake intake) {
-          this.m_intake = intake;
-          addRequirements(intake);
-      }
-      @Override
-      public void initialize() {
-          m_intake.set(1.0);
-      }
-      @Override
-      public void end(boolean interrupted) {
-          m_intake.set(0.0);
-      }
-      // execute() defaults to do nothing
-      // isFinished() defaults to return false
+    private Intake m_intake;
+    public RunIntakeCommand(Intake intake) {
+      this.m_intake = intake;
+      addRequirements(intake);
+    }
+    @Override
+    public void initialize() {
+      m_intake.set(1.0);
+    }
+    @Override
+    public void end(boolean interrupted) {
+      m_intake.set(0.0);
+    }
+    // execute() defaults to do nothing
+    // isFinished() defaults to return false
   }
   ```
 
   ```c++
-  // TODO
+  class RunIntakeCommand : public frc2::CommandHelper<frc2::Command, RunIntakeCommand> {
+   public:
+    RunIntakeCommand(Intake &intake) {
+      m_intake = intake;
+      AddRequirements(&intake);
+    }
+    void Initialize() override {
+      m_intake.set(1.0);
+    }
+    void End(bool interrupted) override {
+      m_intake.set(0.0);
+    }
+    // execute() defaults to do nothing
+    // isFinished() defaults to return false
+   private:
+    Intake m_intake;
+  };
   ```
 
 .. todo:: implement C++ version of the above code
@@ -330,13 +395,13 @@ If we wish to write composite commands as their own classes, we may write a cons
 
   ```java
   public class IntakeThenOuttake extends SequentialCommandGroup {
-      public IntakeThenOuttake(Intake intake) {
-          super(
-              intake.runIntakeCommand(1.0).withTimeout(2.0),
-              new WaitCommand(2.0),
-              intake.runIntakeCommand(-1).withTimeout(5.0)
-          );
-      }
+    public IntakeThenOuttake(Intake intake) {
+      super(
+        intake.runIntakeCommand(1.0).withTimeout(2.0),
+        new WaitCommand(2.0),
+        intake.runIntakeCommand(-1).withTimeout(5.0)
+      );
+    }
   }
   ```
 
