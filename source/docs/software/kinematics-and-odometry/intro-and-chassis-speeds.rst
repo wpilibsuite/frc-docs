@@ -9,6 +9,66 @@ The kinematics suite contains classes for differential drive, swerve drive, and 
 ## What is odometry?
 Odometry involves using sensors on the robot to create an estimate of the position of the robot on the field. In FRC, these sensors are typically several encoders (the exact number depends on the drive type) and a gyroscope to measure robot angle. The odometry classes utilize the kinematics classes along with periodic user inputs about speeds (and angles in the case of swerve) to create an estimate of the robot's location on the field.
 
+## Why use kinematics and odometry?
+
+Teams should use WPILib's kinematics and odometry classes for several important reasons:
+
+### Enhanced Autonomous Performance
+
+**Accurate path following**: Kinematics and odometry enable your robot to precisely follow complex paths during autonomous. Instead of time-based driving ("go forward for 2 seconds"), your robot can navigate to specific field coordinates and execute sophisticated multi-step autonomous routines.
+
+**Position tracking**: Knowing where your robot is on the field allows you to:
+
+- Drive to specific game pieces or scoring locations
+- Dynamically adjust paths based on current position
+- Create reliable autonomous routines that work consistently
+
+**Self-correction**: Combined with vision systems (like AprilTag detection), odometry can be continuously updated to correct for drift and maintain accuracy throughout a match.
+
+### Trajectory Generation and Following
+
+Kinematics integrates with WPILib's trajectory generation to create smooth, dynamically-constrained paths:
+
+- Generate realistic trajectories that respect your drivetrain's physical limits
+- Follow paths with feedback control for disturbance rejection
+- Combine with path planning tools like PathPlanner or Choreo
+
+### Common Use Cases
+
+**Autonomous routines**: Navigate to game pieces, score at specific locations, execute multi-step sequences
+
+**Vision-assisted driving**: Use AprilTags or other vision targets to update odometry and drive to precise field locations
+
+**Teleoperation enhancement**: Field-oriented control for intuitive driving of holonomic robots
+
+**Match strategy**: Plan routes that avoid defense, optimize cycle times, coordinate with alliance partners
+
+## Example Code
+
+For drivetrain-specific implementation examples:
+
+- **Differential Drive**: See the `CTRE Swerve & Swerve Drivetrain examples <https://github.com/CrossTheRoadElec/Phoenix6-Examples/tree/main/java>`__ which also include differential drive path following
+- **Swerve Drive**:
+  - `REV MAXSwerve Template <https://github.com/REVrobotics/MAXSwerve-Java-Template>`__ - Complete swerve template from REV Robotics
+  - `YAGSL (Yet Another Generic Swerve Library) <https://github.com/BroncBotz3481/YAGSL>`__ - Vendor-agnostic swerve library
+  - `CTRE Swerve examples <https://github.com/CrossTheRoadElec/Phoenix6-Examples/tree/main/java/SwerveWithPathPlanner>`__ - Swerve with PathPlanner integration
+- **Mecanum Drive**: See mecanum-specific examples in vendor documentation
+
+## Important considerations
+
+**Odometry drift**: Position estimates accumulate error over time, especially during physical contact with other robots and field elements. This is normal and expected. Vision-based corrections (using AprilTags) help maintain accuracy.
+
+**Sensor requirements**: All kinematics implementations require:
+- Encoders for measuring wheel speeds
+- Gyroscope for measuring robot angle (critical for accurate odometry)
+- For swerve: absolute encoders for measuring module angles
+
+**Mecanum odometry accuracy**: Mecanum drive odometry can be less accurate than differential or swerve due to wheel slipping. The accuracy depends on movement complexity, robot speed, and weight distribution. For improved accuracy, consider using dead wheels (omni wheels that don't provide drive power but only measure movement) or combining with vision-based corrections.
+
+**Autonomous period accuracy**: Odometry is typically very accurate during autonomous (15 seconds) because there's less robot-to-robot contact. Estimates may drift more during the Teleoperated Period.
+
+**Coordinate system**: WPILib uses a specific coordinate system. See :doc:`/docs/software/basic-programming/coordinate-system` for details.
+
 ## The ChassisSpeeds Class
 The ``ChassisSpeeds`` object is essential to the new WPILib kinematics and odometry suite. The ``ChassisSpeeds`` object represents the speeds of a robot chassis. This struct has three components:
 
