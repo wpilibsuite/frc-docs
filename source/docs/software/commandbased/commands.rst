@@ -312,7 +312,7 @@ There are commands for various control setups:
 
 - ``SwerveControllerCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SwerveControllerCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_swerve_controller_command.html)) is useful for controlling swerve drivetrains. See API docs and the **SwerveControllerCommand** ([Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervecontrollercommand), [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveControllerCommand)) example project for more info.
 
-- ``RamseteCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html)) is useful for path following with differential drivetrains ("tank drive"). See API docs and the :ref:`Trajectory Tutorial<docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory:Creating the RamseteCommand>` for more info.
+- ``RamseteCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html)) was used for path following with differential drivetrains but has been deprecated. See :ref:`docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial` for modern path planning alternatives like PathPlanner and Choreo.
 
 ## Custom Command Classes
 

@@ -4,7 +4,7 @@ The ``TrajectoryUtil`` class can be used to import a PathWeaver JSON into robot 
 
 The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static methods in ``TrajectoryUtil`` can be used to create a trajectory from a JSON file stored on the roboRIO file system.
 
-.. important:: To be compatible with the ``Field2d`` view in the simulator GUI, the coordinates for the exported JSON have changed. Previously (before 2021), the range of the y-coordinate was from -27 feet to 0 feet whereas now, the range of the y-coordinate is from 0 feet to 27 feet (with 0 being at the bottom of the screen and 27 feet being at the top). This should not affect teams who are correctly :ref:`resetting their odometry to the starting pose of the trajectory <docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory:Creating the RamseteCommand>` before path following.
+.. important:: To be compatible with the ``Field2d`` view in the simulator GUI, the coordinates for the exported JSON have changed. Previously (before 2021), the range of the y-coordinate was from -27 feet to 0 feet whereas now, the range of the y-coordinate is from 0 feet to 27 feet (with 0 being at the bottom of the screen and 27 feet being at the top). This should not affect teams who are correctly resetting their odometry to the starting pose of the trajectory before path following. See the :ref:`Trajectory Tutorial <docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial>` for guidance on using modern path planning tools.
 
 .. note:: PathWeaver places JSON files in ``src/main/deploy/paths`` which will automatically be placed on the roboRIO file system in ``/home/lvuser/deploy/paths`` and can be accessed using getDeployDirectory as shown below.
 
