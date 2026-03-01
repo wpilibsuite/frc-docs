@@ -21,6 +21,12 @@ You can test your Game Specific Data code without :term:`FMS` by using the Drive
 .. image:: images/2020-Game-Data/ds-game-data.png
   :alt: Game Data text box on the Driver Station.
 
+.. note:: For 2026, the match timings have changed and do not match the driver station defaults. To match the 2026 game, change the values to:
+
+   - Autonomous: 20 seconds
+   - Teleoperated: 110 seconds
+   - End Game: 30 seconds
+
 ## Accessing the Data
 
 The data is accessed using the Game Data methods or VIs in each language. Below are descriptions and examples of how to access the data from each of the three languages. As the data is provided to the Robot during the Teleop period, teams will likely want to query the data in Teleop periodic code.
