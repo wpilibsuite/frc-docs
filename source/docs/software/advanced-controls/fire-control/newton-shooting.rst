@@ -11,8 +11,8 @@ We first introduce notation.  Let:
 - :math:`\mathbf{r}` — robot position
 - :math:`\mathbf{g}` — goal (target) position
 - :math:`\mathbf{v} = (v_x,\; v_y)` — robot velocity
-- :math:`v_p` — projectile speed (constant)
-- :math:`\tau` — time of flight (the unknown we solve for)
+- :math:`v_p` — horizontal projectile speed
+- :math:`\tau` — time of flight
 
 As the robot moves, the *virtual target* shifts opposite to the robot's velocity.  The firing table maps distance to time of flight; call this mapping :math:`\tau(D)`.  It may be the constant-velocity model :math:`\tau(D) = D / v_p`, or an empirical lookup table (LUT).  The fixed-point iteration is :math:`\tau_{n+1} = \tau(D(\tau_n))` — we converge to the TOF that the table implies for the current geometry.  To use Newton's method instead, we define the *TOF error* :math:`E(\tau) = \tau - \tau(D(\tau))` and iterate:
 
@@ -20,7 +20,7 @@ As the robot moves, the *virtual target* shifts opposite to the robot's velocity
 
    \tau_{n+1} \;=\; \tau_n \;-\; \frac{E(\tau_n)}{E'(\tau_n)}
 
-The rest of this section is a recipe for computing :math:`E` and :math:`E'` at the current guess :math:`\tau_n`, so you can plug them into the equation above.
+The rest of this section is a recipe for computing :math:`E` and :math:`E'` at the current guess :math:`\tau_n`, so you can plug them into the equation above.  We will adopt the strategy of using the exact LUT residual :math:`E` and a constant-velocity approximation for the derivative :math:`E'`, as this gives us the best of both worlds: it converges quickly and is relatively insensitive to noise.
 
 Step 1 — Geometry at the current guess
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -46,11 +46,12 @@ Compute the TOF error.  The table says that distance :math:`D` corresponds to ti
 
    E \;=\; \tau_n \;-\; \tau(D)
 
-- **Constant-velocity:** :math:`\tau(D) = D/v_p`, so :math:`E = \tau_n - D/v_p`.
-- **LUT:** look up :math:`\tau(D)` in your table (or interpolate); :math:`E = \tau_n - \tau_{\mathrm{LUT}}(D)`.  The residual uses the table so we converge to the table's TOF.
+- **Exact LUT residual:** We use the empirical residual at this step: look up :math:`\tau(D)` in your table (or interpolate); :math:`E = \tau_n - \tau_{\mathrm{LUT}}(D)`.  This ensures that we converge to the correct (empirical) TOF, rather than the TOF implied by the constant-velocity model.
 
 Step 3 — Rate of change of distance with respect to :math:`\tau`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to compute the error derivative, we need to know how the distance changes with respect to the TOF.
 
 As we increase the TOF guess, the virtual target moves; :math:`d_x` and :math:`d_y` each change by :math:`-v_x` and :math:`-v_y` per unit :math:`\tau`.  So the rate at which :math:`D` changes is:
 
@@ -63,16 +64,19 @@ As we increase the TOF guess, the virtual target moves; :math:`d_x` and :math:`d
 Step 4 — The error derivative :math:`E'`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-By the chain rule, :math:`E' = 1 - \tau'(D)\,(dD/d\tau)`.  We need :math:`\tau'(D)`:
-
-- **Constant-velocity:** :math:`\tau(D) = D/v_p` gives :math:`\tau'(D) = 1/v_p` exactly.
-- **LUT:** we do not differentiate the table.  Use the constant-velocity proxy :math:`\tau'(D) \approx 1/v_p`; the residual still uses the LUT so we converge to the correct TOF.
-
-With :math:`\tau'(D) = 1/v_p` (exact or proxy), the two minus signs combine and:
+Now, to find the error derivative we can use the chain rule, :math:`E' = 1 - \tau'(D)\,(dD/d\tau)`.  We need :math:`\tau'(D)`, which we can find by differentiating :math:`\tau(D) = D/v_p` with respect to :math:`D`:
 
 .. math::
 
-   E' \;=\; 1 \;+\; \frac{d_x\, v_x + d_y\, v_y}{v_p\, D}
+   \tau'(D) \;=\; \frac{d}{dD} \left( \frac{D}{v_p} \right) \;=\; \frac{1}{v_p}
+
+So, the error derivative is:
+
+.. math::
+
+   E' \;=\; 1 \;-\; \frac{1}{v_p} \cdot \left( -\frac{d_x\, v_x + d_y\, v_y}{D} \right) \;=\; 1 \;+\; \frac{d_x\, v_x + d_y\, v_y}{v_p\, D}
+
+- **Constant-velocity approximation:** The derivative is used to determine the step size for the Newton update; to reduce noise-sensitivity, we use an approximate derivative :math:`\tau'(D) \approx 1/v_p` instead of the exact derivative (which would require differentiating the firing table).  Because we use the empirical residual, this approximation will still converge to the correct TOF; using the exact derivative would potentially speed up convergence slightly, but at the cost of introducing noise amplification.
 
 Step 5 — Newton update
 ^^^^^^^^^^^^^^^^^^^^^^
