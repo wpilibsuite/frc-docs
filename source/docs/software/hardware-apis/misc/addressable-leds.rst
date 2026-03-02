@@ -34,7 +34,7 @@ These LEDs can be controlled even when the robot is disabled.
 Instantiating the AddressableLED Object
 ---------------------------------------
 
-You first create an ``AddressableLED`` object that takes the SMART I/O port as an argument. Then you set the number of LEDs that are connected, which can be done with the ``setLength()`` function.
+You first create an ``AddressableLED`` object that takes the SMART I/O port (0-5) as an argument. Then you set the number of LEDs that are connected, which can be done with the ``setLength()`` function.
 
 .. warning:: It is important to note that setting the length of the LED header is an expensive task and it's **not** recommended to run this periodically.
 
@@ -47,24 +47,34 @@ After the length of the strip has been set, you'll have to create an ``Addressab
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
-         :language: java
-         :lines: 32-47
-         :lineno-match:
+      .. code-block:: java
+
+         // Use SMART I/O port 0 for the LED data signal.
+         AddressableLED m_led = new AddressableLED(0);
+
+         // Set the number of LEDs in the strip.
+         AddressableLEDBuffer m_ledBuffer = new AddressableLEDBuffer(60);
+         m_led.setLength(m_ledBuffer.getLength());
+
+         // Write data and start output.
+         m_led.setData(m_ledBuffer);
+         m_led.start();
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
-         :language: c++
-         :lines: 12-12, 18-27
-         :linenos:
-         :lineno-start: 12
+      .. code-block:: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
-         :language: c++
-         :lines: 7-13
-         :lineno-match:
+         // Use SMART I/O port 0 for the LED data signal.
+         frc::AddressableLED m_led{0};
+
+         // Set the number of LEDs in the strip.
+         std::array<frc::AddressableLED::LEDData, 60> m_ledBuffer;
+         m_led.SetLength(m_ledBuffer.size());
+
+         // Write data and start output.
+         m_led.SetData(m_ledBuffer);
+         m_led.Start();
 
 Controlling Sections of an LED Strip
 ------------------------------------
