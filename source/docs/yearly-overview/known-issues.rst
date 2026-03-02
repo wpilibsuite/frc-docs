@@ -6,6 +6,10 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 ## Open Issues
 
+### Driver Station Radio Version Error
+
+**Issue:** The 2026 Driver Station displays "ERROR -44021 Radio Version" when used with VH-109 firmware 2.0.0 or 2.0.1. This is a bug due to the version checking not being updated for the 2026 season and does not affect robot connectivity.
+
 ### Driver Station randomly disabled
 
 **Issue:** The Driver Station contains tighter safety mechanisms introduced in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.
