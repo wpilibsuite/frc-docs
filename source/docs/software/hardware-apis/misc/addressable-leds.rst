@@ -8,8 +8,7 @@ Commonly they are in strips, but bars, circles, matrices, and other form factors
 
 These LEDs can be controlled even when the robot is disabled. Systemcore supports multiple addressable LED products simultaneously, unlike the roboRIO.
 
-Supported LEDs
---------------
+## Supported LEDs
 
 This library supports only WS2812B-compliant LEDs. LEDs that do not follow the timings below may not work correctly. For example, WS2815 and DotStar LEDs are not supported.
 
@@ -20,22 +19,19 @@ This library supports only WS2812B-compliant LEDs. LEDs that do not follow the t
    - T1H: 750ns
    - T1L: 500ns
 
-Wiring and Power
-----------------
+## Wiring and Power
 
 Wiring addressable LEDs is simple: connect the LED DATA pin to the SIGNAL pin of a SMART I/O connector, with power and ground connected to a good-quality external 5V regulator.
 
 .. seealso:: For more detailed information about powering and best practices for addressable LEDs, see the `Adafruit NeoPixel Überguide <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>`_.
 
-Signal
-^^^^^^
+### Signal
 
 WS281x LEDs are designed for **5V** logic, but Systemcore ports output **3.3V** logic. A logic level shifter, like the `Adafruit Pixel Shifter <https://www.adafruit.com/product/6066>`_, is necessary if there is flickering or incorrect behavior.
 
 If you have a lot of LEDs, a 300-500 Ohm data line resistor and a 1000 µF capacitor across the power pins are recommended. Too much resistance (>500 Ohm) however, can degrade the signal and cause flickering or communication failures. Power may need to be `distributed throughout the strip <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels#distributing-power-2894492>`_.
 
-Power
-^^^^^
+### Power
 
 Use a **good-quality, appropriately sized external 5V regulator** (e.g. `Redux Zinc-V+ <https://shop.reduxrobotics.com/products/zinc-v>`_ or `Pololu S13VxF5 <https://www.pololu.com/product/4082>`_) to power the LEDs, ensuring the grounds on Systemcore and the regulator are tied together.
 
@@ -43,11 +39,7 @@ Avoid generic, no-name regulators as they often cannot handle voltage spikes fro
 
 The CTRE VRM can be used if your team already has one, but it is not recommended to purchase one specifically for LED power. Its 5V outputs share a combined 2A current limit across both channels, so it is only suitable for a small number of LEDs.
 
-Code:
-^^^^^
-
-Instantiating the AddressableLED Object
----------------------------------------
+## Instantiating the AddressableLED Object
 
 You first create an ``AddressableLED`` object that takes the SMART I/O port (0-5) as an argument. Then you set the number of LEDs that are connected, which can be done with the ``setLength()`` function.
 
@@ -91,8 +83,7 @@ After the length of the strip has been set, you'll have to create an ``Addressab
          m_led.SetData(m_ledBuffer);
          m_led.Start();
 
-Controlling Sections of an LED Strip
-------------------------------------
+## Controlling Sections of an LED Strip
 
 Individual sections can be accessed in Java using ``AddressableLEDBufferView``. Buffer views behave like subsections of the larger buffer, and can be accessed using indices in the typical [0, length) range. They can also be reversed, to allow for parallel serpentine sections to be animated in the same physical orientation (i.e. both sections would animate "forward" in the same direction, even if the strips are physically tip-to-tail).
 
@@ -137,8 +128,7 @@ Individual sections can be accessed in Java using ``AddressableLEDBufferView``. 
             std::ranges::reverse_view(
                std::ranges::drop_view(m_buffer, 60));
 
-LED Patterns
-------------
+## LED Patterns
 
 The ``LEDPattern`` API simplifies setting LED data. Rather than needing to manually loop over every LED index, you can apply a pattern object to the data buffer directly. LED patterns are stateless, and can safely be applied to multiple buffers or views.
 
@@ -172,8 +162,7 @@ The ``LEDPattern`` API simplifies setting LED data. Rather than needing to manua
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Creating a Rainbow Effect
-^^^^^^^^^^^^^^^^^^^^^^^^^
+### Creating a Rainbow Effect
 
 Using the built in ``LEDPattern.rainbow`` method, we can create a pattern that displays a full rainbow across an entire LED strip. Then, by calling ``scrollAtAbsoluteSpeed`` we can make it animate and cycle around the strip. ``rainbow`` accepts two arguments - one for the saturation and one for the value, expressed as a number from 0 to 255.
 
@@ -238,8 +227,7 @@ Now that the rainbow pattern is defined, we only need to apply it.
    .. image:: images/discontinuous-gradient.png
       :width: 900
 
-Controlling when patterns are applied
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Controlling When Patterns Are Applied
 
 Use commands. The command framework is specifically built for managing when actions run and stop, and prevents multiple actions from running simultaneously.
 
@@ -330,13 +318,11 @@ Use commands. The command framework is specifically built for managing when acti
          }
 
 
-Basic effects
-^^^^^^^^^^^^^
+### Basic Effects
 
 The basic effects can all be created from the factory methods declared in the ``LEDPattern`` class
 
-Solid color
-"""""""""""
+#### Solid Color
 
 .. image:: images/solid.png
    :alt: A solid red LED pattern
@@ -374,8 +360,7 @@ The solid color pattern sets the target LED buffer to a single solid color.
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Continuous Gradient
-"""""""""""""""""""
+#### Continuous Gradient
 
 The gradient pattern sets the target buffer to display a smooth gradient between the specified colors. The gradient wraps around so scrolling effects can be seamless.
 
@@ -418,8 +403,7 @@ The gradient pattern sets the target buffer to display a smooth gradient between
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Discontinuous Gradient
-""""""""""""""""""""""
+#### Discontinuous Gradient
 
 The gradient pattern sets the target buffer to display a smooth gradient between the specified colors. The gradient does not wrap around so it can be used for non-scrolling patterns that don't care about continuity.
 
@@ -460,8 +444,7 @@ The gradient pattern sets the target buffer to display a smooth gradient between
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Steps
-"""""
+#### Steps
 
 .. image:: images/steps.png
    :alt: Steps of solid red on one half and solid blue on the other
@@ -507,8 +490,7 @@ Steps are specified as a combination of the *starting position* of that color, a
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Progress mask
-"""""""""""""
+#### Progress Mask
 
 .. only:: html
 
@@ -559,15 +541,13 @@ Slightly different from the basic color patterns, the progress mask pattern gene
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Modifying effects
-^^^^^^^^^^^^^^^^^
+### Modifying Effects
 
 Basic LED patterns can be combined with modifier effects to create new patterns with a combination of effects. Multiple modifiers can be used together to create complex patterns.
 
 .. note:: The built in animating effects like blinking and scrolling are based on the time returned by ``WPIUtilJNI.now()`` - in effect, they will play as if they started when the robot booted. Because all built in animation patterns are periodic, this means that the *first* period of a pattern may be truncated at any arbitrary point between 0% and 100%, and every period after that will play normally.
 
-Offset
-""""""
+#### Offset
 
 .. image:: images/offset.png
    :alt: A discontinuous gradient, offset by 40 pixels
@@ -610,8 +590,7 @@ Offsets can be used to bias patterns forward of backward by a certain number of 
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Reverse
-"""""""
+#### Reverse
 
 .. image:: images/reverse.png
    :alt: A discontinuous gradient running from blue-to-red instead of red-to-blue
@@ -652,8 +631,7 @@ Patterns and animations can be reversed to flip the direction that patterns are 
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Scroll
-""""""
+#### Scroll
 
 .. only:: html
 
@@ -720,8 +698,7 @@ Scrolling can be controlled in two different ways: either at a speed as a functi
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Breathe
-"""""""
+#### Breathe
 
 .. only:: html
 
@@ -773,8 +750,7 @@ A breathing modifier will make the base pattern brighten and dim in a sinusoidal
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Blink
-"""""
+#### Blink
 
 .. only:: html
 
@@ -857,8 +833,7 @@ Blinking can be done in one of three ways:
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Brightness
-""""""""""
+#### Brightness
 
 .. image:: images/brightness.png
    :alt: A discontinuous gradient at half brightness
@@ -901,13 +876,11 @@ Patterns can be brightened and dimmed relative to their original brightness; a b
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Combinatory effects
-^^^^^^^^^^^^^^^^^^^
+### Combinatory Effects
 
 Complex LED patterns are built up from combining simple base patterns (such as solid colors or gradients) with animating effects (such as scrolling or breathing) and combinatory effects (like masks and overlays). Multiple effects can be combined at once, like in the scrolling rainbow effect above that takes a basic base effect - a static rainbow - and then adds a scrolling effect to it.
 
-Mask
-""""
+#### Mask
 
 .. only:: html
 
@@ -983,7 +956,7 @@ Masks work by combining the RGB values of two patterns and keeping only the valu
    .. image:: images/rainbow.png
       :width: 900
 
-Masks can also be animated (see :ref:`progressMask <docs/software/hardware-apis/misc/addressable-leds:Progress mask>`). Masking a base pattern with a scrolling pattern will result in a panning effect. The animation above was generated by masking a rainbow pattern with a scrolling white/black pattern
+Masks can also be animated (see :ref:`progressMask <docs/software/hardware-apis/misc/addressable-leds:Progress Mask>`). Masking a base pattern with a scrolling pattern will result in a panning effect. The animation above was generated by masking a rainbow pattern with a scrolling white/black pattern
 
 .. tab-set::
 
@@ -1024,18 +997,15 @@ Masks can also be animated (see :ref:`progressMask <docs/software/hardware-apis/
          // Write the data to the LED strip
          m_led.SetData(m_ledBuffer);
 
-Overlay
-"""""""
+#### Overlay
 
 Overlays can be used to "stack" patterns atop each other, where black pixels (set to ``Color.kBlack``, RGB value #000000) are treated as transparent and allow a lower layer to be displayed. Upper layers are typically combined with :ref:`masks <docs/software/hardware-apis/misc/addressable-leds:Mask>` to set transparent sections; recall that masking a pixel with ``Color.kBlack`` will *set* that pixel to black, which will then be treated by the overlay as transparent.
 
-Blend
-"""""
+#### Blend
 
 Blends will combine the output colors of patterns together, by averaging out the individual RGB colors for every pixel. Like the :ref:`brightness modifier <docs/software/hardware-apis/misc/addressable-leds:Brightness>`, this tends to output colors that are more desaturated than its inputs.
 
-Low Level Access
-----------------
+## Low Level Access
 
 ``LEDPattern`` is an easy and convenient way of controlling LEDs, but direct access to the LED colors is sometimes needed for custom patterns and animations.
 
@@ -1090,8 +1060,7 @@ These examples demonstrate setting an entire LED strip to solid red using the RG
          m_led.SetData(m_ledBuffer);
 
 
-Using HSV Values
-^^^^^^^^^^^^^^^^
+### Using HSV Values
 
 .. image:: images/hsv-models.png
    :alt: HSV models picture
