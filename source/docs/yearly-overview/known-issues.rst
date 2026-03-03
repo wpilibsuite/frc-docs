@@ -12,7 +12,7 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 **Workaround:** Open Settings -> Privacy and Security -> Local Network Access and ensure that all VS Code versions are allowed Local Network Access.
 
-If that doesn't work, you can run the following commands in a terminal. This allows any program to access the robot's network.
+If that doesn't work, you can run the following commands in a terminal and then reboot. This allows any program to access the robot's network.
 
 ```zsh
 sudo defaults write com.apple.network.local-network AllowedEthernetLocalNetworkAddresses -array "10.0.0.0/8"
@@ -20,8 +20,6 @@ sudo defaults write com.apple.network.local-network AllowedWiFiLocalNetworkAddre
 ```
 
 .. warning:: This also allows any program to access any network with the address in the range of ``10.x.x.x``, which may be undesirable if you connect to other networks in that range beside's the robot's network. If you only access a robot with a single team number, you can substitute ``10.TE.AM.0/24``` (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Address Notation>`). If you only access the robot's network over eithernet or WiFi, you can only run the appropriate command.
-
-Another workaround is to run any commands which require network access from the macOS terminal, such as ``./gradlew deploy``
 
 ### Driver Station randomly disabled
 
