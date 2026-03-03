@@ -32,7 +32,7 @@ Signal
 
 WS281x LEDs are designed for **5V** logic, but Systemcore ports output **3.3V** logic. A logic level shifter, like the `Adafruit Pixel Shifter <https://www.adafruit.com/product/6066>`_, is necessary if there is flickering or incorrect behavior.
 
-If you have a lot of LEDs, a 300–500 Ohm data line resistor and a 1000 µF capacitor across the power pins are recommended. Too much resistance (>500 Ohm) however, can degrade the signal and cause flickering or communication failures. Power may need to be `distributed throughout the strip <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels#distributing-power-2894492>`_.
+If you have a lot of LEDs, a 300-500 Ohm data line resistor and a 1000 µF capacitor across the power pins are recommended. Too much resistance (>500 Ohm) however, can degrade the signal and cause flickering or communication failures. Power may need to be `distributed throughout the strip <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels#distributing-power-2894492>`_.
 
 Power
 ^^^^^
