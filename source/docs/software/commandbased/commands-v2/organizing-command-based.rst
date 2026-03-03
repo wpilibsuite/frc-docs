@@ -185,22 +185,20 @@ Instance factory methods work great for single-subsystem commands.  However, com
   ```c++
   class AutoRoutines {
    public:
-    static frc2::CommandPtr driveAndIntake(Drivetrain &drivetrain, Intake &intake) {
+    static frc2::CommandPtr driveAndIntake(Drivetrain* drivetrain, Intake* intake) {
       return frc2::cmd::Sequence(
         frc2::cmd::Parallel(
-          drivetrain.driveCommand(0.5, 0.5),
-          intake.runIntakeCommand(1.0)
+          drivetrain->driveCommand(0.5, 0.5),
+          intake->runIntakeCommand(1.0)
         ).WithTimeout(5.0_s),
         frc2::cmd::Parallel(
-          drivetrain.stopCommand(),
-          intake.stopCommand()
+          drivetrain->stopCommand(),
+          intake->stopCommand()
         )
       );
     }
   };
   ```
-
-.. todo:: implement C++ version of the above code
 
 #### Non-Static Command Factories
 If we want to avoid the verbosity of adding required subsystems as parameters to our factory methods, we can instead construct an instance of our ``AutoRoutines`` class and inject our subsystems through the constructor:
@@ -241,37 +239,35 @@ If we want to avoid the verbosity of adding required subsystems as parameters to
   ```c++
   class AutoRoutines {
    public:
-    AutoRoutines(Drivetrain &drivetrain, Intake &intake) {
+    AutoRoutines(Drivetrain* drivetrain, Intake* intake) {
       m_drivetrain = drivetrain;
       m_intake = intake;
     }
     frc2::CommandPtr driveAndIntake() {
       return frc2::cmd::Sequence(
         frc2::cmd::Parallel(
-          m_drivetrain.driveCommand(0.5, 0.5),
-          m_intake.runIntakeCommand(1.0)
+          m_drivetrain->driveCommand(0.5, 0.5),
+          m_intake->runIntakeCommand(1.0)
         ).WithTimeout(5.0_s),
         frc2::cmd::Parallel(
-          m_drivetrain.stopCommand(),
-          m_intake.stopCommand()
+          m_drivetrain->stopCommand(),
+          m_intake->stopCommand()
         )
       );
     }
     frc2::CommandPtr driveThenIntake() {
       return frc2::cmd::Sequence(
-        m_drivetrain.driveCommand(0.5, 0.5).WithTimeout(5.0_s),
-        m_drivetrain.stopCommand(),
-        m_intake.runIntakeCommand(1.0).WithTimeout(5.0_s),
-        m_intake.stopCommand()
+        m_drivetrain->driveCommand(0.5, 0.5).WithTimeout(5.0_s),
+        m_drivetrain->stopCommand(),
+        m_intake->runIntakeCommand(1.0).WithTimeout(5.0_s),
+        m_intake->stopCommand()
       );
     }
    private:
-    Drivetrain m_drivetrain;
-    Intake m_intake;
+    Drivetrain* m_drivetrain;
+    Intake* m_intake;
   };
   ```
-
-.. todo:: implement C++ version of the above code
 
 Then, elsewhere in our code, we can instantiate an single instance of this class and use it to produce several commands:
 
@@ -297,8 +293,6 @@ Then, elsewhere in our code, we can instantiate an single instance of this class
   );
   ```
 
-.. todo:: implement C++ version of the above code
-
 #### Capturing State in Inline Commands
 
 Inline commands are extremely concise and expressive, but do not offer explicit support for commands that have their own internal state (such as a drivetrain trajectory following command, which may encapsulate an entire controller).  This is often accomplished by instead writing a Command class, which will be covered later in this article.
@@ -323,10 +317,18 @@ However, it is still possible to ergonomically write a stateful command composit
   ```
 
   ```c++
-  // TODO
+  frc2::CommandPtr turnToAngle(double targetDegrees) {
+    // Create a controller for the inline command to capture
+    frc::PIDController controller{DrivetrainConstants::kTurnToAngleP, 0, 0};
+    // We can do whatever configuration we want on the created state before returning from the factory
+    controller.SetTolerance(DrivetrainConstants::kTurnToAngleTolerance);
+    controller.SetSetpoint(targetDegrees);
+    // Try to turn at a rate proportional to the heading error until we're at the setpoint, then stop
+    return frc2::cmd::Run([this, controller] mutable {arcadeDrive(0,-controller.Calculate(gyro.getHeading()));})
+      .Until([controller] {return controller.AtSetpoint();})
+      .AndThen(frc2::cmd::RunOnce([this] {arcadeDrive(0, 0);}));
+  }
   ```
-
-.. todo:: implement C++ version of the above code
 
 This pattern works very well in Java so long as the captured state is "effectively final" - i.e., it is never reassigned.  This means that we cannot directly define and capture primitive types (e.g. `int`, `double`, `boolean`) - to circumvent this, we need to wrap any state primitives in a mutable container type (the same way `PIDController` wraps its internal `kP`, `kI`, and `kD` values).
 
@@ -363,24 +365,22 @@ Returning to our simple intake command from earlier, we could do this by creatin
   ```c++
   class RunIntakeCommand : public frc2::CommandHelper<frc2::Command, RunIntakeCommand> {
    public:
-    RunIntakeCommand(Intake &intake) {
+    RunIntakeCommand(Intake* intake) {
       m_intake = intake;
-      AddRequirements(&intake);
+      AddRequirements(m_intake);
     }
     void Initialize() override {
-      m_intake.set(1.0);
+      m_intake->set(1.0);
     }
     void End(bool interrupted) override {
-      m_intake.set(0.0);
+      m_intake->set(0.0);
     }
     // execute() defaults to do nothing
     // isFinished() defaults to return false
    private:
-    Intake m_intake;
+    Intake* m_intake;
   };
   ```
-
-.. todo:: implement C++ version of the above code
 
 This, however, is just as cumbersome as the original repetitive code, if not more verbose. The only two lines that really matter in this entire file are the two calls to ``intake.set()``, yet there are over 20 lines of boilerplate code! Not to mention, doing this for a lot of robot actions quickly clutters up a robot project with dozens of small files. Nevertheless, this might feel more "natural," particularly for programmers who prefer to stick closely to an object-oriented model.
 
@@ -450,4 +450,3 @@ As with factory methods, state can be defined and captured within the command gr
      - Yes
      - Yes, but must obey capture rules
      - Yes
-
