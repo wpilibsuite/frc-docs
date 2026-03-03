@@ -1,5 +1,4 @@
-﻿Addressable LEDs
-================
+﻿# Addressable LEDs
 
 Addressable LEDs are widely used by teams for debugging, visual markers, and aesthetic appeal.
 
@@ -7,11 +6,12 @@ WPILib provides an API for controlling WS2811, WS2812B, SK6812, and other LEDs t
 
 Commonly they are in strips, but bars, circles, matrices, and other form factors are also available. These LEDs are individually controllable, allowing for a wide variety of patterns and effects.
 
-Wiring addressable LEDs is simple: the addressable LED DATA pin is connected to the SIGNAL pin of a SMART I/O connector, with power and ground connected to a good-quality external 5V regulator.
+These LEDs can be controlled even when the robot is disabled. Systemcore supports multiple addressable LED products simultaneously, unlike the roboRIO.
 
-These LEDs can be controlled even when the robot is disabled.
+Supported LEDs
+--------------
 
-.. note:: This library supports only WS2812B-compliant LEDs. LEDs that do not follow the below timings may not work correctly. For example, WS2815 & DotStar LEDs are not supported.
+This library supports only WS2812B-compliant LEDs. LEDs that do not follow the timings below may not work correctly. For example, WS2815 and DotStar LEDs are not supported.
 
 .. collapse:: Timing details
 
@@ -20,16 +20,31 @@ These LEDs can be controlled even when the robot is disabled.
    - T1H: 750ns
    - T1L: 500ns
 
-.. important:: Systemcore supports multiple addressable LED products simultaneously, unlike the roboRIO, and allows LED control while the robot is disabled.
+Wiring and Power
+----------------
+
+Wiring addressable LEDs is simple: connect the LED DATA pin to the SIGNAL pin of a SMART I/O connector, with power and ground connected to a good-quality external 5V regulator.
 
 .. seealso:: For more detailed information about powering and best practices for addressable LEDs, see the `Adafruit NeoPixel Überguide <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels>`_.
 
-.. note:: **Power and Signal Considerations**
+Signal
+^^^^^^
 
-   - WS281x LEDs are designed for **5V**, but Systemcore ports output **3.3V**. A logic level shifter, like the `Adafruit Pixel Shifter <https://www.adafruit.com/product/6066>`_, is necessary if there is flickering or incorrect behavior.
-   - Use a **good-quality appropriately sized external 5V regulator** (e.g. `Redux Zinc-V+ <https://shop.reduxrobotics.com/products/zinc-v>`_ or `Pololu S13VxF5 <https://www.pololu.com/product/4082>`_) to power the LEDs, ensuring the grounds are tied together.
-   - The CTRE VRM can be used if your team already has one, but it is not recommended to purchase new for LED power. Its 5V outputs share a combined 2A current limit across both channels, so it is only suitable for a small number of LEDs.
-   - If you have a lot of LEDs, a 300-500 Ohm data line resistor and a 1000μF capacitor across the power pins are recommended. Too much resistance (>500 Ohm) can degrade the signal and cause flickering or communication failures. Power may need to be `distributed throughout the strip <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels#distributing-power-2894492>`_.
+WS281x LEDs are designed for **5V** logic, but Systemcore ports output **3.3V** logic. A logic level shifter, like the `Adafruit Pixel Shifter <https://www.adafruit.com/product/6066>`_, is necessary if there is flickering or incorrect behavior.
+
+If you have a lot of LEDs, a 300–500 Ohm data line resistor and a 1000 µF capacitor across the power pins are recommended. Too much resistance (>500 Ohm) however, can degrade the signal and cause flickering or communication failures. Power may need to be `distributed throughout the strip <https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels#distributing-power-2894492>`_.
+
+Power
+^^^^^
+
+Use a **good-quality, appropriately sized external 5V regulator** (e.g. `Redux Zinc-V+ <https://shop.reduxrobotics.com/products/zinc-v>`_ or `Pololu S13VxF5 <https://www.pololu.com/product/4082>`_) to power the LEDs, ensuring the grounds on Systemcore and the regulator are tied together.
+
+Avoid generic, no-name regulators as they often cannot handle voltage spikes from robot motors, may lack sufficient current capacity for addressable LEDs, and tend to fail prematurely.
+
+The CTRE VRM can be used if your team already has one, but it is not recommended to purchase one specifically for LED power. Its 5V outputs share a combined 2A current limit across both channels, so it is only suitable for a small number of LEDs.
+
+Code:
+^^^^^
 
 Instantiating the AddressableLED Object
 ---------------------------------------
