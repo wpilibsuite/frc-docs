@@ -6,6 +6,10 @@ This article details known issues (and workarounds) for FRC\ |reg| Control Syste
 
 ## Open Issues
 
+### Driver Station Radio Version Error
+
+**Issue:** The 2026 Driver Station displays "ERROR -44021 Radio Version" when used with VH-109 firmware 2.0.0 or 2.0.1. This is a bug due to the version checking not being updated for the 2026 season and does not affect robot connectivity. Version 2.0.1 is the latest current version and is required by the programming kiosk for use at events.
+
 ### Unable to deploy on macOS when multiple VS Code versions are installed
 
 **Issue:** On macOS, having multiple installed copies of Visual Studio Code can cause deploy operations to fail because of [macOS local network privacy](https://developer.apple.com/documentation/technotes/tn3179-understanding-local-network-privacy)
