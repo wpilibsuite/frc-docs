@@ -16,7 +16,6 @@ from sphinx.application import Sphinx
 from dataclasses import dataclass
 from sphinx.directives.code import CodeBlock
 
-
 LINK_CORE = r"""
     \[ (?P<text>[^\[\]]*?) \]    # link brackets + text w/o brackets - allows spaces in text
     \(
@@ -36,8 +35,7 @@ ROLE_LINK_RE = re.compile(
     (?P<role>
         :(?:.\w+?:)+?            # role(s) - matches :py:func: or :mod: or :class:
     )
-    """
-    + LINK_CORE,
+    """ + LINK_CORE,
     re.VERBOSE,  # whitespace and comments are ignored
 )
 
@@ -45,8 +43,7 @@ LINK_RE = re.compile(
     r"""
     (?<!\w)                      # not alphanum - prevents matching inline code ``initialize[0](0)``
     (?<!:)                       # no colon before - prevents matching roles
-    """
-    + LINK_CORE,
+    """ + LINK_CORE,
     re.VERBOSE,  # whitespace and comments are ignored
 )
 

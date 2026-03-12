@@ -4,7 +4,6 @@ import frccontrol as fct
 import numpy as np
 from scipy.signal import StateSpace
 
-
 kv = 1.0
 ka = 1.5
 dt = 0.01

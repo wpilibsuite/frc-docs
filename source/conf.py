@@ -72,15 +72,13 @@ local_extensions = [
 
 extensions += local_extensions
 
-versionwarning_messages = {
-    "latest": """
+versionwarning_messages = {"latest": """
         The documentation you are currently viewing is for upcoming changes to WPILib.
         Please see the <a href="https://docs.wpilib.org" id="versionwarning_href">stable</a> version for the current release of WPILib.
         <script>
             document.getElementById("versionwarning_href").setAttribute("href", location.href.replace("/latest/", "/stable/"))
         </script>
-        """
-}
+        """}
 
 
 versionwarning_admonition_type = "warning"
