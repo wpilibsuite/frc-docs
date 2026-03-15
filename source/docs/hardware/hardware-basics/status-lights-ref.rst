@@ -257,7 +257,7 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 +-------------------------+--------------------------------------------------+
 | Orange/Magenta Blinking | Device Over Current                              |
 +-------------------------+--------------------------------------------------+
-| Orange/Green Blinking   | Orange/Green Blinking                            |
+| Orange/Green Blinking   | Compressor Over Current                          |
 +-------------------------+--------------------------------------------------+
 
 ### Compressor LED
