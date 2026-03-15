@@ -236,7 +236,7 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 
 .. note:: These led patterns only apply to firmware version 21.1.7 and later
 
-### PH Status LED
+### Pneumatic Hub Status LED
 
 +-------------------------+--------------------------------------------------+
 | LED Color               | Status                                           |
