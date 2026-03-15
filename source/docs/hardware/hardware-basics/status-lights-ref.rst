@@ -236,7 +236,7 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 
 .. note:: These led patterns only apply to firmware version 21.1.7 and later
 
-### PH Status LED
+### Pneumatic Hub Status LED
 
 +-------------------------+--------------------------------------------------+
 | LED Color               | Status                                           |
@@ -257,7 +257,7 @@ These LEDs are lit red if the Solenoid channel is enabled and not lit if it is d
 +-------------------------+--------------------------------------------------+
 | Orange/Magenta Blinking | Device Over Current                              |
 +-------------------------+--------------------------------------------------+
-| Orange/Green Blinking   | Orange/Green Blinking                            |
+| Orange/Green Blinking   | Compressor Over Current                          |
 +-------------------------+--------------------------------------------------+
 
 ### Compressor LED
