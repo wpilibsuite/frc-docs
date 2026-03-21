@@ -16,7 +16,7 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/Intake.java
          :language: java
          :lines: 7-
 
@@ -24,14 +24,14 @@ To provide a "clean slate" for each test, we need to have a function to destroy 
       :sync: C++
 
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/UnitTest/include/subsystems/Intake.h
          :language: c++
          :lines: 7-
 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/UnitTest/cpp/subsystems/Intake.cpp
          :language: c++
          :lines: 5-
 
@@ -51,14 +51,14 @@ Both JUnit and GoogleTest have multiple assertion types; the most common is equa
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2027.0.0-alpha-2/wpilibjExamples/src/test/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/IntakeTest.java
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/test/java/edu/wpi/first/wpilibj/examples/unittest/subsystems/IntakeTest.java
          :language: java
          :lines: 7-
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2027.0.0-alpha-2/wpilibcExamples/src/test/cpp/examples/UnitTest/cpp/subsystems/IntakeTest.cpp
+      .. rli:: https://github.com/wpilibsuite/allwpilib/raw/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/test/cpp/examples/UnitTest/cpp/subsystems/IntakeTest.cpp
          :language: c++
          :lines: 5-
 
