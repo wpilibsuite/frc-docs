@@ -318,7 +318,7 @@ To write a custom command class, subclass the abstract ``Command`` class ([Java]
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/commands/ExampleCommand.java
       :language: java
       :lines: 7-24
       :lineno-match:
