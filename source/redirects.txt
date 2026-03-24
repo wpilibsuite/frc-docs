@@ -258,6 +258,7 @@
 "docs/software/pathplanning/robot-characterization/analyzing-data.rst" "docs/software/pathplanning/system-identification/analyzing-data.rst"
 "docs/software/pathplanning/robot-characterization/analyzing-feedback.rst" "docs/software/pathplanning/system-identification/analyzing-feedback.rst"
 "docs/software/pathplanning/robot-characterization/configuring-project.rst" "docs/software/pathplanning/system-identification/configuring-project.rst"
+"docs/yearly-overview/2026-game-data.rst" "docs/yearly-overview/index.rst"
 "docs/software/pathplanning/robot-characterization/characterization-routine.rst" "docs/software/pathplanning/system-identification/identification-routine.rst"
 "docs/software/pathplanning/robot-characterization/index.rst" "docs/software/pathplanning/system-identification/index.rst"
 "docs/software/pathplanning/robot-characterization/introduction.rst" "docs/software/pathplanning/system-identification/introduction.rst"
