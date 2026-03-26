@@ -30,15 +30,15 @@ If you're interested in just switching what the driver sees, you can change the 
     ```
 
     ```c++
-    cs::UsbCamera camera1;
-    cs::UsbCamera camera2;
-    cs::VideoSink server;
-    frc::Joystick joy1{0};
+    wpi::cs::UsbCamera camera1;
+    wpi::cs::UsbCamera camera2;
+    wpi::cs::VideoSink server;
+    wpi::Joystick joy1{0};
     bool prevTrigger = false;
     Robot() {
-      camera1 = frc::CameraServer::StartAutomaticCapture(0);
-      camera2 = frc::CameraServer::StartAutomaticCapture(1);
-      server = frc::CameraServer::GetServer();
+      camera1 = wpi::CameraServer::StartAutomaticCapture(0);
+      camera2 = wpi::CameraServer::StartAutomaticCapture(1);
+      server = wpi::CameraServer::GetServer();
     }
     void TeleopPeriodic() override {
       if (joy1.GetTrigger() && !prevTrigger) {
@@ -95,15 +95,15 @@ By default, the cscore library is pretty aggressive in turning off cameras not i
     :sync: tabcode-c++
 
     ```c++
-    cs::UsbCamera camera1;
-    cs::UsbCamera camera2;
-    cs::VideoSink server;
-    frc::Joystick joy1{0};
+    wpi::cs::UsbCamera camera1;
+    wpi::cs::UsbCamera camera2;
+    wpi::cs::VideoSink server;
+    wpi::Joystick joy1{0};
     bool prevTrigger = false;
     Robot() {
-      camera1 = frc::CameraServer::StartAutomaticCapture(0);
-      camera2 = frc::CameraServer::StartAutomaticCapture(1);
-      server = frc::CameraServer::GetServer();
+      camera1 = wpi::CameraServer::StartAutomaticCapture(0);
+      camera2 = wpi::CameraServer::StartAutomaticCapture(1);
+      server = wpi::CameraServer::GetServer();
       camera1.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
       camera2.SetConnectionStrategy(cs::VideoSource::ConnectionStrategy::kConnectionKeepOpen);
     }

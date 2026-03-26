@@ -38,8 +38,8 @@ There are three main steps to updating the model:
    ```
 
    ```c++
-   frc::PWMSparkMax m_leftMotor{0};
-   frc::PWMSparkMax m_rightMotor{1};
+   wpi::PWMSparkMax m_leftMotor{0};
+   wpi::PWMSparkMax m_rightMotor{1};
    Drivetrain() {
      ...
      m_leftEncoder.SetDistancePerPulse(2 * std::numbers::pi * kWheelRadius / kEncoderResolution);
@@ -50,8 +50,8 @@ There are three main steps to updating the model:
      // the [-1, 1] PWM signal to voltage by multiplying it by the
      // robot controller voltage.
      m_driveSim.SetInputs(
-       m_leftMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()),
-       m_rightMotor.get() * units::volt_t(frc::RobotController::GetInputVoltage()));
+       m_leftMotor.get() * units::volt_t(wpi::RobotController::GetInputVoltage()),
+       m_rightMotor.get() * units::volt_t(wpi::RobotController::GetInputVoltage()));
      // Advance the model by 20 ms. Note that if you are running this
      // subsystem in a separate thread or have changed the nominal timestep
      // of TimedRobot, this value needs to match it.

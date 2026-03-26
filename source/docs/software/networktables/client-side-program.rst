@@ -89,7 +89,7 @@ A basic client program looks like the following example.
         #include <chrono>
         #include <thread>
         #include <fmt/format.h>
-        #include <ntcore_cpp.h>
+        #include <wpi/nt/ntcore_cpp.hpp>
         int main() {
           NT_Inst inst = nt::GetDefaultInstance();
           NT_Subscriber xSub =
@@ -116,7 +116,7 @@ A basic client program looks like the following example.
         #include <stdio.h>
         #include <threads.h>
         #include <time.h>
-        #include <networktables/ntcore.h>
+        #include <networktables/wpi/nt/ntcore.h>
         int main() {
           NT_Instance inst = NT_GetDefaultInstance();
           NT_Subscriber xSub =

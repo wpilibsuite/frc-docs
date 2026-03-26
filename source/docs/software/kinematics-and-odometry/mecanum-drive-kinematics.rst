@@ -22,12 +22,12 @@ The ``MecanumDriveKinematics`` class accepts four constructor arguments, with ea
 
    ```c++
    // Locations of the wheels relative to the robot center.
-   frc::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
-   frc::Translation2d m_frontRightLocation{0.381_m, -0.381_m};
-   frc::Translation2d m_backLeftLocation{-0.381_m, 0.381_m};
-   frc::Translation2d m_backRightLocation{-0.381_m, -0.381_m};
+   wpi::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
+   wpi::Translation2d m_frontRightLocation{0.381_m, -0.381_m};
+   wpi::Translation2d m_backLeftLocation{-0.381_m, 0.381_m};
+   wpi::Translation2d m_backRightLocation{-0.381_m, -0.381_m};
    // Creating my kinematics object using the wheel locations.
-   frc::MecanumDriveKinematics m_kinematics{
+   wpi::MecanumDriveKinematics m_kinematics{
      m_frontLeftLocation, m_frontRightLocation, m_backLeftLocation,
      m_backRightLocation};
    ```
@@ -69,7 +69,7 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(Ch
    // Example chassis speeds: 1 meter per second forward, 3 meters
    // per second to the left, and rotation at 1.5 radians per second
    // counterclockwise.
-   frc::ChassisSpeeds speeds{1_mps, 3_mps, 1.5_rad_per_s};
+   wpi::ChassisSpeeds speeds{1_mps, 3_mps, 1.5_rad_per_s};
    // Convert to wheel speeds. Here, we can use C++17's structured
    // bindings feature to automatically split up the MecanumDriveWheelSpeeds
    // struct into it's individual components
@@ -109,7 +109,7 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(Ch
    // second toward the left field boundary. The desired rotation
    // is a quarter of a rotation per second counterclockwise. The current
    // robot angle is 45 degrees.
-   frc::ChassisSpeeds speeds = frc::ChassisSpeeds::FromFieldRelativeSpeeds(
+   wpi::ChassisSpeeds speeds = wpi::ChassisSpeeds::FromFieldRelativeSpeeds(
      2_mps, 2_mps, units::radians_per_second_t(std::numbers::pi / 2.0), Rotation2d(45_deg));
    // Now use this in our kinematics
    auto [fl, fr, bl, br] = kinematics.ToWheelSpeeds(speeds);
@@ -155,7 +155,7 @@ One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` 
 
    ```c++
    // Example wheel speeds
-   frc::MecanumDriveWheelSpeeds wheelSpeeds{-17.67_mps, 20.51_mps, -13.44_mps, 16.26_mps};
+   wpi::MecanumDriveWheelSpeeds wheelSpeeds{-17.67_mps, 20.51_mps, -13.44_mps, 16.26_mps};
    // Convert to chassis speeds. Here, we can use C++17's structured bindings
    // feature to automatically break up the ChassisSpeeds struct into its
    // three components.

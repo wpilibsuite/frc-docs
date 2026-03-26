@@ -9,32 +9,32 @@ To start a project using one of the WPILib robot program templates, users must f
 ### TimedRobot
 
 Documentation:
-[Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/TimedRobot.html)
-- [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_timed_robot.html)
+[Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/framework/TimedRobot.html)
+- [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_timed_robot.html)
 
 Source:
-[Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java)
-- [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimedRobot.cpp)
+[Java](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibj/src/main/java/org/wpilib/framework/TimedRobot.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibc/src/main/native/cpp/framework/TimedRobot.cpp)
 
-The :code:`TimedRobot` class is the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). During these calls, your code typically polls each input device and acts according to the data it receives.  For instance, you would typically determine the position of the joystick and state of the joystick buttons on each call and act accordingly.  The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html)/ [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_sendable_chooser.html))
+The :code:`TimedRobot` class is the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). During these calls, your code typically polls each input device and acts according to the data it receives.  For instance, you would typically determine the position of the joystick and state of the joystick buttons on each call and act accordingly.  The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/smartdashboard/SendableChooser.html)/ [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_sendable_chooser.html))
 
 .. note:: A `TimedRobot Skeleton` template is available that removes some informative comments and the autonomous example. You can use this if you're already familiar with `TimedRobot`. The example shown below is of `TimedRobot Skeleton`.
 
 .. tab-set-code::
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timedskeleton/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/templates/timedskeleton/Robot.java
       :language: java
       :lines: 7-53
       :lineno-match:
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
       :language: c++
       :lines: 5-29
       :lineno-match:
 
 Periodic methods are called every 20 ms by default. This can be changed by calling the superclass constructor with the new desired update rate.
 
-.. danger:: Changing your robot rate can cause some unintended behavior (loop overruns). Teams can also use [Notifiers](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/Notifier.html) to schedule methods at a custom rate.
+.. danger:: Changing your robot rate can cause some unintended behavior (loop overruns). Teams can also use [Notifiers](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/system/Notifier.html) to schedule methods at a custom rate.
 
 .. tab-set-code::
 
@@ -45,18 +45,18 @@ Periodic methods are called every 20 ms by default. This can be changed by calli
    ```
 
    ```c++
-   Robot() : frc::TimedRobot(30_ms) {}
+   Robot() : wpi::TimedRobot(30_ms) {}
    ```
 
 ### Timeslice Robot
 
 Documentation:
-[Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/TimesliceRobot.html)
-- [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_timeslice_robot.html#details)
+[Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/framework/TimesliceRobot.html)
+- [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_timeslice_robot.html#details)
 
 Source:
-[Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimesliceRobot.java)
-- [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimesliceRobot.cpp)
+[Java](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibj/src/main/java/org/wpilib/framework/TimesliceRobot.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibc/src/main/native/cpp/framework/TimesliceRobot.cpp)
 
 The :code:`TimesliceRobot` class extends the :code:`TimedRobot` framework to provide more control over the scheduling of periodic functions. It allows users to allocate specific time slices to different robot operations, running them sequentially within a defined period (typically shorter than TimedRobot's default 20ms). This class is recommended for users who need more precise timing control and consistent starting times for their robot's periodic functions.
 
@@ -66,12 +66,12 @@ The :code:`TimesliceRobot` class extends the :code:`TimedRobot` framework to pro
 ### RobotBase
 
 Documentation:
-[Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/RobotBase.html)
-- [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_robot_base.html)
+[Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/framework/RobotBase.html)
+- [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_robot_base.html)
 
 Source:
-[Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java)
-- [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cppcs/RobotBase.cpp)
+[Java](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibj/src/main/java/org/wpilib/framework/RobotBase.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibc/src/main/native/cppcs/RobotBase.cpp)
 
 The :code:`RobotBase` class is the most minimal base-class offered, and is generally not recommended for direct use.  No robot control flow is handled for the user; everything must be written from scratch inside the :code:`startCompetition()` method. The template by default showcases how to process the different operation modes (teleop, auto, etc).
 

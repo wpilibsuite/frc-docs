@@ -22,10 +22,10 @@ The Ramsete controller should be initialized with two gains, namely ``b`` and ``
    ```c++
    // Using the default constructor of RamseteController. Here
    // the gains are initialized to 2.0 and 0.7.
-   frc::RamseteController controller1;
+   wpi::RamseteController controller1;
    // Using the secondary constructor of RamseteController where
    // the user can choose any other gains.
-   frc::RamseteController controller2{2.1, 0.8};
+   wpi::RamseteController controller2{2.1, 0.8};
    ```
 
    ```python
@@ -91,7 +91,7 @@ The returned adjusted speeds can be converted to usable speeds using the kinemat
    right = wheelSpeeds.right
    ```
 
-Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController ([C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_p_i_d_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/math/controller/PIDController.html), :external:py:class:`Python <wpimath.controller.PIDController>`) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX can be used.
+Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController ([C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1math_1_1_p_i_d_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/math/controller/PIDController.html), :external:py:class:`Python <wpimath.controller.PIDController>`) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX can be used.
 
 ## Ramsete in the Command-Based Framework
 For the sake of ease for users, a ``RamseteCommand`` class is built in to WPILib. For a full tutorial on implementing a path-following autonomous using RamseteCommand, see :ref:`docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial`.

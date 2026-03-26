@@ -51,7 +51,7 @@ auto group = SequentialCommandGroup(std::move(commands));
 With ``std::shared_ptr``, there is no clear ownership model because there can be multiple instances of a ``std::shared_ptr`` that point to the same block of memory. If commands were in ``std::shared_ptr`` instances, a command group or the command scheduler cannot take ownership and free the memory once the command has finished executing because the user might still unknowingly still have a ``std::shared_ptr`` instance pointing to that block of memory somewhere in scope.
 
 ## Use of CRTP
-You may have noticed that in order to create a new command, you must extend ``CommandHelper``, providing the base class (usually ``frc2::Command``) and the class that you just created. Let's take a look at the reasoning behind this:
+You may have noticed that in order to create a new command, you must extend ``CommandHelper``, providing the base class (usually ``wpi::cmd::Command``) and the class that you just created. Let's take a look at the reasoning behind this:
 
 ### Command Decorators
 The new command-based framework includes a feature known as "command decorators", which allows the user to something like this:
@@ -183,7 +183,7 @@ In addition to decorators, ``CommandPtr`` instances also define utility methods 
 
 There are multiple ways to get a ``CommandPtr`` instance:
 
-- ``CommandPtr``-returning factories are present in the ``frc2::cmd`` namespace in the ``Commands.h`` header for almost all command types. For multi-command compositions, there is a vector-taking overload as well as a variadic-templated overload for multiple ``CommandPtr`` instances.
+- ``CommandPtr``-returning factories are present in the ``wpi::cmd::cmd`` namespace in the ``Commands.h`` header for almost all command types. For multi-command compositions, there is a vector-taking overload as well as a variadic-templated overload for multiple ``CommandPtr`` instances.
 
 - All decorators, including those defined on ``Command``, return ``CommandPtr``. This has allowed defining almost all decorators on ``Command``, so a decorator chain can start from a ``Command``.
 
@@ -191,7 +191,7 @@ There are multiple ways to get a ``CommandPtr`` instance:
 
 For instance, consider the following from the [HatchbotInlined example project](https://github.com/wpilibsuite/allwpilib/blob/v2023.2.1/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/):
 
-.. rli:: https://github.com/wpilibsuite/allwpilib/raw/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/commands/Autos.cpp
+.. rli:: https://github.com/wpilibsuite/allwpilib/raw/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/commands/Autos.cpp
    :language: c++
    :lines: 33-73
    :lineno-match:

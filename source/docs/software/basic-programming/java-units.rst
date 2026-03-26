@@ -29,9 +29,9 @@ These concepts are used within the Units Library. For example, the **measure** *
 
 The Java units library is available in the ``edu.wpi.first.units`` package. The most relevant classes are:
 
-- The various classes for predefined dimensions, such as [DistanceUnit](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/units/DistanceUnit.html) and [TimeUnit](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/units/TimeUnit.html)
-- [Units](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/units/Units.html), which contains a set of predefined units. Take a look a the [Units javadoc](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/units/Units.html) to browse the available units and their types.
-- [Measure](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/units/Measure.html), which is used to tag a value with a unit, and the dimension-specific implementations like [Distance](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/units/measure/Distance.html) and [Time](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/units/measure/Time.html)
+- The various classes for predefined dimensions, such as [DistanceUnit](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/units/DistanceUnit.html) and [TimeUnit](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/units/TimeUnit.html)
+- [Units](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/units/Units.html), which contains a set of predefined units. Take a look a the [Units javadoc](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/units/Units.html) to browse the available units and their types.
+- [Measure](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/units/Measure.html), which is used to tag a value with a unit, and the dimension-specific implementations like [Distance](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/units/measure/Distance.html) and [Time](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/units/measure/Time.html)
 
 .. note:: It is recommended to static import ``edu.wpi.first.units.Units.*`` to get full access to all the predefined units.
 

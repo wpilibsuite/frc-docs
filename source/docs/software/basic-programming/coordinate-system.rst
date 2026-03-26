@@ -159,7 +159,7 @@ Like mecanum drivetrains, swerve drivetrains are holonomic and have the ability 
 
    ```c++
    // Drive using the X, Y, and Z axes of the joystick.
-   frc::ChassisSpeeds speeds{-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ()};
+   wpi::ChassisSpeeds speeds{-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ()};
    ```
 
    ```python
@@ -260,12 +260,12 @@ A simple way to deal with field oriented driving is to check the alliance color 
    ```c++
    // The origin is always blue. When our alliance is red, X and Y need to be inverted
    int invert = 1;
-   if (frc::DriverStation::GetAlliance() == frc::DriverStation::Alliance::kRed) {
+   if (wpi::DriverStation::GetAlliance() == wpi::DriverStation::Alliance::kRed) {
        invert = -1;
    }
    // Create field relative ChassisSpeeds for controlling Swerve
-   frc::ChassisSpeeds chassisSpeeds =
-           frc::ChassisSpeeds::FromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
+   wpi::ChassisSpeeds chassisSpeeds =
+           wpi::ChassisSpeeds::FromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
    // Control a mecanum drivetrain
    m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
    ```

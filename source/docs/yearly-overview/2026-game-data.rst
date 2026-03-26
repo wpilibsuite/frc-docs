@@ -61,9 +61,9 @@ In C++, Java, and Python the Game Data is accessed by using the GetGameSpecificM
   ```
 
   ```c++
-  #include <frc/DriverStation.h>
+  #include <wpi/driverstation/DriverStation.hpp>
   std::string gameData;
-  gameData = frc::DriverStation::GetGameSpecificMessage();
+  gameData = wpi::DriverStation::GetGameSpecificMessage();
   if(gameData.length() > 0)
   {
     switch (gameData[0])

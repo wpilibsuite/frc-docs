@@ -103,7 +103,7 @@ To start, search above the ``unexpected error has occurred`` for the stack trace
 
       * ``RobotInit`` is a function in the ``Robot::`` namespace (AKA, your team's code)
 
-      * ``RobotInit`` was called from a number of functions from the ``frc::`` namespace (AKA, the WPILib libraries)
+      * ``RobotInit`` was called from a number of functions from the ``wpi::`` namespace (AKA, the WPILib libraries)
 
 
       This "call stack" window represents the state of the *stack* at the time the error happened. Each line represents one method, which was *called by* the method right below it.
@@ -167,14 +167,14 @@ For example, consider the following code:
 
    ```C++
    :lineno-start: 17
-   class Robot : public frc::TimedRobot {
+   class Robot : public wpi::TimedRobot {
     public:
      void RobotInit() override {
         motorRef->SetInverted(false);
      }
     private:
-     frc::PWMVictorSPX m_armMotor{0};
-     frc::PWMVictorSPX* motorRef;
+     wpi::PWMVictorSPX m_armMotor{0};
+     wpi::PWMVictorSPX* motorRef;
    };
    ```
 
@@ -246,15 +246,15 @@ A functional implementation could look like this:
 
    ```C++
    :lineno-start: 17
-   class Robot : public frc::TimedRobot {
+   class Robot : public wpi::TimedRobot {
     public:
      void RobotInit() override {
         motorRef = &m_armMotor;
         motorRef->SetInverted(false);
      }
     private:
-     frc::PWMVictorSPX m_armMotor{0};
-     frc::PWMVictorSPX* motorRef;
+     wpi::PWMVictorSPX m_armMotor{0};
+     wpi::PWMVictorSPX* motorRef;
    };
    ```
 
@@ -280,7 +280,7 @@ For example, consider the following code:
 
    ```C++
    :lineno-start: 17
-   class Robot : public frc::TimedRobot {
+   class Robot : public wpi::TimedRobot {
     public:
      void RobotInit() override {
         armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
@@ -361,7 +361,7 @@ A functional implementation could look like this:
 
    ```C++
    :lineno-start: 17
-   class Robot : public frc::TimedRobot {
+   class Robot : public wpi::TimedRobot {
     public:
      void RobotInit() override {
         armLengthRatio = elbowToWrist_in / shoulderToElbow_in;
@@ -400,15 +400,15 @@ For example, consider the following code:
 
    ```C++
    :lineno-start: 17
-   class Robot : public frc::TimedRobot {
+   class Robot : public wpi::TimedRobot {
     public:
      void RobotInit() override {
         m_frontLeftMotor.Set(0.5);
         m_rearLeftMotor.Set(0.25);
      }
     private:
-     frc::PWMVictorSPX m_frontLeftMotor{0};
-     frc::PWMVictorSPX m_rearLeftMotor{0};
+     wpi::PWMVictorSPX m_frontLeftMotor{0};
+     wpi::PWMVictorSPX m_rearLeftMotor{0};
    };
    ```
 
@@ -459,34 +459,34 @@ When run, you'll see output that looks like this:
       ```text
       Error at PWM [C::31]: PWM or DIO 0 previously allocated.
       Location of the previous allocation:
-              at frc::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
-              at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
-              at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
-              at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
-              at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+              at wpi::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
+              at wpi::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
+              at wpi::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
+              at void wpi::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
+              at int wpi::StartRobot<Robot>() + 0x3d4 [0x13c9c]
               at __libc_start_main + 0x114 [0xb57ec580]
       Location of the current allocation:: Channel 0
               at  + 0x5fb5c [0xb6e81b5c]
-              at frc::PWM::PWM(int, bool) + 0x334 [0xb6f01e4c]
-              at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
-              at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
-              at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xb4 [0x13724]
-              at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+              at wpi::PWM::PWM(int, bool) + 0x334 [0xb6f01e4c]
+              at wpi::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
+              at wpi::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
+              at void wpi::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xb4 [0x13724]
+              at int wpi::StartRobot<Robot>() + 0x3d4 [0x13c9c]
               at __libc_start_main + 0x114 [0xb57ec580]
       Error at RunRobot: Error: The robot program quit unexpectedly. This is usually due to a code error.
         The above stacktrace can help determine where the error occurred.
         See https://wpilib.org/stacktrace for more information.
-              at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0x1c8 [0x13838]
-              at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+              at void wpi::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0x1c8 [0x13838]
+              at int wpi::StartRobot<Robot>() + 0x3d4 [0x13c9c]
               at __libc_start_main + 0x114 [0xb57ec580]
-      terminate called after throwing an instance of 'frc::RuntimeError'
+      terminate called after throwing an instance of 'wpi::RuntimeError'
         what():  PWM or DIO 0 previously allocated.
       Location of the previous allocation:
-              at frc::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
-              at frc::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
-              at frc::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
-              at void frc::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
-              at int frc::StartRobot<Robot>() + 0x3d4 [0x13c9c]
+              at wpi::PWM::PWM(int, bool) + 0x50 [0xb6f01b68]
+              at wpi::PWMMotorController::PWMMotorController(std::basic_string_view<char, std::char_traits<char> >, int) + 0x70 [0xb6ef7d50]
+              at wpi::PWMVictorSPX::PWMVictorSPX(int) + 0x3c [0xb6e9af1c]
+              at void wpi::impl::RunRobot<Robot>(wpi::priority_mutex&, Robot**) + 0xa8 [0x13718]
+              at int wpi::StartRobot<Robot>() + 0x3d4 [0x13c9c]
               at __libc_start_main + 0x114 [0xb57ec580]
       Location of the current allocation:: Channel 0
       ```
@@ -517,15 +517,15 @@ In the example, the left motor controllers are plugged into :term:`PWM` ports ``
 
    ```C++
    :lineno-start: 17
-   class Robot : public frc::TimedRobot {
+   class Robot : public wpi::TimedRobot {
     public:
      void RobotInit() override {
         m_frontLeftMotor.Set(0.5);
         m_rearLeftMotor.Set(0.25);
      }
      private:
-      frc::PWMVictorSPX m_frontLeftMotor{0};
-      frc::PWMVictorSPX m_rearLeftMotor{1};
+      wpi::PWMVictorSPX m_frontLeftMotor{0};
+      wpi::PWMVictorSPX m_rearLeftMotor{1};
    };
    ```
 

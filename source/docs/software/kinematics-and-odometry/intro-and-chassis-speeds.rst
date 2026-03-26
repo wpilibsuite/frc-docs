@@ -2,9 +2,11 @@
 
 .. note:: Kinematics and odometry uses a common coordinate system. You may wish to reference the :doc:`/docs/software/basic-programming/coordinate-system` section for details.
 
+.. todo:: Update for ChassisSpeeds to ChassisVelocities
+
 ## What is kinematics?
 
-The kinematics suite contains classes for differential drive, swerve drive, and mecanum drive kinematics and odometry. The kinematics classes help convert between a universal ``ChassisSpeeds`` ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/math/kinematics/ChassisSpeeds.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/structfrc_1_1_chassis_speeds.html), :external:py:class:`Python <wpimath.kinematics.ChassisSpeeds>`)object, containing linear and angular velocities for a robot to usable speeds for each individual type of drivetrain i.e. left and right wheel speeds for a differential drive, four wheel speeds for a mecanum drive, or individual module states (speed and angle) for a swerve drive.
+The kinematics suite contains classes for differential drive, swerve drive, and mecanum drive kinematics and odometry. The kinematics classes help convert between a universal ``ChassisSpeeds`` ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/math/kinematics/ChassisVelocities.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/structwpi_1_1math_1_1_chassis_velocities.html), :external:py:class:`Python <wpimath.kinematics.ChassisSpeeds>`)object, containing linear and angular velocities for a robot to usable speeds for each individual type of drivetrain i.e. left and right wheel speeds for a differential drive, four wheel speeds for a mecanum drive, or individual module states (speed and angle) for a swerve drive.
 
 ## What is odometry?
 Odometry involves using sensors on the robot to create an estimate of the position of the robot on the field. In FRC, these sensors are typically several encoders (the exact number depends on the drive type) and a gyroscope to measure robot angle. The odometry classes utilize the kinematics classes along with periodic user inputs about speeds (and angles in the case of swerve) to create an estimate of the robot's location on the field.
@@ -34,7 +36,7 @@ The constructor for the ``ChassisSpeeds`` object is very straightforward, accept
    // The robot is moving at 3 meters per second forward, 2 meters
    // per second to the right, and rotating at half a rotation per
    // second counterclockwise.
-   frc::ChassisSpeeds speeds{3.0_mps, -2.0_mps,
+   wpi::ChassisSpeeds speeds{3.0_mps, -2.0_mps,
      units::radians_per_second_t(std::numbers::pi)};
    ```
 
@@ -70,7 +72,7 @@ The static ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java / Python) / ``Chassis
    // second toward the left field boundary. The desired rotation
    // is a quarter of a rotation per second counterclockwise. The current
    // robot angle is 45 degrees.
-   frc::ChassisSpeeds speeds = frc::ChassisSpeeds::FromFieldRelativeSpeeds(
+   wpi::ChassisSpeeds speeds = wpi::ChassisSpeeds::FromFieldRelativeSpeeds(
      2_mps, 2_mps, units::radians_per_second_t(std::numbers::pi / 2.0), Rotation2d(45_deg));
    ```
 

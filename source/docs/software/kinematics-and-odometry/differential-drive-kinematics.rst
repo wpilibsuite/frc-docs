@@ -28,10 +28,10 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(Ch
 
    ```c++
    // Creating my kinematics object: track width of 27 inches
-   frc::DifferentialDriveKinematics kinematics{27_in};
+   wpi::DifferentialDriveKinematics kinematics{27_in};
    // Example chassis speeds: 2 meters per second linear velocity,
    // 1 radian per second angular velocity.
-   frc::ChassisSpeeds chassisSpeeds{2_mps, 0_mps, 1_rad_per_s};
+   wpi::ChassisSpeeds chassisSpeeds{2_mps, 0_mps, 1_rad_per_s};
    // Convert to wheel speeds. Here, we can use C++17's structured bindings
    // feature to automatically split the DifferentialDriveWheelSpeeds
    // struct into left and right velocities.
@@ -77,10 +77,10 @@ One can also use the kinematics object to convert individual wheel speeds (left 
 
    ```c++
    // Creating my kinematics object: track width of 27 inches
-   frc::DifferentialDriveKinematics kinematics{27_in};
+   wpi::DifferentialDriveKinematics kinematics{27_in};
    // Example differential drive wheel speeds: 2 meters per second
    // for the left side, 3 meters per second for the right side.
-   frc::DifferentialDriveWheelSpeeds wheelSpeeds{2_mps, 3_mps};
+   wpi::DifferentialDriveWheelSpeeds wheelSpeeds{2_mps, 3_mps};
    // Convert to chassis speeds. Here we can use C++17's structured bindings
    // feature to automatically split the ChassisSpeeds struct into its 3 components.
    // Note that because a differential drive is non-holonomic, the vy variable

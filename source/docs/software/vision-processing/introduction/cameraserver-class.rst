@@ -88,11 +88,11 @@ The above graph is what the following CameraServer snippet creates:
     ```c++
     #include "cameraserver/CameraServer.h"
     // Creates UsbCamera and MjpegServer [1] and connects them
-    frc::CameraServer::StartAutomaticCapture();
+    wpi::CameraServer::StartAutomaticCapture();
     // Creates the CvSink and connects it to the UsbCamera
-    cs::CvSink cvSink = frc::CameraServer::GetVideo();
+    wpi::cs::CvSink cvSink = wpi::CameraServer::GetVideo();
     // Creates the CvSource and MjpegServer [2] and connects them
-    cs::CvSource outputStream = frc::CameraServer::PutVideo("Blur", 640, 480);
+    wpi::cs::CvSource outputStream = wpi::CameraServer::PutVideo("Blur", 640, 480);
     ```
 
 The CameraServer implementation effectively does the following at the cscore level (for explanation purposes). CameraServer takes care of many of the details such as creating unique names for all cscore objects and automatically selecting port numbers. CameraServer also keeps a singleton registry of created objects so they aren't destroyed if they go out of scope.
@@ -118,17 +118,17 @@ The CameraServer implementation effectively does the following at the cscore lev
     ```
 
     ```c++
-    #include "cscore_oo.h"
+    #include "wpi/cs/cscore_oo.hpp"
     // Creates UsbCamera and MjpegServer [1] and connects them
-    cs::UsbCamera usbCamera("USB Camera 0", 0);
-    cs::MjpegServer mjpegServer1("serve_USB Camera 0", 1181);
+    wpi::cs::UsbCamera usbCamera("USB Camera 0", 0);
+    wpi::cs::MjpegServer mjpegServer1("serve_USB Camera 0", 1181);
     mjpegServer1.SetSource(usbCamera);
     // Creates the CvSink and connects it to the UsbCamera
-    cs::CvSink cvSink("opencv_USB Camera 0");
+    wpi::cs::CvSink cvSink("opencv_USB Camera 0");
     cvSink.SetSource(usbCamera);
     // Creates the CvSource and MjpegServer [2] and connects them
-    cs::CvSource outputStream("Blur", cs::PixelFormat::kMJPEG, 640, 480, 30);
-    cs::MjpegServer mjpegServer2("serve_Blur", 1182);
+    wpi::cs::CvSource outputStream("Blur", wpi::cs::PixelFormat::kMJPEG, 640, 480, 30);
+    wpi::cs::MjpegServer mjpegServer2("serve_Blur", 1182);
     mjpegServer2.SetSource(outputStream);
     ```
 

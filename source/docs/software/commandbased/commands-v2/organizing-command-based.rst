@@ -34,7 +34,7 @@ The easiest and most expressive way to do this is with a ``StartEndCommand``:
   ```
 
   ```c++
-  frc2::CommandPtr runIntake = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake});
+  wpi::cmd::CommandPtr runIntake = wpi::cmd::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake});
   ```
 
 This is sufficient for commands that are only used once. However, for a command like this that might get used in many different autonomous routines and button bindings, inline commands everywhere means a lot of repetitive code:
@@ -54,13 +54,13 @@ This is sufficient for commands that are only used once. However, for a command 
   ```
 
   ```c++
-  intakeButton.WhileTrue(frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake}));
-  frc2::CommandPtr intakeAndShoot = frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake})
+  intakeButton.WhileTrue(wpi::cmd::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake}));
+  wpi::cmd::CommandPtr intakeAndShoot = wpi::cmd::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake})
       .AlongWith(RunShooter(&shooter).ToPtr());
-  frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
-    frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake}).WithTimeout(5.0_s),
-    frc2::cmd::Wait(3.0_s),
-    frc2::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake}).WithTimeout(5.0_s)
+  wpi::cmd::CommandPtr autonomousCommand = wpi::cmd::cmd::Sequence(
+    wpi::cmd::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake}).WithTimeout(5.0_s),
+    wpi::cmd::cmd::Wait(3.0_s),
+    wpi::cmd::cmd::StartEnd([&intake] { intake.Set(1.0); }, [&intake] { intake.Set(0.0); }, {&intake}).WithTimeout(5.0_s)
   );
   ```
 
@@ -88,7 +88,7 @@ For example, a command like the intake-running command is conceptually related t
   ```
 
   ```c++
-  frc2::CommandPtr Intake::RunIntakeCommand() {
+  wpi::cmd::CommandPtr Intake::RunIntakeCommand() {
     // implicitly requires `this`
     return this->StartEnd([this] { this->Set(1.0); }, [this] { this->Set(0.0); });
   }
@@ -114,10 +114,10 @@ Using this new factory method in command groups and button bindings is highly ex
 
   ```c++
   intakeButton.WhileTrue(intake.RunIntakeCommand());
-  frc2::CommandPtr intakeAndShoot = intake.RunIntakeCommand().AlongWith(RunShooter(&shooter).ToPtr());
-  frc2::CommandPtr autonomousCommand = frc2::cmd::Sequence(
+  wpi::cmd::CommandPtr intakeAndShoot = intake.RunIntakeCommand().AlongWith(RunShooter(&shooter).ToPtr());
+  wpi::cmd::CommandPtr autonomousCommand = wpi::cmd::cmd::Sequence(
     intake.RunIntakeCommand().WithTimeout(5.0_s),
-    frc2::cmd::Wait(3.0_s),
+    wpi::cmd::cmd::Wait(3.0_s),
     intake.RunIntakeCommand().WithTimeout(5.0_s)
   );
   ```
@@ -133,7 +133,7 @@ Adding a parameter to the ``runIntakeCommand`` method to provide the exact perce
   ```
 
   ```c++
-  frc2::CommandPtr Intake::RunIntakeCommand(double percent) {
+  wpi::cmd::CommandPtr Intake::RunIntakeCommand(double percent) {
     // implicitly requires `this`
     return this->StartEnd([this, percent] { this->Set(percent); }, [this] { this->Set(0.0); });
   }
@@ -150,8 +150,8 @@ For instance, this code creates a command group that runs the intake forwards fo
   ```
 
   ```c++
-  frc2::CommandPtr intakeRunSequence = intake.RunIntakeCommand(1.0).WithTimeout(2.0_s)
-      .AndThen(frc2::cmd::Wait(2.0_s))
+  wpi::cmd::CommandPtr intakeRunSequence = intake.RunIntakeCommand(1.0).WithTimeout(2.0_s)
+      .AndThen(wpi::cmd::cmd::Wait(2.0_s))
       .AndThen(intake.RunIntakeCommand(-1.0).WithTimeout(5.0_s));
     ```
 

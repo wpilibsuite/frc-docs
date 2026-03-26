@@ -118,11 +118,11 @@ An axis can be used with ``.getRawAxis(int index)`` (if not using any of the cla
    ```
 
    ```c++
-   frc::PWMVictorSPX m_leftMotor{Constants::kLeftMotorPort};
-   frc::PWMVictorSPX m_rightMotor{Constants::kRightMotorPort};
-   frc::DifferentialDrive m_robotDrive{[&](double output) { m_leftMotor.Set(output); },
+   wpi::PWMVictorSPX m_leftMotor{Constants::kLeftMotorPort};
+   wpi::PWMVictorSPX m_rightMotor{Constants::kRightMotorPort};
+   wpi::DifferentialDrive m_robotDrive{[&](double output) { m_leftMotor.Set(output); },
                                        [&](double output) { m_rightMotor.Set(output); }};
-   frc::GenericHID m_stick{Constants::kJoystickPort};
+   wpi::GenericHID m_stick{Constants::kJoystickPort};
    m_robotDrive.ArcadeDrive(-m_stick.GetRawAxis(0), m_stick.GetRawAxis(1));
    ```
 

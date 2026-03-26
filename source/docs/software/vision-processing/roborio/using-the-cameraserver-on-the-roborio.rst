@@ -9,12 +9,12 @@ The following program starts automatic capture of a USB camera like the Microsof
 
 .. tab-set-code::
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/quickvision/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/quickvision/Robot.java
       :language: java
       :lines: 7-19
       :lineno-match:
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/QuickVision/cpp/Robot.cpp
       :language: c++
       :lines: 7-8, 16-18, 20, 25-31
 
@@ -33,7 +33,7 @@ In the following example a thread created in ``Robot`` constructor gets the Came
    .. tab-item:: Java
       :sync: tabcode-java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/intermediatevision/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/intermediatevision/Robot.java
          :language: java
          :lines: 7-65
          :lineno-match:
@@ -41,7 +41,7 @@ In the following example a thread created in ``Robot`` constructor gets the Came
    .. tab-item:: c++
       :sync: tabcode-c++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/IntermediateVision/cpp/Robot.cpp
          :language: c++
          :lines: 5-24, 26-27, 32, 36-69, 71-77
 

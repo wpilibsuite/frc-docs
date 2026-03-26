@@ -97,7 +97,7 @@ Shuffleboard includes a widget for displaying heading data from a gyro in the fo
     // Use gyro declaration from above here
     Robot::Robot() {
         // Places a compass indicator for the gyro heading on the dashboard
-        frc::Shuffleboard.GetTab("Example tab").Add(gyro);
+        wpi::Shuffleboard.GetTab("Example tab").Add(gyro);
     }
     ```
 
@@ -160,11 +160,11 @@ The following example shows how to stabilize heading using a simple P loop close
     // The gain for a simple P loop
     double kP = 1;
     // Initialize motor controllers and drive
-    frc::Spark leftLeader{0};
-    frc::Spark leftFollower{1};
-    frc::Spark rightLeader{2};
-    frc::Spark rightFollower{3};
-    frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
+    wpi::Spark leftLeader{0};
+    wpi::Spark leftFollower{1};
+    wpi::Spark rightLeader{2};
+    wpi::Spark rightFollower{3};
+    wpi::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
                                  [&](double output) { rightLeader.Set(output); }};
     Robot::Robot() {
         // Invert the right side of the drivetrain. You might have to invert the other side
@@ -257,13 +257,13 @@ The following example shows how to stabilize heading using a simple P loop close
     // The heading of the robot when starting the motion
     double heading;
     // Initialize motor controllers and drive
-    frc::Spark left1{0};
-    frc::Spark left2{1};
-    frc::Spark right1{2};
-    frc::Spark right2{3};
-    frc::MotorControllerGroup leftMotors{left1, left2};
-    frc::MotorControllerGroup rightMotors{right1, right2};
-    frc::DifferentialDrive drive{leftMotors, rightMotors};
+    wpi::Spark left1{0};
+    wpi::Spark left2{1};
+    wpi::Spark right1{2};
+    wpi::Spark right2{3};
+    wpi::MotorControllerGroup leftMotors{left1, left2};
+    wpi::MotorControllerGroup rightMotors{right1, right2};
+    wpi::DifferentialDrive drive{leftMotors, rightMotors};
     Robot::Robot() {
       rightMotors.SetInverted(true);
     }
@@ -351,13 +351,13 @@ Much like with heading stabilization, this is often accomplished with a PID loop
     // The gain for a simple P loop
     double kP = 0.05;
     // Initialize motor controllers and drive
-    frc::Spark left1{0};
-    frc::Spark left2{1};
-    frc::Spark right1{2};
-    frc::Spark right2{3};
-    frc::MotorControllerGroup leftMotors{left1, left2};
-    frc::MotorControllerGroup rightMotors{right1, right2};
-    frc::DifferentialDrive drive{leftMotors, rightMotors};
+    wpi::Spark left1{0};
+    wpi::Spark left2{1};
+    wpi::Spark right1{2};
+    wpi::Spark right2{3};
+    wpi::MotorControllerGroup leftMotors{left1, left2};
+    wpi::MotorControllerGroup rightMotors{right1, right2};
+    wpi::DifferentialDrive drive{leftMotors, rightMotors};
     Robot::Robot() {
       rightMotors.SetInverted(true);
     }

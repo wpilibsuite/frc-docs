@@ -3,12 +3,12 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "8cfc158790c5d1c29b0a86643240558c0f6e73ff"
+      "latestVersion": "2109161534fdce08ae845452b746afaa38cf8fd6"
     },
     {
       "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "8cfc158790c5d1c29b0a86643240558c0f6e73ff"
+      "latestVersion": "2109161534fdce08ae845452b746afaa38cf8fd6"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/robotpy/examples/",
