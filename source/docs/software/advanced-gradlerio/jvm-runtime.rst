@@ -2,9 +2,9 @@
 
 Programs compiled with Microsoft Visual C++ (MSVC) require a MSVC runtime that is equal to or newer then the newest library being executed. WPILib is compiled with a recent version of MSVC.
 
-In the past, this hasn’t really been used, but a change in the runtime in 2024 actually took advantage of this requirement.
+In the past, this hasn't really been used, but a change in the runtime in 2024 actually took advantage of this requirement.
 
-Most JDKs ship with an MSVC runtime, and many of them are old. Additionally, many of them don’t actually include the full runtime. Both of these are a problem, as all the JNI libraries loaded by WPILib both use a lot of the runtime, and are compiled against basically the newest runtime.
+Most JDKs ship with an MSVC runtime, and many of them are old. Additionally, many of them don't actually include the full runtime. Both of these are a problem, as all the JNI libraries loaded by WPILib both use a lot of the runtime, and are compiled against basically the newest runtime.
 
 For the JDK shipped with WPILib, the newest runtime is installed to ensure this issue isn't run into. But other JDKs will fail. So in 2025, much more important than prior years, the WPILib JDK needs to be used.
 
