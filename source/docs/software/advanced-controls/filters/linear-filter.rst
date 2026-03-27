@@ -40,7 +40,7 @@ The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse re
   // Creates a new Single-Pole IIR filter
   // Time constant is 0.1 seconds
   // Period is 0.02 seconds - this is the standard FRC main loop period
-  wpi::LinearFilter<double> filter = wpi::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
+  wpi::math::LinearFilter<double> filter = wpi::math::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
   ```
 
   ```python
@@ -73,7 +73,7 @@ The ``movingAverage`` factory method creates a simple flat moving average filter
   ```c++
   // Creates a new flat moving average filter
   // Average will be taken over the last 5 samples
-  wpi::LinearFilter<double> filter = wpi::LinearFilter<double>::MovingAverage(5);
+  wpi::math::LinearFilter<double> filter = wpi::math::LinearFilter<double>::MovingAverage(5);
   ```
 
   ```python
@@ -105,7 +105,7 @@ The ``highPass`` factory method creates a simple first-order infinite impulse re
   // Creates a new high-pass IIR filter
   // Time constant is 0.1 seconds
   // Period is 0.02 seconds - this is the standard FRC main loop period
-  wpi::LinearFilter<double> filter = wpi::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
+  wpi::math::LinearFilter<double> filter = wpi::math::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
   ```
 
   ```python

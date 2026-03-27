@@ -65,7 +65,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
        units::meter_t{m_backLeftEncoder.GetDistance()},
        units::meter_t{m_backRightEncoder.GetDistance()}
      },
-     wpi::Pose2d{5_m, 13.5_m, 0_rad}};
+     wpi::math::Pose2d{5_m, 13.5_m, 0_rad}};
    ```
 
    ```python
@@ -126,7 +126,7 @@ The ``update`` method of the odometry class updates the robot position on the fi
        units::meter_t{m_backLeftEncoder.GetDistance()},
        units::meter_t{m_backRightEncoder.GetDistance()}};
      // Get the rotation of the robot from the gyro.
-     wpi::Rotation2d gyroAngle = m_gyro.GetRotation2d();
+     wpi::math::Rotation2d gyroAngle = m_gyro.GetRotation2d();
      // Update the pose
      m_pose = m_odometry.Update(gyroAngle, wheelPositions);
    }

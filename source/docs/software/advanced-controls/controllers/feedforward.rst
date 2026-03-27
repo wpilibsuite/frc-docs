@@ -44,7 +44,7 @@ To create a ``SimpleMotorFeedforward``, simply construct it with the required ga
   ```c++
   // Create a new SimpleMotorFeedforward with gains kS, kV, and kA
   // Distance is measured in meters
-  wpi::SimpleMotorFeedforward<units::meters> feedforward(kS, kV, kA);
+  wpi::math::SimpleMotorfeedforward<units::meters> feedforward(kS, kV, kA);
   ```
 
   ```python
@@ -101,7 +101,7 @@ To create an ``ArmFeedforward``, simply construct it with the required gains:
 
   ```c++
   // Create a new ArmFeedforward with gains kS, kG, kV, and kA
-  wpi::ArmFeedforward feedforward(kS, kG, kV, kA);
+  wpi::math::Armfeedforward feedforward(kS, kG, kV, kA);
   ```
 
   ```python
@@ -161,7 +161,7 @@ To create a ``ElevatorFeedforward``, simply construct it with the required gains
   ```c++
   // Create a new ElevatorFeedforward with gains kS, kV, and kA
   // Distance is measured in meters
-  wpi::ElevatorFeedforward feedforward(kS, kG, kV, kA);
+  wpi::math::Elevatorfeedforward feedforward(kS, kG, kV, kA);
   ```
 
   ```python

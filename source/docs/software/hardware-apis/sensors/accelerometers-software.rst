@@ -150,7 +150,7 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
     ```c++
     wpi::BuiltInAccelerometer accelerometer;
     // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
-    auto xAccelFilter = wpi::LinearFilter::MovingAverage(10);
+    auto xAccelFilter = wpi::math::LinearFilter::MovingAverage(10);
     void Robot::RobotPeriodic() {
         // Get the filtered X acceleration
         double filteredXAccel = xAccelFilter.Calculate(accelerometer.GetX());

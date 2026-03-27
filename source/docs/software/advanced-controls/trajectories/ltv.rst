@@ -17,7 +17,7 @@ The code example below initializes the LTV Unicycle Controller with `qelems` of 
    ```
 
    ```c++
-   wpi::LTVUnicycleController controller{{0.0625, 0.125, 2.0}, {1.0, 2.0}, 0.02_s, 9_mps};
+   wpi::math::LTVUnicycleController controller{{0.0625, 0.125, 2.0}, {1.0, 2.0}, 0.02_s, 9_mps};
    ```
 
    ```python

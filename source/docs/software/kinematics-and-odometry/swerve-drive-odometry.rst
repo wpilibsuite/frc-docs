@@ -58,7 +58,7 @@ The fourth optional argument is the starting pose of your robot on the field (as
    wpi::SwerveDriveOdometry<4> m_odometry{m_kinematics, m_gyro.GetRotation2d(),
      {m_frontLeft.GetPosition(), m_frontRight.GetPosition(),
      m_backLeft.GetPosition(), m_backRight.GetPosition()},
-     wpi::Pose2d{5_m, 13.5_m, 0_rad}};
+     wpi::math::Pose2d{5_m, 13.5_m, 0_rad}};
    ```
 
    ```python
@@ -118,7 +118,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
    ```c++
    void Periodic() override {
      // Get the rotation of the robot from the gyro.
-     wpi::Rotation2d gyroAngle = m_gyro.GetRotation2d();
+     wpi::math::Rotation2d gyroAngle = m_gyro.GetRotation2d();
      // Update the pose
      m_pose = m_odometry.Update(gyroAngle,
        {

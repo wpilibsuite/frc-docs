@@ -34,9 +34,9 @@ Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PID
   // Creates a ProfiledPIDController
   // Max velocity is 5 meters per second
   // Max acceleration is 10 meters per second
-  wpi::ProfiledPIDController<units::meters> controller(
+  wpi::math::ProfiledPIDController<units::meters> controller(
     kP, kI, kD,
-    wpi::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq});
+    wpi::math::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq});
   ```
 
   ```python

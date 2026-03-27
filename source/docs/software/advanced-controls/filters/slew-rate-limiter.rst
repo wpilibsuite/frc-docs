@@ -25,7 +25,7 @@ Creating a SlewRateLimiter is simple:
 
   ```c++
   // Creates a SlewRateLimiter that limits the rate of change of the signal to 0.5 volts per second
-  wpi::SlewRateLimiter<units::volts> filter{0.5_V / 1_s};
+  wpi::math::SlewRateLimiter<units::volts> filter{0.5_V / 1_s};
   ```
 
   ```python

@@ -23,7 +23,7 @@ In order to use WPILib's PID control functionality, users must first construct a
 
   ```c++
   // Creates a PIDController with gains kP, kI, and kD
-  wpi::PIDController pid{kP, kI, kD};
+  wpi::math::PIDController pid{kP, kI, kD};
   ```
 
   ```python

@@ -26,7 +26,7 @@ Creating a ``MedianFilter`` is simple:
 
   ```c++
   // Creates a MedianFilter with a window size of 5 samples
-  wpi::MedianFilter<double> filter(5);
+  wpi::math::MedianFilter<double> filter(5);
   ```
 
   ```python

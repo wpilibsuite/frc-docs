@@ -122,7 +122,7 @@ You can calculate the measurement noise of your sensors by taking multiple data 
    // Create the simulation model of our drivetrain.
    wpi::sim::DifferentialDrivetrainSim m_driveSim{
      // Create a linear system from our identification gains.
-     wpi::LinearSystemId::IdentifyDrivetrainSystem(
+     wpi::math::LinearSystemId::IdentifyDrivetrainSystem(
        KvLinear, KaLinear, KvAngular, KaAngular, kTrackWidth),
      kTrackWidth,
      wpi::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.

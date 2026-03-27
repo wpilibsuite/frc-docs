@@ -90,14 +90,14 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
    ```
 
    ```c++
-   auto trajectoryOne = wpi::TrajectoryGenerator::GenerateTrajectory(
-      wpi::Pose2d(0_m, 0_m, 0_rad),
+   auto trajectoryOne = wpi::math::TrajectoryGenerator::GenerateTrajectory(
+      wpi::math::Pose2d(0_m, 0_m, 0_rad),
       {wpi::Translation2d(1_m, 1_m), wpi::Translation2d(2_m, -1_m)},
-      wpi::Pose2d(3_m, 0_m, 0_rad), wpi::TrajectoryConfig(3_fps, 3_fps_sq));
-   auto trajectoryTwo = wpi::TrajectoryGenerator::GenerateTrajectory(
-      wpi::Pose2d(3_m, 0_m, 0_rad),
+      wpi::math::Pose2d(3_m, 0_m, 0_rad), wpi::math::TrajectoryConfig(3_fps, 3_fps_sq));
+   auto trajectoryTwo = wpi::math::TrajectoryGenerator::GenerateTrajectory(
+      wpi::math::Pose2d(3_m, 0_m, 0_rad),
       {wpi::Translation2d(4_m, 4_m), wpi::Translation2d(5_m, 3_m)},
-      wpi::Pose2d(6_m, 0_m, 0_rad), wpi::TrajectoryConfig(3_fps, 3_fps_sq));
+      wpi::math::Pose2d(6_m, 0_m, 0_rad), wpi::math::TrajectoryConfig(3_fps, 3_fps_sq));
    auto concatTraj = m_trajectoryOne + m_trajectoryTwo;
    ```
 

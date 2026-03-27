@@ -23,9 +23,9 @@ The final parameter is a ``ProfiledPIDController`` for the rotation of the robot
 
    ```c++
    wpi::HolonomicDriveController controller{
-     wpi::PIDController{1, 0, 0}, wpi::PIDController{1, 0, 0},
-     wpi::ProfiledPIDController<units::radian>{
-       1, 0, 0, wpi::TrapezoidProfile<units::radian>::Constraints{
+     wpi::math::PIDController{1, 0, 0}, wpi::math::PIDController{1, 0, 0},
+     wpi::math::ProfiledPIDController<units::radian>{
+       1, 0, 0, wpi::math::TrapezoidProfile<units::radian>::Constraints{
          6.28_rad_per_s, 3.14_rad_per_s / 1_s}}};
    // Here, our rotation profile constraints were a max velocity
    // of 1 rotation per second and a max acceleration of 180 degrees

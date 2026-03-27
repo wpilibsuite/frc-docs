@@ -310,7 +310,7 @@ Mechanisms with a continuous angle can have that angle wrapped by calling the co
 
    ```c++
    Eigen::Vector<double, 2> error = lqr.R() - x;
-   error(0) = wpi::AngleModulus(units::radian_t{error(0)}).value();
+   error(0) = wpi::math::AngleModulus(units::radian_t{error(0)}).value();
    Eigen::Vector<double, 2> u = lqr.K() * error;
    ```
 

@@ -33,7 +33,7 @@ The optional argument is the starting pose of your robot on the field (as a ``Po
      m_gyro.GetRotation2d(),
      units::meter_t{m_leftEncoder.GetDistance()},
      units::meter_t{m_rightEncoder.GetDistance()},
-     wpi::Pose2d{5_m, 13.5_m, 0_rad}};
+     wpi::math::Pose2d{5_m, 13.5_m, 0_rad}};
    ```
 
    ```python
@@ -71,7 +71,7 @@ The ``update`` method can be used to update the robot's position on the field. T
    ```c++
    void Periodic() override {
      // Get the rotation of the robot from the gyro.
-     wpi::Rotation2d gyroAngle = m_gyro.GetRotation2d();
+     wpi::math::Rotation2d gyroAngle = m_gyro.GetRotation2d();
      // Update the pose
      m_pose = m_odometry.Update(gyroAngle,
        units::meter_t{m_leftEncoder.GetDistance()},

@@ -35,7 +35,7 @@ In order to create a trapezoidal motion profile, we must first impose some const
   // Creates a new set of trapezoidal motion profile constraints
   // Max velocity of 10 meters per second
   // Max acceleration of 20 meters per second squared
-  wpi::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq};
+  wpi::math::TrapezoidProfile<units::meters>::Constraints{10_mps, 20_mps_sq};
   ```
 
   ```python
@@ -61,7 +61,7 @@ Next, we must specify the desired starting and ending states for our mechanisms 
   ```c++
   // Creates a new state with a position of 5 meters
   // and a velocity of 0 meters per second
-  wpi::TrapezoidProfile<units::meters>::State{5_m, 0_mps};
+  wpi::math::TrapezoidProfile<units::meters>::State{5_m, 0_mps};
   ```
 
   ```python
@@ -90,8 +90,8 @@ Now that we know how to create a set of constraints and the desired start/end st
   // Creates a new TrapezoidProfile
   // Profile will have a max vel of 5 meters per second
   // Profile will have a max acceleration of 10 meters per second squared
-  wpi::TrapezoidProfile<units::meters> profile{
-    wpi::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq}};
+  wpi::math::TrapezoidProfile<units::meters> profile{
+    wpi::math::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq}};
   ```
 
   ```python
@@ -122,8 +122,8 @@ Once we've created a ``TrapezoidProfile``, using it is very simple: to get the p
   // Profile will end stationary at 5 meters
   // Returns the motion profile state after 5 seconds of motion
   profile.Calculate(5_s,
-  wpi::TrapezoidProfile<units::meters>::State{0_m, 0_mps},
-  wpi::TrapezoidProfile<units::meters>::State{5_m, 0_mps});
+  wpi::math::TrapezoidProfile<units::meters>::State{0_m, 0_mps},
+  wpi::math::TrapezoidProfile<units::meters>::State{5_m, 0_mps});
   ```
 
   ```python

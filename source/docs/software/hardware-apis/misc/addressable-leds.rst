@@ -248,7 +248,7 @@ Use commands. The command framework is specifically built for managing when acti
         LEDSubsystem();
         void Periodic() override;
 
-        wpi::CommandPtr RunPattern(wpi::LEDPattern pattern);
+        wpi::cmd::CommandPtr RunPattern(wpi::LEDPattern pattern);
 
        private:
         static constexpr int kPort = 9;
@@ -274,7 +274,7 @@ Use commands. The command framework is specifically built for managing when acti
         m_led.SetData(m_ledBuffer);
       }
 
-      wpi::CommandPtr LEDSubsystem::RunPattern(wpi::LEDPattern pattern) {
+      wpi::cmd::CommandPtr LEDSubsystem::RunPattern(wpi::LEDPattern pattern) {
         // std::move is necessary for inline pattern declarations to work
         // Otherwise we could have a use-after-free!
         return Run([this, pattern = std::move(pattern)] { pattern.ApplyTo(m_buffer); });
