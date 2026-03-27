@@ -90,6 +90,9 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
 3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width, so try increasing the track width number or measuring it programmatically.
 
 ### Verify Feedforward
+
+.. todo:: Migrate from RAMSETE to LTV
+
 If your feedforwards are bad then the P controllers for each side of the robot will not track as well, and your ``DifferentialDriveVoltageConstraint`` will not limit your robot's acceleration accurately. We mostly want to turn off the wheel P controllers so that we can isolate and test the feedforwards.
 
 1. First, we must set disable the P controller for each wheel. Set the ``P`` gain to 0 for every controller. In the ``RamseteCommand`` example, you would set ``kPDriveVel`` to 0:
