@@ -4,7 +4,7 @@
 
 In the previous article, we saw how to use the ``TrapezoidProfile`` class to create and use a trapezoidal motion profile.  The example code from that article demonstrates manually composing the ``TrapezoidProfile`` class with the external PID control feature of a "smart" motor controller.
 
-This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/math/controller/ProfiledPIDController.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_profiled_p_i_d_controller.html), :external:py:class:`Python <wpimath.controller.ProfiledPIDController>`) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
+This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/math/controller/ProfiledPIDController.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1math_1_1_profiled_p_i_d_controller.html), :external:py:class:`Python <wpimath.controller.ProfiledPIDController>`) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
 
 ## Using the ProfiledPIDController class
 
@@ -34,9 +34,9 @@ Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PID
   // Creates a ProfiledPIDController
   // Max velocity is 5 meters per second
   // Max acceleration is 10 meters per second
-  frc::ProfiledPIDController<units::meters> controller(
+  wpi::math::ProfiledPIDController<units::meters> controller(
     kP, kI, kD,
-    frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq});
+    wpi::math::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq});
   ```
 
   ```python
@@ -84,12 +84,12 @@ The returned setpoint might then be used as in the following example:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/snippets/profiledpidfeedforward/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/snippets/profiledpidfeedforward/Robot.java
       :language: java
       :lines: 37-42
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/snippets/ProfiledPIDFeedforward/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/snippets/ProfiledPIDFeedforward/cpp/Robot.cpp
       :language: c++
       :lines: 25-32
       :lineno-match:
@@ -112,16 +112,16 @@ The returned setpoint might then be used as in the following example:
 
 ## Complete Usage Example
 
-A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp), [Python](https://github.com/robotpy/examples/tree/main/ElevatorProfiledPID)):
+A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/elevatorprofiledpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp), [Python](https://github.com/robotpy/examples/tree/main/ElevatorProfiledPID)):
 
 .. tab-set-code::
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid/Robot.java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/elevatorprofiledpid/Robot.java
     :language: java
     :lines: 5-
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp/Robot.cpp
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp/Robot.cpp
     :language: c++
     :lines: 5-
     :lineno-match:

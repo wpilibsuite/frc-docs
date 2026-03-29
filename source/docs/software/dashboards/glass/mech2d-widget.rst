@@ -6,16 +6,16 @@ Glass supports displaying stick-figure representations of your robot's mechanism
 
 The ``Mechanism2d`` object is the "canvas" where the mechanism is drawn. The root node is where the mechanism is anchored to ``Mechanism2d``. For a single jointed arm this would the pivot point. For an elevator, this would be where it's attached to the robot's base. To get a root node (represented by a ``MechanismRoot2d`` object), call ``getRoot(name, x, y)`` on the container ``Mechanism2d`` object. The name is used to name the root within NetworkTables, and should be unique, but otherwise isn't important. The ``x / y`` coordinate system follows the same orientation as ``Field2d`` - ``(0,0)`` is bottom left.
 
-In the examples below, an elevator is drawn, with a rotational wrist on top of the elevator. The full Mechanism2d example is available in [Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java) / [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp)
+In the examples below, an elevator is drawn, with a rotational wrist on top of the elevator. The full Mechanism2d example is available in [Java](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java) / [C++](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp)
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
       :language: java
       :lines: 43-46
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
       :lines: 59-62
       :lineno-match:
@@ -31,12 +31,12 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has 
 .. tab-set-code::
 
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
       :language: java
       :lines: 48-53
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
       :lines: 63-69
       :lineno-match:
@@ -50,12 +50,12 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
       :language: java
       :lines: 55-56
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
       :lines: 36-37
       :lineno-match:
@@ -69,12 +69,12 @@ To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()``
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
       :language: java
       :lines: 59-64
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/8cfc158790c5d1c29b0a86643240558c0f6e73ff/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
       :lines: 40-45
       :lineno-match:
@@ -104,4 +104,4 @@ Once the widget appears as shown below, you can resize and place it on the Glass
 
 ## Next Steps
 
-As mentioned above, the Mechanism2d visualization can be combined with :doc:`Physics Simulation </docs/software/wpilib-tools/robot-simulation/physics-sim>` to help you program mechanisms before your robot is built. The ArmSimulation ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java) / [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp) / [Python](https://github.com/robotpy/examples/blob/2024.0.0b4/ArmSimulation/robot.py)) and ElevatorSimulation ([Java](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation/Robot.java) / [C++](https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp) / [Python](https://github.com/robotpy/examples/blob/2024.0.0b4/ElevatorSimulation/robot.py)) examples combine physics simulation and Mechanism2d visualization so that you can practice programming a single jointed arm and elevator without a robot.
+As mentioned above, the Mechanism2d visualization can be combined with :doc:`Physics Simulation </docs/software/wpilib-tools/robot-simulation/physics-sim>` to help you program mechanisms before your robot is built. The ArmSimulation ([Java](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/Robot.java) / [C++](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp) / [Python](https://github.com/robotpy/examples/blob/2024.0.0b4/ArmSimulation/robot.py)) and ElevatorSimulation ([Java](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibjExamples/src/main/java/org/wpilib/examples/elevatorsimulation/Robot.java) / [C++](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/Robot.cpp) / [Python](https://github.com/robotpy/examples/blob/2024.0.0b4/ElevatorSimulation/robot.py)) examples combine physics simulation and Mechanism2d visualization so that you can practice programming a single jointed arm and elevator without a robot.

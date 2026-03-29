@@ -29,11 +29,11 @@ The optional argument is the starting pose of your robot on the field (as a ``Po
    // Creating my odometry object. Here,
    // our starting pose is 5 meters along the long end of the field and in the
    // center of the field along the short end, facing forward.
-   frc::DifferentialDriveOdometry m_odometry{
+   wpi::DifferentialDriveOdometry m_odometry{
      m_gyro.GetRotation2d(),
      units::meter_t{m_leftEncoder.GetDistance()},
      units::meter_t{m_rightEncoder.GetDistance()},
-     frc::Pose2d{5_m, 13.5_m, 0_rad}};
+     wpi::math::Pose2d{5_m, 13.5_m, 0_rad}};
    ```
 
    ```python
@@ -71,7 +71,7 @@ The ``update`` method can be used to update the robot's position on the field. T
    ```c++
    void Periodic() override {
      // Get the rotation of the robot from the gyro.
-     frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
+     wpi::math::Rotation2d gyroAngle = m_gyro.GetRotation2d();
      // Update the pose
      m_pose = m_odometry.Update(gyroAngle,
        units::meter_t{m_leftEncoder.GetDistance()},
@@ -94,6 +94,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important:: If at any time, you decide to reset your gyroscope or encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel distances.
 
-.. note:: A full example of a differential drive robot with odometry is available here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot) / [Python](https://github.com/robotpy/examples/tree/main/DifferentialDriveBot)
+.. note:: A full example of a differential drive robot with odometry is available here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/differentialdrivebot) / [Python](https://github.com/robotpy/examples/tree/main/DifferentialDriveBot)
 
 In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.

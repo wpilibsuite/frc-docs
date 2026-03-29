@@ -25,9 +25,9 @@ Simulation device object can be constructed in two ways:
 
    ```c++
    // create a real encoder object on DIO 2,3
-   frc::Encoder encoder{2, 3};
+   wpi::Encoder encoder{2, 3};
    // create a sim controller for the encoder
-   frc::sim::EncoderSim simEncoder{encoder};
+   wpi::sim::EncoderSim simEncoder{encoder};
    ```
 
 ### Reading and Writing Device Data
@@ -74,7 +74,7 @@ In C++, save the ``CallbackStore`` object in the right scope - the callback will
        wpi::outs() << "Value of " << name << " is " << value->data.v_int << '\n';
      }
    };
-   frc::sim::CallbackStore store = simEncoder.RegisterCountCallback(callback);
+   wpi::sim::CallbackStore store = simEncoder.RegisterCountCallback(callback);
    // the callback will be canceled when ``store`` goes out of scope
    ```
 
@@ -92,7 +92,7 @@ The ``SimDeviceSim`` object is created using a string key identical to the key t
    ```
 
    ```c++
-   frc::sim::SimDeviceSim device{deviceKey, index};
+   wpi::sim::SimDeviceSim device{deviceKey, index};
    ```
 
 Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, ``SimLong``, ``SimBoolean``, and ``SimEnum`` subclasses also exist, and should be used instead of the type-unsafe ``SimValue`` class. These are constructed from the ``SimDeviceSim`` using a string key identical to the one the vendor used to define the field. This key is the one the field appears as in the SimGUI. Attempting to retrieve a ``SimValue`` object outside of simulation or when either the device or field keys are unmatched will return ``null`` - this can cause ``NullPointerException`` in Java or undefined behavior in C++.
@@ -105,7 +105,7 @@ Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects representing 
    ```
 
    ```c++
-   hal::SimDouble field = device.GetDouble(fieldKey);
+   wpi::hal::SimDouble field = device.GetDouble(fieldKey);
    field.Get();
    field.Set(value);
    ```

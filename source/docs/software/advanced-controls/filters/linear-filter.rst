@@ -10,7 +10,7 @@ Infinite impulse responses have infinite "support" - that is, they are nonzero o
 
 Finite impulse responses have finite "support" - that is, they are nonzero on a bounded region.  The "archetypical" FIR filter is a flat moving average - that is, simply setting the output equal to the average of the past n inputs.  FIR filters tend to have more-desirable properties than IIR filters, but are more costly to compute.
 
-Linear filters are supported in WPILib through the ``LinearFilter`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_linear_filter.html), , :external:py:class:`Python <wpimath.filter.LinearFilter>`).
+Linear filters are supported in WPILib through the ``LinearFilter`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1math_1_1_linear_filter.html), , :external:py:class:`Python <wpimath.filter.LinearFilter>`).
 
 ## Creating a LinearFilter
 
@@ -40,7 +40,7 @@ The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse re
   // Creates a new Single-Pole IIR filter
   // Time constant is 0.1 seconds
   // Period is 0.02 seconds - this is the standard FRC main loop period
-  frc::LinearFilter<double> filter = frc::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
+  wpi::math::LinearFilter<double> filter = wpi::math::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
   ```
 
   ```python
@@ -73,7 +73,7 @@ The ``movingAverage`` factory method creates a simple flat moving average filter
   ```c++
   // Creates a new flat moving average filter
   // Average will be taken over the last 5 samples
-  frc::LinearFilter<double> filter = frc::LinearFilter<double>::MovingAverage(5);
+  wpi::math::LinearFilter<double> filter = wpi::math::LinearFilter<double>::MovingAverage(5);
   ```
 
   ```python
@@ -105,7 +105,7 @@ The ``highPass`` factory method creates a simple first-order infinite impulse re
   // Creates a new high-pass IIR filter
   // Time constant is 0.1 seconds
   // Period is 0.02 seconds - this is the standard FRC main loop period
-  frc::LinearFilter<double> filter = frc::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
+  wpi::math::LinearFilter<double> filter = wpi::math::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
   ```
 
   ```python

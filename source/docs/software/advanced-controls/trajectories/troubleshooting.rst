@@ -77,7 +77,7 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
    NetworkTableEntry m_yEntry = nt::NetworkTableInstance::GetDefault().GetTable("troubleshooting")->GetEntry("Y");
    void DriveSubsystem::Periodic() {
        // Implementation of subsystem periodic method goes here.
-       m_odometry.Update(frc::Rotation2d(units::degree_t(GetHeading())),
+       m_odometry.Update(wpi::math::Rotation2d(units::degree_t(GetHeading())),
                            units::meter_t(m_leftEncoder.GetDistance()),
                            units::meter_t(m_rightEncoder.GetDistance()));
        auto translation = m_odometry.GetPose().Translation();
@@ -126,10 +126,10 @@ If your feedforwards are bad then the P controllers for each side of the robot w
    ```
 
    ```c++
-   frc::RamseteController m_disabledRamsete;
+   wpi::RamseteController m_disabledRamsete;
    m_disabledRamsete.SetEnabled(false);
    // Be sure to pass your new disabledRamsete variable
-   frc2::RamseteCommand ramseteCommand(
+   wpi::cmd::RamseteCommand ramseteCommand(
      exampleTrajectory,
      [this]() { return m_drive.GetPose(); },
      m_disabledRamsete,
@@ -177,13 +177,13 @@ If your feedforwards are bad then the P controllers for each side of the robot w
    auto leftMeas = table->GetEntry("left_measurement");
    auto rightRef = table->GetEntry("right_reference");
    auto rightMeas = table->GetEntry("right_measurement");
-   frc::PIDController leftController(DriveConstants::kPDriveVel, 0, 0);
-   frc::PIDController rightController(DriveConstants::kPDriveVel, 0, 0);
-   frc2::RamseteCommand ramseteCommand(
+   wpi::math::PIDController leftController(DriveConstants::kPDriveVel, 0, 0);
+   wpi::math::PIDController rightController(DriveConstants::kPDriveVel, 0, 0);
+   wpi::cmd::RamseteCommand ramseteCommand(
        exampleTrajectory, [this]() { return m_drive.GetPose(); },
-       frc::RamseteController(AutoConstants::kRamseteB,
+       wpi::RamseteController(AutoConstants::kRamseteB,
                                AutoConstants::kRamseteZeta),
-       frc::SimpleMotorFeedforward<units::meters>(
+       wpi::math::SimpleMotorfeedforward<units::meters>(
            DriveConstants::ks, DriveConstants::kv, DriveConstants::ka),
        DriveConstants::kDriveKinematics,
        [this] { return m_drive.GetWheelSpeeds(); }, leftController,

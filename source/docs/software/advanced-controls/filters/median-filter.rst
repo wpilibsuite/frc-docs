@@ -7,7 +7,7 @@ A `statistically robust` alternative to the :ref:`moving-average filter <docs/so
 
 The median filter is most-useful for removing occasional outliers from an input stream.  This makes it particularly well-suited to filtering inputs from distance sensors, which are prone to occasional interference.  Unlike a moving average, the median filter will remain completely unaffected by small numbers of outliers, no matter how extreme.
 
-The median filter is supported in WPILib through the ``MedianFilter`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/math/filter/MedianFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_median_filter.html), , :external:py:class:`Python <wpimath.filter.MedianFilter>`).
+The median filter is supported in WPILib through the ``MedianFilter`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/math/filter/MedianFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1math_1_1_median_filter.html), , :external:py:class:`Python <wpimath.filter.MedianFilter>`).
 
 ## Creating a MedianFilter
 
@@ -26,7 +26,7 @@ Creating a ``MedianFilter`` is simple:
 
   ```c++
   // Creates a MedianFilter with a window size of 5 samples
-  frc::MedianFilter<double> filter(5);
+  wpi::math::MedianFilter<double> filter(5);
   ```
 
   ```python

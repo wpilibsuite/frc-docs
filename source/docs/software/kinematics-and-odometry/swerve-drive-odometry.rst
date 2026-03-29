@@ -43,22 +43,22 @@ The fourth optional argument is the starting pose of your robot on the field (as
 
    ```c++
    // Locations for the swerve drive modules relative to the robot center.
-   frc::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
-   frc::Translation2d m_frontRightLocation{0.381_m, -0.381_m};
-   frc::Translation2d m_backLeftLocation{-0.381_m, 0.381_m};
-   frc::Translation2d m_backRightLocation{-0.381_m, -0.381_m};
+   wpi::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
+   wpi::Translation2d m_frontRightLocation{0.381_m, -0.381_m};
+   wpi::Translation2d m_backLeftLocation{-0.381_m, 0.381_m};
+   wpi::Translation2d m_backRightLocation{-0.381_m, -0.381_m};
    // Creating my kinematics object using the module locations.
-   frc::SwerveDriveKinematics<4> m_kinematics{
+   wpi::SwerveDriveKinematics<4> m_kinematics{
      m_frontLeftLocation, m_frontRightLocation,
      m_backLeftLocation, m_backRightLocation
    };
    // Creating my odometry object from the kinematics object. Here,
    // our starting pose is 5 meters along the long end of the field and in the
    // center of the field along the short end, facing forward.
-   frc::SwerveDriveOdometry<4> m_odometry{m_kinematics, m_gyro.GetRotation2d(),
+   wpi::SwerveDriveOdometry<4> m_odometry{m_kinematics, m_gyro.GetRotation2d(),
      {m_frontLeft.GetPosition(), m_frontRight.GetPosition(),
      m_backLeft.GetPosition(), m_backRight.GetPosition()},
-     frc::Pose2d{5_m, 13.5_m, 0_rad}};
+     wpi::math::Pose2d{5_m, 13.5_m, 0_rad}};
    ```
 
    ```python
@@ -118,7 +118,7 @@ This ``update`` method must be called periodically, preferably in the ``periodic
    ```c++
    void Periodic() override {
      // Get the rotation of the robot from the gyro.
-     frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
+     wpi::math::Rotation2d gyroAngle = m_gyro.GetRotation2d();
      // Update the pose
      m_pose = m_odometry.Update(gyroAngle,
        {
@@ -145,6 +145,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important::  If at any time, you decide to reset your gyroscope or wheel encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel encoder positions.
 
-.. note:: The implementation of ``getPosition() / GetPosition()`` above is left to the user. The idea is to get the module position (distance and angle) from each module. For a full example, see here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/SwerveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot) / [Python](https://github.com/robotpy/examples/tree/main/SwerveBot)
+.. note:: The implementation of ``getPosition() / GetPosition()`` above is left to the user. The idea is to get the module position (distance and angle) from each module. For a full example, see here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/SwerveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/swervebot) / [Python](https://github.com/robotpy/examples/tree/main/SwerveBot)
 
 In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.

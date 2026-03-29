@@ -44,28 +44,28 @@ The fourth optional argument is the starting pose of your robot on the field (as
 
    ```c++
    // Locations of the wheels relative to the robot center.
-   frc::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
-   frc::Translation2d m_frontRightLocation{0.381_m, -0.381_m};
-   frc::Translation2d m_backLeftLocation{-0.381_m, 0.381_m};
-   frc::Translation2d m_backRightLocation{-0.381_m, -0.381_m};
+   wpi::Translation2d m_frontLeftLocation{0.381_m, 0.381_m};
+   wpi::Translation2d m_frontRightLocation{0.381_m, -0.381_m};
+   wpi::Translation2d m_backLeftLocation{-0.381_m, 0.381_m};
+   wpi::Translation2d m_backRightLocation{-0.381_m, -0.381_m};
    // Creating my kinematics object using the wheel locations.
-   frc::MecanumDriveKinematics m_kinematics{
+   wpi::MecanumDriveKinematics m_kinematics{
      m_frontLeftLocation, m_frontRightLocation,
      m_backLeftLocation, m_backRightLocation
    };
    // Creating my odometry object from the kinematics object. Here,
    // our starting pose is 5 meters along the long end of the field and in the
    // center of the field along the short end, facing forward.
-   frc::MecanumDriveOdometry m_odometry{
+   wpi::MecanumDriveOdometry m_odometry{
      m_kinematics,
      m_gyro.GetRotation2d(),
-     frc::MecanumDriveWheelPositions{
+     wpi::MecanumDriveWheelPositions{
        units::meter_t{m_frontLeftEncoder.GetDistance()},
        units::meter_t{m_frontRightEncoder.GetDistance()},
        units::meter_t{m_backLeftEncoder.GetDistance()},
        units::meter_t{m_backRightEncoder.GetDistance()}
      },
-     frc::Pose2d{5_m, 13.5_m, 0_rad}};
+     wpi::math::Pose2d{5_m, 13.5_m, 0_rad}};
    ```
 
    ```python
@@ -120,13 +120,13 @@ The ``update`` method of the odometry class updates the robot position on the fi
    ```c++
    void Periodic() override {
      // Get my wheel positions
-     frc::MecanumDriveWheelPositions wheelPositions{
+     wpi::MecanumDriveWheelPositions wheelPositions{
        units::meter_t{m_frontLeftEncoder.GetDistance()},
        units::meter_t{m_frontRightEncoder.GetDistance()},
        units::meter_t{m_backLeftEncoder.GetDistance()},
        units::meter_t{m_backRightEncoder.GetDistance()}};
      // Get the rotation of the robot from the gyro.
-     frc::Rotation2d gyroAngle = m_gyro.GetRotation2d();
+     wpi::math::Rotation2d gyroAngle = m_gyro.GetRotation2d();
      // Update the pose
      m_pose = m_odometry.Update(gyroAngle, wheelPositions);
    }
@@ -150,6 +150,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important:: If at any time, you decide to reset your gyroscope or encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel positions.
 
-.. note:: A full example of a mecanum drive robot with odometry is available here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/MecanumBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumbot) / [Python](https://github.com/robotpy/examples/tree/main/MecanumBot)
+.. note:: A full example of a mecanum drive robot with odometry is available here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/MecanumBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/mecanumbot) / [Python](https://github.com/robotpy/examples/tree/main/MecanumBot)
 
 In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.

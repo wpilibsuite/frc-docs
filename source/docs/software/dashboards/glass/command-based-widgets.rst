@@ -16,7 +16,7 @@ The :guilabel:`Command Selector`  widget allows you to start and cancel a specif
    #include <frc/smartdashboard/SmartDashboard.h>
    ...
    MyCommand command{...};
-   frc::SmartDashboard::PutData("My Command", &command);
+   wpi::SmartDashboard::PutData("My Command", &command);
    ```
 
    ```python

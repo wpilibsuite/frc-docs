@@ -42,8 +42,8 @@ You can calculate the measurement noise of your sensors by taking multiple data 
    #include <frc/simulation/DifferentialDrivetrainSim.h>
    ...
    // Create the simulation model of our drivetrain.
-   frc::sim::DifferentialDrivetrainSim m_driveSim{
-     frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
+   wpi::sim::DifferentialDrivetrainSim m_driveSim{
+     wpi::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
      7.29,               // 7.29:1 gearing reduction.
      7.5_kg_sq_m,        // MOI of 7.5 kg m^2 (from CAD model).
      60_kg,              // The mass of the robot is 60 kg.
@@ -120,12 +120,12 @@ You can calculate the measurement noise of your sensors by taking multiple data 
    // The track width is 0.7112 meters.
    static constexpr auto kTrackwidth = 0.7112_m;
    // Create the simulation model of our drivetrain.
-   frc::sim::DifferentialDrivetrainSim m_driveSim{
+   wpi::sim::DifferentialDrivetrainSim m_driveSim{
      // Create a linear system from our identification gains.
-     frc::LinearSystemId::IdentifyDrivetrainSystem(
+     wpi::math::LinearSystemId::IdentifyDrivetrainSystem(
        KvLinear, KaLinear, KvAngular, KaAngular, kTrackWidth),
      kTrackWidth,
-     frc::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
+     wpi::DCMotor::GetNEO(2), // 2 NEO motors on each side of the drivetrain.
      7.29,               // 7.29:1 gearing reduction.
      3_in,               // The robot uses 3" radius wheels.
      // The standard deviations for measurement noise:
@@ -165,11 +165,11 @@ You can calculate the measurement noise of your sensors by taking multiple data 
    ```c++
    #include <frc/simulation/DifferentialDrivetrainSim.h>
    ...
-   frc::sim::DifferentialDrivetrainSim m_driveSim =
-     frc::sim::DifferentialDrivetrainSim::CreateKitbotSim(
-       frc::sim::DifferentialDrivetrainSim::KitbotMotor::DualCIMPerSide, // 2 CIMs per side.
-       frc::sim::DifferentialDrivetrainSim::KitbotGearing::k10p71,       // 10.71:1
-       frc::sim::DifferentialDrivetrainSim::KitbotWheelSize::kSixInch    // 6" diameter wheels.
+   wpi::sim::DifferentialDrivetrainSim m_driveSim =
+     wpi::sim::DifferentialDrivetrainSim::CreateKitbotSim(
+       wpi::sim::DifferentialDrivetrainSim::KitbotMotor::DualCIMPerSide, // 2 CIMs per side.
+       wpi::sim::DifferentialDrivetrainSim::KitbotGearing::k10p71,       // 10.71:1
+       wpi::sim::DifferentialDrivetrainSim::KitbotWheelSize::kSixInch    // 6" diameter wheels.
    );
    ```
 

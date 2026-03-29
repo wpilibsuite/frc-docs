@@ -18,9 +18,9 @@ To send your robot's position (usually obtained by :ref:`odometry <docs/software
    ```c++
    #include <frc/smartdashboard/Field2d.h>
    #include <frc/smartdashboard/SmartDashboard.h>
-   frc::Field2d m_field;
+   wpi::Field2d m_field;
    // Do this in either robot or subsystem init
-   frc::SmartDashboard::PutData("Field", &m_field);
+   wpi::SmartDashboard::PutData("Field", &m_field);
    // Do this in either robot periodic or subsystem periodic
    m_field.SetRobotPose(m_odometry.GetPose());
    ```

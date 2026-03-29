@@ -8,7 +8,7 @@ Single acting solenoids apply or vent pressure from a single output port. They a
 
 ## Single Solenoids in WPILib
 
-Single solenoids in WPILib are controlled using the ``Solenoid`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/Solenoid.html) / [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_solenoid.html)). To construct a Solenoid object, simply pass the desired port number (assumes default CAN ID) and pneumatics module type or CAN ID, pneumatics module type, and port number to the constructor. To set the value of the solenoid call ``set(true)`` to enable or ``set(false)`` to disable the solenoid output.
+Single solenoids in WPILib are controlled using the ``Solenoid`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/hardware/pneumatic/Solenoid.html) / [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_solenoid.html)). To construct a Solenoid object, simply pass the desired port number (assumes default CAN ID) and pneumatics module type or CAN ID, pneumatics module type, and port number to the constructor. To set the value of the solenoid call ``set(true)`` to enable or ``set(false)`` to disable the solenoid output.
 
 .. tab-set::
 
@@ -43,7 +43,7 @@ Single solenoids in WPILib are controlled using the ``Solenoid`` class ([Java](h
 
 ## Double Solenoids in WPILib
 
-Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/DoubleSolenoid.html) / [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_double_solenoid.html)). These are constructed similarly to the single solenoid but there are now two port numbers to pass to the constructor, a forward channel (first) and a reverse channel (second). The state of the valve can then be set to ``kOff`` (neither output activated), ``kForward`` (forward channel enabled) or ``kReverse`` (reverse channel enabled). Additionally, the CAN ID can be passed to the DoubleSolenoid if teams have a non-default CAN ID.
+Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/hardware/pneumatic/DoubleSolenoid.html) / [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_double_solenoid.html)). These are constructed similarly to the single solenoid but there are now two port numbers to pass to the constructor, a forward channel (first) and a reverse channel (second). The state of the valve can then be set to ``kOff`` (neither output activated), ``kForward`` (forward channel enabled) or ``kReverse`` (reverse channel enabled). Additionally, the CAN ID can be passed to the DoubleSolenoid if teams have a non-default CAN ID.
 
 .. tab-set::
 
@@ -98,10 +98,10 @@ Solenoids can be switched from one output to the other (known as toggling) by us
    ```
 
    ```c++
-   frc::Solenoid exampleSingle{frc::PneumaticsModuleType::CTREPCM, 0};
-   frc::DoubleSolenoid exampleDouble{frc::PneumaticsModuleType::CTREPCM, 1, 2};
+   wpi::Solenoid exampleSingle{wpi::PneumaticsModuleType::CTREPCM, 0};
+   wpi::DoubleSolenoid exampleDouble{wpi::PneumaticsModuleType::CTREPCM, 1, 2};
    // Initialize the DoubleSolenoid so it knows where to start.  Not required for single solenoids.
-   exampleDouble.Set(frc::DoubleSolenoid::Value::kReverse);
+   exampleDouble.Set(wpi::DoubleSolenoid::Value::kReverse);
    if (m_controller.GetYButtonPressed()) {
       exampleSingle.Toggle();
       exampleDouble.Toggle();

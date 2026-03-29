@@ -11,7 +11,7 @@ Servo motors are a type of motor which integrates positional feedback into the m
     ```
 
     ```c++
-    frc::Servo exampleServo {1};
+    wpi::Servo exampleServo {1};
     ```
 
     ```python

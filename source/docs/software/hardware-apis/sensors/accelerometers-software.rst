@@ -17,7 +17,7 @@ Three-axis accelerometers often require more complicated communications protocol
 
 ## AnalogAccelerometer
 
-The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/AnalogAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_analog_accelerometer.html)) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
+The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/hardware/accelerometer/AnalogAccelerometer.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_analog_accelerometer.html)) allows users to read values from a single-axis accelerometer that is connected to one of the roboRIO's analog inputs.
 
 .. tab-set-code::
 
@@ -34,7 +34,7 @@ The :code:`AnalogAccelerometer` class ([Java](https://github.wpilib.org/allwpili
 
     ```c++
     // Creates an analog accelerometer on analog input 0
-    frc::AnalogAccelerometer accelerometer{0};
+    wpi::AnalogAccelerometer accelerometer{0};
     // Sets the sensitivity of the accelerometer to 1 volt per G
     accelerometer.SetSensitivity(1);
     // Sets the zero voltage of the accelerometer to 3 volts
@@ -61,7 +61,7 @@ There are getters for the acceleration along each cardinal direction (x, y, and 
 
 ### ADXL345_I2C
 
-The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/wpilibj/ADXL345_I2C.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_a_d_x_l345___i2_c.html)) provides support for the ADXL345 accelerometer over the I2C communications bus.
+The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/hardware/accelerometer/ADXL345_I2C.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_a_d_x_l345___i2_c.html)) provides support for the ADXL345 accelerometer over the I2C communications bus.
 
 .. tab-set-code::
 
@@ -74,7 +74,7 @@ The :code:`ADXL345_I2C` class ([Java](https://github.wpilib.org/allwpilib/docs/2
     ```c++
     // Creates an ADXL345 accelerometer object on the MXP I2C port
     // with a measurement range from -8 to 8 G's
-    frc::ADXL345_I2C accelerometer{I2C::Port::kMXP, frc::ADXL345_I2C::Range::kRange_8G};
+    wpi::ADXL345_I2C accelerometer{I2C::Port::kMXP, wpi::ADXL345_I2C::Range::kRange_8G};
     ```
 
 ### BuiltInAccelerometer
@@ -118,7 +118,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
     ```c++
     double prevXAccel = 0.0;
     double prevYAccel = 0.0;
-    frc::BuiltInAccelerometer accelerometer;
+    wpi::BuiltInAccelerometer accelerometer;
     void Robot::RobotPeriodic() {
         // Gets the current accelerations in the X and Y directions
         double xAccel = accelerometer.GetX();
@@ -132,7 +132,7 @@ For detecting collisions, it is often more robust to measure the jerk than the a
     }
     ```
 
-Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/edu/wpi/first/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classfrc_1_1_linear_filter.html)) to reduce the noise:
+Most accelerometers legal for FRC use are quite noisy, and it is often a good idea to combine them with the :code:`LinearFilter` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/math/filter/LinearFilter.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1math_1_1_linear_filter.html)) to reduce the noise:
 
 .. tab-set-code::
 
@@ -148,9 +148,9 @@ Most accelerometers legal for FRC use are quite noisy, and it is often a good id
     ```
 
     ```c++
-    frc::BuiltInAccelerometer accelerometer;
+    wpi::BuiltInAccelerometer accelerometer;
     // Create a LinearFilter that will calculate a moving average of the measured X acceleration over the past 10 iterations of the main loop
-    auto xAccelFilter = frc::LinearFilter::MovingAverage(10);
+    auto xAccelFilter = wpi::math::LinearFilter::MovingAverage(10);
     void Robot::RobotPeriodic() {
         // Get the filtered X acceleration
         double filteredXAccel = xAccelFilter.Calculate(accelerometer.GetX());
