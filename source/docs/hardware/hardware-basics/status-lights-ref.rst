@@ -61,7 +61,7 @@ A compact and printable `Status Light Quick Reference <https://wpilib.org/s/Stat
 |            +----------------+-----------------------------------------------------------------------------------+
 |            | Red            | Test Enabled                                                                      |
 +------------+----------------+-----------------------------------------------------------------------------------+
-| **RSL**    | `See above <#robot-signal-light-rsl>`_                                                             |
+| **RSL**    | `See above <#robot-signal-light-rsl>`_ (Will appear in red if the RSL is not connected)            |
 +------------+----------------------------------------------------------------------------------------------------+
 
 ## Vivid-Hosting VH-109 Radio
