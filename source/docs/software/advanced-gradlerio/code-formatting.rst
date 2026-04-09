@@ -172,8 +172,8 @@ You can install [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/
 
 wpiformat can be ran by typing ``wpiformat`` in a console. This will format with ``clang-format``. There are three configuration files one can place in the project root: ``.clang-format`` (optional), ``.wpiformat`` (optional), and ``.wpiformat-license`` (required).
 
--- ``.clang-format`` [style option docs](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
--- ``.wpiformat`` [configuration docs](https://github.com/wpilibsuite/styleguide/tree/main/wpiformat#wpiformat-1)
+- ``.clang-format`` [style option docs](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
+- ``.wpiformat`` [configuration docs](https://github.com/wpilibsuite/styleguide/tree/main/wpiformat#wpiformat-1)
 
 An example ``.wpiformat-license`` is shown below:
 
