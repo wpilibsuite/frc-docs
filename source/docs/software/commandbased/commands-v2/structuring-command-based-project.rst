@@ -33,7 +33,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandbased/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/Robot.java
          :language: java
          :lines: 31-45
          :lineno-match:
@@ -53,7 +53,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandbased/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/Robot.java
          :language: java
          :lines: 54-63
          :lineno-match:
@@ -73,7 +73,7 @@ The ``autonomousInit()`` method schedules an autonomous command returned by the 
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandbased/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/Robot.java
          :language: java
          :lines: 69-78
          :lineno-match:
@@ -99,7 +99,7 @@ This class ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandbased/RobotContainer.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/RobotContainer.java
          :language: java
          :lines: 23
          :lineno-match:
@@ -119,7 +119,7 @@ Notice that subsystems are declared as private fields in ``RobotContainer``. Thi
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandbased/RobotContainer.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/RobotContainer.java
          :language: java
          :lines: 58
          :lineno-match:
@@ -139,7 +139,7 @@ Since subsystems are declared as private members, they must be explicitly passed
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandbased/RobotContainer.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/RobotContainer.java
          :language: java
          :lines: 34-49
          :lineno-match:
@@ -159,7 +159,7 @@ As mentioned before, the ``RobotContainer()`` constructor is where most of the d
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandbased/RobotContainer.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/RobotContainer.java
          :language: java
          :lines: 51-59
          :lineno-match:
