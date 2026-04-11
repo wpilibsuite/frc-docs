@@ -41,7 +41,7 @@ In C++, this is not needed as RobotContainer is a value member and will be const
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandv2/cpp/Robot.cpp
          :language: c++
          :lines: 11-21
          :lineno-match:
@@ -61,7 +61,7 @@ The inclusion of the ``CommandScheduler.getInstance().run()`` call in the ``robo
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandv2/cpp/Robot.cpp
          :language: c++
          :lines: 32-43
          :lineno-match:
@@ -81,7 +81,7 @@ The ``autonomousInit()`` method schedules an autonomous command returned by the 
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandv2/cpp/Robot.cpp
          :language: c++
          :lines: 47-55
          :lineno-match:
@@ -107,7 +107,7 @@ This class ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandbased/include/RobotContainer.hpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandv2/include/RobotContainer.hpp
          :language: c++
          :lines: 31
          :lineno-match:
@@ -127,7 +127,7 @@ Notice that subsystems are declared as private fields in ``RobotContainer``. Thi
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandv2/cpp/RobotContainer.cpp
          :language: c++
          :lines: 33
          :lineno-match:
@@ -147,7 +147,7 @@ Since subsystems are declared as private members, they must be explicitly passed
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandv2/cpp/RobotContainer.cpp
          :language: c++
          :lines: 18-29
          :lineno-match:
@@ -167,7 +167,7 @@ As mentioned before, the ``RobotContainer()`` constructor is where most of the d
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandbased/cpp/RobotContainer.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/commandv2/cpp/RobotContainer.cpp
          :language: c++
          :lines: 31-34
          :lineno-match:
