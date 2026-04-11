@@ -8,11 +8,11 @@ Limit switches can have "normally open" or "normally closed" outputs.  This will
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/snippets/limitswitch/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/snippets/limitswitch/Robot.java
       :language: java
       :lines: 17-50
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/snippets/LimitSwitch/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/snippets/LimitSwitch/cpp/Robot.cpp
       :language: c++
       :lines: 40-43, 17-37
 

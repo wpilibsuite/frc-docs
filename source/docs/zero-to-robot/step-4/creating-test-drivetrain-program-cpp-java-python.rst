@@ -133,7 +133,7 @@ Now let's look at various parts of the code.
          .. tab-item:: Java
             :sync: java
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
                :language: java
                :lines: 7-12
                :linenos:
@@ -141,7 +141,7 @@ Now let's look at various parts of the code.
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 5-9
                :lineno-match:
@@ -253,7 +253,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: Java
             :sync: java
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
                :language: java
                :lines: 19-25
                :lineno-match:
@@ -261,7 +261,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 50-60
                :lineno-match:
@@ -486,7 +486,7 @@ The ``Robot`` constructor for our sample program inverts the right side of the d
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
       :lines: 38-54
       :lineno-match:

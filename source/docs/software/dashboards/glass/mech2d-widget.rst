@@ -15,9 +15,9 @@ In the examples below, an elevator is drawn, with a rotational wrist on top of t
       :lines: 43-46
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 59-62
+      :lines: 58-61
       :lineno-match:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2024.0.0b4/Mechanism2d/robot.py
@@ -36,9 +36,9 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has 
       :lines: 48-53
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 63-69
+      :lines: 62-68
       :lineno-match:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2024.0.0b4/Mechanism2d/robot.py
@@ -55,9 +55,9 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
       :lines: 55-56
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 36-37
+      :lines: 35-36
       :lineno-match:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2024.0.0b4/Mechanism2d/robot.py

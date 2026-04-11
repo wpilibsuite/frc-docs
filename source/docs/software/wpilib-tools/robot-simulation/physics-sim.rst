@@ -50,9 +50,9 @@ In the following example, we simulate an elevator given the mass of the moving c
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/include/subsystems/Elevator.hpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/include/subsystems/Elevator.hpp
          :language: c++
-         :lines: 51-61
+         :lines: 50-60
          :lineno-match:
 
 Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID control loop to drive our elevator to a setpoint 30 inches off the ground.
@@ -96,7 +96,7 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/elevatorsimulation/subsystems/Elevator.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/elevatorsimulation/subsystems/Elevator.java
          :language: java
          :lines: 78-91
          :lineno-match:
@@ -104,7 +104,7 @@ Finally, the simulated encoder's distance reading is set using the simulated ele
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp/subsystems/Elevator.cpp
          :language: c++
-         :lines: 20-35
+         :lines: 19-34
          :lineno-match:
