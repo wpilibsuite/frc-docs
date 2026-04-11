@@ -298,7 +298,7 @@ Command compositions can also be written as a constructor-only subclass of the m
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/ComplexAuto.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/ComplexAuto.java
          :language: java
          :lines: 5-
          :lineno-match:
@@ -306,7 +306,7 @@ Command compositions can also be written as a constructor-only subclass of the m
    .. tab-item:: C++ (Header)
       :sync: C++ (Header)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.hpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/ComplexAuto.hpp
          :language: c++
          :lines: 5-
          :lineno-match:
@@ -314,7 +314,7 @@ Command compositions can also be written as a constructor-only subclass of the m
    .. tab-item:: C++ (Source)
       :sync: C++ (Source)
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/ComplexAuto.cpp
          :language: c++
          :lines: 5-
          :lineno-match:

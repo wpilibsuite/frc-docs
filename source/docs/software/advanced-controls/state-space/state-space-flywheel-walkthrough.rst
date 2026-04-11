@@ -79,7 +79,7 @@ The ``LinearSystem`` class contains methods for easily creating state-space syst
          :lines: 16
          :lineno-match:
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
          :language: c++
          :lines: 27-42
          :lineno-match:
@@ -120,12 +120,12 @@ The ``LinearSystem`` class contains methods to easily create a model of a flywhe
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
          :language: c++
          :lines: 16
          :lineno-match:
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
          :language: c++
          :lines: 29-45
          :lineno-match:
@@ -171,12 +171,12 @@ Because the feedback controller computes error using the :term:`x-hat` estimated
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
          :language: c++
-         :lines: 13-13
+         :lines: 12
          :lineno-match:
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
          :language: c++
-         :lines: 48-53
+         :lines: 47-52
          :lineno-match:
 
    .. tab-item:: Python
@@ -210,14 +210,14 @@ Much like ``SimpleMotorFeedforward`` can be used to generate feedforward voltage
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
          :language: c++
          :lines: 11
          :lineno-match:
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
          :language: c++
-         :lines: 55-75
+         :lines: 54-73
          :lineno-match:
 
    .. tab-item:: Python
@@ -245,14 +245,14 @@ LinearSystemLoop combines our system, controller, and observer that we created e
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
          :language: c++
-         :lines: 15-15
+         :lines: 13
          :lineno-match:
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
          :language: c++
-         :lines: 71-74
+         :lines: 70-73
          :lineno-match:
 
    .. tab-item:: Python
@@ -270,7 +270,7 @@ Once we have our ``LinearSystemLoop``, the only thing left to do is actually run
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/statespaceflywheel/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/statespaceflywheel/Robot.java
          :language: java
          :lines: 94-119
          :lineno-match:
@@ -278,14 +278,14 @@ Once we have our ``LinearSystemLoop``, the only thing left to do is actually run
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp
          :language: c++
-         :lines: 5-17
+         :lines: 5-14
          :lineno-match:
 
       .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp
          :language: c++
-         :lines: 92-114
+         :lines: 91-113
          :lineno-match:
 
    .. tab-item:: Python

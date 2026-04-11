@@ -27,9 +27,9 @@ This example shows how to utilize Preferences to change the setpoint of a PID co
          :language: c++
          :lines: 30-34
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: c++
-         :lines: 12, 18-22
+         :lines: 11, 17-21
 
    .. tab-item:: Python
       :sync: Python
@@ -62,9 +62,9 @@ If using the Command Framework, this type of code could be placed in the constru
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: c++
-         :lines: 44-52
+         :lines: 3-51
 
    .. tab-item:: Python
       :sync: Python
@@ -95,9 +95,9 @@ Depending on the data that is stored in preferences, you can use it when you rea
       .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: c++
          :lines: 15-24
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: c++
-         :lines: 54-60
+         :lines: 53-59
 
    .. tab-item:: Python
       :sync: Python
