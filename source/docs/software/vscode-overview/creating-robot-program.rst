@@ -22,7 +22,7 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
 
 .. tab-set-code::
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/templates/timedskeleton/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/timedskeleton/Robot.java
       :language: java
       :lines: 7-53
       :lineno-match:

@@ -74,9 +74,9 @@ To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()``
       :lines: 59-64
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4wpilibjExamples/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 40-45
+      :lines: 39-44
       :lineno-match:
 
    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/2024.0.0b4/Mechanism2d/robot.py
