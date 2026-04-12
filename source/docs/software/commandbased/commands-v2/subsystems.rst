@@ -98,7 +98,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
    .. tab-item:: Python
       :sync: Python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/subsystems/hatchsubsystem.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot//HatchbotTraditional/subsystems/hatchsubsystem.py
          :language: python
          :lines: 7-
          :lineno-match:
@@ -136,7 +136,7 @@ Alternatively, instead of writing ``void`` public methods that are called from c
    .. tab-item:: Python
       :sync: Python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotInlined/subsystems/hatchsubsystem.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot//HatchbotInlined/subsystems/hatchsubsystem.py
          :language: python
          :lines: 7-
          :lineno-match:

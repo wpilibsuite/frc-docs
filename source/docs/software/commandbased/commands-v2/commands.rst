@@ -135,7 +135,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github
   .. tab-item:: Python
       :sync: tabcode-python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotInlined/subsystems/hatchsubsystem.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot//HatchbotInlined/subsystems/hatchsubsystem.py
         :language: python
         :lines: 24-34
         :lineno-match:
@@ -361,7 +361,7 @@ What might a functional command look like in practice? As before, below is a sim
   .. tab-item:: Python
     :sync: tabcode-python
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/grabhatch.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot//HatchbotTraditional/commands/grabhatch.py
       :language: python
       :lines: 7-
       :lineno-match:
@@ -401,7 +401,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: Python
     :sync: tabcode-python
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/commands/defaultdrive.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot//HatchbotTraditional/commands/defaultdrive.py
       :language: python
       :lines: 7-
       :lineno-match:
@@ -420,7 +420,7 @@ And then usage:
     :lines: 31-34
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotTraditional/robotcontainer.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot//HatchbotTraditional/robotcontainer.py
     :language: python
     :lines: 65-72
     :lineno-match:
@@ -439,7 +439,7 @@ Notice that this command does not override ``isFinished()``, and thus will never
       :lines: 26-32
       :lineno-match:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/main/HatchbotInlined/robotcontainer.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot//HatchbotInlined/robotcontainer.py
       :language: python
       :lines: 53-65
       :lineno-match:
