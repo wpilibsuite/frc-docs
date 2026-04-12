@@ -158,7 +158,7 @@ The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same on
 
 .. note:: In this example, the initial state is re-computed every timestep. This is a somewhat different usage technique than is detailed above, but works according to the same principles - the profile is sampled at a time corresponding to the loop period to get the setpoint for the next loop iteration.
 
-A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/elevatortrapezoidprofile), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp), [Python](https://github.com/robotpy/examples/tree/main/ElevatorTrapezoidProfile)):
+A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/elevatortrapezoidprofile), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp), [Python](https://github.com/robotpy/mostrobotpy/tree/2027/examples/robot/ElevatorTrapezoidProfile)):
 
 .. tab-set-code::
 
