@@ -34,7 +34,7 @@ This example shows how to utilize Preferences to change the setpoint of a PID co
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/ArmSimulation/constants.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/constants.py
          :language: python
          :lines: 18-23
 
