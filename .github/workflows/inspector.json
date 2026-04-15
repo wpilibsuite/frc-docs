@@ -12,8 +12,8 @@
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/robotpy/mostrobotpy/",
-      "versionScheme": "\\d{4}\\.\\d\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "d88ac48cd5f1d0f11ec03c493301dc2048bb314a"
+      "versionScheme": "\\d{4}\\.\\d\\.\\d(?:(?:a|b)\\d)?|[0-9a-f]{40}",
+      "latestVersion": "2027.0.0a4"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
