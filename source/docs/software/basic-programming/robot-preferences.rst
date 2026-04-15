@@ -38,9 +38,9 @@ This example shows how to utilize Preferences to change the setpoint of a PID co
          :language: python
          :lines: 18-23
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/ArmSimulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/subsystems/arm.py
          :language: python
-         :lines: 20-23,37-41
+         :lines: 18-20,69-73
 
 Preferences are stored using a name, the key. It's helpful to store the key in a constant, like ``kArmPositionKey`` and ``kArmPKey`` in the code above to avoid typing it multiple times and avoid typos. We also declare variables, ``kArmKp`` and ``armPositionDeg`` to hold the data retrieved from preferences.
 
@@ -69,9 +69,9 @@ If using the Command Framework, this type of code could be placed in the constru
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/ArmSimulation/subsytems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/subsystems/arm.py
          :language: python
-         :lines: 43-50
+         :lines: 97-104
 
 Reading a preference is easy. The ``getDouble`` method takes two parameters, the key to read, and a default value to use in case the preference doesn't exist. There are similar methods for other data types like booleans, ints, and strings.
 
@@ -102,12 +102,12 @@ Depending on the data that is stored in preferences, you can use it when you rea
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/ArmSimulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/robot.py
          :language: python
-         :lines: 22-28
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/ArmSimulation/subsytems/arm.py
+         :lines: 28-34
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/subsystems/arm.py
          :language: python
-         :lines: 52-57
+         :lines: 106-111
 
 ## Using Preferences in SmartDashboard
 
