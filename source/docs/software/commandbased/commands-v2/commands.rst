@@ -401,7 +401,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: Python
     :sync: tabcode-python
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot//HatchbotTraditional/commands/defaultdrive.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot//HatchbotTraditional/commands/defaultdrive.py
       :language: python
       :lines: 7-
       :lineno-match:
