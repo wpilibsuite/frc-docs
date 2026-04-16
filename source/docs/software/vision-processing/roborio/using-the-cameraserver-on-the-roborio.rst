@@ -18,9 +18,9 @@ The following program starts automatic capture of a USB camera like the Microsof
       :language: c++
       :lines: 7-8, 16-18, 20, 25-31
 
-   .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/QuickVision/robot.py
+   .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/QuickVision/robot.py
       :language: python
-      :lines: 8-20
+      :lines: 8-21
       :linenos:
 
 
@@ -69,16 +69,16 @@ In the following example a thread created in ``Robot`` constructor gets the Came
 
       Here's what your ``robot.py`` needs to contain to launch the image processing process:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/IntermediateVision/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/IntermediateVision/robot.py
          :language: python
-         :lines: 8-19
+         :lines: 8-20
          :linenos:
 
       The ``launch("vision.py")`` function says to launch ``vision.py`` and call the ``run`` function in that file. Here's what is in ``vision.py``:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/IntermediateVision/vision.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/IntermediateVision/vision.py
          :language: python
-         :lines: 12-55
+         :lines: 12-53
          :linenos:
 
       You need to update ``pyproject.toml`` contents to include cscore in the robotpy-extras key (this only shows the portions you need to update):

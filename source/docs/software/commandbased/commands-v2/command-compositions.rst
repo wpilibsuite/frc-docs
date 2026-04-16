@@ -322,7 +322,7 @@ Command compositions can also be written as a constructor-only subclass of the m
    .. tab-item:: Python
       :sync: Python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot//HatchbotTraditional/commands/complexauto.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot//HatchbotTraditional/commands/complexauto.py
          :language: python
          :lines: 7-
          :lineno-match:

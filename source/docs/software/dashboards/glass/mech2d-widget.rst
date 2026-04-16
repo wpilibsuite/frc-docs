@@ -20,9 +20,9 @@ In the examples below, an elevator is drawn, with a rotational wrist on top of t
       :lines: 58-61
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/Mechanism2d/robot.py
       :language: python
-      :lines: 32-35
+      :lines: 34-37
       :lineno-match:
 
 
@@ -41,9 +41,9 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has 
       :lines: 62-68
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/Mechanism2d/robot.py
          :language: python
-         :lines: 37-44
+         :lines: 39-46
          :lineno-match:
 
 Then, publish the ``Mechanism2d`` object to NetworkTables:
@@ -60,9 +60,9 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
       :lines: 35-36
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/Mechanism2d/robot.py
       :language: python
-      :lines: 46-47
+      :lines: 48-49
       :lineno-match:
 
 To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()`` on the ``MechanismLigament2d`` object. When manipulating ligament length based off of sensor measurements, make sure to add the minimum length to prevent 0-length (and therefore invisible) ligaments.
@@ -79,9 +79,9 @@ To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()``
       :lines: 39-44
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/Mechanism2d/robot.py
       :language: python
-      :lines: 49-54
+      :lines: 51-56
       :lineno-match:
 
 ## Viewing the Mechanism2d in Glass
