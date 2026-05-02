@@ -132,11 +132,11 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 ### Java units
 
-2027 Alpha 5: Make measure implementations immutable only
-2027 Alpha 5: Rename ``AngularMomentumUnit.mult`` to ``per``
-2027 Alpha 5: Make RPM an alias of RotationsPerMinute
-2027 Alpha 5: Fix incorrect magnitudes in some ``MutableMeasure`` mutations
-2027 Alpha 5: Remove deprecated divide and negate functions
+- 2027 Alpha 5: Make measure implementations immutable only
+- 2027 Alpha 5: Rename `AngularMomentumUnit.mult` to `per`
+- 2027 Alpha 5: Make RPM an alias of RotationsPerMinute
+- 2027 Alpha 5: Fix incorrect magnitudes in some MutableMeasure mutations
+- 2027 Alpha 5: Remove deprecated divide and negate functions
 
 ### CameraServer
 
