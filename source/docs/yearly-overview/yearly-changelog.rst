@@ -22,7 +22,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - Add Commands v3 framework
 - reorganize java packages from ``edu.wpi.first`` to ``org.wpilib`` and c++ namespaces from ``frc::`` to ``wpi::``. The :doc:`VS Code importer </docs/software/vscode-overview/importing-last-years-robot-code>` will attempt to update code for these changes as part of the import process.
 - Add OpMode framework, similar to FTC
-- Many of the simple examples were moved to snippets to de-clutter the VS Code examples. The snippets are availible here: [Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/snippets) / [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/snippets). We're thinking of ways to make these easier to discover.
+- Many of the simple examples were moved to snippets to de-clutter the VS Code examples. The snippets are available here: [Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/snippets) / [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/snippets). We're thinking of ways to make these easier to discover.
 
 ## WPILib
 
@@ -31,7 +31,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 ### General Library
 
 - 2027 Alpha 2: Update POV to use enums
-- 2027 Alpha 2: Use steady clock directly on SystemCore
+- 2027 Alpha 2: Use steady clock directly on Systemcore
 - 2027 Alpha 5: Replace libprotobuf with upb for dynamic decode
 - 2027 Alpha 5: Remove robotInit()
 - 2027 Alpha 5: Switch to use new DS available API from Mrccomm
@@ -198,7 +198,7 @@ Remove standalone utility
 - 2027 Alpha 5: Move source backup in jar to backup directory
 - 2027 Alpha 5: Set java project source/targetCompatibility to 25
 - 2027 Alpha 5: Use shadow plugin to make shaded JARs
-- 2027 Alpha 5: Port Java simulation cancelling to C++
+- 2027 Alpha 5: Port Java simulation canceling to C++
 - 2027 Alpha 5: Move wpilibHome to the top of the plugin repository list
 
 ## SysId
