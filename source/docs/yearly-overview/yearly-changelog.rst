@@ -46,7 +46,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 5: Rename FPGA clock to monotonic clock
 - 2027 Alpha 5: Rename constants to all caps style
 - 2027 Alpha 5: Fix HSV to RGB conversion off-by-one error
-- 2027 Alpha 5: Rename MotorController setDutyCycle() to setThrottle()
+- 2027 Alpha 5: Rename ``MotorController`` ``setDutyCycle()`` to ``setThrottle()``
 - 2027 Alpha 5: Add FTC fields
 - 2027 Alpha 5: Make swerve and differential kinematics functions immutable
 - 2027 Alpha 5: Rename "Test" robot mode to "Utility"
