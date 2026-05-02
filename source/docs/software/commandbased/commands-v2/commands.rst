@@ -330,7 +330,7 @@ To write a custom command class, subclass the abstract ``Command`` class ([Java]
 
 ## Simple Command Example
 
-What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)) that uses the ``HatchSubsystem``:
+What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)) that uses the ``HatchSubsystem``:
 
 .. tab-set::
 
