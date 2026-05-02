@@ -19,9 +19,9 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - Removed Network Tables v3 support
 - Systemcore has different hardware support. Support multiple CAN buses, Smart IO, onboard IMU, Expansion Hub. Removed relay, analog output, SPI, analog gyro, SPI, DMA, built-in accelerometer, Digital Glitch Filter, interrupts, analog trigger, Nidec Brushless, Servo, Jaguar
 - Use Java 25 and C++ 23
-- Add Commands v3 framework
+- Add Commands v3 framework for Java. Documentation is in work. In the meantime, see the [Commands v3 Conference ](https://www.chiefdelphi.com/t/wpilib-commands-v3-championship-conference/519702), [Design Document](https://github.com/wpilibsuite/allwpilib/blob/2027/design-docs/commands-v3.md) and the port of the [Hatchbot example to Commands v3](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotcmdv3).
 - reorganize java packages from ``edu.wpi.first`` to ``org.wpilib`` and c++ namespaces from ``frc::`` to ``wpi::``. The :doc:`VS Code importer </docs/software/vscode-overview/importing-last-years-robot-code>` will attempt to update code for these changes as part of the import process.
-- Add OpMode framework, similar to FTC
+- Add OpMode framework, similar to FTC. Documentation is in progress. In the meantime, see the [OpModes Design Document](https://github.com/wpilibsuite/allwpilib/blob/2027/design-docs/opmodes.md)
 - Many of the simple examples were moved to snippets to de-clutter the VS Code examples. The snippets are available here: [Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/snippets) / [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/snippets). We're thinking of ways to make these easier to discover.
 
 ## WPILib
