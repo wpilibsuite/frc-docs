@@ -33,12 +33,12 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 2: Update POV to use enums
 - 2027 Alpha 2: Use steady clock directly on Systemcore
 - 2027 Alpha 5: Replace libprotobuf with upb for dynamic decode
-- 2027 Alpha 5: Remove robotInit()
+- 2027 Alpha 5: Remove ``robotInit()``
 - 2027 Alpha 5: Switch to use new DS available API from Mrccomm
 - 2027 Alpha 5: Add a few unit overloads
-- 2027 Alpha 5: Remove deprecated MotorControllerGroup
+- 2027 Alpha 5: Remove deprecated ``MotorControllerGroup``
 - 2027 Alpha 5: Add Touchpad support
-- 2027 Alpha 5: Remove MotorController::StopMotor()
+- 2027 Alpha 5: Remove ``MotorController::StopMotor()``
 - 2027 Alpha 5: Switch to new game data
 - 2027 Alpha 5: Make joystick unplugged warning better in cases of out of range axis/button
 - 2027 Alpha 5: Preferences Listener should not depend on mutable fields
@@ -55,14 +55,14 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 - Remove RamseteCommand
 - Remove control commands and subsystems
-- 2027 Alpha 2: Deprecate Command.schedule()
-- 2027 Alpha 5: Remove Mecanum/SwerveControllerCommand
-- 2027 Alpha 5: Add Subsystem.idle()
-- 2027 Alpha 5: Fix WaitUntilCommand for match time counting down
+- 2027 Alpha 2: Deprecate ``Command.schedule()``
+- 2027 Alpha 5: Remove ``Mecanum``/``SwerveControllerCommand``
+- 2027 Alpha 5: Add ``Subsystem.idle()``
+- 2027 Alpha 5: Fix ``WaitUntilCommand`` for match time counting down
 
 #### Commands v3
 
-- 2027 Alpha 5: Add CommandGamepad for V3 commands
+- 2027 Alpha 5: Add ``CommandGamepad`` for V3 commands
 - 2027 Alpha 5: Add compile-time checks for unsafe or incorrect coroutine usage
 
 #### NetworkTables
@@ -86,41 +86,41 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 2: Fix I2C order on Systemcore
 - 2027 Alpha 2: Fix analog scaling for updated image
 - 2027 Alpha 2: Add support for onboard IMU mount orientations with Euler angles
-- 2027 Alpha 5: AddressableLED: Restore alternative color order support
+- 2027 Alpha 5: ``AddressableLED``: Restore alternative color order support
 - 2027 Alpha 5: Integrate support for ExpansionHub over USB
 
 #### Math
 
-- Remove rotation2d value field
-- Fix SimpleFeedforward overload set
-- Fix duplicate Rotation2d constructor
+- Remove ``Rotation2d`` value field
+- Fix ``SimpleFeedforward`` overload set
+- Fix duplicate ``Rotation2d`` constructor
 - Remove LUTs from LTV controllers
-- Remove RamseteController and RamseteCommand
-- Use immutable member functions in ChassisSpeeds
+- Remove ``RamseteController`` and ``RamseteCommand``
+- Use immutable member functions in ``ChassisSpeeds``
 - Clean up arm and elevator feedforward APIs
 - Remove PathWeaver support
-- Fix SimpleMotorFeedforward no-accel overload returning negative voltage outputs
-- 2027 Alpha 2: Fix TrapezoidProfile limiting velocity incorrectly
+- Fix ``SimpleMotorFeedforward`` no-accel overload returning negative voltage outputs
+- 2027 Alpha 2: Fix ``TrapezoidProfile`` limiting velocity incorrectly
 - 2027 Alpha 5: Remove redundant transposes on symmetric matrices
-- 2027 Alpha 5: Add vector product and squared length operations to Translation2d/3d
-- 2027 Alpha 5: Remove Mecanum/SwerveControllerCommand
-- 2027 Alpha 5: Added structs for TrapezoidProfile.State and ExponentialProfile.State
-- 2027 Alpha 5: Replace Pose2/3d.exp(Twist2/3d) with Pose2/3d.plus(Twist2/3d.exp()) to match math notation better
-- 2027 Alpha 5:  Refactor MathUtil.interpolate() and MathUtil.inverseInterpolate() to handle extrapolation
+- 2027 Alpha 5: Add vector product and squared length operations to ``Translation2d``/``3d``
+- 2027 Alpha 5: Remove ``Mecanum``/``SwerveControllerCommand``
+- 2027 Alpha 5: Added structs for ``TrapezoidProfile.State`` and ``ExponentialProfile.State``
+- 2027 Alpha 5: Replace ``Pose2``/``3d.exp(Twist2/3d)`` with ``Pose2``/``3d.plus(Twist2/3d.exp())`` to match math notation better
+- 2027 Alpha 5:  Refactor ``MathUtil.interpolate()`` and ``MathUtil.inverseInterpolate()`` to handle extrapolation
 - 2027 Alpha 5: Fix units overload resolution
-- 2027 Alpha 5: Add 2D variants of `MathUtil.applyDeadband` and `MathUtil.copySignPow` for circular joystick inputs
-- 2027 Alpha 5: Rename 1D copySignPow to match 2D copyDirectionPow
-- 2027 Alpha 5: Add X44 and Minion to DCMotor
-- 2027 Alpha 5:  Scale transforms instead of twists in PoseEstimator
-- 2027 Alpha 5:  Fix `ElevatorSim::GetCurrentDraw()`
-- 2027 Alpha 5: Add ChassisAccelerations and drivetrain accelerations classes and add forward and inverse kinematics for accelerations to the interface
-- 2027 Alpha 5: TrapezoidProfile.State implement StructSerializable
-- 2027 Alpha 5: Add multi tap boolean stream filter and multi tap trigger modifier (double tap detector)
+- 2027 Alpha 5: Add 2D variants of ``MathUtil.applyDeadband`` and ``MathUtil.copySignPow`` for circular joystick inputs
+- 2027 Alpha 5: Rename 1D ``copySignPow`` to match 2D ``copyDirectionPow``
+- 2027 Alpha 5: Add Kraken X44 and Minion to ``DCMotor``
+- 2027 Alpha 5: Scale transforms instead of twists in ``PoseEstimator``
+- 2027 Alpha 5: Fix ``ElevatorSim::GetCurrentDraw()``
+- 2027 Alpha 5: Add ``ChassisAccelerations`` and drivetrain accelerations classes, and add forward and inverse kinematics for accelerations to the interface
+- 2027 Alpha 5: ``TrapezoidProfile.State`` implement ``StructSerializable``
+- 2027 Alpha 5: Add multi-tap boolean stream filter and multi-tap trigger modifier (double-tap detector)
 - 2027 Alpha 5: Speed up pose estimator correction computation
-- 2027 Alpha 5: Add limit setters to SlewRateLimiter
-- 2027 Alpha 5: Implement Rotation3d interpolation as slerp instead of lerp
-- 2027 Alpha 5: Don't clamp Rotation2d interpolation
-- 2027 Alpha 5: Prevent CoordinateSystem from accepting left-handed systems
+- 2027 Alpha 5: Add limit setters to ``SlewRateLimiter``
+- 2027 Alpha 5: Implement ``Rotation3d`` interpolation as slerp instead of lerp
+- 2027 Alpha 5: Don't clamp ``Rotation2d`` interpolation
+- 2027 Alpha 5: Prevent ``CoordinateSystem`` from accepting left-handed systems
 - 2027 Alpha 5: Make swerve and differential kinematics functions immutable
 - 2027 Alpha 5: Mark all geometry classes as final
 
@@ -128,14 +128,14 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 ### Romi/XRP
 
-2027 Alpha 5: Adding XRP java and cpp examples for Timed Robot
+2027 Alpha 5: Adding XRP Java and C++ examples for Timed Robot
 
 ### Java units
 
 2027 Alpha 5: Make measure implementations immutable only
-2027 Alpha 5: Rename `AngularMomentumUnit.mult` to `per`
+2027 Alpha 5: Rename ``AngularMomentumUnit.mult`` to ``per``
 2027 Alpha 5: Make RPM an alias of RotationsPerMinute
-2027 Alpha 5: Fix incorrect magnitudes in some MutableMeasure mutations
+2027 Alpha 5: Fix incorrect magnitudes in some ``MutableMeasure`` mutations
 2027 Alpha 5: Remove deprecated divide and negate functions
 
 ### CameraServer
@@ -144,33 +144,33 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 ### Util
 
-2027 Alpha 5: Add reverse iterators to wpi::circular_buffer and wpi::static_circular_buffer, make other iterators bidirectional
+2027 Alpha 5: Add reverse iterators to ``wpi::circular_buffer`` and ``wpi::static_circular_buffer``, make other iterators bidirectional
 2027 Alpha 5: Fix windows mDNS announcer long startup times
-2027 Alpha 5: Fix uv_tcp_keepalive time
-2027 Alpha 5: Remove CombinedRuntimeLoader
-2027 Alpha 5: Fix port having incorrect endian on windows resolver
-2027 Alpha 5: Rename CreateEvent and CreateSemaphore to Make
+2027 Alpha 5: Fix ``uv_tcp_keepalive`` time
+2027 Alpha 5: Remove ``CombinedRuntimeLoader``
+2027 Alpha 5: Fix port having incorrect endian on Windows resolver
+2027 Alpha 5: Rename ``CreateEvent`` and ``CreateSemaphore`` to Make
 2027 Alpha 5: Change C++ json to jart/json.cpp
 2027 Alpha 5: Change Java JSON to Avaje Jsonb
 2027 Alpha 5: Use C++23 stacktrace library on WindowsS
 
 ## Glass / OutlineViewer / Simulation GUI
 
-2027 Alpha 2: Fix NT int64 value display
-2027 Alpha 5: NetworkTables: Show struct enum values
-2027 Alpha 5: Fix handling for optionals and empty arrays
-2027 Alpha 5: Fix color order for sim GUI LEDs
-2027 Alpha 5: FMS: Fix reading past end of GSM buffer
-2027 Alpha 5: Fix NT server mode
-2027 Alpha 5: Add correct time for rebuilt
-2027 Alpha 5: Update to SDL joystick mappings from 1-19-2026
+- 2027 Alpha 2: Fix NT int64 value display
+- 2027 Alpha 5: NetworkTables: Show struct enum values
+- 2027 Alpha 5: Fix handling for optionals and empty arrays
+- 2027 Alpha 5: Fix color order for sim GUI LEDs
+- 2027 Alpha 5: FMS: Fix reading past end of GSM buffer
+- 2027 Alpha 5: Fix NT server mode
+- 2027 Alpha 5: Add correct time for rebuilt
+- 2027 Alpha 5: Update to SDL joystick mappings from 1-19-2026
 
 ## GradleRIO
 
-2027 Alpha 5: Upgrade to Gradle 9.4.1
-2027 Alpha 5: Add ZGC as a GC option and make it the default
-2027 Alpha 5: Force encoding for written files to UTF-8
-2027 Alpha 5: Add Avaje Jsonb and remove Jackson
+- 2027 Alpha 5: Upgrade to Gradle 9.4.1
+- 2027 Alpha 5: Add ZGC as a GC option and make it the default
+- 2027 Alpha 5: Force encoding for written files to UTF-8
+- 2027 Alpha 5: Add Avaje Jsonb and remove Jackson
 
 ## WPILib All in One Installer
 
@@ -183,7 +183,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 5: Use unique strings for tool display vs executable names
 - 2027 Alpha 5: Change installer to AOT, convert tools updater to AOT app
 - 2027 Alpha 5: Catch download failures and show URL
-- 2027 Alpha 5: Remove python VS Code extensions
+- 2027 Alpha 5: Remove Python VS Code extensions
 - 2027 Alpha 5: Improve error handling for 0 length downloads
 - 2027 Alpha 5: Fix Windows CRLF line break in installer when creating Linux desktop files
 - 2027 Alpha 5: Update to Avalonia 12
