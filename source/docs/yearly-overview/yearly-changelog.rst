@@ -152,7 +152,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 2027 Alpha 5: Rename CreateEvent and CreateSemaphore to Make
 2027 Alpha 5: Change C++ json to jart/json.cpp
 2027 Alpha 5: Change Java JSON to Avaje Jsonb
-2027 Alpha 5: Use C++23 stacktrace library on Windows 
+2027 Alpha 5: Use C++23 stacktrace library on WindowsS
 
 ## Glass / OutlineViewer / Simulation GUI
 
