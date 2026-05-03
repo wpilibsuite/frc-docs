@@ -231,7 +231,7 @@ Remove standalone utility
 
 ## PathWeaver
 
-.. warning:: PathWeaver has been removed for 2027 due to its lack of swerve support and lack of a maintainer. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>`, [PathPlanner](https://github.com/mjansen4857/pathplanner), or [Bline](https://www.chiefdelphi.com/t/introducing-bline-a-new-rapid-polyline-autonomous-path-planning-suite/509778) more useful. They have an intuitive user interface and swerve support.
+.. warning:: PathWeaver has been removed for 2027 due to its lack of swerve support and lack of a maintainer. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>`, [PathPlanner](https://pathplanner.dev), or [Bline](https://www.chiefdelphi.com/t/introducing-bline-a-new-rapid-polyline-autonomous-path-planning-suite/509778) more useful. They have an intuitive user interface and swerve support.
 
 ## RobotBuilder
 
