@@ -145,15 +145,15 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 ### Util
 
-2027 Alpha 5: Add reverse iterators to ``wpi::circular_buffer`` and ``wpi::static_circular_buffer``, make other iterators bidirectional
-2027 Alpha 5: Fix windows mDNS announcer long startup times
-2027 Alpha 5: Fix ``uv_tcp_keepalive`` time
-2027 Alpha 5: Remove ``CombinedRuntimeLoader``
-2027 Alpha 5: Fix port having incorrect endian on Windows resolver
-2027 Alpha 5: Rename ``CreateEvent`` and ``CreateSemaphore`` to Make
-2027 Alpha 5: Change C++ json to jart/json.cpp
-2027 Alpha 5: Change Java JSON to Avaje Jsonb
-2027 Alpha 5: Use C++23 stacktrace library on WindowsS
+- 2027 Alpha 5: Add reverse iterators to ``wpi::circular_buffer`` and ``wpi::static_circular_buffer``, make other iterators bidirectional
+- 2027 Alpha 5: Fix windows mDNS announcer long startup times
+- 2027 Alpha 5: Fix ``uv_tcp_keepalive`` time
+- 2027 Alpha 5: Remove ``CombinedRuntimeLoader``
+- 2027 Alpha 5: Fix port having incorrect endian on Windows resolver
+- 2027 Alpha 5: Rename ``CreateEvent`` and ``CreateSemaphore`` to Make
+- 2027 Alpha 5: Change C++ json to jart/json.cpp
+- 2027 Alpha 5: Change Java JSON to Avaje Jsonb
+- 2027 Alpha 5: Use C++23 stacktrace library on WindowsS
 
 ## Glass / OutlineViewer / Simulation GUI
 
@@ -191,7 +191,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 ## Visual Studio Code Extension
 
-Remove standalone utility
+- Remove standalone utility
 - 2027 Alpha 5: Improve RIOLog UI
 - 2027 Alpha 5: Fix blank window after installing dependency from local copy
 - 2027 Alpha 5: Remove unnecessary setting change commands
