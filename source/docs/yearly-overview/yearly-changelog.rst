@@ -2,7 +2,7 @@
 
 # New for 2027
 
-The change from the roboRIO to Systemcore is the biggest control system update since the introduction of the cRIO. A number of improvements have been made to WPILib to take advantage of Systemcore. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories.
+The change from the roboRIO to Systemcore is the biggest control system update since the introduction of the cRIO. A number of improvements have been made to WPILib to take advantage of Systemcore. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories. There's more information about Systemcore in the :doc:`Systemcore overview </docs/hardware/systemcore/overview>`.
 
 It's recommended to also review the list of :doc:`known issues <known-issues>`.
 
@@ -20,7 +20,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - Add Commands v3 framework for Java. Documentation is in work. In the meantime, see the [Commands v3 Conference ](https://www.chiefdelphi.com/t/wpilib-commands-v3-championship-conference/519702), [Design Document](https://github.com/wpilibsuite/allwpilib/blob/2027/design-docs/commands-v3.md) and the port of the [Hatchbot example to Commands v3](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotcmdv3).
 - Add OpMode framework, similar to FTC. Documentation is in progress. In the meantime, see the [OpModes Design Document](https://github.com/wpilibsuite/allwpilib/blob/2027/design-docs/opmodes.md) and the OpMode Robot template ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/templates/opmode) / [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/templates/opmode))
 - Support for the [2027 FIRST Driver Station](https://wpilib.org/blog/the-2027-first-driver-station) bringing multi-platform support.
-- Reorganize java packages from ``edu.wpi.first`` to ``org.wpilib`` and c++ namespaces from ``frc::`` to ``wpi::``. The :doc:`VS Code importer </docs/software/vscode-overview/importing-last-years-robot-code>` will attempt to update code for these changes as part of the import process.
+- Reorganize java packages from ``edu.wpi.first`` to ``org.wpilib`` and c++ namespaces from ``frc::`` to ``wpi::`` and create new subpackages for better organization. The :doc:`VS Code importer </docs/software/vscode-overview/importing-last-years-robot-code>` will attempt to update code for these changes as part of the import process.
 - Systemcore has different hardware support. Support multiple CAN buses, Smart IO, onboard IMU, Expansion Hub. Removed relay, analog output, SPI and SPI IMUs (ADIS16448, ADIS16470, ADXL345, ADXRS450), analog gyro, DMA, built-in accelerometer, Digital Glitch Filter, interrupts, counter, ultrasonic, analog trigger, Nidec Brushless, Servo, Jaguar
 - Removed Network Tables v3 support
 - Many of the simple examples were moved to snippets to de-clutter the VS Code examples. The snippets are available here: [Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/snippets) / [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/snippets). We're thinking of ways to make these easier to discover.
@@ -34,23 +34,23 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 2: Update POV to use enums
 - 2027 Alpha 2: Use steady clock directly on Systemcore
 - 2027 Alpha 5: Replace libprotobuf with upb for dynamic decode
-- 2027 Alpha 5: Remove ``robotInit()``
-- 2027 Alpha 5: Switch to use new DS available API from Mrccomm
+- 2027 Alpha 5: Remove ``robotInit()``. Use the ``Robot()`` constructor instead.
 - 2027 Alpha 5: Add a few unit overloads
 - 2027 Alpha 5: Remove deprecated ``MotorControllerGroup``
-- 2027 Alpha 5: Add Touchpad support
-- 2027 Alpha 5: Remove ``MotorController::StopMotor()``
+- 2027 Alpha 5: Replace individual gamepad classes (e.g. ``XboxController``, ``PS4Controller``, ``PS5Controller``, ``StadiaController``) with a single ``Gamepad`` class.
+- 2027 Alpha 5: Add Touchpad support for gamepads
+- 2027 Alpha 5: Remove ``MotorController::StopMotor()``. Use ``MotorController::Disable()`` instead.
 - 2027 Alpha 5: Switch to new game data
 - 2027 Alpha 5: Make joystick unplugged warning better in cases of out of range axis/button
 - 2027 Alpha 5: Preferences Listener should not depend on mutable fields
-- 2027 Alpha 5: Replace Speeds with Velocities
+- 2027 Alpha 5: Replace Speeds with Velocities in method signatures where appropriate
 - 2027 Alpha 5: Rename FPGA clock to monotonic clock
 - 2027 Alpha 5: Rename constants to all caps style
 - 2027 Alpha 5: Fix HSV to RGB conversion off-by-one error
-- 2027 Alpha 5: Rename ``MotorController`` ``setDutyCycle()`` to ``setThrottle()``
+- 2027 Alpha 5: Rename ``MotorController`` ``set()`` to ``setThrottle()``
 - 2027 Alpha 5: Add FTC fields
 - 2027 Alpha 5: Make swerve and differential kinematics functions immutable
-- 2027 Alpha 5: Rename "Test" robot mode to "Utility"
+- 2027 Alpha 5: Rename "Test" robot mode to "Utility" to emphasize that it can be used for more than just testing
 
 #### Commands v2
 
