@@ -13,7 +13,7 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/robotpy/mostrobotpy/",
       "versionScheme": "\\d{4}\\.\\d\\.\\d(?:(?:a|b)\\d)?|[0-9a-f]{40}",
-      "latestVersion": "2027.0.0a4"
+      "latestVersion": "2027.0.0a5"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
