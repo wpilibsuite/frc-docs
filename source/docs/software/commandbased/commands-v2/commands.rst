@@ -361,7 +361,7 @@ What might a functional command look like in practice? As before, below is a sim
   .. tab-item:: Python
     :sync: tabcode-python
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot//HatchbotTraditional/commands/grabhatch.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot//HatchbotTraditional/commands/grabhatch.py
       :language: python
       :lines: 7-
       :lineno-match:
@@ -401,7 +401,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: Python
     :sync: tabcode-python
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot//HatchbotTraditional/commands/defaultdrive.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot//HatchbotTraditional/commands/defaultdrive.py
       :language: python
       :lines: 7-
       :lineno-match:
@@ -420,7 +420,7 @@ And then usage:
     :lines: 30-33
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot//HatchbotTraditional/robotcontainer.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot//HatchbotTraditional/robotcontainer.py
     :language: python
     :lines: 64-71
     :lineno-match:
@@ -439,7 +439,7 @@ Notice that this command does not override ``isFinished()``, and thus will never
       :lines: 26-32
       :lineno-match:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot//HatchbotInlined/robotcontainer.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot//HatchbotInlined/robotcontainer.py
       :language: python
       :lines: 52-64
       :lineno-match:

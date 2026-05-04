@@ -126,7 +126,7 @@ A more complete example of ``ProfiledPIDController`` usage is provided in the El
     :lines: 5-
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ElevatorProfiledPID/robot.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ElevatorProfiledPID/robot.py
     :language: python
     :lines: 8-
     :lineno-match:

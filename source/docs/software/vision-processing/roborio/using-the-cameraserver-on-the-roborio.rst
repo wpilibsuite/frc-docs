@@ -69,14 +69,14 @@ In the following example a thread created in ``Robot`` constructor gets the Came
 
       Here's what your ``robot.py`` needs to contain to launch the image processing process:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/IntermediateVision/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/IntermediateVision/robot.py
          :language: python
          :lines: 8-20
          :linenos:
 
       The ``launch("vision.py")`` function says to launch ``vision.py`` and call the ``run`` function in that file. Here's what is in ``vision.py``:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/IntermediateVision/vision.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/IntermediateVision/vision.py
          :language: python
          :lines: 12-53
          :linenos:

@@ -34,11 +34,11 @@ This example shows how to utilize Preferences to change the setpoint of a PID co
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/constants.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/constants.py
          :language: python
          :lines: 18-23
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/subsystems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/subsystems/arm.py
          :language: python
          :lines: 18-20,69-73
 
@@ -69,7 +69,7 @@ If using the Command Framework, this type of code could be placed in the constru
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/subsystems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/subsystems/arm.py
          :language: python
          :lines: 97-104
 
@@ -102,10 +102,10 @@ Depending on the data that is stored in preferences, you can use it when you rea
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/robot.py
          :language: python
          :lines: 28-34
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/ArmSimulation/subsystems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/subsystems/arm.py
          :language: python
          :lines: 106-111
 
