@@ -15,7 +15,7 @@ When a large number of objects are created, it increases the overall memory foot
 
 ### Performance Concerns
 
-The GC's job is to periodically identify and reclaim unused objects in memory. While garbage collection is running on an FRC robot coded in Java, execution of the robot program is paused. When the GC has to collect a large number of objects, it has to pause the application to run more frequently or for longer periods of time. This is because the GC has to perform more work to collect and process each object.
+The GC's job is to periodically identify and reclaim unused objects in memory. While garbage collection is running on an robot coded in Java, execution of the robot program is paused. When the GC has to collect a large number of objects, it has to pause the application to run more frequently or for longer periods of time. This is because the GC has to perform more work to collect and process each object.
 
 GC-related performance degradation in robot programs can manifest as occasional pauses, freezes, or loop overruns as the GC works to reclaim memory.
 
@@ -31,27 +31,27 @@ If you anticipate your application creating a large number of short-lived object
 
 All objects in Java are retained in a section of memory called the *heap*. As objects typically consume the greatest amount of memory in a Java program, it is often useful to take a snapshot of the state of the heap---a heap dump---to analyze memory issues. Heap dumps only capture the state of a program's heap at a single point in time, so they are unlikely to be useful if not captured exactly at the time the program is experiencing memory issues.
 
-Since ``OutOfMemoryError``\ s both crash the program and are a common reason to want a heap dump, the JVM can be configured to automatically take a heap dump the moment an ``OutOfMemoryError`` is caught by the JVM. To configure these options, locate the ``frcJava`` code block in your project's ``build.gradle``:
+Since ``OutOfMemoryError``\ s both crash the program and are a common reason to want a heap dump, the JVM can be configured to automatically take a heap dump the moment an ``OutOfMemoryError`` is caught by the JVM. To configure these options, locate the ``wpilibJava`` code block in your project's ``build.gradle``:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2027.0.0-alpha-2/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2027.0.0-alpha-5/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
-   :lines: 15-42
+   :lines: 16-46
    :lineno-match:
    :emphasize-lines: 15-16
 
 Add to the code block so that it contains two ``jvmArgs`` commands, as shown below:
 
 ```groovy
-frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
+wpilibJava(getArtifactTypeClass('WPILibJavaArtifact')) {
     // If you have other configuration here, you do not need to remove it.
     // Enable automatic heap dumps on OutOfMemoryError
     // Note: the heap dump path here is a path on a USB flash drive, see below
     jvmArgs.add("-XX:+HeapDumpOnOutOfMemoryError")
-    jvmArgs.add("-XX:HeapDumpPath=/u/frc-usercode.hprof")
+    jvmArgs.add("-XX:HeapDumpPath=/u/wpilib-usercode.hprof")
 }
 ```
 
-This will cause the JVM to write heap dumps to a file named ``frc-usercode.hprof`` at the root of a USB flash drive attached to the roboRIO when the code runs out of memory. It is recommended to save these heap dumps to a USB flash drive because heap dumps intrinsically consume the same amount of space on disk as the program heap did in memory when the program crashed, and are likely to be larger than the roboRIO's internal storage has capacity for. Once you have reproduced the ``OutOfMemoryError``, redeploy your code without these options enabled, and use the USB flash drive to transfer the heap dump to a computer for analysis in a memory profiler such as :ref:`VisualVM <docs/software/advanced-gradlerio/profiling-with-visualvm:Analyzing a Heap Dump>`.
+This will cause the JVM to write heap dumps to a file named ``wpilib-usercode.hprof`` at the root of a USB flash drive attached to the roboRIO when the code runs out of memory. It is recommended to save these heap dumps to a USB flash drive because heap dumps intrinsically consume the same amount of space on disk as the program heap did in memory when the program crashed, and are likely to be larger than the roboRIO's internal storage has capacity for. Once you have reproduced the ``OutOfMemoryError``, redeploy your code without these options enabled, and use the USB flash drive to transfer the heap dump to a computer for analysis in a memory profiler such as :ref:`VisualVM <docs/software/advanced-gradlerio/profiling-with-visualvm:Analyzing a Heap Dump>`.
 
 .. warning:: Configuring the JVM this way requires that the flash drive remain connected to the roboRIO while your code is running.
 

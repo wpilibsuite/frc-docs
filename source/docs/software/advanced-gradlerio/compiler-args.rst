@@ -33,10 +33,10 @@ tasks.withType(JavaCompile) {
 
 ### JVM Arguments
 
-Along with being able to configure compiler arguments Java also allows us to configure runtime options for the JVM. We do this by editing the `frcJava` artifact's arguments.
+Along with being able to configure compiler arguments Java also allows us to configure runtime options for the JVM. We do this by editing the `wpilibJava` artifact's arguments.
 
 ```groovy
-frcJava(getArtifactClass('FRCJavaArtifact')) {
+wpilibJava(getArtifactClass('WPILibJavaArtifact')) {
   jvmArgs.add("-XX:+DisableExplicitGC")
 }
 ```
