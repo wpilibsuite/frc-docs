@@ -14,7 +14,7 @@ GradleRIO supports passing JVM launch arguments, and this is what is necessary t
    :language: groovy
    :lines: 16-46
    :lineno-match:
-   :emphasize-lines: 15-16
+   :emphasize-lines: 18-19
 
 
 We will be replacing the highlighted lines with:

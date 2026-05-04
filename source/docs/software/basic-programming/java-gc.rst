@@ -37,7 +37,7 @@ Since ``OutOfMemoryError``\ s both crash the program and are a common reason to 
    :language: groovy
    :lines: 16-46
    :lineno-match:
-   :emphasize-lines: 15-16
+   :emphasize-lines: 18-19
 
 Add to the code block so that it contains two ``jvmArgs`` commands, as shown below:
 
