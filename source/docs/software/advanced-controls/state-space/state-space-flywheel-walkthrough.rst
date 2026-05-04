@@ -91,7 +91,7 @@ The ``LinearSystem`` class contains methods for easily creating state-space syst
          :lines: 19-23
          :lineno-match:
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/StateSpaceFlywheelSysId/robot.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/StateSpaceFlywheelSysId/robot.py
          :language: python
          :lines: 35-50
          :lineno-match:

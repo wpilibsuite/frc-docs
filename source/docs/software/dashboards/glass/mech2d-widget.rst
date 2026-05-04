@@ -41,7 +41,7 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has 
       :lines: 61-67
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/Mechanism2d/robot.py
          :language: python
          :lines: 39-46
          :lineno-match:
