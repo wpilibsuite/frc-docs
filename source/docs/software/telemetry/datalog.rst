@@ -8,7 +8,7 @@ Similar to NetworkTables, data logs have the concept of entries with string iden
 
 Data logs consist of a series of timestamped records.  Control records allow starting, finishing, or changing the metadata of entries, and data records record data value changes.  Timestamps are stored in integer microseconds; when running on the RoboRIO, the FPGA timestamp is used (the same timestamp returned by ``Timer.getFPGATimestamp()``).
 
-.. note:: For more information on the details of the data log file format, see the [WPILib Data Log File Format Specification](https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc).
+.. note:: For more information on the details of the data log file format, see the [WPILib Data Log File Format Specification](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/datalog/doc/datalog.adoc).
 
 ## Standard Data Logging using DataLogManager
 
