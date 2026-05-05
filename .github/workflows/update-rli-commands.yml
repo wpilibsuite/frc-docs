@@ -37,7 +37,7 @@ jobs:
         run: exit 1
 
       - name: Checkout [Common]
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Checkout PR [Comment]
         run: gh pr checkout $NUMBER
