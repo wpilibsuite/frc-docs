@@ -19,7 +19,7 @@ In addition to lack of maintenance, SmartDashboard uses the NT3 protocol, which 
 No replacement. There are many upcoming codegen projects however.
 
 ### PathWeaver
-Use :doc:`/docs/software/pathplanning/choreo/index` or [PathPlanner](https://pathplanner.dev) instead.
+PathWeaver has been removed for 2027 due to its lack of swerve support and lack of a maintainer. Use :doc:`/docs/software/pathplanning/choreo/index`, [PathPlanner](https://pathplanner.dev), or [Bline](https://www.chiefdelphi.com/t/introducing-bline-a-new-rapid-polyline-autonomous-path-planning-suite/509778) instead.
 
 ## roboRIO Team Number Setter
 Config for Systemcore will be handled via the web interface.

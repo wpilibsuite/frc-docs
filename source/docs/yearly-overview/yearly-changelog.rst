@@ -1,280 +1,238 @@
 .. include:: <isonum.txt>
 
-# New for 2025
+# New for 2027
 
-A number of improvements have been made to FRC\ |reg| Control System software for 2025. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories.
+The change from the roboRIO to Systemcore is the biggest control system update since the introduction of the cRIO. A number of improvements have been made to WPILib to take advantage of Systemcore. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories. There's more information about Systemcore in the :doc:`/docs/software/systemcore-info/systemcore-introduction`.
 
 It's recommended to also review the list of :doc:`known issues <known-issues>`.
 
 ## Importing Projects from Previous Years
 
-Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2025 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2024 projects must be :doc:`imported </docs/software/vscode-overview/importing-last-years-robot-code>` to be compatible.
+Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2027 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2026 projects must be :doc:`imported </docs/software/vscode-overview/importing-last-years-robot-code>` to be compatible.
 
 ## Major Changes (Java/C++)
 
-These changes contain *some* of the major changes to the library that it's important for the user to recognize. This does not include all of the breaking changes, see the other sections of this document for more changes.
+In order to more closly track C++ compiler feature support, the supported Linux distribution has changed to only the latest Ubuntu LTS. See :ref:`Supported Operating Systems and Architectures <docs/software/what-is-wpilib:Platform Support>` for more information.
 
-- The Dependency Manager in VS Code will help teams :doc:`discover and install vendordeps </docs/software/vscode-overview/3rd-party-libraries>`.
-- Added :doc:`Elastic Dashboard </docs/software/dashboards/elastic>` a driver focused dashboard.
-- Added :doc:`annotation based logging (Epilogue) </docs/software/telemetry/robot-telemetry-with-annotations>` for Java
-- Added :doc:`WPIcal </docs/software/wpilib-tools/wpical/index>` tool for calibrating FRC Apriltags to correct for field setup error
-- The :doc:`Java units library </docs/software/basic-programming/java-units>` has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
-- Add :doc:`persistent alerts API </docs/software/telemetry/persistent-alerts>`. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
-- Add :ref:`LED pattern API <docs/software/hardware-apis/misc/addressable-leds:LED Patterns>` for easily animating addressable LEDs
-- Java 17 must be used as Java Source and Target compatibility have been bumped to Java 17. Java 17 has been used since 2023.
+.. note:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
 
-Supported Operating Systems and Architectures:
- * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
- * Ubuntu 22.04 & 24.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
- * macOS 13.3 or higher, both Intel and Arm.
-
-.. warning:: The following OSes are no longer supported: macOS 12 or earlier, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
-
-.. note:: [Windows 10 support from Microsoft will end in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
+- Use Java 25 and C++ 23
+- Add Commands v3 framework for Java. Documentation is in work. In the meantime, see the [Commands v3 Conference ](https://www.chiefdelphi.com/t/wpilib-commands-v3-championship-conference/519702), [Design Document](https://github.com/wpilibsuite/allwpilib/blob/2027/design-docs/commands-v3.md) and the port of the [Hatchbot example to Commands v3](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotcmdv3).
+- Add OpMode framework, similar to FTC. Documentation is in progress. In the meantime, see the [OpModes Design Document](https://github.com/wpilibsuite/allwpilib/blob/2027/design-docs/opmodes.md) and the OpMode Robot template ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/templates/opmode) / [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/templates/opmode))
+- Support for the [2027 FIRST Driver Station](https://wpilib.org/blog/the-2027-first-driver-station) bringing multi-platform support.
+- Reorganize java packages from ``edu.wpi.first`` to ``org.wpilib`` and c++ namespaces from ``frc::`` to ``wpi::`` and create new subpackages for better organization. The :doc:`VS Code importer </docs/software/vscode-overview/importing-last-years-robot-code>` will attempt to update code for these changes as part of the import process.
+- Systemcore has different hardware support. Support multiple CAN buses, Smart IO, onboard IMU, Expansion Hub. Removed relay, analog output, SPI and SPI IMUs (ADIS16448, ADIS16470, ADXL345, ADXRS450), analog gyro, DMA, built-in accelerometer, Digital Glitch Filter, interrupts, counter, ultrasonic, analog trigger, Nidec Brushless, Servo, Jaguar
+- Removed Network Tables v3 support
+- Many of the simple examples were moved to snippets to de-clutter the VS Code examples. The snippets are available here: [Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/org/wpilib/snippets) / [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/snippets). We're thinking of ways to make these easier to discover.
 
 ## WPILib
 
+.. note:: As the 2026 and 2027 development happened in parallel, some of these changes are new to 2027 Alpha 5 compared to earlier alphas, but not new compared to 2026.
+
 ### General Library
 
-- Add persistent alerts API. Alerts are displayed on supported dashboards such as Shuffleboard and Elastic.
-- Add LED pattern API for easily animating addressable LEDs
-- Breaking: Remove deprecated ``Gyro`` and ``Accelerometer`` interface
-- Breaking: Remove deprecated ``Notifier.SetHandler`` function
-- Remove ``RobotInit`` usage in examples. Use constructor instead. RobotInit may be deprecated in the future.
-- Deprecate ``AxisCamera``
-- C++: Add ``FRC_ReportWarning``
-- Implement ``Sendable`` for HID classes
-- Include sendable type information in topic metadata
-- ``GenericHID.setRumble``: Fix Java integer overflow
-- Rename SysId example to SysIdRoutine
-- Add ``Timer.isRunning`` method
-- Add Java unit support for RobotController
-- Add a functional interface for MecanumDriveMotorVoltages and deprecate old interface
-- Add ``Koors40`` Motor Controller
-- 2025.2.1: Add 2025 field image and april tag map
-- 2025.3.1: Add april tag map for AndyMark field. See [Team Update 12](https://firstfrc.blob.core.windows.net/frc2025/Manual/TeamUpdates/TeamUpdate12.pdf) for more information.
+- 2027 Alpha 2: Update POV to use enums
+- 2027 Alpha 2: Use steady clock directly on Systemcore
+- 2027 Alpha 5: Replace libprotobuf with upb for dynamic decode
+- 2027 Alpha 5: Remove ``robotInit()``. Use the ``Robot()`` constructor instead.
+- 2027 Alpha 5: Add a few unit overloads
+- 2027 Alpha 5: Remove deprecated ``MotorControllerGroup``
+- 2027 Alpha 5: Replace individual gamepad classes (e.g. ``XboxController``, ``PS4Controller``, ``PS5Controller``, ``StadiaController``) with a single ``Gamepad`` class.
+- 2027 Alpha 5: Add Touchpad support for gamepads
+- 2027 Alpha 5: Remove ``MotorController::StopMotor()``. Use ``MotorController::Disable()`` instead.
+- 2027 Alpha 5: Switch to new game data
+- 2027 Alpha 5: Make joystick unplugged warning better in cases of out of range axis/button
+- 2027 Alpha 5: Preferences Listener should not depend on mutable fields
+- 2027 Alpha 5: Replace Speeds with Velocities in method signatures where appropriate
+- 2027 Alpha 5: Rename FPGA clock to monotonic clock
+- 2027 Alpha 5: Rename constants to all caps style
+- 2027 Alpha 5: Fix HSV to RGB conversion off-by-one error
+- 2027 Alpha 5: Rename ``MotorController`` ``set()`` to ``setThrottle()``
+- 2027 Alpha 5: Add FTC fields
+- 2027 Alpha 5: Make swerve and differential kinematics functions immutable
+- 2027 Alpha 5: Rename "Test" robot mode to "Utility" to emphasize that it can be used for more than just testing
 
-#### Commands
+#### Commands v2
 
-- Breaking: Remove deprecated ``CommandBase``
-- Remove deprecated ``TrapzoidProfileCommand`` API
-- Breaking: Remove deprecated C++ method ``TransferOwnership``
-- Deprecate ``PIDCommand``, ``PIDSubsystem``, ``ProfiledPIDCommand``, ``ProfiledPIDSubsystem``, ``TrapezoidProfileSubsystem``
-- Deprecate ``TrapezoidProfileCommand``. Use :doc:`TrapezoidProfile Directly </docs/software/commandbased/commands-v2/profile-subsystems-commands>`
-- Cache controller ``BooleanEvents`` / ``Triggers`` and directly construct ``Triggers``, fixing issues if ``BooleanEvents`` / ``Triggers`` are created in loops
-- Add deadband trigger methods to ``CommandGenericHID``
-- Make requirements private
-- Add ``setRumble`` and ``isConnected`` to ``CommandGenericHID``
-- Add ``StartRun`` command factory
-- Rename ``deadlineWith`` to ``deadlineFor``
-- Fix double composition error message truncation
-- Add ``withDeadline`` modifier
+- Remove RamseteCommand
+- Remove control commands and subsystems
+- 2027 Alpha 2: Deprecate ``Command.schedule()``
+- 2027 Alpha 5: Remove ``Mecanum``/``SwerveControllerCommand``
+- 2027 Alpha 5: Add ``Subsystem.idle()``
+- 2027 Alpha 5: Fix ``WaitUntilCommand`` for match time counting down
+
+#### Commands v3
+
+- 2027 Alpha 5: Add ``CommandGamepad`` for V3 commands
+- 2027 Alpha 5: Add compile-time checks for unsafe or incorrect coroutine usage
 
 #### NetworkTables
 
-- Server round robin message processing
-- Client: only connect to IPv4 addresses
-- Deprecate setNetworkTablesFlushEnabled
-- Set NetworkTables 3 client network identity
+- Remove NT3 support
+- 2027 Alpha 2: Check id ranges in control messages
+- 2027 Alpha 5: Handle interrupted save in NetworkServer
+- 2027 Alpha 5: PubSubOption: Use record approach for Java
+- 2027 Alpha 5: Prefix log levels to avoid macro conflicts
 
 #### Data Logging
 
-- Added :doc:`annotation based logging (Epilogue) </docs/software/telemetry/robot-telemetry-with-annotations>` for Java
-- Logging the console can be enabled with ``DatalogManager.logConsoleOutput``
-- DataLog: Add last value and change detection
-- DataLogManager: Fix behavior when low on space
-- Epilogue: Autogenerate nicer data names by default, not just raw element names
-- 2025.3.2: Epilogue: Make nonloggable type warnings configurable
+- 2027 Alpha 5: Use reflection to access non-public superclass fields
+- 2027 Alpha 5: Optimize time and memory usage of epilogue backends
+- 2027 Alpha 5: Support logging of protobuf-serializable types
+- 2027 Alpha 5: Use full class names in static logger fields
 
 #### Hardware interfaces
 
-- Breaking: Rewrite ``DutyCycleEncoder`` and ``AnalogEncoder`` to simplify and remove rollover detection that was broken
-- Add ``getVoltage`` to ``PWMMotorController``
-- Add support for Sharp IR sensors
-- Fix edge cases of CAN ID validation and reporting for CTRE and REV devices
-- Report Radio LED state
-- Correct maximum length of DS console send
-- C++: Refactor AnalogTrigger to use shared_ptr
-- Add ``RobotController.GetCommsDisableCount()``
-- Expose sticky hardware and firmware faults in PDH and PH
-- Fix potential race in CANAPI
-- Fix REV PH disabled solenoid list
-- remove CANDeviceInterface
-- Refactor and clean up ADIS IMU classes
-- Propagate ``PWMMotorController`` ``stopMotor()`` and ``disable()`` to followers
-- ``Compressor``: Add more Sendable data
-- Fix ``PowerDistribution.GetAllCurrents()``
-- Fix ``AsynchronousInterrupt``
-- 2025.3.1: AddressableLED: add support for other color orders
+- Add SPARKmini to PWM support
+- 2027 Alpha 2: Fix I2C order on Systemcore
+- 2027 Alpha 2: Fix analog scaling for updated image
+- 2027 Alpha 2: Add support for onboard IMU mount orientations with Euler angles
+- 2027 Alpha 5: ``AddressableLED``: Restore alternative color order support
+- 2027 Alpha 5: Integrate support for ExpansionHub over USB
 
 #### Math
 
-- Breaking: Remove deprecated TrapezoidProfile constructors
-- Breaking: Remove deprecated MatBuilder factory
-- Deprecate ``RamseteController``. Use ``LTVUnicycleController`` instead
-- Breaking: Remove deprecated ``MatBuilder`` constructor. Use ``MatBuilder.fill`` instead
-- Discretize ``SimpleMotorFeedForward``, ``ArmFeedForward`` and ``ElevatorFeedForward``
-- ``SwerveDrivePoseEstimator``: Fix stationary module emitting error when calculating angle
-- Add ``DCMotor.getCurrent()`` overload accepting torque
-- Add ``cosineScale`` method to ``SwerveModuleState`` and instance optimize
-- Make trajectory constraints use ``Rectangle2d`` and ``Ellipse2d``
-- Add Protobuf and Struct support to many more classes
-- Add ``getAccumulatedError()`` to ``PIDController``
-- Remove ``WheelPositions`` interface/concept
-- Add ``kinematics.copyInto()``
-- Add geometry classes for ``Rectangle2d`` and ``Ellipse2d``
-- Add reset methods to ``Odometry`` and ``PoseEstimator``
-- Add ArmFeedforward calculate() overload that takes current and next velocity instead of acceleration
-- Fix C++ pose estimator poseEstimate initialization
-- Fix PIDController error tolerance getters
-- Add time-varying RKDP
-- Add 2D to 3D geometry constructors
-- 2025.2.1: Implement Translation3d.RotateAround
-- 2025.3.1: Add Pose2d and Pose3d RotateAround
-- 2025.3.1: Fix infinite loop in ArmFeedforward::Calculate(xₖ, vₖ, vₖ₊₁)
-- 2025.3.1: Add setters for Feedforward gains
-- 2025.3.2: Make LinearSystemSim setState() update output
-- 2025.3.2: Fix another infinite loop in ArmFeedforward
-- 2025.3.2: Add Translation2d/Translation3d slew rate limiter
-- 2025.3.2: Fix feedforward returning NaN when kᵥ = 0
-- 2025.3.2: Add Debouncer type and time setters
-- 2025.3.2: Fix singularities in Ellipse2d::Nearest()
-- 2025.3.2: Fix UnscentedKalmanFilter and improve math docs
+- Remove ``Rotation2d`` value field
+- Fix ``SimpleFeedforward`` overload set
+- Fix duplicate ``Rotation2d`` constructor
+- Remove LUTs from LTV controllers
+- Remove ``RamseteController`` and ``RamseteCommand``
+- Use immutable member functions in ``ChassisSpeeds``
+- Clean up arm and elevator feedforward APIs
+- Remove PathWeaver support
+- Fix ``SimpleMotorFeedforward`` no-accel overload returning negative voltage outputs
+- 2027 Alpha 2: Fix ``TrapezoidProfile`` limiting velocity incorrectly
+- 2027 Alpha 5: Remove redundant transposes on symmetric matrices
+- 2027 Alpha 5: Add vector product and squared length operations to ``Translation2d``/``3d``
+- 2027 Alpha 5: Remove ``Mecanum``/``SwerveControllerCommand``
+- 2027 Alpha 5: Added structs for ``TrapezoidProfile.State`` and ``ExponentialProfile.State``
+- 2027 Alpha 5: Replace ``Pose2``/``3d.exp(Twist2/3d)`` with ``Pose2``/``3d.plus(Twist2/3d.exp())`` to match math notation better
+- 2027 Alpha 5:  Refactor ``MathUtil.interpolate()`` and ``MathUtil.inverseInterpolate()`` to handle extrapolation
+- 2027 Alpha 5: Fix units overload resolution
+- 2027 Alpha 5: Add 2D variants of ``MathUtil.applyDeadband`` and ``MathUtil.copySignPow`` for circular joystick inputs
+- 2027 Alpha 5: Rename 1D ``copySignPow`` to match 2D ``copyDirectionPow``
+- 2027 Alpha 5: Add Kraken X44 and Minion to ``DCMotor``
+- 2027 Alpha 5: Scale transforms instead of twists in ``PoseEstimator``
+- 2027 Alpha 5: Fix ``ElevatorSim::GetCurrentDraw()``
+- 2027 Alpha 5: Add ``ChassisAccelerations`` and drivetrain accelerations classes, and add forward and inverse kinematics for accelerations to the interface
+- 2027 Alpha 5: ``TrapezoidProfile.State`` implement ``StructSerializable``
+- 2027 Alpha 5: Add multi-tap boolean stream filter and multi-tap trigger modifier (double-tap detector)
+- 2027 Alpha 5: Speed up pose estimator correction computation
+- 2027 Alpha 5: Add limit setters to ``SlewRateLimiter``
+- 2027 Alpha 5: Implement ``Rotation3d`` interpolation as slerp instead of lerp
+- 2027 Alpha 5: Don't clamp ``Rotation2d`` interpolation
+- 2027 Alpha 5: Prevent ``CoordinateSystem`` from accepting left-handed systems
+- 2027 Alpha 5: Make swerve and differential kinematics functions immutable
+- 2027 Alpha 5: Mark all geometry classes as final
 
 ### Simulation
 
-- Breaking: Remove gearing input from ``FlywheelSim`` and ``DCMotorSim`` and calculate from the LinearSystem and DCMotor inputs
-- Add ``SendableChooserSim``
-- Fix Java sim timing on Windows
-- Fix interrupt edges being flipped in sim
-- Don't send joystick data during auto
-- Initialize DIO to true in sim
-- Clamp battery voltage to 0
-- Fix: Update FMS widget when real DS is connected
-- Fix DS GUI System Joysticks window auto-hiding
-
 ### Romi/XRP
 
-- XRP: Add ``GetRotation2d`` to ``Gyro``
-- XRP: Add Support for Encoder Period
-- XRP: Add ``GetLED`` to ``OnBoardIO``
-- XRP & Romi: Changed applicable C++ methods to use units library
+2027 Alpha 5: Adding XRP Java and C++ examples for Timed Robot
 
 ### Java units
 
-- The units library has been refactored to have unit-specific measurement classes instead of a single generic ``Measure`` class. The new measurement classes have clearer names (``Distance`` instead of ``Measure<Distance>``, or ``LinearAcceleration`` instead of ``Measure<Velocity<Velocity<Distance>>>``), and implement math operations to return the most specific result types possible instead of a wildcard ``Measure<?>``.
-- Add resistance units
-- Use div instead of divide
-- Add absolute value and copy sign functionality
-- 2025.3.1: Add Measure.per overloads for all known unit types
+- 2027 Alpha 5: Make measure implementations immutable only
+- 2027 Alpha 5: Rename `AngularMomentumUnit.mult` to `per`
+- 2027 Alpha 5: Make RPM an alias of RotationsPerMinute
+- 2027 Alpha 5: Fix incorrect magnitudes in some MutableMeasure mutations
+- 2027 Alpha 5: Remove deprecated divide and negate functions
 
 ### CameraServer
 
-- Update to OpenCV 4.10.0
-- Wake up even if no frames received
-- Fix wakeup on sink destruction
-- HttpCamera: Send width/height/fps stream settings
-- HttpCamera: Auto-detect mode from stream if not set
-- Sink: add ability to get most recent frame instead of waiting
-- 2025.2.1: Use frame time in Linux UsbCameraImpl
+- Remove Axis Camera
 
 ### Util
 
-- Breaking: Remove ``RuntimeLoader``
-- Deprecate ``RuntimeDetector``
-- Add a simple web server for serving files. Example: ``WebServer.start(5800, Filesystem.getDeployDirectory());``
-
-## Branding
-
-- WPILib has a new logo.
-
-.. image:: /assets/wpilib-generic.svg
-  :alt: WPILib Logo
-
-## Shuffleboard
-
-- Expose orientation property for NumberSlider
-- Add :doc:`persistent alerts widget </docs/software/telemetry/persistent-alerts>`
-- Correct FieldData de/serialization
-- 2025.2.1: Add 2025 field image
-- 2025.3.1: After many reports of a variety of issues, many of the resource optimations have been reverted. Performance should be similar to 2024 Shuffleboard.
-
-## SmartDashboard
-
-.. important:: SmartDashboard is not supported on Apple Silicon (Arm64) Macs.
-
-.. warning:: SmartDashboard is deprecated and will be removed for 2027 due to its usage of Network Tables v3. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
-
-- No changes other than build updates were made to SmartDashboard
+- 2027 Alpha 5: Add reverse iterators to ``wpi::circular_buffer`` and ``wpi::static_circular_buffer``, make other iterators bidirectional
+- 2027 Alpha 5: Fix windows mDNS announcer long startup times
+- 2027 Alpha 5: Fix ``uv_tcp_keepalive`` time
+- 2027 Alpha 5: Remove ``CombinedRuntimeLoader``
+- 2027 Alpha 5: Fix port having incorrect endian on Windows resolver
+- 2027 Alpha 5: Rename ``CreateEvent`` and ``CreateSemaphore`` to Make
+- 2027 Alpha 5: Change C++ json to jart/json.cpp
+- 2027 Alpha 5: Change Java JSON to Avaje Jsonb
+- 2027 Alpha 5: Use C++23 stacktrace library on WindowsS
 
 ## Glass / OutlineViewer / Simulation GUI
 
-- Save input after clicking away
-- Check for struct descriptor size 0
-- Align Field2d border and image padding for custom images
-- Add Alerts widget
-- Fix minimum widget width
-- 2025.2.1: Add 2025 field image
-- 2025.2.1: Make picking a Field2d field JSON more obvious
-- 2025.3.2: Update default field to 2025 for Field2D
+- 2027 Alpha 2: Fix NT int64 value display
+- 2027 Alpha 5: NetworkTables: Show struct enum values
+- 2027 Alpha 5: Fix handling for optionals and empty arrays
+- 2027 Alpha 5: Fix color order for sim GUI LEDs
+- 2027 Alpha 5: FMS: Fix reading past end of GSM buffer
+- 2027 Alpha 5: Fix NT server mode
+- 2027 Alpha 5: Add correct time for rebuilt
+- 2027 Alpha 5: Update to SDL joystick mappings from 1-19-2026
 
 ## GradleRIO
 
-- Use Gradle 8.11
-- Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
-- Add method to delete files on roboRIO that have been deleted in the deploy directory. :ref:`Set deleteOldFiles to true <docs/software/basic-programming/deploy-directory:Deleting Unused Deploy Files>` in the frcStaticFileDeploy block
-- Gradle now consolidates Java compile errors at the bottom of the terminal to aid discoverability https://docs.gradle.org/8.11/release-notes.html#error-warning
-- 2025.3.1: Warn if multiple versions of the same vendordep is found
-- 2025.3.2: Disable code reboot while killing robot process, which was causing high CPU usage every other code reboot for some teams
+- 2027 Alpha 5: Upgrade to Gradle 9.4.1
+- 2027 Alpha 5: Add ZGC as a GC option and make it the default
+- 2027 Alpha 5: Force encoding for written files to UTF-8
+- 2027 Alpha 5: Add Avaje Jsonb and remove Jackson
 
 ## WPILib All in One Installer
 
-- Update to VS Code 1.96.2
-- VS Code extension updates: cpptools 1.23.2, javaext 1.38
-- Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
-- Only install scripts if they are used by a specific platform
-- Make shortcuts use the app icon
-- Add AppArmor file for electron apps for Ubuntu 24.04, which must be :ref:`manually installed <docs/zero-to-robot/step-2/wpilib-setup:Post-Installation>`
+- 2027 Alpha 2: Use unique icons for tools
+- 2027 Alpha 5: Update to VS Code 1.116.0
+- 2027 Alpha 5: VS Code extension updates: cpptools 1.31.4, javaext 1.54
+- 2027 Alpha 5: Show deprecated message on Windows 10
+- 2027 Alpha 5: Hide recommended vscode extensions to install
+- 2027 Alpha 5: Hide the chat sidebar by default
+- 2027 Alpha 5: Use unique strings for tool display vs executable names
+- 2027 Alpha 5: Change installer to AOT, convert tools updater to AOT app
+- 2027 Alpha 5: Catch download failures and show URL
+- 2027 Alpha 5: Remove Python VS Code extensions
+- 2027 Alpha 5: Improve error handling for 0 length downloads
+- 2027 Alpha 5: Fix Windows CRLF line break in installer when creating Linux desktop files
+- 2027 Alpha 5: Update to Avalonia 12
 
 ## Visual Studio Code Extension
 
-- Add :doc:`Dependency Manager extension </docs/software/vscode-overview/3rd-party-libraries>` for easier finding and updating of 3rd party libraries
-- Add gradle clean command
-- Use shell scripts for launching tools on Linux / macOS, since macOS doesn't ship Python any more
-- Add option to importer to import XRP project
-- Importer: Update for Java Units changes
-- Extract WPILib Utility on mac
-- Define java.configuration.runtimes in settings.json to ensure WPILib JDK is used
-- Improve intellisense by hiding items not likely to be used in Robot Programs
-
-## RobotBuilder
-
-- Remove robotInit in favor of Robot constructor
+- Remove standalone utility
+- 2027 Alpha 5: Improve RIOLog UI
+- 2027 Alpha 5: Fix blank window after installing dependency from local copy
+- 2027 Alpha 5: Remove unnecessary setting change commands
+- 2027 Alpha 5: Support Commandsv3 vendordep
+- 2027 Alpha 5: Move source backup in jar to backup directory
+- 2027 Alpha 5: Set java project source/targetCompatibility to 25
+- 2027 Alpha 5: Use shadow plugin to make shaded JARs
+- 2027 Alpha 5: Port Java simulation canceling to C++
+- 2027 Alpha 5: Move wpilibHome to the top of the plugin repository list
 
 ## SysId
 
-- Fix crash when all data is filtered out during analysis
-- Remove obsolete WPILib & CTRE presets, rename CTRE presets
-- Clamp feedback measurement delay to zero or higher
-- 2025.3.2: Refactor feedback analysis
-
-## PathWeaver
-
-.. warning:: PathWeaver is deprecated and will be removed for 2027. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>` or [PathPlanner](https://github.com/mjansen4857/pathplanner) more useful. They both have an intuitive user interface and swerve support.
-
-- Fix finding deploy directory when outputdir blank
-- 2025.2.1: Add 2025 field image
+- 2027 Alpha 5: Remove Phoenix5 CANcoder preset
+- 2027 Alpha 5: Fix crash on partially empty raw data
 
 ## AdvantageScope
 
-- Update to [2025 AdvantageScope](https://www.chiefdelphi.com/t/advantagescope-2025-swift-simple-smart/471922)
+- 2027 Alpha 5: Use AdvantageScope 27.0.0-alpha-4
 
 ## Elastic
 
-Elastic is bundled in the installer! Elastic is a simple and modern dashboard. :doc:`Read more here </docs/software/dashboards/elastic>`.
+- 2027 Alpha 5: Use Elastic 2027.0.0-alpha7
 
 ## WPIcal
 
-WPIcal is new WPILib tool for calibrating FRC Apriltags to correct for field setup error. :doc:`Read more here </docs/software/wpilib-tools/wpical/index>`.
+- 2027 Alpha 5: Use updated thirdparty-ceres and move resource files
+- 2027 Alpha 5: Refactor to use WPILib libraries and modern C++ conventions and improve UX
+- 2027 Alpha 5: Remove tag ID limit
 
-- 2025.2.1: Add JSON combiner which allows users to combine multiple AprilTag layouts
+## Shuffleboard
+
+.. warning:: Shuffleboard has been removed for 2027 due to its lack of a maintainer and resource utilization issues. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
+
+## SmartDashboard
+
+.. warning:: SmartDashboard has been removed for 2027 due to its usage of Network Tables v3. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
+
+## PathWeaver
+
+.. warning:: PathWeaver has been removed for 2027 due to its lack of swerve support and lack of a maintainer. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>`, [PathPlanner](https://pathplanner.dev), or [Bline](https://www.chiefdelphi.com/t/introducing-bline-a-new-rapid-polyline-autonomous-path-planning-suite/509778) more useful. They have an intuitive user interface and swerve support.
+
+## RobotBuilder
+
+.. warning:: RobotBuilder has been removed for 2027 due to its declining usage and burden of updating for the 2027 control system.
