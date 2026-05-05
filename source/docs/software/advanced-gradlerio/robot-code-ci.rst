@@ -35,7 +35,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     # Declares the repository safe and not under dubious ownership.
     - name: Add repository to git safe directories
       run: git config --global --add safe.directory $GITHUB_WORKSPACE
@@ -92,7 +92,7 @@ We specify that we want the job to run on an Ubuntu virtual machine and in a vir
 # Steps represent a sequence of tasks that will be executed as part of the job
 steps:
 # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-- uses: actions/checkout@v4
+- uses: actions/checkout@v6
 # Declares the repository safe and not under dubious ownership.
 - name: Add repository to git safe directories
   run: git config --global --add safe.directory $GITHUB_WORKSPACE
