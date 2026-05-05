@@ -13,8 +13,8 @@ Documentation:
 - [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_timed_robot.html)
 
 Source:
-[Java](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibj/src/main/java/org/wpilib/framework/TimedRobot.java)
-- [C++](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibc/src/main/native/cpp/framework/TimedRobot.cpp)
+[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibj/src/main/java/org/wpilib/framework/TimedRobot.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibc/src/main/native/cpp/framework/TimedRobot.cpp)
 
 The :code:`TimedRobot` class is the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). During these calls, your code typically polls each input device and acts according to the data it receives.  For instance, you would typically determine the position of the joystick and state of the joystick buttons on each call and act accordingly.  The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/smartdashboard/SendableChooser.html)/ [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_sendable_chooser.html))
 
@@ -22,12 +22,12 @@ The :code:`TimedRobot` class is the base class recommended for most users.  It p
 
 .. tab-set-code::
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibjExamples/src/main/java/org/wpilib/templates/timedskeleton/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/templates/timedskeleton/Robot.java
       :language: java
       :lines: 7-53
       :lineno-match:
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-4/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
       :language: c++
       :lines: 5-29
       :lineno-match:
@@ -55,8 +55,8 @@ Documentation:
 - [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_timeslice_robot.html#details)
 
 Source:
-[Java](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibj/src/main/java/org/wpilib/framework/TimesliceRobot.java)
-- [C++](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibc/src/main/native/cpp/framework/TimesliceRobot.cpp)
+[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibj/src/main/java/org/wpilib/framework/TimesliceRobot.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibc/src/main/native/cpp/framework/TimesliceRobot.cpp)
 
 The :code:`TimesliceRobot` class extends the :code:`TimedRobot` framework to provide more control over the scheduling of periodic functions. It allows users to allocate specific time slices to different robot operations, running them sequentially within a defined period (typically shorter than TimedRobot's default 20ms). This class is recommended for users who need more precise timing control and consistent starting times for their robot's periodic functions.
 
@@ -70,8 +70,8 @@ Documentation:
 - [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_robot_base.html)
 
 Source:
-[Java](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibj/src/main/java/org/wpilib/framework/RobotBase.java)
-- [C++](https://github.com/wpilibsuite/allwpilib/blob/2027/wpilibc/src/main/native/cppcs/RobotBase.cpp)
+[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibj/src/main/java/org/wpilib/framework/RobotBase.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibc/src/main/native/cppcs/RobotBase.cpp)
 
 The :code:`RobotBase` class is the most minimal base-class offered, and is generally not recommended for direct use.  No robot control flow is handled for the user; everything must be written from scratch inside the :code:`startCompetition()` method. The template by default showcases how to process the different operation modes (teleop, auto, etc).
 

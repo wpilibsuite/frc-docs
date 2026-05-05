@@ -8,19 +8,19 @@ To begin, [download VisualVM](https://visualvm.github.io/download.html) and unpa
 
 ## Setting up Gradle
 
-GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a SystemCore). To begin, locate the ``frcJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
+GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a SystemCore). To begin, locate the ``wpilibJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2027.0.0-alpha-2/vscode-wpilib/resources/gradle/java/build.gradle
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/v2027.0.0-alpha-5/vscode-wpilib/resources/gradle/java/build.gradle
    :language: groovy
-   :lines: 15-42
+   :lines: 16-46
    :lineno-match:
-   :emphasize-lines: 15-16
+   :emphasize-lines: 18-19
 
 
 We will be replacing the highlighted lines with:
 
 ```groovy
-frcJava(getArtifactTypeClass('FRCJavaArtifact')) {
+wpilibJava(getArtifactTypeClass('WPILibJavaArtifact')) {
    // Enable VisualVM connection
    jvmArgs.add("-Dcom.sun.management.jmxremote=true")
    jvmArgs.add("-Dcom.sun.management.jmxremote.port=1198")
