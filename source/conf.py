@@ -162,6 +162,7 @@ linkcheck_ignore = [
     r".*opencv.org.*",
     r".*strawberryperl.com.*",
     r".*docutils.sourceforge.io.*",
+    r".*cppreference.com.*",
 ]
 
 linkcheck_anchors_ignore_for_url = [
