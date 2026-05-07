@@ -5,13 +5,16 @@ This guide will walk you through installing the WPILib development environment o
 ## Prerequisites
 
 Supported Operating Systems and Architectures:
- * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
- * Ubuntu 22.04 & 24.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
- * macOS 13.3 or higher, both Intel and Arm.
+ * Windows 11, 64 bit only. Arm-based Windows 11 is unsupported.
+ * Debian 13 'Trixie', 64 bit only.
+ * Ubuntu 26.04, 64 bit only.
+ * macOS 15 or higher, both Intel and Arm.
 
-.. warning:: The following OSes are no longer supported: macOS 12 or earlier, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
+.. note:: Linux distributions other than those mentioned above that contain glibc >= 2.41 may work, but are unsupported.
 
-.. note:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11, or switch to one of the supported Linux distributions listed.
+.. warning:: The following OSes are no longer supported: macOS 14 or earlier, Ubuntu 24.04 or earlier, Windows 7, Windows 8.1, Windows 10, and any 32-bit Windows.
+
+.. warning:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). While we will not explicitly block Windows 10 from being used, future changes may inadvertently break compatibility with Windows 10. We will not postpone these changes in order to maintain Windows 10 compatibility, and Windows 10 support may break at any time as a result.
 
 .. note:: C++ compilation is memory intensive. A minimum of 32 GB of RAM is recommended for C++ teams.
 
@@ -158,12 +161,12 @@ Some operating systems require some final action to complete installation.
    .. tab-item:: Linux
       :sync: linux
 
-      Some versions of Linux (e.g. Ubuntu 22.04 and later) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
+      Modern Ubuntu versions require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
 
       .. image:: images/wpilib-setup/linux-enable-launching.png
          :alt: Menu that pops up after right click the desktop icon in Linux.
 
-      Ubuntu 23.10 and later [disable the kernel user namespaces feature for unknown applications](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces). This means that the [sandboxing feature](https://code.visualstudio.com/blogs/2022/11/28/vscode-sandbox) won't work on the WPILib VS Code. To enable sandboxing for the WPILib applications, AppArmor profiles are provided, and can be installed using the command below.
+      Furthermore, modern Ubuntu versions [disable the kernel user namespaces feature for unknown applications](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces). This means that the [sandboxing feature](https://code.visualstudio.com/blogs/2022/11/28/vscode-sandbox) won't work on the WPILib VS Code. To enable sandboxing for the WPILib applications, AppArmor profiles are provided, and can be installed using the command below.
 
       ```console
       $ sudo cp ~/wpilib/YEAR/frccode/AppArmor/* /etc/apparmor.d/
