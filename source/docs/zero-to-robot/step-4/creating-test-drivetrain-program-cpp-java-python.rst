@@ -122,7 +122,7 @@ This will create a ``robot.py`` and ``pyproject.toml`` file, but will not overwr
 
 First, here is what a simple code can look like for a Drivetrain with PWM controlled motors (such as SparkMax).
 
-.. note:: the Python example below is from `<https://github.com/robotpy/mostrobotpy/tree/2027/examples/robot/GettingStarted>`__
+.. note:: the Python example below is from `<https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/GettingStarted>`__
 
 .. tab-set-code::
 
