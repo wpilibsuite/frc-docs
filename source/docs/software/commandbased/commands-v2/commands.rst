@@ -111,7 +111,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github
   .. tab-item:: Java
       :sync: tabcode-java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/subsystems/HatchSubsystem.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/subsystems/HatchSubsystem.java
         :language: java
         :lines: 26-36
         :lineno-match:
@@ -119,7 +119,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github
   .. tab-item:: C++ (Header)
       :sync: tabcode-c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.hpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.hpp
         :language: c++
         :lines: 19-27
         :lineno-match:
@@ -127,7 +127,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github
   .. tab-item:: C++ (Source)
       :sync: tabcode-c++-source
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
         :language: c++
         :lines: 15-25
         :lineno-match:
@@ -318,12 +318,12 @@ To write a custom command class, subclass the abstract ``Command`` class ([Java]
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java
       :language: java
       :lines: 7-24
       :lineno-match:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp
       :language: c++
       :lines: 5-30
       :lineno-match:
@@ -337,7 +337,7 @@ What might a functional command look like in practice? As before, below is a sim
   .. tab-item:: Java
     :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/GrabHatch.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/GrabHatch.java
       :language: java
       :lines: 5-
       :lineno-match:
@@ -345,7 +345,7 @@ What might a functional command look like in practice? As before, below is a sim
   .. tab-item:: C++ (Header)
     :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.hpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.hpp
       :language: c++
       :lines: 5-
       :lineno-match:
@@ -353,7 +353,7 @@ What might a functional command look like in practice? As before, below is a sim
   .. tab-item:: C++ (Source)
     :sync: tabcode-c++-source
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
       :language: c++
       :lines: 5-
       :lineno-match:
@@ -377,7 +377,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: Java
     :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/DefaultDrive.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/DefaultDrive.java
       :language: java
       :lines: 5-
       :lineno-match:
@@ -385,7 +385,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: C++ (Header)
     :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.hpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.hpp
       :language: c++
       :lines: 5-
       :lineno-match:
@@ -393,7 +393,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: C++ (Source)
     :sync: tabcode-c++-source
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
       :language: c++
       :lines: 5-
       :lineno-match:
@@ -410,12 +410,12 @@ And then usage:
 
 .. tab-set-code::
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/RobotContainer.java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/RobotContainer.java
     :language: java
     :lines: 57-63
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
     :language: c++
     :lines: 30-33
     :lineno-match:
@@ -429,12 +429,12 @@ Notice that this command does not override ``isFinished()``, and thus will never
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/RobotContainer.java
       :language: java
       :lines: 48-56
       :lineno-match:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
       :language: c++
       :lines: 26-32
       :lineno-match:
