@@ -12,9 +12,9 @@ Supported Operating Systems and Architectures:
 
 .. note:: Linux distributions other than those mentioned above that contain glibc >= 2.41 may work, but are unsupported.
 
-.. warning:: The following OSes are no longer supported: macOS 14 or earlier, Ubuntu 24.04 or earlier, Windows 7, Windows 8.1, Windows 10, and any 32-bit Windows.
+.. warning:: OS versions not listed here are not supported by the WPILib team.
 
-.. warning:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). While we will not explicitly block Windows 10 from being used, future changes may inadvertently break compatibility with Windows 10. We will not postpone these changes in order to maintain Windows 10 compatibility, and Windows 10 support may break at any time as a result.
+.. warning:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). While we will not explicitly block Windows 10 from being used, future releases may inadvertently break compatibility with Windows 10. We will not postpone these changes in order to maintain Windows 10 compatibility, and Windows 10 support may break as a result.
 
 .. note:: C++ compilation is memory intensive. A minimum of 32 GB of RAM is recommended for C++ teams.
 
@@ -43,17 +43,17 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
 .. tab-set::
 
-   .. tab-item:: Windows 10+
-      :sync: windows-10
+   .. tab-item:: Windows 11
+      :sync: windows-11
 
-      Windows 10+ users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
+      Windows 11 users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
       .. image:: images/wpilib-setup/extract-windows-10.png
          :alt: The menu after right clicking on an .iso file to choose "Mount".
 
       .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions below.
 
-      You can use [7-zip](https://www.7-zip.org/) to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Windows 11 users may need to select :guilabel:`Show more options` at the bottom of the context menu.
+      You can use [7-zip](https://www.7-zip.org/) to extract the disk image by right-clicking, selecting :guilabel:`Show more options` at the bottom of the context menu, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`.
 
       .. image:: images/wpilib-setup/extract-windows-7.png
          :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
@@ -161,7 +161,7 @@ Some operating systems require some final action to complete installation.
    .. tab-item:: Linux
       :sync: linux
 
-      Modern Ubuntu versions require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
+      Some Linux versions require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
 
       .. image:: images/wpilib-setup/linux-enable-launching.png
          :alt: Menu that pops up after right click the desktop icon in Linux.
