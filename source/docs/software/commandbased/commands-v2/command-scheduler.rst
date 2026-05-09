@@ -169,7 +169,7 @@ Occasionally, it is desirable to have the scheduler execute a custom action when
 
 - ``onCommandInterrupt`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command_scheduler.html#affaa5c53db71e448a49eeb5067cd6b6f)) runs a specified action whenever a command is interrupted (i.e. by being explicitly canceled or by another command that shares one of its requirements).
 
-A typical use-case for these methods is adding markers in an event log whenever a command scheduling event takes place, as demonstrated in the following code from the HatchbotInlined example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotInlined)):
+A typical use-case for these methods is adding markers in an event log whenever a command scheduling event takes place, as demonstrated in the following code from the HatchbotInlined example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotInlined)):
 
 .. tab-set::
 

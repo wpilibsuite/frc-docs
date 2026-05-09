@@ -26,9 +26,9 @@ WPILib is an open-source library - the C++ and Java source code is in the [allwp
 
 The Java and C++ source code can be found in the WPILibJ and WPILibC source directories:
 
-- [Java source code](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibj/src/main/java/org/wpilib)
+- [Java source code](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibj/src/main/java/org/wpilib)
 
-- [C++ source code](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibc/src/main/native/cpp)
+- [C++ source code](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibc/src/main/native/cpp)
 
 - [Python source code](https://github.com/robotpy/mostrobotpy)
 

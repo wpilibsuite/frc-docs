@@ -2,7 +2,7 @@
 
 The Robot Preferences ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/util/Preferences.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_preferences.html)) class is used to store values in the flash memory on the roboRIO. The values might be for remembering preferences on the robot such as calibration settings for potentiometers, PID values, setpoints, etc. that you would like to change without having to rebuild the program. The values can be viewed on SmartDashboard or Shuffleboard and read and written by the robot program.
 
-This example shows how to utilize Preferences to change the setpoint of a PID controller and the P constant. The code examples are adapted from the Arm Simulation example ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/Robot.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp)). You can run the Arm Simulation example in the Robot Simulator to see how to use the preference class and interact with it using the dashboards without needing a robot.
+This example shows how to utilize Preferences to change the setpoint of a PID controller and the P constant. The code examples are adapted from the Arm Simulation example ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/Robot.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp)). You can run the Arm Simulation example in the Robot Simulator to see how to use the preference class and interact with it using the dashboards without needing a robot.
 
 
 ## Initializing Preferences
@@ -12,33 +12,33 @@ This example shows how to utilize Preferences to change the setpoint of a PID co
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/Constants.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/Constants.java
          :language: java
          :lines: 15-20
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 27-29, 73-74, 80-83
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.hpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/include/Constants.hpp
          :language: c++
          :lines: 30-34
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: c++
          :lines: 11, 17-21
 
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/constants.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/ArmSimulation/constants.py
          :language: python
          :lines: 18-23
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/subsystems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/ArmSimulation/subsystems/arm.py
          :language: python
          :lines: 18-20,69-73
 
@@ -55,21 +55,21 @@ If using the Command Framework, this type of code could be placed in the constru
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 105-112
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: c++
          :lines: 3-51
 
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/subsystems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/ArmSimulation/subsystems/arm.py
          :language: python
          :lines: 97-104
 
@@ -82,30 +82,30 @@ Depending on the data that is stored in preferences, you can use it when you rea
    .. tab-item:: Java
       :sync: Java
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/Robot.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/Robot.java
          :language: java
          :lines: 28-37
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/subsystems/Arm.java
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/armsimulation/subsystems/Arm.java
          :language: java
          :lines: 114-120
 
    .. tab-item:: C++
       :sync: C++
 
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp
          :language: c++
          :lines: 15-24
-      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
+      .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/subsystems/Arm.cpp
          :language: c++
          :lines: 53-59
 
    .. tab-item:: Python
       :sync: Python
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/ArmSimulation/robot.py
          :language: python
          :lines: 28-34
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ArmSimulation/subsystems/arm.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/ArmSimulation/subsystems/arm.py
          :language: python
          :lines: 106-111
 

@@ -3,22 +3,22 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2027.0.0-alpha-5"
+      "latestVersion": "v2027.0.0-alpha-6"
     },
     {
       "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2027.0.0-alpha-5"
+      "latestVersion": "v2027.0.0-alpha-6"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/robotpy/mostrobotpy/",
       "versionScheme": "\\d{4}\\.\\d\\.\\d(?:(?:a|b)\\d)?|[0-9a-f]{40}",
-      "latestVersion": "2027.0.0a5"
+      "latestVersion": "2027.0.0a6"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2027.0.0-alpha-5"
+      "latestVersion": "v2027.0.0-alpha-6"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/",

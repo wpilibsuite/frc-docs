@@ -158,21 +158,21 @@ The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the same on
 
 .. note:: In this example, the initial state is re-computed every timestep. This is a somewhat different usage technique than is detailed above, but works according to the same principles - the profile is sampled at a time corresponding to the loop period to get the setpoint for the next loop iteration.
 
-A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/elevatortrapezoidprofile), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp), [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/ElevatorTrapezoidProfile)):
+A more complete example of ``TrapezoidProfile`` usage is provided in the ElevatorTrapezoidProfile example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/elevatortrapezoidprofile), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp), [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/ElevatorTrapezoidProfile)):
 
 .. tab-set-code::
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/elevatortrapezoidprofile/Robot.java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/elevatortrapezoidprofile/Robot.java
     :language: java
     :lines: 5-
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp/Robot.cpp
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp/Robot.cpp
     :language: c++
     :lines: 5-
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/ElevatorTrapezoidProfile/robot.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/ElevatorTrapezoidProfile/robot.py
     :language: python
     :lines: 8-
     :lineno-match:
