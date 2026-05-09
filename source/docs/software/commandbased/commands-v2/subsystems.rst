@@ -8,7 +8,7 @@ Subsystems can be associated with "default commands" that will be automatically 
 
 ## Creating a Subsystem
 
-The recommended method to create a subsystem for most users is to subclass the abstract ``SubsystemBase`` class in ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/SubsystemBase.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_subsystem_base.html)), as seen in the command-based template ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/subsystems/ExampleSubsystem.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/templates/commandv2/include/subsystems/ExampleSubsystem.hpp)). In Python, because Python does not have interfaces, the ``Subsystem`` class is a concrete class that can be subclassed directly (:external:py:class:`Python <commands2.Subsystem>`). The following example demonstrates how to create a simple subsystem in each of the supported languages:
+The recommended method to create a subsystem for most users is to subclass the abstract ``SubsystemBase`` class in ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/SubsystemBase.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_subsystem_base.html)), as seen in the command-based template ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/subsystems/ExampleSubsystem.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/templates/commandv2/include/subsystems/ExampleSubsystem.hpp)). In Python, because Python does not have interfaces, the ``Subsystem`` class is a concrete class that can be subclassed directly (:external:py:class:`Python <commands2.Subsystem>`). The following example demonstrates how to create a simple subsystem in each of the supported languages:
 
 .. tab-set::
 
@@ -67,7 +67,7 @@ Advanced users seeking more flexibility may simply create a class that implement
 
 ## Simple Subsystem Example
 
-What might a functional subsystem look like in practice? Below is a simple pneumatically-actuated hatch mechanism from the HatchBotTraditional example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional), [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/HatchbotTraditional)):
+What might a functional subsystem look like in practice? Below is a simple pneumatically-actuated hatch mechanism from the HatchBotTraditional example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional), [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/HatchbotTraditional)):
 
 .. tab-set::
 
@@ -105,7 +105,7 @@ What might a functional subsystem look like in practice? Below is a simple pneum
 
 Notice that the subsystem hides the presence of the DoubleSolenoid from outside code (it is declared ``private``), and instead publicly exposes two higher-level, descriptive robot actions: ``grabHatch()`` and ``releaseHatch()``. It is extremely important that "implementation details" such as the double solenoid be "hidden" in this manner; this ensures that code outside the subsystem will never cause the solenoid to be in an unexpected state. It also allows the user to change the implementation (for instance, a motor could be used instead of a pneumatic) without any of the code outside of the subsystem having to change with it.
 
-Alternatively, instead of writing ``void`` public methods that are called from commands, we can define the public methods as factories that return a command. Consider the following from the HatchBotInlined example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotInlined), [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/HatchbotInlined)):
+Alternatively, instead of writing ``void`` public methods that are called from commands, we can define the public methods as factories that return a command. Consider the following from the HatchBotInlined example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotInlined), [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/HatchbotInlined)):
 
 .. tab-set::
 

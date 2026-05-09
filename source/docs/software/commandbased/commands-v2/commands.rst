@@ -314,7 +314,7 @@ Users may also write custom command classes. As this is significantly more verbo
 
 .. note:: In the C++ API, a :term:`CRTP` is used to allow certain Command methods to work with the object ownership model.  Users should always extend the ``CommandHelper`` [class](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command_helper.html) when defining their own command classes, as is shown below.
 
-To write a custom command class, subclass the abstract ``Command`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html)) or ``CommandHelper`` ([C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html)), as seen in the command-based template ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp)):
+To write a custom command class, subclass the abstract ``Command`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html)) or ``CommandHelper`` ([C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html)), as seen in the command-based template ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp)):
 
 .. tab-set-code::
 
@@ -330,7 +330,7 @@ To write a custom command class, subclass the abstract ``Command`` class ([Java]
 
 ## Simple Command Example
 
-What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)) that uses the ``HatchSubsystem``:
+What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)) that uses the ``HatchSubsystem``:
 
 .. tab-set::
 
