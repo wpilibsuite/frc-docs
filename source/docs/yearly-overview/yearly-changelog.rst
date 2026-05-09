@@ -174,7 +174,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 5: Fix NT server mode
 - 2027 Alpha 5: Add correct time for rebuilt
 - 2027 Alpha 5: Update to SDL joystick mappings from 1-19-2026
-- 2027 Alpha 6: Fix memory corruption and incorect POV count
+- 2027 Alpha 6: Fix memory corruption and incorrect POV count
 
 ## GradleRIO
 
