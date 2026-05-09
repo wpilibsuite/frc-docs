@@ -18,7 +18,7 @@ The following program starts automatic capture of a USB camera like the Microsof
       :language: c++
       :lines: 7-8, 16-18, 20, 25-32
 
-   .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/QuickVision/robot.py
+   .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/QuickVision/robot.py
       :language: python
       :lines: 8-21
       :linenos:
@@ -69,14 +69,14 @@ In the following example a thread created in ``Robot`` constructor gets the Came
 
       Here's what your ``robot.py`` needs to contain to launch the image processing process:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/IntermediateVision/robot.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/IntermediateVision/robot.py
          :language: python
          :lines: 8-20
          :linenos:
 
       The ``launch("vision.py")`` function says to launch ``vision.py`` and call the ``run`` function in that file. Here's what is in ``vision.py``:
 
-      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/IntermediateVision/vision.py
+      .. rli:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/IntermediateVision/vision.py
          :language: python
          :lines: 12-53
          :linenos:

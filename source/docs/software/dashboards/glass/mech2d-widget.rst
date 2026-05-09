@@ -20,7 +20,7 @@ In the examples below, an elevator is drawn, with a rotational wrist on top of t
       :lines: 57-60
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/Mechanism2d/robot.py
       :language: python
       :lines: 34-37
       :lineno-match:
@@ -41,7 +41,7 @@ Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has 
       :lines: 61-67
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/Mechanism2d/robot.py
          :language: python
          :lines: 39-46
          :lineno-match:
@@ -60,7 +60,7 @@ Then, publish the ``Mechanism2d`` object to NetworkTables:
       :lines: 35-36
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/Mechanism2d/robot.py
       :language: python
       :lines: 48-49
       :lineno-match:
@@ -79,7 +79,7 @@ To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()``
       :lines: 39-43
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a5/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/Mechanism2d/robot.py
       :language: python
       :lines: 51-56
       :lineno-match:
