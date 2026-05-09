@@ -12,7 +12,7 @@ Analog inputs return a 12-bit integer proportional to the voltage, from 0 to 3.3
 
 .. note:: It is often more convenient to use the :doc:`Analog Potentiometers <analog-potentiometers-software>` wrapper class than to use :code:`AnalogInput` directly, as it supports scaling to meaningful units.
 
-Support for reading the voltages on the Smart I/O ports is provided through the :code:`AnalogInput` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/hardware/discrete/AnalogInput.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1_analog_input.html)).
+Support for reading the voltages on the Smart I/O ports is provided through the :code:`AnalogInput` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/hardware/discrete/AnalogInput.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_analog_input.html)).
 
 ### Initializing an AnalogInput
 
