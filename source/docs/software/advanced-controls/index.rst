@@ -13,4 +13,5 @@ This section covers advanced control features in WPILib, such as various feedbac
    controllers/index
    trajectories/index
    state-space/index
+   fire-control/index
    controls-glossary
