@@ -32,11 +32,15 @@ Damaged batteries should be safely disposed of as soon as possible. All retailer
 
 ### Battery Leads
 
-Battery leads must be copper, minimum size (cross section) 6 AWG (16mm2, 7 SWG) and maximum length 12", color coded for polarity, with an Anderson SB connector. Standard 6AWG copper leads with Pink/Red SB50 battery leads often come in the Kit of Parts and are sold by FRC vendors.
+Battery leads should be copper, minimum size (cross section) 6 AWG (16mm2, 7 SWG) and a minimum length to reach where they need to go on your robot, color coded for polarity, with an Anderson SB connector. Standard 6AWG copper leads with Pink/Red SB50 battery leads often come in the Kit of Parts and are sold by FRC vendors.
+
+.. note:: There is no maximum length of wire leads coming off the battery. However, keeping runs as short as possible is best for robot performance.
 
 #### Lead Cables
 
-Tinned, annealed, or coated copper is allowed. Do not use CCA (copper clad aluminum), aluminum, or other non-copper base metal. The conductor metal is normally printed on the outside of the insulation with the other cable ratings.
+Tinned, annealed, coated copper, or CCA (copper clad aluminum) is allowed. Do not use regular aluminum wire, or other non-copper base metal. The conductor metal is normally printed on the outside of the insulation with the other cable ratings.
+
+.. note:: In 2026, all robot electrical wires may now be CCA (copper clad aluminum) (including the main power cables) but this is not recommended. Typically a given CCA wire gauge is equivalent to the next smaller copper wire gauge so 6 AWG CCA is closer to 7 or even 8 AWG copper for current carrying capacity.
 
 Wire size 6AWG is sufficient for almost all robots and fits standard SB50 contacts. A small number of teams adopt larger wire sizes for marginal performance benefits.
 
