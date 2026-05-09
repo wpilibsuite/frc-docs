@@ -1,6 +1,6 @@
 # Commands
 
-**Commands** represent actions the robot can take. Commands run when scheduled, until they are interrupted or their end condition is met.  Commands are represented in the command-based library by the ``Command`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html)) or the ``Command`` class in ``commands2`` library (:external:py:class:`Python <commands2.Command>`).
+**Commands** represent actions the robot can take. Commands run when scheduled, until they are interrupted or their end condition is met.  Commands are represented in the command-based library by the ``Command`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html)) or the ``Command`` class in ``commands2`` library (:external:py:class:`Python <commands2.Command>`).
 
 ## The Structure of a Command
 
@@ -8,19 +8,19 @@ Commands specify what the command will do in each of its possible states. This i
 
 ### Initialization
 
-The ``initialize()`` method ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html#initialize()), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html#ad5018828a51ea1cfbdfce7f13c97cca1), :external:py:meth:`Python <commands2.Command.initialize>`) marks the command start, and is called exactly once per time a command is scheduled. The ``initialize()`` method should be used to place the command in a known starting state for execution. Command objects may be reused and scheduled multiple times, so any state or resources needed for the command's functionality should be initialized or opened in ``initialize`` (which will be called at the start of each use) rather than the constructor (which is invoked only once on object allocation). It is also useful for performing tasks that only need to be performed once per time scheduled, such as setting motors to run at a constant speed or setting the state of a solenoid actuator.
+The ``initialize()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#initialize()), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#ad5018828a51ea1cfbdfce7f13c97cca1), :external:py:meth:`Python <commands2.Command.initialize>`) marks the command start, and is called exactly once per time a command is scheduled. The ``initialize()`` method should be used to place the command in a known starting state for execution. Command objects may be reused and scheduled multiple times, so any state or resources needed for the command's functionality should be initialized or opened in ``initialize`` (which will be called at the start of each use) rather than the constructor (which is invoked only once on object allocation). It is also useful for performing tasks that only need to be performed once per time scheduled, such as setting motors to run at a constant speed or setting the state of a solenoid actuator.
 
 ### Execution
 
-The ``execute()`` method ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html#execute()), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.execute>`) is called repeatedly while the command is scheduled; this is when the scheduler’s ``run()`` method is called (this is generally done in the main robot periodic method, which runs every 20ms by default). The execute block should be used for any task that needs to be done continually while the command is scheduled, such as updating motor outputs to match joystick inputs, or using the output of a control loop.
+The ``execute()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#execute()), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.execute>`) is called repeatedly while the command is scheduled; this is when the scheduler’s ``run()`` method is called (this is generally done in the main robot periodic method, which runs every 20ms by default). The execute block should be used for any task that needs to be done continually while the command is scheduled, such as updating motor outputs to match joystick inputs, or using the output of a control loop.
 
 ### Ending
 
-The ``end(bool interrupted)`` method ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html#end(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.end>`) is called once when the command ends, whether it finishes normally (i.e. ``isFinished()`` returned true) or it was interrupted (either by another command or by being explicitly canceled). The method argument specifies the manner in which the command ended; users can use this to differentiate the behavior of their command end accordingly. The end block should be used to "wrap up" command state in a neat way, such as setting motors back to zero or reverting a solenoid actuator to a "default" state. Any state or resources initialized in ``initialize()`` should be closed in ``end()``.
+The ``end(bool interrupted)`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#end(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.end>`) is called once when the command ends, whether it finishes normally (i.e. ``isFinished()`` returned true) or it was interrupted (either by another command or by being explicitly canceled). The method argument specifies the manner in which the command ended; users can use this to differentiate the behavior of their command end accordingly. The end block should be used to "wrap up" command state in a neat way, such as setting motors back to zero or reverting a solenoid actuator to a "default" state. Any state or resources initialized in ``initialize()`` should be closed in ``end()``.
 
 ### Specifying end conditions
 
-The ``isFinished()`` method ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html#end(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html#a7082630601e4b249933c972b028ec705), :external:py:meth:`Python <commands2.Command.isFinished>`) is called repeatedly while the command is scheduled, whenever the scheduler’s ``run()`` method is called. As soon as it returns true, the command’s ``end()`` method is called and it ends. The ``isFinished()`` method is called after the ``execute()`` method, so the command will execute once on the same iteration that it ends.
+The ``isFinished()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#end(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#a7082630601e4b249933c972b028ec705), :external:py:meth:`Python <commands2.Command.isFinished>`) is called repeatedly while the command is scheduled, whenever the scheduler’s ``run()`` method is called. As soon as it returns true, the command’s ``end()`` method is called and it ends. The ``isFinished()`` method is called after the ``execute()`` method, so the command will execute once on the same iteration that it ends.
 
 ## Command Properties
 
@@ -50,11 +50,11 @@ As a rule, command compositions require all subsystems their components require.
 
 ### runsWhenDisabled
 
-The ``runsWhenDisabled()`` method ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html#runsWhenDisabled()), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.runsWhenDisabled>`) returns a ``boolean``/``bool`` specifying whether the command may run when the robot is disabled. With the default of returning ``false``, the command will be canceled when the robot is disabled and attempts to schedule it will do nothing. Returning ``true`` will allow the command to run and be scheduled when the robot is disabled.
+The ``runsWhenDisabled()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#runsWhenDisabled()), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.runsWhenDisabled>`) returns a ``boolean``/``bool`` specifying whether the command may run when the robot is disabled. With the default of returning ``false``, the command will be canceled when the robot is disabled and attempts to schedule it will do nothing. Returning ``true`` will allow the command to run and be scheduled when the robot is disabled.
 
 .. important::  When the robot is disabled, :term:`PWM` outputs are disabled and CAN motor controllers may not apply voltage, regardless of ``runsWhenDisabled``!
 
-This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the ``ignoringDisable`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html#ignoringDisable(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.ignoringDisable>`):
+This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the ``ignoringDisable`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#ignoringDisable(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.ignoringDisable>`):
 
 .. tab-set-code::
 
@@ -74,11 +74,11 @@ As a rule, command compositions may run when disabled if all their component com
 
 ### getInterruptionBehavior
 
-The ``getInterruptionBehavior()`` method ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html#getInterruptionBehavior()), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.getInterruptionBehavior>`) defines what happens if another command sharing a requirement is scheduled while this one is running. In the default behavior, ``kCancelSelf``, the current command will be canceled and the incoming command will be scheduled successfully. If ``kCancelIncoming`` is returned, the incoming command's scheduling will be aborted and this command will continue running. Note that ``getInterruptionBehavior`` only affects resolution of requirement conflicts: all commands can be canceled, regardless of ``getInterruptionBehavior``.
+The ``getInterruptionBehavior()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#getInterruptionBehavior()), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.getInterruptionBehavior>`) defines what happens if another command sharing a requirement is scheduled while this one is running. In the default behavior, ``kCancelSelf``, the current command will be canceled and the incoming command will be scheduled successfully. If ``kCancelIncoming`` is returned, the incoming command's scheduling will be aborted and this command will continue running. Note that ``getInterruptionBehavior`` only affects resolution of requirement conflicts: all commands can be canceled, regardless of ``getInterruptionBehavior``.
 
 .. note:: This was previously controlled by the ``interruptible`` parameter passed when scheduling a command, and is now a property of the command object.
 
-This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the `withInterruptBehavior()` decorator ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html#withInterruptBehavior(org.wpilib.command2.Command.InterruptionBehavior)), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.withInterruptBehavior>`)
+This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the `withInterruptBehavior()` decorator ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#withInterruptBehavior(org.wpilib.command2.Command.InterruptionBehavior)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.withInterruptBehavior>`)
 
 .. tab-set-code::
 
@@ -104,7 +104,7 @@ The command-based library includes many pre-written command types. Through the u
 
 The most basic commands are actions the robot takes: setting voltage to a motor, changing a solenoid's direction, etc. For these commands, which typically consist of a method call or two, the command-based library offers several factories to be construct commands inline with one or more lambdas to be executed.
 
-The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/InstantCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_instant_command.html), :external:py:class:`Python <commands2.InstantCommand>`) class, creates a command that calls a lambda once, and then finishes.
+The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/InstantCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_instant_command.html), :external:py:class:`Python <commands2.InstantCommand>`) class, creates a command that calls a lambda once, and then finishes.
 
 .. tab-set::
 
@@ -140,7 +140,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github
         :lines: 23-33
         :lineno-match:
 
-The ``run`` factory, backed by the ``RunCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/RunCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_run_command.html), :external:py:class:`Python <commands2.RunCommand>`) class, creates a command that calls a lambda repeatedly, until interrupted.
+The ``run`` factory, backed by the ``RunCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/RunCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_run_command.html), :external:py:class:`Python <commands2.RunCommand>`) class, creates a command that calls a lambda repeatedly, until interrupted.
 
 .. tab-set-code::
 
@@ -174,7 +174,7 @@ The ``run`` factory, backed by the ``RunCommand`` ([Java](https://github.wpilib.
       robot_drive)
       ```
 
-The ``startEnd`` factory, backed by the ``StartEndCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/StartEndCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_start_end_command.html), :external:py:class:`Python <commands2.StartEndCommand>`) class, calls one lambda when scheduled, and then a second lambda when interrupted.
+The ``startEnd`` factory, backed by the ``StartEndCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/StartEndCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_start_end_command.html), :external:py:class:`Python <commands2.StartEndCommand>`) class, calls one lambda when scheduled, and then a second lambda when interrupted.
 
 .. tab-set-code::
 
@@ -210,7 +210,7 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` ([Java](https://gith
      shooter)
   ```
 
-``FunctionalCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/FunctionalCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_functional_command.html), :external:py:class:`Python <commands2.FunctionalCommand>`) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>/Callable`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>/Callable[bool,[]]`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>/Callable[[],bool]`` for ``isFinished()``.
+``FunctionalCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/FunctionalCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_functional_command.html), :external:py:class:`Python <commands2.FunctionalCommand>`) accepts four lambdas that constitute the four command lifecycle methods: a ``Runnable``/``std::function<void()>/Callable`` for each of ``initialize()`` and ``execute()``, a ``BooleanConsumer``/``std::function<void(bool)>/Callable[bool,[]]`` for ``end()``, and a ``BooleanSupplier``/``std::function<bool()>/Callable[[],bool]`` for ``isFinished()``.
 
 .. tab-set-code::
 
@@ -258,13 +258,13 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` ([Java](https://gith
       robot_drive)
   ```
 
-To print a string and ending immediately, the library offers the ``Commands.print(String)``/``wpi::cmd::cmd::Print(std::string_view)``/``commands2.cmd.print(String)`` factory, backed by the ``PrintCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/PrintCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_print_command.html), :external:py:class:`Python <commands2.PrintCommand>`) subclass of ``InstantCommand``.
+To print a string and ending immediately, the library offers the ``Commands.print(String)``/``wpi::cmd::cmd::Print(std::string_view)``/``commands2.cmd.print(String)`` factory, backed by the ``PrintCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/PrintCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_print_command.html), :external:py:class:`Python <commands2.PrintCommand>`) subclass of ``InstantCommand``.
 
 ### Waiting
 
 Waiting for a certain condition to happen or adding a delay can be useful to synchronize between different commands in a command composition or between other robot actions.
 
-To wait and end after a specified period of time elapses, the library offers the ``Commands.waitSeconds(double)``/``wpi::cmd::cmd::Wait(units::second_t)``/``commands2.cmd.wait(float)`` factory, backed by the ``WaitCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/WaitCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_wait_command.html), :external:py:class:`Python <commands2.WaitCommand>`) class.
+To wait and end after a specified period of time elapses, the library offers the ``Commands.waitSeconds(double)``/``wpi::cmd::cmd::Wait(units::second_t)``/``commands2.cmd.wait(float)`` factory, backed by the ``WaitCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/WaitCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_wait_command.html), :external:py:class:`Python <commands2.WaitCommand>`) class.
 
 .. tab-set-code::
 
@@ -283,7 +283,7 @@ To wait and end after a specified period of time elapses, the library offers the
   commands2.cmd.wait(5.0)
   ```
 
-To wait until a certain condition becomes ``true``, the library offers the ``Commands.waitUntil(BooleanSupplier)``/``wpi::cmd::cmd::WaitUntil(std::function<bool()>)`` factory, backed by the ``WaitUntilCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/WaitUntilCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_wait_until_command.html), :external:py:class:`Python <commands2.WaitUntilCommand>`).
+To wait until a certain condition becomes ``true``, the library offers the ``Commands.waitUntil(BooleanSupplier)``/``wpi::cmd::cmd::WaitUntil(std::function<bool()>)`` factory, backed by the ``WaitUntilCommand`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/WaitUntilCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_wait_until_command.html), :external:py:class:`Python <commands2.WaitUntilCommand>`).
 
 .. tab-set-code::
 
@@ -312,9 +312,9 @@ There are commands for various control setups:
 
 Users may also write custom command classes. As this is significantly more verbose, it's recommended to use the more concise factories mentioned above.
 
-.. note:: In the C++ API, a :term:`CRTP` is used to allow certain Command methods to work with the object ownership model.  Users should always extend the ``CommandHelper`` [class](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command_helper.html) when defining their own command classes, as is shown below.
+.. note:: In the C++ API, a :term:`CRTP` is used to allow certain Command methods to work with the object ownership model.  Users should always extend the ``CommandHelper`` [class](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command_helper.html) when defining their own command classes, as is shown below.
 
-To write a custom command class, subclass the abstract ``Command`` class ([Java](https://github.wpilib.org/allwpilib/docs/2027/java/org/wpilib/command2/Command.html)) or ``CommandHelper`` ([C++](https://github.wpilib.org/allwpilib/docs/2027/cpp/classwpi_1_1cmd_1_1_command.html)), as seen in the command-based template ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp)):
+To write a custom command class, subclass the abstract ``Command`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html)) or ``CommandHelper`` ([C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html)), as seen in the command-based template ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp)):
 
 .. tab-set-code::
 
