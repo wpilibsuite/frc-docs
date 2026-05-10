@@ -99,6 +99,22 @@ The ``Romi - Command Bot`` template provides a ``RomiDrivetrain`` subsystem that
 
 This subsystem also provides functions for retrieving and resetting the Romi's onboard encoders.
 
+### XRP
+
+Teams using a :ref:`XRP <docs/xrp-robot/index:Getting Started with XRP>` should use the ``XRP - Timed`` or ``XRP - Command Bot`` template.
+
+#### XRP - Timed
+
+The ``XRP - Timed`` template provides a ``XRPDrivetrain`` class that exposes an ``arcadeDrive(double xaxisSpeed, double zaxisRotate)`` method. It's up to the user to feed this arcadeDrive function.
+
+This class also provides functions for retrieving and resetting the XRP's onboard encoders.
+
+#### XRP - Command Bot
+
+The ``XRP - Command Bot`` template provides a ``XRPDrivetrain`` subsystem that exposes an ``arcadeDrive(double xaxisSpeed, double zaxisRotate)`` method. It's up to the user to feed this arcadeDrive function.
+
+This subsystem also provides functions for retrieving and resetting the XRP's onboard encoders.
+
 ### Not Using a Base Class
 
 If desired, users can omit a base class entirely and simply write their program in a :code:`main()` method, as they would for any other program.  This is *highly* discouraged - users should not "reinvent the wheel" when writing their robot code - but it is supported for those who wish to have absolute control over their program flow.
