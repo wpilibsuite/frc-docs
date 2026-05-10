@@ -15,6 +15,7 @@ For a collection of example projects using the command-based framework, see :ref
    structuring-command-based-project
    organizing-command-based
    command-scheduler
+   cpp-command-ownership
    cpp-command-discussion
    pid-subsystems-commands
    profile-subsystems-commands
