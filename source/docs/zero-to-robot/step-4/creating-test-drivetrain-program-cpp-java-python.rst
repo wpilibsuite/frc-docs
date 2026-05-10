@@ -167,7 +167,7 @@ Now let's look at various parts of the code.
 
          .. tab-item:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/GettingStarted/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
                :language: python
                :lines: 8
                :lineno-match:
@@ -517,7 +517,7 @@ The ``Robot`` constructor for our sample program inverts the right side of the d
       :lines: 25-36
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
       :language: python
       :lines: 29-41
       :lineno-match:
@@ -540,7 +540,7 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
       :lines: 38-45
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
       :language: python
       :lines: 43-50
       :lineno-match:
