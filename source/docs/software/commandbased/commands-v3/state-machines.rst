@@ -10,10 +10,8 @@
 
 .. todo::
    Help teams decide when the StateMachine API is the right tool. Cover:
-   - The FSM API handles cases that coroutines and composition groups cannot: arbitrary transitions
-     between states (not just sequential or parallel)
-   - Scenarios that are a good fit: multi-phase autos with re-entry conditions, complex state-dependent
-     behaviors, commands that may need to recover to a previous state after a disturbance
+   - The FSM API handles cases that coroutines and composition groups cannot: arbitrary transitions between states (not just sequential or parallel)
+   - Scenarios that are a good fit: multi-phase autos with re-entry conditions, complex state-dependent behaviors, commands that may need to recover to a previous state after a disturbance
    - Scenarios where coroutines or compositions are simpler and preferred
    - Rough rule of thumb: if you'd naturally draw a state diagram with non-linear arrows, use StateMachine
 
@@ -23,26 +21,19 @@
    Walk through the StateMachine builder API from allwpilib#8297. Cover:
    - Creating a ``StateMachine`` with a name
    - Adding states with ``stateMachine.addState(command)`` — each state wraps a command
-   - Setting the initial state with ``stateMachine.setInitialState(state)`` (required; omitting it
-     causes a runtime exception; teams using the WPILib compiler plugin get a compile-time error)
+   - Setting the initial state with ``stateMachine.setInitialState(state)`` (required; omitting it causes a runtime exception; teams using the WPILib compiler plugin get a compile-time error)
    - Building a ``StateMachine`` returns a ``Command`` that can be scheduled normally
-   - Example: reference the auto scoring example from the allwpilib#8297 PR description
-     (drive to position → aim → repeatedly shoot until hopper empty → celebrate)
+   - Example: reference the auto scoring example from allwpilib#8297 (drive to position → aim → repeatedly shoot until hopper empty → celebrate)
 
 ## Defining Transitions
 
 .. todo::
    Explain how to define transitions between states using the staged builder DSL. Cover:
    - ``state.switchTo(otherState)`` begins a transition definition
-   - Available transition triggers:
-     - ``.whenComplete()`` — transition when the state's command finishes
-     - ``.whenCompleteAnd(condition)`` — transition on completion only if condition is true
-     - ``.when(condition)`` — transition at any time when condition becomes true (interrupts current state)
+   - Available transition triggers: ``.whenComplete()`` (on completion), ``.whenCompleteAnd(condition)`` (on completion if condition true), ``.when(condition)`` (at any time when condition becomes true, interrupts current state)
    - Transition to self: ``scoring.switchTo(scoring).whenCompleteAnd(() -> hopper.hasBall())`` for loops
-   - ``stateMachine.switchFromAny(stateA, stateB, ...).to(targetState).when(condition)`` for global
-     interruption conditions that apply regardless of which state is active
-   - The ``@NoDiscard`` annotation on the builder DSL: incomplete transition definitions cause
-     a compiler error via the WPILib javac plugin (allwpilib#8196), catching configuration mistakes early
+   - ``stateMachine.switchFromAny(stateA, stateB, ...).to(targetState).when(condition)`` for global interruption conditions that apply regardless of which state is active
+   - The ``@NoDiscard`` annotation on the builder DSL: incomplete transition definitions cause a compiler error via the WPILib javac plugin (allwpilib#8196), catching configuration mistakes early
 
 ## State Exit Actions
 
@@ -59,7 +50,5 @@
    Provide a decision guide for choosing the right abstraction. Cover:
    - **Coroutines**: best for linear sequences with simple branching (if/else, loops); most readable for straightforward flows
    - **Composition groups** (sequence, parallel, race, deadline): best for combining independent commands declaratively
-   - **StateMachine**: best when the control flow graph is non-linear — states that can transition to
-     multiple other states, recovery paths, or loops that don't fit sequential coroutine logic
-   - Present a side-by-side comparison showing the same behavior implemented as a coroutine vs. a state machine,
-     highlighting where the state machine is clearer
+   - **StateMachine**: best when the control flow graph is non-linear — states that can transition to multiple other states, recovery paths, or loops that don't fit sequential coroutine logic
+   - Present a side-by-side comparison showing the same behavior implemented as a coroutine vs. a state machine, highlighting where the state machine is clearer

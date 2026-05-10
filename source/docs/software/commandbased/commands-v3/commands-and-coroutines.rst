@@ -79,10 +79,8 @@
    - Commands cannot outlive the scope in which they were scheduled (opmode scope, command scope, global scope)
    - How this prevents dangling commands from running after their context has ended
    - Implications for ``schedule()``, ``setDefaultCommand()``, and trigger bindings inside commands
-   - Default command restoration: when an opmode or command that set a default command exits,
-     the next-most-appropriate default command (e.g., the globally-scoped one) is automatically restored
-   - How ``setDefaultCommand()`` called inside a command immediately starts the new default (same
-     as ``schedule()``) to avoid 1-loop delays — except when called by the current default command itself
+   - Default command restoration: when an opmode or command that set a default command exits, the next-most-appropriate default command (e.g., the globally-scoped one) is automatically restored
+   - How ``setDefaultCommand()`` called inside a command immediately starts the new default (same as ``schedule()``) to avoid 1-loop delays — except when called by the current default command itself
    - Practical examples: opmode-specific default commands vs. global default commands
    - Common pitfalls: trying to schedule commands that outlive their scope
 

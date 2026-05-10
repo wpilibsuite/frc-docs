@@ -56,10 +56,7 @@
 .. todo::
    Explain the rising and falling edge trigger factories added in allwpilib#8366. Cover:
    - ``Trigger.rising()`` and ``Trigger.falling()`` factory methods for detecting signal transitions
-   - The behavior change from allwpilib#8366: ``Trigger.getAsBoolean()`` now returns the cached signal
-     from the most recent ``poll()`` call rather than querying the underlying boolean supplier directly.
-     This ensures rising/falling edge triggers have a consistent return value for the entire polling
-     cycle rather than only being high for the first check in a cycle.
+   - The behavior change from allwpilib#8366: ``Trigger.getAsBoolean()`` now returns the cached value from the most recent ``poll()`` call rather than querying the supplier directly, ensuring consistent return values within a polling cycle.
    - When to use edge triggers vs. ``onTrue()``/``onFalse()`` bindings
    - Examples of edge trigger patterns (describe what examples should show)
 

@@ -93,8 +93,7 @@
 .. todo::
    Explain the ``Command.noRequirements(impl)`` factory added in allwpilib#8783. Cover:
    - What ``noRequirements()`` does: creates a command with no mechanism requirements
-   - The updated ergonomic form: ``Command.noRequirements(coroutine -> { ... })`` replaces
-     the older ``Command.noRequirements().executing(coroutine -> { ... })``
+   - The updated ergonomic form: ``Command.noRequirements(coroutine -> { ... })`` replaces the older ``Command.noRequirements().executing(coroutine -> { ... })``
    - When to use commands without requirements (background telemetry, timers, logging, etc.)
    - How requirement-free commands interact with the scheduler and priorities
    - Examples of common noRequirements() use cases
