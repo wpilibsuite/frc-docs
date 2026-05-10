@@ -130,15 +130,15 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 ### Simulation
 
-2027 Alpha 6: Don't wait on init for ``ExpansionHub`` in simulation.
-2027 Alpha 6: Add Onboard IMU Simulation
-2027 Alpha 6: GUI: fix game message string lifetime
-2027 Alpha 6: Make HalSim DS extension a no-op, fixing crash when running with the real DS option. Support for the real DS simulation option will be added in a future release.
+- 2027 Alpha 6: Don't wait on init for ``ExpansionHub`` in simulation.
+- 2027 Alpha 6: Add Onboard IMU Simulation
+- 2027 Alpha 6: GUI: fix game message string lifetime
+- 2027 Alpha 6: Make HalSim DS extension a no-op, fixing crash when running with the real DS option. Support for the real DS simulation option will be added in a future release.
 
 ### Romi/XRP
 
-2027 Alpha 5: Adding XRP Java and C++ examples for Timed Robot
-2027 Alpha 6: Show IP and port of XRP/Romi to user on connection
+- 2027 Alpha 5: Adding XRP Java and C++ examples for Timed Robot
+- 2027 Alpha 6: Show IP and port of XRP/Romi to user on connection
 
 ### Java units
 
