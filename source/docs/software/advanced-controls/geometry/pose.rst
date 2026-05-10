@@ -14,7 +14,7 @@ Rotation in 2 dimensions is represented by WPILib's ``Rotation2d`` class ([Java]
 
 .. note:: ``Rotation2d`` uses the C++ Units library. The constructor in Java/Python accepts either the angle in radians, or the sine and cosine of the angle, but the ``fromDegrees`` method will construct a ``Rotation2d`` object from degrees.
 
-.. note:: ``Rotation2d`` does not wrap the value of the angle, so if a value of 400 degrees is passed into the constructor, then 400 degrees will be returned in subsequent value calls.
+.. note:: ``Rotation2d`` does not wrap the value of the angle, so if a value of 400 degrees is passed into the constructor, then 400 degrees will be returned in subsequent value calls. However, some method calls like ``plus`` and ``minus`` wrap the angle prior to the construction of the ``Rotation2d`` object. 
 
 ## Pose
 
