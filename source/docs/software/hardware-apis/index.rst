@@ -18,8 +18,6 @@ A motor controller is responsible on your robot for making motors move. For brus
 
 .. note:: Another name for a motor controller is a speed controller.
 
-.. hint:: One can make a quick, non-competition-legal motor controller by removing the motor from a cordless BRUSHED drill and attaching PowerPoles or equivalents to the motor's leads. Make sure that the voltage supplied by the drill will not damage the motor, but note that the 775 is fine at up to 24 volts.
-
 .. warning:: Connecting a BRUSHLESS motor controller straight to power, such as to a conventional brushed motor controller, will destroy the motor!
 
 ### FRC Legal Motor Controllers
