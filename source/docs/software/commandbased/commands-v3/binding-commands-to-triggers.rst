@@ -47,11 +47,21 @@
    - Available composition operations: and(), or(), negate()
    - Creating complex trigger conditions from simple ones
    - Debouncing triggers
-   - Edge detection (rising/falling edges)
    - Trigger filtering and transformation
    - When composition is evaluated
-   - Note: This section may need updates if https://github.com/wpilibsuite/allwpilib/pull/8366 is merged
    - Examples of trigger composition patterns (describe what examples should show)
+
+## Rising and Falling Edge Triggers
+
+.. todo::
+   Explain the rising and falling edge trigger factories added in allwpilib#8366. Cover:
+   - ``Trigger.rising()`` and ``Trigger.falling()`` factory methods for detecting signal transitions
+   - The behavior change from allwpilib#8366: ``Trigger.getAsBoolean()`` now returns the cached signal
+     from the most recent ``poll()`` call rather than querying the underlying boolean supplier directly.
+     This ensures rising/falling edge triggers have a consistent return value for the entire polling
+     cycle rather than only being high for the first check in a cycle.
+   - When to use edge triggers vs. ``onTrue()``/``onFalse()`` bindings
+   - Examples of edge trigger patterns (describe what examples should show)
 
 ## Inner Trigger Scopes
 

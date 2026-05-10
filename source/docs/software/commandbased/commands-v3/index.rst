@@ -45,6 +45,7 @@ See :ref:`docs/software/commandbased/commands-v2/index:Commands v2 Programming` 
    commands-and-coroutines
    async-await-patterns
    command-compositions
+   state-machines
    binding-commands-to-triggers
    priorities-and-interrupts
    structuring-v3-project
