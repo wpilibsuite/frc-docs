@@ -126,15 +126,15 @@ First, here is what a simple code can look like for a Drivetrain with PWM contro
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
       :linenos:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :linenos:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
       :language: python
       :linenos:
 
@@ -180,19 +180,19 @@ Now let's look at various parts of the code.
 
 
          ```java
-         import edu.wpi.first.wpilibj.TimedRobot;
-         import edu.wpi.first.wpilibj.Timer;
-         import edu.wpi.first.wpilibj.XboxController;
-         import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+         import org.wpilib.framework.TimedRobot;
+         import org.wpilib.system.Timer;
+         import org.wpilib.driverstation.Gamepad;
+         import org.wpilib.drive.DifferentialDrive;
          import com.ctre.phoenix6.hardware.TalonFX;
          ```
 
          ```c++
-         #include <wpi/framework/TimedRobot.hpp>
-         #include <wpi/system/Timer.hpp>
-         #include <wpi/driverstation/XboxController.hpp>
-         #include <frc/drive/DifferentialDrive.h>
-         #include <ctre/phoenix6/TalonFX.hpp>
+         #include "wpi/framework/TimedRobot.hpp"
+         #include "wpi/system/Timer.hpp"
+         #include "wpi/driverstation/Gamepad.hpp"
+         #include "wpi/drive/DifferentialDrive.hpp"
+         #include "ctre/phoenix6/TalonFX.hpp"
          ```
 
          ```python
@@ -208,19 +208,19 @@ Now let's look at various parts of the code.
             ```java
             import com.revrobotics.CANSparkMax;
             import com.revrobotics.CANSparkLowLevel.MotorType;
-            import edu.wpi.first.wpilibj.TimedRobot;
-            import edu.wpi.first.wpilibj.Timer;
-            import edu.wpi.first.wpilibj.XboxController;
-            import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+            import org.wpilib.framework.TimedRobot;
+            import org.wpilib.system.Timer;
+            import org.wpilib.driverstation.Gamepad;
+            import org.wpilib.drive.DifferentialDrive;
             ```
 
             ```c++
-            #include <wpi/framework/TimedRobot.hpp>
-            #include <wpi/system/Timer.hpp>
-            #include <wpi/driverstation/XboxController.hpp>
-            #include <frc/drive/DifferentialDrive.h>
-            #include <wpi/hardware/motor/PWMSparkMax.hpp>
-            #include <rev/CANSparkMax.h>
+            #include "wpi/framework/TimedRobot.hpp"
+            #include "wpi/system/Timer.hpp"
+            #include "wpi/driverstation/Gamepad.hpp"
+            #include "wpi/drive/DifferentialDrive.hpp"
+            #include "wpi/hardware/motor/PWMSparkMax.hpp"
+            #include "rev/CANSparkMax.h"
             ```
 
             ```python
@@ -237,19 +237,19 @@ Now let's look at various parts of the code.
 
 
          ```java
-         import edu.wpi.first.wpilibj.TimedRobot;
-         import edu.wpi.first.wpilibj.Timer;
-         import edu.wpi.first.wpilibj.XboxController;
-         import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+         import org.wpilib.framework.TimedRobot;
+         import org.wpilib.system.Timer;
+         import org.wpilib.driverstation.Gamepad;
+         import org.wpilib.drive.DifferentialDrive;
          import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
          ```
 
          ```c++
-         #include <wpi/framework/TimedRobot.hpp>
-         #include <wpi/system/Timer.hpp>
-         #include <wpi/driverstation/XboxController.hpp>
-         #include <frc/drive/DifferentialDrive.h>
-         #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
+         #include "wpi/framework/TimedRobot.hpp"
+         #include "wpi/system/Timer.hpp"
+         #include "wpi/driverstation/Gamepad.hpp"
+         #include "wpi/drive/DifferentialDrive.hpp"
+         #include "ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h"
          ```
 
          ```python
@@ -258,7 +258,9 @@ Now let's look at various parts of the code.
          import ctre             # CTRE library
          ```
 
-Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``XBoxController`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax`` / ``WPI_TalonSRX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the Xbox  controller to the motors).
+Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``Gamepad`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax`` / ``WPI_TalonSRX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the Gamepad to the motors).
+
+.. note:: The ``Gamepad`` class is used with the 2027 FIRST Driver station. If you are using the NI Driver station, you will need to use the ``NiDsXboxController`` class instead.
 
 ## Defining the variables for our sample robot
 
@@ -308,7 +310,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                private final TalonFX m_rightDrive = new TalonFX(2);
                private final DifferentialDrive m_robotDrive =
                  new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
-               private final XboxController m_controller = new XboxController(0);
+               private final Gamepad controller = new Gamepad(0);
                private final Timer m_timer = new Timer();
             ```
 
@@ -333,7 +335,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
              wpi::DifferentialDrive m_robotDrive{
                [&](double output) { m_left.Set(output); },
                [&](double output) { m_right.Set(output); }};
-             wpi::XboxController m_controller{0};
+             wpi::Gamepad controller{0};
              wpi::Timer m_timer;
             ```
 
@@ -352,7 +354,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                  self.robotDrive = wpilib.drive.DifferentialDrive(
                      self.leftDrive, self.rightDrive
                  )
-                 self.controller = wpilib.XboxController(0)
+                 self.controller = wpilib.Gamepad(0)
                  self.timer = wpilib.Timer()
                  # We need to invert one side of the drivetrain so that positive voltages
                  # result in both sides moving forward. Depending on how your robot's
@@ -374,7 +376,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
               private final CANSparkMax m_rightDrive = new CANSparkMax(2, MotorType.kBrushless);
               private final DifferentialDrive m_robotDrive =
                 new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
-              private final XboxController m_controller = new XboxController(0);
+              private final Gamepad controller = new Gamepad(0);
               private final Timer m_timer = new Timer();
             ```
 
@@ -399,7 +401,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
              wpi::DifferentialDrive m_robotDrive{
                [&](double output) { m_left.Set(output); },
                [&](double output) { m_right.Set(output); }};
-             wpi::XboxController m_controller{0};
+             wpi::Gamepad controller{0};
              wpi::Timer m_timer;
             ```
 
@@ -425,7 +427,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                private final WPI_TalonSRX m_leftDrive = new WPI_TalonSRX(1);
                private final WPI_TalonSRX m_rightDrive = new WPI_TalonSRX(2);
                private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive1::set, m_rightDrive2::set);
-               private final XboxController m_controller = new XboxController(0);
+               private final Gamepad controller = new Gamepad(0);
                private final Timer m_timer = new Timer();
             ```
 
@@ -450,7 +452,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
              wpi::DifferentialDrive m_robotDrive{
                [&](double output) { m_left.Set(output); },
                [&](double output) { m_right.Set(output); }};
-             wpi::XboxController m_controller{0};
+             wpi::Gamepad controller{0};
              wpi::Timer m_timer;
             ```
 
@@ -463,7 +465,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                :lines: 13-30
                :lineno-start: 13
 
-The sample robot in our examples will have an Xbox Controller on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type ``DifferentialDrive`` (m_robotDrive), ``XboxController`` (m_controller) and ``Timer`` (m_timer). This section of the code does three things:
+The sample robot in our examples will have an Xbox Controller on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type ``DifferentialDrive`` (m_robotDrive), ``Gamepad`` (m_controller) and ``Timer`` (m_timer). This section of the code does three things:
 
 1. Defines the variables as members of our Robot class.
 2. Initializes the variables.
@@ -543,7 +545,7 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
       :lines: 43-50
       :lineno-match:
 
-Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the left thumbstick of the ``XBoxController`` to forward/back motion of the drive motors and the X-axis to turning motion.
+Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the left thumbstick of the ``Gamepoad`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
 ## Test Mode
 
