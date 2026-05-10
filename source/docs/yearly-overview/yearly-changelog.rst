@@ -51,6 +51,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 5: Add FTC fields
 - 2027 Alpha 5: Make swerve and differential kinematics functions immutable
 - 2027 Alpha 5: Rename "Test" robot mode to "Utility" to emphasize that it can be used for more than just testing
+- 2027 Alpha 6: Fix crash when using OpMode robot on Systemcore.
 
 #### Commands v2
 
@@ -65,6 +66,8 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 - 2027 Alpha 5: Add ``CommandGamepad`` for V3 commands
 - 2027 Alpha 5: Add compile-time checks for unsafe or incorrect coroutine usage
+- 2027 Alpha 6: Add rising and falling edge trigger factories
+- 2027 Alpha 6: Add a declarative state machine API on top of commands v3
 
 #### NetworkTables
 
@@ -127,9 +130,15 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 ### Simulation
 
+- 2027 Alpha 6: Don't wait on init for ``ExpansionHub`` in simulation.
+- 2027 Alpha 6: Add Onboard IMU Simulation
+- 2027 Alpha 6: GUI: fix game message string lifetime
+- 2027 Alpha 6: Make HalSim DS extension a no-op, fixing crash when running with the real DS option. Support for the real DS simulation option will be added in a future release.
+
 ### Romi/XRP
 
-2027 Alpha 5: Adding XRP Java and C++ examples for Timed Robot
+- 2027 Alpha 5: Adding XRP Java and C++ examples for Timed Robot
+- 2027 Alpha 6: Show IP and port of XRP/Romi to user on connection
 
 ### Java units
 
@@ -165,6 +174,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 5: Fix NT server mode
 - 2027 Alpha 5: Add correct time for rebuilt
 - 2027 Alpha 5: Update to SDL joystick mappings from 1-19-2026
+- 2027 Alpha 6: Fix memory corruption and incorrect POV count
 
 ## GradleRIO
 
@@ -188,6 +198,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 5: Improve error handling for 0 length downloads
 - 2027 Alpha 5: Fix Windows CRLF line break in installer when creating Linux desktop files
 - 2027 Alpha 5: Update to Avalonia 12
+- 2027 Alpha 6: Fix progress bar on Linux
 
 ## Visual Studio Code Extension
 
@@ -214,6 +225,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 ## Elastic
 
 - 2027 Alpha 5: Use Elastic 2027.0.0-alpha7
+- 2027 Alpha 6: Use Elastic 2027.0.0-alpha8
 
 ## WPIcal
 
