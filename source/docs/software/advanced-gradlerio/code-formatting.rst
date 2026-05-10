@@ -81,12 +81,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
-          distribution: 'zulu'
+          distribution: 'temurin'
           java-version: 17
       - run: ./gradlew spotlessCheck
 ```
@@ -164,38 +164,27 @@ Spotless will attempt to apply line endings per-OS, which means Git diffs will b
 
 ### Requirements
 
-- [Python 3.9 or higher](https://www.python.org/)
+- [Python 3.11 or higher](https://www.python.org/)
 
 You can install [wpiformat](https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.md) by typing ``pip3 install wpiformat`` into a terminal or command prompt.
 
 ### Usage
 
-wpiformat can be ran by typing ``wpiformat`` in a console. This will format with ``clang-format``. Three configuration files are required (``.clang-format``, ``.styleguide``, ``.styleguide-license``). These must exist in the project root.
+wpiformat can be ran by typing ``wpiformat`` in a console. This will format with ``clang-format``. There are three configuration files one can place in the project root: ``.clang-format`` (optional), ``.wpiformat`` (optional), and ``.wpiformat-license`` (required).
 
-- ``.clang-format``: :download:`Download <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.clang-format>`
-- ``.styleguide-license``: :download:`Download <https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.styleguide-license>`
+- ``.clang-format`` [style option docs](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
+- ``.wpiformat`` [configuration docs](https://github.com/wpilibsuite/styleguide/tree/main/wpiformat#wpiformat-1)
 
-An example styleguide is shown below:
+An example ``.wpiformat-license`` is shown below:
 
 ```text
-cppHeaderFileInclude {
-   \.h$
-   \.hpp$
-   \.inc$
-   \.inl$
-}
-cppSrcFileInclude {
-   \.cpp$
-}
-modifiableFileExclude {
-   gradle/
-}
+// Copyright (c) FIRST and other WPILib contributors.
+// Open Source Software; you can modify and/or share it under the terms of
+// the WPILib BSD license file in the root directory of this project.
 ```
-
-.. note:: Teams can adapt ``.styleguide`` and ``.styleguide-license`` however they wish. It's important that these are not deleted, as they are required to run wpiformat!
 
 You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git --no-pager diff --exit-code HEAD``, as shown in the example GitHub Actions workflow below:
 
-.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/.github/workflows/lint-format.yml
+.. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/.github/workflows/lint-format.yml
    :language: yaml
    :lines: 1-5, 13, 21-43

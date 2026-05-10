@@ -52,6 +52,7 @@ Currently, annotation logging supports the following data types:
 * Arrays of anything that inherits from ``StructSerializable``, such as ``Rotation2d[]`` or ``SwerveModuleState[]``
 * Java collections, like ``List`` and ``Set``, of ``String`` or ``StructSerializable`` objects, such as ``Set<String>`` or ``List<SwerveModuleState>``
 * Any ``Sendable`` object, like a ``DigitalInput`` (note: commands and subsystems are excluded and will not be logged using their sendable implementation)
+  * ``Mechanism2D`` objects will not be logged as they do not implement the ``Sendable`` interface in a way that is compatible with annotation logging.
 * Any ``BooleanSupplier``, ``IntSupplier``, ``LongSupplier``, or ``DoubleSupplier`` (note: this includes command triggers!)
 
 
@@ -254,7 +255,7 @@ Logging Third-Party Data
 
 A large part of the Java ecosystem is its access to third-party libraries that provide extra functionality, such as vendor libraries for interacting with custom hardware like motor controllers and sensors. If those vendors do not use logging annotations in their libraries, then you can still log them by writing a custom logger class! These classes are actually what the WPILib annotations will generate; you just write a custom one because third-party code cannot be annotated.
 
-Custom loggers can be declared in any package, and only need to have the ``@CustomLoggerFor`` annotation present to be able to be detected and used. They must extend from ``ClassSpecificLogger`` ([Javadoc](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/epilogue/logging/ClassSpecificLogger.html)) and must have a public no-argument constructor - failing to declare one will result in a compilation error - and must pass the type they log to the superclass constructor.
+Custom loggers can be declared in any package, and only need to have the ``@CustomLoggerFor`` annotation present to be able to be detected and used. They must extend from ``ClassSpecificLogger`` ([Javadoc](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/epilogue/logging/ClassSpecificLogger.html)) and must have a public no-argument constructor - failing to declare one will result in a compilation error - and must pass the type they log to the superclass constructor.
 
 .. note:: Only one custom logger may be defined for a single type. Custom loggers will only be detected and used if they are defined in the robot project; custom loggers defined in third-party libraries cannot be detected.
 

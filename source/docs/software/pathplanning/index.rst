@@ -15,5 +15,4 @@ We are sorry for the inconvenience.
 .. toctree::
    :maxdepth: 2
 
-   trajectory-tutorial/index
    choreo/index

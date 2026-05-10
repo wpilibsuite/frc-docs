@@ -102,19 +102,19 @@ Follow the [WPILib style guide](https://github.com/wpilibsuite/styleguide/) for 
 When possible, instead of using code blocks, an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
 
 ```ReST
-.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
    :language: java
    :lines: 19-25
    :lineno-match:
 
-.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
    :language: c++
-   :lines: 50-60
+   :lines: 49-59
    :lineno-match:
 
-.. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
+.. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
    :language: python
-   :lines: 12-29
+   :lines: 10-27
    :lineno-match:
 ```
 
@@ -127,7 +127,7 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
 
 ````ReST
 .. tab-set-code::
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
       :lines: 19-25
       :lineno-match:
@@ -136,7 +136,7 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
    // Start the timer.
    m_timer.Start();
    // Send Field2d to SmartDashboard.
-   frc::SmartDashboard::PutData(&m_field);
+   wpi::SmartDashboard::PutData(&m_field);
    // Reset the drivetrain's odometry to the starting pose of the trajectory.
    m_drive.ResetOdometry(m_trajectory.InitialPose());
    // Send our generated trajectory to Field2d.

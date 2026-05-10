@@ -34,7 +34,7 @@ The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instanc
    ```
 
    ```c++
-   frc::SmartDashboard::PutData("Auto Selector", &m_selector);
+   wpi::SmartDashboard::PutData("Auto Selector", &m_selector);
    ```
 
    ```python
@@ -56,7 +56,7 @@ The :guilabel:`PID Controller` widget allows you to quickly tune PID values for 
    ```
 
    ```c++
-   frc::SmartDashboard::PutData("Elevator PID Controller", &m_elevatorPIDController);
+   wpi::SmartDashboard::PutData("Elevator PID Controller", &m_elevatorPIDController);
    ```
 
    ```python

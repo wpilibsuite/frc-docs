@@ -25,7 +25,7 @@ The :guilabel:`Select Autonomous...` dropdown can be used so show the available 
    ```
 
    ```c++
-   frc::SmartDashboard::PutStringArray("Auto List", {"Drive Forwards", "Drive Backwards", "Shoot"});
+   wpi::SmartDashboard::PutStringArray("Auto List", {"Drive Forwards", "Drive Backwards", "Shoot"});
       // At the beginning of auto
    String autoName = SmartDashboard.GetString("Auto Selector", "Drive Forwards") // This would make "Drive Forwards the default auto
    switch(autoName) {
@@ -61,7 +61,7 @@ Sending to the "Gyro" NetworkTables entry will populate the gyro here.
    ```
 
    ```c++
-   frc::SmartDashboard::PutNumber("Gyro", Drivetrain.GetHeading());
+   wpi::SmartDashboard::PutNumber("Gyro", Drivetrain.GetHeading());
    ```
 
    ```python
@@ -78,7 +78,7 @@ There are four outputs that show the motor power to the drivetrain.  This is con
    ```
 
    ```c++
-   frc::SmartDashboard::PutNumberArray("Gyro", {drivetrain.GetLeftFront(), drivetrain.GetRightFront(), drivetrain.GetLeftBack(), drivetrain.GetRightBack()});
+   wpi::SmartDashboard::PutNumberArray("Gyro", {drivetrain.GetLeftFront(), drivetrain.GetRightFront(), drivetrain.GetLeftBack(), drivetrain.GetRightBack()});
    ```
 
    ```python
@@ -105,7 +105,7 @@ The strings are labeled top-to-bottom, left-to-right from "DB/String 0" to "DB/S
    ```
 
    ```c++
-   frc::SmartDashboard::PutString("DB/String 0", "My 21 Char TestString");
+   wpi::SmartDashboard::PutString("DB/String 0", "My 21 Char TestString");
    ```
 
    ```python
@@ -122,7 +122,7 @@ To read string data entered on the Dashboard:
    ```
 
    ```c++
-   std::string dashData = frc::SmartDashboard::GetString("DB/String 0", "myDefaultData");
+   std::string dashData = wpi::SmartDashboard::GetString("DB/String 0", "myDefaultData");
    ```
 
    ```python
@@ -143,7 +143,7 @@ The Buttons and LEDs are boolean values and are labeled top-to-bottom from "DB/B
    ```
 
    ```c++
-   frc::SmartDashboard::PutBoolean("DB/Button 0", true);
+   wpi::SmartDashboard::PutBoolean("DB/Button 0", true);
    ```
 
    ```python
@@ -160,7 +160,7 @@ To read from the Buttons: (default value is false)
    ```
 
    ```c++
-   bool buttonValue = frc::SmartDashboard::GetBoolean("DB/Button 0", false);
+   bool buttonValue = wpi::SmartDashboard::GetBoolean("DB/Button 0", false);
    ```
 
    ```python
@@ -181,7 +181,7 @@ The Sliders are bi-directional analog (double) controls/indicators with a range 
    ```
 
    ```c++
-   frc::SmartDashboard::PutNumber("DB/Slider 0", 2.58);
+   wpi::SmartDashboard::PutNumber("DB/Slider 0", 2.58);
    ```
 
    ```python
@@ -198,7 +198,7 @@ To read values from the Dashboard into the robot program: (default value of 0.0)
    ```
 
    ```c++
-   double dashData = frc::SmartDashboard::GetNumber("DB/Slider 0", 0.0);
+   double dashData = wpi::SmartDashboard::GetNumber("DB/Slider 0", 0.0);
    ```
 
    ```python

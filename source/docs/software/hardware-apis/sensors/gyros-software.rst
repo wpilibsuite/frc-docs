@@ -10,98 +10,23 @@ There are getters the current angular rate and heading and functions for zeroing
 
 .. note:: It is crucial that the robot remain stationary while calibrating a gyro.
 
+.. todo:: Add OnboardIMU
+
 ## ADIS16448
 
-The ADIS16448 uses the :code:`ADIS16448_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16448_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16448___i_m_u.html), :external:py:class:`Python <wpilib.ADIS16448_IMU>`).  See the [Analog Devices ADIS16448 documentation](https://wiki.analog.com/first/adis16448_imu_frc) for additional information and examples.
-
-.. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16448 is now built into WPILib.
-
-.. tab-set-code::
-
-    ```java
-    // ADIS16448 plugged into the MXP port
-    ADIS16448_IMU gyro = new ADIS16448_IMU();
-    ```
-
-    ```c++
-    // ADIS16448 plugged into the MXP port
-    ADIS16448_IMU gyro;
-    ```
-
-    ```python
-    from wpilib import ADIS16448_IMU
-    # ADIS16448 plugged into the MXP port
-    self.gyro = ADIS16448_IMU()
-    ```
+.. note:: Systemcore does not support the ADIS16448 IMU.
 
 ## ADIS16470
 
-The ADIS16470 uses the :code:`ADIS16470_IMU` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADIS16470_IMU.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_i_s16470___i_m_u.html), :external:py:class:`Python <wpilib.ADIS16470_IMU>`).  See the [Analog Devices ADIS16470 documentation](https://wiki.analog.com/first/adis16470_imu_frc) for additional information and examples.
-
-.. warning:: The Analog Devices documentation linked above contains outdated instructions for software installation as the ADIS16470 is now built into WPILib.
-
-.. tab-set-code::
-
-    ```java
-    // ADIS16470 plugged into the SPI port
-    ADIS16470_IMU gyro = new ADIS16470_IMU();
-    ```
-
-    ```c++
-    // ADIS16470 plugged into the SPI port
-    ADIS16470_IMU gyro;
-    ```
-
-    ```python
-    # ADIS16470 plugged into the SPI port
-    self.gyro = ADIS16470_IMU()
-    ```
+.. note:: Systemcore does not support the ADIS16470 IMU.
 
 ## ADXRS450_Gyro
 
-The :code:`ADXRS450_Gyro` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_a_d_x_r_s450___gyro.html), :external:py:class:`Python <wpilib.ADXRS450_Gyro>`) provides support for the Analog Devices ADXRS450 gyro available in the kit of parts, which connects over the SPI bus.
-
-.. note:: ADXRS450 Gyro accumulation is handled through special circuitry in the FPGA; accordingly only a single instance of :code:`ADXRS450_Gyro` may be used.
-
-.. tab-set-code::
-
-    ```java
-    // Creates an ADXRS450_Gyro object on the onboard SPI port
-    ADXRS450_Gyro gyro = new ADXRS450_Gyro();
-    ```
-
-    ```c++
-    // Creates an ADXRS450_Gyro object on the onboard SPI port
-    frc::ADXRS450_Gyro gyro;
-    ```
-
-    ```python
-    # Creates an ADXRS450_Gyro object on the onboard SPI port
-    self.gyro = ADXRS450_Gyro()
-    ```
+.. note:: Systemcore does not support the ADXRS450 gyro.
 
 ## AnalogGyro
 
-The :code:`AnalogGyro` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_gyro.html), :external:py:class:`Python <wpilib.AnalogGyro>`) provides support for any single-axis gyro with an analog output.
-
-.. note:: Gyro accumulation is handled through special circuitry in the FPGA; accordingly, :code:`AnalogGyro`\`s may only be used on analog ports 0 and 1.
-
-.. tab-set-code::
-
-    ```java
-    // Creates an AnalogGyro object on port 0
-    AnalogGyro gyro = new AnalogGyro(0);
-    ```
-
-    ```c++
-    // Creates an AnalogGyro object on port 0
-    frc::AnalogGyro gyro{0};
-    ```
-
-    ```python
-    # Creates an AnalogGyro object on port 0
-    self.gyro = AnalogGyro(0)
-    ```
+.. note:: Systemcore does not support analog gyros.
 
 ## navX
 
@@ -172,7 +97,7 @@ Shuffleboard includes a widget for displaying heading data from a gyro in the fo
     // Use gyro declaration from above here
     Robot::Robot() {
         // Places a compass indicator for the gyro heading on the dashboard
-        frc::Shuffleboard.GetTab("Example tab").Add(gyro);
+        wpi::Shuffleboard.GetTab("Example tab").Add(gyro);
     }
     ```
 
@@ -235,11 +160,11 @@ The following example shows how to stabilize heading using a simple P loop close
     // The gain for a simple P loop
     double kP = 1;
     // Initialize motor controllers and drive
-    frc::Spark leftLeader{0};
-    frc::Spark leftFollower{1};
-    frc::Spark rightLeader{2};
-    frc::Spark rightFollower{3};
-    frc::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
+    wpi::Spark leftLeader{0};
+    wpi::Spark leftFollower{1};
+    wpi::Spark rightLeader{2};
+    wpi::Spark rightFollower{3};
+    wpi::DifferentialDrive drive{[&](double output) { leftLeader.Set(output); },
                                  [&](double output) { rightLeader.Set(output); }};
     Robot::Robot() {
         // Invert the right side of the drivetrain. You might have to invert the other side
@@ -332,13 +257,13 @@ The following example shows how to stabilize heading using a simple P loop close
     // The heading of the robot when starting the motion
     double heading;
     // Initialize motor controllers and drive
-    frc::Spark left1{0};
-    frc::Spark left2{1};
-    frc::Spark right1{2};
-    frc::Spark right2{3};
-    frc::MotorControllerGroup leftMotors{left1, left2};
-    frc::MotorControllerGroup rightMotors{right1, right2};
-    frc::DifferentialDrive drive{leftMotors, rightMotors};
+    wpi::Spark left1{0};
+    wpi::Spark left2{1};
+    wpi::Spark right1{2};
+    wpi::Spark right2{3};
+    wpi::MotorControllerGroup leftMotors{left1, left2};
+    wpi::MotorControllerGroup rightMotors{right1, right2};
+    wpi::DifferentialDrive drive{leftMotors, rightMotors};
     Robot::Robot() {
       rightMotors.SetInverted(true);
     }
@@ -426,13 +351,13 @@ Much like with heading stabilization, this is often accomplished with a PID loop
     // The gain for a simple P loop
     double kP = 0.05;
     // Initialize motor controllers and drive
-    frc::Spark left1{0};
-    frc::Spark left2{1};
-    frc::Spark right1{2};
-    frc::Spark right2{3};
-    frc::MotorControllerGroup leftMotors{left1, left2};
-    frc::MotorControllerGroup rightMotors{right1, right2};
-    frc::DifferentialDrive drive{leftMotors, rightMotors};
+    wpi::Spark left1{0};
+    wpi::Spark left2{1};
+    wpi::Spark right1{2};
+    wpi::Spark right2{3};
+    wpi::MotorControllerGroup leftMotors{left1, left2};
+    wpi::MotorControllerGroup rightMotors{right1, right2};
+    wpi::DifferentialDrive drive{leftMotors, rightMotors};
     Robot::Robot() {
       rightMotors.SetInverted(true);
     }

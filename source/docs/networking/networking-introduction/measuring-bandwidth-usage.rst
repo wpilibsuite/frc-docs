@@ -2,7 +2,7 @@
 
 # Measuring Bandwidth Usage
 
-On the FRC\ |reg| Field each team is allocated limited network bandwidth (see R704 in the 2025 manual). Some teams may wish to measure their overall bandwidth consumption. This document details how to make that measurement.
+On the FRC\ |reg| Field each team is allocated limited network bandwidth (see R704 in the 2026 manual). Some teams may wish to measure their overall bandwidth consumption. This document details how to make that measurement.
 
 ## Measuring Bandwidth Using the Performance Monitor (Win 7/10)
 

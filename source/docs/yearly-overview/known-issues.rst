@@ -22,6 +22,21 @@ Due to the change in Hostname, the radio will not hand out .2 to SystemCore. Use
 
 Generally, everything should work in this configuration. But if you run into issues where the DS cannot connect (And you're sure the team number is set, it's required to connect the DS and can be verified on the screen), you can manually type the IP address into the team number selector in the DS.
 
+### Unable to deploy on macOS when multiple VS Code versions are installed
+
+**Issue:** On macOS, having multiple installed copies of Visual Studio Code can cause deploy operations to fail because of [macOS local network privacy](https://developer.apple.com/documentation/technotes/tn3179-understanding-local-network-privacy)
+
+**Workaround:** Open Settings -> Privacy and Security -> Local Network Access and ensure that all VS Code versions are allowed Local Network Access.
+
+If that doesn't work, you can run the following commands in a terminal and then reboot. This allows any program to access the robot's network.
+
+```zsh
+sudo defaults write com.apple.network.local-network AllowedEthernetLocalNetworkAddresses -array "10.0.0.0/8"
+sudo defaults write com.apple.network.local-network AllowedWiFiLocalNetworkAddresses -array "10.0.0.0/8"
+```
+
+.. warning:: This also allows any program to access any network with the address in the range of ``10.x.x.x``, which may be undesirable if you connect to other networks in that range beside's the robot's network. If you only access a robot with a single team number, you can substitute ``10.TE.AM.0/24``` (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Address Notation>`). If you only access the robot's network over eithernet or WiFi, you can only run the appropriate command.
+
 ### Driver Station randomly disabled
 
 **Issue:** The Driver Station contains tighter safety mechanisms introduced in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.

@@ -54,9 +54,9 @@ In C++ and Java the Game Data is accessed by using the GetGameSpecificMessage me
   ```
 
   ```c++
-  #include <frc/DriverStation.h>
+  #include <wpi/driverstation/DriverStation.hpp>
   std::string gameData;
-  gameData = frc::DriverStation::GetInstance().GetGameSpecificMessage();
+  gameData = wpi::DriverStation::GetInstance().GetGameSpecificMessage();
   if(gameData.length() > 0)
   {
     switch (gameData[0])

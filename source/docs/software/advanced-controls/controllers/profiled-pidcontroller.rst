@@ -4,7 +4,7 @@
 
 In the previous article, we saw how to use the ``TrapezoidProfile`` class to create and use a trapezoidal motion profile.  The example code from that article demonstrates manually composing the ``TrapezoidProfile`` class with the external PID control feature of a "smart" motor controller.
 
-This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class ([Java](https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/ProfiledPIDController.html), [C++](https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_profiled_p_i_d_controller.html), :external:py:class:`Python <wpimath.controller.ProfiledPIDController>`) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
+This combination of functionality (a motion profile for generating setpoints combined with a PID controller for following them) is extremely common.  To facilitate this, WPILib comes with a ``ProfiledPIDController`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/math/controller/ProfiledPIDController.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1math_1_1_profiled_p_i_d_controller.html), :external:py:class:`Python <wpimath.controller.ProfiledPIDController>`) that does most of the work of combining these two functionalities.  The API of the ``ProfiledPIDController`` is very similar to that of the ``PIDController``, allowing users to add motion profiling to a PID-controlled mechanism with very few changes to their code.
 
 ## Using the ProfiledPIDController class
 
@@ -34,9 +34,9 @@ Creating a ``ProfiledPIDController`` is nearly identical to :ref:`creating a PID
   // Creates a ProfiledPIDController
   // Max velocity is 5 meters per second
   // Max acceleration is 10 meters per second
-  frc::ProfiledPIDController<units::meters> controller(
+  wpi::math::ProfiledPIDController<units::meters> controller(
     kP, kI, kD,
-    frc::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq});
+    wpi::math::TrapezoidProfile<units::meters>::Constraints{5_mps, 10_mps_sq});
   ```
 
   ```python
@@ -84,76 +84,49 @@ The returned setpoint might then be used as in the following example:
 
 .. tab-set-code::
 
-  ```java
-  double lastSpeed = 0;
-  double lastTime = Timer.getFPGATimestamp();
-    // Controls a simple motor's position using a SimpleMotorFeedforward
-  // and a ProfiledPIDController
-  public void goToPosition(double goalPosition) {
-    double pidVal = controller.calculate(encoder.getDistance(), goalPosition);
-    double acceleration = (controller.getSetpoint().velocity - lastSpeed) / (Timer.getFPGATimestamp() - lastTime);
-    motor.setVoltage(
-        pidVal
-        + feedforward.calculate(controller.getSetpoint().velocity, acceleration));
-    lastSpeed = controller.getSetpoint().velocity;
-    lastTime = Timer.getFPGATimestamp();
-  }
-  ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/snippets/profiledpidfeedforward/Robot.java
+      :language: java
+      :lines: 37-42
+      :lineno-match:
 
-  ```c++
-  units::meters_per_second_t lastSpeed = 0_mps;
-  units::second_t lastTime = frc2::Timer::GetFPGATimestamp();
-    // Controls a simple motor's position using a SimpleMotorFeedforward
-  // and a ProfiledPIDController
-  void GoToPosition(units::meter_t goalPosition) {
-    auto pidVal = controller.Calculate(units::meter_t{encoder.GetDistance()}, goalPosition);
-    auto acceleration = (controller.GetSetpoint().velocity - lastSpeed) /
-        (frc2::Timer::GetFPGATimestamp() - lastTime);
-    motor.SetVoltage(
-         pidVal +
-        feedforward.Calculate(controller.GetSetpoint().velocity, acceleration));
-    lastSpeed = controller.GetSetpoint().velocity;
-    lastTime = frc2::Timer::GetFPGATimestamp();
-  }
-  ```
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/snippets/ProfiledPIDFeedforward/cpp/Robot.cpp
+      :language: c++
+      :lines: 25-32
+      :lineno-match:
 
-  ```python
-  from wpilib import Timer
-  from wpilib.controller import ProfiledPIDController
-  from wpilib.controller import SimpleMotorFeedforward
-  def __init__(self):
-      # Assuming encoder, motor, controller are already defined
-      self.lastSpeed = 0
-      self.lastTime = Timer.getFPGATimestamp()
-      # Assuming feedforward is a SimpleMotorFeedforward object
-      self.feedforward = SimpleMotorFeedforward(ks=0.0, kv=0.0, ka=0.0)
-  def goToPosition(self, goalPosition: float):
-      pidVal = self.controller.calculate(self.encoder.getDistance(), goalPosition)
-      acceleration = (self.controller.getSetpoint().velocity - self.lastSpeed) / (Timer.getFPGATimestamp() - self.lastTime)
-      self.motor.setVoltage(
-          pidVal
-          + self.feedforward.calculate(self.controller.getSetpoint().velocity, acceleration))
-      self.lastSpeed = controller.getSetpoint().velocity
-      self.lastTime = Timer.getFPGATimestamp()
-  ```
+   .. code-block:: python
+
+      from wpilib.controller import ProfiledPIDController
+      from wpilib.controller import SimpleMotorFeedforward
+      def __init__(self):
+          # Assuming encoder, motor, controller are already defined
+          self.lastSpeed = 0
+          # Assuming feedforward is a SimpleMotorFeedforward object
+          self.feedforward = SimpleMotorFeedforward(ks=0.0, kv=0.0, ka=0.0)
+      def goToPosition(self, goalPosition: float):
+          pidVal = self.controller.calculate(self.encoder.getDistance(), goalPosition)
+          self.motor.setVoltage(
+              pidVal
+              + self.feedforward.calculate(self.lastSpeed, self.controller.getSetpoint().velocity))
+          self.lastSpeed = self.controller.getSetpoint().velocity
 
 ## Complete Usage Example
 
-A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/2027/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp), [Python](https://github.com/robotpy/examples/tree/main/ElevatorProfiledPID)):
+A more complete example of ``ProfiledPIDController`` usage is provided in the ElevatorProfilePID example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/elevatorprofiledpid), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp), [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/ElevatorProfiledPID)):
 
 .. tab-set-code::
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorprofiledpid/Robot.java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/elevatorprofiledpid/Robot.java
     :language: java
     :lines: 5-
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp/Robot.cpp
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ElevatorProfiledPID/cpp/Robot.cpp
     :language: c++
     :lines: 5-
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/ElevatorProfiledPID/robot.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/ElevatorProfiledPID/robot.py
     :language: python
     :lines: 8-
     :lineno-match:

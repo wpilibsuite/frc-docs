@@ -174,7 +174,7 @@ For example, we might use the following Q and R for an elevator system with posi
 
    ```C++
    // Example system -- must be changed to match your robot.
-   LinearSystem<2, 1, 1> elevatorSystem = frc::LinearSystemId::IdentifyVelocitySystem(5, 0.5);
+   LinearSystem<2, 1, 1> elevatorSystem = wpi::math::LinearSystemId::IdentifyVelocitySystem(5, 0.5);
    LinearQuadraticRegulator<2, 1> controller{
        elevatorSystem,
        // q's elements

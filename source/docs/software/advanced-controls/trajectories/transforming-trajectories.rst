@@ -18,8 +18,8 @@ For example, a trajectory defined in coordinate system A can be redefined in coo
    ```
 
    ```c++
-   frc::Pose2d bOrigin{3_m, 3_m, frc::Rotation2d(30_deg)};
-   frc::Trajectory bTrajectory = aTrajectory.RelativeTo(bOrigin);
+   wpi::math::Pose2d bOrigin{3_m, 3_m, wpi::math::Rotation2d(30_deg)};
+   wpi::math::Trajectory bTrajectory = aTrajectory.RelativeTo(bOrigin);
    ```
 
    ```python
@@ -47,8 +47,8 @@ For example, one may want to transform a trajectory that begins at (2, 2, 30 deg
    ```
 
    ```c++
-   frc::Transform2d transform = Pose2d(4_m, 4_m, Rotation2d(50_deg)) - trajectory.InitialPose();
-   frc::Trajectory newTrajectory = trajectory.TransformBy(transform);
+   wpi::Transform2d transform = Pose2d(4_m, 4_m, Rotation2d(50_deg)) - trajectory.InitialPose();
+   wpi::math::Trajectory newTrajectory = trajectory.TransformBy(transform);
    ```
 
    ```python

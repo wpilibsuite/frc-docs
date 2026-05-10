@@ -24,7 +24,7 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 # -- Project information -----------------------------------------------------
 
 project = "FIRST Robotics Competition"
-copyright = "2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
+copyright = "2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
 version = "2027"
 
@@ -49,7 +49,6 @@ extensions = [
     "sphinxext.remoteliteralinclude",
     "sphinxext.toptranslators",
     "sphinxext.mimictoc",
-    "sphinxext.presentations",
     "hoverxref.extension",
     "notfound.extension",
     "versionwarning.extension",
@@ -170,6 +169,11 @@ linkcheck_ignore = [
     r".*electrodragon.com.*",
     r".*filezilla-project.org.*",
     r".*miktex.org.*",
+    r".*analog.com.*",
+    r".*opencv.org.*",
+    r".*strawberryperl.com.*",
+    r".*docutils.sourceforge.io.*",
+    r".*cppreference.com.*",
 ]
 
 linkcheck_anchors_ignore_for_url = [
@@ -198,7 +202,6 @@ templates_path = ["_templates"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [
     "docs/yearly-overview/2020-Game-Data.rst",
-    "docs/software/wpilib-tools/robotbuilder/resources/**",
     "docs/beta/*",
 ]
 
@@ -221,6 +224,7 @@ hoverxref_mathjax = True
 # Use MathJax3 for better page loading times
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 
+nitpicky = True
 
 # -- Options for HTML output -------------------------------------------------
 

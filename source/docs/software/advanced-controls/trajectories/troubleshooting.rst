@@ -77,7 +77,7 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
    NetworkTableEntry m_yEntry = nt::NetworkTableInstance::GetDefault().GetTable("troubleshooting")->GetEntry("Y");
    void DriveSubsystem::Periodic() {
        // Implementation of subsystem periodic method goes here.
-       m_odometry.Update(frc::Rotation2d(units::degree_t(GetHeading())),
+       m_odometry.Update(wpi::math::Rotation2d(units::degree_t(GetHeading())),
                            units::meter_t(m_leftEncoder.GetDistance()),
                            units::meter_t(m_rightEncoder.GetDistance()));
        auto translation = m_odometry.GetPose().Translation();
@@ -90,6 +90,9 @@ If your odometry is bad, then your Ramsete controller may misbehave, because it 
 3. Compare X and Y reported by the robot to actual X and Y. If X is off by more than 5 centimeters in the first test then you should check that you measured your wheel diameter correctly, and that your wheels are not worn down. If the second test is off by more than 5 centimeters in either X or Y then your track width (distance from the center of the left wheel to the center of the right wheel) may be incorrect; if you're sure that you measured the track width correctly with a tape measure then your robot's wheels may be slipping in a way that is not accounted for by track width, so try increasing the track width number or measuring it programmatically.
 
 ### Verify Feedforward
+
+.. todo:: Migrate from RAMSETE to LTV
+
 If your feedforwards are bad then the P controllers for each side of the robot will not track as well, and your ``DifferentialDriveVoltageConstraint`` will not limit your robot's acceleration accurately. We mostly want to turn off the wheel P controllers so that we can isolate and test the feedforwards.
 
 1. First, we must set disable the P controller for each wheel. Set the ``P`` gain to 0 for every controller. In the ``RamseteCommand`` example, you would set ``kPDriveVel`` to 0:
@@ -123,10 +126,10 @@ If your feedforwards are bad then the P controllers for each side of the robot w
    ```
 
    ```c++
-   frc::RamseteController m_disabledRamsete;
+   wpi::RamseteController m_disabledRamsete;
    m_disabledRamsete.SetEnabled(false);
    // Be sure to pass your new disabledRamsete variable
-   frc2::RamseteCommand ramseteCommand(
+   wpi::cmd::RamseteCommand ramseteCommand(
      exampleTrajectory,
      [this]() { return m_drive.GetPose(); },
      m_disabledRamsete,
@@ -174,13 +177,13 @@ If your feedforwards are bad then the P controllers for each side of the robot w
    auto leftMeas = table->GetEntry("left_measurement");
    auto rightRef = table->GetEntry("right_reference");
    auto rightMeas = table->GetEntry("right_measurement");
-   frc::PIDController leftController(DriveConstants::kPDriveVel, 0, 0);
-   frc::PIDController rightController(DriveConstants::kPDriveVel, 0, 0);
-   frc2::RamseteCommand ramseteCommand(
+   wpi::math::PIDController leftController(DriveConstants::kPDriveVel, 0, 0);
+   wpi::math::PIDController rightController(DriveConstants::kPDriveVel, 0, 0);
+   wpi::cmd::RamseteCommand ramseteCommand(
        exampleTrajectory, [this]() { return m_drive.GetPose(); },
-       frc::RamseteController(AutoConstants::kRamseteB,
+       wpi::RamseteController(AutoConstants::kRamseteB,
                                AutoConstants::kRamseteZeta),
-       frc::SimpleMotorFeedforward<units::meters>(
+       wpi::math::SimpleMotorfeedforward<units::meters>(
            DriveConstants::ks, DriveConstants::kv, DriveConstants::ka),
        DriveConstants::kDriveKinematics,
        [this] { return m_drive.GetWheelSpeeds(); }, leftController,

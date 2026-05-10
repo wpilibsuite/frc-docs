@@ -44,11 +44,11 @@ The example robot program below publishes incrementing X and Y values to a table
     ```
 
     ```c++
-    #include <frc/TimedRobot.h>
+    #include <wpi/framework/TimedRobot.hpp>
     #include <networktables/DoubleTopic.h>
     #include <networktables/NetworkTable.h>
     #include <networktables/NetworkTableInstance.h>
-    class EasyNetworkExample : public frc::TimedRobot {
+    class EasyNetworkExample : public wpi::TimedRobot {
      public:
       nt::DoublePublisher xPub;
       nt::DoublePublisher yPub;

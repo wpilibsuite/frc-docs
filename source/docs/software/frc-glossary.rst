@@ -41,7 +41,7 @@
       A core concept in probability which states that when many independent variables are added up, the result tends to look like a "normal" (or Gaussian) distribution, regardless of whether the independent variables themselves are normally distributed. See [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) on Wikipedia for more info.
 
    CIM
-      CCL Industrial Motor, Limited - [Chiaphua Components Limited](https://www.cclmotors.com/website/eng/home) is the company that made the commonly used, relatively powerful, brushed motor.
+      CCL Industrial Motor, Limited - [Chiaphua Components Limited](https://www.cclmotors.com/) is the company that made the commonly used, relatively powerful, brushed motor.
 
    Classical Mechanics
       The branch of physics which studies and describes the motion of relatively large, relatively slow objects. See [Classical Mechanics](https://en.wikipedia.org/wiki/Classical_mechanics) on Wikipedia for more info.
@@ -152,7 +152,7 @@
       Kit of Parts - the collection of items listed on the Kickoff Kit checklists, distributed to the team via FIRST Choice, or paid for completely (except shipping) with a Product Donation Voucher (PDV).
 
    KOP chassis
-      The KOP contains a drive base (chassis) distributed to every team (that did not opt out) as part of the :term:`KOP`. For the 2025 season, the KOP chassis is the [AM14U6](https://www.andymark.com/products/am14u6-6-wheel-drop-center-robot-drive-base-2025-frc-kit-of-parts-drive-base).
+      The KOP contains a drive base (chassis) distributed to every team (that did not opt out) as part of the :term:`KOP`. For the 2026 season, the KOP chassis is the [AM14U6](https://www.andymark.com/products/am14u6-6-wheel-drop-center-robot-drive-base-2025-frc-kit-of-parts-drive-base).
 
    LED
       Light-Emitting Diode - a semiconductor device that emits light when current flows through it.  Used on multiple robot parts to convey the status of the device.

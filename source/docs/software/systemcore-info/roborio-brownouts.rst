@@ -71,7 +71,7 @@ The NI roboRIO 2.0 adds the option for a software settable brownout level.  The 
   ```
 
   ```c++
-  frc::RobotController::SetBrownoutVoltage(7_V);
+  wpi::RobotController::SetBrownoutVoltage(7_V);
   ```
 
 ## Measuring Current Draw using the PDP/PDH

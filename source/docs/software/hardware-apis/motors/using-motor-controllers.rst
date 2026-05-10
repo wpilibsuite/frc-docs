@@ -37,7 +37,7 @@ Motor controllers should be declared as member variables in your subsystem class
    ```
 
    ```c++
-   class IntakeSubsystem : public frc2::SubsystemBase {
+   class IntakeSubsystem : public wpi::cmd::SubsystemBase {
     public:
      IntakeSubsystem() : m_motor{0} {}
 
@@ -50,7 +50,7 @@ Motor controllers should be declared as member variables in your subsystem class
      }
 
     private:
-     frc::Spark m_motor;
+     wpi::Spark m_motor;
    };
    ```
 
@@ -97,7 +97,7 @@ Motor controllers should be declared as member variables in your ``Robot`` class
    ```
 
    ```c++
-   class Robot : public frc::TimedRobot {
+   class Robot : public wpi::TimedRobot {
     public:
      Robot() : m_intakeMotor{0}, m_joystick{0} {}
 
@@ -111,8 +111,8 @@ Motor controllers should be declared as member variables in your ``Robot`` class
      }
 
     private:
-     frc::Spark m_intakeMotor;
-     frc::Joystick m_joystick;
+     wpi::Spark m_intakeMotor;
+     wpi::Joystick m_joystick;
    };
    ```
 

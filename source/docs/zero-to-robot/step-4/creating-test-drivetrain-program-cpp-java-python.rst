@@ -16,27 +16,46 @@ Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
    :alt: Choose "WPILib: Create a new project".
 
-This will bring up the "New Project Creator Window:"
+This will bring up the "WPILIb New Project Creator"
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
-   :alt: The different parts of the new project creation window.
+   :alt: The project type selector of the WPILib New Project Creator
 
-The elements of the New Project Creator Window are explained below:
+The **Project Type** chooses between an empty template project, or a :doc:`WPILib example project </docs/software/examples-tutorials/wpilib-examples>`. For this example, select :guilabel:`Example` and then choose :guilabel:`Next`.
 
-1. **Project Type**: The kind of project we wish to create.  For this example, select **Example**
-2. **Language**: This is the language (C++ or Java) that will be used for this project.
-3. **Project Base**: This box is used to select the base class or example to generate the project from. For this example, select **Getting Started**
-4. **Base Folder**: This determines the folder in which the robot project will be located.
-5. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
-6. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked. project folder will be given if the Create New Folder box is checked.
-7. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
-8. **Enable Desktop Support**: Enables unit test and simulation. While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it. For this example, do not check this box.
+This will bring up the language and base selection window.
 
-Once all the above have been configured, click "Generate Project" and the robot project will be created.
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-language.png
+   :alt: The language and base page of the WPILib New Project Creator
 
-.. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
+1. **Language**: This is the language (C++ or Java) that will be used for this project.
+2. **Project Base**: This box is used to select the base class or example to generate the project from. For this example, select **Getting Started**
+
+After making the selections, click :guilabel:`Next`.
+
+This will bring up the Project and Configuration window.
+
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-location.png
+   :alt: The project and configuration page of the WPILib New Project Creator
+
+1. **Base Folder**: This determines the folder in which the robot project will be located.
+2. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
+3. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
+4. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
+5. **Enable Desktop Support**: Enables unit test and simulation support (see :doc:`/docs/software/wpilib-tools/robot-simulation/introduction`). While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it. For this example, do not check this box.
 
 .. warning:: Creating projects on OneDrive is not supported as OneDrive's caching interferes with the build system. Some Windows installations put the Documents and Desktop folders on OneDrive by default.
+
+Once all the above have been configured, click :guilabel:`Next`.
+
+This will bring up the Review and Create window.
+
+.. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-configured.png
+   :alt: The review and create page of the WPILib New Project Creator
+
+Double check all the settings and click :guilabel:`Create Project`. If anything is not correct, click :guilabel:`Back` and make the necessary corrections.
+
+.. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
 
 ## Opening The New Project
 
@@ -103,19 +122,19 @@ This will create a ``robot.py`` and ``pyproject.toml`` file, but will not overwr
 
 First, here is what a simple code can look like for a Drivetrain with PWM controlled motors (such as SparkMax).
 
-.. note:: the Python example below is from `<https://github.com/robotpy/examples/tree/main/GettingStarted>`__
+.. note:: the Python example below is from `<https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/GettingStarted>`__
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
       :linenos:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2025.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/2109161534fdce08ae845452b746afaa38cf8fd6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :linenos:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c616f00ad7c316ecb21428118a2aefb8a5b104ad/getting-started/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/d88ac48cd5f1d0f11ec03c493301dc2048bb314a/examples/robot/GettingStarted/robot.py
       :language: python
       :linenos:
 
@@ -133,7 +152,7 @@ Now let's look at various parts of the code.
          .. tab-item:: Java
             :sync: java
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
                :language: java
                :lines: 7-12
                :linenos:
@@ -141,16 +160,16 @@ Now let's look at various parts of the code.
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 5-9
                :lineno-match:
 
          .. tab-item:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/GettingStarted/robot.py
                :language: python
-               :lines: 8-9
+               :lines: 8
                :lineno-match:
 
    .. tab-item:: CTRE-Phoenix6
@@ -169,9 +188,9 @@ Now let's look at various parts of the code.
          ```
 
          ```c++
-         #include <frc/TimedRobot.h>
-         #include <frc/Timer.h>
-         #include <frc/XboxController.h>
+         #include <wpi/framework/TimedRobot.hpp>
+         #include <wpi/system/Timer.hpp>
+         #include <wpi/driverstation/XboxController.hpp>
          #include <frc/drive/DifferentialDrive.h>
          #include <ctre/phoenix6/TalonFX.hpp>
          ```
@@ -196,11 +215,11 @@ Now let's look at various parts of the code.
             ```
 
             ```c++
-            #include <frc/TimedRobot.h>
-            #include <frc/Timer.h>
-            #include <frc/XboxController.h>
+            #include <wpi/framework/TimedRobot.hpp>
+            #include <wpi/system/Timer.hpp>
+            #include <wpi/driverstation/XboxController.hpp>
             #include <frc/drive/DifferentialDrive.h>
-            #include <frc/motorcontrol/PWMSparkMax.h>
+            #include <wpi/hardware/motor/PWMSparkMax.hpp>
             #include <rev/CANSparkMax.h>
             ```
 
@@ -226,9 +245,9 @@ Now let's look at various parts of the code.
          ```
 
          ```c++
-         #include <frc/TimedRobot.h>
-         #include <frc/Timer.h>
-         #include <frc/XboxController.h>
+         #include <wpi/framework/TimedRobot.hpp>
+         #include <wpi/system/Timer.hpp>
+         #include <wpi/driverstation/XboxController.hpp>
          #include <frc/drive/DifferentialDrive.h>
          #include <ctre/phoenix/motorcontrol/can/WPI_TalonSRX.h>
          ```
@@ -253,7 +272,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: Java
             :sync: java
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
                :language: java
                :lines: 19-25
                :lineno-match:
@@ -261,7 +280,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 50-60
                :lineno-match:
@@ -296,12 +315,12 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 12-13
                :lineno-match:
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 17-23
                :lineno-match:
@@ -311,11 +330,11 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
              // Robot drive system
              ctre::phoenix6::hardware::TalonFX m_left{1};
              ctre::phoenix6::hardware::TalonFX m_right{2};
-             frc::DifferentialDrive m_robotDrive{
+             wpi::DifferentialDrive m_robotDrive{
                [&](double output) { m_left.Set(output); },
                [&](double output) { m_right.Set(output); }};
-             frc::XboxController m_controller{0};
-             frc::Timer m_timer;
+             wpi::XboxController m_controller{0};
+             wpi::Timer m_timer;
             ```
 
          .. tab-item:: Python
@@ -362,12 +381,12 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 12-13
                :lineno-match:
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 17-23
                :lineno-match:
@@ -377,11 +396,11 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
              // Robot drive system
              rev::CANSparkMax m_left{1, rev::CANSparkMax::MotorType::kBrushless};
              rev::CANSparkMax m_right{2, rev::CANSparkMax::MotorType::kBrushless};
-             frc::DifferentialDrive m_robotDrive{
+             wpi::DifferentialDrive m_robotDrive{
                [&](double output) { m_left.Set(output); },
                [&](double output) { m_right.Set(output); }};
-             frc::XboxController m_controller{0};
-             frc::Timer m_timer;
+             wpi::XboxController m_controller{0};
+             wpi::Timer m_timer;
             ```
 
          .. tab-item:: Python
@@ -413,12 +432,12 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 12-13
                :lineno-match:
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 17-23
                :lineno-match:
@@ -428,11 +447,11 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
              // Robot drive system
              ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_left{1};
              ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_right{2};
-             frc::DifferentialDrive m_robotDrive{
+             wpi::DifferentialDrive m_robotDrive{
                [&](double output) { m_left.Set(output); },
                [&](double output) { m_right.Set(output); }};
-             frc::XboxController m_controller{0};
-             frc::Timer m_timer;
+             wpi::XboxController m_controller{0};
+             wpi::Timer m_timer;
             ```
 
          .. tab-item:: Python
@@ -458,7 +477,7 @@ The sample robot in our examples will have an Xbox Controller on USB port 0 for 
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
          :language: java
          :lines: 27-28,32-36
          :linenos:
@@ -467,7 +486,7 @@ The sample robot in our examples will have an Xbox Controller on USB port 0 for 
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
          :lines: 12-13,17-24
          :linenos:
@@ -486,19 +505,19 @@ The ``Robot`` constructor for our sample program inverts the right side of the d
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
       :lines: 38-54
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :lines: 25-36
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/GettingStarted/robot.py
       :language: python
-      :lines: 31-43
+      :lines: 29-41
       :lineno-match:
 
 The ``AutonomousInit`` method is run once each time the robot transitions to autonomous from another mode. In this program, we restart the ``Timer`` in this method.
@@ -509,19 +528,19 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
       :lines: 56-64
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :lines: 38-45
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/GettingStarted/robot.py
       :language: python
-      :lines: 45-52
+      :lines: 43-50
       :lineno-match:
 
 Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the left thumbstick of the ``XBoxController`` to forward/back motion of the drive motors and the X-axis to turning motion.
@@ -530,19 +549,19 @@ Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` 
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
       :lines: 66-73
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-5/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :lines: 45-48
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/242924b3843fdcc6efc2cefa8eac7bfff8b6bc48/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a4/examples/robot/GettingStarted/robot.py
       :language: python
-      :lines: 54-58
+      :lines: 52-56
       :lineno-match:
 
 Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.

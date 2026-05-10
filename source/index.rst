@@ -24,7 +24,7 @@ Community translations can be found in a variety of languages in the menu toward
 
       ^^^
 
-      If you are a returning team, please check out the overview of changes from 2024 to 2025, known issues, and quick start guide for updating.
+      If you are a returning team, please check out the overview of changes for 2027, known issues, and quick start guide for updating.
 
       +++
 
@@ -219,7 +219,7 @@ Community translations can be found in a variety of languages in the menu toward
 
       Java, C++, and Python class documentation.
 
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/2027/java/index.html
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/beta/java/index.html
          :color: primary
          :shadow:
          :align: center
@@ -228,7 +228,7 @@ Community translations can be found in a variety of languages in the menu toward
 
          Java
 
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/2027/cpp/index.html
+      .. button-link:: https://github.wpilib.org/allwpilib/docs/beta/cpp/index.html
          :color: primary
          :shadow:
          :align: center
@@ -368,8 +368,8 @@ Community translations can be found in a variety of languages in the menu toward
    :caption: API Docs
    :hidden:
 
-   WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/2027/java/index.html>
-   WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/2027/cpp/index.html>
+   WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/beta/java/index.html>
+   WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/beta/cpp/index.html>
    WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/stable/>
 
 .. toctree::

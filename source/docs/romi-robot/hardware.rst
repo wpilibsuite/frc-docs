@@ -22,12 +22,12 @@ The Romi Robot Kit for FIRST comes pre-soldered and only has to be put together 
 .. image:: images/hardware/assembly-motors.png
    :alt: Installing the motors on the Romi chassis.
 
-3. Press the wheels onto the output shafts of the motors until the motor shaft is flush with the outer face of the wheel. One way to do this is to set the wheel on a flat surface and line the chassis up with it so that the flat part of the motor’s D-shaft lines up correctly with the wheel. Then, lower the chassis, pressing the motor shaft into the wheel until it contacts the surface.
+3. Press the wheels onto the output shafts of the motors until the motor shaft is flush with the outer face of the wheel. One way to do this is to set the wheel on a flat surface and line the chassis up with it so that the flat part of the motor's D-shaft lines up correctly with the wheel. Then, lower the chassis, pressing the motor shaft into the wheel until it contacts the surface.
 
 .. image:: images/hardware/assembly-wheels.png
    :alt: Attaching the wheels on the Romi chassis.
 
-4. Flip the chassis upside down and place the three rollers for the rear ball caster into the cutouts in the chassis. Place the 1″ plastic ball on top of the three rollers. Then push the ball caster retention clip over the ball and into the chassis so the three legs snap into their respective holes.
+4. Flip the chassis upside down and place the three rollers for the rear ball caster into the cutouts in the chassis. Place the 1" plastic ball on top of the three rollers. Then push the ball caster retention clip over the ball and into the chassis so the three legs snap into their respective holes.
 
 .. image:: images/hardware/assembly-caster-rear.png
    :alt: Installing the rear ball caster on the Romi chassis.

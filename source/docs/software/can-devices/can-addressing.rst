@@ -89,7 +89,7 @@ The Message identifier is further broken down into 2 sub-fields: the
 
 The API Class is a 6-bit identifier for an API grouping. Similar
 messages are grouped into a single API Class. An example of the API
-Classes for the Jaguar Motor Controller is shown in the table below.
+Classes for a CAN Motor Controller is shown in the table below.
 
 ========================= =
 API Class
@@ -108,7 +108,7 @@ Ack                       8
 #### API Index
 
 The API Index is a 4-bit identifier for a particular message within an
-API Class. An example of the API Index values for the Jaguar Motor
+API Class. An example of the API Index values for a CAN Motor
 Controller Speed Control API Class is shown in the table below.
 
 =========================== ==

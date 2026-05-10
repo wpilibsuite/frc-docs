@@ -3,22 +3,22 @@
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/allwpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2027.0.0-alpha-2"
+      "latestVersion": "v2027.0.0-alpha-6"
     },
     {
       "baseUrl": "https://github.com/wpilibsuite/allwpilib/raw/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2027.0.0-alpha-2"
+      "latestVersion": "v2027.0.0-alpha-6"
     },
     {
-      "baseUrl": "https://raw.githubusercontent.com/robotpy/examples/",
-      "versionScheme": "\\d{4}\\.\\d\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "242924b3843fdcc6efc2cefa8eac7bfff8b6bc48"
+      "baseUrl": "https://raw.githubusercontent.com/robotpy/mostrobotpy/",
+      "versionScheme": "\\d{4}\\.\\d\\.\\d(?:(?:a|b)\\d)?|[0-9a-f]{40}",
+      "latestVersion": "2027.0.0a6"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/vscode-wpilib/",
       "versionScheme": "v\\d{4}\\.\\d\\.\\d(?:-(?:alpha|beta)-\\d)?|[0-9a-f]{40}",
-      "latestVersion": "v2027.0.0-alpha-2"
+      "latestVersion": "v2027.0.0-alpha-6"
     },
     {
       "baseUrl": "https://raw.githubusercontent.com/wpilibsuite/StandaloneAppSamples/",
@@ -27,19 +27,17 @@
     }
   ],
   "ignoredFiles": [
-    "source/docs/software/commandbased/command-scheduler.rst",
+    "source/docs/software/commandbased/commands-v2/command-scheduler.rst",
     "source/docs/software/hardware-apis/pneumatics/pressure.rst",
     "source/docs/software/hardware-apis/pneumatics/solenoids.rst",
     "source/docs/software/advanced-controls/state-space/state-space-pose-estimators.rst",
-    "source/docs/software/commandbased/subsystems.rst",
+    "source/docs/software/commandbased/commands-v2/subsystems.rst",
     "source/docs/software/advanced-controls/trajectories/troubleshooting.rst",
     "source/docs/software/hardware-apis/motors/wpi-drive-classes.rst",
-    "source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst",
-    "source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst",
-    "source/docs/software/pathplanning/trajectory-tutorial/entering-constants.rst",
     "source/docs/software/convenience-features/event-based.rst",
     "source/docs/software/dashboards/glass/field2d-widget.rst",
     "source/docs/software/hardware-apis/sensors/encoders-software.rst",
-    "source/docs/software/hardware-apis/misc/addressable-leds.rst"
+    "source/docs/software/hardware-apis/misc/addressable-leds.rst",
+    "source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst"
   ]
 }

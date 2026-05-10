@@ -38,12 +38,12 @@ The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a lambda 
     :sync: C++ (Header)
 
     ```c++
-    class Robot : public frc::TimedRobot {
+    class Robot : public wpi::TimedRobot {
      private:
-      frc::Joystick m_joystick{0};
-      frc::Encoder m_encoder{1, 2};
-      frc::Spark m_motor{1};
-      frc::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
+      wpi::Joystick m_joystick{0};
+      wpi::Encoder m_encoder{1, 2};
+      wpi::Spark m_motor{1};
+      wpi::math::PIDController m_controller{1.0, 0.0, 0.5, 10_ms};
       Robot();
       void TeleopPeriodic() override;
     };

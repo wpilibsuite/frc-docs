@@ -76,18 +76,18 @@ The roboRIO can only control a single addressable LED output at a time, but ther
 
       ```C++
       // Create the buffer
-      std::array<frc::AddressableLED::LEDData, 120> m_buffer;
+      std::array<wpi::AddressableLED::LEDData, 120> m_buffer;
 
       // Create the view for the section of the strip on the left side of the robot.
       // This section spans LEDs from index 0 through index 59, inclusive.
-      std::view<frc::AddressableLED::LEDData> m_left =
+      std::view<wpi::AddressableLED::LEDData> m_left =
          std::ranges::take_view(m_buffer, 60);
 
       // The section of the strip on the right side of the robot.
       // This section spans LEDs from index 60 through index 119, inclusive.
       // This view is reversed to cancel out the serpentine arrangement of the
       // physical LED strip on the robot.
-      std::view<frc::AddressableLED::LEDData> m_right =
+      std::view<wpi::AddressableLED::LEDData> m_right =
          std::ranges::reverse_view(
             std::ranges::drop_view(m_buffer, 60));
       ```
@@ -248,13 +248,13 @@ Use commands. The command framework is specifically built for managing when acti
         LEDSubsystem();
         void Periodic() override;
 
-        frc::CommandPtr RunPattern(frc::LEDPattern pattern);
+        wpi::cmd::CommandPtr RunPattern(wpi::LEDPattern pattern);
 
        private:
         static constexpr int kPort = 9;
         static constexpr int kLength = 120;
-        frc::AddressableLED m_led{kPort};
-        std::array<frc::AddressableLED::LEDData, kLength> m_ledBuffer;
+        wpi::AddressableLED m_led{kPort};
+        std::array<wpi::AddressableLED::LEDData, kLength> m_ledBuffer;
       }
       ```
 
@@ -266,7 +266,7 @@ Use commands. The command framework is specifically built for managing when acti
         // Set the default command to turn the strip off, otherwise the last colors written by
         // the last command to run will continue to be displayed.
         // Note: Other default patterns could be used instead!
-        SetDefaultCommand(RunPattern(frc::LEDPattern::Solid(frc::Color::kBlack)).WithName("Off"));
+        SetDefaultCommand(RunPattern(wpi::LEDPattern::Solid(wpi::Color::kBlack)).WithName("Off"));
       }
 
       LEDSubsystem::Periodic() {
@@ -274,7 +274,7 @@ Use commands. The command framework is specifically built for managing when acti
         m_led.SetData(m_ledBuffer);
       }
 
-      frc::CommandPtr LEDSubsystem::RunPattern(frc::LEDPattern pattern) {
+      wpi::cmd::CommandPtr LEDSubsystem::RunPattern(wpi::LEDPattern pattern) {
         // std::move is necessary for inline pattern declarations to work
         // Otherwise we could have a use-after-free!
         return Run([this, pattern = std::move(pattern)] { pattern.ApplyTo(m_buffer); });
