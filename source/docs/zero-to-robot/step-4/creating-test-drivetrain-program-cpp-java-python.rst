@@ -545,9 +545,9 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
       :lines: 43-50
       :lineno-match:
 
-Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the left thumbstick of the ``Gamepoad`` to forward/back motion of the drive motors and the X-axis to turning motion.
+Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the left thumbstick of the ``Gamepad`` to forward/back motion of the drive motors and the X-axis to turning motion.
 
-## Test Mode
+## Utility Mode
 
 .. tab-set-code::
 
@@ -566,7 +566,7 @@ Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` 
       :lines: 52-56
       :lineno-match:
 
-Test Mode is used for testing robot functionality. Similar to ``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided here for illustrative purposes only.
+Utility Mode is used for testing robot functionality or running other code that shouldn't be run in a match. Similar to ``TeleopInit``, the ``UtilityInit`` and ``UtilityPeriodic`` methods are provided here for illustrative purposes only.
 
 ## Deploying the Project to a Robot
 
