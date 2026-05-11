@@ -317,16 +317,6 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-               :language: c++
-               :lines: 12-13
-               :lineno-match:
-
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-               :language: c++
-               :lines: 17-23
-               :lineno-match:
-
             ```c++
             private:
              // Robot drive system
@@ -383,16 +373,6 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-               :language: c++
-               :lines: 12-13
-               :lineno-match:
-
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-               :language: c++
-               :lines: 17-23
-               :lineno-match:
-
             ```c++
             private:
              // Robot drive system
@@ -434,16 +414,6 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-               :language: c++
-               :lines: 12-13
-               :lineno-match:
-
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
-               :language: c++
-               :lines: 17-23
-               :lineno-match:
-
             ```c++
             private:
              // Robot drive system
@@ -465,7 +435,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                :lines: 13-30
                :lineno-start: 13
 
-The sample robot in our examples will have an Xbox Controller on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type ``DifferentialDrive`` (m_robotDrive), ``Gamepad`` (m_controller) and ``Timer`` (m_timer). This section of the code does three things:
+The sample robot in our examples will have an Xbox Controller (or other Gamepad)on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type ``DifferentialDrive`` (m_robotDrive), ``Gamepad`` (m_controller) and ``Timer`` (m_timer). This section of the code does three things:
 
 1. Defines the variables as members of our Robot class.
 2. Initializes the variables.
