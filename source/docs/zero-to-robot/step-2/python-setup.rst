@@ -14,6 +14,8 @@ Supported Operating Systems and Architectures:
 
 .. note:: Linux distributions other than those mentioned above that contain glibc >= 2.41 may work, but are unsupported.
 
+.. warning:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). While we will not explicitly block Windows 10 from being used, future releases may inadvertently break compatibility with Windows 10. We will not postpone these changes in order to maintain Windows 10 compatibility, and Windows 10 support may break as a result.
+
 On Windows and macOS, we recommend using the official Python installers distributed by python.org.
 
 * [Python for Windows](https://www.python.org/downloads/windows/)
