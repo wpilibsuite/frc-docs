@@ -7,9 +7,14 @@ This guide is intended for Python teams. Java and C++ teams can skip to :doc:`wp
 You must install a supported version of Python on a supported operating system. Every year we upgrade RobotPy to the latest available version of Python. In 2025 we support Python 3.9/3.10/3.11/3.12/3.13, but only 3.13 is available for the roboRIO.
 
 Supported Operating Systems and Architectures:
- * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
- * macOS 13.3 or higher
- * Ubuntu 22.04 & 24.04, 64 bit. Other Linux distributions with glibc >= 2.35 may work, but are unsupported
+ * Windows 11, 64 bit only. Arm-based Windows 11 is unsupported.
+ * Debian 13 'Trixie', 64 bit only.
+ * Ubuntu 26.04, 64 bit only.
+ * macOS 15 or higher, both Intel and Arm.
+
+.. note:: Linux distributions other than those mentioned above that contain glibc >= 2.41 may work, but are unsupported.
+
+.. warning:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). While we will not explicitly block Windows 10 from being used, future releases may inadvertently break compatibility with Windows 10. We will not postpone these changes in order to maintain Windows 10 compatibility, and Windows 10 support may break as a result.
 
 On Windows and macOS, we recommend using the official Python installers distributed by python.org.
 
