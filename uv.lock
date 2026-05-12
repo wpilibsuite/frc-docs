@@ -556,77 +556,6 @@ woff = [
 ]
 
 [[package]]
-name = "frc-docs"
-version = "9999"
-source = { virtual = "." }
-dependencies = [
-    { name = "black" },
-    { name = "doc8" },
-    { name = "docutils" },
-    { name = "fonttools", extra = ["woff"] },
-    { name = "frccontrol" },
-    { name = "furo" },
-    { name = "jsmin" },
-    { name = "markdown2" },
-    { name = "modern-sphinx-version-warning" },
-    { name = "sphinx" },
-    { name = "sphinx-build-compatibility" },
-    { name = "sphinx-contributors" },
-    { name = "sphinx-copybutton" },
-    { name = "sphinx-design" },
-    { name = "sphinx-hoverxref" },
-    { name = "sphinx-last-updated-by-git" },
-    { name = "sphinx-notfound-page" },
-    { name = "sphinx-tabs" },
-    { name = "sphinx-toolbox" },
-    { name = "sphinxcontrib-htmlhelp" },
-    { name = "sphinxcontrib-serializinghtml" },
-    { name = "sphinxcontrib-svg2pdfconverter" },
-    { name = "sphinxcontrib-video" },
-    { name = "sphinxext-delta" },
-    { name = "sphinxext-mimic" },
-    { name = "sphinxext-opengraph" },
-    { name = "sphinxext-photofinish" },
-    { name = "sphinxext-rediraffe" },
-    { name = "sphinxext-remoteliteralinclude" },
-    { name = "sphinxext-toptranslators" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "black", specifier = ">=26.0.0,<27.0.0" },
-    { name = "doc8", specifier = "==2.0.0" },
-    { name = "docutils", specifier = "==0.21.2" },
-    { name = "fonttools", extras = ["woff"], specifier = "==4.60.2" },
-    { name = "frccontrol", specifier = "==2026.11" },
-    { name = "furo", specifier = "==2025.12.19" },
-    { name = "jsmin", specifier = "==3.0.1" },
-    { name = "markdown2", specifier = "==2.5.5" },
-    { name = "modern-sphinx-version-warning", specifier = "==1.1.6" },
-    { name = "sphinx", specifier = "==8.2.3" },
-    { name = "sphinx-build-compatibility", git = "https://github.com/readthedocs/sphinx-build-compatibility" },
-    { name = "sphinx-contributors", specifier = "==0.3.0" },
-    { name = "sphinx-copybutton", specifier = "==0.5.2" },
-    { name = "sphinx-design", specifier = "==0.7.0" },
-    { name = "sphinx-hoverxref", specifier = "==1.4.2" },
-    { name = "sphinx-last-updated-by-git", specifier = "==0.3.8" },
-    { name = "sphinx-notfound-page", specifier = "==1.1.0" },
-    { name = "sphinx-tabs", specifier = "==3.4.5" },
-    { name = "sphinx-toolbox", specifier = "==4.1.2" },
-    { name = "sphinxcontrib-htmlhelp", specifier = "==2.1.0" },
-    { name = "sphinxcontrib-serializinghtml", specifier = "==2.0.0" },
-    { name = "sphinxcontrib-svg2pdfconverter", specifier = "==2.1.0" },
-    { name = "sphinxcontrib-video", specifier = "==0.4.2" },
-    { name = "sphinxext-delta", specifier = "==0.4.0" },
-    { name = "sphinxext-mimic", specifier = "==0.1.1" },
-    { name = "sphinxext-opengraph", specifier = "==0.13.0" },
-    { name = "sphinxext-photofinish", specifier = "==0.1.11" },
-    { name = "sphinxext-rediraffe", specifier = "==0.3.0" },
-    { name = "sphinxext-remoteliteralinclude", specifier = "==0.6.1" },
-    { name = "sphinxext-toptranslators", specifier = "==0.1.3" },
-]
-
-[[package]]
 name = "frccontrol"
 version = "2026.11"
 source = { registry = "https://pypi.org/simple" }
@@ -1908,6 +1837,77 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/0b/02/ae6ceac1baeda530866a85075641cec12989bd8d31af6d5ab4a3e8c92f47/webencodings-0.5.1.tar.gz", hash = "sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923", size = 9721, upload-time = "2017-04-05T20:21:34.189Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl", hash = "sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78", size = 11774, upload-time = "2017-04-05T20:21:32.581Z" },
+]
+
+[[package]]
+name = "wpilib-docs"
+version = "9999"
+source = { virtual = "." }
+dependencies = [
+    { name = "black" },
+    { name = "doc8" },
+    { name = "docutils" },
+    { name = "fonttools", extra = ["woff"] },
+    { name = "frccontrol" },
+    { name = "furo" },
+    { name = "jsmin" },
+    { name = "markdown2" },
+    { name = "modern-sphinx-version-warning" },
+    { name = "sphinx" },
+    { name = "sphinx-build-compatibility" },
+    { name = "sphinx-contributors" },
+    { name = "sphinx-copybutton" },
+    { name = "sphinx-design" },
+    { name = "sphinx-hoverxref" },
+    { name = "sphinx-last-updated-by-git" },
+    { name = "sphinx-notfound-page" },
+    { name = "sphinx-tabs" },
+    { name = "sphinx-toolbox" },
+    { name = "sphinxcontrib-htmlhelp" },
+    { name = "sphinxcontrib-serializinghtml" },
+    { name = "sphinxcontrib-svg2pdfconverter" },
+    { name = "sphinxcontrib-video" },
+    { name = "sphinxext-delta" },
+    { name = "sphinxext-mimic" },
+    { name = "sphinxext-opengraph" },
+    { name = "sphinxext-photofinish" },
+    { name = "sphinxext-rediraffe" },
+    { name = "sphinxext-remoteliteralinclude" },
+    { name = "sphinxext-toptranslators" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "black", specifier = ">=26.0.0,<27.0.0" },
+    { name = "doc8", specifier = "==2.0.0" },
+    { name = "docutils", specifier = "==0.21.2" },
+    { name = "fonttools", extras = ["woff"], specifier = "==4.60.2" },
+    { name = "frccontrol", specifier = "==2026.11" },
+    { name = "furo", specifier = "==2025.12.19" },
+    { name = "jsmin", specifier = "==3.0.1" },
+    { name = "markdown2", specifier = "==2.5.5" },
+    { name = "modern-sphinx-version-warning", specifier = "==1.1.6" },
+    { name = "sphinx", specifier = "==8.2.3" },
+    { name = "sphinx-build-compatibility", git = "https://github.com/readthedocs/sphinx-build-compatibility" },
+    { name = "sphinx-contributors", specifier = "==0.3.0" },
+    { name = "sphinx-copybutton", specifier = "==0.5.2" },
+    { name = "sphinx-design", specifier = "==0.7.0" },
+    { name = "sphinx-hoverxref", specifier = "==1.4.2" },
+    { name = "sphinx-last-updated-by-git", specifier = "==0.3.8" },
+    { name = "sphinx-notfound-page", specifier = "==1.1.0" },
+    { name = "sphinx-tabs", specifier = "==3.4.5" },
+    { name = "sphinx-toolbox", specifier = "==4.1.2" },
+    { name = "sphinxcontrib-htmlhelp", specifier = "==2.1.0" },
+    { name = "sphinxcontrib-serializinghtml", specifier = "==2.0.0" },
+    { name = "sphinxcontrib-svg2pdfconverter", specifier = "==2.1.0" },
+    { name = "sphinxcontrib-video", specifier = "==0.4.2" },
+    { name = "sphinxext-delta", specifier = "==0.4.0" },
+    { name = "sphinxext-mimic", specifier = "==0.1.1" },
+    { name = "sphinxext-opengraph", specifier = "==0.13.0" },
+    { name = "sphinxext-photofinish", specifier = "==0.1.11" },
+    { name = "sphinxext-rediraffe", specifier = "==0.3.0" },
+    { name = "sphinxext-remoteliteralinclude", specifier = "==0.6.1" },
+    { name = "sphinxext-toptranslators", specifier = "==0.1.3" },
 ]
 
 [[package]]

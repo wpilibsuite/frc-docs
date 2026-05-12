@@ -32,14 +32,14 @@ The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse re
   ```java
   // Creates a new Single-Pole IIR filter
   // Time constant is 0.1 seconds
-  // Period is 0.02 seconds - this is the standard FRC main loop period
+  // Period is 0.02 seconds - this is the standard main loop period
   LinearFilter filter = LinearFilter.singlePoleIIR(0.1, 0.02);
   ```
 
   ```c++
   // Creates a new Single-Pole IIR filter
   // Time constant is 0.1 seconds
-  // Period is 0.02 seconds - this is the standard FRC main loop period
+  // Period is 0.02 seconds - this is the standard main loop period
   wpi::math::LinearFilter<double> filter = wpi::math::LinearFilter<double>::SinglePoleIIR(0.1_s, 0.02_s);
   ```
 
@@ -47,7 +47,7 @@ The ``singlePoleIIR()`` factory method creates a single-pole infinite impulse re
   from wpimath.filter import LinearFilter
   # Creates a new Single-Pole IIR filter
   # Time constant is 0.1 seconds
-  # Period is 0.02 seconds - this is the standard FRC main loop period
+  # Period is 0.02 seconds - this is the standard main loop period
   filter = LinearFilter.singlePoleIIR(0.1, 0.02)
   ```
 
@@ -97,14 +97,14 @@ The ``highPass`` factory method creates a simple first-order infinite impulse re
   ```java
   // Creates a new high-pass IIR filter
   // Time constant is 0.1 seconds
-  // Period is 0.02 seconds - this is the standard FRC main loop period
+  // Period is 0.02 seconds - this is the standard main loop period
   LinearFilter filter = LinearFilter.highPass(0.1, 0.02);
   ```
 
   ```c++
   // Creates a new high-pass IIR filter
   // Time constant is 0.1 seconds
-  // Period is 0.02 seconds - this is the standard FRC main loop period
+  // Period is 0.02 seconds - this is the standard main loop period
   wpi::math::LinearFilter<double> filter = wpi::math::LinearFilter<double>::HighPass(0.1_s, 0.02_s);
   ```
 
@@ -112,7 +112,7 @@ The ``highPass`` factory method creates a simple first-order infinite impulse re
   from wpimath.filter import LinearFilter
   # Creates a new high-pass IIR filter
   # Time constant is 0.1 seconds
-  # Period is 0.02 seconds - this is the standard FRC main loop period
+  # Period is 0.02 seconds - this is the standard main loop period
   filter = LinearFilter.highPass(0.1, 0.02)
   ```
 

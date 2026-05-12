@@ -76,7 +76,7 @@ The NI roboRIO 2.0 adds the option for a software settable brownout level.  The 
 
 ## Measuring Current Draw using the PDP/PDH
 
-The FRC\ |reg| Driver Station works in conjunction with the roboRIO and PDP/PDH to extract logged data from the PDP/PDH and log it on your DS PC. A viewer for this data is still under development.
+The FIRST\ |reg| Driver Station works in conjunction with the roboRIO and PDP/PDH to extract logged data from the PDP/PDH and log it on your DS PC. A viewer for this data is still under development.
 
 In the meantime, teams can use their robot code and manual logging or AdvantageScope to visualize current draw on their robot as mechanisms are developed. For C++ and Java teams, use the PowerDistribution class as described in the :doc:`Power Distribution </docs/software/can-devices/power-distribution-module>` article. Plotting this information over time (easiest with AdvantageScope's Line Graph tab) can provide information to compare against and update your power budget or can locate mechanisms which do not seem to be performing as expected (due to incorrect load calculation, incorrect efficiency assumptions, or mechanism issues such as binding).
 

@@ -2,11 +2,11 @@
 
 # Software Component Overview
 
-The FRC\ |reg| software consists of a wide variety of mandatory and optional components. These elements are designed to assist you in the design, development, and debugging of your robot code as well as assist with control robot operation and to provide feedback when troubleshooting. For each software component this document will provide a brief overview of its purpose, a link to the package download, if appropriate, and a link to further documentation where available.
+The FRC\ |reg| & FTC\ |reg| software consists of a wide variety of mandatory and optional components. These elements are designed to assist you in the design, development, and debugging of your robot code as well as assist with control robot operation and to provide feedback when troubleshooting. For each software component this document will provide a brief overview of its purpose, a link to the package download, if appropriate, and a link to further documentation where available.
 
 ## Operating System Compatibility
 
-The primary supported OS for FRC components is Windows. All required FRC software components have been tested on Windows 10 & 11.
+The primary supported OS is Windows. All required FRC software components have been tested on Windows 10 & 11.
 
 Many of the tools for C++/Java/Python programming are also supported and tested on macOS and Linux. Teams programming in C++/Java/Python should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station and roboRIO Imaging Tool.
 
@@ -15,7 +15,7 @@ Many of the tools for C++/Java/Python programming are also supported and tested 
 .. image:: images/control-system-software/visual-studio-code.png
    :alt: Welcome screen of Visual Studio Code.
 
-Visual Studio Code is the supported development environment for C++, Java.  A guide to getting started with Java and C++ for FRC, including the installation and configuration of Visual Studio Code can be found :ref:`here <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
+Visual Studio Code is the supported development environment for C++, Java.  A guide to getting started with WPILib programming for Java and C++, including the installation and configuration of Visual Studio Code can be found :ref:`here <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
 
 ## FRC Driver Station Powered by NI LabVIEW (Windows Only)
 

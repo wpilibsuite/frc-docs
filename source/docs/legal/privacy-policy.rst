@@ -1,6 +1,6 @@
 # Privacy Policy
 
-WPILib is a project developed by volunteers who are largely based in the United States.  We take privacy seriously and collect only the minimum amount of information needed to support our mission of providing user-friendly libraries and software tools to enable FIRST Robotics Competition teams to be successful in writing software for their robots.
+WPILib is a project developed by volunteers who are largely based in the United States.  We take privacy seriously and collect only the minimum amount of information needed to support our mission of providing user-friendly libraries and software tools to enable FIRST teams to be successful in writing software for their robots.
 
 ## Information We Collect
 

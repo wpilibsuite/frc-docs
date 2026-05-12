@@ -1,6 +1,6 @@
 # XRP Hardware Support
 
-The XRP robot, having a different hardware architecture than a roboRIO, is compatible with a subset of commonly used FRC control system components.
+The XRP robot, having a different hardware architecture than a roboRIO, is compatible with a subset of commonly used FIRST control system components.
 
 ## Compatible Hardware
 

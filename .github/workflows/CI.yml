@@ -27,8 +27,8 @@ jobs:
     - name: Archive PDF
       uses: actions/upload-artifact@v7
       with:
-        name: frc-docs-pdf
-        path: build/latex/firstroboticscompetition.pdf
+        name: wpilib-docs-pdf
+        path: build/latex/wpilib-docs.pdf
         if-no-files-found: error
         
   build-html:
@@ -52,7 +52,7 @@ jobs:
     - name: Archive HTML
       uses: actions/upload-artifact@v7
       with:
-        name: frc-docs-html
+        name: wpilib-docs-html
         path: build/html/
         if-no-files-found: error
         

@@ -16,7 +16,7 @@ The digital inputs on the roboRIO have pull-up resistors that will make the inpu
 
 ## Types of Proximity Switches
 
-There are several types of proximity switches that are commonly used in FRC\ |reg|:
+There are several types of proximity switches that are commonly used:
 
 - `Mechanical Proximity Switches ("limit switches")`_
 - `Magnetic Proximity Switches`_
@@ -29,7 +29,7 @@ There are several types of proximity switches that are commonly used in FRC\ |re
 .. image:: images/digital-inputs-hardware/limit-switch-to-roborio.svg
    :alt: A normally open limit switch connected to a channel of the roboRIO DIO.
 
-Mechanical proximity switches (more commonly known as "limit switches") are probably the most commonly used proximity switch in FRC, due to their simplicity, ease-of-use, and low cost.  A limit switch is quite simply a switch attached to a mechanical arm, usually at the limits of travel.  The switch is activated when an object pushes against the switch arm, actuating the switch.
+Mechanical proximity switches (more commonly known as "limit switches") are probably the most commonly used proximity switches, due to their simplicity, ease-of-use, and low cost.  A limit switch is quite simply a switch attached to a mechanical arm, usually at the limits of travel.  The switch is activated when an object pushes against the switch arm, actuating the switch.
 
 Limit switches vary in size, the geometry of the switch-arm, and in the amount of "throw" required to activate the switch.  While limit switches are quite cheap, their mechanical actuation is sometimes less-reliable than no-contact alternatives.  However, they are also extremely versatile, as they can be triggered by any physical object capable of moving the switch arm.
 

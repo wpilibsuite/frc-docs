@@ -11,7 +11,7 @@ Both boards need to have firmware installed so that the robot operates properly.
 
 ### Download
 
-The Raspberry Pi firmware is based on WPILibPi (formerly FRCVision) and must be downloaded and written to the Raspberry Pi micro SD card. Click on ``Assets`` at the bottom of the description to see the available image files:
+The Raspberry Pi firmware is based on WPILibPi and must be downloaded and written to the Raspberry Pi micro SD card. Click on ``Assets`` at the bottom of the description to see the available image files:
 
 [Romi WPILibPi](https://github.com/wpilibsuite/WPILibPi/releases)
 

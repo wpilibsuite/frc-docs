@@ -191,7 +191,7 @@
       CTRE Power Distribution Panel - power distribution module with 8 high-current (40A max), 8 lower current (20A / 30A), 1 20A protected channel (for :term:`PCM` and :term:`VRM`), and 1 10A protected channel (for the roboRIO).
 
    permanent-magnet DC motor
-      The classification of all legal motors for the FIRST robotics competition. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See [permanent-magnet motor](https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors) on Wikipedia for more info.
+      The classification of all legal motors for the FRC and FTC. This type of motor takes direct current as input, and uses it to create a magnetic field. In turn, this magnetic field interacts with a physical magnet to create a force that turns the output shaft. Electrical ("brushless") or mechanical ("brushed") means are used to ensure the electrically-generated magnetic field always points in a direction that creates forces when it interacts with the physical magnet, even as the motor's shaft rotates. See [permanent-magnet motor](https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-magnet_motors) on Wikipedia for more info.
 
    persistent
       In :term:`NetworkTables`, a :term:`topic` that is saved to a file by the server and restored at startup.

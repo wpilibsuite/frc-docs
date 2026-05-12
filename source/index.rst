@@ -1,4 +1,4 @@
-.. FIRST Robotics Competition documentation master file, created by
+.. WPILib Documentation master file, created by
    sphinx-quickstart on Fri Apr  5 23:28:43 2019.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -8,9 +8,9 @@
 .. meta::
    :google-site-verification: POR_nG8b56eXGxmUIutST7jcA_Vl58ypSdJTzJ1g0zg
 
-# FIRST Robotics Competition Control System
+# FIRST Control System
 
-Welcome to the *FIRST*\ |reg| Robotics Competition Control System Documentation! This site contains everything you need to know for programming a competition robot!
+Welcome to the *FIRST*\ |reg| Control System Documentation! This site contains everything you need to know for programming a competition robot using WPILib!
 
 Community translations can be found in a variety of languages in the menu towards the bottom-right of the screen.
 
@@ -253,7 +253,7 @@ Community translations can be found in a variety of languages in the menu toward
 
       ^^^
 
-      Essential tooling such as FRC Driver Station, Dashboards, roboRIO Imaging Tool and more.
+      Essential tooling such as FIRST Driver Station, Dashboards, roboRIO Imaging Tool and more.
 
       +++
 
@@ -435,7 +435,7 @@ Community translations can be found in a variety of languages in the menu toward
    :caption: Contributing
    :hidden:
 
-   docs/contributing/frc-docs/index
+   docs/contributing/wpilib-docs/index
    docs/contributing/wpilib/index
 
 .. toctree::

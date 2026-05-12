@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 # Controls Glossary
 
 .. glossary::
@@ -6,7 +8,7 @@
       A very simple, no-tuning-required closed-loop control technique. It simply "turns on" the :term:`control effort` when the :term:`process variable` is too small, and "turns off" the control effort when the process variable is too big. It works well in some cases, but not all. See ["Bang-bang" control](https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control) on Wikipedia for more info.
 
    Cartesian coordinate system
-      A set of points in space where each point is described by a set of numbers, indicating its *coordinates* within that space. These coordinates are an expression of the :term:`orthogonal` distance of each point from a set of fixed, orthogonal axes (IE, a "rectangular" system). 2-dimension and 3-dimension spaces are most common in FRC (and likely what was learned in algebra 1), but any number of dimensions is theoretically possible. See [Cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) on Wikipedia for more info.
+      A set of points in space where each point is described by a set of numbers, indicating its *coordinates* within that space. These coordinates are an expression of the :term:`orthogonal` distance of each point from a set of fixed, orthogonal axes (IE, a "rectangular" system). 2-dimension and 3-dimension spaces are most common in FRC\ |reg| & FTC\ |reg| (and likely what was learned in algebra 1), but any number of dimensions is theoretically possible. See [Cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) on Wikipedia for more info.
 
    churning losses
       Complex friction-like forces arising from the fact that when gears and bearings rotate, they must displace liquid lubricant. This reduces the efficiency of rotating mechanisms.

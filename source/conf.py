@@ -23,7 +23,7 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 
 # -- Project information -----------------------------------------------------
 
-project = "FIRST Robotics Competition"
+project = "WPILib Documentation"
 copyright = "2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
 version = "2027"
@@ -96,7 +96,7 @@ versionwarning_admonition_type = "warning"
 versionwarning_banner_title = "Warning!"
 versionwarning_body_selector = 'article[role="main"]'
 
-# List of languages that frc-docs supports
+# List of languages that wpilib-docs supports
 localization_languages = [
     "en",
     "es",
@@ -118,7 +118,7 @@ rediraffe_auto_redirect_perc = 80
 
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/stable/"
-ogp_site_name = "FIRST Robotics Competition Documentation"
+ogp_site_name = "WPILib Documentation"
 ogp_image = "https://raw.githubusercontent.com/wpilibsuite/branding/main/export/png/wpilib-icon-256.png"
 
 # Configure photofinish ci mode
@@ -213,9 +213,9 @@ IMAGE_SIZE_EXCLUSIONS = [
     "docs/networking/networking-introduction/diagrams/mixing-static-dynamic.drawio.svg",
     "docs/software/vision-processing/wpilibpi/diagrams/vision-code-on-a-coprocessor.drawio.svg",
     "docs/software/vision-processing/introduction/diagrams/vision-code-on-a-coprocessor.drawio.svg",
-    "docs/controls-overviews/images/frc-control-system-layout.svg",
-    "docs/controls-overviews/images/frc-control-system-layout-rev.svg",
-    "docs/controls-overviews/images/frc-control-system-layout-basic.svg",
+    "docs/controls-overviews/images/wpilib-control-system-layout.svg",
+    "docs/controls-overviews/images/wpilib-control-system-layout-rev.svg",
+    "docs/controls-overviews/images/wpilib-control-system-layout-basic.svg",
 ]
 
 # Required to display LaTeX in hover content
@@ -277,7 +277,7 @@ user_options = [
 
 
 def setup(app):
-    app.add_css_file("css/frc-rtd.css")
+    app.add_css_file("css/wpilib-rtd.css")
 
     # Local Api Docs support
     app.add_js_file("js/api-docs-redirect.js")
@@ -286,7 +286,7 @@ def setup(app):
     is_rtl = app.config.language in rtl_locale
     app.config.hoverxref_tooltip_side = "left" if is_rtl else "right"
     if is_rtl:
-        app.add_css_file("css/frc-rtl.css")
+        app.add_css_file("css/wpilib-rtl.css")
 
     # Fix rtd version/language menu on iOS
     app.add_js_file("js/fix-rtd-menu-ios.js")

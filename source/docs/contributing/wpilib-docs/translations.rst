@@ -1,10 +1,10 @@
 # Translations
 
-frc-docs supports translations using the web-based [Transifex](https://www.transifex.com) utility. frc-docs has been translated into Spanish - Mexico (es_MX), French - Canada (fr_CA) and Turkish - Turkey (tr_TR). Chinese - China (zh_CN), Hebrew - Israel (he_IL), and Portuguese - Brazil  (pt_BR) have translations in progress. Translators that are fluent in *both* English and one of the specified languages would be greatly appreciated to contribute to the translations. Even once a translation is complete, it needs to be updated to keep up with changes in frc-docs.
+wpilib-docs supports translations using the web-based [Transifex](https://www.transifex.com) utility. wpilib-docs has been translated into Spanish - Mexico (es_MX), French - Canada (fr_CA) and Turkish - Turkey (tr_TR). Chinese - China (zh_CN), Hebrew - Israel (he_IL), and Portuguese - Brazil  (pt_BR) have translations in progress. Translators that are fluent in *both* English and one of the specified languages would be greatly appreciated to contribute to the translations. Even once a translation is complete, it needs to be updated to keep up with changes in wpilib-docs.
 
 ## Workflow
 
-Here are some steps to follow for translating frc-docs.
+Here are some steps to follow for translating wpilib-docs.
 
 1. Sign up for [Transifex](https://www.transifex.com/) and ask to join the [frc-docs project](https://explore.transifex.com/wpilib/frc-docs/), and request access to the language you'd like to contribute to.
 2. Join GitHub [discussions](https://github.com/wpilibsuite/allwpilib/discussions)! This is a direct means of communication with the WPILib team. You can use this to ask us questions in a fast and streamlined fashion.
@@ -39,4 +39,4 @@ Translations are pulled from Transifex and published automatically each day.
 
 ## Accuracy
 
-Translations should be accurate to the original text. If improvements to the English text can be made, open a PR or issue on the [frc-docs](https://github.com/wpilibsuite/frc-docs) repository. These can then get translated on merge.
+Translations should be accurate to the original text. If improvements to the English text can be made, open a PR or issue on the [wpilib-docs](https://github.com/wpilibsuite/frc-docs) repository. These can then get translated on merge.

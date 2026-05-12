@@ -90,7 +90,7 @@ If the :term:`setpoint` is constant, the implicit velocity :term:`setpoint` is z
 
 ## Integral Term
 
-.. important:: Integral gain is generally not recommended for FRC\ |reg| use. It is almost always better to use a feedforward controller to eliminate steady-state error.  If you do employ integral gain, it is crucial to provide some protection against :ref:`integral windup <docs/software/advanced-controls/introduction/common-control-issues:Integral Term Windup>`.
+.. important:: Integral gain is generally not recommended for FRC\ |reg| & FTC\ |reg| use. It is almost always better to use a feedforward controller to eliminate steady-state error.  If you do employ integral gain, it is crucial to provide some protection against :ref:`integral windup <docs/software/advanced-controls/introduction/common-control-issues:Integral Term Windup>`.
 
 The *Integral* term attempts to drive the total accumulated error to zero by contributing to the control signal proportionally to the sum of all past errors.  Intuitively, this tries to drive the *average* of all past :term:`output` values towards the *average* of all past :term:`reference` values.
 

@@ -1,10 +1,12 @@
+.. include:: <isonum.txt>
+
 # Programming the Romi
 
-Writing a program for the Romi is very similar to writing a program for a regular FRC robot. In fact, all the same tools (Visual Studio Code, Driver Station, SmartDashboard, etc) can be used with the Romi.
+Writing a program for the Romi is very similar to writing a program for a regular FRC\ |reg| or FTC\ |reg| robot. In fact, all the same tools (Visual Studio Code, Driver Station, SmartDashboard, etc) can be used with the Romi.
 
 ## Creating a Romi Program
 
-Creating a new program for a Romi is like creating a normal FRC program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps.
+Creating a new program for a Romi is like creating a normal WPILib program, similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` programming steps.
 
 WPILib comes with two templates for Romi projects, including one based on TimedRobot, and a Command-Based project template. Additionally, an example project is provided which showcases some of the built-in functionality of the Romi. This article will walk through creating a project from this example.
 
@@ -34,7 +36,7 @@ Fill out the rest of the fields in the "New Project Creator" and click "Generate
 
 Once the robot project is generated, it is essentially ready to run. The project has a pre-built ``Drivetrain`` class and associated default command that lets you drive the Romi around using a joystick.
 
-One aspect where a Romi project differs from a regular FRC robot project is that the code is not deployed directly to the Romi. Instead, a Romi project runs on your development computer and leverages the WPILib simulation framework to communicate with the Romi robot.
+One aspect where a Romi project differs from a regular FRC or FTCrobot project is that the code is not deployed directly to the Romi. Instead, a Romi project runs on your development computer and leverages the WPILib simulation framework to communicate with the Romi robot.
 
 To run a Romi program, first, ensure that your Romi is powered on. Next, connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If you changed the Romi network settings (for example, to connect it to your own WiFi network) you may change the IP address that your program uses to connect to the Romi. To do this, open the ``build.gradle`` file and update the ``wpi.sim.envVar`` line to the appropriate IP address.
 

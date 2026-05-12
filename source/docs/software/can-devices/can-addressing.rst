@@ -1,14 +1,14 @@
 .. include:: <isonum.txt>
 
-# FRC CAN Device Specifications
+# FIRST CAN Device Specifications
 
-This document seeks to describe the basic functions of the current FRC\ |reg|
+This document seeks to describe the basic functions of the current FRC\ |reg| & FTC\ |reg|
 :term:`CAN` system and the requirements for any new CAN devices seeking to work
 with the system.
 
 ## Addressing
 
-FRC CAN nodes assign arbitration IDs based on a pre-defined scheme that
+FIRST CAN nodes assign arbitration IDs based on a pre-defined scheme that
 breaks the ID into 5 components:
 
 #### Device Type
@@ -131,7 +131,7 @@ Set Setpoint No Ack         11
 
 Device Number is a 6-bit quantity indicating the number of the device of
 a particular type. Devices should default to device ID 0 to match other
-components of the FRC Control System. Device 0x3F may be reserved for
+components of the FIRST Control System. Device 0x3F may be reserved for
 device specific broadcast messages.
 
 .. image:: images/can-addressing/can-id-example.png
@@ -139,7 +139,7 @@ device specific broadcast messages.
 
 ## Protected Frames
 
-FRC CAN Nodes which implement actuator control capability (motor
+FIRST CAN Nodes which implement actuator control capability (motor
 controllers, relays, pneumatics controllers, etc.) must implement a way
 to verify that the robot is enabled and that commands originate with the
 main robot controller (i.e. the roboRIO).
@@ -170,10 +170,10 @@ System Resume     10
 Devices should disable immediately when receiving the Disable message
 (arbID 0).  Implementation of other broadcast messages is optional.
 
-## Requirements for FRC CAN Nodes
-For CAN Nodes to be accepted for use in the FRC System, they must:
+## Requirements for FIRST CAN Nodes
+For CAN Nodes to be accepted for use in the FIRST System, they must:
 
--  Communicate using Arbitration IDs which match the prescribed FRC
+-  Communicate using Arbitration IDs which match the prescribed FIRST
    format:
 
    -  A valid, issued CAN Device Type (per Table 1 - CAN Device Types)
