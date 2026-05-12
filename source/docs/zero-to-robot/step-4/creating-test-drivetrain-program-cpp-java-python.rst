@@ -306,12 +306,12 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
 
             ```java
             public class Robot extends TimedRobot {
-               private final TalonFX m_leftDrive = new TalonFX(1);
-               private final TalonFX m_rightDrive = new TalonFX(2);
-               private final DifferentialDrive m_robotDrive =
-                 new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
+               private final TalonFX leftDrive = new TalonFX(1);
+               private final TalonFX rightDrive = new TalonFX(2);
+               private final DifferentialDrive robotDrive =
+                 new DifferentialDrive(leftDrive::set, rightDrive::set);
                private final Gamepad controller = new Gamepad(0);
-               private final Timer m_timer = new Timer();
+               private final Timer timer = new Timer();
             ```
 
          .. tab-item:: C++
@@ -320,13 +320,13 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
             ```c++
             private:
              // Robot drive system
-             ctre::phoenix6::hardware::TalonFX m_left{1};
-             ctre::phoenix6::hardware::TalonFX m_right{2};
-             wpi::DifferentialDrive m_robotDrive{
-               [&](double output) { m_left.Set(output); },
-               [&](double output) { m_right.Set(output); }};
+             ctre::phoenix6::hardware::TalonFX left{1};
+             ctre::phoenix6::hardware::TalonFX right{2};
+             wpi::DifferentialDrive robotDrive{
+               [&](double output) { left.Set(output); },
+               [&](double output) { right.Set(output); }};
              wpi::Gamepad controller{0};
-             wpi::Timer m_timer;
+             wpi::Timer timer;
             ```
 
          .. tab-item:: Python
@@ -362,12 +362,12 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
 
             ```java
             public class Robot extends TimedRobot {
-              private final CANSparkMax m_leftDrive = new CANSparkMax(1, MotorType.kBrushless);
-              private final CANSparkMax m_rightDrive = new CANSparkMax(2, MotorType.kBrushless);
-              private final DifferentialDrive m_robotDrive =
-                new DifferentialDrive(m_leftDrive::set, m_rightDrive::set);
+              private final CANSparkMax leftDrive = new CANSparkMax(1, MotorType.kBrushless);
+              private final CANSparkMax rightDrive = new CANSparkMax(2, MotorType.kBrushless);
+              private final DifferentialDrive robotDrive =
+                new DifferentialDrive(leftDrive::set, rightDrive::set);
               private final Gamepad controller = new Gamepad(0);
-              private final Timer m_timer = new Timer();
+              private final Timer timer = new Timer();
             ```
 
          .. tab-item:: C++
@@ -376,13 +376,13 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
             ```c++
             private:
              // Robot drive system
-             rev::CANSparkMax m_left{1, rev::CANSparkMax::MotorType::kBrushless};
-             rev::CANSparkMax m_right{2, rev::CANSparkMax::MotorType::kBrushless};
-             wpi::DifferentialDrive m_robotDrive{
-               [&](double output) { m_left.Set(output); },
-               [&](double output) { m_right.Set(output); }};
+             rev::CANSparkMax left{1, rev::CANSparkMax::MotorType::kBrushless};
+             rev::CANSparkMax right{2, rev::CANSparkMax::MotorType::kBrushless};
+             wpi::DifferentialDrive robotDrive{
+               [&](double output) { left.Set(output); },
+               [&](double output) { right.Set(output); }};
              wpi::Gamepad controller{0};
-             wpi::Timer m_timer;
+             wpi::Timer timer;
             ```
 
          .. tab-item:: Python
@@ -404,11 +404,11 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
 
             ```java
             public class Robot extends TimedRobot {
-               private final WPI_TalonSRX m_leftDrive = new WPI_TalonSRX(1);
-               private final WPI_TalonSRX m_rightDrive = new WPI_TalonSRX(2);
-               private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftDrive1::set, m_rightDrive2::set);
+               private final WPI_TalonSRX leftDrive = new WPI_TalonSRX(1);
+               private final WPI_TalonSRX rightDrive = new WPI_TalonSRX(2);
+               private final DifferentialDrive robotDrive = new DifferentialDrive(leftDrive1::set, rightDrive2::set);
                private final Gamepad controller = new Gamepad(0);
-               private final Timer m_timer = new Timer();
+               private final Timer timer = new Timer();
             ```
 
          .. tab-item:: C++
@@ -417,13 +417,13 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
             ```c++
             private:
              // Robot drive system
-             ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_left{1};
-             ctre::phoenix::motorcontrol::can::WPI_TalonSRX m_right{2};
-             wpi::DifferentialDrive m_robotDrive{
-               [&](double output) { m_left.Set(output); },
-               [&](double output) { m_right.Set(output); }};
+             ctre::phoenix::motorcontrol::can::WPI_TalonSRX left{1};
+             ctre::phoenix::motorcontrol::can::WPI_TalonSRX right{2};
+             wpi::DifferentialDrive robotDrive{
+               [&](double output) { left.Set(output); },
+               [&](double output) { right.Set(output); }};
              wpi::Gamepad controller{0};
-             wpi::Timer m_timer;
+             wpi::Timer timer;
             ```
 
          .. tab-item:: Python
@@ -435,7 +435,7 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
                :lines: 13-30
                :lineno-start: 13
 
-The sample robot in our examples will have an Xbox Controller (or other Gamepad)on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type ``DifferentialDrive`` (m_robotDrive), ``Gamepad`` (m_controller) and ``Timer`` (m_timer). This section of the code does three things:
+The sample robot in our examples will have an Xbox Controller (or other Gamepad) on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type ``DifferentialDrive`` (robotDrive), ``Gamepad`` (controller) and ``Timer`` (timer). This section of the code does three things:
 
 1. Defines the variables as members of our Robot class.
 2. Initializes the variables.
