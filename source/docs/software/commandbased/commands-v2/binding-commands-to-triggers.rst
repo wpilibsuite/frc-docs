@@ -68,8 +68,6 @@ There are a number of bindings available for the ``Trigger`` class. All of these
 
 ``Trigger`` objects *do not need to survive past the call to a binding method*, so the binding methods may be simply called on a temp. Remember that button binding is *declarative*: bindings only need to be declared once, ideally some time during robot initialization. The library handles everything else.
 
-.. note:: The ``Button`` subclass is deprecated, and usage of its binding methods should be replaced according to the respective deprecation messages in the API docs.
-
 ### onTrue
 
 This binding schedules a command when a trigger changes from ``false`` to ``true`` (or, accordingly, when a button changes is initially pressed). The command will be scheduled on the iteration when the state changes, and will not be scheduled again unless the trigger becomes ``false`` and then ``true`` again (or the button is released and then re-pressed).

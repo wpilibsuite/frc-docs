@@ -433,3 +433,4 @@
 "docs/software/pathplanning/trajectory-tutorial/entering-constants.rst" "docs/software/pathplanning/index.rst"
 "docs/software/pathplanning/trajectory-tutorial/index.rst" "docs/software/pathplanning/index.rst"
 "docs/software/pathplanning/trajectory-tutorial/trajectory-tutorial-overview.rst" "docs/software/pathplanning/index.rst"
+"docs/software/advanced-controls/trajectories/holonomic.rst" "docs/software/advanced-controls/trajectories/index.rst"
