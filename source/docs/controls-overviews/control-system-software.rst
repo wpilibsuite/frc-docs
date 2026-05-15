@@ -26,13 +26,6 @@ This is the only software allowed to be used for the purpose of controlling the 
 
 ## Dashboard Options
 
-### LabVIEW Dashboard (Windows Only)
-
-.. image:: images/control-system-software/frc-labview-dashboard.png
-   :alt: The default LabVIEW Dashboard on the Drive tab.
-
-The LabVIEW Dashboard is automatically launched by the FRC Driver Station by default. The purpose of the Dashboard is to provide feedback about the operation of the robot using tabbed display with a variety of built in features.  More information about the FRC Default Dashboard software can be found :ref:`here <docs/software/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.
-
 ### Glass
 
 .. image:: images/control-system-software/glass.png

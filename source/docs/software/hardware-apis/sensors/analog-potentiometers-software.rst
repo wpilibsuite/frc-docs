@@ -27,8 +27,6 @@ An AnalogPotentiometer can be initialized as follows:
 
 ### Customizing the underlying AnalogInput
 
-.. note:: If the user changes the scaling of the :code:`AnalogInput` with oversampling, this must be reflected in the scale setting passed to the :code:`AnalogPotentiometer`.
-
 If the user would like to apply custom settings to the underlying :code:`AnalogInput` used by the :code:`AnalogPotentiometer`, an alternative constructor may be used in which the :code:`AnalogInput` is injected:
 
 .. tab-set-code::

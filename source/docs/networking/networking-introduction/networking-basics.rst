@@ -60,9 +60,9 @@ Statically assigning IP addresses means that we are manually telling each device
 
 ## What is link-local?
 
-If a device does not have an IP address, then it cannot communicate on a network. This can become an issue if we have a device that is set to dynamically acquire its address from a DHCP server, but there is no DHCP server on the network. An example of this would be when you have a laptop directly connected to a roboRIO and both are set to dynamically acquire an IP address. Neither device is a DHCP server, and since they are the only two devices on the network, they will not be assigned IP addresses automatically.
+If a device does not have an IP address, then it cannot communicate on a network. This can become an issue if we have a device that is set to dynamically acquire its address from a DHCP server, but there is no DHCP server on the network. An example of this would be when you have a laptop directly connected to a Systemcore and both are set to dynamically acquire an IP address. Neither device is a DHCP server, and since they are the only two devices on the network, they will not be assigned IP addresses automatically.
 
-Link-local addresses give us a standard set of addresses that we can "fall-back" to if a device set to acquire dynamically is not able to acquire an address. If this happens, the device will assign itself an IP address in the ``169.254.xx.yy`` address range; this is a link-local address. In our roboRIO and computer example above, both devices will realize they haven’t been assigned an IP address and assign themselves a link-local address. Once they are both assigned addresses in the ``169.254.xx.yy`` range, they will be in the same network and will be able to communicate, even though they were set to dynamic and a DHCP server did not assign addresses.
+Link-local addresses give us a standard set of addresses that we can "fall-back" to if a device set to acquire dynamically is not able to acquire an address. If this happens, the device will assign itself an IP address in the ``169.254.xx.yy`` address range; this is a link-local address. In our Systemcore and computer example above, both devices will realize they haven’t been assigned an IP address and assign themselves a link-local address. Once they are both assigned addresses in the ``169.254.xx.yy`` range, they will be in the same network and will be able to communicate, even though they were set to dynamic and a DHCP server did not assign addresses.
 
 ## IP Addressing for FRC
 
@@ -72,12 +72,14 @@ See the :doc:`IP Networking Article <ip-configurations>` for more information.
 
 While on the field, the team should not notice any issues with having devices set statically in the ``10.TE.AM.xx`` range, and having the field assign DHCP addresses as long as there are no IP address conflicts as referred to in the section above.
 
-In the pits, a team may encounter issues with mixing Static and DHCP devices for the following reason. As mentioned above, DHCP devices will fall back to a link-local address (``169.254.xx.yy``) if a server isn’t present. For static devices, the IP address will always be the same. If the DHCP server is not present and the roboRIO, driver station, and laptop fall back to link-local addresses, the statically set devices in the 10.TE.AM.xx range will be in a different network and not visible to those with link-local addresses. A visual description of this is provided below:
+In the pits, a team may encounter issues with mixing Static and DHCP devices for the following reason. As mentioned above, DHCP devices will fall back to a link-local address (``169.254.xx.yy``) if a server isn’t present. For static devices, the IP address will always be the same. If the DHCP server is not present and the Systemcore, driver station, and laptop fall back to link-local addresses, the statically set devices in the 10.TE.AM.xx range will be in a different network and not visible to those with link-local addresses. A visual description of this is provided below:
+
+.. todo:: Update image for Systemcore
 
 .. image:: diagrams/mixing-static-dynamic.drawio.svg
    :alt: How you can't mix link-local and static IP configurations.
 
-.. warning:: When connected via USB to the roboRIO, a :ref:`docs/networking/networking-utilities/portforwarding:Port Forwarding` configuration is required to access devices connected to the VH-109 radio (on the green network shown above).
+.. warning:: When connected via USB to Systemcore, a :ref:`docs/networking/networking-utilities/portforwarding:Port Forwarding` configuration is required to access devices connected to the VH-109 radio (on the green network shown above).
 
 ### Available Network Ports
 
@@ -103,7 +105,7 @@ This is the second benefit to DNS and the most relevant for FRC. With DNS, if we
 
 On the field and in the pits, there is no DNS server that allows us to perform the lookups like we do for the Google website, but we’d still like to have the benefits of not remembering every IP Address, and not having to guess at every device’s address if DHCP assigns a different address than we expect. This is where mDNS comes into the picture.
 
-mDNS provides us the same benefits as traditional DNS, but is just implemented in a way that does not require a server. Whenever a user asks to connect to a device using a friendly name, mDNS sends out a message asking the device with that name to identify itself. The device with the name then sends a return message including its IP address so all devices on the network can update their information. mDNS is what allows us to refer to our roboRIO as ``roboRIO-TEAM-FRC.local`` and have it connect on a DHCP network.
+mDNS provides us the same benefits as traditional DNS, but is just implemented in a way that does not require a server. Whenever a user asks to connect to a device using a friendly name, mDNS sends out a message asking the device with that name to identify itself. The device with the name then sends a return message including its IP address so all devices on the network can update their information. mDNS is what allows us to refer to our Systemcore as ``robot.local`` and have it connect on a DHCP network.
 
 .. note::
    If a device used for FRC does not support mDNS, then it will be assigned an IP Address in the 10.TE.AM.20 - 10.TE.AM.255 range, but we won’t know the exact address to connect and we won’t be able to use the friendly name like before. In this case, the device would need to have a static IP Address.
@@ -118,8 +120,8 @@ To use mDNS, an mDNS implementation is required to be installed on your PC. Here
 
 Windows:
 
-- **NI mDNS Responder:** Installed with the NI FRC Game Tools
 - **Apple Bonjour:** Installed with iTunes
+- **DNS Client:** Built-in to Windows
 
 OSX:
 
@@ -133,10 +135,7 @@ Linux:
 
 .. note:: Depending on your PC configuration, no changes may be required, this section is provided to assist with troubleshooting.
 
-To work properly mDNS must be allowed to pass through your firewall. Because the network traffic comes from the mDNS implementation and not directly from the Driver Station or IDE, allowing those applications through may not be sufficient. There are two main ways to resolve mDNS firewall issues:
-
-- Add an application/service exception for the mDNS implementation (NI mDNS Responder is ``C:\Program Files\National Instruments\Shared\mDNS Responder\nimdnsResponder.exe``)
-- Add a port exception for traffic to/from UDP 5353. IP Ranges:
+To work properly mDNS must be allowed to pass through your firewall. Because the network traffic comes from the mDNS implementation and not directly from the Driver Station or IDE, allowing those applications through may not be sufficient. The main way to resolve mDNS firewall issues is to add a port exception for traffic to/from UDP 5353. IP Ranges:
 
   - ``10.0.0.0 - 10.255.255.255``
   - ``172.16.0.0 - 172.31.255.255``
@@ -146,11 +145,11 @@ To work properly mDNS must be allowed to pass through your firewall. Because the
 
 ### mDNS - Browser support
 
-Most web-browsers should be able to utilize the mDNS address to access the roboRIO web server as long as an mDNS provider is installed. These browsers include Microsoft Edge, Firefox, and Google Chrome.
+Most web-browsers should be able to utilize the mDNS address to access the Systemcore web server as long as an mDNS provider is installed. These browsers include Microsoft Edge, Firefox, and Google Chrome.
 
 ## USB
 
-If using the USB interface, no network setup is required, but you do need the :doc:`FRC Game Tools </docs/zero-to-robot/step-2/frc-game-tools>` installed to provide the roboRIO USB Driver. The roboRIO driver will automatically configure the IP address of the host (your computer) and roboRIO and the software listed above should be able to locate and utilize your roboRIO.
+If using the USB interface, no network setup is required. Systemcore will automatically configure the IP address of the host (your computer) and Systemcore, and the software listed above should be able to locate and utilize your Systemcore.
 
 ## Ethernet/Wireless
 
@@ -160,6 +159,6 @@ The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` wi
 
 IP Addresses are what allow us to communicate with devices on a network. For FRC, these addresses are going to be in the 10.TE.AM.xx range if we are connected to a DHCP server or if they are assigned statically, or in the link-local ``169.254.xx.yy`` range if the devices are set to DHCP, but there is no server present. For more information on how IP Addresses work, see [this](https://support.microsoft.com/en-us/help/164015/understanding-tcp-ip-addressing-and-subnetting-basics) article by Microsoft.
 
-If all devices on the network support mDNS, then all devices can be set to DHCP and referred to using their friendly names (ex. ``roboRIO-TEAM-FRC.local``). If some devices do not support mDNS, they will need to be set to use static addresses.
+If all devices on the network support mDNS, then all devices can be set to DHCP and referred to using their friendly names (ex. ``robot.local``). If some devices do not support mDNS, they will need to be set to use static addresses.
 
 If all devices are set to use DHCP or Static IP assignments (with correct static settings), the communication should work in both the pit and on the field without any changes needed. If there are a mix of some Static and some DHCP devices, then the Static devices will connect on the field, but will not connect in the pit. This can be resolved by either setting all devices to static settings, or leaving the current settings and providing a DHCP server in the pit.

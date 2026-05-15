@@ -7,5 +7,4 @@
    glass/index
    advantagescope.rst
    elastic.rst
-   labview-dashboard/index
    troubleshooting-dashboard-connectivity.rst

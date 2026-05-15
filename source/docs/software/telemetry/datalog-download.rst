@@ -1,6 +1,6 @@
 # Downloading & Processing Data Logs
 
-Data logs can be processed and viewed offline by AdvantageScope, the DataLogTool, or custom utilities. If data log files are being stored to the roboRIO integrated flash memory instead of a removable USB flash drive, it's important to periodically download and delete data logs to avoid the storage from filling up.
+Data logs can be processed and viewed offline by AdvantageScope, the DataLogTool, or custom utilities. If data log files are being stored to the Systemcore integrated flash memory instead of a removable USB flash drive, it's important to periodically download and delete data logs to avoid the storage from filling up.
 
 ## Managing Data Logs with AdvantageScope
 
@@ -11,27 +11,27 @@ Data logs can be processed and viewed offline by AdvantageScope, the DataLogTool
 
 ## Managing Data Logs with the DataLogTool
 
-The DataLogTool desktop application integrates a SFTP client for downloading data log files from a network device (e.g. roboRIO or coprocessor) to the local computer.
+The DataLogTool desktop application integrates a SFTP client for downloading data log files from a network device (e.g. Systemcore or coprocessor) to the local computer.
 
 This process consists of four steps:
 
-1. Connect to roboRIO or coprocessor
+1. Connect to Systemcore or coprocessor
 2. Navigate to remote directory and select what files to download
 3. Select download folder
 4. Download files and optionally delete remote files after downloading
 
-### Connecting to RoboRIO
+### Connecting to Systemcore
 
 .. note:: The downloader uses SSH, so it will not be able to connect wirelessly if the radio firewall is enabled (e.g. when the robot is on the competition field).
 
 .. image:: images/datalogtool/download-connecting.png
    :alt: Connection display showing team number, username, and password fields.
 
-Either a team number, IP address, or hostname can be entered into the :guilabel:`Team Number / Address` field.  This field specifies the remote host to connect to. If a team number is entered, ``roborio-TEAM-frc.local`` is used as the connection address.
+Either a team number, IP address, or hostname can be entered into the :guilabel:`Team Number / Address` field.  This field specifies the remote host to connect to. If a team number is entered, ``robot.local`` is used as the connection address.
 
-The remote username and password are also entered here.  For the roboRIO, the username should be ``lvuser`` with a blank password.
+The remote username and password are also entered here.  For Systemcore, the username and password should both be ``systemcore``.
 
-The tool also supports connecting to network devices other than the roboRIO, such as coprocessors, as long as the device supports SFTP password-based authentication.
+The tool also supports connecting to network devices other than Systemcore, such as coprocessors, as long as the device supports SFTP password-based authentication.
 
 Click :guilabel:`Connect` to connect to the remote device.  This will attempt to connect to the device.  The connection attempt can be aborted at any time by clicking :guilabel:`Disconnect`.  If the application is unable to connect to the remote device, an error will be displayed above the :guilabel:`Team Number / Address` field and a new connection can be attempted.
 
@@ -39,7 +39,7 @@ Click :guilabel:`Connect` to connect to the remote device.  This will attempt to
 
 After the connection is successfully established, a simplified file browser will be displayed.  This is used to navigate the remote filesystem and select which files to download.  The first text box shows the current directory.  A specific directory can be navigated to by typing it in this text box and pressing Enter.  Alternatively, directory navigation can be performed by clicking on one of the directories that are listed below the remote dir textbox.  Following the list of directories is a table of files.  Only files with a ``.wpilog`` extension are shown, so the table will be empty if there are no log files in the current directory.  The checkbox next to each data log file indicates whether the file should be downloaded.
 
-.. note:: On the roboRIO, log files are typically saved to either ``/home/lvuser/logs`` or ``/u/logs`` (USB stick location).
+.. note:: On Systemcore, log files are typically saved to either ``/home/systemcore/logs`` or ``/u/logs`` (USB stick location).
 
 .. image:: images/datalogtool/download-file-selection.png
    :alt: Remote file browser showing remote directory, list of directories, and list of files with checkboxes next to each one.
@@ -65,13 +65,6 @@ The conversion process is started by opening data log files in the "Input Files"
 After at least one file is loaded, the "Entries" window displays a tree view of the entries (this can be changed to a flat view by right clicking on the "Entries" window title bar and unchecking :guilabel:`Tree View`).  Individual entries or entire subtrees can be checked or unchecked to indicate whether they should be included in the export.  The data type information and initial metadata for each entry is also shown in the table.  As the "Entries" view shows a merged view of all entries across all input files, if more than one input file is open, hovering over an entry's name will highlight what input files contain that entry.
 
 The output window is used to specify the output folder (via :guilabel:`Select Output Folder...`) as well as the output style (list or table).  The list output style outputs a CSV file with 3 columns (timestamp, entry name, and value) and a row for every value change (for every exported entry).  The table output style outputs a CSV file with a timestamp column and a column for every exported entry; a row is output for every value change (for every exported entry), but the value is placed in the correct column for that entry.  Clicking :guilabel:`Export CSV` will create a ``.csv`` file in the output folder corresponding to each input file.
-
-## Managing Data Logs with the Driver Station
-
-.. image:: images/datalogtool/DS_WPILogs.png
-   :alt: Selecting Upload WPILogs in the Driver Station
-
-The Driver Station software can download WPILogs. Click on the gear icon and select :guilabel:`Upload WPILogs`. The logs in ``/home/lvuser/logs`` or ``/u/logs`` will be downloaded automatically to ``C:\Users\Public\Documents\FRC\Log Files\WPILogs``
 
 ## Custom Processing of Data Logs
 
