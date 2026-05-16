@@ -49,7 +49,7 @@ black==26.3.1 \
     --hash=sha256:dfdd51fc3e64ea4f35873d1b3fb25326773d55d2329ff8449139ebaad7357efb \
     --hash=sha256:f1cd08e99d2f9317292a311dfe578fd2a24b15dbce97792f9c4d752275c1fa56 \
     --hash=sha256:f89f2ab047c76a9c03f78d0d66ca519e389519902fa27e7a91117ef7611c0568
-    # via frc-docs
+    # via wpilib-docs
 brotli==1.2.0 ; platform_python_implementation == 'CPython' \
     --hash=sha256:072e7624b1fc4d601036ab3f4f27942ef772887e876beff0301d261210bca97f \
     --hash=sha256:0cf8c3b8ba93d496b2fae778039e2f5ecc7cff99df84df337ca31d8f2252896c \
@@ -306,18 +306,18 @@ dict2css==0.3.0.post1 \
 doc8==2.0.0 \
     --hash=sha256:1267ad32758971fbcf991442417a3935c7bc9e52550e73622e0e56ba55ea1d40 \
     --hash=sha256:9862710027f793c25f9b1899150660e4bf1d4c9a6738742e71f32011e2e3f590
-    # via frc-docs
+    # via wpilib-docs
 docutils==0.21.2 \
     --hash=sha256:3a6b18732edf182daa3cd12775bbb338cf5691468f91eeeb109deff6ebfa986f \
     --hash=sha256:dafca5b9e384f0e419294eb4d2ff9fa826435bf15f15b7bd45723e8ad76811b2
     # via
     #   doc8
-    #   frc-docs
     #   restructuredtext-lint
     #   sphinx
     #   sphinx-prompt
     #   sphinx-tabs
     #   sphinx-toolbox
+    #   wpilib-docs
 domdf-python-tools==3.10.0 \
     --hash=sha256:2ae308d2f4f1e9145f5f4ba57f840fbfd1c2983ee26e4824347789649d3ae298 \
     --hash=sha256:5e71c1be71bbcc1f881d690c8984b60e64298ec256903b3147f068bc33090c36
@@ -368,16 +368,16 @@ fonttools==4.60.2 \
     --hash=sha256:ebfdb66fa69732ed604ab8e2a0431e6deff35e933a11d73418cbc7823d03b8e1 \
     --hash=sha256:fa8446e6ab8bd778b82cb1077058a2addba86f30de27ab9cc18ed32b34bc8667
     # via
-    #   frc-docs
     #   matplotlib
+    #   wpilib-docs
 frccontrol==2026.11 \
     --hash=sha256:47c73dc0228c02e4d335cc39d3bb1e074ca44d8ebd49cba0f60567ca8c965820 \
     --hash=sha256:6e69ca1d3a7519585c2d969c6958ac5ca957453171db58bff6271fb1d57063aa
-    # via frc-docs
+    # via wpilib-docs
 furo==2025.12.19 \
     --hash=sha256:188d1f942037d8b37cd3985b955839fea62baa1730087dc29d157677c857e2a7 \
     --hash=sha256:bb0ead5309f9500130665a26bee87693c41ce4dbdff864dbfb6b0dae4673d24f
-    # via frc-docs
+    # via wpilib-docs
 gitdb==4.0.12 \
     --hash=sha256:5ef71f855d191a3326fcfbc0d5da835f26b13fbcba60c32c21091c349ffdb571 \
     --hash=sha256:67073e15955400952c6565cc3e707c554a4eea2e428946f7a4c162fab9bd9bcf
@@ -410,7 +410,7 @@ jinja2==3.1.6 \
     #   sphinx-prompt
 jsmin==3.0.1 \
     --hash=sha256:c0959a121ef94542e807a674142606f7e90214a2b3d1eb17300244bbb5cc2bfc
-    # via frc-docs
+    # via wpilib-docs
 kiwisolver==1.5.0 \
     --hash=sha256:012b1eb16e28718fa782b5e61dc6f2da1f0792ca73bd05d54de6cb9561665fc9 \
     --hash=sha256:0255a027391d52944eae1dbb5d4cc5903f57092f3674e8e544cdd2622826b3f0 \
@@ -495,7 +495,7 @@ kiwisolver==1.5.0 \
 markdown2==2.5.5 \
     --hash=sha256:001547e68f6e7fcf0f1cb83f7e82f48aa7d48b2c6a321f0cd20a853a8a2d1664 \
     --hash=sha256:be798587e09d1f52d2e4d96a649c4b82a778c75f9929aad52a2c95747fa26941
-    # via frc-docs
+    # via wpilib-docs
 markupsafe==3.0.3 \
     --hash=sha256:0eb9ff8191e8498cca014656ae6b8d61f39da5f95b488805da4bb029cccbfbaf \
     --hash=sha256:1085e7fbddd3be5f89cc898938f42c0b3c711fdcb37d75221de2666af647c175 \
@@ -596,7 +596,7 @@ matplotlib==3.10.8 \
     # via frccontrol
 modern-sphinx-version-warning==1.1.6 \
     --hash=sha256:59e7b47e7af929363f7395c1de88f305c09d93bdc2c874d9a654adbd74d788c2
-    # via frc-docs
+    # via wpilib-docs
 more-itertools==10.8.0 \
     --hash=sha256:52d4362373dcf7c52546bc4af9a86ee7c4579df9a8dc268be0a2f949d376cc9b \
     --hash=sha256:f638ddf8a1a0d134181275fb5d58b086ead7c6a72429ad725c67503f13ba30bd
@@ -979,7 +979,6 @@ sphinx==8.2.3 \
     --hash=sha256:4405915165f13521d875a8c29c8970800a0141c14cc5416a38feca4ea5d9b9c3
     # via
     #   autodocsumm
-    #   frc-docs
     #   furo
     #   modern-sphinx-version-warning
     #   sphinx-autodoc-typehints
@@ -1004,6 +1003,7 @@ sphinx==8.2.3 \
     #   sphinxext-rediraffe
     #   sphinxext-remoteliteralinclude
     #   sphinxext-toptranslators
+    #   wpilib-docs
 sphinx-autodoc-typehints==3.5.2 \
     --hash=sha256:0accd043619f53c86705958e323b419e41667917045ac9215d7be1b493648d8c \
     --hash=sha256:5fcd4a3eb7aa89424c1e2e32bedca66edc38367569c9169a80f4b3e934171fdb
@@ -1013,23 +1013,23 @@ sphinx-basic-ng==1.0.0b2 \
     --hash=sha256:eb09aedbabfb650607e9b4b68c9d240b90b1e1be221d6ad71d61c52e29f7932b
     # via furo
 sphinx-build-compatibility @ git+https://github.com/readthedocs/sphinx-build-compatibility@58aabc5f207c6c2421f23d3578adc0b14af57047
-    # via frc-docs
+    # via wpilib-docs
 sphinx-contributors==0.3.0 \
     --hash=sha256:9b8c94fb5c1f851719a3abb9e15281c34f511b8aba71c97ac9c30bcb14f907fd \
     --hash=sha256:fd762cf65d4b931f4e073c1a0ae37aa5881b8a01788fb633963ba6b104c1e90b
-    # via frc-docs
+    # via wpilib-docs
 sphinx-copybutton==0.5.2 \
     --hash=sha256:4cf17c82fb9646d1bc9ca92ac280813a3b605d8c421225fd9913154103ee1fbd \
     --hash=sha256:fb543fd386d917746c9a2c50360c7905b605726b9355cd26e9974857afeae06e
-    # via frc-docs
+    # via wpilib-docs
 sphinx-design==0.7.0 \
     --hash=sha256:d2a3f5b19c24b916adb52f97c5f00efab4009ca337812001109084a740ec9b7a \
     --hash=sha256:f82bf179951d58f55dca78ab3706aeafa496b741a91b1911d371441127d64282
-    # via frc-docs
+    # via wpilib-docs
 sphinx-hoverxref==1.4.2 \
     --hash=sha256:4fc2e283e908d9df61ea9196589934944a7e2e6e3cb753a420b938cd6d14e220 \
     --hash=sha256:74fab961b1b8c0e9c2cf22fa195c0e783d635e78686d39dd06ff157c196ca0c9
-    # via frc-docs
+    # via wpilib-docs
 sphinx-jinja2-compat==0.4.1 \
     --hash=sha256:0188f0802d42c3da72997533b55a00815659a78d3f81d4b4747b1fb15a5728e6 \
     --hash=sha256:64ca0d46f0d8029fbe69ea612793a55e6ef0113e1bba4a85d402158c09f17a14
@@ -1037,11 +1037,11 @@ sphinx-jinja2-compat==0.4.1 \
 sphinx-last-updated-by-git==0.3.8 \
     --hash=sha256:6382c8285ac1f222483a58569b78c0371af5e55f7fbf9c01e5e8a72d6fdfa499 \
     --hash=sha256:c145011f4609d841805b69a9300099fc02fed8f5bb9e5bcef77d97aea97b7761
-    # via frc-docs
+    # via wpilib-docs
 sphinx-notfound-page==1.1.0 \
     --hash=sha256:835dc76ff7914577a1f58d80a2c8418fb6138c0932c8da8adce4d9096fbcd389 \
     --hash=sha256:913e1754370bb3db201d9300d458a8b8b5fb22e9246a816643a819a9ea2b8067
-    # via frc-docs
+    # via wpilib-docs
 sphinx-prompt==1.10.2 \
     --hash=sha256:47b592ba75caebd044b0eddf7a5a1b6e0aef6df587b034377cd101a999b686ba \
     --hash=sha256:6594337962c4b1498602e6984634bed4a0dc7955852e3cfc255eb0af766ed859
@@ -1050,12 +1050,12 @@ sphinx-tabs==3.4.5 \
     --hash=sha256:92cc9473e2ecf1828ca3f6617d0efc0aa8acb06b08c56ba29d1413f2f0f6cf09 \
     --hash=sha256:ba9d0c1e3e37aaadd4b5678449eb08176770e0fc227e769b6ce747df3ceea531
     # via
-    #   frc-docs
     #   sphinx-toolbox
+    #   wpilib-docs
 sphinx-toolbox==4.1.2 \
     --hash=sha256:0438f8342ba1c6c0d6e47207f4eac167adba61742e8c2b1dc9624ff955b7bc89 \
     --hash=sha256:c30a4f86c4c29e97adb0eb9337d35f5093cb96a44f49caffcf7d5bc58a88b781
-    # via frc-docs
+    # via wpilib-docs
 sphinxcontrib-applehelp==2.0.0 \
     --hash=sha256:2f29ef331735ce958efa4734873f084941970894c6090408b079c61b2e1c06d1 \
     --hash=sha256:4cd3f0ec4ac5dd9c17ec65e9ab272c9b867ea77425228e68ecf08d6b28ddbdb5
@@ -1068,8 +1068,8 @@ sphinxcontrib-htmlhelp==2.1.0 \
     --hash=sha256:166759820b47002d22914d64a075ce08f4c46818e17cfc9470a9786b759b19f8 \
     --hash=sha256:c9e2916ace8aad64cc13a0d233ee22317f2b9025b9cf3295249fa985cc7082e9
     # via
-    #   frc-docs
     #   sphinx
+    #   wpilib-docs
 sphinxcontrib-jquery==4.1 \
     --hash=sha256:1620739f04e36a2c779f1a131a2dfd49b2fd07351bf1968ced074365933abc7a \
     --hash=sha256:f936030d7d0147dd026a4f2b5a57343d233f1fc7b363f68b3d4f1cb0993878ae
@@ -1086,44 +1086,44 @@ sphinxcontrib-serializinghtml==2.0.0 \
     --hash=sha256:6e2cb0eef194e10c27ec0023bfeb25badbbb5868244cf5bc5bdc04e4464bf331 \
     --hash=sha256:e9d912827f872c029017a53f0ef2180b327c3f7fd23c87229f7a8e8b70031d4d
     # via
-    #   frc-docs
     #   sphinx
+    #   wpilib-docs
 sphinxcontrib-svg2pdfconverter==2.1.0 \
     --hash=sha256:805635ac274583e1606b0ec7fb21f16b69ca8ff223dd7e237d91127015628b0c \
     --hash=sha256:9756e82d5f3bf11629ffcbafb1f8a1092d3bb4789e33494032cdce9a9c8459d3
-    # via frc-docs
+    # via wpilib-docs
 sphinxcontrib-video==0.4.2 \
     --hash=sha256:18477fd9454ac8c69259e6d24e782d8b802345b6475de6216351c2305b06c898 \
     --hash=sha256:7dfd01e5e2025de39536457854052b18723575d6213d96ca35f83e3154dc0315
-    # via frc-docs
+    # via wpilib-docs
 sphinxext-delta==0.4.0 \
     --hash=sha256:0537ca8b81fc5bb0226de33f679a325ef7e23420c6a8f9770d9c64eff898a50b \
     --hash=sha256:1bf31ca68ce81419a56cdf221402f2fa9f531533919b471bec829a599cb56075
-    # via frc-docs
+    # via wpilib-docs
 sphinxext-mimic==0.1.1 \
     --hash=sha256:08f0840a59c58ca71db1378fd5aeeba6149579de583b885658f9ddb59299a8c9 \
     --hash=sha256:e1e5e0229811cc816eced0244c9591e1eead62b57a7e41371b9b3ef4c6eb854d
-    # via frc-docs
+    # via wpilib-docs
 sphinxext-opengraph==0.13.0 \
     --hash=sha256:103335d08567ad8468faf1425f575e3b698e9621f9323949a6c8b96d9793e80b \
     --hash=sha256:936c07828edc9ad9a7b07908b29596dc84ed0b3ceaa77acdf51282d232d4d80e
-    # via frc-docs
+    # via wpilib-docs
 sphinxext-photofinish==0.1.11 \
     --hash=sha256:175f8a1522f2decc59b34daa974c7ff92d037b0820f4af4f6218df967b68ebfa \
     --hash=sha256:25c1098ce9e7a0c17ceee27d6432940f4c2f32b8efa7f391384023a4364f7578
-    # via frc-docs
+    # via wpilib-docs
 sphinxext-rediraffe==0.3.0 \
     --hash=sha256:f319b3ccb7c3c3b6f63ffa6fd3eeb171b6d272df55075a9e84364394f391f507 \
     --hash=sha256:f4220beafa99c99177488276b8e4fcf61fbeeec4253c1e4aae841a18c475330c
-    # via frc-docs
+    # via wpilib-docs
 sphinxext-remoteliteralinclude==0.6.1 \
     --hash=sha256:70271f0404476c08105abff5b30c636864461c1970e47efae0655c5774429a5c \
     --hash=sha256:a8b072a6e88a336662810017da3d4eeb154a4ef4ca8b42db69015dbbd36189c7
-    # via frc-docs
+    # via wpilib-docs
 sphinxext-toptranslators==0.1.3 \
     --hash=sha256:524950d326f035955388bafac1f606263f186973a8f86b383faa75bd71db69f3 \
     --hash=sha256:9d6d0eed96e84edd70a83711ccaca7c4914a29123f2507aa89f79bd9d7b7fe9f
-    # via frc-docs
+    # via wpilib-docs
 standard-imghdr==3.10.14 ; python_full_version >= '3.13' \
     --hash=sha256:2598fe2e7c540dbda34b233295e10957ab8dc8ac6f3bd9eaa8d38be167232e52 \
     --hash=sha256:cdf6883163349624dee9a81d2853a20260337c4cd41c04e99c082e01833a08e2

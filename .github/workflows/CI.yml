@@ -28,7 +28,7 @@ jobs:
       uses: actions/upload-artifact@v7
       with:
         name: wpilib-docs-pdf
-        path: build/latex/wpilib-docs.pdf
+        path: build/latex/wpilib.pdf
         if-no-files-found: error
         
   build-html:

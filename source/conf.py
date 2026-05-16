@@ -213,9 +213,9 @@ IMAGE_SIZE_EXCLUSIONS = [
     "docs/networking/networking-introduction/diagrams/mixing-static-dynamic.drawio.svg",
     "docs/software/vision-processing/wpilibpi/diagrams/vision-code-on-a-coprocessor.drawio.svg",
     "docs/software/vision-processing/introduction/diagrams/vision-code-on-a-coprocessor.drawio.svg",
-    "docs/controls-overviews/images/wpilib-control-system-layout.svg",
-    "docs/controls-overviews/images/wpilib-control-system-layout-rev.svg",
-    "docs/controls-overviews/images/wpilib-control-system-layout-basic.svg",
+    "docs/controls-overviews/images/frc-control-system-layout.svg",
+    "docs/controls-overviews/images/frc-control-system-layout-rev.svg",
+    "docs/controls-overviews/images/frc-control-system-layout-basic.svg",
 ]
 
 # Required to display LaTeX in hover content
