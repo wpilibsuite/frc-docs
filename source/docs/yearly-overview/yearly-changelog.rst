@@ -14,7 +14,7 @@ Due to internal GradleRIO changes, it is necessary to update projects from previ
 
 In order to more closly track C++ compiler feature support, the supported Linux distribution has changed to only the latest Ubuntu LTS. See :ref:`Supported Operating Systems and Architectures <docs/software/what-is-wpilib:Platform Support>` for more information.
 
-.. note:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11.
+.. warning:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). While we will not explicitly block Windows 10 from being used, future releases may inadvertently break compatibility with Windows 10. We will not postpone these changes in order to maintain Windows 10 compatibility, and Windows 10 support may break as a result.
 
 - Use Java 25 and C++ 23
 - Add Commands v3 framework for Java. Documentation is in work. In the meantime, see the [Commands v3 Conference ](https://www.chiefdelphi.com/t/wpilib-commands-v3-championship-conference/519702), [Design Document](https://github.com/wpilibsuite/allwpilib/blob/main/design-docs/commands-v3.md) and the port of the [Hatchbot example to Commands v3](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotcmdv3).

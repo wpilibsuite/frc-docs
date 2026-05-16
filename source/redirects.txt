@@ -433,6 +433,7 @@
 "docs/software/pathplanning/trajectory-tutorial/entering-constants.rst" "docs/software/pathplanning/index.rst"
 "docs/software/pathplanning/trajectory-tutorial/index.rst" "docs/software/pathplanning/index.rst"
 "docs/software/pathplanning/trajectory-tutorial/trajectory-tutorial-overview.rst" "docs/software/pathplanning/index.rst"
+"docs/software/advanced-controls/trajectories/holonomic.rst" "docs/software/advanced-controls/trajectories/index.rst"
 "docs/contributing/frc-docs/build-instructions.rst" "docs/contributing/wpilib-docs/build-instructions.rst"
 "docs/contributing/frc-docs/contribution-guidelines.rst" "docs/contributing/wpilib-docs/contribution-guidelines.rst"
 "docs/contributing/frc-docs/drawio-saving-instructions.rst" "docs/contributing/wpilib-docs/drawio-saving-instructions.rst"

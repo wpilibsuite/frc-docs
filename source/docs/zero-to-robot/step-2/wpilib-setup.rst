@@ -5,13 +5,14 @@ This guide will walk you through installing the WPILib development environment o
 ## Prerequisites
 
 Supported Operating Systems and Architectures:
- * Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported
- * Ubuntu 22.04 & 24.04, 64 bit. Other Linux distributions with glibc >= 2.34 may work, but are unsupported
- * macOS 13.3 or higher, both Intel and Arm.
+ * Windows 11, 64 bit only. Arm-based Windows 11 is unsupported.
+ * Debian 13 'Trixie', 64 bit only.
+ * Ubuntu 26.04, 64 bit only.
+ * macOS 15 or higher, both Intel and Arm.
 
-.. warning:: The following OSes are no longer supported: macOS 12 or earlier, Ubuntu 18.04 & 20.04, Windows 7, Windows 8.1, and any 32-bit Windows.
+.. note:: Linux distributions other than those mentioned above that contain glibc >= 2.41 may work, but are unsupported.
 
-.. note:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). We intend to continue supporting Windows 10 through the 2026 season, but may have to drop support in 2027. Teams should start planning their upgrade path to Windows 11, or switch to one of the supported Linux distributions listed.
+.. warning:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). While we will not explicitly block Windows 10 from being used, future releases may inadvertently break compatibility with Windows 10. We will not postpone these changes in order to maintain Windows 10 compatibility, and Windows 10 support may break as a result.
 
 .. note:: C++ compilation is memory intensive. A minimum of 32 GB of RAM is recommended for C++ teams.
 
@@ -40,17 +41,17 @@ When you download the WPILib installer, it is distributed as a disk image file `
 
 .. tab-set::
 
-   .. tab-item:: Windows 10+
-      :sync: windows-10
+   .. tab-item:: Windows 11
+      :sync: windows-11
 
-      Windows 10+ users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
+      Windows 11 users can right click on the downloaded disk image and select :guilabel:`Mount` to open it. Then launch ``WPILibInstaller.exe``.
 
       .. image:: images/wpilib-setup/extract-windows-10.png
          :alt: The menu after right clicking on an .iso file to choose "Mount".
 
       .. note:: Other installed programs may associate with iso files and the :guilabel:`mount` option may not appear. If that software does not give the option to mount or extract the iso file, then follow the directions below.
 
-      You can use [7-zip](https://www.7-zip.org/) to extract the disk image by right-clicking, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`. Windows 11 users may need to select :guilabel:`Show more options` at the bottom of the context menu.
+      You can use [7-zip](https://www.7-zip.org/) to extract the disk image by right-clicking, selecting :guilabel:`Show more options` at the bottom of the context menu, selecting :guilabel:`7-Zip` and selecting :guilabel:`Extract to...`.
 
       .. image:: images/wpilib-setup/extract-windows-7.png
          :alt: After right clicking on the .iso file go to "7-Zip" then "Extract to....".
@@ -127,7 +128,7 @@ This next screen involves downloading VS Code. Unfortunately, due to licensing r
 
   - This option downloads and saves a copy of VS Code for all platforms, which is useful for sharing with the installer for future offline installs.
 
-Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~150MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
+Go ahead and select :guilabel:`Download for this computer only`. This will begin the download process and can take a bit depending on internet connectivity (it's ~300MB). Once the download is done, select :guilabel:`Next`. You should be presented with a screen that looks similar to the one below.
 
 .. note:: teams upgrading from Beta will already have a version of VS Code installed. However, it's still recommended to select :guilabel:`Download for this computer only` to ensure the latest recommended version of VS Code is installed
 
@@ -158,12 +159,12 @@ Some operating systems require some final action to complete installation.
    .. tab-item:: Linux
       :sync: linux
 
-      Some versions of Linux (e.g. Ubuntu 22.04 and later) require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
+      Some Linux versions require you to give the desktop shortcut the ability to launch. Right click on the desktop icon and select Allow Launching.
 
       .. image:: images/wpilib-setup/linux-enable-launching.png
          :alt: Menu that pops up after right click the desktop icon in Linux.
 
-      Ubuntu 23.10 and later [disable the kernel user namespaces feature for unknown applications](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces). This means that the [sandboxing feature](https://code.visualstudio.com/blogs/2022/11/28/vscode-sandbox) won't work on the WPILib VS Code. To enable sandboxing for the WPILib applications, AppArmor profiles are provided, and can be installed using the command below.
+      Furthermore, modern Ubuntu versions [disable the kernel user namespaces feature for unknown applications](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces). This means that the [sandboxing feature](https://code.visualstudio.com/blogs/2022/11/28/vscode-sandbox) won't work on the WPILib VS Code. To enable sandboxing for the WPILib applications, AppArmor profiles are provided, and can be installed using the command below.
 
       ```console
       $ sudo cp ~/wpilib/YEAR/wpilibcode/AppArmor/* /etc/apparmor.d/
