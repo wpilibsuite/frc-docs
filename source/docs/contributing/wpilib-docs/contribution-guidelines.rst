@@ -8,9 +8,9 @@ Welcome to the contribution guidelines for the wpilib-docs project. If you are u
 
 ## Mission Statement
 
-The WPILib Mission is to enable *FIRST* Robotics teams to focus on writing game-specific software rather than focusing on hardware details - "raise the floor, don't lower the ceiling". We work to enable teams with limited programming knowledge and/or mentor experience to be as successful as possible, while not hampering the abilities of teams with more advanced programming capabilities. We support Kit of Parts control system components directly in the library. We also strive to keep parity between major features of each language (Java, C++, and NI's LabVIEW), so that teams aren't at a disadvantage for choosing a specific programming language.
+The WPILib Mission is to enable *FIRST* teams to focus on writing game-specific software rather than focusing on hardware details - "raise the floor, don't lower the ceiling". We work to enable teams with limited programming knowledge and/or mentor experience to be as successful as possible, while not hampering the abilities of teams with more advanced programming capabilities. We support Kit of Parts control system components directly in the library. We also strive to keep parity between major features of each language (Java, C++, and NI's LabVIEW), so that teams aren't at a disadvantage for choosing a specific programming language.
 
-These docs serve to provide a learning ground for all *FIRST*  teams. Contributions to the project must follow these core principles.
+These docs serve to provide a learning ground for all *FIRST* teams. Contributions to the project must follow these core principles.
 
 - Community-led documentation. Documentation sources are hosted publicly and the community are able to make contributions
 - Structured, well-formatted, clean documentation. Documentation should be clean and easy to read, from both a source and release standpoint
