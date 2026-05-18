@@ -37,7 +37,6 @@
     "source/docs/software/convenience-features/event-based.rst",
     "source/docs/software/dashboards/glass/field2d-widget.rst",
     "source/docs/software/hardware-apis/sensors/encoders-software.rst",
-    "source/docs/software/hardware-apis/misc/addressable-leds.rst",
-    "source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst"
+    "source/docs/software/hardware-apis/misc/addressable-leds.rst"
   ]
 }
