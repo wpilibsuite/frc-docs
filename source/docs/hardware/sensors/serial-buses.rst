@@ -15,7 +15,6 @@ The roboRIO supports many basic types of serial communications:
 - `USB Host`_
 - `CAN Bus`_
 
-Additionally, the roboRIO supports communications with peripheral devices over the :term:`CAN` bus.  However, as the FRC\ |reg| CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers).
 
 ## I2C
 
@@ -74,7 +73,7 @@ Many peripheral devices attach directly to the MXP port for convenience, requiri
 .. image:: images/systemcore/roborio-can.svg
    :alt: Show the location of the CAN bus terminals in the top left corner of the roboRIO.
 
-Additionally, the roboRIO supports communications with peripheral devices over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, relatively few peripheral sensors support it (though it is heavily used for motor controllers). One of the advantages of using the CAN bus protocol is that devices can be daisy-chained, as shown below. If power is removed from any device in the chain, data signals will still be able to reach all devices in the chain.
+One of the advantages of using the CAN bus protocol is that devices can be daisy-chained, as shown below. If power is removed from any device in the chain, data signals will still be able to reach all devices in the chain.
 
 .. image:: images/serial-buses/can-bus-talon-srx-chain.png
    :alt: A CAN bus topology between motor controllers.

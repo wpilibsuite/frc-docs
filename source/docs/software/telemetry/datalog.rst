@@ -16,9 +16,9 @@ The ``DataLogManager`` class ([Java](https://github.wpilib.org/allwpilib/docs/be
 
 .. note:: USB flash drives need to be formatted as FAT32 to work with the roboRIO.  NTFS or exFAT formatted drives will not work. Flash drives of 32GB or smaller are recommended, as Windows doesn't format drives larger then 32GB with FAT32.
 
-Log files are initially named ``FRC_TBD_{random}.wpilog`` until the DS connects.  After the DS connects, the log file is renamed to ``FRC_yyyyMMdd_HHmmss.wpilog`` (where the date/time is UTC).  If the :term:`FMS` is connected and provides a match number, the log file is renamed to ``FRC_yyyyMMdd_HHmmss_{event}_{match}.wpilog``.
+Log files are initially named ``WPILib_TBD_{random}.wpilog`` until the DS connects.  After the DS connects, the log file is renamed to ``WPILib_yyyyMMdd_HHmmss.wpilog`` (where the date/time is UTC).  If the :term:`FMS` is connected and provides a match number, the log file is renamed to ``WPILib_yyyyMMdd_HHmmss_{event}_{match}.wpilog``.
 
-On startup, all existing log files where a DS has not been connected will be deleted.  If there is less than 50 MB of free space on the target storage, ``FRC_`` log files are deleted (oldest to newest) until there is 50 MB free OR there are 10 files remaining.
+On startup, all existing log files where a DS has not been connected will be deleted.  If there is less than 50 MB of free space on the target storage, ``WPILib_`` log files are deleted (oldest to newest) until there is 50 MB free OR there are 10 files remaining.
 
 The most basic usage of DataLogManager only requires a single line of code (typically this would be called from ``Robot`` constructor). This will record all NetworkTables changes to the data log.
 

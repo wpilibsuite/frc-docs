@@ -2,11 +2,11 @@
 
 # Introduction
 
-Welcome to the official documentation home for the *FIRST*\ |reg| Robotics Competition Control System and WPILib software packages. This page is the primary resource documenting the use of the FRC\ |reg| Control System (including wiring, configuration, and software) as well as the WPILib libraries and tools.
+Welcome to the official documentation home for the *FIRST*\ |reg| Control System and WPILib software packages. This page is the primary resource documenting the use of the FRC\ |reg| & FTC\ |reg| Control System (including wiring, configuration, and software) as well as the WPILib libraries and tools.
 
 ## New to Programming?
 
-These pages cover the specifics of the WPILib libraries and the FRC Control System and do not describe the basics of using the supported programming languages. If you would like resources on learning the supported programming languages check out the recommendations below:
+These pages cover the specifics of the WPILib libraries and the FIRST Control System and do not describe the basics of using the supported programming languages. If you would like resources on learning the supported programming languages check out the recommendations below:
 
 .. note:: You can continue with this Zero-to-Robot section to get a functioning basic robot without knowledge of the programming language. To go beyond that, you will need to be familiar with the language you choose to program in.
 

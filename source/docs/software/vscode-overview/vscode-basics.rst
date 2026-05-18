@@ -2,7 +2,7 @@
 
 # Visual Studio Code Basics and the WPILib Extension
 
-Microsoft's Visual Studio Code is the supported IDE for C++ and Java development in FRC. This article introduces some of the basics of using Visual Studio Code and the WPILib extension.
+Microsoft's Visual Studio Code is the supported IDE for C++ and Java development using WPILib. This article introduces some of the basics of using Visual Studio Code and the WPILib extension.
 
 ## Welcome Page
 
@@ -14,7 +14,7 @@ You may also notice a small WPILib logo way up in the top right corner. This is 
 
 ## User Interface
 
-The most important link to take a look at is probably the basic User Interface document. This document describes a lot of the basics of using the UI and provides the majority of the information you should need to get started using Visual Studio Code for FRC.
+The most important link to take a look at is probably the basic User Interface document. This document describes a lot of the basics of using the UI and provides the majority of the information you should need to get started using Visual Studio Code for WPILib.
 
 ## Command Palette
 
@@ -26,12 +26,12 @@ In the following example "wpilib" is typed into the search box after activating 
 
 |WPILib Commands|
 
-The WPILib extension provides the FRC\ |reg| specific functionality related to creating projects and project components, building, and downloading code to the roboRIO and more. You can access the WPILib commands one of two ways:
+The WPILib extension provides the WPILib specific functionality related to creating projects and project components, building, and downloading code to the Systemcore and more. You can access the WPILib commands one of two ways:
 
 - By typing "WPILib" into the Command Palette
 - By clicking on the WPILib icon in the top right of most windows. This will open the Command Palette with "WPILib" pre-entered
 
-.. note:: It is **not** recommended to install the [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode) plugin with the FRC installation of VS Code as it is known to break IntelliSense in odd ways.
+.. note:: It is **not** recommended to install the [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode) plugin with the WPILib installation of VS Code as it is known to break IntelliSense in odd ways.
 
 For more information about specific WPILib extension commands, see the other articles in this chapter.
 

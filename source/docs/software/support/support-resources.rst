@@ -2,13 +2,12 @@
 
 # Support Resources
 
-In addition to the documentation here, there are a variety of other resources available to FRC\ |reg| teams to help understand the Control System and software.
+In addition to the documentation here, there are a variety of other resources available to FRC\ |reg| & FTC\ |reg| teams to help understand the Control System and software.
 
 ## Other Documentation
 
 In addition to this site there are a few other places teams may check for documentation:
 
--  [NI FRC Community Documents Section](https://forums.ni.com/t5/FIRST-Robotics-Competition/bd-p/1014?profile.language=en&view=documents)
 -  [FIRST Inspires Technical Resources Page](https://www.firstinspires.org/resource-library/frc/technical-resources)
 -  [CTRE Software & Resources Page](https://store.ctr-electronics.com/software/)
 -  [REV Robotics Documentation](https://docs.revrobotics.com/docs/)
@@ -18,7 +17,6 @@ In addition to this site there are a few other places teams may check for docume
 
 Stuck? Have a question not answered by the documentation? Official Support is provided on these forums:
 
--  [NI FRC Support Forum](https://forums.ni.com/t5/Support/ct-p/Support) (roboRIO, LabVIEW, and Driver Station software questions, as well as roboRIO repairs)
 -  [FIRST Inspires Control System Forum](https://forums.firstinspires.org/forum/general-discussions/first-programs/first-robotics-competition/competition-discussion/control-system?f=1338) (wiring, hardware, and Driver Station questions)
 -  [FIRST Inspires Programming Forum](https://forums.firstinspires.org/forum/general-discussions/first-programs/first-robotics-competition/competition-discussion/programming-aa) (programming questions for C++, Java, or LabVIEW)
 

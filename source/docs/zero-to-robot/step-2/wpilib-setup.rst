@@ -167,7 +167,7 @@ Some operating systems require some final action to complete installation.
       Furthermore, modern Ubuntu versions [disable the kernel user namespaces feature for unknown applications](https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces). This means that the [sandboxing feature](https://code.visualstudio.com/blogs/2022/11/28/vscode-sandbox) won't work on the WPILib VS Code. To enable sandboxing for the WPILib applications, AppArmor profiles are provided, and can be installed using the command below.
 
       ```console
-      $ sudo cp ~/wpilib/YEAR/frccode/AppArmor/* /etc/apparmor.d/
+      $ sudo cp ~/wpilib/YEAR/wpilibcode/AppArmor/* /etc/apparmor.d/
       $ sudo systemctl reload apparmor.service
       ```
 
@@ -207,9 +207,9 @@ The Offline Installer installs the following components:
 
 - **VS Code Extensions** - WPILib and Java/C++/Python extensions for robot code development in VS Code
 
-- **Documentation** - Offline copies of this frc-docs documentation and Java/C++/Python APIs
+- **Documentation** - Offline copies of this wpilib-docs documentation and Java/C++/Python APIs
 
-.. note:: It's not recommended to use the VS Code Backup and Settings Sync feature to sync settings between a regular VS Code installation and the FRC VS Code installation. This could lead to either installation being broken.
+.. note:: It's not recommended to use the VS Code Backup and Settings Sync feature to sync settings between a regular VS Code installation and the WPILib VS Code installation. This could lead to either installation being broken.
 
 
 ## Uninstalling

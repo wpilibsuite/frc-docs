@@ -1,3 +1,5 @@
+.. include:: <isonum.txt>
+
 # Common Control Loop Tuning Issues
 
 There are a number of common issues which can arise while tuning feedforward and feedback controllers.
@@ -12,7 +14,7 @@ There are a few ways to mitigate this:
 2. Add logic to reset the integrator term to zero if the :term:`output` is too far from the :term:`setpoint`. Some smart motor controllers and WPILib's ``PIDController`` implement this with a ``setIZone()`` method.
 3. Cap the integrator at some maximum value. WPILib's ``PIDController`` implements this with the ``setIntegratorRange()`` method.
 
-.. important:: Most mechanisms in FRC do not require any integral control, and systems that seem to require integral control to respond well probably have an inaccurate feedforward model.
+.. important:: Most mechanisms in FRC\ |reg| & FTC\ |reg| do not require any integral control, and systems that seem to require integral control to respond well probably have an inaccurate feedforward model.
 
 ## Voltage Sag
 

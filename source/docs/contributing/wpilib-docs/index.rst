@@ -1,4 +1,4 @@
-# Contributing to frc-docs
+# Contributing to wpilib-docs
 
 .. toctree::
    :maxdepth: 1
