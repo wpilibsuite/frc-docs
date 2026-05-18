@@ -617,7 +617,7 @@ requires-dist = [
     { name = "sphinxcontrib-serializinghtml", specifier = "==2.0.0" },
     { name = "sphinxcontrib-svg2pdfconverter", specifier = "==2.1.0" },
     { name = "sphinxcontrib-video", specifier = "==0.4.2" },
-    { name = "sphinxext-delta", specifier = "==0.4.0" },
+    { name = "sphinxext-delta", specifier = "==0.4.1" },
     { name = "sphinxext-mimic", specifier = "==0.1.1" },
     { name = "sphinxext-opengraph", specifier = "==0.13.0" },
     { name = "sphinxext-photofinish", specifier = "==0.1.11" },
@@ -1755,16 +1755,16 @@ wheels = [
 
 [[package]]
 name = "sphinxext-delta"
-version = "0.4.0"
+version = "0.4.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "requests" },
     { name = "six" },
     { name = "sphinx" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/75/7c/277c964ba02873bfd4a12356a58e46ad083cc9d0735e8190aaa982cd099e/sphinxext_delta-0.4.0.tar.gz", hash = "sha256:0537ca8b81fc5bb0226de33f679a325ef7e23420c6a8f9770d9c64eff898a50b", size = 4486, upload-time = "2026-03-27T23:37:09.333Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/87/ac/f754400a815c80af51852086d114ed4603f4e31a00a35eff19a6d6ffd648/sphinxext_delta-0.4.1.tar.gz", hash = "sha256:9a2c377c7459f83510acdd96d687ed9e0fb01bc873f30f4d4db1471e61cdaffe", size = 4792, upload-time = "2026-05-18T01:08:24.76Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/66/91/bdcdd3f5ea87734c7b8451cfc5f3cfd6253cd31511fb8ba6ad9d620c56a7/sphinxext_delta-0.4.0-py3-none-any.whl", hash = "sha256:1bf31ca68ce81419a56cdf221402f2fa9f531533919b471bec829a599cb56075", size = 4306, upload-time = "2026-03-27T23:37:08.598Z" },
+    { url = "https://files.pythonhosted.org/packages/11/62/f2579bc3b573fca607c850269f9a798e50b9e7809aae3fa7d47119149887/sphinxext_delta-0.4.1-py3-none-any.whl", hash = "sha256:edd12e1c9036e6bd59c42e91c34884d4d3cbaa28e4bc5beb170820e5f1b56614", size = 4629, upload-time = "2026-05-18T01:08:23.45Z" },
 ]
 
 [[package]]
