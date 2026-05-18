@@ -86,26 +86,24 @@ NetworkTables is efficient by default, but poor usage patterns can waste bandwid
 
    // BAD: Updating every loop (50+ times per second)
    public void teleopPeriodic() {
-     SmartDashboard.putNumber("Encoder", encoder.get());
+     encoderEntry.setDouble(encoder.get());
    }
 
    // GOOD: Update at lower frequency (10 times per second)
    public void teleopPeriodic() {
      counter++;
      if (counter % 5 == 0) {  // Every 5th loop = ~10 Hz
-       SmartDashboard.putNumber("Encoder", encoder.get());
+       encoderEntry.setDouble(encoder.get());
      }
    }
 
 .. code-block:: python
 
    # GOOD: Only update when value changes significantly
-   last_position = 0
-
    def teleopPeriodic(self):
        current_position = self.encoder.get()
        if abs(current_position - self.last_position) > 0.1:
-           SmartDashboard.putNumber("Encoder", current_position)
+           self.encoder_entry.setDouble(current_position)
            self.last_position = current_position
 
 ### Data Selection
@@ -155,7 +153,7 @@ Consider creating a "competition mode" that disables non-essential features:
 .. code-block:: java
 
    public class Robot extends TimedRobot {
-     private boolean competitionMode = true;  // Set via dashboard or SmartDashboard
+     private boolean competitionMode = true;  // Set via NetworkTables entry
 
      public void robotPeriodic() {
        if (competitionMode) {

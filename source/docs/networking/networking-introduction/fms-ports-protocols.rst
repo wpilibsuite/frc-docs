@@ -2,7 +2,7 @@
 
 This article provides a reference for network ports and protocols used by the Field Management System (FMS) and common FRC software. Understanding these ports helps with firewall configuration, custom software development, and network troubleshooting.
 
-.. important:: Port usage rules are defined in the FRC Game Manual (Rule R704 for 2024). Always consult the current year's manual for official requirements. The `FMS Whitepaper <https://fms-manual.readthedocs.io/en/latest/fms-whitepaper/fms-whitepaper.html>`__ provides additional technical details.
+.. important:: Port usage rules are defined in the FRC Game Manual. Always consult the current year's manual for official requirements. The `FMS Whitepaper <https://fms-manual.readthedocs.io/en/latest/fms-whitepaper/fms-whitepaper.html>`__ provides additional technical details.
 
 ## Core Robot Communication Ports
 
@@ -16,10 +16,6 @@ These ports are used for essential robot operation and are always allowed:
      - Protocol
      - Purpose
      - Used By
-   * - 1110
-     - TCP
-     - Camera data (roboRIO)
-     - WPILib CameraServer
    * - 1130
      - UDP
      - Dashboard-to-Robot control
@@ -27,7 +23,7 @@ These ports are used for essential robot operation and are always allowed:
    * - 1140
      - UDP
      - Robot-to-Dashboard status
-     - roboRIO, Dashboards
+     - Robot controller, Dashboards
    * - 1180-1190
      - TCP/UDP
      - Camera streams
@@ -35,11 +31,11 @@ These ports are used for essential robot operation and are always allowed:
    * - 5810
      - TCP/UDP
      - NetworkTables 4
-     - SmartDashboard, Shuffleboard
+     - Elastic, Glass, custom dashboards
    * - 5353
      - UDP
      - mDNS (multicast DNS)
-     - All devices (``roboRIO-TEAM-FRC.local``)
+     - All devices
    * - 5800-5810
      - TCP/UDP
      - Team custom use
@@ -66,7 +62,7 @@ These ports are used for essential robot operation and are always allowed:
 
 ## Driver Station Ports
 
-The Driver Station uses these ports to communicate with the roboRIO and FMS:
+The Driver Station uses these ports to communicate with the robot controller and FMS:
 
 .. list-table::
    :header-rows: 1
@@ -89,7 +85,7 @@ The Driver Station uses these ports to communicate with the roboRIO and FMS:
      - Robot-to-DS status packets
    * - 1750
      - TCP
-     - DS-to-roboRIO (webdash, imaging)
+     - DS-to-Systemcore (web interface)
 
 ## Vision Processing Ports
 
@@ -106,7 +102,7 @@ Common ports used by vision processing systems:
    * - 1180-1190
      - TCP/UDP
      - MJPEG camera streams
-     - Axis cameras, roboRIO
+     - Coprocessors, robot controller
    * - 5800-5807
      - TCP
      - PhotonVision web interface
@@ -131,10 +127,10 @@ These ports provide web-based configuration and monitoring:
      - Purpose
    * - 80
      - TCP
-     - roboRIO Web Dashboard (HTTP)
+     - Systemcore Web Interface (HTTP)
    * - 443
      - TCP
-     - roboRIO Web Dashboard (HTTPS)
+     - Systemcore Web Interface (HTTPS)
    * - 5800-5810
      - TCP
      - Coprocessor web interfaces (PhotonVision, Limelight, etc.)
@@ -146,7 +142,7 @@ FMS prioritizes network traffic to ensure reliable robot control:
 1. **Highest Priority**: Driver Station control packets (ports 1110-1115, 1130)
 
    - Robot enable/disable commands
-   - Mode selection (auto/teleop/test)
+   - Mode selection (auto/teleop/utility)
    - Joystick/gamepad data
    - These packets are **never** dropped or delayed
 
@@ -178,7 +174,7 @@ FMS prioritizes network traffic to ensure reliable robot control:
 - Higher latency than UDP
 
 **mDNS (Multicast DNS)**
-- Allows devices to be found by name (``roboRIO-TEAM-FRC.local``)
+- Allows devices to be found by name instead of IP address
 - Uses UDP port 5353
 - No DNS server required
 - Essential for DHCP networks where IP addresses may change
@@ -215,7 +211,7 @@ See :doc:`windows-firewall-configuration` for detailed firewall setup instructio
 - **Check**: Bandwidth limit exceeded (camera resolution too high)
 - **Check**: Firewall blocking ports 1180-1190
 
-**Problem**: Can't access roboRIO web dashboard
+**Problem**: Can't access Systemcore web interface
 - **Check**: Firewall blocking port 80/443
 - **Check**: Using HTTP (``http://10.TE.AM.2``) not HTTPS
 
