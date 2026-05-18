@@ -25,7 +25,7 @@ dependencies = [
     "sphinxcontrib-svg2pdfconverter==2.1.0",
     "sphinxcontrib-video==0.4.2",
     "sphinx_contributors==0.3.0",
-    "sphinxext-delta==0.4.0",
+    "sphinxext-delta==0.4.1",
     "sphinxext-mimic==0.1.1",
     "sphinxext-opengraph==0.13.0",
     "sphinxext-photofinish==0.1.11",

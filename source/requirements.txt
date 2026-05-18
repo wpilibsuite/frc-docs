@@ -1096,9 +1096,9 @@ sphinxcontrib-video==0.4.2 \
     --hash=sha256:18477fd9454ac8c69259e6d24e782d8b802345b6475de6216351c2305b06c898 \
     --hash=sha256:7dfd01e5e2025de39536457854052b18723575d6213d96ca35f83e3154dc0315
     # via frc-docs
-sphinxext-delta==0.4.0 \
-    --hash=sha256:0537ca8b81fc5bb0226de33f679a325ef7e23420c6a8f9770d9c64eff898a50b \
-    --hash=sha256:1bf31ca68ce81419a56cdf221402f2fa9f531533919b471bec829a599cb56075
+sphinxext-delta==0.4.1 \
+    --hash=sha256:9a2c377c7459f83510acdd96d687ed9e0fb01bc873f30f4d4db1471e61cdaffe \
+    --hash=sha256:edd12e1c9036e6bd59c42e91c34884d4d3cbaa28e4bc5beb170820e5f1b56614
     # via frc-docs
 sphinxext-mimic==0.1.1 \
     --hash=sha256:08f0840a59c58ca71db1378fd5aeeba6149579de583b885658f9ddb59299a8c9 \
