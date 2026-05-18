@@ -113,8 +113,10 @@ rediraffe_branch = "origin/main"
 # File containing redirects
 rediraffe_redirects = "redirects.txt"
 
-# Required accuracy for redirect writer
-rediraffe_auto_redirect_perc = 80
+# Set above 100 so the checker never auto-approves renamed files based on
+# content similarity — every moved/deleted page must have an explicit entry
+# in redirects.txt. Use "make rediraffewrites" to auto-generate entries.
+rediraffe_auto_redirect_perc = 101
 
 # Configure OpenGraph support
 ogp_site_url = "https://docs.wpilib.org/en/stable/"
