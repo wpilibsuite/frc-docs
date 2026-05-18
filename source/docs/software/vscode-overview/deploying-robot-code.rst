@@ -33,4 +33,4 @@ Choosing to deploy robot code will first build the code if it has not been built
 
 ## Clean
 
-If you want to force a full rebuild of the code, you can select :guilabel:`Run Gradle Clean` the WPILib Menu. This will delete all build artifacts and force a full rebuild the next time you build or deploy.
+If you want to force a full rebuild of the code, you can select :guilabel:`Run Gradle Clean` from the WPILib Menu. This will delete all build artifacts and force a full rebuild the next time you build or deploy.
