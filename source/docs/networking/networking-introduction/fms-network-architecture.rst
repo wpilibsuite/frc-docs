@@ -8,16 +8,15 @@ This article provides an overview of how the Field Management System (FMS) netwo
 
 The FMS network is an Ethernet-based system that connects all robots, driver stations, and field equipment. The **Score Switch** connects the following components:
 
-- **Field Router**: Connects to the FMS server and manages alliance networks
+- **Field Router**: Manages FMS network routing (VLANs) and traffic in/out of event internet uplink
 - **FMS Server**: Controls match flow and communicates with Driver Station software
-- **Field Access Point (AP)**: Provides 6 GHz wireless connectivity to robots
-- **Smart Router**: Manages external connectivity and network services
+- **Field Access Point (AP)**: Provide 6 GHz wireless connectivity to robots
 
-Robot-to-field communication uses a dedicated wireless access point operating in the 6 GHz band with 802.11ax (Wi-Fi 6E) to minimize interference from spectator devices.
+Robot-to-field communication uses a dedicated wireless access point operating in the 6 GHz band with 802.11ax (Wi-Fi 6E) to minimize interference from spectator devices. FTAs use a secondary AP with their wireless devices for field network debugging, that runs on either the 2.4GHz or 5GHz band depending on network congestion.
 
 ## Team Network Isolation
 
-The FMS network uses Virtual LANs (VLANs) to completely isolate each team's traffic. Each team's network contains **only** their robot, driver station, and the FMS server.
+FMS completely isolates each team's traffic from other teams. Each team's network contains **only** their robot, driver station, and the FMS server.
 
 .. important:: Teams cannot communicate with other teams' robots or driver stations, even during the same match. This isolation protects against accidental interference and ensures fair competition.
 
@@ -39,22 +38,14 @@ When connected to FMS, teams use the standard ``10.TE.AM.xx`` addressing scheme:
 
 ## Wireless Specifications
 
-FMS wireless uses modern standards to ensure reliable connectivity:
-
-- **Frequency Band**: 6 GHz exclusively (avoids 2.4/5 GHz congestion from phones, tablets)
+- **Frequency Band**: 6 GHz
 - **Standard**: 802.11ax (Wi-Fi 6E)
 - **Encryption**: WPA3 with AES encryption
-- **Security Keys**: Unique per team, per event (teams configure radios using event kiosks)
-
-.. warning:: Field staff devices use separate 2.4 GHz and 5 GHz networks. Robot radios must be configured for 6 GHz operation at competition.
+- **Security Keys**: Unique per team, per event (teams program their radio at event kiosks)
 
 ## Network Security
 
-FMS uses several techniques to isolate team networks:
-
-1. **VLAN Isolation**: Each team's network is completely separated from other teams
-2. **WPA3 Encryption**: Wireless traffic is encrypted with per-team keys
-3. **Port Restrictions**: Only approved network ports are allowed through the field firewall (see :doc:`fms-ports-protocols`)
+Teams are isolated from each other through WPA3 encryption with per-team keys, and a field firewall that restricts which ports are available (see :doc:`fms-ports-protocols`).
 
 ## How FMS Coordinates Robot Communication
 
@@ -70,7 +61,7 @@ When your robot connects to the field:
 6. **Robot** sends status information back to the Driver Station
 7. **Driver Station** sends status information back to the FMS
 
-The FMS tells your Driver Station what mode to use (auto/teleop/test) and when to enable/disable the robot, but your Driver Station and robot communicate directly with each other.
+The FMS tells your Driver Station what mode to use (auto/teleop/utility) and when to enable/disable the robot, but your Driver Station and robot communicate directly with each other.
 
 ## Bandwidth Allocation
 
@@ -102,8 +93,8 @@ Your robot should work seamlessly in both environments if following standard :do
 
 ## Key Takeaways
 
-- Each team's network is completely isolated in its own VLAN
-- FMS uses 6 GHz Wi-Fi 6E to avoid interference
+- Each team's network is completely isolated from other teams
+- FMS uses 6 GHz Wi-Fi 6E; FTAs use a separate 2.4/5 GHz AP for debugging
 - Your robot radio provides DHCP for robot devices; FMS provides DHCP for driver stations
 - Bandwidth is limited to 7 Mbps per team with prioritized traffic types
 - Standard ``10.TE.AM.xx`` addressing works on field and in pits

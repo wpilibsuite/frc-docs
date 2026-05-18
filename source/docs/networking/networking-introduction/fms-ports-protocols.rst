@@ -32,9 +32,9 @@ These ports are used for essential robot operation and are always allowed:
      - TCP/UDP
      - Camera streams
      - IP Cameras, Driver Station
-   * - 1735
-     - TCP
-     - SmartDashboard / Shuffleboard
+   * - 5810
+     - TCP/UDP
+     - NetworkTables 4
      - SmartDashboard, Shuffleboard
    * - 5353
      - UDP
@@ -47,8 +47,6 @@ These ports are used for essential robot operation and are always allowed:
 
 ## NetworkTables Ports
 
-NetworkTables uses multiple ports for different protocol versions:
-
 .. list-table::
    :header-rows: 1
    :widths: 15 15 50 20
@@ -57,10 +55,6 @@ NetworkTables uses multiple ports for different protocol versions:
      - Protocol
      - Purpose
      - Version
-   * - 1735
-     - TCP
-     - NetworkTables 3
-     - NT3 (legacy)
    * - 5810
      - TCP
      - NetworkTables 4 (primary)
@@ -69,8 +63,6 @@ NetworkTables uses multiple ports for different protocol versions:
      - UDP
      - NetworkTables 4 (discovery)
      - NT4 (current)
-
-.. note:: NetworkTables 4 is the current standard. NetworkTables 3 (port 1735) is maintained for backwards compatibility with older dashboards.
 
 ## Driver Station Ports
 
@@ -158,7 +150,7 @@ FMS prioritizes network traffic to ensure reliable robot control:
    - Joystick/gamepad data
    - These packets are **never** dropped or delayed
 
-2. **Medium Priority**: NetworkTables data (ports 1735, 5810)
+2. **Medium Priority**: NetworkTables data (port 5810)
 
    - Sensor readings sent to dashboard
    - Configuration values from dashboard
@@ -216,7 +208,7 @@ See :doc:`windows-firewall-configuration` for detailed firewall setup instructio
 ## Common Port Issues
 
 **Problem**: Dashboard can't connect to robot
-- **Check**: Firewall blocking port 5810 (NT4) or 1735 (NT3)
+- **Check**: Firewall blocking port 5810 (NT4)
 - **Check**: mDNS not working (port 5353 blocked)
 
 **Problem**: Camera stream not visible
@@ -232,7 +224,7 @@ For more troubleshooting guidance, see :doc:`roborio-network-troubleshooting`.
 ## Key Takeaways
 
 - Driver Station control packets (ports 1110-1115, 1130) have highest priority
-- NetworkTables 4 uses port 5810 (TCP/UDP); NT3 uses port 1735 (TCP)
+- NetworkTables 4 uses port 5810 (TCP/UDP)
 - Camera streams (ports 1180-1190) are lowest priority and may be throttled
 - mDNS (port 5353) is essential for ``.local`` hostname resolution
 - Ports 5800-5810 are reserved for team custom use
