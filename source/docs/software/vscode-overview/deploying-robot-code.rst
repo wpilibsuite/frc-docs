@@ -6,9 +6,9 @@ Robot projects must be compiled ("built") and deployed in order to run on System
 
 To build a robot project, do one of:
 
-1. In Visual Studio Code, click the WPILib logo in the top right to launch the WPILib Command Palette (or press :kbd:`ctrl+shift+p` and then type WPILib) and enter/select :guilabel:`Build Robot Code`
-2. Open the shortcut menu indicated by the ellipses in the top right corner of the VS Code window and select :guilabel:`Build Robot Code`
-3. Right-click on the build.gradle file in the project hierarchy and select :guilabel:`Build Robot Code`
+* In Visual Studio Code, click the WPILib logo in the top right to launch the WPILib Command Palette (or press :kbd:`ctrl+shift+p` and then type WPILib) and enter/select :guilabel:`Build Robot Code`
+* Open the shortcut menu indicated by the ellipses in the top right corner of the VS Code window and select :guilabel:`Build Robot Code`
+* Right-click on the build.gradle file in the project hierarchy and select :guilabel:`Build Robot Code`
 
 ## Deploy
 
@@ -28,8 +28,8 @@ If successful, we will see a "Build Successful" message (1) and the RioLog will 
 
 Choosing to deploy robot code will first build the code if it has not been built since the last change. If the code has already been built, it will skip the build step and deploy the existing build artifacts to Systemcore. You can force a rebuild by selecting :guilabel:`Build Robot Code` before deploying. There are some differences when running the :guilabel:`Build Robot Code` command vs the :guilabel:`Deploy Robot Code` command:
 
-1. :guilabel:`Build Robot Code` will download dependencies from the internet, while :guilabel:`Deploy Robot Code` will not. If you have not built the code before (for example, if you are working with a new project or you have recently cloned the repository, or you have added or changed a vendordep), you must run :guilabel:`Build Robot Code` at least once to download dependencies before you can deploy.
-2. :guilabel:`Build Robot Code` will run unit tests, if your project has unit tests, while :guilabel:`Deploy Robot Code` will not.
+* :guilabel:`Build Robot Code` will download dependencies from the internet, while :guilabel:`Deploy Robot Code` will not. If you have not built the code before (for example, if you are working with a new project or you have recently cloned the repository, or you have added or changed a vendordep), you must run :guilabel:`Build Robot Code` at least once to download dependencies before you can deploy.
+* :guilabel:`Build Robot Code` will run unit tests, if your project has unit tests, while :guilabel:`Deploy Robot Code` will not.
 
 ## Clean
 
