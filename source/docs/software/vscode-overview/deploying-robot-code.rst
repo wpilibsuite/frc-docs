@@ -6,7 +6,7 @@ Robot projects must be compiled ("built") and deployed in order to run on System
 
 To build a robot project, do one of:
 
-1. In Visual Studio Code, click the WPILib logo in the top right to launch the WPILib Command Palette (or type :kbd:`ctrl+shift+p` and then type WPILib) and enter/select :guilabel:`Build Robot Code`
+1. In Visual Studio Code, click the WPILib logo in the top right to launch the WPILib Command Palette (or press :kbd:`ctrl+shift+p` and then type WPILib) and enter/select :guilabel:`Build Robot Code`
 2. Open the shortcut menu indicated by the ellipses in the top right corner of the VS Code window and select :guilabel:`Build Robot Code`
 3. Right-click on the build.gradle file in the project hierarchy and select :guilabel:`Build Robot Code`
 
@@ -22,7 +22,7 @@ If successful, we will see a "Build Successful" message (1) and the RioLog will 
 
 .. image:: images/deploying-robot-code/build-successful.png
 
-.. note:: The run button in VS Code's debug view is not used to run robot code. Instead, use the :guilabel:`Deploy Robot Code` command as described above. The debug view's run button is used for running and debugging code on the local machine in simulation, which is not applicable for robot code that runs on Systemcore.
+.. note:: The run button in VS Code's debug view is not used to run robot code. Instead, use the :guilabel:`Deploy Robot Code` command as described above. The debug view's run button is used for running and debugging code on the local machine in simulation, which will not run the robot code on a Systemcore.
 
 ## Build vs Deploy
 
