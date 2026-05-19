@@ -11,7 +11,7 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 
 ## Creating a New WPILib Project (Java/C++)
 
-Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. Then, type "WPILib" into the prompt.  Since all WPILib commands start with "WPILib", this will bring up the list of WPILib-specific VS Code commands. Now, select the "Create a new project" command:
+In Visual Studio Code, click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Create a new project`:
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
    :alt: Choose "WPILib: Create a new project".
@@ -540,5 +540,42 @@ Utility Mode is used for testing robot functionality or running other code that 
 
 ## Deploying the Project to a Robot
 
-* :ref:`Deploy Java/C++ code <docs/software/vscode-overview/deploying-robot-code:Building and Deploying Robot Code>`
-* :doc:`Deploy Python code </docs/software/python/subcommands/deploy>`
+.. tab-set::
+
+   .. tab-item:: Java/C++
+
+      In Visual Studio Code, click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Deploy Robot Code` to deploy the code to the robot.
+
+      .. note:: The run button in VS Code's debug view is not used to run robot code. Instead, use the :guilabel:`Deploy Robot Code` command as described above. The debug view's run button is used for running and debugging code on the local machine in simulation, which is not applicable for robot code that runs on Systemcore.
+
+      For more detailed instructions, see :ref:`Deploy Java/C++ code <docs/software/vscode-overview/deploying-robot-code:Building and Deploying Robot Code>`.
+
+   .. tab-item:: Python
+
+      In the terminal, run the following command to deploy the code to the robot:
+
+      .. tab-set::
+
+         .. tab-item:: Windows
+            :sync: windows
+
+            ```sh
+            py -3 -m robotpy deploy
+            ```
+
+         .. tab-item:: macOS
+            :sync: macos
+
+            ```sh
+            python3 -m robotpy deploy
+            ```
+
+         .. tab-item:: Linux
+            :sync: linux
+
+            ```sh
+            python3 -m robotpy deploy
+            ```
+
+      For more detailed instructions, see :doc:`Deploy Python code </docs/software/python/subcommands/deploy>`.
+
