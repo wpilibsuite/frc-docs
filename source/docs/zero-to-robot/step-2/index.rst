@@ -6,7 +6,7 @@ An overview of the available control system software can be found :doc:`here </d
    :maxdepth: 1
 
    offline-installation-preparations
-   frc-game-tools
+   first-driver-station
    wpilib-setup
    python-setup
    step-2-next-steps

@@ -39,7 +39,7 @@ Download the latest FRC Radio Configuration Utility Installer from the following
 
 Before you begin using the software:
 
-1. :ref:`docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters`
+1. :ref:`docs/networking/networking-introduction/systemcore-network-troubleshooting:Disabling Network Adapters`
 2. Plug directly from your computer into the wireless bridge ethernet port closest to the power jack. Make sure no other devices are connected to your computer via ethernet. If powering the radio via PoE, plug an Ethernet cable from the PC into the socket side of the PoE adapter (where the roboRIO would plug in). If you experience issues configuring through the PoE adapter, you may try connecting the PC to the alternate port on the radio.
 
 .. warning:: Many barrel connectors look alike, however they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM (center-pin positive).
@@ -149,7 +149,7 @@ If you need to load the FRC firmware (or reset the radio), you can do so using t
 5. Press the Load Firmware button
 6. When prompted, plug in the radio power. The software should detect the radio, load the firmware and prompt you when complete.
 
-.. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters` for more info.
+.. warning:: If you see an error about NPF name, try disabling all adapters other than the one being used to program the radio. If only one adapter is found, the tool should attempt to use that one. See the steps in :ref:`docs/networking/networking-introduction/systemcore-network-troubleshooting:Disabling Network Adapters` for more info.
 
    Teams may also see this error with Operating Systems configured for languages other than US English. If you experience issues loading firmware or programming on a foreign language OS, try using an English OS, such as on the KOP provided PC or setting the Locale setting to "en_us" as described on [this page] (https://www.java.com/en/download/help/locale.html).
 
@@ -212,7 +212,7 @@ If an error occurs during the configuration process, follow the instructions in 
 
 ## Troubleshooting
 
-- :ref:`docs/networking/networking-introduction/roborio-network-troubleshooting:Disabling Network Adapters`.
+- :ref:`docs/networking/networking-introduction/systemcore-network-troubleshooting:Disabling Network Adapters`.
 - Make sure you wait long enough that the power light has stayed solid for 10 seconds.
 - Make sure you have the correct network interface, and only one interface is listed in the drop-down.
 - Make sure your firewall is turned off.

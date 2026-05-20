@@ -12,7 +12,7 @@ To deploy instead, select "Deploy Robot Code" from any of the three locations fr
 
 .. image:: images/deploying-robot-code/building-code-options.png
 
-.. warning:: Avoid powering off the robot while deploying robot code. Interrupting the deployment process can corrupt the Systemcore filesystem and prevent your code from working until the Systemcore is :doc:`re-imaged </docs/zero-to-robot/step-3/imaging-your-roborio>`.
+.. warning:: Avoid powering off the robot while deploying robot code. Interrupting the deployment process can corrupt the Systemcore filesystem and prevent your code from working until the Systemcore is :doc:`re-imaged </docs/zero-to-robot/step-3/imaging-your-systemcore>`.
 
 If successful, we will see a "Build Successful" message (1) and the RioLog will open with the console output from the robot program as it runs (2).
 

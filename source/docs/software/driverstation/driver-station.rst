@@ -4,7 +4,7 @@
 
 This article describes the use and features of the FRC\ |reg| Driver Station Powered by NI LabVIEW.
 
-For information on installing the Driver Station software see :ref:`this document <docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game Tools>`.
+For information on installing the Driver Station software see :doc:`/docs/zero-to-robot/step-2/first-driver-station`.
 
 ## Starting the FRC Driver Station
 
@@ -13,7 +13,9 @@ For information on installing the Driver Station software see :ref:`this documen
 
 The FRC Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Apps->FRC Driver Station.
 
-.. note:: By default the FRC Driver Station launches the :ref:`LabVIEW Dashboard <docs/software/dashboards/labview-dashboard/driver-station-labview-dashboard:FRC LabVIEW Dashboard>`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch other dashboards, including ones not listed like :doc:`/docs/software/dashboards/elastic` by following the instructions in :doc:`/docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard`. WPILib must be :ref:`installed <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` to use Elastic.
+.. todo:: Update for new DS
+
+.. note:: By default the FRC Driver Station launches :doc:`/docs/software/dashboards/elastic`.  It can also be configured on :ref:`docs/software/driverstation/driver-station:Setup Tab` to launch other dashboards, including ones not listed by following the instructions in :doc:`/docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard`. WPILib must be :ref:`installed <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>` to use Elastic.
 
 ## Driver Station Key Shortcuts
 
