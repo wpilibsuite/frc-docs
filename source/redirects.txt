@@ -334,7 +334,7 @@
 "docs/romi-robot/programming-romi-in-labview.rst" "docs/yearly-overview/removed-features.rst"
 "docs/zero-to-robot/step-2/labview-setup.rst" "docs/yearly-overview/removed-features.rst"
 "docs/zero-to-robot/step-4/creating-test-drivetrain-program-labview.rst" "docs/yearly-overview/removed-features.rst"
-"docs/software/basic-programming/using-test-mode.rst" "docs/yearly-overview/removed-features.rst"
+"docs/software/basic-programming/using-test-mode.rst" "docs/software/basic-programming/using-utility-mode.rst"
 "docs/software/dashboards/shuffleboard/advanced-usage/index.rst" "docs/yearly-overview/removed-features.rst"
 "docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-commands-subsystems.rst" "docs/yearly-overview/removed-features.rst"
 "docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-hierarchies.rst" "docs/yearly-overview/removed-features.rst"
