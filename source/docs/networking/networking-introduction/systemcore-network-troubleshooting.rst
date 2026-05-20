@@ -30,7 +30,7 @@ If you are attempting to troubleshoot the USB connection, try pinging Systemcore
 
 If this ping succeeds, but the .local ping fails, it is likely that either the Systemcore hostname is configured incorrectly, or you are connected to a DNS server which is attempting to resolve the .local address.
 
-- :ref: Try `disabling all other network adapters <docs/networking/networking-introduction/systemcore-network-troubleshooting:Disabling Network Adapters>`
+- Try :ref:`disabling all other network adapters <docs/networking/networking-introduction/systemcore-network-troubleshooting:Disabling Network Adapters>`
 
 ## Ethernet Connection
 
