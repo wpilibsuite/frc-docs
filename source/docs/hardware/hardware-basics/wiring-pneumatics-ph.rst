@@ -6,11 +6,7 @@ This page describes wiring pneumatics with the REV Pneumatic Hub (:term:`PH`). F
 
 .. seealso:: For Pneumatic Hub configuration, firmware updates, and detailed technical specifications, see the [REV Pneumatic Hub Documentation](https://docs.revrobotics.com/ion-control-system/ph).
 
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube-nocookie.com/embed/uQEiNiHT9fs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+.. youtube:: uQEiNiHT9fs
 
 ----
 

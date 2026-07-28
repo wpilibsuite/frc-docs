@@ -11,11 +11,7 @@
 ## Overview
 .. warning:: The video shown below contains the OM5P radio used through the 2024 season. Teams outside China and Chinese Taipei should see :ref:`docs/zero-to-robot/step-1/basic-robot-wiring:Radio Power` for wiring info for the VH-109 radio used this season.
 
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube-nocookie.com/embed/lGgIhxYuSHM" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+.. youtube:: lGgIhxYuSHM
 
 ----
 
@@ -248,11 +244,7 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
    .. tab-item:: CTR
       :sync: CTR
 
-      .. raw:: html
-
-       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-           <iframe src="https://www.youtube-nocookie.com/embed/t-zb7j4ikHM" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-       </div>
+      .. youtube:: t-zb7j4ikHM
 
       The next step will involve using the Wago connectors on the PDP. To use the Wago connectors, insert a small flat blade screwdriver into the rectangular hole at a shallow angle then angle the screwdriver upwards as you continue to press in to actuate the lever, opening the terminal. Two sizes of Wago connector are found on the PDP:
 
@@ -284,11 +276,8 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
 
 ## Weidmuller Connectors
 
-.. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube-nocookie.com/embed/SfkmyN9mYLA?si=dMHW1JCVkbpDjbu6&amp;start=39" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+.. youtube:: SfkmyN9mYLA
+   :url_parameters: ?start=39
 
 
 A number of the CAN and power connectors in the system use a Weidmuller LSF series wire-to-board connector. There are a few things to keep in mind when using this connector for best results:

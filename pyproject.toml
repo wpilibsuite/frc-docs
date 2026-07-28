@@ -35,6 +35,7 @@ dependencies = [
     "frccontrol==2026.11",
     "furo==2025.12.19",
     "sphinx-build-compatibility",
+    "sphinxcontrib-youtube>=1.5.0",
 ]
 
 [tool.uv]
