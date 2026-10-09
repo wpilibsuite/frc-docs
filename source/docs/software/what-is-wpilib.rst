@@ -123,9 +123,11 @@ FIRST\ |reg|, and volunteer developers from the community.
      - Generates Python code
    * - **C++**
      - Teams with C++ experience
+     - Statically typed
      - Available in the desktop environment only
    * - **Python**
      - Teams that know Python or want to learn it
+     - Dynamically typed
      - Uses indentation to group code
 
 .. tip::

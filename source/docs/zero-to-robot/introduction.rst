@@ -3,7 +3,7 @@
 # Zero to Robot
 
 This guide takes you from setting up **Systemcore** to running a drivetrain
-program. 
+program.
 
 Start with assembly and wiring in Step 1, set up your editor in Step 2,
 configure the control system in Step 3, then write code and test the
@@ -21,7 +21,7 @@ legacy hardware setup and programming.
 .. rubric:: Choose How You Will Program
    :class: wl-shared-text
 
-Choose a programming enviroment and a language available for that platform
+Choose a programming environment and a language available for that platform.
 Keep those choices as you follow Steps 2 and 4.
 
 **Choice 1: Programming environment**
@@ -32,7 +32,7 @@ Keep those choices as you follow Steps 2 and 4.
    .. grid-item-card:: OnBot: Program in a Browser
       :class-card: sw-card-shared
 
-      **OnBot Developement**
+      **OnBot Development**
       ^^^
       Open the editor hosted by Systemcore from a browser. Choose Java,
       Blocks, Python, or LabVIEW.
@@ -47,7 +47,7 @@ Keep those choices as you follow Steps 2 and 4.
 
 **Choice 2: Programming language**
 
-Use the table to check which enviroement support your language. If your team
+Use the table to check which environments support your language. If your team
 already knows a language, start there. If you prefer visual programming,
 look at Blocks or LabVIEW.
 
@@ -80,7 +80,7 @@ look at Blocks or LabVIEW.
      - Teams that already know C++
      - Desktop development only
    * - **Python**
-     - Text 
+     - Text
      - ✓
      - ✓
      - Teams already using Python
@@ -141,7 +141,7 @@ the desktop LabVIEW installation walkthrough is still being completed.
    .. grid-item-card:: What Gets Installed
       :class-card: sw-card-shared
 
-      **Software: (If Needed) **
+      **Software: (If Needed)**
       ^^^
       OnBot teams don't need to download anything to write code. You only
       need desktop software if you're not using OnBot, or if you're an

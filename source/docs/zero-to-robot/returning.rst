@@ -18,7 +18,7 @@ follow the update steps for your control system if needed.
    .. grid-item-card:: Check Known Issues
 
       Having trouble after an update? Check for a known issue and any
-      available workaround before sumbitting an issue 
+      available workaround before submitting an issue.
       :doc:`Known issues </docs/yearly-overview/known-issues>`
 
 .. rubric:: FRC: What to Update
