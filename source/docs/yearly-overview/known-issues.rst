@@ -94,7 +94,7 @@ Delete your Gradle cache located under ``~$USER_HOME/.gradle``. Windows machines
 
 ### I2C numbering backwards
 
-The I2C numbering in WPILib is backwards from what the labels are on SystemCore. This will be fixed in Alpha 2 and later releases.
+The I2C numbering in WPILib is backwards from what the labels are on Systemcore. This will be fixed in Alpha 2 and later releases.
 
 ### DutyCycle.getOutput crashes
 
@@ -104,8 +104,8 @@ Use DutyCycle.getHighTime() or DutyCycleEncoder.setAssumedFrequency(), and use t
 
 ## Fixed in VH-109 fimware version 2.0.0
 
-### SystemCore won't get 10.TE.AM.2 address from Radio.
+### Systemcore won't get 10.TE.AM.2 address from Radio.
 
-Due to the change in Hostname, the radio will not hand out .2 to SystemCore. Use the IP address displayed on the SystemCore screen if you need to know the IP address.
+Due to the change in Hostname, the radio will not hand out .2 to Systemcore. Use the IP address displayed on the Systemcore screen if you need to know the IP address.
 
 Generally, everything should work in this configuration. But if you run into issues where the DS cannot connect (And you're sure the team number is set, it's required to connect the DS and can be verified on the screen), you can manually type the IP address into the team number selector in the DS.
