@@ -2,7 +2,7 @@
 
 Addressable LEDs are widely used by teams for debugging, visual markers, and aesthetic appeal.
 
-WPILib provides an API for controlling WS2811, WS2812B, SK6812, and other LEDs that use similar protocols, often called NeoPixels, without the need for an external LED controller.
+WPILib provides an API for controlling WS2811, WS2812B, WS2815, SK6812, and other LEDs that use similar protocols, often called NeoPixels, without the need for an external LED controller.
 
 Commonly they are in strips, but bars, circles, matrices, and other form factors are also available. These LEDs are individually controllable (or controllable by groups on some strips), allowing for a wide variety of patterns and effects.
 
@@ -10,7 +10,7 @@ Wiring addressable LEDs is simple: the DATA pin on the addressable LED product i
 
 These LEDs can be controlled even when the robot is disabled.
 
-.. note:: This library supports only WS2812B-compliant LEDs. The LED timings are fixed and not user-configurable like they are on the roboRIO, so LEDs that do not follow the below timings may not work correctly. For example, WS2815 & DotStar LEDs are not supported.
+.. note:: This library supports only WS2812B/WS2815-compliant LEDs. The LED timings are fixed and not user-configurable like they are on the roboRIO, so LEDs that do not follow the below timings may not work correctly. For example DotStar LEDs are not supported.
 
 .. collapse:: Timing details
 
