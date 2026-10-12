@@ -464,3 +464,4 @@
 "docs/software/driverstation/index.rst" "docs/software/firstdriverstation/index.rst"
 "docs/software/driverstation/manually-setting-the-driver-station-to-start-custom-dashboard.rst" "docs/software/firstdriverstation/manually-setting-the-first-driver-station-to-start-custom-dashboard.rst"
 "docs/zero-to-robot/step-2/first-driver-station.rst" "docs/zero-to-robot/step-2/first-driver-station-installation.rst"
+"docs/software/systemcore-info/roborio-ssh.rst" "docs/software/systemcore-info/systemcore-ssh.rst"
