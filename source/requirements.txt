@@ -836,7 +836,6 @@ requests==2.33.1 \
     #   sphinx-build-compatibility
     #   sphinx-contributors
     #   sphinx-prompt
-    #   sphinxcontrib-youtube
     #   sphinxext-delta
 restructuredtext-lint==2.0.2 \
     --hash=sha256:374c0d3e7e0867b2335146a145343ac619400623716b211b9a010c94426bbed7 \
@@ -986,7 +985,6 @@ sphinx==8.2.3 \
     #   sphinxcontrib-jquery
     #   sphinxcontrib-svg2pdfconverter
     #   sphinxcontrib-video
-    #   sphinxcontrib-youtube
     #   sphinxext-delta
     #   sphinxext-mimic
     #   sphinxext-opengraph
@@ -1086,10 +1084,6 @@ sphinxcontrib-svg2pdfconverter==2.1.0 \
 sphinxcontrib-video==0.4.2 \
     --hash=sha256:18477fd9454ac8c69259e6d24e782d8b802345b6475de6216351c2305b06c898 \
     --hash=sha256:7dfd01e5e2025de39536457854052b18723575d6213d96ca35f83e3154dc0315
-    # via wpilib-docs
-sphinxcontrib-youtube==1.5.0 \
-    --hash=sha256:541b5880096e0a8759f49711f45087c91d6992ff45f03c178e974c66c8f5e326 \
-    --hash=sha256:58d92bec536fbf029b642de3c9bbd32c7de307e0e13686015a0c0e91b7dfe3b8
     # via wpilib-docs
 sphinxext-delta==0.4.1 \
     --hash=sha256:9a2c377c7459f83510acdd96d687ed9e0fb01bc873f30f4d4db1471e61cdaffe \
