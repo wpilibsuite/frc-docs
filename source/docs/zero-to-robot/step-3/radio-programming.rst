@@ -118,7 +118,7 @@ If your team has access to only one VH-109 radio, there are still viable options
 
 If your team still has an older radio from a previous season, it can serve as a temporary substitute for the VH-109 on your robot. In this case, you should:
 
-- Reserve a spot on your robot specifically for the VH-109 radio to ensure seamless integration during competition.
+- Reserve a mounting location on your robot for the VH-109 radio.
 - Provide the older radio regulated power with a REV Radio Power Module or a CTRE Voltage Regulator Module.
 - Be prepared to connect devices via a network switch if the older radio does not provide enough Ethernet ports. This may add complexity but ensures all devices are networked properly during testing.
 

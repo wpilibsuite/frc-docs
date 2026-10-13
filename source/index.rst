@@ -243,7 +243,7 @@ WPILib Documentation
      <a class="wl-core-card" href="docs/api-reference.html"><div class="wl-core-title">API Reference</div><div class="wl-core-desc">Java, C++, and Python class and method documentation.</div></a>
    </div>
 
-   <h3 class="wl-sh">Advanced &amp; Autonomy</h3>
+   <h3 class="wl-sh">Controls and Autonomous Programming</h3>
    <div class="wl-core-grid">
      <a class="wl-core-card" href="docs/software/pathplanning/index.html"><div class="wl-core-title">Path Planning</div><div class="wl-core-desc">Plan autonomous paths with PathPlanner, Choreo, and WPILib tools.</div></a>
      <a class="wl-core-card" href="docs/software/advanced-controls/index.html"><div class="wl-core-title">Advanced Controls</div><div class="wl-core-desc">PID, feedforward, state-space, kinematics, and system identification.</div></a>

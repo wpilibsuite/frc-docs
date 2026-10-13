@@ -1,8 +1,7 @@
 # Create Your Test Drivetrain Program
 
-**By the end of this page:** your drivetrain project will be configured for
-its motor controllers and deployed to Systemcore. You will test the motors
-on the next page, with the wheels off the floor.
+Configure a drivetrain project for your motor controllers and deploy it to
+Systemcore. The next page covers motor testing with the wheels off the floor.
 
 Use the Java, C++, or Python walkthrough below, or start with a Blocks sample.
 
@@ -11,9 +10,8 @@ Before beginning, confirm that WPILib and any language-specific tools from
 the motor-controller type, port numbers or CAN IDs, and team number for your
 robot.
 
-WPILib includes tested example projects with working robot structure already
-in place. This walkthrough starts with the **Getting Started** example, then
-explains the code you must check before deploying it to your robot.
+Start with the WPILib **Getting Started** example, then check its motor
+configuration before deploying it to your robot.
 
 * :ref:`create_java_cpp_project`
 * :ref:`create_python_project`

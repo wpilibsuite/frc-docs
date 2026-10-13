@@ -44,7 +44,7 @@ The programming options below describe Systemcore with WPILib.
 
       **Systemcore**
       ^^^
-      Full Java support via the OnBot browser editor and VS Code
+      Write Java in the OnBot browser editor or VS Code
       with the WPILib extension.
 
    .. grid-item-card:: Python
@@ -82,8 +82,7 @@ The programming options below describe Systemcore with WPILib.
 
       **Systemcore**
       ^^^
-      The main FTC robot controller. Runs the full WPILib stack,
-      the same software foundation used in FRC.
+      Runs WPILib robot code and connects to Motioncore.
 
    .. grid-item-card:: Motioncore
       :class-card: sw-card-ftc
@@ -112,14 +111,11 @@ The programming options below describe Systemcore with WPILib.
       :link-type: doc
       :class-card: sw-card-shared
 
-      Overview of WPILib tools, languages, and how FTC fits into
-      the broader WPILib ecosystem.
+      WPILib tools, supported languages, and programming options for FTC.
 
    .. grid-item-card:: Coach / Mentor Resources
       :link: https://ftc-docs.firstinspires.org/en/latest/persona_pages/rookie_teams/rookie_teams.html
       :link-type: url
       :class-card: sw-card-shared
 
-      Team registration, mentor resources, budgeting, and the
-      competition manual, program-wide and independent of which
-      control system your team uses.
+      Team registration, mentor resources, budgeting, and the competition manual.

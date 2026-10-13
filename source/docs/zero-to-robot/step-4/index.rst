@@ -16,9 +16,8 @@
 
          Step 4 of 4
 
-**By the end of this step:** a drivetrain program will run on Systemcore,
-your controller will operate the drive motors, and you will have checked
-that disabling the robot stops them.
+Deploy a drivetrain program to Systemcore, test the controller and drive
+motors, and verify that disabling the robot stops the motors.
 
 Use the programming environment and language you set up in Step 2. Start with the example
 for your hardware and test with the drive wheels off the floor.

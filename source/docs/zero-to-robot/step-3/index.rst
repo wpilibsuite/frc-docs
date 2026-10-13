@@ -16,9 +16,8 @@
 
          Step 3 of 4
 
-**By the end of this step:** Systemcore will run the current season image, the
-robot and Driver Station will use the same team number, and the computer will
-communicate with the robot through the intended network path.
+Install the current season image on Systemcore, set the team number, and
+check the connection between your computer and robot.
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -97,8 +96,8 @@ Before continuing:
 
 .. rubric:: Part 2: Configure the Radio
 
-The steps below are FRC-specific. FTC teams still configure their radio,
-it's just built into the Systemcore itself rather than a separate device.
+The steps below cover the external FRC radio. FTC uses the radio built into
+Systemcore.
 Systemcore-specific radio configuration steps for FTC are still being
 written; see :doc:`Step 1: Confirm It's Alive <../step-1/index>` in the
 meantime for the built-in connection details.

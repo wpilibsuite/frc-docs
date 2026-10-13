@@ -2,14 +2,15 @@
 
 # Running Your Test Program
 
-**By the end of this page:** you will have confirmed that an FRC drivetrain
-responds correctly while tethered and through the radio, with its wheels safely
-off the floor.
+Test your FRC drivetrain through a direct connection and through the radio,
+with its drive wheels safely off the floor.
 
-This page covers the FRC Driver Station path. First, create and deploy the
-:doc:`Java, C++, or Python drivetrain program
+This page covers testing an FRC drivetrain program written in Java, C++,
+Python, or Blocks using the FRC Driver Station. Before testing, create and
+deploy your :doc:`Java, C++, or Python drivetrain program
 </docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python>`
-and complete the Step 3 communication checks.
+or a :ref:`Blocks drivetrain sample <create_blocks_project>`, and complete
+the Step 3 communication checks.
 
 Work through the tests in order: check the direct connection, test controller
 response with the wheels off the floor, then repeat the test through the radio.
@@ -118,9 +119,8 @@ response through the radio as through the direct connection. If the direct test
 passes but the radio test fails, check the radio setup and network connection
 before changing the drive code.
 
-Passing both tests confirms that the program, Systemcore, controller, and radio
-path are working together. Lower the robot to the floor only after disabling
-it and confirming that all drivetrain directions are correct. For the first
+After both tests pass, disable the robot and confirm that all drivetrain
+directions are correct before lowering it to the floor. For the first
 floor test, use a clear open area, begin with small controller inputs, and keep
 another person ready to disable or power off the robot.
 

@@ -1,8 +1,7 @@
 Returning This Season
 ======================
 
-Welcome back! Check the season changes,  then
-follow the update steps for your control system if needed.
+Review the season changes and update your tools and robot project.
 
 .. rubric:: Before Your First Practice
    :class: wl-shared-text
@@ -30,9 +29,8 @@ follow the update steps for your control system if needed.
    .. grid-item-card:: Pre-Season Checklist
       :class-card: sw-card-frc
 
-      Install WPILib (If using Desktop versions) and the Driver Station, reimage Systemcore, import
-      last year's project, and re-add your vendor libraries. Follow the
-      checklist for the full update steps.
+      Install the Driver Station and, for desktop development, WPILib. Reimage
+      Systemcore, import last year's project, and re-add vendor libraries.
       ^^^
       :doc:`Full returning-team checklist </docs/yearly-overview/returning-quickstart>` ·
       :doc:`Removed in 2027 </docs/yearly-overview/removed-features>`

@@ -16,9 +16,8 @@
 
          Step 2 of 4
 
-**By the end of this step:** your selected programming environment will open
-successfully, and the driver software required by your program will be ready
-for robot setup and testing.
+Set up your programming environment and the Driver Station software for
+your robot.
 
 .. rubric:: Before You Start
 

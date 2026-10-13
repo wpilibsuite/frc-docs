@@ -9,7 +9,7 @@ Start with assembly and wiring in Step 1, set up your editor in Step 2,
 configure the control system in Step 3, then write code and test the
 drivetrain in Step 4.
 
-Robot assembly and robot specific wiring are prerequisites. Step 1 links
+Assemble and wire your robot then configuring Systemcore. Step 1 links
 to the FRC assembly and wiring guides currently hosted here and to
 `FTC Docs <https://ftc-docs.firstinspires.org/en/latest/>`_ for FTC resources.
 Use instructions that match your hardware.
@@ -98,8 +98,7 @@ the desktop LabVIEW installation walkthrough is still being completed.
 
 .. tip::
 
-   **New to programming entirely?** No programming experience is required.
-   This guide introduces variables, objects, methods, and control flow as you
+   **New to programming?** This guide introduces variables, objects, methods, and control flow as you
    build and test the robot. If you want a full course alongside the guide, try
    `Codecademy Java <https://www.codecademy.com/learn/learn-java>`_ or
    `Python learning guides <http://docs.python-guide.org/en/latest/intro/learning/>`_.
@@ -143,9 +142,9 @@ the desktop LabVIEW installation walkthrough is still being completed.
 
       **Software: (If Needed)**
       ^^^
-      OnBot teams don't need to download anything to write code. You only
-      need desktop software if you're not using OnBot, or if you're an
-      FRC team that needs the Driver Station.
+      OnBot hosts the code editor on Systemcore. Install desktop programming
+      tools if you choose desktop development. FRC teams also need the
+      Driver Station.
 
       - **WPILib**: robot programming library + VS Code, for desktop
         development

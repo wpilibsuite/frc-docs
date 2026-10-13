@@ -151,7 +151,7 @@ After installation is complete, you will be presented with the finished screen.
    system installation. Each season has its own copy, such as ``WPILib VS Code
    2027``. Launch WPILib VS Code when working on a robot project.
 
-Congratulations, the WPILib development environment and tooling is now installed on your computer! Press Finish to exit the installer.
+WPILib and its tools are installed. Press Finish to exit the installer.
 
 ## Post-Installation
 

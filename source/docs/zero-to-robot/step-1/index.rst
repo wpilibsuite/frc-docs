@@ -16,9 +16,8 @@
 
          Step 1 of 4
 
-**By the end of this step:** your drivetrain and control system will be
-assembled, Systemcore will power on, and its web interface will open from your
-computer.
+Assemble and wire the drivetrain and control system, power on Systemcore,
+and open its web interface from your computer.
 
 Before starting, turn robot power **Off** and disconnect the battery. For FRC,
 switch the main breaker off; for FTC, use the robot's power switch. Keep the
