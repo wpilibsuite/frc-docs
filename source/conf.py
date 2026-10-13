@@ -42,7 +42,6 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinxcontrib.rsvgconverter",
     "sphinxcontrib.video",
-    "sphinxcontrib.youtube",
     "sphinxext.delta",
     "sphinxext.opengraph",
     "sphinxext.photofinish",
