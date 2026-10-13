@@ -29,7 +29,7 @@ All simulation classes (with the exception of the differential drive simulator) 
 
 ## Usage in User Code
 
-The following is available from the WPILib :code:`elevatorsimulation` [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/elevatorsimulation) / [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp).
+The following is available from the WPILib :code:`elevatorsimulation` [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/elevatorsimulation) / [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/ElevatorSimulation/cpp).
 
 In addition to standard objects such as motors and encoders, we instantiate our elevator simulator using known constants such as carriage mass and gearing reduction. We also instantiate an :code:`EncoderSim`, which sets the distance and rate read by our :code:`Encoder`.
 
@@ -87,7 +87,7 @@ Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple PID
 
 Next, :code:`simulationPeriodic`/:code:`SimulationPeriodic` (Java/C++) uses the voltage applied to the motor to update the simulated position of the elevator. We use :code:`SimulationPeriodic` because it runs periodically only for simulated robots. This means that our simulation code will not be run on a real robot.
 
-.. note:: Classes inheriting from command-based's ``Subsystem`` can override the inherited ``simulationPeriodic()`` method. Other classes will need their simulation update methods called from ``Robot``'s ``simulationPeriodic``.
+.. note:: Classes inheriting from the Commands v2 ``Subsystem`` class can override the inherited ``simulationPeriodic()`` method. Other classes will need their simulation update methods called from ``Robot``'s ``simulationPeriodic``.
 
 Finally, the simulated encoder's distance reading is set using the simulated elevator's position, and the robot's battery voltage is set using the estimated current drawn by the elevator.
 

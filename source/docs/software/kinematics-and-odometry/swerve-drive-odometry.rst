@@ -1,5 +1,5 @@
 # Swerve Drive Odometry
-A user can use the swerve drive kinematics classes in order to perform :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>`. WPILib contains a ``SwerveDriveOdometry`` class that can be used to track the position of a swerve drive robot on the field.
+A user can use the swerve drive kinematics classes in order to perform :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-velocities:What is odometry?>`. WPILib contains a ``SwerveDriveOdometry`` class that can be used to track the position of a swerve drive robot on the field.
 
 .. note:: Because this method only uses encoders and a gyro, the estimate of the robot's position on the field will drift over time, especially as your robot comes into contact with other robots during gameplay. However, odometry is usually very accurate during the autonomous period.
 
@@ -70,26 +70,27 @@ The fourth optional argument is the starting pose of your robot on the field (as
    from wpimath.geometry import Pose2d
    from wpimath.geometry import Rotation2d
    class MyRobot:
-     def robotInit(self):
+     def __init__(self):
+       super().__init__()
        # Locations for the swerve drive modules relative to the robot center.
-       frontLeftLocation = Translation2d(0.381, 0.381)
-       frontRightLocation = Translation2d(0.381, -0.381)
-       backLeftLocation = Translation2d(-0.381, 0.381)
-       backRightLocation = Translation2d(-0.381, -0.381)
+       front_left_location = Translation2d(0.381, 0.381)
+       front_right_location = Translation2d(0.381, -0.381)
+       back_left_location = Translation2d(-0.381, 0.381)
+       back_right_location = Translation2d(-0.381, -0.381)
        # Creating my kinematics object using the module locations
        self.kinematics = SwerveDrive4Kinematics(
-         frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
+         front_left_location, front_right_location, back_left_location, back_right_location
        )
        # Creating my odometry object from the kinematics object and the initial wheel positions.
        # Here, our starting pose is 5 meters along the long end of the field and in the
        # center of the field along the short end, facing the opposing alliance wall.
        self.odometry = SwerveDrive4Odometry(
-         self.kinematics, self.gyro.getRotation2d(),
+         self.kinematics, self.gyro.get_rotation2d(),
          (
-           self.frontLeftModule.getPosition(),
-           self.frontRightModule.getPosition(),
-           self.backLeftModule.getPosition(),
-           self.backRightModule.getPosition()
+           self.frontLeftModule.get_position(),
+           self.frontRightModule.get_position(),
+           self.backLeftModule.get_position(),
+           self.backRightModule.get_position()
          ),
          Pose2d(5.0, 13.5, Rotation2d()))
    ```
@@ -132,11 +133,11 @@ This ``update`` method must be called periodically, preferably in the ``periodic
    ```python
    def periodic(self):
      # Get the rotation of the robot from the gyro.
-     self.gyroAngle = self.gyro.getRotation2d()
+     self.gyroAngle = self.gyro.get_rotation2d()
      # Update the pose
      self.pose = self.odometry.update(self.gyroAngle,
-         self.frontLeftModule.getPosition(), self.frontRightModule.getPosition(),
-         self.backLeftModule.getPosition(), self.backRightModule.getPosition()
+         self.frontLeftModule.get_position(), self.frontRightModule.get_position(),
+         self.backLeftModule.get_position(), self.backRightModule.get_position()
      )
    ```
 
@@ -145,6 +146,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important::  If at any time, you decide to reset your gyroscope or wheel encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel encoder positions.
 
-.. note:: The implementation of ``getPosition() / GetPosition()`` above is left to the user. The idea is to get the module position (distance and angle) from each module. For a full example, see here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/SwerveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/swervebot) / [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/SwerveBot)
+.. note:: The implementation of ``getPosition() / GetPosition()`` above is left to the user. The idea is to get the module position (distance and angle) from each module. For a full example, see here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/SwerveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/swervebot) / [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/SwerveBot)
 
 In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.

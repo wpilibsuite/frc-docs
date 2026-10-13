@@ -102,19 +102,19 @@ Follow the [WPILib style guide](https://github.com/wpilibsuite/styleguide/) for 
 When possible, instead of using code blocks, an RLI should be used.  This pulls code lines directly from GitHub, most commonly using the example programs.  This automatically keeps the code up to date with any changes that are made.  The format of an RLI is:
 
 ```ReST
-.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
    :language: java
-   :lines: 19-25
+   :lines: 18-24
    :lineno-match:
 
-.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+.. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
    :language: c++
-   :lines: 49-59
+   :lines: 46-56
    :lineno-match:
 
-.. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
+.. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/GettingStarted/robot.py
    :language: python
-   :lines: 10-27
+   :lines: 11-28
    :lineno-match:
 ```
 
@@ -127,11 +127,11 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
 
 ````ReST
 .. tab-set-code::
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
-      :lines: 19-25
+      :lines: 18-24
       :lineno-match:
-   
+
    ```c++
    // Start the timer.
    m_timer.Start();

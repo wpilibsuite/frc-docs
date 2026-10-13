@@ -8,7 +8,7 @@ Similar to NetworkTables, data logs have the concept of entries with string iden
 
 Data logs consist of a series of timestamped records.  Control records allow starting, finishing, or changing the metadata of entries, and data records record data value changes.  Timestamps are stored in integer microseconds; when running on the RoboRIO, the FPGA timestamp is used (the same timestamp returned by ``Timer.getFPGATimestamp()``).
 
-.. note:: For more information on the details of the data log file format, see the [WPILib Data Log File Format Specification](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/datalog/doc/datalog.adoc).
+.. note:: For more information on the details of the data log file format, see the [WPILib Data Log File Format Specification](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/datalog/doc/datalog.adoc).
 
 ## Standard Data Logging using DataLogManager
 
@@ -80,14 +80,14 @@ DataLogManager by default does not record joystick data.  The ``DriverStation`` 
     # Starts recording to data log
     DataLogManager.start()
     # Record both DS control and joystick data
-    DriverStation.startDataLog(DataLogManager.getLog())
+    DriverStation.start_data_log(DataLogManager.get_log())
     # (alternatively) Record only DS control data
-    DriverStation.startDataLog(DataLogManager.getLog(), False)
+    DriverStation.start_data_log(DataLogManager.get_log(), False)
     ```
 
 ## Custom Data Logging using DataLog
 
-The ``DataLog`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/datalog/DataLog.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1log_1_1_data_log.html), :external:py:class:`Python <wpiutil.log.DataLog>`) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
+The ``DataLog`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/datalog/DataLog.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1log_1_1_data_log.html), :external:py:class:`Python <wpilog.DataLog>`) and its associated LogEntry classes (e.g. ``BooleanLogEntry``, ``DoubleLogEntry``, etc) provides low-level access for writing data logs.
 
 .. note:: Unlike NetworkTables, there is no change checking performed.  **Every** call to a ``LogEntry.append()`` function will result in a record being written to the data log.  Checking for changes and only appending to the log when necessary is the responsibility of the caller.
 
@@ -158,15 +158,16 @@ The LogEntry classes can be used in conjunction with DataLogManager to record va
         StringLogEntry,
     )
    class MyRobot(TimedRobot):
-        def robotInit(self):
+        def __init__(self):
+            super().__init__()
             # Starts recording to data log
             DataLogManager.start()
             # Set up custom log entries
-            log = DataLogManager.getLog()
+            log = DataLogManager.get_log()
             self.myBooleanLog = BooleanLogEntry(log, "/my/boolean")
             self.myDoubleLog = DoubleLogEntry(log, "/my/double")
             self.myStringLog = StringLogEntry(log, "/my/string")
-        def teleopPeriodic(self):
+        def teleop_periodic(self):
             if ...:
                 # Only log when necessary
                 self.myBooleanLog.append(True)

@@ -67,7 +67,7 @@ Destroying a NetworkTableInstance frees all resources related to the instance. A
         ```python
         import ntcore
         # get the default NetworkTable instance
-        defaultInst = ntcore.NetworkTableInstance.getDefault()
+        defaultInst = ntcore.NetworkTableInstance.get_default()
         # create a NetworkTable instance
         inst = ntcore.NetworkTableInstance.create()
         # destroy a NetworkTable instance

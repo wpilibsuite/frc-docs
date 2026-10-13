@@ -2,9 +2,17 @@
 
 # Programming your Radio
 
-This guide will show you how to do a basic setup for controlling your robot "at home" using the VH-109 FRC\ |reg| Radio.  For complete documentation and information please see the [Vivid-Hosting radio site](https://frc-radio.vivid-hosting.net/).
+This guide shows a basic at-home setup using the VH-109 FRC\ |reg| Radio.
+The `Vivid-Hosting radio documentation
+<https://frc-radio.vivid-hosting.net/>`_ is the authority for current firmware,
+power, mounting, and configuration requirements.
 
-.. note:: If looking for how to use the OpenMesh (OM5P) Radio please see :ref:`docs/zero-to-robot/step-3/openmesh:Using the OpenMesh OM5P Radio`
+.. note::
+
+   **Using a legacy OpenMesh OM5P radio?** Keep using
+   :ref:`docs/zero-to-robot/step-3/openmesh:Using the OpenMesh OM5P Radio`.
+   Its regulated VRM/RPM power and configuration instructions remain separate
+   from the VH-109 instructions on this page.
 
 ## Prerequisites
 
@@ -15,6 +23,31 @@ Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Set
 .. image:: images/radio-programming/VH-109-2-radios.drawio.svg
    :alt: Connectivity diagram of VH-109 on robot connected to VH-109 on Driver station, powered by VH-117 POE wall adapter, with DS, and programming laptops connected to it
    :width: 500
+
+## Powering the VH-109
+
+The robot-mounted VH-109 is designed to run directly from robot battery
+voltage. Connect the robot power distribution system to the radio's 12 VDC
+Weidmuller input using the wiring described in
+:ref:`docs/zero-to-robot/step-1/basic-robot-wiring:Radio Power`. A VRM is not
+required.
+
+The VH-109 can also receive passive :term:`PoE` through its RIO port. Vivid
+Hosting recommends 12 VDC plus PoE for redundant robot-radio power, with both
+inputs supplied from the same source and at the same voltage.
+
+.. warning::
+
+   Do not power a VH-109 from both a REV Radio Power Module (RPM) and its 12 VDC
+   input. If AUX-port PoE output is enabled, verify that every downstream device
+   accepts the supplied voltage before connecting it.
+
+.. important::
+
+   A VH-109 configured as an **access point** must use an AC-powered adapter or
+   power supply; it cannot legally be powered from a battery. The recommended
+   at-home method is the VH-117 PoE wall adapter. If powering through the 12 VDC
+   input instead, use a wall supply rated for at least 12 V at 1 A.
 
 ## Getting to the Web Configuration Page
 
@@ -29,9 +62,12 @@ Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Set
 .. image:: images/radio-programming/radio-firmware.png
   :alt: The Firmware Upload section of the radio configuration page
 
-.. note:: Newer versions of the radio firmware will have the version listed at the bottom.  If you do not see the version listed you have firmware prior to 1.2.0.
-
-You can skip this section if already at version 1.3.0 or later.
+The required firmware changes by season. Compare the version shown by the
+radio with the current version on the Vivid-Hosting
+`firmware releases page
+<https://frc-radio.vivid-hosting.net/miscellaneous/firmware-releases>`_. Skip
+the update only when the installed version already satisfies the current
+season requirement.
 
 1. On the Vivid-Hosting [firmware releases](https://frc-radio.vivid-hosting.net/miscellaneous/firmware-releases) page download the proper firmware for the current firmware version you have.  Always choose the `Radio Variant`.
 
@@ -82,7 +118,7 @@ If your team has access to only one VH-109 radio, there are still viable options
 
 If your team still has an older radio from a previous season, it can serve as a temporary substitute for the VH-109 on your robot. In this case, you should:
 
-- Reserve a spot on your robot specifically for the VH-109 radio to ensure seamless integration during competition.
+- Reserve a mounting location on your robot for the VH-109 radio.
 - Provide the older radio regulated power with a REV Radio Power Module or a CTRE Voltage Regulator Module.
 - Be prepared to connect devices via a network switch if the older radio does not provide enough Ethernet ports. This may add complexity but ensures all devices are networked properly during testing.
 
@@ -95,17 +131,18 @@ Disadvantages:
 - Requires additional hardware (e.g., the old radio and maybe a network switch).
 - The older radio may not offer the same performance as the VH-109, potentially affecting test results.
 
-#### Enable 2.4GHz Wifi on the VH-109
+#### Use the VH-109 2.4 GHz Network
 
-The VH-109 radio includes a standalone mode that can be activated using DIP switch 3. In this configuration, the radio hosts its own 2.4GHz network, enabling direct connections without additional hardware.
+Some firmware versions allow the robot radio to host a 2.4 GHz network for
+direct testing. Firmware 2.0 and later configure this in software; older
+DIP-switch instructions do not apply. Follow the current
+`Practicing At Home guide
+<https://frc-radio.vivid-hosting.net/overview/practicing-at-home>`_ for the
+installed firmware.
 
-To enable standalone mode:
-
-1. Locate the DIP switches on the VH-109 radio, removing the sticker if required.
-2. Flip DIP switch 3 to the "ON" position.
-3. Connect devices directly to the 2.4GHz network hosted by the radio, using the 2.4 GHz WPA/SAE key from configuration.
-
-.. warning:: Due to poor performance, Vivid-Hosting does not recommend using this method for practicing at home. You should only use this method in extreme cases. School campuses tend to have noisy 2.4GHz environments, which can significantly degrade wireless performance.
+.. warning:: Vivid Hosting does not recommend 2.4 GHz as the normal practice
+   setup. Congested environments, including many school campuses, can produce
+   poor performance.
 
 Advantages:
 

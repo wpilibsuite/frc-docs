@@ -69,7 +69,7 @@ Motor controllers should be declared as member variables in your subsystem class
 
 **In Timed Robot programs:**
 
-Motor controllers should be declared as member variables in your ``Robot`` class. Create them in ``robotInit()``, and use them in periodic methods or autonomous/teleop methods.
+Motor controllers should be declared as member variables in your ``Robot`` class. Create them in the ``Robot`` constructor, and use them in periodic methods or autonomous/teleop methods.
 
 .. tab-set-code::
 
@@ -78,8 +78,7 @@ Motor controllers should be declared as member variables in your ``Robot`` class
      private Spark m_intakeMotor;
      private Joystick m_joystick;
 
-     @Override
-     public void robotInit() {
+     public Robot() {
        m_intakeMotor = new Spark(0);
        m_joystick = new Joystick(0);
      }
@@ -118,13 +117,14 @@ Motor controllers should be declared as member variables in your ``Robot`` class
 
    ```python
    class MyRobot(wpilib.TimedRobot):
-       def robotInit(self):
+       def __init__(self):
+           super().__init__()
            self.intake_motor = wpilib.Spark(0)
            self.joystick = wpilib.Joystick(0)
 
-       def teleopPeriodic(self):
+       def teleop_periodic(self):
            # Run intake when button is pressed
-           if self.joystick.getRawButton(1):
+           if self.joystick.get_raw_button(1):
                self.intake_motor.set(0.8)
            else:
                self.intake_motor.set(0.0)

@@ -12,6 +12,7 @@
    deploy-directory
    reading-stacktraces
    functions-as-data
+   opmodes
    alliancecolor
    java-gc
    using-utility-mode

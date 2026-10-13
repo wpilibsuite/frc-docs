@@ -32,8 +32,8 @@ Reliable data of the :term:`system's <system>` :term:`state`\s, :term:`input`\s 
 
    ```python
    from ntcore import NetworkTableInstance
-   def robotPeriodic(self):
-      NetworkTableInstance.getDefault().flush()
+   def robot_periodic(self):
+      NetworkTableInstance.get_default().flush()
    ```
 
 ## Compensating for Input Lag

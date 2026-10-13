@@ -8,7 +8,7 @@ Essential tooling such as the FIRST Driver Station, Dashboards, roboRIO Imaging 
    :maxdepth: 2
 
    /docs/software/systemcore-info/index
-   /docs/software/driverstation/index
+   /docs/software/firstdriverstation/index
    /docs/software/dashboards/index
    /docs/software/wpilib-tools/robot-simulation/index
    /docs/software/wpilib-tools/outlineviewer/index

@@ -71,7 +71,7 @@ You can use NetworkTables to send these properties to the Driver Station and the
 
    ```py
    import ntcore
-   nt = ntcore.NetworkTableInstance.getDefault().getTable('vision')
+   nt = ntcore.NetworkTableInstance.get_default().get_table('vision')
    #
    # Initialization code here
    #
@@ -79,7 +79,7 @@ You can use NetworkTables to send these properties to the Driver Station and the
       #
       # Image processing code here
       #
-      nt.putNumber('center_x', center_x)
-      nt.putNumber('center_y', center_y)
+      nt.put_number('center_x', center_x)
+      nt.put_number('center_y', center_y)
    ```
 

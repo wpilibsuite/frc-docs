@@ -10,7 +10,7 @@ Typically, code that calls a function is coupled to (depends on) the definition 
 
 For example, WPILib offers several ways for users to execute certain code whenever a joystick button is pressed - one of the easiest and cleanest ways to do this is to allow the user to *pass a function* to one of the WPILib joystick methods.  This way, the user only has to write the code that deals with the interesting and team-specific things (e.g., "move my robot arm") and not the boring, error-prone, and universal thing ("properly read button inputs from a standard joystick").
 
-For another example, the :ref:`Command-based framework <docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?>` is built on ``Command`` objects that refer to methods defined on various ``Subsystem`` classes.  Many of the included ``Command`` types (such as ``InstantCommand`` and ``RunCommand``) work with *any* function - not just functions associated with a single ``Subsystem``.  To support building commands generically, we need to support passing functions from a ``Subsystem`` (which interacts with the hardware) to a ``Command`` (which interacts with the scheduler).
+For another example, the :ref:`Commands v2 framework <docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?>` is built on ``Command`` objects that refer to methods defined on various ``Subsystem`` classes.  Many of the included ``Command`` types (such as ``InstantCommand`` and ``RunCommand``) work with *any* function - not just functions associated with a single ``Subsystem``.  To support building commands generically, we need to support passing functions from a ``Subsystem`` (which interacts with the hardware) to a ``Command`` (which interacts with the scheduler).
 
 In these cases, we want to be able to pass a single function as a piece of data, as if it were a variable - it doesn't make sense to ask the user to provide an entire class, when we really just want them to give us a single appropriately-shaped function.
 
@@ -20,16 +20,83 @@ Inside of code that passes a function, we will see some syntax that either refer
 
 ## Treating Functions as Data in Java
 
-Java represents functions-as-data as instances of [functional interfaces](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html).  A "functional interface" is a special kind of class that has only a single method - since Java was originally designed strictly for object-oriented programming, it has no way of representing a single function detached from a class.  Instead, it defines a particular group of classes that *only* represent single functions.  Each type of function signature has its own functional interface, which is an interface with a single function definition of that signature.
+Java represents functions-as-data as instances of [functional interfaces](https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html).  A "functional interface" is a special kind of interface that has only a single abstract method - since Java was originally designed strictly for object-oriented programming, it has no way of representing a single function detached from a class.  Instead, it defines a particular group of classes that *only* represent single functions.  Each type of function signature has its own functional interface, which is an interface with a single function definition of that signature.
 
-This might sound complicated, but in the context of WPILib we don't really need to worry much about using the functional interfaces themselves - the code that does that is internal to WPILib.  Instead, all we need to know is how to pass a function that we've written to a method that takes a functional interface as a parameter.  For a simple example, consider the signature of ``Commands.runOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
+This might sound complicated, but in the context of WPILib we don't really need to worry much about defining functional interfaces ourselves - the code that does that is internal to WPILib.  Instead, all we need to know is how to pass a function that we've written to a method that takes a functional interface as a parameter.
 
-.. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands-v2/commands:getRequirements>`, and will not be discussed here.
+### Evolution of Callbacks in Java
+
+To understand why lambda expressions exist, consider a method that accepts a callback to decide when to stop executing:
+
+```java
+/**
+ * Runs until a user-supplied callback tells us to stop.
+ */
+public void runUntil(BooleanSupplier stop) {
+  int counter = 0;
+  while (!stop.getAsBoolean()) {
+    counter += 1;
+    System.out.println("Still going at iteration " + counter + "!");
+  }
+}
+```
+
+Java has evolved through three main approaches to passing behavior like this:
+
+#### 1. Named Classes (pre-Java 8)
+
+In early versions of Java, passing behavior required defining a named class that implemented the desired interface:
+
+```java
+public class RandomCondition implements BooleanSupplier {
+  @Override
+  public boolean getAsBoolean() {
+    return Math.random() >= 0.5;
+  }
+}
+
+// Usage
+runUntil(new RandomCondition());
+```
+
+This approach is verbose and requires creating separate top-level or inner classes even for trivial, one-off logic.
+
+#### 2. Anonymous Inner Classes (pre-Java 8)
+
+Java later allowed defining classes inline where they are needed without giving them a name:
+
+```java
+runUntil(new BooleanSupplier() {
+  @Override
+  public boolean getAsBoolean() {
+    return Math.random() >= 0.5;
+  }
+});
+```
+
+While this keeps the logic close to the call site, it still introduces boilerplate (repeating the interface name, method signature, and annotations) for what is fundamentally a single expression.
+
+#### 3. Lambda Expressions (Java 8 and later)
+
+Lambda expressions eliminate this boilerplate by focusing entirely on the input parameters and the executable body:
+
+```java
+runUntil(() -> Math.random() >= 0.5);
+```
+
+Because ``BooleanSupplier`` has only one method that takes no arguments and returns a ``boolean``, the Java compiler can infer all required type information directly from context.
+
+### Passing Existing Methods: Method References
+
+For a simple WPILib example, consider the signature of ``Commands.runOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
+
+.. note:: The ``requirements`` parameter is explained in the :ref:`Commands v2 documentation <docs/software/commandbased/commands-v2/commands:getRequirements>`, and will not be discussed here.
+
 ```java
 public static Command runOnce(Runnable action, Subsystem... requirements)
 ```
 
-``runOnce`` expects us to give it a ``Runnable`` parameter (named ``action``).  A ``Runnable`` is the Java term for a function that takes no parameters and returns no value.  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  There are two ways to do this: we can refer to some existing function using a "method reference", or we can define the function we want inline using a "lambda expression".
+``runOnce`` expects us to give it a ``Runnable`` parameter (named ``action``).  A ``Runnable`` is the standard Java functional interface for a function that takes no parameters and returns no value.  When we call ``runOnce``, we need to give it a function with no parameters and no return value.  There are two ways to do this: we can refer to some existing function using a "method reference", or we can define the function we want inline using a lambda expression.
 
 ### Method References
 
@@ -42,27 +109,34 @@ Command disableCommand = runOnce(drivetrain::resetEncoders, drivetrain);
 
 The expression ``drivetrain::resetEncoders`` is a reference to the ``resetEncoders`` method of the ``drivetrain`` object.  It is not a method *call* - this line of code does not *itself* reset the encoders of the drivetrain.  Instead, it returns a ``Command`` that will do so *when it is scheduled.*
 
-Remember that in order for this to work, ``resetEncoders`` must be a ``Runnable`` - that is, it must take no parameters and return no value.  So, its signature must look like this:
+Remember that in order for this to work, ``resetEncoders`` must match the ``Runnable`` signature: it must take no parameters and return no value:
 
 ```java
-// void because it returns no parameters, and has an empty parameter list
+// void because it returns no value, and has an empty parameter list
 public void resetEncoders()
 ```
 
-If the function signature does not match this, Java will not be able to interpret the method reference as a ``Runnable`` and the code will not compile.  Note that all we need to do is make sure that the signature matches the signature of the single method in the ``Runnable`` functional interface - we don't need to *explicitly* name it as a ``Runnable``.
+If the function signature does not match the functional interface, Java will not be able to interpret the method reference as a ``Runnable`` and the code will not compile.  Note that all we need to do is make sure that the signature matches the signature of the single method in the ``Runnable`` functional interface - we don't need to *explicitly* name it as a ``Runnable``.
 
 ### Lambda Expressions in Java
 
-If we do not already have a named function that does what we want, we can define a function "inline" - that means, right inside of the call to ``runOnce``!  We do this by writing our function with a special syntax that uses an "arrow" symbol to link the argument list to the function body:
+If we do not already have a named function that does what we want, we can define a function inline right inside the call to ``runOnce`` using a lambda expression:
 
 ```java
 // Create an InstantCommand that runs the drive forward at half speed
 Command driveHalfSpeed = runOnce(() -> { drivetrain.arcadeDrive(0.5, 0.0); }, drivetrain);
 ```
 
-Java calls ``() -> { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression"; it may be less-confusingly called an "arrow function", "inline function", or "anonymous function" (because it has no name).  While this may look a bit funky, it is just another way of writing a function - the parentheses before the arrow are the function's argument list, and the code contained in the brackets is the function body.  The "lambda expression" here represents a function that calls ``drivetrain.arcadeDrive`` with a specific set of parameters - note again that this does not *call* the function, but merely defines it and passes it to the ``Command`` to be run later when the ``Command`` is scheduled.
+Java calls ``() -> { drivetrain.arcadeDrive(0.5, 0.0); }`` a "lambda expression" (also known as an "arrow function" or "anonymous function"). A lambda expression separates the parameter list from the body using an arrow (``->``):
 
-As with method references, we do not need to *explicitly* name the lambda expression as a ``Runnable`` - Java can infer that our lambda expression is a ``Runnable`` so long as its signature matches that of the single method in the ``Runnable`` interface.  Accordingly, our lambda takes no arguments and has no return statement - if it did not match the ``Runnable`` contract, our code would fail to compile.
+```java
+(param1, param2, ..., paramN) -> {
+  ... body ...
+  return result;
+}
+```
+
+Java infers the return type and parameter types automatically based on the functional interface expected by the method being called (its "target type").
 
 #### Capturing State in Java Lambda Expressions
 
@@ -74,26 +148,45 @@ This means we can only capture primitive types (like ``int``, ``double``, and ``
 
 ### Syntactic Sugar for Java Lambda Expressions
 
-The full lambda expression syntax can be needlessly verbose in some cases.  To help with this, Java lets us take some shortcuts (called "syntactic sugar") in cases where some of the notation is redundant.
+Java provides several shortcuts to make lambda expressions concise and readable:
 
 #### Omitting Function Body Brackets for One-Line Lambdas
 
-If the function body of our lambda expression is only one line, Java lets us omit the brackets around the function body.  When omitting function brackets, we also omit trailing semicolons And the `return` keyword.
-
-So, our ``Runnable`` lambda above could instead be written:
+If the function body of our lambda expression is only one line, Java lets us omit the curly braces around the function body as well as the trailing semicolon and ``return`` keyword:
 
 ```java
 // Create an InstantCommand that runs the drive forward at half speed
 Command driveHalfSpeed = runOnce(() -> drivetrain.arcadeDrive(0.5, 0.0), drivetrain);
 ```
 
-#### Omitting Parentheses around Single Lambda Parameters
+#### Omitting Parameter Types
 
-If the lambda expression is for a functional interface that takes only a single argument, we can omit the parenthesis around the parameter list:
+The compiler automatically infers the types of lambda parameters from the functional interface signature, so parameter types can be omitted:
 
 ```java
-// We can write this lambda with no parenthesis around its single argument
-IntConsumer exampleLambda = (a -> System.out.println(a));
+// Explicit parameter types:
+(double value) -> Math.sqrt(value)
+
+// Inferred parameter types:
+(value) -> Math.sqrt(value)
+```
+
+#### Omitting Parentheses around Single Lambda Parameters
+
+If the lambda expression accepts exactly one parameter, parentheses around the parameter name can also be omitted:
+
+```java
+// Parameter parentheses omitted:
+IntConsumer exampleLambda = a -> System.out.println(a);
+```
+
+#### Unused Parameters (``_``)
+
+When a functional interface requires a parameter that is not needed in the lambda body, modern Java allows naming the unused parameter with an underscore (``_``) to indicate to readers and the compiler that it is intentionally ignored:
+
+```java
+// Ignoring an unused parameter
+DoubleConsumer ignoreInput = _ -> System.out.println("Triggered!");
 ```
 
 ## Treating Functions as Data in C++
@@ -104,7 +197,7 @@ In WPILibC, function types are represented with the ``std::function`` class (htt
 
 This sounds a lot more complicated than it is to use in practice.  Let's look at the call signature of ``cmd::RunOnce`` (which creates an ``InstantCommand`` that, when scheduled, runs the given function once and then terminates):
 
-.. note:: The ``requirements`` parameter is explained in the :ref:`Command-based documentation <docs/software/commandbased/commands-v2/commands:getRequirements>`, and will not be discussed here.
+.. note:: The ``requirements`` parameter is explained in the :ref:`Commands v2 documentation <docs/software/commandbased/commands-v2/commands:getRequirements>`, and will not be discussed here.
 
 ```c++
 CommandPtr RunOnce(
@@ -131,6 +224,6 @@ Since ``RunOnce`` wants a function with no parameters and no return value, our l
 
 In the above example, our function body references an object that lives outside of the function itself (namely, the ``drivetrain`` object).  This is called a "capture" of a variable from the surrounding code (which is sometimes called the "outer scope" or "enclosing scope").  Usually the captured variables are either local variables from the enclosing method body in which the lambda expression is defined, or else fields of an enclosing class definition in which that method is defined.
 
-C++ has somewhat more-powerful semantics than Java.  One cost of this is that we generally need to give the C++ compiler some help to figure out *how exactly* we want it to capture state from the enclosing scope.  This is the purpose of the *capture list*.  For the purposes of using the WPILibC Command-based framework, it is usually sufficient to use a capture list of ``[this]``, which gives access to members of the enclosing class by capturing the enclosing class's ``this`` pointer by value.
+C++ has somewhat more-powerful semantics than Java.  One cost of this is that we generally need to give the C++ compiler some help to figure out *how exactly* we want it to capture state from the enclosing scope.  This is the purpose of the *capture list*.  For the purposes of using the WPILibC Commands v2 framework, it is usually sufficient to use a capture list of ``[this]``, which gives access to members of the enclosing class by capturing the enclosing class's ``this`` pointer by value.
 
 Method locals cannot be captured with the ``this`` pointer, and must be captured explicitly either by reference or by value by including them in the capture list (or by implicitly by instead specifying a default capture semantics).  It is typically safer to capture locals by-value, since a lambda can outlive the lifespan of an object it captures by reference.  For more details, consult the [C++ standard library documentation on capture semantics](https://en.cppreference.com/w/cpp/language/lambda#Lambda_capture).

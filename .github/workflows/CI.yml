@@ -179,7 +179,7 @@ jobs:
         uv run make rediraffecheckdiff
     - name: Check redirects format
       run: |
-        [[ $(<source/redirects.txt) == $(git show origin/main:source/redirects.txt)* ]] || { echo "Error: redirects.txt can only be appended to. Lines cannot be modified or deleted."; exit 1; }
+        [[ $(grep -v '^#' source/redirects.txt) == $(git show origin/main:source/redirects.txt | grep -v '^#')* ]] || { echo "Error: redirects.txt can only be appended to. Lines cannot be modified or deleted."; exit 1; }
         
   check-formatting:
     runs-on: ubuntu-24.04

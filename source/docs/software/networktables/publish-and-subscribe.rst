@@ -364,7 +364,7 @@ Subscribers have a range of different ways to read received values. It's possibl
               self.dblSub = dblTopic.subscribe(0.0)
               # subscribe options may be specified using PubSubOption
               self.dblSub = dblTopic.subscribe(
-                  0.0, ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+                  0.0, ntcore.PubSubOptions(keepDuplicates=True, poll_storage=10)
               )
               # subscribeEx provides the options of using a custom type string.
               # Using a custom type string for types other than raw and string is not recommended.
@@ -378,9 +378,9 @@ Subscribers have a range of different ways to read received values. It's possibl
               val = self.dblSub.get(-1.0)
               # get the most recent value, along with its timestamp
               tsVal = self.dblSub.getAtomic()
-              # read all value changes since the last call to readQueue
-              # readQueue() returns timestamps
-              tsUpdates = self.dblSub.readQueue()
+              # read all value changes since the last call to read_queue
+              # read_queue() returns timestamps
+              tsUpdates = self.dblSub.read_queue()
               # often not required in robot code, unless this class doesn't exist for
           # the lifetime of the entire robot program, in which case close() needs to be
           # called to stop subscribing
@@ -579,10 +579,10 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
           def __init__(self, dblTopic: ntcore.DoubleTopic):
               # start subscribing; the return value must be retained.
               # the parameter is the default value if no value is available when get() is called
-              self.dblEntry = dblTopic.getEntry(0.0)
+              self.dblEntry = dblTopic.get_entry(0.0)
               # publish and subscribe options may be specified using PubSubOption
-              self.dblEntry = dblTopic.getEntry(
-                  0.0, ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+              self.dblEntry = dblTopic.get_entry(
+                  0.0, ntcore.PubSubOptions(keepDuplicates=True, poll_storage=10)
               )
               # getEntryEx provides the options of using a custom type string.
               # Using a custom type string for types other than raw and string is not recommended.
@@ -593,7 +593,7 @@ An :term:`entry` is a combined publisher and subscriber. The subscriber is alway
               val = self.dblEntry.get(-1.0)
               val = self.dblEntry.getAsDouble()
               tsVal = self.dblEntry.getAtomic()
-              tsUpdates = self.dblEntry.readQueue()
+              tsUpdates = self.dblEntry.read_queue()
               # entries also support all the same methods as publishers; the first time
               # one of these is called, an internal publisher is automatically created
               self.dblEntry.setDefault(0.0)
@@ -761,30 +761,30 @@ For the most robust code, using the type-specific Publisher, Subscriber, and Ent
               self.entry = topic.getGenericEntry("double")
               # publish and subscribe options may be specified using PubSubOption
               self.pub = topic.genericPublish(
-                  "double", ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+                  "double", ntcore.PubSubOptions(keepDuplicates=True, poll_storage=10)
               )
               self.sub = topic.genericSubscribe(
-                  ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+                  ntcore.PubSubOptions(keepDuplicates=True, poll_storage=10)
               )
               self.entry = topic.getGenericEntry(
-                  ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10)
+                  ntcore.PubSubOptions(keepDuplicates=True, poll_storage=10)
               )
               # genericPublishEx provides the option of setting initial properties.
               self.pub = topic.genericPublishEx(
                   "double",
                   {"retained": true},
-                  ntcore.PubSubOptions(keepDuplicates=True, pollStorage=10),
+                  ntcore.PubSubOptions(keepDuplicates=True, poll_storage=10),
               )
           def periodic(self):
               # generic subscribers and entries have typed get operations; a default must be provided
-              val = self.sub.getDouble(-1.0)
-              val = self.entry.getDouble(-1.0)
+              val = self.sub.get_double(-1.0)
+              val = self.entry.get_double(-1.0)
               # they also support an untyped get (also meets Supplier<NetworkTableValue> interface)
               val = self.sub.get()
               val = self.entry.get()
-              # they also support readQueue
-              updates = self.sub.readQueue()
-              updates = self.entry.readQueue()
+              # they also support read_queue
+              updates = self.sub.read_queue()
+              updates = self.entry.read_queue()
               # publishers and entries have typed set operations; these return false if the
               # topic already exists with a mismatched type
               success = self.pub.setDefaultDouble(1.0)
@@ -969,10 +969,10 @@ While in most cases it's only necessary to subscribe to individual topics, it is
               # to get value updates from a MultiSubscriber, it's necessary to create a listener
               # (see the listener documentation for more details)
               self.poller = ntcore.NetworkTableListenerPoller(inst)
-              self.poller.addListener(self.multiSub, ntcore.EventFlags.kValueAlls)
+              self.poller.add_listener(self.multiSub, ntcore.EventFlags.kValueAlls)
           def periodic(self):
               # read value events
-              events = self.poller.readQueue()
+              events = self.poller.read_queue()
               for event in events:
                   value: ntcore.Value = event.data.value
           # often not required in robot code, unless this class doesn't exist for

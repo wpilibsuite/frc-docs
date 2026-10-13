@@ -17,23 +17,23 @@ This is an example of a basic vision setup that posts the target's location in t
       camera = config['cameras'][0]
          width = camera['width']
       height = camera['height']
-      nt = ntcore.NetworkTableInstance.getDefault()
-      CameraServer.startAutomaticCapture()
-      input_stream = CameraServer.getVideo()
-      output_stream = CameraServer.putVideo('Processed', width, height)
+      nt = ntcore.NetworkTableInstance.get_default()
+      CameraServer.start_automatic_capture()
+      input_stream = CameraServer.get_video()
+      output_stream = CameraServer.put_video('Processed', width, height)
       # Table for vision output information
-      vision_nt = nt.getTable('Vision')
+      vision_nt = nt.get_table('Vision')
       # Allocating new images is very expensive, always try to preallocate
       img = np.zeros(shape=(240, 320, 3), dtype=np.uint8)
       # Wait for NetworkTables to start
       time.sleep(0.5)
       while True:
          start_time = time.time()
-         frame_time, input_img = input_stream.grabFrame(img)
+         frame_time, input_img = input_stream.grab_frame(img)
          output_img = np.copy(input_img)
          # Notify output of error and skip iteration
          if frame_time == 0:
-            output_stream.notifyError(input_stream.getError())
+            output_stream.notify_error(input_stream.get_error())
             continue
          # Convert to HSV and threshold image
          hsv_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2HSV)
@@ -59,7 +59,7 @@ This is an example of a basic vision setup that posts the target's location in t
          processing_time = time.time() - start_time
          fps = 1 / processing_time
          cv2.putText(output_img, str(round(fps, 1)), (0, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255))
-         output_stream.putFrame(output_img)
+         output_stream.put_frame(output_img)
    main()
    ```
 

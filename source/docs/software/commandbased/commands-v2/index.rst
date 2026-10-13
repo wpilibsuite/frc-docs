@@ -4,7 +4,7 @@ This sequence of articles serves as an introduction to and reference for the WPI
 
 Commands v2 is the stable, production-ready command-based framework that supports Java, C++, and Python. It uses a declarative programming style with method chaining and lambda expressions to compose robot behaviors.
 
-For a collection of example projects using Commands v2, see :ref:`docs/software/examples-tutorials/wpilib-examples:Command-Based Examples`.
+For a collection of example projects using Commands v2, see :ref:`docs/software/examples-tutorials/wpilib-examples:Commands v2 Examples`.
 
 .. toctree::
    :maxdepth: 1

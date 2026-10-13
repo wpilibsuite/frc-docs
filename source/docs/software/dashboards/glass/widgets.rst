@@ -39,7 +39,7 @@ The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instanc
 
    ```python
    from wpilib import SmartDashboard
-   SmartDashboard.putData("Auto Selector", selector)
+   SmartDashboard.put_data("Auto Selector", selector)
    ```
 
 The :guilabel:`Sendable Chooser` widget will appear in the :guilabel:`NetworkTables` menu and underneath the main table name that the instance was sent over. From the example above, the main table name would be :guilabel:`SmartDashboard`.
@@ -61,7 +61,7 @@ The :guilabel:`PID Controller` widget allows you to quickly tune PID values for 
 
    ```python
    from wpilib import SmartDashboard
-   SmartDashboard.putData("Elevator PID Controller", elevatorPIDController)
+   SmartDashboard.put_data("Elevator PID Controller", elevatorPIDController)
    ```
 
 This allows you to quickly tune P, I, and D values for various setpoints.

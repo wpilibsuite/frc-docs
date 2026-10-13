@@ -8,7 +8,7 @@ Glass can be launched by selecting the ellipsis menu (:guilabel:`...`) in VS Cod
 
 .. image:: images/vs-code-glass-launch.png
 
-.. note:: You can also launch Glass directly by navigating to ``~/wpilib/YYYY/tools`` and running ``Glass.py`` (Linux and macOS) or by using the shortcut inside the WPILib Tools desktop folder (Windows).
+.. note:: You can also launch Glass directly by navigating to tools folder in the WPILib installation folder (e.g., ``~/wpilib/YYYY/tools``) where YYYY is the WPILib version year. On macOS this is  ``~/wpilib/YYYY``, where ``~`` indicates the users home directory. On Linux, this is ``XDG_DATA_HOME/wpilib/YYYY`` (likely ``~/.local/share/wpilib/YYYY``) or you can use the shortcut installed in the application menu. On Windows, you can run use use the Glass shortcut in the Windows Start menu or the shortcut inside the WPILib Tools desktop folder (Windows).
 
 ## Changing View Settings
 
