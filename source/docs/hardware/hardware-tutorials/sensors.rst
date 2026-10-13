@@ -8,11 +8,21 @@ number of classes of sensors, how they are used, and provides guidance on
 what sensors are best for your applications.
 
 .. youtube:: 1KiFLdFx1c8
+   :privacy_mode:
+   :width: 100%
 
 .. youtube:: qLYN6mqbBNs
+   :privacy_mode:
+   :width: 100%
 
 .. youtube:: taoa8UWRHa0
+   :privacy_mode:
+   :width: 100%
 
 .. youtube:: J6sgEZ5eJW8
+   :privacy_mode:
+   :width: 100%
 
 .. youtube:: ukYHeqeSCNM
+   :privacy_mode:
+   :width: 100%

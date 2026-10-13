@@ -16,5 +16,7 @@ The entire routine should look something like this:
 .. note:: A drivetrain routine is shown below, but the same motions will occur on any mechanism.
 
 .. youtube:: FN2xqoB1sfU
+   :privacy_mode:
+   :width: 100%
 
 After all four tests have been completed, use the ``DataLogTool`` to retrieve the log file from the roboRIO.

@@ -9,9 +9,17 @@ to design systems to operate at maximum performance, and a sample design for a
 robot system.
 
 .. youtube:: J8LeSMPq82o
+   :privacy_mode:
+   :width: 100%
 
 .. youtube:: JLb-BrwnPE4
+   :privacy_mode:
+   :width: 100%
 
 .. youtube:: zfAA9SleSWg
+   :privacy_mode:
+   :width: 100%
 
 .. youtube:: n84HlBeS4To
+   :privacy_mode:
+   :width: 100%

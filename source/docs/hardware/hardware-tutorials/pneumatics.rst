@@ -7,3 +7,5 @@ applications with robots, and calculating the right sized system for an
 application.
 
 .. youtube:: JN9KCOp3hHA
+   :privacy_mode:
+   :width: 100%

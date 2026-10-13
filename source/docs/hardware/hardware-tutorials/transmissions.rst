@@ -9,3 +9,5 @@ choosing correct gear or chain and sprocket ratios to get the maximum
 performance from your robot design.
 
 .. youtube:: eJMTW0ILp6M
+   :privacy_mode:
+   :width: 100%

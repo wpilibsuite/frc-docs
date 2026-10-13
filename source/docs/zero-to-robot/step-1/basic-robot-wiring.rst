@@ -12,6 +12,8 @@
 .. warning:: The video shown below contains the OM5P radio used through the 2024 season. Teams outside China and Chinese Taipei should see :ref:`docs/zero-to-robot/step-1/basic-robot-wiring:Radio Power` for wiring info for the VH-109 radio used this season.
 
 .. youtube:: lGgIhxYuSHM
+   :privacy_mode:
+   :width: 100%
 
 ----
 
@@ -245,6 +247,8 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
       :sync: CTR
 
       .. youtube:: t-zb7j4ikHM
+         :privacy_mode:
+         :width: 100%
 
       The next step will involve using the Wago connectors on the PDP. To use the Wago connectors, insert a small flat blade screwdriver into the rectangular hole at a shallow angle then angle the screwdriver upwards as you continue to press in to actuate the lever, opening the terminal. Two sizes of Wago connector are found on the PDP:
 
@@ -277,6 +281,8 @@ Using the Dual Lock or hardware, fasten all components to the board. Note that i
 ## Weidmuller Connectors
 
 .. youtube:: SfkmyN9mYLA
+   :privacy_mode:
+   :width: 100%
    :url_parameters: ?start=39
 
 
