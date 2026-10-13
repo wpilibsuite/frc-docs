@@ -25,6 +25,18 @@ switch the main breaker off; for FTC, use the robot's power switch. Keep the
 drivetrain safely supported so the wheels cannot move the robot during later
 testing.
 
+.. rubric:: Before You Start
+
+Use this order to work through the step:
+
+1. Assemble the chassis and drivetrain using the guide for your robot.
+2. Connect Systemcore power using the instructions on this page.
+3. Open the Systemcore web interface to check power and communication.
+4. Turn power off again, then finish wiring the motor controllers and radio.
+
+Already assembled and wired? Check the Systemcore power connection and complete
+**Part 3: Confirm It's Alive** before moving to software setup.
+
 .. rubric:: What You Need for This Step
 
 - Systemcore and a robot battery
@@ -175,6 +187,22 @@ the reference guides below.
 Turn robot power **Off** and disconnect the battery again before making any of
 these connections.
 
+.. admonition:: Wiring Guide Compatibility
+
+   Use **Part 2 on this page** for the current 2027 instructions for powering
+   and connecting Systemcore.
+
+   The FRC walkthrough and reference still show roboRIO-era hardware. Their
+   guidance remains useful for the PDH or PDP, main breaker, motor controllers,
+   CAN bus, radio, and pneumatics. Do not follow their roboRIO power or data
+   connections when building a Systemcore robot.
+
+   The FTC Systemcore and Motioncore walkthrough and reference are still
+   being developed. Teams using the REV Control Hub or Expansion Hub should
+   follow the
+   `current FTC Robot Wiring Guide
+   <https://ftc-docs.firstinspires.org/en/latest/robot_building/wiring_guide/wiring-guide.html>`_.
+
 .. grid:: 1 1 2 2
    :gutter: 3
 
@@ -237,30 +265,15 @@ these connections.
       Connection diagrams and component details to look up while
       wiring or troubleshooting an FTC control system.
 
-.. admonition:: Wiring Guide Compatibility
-
-   Use **Part 2 on this page** for the current 2027 instructions for powering
-   and connecting Systemcore.
-
-   The FRC walkthrough and reference still show roboRIO-era hardware. Their
-   guidance remains useful for the PDH or PDP, main breaker, motor controllers,
-   CAN bus, radio, and pneumatics. Do not follow their roboRIO power or data
-   connections when building a Systemcore robot.
-
-   The FTC Systemcore and Motioncore walkthrough and reference are still
-   being developed. Teams using the REV Control Hub or Expansion Hub should
-   follow the
-   `current FTC Robot Wiring Guide
-   <https://ftc-docs.firstinspires.org/en/latest/robot_building/wiring_guide/wiring-guide.html>`_.
-
 .. tip::
 
-   **Not sure which PDH or PDP you have?**
-   The **Power Distribution Hub (PDH)** is the REV Robotics unit
-   (rectangular, 20 slots). The older
-   **Power Distribution Panel (PDP)** is the Cross The Road Electronics unit
-   (oval shape, 16 slots). Both are legal; wiring diagrams for each are in
-   the wiring overview above.
+   **Not sure which power distribution unit you have?**
+   The hardware overview compares the **REV Power Distribution Hub (PDH)**,
+   **CTRE Power Distribution Panel (PDP)**, **CTRE PDP 2.0**, and
+   **AndyMark AMPD**. Find your unit in the **FRC → Power Distribution**
+   section of the :doc:`hardware overview
+   </docs/hardware/hardware-basics/hardware-overview>`, then follow its
+   manufacturer's wiring instructions.
 
 .. container:: sw-success
 

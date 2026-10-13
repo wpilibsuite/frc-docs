@@ -16,9 +16,12 @@
 
          Step 4 of 4
 
-Create or open a drivetrain project, deploy it to Systemcore, and test it
-with the drive wheels off the floor. Use the editor and language you set up
-in Step 2.
+**By the end of this step:** a drivetrain program will run on Systemcore,
+your controller will operate the drive motors, and you will have checked
+that disabling the robot stops them.
+
+Use the programming environment and language you set up in Step 2. Start with the example
+for your hardware and test with the drive wheels off the floor.
 
 .. note::
 
@@ -41,11 +44,12 @@ in Step 2.
       - People, tools, hair, and loose clothing are clear of moving parts
       - Someone is ready to turn off robot power
 
-.. rubric:: Continue with Your Programming Choice
+.. rubric:: Part 1: Choose Your Walkthrough
 
-Choose your environment below. The VS Code card opens the full drivetrain
-walkthrough; the Blocks card opens the project-creation guide. OnBot and
-LabVIEW walkthroughs are still being completed.
+The detailed FRC VS Code walkthrough covers project creation through the
+first drive test. Blocks has a project-creation guide; its deployment
+walkthrough and the OnBot, LabVIEW, and FTC walkthroughs are still being
+completed. Use the path that matches your programming environment and hardware.
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -80,73 +84,71 @@ LabVIEW walkthroughs are still being completed.
       project-creation and deployment walkthroughs for both environments
       are still being completed.
 
-.. rubric:: Desktop / VS Code Path
+.. rubric:: Part 2: Create and Configure Your Project
 
-For **Java, C++, or Python in VS Code**, follow Parts 1 through 5 below.
+Start with a working drivetrain example, then match it to your robot's
+motor controllers and wiring.
 
-For **Blocks**, create your project from a drivetrain sample, then
-continue with :ref:`deployment <first-drive-deploy>` in Part 4.
+.. tab-set::
 
-For **OnBot**, save and deploy in your browser editor, then continue with
-:ref:`the driving checks <first-drive-enable>` in Part 5.
+   .. tab-item:: Java / C++
 
-For **desktop LabVIEW**, save and deploy your code from LabVIEW, then continue
-with :ref:`the driving checks <first-drive-enable>` in Part 5.
+      1. Open **WPILib VS Code** and open the WPILib command palette.
+         Select :guilabel:`Create a new project`.
+      2. Choose :guilabel:`Example`, then :guilabel:`Next`. Select your
+         language and the :guilabel:`Getting Started` project base.
+      3. Choose a project folder and name, and enter the team number shown
+         on Systemcore. Leave desktop support unchecked for this example,
+         as described in the full walkthrough.
+      4. Review the settings, select :guilabel:`Create Project`, then open
+         the new project in VS Code. For C++, accept the prompt to refresh
+         C++ configurations.
 
-.. rubric:: Desktop Part 1: Create Your Robot Project
+      **Expected result:** the project appears in the file explorer and you
+      can open its Robot source file. The Getting Started example provides
+      the robot program structure and drivetrain code.
 
-Open WPILib VS Code. Use the linked walkthrough for the complete project;
-the checklist below summarizes the setup steps.
+   .. tab-item:: Python
 
-.. grid:: 1 1 2 2
-   :gutter: 3
+      1. Create a folder for your robot project and open it in VS Code.
+      2. Open a terminal in that folder. On Windows, run
+         ``py -3 -m robotpy init``. On macOS or Linux, run
+         ``python3 -m robotpy init``.
+      3. Open the generated ``robot.py``. Use the complete Python drivetrain
+         example in the :doc:`walkthrough
+         <creating-test-drivetrain-program-cpp-java-python>` to fill in the
+         Robot class and configure the hardware.
 
-   .. grid-item-card:: Create a Drivetrain Program
-      :link: creating-test-drivetrain-program-cpp-java-python
-      :link-type: doc
-      :class-card: sw-card-shared
+      **Expected result:** the folder contains ``robot.py`` and
+      ``pyproject.toml``. The first contains your robot code; the second
+      lists its Python dependencies.
 
-      **FRC + FTC: Java / C++ / Python**
-      ^^^
-      Step-by-step guide: new project, vendor libraries, arcade drive
-      code, and deploy to the robot.
+The :doc:`full drivetrain walkthrough
+<creating-test-drivetrain-program-cpp-java-python>` includes screenshots,
+complete code, and motor-controller-specific configurations. Use its complete
+example when adapting the project to your hardware.
 
-   .. grid-item-card:: New Project Checklist
+For **Blocks**, follow :ref:`create_blocks_project` to make an editable copy
+of a drivetrain sample. Check the sample's hardware before using it.
 
-      **Quick reference**
-      ^^^
-      - Open WPILib VS Code (not system VS Code)
-      - Press :kbd:`Ctrl+Shift+P` → *WPILib: Create a new project*
-      - Choose **Template → TimedRobot**
-      - Set team number and project folder
-      - Add vendor libraries via *Manage Vendor Libraries*
+For **OnBot or LabVIEW**, use the environment you selected in Step 2. The
+Systemcore project-creation instructions are still being completed; the
+VS Code walkthrough does not describe these editors.
 
-.. rubric:: Desktop Part 2: Install Vendor Libraries
+Before deploying any drivetrain project:
 
-Vendor libraries provide code for motor controllers and sensors, as well as
-software features such as autonomous path following and vision processing.
+- Set the project team number to match Systemcore.
+- Check each motor controller's type and port or CAN ID against the wiring.
+- Check which controller axes the example uses to drive and turn.
+- Add the vendor libraries required by the motor controllers in your example.
 
-Add the libraries your project uses each time you create or import it.
-See :doc:`Managing Vendor Dependencies
-</docs/software/vscode-overview/3rd-party-libraries>` for installation and
-update instructions.
+.. card:: Managing Vendor Dependencies
+   :link: /docs/software/vscode-overview/3rd-party-libraries
+   :link-type: doc
+   :class-card: sw-card-shared
 
-.. grid:: 1 1 2 2
-   :gutter: 3
-
-   .. grid-item-card:: Common Vendor Libraries
-
-      - **REVLib**: SPARK MAX, SPARK Flex, and the 2027 A301 on Motioncore
-      - **Phoenix 6**: Talon FX, CANcoder, Pigeon 2
-      - **Choreo**: autonomous trajectories
-      - **PhotonLib**: PhotonVision camera support
-
-   .. grid-item-card:: How to Add a Library
-
-      - :kbd:`Ctrl+Shift+P` → *WPILib: Manage Vendor Libraries*
-      - Select *Install new libraries (online)*
-      - Paste the vendor JSON URL from their docs
-      - Build the project to download dependencies
+   Install and update the vendor libraries used by a VS Code project.
+   Add dependencies each time you create or import a project.
 
 .. note::
 
@@ -157,107 +159,71 @@ update instructions.
    <https://github.com/wpilibsuite/SystemcoreTesting/blob/main/A301.md>`_
    for the required version pair and channel examples.
 
-.. rubric:: Desktop Part 3: Basic Arcade Drive
+.. rubric:: Understand How the Robot Drives
 
-A minimal drivetrain has three objects: the two motor controllers
-and the ``DifferentialDrive``. Create them once as fields of the robot class
-(or in its constructor), not inside ``teleopPeriodic()``. The periodic method
-should only read the controller and command the existing drive object.
+Open the Robot class and trace the path from controller input to motor output:
 
-.. tab-set-code::
+1. The program creates the motor-controller objects, a ``Gamepad`` on port 0,
+   and a ``DifferentialDrive`` once when the robot starts. The motor objects
+   identify the PWM ports or CAN IDs connected to your drivetrain.
+2. During teleop, ``teleopPeriodic`` (``TeleopPeriodic`` in C++) reads the
+   controller axes repeatedly. One input requests forward or backward motion;
+   the other requests a turn.
+3. ``DifferentialDrive`` combines those inputs into left and right motor
+   outputs. The motor-controller objects send the outputs to the hardware.
 
-   ```java
-   // Fields in the Robot class; construct these only once.
-   private final PWMSparkMax leftMotor = new PWMSparkMax(0);
-   private final PWMSparkMax rightMotor = new PWMSparkMax(1);
-   private final DifferentialDrive drive =
-       new DifferentialDrive(leftMotor::setThrottle, rightMotor::setThrottle);
-   private final Gamepad controller = new Gamepad(0);
+Find the motor ports or CAN IDs in your example and compare them with the
+wiring. The PWM example uses ports 0 and 1; the vendor examples use CAN IDs
+1 and 2. Keep the objects outside the periodic method so they are not
+recreated on every iteration.
 
-   @Override
-   public void teleopPeriodic() {
-       drive.arcadeDrive(-controller.getLeftY(), -controller.getRightX());
-   }
-   ```
+Follow the example's motor-inversion setup so both drivetrain sides move the
+robot in the same direction for a forward request. You will check that direction
+with the wheels off the floor during the first drive test.
 
-   ```c++
-   // Members of the Robot class; construct these only once.
-   wpi::PWMSparkMax leftMotor{0};
-   wpi::PWMSparkMax rightMotor{1};
-   wpi::DifferentialDrive drive{
-       [&](double output) { leftMotor.SetThrottle(output); },
-       [&](double output) { rightMotor.SetThrottle(output); }};
-   wpi::Gamepad controller{0};
-
-   void Robot::TeleopPeriodic() {
-     drive.ArcadeDrive(-controller.GetLeftY(), controller.GetRightX());
-   }
-   ```
-
-   ```python
-   def __init__(self):
-       super().__init__()
-       # Construct hardware objects only once, during robot startup.
-       self.left_motor = wpilib.PWMSparkMax(0)
-       self.right_motor = wpilib.PWMSparkMax(1)
-       self.drive = wpilib.DifferentialDrive(
-           self.left_motor, self.right_motor
-       )
-       self.controller = wpilib.Gamepad(0)
-
-   def teleopPeriodic(self):
-       self.drive.arcadeDrive(
-           -self.controller.getLeftY(), -self.controller.getRightX()
-       )
-   ```
-
-.. card:: Full drivetrain walkthrough →
-   :link: creating-test-drivetrain-program-cpp-java-python
-   :link-type: doc
-   :class-card: sw-card-shared
-
-   Complete guide: project setup, motor controller configuration,
-   and deploy steps for Java, C++, and Python.
-
-.. important::
-
-   The snippets above show object placement and control flow, but omit imports,
-   class declarations, motor inversion, and safety setup. Start from the tested
-   complete example in the full drivetrain walkthrough rather than pasting an
-   isolated snippet into an empty file.
+**Expected result:** you can identify the controller input, the left and right
+motor assignments, and the drive call in your program before deploying it.
 
 .. _first-drive-deploy:
 
-.. rubric:: Desktop Part 4: Deploy to the Robot
+.. rubric:: Part 3: Deploy and Confirm Robot Code Is Running
 
-.. grid:: 1 1 2 2
-   :gutter: 3
+Keep the robot disabled and its drive wheels supported off the floor.
 
-   .. grid-item-card:: Deploy over Wi-Fi
+1. Power on Systemcore and connect the computer using the USB or robot-network
+   path you checked in Step 3. Confirm Driver Station communication before
+   deploying.
+2. Save your program and deploy using the command for your language:
 
-      Connect to the robot Wi-Fi network (XXXX_Robot), then press
-      :kbd:`Ctrl+Shift+P` → *WPILib: Deploy Robot Code*.
+   - **Java / C++:** open the WPILib command palette in VS Code and select
+     :guilabel:`Deploy Robot Code`.
+   - **Python on Windows:** run ``py -3 -m robotpy deploy`` in the project folder.
+   - **Python on macOS / Linux:** run ``python3 -m robotpy deploy`` in the
+     project folder.
 
-   .. grid-item-card:: Deploy over USB
+3. Watch the build and deploy output. If it reports an error, fix that error
+   before continuing. A successful build alone does not confirm that the
+   program reached the robot.
+4. Check Driver Station for both robot communication and robot code running.
+   Leave the robot disabled until you complete the checks in Part 4.
 
-      Connect the laptop to the Systemcore's USB device port with the
-      appropriate data-capable cable.
-      WPILib auto-detects USB and deploys without Wi-Fi.
+**Expected result:** deployment reports success, and Driver Station reports
+communication and robot code. If code is missing, inspect the deploy output
+and Driver Station log before trying to enable.
 
-.. TODO: Add a screenshot of a successful WPILib deploy terminal showing that
-   robot code started.
+For **OnBot or LabVIEW**, deploy from your selected editor. The detailed
+Systemcore deployment walkthroughs for these paths are still being completed.
 
-.. card:: Running and testing your program →
+.. card:: Running and Testing Your Program
    :link: running-test-program
    :link-type: doc
    :class-card: sw-card-frc
 
-   Connect the Driver Station and controller, check that robot code
-   is running, and test teleop with the drive wheels off the floor.
+   FRC Driver Station and controller checks, followed by the first teleop test.
 
 .. _first-drive-enable:
 
-.. rubric:: Shared Part 5: Enable and Drive
+.. rubric:: Part 4: Test, Disable, and Check the Result
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -266,7 +232,7 @@ should only read the controller and command the existing drive object.
 
       - First test: robot safely elevated with every drive wheel off the floor
       - All team members clear of moving parts
-      - Driver Station shows "Robot Code" (green)
+      - Driver Station shows communication and robot code running
       - Joystick connected and recognized in DS
       - Driver Station reports a plausible robot battery voltage
 
@@ -275,16 +241,19 @@ should only read the controller and command the existing drive object.
       - Open FRC Driver Station
       - Select **TeleOperated** mode
       - Announce that the robot is about to enable, then click **Enable**
-      - Move joystick: robot should respond
-      - Click **Disable** or press :kbd:`Enter` to stop
+      - Apply a small forward input, then release it
+      - Confirm both sides turn in the expected direction and stop on release
+      - Apply a small turn input, then release it
+      - Click **Disable** or press :kbd:`Enter` before approaching the robot
 
-   .. grid-item-card:: FTC enable steps
+   .. grid-item-card:: FTC with Systemcore
+      :link: /docs/ftc/index
+      :link-type: doc
+      :class-card: sw-card-ftc
 
-      - Open the FTC Driver Station software
-      - Select and initialize your TeleOp program
-      - Announce that the robot is about to start, then start the program
-      - Move the controller: robot should respond
-      - Stop the program before approaching the robot
+      The detailed Systemcore driver-software and first-drive walkthroughs
+      are still being completed. Check the FTC overview for available
+      instructions before proceeding with a powered test.
 
 .. TODO: Add a screenshot showing the controller recognized and the robot ready
    to enable in Driver Station.
@@ -298,6 +267,20 @@ should only read the controller and command the existing drive object.
 .. tip::
 
    **Something not working?** See :doc:`Troubleshooting </docs/software/support/troubleshooting>`.
+
+.. rubric:: Check That You Can Continue
+
+For the FRC drive test, confirm each result before putting the robot on the
+floor:
+
+- The expected controller input operates the expected motor or drivetrain side.
+- Forward and turn directions match the example's intended controls.
+- Releasing the controls stops the drive motors.
+- Disabling the robot stops the drive motors.
+
+If any check fails, disable the robot before changing its code or wiring.
+Use the drivetrain walkthrough and troubleshooting guide to resolve the
+problem, then repeat the test with the wheels off the floor.
 
 .. container:: sw-success
 

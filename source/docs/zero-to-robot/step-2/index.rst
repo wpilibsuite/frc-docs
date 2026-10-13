@@ -20,6 +20,13 @@
 successfully, and the driver software required by your program will be ready
 for robot setup and testing.
 
+.. rubric:: Before You Start
+
+Keep the language and programming environment you selected in :doc:`Zero to Robot
+<../introduction>`. Complete the setup for that environment, then set up your
+program's driver software. The programming environment is where you write code;
+the Driver Station is where you control the robot during a test.
+
 .. grid:: 1 1 2 2
    :gutter: 3
 
@@ -48,6 +55,8 @@ on the Zero to Robot page.
    will be added as their software is finalized. If you are using a REV
    Control Hub today, use the linked current FTC documentation instead.
 
+.. rubric:: Part 1: Set Up Your Programming Environment
+
 .. tab-set::
 
    .. tab-item:: OnBot
@@ -58,7 +67,7 @@ on the Zero to Robot page.
 
       **Languages:** Java, Blocks, Python, and LabVIEW.
 
-      .. TODO: Add a screenshot of the Systemcore OnBot landing page with the editor choices labeled.
+      .. TODO: Add a screenshot of the Systemcore OnBot landing page with the programming environment choices labeled.
 
       .. note::
 
@@ -70,7 +79,7 @@ on the Zero to Robot page.
 
       .. tip::
 
-         **FRC teams:** OnBot replaces the code editor, not the Driver
+         **FRC teams:** OnBot provides the programming environment, not the Driver
          Station. You'll still need the FRC Driver Station installed
          locally for competition. See **Set Up Driver Software** below.
 
@@ -146,7 +155,11 @@ on the Zero to Robot page.
 
       .. rubric:: Verify Your Installation
 
-      After completing all parts above, confirm the installation is working:
+      Install WPILib first. Python teams should then complete RobotPy setup;
+      Java and C++ teams can skip it. The offline preparation guide is only
+      needed when installing without internet access.
+
+      Confirm the installation is working:
 
       .. grid:: 1 1 2 2
          :gutter: 3
@@ -181,7 +194,7 @@ LabVIEW is also available for desktop development. Its Systemcore installation
 and project-creation walkthroughs are still being completed. The VS Code
 installation steps above apply to Java, Blocks, C++, and Python.
 
-.. rubric:: Set Up Driver Software
+.. rubric:: Part 2: Set Up Driver Software
 
 Your programming environment and your competition driver software are
 separate choices. Set up the driver software required by your program,
@@ -220,13 +233,22 @@ regardless of whether you selected OnBot, VS Code, or desktop LabVIEW.
    2027.** Upgrade the FRC driver-station computer to Windows 11 before
    installing it.
 
+.. rubric:: Part 3: Check That You Can Continue
+
+- Your selected programming environment opens and its setup instructions are complete.
+- For VS Code, WPILib commands appear in the command palette.
+- The driver software for your program is installed and opens.
+
+You do not need to create a project or install vendor libraries yet. Those
+belong to Step 4, after the control system is configured.
+
 .. container:: sw-success
 
    .. container:: sw-success-h
 
       ✓ Your programming environment is ready.
 
-   Continue when your selected editor opens successfully. FRC teams should
+   Continue when your selected programming environment opens successfully. FRC teams should
    also confirm that the FRC Driver Station opens; "No Robot Communication"
    is expected until the robot is configured in Step 3.
 
