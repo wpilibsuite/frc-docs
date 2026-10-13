@@ -86,6 +86,10 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 7: Move Preferences from util to preferences package
 - 2027 Alpha 7: Remove useless AutoCloseable implementations
 - 2027 Alpha 7: Add raw rumble API
+- 2027 Alpha 7: Use nanoseconds for timestamps
+
+  .. warning:: Silent Breaking: The change to nanoseconds affects ``RobotController`` ``getTime`` and ``getMonotonicTime`` and ``wpi::Now()``, ``nt::Now()``, and the cscore timestamp functions.
+
 
 #### Commands v2
 
@@ -260,7 +264,6 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 7: Always use steady_clock for timestamp
 - 2027 Alpha 7: Accept UTF-8 struct schema identifiers
 - 2027 Alpha 7: Move Alert from HAL/wpilib to wpiutil
-- 2027 Alpha 7: Use nanoseconds for timestamps
 - 2027 Alpha 7: Add usage reporting API
 
 ### Javac Plugin

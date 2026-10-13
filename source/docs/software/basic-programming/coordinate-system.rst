@@ -239,49 +239,94 @@ Some advantages to this approach are:
 
 In order to use this approach for field oriented driving, driver input needs to consider the alliance color. When your alliance is red and the driver is standing behind the red alliance wall, they will want the robot to move downfield toward the blue alliance wall. However, when your alliance is blue, the driver will want the robot to go downfield toward the red alliance wall.
 
-A simple way to deal with field oriented driving is to check the alliance color reported by the `DriverStation` class, and invert the driver's controls based on the alliance. As noted above, your alliance color can change so it needs to be checked on every robot iteration.
+A simple way to deal with field oriented driving is to check the alliance color reported by the ``MatchState`` class, and invert the driver's controls based on the alliance. As noted above, your alliance color can change so it needs to be checked on every robot iteration.
+
+Swerve:
 
 .. tab-set-code::
 
    ```java
-   // The origin is always blue. When our alliance is red, X and Y need to be inverted
-   var alliance = DriverStation.getAlliance();
-   var invert = 1;
-   if (alliance.isPresent() && alliance.get() == Alliance.Red) {
-       invert = -1;
-   }
-   // Create field relative ChassisSpeeds for controlling Swerve
-   var chassisSpeeds = ChassisSpeeds
-           .fromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
-   // Control a mecanum drivetrain
-   m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.getRotation2d());
+    // The origin is always blue. When our alliance is red, X and Y need to be inverted
+    var alliance = MatchState.getAlliance();
+    var invert = 1;
+    if (alliance.isPresent() && alliance.get() == Alliance.RED) {
+      invert = -1;
+    }
+
+    // Create field-relative ChassisVelocities for controlling Swerve
+    var chassisVelocities =
+        new ChassisVelocities(xSpeed * invert, ySpeed * invert, zRotation)
+            .toRobotRelative(gyroAngle);
    ```
 
    ```c++
-   // The origin is always blue. When our alliance is red, X and Y need to be inverted
-   int invert = 1;
-   if (wpi::DriverStation::GetAlliance() == wpi::DriverStation::Alliance::kRed) {
-       invert = -1;
-   }
-   // Create field relative ChassisSpeeds for controlling Swerve
-   wpi::ChassisSpeeds chassisSpeeds =
-           wpi::ChassisSpeeds::FromFieldRelativeSpeeds(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
-   // Control a mecanum drivetrain
-   m_robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, imu.GetRotation2d());
+    // The origin is always blue. When our alliance is red, X and Y need to be
+    // inverted
+    int invert = 1;
+    if (wpi::MatchState::GetAlliance().value_or(wpi::Alliance::BLUE) ==
+        wpi::Alliance::RED) {
+      invert = -1;
+    }
+
+    // Create field-relative ChassisVelocities for controlling Swerve
+    wpi::math::ChassisVelocities chassisVelocities{
+        wpi::units::meters_per_second_t{xSpeed * invert},
+        wpi::units::meters_per_second_t{ySpeed * invert},
+        wpi::units::radians_per_second_t{zRotation}};
    ```
 
    ```python
-   # The origin is always blue. When our alliance is red, X and Y need to be inverted
-   invert = 1
-   if wpilib.DriverStation.get_alliance() == wpilib.DriverStation.Alliance.kRed:
-       invert = -1
-   # Create field relative ChassisSpeeds for controlling Swerve
-   chassis_speeds = wpilib.ChassisSpeeds.FromFieldRelativeSpeeds(
-       x_speed * invert, y_speed * invert, z_rotation, self.imu.GetAngle()
-   )
-   # Control a mecanum drivetrain
-   self.robot_drive.drive_cartesian(x_speed * invert, y_speed * invert, z_rotation, self.imu.GetAngle())
+        # The origin is always blue. When our alliance is red, X and Y need to be inverted
+        invert = 1
+        if wpilib.MatchState.get_alliance() == wpilib.Alliance.RED:
+            invert = -1
+
+        # Create field-relative ChassisVelocities for controlling Swerve
+        chassis_velocities = wpimath.ChassisVelocities(
+            x_speed * invert, y_speed * invert, z_rotation
+        ).to_robot_relative(gyro_angle)
    ```
+
+Mecanum:
+
+.. tab-set-code::
+
+   ```java
+    // The origin is always blue. When our alliance is red, X and Y need to be inverted
+    var alliance = MatchState.getAlliance();
+    var invert = 1;
+    if (alliance.isPresent() && alliance.get() == Alliance.RED) {
+      invert = -1;
+    }
+    // Drive using the X, Y, and Z axes of the joystick.
+    robotDrive.driveCartesian(xSpeed * invert, ySpeed * invert, zRotation, gyroAngle);
+   ```
+
+   ```c++
+    // The origin is always blue. When our alliance is red, X and Y need to be
+    // inverted
+    int invert = 1;
+    if (wpi::MatchState::GetAlliance().value_or(wpi::Alliance::BLUE) ==
+        wpi::Alliance::RED) {
+      invert = -1;
+    }
+    // Control a mecanum drivetrain
+    robotDrive.DriveCartesian(xSpeed * invert, ySpeed * invert, zRotation,
+                              gyroAngle);
+   ```
+
+   ```python
+        # The origin is always blue. When our alliance is red, X and Y need to be inverted
+        invert = 1
+        if wpilib.MatchState.get_alliance() == wpilib.Alliance.RED:
+            invert = -1
+
+        robot_drive.drive_cartesian(
+            x_speed * invert, y_speed * invert, z_rotation, gyro_angle
+        )
+   ```
+
+.. todo:: Change to RLIs when https://github.com/wpilibsuite/allwpilib/pull/9501 is merged
 
 #### Origin follows your alliance
 
