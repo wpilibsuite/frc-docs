@@ -1,7 +1,10 @@
 # Create Your Test Drivetrain Program
 
-Use the Java, C++, or Python walkthrough to configure and deploy a drivetrain
-project, or start with the Blocks sample workflow below.
+**By the end of this page:** your drivetrain project will be configured for
+its motor controllers and deployed to Systemcore. You will test the motors
+on the next page, with the wheels off the floor.
+
+Use the Java, C++, or Python walkthrough below, or start with a Blocks sample.
 
 Before beginning, confirm that WPILib and any language-specific tools from
 :doc:`Step 2 <../step-2/index>` are installed, Step 3 is complete, and you know
@@ -62,29 +65,33 @@ The remaining sections describe the Java, C++, and Python workflow.
 
 ## Creating a New WPILib Project (Java/C++)
 
-In Visual Studio Code, click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Create a new project`:
+Open **WPILib VS Code**. Open the WPILib command palette and select
+:guilabel:`Create a new project`:
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
    :alt: Choose "WPILib: Create a new project".
 
-This will bring up the "WPILIb New Project Creator"
+The WPILib New Project Creator opens.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
    :alt: The project type selector of the WPILib New Project Creator
 
-The **Project Type** chooses between an empty template project, or a :doc:`WPILib example project </docs/software/examples-tutorials/wpilib-examples>`. For this example, select :guilabel:`Example` and then choose :guilabel:`Next`.
+Select :guilabel:`Example`, then :guilabel:`Next`. This starts from a
+:doc:`working WPILib example </docs/software/examples-tutorials/wpilib-examples>`
+instead of an empty template.
 
-This will bring up the language and base selection window.
+The next page asks for a language and project base.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-language.png
    :alt: The language and base page of the WPILib New Project Creator
 
-1. **Language**: This is the language (C++ or Java) that will be used for this project.
-2. **Project Base**: This box is used to select the base class or example to generate the project from. For this example, select **Getting Started**
+1. **Language:** select Java or C++ to match your choice in Step 2.
+2. **Project Base:** select **Getting Started** for this walkthrough.
 
 After making the selections, click :guilabel:`Next`.
 
-This will bring up the Project and Configuration window.
+On the Project and Configuration page, choose where to save the project and
+enter your team number.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-location.png
    :alt: The project and configuration page of the WPILib New Project Creator
@@ -100,11 +107,16 @@ This will bring up the Project and Configuration window.
 Once all the above have been configured, click :guilabel:`Next`.
 
 This will bring up the Review and Create window.
+The Review and Create page shows the settings you selected.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-configured.png
    :alt: The review and create page of the WPILib New Project Creator
 
-Double check all the settings and click :guilabel:`Create Project`. If anything is not correct, click :guilabel:`Back` and make the necessary corrections.
+Check the language, example, folder, and team number. Use :guilabel:`Back`
+to correct a setting, then select :guilabel:`Create Project`.
+
+**Expected result:** VS Code offers to open the new project. If creation fails,
+read the error notification before trying again.
 
 .. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
 
@@ -113,21 +125,25 @@ Double check all the settings and click :guilabel:`Create Project`. If anything 
 .. image:: /docs/software/vscode-overview/images/importing-previous-project/opening-project.png
    :alt: Open Project Dialog in VS Code
 
-After successfully creating your project, VS Code will give the option of opening the project as shown above. We can choose to do that now or later by typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
+Accept the prompt to open your new project. To open it later, press
+:kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or :kbd:`Command+O` on macOS) and select
+the project folder.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/trusted-workspace.png
    :alt: Trusted Workspace dialog in VS Code.
 
 Click :guilabel:`Yes I trust the authors`.
 
-Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
+The file explorer shows the project folders. Open the Robot source file to
+inspect the example you will configure in the following sections.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
     :alt: The robot.java code shown after opening a new project.
 
 ## C++ Configurations (C++ Only)
 
-For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
+For a C++ project, accept the prompt to refresh C++ configurations. Select
+**Yes** to set up IntelliSense for this project.
 
 .. image:: /docs/software/vscode-overview/images/importing-previous-project/cpp-configurations.png
     :alt: You must choose "Yes" to refresh the C++ configurations.
@@ -171,8 +187,9 @@ This will create a ``robot.py`` and ``pyproject.toml`` file, but will not overwr
 
 ## Basic Drivetrain Example
 
-First, here is what a simple drivetrain program can look like with
-PWM-controlled motor controllers.
+Read the complete PWM example below to see how the Robot class connects
+controller input to motor output. Then use the hardware tabs in the following
+sections to configure the example for your motor controllers.
 
 .. note:: the Python example below is from `<https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/GettingStarted>`__
 
@@ -598,6 +615,16 @@ Utility Mode is used for testing robot functionality or running other code that 
 
 ## Deploying the Project to a Robot
 
+Before deploying, save the program and check that:
+
+- The project's team number matches Systemcore and the Driver Station.
+- Motor ports or CAN IDs match the wired devices.
+- The required vendor libraries are installed for a CAN example.
+- The controller is assigned to the port used by the example.
+
+Connect the computer using the USB or robot-network path verified in Step 3.
+Keep the robot disabled, then use the command for your language below.
+
 .. tab-set::
 
    .. tab-item:: Java/C++
@@ -637,9 +664,12 @@ Utility Mode is used for testing robot functionality or running other code that 
 
       For more detailed instructions, see :doc:`Deploy Python code </docs/software/python/subcommands/deploy>`.
 
-After deployment, confirm that the terminal reports success and Driver Station
-shows both robot communication and robot code. Do not enable the drivetrain
-from this page.
+**Expected result:** the terminal reports deployment success, and Driver
+Station shows both robot communication and robot code. If either is missing,
+read the deploy output and resolve the first error before continuing.
+
+Leave the robot disabled. Continue to :doc:`running-test-program` for the
+controller checks and first drive test.
 
 .. container:: sw-success
 

@@ -11,6 +11,10 @@ This page covers the FRC Driver Station path. First, create and deploy the
 </docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python>`
 and complete the Step 3 communication checks.
 
+Work through the tests in order: check the direct connection, test controller
+response with the wheels off the floor, then repeat the test through the radio.
+Keep the robot disabled between tests.
+
 ## Before You Enable
 
 .. warning::
@@ -63,6 +67,10 @@ separates program and controller problems from radio configuration problems.
    - Controller input
    - A plausible robot battery voltage
 
+**Expected result:** Driver Station reports communication, running code, and
+controller input while the robot remains disabled. Controller values change
+when you move a stick and return to neutral when you release it.
+
 If communication is missing, return to
 :doc:`Step 3 <../step-3/index>`. If communication is present but robot code is
 missing, inspect the deploy output and Driver Station log before enabling.
@@ -75,7 +83,8 @@ missing, inspect the deploy output and Driver Station log before enabling.
 3. Click **Enable** in Driver Station.
 4. Move the forward axis only a small amount, then release it. Confirm that
    both sides turn in the expected direction.
-5. Test steering with a small input.
+5. Test steering with a small input, then release it. Confirm the drivetrain
+   responds to the turn input and stops when the controls return to neutral.
 6. Click **Disable**, or press :kbd:`Enter`, before approaching the robot.
 
 .. important::
@@ -84,6 +93,10 @@ missing, inspect the deploy output and Driver Station log before enabling.
    :kbd:`Enter`. The :kbd:`Space` bar is **Emergency Stop**, not ordinary
    disable. An emergency-stopped robot must be rebooted before it can be
    enabled again.
+
+**Expected result:** forward and steering inputs produce the intended motion,
+and releasing the controls stops the motors. Confirm that disabling stops the
+motors before approaching the robot.
 
 If one side runs backward, disable the robot and change that side's inversion
 setting in software. Do not reverse motor power leads as a substitute for
@@ -99,6 +112,11 @@ Only continue after tethered operation works.
 2. Connect the Driver Station computer to the access-point radio by Ethernet.
 3. Confirm that robot communication and robot code return in Driver Station.
 4. Repeat the **First Enable** procedure with the robot safely supported.
+
+**Expected result:** the same controller inputs produce the same drivetrain
+response through the radio as through the direct connection. If the direct test
+passes but the radio test fails, check the radio setup and network connection
+before changing the drive code.
 
 Passing both tests confirms that the program, Systemcore, controller, and radio
 path are working together. Lower the robot to the floor only after disabling
