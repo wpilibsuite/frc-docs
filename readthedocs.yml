@@ -23,7 +23,7 @@ build:
       htmlzip:
         - mkdir --parents _readthedocs/htmlzip
         # Output to an intermediate directory because RTD doesn't like extra content in the directory. $READTHEDOCS_PROJECT is chosen to so that frc-docs-latest is the root directory of the zip
-        - uv run sphinx-build -T -W --keep-going -b readthedocssinglehtmllocalmedia -d _build/doctrees -D language=$READTHEDOCS_LANGUAGE source $READTHEDOCS_OUTPUT/$READTHEDOCS_PROJECT
+        - uv run sphinx-build -T -W --keep-going -b html -d _build/doctrees -D language=$READTHEDOCS_LANGUAGE source $READTHEDOCS_OUTPUT/$READTHEDOCS_PROJECT
         - cd $READTHEDOCS_OUTPUT ; zip --recurse-path --symlinks htmlzip/$READTHEDOCS_PROJECT.zip $READTHEDOCS_PROJECT
 
  
