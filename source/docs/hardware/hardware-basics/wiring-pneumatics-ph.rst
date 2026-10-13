@@ -8,6 +8,7 @@ This page describes wiring pneumatics with the REV Pneumatic Hub (:term:`PH`). F
 
 .. youtube:: uQEiNiHT9fs
    :privacy_mode:
+   :privacy_mode:
    :width: 100%
 
 ----
