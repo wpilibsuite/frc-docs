@@ -257,12 +257,12 @@ html_baseurl = "https://docs.wpilib.org/en/stable/"
 html_theme_options = {
     "announcement": "&#x26A0;&#xFE0F; <strong>DRAFT</strong> &mdash; This site is a work in progress and does not reflect final 2027 documentation. Content may be incomplete or inaccurate.",
     "light_css_variables": {
-        "color-sidebar-background": "#003974",
+        "color-sidebar-background": "#AC2B37",
         "color-sidebar-brand-text": "#ffffffcc",
         "color-sidebar-link-text--top-level": "#d9d9d9",
-        "color-background-hover": "#023160",
-        "color-sidebar-link-text": "#acb1b9",
-        "color-sidebar-caption-text": "#81868d",
+        "color-background-hover": "#922430",
+        "color-sidebar-link-text": "#d9d9d9",
+        "color-sidebar-caption-text": "#c5cbd1",
     },
 }
 
