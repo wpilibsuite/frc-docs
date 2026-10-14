@@ -17,6 +17,11 @@
 	cursor: pointer;
 }
 
+/* Remove the extra control height added to responsive YouTube embeds. */
+.video_wrapper {
+	padding-top: 0 !important;
+}
+
 .document img {
 	margin-bottom: 10px;
 }

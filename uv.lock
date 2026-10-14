@@ -1672,6 +1672,19 @@ wheels = [
 ]
 
 [[package]]
+name = "sphinxcontrib-youtube"
+version = "1.5.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+    { name = "sphinx" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/54/5c/61d1f11ad543f3a4da3b463de69f743051164087b5b9615aff9a1d2e49b8/sphinxcontrib_youtube-1.5.0.tar.gz", hash = "sha256:541b5880096e0a8759f49711f45087c91d6992ff45f03c178e974c66c8f5e326", size = 6088, upload-time = "2026-04-01T13:57:38.1Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/df/98/5a7457f5c57da4d30185a63fca7beff54e35fca8328473a92e90a1d621de/sphinxcontrib_youtube-1.5.0-py2.py3-none-any.whl", hash = "sha256:58d92bec536fbf029b642de3c9bbd32c7de307e0e13686015a0c0e91b7dfe3b8", size = 7680, upload-time = "2026-04-01T13:57:37.201Z" },
+]
+
+[[package]]
 name = "sphinxext-delta"
 version = "0.4.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1856,6 +1869,7 @@ dependencies = [
     { name = "sphinxcontrib-serializinghtml" },
     { name = "sphinxcontrib-svg2pdfconverter" },
     { name = "sphinxcontrib-video" },
+    { name = "sphinxcontrib-youtube" },
     { name = "sphinxext-delta" },
     { name = "sphinxext-mimic" },
     { name = "sphinxext-opengraph" },
@@ -1890,6 +1904,7 @@ requires-dist = [
     { name = "sphinxcontrib-serializinghtml", specifier = "==2.0.0" },
     { name = "sphinxcontrib-svg2pdfconverter", specifier = "==2.1.0" },
     { name = "sphinxcontrib-video", specifier = "==0.4.2" },
+    { name = "sphinxcontrib-youtube", specifier = ">=1.5.0" },
     { name = "sphinxext-delta", specifier = "==0.4.1" },
     { name = "sphinxext-mimic", specifier = "==0.1.1" },
     { name = "sphinxext-opengraph", specifier = "==0.13.0" },
