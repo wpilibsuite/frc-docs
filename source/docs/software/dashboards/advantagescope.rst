@@ -1,6 +1,6 @@
 # AdvantageScope
 
-AdvantageScope is a data visualization tool for :ref:`NetworkTables <docs/software/networktables/networktables-intro:What is NetworkTables>`, :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`, and :ref:`Driver Station logs <docs/software/driverstation/driver-station-log-viewer:Driver Station Log File Viewer>`. It is a programmer's tool (rather than a competition dashboard) and can be used to debug real or simulated robot code from a log file or live over the network.
+AdvantageScope is a data visualization tool for :doc:`NetworkTables </docs/software/networktables/networktables-intro>`, :doc:`WPILib data logs </docs/software/telemetry/datalog>`, and :doc:`Driver Station logs </docs/software/firstdriverstation/first-driver-station-log-viewer>`. It is a programmer's tool (rather than a competition dashboard) and can be used to debug real or simulated robot code from a log file or live over the network.
 
 In Visual Studio Code, press :kbd:`Ctrl+Shift+P` and type ``WPILib`` or click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Start Tool`, then select :guilabel:`AdvantageScope`. You can also open any supported log file in AdvantageScope using a standard file browser.
 

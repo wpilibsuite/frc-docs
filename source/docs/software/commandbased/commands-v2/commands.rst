@@ -20,7 +20,7 @@ The ``end(bool interrupted)`` method ([Java](https://github.wpilib.org/allwpilib
 
 ### Specifying end conditions
 
-The ``isFinished()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#end(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#a7082630601e4b249933c972b028ec705), :external:py:meth:`Python <commands2.Command.isFinished>`) is called repeatedly while the command is scheduled, whenever the scheduler’s ``run()`` method is called. As soon as it returns true, the command’s ``end()`` method is called and it ends. The ``isFinished()`` method is called after the ``execute()`` method, so the command will execute once on the same iteration that it ends.
+The ``isFinished()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#end(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#a7082630601e4b249933c972b028ec705), :external:py:meth:`Python <commands2.Command.is_finished>`) is called repeatedly while the command is scheduled, whenever the scheduler’s ``run()`` method is called. As soon as it returns true, the command’s ``end()`` method is called and it ends. The ``isFinished()`` method is called after the ``execute()`` method, so the command will execute once on the same iteration that it ends.
 
 ## Command Properties
 
@@ -50,11 +50,11 @@ As a rule, command compositions require all subsystems their components require.
 
 ### runsWhenDisabled
 
-The ``runsWhenDisabled()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#runsWhenDisabled()), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.runsWhenDisabled>`) returns a ``boolean``/``bool`` specifying whether the command may run when the robot is disabled. With the default of returning ``false``, the command will be canceled when the robot is disabled and attempts to schedule it will do nothing. Returning ``true`` will allow the command to run and be scheduled when the robot is disabled.
+The ``runsWhenDisabled()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#runsWhenDisabled()), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.runs_when_disabled>`) returns a ``boolean``/``bool`` specifying whether the command may run when the robot is disabled. With the default of returning ``false``, the command will be canceled when the robot is disabled and attempts to schedule it will do nothing. Returning ``true`` will allow the command to run and be scheduled when the robot is disabled.
 
 .. important::  When the robot is disabled, :term:`PWM` outputs are disabled and CAN motor controllers may not apply voltage, regardless of ``runsWhenDisabled``!
 
-This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the ``ignoringDisable`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#ignoringDisable(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.ignoringDisable>`):
+This property can be set either by overriding the ``runsWhenDisabled()`` method in the relevant command class, or by using the ``ignoringDisable`` decorator ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#ignoringDisable(boolean)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.ignoring_disable>`):
 
 .. tab-set-code::
 
@@ -74,11 +74,11 @@ As a rule, command compositions may run when disabled if all their component com
 
 ### getInterruptionBehavior
 
-The ``getInterruptionBehavior()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#getInterruptionBehavior()), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.getInterruptionBehavior>`) defines what happens if another command sharing a requirement is scheduled while this one is running. In the default behavior, ``kCancelSelf``, the current command will be canceled and the incoming command will be scheduled successfully. If ``kCancelIncoming`` is returned, the incoming command's scheduling will be aborted and this command will continue running. Note that ``getInterruptionBehavior`` only affects resolution of requirement conflicts: all commands can be canceled, regardless of ``getInterruptionBehavior``.
+The ``getInterruptionBehavior()`` method ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#getInterruptionBehavior()), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.get_interruption_behavior>`) defines what happens if another command sharing a requirement is scheduled while this one is running. In the default behavior, ``kCancelSelf``, the current command will be canceled and the incoming command will be scheduled successfully. If ``kCancelIncoming`` is returned, the incoming command's scheduling will be aborted and this command will continue running. Note that ``getInterruptionBehavior`` only affects resolution of requirement conflicts: all commands can be canceled, regardless of ``getInterruptionBehavior``.
 
 .. note:: This was previously controlled by the ``interruptible`` parameter passed when scheduling a command, and is now a property of the command object.
 
-This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the `withInterruptBehavior()` decorator ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#withInterruptBehavior(org.wpilib.command2.Command.InterruptionBehavior)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.withInterruptBehavior>`)
+This property can be set either by overriding the ``getInterruptionBehavior`` method in the relevant command class, or by using the `withInterruptBehavior()` decorator ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html#withInterruptBehavior(org.wpilib.command2.Command.InterruptionBehavior)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html#aad3c4611e89a022a0806fa76240aeccb), :external:py:meth:`Python <commands2.Command.with_interrupt_behavior>`)
 
 .. tab-set-code::
 
@@ -91,7 +91,7 @@ This property can be set either by overriding the ``getInterruptionBehavior`` me
   ```
 
   ```python
-  non_interruptible = commands2.cmd.run(intake.activate, intake).with_interrupt_behavior(Command.InterruptBehavior.kCancelIncoming)
+  non_interruptible = commands2.cmd.run(intake.activate, intake).with_interrupt_behavior(Command.InterruptBehavior.CANCEL_INCOMING)
   ```
 
 As a rule, command compositions are ``kCancelIncoming`` if all their components are ``kCancelIncoming`` as well.
@@ -111,15 +111,15 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github
   .. tab-item:: Java
       :sync: tabcode-java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/subsystems/HatchSubsystem.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/subsystems/HatchSubsystem.java
         :language: java
-        :lines: 26-36
+        :lines: 27-36
         :lineno-match:
 
   .. tab-item:: C++ (Header)
       :sync: tabcode-c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.hpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/HatchSubsystem.hpp
         :language: c++
         :lines: 19-27
         :lineno-match:
@@ -127,7 +127,7 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github
   .. tab-item:: C++ (Source)
       :sync: tabcode-c++-source
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/HatchSubsystem.cpp
         :language: c++
         :lines: 15-25
         :lineno-match:
@@ -135,9 +135,9 @@ The ``runOnce`` factory, backed by the ``InstantCommand`` ([Java](https://github
   .. tab-item:: Python
       :sync: tabcode-python
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot//HatchbotInlined/subsystems/hatchsubsystem.py
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot//HatchbotInlined/subsystems/hatchsubsystem.py
         :language: python
-        :lines: 23-33
+        :lines: 24-34
         :lineno-match:
 
 The ``run`` factory, backed by the ``RunCommand`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/RunCommand.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_run_command.html), :external:py:class:`Python <commands2.RunCommand>`) class, creates a command that calls a lambda repeatedly, until interrupted.
@@ -249,11 +249,11 @@ The ``startEnd`` factory, backed by the ``StartEndCommand`` ([Java](https://gith
       # Reset encoders on command start
       lambda: robot_drive.reset_encoders(),
       # Start driving forward at the start of the command
-      lambda: robot_drive.arcade_drive(ac.kAutoDriveSpeed, 0),
+      lambda: robot_drive.arcade_drive(ac.AUTO_DRIVE_SPEED, 0),
       # Stop driving at the end of the command
       lambda interrupted: robot_drive.arcade_drive(0, 0),
       # End the command when the robot's driven distance exceeds the desired value
-      lambda: robot_drive.get_average_encoder_distance() >= ac.kAutoDriveDistanceInches,
+      lambda: robot_drive.get_average_encoder_distance() >= ac.AUTO_DRIVE_DISTANCE_INCHES,
       # Require the drive subsystem
       robot_drive)
   ```
@@ -314,30 +314,30 @@ Users may also write custom command classes. As this is significantly more verbo
 
 .. note:: In the C++ API, a :term:`CRTP` is used to allow certain Command methods to work with the object ownership model.  Users should always extend the ``CommandHelper`` [class](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command_helper.html) when defining their own command classes, as is shown below.
 
-To write a custom command class, subclass the abstract ``Command`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html)) or ``CommandHelper`` ([C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html)), as seen in the command-based template ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp)):
+To write a custom command class, subclass the abstract ``Command`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/command2/Command.html)) or ``CommandHelper`` ([C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1cmd_1_1_command.html)), as seen in the command-based template ([Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java), [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp)):
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/templates/commandv2/commands/ExampleCommand.java
       :language: java
       :lines: 7-24
       :lineno-match:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/templates/commandv2/include/commands/ExampleCommand.hpp
       :language: c++
       :lines: 5-30
       :lineno-match:
 
 ## Simple Command Example
 
-What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)) that uses the ``HatchSubsystem``:
+What might a functional command look like in practice? As before, below is a simple command from the HatchBot example project ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional)) that uses the ``HatchSubsystem``:
 
 .. tab-set::
 
   .. tab-item:: Java
     :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/GrabHatch.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/GrabHatch.java
       :language: java
       :lines: 5-
       :lineno-match:
@@ -345,7 +345,7 @@ What might a functional command look like in practice? As before, below is a sim
   .. tab-item:: C++ (Header)
     :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.hpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/GrabHatch.hpp
       :language: c++
       :lines: 5-
       :lineno-match:
@@ -353,7 +353,7 @@ What might a functional command look like in practice? As before, below is a sim
   .. tab-item:: C++ (Source)
     :sync: tabcode-c++-source
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/GrabHatch.cpp
       :language: c++
       :lines: 5-
       :lineno-match:
@@ -361,7 +361,7 @@ What might a functional command look like in practice? As before, below is a sim
   .. tab-item:: Python
     :sync: tabcode-python
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot//HatchbotTraditional/commands/grabhatch.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot//HatchbotTraditional/commands/grabhatch.py
       :language: python
       :lines: 7-
       :lineno-match:
@@ -377,7 +377,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: Java
     :sync: tabcode-java
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/DefaultDrive.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/commands/DefaultDrive.java
       :language: java
       :lines: 5-
       :lineno-match:
@@ -385,7 +385,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: C++ (Header)
     :sync: tabcode-c++
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.hpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/include/commands/DefaultDrive.hpp
       :language: c++
       :lines: 5-
       :lineno-match:
@@ -393,7 +393,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: C++ (Source)
     :sync: tabcode-c++-source
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/commands/DefaultDrive.cpp
       :language: c++
       :lines: 5-
       :lineno-match:
@@ -401,7 +401,7 @@ What about a more complicated case? Below is a drive command, from the same exam
   .. tab-item:: Python
     :sync: tabcode-python
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot//HatchbotTraditional/commands/defaultdrive.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot//HatchbotTraditional/commands/defaultdrive.py
       :language: python
       :lines: 7-
       :lineno-match:
@@ -410,36 +410,36 @@ And then usage:
 
 .. tab-set-code::
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/RobotContainer.java
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbottraditional/RobotContainer.java
     :language: java
-    :lines: 57-63
+    :lines: 58-64
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional/cpp/RobotContainer.cpp
     :language: c++
-    :lines: 30-33
+    :lines: 28-31
     :lineno-match:
 
-  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot//HatchbotTraditional/robotcontainer.py
+  .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot//HatchbotTraditional/robotcontainer.py
     :language: python
-    :lines: 64-71
+    :lines: 68-75
     :lineno-match:
 
 Notice that this command does not override ``isFinished()``, and thus will never end; this is the norm for commands that are intended to be used as default commands. Once more, this command is rather simple and calls the subsystem method only from one place, and as such, could be more concisely written using factories:
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/RobotContainer.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/RobotContainer.java
       :language: java
-      :lines: 48-56
+      :lines: 49-57
       :lineno-match:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/RobotContainer.cpp
       :language: c++
-      :lines: 26-32
+      :lines: 24-30
       :lineno-match:
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot//HatchbotInlined/robotcontainer.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot//HatchbotInlined/robotcontainer.py
       :language: python
-      :lines: 52-64
+      :lines: 55-66
       :lineno-match:

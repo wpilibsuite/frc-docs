@@ -5,9 +5,14 @@
 
 
 Prior to 2025 the official radio used in FRC was an OM5P-AN or OM5P-AC Radio.
-As of the 2026 season the OpenMesh radio is still being used in Taiwan and China.
+This reference is retained for teams and regions that are still directed to use
+OpenMesh hardware, and for teams using an older radio during testing.
 
-.. warning:: This page is either for teams looking to use the OM5P radio to test or teams in China and Taiwan. For the current robot radio please see :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio`
+.. warning::
+
+   Follow the radio requirements for your event or region. For the current
+   standard VH-109 radio, see
+   :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio`.
 
 
 .. image:: /docs/controls-overviews/images/control-system-hardware/openmesh-radio.png

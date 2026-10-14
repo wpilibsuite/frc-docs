@@ -17,7 +17,7 @@ The command-based paradigm is also an example of :term:`declarative programming`
   ```
 
   ```python
-  Trigger(condition.get).onTrue(Commands.runOnce(lambda: piston.set(DoubleSolenoid.Value.kForward)))
+  Trigger(condition.get).on_true(Commands.run_once(lambda: piston.set(DoubleSolenoid.Value.FORWARD)))
   ```
 
 In contrast, without using command-based, the user would need to check the button state every iteration, and perform the appropriate action based on the state of the button.
@@ -49,7 +49,7 @@ In contrast, without using command-based, the user would need to check the butto
   ```python
   if condition.get():
       if not pressed:
-          piston.set(DoubleSolenoid.Value.kForward)
+          piston.set(DoubleSolenoid.Value.FORWARD)
           pressed = True
       else:
           pressed = False

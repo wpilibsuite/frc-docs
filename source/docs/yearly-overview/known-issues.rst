@@ -6,22 +6,6 @@ This article details known issues (and workarounds) for FIRST\ |reg| Control Sys
 
 ## Open Issues
 
-### I2C numbering backwards
-
-The I2C numbering in WPILib is backwards from what the labels are on SystemCore. This will be fixed in Alpha 2 and later releases.
-
-### DutyCycle.getOutput crashes
-
-Attempting to call DutyCycle.getOutput() or DutyCycleEncoder.get() without calling setAssumedFrequency() will crash. This is because currently the HW does not report frequency, which doesn't allow us to compute a percentage output. This also means getFrequency() also will fail.
-
-Use DutyCycle.getHighTime() or DutyCycleEncoder.setAssumedFrequency(), and use the value specified in the datasheet of the sensor to compute a percentage output.
-
-### SystemCore won't get 10.TE.AM.2 address from Radio.
-
-Due to the change in Hostname, the radio will not hand out .2 to SystemCore. Use the IP address displayed on the SystemCore screen if you need to know the IP address.
-
-Generally, everything should work in this configuration. But if you run into issues where the DS cannot connect (And you're sure the team number is set, it's required to connect the DS and can be verified on the screen), you can manually type the IP address into the team number selector in the DS.
-
 ### Unable to deploy on macOS when multiple VS Code versions are installed
 
 **Issue:** On macOS, having multiple installed copies of Visual Studio Code can cause deploy operations to fail because of [macOS local network privacy](https://developer.apple.com/documentation/technotes/tn3179-understanding-local-network-privacy)
@@ -39,13 +23,11 @@ sudo defaults write com.apple.network.local-network AllowedWiFiLocalNetworkAddre
 
 ### Driver Station randomly disabled
 
-**Issue:** The Driver Station contains tighter safety mechanisms introduced in 2024 to protect against control issues. Some teams have seen this cause the robot to disable.
+**Issue:** The Driver Station contains safety mechanisms to protect against control issues. Some teams have seen this cause the robot to disable.
 
 **Workaround:** There are multiple potential causes for tripping the safety mechanisms.
 
-.. note:: The new safety mechanisms will *not* disable the robot when connected to the :term:`FMS`.
-
-The Driver Station software has new tools for control packet delays that could cause this. The control system team requests that teams that experience this issue post screenshots of the :doc:`Driver Station Timing window </docs/software/driverstation/driver-station-timing-viewer>` to https://github.com/wpilibsuite/allwpilib/issues/6174
+.. note:: The safety mechanisms will *not* disable the robot when connected to the :term:`FMS`.
 
 Some teams have seen this happen only when the robot is operated wirelessly, but not when operated via USB or ethernet tether. Some potential mitigations:
 
@@ -61,25 +43,11 @@ Some teams have seen this happen due to software that is running on the driver s
 
 1. Reboot the driver station computer
 2. Close software that is running in the background
-3. Follow the :doc:`Driver Station Best Practices </docs/software/driverstation/driver-station-best-practices>`
+3. Follow the :doc:`Driver Station Best Practices </docs/software/firstdriverstation/first-driver-station-best-practices>`
 
-While rare, this can be caused by robot code that oversaturates the roboRIO processor or network connection. If all other troubleshooting steps fail, you can try running with one of the WPILib example programs to see if the problem still occurs.
+While rare, this can be caused by robot code that oversaturates the Systemcore processor or network connection. If all other troubleshooting steps fail, you can try running with one of the WPILib example programs to see if the problem still occurs.
 
-If you identify software that interferes with driver station, please post it to https://github.com/wpilibsuite/allwpilib/issues/6174
-
-### Driver Station Reports Less Free RAM then is Available
-
-**Issue:** The Driver Station diagnostic screen reports free RAM that is misleadingly low. This is due to Linux's use of memory caches. Linux will cache data in memory, but then relinquish when the robot programs requests more memory. The Driver Station only reports memory that isn't used by caches.
-
-**Workaround:** The true memory available to the robot program is available in the file ``/proc/meminfo``. :doc:`Use ssh to connect to the robot </docs/software/systemcore-info/roborio-ssh>`, and run ``cat /proc/meminfo``.
-
-```text
-MemTotal:         250152 kB
-MemFree:           46484 kB
-MemAvailable:     126956 kB
-```
-
-The proper value to look is as MemAvailable, rather then MemFree (which is what the driver station is reporting).
+If you identify software that interferes with driver station, please open an issue at https://github.com/wpilibsuite/FirstDriverStation-Public/issues
 
 ### Simulation crashes on Mac after updating WPILib
 
@@ -98,19 +66,6 @@ Could not apply requested plugin [id: ‘edu.wpi.first.GradleRIO’, version: �
 **Workaround:**
 
 Delete your Gradle cache located under ``~$USER_HOME/.gradle``. Windows machines may need to enable the ability to [view hidden files](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5). This issue has only shown up on Windows so far. Please [report](https://github.com/wpilibsuite/wpilib-docs/issues/new) this issue if you get it on an alternative OS.
-
-### Chinese characters in Driver Station Log
-
-**Issue:** Rarely, the driver station log will show Chinese characters instead of the English text. This appears to only happen when Windows is set to a language other then English.
-
-.. image:: /docs/software/vscode-overview/images/known-issues/DS-chinese.jpg
-  :alt: Chinese character appearing in the Driver Station log window.
-
-**Workaround:**
-There are two known workarounds:
-
-#. Copy and paste the Chinese characters into notepad, and the English text will be shown.
-#. Temporarily change the Windows language to English.
 
 ### C++ Intellisense - Files Open on Launch Don't Work Properly
 
@@ -134,3 +89,23 @@ There are two known workarounds:
 - Robot Simulation will crash on start-up
 
 **Solution:** Install the [Media Feature Pack](https://support.microsoft.com/en-us/topic/media-feature-pack-list-for-windows-n-editions-c1c6fffa-d052-8338-7a79-a4bb980a700a)
+
+## Fixed in WPILib 2027.0.0-alpha-2
+
+### I2C numbering backwards
+
+The I2C numbering in WPILib is backwards from what the labels are on Systemcore. This will be fixed in Alpha 2 and later releases.
+
+### DutyCycle.getOutput crashes
+
+Attempting to call DutyCycle.getOutput() or DutyCycleEncoder.get() without calling setAssumedFrequency() will crash. This is because currently the HW does not report frequency, which doesn't allow us to compute a percentage output. This also means getFrequency() also will fail.
+
+Use DutyCycle.getHighTime() or DutyCycleEncoder.setAssumedFrequency(), and use the value specified in the datasheet of the sensor to compute a percentage output.
+
+## Fixed in VH-109 fimware version 2.0.0
+
+### Systemcore won't get 10.TE.AM.2 address from Radio.
+
+Due to the change in Hostname, the radio will not hand out .2 to Systemcore. Use the IP address displayed on the Systemcore screen if you need to know the IP address.
+
+Generally, everything should work in this configuration. But if you run into issues where the DS cannot connect (And you're sure the team number is set, it's required to connect the DS and can be verified on the screen), you can manually type the IP address into the team number selector in the DS.

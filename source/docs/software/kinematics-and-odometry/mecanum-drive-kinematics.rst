@@ -36,13 +36,13 @@ The ``MecanumDriveKinematics`` class accepts four constructor arguments, with ea
    from wpimath.geometry import Translation2d
    from wpimath.kinematics import MecanumDriveKinematics
    # Locations of the wheels relative to the robot center.
-   frontLeftLocation = Translation2d(0.381, 0.381)
-   frontRightLocation = Translation2d(0.381, -0.381)
-   backLeftLocation = Translation2d(-0.381, 0.381)
-   backRightLocation = Translation2d(-0.381, -0.381)
+   front_left_location = Translation2d(0.381, 0.381)
+   front_right_location = Translation2d(0.381, -0.381)
+   back_left_location = Translation2d(-0.381, 0.381)
+   back_right_location = Translation2d(-0.381, -0.381)
    # Creating my kinematics object using the wheel locations.
    self.kinematics = MecanumDriveKinematics(
-     frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
+     front_left_location, front_right_location, back_left_location, back_right_location
    )
    ```
 
@@ -83,11 +83,11 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(Ch
    # counterclockwise.
    speeds = ChassisSpeeds(1.0, 3.0, 1.5)
    # Convert to wheel speeds
-   frontLeft, frontRight, backLeft, backRight = self.kinematics.toWheelSpeeds(speeds)
+   front_left, front_right, back_left, back_right = self.kinematics.toWheelSpeeds(speeds)
    ```
 
 #### Field-oriented drive
-:ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get wheel speeds from a set of desired field-oriented speeds.
+:ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-velocities:Creating a Robot-Relative ChassisVelocities Object from Field-Relative Velocities>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get wheel speeds from a set of desired field-oriented speeds.
 
 .. tab-set-code::
 
@@ -125,9 +125,9 @@ The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java / Python) / ``ToWheelSpeeds(Ch
    # is a quarter of a rotation per second counterclockwise. The current
    # robot angle is 45 degrees.
    speeds = ChassisSpeeds.fromFieldRelativeSpeeds(
-     2.0, 2.0, math.pi / 2.0, Rotation2d.fromDegrees(45.0))
+     2.0, 2.0, math.pi / 2.0, Rotation2d.from_degrees(45.0))
    # Now use this in our kinematics
-   wheelSpeeds = self.kinematics.toWheelSpeeds(speeds)
+   wheel_speeds = self.kinematics.toWheelSpeeds(speeds)
    ```
 
 #### Using custom centers of rotation
@@ -165,12 +165,11 @@ One can also use the kinematics object to convert a ``MecanumDriveWheelSpeeds`` 
    ```python
    from wpimath.kinematics import MecanumDriveWheelSpeeds
    # Example wheel speeds
-   wheelSpeeds = MecanumDriveWheelSpeeds(-17.67, 20.51, -13.44, 16.26)
+   wheel_speeds = MecanumDriveWheelSpeeds(-17.67, 20.51, -13.44, 16.26)
    # Convert to chassis speeds
-   chassisSpeeds = self.kinematics.toChassisSpeeds(wheelSpeeds)
+   chassis_speeds = self.kinematics.toChassisSpeeds(wheel_speeds)
    # Getting individual speeds
-   forward = chassisSpeeds.vx
-   sideways = chassisSpeeds.vy
-   angular = chassisSpeeds.omega
+   forward = chassis_speeds.vx
+   sideways = chassis_speeds.vy
+   angular = chassis_speeds.omega
    ```
-

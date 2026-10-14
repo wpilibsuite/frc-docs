@@ -22,47 +22,50 @@ Mecanum drive is a method of driving using specially designed wheels that allow 
 
 When viewed from the top, the rollers on a mecanum drivetrain should form an 'X' pattern. This results in the force vectors (when driving the wheel forward) on the front two wheels pointing forward and inward and the rear two wheels pointing forward and outward. By spinning the wheels in different directions, various components of the force vectors cancel out, resulting in the desired robot movement. A quick chart of different movements has been provided below, drawing out the force vectors for each of these motions may help in understanding how these drivetrains work. By varying the speeds of the wheels in addition to the direction, movements can be combined resulting in translation in any direction and rotation, simultaneously.
 
+## Swerve Drive
+
+.. image:: images/WCPSwerveX2i.png
+   :alt: A swerve drive robot using WCP X2i swerve modules.
+   :width: 600
+
+Swerve drive is a method of driving using independently steerable and drivable wheels. This allows the robot to drive in any direction without changing the orientation of the robot, much like mecanum drive. However, since the wheels are steerable, they can be driven with their force vectors pointing straight forward, rather than at a 45 degree angle as in mecanum drive. This results in more efficient movement and better traction than mecanum drive.
+
 ## Drive Class Conventions
 
 ### Motor Inversion
 
 It is the responsibility of the user to manage proper inversions for their drivetrain. Users can invert motors by calling ``setInverted()``/``SetInverted()`` on their motor objects. Typically for differential drive trains, one side must be inverted to avoid spinning in circles, since the forward direction of each side of the tank drive is opposite of each other.
 
-.. tab-set-code::
+.. tab-set::
 
-   ```java
-   PWMSparkMax m_motorRight = new PWMSparkMax(0);
+    .. tab-item:: Java
+        :sync: Java
 
-   public Robot() {
-      m_motorRight.setInverted(true);
-   }
-   ```
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/tankdrivegamepad/Robot.java
+            :language: java
+            :lines: 18,24-29
 
-   ```c++
-   wpi::PWMSparkMax m_motorLeft{0};
-   public:
-    Robot::Robot() {
-      m_motorRight.SetInverted(true);
-    }
-   ```
+    .. tab-item:: C++
+        :sync: C++
 
-   ```python
-   def robotInit(self):
-       self.motorRight = wpilib.PWMSparkMax(0)
-       self.motorRight.setInverted(True)
-   ```
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/TankDriveGamepad/cpp/Robot.cpp
+            :language: c++
+            :lines: 16, 22-28
+
+    .. tab-item:: Python
+        :sync: Python
+
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/TankDrive/robot.py
+           :language: python
+           :lines: 18-20,23,31
 
 ### Squaring Inputs
 
 When driving robots, it is often desirable to manipulate the joystick inputs such that the robot has finer control at low speeds while still using the full output range. One way to accomplish this is by squaring the joystick input, then reapplying the sign. By default the Differential Drive class will square the inputs. If this is not desired (e.g. if passing values in from a PIDController), use one of the drive methods with the squaredInputs parameter and set it to false.
 
-### Input Deadband
-
-By default, the Differential Drive class applies an input deadband of 0.02. This means that input values with a magnitude below 0.02 (after any squaring as described above) will be set to 0. In most cases these small inputs result from imperfect joystick centering and are not sufficient to cause drivetrain movement, the deadband helps reduce unnecessary motor heating that may result from applying these small values to the drivetrain. To change the deadband, use the `setDeadband()` method.
-
 ### Maximum Output
 
-Sometimes drivers feel that their drivetrain is driving too fast and want to limit the output.  This can be accomplished with the `setMaxOutput()` method.  This maximum output is multiplied by result of the previous drive functions like deadband and squared inputs.
+Sometimes drivers feel that their drivetrain is driving too fast and want to limit the output.  This can be accomplished with the `setMaxOutput()` method.  This maximum output is multiplied by result of the previous drive functions like squared inputs.
 
 ### Motor Safety
 
@@ -76,26 +79,19 @@ The Motor Safety interface of motor controllers can be interacted with by the us
 
 .. tab-set-code::
 
-    ```java
-    m_motorRight.setSafetyEnabled(true);
-    m_motorRight.setSafetyEnabled(false);
-    m_motorRight.setExpiration(.1);
-    m_motorRight.feed()
-    ```
 
-    ```c++
-    m_motorRight->SetSafetyEnabled(true);
-    m_motorRight->SetSafetyEnabled(false);
-    m_motorRight->SetExpiration(.1);
-    m_motorRight->Feed();
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/snippets/motorcontrol/Robot.java
+        :language: java
+        :lines: 50-53
 
-    ```python
-    m_motorRight.setSafetyEnabled(True)
-    m_motorRight.setSafetyEnabled(False)
-    m_motorRight.setExpiration(.1)
-    m_motorRight.feed()
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/snippets/MotorControl/cpp/Robot.cpp
+        :language: c++
+        :lines: 49-52
+
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/snippets/robot/MotorControl/robot.py
+        :language: python
+        :lines: 51-54
+
 
 By default all Drive objects enable Motor Safety. Depending on the mechanism and the structure of your program, you may wish to configure the timeout length of the motor safety (in seconds). The timeout length is configured on a per actuator basis and is not a global setting. The default (and minimum useful) value is 100ms.
 
@@ -109,7 +105,7 @@ Joysticks follow NED (North-East-Down) convention, where the positive X axis poi
 
 ## Using the DifferentialDrive class to control Differential Drive robots
 
-.. note:: WPILib provides separate Robot Drive classes for the most common drive train configurations (differential and mecanum).  The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive" (WCD). The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
+.. note:: The DifferentialDrive class handles the differential drivetrain configuration. These drive bases typically have two or more in-line traction or omni wheels per side (e.g., 6WD or 8WD) and may also be known as "skid-steer", "tank drive", or "West Coast Drive" (WCD). The Kit of Parts drivetrain is an example of a differential drive. There are methods to control the drive with 3 different styles ("Tank", "Arcade", or "Curvature"), explained in the article below.
 
 DifferentialDrive is a method provided for the control of "skid-steer" or "West Coast" drivetrains, such as the Kit of Parts chassis. Instantiating a DifferentialDrive is as simple as so:
 
@@ -118,30 +114,23 @@ DifferentialDrive is a method provided for the control of "skid-steer" or "West 
     .. tab-item:: Java
         :sync: Java
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/tankdrive/Robot.java
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/tankdrivegamepad/Robot.java
             :language: java
-            :lines: 17-18,22-23,24-26,30-35,38
+            :lines: 17-20
 
     .. tab-item:: C++ (Header)
         :sync: C++ (Header)
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/TankDrive/cpp/Robot.cpp
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/TankDriveGamepad/cpp/Robot.cpp
             :language: c++
             :lines: 15-19
-
-    .. tab-item:: C++ (Source)
-         :sync: C++ (Source)
-
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/TankDrive/cpp/Robot.cpp
-            :language: c++
-            :lines: 24, 28-32
 
     .. tab-item:: Python
         :sync: Python
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/TankDrive/robot.py
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/TankDrive/robot.py
            :language: python
-           :lines: 18-23,27-30
+           :lines: 22-24
 
 
 ### Multi-Motor DifferentialDrive
@@ -155,56 +144,41 @@ Many FRC\ |reg| drivetrains have more than 1 motor on each side. Classes derived
 
         Class variables (e.g. in Robot.java or Subsystem):
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/subsystems/DriveSubsystem.java
             :language: java
-            :lines: 19-25
+            :lines: 16-25
 
         In Robot or Subsystem constructor:
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand/subsystems/DriveSubsystem.java
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotinlined/subsystems/DriveSubsystem.java
             :language: java
-            :lines: 56-62
+            :lines: 43-49
 
     .. tab-item:: C++ (Header)
         :sync: C++ (Header)
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/include/subsystems/DriveSubsystem.h
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/include/subsystems/DriveSubsystem.hpp
             :language: c++
-            :lines: 114, 118-126
+            :lines: 54, 58-67
 
     .. tab-item:: C++ (Source)
         :sync: C++ (Source)
 
         In Robot or Subsystem constructor:
 
-        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand/cpp/subsystems/DriveSubsystem.cpp
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/HatchbotInlined/cpp/subsystems/DriveSubsystem.cpp
             :language: c++
-            :lines: 23-29
+            :lines: 18-24
 
     .. tab-item:: Python
         :sync: Python
 
-        ```python
-        def robotInit(self):
-            leftLeader = wpilib.Spark(1)
-            leftFollower = wpilib.Spark(2)
-            leftLeader.addFollower(leftFollower)
-            leftLeader.setInverted(
-                True
-            )  # if you want to invert the entire side you can do so here
-            rightLeader = wpilib.Spark(3)
-            rightFollower = wpilib.Spark(4)
-            rightLeader.addFollower(rightFollower)
-            self.drive = wpilib.drive.DifferentialDrive(leftLeader, rightLeader)
-        ```
+        .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/HatchbotInlined/subsystems/drivesubsystem.py
+            :language: python
+            :lines: 16-30
+
 
 ### Drive Modes
-.. note::
-    The DifferentialDrive class contains three different default modes of driving your robot's motors.
-
-    - Tank Drive, which controls the left and right side independently
-    - Arcade Drive, which controls a forward and turn speed
-    - Curvature Drive, a subset of Arcade Drive, which makes your robot handle like a car with constant-curvature turns.
 
 The DifferentialDrive class contains three default methods for controlling skid-steer or WCD robots. Note that you can create your own methods of controlling the robot's driving and have them call tankDrive() with the derived inputs for left and right motors.
 
@@ -216,37 +190,25 @@ Like Arcade Drive, the Curvature Drive mode is used to control the drivetrain us
 
 .. tab-set-code::
 
-    ```java
-    public void teleopPeriodic() {
-        // Tank drive with a given left and right rates
-        myDrive.tankDrive(-leftStick.getY(), -rightStick.getY());
-        // Arcade drive with a given forward and turn rate
-        myDrive.arcadeDrive(-driveStick.getY(), -driveStick.getX());
-        // Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
-        myDrive.curvatureDrive(-driveStick.getY(), -driveStick.getX(), driveStick.getButton(1));
-    }
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/snippets/differentialdrive/Robot.java
+        :language: java
+        :lines: 34-42
 
-    ```c++
-    void TeleopPeriodic() override {
-        // Tank drive with a given left and right rates
-        myDrive.TankDrive(-leftStick.GetY(), -rightStick.GetY());
-        // Arcade drive with a given forward and turn rate
-        myDrive.ArcadeDrive(-driveStick.GetY(), -driveStick.GetX());
-        // Curvature drive with a given forward and turn rate, as well as a quick-turn button
-        myDrive.CurvatureDrive(-driveStick.GetY(), -driveStick.GetX(), driveStick.GetButton(1));
-    }
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/snippets/DifferentialDrive/cpp/Robot.cpp
+        :language: c++
+        :lines: 37-47
 
     ```python
-    def teleopPeriodic(self):
+    def teleop_periodic(self):
         # Tank drive with a given left and right rates
-        self.myDrive.tankDrive(-self.leftStick.getY(), -self.rightStick.getY())
+        self.myDrive.tank_drive(-self.left_stick.get_y(), -self.right_stick.get_y())
         # Arcade drive with a given forward and turn rate
-        self.myDrive.arcadeDrive(-self.driveStick.getY(), -self.driveStick.getX())
+        self.myDrive.arcade_drive(-self.driveStick.get_y(), -self.driveStick.get_x())
         # Curvature drive with a given forward and turn rate, as well as a button for turning in-place.
-        self.myDrive.curvatureDrive(-self.driveStick.getY(), -self.driveStick.getX(), self.driveStick.getButton(1))
+        self.myDrive.curvature_drive(-self.driveStick.get_y(), -self.driveStick.get_x(), self.driveStick.getButton(1))
     ```
+
+.. todo:: Add RLI for python example above.
 
 ## Using the MecanumDrive class to control Mecanum Drive robots
 
@@ -254,17 +216,17 @@ MecanumDrive is a method provided for the control of holonomic drivetrains with 
 
 .. tab-set-code::
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/mecanumdrive/Robot.java
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/mecanumdrive/Robot.java
         :language: java
-        :lines: 15-18, 24-30, 37-42, 45
+        :lines: 18-21, 26, 31-48
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/MecanumDrive/cpp/Robot.cpp
         :language: c++
-        :lines: 36-40, 43-53, 16, 22-26
+        :lines: 37-40, 45-53, 18-23
 
-    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/d89b0587a1e1111239728140466c7dc4324d4005/MecanumDrive/robot.py
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/MecanumDrive/robot.py
       :language: python
-      :lines: 18-22, 26-42
+      :lines: 19-23, 26-43
 
 ### Mecanum Drive Modes
 .. note::
@@ -278,31 +240,23 @@ The MecanumDrive class contains two different default modes of driving your robo
 
 .. tab-set-code::
 
-    ```java
-    public void teleopPeriodic() {
-        // Drive using the X, Y, and Z axes of the joystick.
-        m_robotDrive.driveCartesian(-m_stick.getY(), -m_stick.getX(), -m_stick.getZ());
-        // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
-        m_robotDrive.drivePolar(-m_stick.getY(), Rotation2d.fromDegrees(45), 0);
-    }
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/snippets/mecanumdrive/Robot.java
+        :language: java
+        :lines: 62-67
 
-    ```c++
-    void TeleopPeriodic() override {
-        // Drive using the X, Y, and Z axes of the joystick.
-        m_robotDrive.driveCartesian(-m_stick.GetY(), -m_stick.GetX(), -m_stick.GetZ());
-        // Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
-        m_robotDrive.drivePolar(-m_stick.GetY(), 45_deg, 0);
-    }
-    ```
+    .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/snippets/MecanumDrive/cpp/Robot.cpp
+        :language: c++
+        :lines: 38-43
 
     ```python
-    def teleopPeriodic(self):
+    def teleop_periodic(self):
         # Drive using the X, Y, and Z axes of the joystick.
-        self.robotDrive.driveCartesian(-self.stick.getY(), -self.stick.getX(), -self.stick.getZ())
+        self.robot_drive.drive_cartesian(-self.stick.get_y(), -self.stick.get_x(), -self.stick.get_z())
         # Drive at 45 degrees relative to the robot, at the speed given by the Y axis of the joystick, with no rotation.
-        self.robotDrive.drivePolar(-self.stick.getY(), Rotation2d.fromDegrees(45), 0)
+        self.robot_drive.drive_polar(-self.stick.get_y(), Rotation2d.from_degrees(45), 0)
     ```
+
+.. todo:: Add RLI for python example above.
 
 ### Field-Oriented Driving
 
@@ -313,3 +267,21 @@ The use of field-oriented driving makes often makes the robot much easier to dri
 Just remember to get the gyro angle each time ``driveCartesian()`` is called.
 
 .. note:: Many teams also like to ramp the joysticks inputs over time to promote a smooth acceleration and reduce jerk.  This can be accomplished with a :ref:`Slew Rate Limiter <docs/software/advanced-controls/filters/slew-rate-limiter:Slew Rate Limiter>`.
+
+## Swerve Drive SW
+
+WPILib does not have a default class for controlling swerve drive. The WPILib swerve drive kinematics classes can be used to help with the math for controlling a swerve drive. See the :doc:`/docs/software/kinematics-and-odometry/swerve-drive-kinematics` section for more information on the kinematics of swerve drive and how to use the WPILib swerve drive kinematics classes. See the :doc:`/docs/software/kinematics-and-odometry/swerve-drive-odometry` section for more information on the odometry of swerve drive and how to use the WPILib swerve drive odometry classes. These are used in the SwerveBot ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/swervebot), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/SwerveBot), [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/SwerveBot)) and SwerveDrivePoseEstimator ([Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/swervedriveposeestimator), [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/SwerveDrivePoseEstimator)) examples.
+
+### Third Party Swerve Drive Libraries
+
+There are also third party libraries for controlling swerve drive. These libraries typically include classes for controlling the swerve modules and the drivetrain as a whole, and may also include features such as odometry and path following. See the vendor's documentation for more information on how to use these libraries.
+
+[AdvantageKit Swerve](https://docs.advantagekit.org/getting-started/template-projects): Thare are templates provided by AdvantageKit for controlling swerve drive robots for users of the AdvantageKit library.
+
+[CTRE Swerve Project Generator](https://v6.docs.ctr-electronics.com/en/latest/docs/tuner/tuner-swerve/index.html): This is a tool provided by CTRE to generate swerve drive code for their motor controllers, encoders, and gyro.
+
+[Rev Max Swerve Template](https://github.com/REVrobotics/MAXSwerve-Java-Template): This is a template provided by REV Robotics for controlling their MAX Swerve drive system.
+
+[Thrifty Swerve Generator](https://docs.home.thethriftybot.com/pages/thrifty-config.html): This is a tool provided by ThriftyBot to generate swerve drive code for their motor controllers and encoders.
+
+[Yet Another Mechanism System (YAMS)](https://yagsl.gitbook.io/yams/documentation/tutorials/swerve-drive): This is a generic mechanism library that includes support for swerve drive.

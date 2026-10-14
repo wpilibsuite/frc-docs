@@ -56,17 +56,17 @@ NT3 code (was):
       ```python
       class Example:
           def __init__(self):
-              inst = ntcore.NetworkTableInstance.getDefault()
+              inst = ntcore.NetworkTableInstance.get_default()
               # get the subtable called "datatable"
-              datatable = inst.getTable("datatable")
+              datatable = inst.get_table("datatable")
               # get the entry in "datatable" called "Y"
-              self.yEntry = datatable.getEntry("Y")
+              self.yEntry = datatable.get_entry("Y")
               # get the entry in "datatable" called "Out"
-              self.outEntry = datatable.getEntry("Out")
+              self.outEntry = datatable.get_entry("Out")
           def periodic(self):
               # read a double value from Y, and set Out to that value multiplied by 2
-              value = self.yEntry.getDouble(0.0)  # default to 0
-              self.outEntry.setDouble(value * 2)
+              value = self.yEntry.get_double(0.0)  # default to 0
+              self.outEntry.set_double(value * 2)
       ```
 
 Recommended NT4 equivalent (should be):
@@ -128,14 +128,14 @@ Recommended NT4 equivalent (should be):
       ```python
       class Example:
           def __init__(self) -> None:
-              inst = ntcore.NetworkTableInstance.getDefault()
+              inst = ntcore.NetworkTableInstance.get_default()
               # get the subtable called "datatable"
-              datatable = inst.getTable("datatable")
+              datatable = inst.get_table("datatable")
               # subscribe to the topic in "datatable" called "Y"
               # default value is 0
-              self.ySub = datatable.getDoubleTopic("Y").subscribe(0.0)
+              self.ySub = datatable.get_double_topic("Y").subscribe(0.0)
               # publish to the topic in "datatable" called "Out"
-              self.outPub = datatable.getDoubleTopic("Out").publish()
+              self.outPub = datatable.get_double_topic("Out").publish()
           def periodic(self):
               # read a double value from Y, and set Out to that value multiplied by 2
               value = self.ySub.get()

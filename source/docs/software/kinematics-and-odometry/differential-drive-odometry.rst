@@ -1,5 +1,5 @@
 # Differential Drive Odometry
-A user can use the differential drive kinematics classes in order to perform :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is odometry?>`. WPILib contains a ``DifferentialDriveOdometry`` class that can be used to track the position of a differential drive robot on the field.
+A user can use the differential drive kinematics classes in order to perform :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-velocities:What is odometry?>`. WPILib contains a ``DifferentialDriveOdometry`` class that can be used to track the position of a differential drive robot on the field.
 
 .. note:: Because this method only uses encoders and a gyro, the estimate of the robot's position on the field will drift over time, especially as your robot comes into contact with other robots during gameplay. However, odometry is usually very accurate during the autonomous period.
 
@@ -44,8 +44,8 @@ The optional argument is the starting pose of your robot on the field (as a ``Po
    # our starting pose is 5 meters along the long end of the field and in the
    # center of the field along the short end, facing forward.
    m_odometry = DifferentialDriveOdometry(
-     m_gyro.getRotation2d(),
-     m_leftEncoder.getDistance(), m_rightEncoder.getDistance(),
+     m_gyro.get_rotation2d(),
+     m_leftEncoder.get_distance(), m_rightEncoder.get_distance(),
      Pose2d(5.0, 13.5, Rotation2d()))
    ```
 
@@ -82,11 +82,11 @@ The ``update`` method can be used to update the robot's position on the field. T
    ```python
    def periodic(self):
      # Get the rotation of the robot from the gyro.
-     gyroAngle = m_gyro.getRotation2d()
+     gyro_angle = m_gyro.get_rotation2d()
      # Update the pose
-     m_pose = m_odometry.update(gyroAngle,
-       m_leftEncoder.getDistance(),
-       m_rightEncoder.getDistance())
+     m_pose = m_odometry.update(gyro_angle,
+       m_leftEncoder.get_distance(),
+       m_rightEncoder.get_distance())
    ```
 
 ## Resetting the Robot Pose
@@ -94,6 +94,6 @@ The robot pose can be reset via the ``resetPosition`` method. This method accept
 
 .. important:: If at any time, you decide to reset your gyroscope or encoders, the ``resetPosition`` method MUST be called with the new gyro angle and wheel distances.
 
-.. note:: A full example of a differential drive robot with odometry is available here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/differentialdrivebot) / [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/DifferentialDriveBot)
+.. note:: A full example of a differential drive robot with odometry is available here: [C++](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot) / [Java](https://github.com/wpilibsuite/allwpilib/tree/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/differentialdrivebot) / [Python](https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/DifferentialDriveBot)
 
 In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java / Python) methods can be used to retrieve the current robot pose without an update.

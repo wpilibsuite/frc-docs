@@ -24,8 +24,8 @@ For example, a trajectory defined in coordinate system A can be redefined in coo
 
    ```python
    from wpimath.geometry import Pose2d, Rotation2d
-   bOrigin = Pose2d(3, 3, Rotation2d.fromDegrees(30))
-   bTrajectory = aTrajectory.relativeTo(bOrigin)
+   b_origin = Pose2d(3, 3, Rotation2d.from_degrees(30))
+   b_trajectory = a_trajectory.relativeTo(b_origin)
    ```
 
 .. image:: images/relative-to.png
@@ -53,8 +53,8 @@ For example, one may want to transform a trajectory that begins at (2, 2, 30 deg
 
    ```python
    from wpimath.geometry import Pose2d, Rotation2d
-   transform = Pose2d(4, 4, Rotation2d.fromDegrees(50)) - trajectory.initialPose()
-   newTrajectory = trajectory.transformBy(transform)
+   transform = Pose2d(4, 4, Rotation2d.from_degrees(50)) - trajectory.initial_pose()
+   new_trajectory = trajectory.transform_by(transform)
    ```
 
 .. image:: images/transform-by.png

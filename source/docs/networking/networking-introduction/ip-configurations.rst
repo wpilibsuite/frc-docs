@@ -72,11 +72,29 @@ Both the Field Network and Robot Radio run DHCP servers with non-overlapping poo
 
 ## Static Configuration
 
-It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so you want to make sure to avoid addresses that will be in use when the robot is on the field network. These addresses are ``10.TE.AM.1`` for the VH-109 radio, ``10.TE.AM.3`` and ``10.TE.AM.4`` for the field network, and anything ``10.TE.AM.20`` or greater which may be assigned to a device configured for DHCP or else reserved. The Systemcore network configuration can be set from the webdashboard.
+It is also possible to configure static IPs on your devices to accommodate devices or software which do not support mDNS. When doing so, you must ensure you avoid addresses that are reserved or assigned to the field network, radio, or DHCP pools.
 
--  VH-109 radio - Static ``10.TE.AM.1`` programmed when configuring robot radio
--  Systemcore - Static ``10.TE.AM.2`` subnet mask of ``255.255.255.0`` (default)
--  VH-109 access point radio - Static ``10.TE.AM.4``, programmed when configuring access point radio
--  Driver Station - Static ``10.TE.AM.5`` subnet mask **must** be ``255.0.0.0`` to enable the DS to reach both the robot and :term:`FMS` Server, without additionally configuring the default gateway.
-   If a static address is assigned and the subnet mask is set to ``255.255.255.0``, then the default gateway must be configured to ``10.TE.AM.4``.
--  Other devices - Static ``10.TE.AM.6-.19`` subnet ``255.255.255.0``
+The table below outlines the general static IP address allocations and reserved ranges:
+
++---------------------------------------+---------------------------------------+-------------------+-----------------+
+| Device / Role                         | Static IP                             | Subnet Mask       | Default Gateway |
++=======================================+=======================================+===================+=================+
+| Robot Radio (VH-109 / OpenMesh)       | ``10.TE.AM.1``                        | ``255.255.255.0`` | ``10.TE.AM.4``  |
++---------------------------------------+---------------------------------------+-------------------+-----------------+
+| Systemcore                            | ``10.TE.AM.2``                        | ``255.255.255.0`` | ``10.TE.AM.4``  |
++---------------------------------------+---------------------------------------+-------------------+-----------------+
+| Field Network / Reserved              | ``10.TE.AM.3``                        | ``255.255.255.0`` | ``10.TE.AM.4``  |
++---------------------------------------+---------------------------------------+-------------------+-----------------+
+| Network Gateway / Field AP            | ``10.TE.AM.4``                        | ``255.255.255.0`` | ``10.TE.AM.4``  |
++---------------------------------------+---------------------------------------+-------------------+-----------------+
+| Driver Station                        | ``10.TE.AM.5``                        | ``255.0.0.0`` (1) | ``10.TE.AM.4``  |
++---------------------------------------+---------------------------------------+-------------------+-----------------+
+| Additional On-Robot Devices           | ``10.TE.AM.6`` to ``10.TE.AM.19``     | ``255.255.255.0`` | ``10.TE.AM.4``  |
++---------------------------------------+---------------------------------------+-------------------+-----------------+
+| Field DHCP Pool (Avoid Static)        | ``10.TE.AM.20`` to ``10.TE.AM.199``   | ``255.255.255.0`` | ``10.TE.AM.4``  |
++---------------------------------------+---------------------------------------+-------------------+-----------------+
+| Robot Radio DHCP Pool (Avoid Static)  | ``10.TE.AM.200`` to ``10.TE.AM.219``  | ``255.255.255.0`` | ``10.TE.AM.4``  |
++---------------------------------------+---------------------------------------+-------------------+-----------------+
+
+.. note::
+   (1) The Driver Station static subnet mask **must** be set to ``255.0.0.0`` to enable the Driver Station to reach both the robot and :term:`FMS` Server without additionally configuring the default gateway. If the subnet mask is set to ``255.255.255.0``, the default gateway must be configured to ``10.TE.AM.4``.

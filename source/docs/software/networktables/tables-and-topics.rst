@@ -72,17 +72,17 @@ Having a Topic object or handle does not mean the topic exists or is of the corr
 
         ```python
         import ntcore
-        inst = ntcore.NetworkTableInstance.getDefault()
-        table = inst.getTable("datatable")
+        inst = ntcore.NetworkTableInstance.get_default()
+        table = inst.get_table("datatable")
         # get a topic from a NetworkTableInstance
         # the topic name in this case is the full name
-        dblTopic = inst.getDoubleTopic("/datatable/X")
+        dbl_topic = inst.get_double_topic("/datatable/X")
         # get a topic from a NetworkTable
         # the topic name in this case is the name within the table;
         # this line and the one above reference the same topic
-        dblTopic = table.getDoubleTopic("X")
+        dbl_topic = table.get_double_topic("X")
         # get a type-specific topic from a generic Topic
-        genericTopic = inst.getTopic("/datatable/X")
-        dblTopic = ntcore.DoubleTopic(genericTopic)
+        generic_topic = inst.get_topic("/datatable/X")
+        dbl_topic = ntcore.DoubleTopic(generic_topic)
         ```
 

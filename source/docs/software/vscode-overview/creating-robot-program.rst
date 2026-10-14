@@ -6,6 +6,32 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 
 To start a project using one of the WPILib robot program templates, users must first choose a base class for their robot.  Users subclass these base classes to create their primary :code:`Robot` class, which controls the main flow of the robot program.  There are various choices available for the base class:
 
+### OpModeRobot
+
+Documentation:
+[Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/framework/OpModeRobot.html)
+- [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_op_mode_robot_base.html)
+
+Source:
+[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibj/src/main/java/org/wpilib/framework/OpModeRobot.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibc/src/main/native/include/wpi/framework/OpModeRobot.hpp)
+
+``OpModeRobot`` is the recommended base class for most users.  It structures robot code around individual *opmode* classes, one per autonomous routine, one per teleoperated configuration, and so on, annotated with ``@Autonomous``, ``@Teleop``, or ``@Utility`` (Java) or registered manually (C++).  The Driver Station displays a drop-down list of available opmodes for each mode, so operators can select routines without recompiling the robot program.  The ``Robot`` class holds shared hardware and subsystems, which opmodes receive through their constructors.
+
+See :doc:`/docs/software/basic-programming/opmodes` for full documentation, including the opmode lifecycle, multiple opmode selection, and DS integration.
+
+.. tab-set-code::
+
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/templates/opmode/Robot.java
+      :language: java
+      :lines: 5-33
+      :lineno-match:
+
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/templates/opmode/cpp/Robot.cpp
+      :language: c++
+      :lines: 5-25
+      :lineno-match:
+
 ### TimedRobot
 
 Documentation:
@@ -13,21 +39,21 @@ Documentation:
 - [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_timed_robot.html)
 
 Source:
-[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibj/src/main/java/org/wpilib/framework/TimedRobot.java)
-- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibc/src/main/native/cpp/framework/TimedRobot.cpp)
+[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibj/src/main/java/org/wpilib/framework/TimedRobot.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibc/src/main/native/cpp/framework/TimedRobot.cpp)
 
-The :code:`TimedRobot` class is the base class recommended for most users.  It provides control of the robot program through a collection of :code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are called by WPILib during specific robot states (e.g. autonomous or teleoperated). During these calls, your code typically polls each input device and acts according to the data it receives.  For instance, you would typically determine the position of the joystick and state of the joystick buttons on each call and act accordingly.  The ``TimedRobot`` class also provides an example of retrieving autonomous routines through SendableChooser ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/smartdashboard/SendableChooser.html)/ [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_sendable_chooser.html))
+The :code:`TimedRobot` class is an alternative base class that structures robot code around a single :code:`Robot` class with :code:`init()`, :code:`periodic()`, and :code:`exit()` methods for each mode (autonomous, teleoperated, utility), which are called by WPILib during the corresponding robot states. During these calls, your code typically polls each input device and acts according to the data it receives.  For instance, you would typically determine the position of the joystick and state of the joystick buttons on each call and act accordingly.  ``TimedRobot`` uses ``Selectable`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/tunable/Selectable.html)/ [C++](file:///C:/Users/Public/wpilib/2027_alpha7/documentation/cpp/classwpi_1_1tunables_1_1_selectable.html)) for autonomous routine selection via the dashboard.
 
 .. note:: A `TimedRobot Skeleton` template is available that removes some informative comments and the autonomous example. You can use this if you're already familiar with `TimedRobot`. The example shown below is of `TimedRobot Skeleton`.
 
 .. tab-set-code::
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/templates/timedskeleton/Robot.java
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/templates/timedskeleton/Robot.java
       :language: java
       :lines: 7-53
       :lineno-match:
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
+   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/templates/timedskeleton/cpp/Robot.cpp
       :language: c++
       :lines: 5-29
       :lineno-match:
@@ -55,8 +81,8 @@ Documentation:
 - [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_timeslice_robot.html#details)
 
 Source:
-[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibj/src/main/java/org/wpilib/framework/TimesliceRobot.java)
-- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibc/src/main/native/cpp/framework/TimesliceRobot.cpp)
+[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibj/src/main/java/org/wpilib/framework/TimesliceRobot.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibc/src/main/native/cpp/framework/TimesliceRobot.cpp)
 
 The :code:`TimesliceRobot` class extends the :code:`TimedRobot` framework to provide more control over the scheduling of periodic functions. It allows users to allocate specific time slices to different robot operations, running them sequentially within a defined period (typically shorter than TimedRobot's default 20ms). This class is recommended for users who need more precise timing control and consistent starting times for their robot's periodic functions.
 
@@ -70,8 +96,8 @@ Documentation:
 - [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_robot_base.html)
 
 Source:
-[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibj/src/main/java/org/wpilib/framework/RobotBase.java)
-- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-6/wpilibc/src/main/native/cppcs/RobotBase.cpp)
+[Java](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibj/src/main/java/org/wpilib/framework/RobotBase.java)
+- [C++](https://github.com/wpilibsuite/allwpilib/blob/v2027.0.0-alpha-7/wpilibc/src/main/native/cpp/framework/RobotBase.cpp)
 
 The :code:`RobotBase` class is the most minimal base-class offered, and is generally not recommended for direct use.  No robot control flow is handled for the user; everything must be written from scratch inside the :code:`startCompetition()` method. The template by default showcases how to process the different operation modes (teleop, auto, etc).
 
@@ -117,7 +143,7 @@ This will bring up the "WPILIb New Project Creator"
 .. image:: images/creating-robot-program/new-project-creator.png
    :alt: The project type selector of the WPILib New Project Creator
 
-The **Project Type** chooses between an empty template project of one of the base classes, or a :doc:`WPILib example project </docs/software/examples-tutorials/wpilib-examples>`. Additionally, a template exists for :ref:`Command-based <docs/software/commandbased/commands-v2/what-is-command-based:What is "command-based" programming?>` projects, which are built on the :code:`TimedRobot` base class but include a number of additional features - this type of robot program is highly recommended for new teams.
+The **Project Type** chooses between an empty template project of one of the base classes, or a :doc:`WPILib example project </docs/software/examples-tutorials/wpilib-examples>`. Additionally, templates exist for :ref:`Commands v2 <docs/software/commandbased/commands-v2/what-is-command-based:What is "command-based" programming?>` and :doc:`Commands v3 </docs/software/commandbased/commands-v3/index>` projects, which are built on the :code:`TimedRobot` base class but include a number of additional features - this type of robot program is highly recommended for new teams.
 
 After making the selections, click :guilabel:`Next`.
 

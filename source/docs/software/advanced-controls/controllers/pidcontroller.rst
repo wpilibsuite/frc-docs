@@ -2,9 +2,9 @@
 
 .. note:: This article focuses on in-code implementation of PID control in WPILib. For a conceptual explanation of the working of a PIDController, see :ref:`docs/software/advanced-controls/introduction/introduction-to-pid:Introduction to PID`
 
-.. note:: For a guide on implementing PID control through the :ref:`command-based framework <docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?>`, see :ref:`docs/software/commandbased/commands-v2/pid-subsystems-commands:PID Control in Command-based`.
+.. note:: For a guide on implementing PID control through the :ref:`Commands v2 framework <docs/software/commandbased/commands-v2/what-is-command-based:What Is "Command-Based" Programming?>`, see :ref:`docs/software/commandbased/commands-v2/pid-subsystems-commands:PID Control in Command-based`.
 
-WPILib supports PID control of mechanisms through the ``PIDController`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/math/controller/PIDController.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1math_1_1_p_i_d_controller.html), :external:py:class:`Python <wpimath.controller.PIDController>`).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
+WPILib supports PID control of mechanisms through the ``PIDController`` class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/math/controller/PIDController.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1math_1_1_p_i_d_controller.html), :external:py:class:`Python <wpimath.PIDController>`).  This class handles the feedback loop calculation for the user, as well as offering methods for returning the error, setting tolerances, and checking if the control loop has reached its setpoint within the specified tolerances.
 
 ## Using the PIDController Class
 
@@ -57,7 +57,7 @@ Using the constructed ``PIDController`` is simple: simply call the ``calculate()
   ```python
   # Calculates the output of the PID algorithm based on the sensor reading
   # and sends it to a motor
-  motor.set(pid.calculate(encoder.getDistance(), setpoint))
+  motor.set(pid.calculate(encoder.get_distance(), setpoint))
   ```
 
 ### Checking Errors
@@ -98,10 +98,10 @@ To do this, we first must specify the tolerances with the ``setTolerance()`` met
 
   ```python
   # Sets the error tolerance to 5, and the error derivative tolerance to 10 per second
-  pid.setTolerance(5, 10)
+  pid.set_tolerance(5, 10)
     # Returns true if the error is less than 5 units, and the
   # error derivative is less than 10 units
-  pid.atSetpoint()
+  pid.at_setpoint()
   ```
 
 ### Resetting the Controller
@@ -194,7 +194,7 @@ To configure a ``PIDController`` to automatically do this, use the ``enableConti
 
   ```python
   # Enables continuous input on a range from -180 to 180
-  pid.enableContinuousInput(-180, 180)
+  pid.enable_continuous_input(-180, 180)
   ```
 
 ## Clamping Controller Output
@@ -216,6 +216,6 @@ To configure a ``PIDController`` to automatically do this, use the ``enableConti
   def clamp(v, minval, maxval):
       return max(min(v, maxval), minval)
     # Clamps the controller output to between -0.5 and 0.5
-  clamp(pid.calculate(encoder.getDistance(), setpoint), -0.5, 0.5)
+  clamp(pid.calculate(encoder.get_distance(), setpoint), -0.5, 0.5)
   ```
 

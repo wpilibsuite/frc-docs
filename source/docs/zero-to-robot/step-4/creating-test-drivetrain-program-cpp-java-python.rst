@@ -1,39 +1,95 @@
-# Creating your Test Drivetrain Program (Java/C++/Python)
+# Create Your Test Drivetrain Program
 
-Once everything is installed, we're ready to create a robot program.  WPILib comes with several templates for robot programs.  Use of these templates is highly recommended for new users; however, advanced users are free to write their own robot code from scratch. This article walks through creating a project from one of the provided examples which has some code already written to drive a basic robot.
+Configure a drivetrain project for your motor controllers and deploy it to
+Systemcore. The next page covers motor testing with the wheels off the floor.
+
+Use the Java, C++, or Python walkthrough below, or start with a Blocks sample.
+
+Before beginning, confirm that WPILib and any language-specific tools from
+:doc:`Step 2 <../step-2/index>` are installed, Step 3 is complete, and you know
+the motor-controller type, port numbers or CAN IDs, and team number for your
+robot.
+
+Start with the WPILib **Getting Started** example, then check its motor
+configuration before deploying it to your robot.
 
 * :ref:`create_java_cpp_project`
 * :ref:`create_python_project`
+* :ref:`create_blocks_project`
 
-.. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, :term:`PWM` refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless motor, but it's similar for brushed motor. There is an assumption that the user has already installed the required :doc:`vendordeps </docs/software/vscode-overview/3rd-party-libraries>` and configured the device(s) (update firmware, assign CAN IDs, etc) according to the manufacturer documentation ([CTRE](https://docs.ctr-electronics.com/) / [REV](https://docs.revrobotics.com/brushless/spark-max/gs)).
+.. important::
+
+   Choose the hardware tab that matches the motor controllers on your robot.
+   The **PWM** tab covers the motor controller included in the FRC Kit of Parts.
+   The **CTRE** tabs cover Talon controllers, and the **REV** tab covers SPARK
+   controllers. Before deploying a CAN example, install the required
+   :doc:`vendor library </docs/software/vscode-overview/3rd-party-libraries>`,
+   update the devices, and assign unique CAN IDs using the manufacturer's
+   instructions.
+
+.. _create_blocks_project:
+
+## Starting a Drivetrain Project in Blocks
+
+In the Blocks editor, select :guilabel:`Samples...`, choose a drivetrain
+sample, then select :guilabel:`Create New Project From Sample` to make an
+editable copy. Choose the sample that matches your hardware:
+
+- **DifferentialDrive301:** a two-motor differential drivetrain with A301
+  motor controllers.
+- **MecanumRobot301:** a four-motor mecanum drivetrain with A301 motor
+  controllers.
+- **MecanumRobotExpansionHub:** a four-motor mecanum drivetrain with motors
+  connected to a REV Expansion Hub.
+
+See :ref:`blocks-drivetrain-samples` for screenshots and links to each sample's
+source. Before running a sample, check the motor connections, controller
+assignment, and inversion against your robot. A sample for a different motor
+controller is not a drop-in replacement for your hardware.
+
+.. note::
+
+   The detailed Systemcore Blocks deployment walkthrough is still being
+   completed. Once your program is deployed, FRC teams can follow
+   :doc:`running-test-program` for the pre-enable checks and first drive.
+
+.. note::
+
+   More drivetrain examples for Blocks are coming soon.
+
+The remaining sections describe the Java, C++, and Python workflow.
 
 .. _create_java_cpp_project:
 
 ## Creating a New WPILib Project (Java/C++)
 
-In Visual Studio Code, click the WPILib logo in the top right to launch the WPILib Command Palette. Select :guilabel:`Create a new project`:
+Open **WPILib VS Code**. Open the WPILib command palette and select
+:guilabel:`Create a new project`:
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/create-new-project.png
    :alt: Choose "WPILib: Create a new project".
 
-This will bring up the "WPILIb New Project Creator"
+The WPILib New Project Creator opens.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
    :alt: The project type selector of the WPILib New Project Creator
 
-The **Project Type** chooses between an empty template project, or a :doc:`WPILib example project </docs/software/examples-tutorials/wpilib-examples>`. For this example, select :guilabel:`Example` and then choose :guilabel:`Next`.
+Select :guilabel:`Example`, then :guilabel:`Next`. This starts from a
+:doc:`working WPILib example </docs/software/examples-tutorials/wpilib-examples>`
+instead of an empty template.
 
-This will bring up the language and base selection window.
+The next page asks for a language and project base.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-language.png
    :alt: The language and base page of the WPILib New Project Creator
 
-1. **Language**: This is the language (C++ or Java) that will be used for this project.
-2. **Project Base**: This box is used to select the base class or example to generate the project from. For this example, select **Getting Started**
+1. **Language:** select Java or C++ to match your choice in Step 2.
+2. **Project Base:** select **Getting Started** for this walkthrough.
 
 After making the selections, click :guilabel:`Next`.
 
-This will bring up the Project and Configuration window.
+On the Project and Configuration page, choose where to save the project and
+enter your team number.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-location.png
    :alt: The project and configuration page of the WPILib New Project Creator
@@ -49,34 +105,43 @@ This will bring up the Project and Configuration window.
 Once all the above have been configured, click :guilabel:`Next`.
 
 This will bring up the Review and Create window.
+The Review and Create page shows the settings you selected.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator-configured.png
    :alt: The review and create page of the WPILib New Project Creator
 
-Double check all the settings and click :guilabel:`Create Project`. If anything is not correct, click :guilabel:`Back` and make the necessary corrections.
+Check the language, example, folder, and team number. Use :guilabel:`Back`
+to correct a setting, then select :guilabel:`Create Project`.
+
+**Expected result:** VS Code offers to open the new project. If creation fails,
+read the error notification before trying again.
 
 .. note:: Any errors in project generation will appear in the bottom right-hand corner of the screen.
 
-## Opening The New Project
+## Opening the New Project
 
 .. image:: /docs/software/vscode-overview/images/importing-previous-project/opening-project.png
    :alt: Open Project Dialog in VS Code
 
-After successfully creating your project, VS Code will give the option of opening the project as shown above. We can choose to do that now or later by typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS) and select the folder where we saved our project.
+Accept the prompt to open your new project. To open it later, press
+:kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or :kbd:`Command+O` on macOS) and select
+the project folder.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/trusted-workspace.png
    :alt: Trusted Workspace dialog in VS Code.
 
 Click :guilabel:`Yes I trust the authors`.
 
-Once opened we will see the project hierarchy on the left. Double clicking on the file will open that file in the editor.
+The file explorer shows the project folders. Open the Robot source file to
+inspect the example you will configure in the following sections.
 
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/opened-robot-project.png
     :alt: The robot.java code shown after opening a new project.
 
 ## C++ Configurations (C++ Only)
 
-For C++ projects, there is one more step to set up IntelliSense.  Whenever we open a project, we should get a pop-up in the bottom right corner asking to refresh C++ configurations.  Click "Yes" to set up IntelliSense.
+For a C++ project, accept the prompt to refresh C++ configurations. Select
+**Yes** to set up IntelliSense for this project.
 
 .. image:: /docs/software/vscode-overview/images/importing-previous-project/cpp-configurations.png
     :alt: You must choose "Yes" to refresh the C++ configurations.
@@ -113,28 +178,30 @@ Running the ``robotpy init`` command will initialize a new robot project:
 This will create a ``robot.py`` and ``pyproject.toml`` file, but will not overwrite an existing file.
 
 * The ``pyproject.toml`` file contains the requirements for your project, which are downloaded and installed via the ``robotpy sync`` command.
-* The ``robot.py`` file is where you will put the your Robot class.
+* The ``robot.py`` file is where you will put your Robot class.
 
-.. seealso:: :ref:`docs/zero-to-robot/step-2/python-setup:Download RobotPy for roboRIO`
+.. seealso:: :ref:`docs/zero-to-robot/step-2/python-setup:Download RobotPy for Systemcore`
 
 
-## Basic Drivetrain example
+## Basic Drivetrain Example
 
-First, here is what a simple code can look like for a Drivetrain with PWM controlled motors (such as SparkMax).
+Read the complete PWM example below to see how the Robot class connects
+controller input to motor output. Then use the hardware tabs in the following
+sections to configure the example for your motor controllers.
 
 .. note:: the Python example below is from `<https://github.com/robotpy/mostrobotpy/tree/main/examples/robot/GettingStarted>`__
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
       :linenos:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
       :linenos:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/GettingStarted/robot.py
       :language: python
       :linenos:
 
@@ -152,22 +219,22 @@ Now let's look at various parts of the code.
          .. tab-item:: Java
             :sync: java
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
                :language: java
-               :lines: 7-12
+               :lines: 7-11
                :linenos:
 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
                :lines: 5-9
                :lineno-match:
 
          .. tab-item:: Python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/GettingStarted/robot.py
                :language: python
                :lines: 8
                :lineno-match:
@@ -196,9 +263,9 @@ Now let's look at various parts of the code.
          ```
 
          ```python
-         import wpilib               # Used to get the joysticks
-         import wpilib.drive         # Used for the DifferentialDrive class
-         import phoenix6             # CTRE library
+         import wpilib                            # Used to get the joysticks
+         from wpilib import DifferentialDrive     # Used for the DifferentialDrive class
+         import phoenix6                          # CTRE library
          ```
 
    .. tab-item:: REV
@@ -224,8 +291,7 @@ Now let's look at various parts of the code.
             ```
 
             ```python
-            import wpilib           # Used to get the joysticks
-            import wpilib.drive     # Used for the DifferentialDrive class
+            import wpilib           # Used to get the joysticks and DifferentialDrive class
             import rev              # REV library
             ```
 
@@ -253,14 +319,18 @@ Now let's look at various parts of the code.
          ```
 
          ```python
-         import wpilib           # Used to get the joysticks
-         import wpilib.drive     # Used for the DifferentialDrive class
-         import ctre             # CTRE library
+         import wpilib                            # Used to get the joysticks
+         from wpilib import DifferentialDrive     # Used for the DifferentialDrive class
+         import phoenix5                          # Phoenix5 library
          ```
 
 Our code needs to reference the components of WPILib that are used. In C++ this is accomplished using ``#include`` statements; in Java and Python it is done with ``import`` statements. The program references classes for ``Gamepad`` (for driving), ``PWMSparkMax`` / ``TalonFX`` / ``CANSparkMax`` / ``WPI_TalonSRX`` (for controlling motors), ``TimedRobot`` (the base class used for the example), ``Timer`` (used for autonomous), and ``DifferentialDrive`` (for connecting the Gamepad to the motors).
 
-.. note:: The ``Gamepad`` class is used with the 2027 FIRST Driver station. If you are using the NI Driver station, you will need to use the ``NiDsXboxController`` class instead.
+.. note:: The ``Gamepad`` class is used with the 2027 FIRST Driver Station. If
+   you are using the NI Driver Station, use the ``NiDsXboxController`` class
+   instead. The pinned Python PWM example above still shows
+   ``NiDsXboxController``; replace it with ``wpilib.Gamepad(0)`` when following
+   this guide with the 2027 Driver Station.
 
 ## Defining the variables for our sample robot
 
@@ -274,27 +344,26 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: Java
             :sync: java
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
                :language: java
-               :lines: 19-25
+               :lines: 18-24
                :lineno-match:
 
          .. tab-item:: C++
             :sync: c++
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
                :language: c++
-               :lines: 50-60
+               :lines: 46-55
                :lineno-match:
 
          .. tab-item:: Python
             :sync: python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/examples/c6d0540b01e138725fad7366ff4e317e9994b78b/GettingStarted/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/GettingStarted/robot.py
                :language: python
-               :linenos:
+               :lineno-match:
                :lines: 12-29
-               :lineno-start: 12
 
    .. tab-item:: CTRE-Phoenix6
       :sync: ctre6
@@ -334,22 +403,23 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
 
             ```python
             class MyRobot(wpilib.TimedRobot):
-              def robotInit(self):
+              def __init__(self):
                  """
                  This function is called upon program startup and
                  should be used for any initialization code.
                  """
-                 self.leftDrive = phoenix6.hardware.TalonFX(1)
-                 self.rightDrive = phoenix6.hardware.TalonFX(2)
-                 self.robotDrive = wpilib.drive.DifferentialDrive(
-                     self.leftDrive, self.rightDrive
+                 super().__init__()
+                 self.left_drive = phoenix6.hardware.TalonFX(1)
+                 self.right_drive = phoenix6.hardware.TalonFX(2)
+                 self.robot_drive = DifferentialDrive(
+                     self.left_drive, self.right_drive
                  )
                  self.controller = wpilib.Gamepad(0)
                  self.timer = wpilib.Timer()
                  # We need to invert one side of the drivetrain so that positive voltages
                  # result in both sides moving forward. Depending on how your robot's
                  # gearbox is constructed, you might have to invert the left side instead.
-                 self.rightDrive.setInverted(True)
+                 self.right_drive.set_inverted(True)
             ```
 
    .. tab-item:: REV
@@ -388,11 +458,11 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: Python
             :sync: python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-rev/bc3ebc4/examples/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-rev/29651ec/examples/getting-started/robot.py
                :language: python
                :linenos:
-               :lines: 13-30
-               :lineno-start: 13
+               :lines: 12-28
+               :lineno-start: 12
 
    .. tab-item:: CTRE-Phoenix5
       :sync: ctre5
@@ -429,18 +499,21 @@ Our code needs to reference the components of WPILib that are used. In C++ this 
          .. tab-item:: Python
             :sync: python
 
-            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/5b8d33f/examples/getting-started/robot.py
+            .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/robotpy-ctre/126e0a4/examples/getting-started/robot.py
                :language: python
                :linenos:
                :lines: 13-30
                :lineno-start: 13
 
-The sample robot in our examples will have an Xbox Controller (or other Gamepad) on USB port 0 for arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN with IDs 1 and 2). Here we create objects of type ``DifferentialDrive`` (robotDrive), ``Gamepad`` (controller) and ``Timer`` (timer). This section of the code does three things:
+The sample robot uses an Xbox controller (or another gamepad) on USB port 0
+for arcade drive and two motors on PWM ports 0 and 1. The vendor examples use
+CAN IDs 1 and 2. Here we create ``DifferentialDrive`` (``robotDrive``),
+``Gamepad`` (``controller``), and ``Timer`` (``timer``) objects. This code:
 
-1. Defines the variables as members of our Robot class.
-2. Initializes the variables.
+1. Defines the variables as members of the Robot class.
+2. Initializes each object once instead of recreating it periodically.
 
-.. note:: The variable initializations for C++ are in the ``private`` section at the bottom of the program. This means they are private to the class (``Robot``). The C++ code also sets the Motor Safety expiration to 0.1 seconds (the drive will shut off if we don't give it a command every .1 seconds) and starts the ``Timer`` used for autonomous.
+.. note:: The variable initializations for C++ are in the ``private`` section at the bottom of the program. This means they are private to the class (``Robot``).
 
 ## Robot Initialization
 
@@ -449,27 +522,27 @@ The sample robot in our examples will have an Xbox Controller (or other Gamepad)
    .. tab-item:: Java
       :sync: java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
          :language: java
-         :lines: 27-28,32-36
-         :linenos:
-         :lineno-start: 27
+         :lines: 27-32
+         :lineno-match:
 
    .. tab-item:: C++
       :sync: c++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
          :language: c++
-         :lines: 12-13,17-24
-         :linenos:
-         :lineno-start: 12
+         :lines: 13-20
+         :lineno-match:
 
    .. tab-item:: Python
       :sync: python
 
-      ```python
-      def robotInit(self):
-      ```
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/GettingStarted/robot.py
+         :language: python
+         :lines: 13-18, 25-28
+         :linenos:
+         :lineno-start: 12
 
 The ``Robot`` constructor for our sample program inverts the right side of the drivetrain. Depending on your drive setup, you might need to invert the left side instead.
 
@@ -477,19 +550,19 @@ The ``Robot`` constructor for our sample program inverts the right side of the d
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
-      :lines: 38-54
+      :lines: 34-50
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
-      :lines: 25-36
+      :lines: 22-33
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/GettingStarted/robot.py
       :language: python
-      :lines: 29-41
+      :lines: 30-42
       :lineno-match:
 
 The ``AutonomousInit`` method is run once each time the robot transitions to autonomous from another mode. In this program, we restart the ``Timer`` in this method.
@@ -500,19 +573,19 @@ The ``AutonomousInit`` method is run once each time the robot transitions to aut
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
-      :lines: 56-64
+      :lines: 52-60
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
-      :lines: 38-45
+      :lines: 35-40
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/GettingStarted/robot.py
       :language: python
-      :lines: 43-50
+      :lines: 44-51
       :lineno-match:
 
 Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` function. In this example we don't have anything to do in ``TeleopInit``, it is provided for illustration purposes only. In ``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the Y-axis of the left thumbstick of the ``Gamepad`` to forward/back motion of the drive motors and the X-axis to turning motion.
@@ -521,24 +594,34 @@ Like in Autonomous, the Teleop mode has a ``TeleopInit`` and ``TeleopPeriodic`` 
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/gettingstarted/Robot.java
       :language: java
-      :lines: 66-73
+      :lines: 62-68
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/GettingStarted/cpp/Robot.cpp
       :language: c++
-      :lines: 45-48
+      :lines: 42-44
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/GettingStarted/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/GettingStarted/robot.py
       :language: python
-      :lines: 52-56
+      :lines: 53-57
       :lineno-match:
 
 Utility Mode is used for testing robot functionality or running other code that shouldn't be run in a match. Similar to ``TeleopInit``, the ``UtilityInit`` and ``UtilityPeriodic`` methods are provided here for illustrative purposes only.
 
 ## Deploying the Project to a Robot
+
+Before deploying, save the program and check that:
+
+- The project's team number matches Systemcore and the Driver Station.
+- Motor ports or CAN IDs match the wired devices.
+- The required vendor libraries are installed for a CAN example.
+- The controller is assigned to the port used by the example.
+
+Connect the computer using the USB or robot-network path verified in Step 3.
+Keep the robot disabled, then use the command for your language below.
 
 .. tab-set::
 
@@ -579,3 +662,26 @@ Utility Mode is used for testing robot functionality or running other code that 
 
       For more detailed instructions, see :doc:`Deploy Python code </docs/software/python/subcommands/deploy>`.
 
+**Expected result:** the terminal reports deployment success, and Driver
+Station shows both robot communication and robot code. If either is missing,
+read the deploy output and resolve the first error before continuing.
+
+Leave the robot disabled. Continue to :doc:`running-test-program` for the
+controller checks and first drive test.
+
+.. container:: sw-success
+
+   .. container:: sw-success-h
+
+      ✓ Your drivetrain program is deployed.
+
+   Continue to the safety checks and first-enable procedure before running the
+   motors.
+
+.. container:: sw-nav
+
+   :doc:`← Step 4: Write and Drive <index>`
+
+   .. container:: sw-next
+
+      :doc:`Run Your Test Program Safely → <running-test-program>`

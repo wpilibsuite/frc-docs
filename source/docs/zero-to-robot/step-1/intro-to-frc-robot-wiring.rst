@@ -1,6 +1,6 @@
 .. include:: <isonum.txt>
 
-# Introduction to FRC Robot Wiring
+# FRC Robot Wiring Reference
 
 .. note::
 
@@ -232,7 +232,9 @@ If you are preparing the wiring outside the robot, pause at this point. The rema
 
 Requires: Wire stripper, small flat screwdriver (optional), 18 AWG (1 :math:`mm^2`) red and black wire:
 
-Using 18AWG wire, connect a non-switchable fused channel (20-22) with a 10A fuse to the power input of the VH-109 radio.
+Using 18AWG wire, connect a non-switchable fused channel (20-22) with a
+10A fuse directly to the power input of the VH-109 radio. The VH-109 accepts
+robot battery voltage at this input; a VRM is not required.
 
 .. collapse:: Details
 
@@ -257,7 +259,10 @@ Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the 
     .. image:: images/how-to-wire-a-simple-robot/radio-ethernet-kitbot-alt.jpg
         :alt: Picture of the KitBot showing radio ethernet cable plugged into VH-109 AUX port.
 
-    Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the port on the VH-109 radio labeled AUX2. The corresponding DIP switch on the radio must be in the off (default) position.
+    Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO
+    to the port on the VH-109 radio labeled AUX2. In the radio configuration,
+    verify that PoE output is disabled for that AUX port before connecting the
+    roboRIO.
 
 
 ## Robot Signal Light
@@ -340,4 +345,3 @@ Before moving on, if using SPARK MAX controllers, there is one more configuratio
 .. tip:: For more information on the SPARK MAX motor controllers, including how to test your motors/controllers without writing any code by using the REV Hardware Client, see the [SPARK MAX Quickstart guide](https://docs.revrobotics.com/brushless/spark-max/gs).
 
 From here, you should continue on to install software and configure your radio and roboRIO, then load up the provided KitBot code.
-
