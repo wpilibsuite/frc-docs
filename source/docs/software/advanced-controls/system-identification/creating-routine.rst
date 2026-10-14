@@ -17,7 +17,9 @@ To assist in creating SysId-compatible identification routines, WPILib provides 
 
 ### Routine Config
 
-The ``Config`` object takes in a a voltage ramp rate for use in Quasistatic tests, a steady state step voltage for use in Dynamic tests, a time to use as the maximum test duration for safety reasons, and a callback method that accepts the current test state (such as "dynamic-forward") for use by a 3rd party logging solution. The constructor may be left blank to default the ramp rate to 1 volt per second and the step voltage to 7 volts.
+The ``Config`` object takes in a a voltage ramp rate for use in Quasistatic tests, a steady state step voltage for use in Dynamic tests, a time to use as the maximum test duration for safety reasons, and a callback method that accepts the current test state (such as "dynamic-forward") for use by a 3rd party logging solution. The constructor may be left blank to default the ramp rate to 1 volt per second and the step voltage to 4 volts.
+
+Choose a step voltage appropriate for the mechanism. A reasonable starting point is 2 volts; increase it only as needed to produce useful acceleration data. Excessive voltage can cause wheel slip and invalidate the test data.
 
 .. note:: Not all 3rd party loggers will interact with SysIdRoutine directly. CTRE users who do not wish to use SysIdRoutine directly for logging should use the [SignalLogger](https://pro.docs.ctr-electronics.com/en/latest/docs/api-reference/api-usage/signal-logging.html) API and use Tuner X to convert to wpilog. REV users may use Team 6328's [Unofficial REV-Compatible Logger (URCL)](https://docs.advantagescope.org/more-features/urcl). In both cases the log callback should be set to ``null``. Once the log file is in hand, it may be used with SysId just like any other.
 
@@ -34,14 +36,16 @@ The callbacks can either be created in-place via Lambda expressions or can be th
   ```java
   // Creates a SysIdRoutine
   SysIdRoutine routine = new SysIdRoutine(
-      new SysIdRoutine.Config(),
+      // Use 4 volts for the dynamic test. Change this value to suit your mechanism.
+      new SysIdRoutine.Config(null, Volts.of(4), null),
       new SysIdRoutine.Mechanism(this::voltageDrive, this::logMotors, this)
   );
   ```
 
   ```python
   routine =  commands2.sysid.SysIdRoutine(
-      commands2.sysid.SysIdRoutine.Config(),
+      # Use 4 volts for the dynamic test. Change this value to suit your mechanism.
+      commands2.sysid.SysIdRoutine.Config(step_voltage=4.0),
       commands2.sysid.SysIdRoutine.Mechanism(self.voltageDrive, self.logMotors, self),
   )
   ```
