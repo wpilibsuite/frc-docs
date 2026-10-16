@@ -6,7 +6,22 @@ This document is intended to familiarize the reader with the diagnostic tool tha
 
 To begin, [download VisualVM](https://visualvm.github.io/download.html) and unpack it to the WPILib installation folder where YYYY is the WPILib version year. On Windows, The folder is located at ``C:\Users\Public\wpilib\YYYY``. On macOS this is  ``~/wpilib/YYYY``, where ``~`` indicates the users home directory. On Linux, this is ``XDG_DATA_HOME/wpilib/YYYY`` (likely ``~/.local/share/wpilib/YYYY``).
 
-## Setting up Gradle
+## Profiling Simulation
+
+When profiling simulation, no additional Gradle configuration is needed. VisualVM can directly connect to any Java process running on your computer, including robot simulations.
+
+To profile simulation:
+
+1. Launch VisualVM (see :ref:`Running VisualVM <docs/software/advanced-gradlerio/profiling-with-visualvm:Running VisualVM>` below for instructions)
+2. Start your robot simulation from VS Code
+3. In VisualVM, the simulation process will automatically appear in the left sidebar under "Local" as a Java process
+4. Double-click the process to begin profiling
+
+Once connected, you can use all the same features described in this document: CPU sampling, heap dumps, memory monitoring, and more.
+
+.. tip:: You can also use the [VisualVM VSCode extension](https://marketplace.visualstudio.com/items?itemName=oracle-labs-graalvm.visualvm-vscode) for a more integrated experience.
+
+## Setting up Gradle for SystemCore Profiling
 
 GradleRIO supports passing JVM launch arguments, and this is what is necessary to enable remote debugging. Remote debugging is a feature that allows a local machine (such as the user's desktop) to view important information about a remote target (in our case, a Systemcore). To begin, locate the ``wpilibJava`` code block located in the projects ``build.gradle``. Below is what is looks like.
 
