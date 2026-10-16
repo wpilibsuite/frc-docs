@@ -204,6 +204,62 @@ To measure :math:`K_s` manually, slowly increase the voltage to the mechanism un
 
 Additionally, there is no need for a :math:`K_a` term in the feedforward for velocity control unless the setpoint is changing - for a flywheel, this is not a concern, and so the gain is omitted here.
 
+## Implementing the Code
+
+### Bang-Bang Control
+
+To implement this controller in real life, you'll need to set up an encoder to measure the flywheel's speed, as well as a motor to control.
+
+.. tab-set-code::
+
+   .. rli:: https://raw.githubusercontent.com/gerth2/allwpilib/62333ad57390ac9f4281f5c2d936e328c55f9493/wpilibjExamples/src/main/java/org/wpilib/snippets/controlstutorialexamples/mechanisms/FlywheelBangBang.java
+      :language: java
+      :lines: 54-63
+      :lineno-match:
+
+Periodically, you'll want to set the voltage to the motor. Set it to the maximum voltage when the flywheel is below the setpoint, and set it to zero when the flywheel is above the setpoint.
+
+.. tab-set-code::
+
+   .. rli:: https://raw.githubusercontent.com/gerth2/allwpilib/62333ad57390ac9f4281f5c2d936e328c55f9493/wpilibjExamples/src/main/java/org/wpilib/snippets/controlstutorialexamples/mechanisms/FlywheelBangBang.java
+      :language: java
+      :lines: 93-107
+      :lineno-match:
+
+See https://github.com/gerth2/allwpilib/blob/62333ad57390ac9f4281f5c2d936e328c55f9493/wpilibjExamples/src/main/java/org/wpilib/snippets/controlstutorialexamples/mechanisms/FlywheelBangBang.java for a complete example of this controller.
+
+
+### PIDF Control
+
+To implement this controller in real life,  define values for each of the gains.
+
+.. tab-set-code::
+
+   .. rli:: https://raw.githubusercontent.com/gerth2/allwpilib/62333ad57390ac9f4281f5c2d936e328c55f9493/wpilibjExamples/src/main/java/org/wpilib/snippets/controlstutorialexamples/mechanisms/FlywheelPIDF.java
+      :language: java
+      :lines: 27-31
+      :lineno-match:
+
+Then, set up an encoder to measure the flywheel's speed, as well as a motor to control. Also set up the WPILib classes to do the feedforward and feedback calculations.
+
+.. tab-set-code::
+
+   .. rli:: https://raw.githubusercontent.com/gerth2/allwpilib/62333ad57390ac9f4281f5c2d936e328c55f9493/wpilibjExamples/src/main/java/org/wpilib/snippets/controlstutorialexamples/mechanisms/FlywheelPIDF.java
+      :language: java
+      :lines: 66-79
+      :lineno-match:
+
+Periodically, calculate the voltage to send to the motor. Use the WPILib classes to to calculate the feedforward and feedback components separately, and then add them together to get the total control effort.
+
+.. tab-set-code::
+
+   .. rli:: https://raw.githubusercontent.com/gerth2/allwpilib/62333ad57390ac9f4281f5c2d936e328c55f9493/wpilibjExamples/src/main/java/org/wpilib/snippets/controlstutorialexamples/mechanisms/FlywheelPIDF.java
+      :language: java
+      :lines: 110-127
+      :lineno-match:
+
+See https://github.com/gerth2/allwpilib/blob/62333ad57390ac9f4281f5c2d936e328c55f9493/wpilibjExamples/src/main/java/org/wpilib/snippets/controlstutorialexamples/mechanisms/FlywheelPIDF.java for a complete example of this controller.
+
 
 ## Footnotes
 
