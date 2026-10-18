@@ -271,6 +271,6 @@ Callbacks are registered immediately at opmode construction and run even while t
 
 ## Migration from TimedRobot
 
-To switch to the OpMode framework from TimedRobot, replace per-mode methods in ``Robot`` (``autonomousInit``, ``teleopPeriodic``, ``utilityInit``, ``utilityPeriodic`` etc.) with separate ``@Autonomous``, ``@Teleop``, and ``@Utility`` opmode classes. Multiple opmodes of the same type replace ``SendableChooser``.
+To switch to the OpMode framework from TimedRobot, replace per-mode methods in ``Robot`` (``autonomousInit``, ``teleopPeriodic``, ``utilityInit``, ``utilityPeriodic`` etc.) with separate ``@Autonomous``, ``@Teleop``, and ``@Utility`` opmode classes. Multiple opmodes of the same type provide Driver Station selection without a dashboard :doc:`Selectable </docs/software/telemetry/selectable>`.
 
 .. note:: ``TimedRobot`` remains fully supported. Migration is not required.

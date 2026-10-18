@@ -8,34 +8,20 @@ The robot pose can be visualized on the Simulator GUI (during simulation) or on 
 
 .. tab-set-code::
    ```java
-   private Field2d m_field = new Field2d();
+   import org.wpilib.smartdashboard.Field2d;
+   import org.wpilib.telemetry.Telemetry;
+
+   private final Field2d m_field = new Field2d();
    ```
 
    ```c++
-   #include <frc/smartdashboard/Field2d.h>
+   #include <wpi/smartdashboard/Field2d.hpp>
+   #include <wpi/telemetry/Telemetry.hpp>
    ...
    wpi::Field2d m_field;
    ```
 
-This ``Field2d`` instance must then be sent over NetworkTables. The best place to do this is in the constructor of your subsystem.
-
-.. tab-set-code::
-   ```java
-   public Drivetrain() {
-     ...
-     SmartDashboard.putData("Field", m_field);
-   }
-   ```
-
-   ```c++
-   #include <frc/smartdashboard/SmartDashboard.h>
-   Drivetrain() {
-     ...
-     wpi::SmartDashboard::PutData("Field", &m_field);
-   }
-   ```
-
-Finally, the pose from your odometry must be updated periodically into the ``Field2d`` object. Remember that this should be in a general ``periodic()`` method i.e. one that runs both during simulation and during real robot operation.
+Update the field with the pose from odometry, then log it through :doc:`Telemetry </docs/software/telemetry/telemetry>` each cycle. This belongs in a general ``periodic()`` method that runs both in simulation and on the real robot. With the default backend, the field appears at ``/Telemetry/Field``.
 
 .. tab-set-code::
    ```java
@@ -48,6 +34,7 @@ Finally, the pose from your odometry must be updated periodically into the ``Fie
                        m_leftEncoder.getDistance(),
                        m_rightEncoder.getDistance());
      m_field.setRobotPose(m_odometry.getPoseMeters());
+     Telemetry.log("Field", m_field);
    }
    ```
 
@@ -61,6 +48,7 @@ Finally, the pose from your odometry must be updated periodically into the ``Fie
                        units::meter_t(m_leftEncoder.GetDistance()),
                        units::meter_t(m_rightEncoder.GetDistance()));
      m_field.SetRobotPose(m_odometry.GetPose());
+     wpi::telemetry::Log("Field", m_field);
    }
    ```
 

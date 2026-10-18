@@ -1,12 +1,11 @@
-New for 2025: Robot Telemetry with Annotations (Java Only)
-==========================================================
+# Robot Telemetry with Annotations (Java Only)
 
 At its most basic, telemetry with annotations can be accomplished with only a few lines of code:
 
 #. Add the ``@Logged`` annotation to your main robot class and to the classes it references, like subsystems
 #. Bind the logger to the robot in the constructor to start logging
 
-This is enough to start logging data to NetworkTables for display and capture on a desktop application like a dashboard or AdvantageScope. Optionally, you can start the data log manager to capture the NetworkTables-logged data and save it to a log file on the roboRIO.
+Epilogue generates calls to the :doc:`Telemetry API <telemetry>`. With the standard robot framework, this logs data under ``/Telemetry/Robot`` in NetworkTables for display and capture on a desktop application like a dashboard or AdvantageScope. Optionally, you can start the data log manager to capture the NetworkTables-logged data and save it to a log file on the roboRIO.
 
 .. tab-set-code::
 
@@ -46,13 +45,12 @@ Currently, annotation logging supports the following data types:
 * All primitive types (``byte``, ``char``, ``short``, ``int``, ``long``, ``float``, ``double``, and ``boolean``) (note: this excludes wrapper types like ``Byte``, ``Integer``, and ``Boolean``)
 * Strings
 * Any type that inherits from ``StructSerializable``, such as WPILib math types or custom user-defined types
-* Any ``edu.wpi.first.units.Measure`` (logged as a double in terms of the base unit)
+* Any ``org.wpilib.units.Measure`` (logged as a double in terms of the base unit)
 * ``byte[]``, ``int[]``, ``long[]``, ``float[]``, ``double[]``, and ``boolean[]`` primitive arrays
 * ``String[]`` arrays
 * Arrays of anything that inherits from ``StructSerializable``, such as ``Rotation2d[]`` or ``SwerveModuleState[]``
 * Java collections, like ``List`` and ``Set``, of ``String`` or ``StructSerializable`` objects, such as ``Set<String>`` or ``List<SwerveModuleState>``
-* Any ``Sendable`` object, like a ``DigitalInput`` (note: commands and subsystems are excluded and will not be logged using their sendable implementation)
-  * ``Mechanism2D`` objects will not be logged as they do not implement the ``Sendable`` interface in a way that is compatible with annotation logging.
+* Any ``TelemetryLoggable`` object, including ``DigitalInput``, ``Field2d``, and ``Mechanism2d``. Commands and subsystems that implement this interface can also be logged.
 * Any ``BooleanSupplier``, ``IntSupplier``, ``LongSupplier``, or ``DoubleSupplier`` (note: this includes command triggers!)
 
 
@@ -141,11 +139,11 @@ The names of log entries can be changed using the ``name`` configuration option 
         Data will be logged as:
 
         ```
-        /Robot/arm/atLowStop
-        /Robot/arm/atHighStop
-        /Robot/arm/lastPosition
-        /Robot/arm/getPosition
-        /Robot/arm/getSpeed
+        /Telemetry/Robot/arm/atLowStop
+        /Telemetry/Robot/arm/atHighStop
+        /Telemetry/Robot/arm/lastPosition
+        /Telemetry/Robot/arm/getPosition
+        /Telemetry/Robot/arm/getSpeed
         ```
 
    .. tab-item:: Code with logging (configured)
@@ -188,10 +186,10 @@ The names of log entries can be changed using the ``name`` configuration option 
         Data will be logged as:
 
         ```
-        /Robot/Arm/At Low Stop
-        /Robot/Arm/atHighStop
-        /Robot/Arm/Position
-        /Robot/Arm/getSpeed
+        /Telemetry/Robot/Arm/At Low Stop
+        /Telemetry/Robot/Arm/atHighStop
+        /Telemetry/Robot/Arm/Position
+        /Telemetry/Robot/Arm/getSpeed
         ```
 
 The Epilogue Class
@@ -207,11 +205,11 @@ If your main robot class inherits from ``TimedRobot``, the generated ``Epilogue`
     * - Configuration
       - Description
       - Default Value
-    * - Data Logger
-      - The data logging implementation to use to save logged data.
-      - NetworkTables-based logging, which the DataLogManager can read and save to a file on disk
+    * - Table
+      - The ``TelemetryTable`` used for logging. Backend routing is configured through ``TelemetryRegistry``.
+      - ``Telemetry.getTable()``, which the standard robot framework routes to NetworkTables under ``/Telemetry``
     * - Root Data Entry
-      - The root entry that logged data will appear under. Used for both NetworkTables-based and DataLog-based logging. Can be set to any string.
+      - The root entry that logged data will appear under. Relative to the configured telemetry table. Can be set to any string.
       - ``"Robot"``
     * - Minimum Importance Level
       - The minimum importance level of data for it to be logged. Any logged data marked with a lower priority will be excluded from telemetry.
@@ -220,16 +218,19 @@ If your main robot class inherits from ``TimedRobot``, the generated ``Epilogue`
       - Catches and responds to errors encountered while logging data. Error handlers are used to prevent any errors encountered during logging from crashing the entire robot program.
       - Errors are caught and printed to the console
 
+The following example uses ``org.wpilib.backend.DataLogTelemetryBackend``, ``org.wpilib.telemetry.Telemetry``, and ``org.wpilib.telemetry.TelemetryRegistry``. Routing ``/Robot`` to disk prevents that subtree from being sent to the dashboard.
+
 .. tab-set-code::
 
     ```java
     @Logged
     public class Robot extends TimedRobot {
       public Robot() {
+        // Route this telemetry subtree directly to disk.
+        TelemetryRegistry.registerBackend(
+            "/Robot", new DataLogTelemetryBackend(DataLogManager.getLog(), ""));
         Epilogue.configure(config -> {
-          // Log only to disk, instead of the default NetworkTables logging
-          // Note that this means data cannot be analyzed in realtime by a dashboard
-          config.backend = new FileBackend(DataLogManager.getLog());
+          config.table = Telemetry.getTable();
 
           if (isSimulation()) {
             // If running in simulation, then we'd want to re-throw any errors that
@@ -237,8 +238,8 @@ If your main robot class inherits from ``TimedRobot``, the generated ``Epilogue`
             config.errorHandler = ErrorHandler.crashOnError();
           }
 
-          // Change the root data path
-          config.root = "Telemetry";
+          // Match the subtree routed to the data log above.
+          config.root = "Robot";
 
           // Only log critical information instead of the default DEBUG level.
           // This can be helpful in a pinch to reduce network bandwidth or log file size
@@ -255,7 +256,7 @@ Logging Third-Party Data
 
 A large part of the Java ecosystem is its access to third-party libraries that provide extra functionality, such as vendor libraries for interacting with custom hardware like motor controllers and sensors. If those vendors do not use logging annotations in their libraries, then you can still log them by writing a custom logger class! These classes are actually what the WPILib annotations will generate; you just write a custom one because third-party code cannot be annotated.
 
-Custom loggers can be declared in any package, and only need to have the ``@CustomLoggerFor`` annotation present to be able to be detected and used. They must extend from ``ClassSpecificLogger`` ([Javadoc](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/epilogue/logging/ClassSpecificLogger.html)) and must have a public no-argument constructor - failing to declare one will result in a compilation error - and must pass the type they log to the superclass constructor.
+Custom loggers use ``org.wpilib.telemetry.TelemetryTable`` in their ``update()`` method. They can be declared in any package, and only need to have the ``@CustomLoggerFor`` annotation present to be able to be detected and used. They must extend from ``ClassSpecificLogger`` ([Javadoc](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/epilogue/logging/ClassSpecificLogger.html)) and must have a public no-argument constructor - failing to declare one will result in a compilation error - and must pass the type they log to the superclass constructor.
 
 .. note:: Only one custom logger may be defined for a single type. Custom loggers will only be detected and used if they are defined in the robot project; custom loggers defined in third-party libraries cannot be detected.
 
@@ -276,13 +277,13 @@ Custom loggers can be declared in any package, and only need to have the ``@Cust
       }
 
       @Override
-      public void update(EpilogueBackend backend, VendorMotor motor) {
+      public void update(TelemetryTable table, VendorMotor motor) {
         if (Epilogue.shouldLog(Logged.Importance.DEBUG)) {
-          backend.log("Faults", motor.getFaults());
+          table.log("Faults", motor.getFaults());
         }
-        backend.log("Requested Speed (Duty Cycle)", motor.get());
-        backend.log("Motor Voltage (V)", motor.getAppliedVoltage());
-        backend.log("Input Current (A)", motor.getInputCurrent());
+        table.log("Requested Speed (Duty Cycle)", motor.get());
+        table.log("Motor Voltage (V)", motor.getAppliedVoltage());
+        table.log("Input Current (A)", motor.getInputCurrent());
       }
     }
     ```
@@ -296,4 +297,4 @@ Null values are unrepresentable in log data and therefore cannot be logged. If a
 
 Data logging increases CPU load on the roboRIO and can lead to loop overruns. The CPU load is not caused by the logging itself, but from calling expensive methods to read data. This is most often seen when querying information from devices on a CAN bus. If your code frequently sees loop overruns caused by logging, consider reducing the number of logged fields or restructure your code to periodically read and cache data from connected devices and log the cached data instead of logging methods that needlessly re-query it.
 
-.. note:: Time spent on logging in each loop will be logged to ``/Epilogue/Stats/Last Run`` in NetworkTables and can be analyzed in a tool like AdvantageScope.
+.. note:: Time spent on logging in each loop will be logged to ``/Telemetry/Epilogue/Stats/Last Run`` in NetworkTables and can be analyzed in a tool like AdvantageScope.

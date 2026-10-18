@@ -33,7 +33,7 @@ When vision code is running on the DS computer, the video is streamed back to th
 
 After the images are processed, the key values such as the target position, distance, or anything else you need can be sent back to the robot with NetworkTables. This approach generally has higher latency, as delay is added due to the images needing to be sent to the laptop. Bandwidth limitations also limit the maximum resolution and FPS of the images used for processing.
 
-The video stream can be displayed on Shuffleboard or SmartDashboard.
+The video stream can be displayed on a dashboard such as :doc:`/docs/software/dashboards/elastic`.
 
 ## Vision Code on Coprocessor
 

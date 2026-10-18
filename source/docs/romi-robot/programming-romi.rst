@@ -2,7 +2,7 @@
 
 # Programming the Romi
 
-Writing a program for the Romi is very similar to writing a program for a regular FRC\ |reg| or FTC\ |reg| robot. In fact, all the same tools (Visual Studio Code, Driver Station, SmartDashboard, etc) can be used with the Romi.
+Writing a program for the Romi is very similar to writing a program for a regular FRC\ |reg| or FTC\ |reg| robot. In fact, all the same tools (Visual Studio Code, Driver Station, Elastic, etc) can be used with the Romi.
 
 ## Creating a Romi Program
 

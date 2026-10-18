@@ -2,7 +2,7 @@
 
 # Programming the XRP
 
-Writing a program for the XRP is very similar to writing a program for a regular FRC\ |reg| or FTC\ |reg| robot. In fact, all the same tools (Visual Studio Code, Driver Station, SmartDashboard, etc) can be used with the XRP.
+Writing a program for the XRP is very similar to writing a program for a regular FRC\ |reg| or FTC\ |reg| robot. In fact, all the same tools (Visual Studio Code, Driver Station, Elastic, etc) can be used with the XRP.
 
 ## Creating an XRP Program
 

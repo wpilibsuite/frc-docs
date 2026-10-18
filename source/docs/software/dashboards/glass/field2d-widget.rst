@@ -4,64 +4,98 @@ Glass supports displaying your robot's position on the field using the :guilabel
 
 ## Sending Robot Pose from User Code
 
-To send your robot's position (usually obtained by :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-velocities:What is odometry?>` or a pose estimator), a ``Field2d`` instance must be created in robot code and sent over NetworkTables. The instance must then be updated periodically with the latest robot pose.
+Create a ``Field2d`` member, update it with the pose from :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-velocities:What is odometry?>` or a pose estimator, and log it each periodic cycle using :doc:`Telemetry </docs/software/telemetry/telemetry>`:
 
 .. tab-set-code::
    ```java
+   import org.wpilib.smartdashboard.Field2d;
+   import org.wpilib.telemetry.Telemetry;
+
    private final Field2d m_field = new Field2d();
-   // Do this in either robot or subsystem init
-   SmartDashboard.putData("Field", m_field);
-   // Do this in either robot periodic or subsystem periodic
+
+   // In robotPeriodic() or subsystem periodic():
    m_field.setRobotPose(m_odometry.getPoseMeters());
+   Telemetry.log("Field", m_field);
    ```
 
    ```c++
-   #include <frc/smartdashboard/Field2d.h>
-   #include <frc/smartdashboard/SmartDashboard.h>
+   #include <wpi/smartdashboard/Field2d.hpp>
+   #include <wpi/telemetry/Telemetry.hpp>
+
    wpi::Field2d m_field;
-   // Do this in either robot or subsystem init
-   wpi::SmartDashboard::PutData("Field", &m_field);
-   // Do this in either robot periodic or subsystem periodic
+
+   // In RobotPeriodic() or subsystem Periodic():
    m_field.SetRobotPose(m_odometry.GetPose());
+   wpi::telemetry::Log("Field", m_field);
    ```
 
    ```python
-   from wpilib import SmartDashboard, Field2d
+   import telemetry
+   from wpilib import Field2d
+
+   # In initialization:
    self.field = Field2d()
-   # Do this in either robot or subsystem init
-   SmartDashboard.put_data("Field", self.field)
-   # Do this in either robot periodic or subsystem periodic
+
+   # In robot_periodic() or subsystem periodic():
    self.field.set_robot_pose(self.odometry.get_pose())
+   telemetry.log("Field", self.field)
    ```
+
+With the default backend, the field appears at ``/Telemetry/Field``. Updating the pose alone does not send another telemetry sample; log the object after updating it.
 
 ## Sending Trajectories to Field2d
 
-Visualizing your trajectory is a great debugging step for verifying that your trajectories are created as intended. Trajectories can be easily visualized in :ref:`Field2d <docs/software/dashboards/glass/field2d-widget:The Field2d Widget>` using the ``setTrajectory()``/``SetTrajectory()`` functions.
+Visualizing a trajectory helps verify that it was generated as intended. Add it to a named field object with ``setTrajectory()`` / ``SetTrajectory()`` / ``set_trajectory()``:
 
 .. tab-set-code::
+   ```java
+   m_field.getObject("traj").setTrajectory(m_trajectory);
+   ```
 
-   .. rli:: https://github.com/wpilibsuite/allwpilib/raw/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java
-      :language: java
-      :lines: 44-61
-      :lineno-match:
+   ```c++
+   m_field.GetObject("traj")->SetTrajectory(m_trajectory);
+   ```
 
-   .. rli:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp
-      :language: c++
-      :lines: 18-30
-      :lineno-match:
+   ```python
+   self.field.get_object("traj").set_trajectory(self.trajectory)
+   ```
 
-   .. rli:: https://raw.githubusercontent.com/robotpy/examples/2024.0.0b4/RamseteController/robot.py
-      :language: python
-      :lines: 19,26-39,46-53
+Set the trajectory when it is created or changed, and continue logging the field periodically as shown above.
 
 ## Viewing Trajectories with Glass
 
-The sent trajectory can be viewed with :ref:`Glass <docs/software/dashboards/glass/index:Glass>` through the dropdown :guilabel:`NetworkTables` -> :guilabel:`SmartDashboard` -> :guilabel:`Field2d`.
+The sent trajectory can be viewed with :ref:`Glass <docs/software/dashboards/glass/index:Glass>` through :guilabel:`NetworkTables` -> :guilabel:`Telemetry` -> :guilabel:`Field`.
 
 .. image:: images/sent-trajectory.png
    :alt: Picture containing Field2d and the generated trajectory
 
-.. note:: The above example which uses the RamseteController ([Java](https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java) / [C++](https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp) / [Python](https://github.com/robotpy/examples/tree/2024.0.0b4/RamseteController)) will not show the sent trajectory until autonomous is enabled at least once.
+## Accepting Dashboard Pose Edits
+
+If robot code needs to read poses edited on the dashboard, publish the field once through :doc:`Tunables </docs/software/telemetry/tunables>` instead:
+
+.. tab-set-code::
+   ```java
+   import org.wpilib.tunable.Tunables;
+
+   // In initialization:
+   Tunables.publish("Field", m_field);
+   ```
+
+   ```c++
+   #include <wpi/tunables/Tunables.hpp>
+
+   // In initialization:
+   wpi::tunables::Publish("Field", m_field);
+   ```
+
+   ```python
+   import tunables
+
+   # In initialization:
+   tunables.publish("Field", self.field)
+   ```
+
+This field appears at ``/Tunables/Field`` and is updated by the framework. Read an edited pose with the field object's pose getter, such as ``m_field.getObject("Target").getPose()`` in Java. Avoid overwriting that target pose every cycle if the dashboard is meant to control it. Use Telemetry for a field that only displays robot state.
 
 ## Viewing the Robot Pose in Glass
 
