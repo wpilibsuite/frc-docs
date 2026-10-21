@@ -24,7 +24,7 @@ for your hardware and test with the drive wheels off the floor.
 
 .. note::
 
-   FRC KitBot example code will be available after the 2027 kickoff.
+   FRC KitBot example code is not available yet. A download may be added after the 2027 kickoff.
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -46,9 +46,7 @@ for your hardware and test with the drive wheels off the floor.
 .. rubric:: Part 1: Choose Your Walkthrough
 
 The detailed FRC VS Code walkthrough covers project creation through the
-first drive test. Blocks has a project-creation guide; its deployment
-walkthrough and the OnBot, LabVIEW, and FTC walkthroughs are still being
-completed. Use the path that matches your programming environment and hardware.
+first drive test. The Blocks KitBot walkthrough is a draft awaiting runtime and hardware verification. The OnBot, LabVIEW, and FTC walkthroughs are still being completed. Use the path that matches your programming environment and hardware.
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -62,13 +60,11 @@ completed. Use the path that matches your programming environment and hardware.
       the full drivetrain walkthrough. C++ uses desktop development only.
 
    .. grid-item-card:: Blocks
-      :link: create_blocks_project
-      :link-type: ref
+      :link: /docs/software/blocks/first-project
+      :link-type: doc
       :class-card: sw-card-shared
 
-      Start with a drivetrain sample in the Blocks editor. Choose the sample
-      for your hardware, make an editable copy, and check its configuration.
-      More drivetrain examples for Blocks are coming soon.
+      Build a four-motor CIM/SPARK MAX drivetrain, connect the driver controls, and follow the first-drive steps. This draft requires API compatibility checks before deployment.
 
    .. grid-item-card:: Java or Python in OnBot
       :class-card: sw-card-shared
@@ -127,8 +123,7 @@ The :doc:`full drivetrain walkthrough
 complete code, and motor-controller-specific configurations. Use its complete
 example when adapting the project to your hardware.
 
-For **Blocks**, follow :ref:`create_blocks_project` to make an editable copy
-of a drivetrain sample. Check the sample's hardware before using it.
+For **Blocks**, follow :doc:`Drive Your KitBot with Blocks </docs/software/blocks/first-project>` to build the drivetrain program and check its hardware and API compatibility before deployment.
 
 For **OnBot or LabVIEW**, use the environment you selected in Step 2. The
 Systemcore project-creation instructions are still being completed; the

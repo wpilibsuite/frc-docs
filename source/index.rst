@@ -291,6 +291,7 @@ WPILib Documentation
    docs/software/hardware-apis/index
    docs/software/commandbased/index
    docs/software/python/index
+   docs/software/blocks/index
    docs/software/programming-snippets
    docs/software/examples-tutorials/wpilib-examples
    docs/software/examples-tutorials/third-party-examples
