@@ -97,7 +97,7 @@ If your battery charger has Maintenance Mode indicator, such as a GREEN LED, you
 
 When the robot is plugged in and connected to the driver station laptop, the battery voltage is displayed on the NI Driver Station software.
 
-After you finish a driving session, you can :ref:`review the battery voltage in the Log Viewer. <docs/software/driverstation/driver-station-log-viewer:Using the Graph Display>`
+After you finish a driving session, you can :doc:`review the battery voltage in the Log Viewer. </docs/software/firstdriverstation/first-driver-station-log-viewer>`
 
 Hand-held **Voltmeter** or **Multimeter**
 

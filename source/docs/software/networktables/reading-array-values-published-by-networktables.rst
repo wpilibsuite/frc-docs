@@ -12,7 +12,7 @@ You can verify the names of the NetworkTables topics used for publishing the val
 
 In this case the values are stored in a table called GRIP and a sub-table called myContoursReport. You can see that the values are in brackets and there are 2 values in this case for each topic. The NetworkTables topic names are centerX, centerY, area, height, and width.
 
-Both of the following examples are extremely simplified programs that just illustrate the use of NetworkTables. All the code is in the robotInit() method so it's only run when the program starts up. In your programs, you would more likely get the values in code that is evaluating which direction to aim the robot in a command or a control loop during the autonomous or teleop periods.
+Both of the following examples are extremely simplified programs that just illustrate the use of NetworkTables. The initialization code is in the ``Robot`` constructor so it's only run when the program starts up. In your programs, you would more likely get the values in code that is evaluating which direction to aim the robot in a command or a control loop during the autonomous or teleop periods.
 
 ## Writing a Program to Access the Topics
 
@@ -54,10 +54,11 @@ Both of the following examples are extremely simplified programs that just illus
    ```
 
    ```python
-   def robotInit(self):
-       table = ntcore.NetworkTableInstance.getDefault().getTable("GRIP/mycontoursReport")
-       self.areasSub = table.getDoubleArrayTopic("area").subscribe([])
-   def teleopPeriodic(self):
+   def __init__(self):
+       super().__init__()
+       table = ntcore.NetworkTableInstance.get_default().get_table("GRIP/mycontoursReport")
+       self.areasSub = table.get_double_array_topic("area").subscribe([])
+   def teleop_periodic(self):
        areas = self.areasSub.get()
        print("Areas:", areas)
    ```

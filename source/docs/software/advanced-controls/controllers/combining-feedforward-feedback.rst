@@ -26,14 +26,14 @@ Users may add any feedforward they like to the output of the controller before s
 
   ```python
   # Adds a feedforward to the loop output before sending it to the motor
-  motor.setVoltage(pid.calculate(encoder.getDistance(), setpoint) + feedforward)
+  motor.set_voltage(pid.calculate(encoder.get_distance(), setpoint) + feedforward)
   ```
 
 Moreover, feedforward is a separate feature entirely from feedback, and thus has no reason to be handled in the same controller object, as this violates separation of concerns.  WPILib comes with several helper classes to compute accurate feedforward voltages for common FRC\ |reg| mechanisms - for more information, see :ref:`docs/software/advanced-controls/controllers/feedforward:Feedforward Control in WPILib`.
 
 ## Using Feedforward Components with PID
 
-.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/hardware/motor/MotorController.html#setVoltage(double)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_motor_controller.html#a48ce22a1b262d8f4ddf36f6c48f14feb), :external:py:meth:`Python <wpilib.interfaces.MotorController.setVoltage>`) method when applying them to motors to compensate for "voltage sag" from the battery.
+.. note:: Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/hardware/motor/MotorController.html#setVoltage(double)), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1_motor_controller.html#a48ce22a1b262d8f4ddf36f6c48f14feb), :external:py:meth:`Python <wpilib.MotorController.set_voltage>`) method when applying them to motors to compensate for "voltage sag" from the battery.
 
 What might a more complete example of combined feedforward/PID control look like?  Consider the :ref:`drive example <docs/software/advanced-controls/controllers/feedforward:Using Feedforward to Control Mechanisms>` from the feedforward page.  We can easily modify this to include feedback control (with a ``SimpleMotorFeedforward`` component):
 
@@ -59,17 +59,17 @@ What might a more complete example of combined feedforward/PID control look like
   ```
 
   ```python
-  def tank_drive_with_feedforward_PID(
+  def tank_drive_with_feedforward_pid(
       left_velocity_setpoint: float,
       right_velocity_setpoint: float,
   ) -> None:
-      leftMotor.setVoltage(
+      left_motor.set_voltage(
           feedforward.calculate(left_velocity_setpoint)
-          + leftPID.calculate(leftEncoder.getRate(), left_velocity_setpoint)
+          + left_pid.calculate(left_encoder.get_rate(), left_velocity_setpoint)
       )
-      rightMotor.setVoltage(
+      right_motor.set_voltage(
           feedforward.calculate(right_velocity_setpoint)
-          + rightPID.calculate(rightEncoder.getRate(), right_velocity_setpoint)
+          + right_pid.calculate(right_encoder.get_rate(), right_velocity_setpoint)
       )
   ```
 

@@ -1,6 +1,6 @@
 # LTV Unicycle Controller
 
-The LTV Unicycle Controller ([C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1math_1_1_l_t_v_unicycle_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/math/controller/LTVUnicycleController.html), :external:py:class:`Python <wpimath.controller.LTVUnicycleController>`) is a trajectory tracker that is built in to WPILib. This tracker can be used to accurately track trajectories with correction for minor disturbances for differential drivetrains.
+The LTV Unicycle Controller ([C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1math_1_1_l_t_v_unicycle_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/math/controller/LTVUnicycleController.html), :external:py:class:`Python <wpimath.LTVUnicycleController>`) is a trajectory tracker that is built in to WPILib. This tracker can be used to accurately track trajectories with correction for minor disturbances for differential drivetrains.
 
 .. note:: LTV has replaced RAMSETE, because it has more intuitive tuning.
 
@@ -78,5 +78,5 @@ The returned adjusted speeds can be converted to usable speeds using the kinemat
    right = wheelSpeeds.right
    ```
 
-These new left and right velocities are still speeds and not voltages, so two PID Controllers, one for each side, should be used to track them. You can use either the WPILib PIDController ([C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1math_1_1_p_i_d_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/math/controller/PIDController.html), :external:py:class:`Python <wpimath.controller.PIDController>`) or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX.
+These new left and right velocities are still speeds and not voltages, so two PID Controllers, one for each side, should be used to track them. You can use either the WPILib PIDController ([C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1math_1_1_p_i_d_controller.html), [Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/math/controller/PIDController.html), :external:py:class:`Python <wpimath.PIDController>`) or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SPARK MAX.
 

@@ -10,13 +10,13 @@ The WPILibPi image comes with all the necessary libraries to make your own visio
    from cscore import CameraServer
    import cv2
    import numpy as np
-   CameraServer.enableLogging()
-   camera = CameraServer.startAutomaticCapture()
-   camera.setResolution(width, height)
-   sink = CameraServer.getVideo()
+   CameraServer.enable_logging()
+   camera = CameraServer.start_automatic_capture()
+   camera.set_resolution(width, height)
+   sink = CameraServer.get_video()
    input_img = np.zeros(shape=(height, width, 3), dtype=np.uint8)
    while True:
-      time, input_img = sink.grabFrame(input_img)
+      time, input_img = sink.grab_frame(input_img)
       if time == 0: # There is an error
          continue
    ```
@@ -38,17 +38,17 @@ Sometimes, you may want to send processed video frames back to the CameraServer 
    #
    # CameraServer initialization code here
    #
-   output = CameraServer.putVideo("Name", width, height)
+   output = CameraServer.put_video("Name", width, height)
    input_img = np.zeros(shape=(height, width, 3), dtype=np.uint8)
    while True:
-      time, input_img = sink.grabFrame(input_img)
+      time, input_img = sink.grab_frame(input_img)
       if time == 0: # There is an error
-         output.notifyError(sink.getError())
+         output.notify_error(sink.get_error())
          continue
       #
       # Insert processing code here
       #
-      output.putFrame(processed_img)
+      output.put_frame(processed_img)
    ```
 
 As an example, the processing code could outline the target in red, and show the corners in yellow for debugging purposes.

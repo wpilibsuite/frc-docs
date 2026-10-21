@@ -44,8 +44,8 @@ The advantage of the robot program being the server is that it's at a known netw
 
         ```python
         import ntcore
-        inst = ntcore.NetworkTableInstance.getDefault()
-        inst.startServer()
+        inst = ntcore.NetworkTableInstance.get_default()
+        inst.start_server()
         ```
 
 ## Starting a NetworkTables Client
@@ -118,14 +118,14 @@ The advantage of the robot program being the server is that it's at a known netw
 
         ```python
         import ntcore
-        inst = ntcore.NetworkTableInstance.getDefault()
+        inst = ntcore.NetworkTableInstance.get_default()
         # start a NT4 client
-        inst.startClient4("example client")
+        inst.start_client4("example client")
         # connect to a roboRIO with team number TEAM
-        inst.setServerTeam(TEAM)
+        inst.set_server_team(TEAM)
         # starting a DS client will try to get the roboRIO address from the DS application
         inst.startDSClient()
         # connect to a specific host/port
-        inst.setServer("host", ntcore.NetworkTableInstance.kDefaultPort4)
+        inst.set_server("host", ntcore.NetworkTableInstance.kDefaultPort4)
         ```
 

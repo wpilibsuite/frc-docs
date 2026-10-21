@@ -1,7 +1,12 @@
 # Removed features
 
-## LabVIEW
-LabVIEW is not currently supported on Systemcore. Old LabVIEW docs can be found [here](https://docs.wpilib.org/en/stable/docs/software/labview/index.html).
+## Desktop LabVIEW
+
+The legacy desktop LabVIEW environment is not supported on Systemcore.
+Systemcore instead provides LabVIEW through its browser-based OnBot editor, so
+there is no desktop LabVIEW installation for 2027. The `legacy LabVIEW
+documentation <https://docs.wpilib.org/en/stable/docs/software/labview/index.html>`_
+remains available for teams using earlier control-system hardware.
 
 ## NetworkTables 3
 Removed since NetworkTables 4 has been out for a few years and is a better protocol bandwidth-wise.

@@ -83,7 +83,7 @@ versionwarning_messages = {
     #    </script>
     #    """,
     "latest": """
-        The documentation you are currently viewing is for the SystemCore Alpha Test.
+        The documentation you are currently viewing is for the Systemcore Alpha Test.
         Please see the <a href="https://docs.wpilib.org" id="versionwarning_href">stable</a> version for the current release of WPILib.
         <script>
             document.getElementById("versionwarning_href").setAttribute("href", location.href.replace("/latest/", "/stable/"))
@@ -142,7 +142,7 @@ hoverxref_role_types = {"term": "tooltip"}
 todo_emit_warnings = False
 
 # TODO Directives are shown in output
-todo_include_todos = True
+todo_include_todos = False
 
 # Disable following anchors in URLS for linkcheck
 linkcheck_anchors = True
@@ -254,14 +254,15 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
+    "announcement": "&#x26A0;&#xFE0F; <strong>DRAFT</strong> &mdash; This site is a work in progress and does not reflect final 2027 documentation. Content may be incomplete or inaccurate.",
     "light_css_variables": {
-        "color-sidebar-background": "#003974",
+        "color-sidebar-background": "#AC2B37",
         "color-sidebar-brand-text": "#ffffffcc",
         "color-sidebar-link-text--top-level": "#d9d9d9",
-        "color-background-hover": "#023160",
-        "color-sidebar-link-text": "#acb1b9",
-        "color-sidebar-caption-text": "#81868d",
-    }
+        "color-background-hover": "#922430",
+        "color-sidebar-link-text": "#d9d9d9",
+        "color-sidebar-caption-text": "#c5cbd1",
+    },
 }
 
 html_sidebars = {
@@ -269,6 +270,7 @@ html_sidebars = {
         "sidebar/scroll-start.html",
         "sidebar/brand.html",
         "sidebar/search.html",
+        "sidebar/legend.html",
         "sidebar/navigation.html",
         "sidebar/ethical-ads.html",
         "sidebar/scroll-end.html",
@@ -281,8 +283,37 @@ user_options = [
 ]
 
 
+def skip_case_only_redirects(app):
+    """Avoid writing redirects over their targets on case-insensitive disks."""
+    if app.builder.format != "html":
+        return
+
+    from sphinxext.rediraffe import create_graph
+
+    redirects = app.config.rediraffe_redirects
+    if isinstance(redirects, str):
+        redirects = create_graph(Path(app.srcdir) / redirects)
+
+    filtered = {}
+    for old, new in redirects.items():
+        old_path = Path(app.srcdir) / old
+        new_path = Path(app.srcdir) / new
+        if (
+            old != new
+            and old.casefold() == new.casefold()
+            and old_path.exists()
+            and new_path.exists()
+            and old_path.samefile(new_path)
+        ):
+            continue
+        filtered[old] = new
+    app.config.rediraffe_redirects = filtered
+
+
 def setup(app):
+    app.connect("builder-inited", skip_case_only_redirects)
     app.add_css_file("css/wpilib-rtd.css")
+    app.add_css_file("css/sw-components.css")
 
     # Local Api Docs support
     app.add_js_file("js/api-docs-redirect.js")
@@ -338,7 +369,17 @@ latex_elements = {
     "printindex": r"\footnotesize\raggedright\printindex",
 }
 
-suppress_warnings = ["epub.unknown_project_files"]
+latex_documents = [
+    (
+        master_doc,
+        "wpilib.tex",
+        "FIRST Robotics Documentation",
+        author,
+        "manual",
+    )
+]
+
+suppress_warnings = ["epub.unknown_project_files", "ref.ref"]
 
 
 # Options for translation support -------------------------------------------
@@ -390,9 +431,8 @@ def new_send(self, data):
 http.client.HTTPConnection.send = new_send
 
 intersphinx_mapping = {
-    "robotpy": ("https://robotpy.readthedocs.io/projects/robotpy/en/stable/", None),
-    "commands2": (
-        "https://robotpy.readthedocs.io/projects/commands-v2/en/stable/",
+    "robotpy": (
+        "https://robotpy.readthedocs.io/projects/robotpy/en/2027.0.0a7/",
         None,
     ),
 }

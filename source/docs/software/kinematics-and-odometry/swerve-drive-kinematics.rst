@@ -49,13 +49,13 @@ The locations for the modules must be relative to the center of the robot. Posit
    from wpimath.geometry import Translation2d
    from wpimath.kinematics import SwerveDrive4Kinematics
    # Locations for the swerve drive modules relative to the robot center.
-   frontLeftLocation = Translation2d(0.381, 0.381)
-   frontRightLocation = Translation2d(0.381, -0.381)
-   backLeftLocation = Translation2d(-0.381, 0.381)
-   backRightLocation = Translation2d(-0.381, -0.381)
+   front_left_location = Translation2d(0.381, 0.381)
+   front_right_location = Translation2d(0.381, -0.381)
+   back_left_location = Translation2d(-0.381, 0.381)
+   back_right_location = Translation2d(-0.381, -0.381)
    # Creating my kinematics object using the module locations
    self.kinematics = SwerveDrive4Kinematics(
-     frontLeftLocation, frontRightLocation, backLeftLocation, backRightLocation
+     front_left_location, front_right_location, back_left_location, back_right_location
    )
    ```
 
@@ -101,7 +101,7 @@ The elements in the array that is returned by this method are the same order in 
    # counterclockwise.
    speeds = ChassisSpeeds(1.0, 3.0, 1.5)
    # Convert to module states
-   frontLeft, frontRight, backLeft, backRight = self.kinematics.toSwerveModuleStates(speeds)
+   front_left, front_right, back_left, back_right = self.kinematics.toSwerveModuleStates(speeds)
    ```
 
 ### Module angle optimization
@@ -123,8 +123,8 @@ This method takes two parameters: the desired state (usually from the ``toSwerve
    ```python
    from wpimath.kinematics import SwerveModuleState
    from wpimath.geometry import Rotation2d
-   frontLeftOptimized = SwerveModuleState.optimize(frontLeft,
-      Rotation2d(self.m_turningEncoder.getDistance()))
+   front_left_optimized = SwerveModuleState.optimize(front_left,
+      Rotation2d(self.m_turningEncoder.get_distance()))
    ```
 
 ### Cosine compensation
@@ -152,13 +152,13 @@ Cosine compensation has been shown to reduce the amount of "skew" a swerve drive
    ```python
    from wpimath.kinematics import SwerveModuleState
    from wpimath.geometry import Rotation2d
-   currentAngle = Rotation2d(self.m_turningEncoder.getDistance())
-   frontLeftOptimized = SwerveModuleState.optimize(frontLeft, currentAngle)
-   frontLeftOptimized.speed *= (frontLeftOptimized.angle - currentAngle).cos()
+   current_angle = Rotation2d(self.m_turningEncoder.get_distance())
+   front_left_optimized = SwerveModuleState.optimize(front_left, current_angle)
+   front_left_optimized.speed *= (front_left_optimized.angle - current_angle).cos()
    ```
 
 ### Field-oriented drive
-:ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get module states from a set of desired field-oriented speeds.
+:ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-velocities:Creating a Robot-Relative ChassisVelocities Object from Field-Relative Velocities>` that a ``ChassisSpeeds`` object can be created from a set of desired field-oriented speeds. This feature can be used to get module states from a set of desired field-oriented speeds.
 
 .. tab-set-code::
 
@@ -196,7 +196,7 @@ Cosine compensation has been shown to reduce the amount of "skew" a swerve drive
    # is a quarter of a rotation per second counterclockwise. The current
    # robot angle is 45 degrees.
    speeds = ChassisSpeeds.fromFieldRelativeSpeeds(
-     2.0, 2.0, math.pi / 2.0, Rotation2d.fromDegrees(45.0))
+     2.0, 2.0, math.pi / 2.0, Rotation2d.from_degrees(45.0))
    # Now use this in our kinematics
    self.moduleStates = self.kinematics.toSwerveModuleStates(speeds)
    ```
@@ -245,17 +245,17 @@ One can also use the kinematics object to convert an array of ``SwerveModuleStat
    from wpimath.kinematics import SwerveModuleState
    from wpimath.geometry import Rotation2d
    # Example module states
-   frontLeftState = SwerveModuleState(23.43, Rotation2d.fromDegrees(-140.19))
-   frontRightState = SwerveModuleState(23.43, Rotation2d.fromDegrees(-39.81))
-   backLeftState = SwerveModuleState(54.08, Rotation2d.fromDegrees(-109.44))
-   backRightState = SwerveModuleState(54.08, Rotation2d.fromDegrees(-70.56))
+   front_left_state = SwerveModuleState(23.43, Rotation2d.from_degrees(-140.19))
+   front_right_state = SwerveModuleState(23.43, Rotation2d.from_degrees(-39.81))
+   back_left_state = SwerveModuleState(54.08, Rotation2d.from_degrees(-109.44))
+   back_right_state = SwerveModuleState(54.08, Rotation2d.from_degrees(-70.56))
    # Convert to chassis speeds
-   chassisSpeeds = self.kinematics.toChassisSpeeds(
-     frontLeftState, frontRightState, backLeftState, backRightState)
+   chassis_speeds = self.kinematics.toChassisSpeeds(
+     front_left_state, front_right_state, back_left_state, back_right_state)
    # Getting individual speeds
-   forward = chassisSpeeds.vx
-   sideways = chassisSpeeds.vy
-   angular = chassisSpeeds.omega
+   forward = chassis_speeds.vx
+   sideways = chassis_speeds.vy
+   angular = chassis_speeds.omega
    ```
 
 ## Module state visualization with AdvantageScope
@@ -310,13 +310,13 @@ By recording a set of swerve module states using :ref:`NetworkTables <docs/softw
    import ntcore
    from wpimath.kinematics import SwerveModuleState
    # get the default instance of NetworkTables
-   nt = ntcore.NetworkTableInstance.getDefault()
+   nt = ntcore.NetworkTableInstance.get_default()
    # Start publishing an array of module states with the "/SwerveStates" key
    topic = nt.getStructArrayTopic("/SwerveStates", SwerveModuleState)
    self.pub = topic.publish()
    def periodic(self):
      # Periodically send a set of module states
-     self.pub.set([frontLeftState,frontRightState,backLeftState,backRightState])
+     self.pub.set([front_left_state, front_right_state, back_left_state, back_right_state])
    ```
 
 See the documentation for the [swerve](https://docs.advantagescope.org/tab-reference/swerve) tab for more details on visualizing this data using AdvantageScope.

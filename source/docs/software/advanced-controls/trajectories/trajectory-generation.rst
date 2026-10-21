@@ -104,18 +104,18 @@ Trajectories in Java can be combined into a single trajectory using the ``concat
    ```python
    from wpimath.geometry import Pose2d, Rotation2d, Translation2d
    from wpimath.trajectory import TrajectoryGenerator, TrajectoryConfig
-   trajectoryOne = TrajectoryGenerator.generateTrajectory(
-      Pose2d(0, 0, Rotation2d.fromDegrees(0)),
+   trajectory_one = TrajectoryGenerator.generate_trajectory(
+      Pose2d(0, 0, Rotation2d.from_degrees(0)),
       [Translation2d(1, 1), Translation2d(2, -1)],
-      Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+      Pose2d(3, 0, Rotation2d.from_degrees(0)),
       TrajectoryConfig.fromFps(3.0, 3.0),
    )
-   trajectoryTwo = TrajectoryGenerator.generateTrajectory(
-      Pose2d(3, 0, Rotation2d.fromDegrees(0)),
+   trajectory_two = TrajectoryGenerator.generate_trajectory(
+      Pose2d(3, 0, Rotation2d.from_degrees(0)),
       [Translation2d(4, 4), Translation2d(6, 3)],
-      Pose2d(6, 0, Rotation2d.fromDegrees(0)),
+      Pose2d(6, 0, Rotation2d.from_degrees(0)),
       TrajectoryConfig.fromFps(3.0, 3.0),
    )
-      concatTraj = trajectoryOne + trajectoryTwo
+      concat_traj = trajectory_one + trajectory_two
    ```
 

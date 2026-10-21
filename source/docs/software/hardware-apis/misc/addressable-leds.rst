@@ -1,21 +1,37 @@
-# Addressable LEDs
+﻿# Addressable LEDs
 
-LED strips have been commonly used by teams for several years for a variety of reasons. They allow teams to debug robot functionality from the audience, provide a visual marker for their robot, and can simply add some visual appeal. WPILib has an API for controlling WS2812, WS2812B, and WS2815 LEDs with their data pin connected via :term:`PWM`.
+Addressable LEDs are widely used by teams for debugging, visual markers, and aesthetic appeal.
 
-.. note:: LEDs can be controlled through this API while the robot is disabled.
+WPILib provides an API for controlling WS2811, WS2812B, SK6812, and other LEDs that use similar protocols, often called NeoPixels, without the need for an external LED controller.
 
-.. important:: The roboRIO can only control **one** ``AddressableLED`` object at a time through its PWM ports. Attempting to create multiple ``AddressableLED`` objects will result in a HAL allocation error. If you need to control multiple physical LED strips, you have several options:
+Commonly they are in strips, but bars, circles, matrices, and other form factors are also available. These LEDs are individually controllable (or controllable by groups on some strips), allowing for a wide variety of patterns and effects.
 
-   - **Daisy-chain strips in series**: Connect multiple LED strips end-to-end as a single long strip, then use :ref:`buffer views <docs/software/hardware-apis/misc/addressable-leds:Controlling Sections of an LED Strip>` to control different sections independently
-   - **Use PWM Y-cables**: If you need identical patterns on multiple strips, use PWM Y-cables to send the same signal to multiple strips simultaneously
+Wiring addressable LEDs is simple: the DATA pin on the addressable LED product is connected to the SIGNAL pin of a SMART I/O connector, with power and ground connected to a good-quality external 5V regulator.
 
-.. seealso:: For detailed information about powering and best practices for addressable LEDs, see the [Adafruit NeoPixel Überguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels).
+These LEDs can be controlled even when the robot is disabled.
 
-.. warning:: WS2812B LEDs are designed for 5V, but roboRIO PWM/Servo ports output 6V. While the LEDs will function, this may reduce their lifespan. Consider using a voltage regulator or level shifter if longevity is a concern.
+.. note:: This library supports only WS2812B-compliant LEDs. The LED timings are fixed and not user-configurable like they are on the roboRIO, so LEDs that do not follow the below timings may not work correctly. For example, WS2815 & DotStar LEDs are not supported.
+
+.. collapse:: Timing details
+
+   - T0H: 375ns
+   - T0L: 875ns
+   - T1H: 750ns
+   - T1L: 500ns
+
+.. important:: Systemcore supports multiple addressable LED products simultaneously, unlike the roboRIO, and allows LED control while the robot is disabled. Addressable LED data is stored in one shared buffer (up to 1024 LEDs total), so configure each product with a distinct starting position using ``setStart()`` in Java or ``SetStart()`` in C++.
+
+.. seealso:: For more detailed information about powering and best practices for addressable LEDs, see the [Adafruit NeoPixel Überguide](https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels).
+
+.. note:: **Power and Signal Considerations**
+
+   - WS281x LEDs are designed for **5V**, but Systemcore ports output **3.3V**. A logic level shifter, like the [Adafruit Pixel Shifter](https://www.adafruit.com/product/6066), is necessary if there is flickering or incorrect behavior.
+   - Use a **good-quality appropriately sized external 5V regulator** (e.g. [Redux Zinc-V+](https://shop.reduxrobotics.com/products/zinc-v), [Pololu S13VxF5](https://www.pololu.com/product/4082) or [CTRE VRM 5V output](https://store.ctr-electronics.com/products/voltage-regulator-module)) to power the LEDs, ensuring the grounds are tied together.
+   - If you have a lot of LEDs, a 300-500 Ohm data line resistor and a 1000μF capacitor across the power pins are recommended. Too much resistance (>500 Ohm) can degrade the signal and cause flickering or communication failures. Power may need to be [distributed throughout the strip](https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels#distributing-power-2894492).
 
 ## Instantiating the AddressableLED Object
 
-You first create an ``AddressableLED`` object that takes the PWM port as an argument. It *must* be a PWM header on the roboRIO. Then you set the number of LEDs located on your LED strip, which can be done with the ``setLength()`` function.
+You first create an ``AddressableLED`` object that takes the SMART I/O port as an argument. Then you set the number of LEDs that are connected, which can be done with the ``setLength()`` function.
 
 .. warning:: It is important to note that setting the length of the LED header is an expensive task and it's **not** recommended to run this periodically.
 
@@ -28,28 +44,28 @@ After the length of the strip has been set, you'll have to create an ``Addressab
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/snippets/addressableled/Robot.java
          :language: java
-         :lines: 32-47
+         :lines: 33-45
          :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/snippets/AddressableLED/include/Robot.hpp
          :language: c++
-         :lines: 12-12, 18-27
+         :lines: 12-25
          :linenos:
          :lineno-start: 12
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/snippets/AddressableLED/cpp/Robot.cpp
          :language: c++
-         :lines: 7-13
+         :lines: 7-11
          :lineno-match:
 
 ## Controlling Sections of an LED Strip
 
-The roboRIO can only control a single addressable LED output at a time, but there are often multiple physical LED strips daisy-chained around a robot, or a single flexible LED strip wrapped around structures on a robot. Individual sections can be accessed in Java using ``AddressableLEDBufferView``. Buffer views behave like subsections of the larger buffer, and can be accessed using indices in the typical [0, length) range. They can also be reversed, to allow for parallel serpentine sections to be animated in the same physical orientation (i.e. both sections would animate "forward" in the same direction, even if the strips are physically tip-to-tail).
+Individual sections can be accessed in Java using ``AddressableLEDBufferView``. Buffer views behave like subsections of the larger buffer, and can be accessed using indices in the typical [0, length) range. They can also be reversed, to allow for parallel serpentine sections to be animated in the same physical orientation (i.e. both sections would animate "forward" in the same direction, even if the strips are physically tip-to-tail).
 
 .. tab-set::
 
@@ -143,17 +159,17 @@ The base rainbow pattern will look like this:
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/snippets/addressableled/Robot.java
          :language: java
-         :lines: 21-31
+         :lines: 20-30
          :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/include/Robot.h
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/snippets/AddressableLED/include/Robot.hpp
          :language: c++
-         :lines: 27-37
+         :lines: 27-36
          :lineno-match:
 
 Now that the rainbow pattern is defined, we only need to apply it.
@@ -163,17 +179,17 @@ Now that the rainbow pattern is defined, we only need to apply it.
    .. tab-item:: Java
       :sync: Java
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/addressableled/Robot.java
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/snippets/addressableled/Robot.java
          :language: java
-         :lines: 50-56
+         :lines: 47-53
          :lineno-match:
 
    .. tab-item:: C++
       :sync: C++
 
-      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-1/wpilibcExamples/src/main/cpp/examples/AddressableLED/cpp/Robot.cpp
+      .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/snippets/AddressableLED/cpp/Robot.cpp
          :language: c++
-         :lines: 15-20
+         :lines: 13-18
          :lineno-match:
 
 .. only:: html
@@ -202,7 +218,7 @@ Use commands. The command framework is specifically built for managing when acti
 
       ```Java
       public class LEDSubsystem extends SubsystemBase {
-        private static final int kPort = 9;
+        private static final int kPort = 1;
         private static final int kLength = 120;
 
         private final AddressableLED m_led;
@@ -251,7 +267,7 @@ Use commands. The command framework is specifically built for managing when acti
         wpi::cmd::CommandPtr RunPattern(wpi::LEDPattern pattern);
 
        private:
-        static constexpr int kPort = 9;
+        static constexpr int kPort = 1;
         static constexpr int kLength = 120;
         wpi::AddressableLED m_led{kPort};
         std::array<wpi::AddressableLED::LEDData, kLength> m_ledBuffer;
@@ -329,7 +345,7 @@ The solid color pattern sets the target LED buffer to a single solid color.
 The gradient pattern sets the target buffer to display a smooth gradient between the specified colors. The gradient wraps around so scrolling effects can be seamless.
 
 .. image:: images/continuous-gradient.png
-   :alt: A contiuous red-to-blue-to-red gradient
+   :alt: A continuous red-to-blue-to-red gradient
    :width: 900
 
 .. tab-set::
@@ -372,7 +388,7 @@ The gradient pattern sets the target buffer to display a smooth gradient between
 The gradient pattern sets the target buffer to display a smooth gradient between the specified colors. The gradient does not wrap around so it can be used for non-scrolling patterns that don't care about continuity.
 
 .. image:: images/discontinuous-gradient.png
-   :alt: A discontiuous red-to-blue gradient
+   :alt: A discontinuous red-to-blue gradient
    :width: 900
 
 .. tab-set::
@@ -448,7 +464,7 @@ Steps are specified as a combination of the *starting position* of that color, a
       LEDPattern steps = LEDPattern.Steps(colorSteps);
 
       // Apply the LED pattern to the data buffer
-      gradient.ApplyTo(m_ledBuffer);
+      steps.ApplyTo(m_ledBuffer);
 
       // Write the data to the LED strip
       m_led.SetData(m_ledBuffer);
@@ -548,7 +564,7 @@ Offsets can be used to bias patterns forward of backward by a certain number of 
       LEDPattern negative = base.OffsetBy(-20); // Equivalent to the above when applied to a 60-LED buffer
 
       // Apply the LED pattern to the data buffer
-      heightDisplay.ApplyTo(m_ledBuffer);
+      pattern.ApplyTo(m_ledBuffer);
 
       // Write the data to the LED strip
       m_led.SetData(m_ledBuffer);
@@ -589,7 +605,7 @@ Patterns and animations can be reversed to flip the direction that patterns are 
       LEDPattern pattern = base.Reversed();
 
       // Apply the LED pattern to the data buffer
-      heightDisplay.ApplyTo(m_ledBuffer);
+      pattern.ApplyTo(m_ledBuffer);
 
       // Write the data to the LED strip
       m_led.SetData(m_ledBuffer);
@@ -656,7 +672,7 @@ Scrolling can be controlled in two different ways: either at a speed as a functi
       LEDPattern absolute = base.ScrollAtAbsoluteSpeed(0.125_mps, units::meter_t{1/120.0});
 
       // Apply the LED pattern to the data buffer
-      heightDisplay.ApplyTo(m_ledBuffer);
+      pattern.ApplyTo(m_ledBuffer);
 
       // Write the data to the LED strip
       m_led.SetData(m_ledBuffer);
@@ -708,7 +724,7 @@ A breathing modifier will make the base pattern brighten and dim in a sinusoidal
       LEDPattern pattern = base.Breathe(2_s);
 
       // Apply the LED pattern to the data buffer
-      heightDisplay.ApplyTo(m_ledBuffer);
+      pattern.ApplyTo(m_ledBuffer);
 
       // Write the data to the LED strip
       m_led.SetData(m_ledBuffer);
@@ -745,7 +761,7 @@ A breathing modifier will make the base pattern brighten and dim in a sinusoidal
 Blinking can be done in one of three ways:
 
 1. Symmetrically, where an equal amount of time is spent in the "on" and "off" states per cycle
-2. Asymetrically, where the time spent "on" can be configured independently from the time spent "off"
+2. Asymmetrically, where the time spent "on" can be configured independently from the time spent "off"
 3. Synchronously, where the time spent on and off is synchronized with an external source (for example, the state of the RSL)
 
 .. tab-set::
@@ -764,7 +780,7 @@ Blinking can be done in one of three ways:
       LEDPattern asymmetric = base.blink(Seconds.of(2), Seconds.of(1));
 
       // Turn the base pattern on when the RSL is on, and off when the RSL is off
-      LEDPattern sycned = base.synchronizedBlink(RobotController::getRSLState);
+      LEDPattern synced = base.synchronizedBlink(RobotController::getRSLState);
 
       // Apply the LED pattern to the data buffer
       pattern.applyTo(m_ledBuffer);
@@ -785,10 +801,10 @@ Blinking can be done in one of three ways:
       LEDPattern pattern = base.Blink(1.5_s);
 
       // 2 seconds on, 1 second off, for a total period of 3 seconds
-      LEDPattern asymmetric = base.Blink(2_s, 1_s));
+      LEDPattern asymmetric = base.Blink(2_s, 1_s);
 
       // Turn the base pattern on when the RSL is on, and off when the RSL is off
-      LEDPattern sycned = base.SynchronizedBlink([]() { return RobotController.GetRSLState(); });
+      LEDPattern synced = base.SynchronizedBlink(wpi::RobotController::GetRSLState);
 
       // Apply the LED pattern to the data buffer
       pattern.ApplyTo(m_ledBuffer);
@@ -803,7 +819,7 @@ Blinking can be done in one of three ways:
    :alt: A discontinuous gradient at half brightness
    :width: 900
 
-Patterns can be brightened and dimmed relative to their original brightness; a brightness value of 100% is identical to the original pattern, a value of 200% is twice as bright, and a value of 0% is completely turned off. This can be useful in a pinch to tone down patterns that are too bright (apologies to the 2024 NE Greater Boston district event staff, who were subjected to a maximimum brightness white flashing pattern with a precursor version of this library before the brightness modifier was added).
+Patterns can be brightened and dimmed relative to their original brightness; a brightness value of 100% is identical to the original pattern, a value of 200% is twice as bright, and a value of 0% is completely turned off. This can be useful in a pinch to tone down patterns that are too bright (apologies to the 2024 NE Greater Boston district event staff, who were subjected to a maximum brightness white flashing pattern with a precursor version of this library before the brightness modifier was added).
 
 .. note:: For speed, brightness calculations are done naively in the RGB color space instead of HSL/HSV/Lab. This sacrifices accuracy, so large changes in brightness may look undersaturated.
 
@@ -894,7 +910,7 @@ Masks work by combining the RGB values of two patterns and keeping only the valu
       // that end will be solid black when the elevator is at lower heights.
       std::array<Color, 2> colors{Color::kRed, Color::kBlue};
       LEDPattern base = LEDPattern::DiscontinuousGradient(colors);
-      LEDPattern mask = LEDPattern::ProgressMaskLayer([&]() { m_elevator.GetHeight() / m_elevator.GetMaxHeight() });
+      LEDPattern mask = LEDPattern::ProgressMaskLayer([&]() { return m_elevator.GetHeight() / m_elevator.GetMaxHeight(); });
       LEDPattern heightDisplay = base.Mask(mask);
 
       // Apply the LED pattern to the data buffer

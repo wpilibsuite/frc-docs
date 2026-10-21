@@ -6,7 +6,7 @@ This may initially seem like a poor control strategy, as PID loops are known to 
 
 However, when controlling the velocity of high-inertia mechanisms under varying loads (like a shooter flywheel), a bang-bang controller can yield faster recovery time and thus better/more consistent performance than a proportional controller.  Unlike an ordinary P loop, a bang-bang controller is *asymmetric* - that is, the controller turns on when the process variable is below the setpoint, and does nothing otherwise.  This allows the control effort in the forward direction to be made as large as possible without risking destructive oscillations as the control loop tries to correct a resulting overshoot.
 
-Asymmetric bang-bang control is provided in WPILib by the BangBangController class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/math/controller/BangBangController.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1math_1_1_bang_bang_controller.html), :external:py:class:`Python <wpimath.controller.BangBangController>`).
+Asymmetric bang-bang control is provided in WPILib by the BangBangController class ([Java](https://github.wpilib.org/allwpilib/docs/beta/java/org/wpilib/math/controller/BangBangController.html), [C++](https://github.wpilib.org/allwpilib/docs/beta/cpp/classwpi_1_1math_1_1_bang_bang_controller.html), :external:py:class:`Python <wpimath.BangBangController>`).
 
 ## Constructing a BangBangController
 
@@ -50,7 +50,7 @@ Using a bang-bang controller is easy:
 
   ```python
   # Controls a motor with the output of the BangBang controller
-  motor.set(controller.calculate(encoder.getRate(), setpoint))
+  motor.set(controller.calculate(encoder.get_rate(), setpoint))
   ```
 
 ## Combining Bang Bang Control with Feedforward
@@ -73,6 +73,6 @@ Like a PID controller, best results are obtained in conjunction with a :ref:`fee
 
   ```python
   # Controls a motor with the output of the BangBang controller and a feedforward
-  motor.setVoltage(controller.calculate(encoder.getRate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint))
+  motor.set_voltage(controller.calculate(encoder.get_rate(), setpoint) * 12.0 + 0.9 * feedforward.calculate(setpoint))
   ```
 

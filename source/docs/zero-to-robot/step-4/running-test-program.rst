@@ -1,69 +1,149 @@
 .. include:: <isonum.txt>
 
-# Running your Test Program
+# Running Your Test Program
 
-## Overview
+Test your FRC drivetrain through a direct connection and through the radio,
+with its drive wheels safely off the floor.
 
-You should create and download a Test Program as described for your programming language:
+This page covers testing an FRC drivetrain program written in Java, C++,
+Python, or Blocks using the FRC Driver Station. Before testing, create and
+deploy your :doc:`Java, C++, or Python drivetrain program
+</docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python>`
+or a :ref:`Blocks drivetrain sample <create_blocks_project>`, and complete
+the Step 3 communication checks.
 
-:doc:`C++/Java/Python </docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python>`
+Work through the tests in order: check the direct connection, test controller
+response with the wheels off the floor, then repeat the test through the radio.
+Keep the robot disabled between tests.
 
-## Tethered Operation
+## Before You Enable
 
-Running your test program while tethered to the Driver Station via ethernet or USB cable will confirm the program was successfully deployed and that the driver station and roboRIO are properly configured.
+.. warning::
 
-The roboRIO should be powered on and connected to the PC over Ethernet or USB.
+   A drivetrain can move as soon as the robot is enabled. Safely support the
+   robot with all drive wheels clear of the floor. Keep hands, hair, tools, and
+   loose clothing away from moving parts. Have another person ready to turn
+   robot power off.
 
-## Starting the FRC Driver Station
+Confirm all of the following:
 
-.. image:: /docs/software/driverstation/images/driver-station/ds-icon.png
-    :alt: The Driver Station icon found on the desktop.
+- The Systemcore, Driver Station, and WPILib project use the same team number.
+- The drivetrain example was deployed without a build or deploy error.
+- The controller is connected and assigned to port 0.
+- Controller axes return to neutral when released.
+- Motor ports or CAN IDs in the program match the wired devices.
+- One drivetrain side is inverted in software as shown by the complete example.
 
-The FRC\ |reg| Driver Station can be launched by double-clicking the icon on the Desktop or by selecting Start->All Programs->FRC Driver Station.
+## Test While Tethered
 
-## Setting Up the Driver Station
+Test through a direct connection before testing through the radio. This
+separates program and controller problems from radio configuration problems.
 
-.. image:: /docs/software/driverstation/images/driver-station/ds-setup.png
-    :alt: Using the 3rd tab with the gear of the Driver Station to set the team number.
+1. Boot the Systemcore normally.
+2. Connect the Driver Station computer directly to the Systemcore:
 
-The DS must be set to your team number in order to connect to your robot. In order to do this click the Setup tab then enter your team number in the team number box. Press return or click outside the box for the setting to take effect.
+   - Use the USB-C LINK port with a data-capable cable. On Alpha hardware,
+     connect LINK after the Systemcore boots so it does not enter flash mode.
+   - Or connect directly by Ethernet.
 
-PCs will typically have the correct network settings for the DS to connect to the robot already, but if not, make sure your Network adapter is set to :term:`DHCP`.
+3. Open **FIRST Driver Station** from the desktop or Start menu.
 
+   .. image:: /docs/software/firstdriverstation/images/driver-station/first-ds-icon.png
+      :alt: The FIRST Driver Station desktop icon.
+      :width: 64
 
-## Confirm Connectivity
+4. In Driver Station settings, enter the team number shown on the Systemcore
+   display.
 
-.. figure:: images/run-test-program/confirm-connectivity-tethered.png
+   .. image:: /docs/software/firstdriverstation/images/driver-station/settings-tab(1).png
+      :alt: The Driver Station settings tab used to enter the team number.
 
-    Tethered
+5. Open the **Gamepad** tab. Assign the controller to port 0 and verify
+   that its axes and buttons respond. Keep this tab open when reconnecting a
+   controller so Driver Station refreshes the connected-device list.
+6. Confirm that Driver Station shows:
 
-.. figure:: images/run-test-program/confirm-connectivity-wireless.png
+   - Robot communication
+   - Robot code
+   - Controller input
+   - A plausible robot battery voltage
 
-    Wireless
+**Expected result:** Driver Station reports communication, running code, and
+controller input while the robot remains disabled. Controller values change
+when you move a stick and return to neutral when you release it.
 
-Using the Driver Station software, click Diagnostics and confirm that the Enet Link (or Robot Radio led, if operating wirelessly) and Robot leds are green.
+If communication is missing, return to
+:doc:`Step 3 <../step-3/index>`. If communication is present but robot code is
+missing, inspect the deploy output and Driver Station log before enabling.
 
-## Operate the Robot
+## First Enable
 
-.. image:: images/run-test-program/run-robot.png
-    :alt: Highlights the different sections of the Drive Tab (1st)
+1. Select **Teleoperated** mode.
+2. Ask everyone nearby to stand clear and announce that the robot is about to
+   enable.
+3. Click **Enable** in Driver Station.
+4. Move the forward axis only a small amount, then release it. Confirm that
+   both sides turn in the expected direction.
+5. Test steering with a small input, then release it. Confirm the drivetrain
+   responds to the turn input and stops when the controls return to neutral.
+6. Click **Disable**, or press :kbd:`Enter`, before approaching the robot.
 
-Click the Operation Tab
+.. important::
 
-1. Confirm that battery voltage is displayed
-2. Communications, Robot Code, and Joysticks indicators are green.
-3. Put the robot in Teleop Mode
-4. Click Enable. Move the joysticks and observe how the robot responds.
-5. Click Disable
+   The keyboard enable shortcut is :kbd:`[` + :kbd:`]` + :kbd:`\\`, not
+   :kbd:`Enter`. The :kbd:`Space` bar is **Emergency Stop**, not ordinary
+   disable. An emergency-stopped robot must be rebooted before it can be
+   enabled again.
 
-## Wireless Operation
+**Expected result:** forward and steering inputs produce the intended motion,
+and releasing the controls stops the motors. Confirm that disabling stops the
+motors before approaching the robot.
 
-Before attempting wireless operation, tethered operation should have been confirmed as described in `Tethered Operation`_. Running your test program while connected to the Driver Station via WiFi will confirm that the access point is properly configured.
+If one side runs backward, disable the robot and change that side's inversion
+setting in software. Do not reverse motor power leads as a substitute for
+correct drivetrain configuration.
 
-### Configuring the Access Point
+## Test Through the Radio
 
-See the article :ref:`Programming your radio <docs/zero-to-robot/step-3/radio-programming:Programming your Radio>` for details on configuring the second VH-109 for use as an access point.
+Only continue after tethered operation works.
 
-After configuring the access point, connect the driver station via Ethernet to the VH-109 AP radio.
+1. Configure the robot and access-point VH-109 radios with matching team
+   number, suffix, and security keys as described in
+   :doc:`Programming Your Radio <../step-3/radio-programming>`.
+2. Connect the Driver Station computer to the access-point radio by Ethernet.
+3. Confirm that robot communication and robot code return in Driver Station.
+4. Repeat the **First Enable** procedure with the robot safely supported.
 
-You can now confirm wireless operation using the same steps in **Confirm Connectivity** and **Operate the Robot** above.
+**Expected result:** the same controller inputs produce the same drivetrain
+response through the radio as through the direct connection. If the direct test
+passes but the radio test fails, check the radio setup and network connection
+before changing the drive code.
+
+After both tests pass, disable the robot and confirm that all drivetrain
+directions are correct before lowering it to the floor. For the first
+floor test, use a clear open area, begin with small controller inputs, and keep
+another person ready to disable or power off the robot.
+
+.. tip::
+
+   If a check fails, use :doc:`Robot troubleshooting
+   </docs/software/support/troubleshooting>` or the
+   :doc:`Driver Station errors and warnings
+   </docs/software/firstdriverstation/first-driver-station-errors-warnings>`.
+
+.. container:: sw-success
+
+   .. container:: sw-success-h
+
+      ✓ Your FRC drivetrain passed its supported-wheel tests.
+
+   The robot is ready for a careful floor test in a clear area.
+
+.. container:: sw-nav
+
+   :doc:`← Create Your Test Drivetrain Program
+   <creating-test-drivetrain-program-cpp-java-python>`
+
+   .. container:: sw-next
+
+      :doc:`Return to Step 4 → <index>`

@@ -6,9 +6,7 @@ The FRC\ |reg| & FTC\ |reg| software consists of a wide variety of mandatory and
 
 ## Operating System Compatibility
 
-The primary supported OS is Windows. All required FRC software components have been tested on Windows 10 & 11.
-
-Many of the tools for C++/Java/Python programming are also supported and tested on macOS and Linux. Teams programming in C++/Java/Python should be able to develop using these systems, using a Windows system for the Windows-only operations such as the Driver Station and roboRIO Imaging Tool.
+The WPILib tools for C++/Java/Python programming are also supported and tested on Windows, and Linux x64, and macOS x64 and Arm64. Many tools additionally have windows and / or Linux ARM64 builds available. For more details on the supported operating systems and versions, see the :ref:`Supported Operating Systems section <docs/software/what-is-wpilib:platform support>`.
 
 ## Visual Studio Code
 
@@ -17,12 +15,12 @@ Many of the tools for C++/Java/Python programming are also supported and tested 
 
 Visual Studio Code is the supported development environment for C++, Java.  A guide to getting started with WPILib programming for Java and C++, including the installation and configuration of Visual Studio Code can be found :ref:`here <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation Guide>`.
 
-## FRC Driver Station Powered by NI LabVIEW (Windows Only)
+## FIRST Driver Station
 
-.. image:: images/control-system-software/frc-driver-station.png
+.. image:: /docs/software/firstdriverstation/images/driver-station/control-tab.png
    :alt: Driver Station on the first tab with the robot disabled and disconnected.
 
-This is the only software allowed to be used for the purpose of controlling the state of the robot during competition. This software sends data to your robot from a variety of input devices. It also contains a number of tools used to help troubleshoot robot issues.  More information about the FRC Driver Station Powered by NI LabVIEW can be found :ref:`here <docs/software/driverstation/driver-station:FRC Driver Station Powered by NI LabVIEW>`.
+This is the only software allowed to be used for the purpose of controlling the state of the robot during competition. This software sends data to your robot from a variety of input devices. It also contains a number of tools used to help troubleshoot robot issues.  More information about the FIRST Driver Station can be found :doc:`here </docs/software/firstdriverstation/first-driver-station-introduction>`.
 
 ## Dashboard Options
 
@@ -38,7 +36,7 @@ This is the only software allowed to be used for the purpose of controlling the 
 .. image:: /docs/software/dashboards/images/advantagescope.png
    :alt: Screenshot of an AdvantageScope window displaying a line graph, a list of fields, and a series of miscellaneous tabs.
 
-AdvantageScope is a data visualization tool for :ref:`NetworkTables <docs/software/networktables/networktables-intro:What is NetworkTables>`, :ref:`WPILib data logs <docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data Logs>`, and :ref:`Driver Station logs <docs/software/driverstation/driver-station-log-viewer:Driver Station Log File Viewer>`. It is a programmer's tool (rather than a competition dashboard) and can be used to debug real or simulated robot code from a log file or live over the network. For more information see the :doc:`AdvantageScope section </docs/software/dashboards/advantagescope>`.
+AdvantageScope is a data visualization tool for :doc:`NetworkTables </docs/software/networktables/networktables-intro>`, :doc:`WPILib data logs </docs/software/telemetry/datalog>`, and :doc:`Driver Station logs </docs/software/firstdriverstation/first-driver-station-log-viewer>`. It is a programmer's tool (rather than a competition dashboard) and can be used to debug real or simulated robot code from a log file or live over the network. For more information see the :doc:`AdvantageScope section </docs/software/dashboards/advantagescope>`.
 
 ### Elastic
 
@@ -46,13 +44,6 @@ AdvantageScope is a data visualization tool for :ref:`NetworkTables <docs/softwa
    :alt: Screenshot of an Elastic showing field trajectory, match time, and several other widgets
 
 Elastic is a simple and modern dashboard made by Team 353. It is meant to serve as a dashboard for competition but can also be used for testing. It was built with the goal of being a drag & drop dashboard with an easy setup and elegant UI designed for a high pressure competition environment. For more information see the :doc:`Elastic section </docs/software/dashboards/elastic>`.
-
-## FRC Driver Station Log Viewer (Windows Only)
-
-.. image:: images/control-system-software/frc-log-viewer.png
-   :alt: Driver Station Log Viewer showing a logged practice session.
-
-The FRC Driver Station Log Viewer is used to view logs created by the FRC Driver Station. These logs contain a variety of information important for understanding what happened during a practice session or FRC match. More information about the FRC Driver Station Log Viewer and understanding the logs can be found :ref:`here <docs/software/driverstation/driver-station-log-viewer:Driver Station Log File Viewer>`
 
 ## Robot Simulation
 
