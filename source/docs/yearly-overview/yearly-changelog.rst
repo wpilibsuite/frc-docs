@@ -146,7 +146,7 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 - 2027 Alpha 5: Integrate support for ExpansionHub over USB
 - 2027 Alpha 7: Updated hardware support (e.g. brownout, quadrature encoders, counters)
 - 2027 Alpha 7: All CAN device classes now take a ``CANPort`` enum instead of an integer port to disambiguate Systemcore ports from Motioncore ports.
-- 2027 Alpha 7: Create drivers library
+- 2027 Alpha 7: Create drivers library. PWM motor controllers were moved to this library.
 - 2027 Alpha 7: Add Gobilda Pinpoint support
 
 #### Math
