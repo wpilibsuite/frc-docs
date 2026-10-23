@@ -135,8 +135,8 @@ To create code tabs in an article, you can use the ``.. tab-set-code::`` directi
    ```c++
    // Start the timer.
    m_timer.Start();
-   // Send Field2d to SmartDashboard.
-   wpi::SmartDashboard::PutData(&m_field);
+   // Log the current Field2d state.
+   wpi::telemetry::Log("Field", m_field);
    // Reset the drivetrain's odometry to the starting pose of the trajectory.
    m_drive.ResetOdometry(m_trajectory.InitialPose());
    // Send our generated trajectory to Field2d.

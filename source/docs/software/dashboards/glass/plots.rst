@@ -18,7 +18,7 @@ If you choose to make secondary and tertiary y axes available, you can drag data
 
 .. image:: images/second-axis.png
 
-Then, you can lock certain axes so that their range always remains constant, regardless of panning. In this example, the secondary axis range (with the ``/SmartDashboard/Kp`` entry) was locked between 9 and 12.
+Then, you can lock certain axes so that their range always remains constant, regardless of panning. In this older screenshot, the secondary axis range was locked between 9 and 12. With the current APIs, choose data sources under ``/Telemetry`` or ``/Tunables`` instead of the pictured ``/SmartDashboard`` paths.
 
 .. image:: images/locked-axis.png
 

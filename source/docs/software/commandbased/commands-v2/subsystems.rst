@@ -61,7 +61,7 @@ The recommended method to create a subsystem for most users is to subclass the a
               pass
       ```
 
-This class contains a few convenience features on top of the basic ``Subsystem`` interface: it automatically calls the ``register()`` method in its constructor to register the subsystem with the scheduler (this is necessary for the ``periodic()`` method to be called when the scheduler runs), and also implements the ``Sendable`` interface so that it can be sent to the dashboard to display/log relevant status information.
+This class contains a few convenience features on top of the basic ``Subsystem`` interface: it automatically calls the ``register()`` method in its constructor to register the subsystem with the scheduler (this is necessary for the ``periodic()`` method to be called when the scheduler runs), and also implements ``TelemetryLoggable`` so that its status can be logged periodically with the :doc:`Telemetry API </docs/software/telemetry/telemetry>`. Subsystems are not automatically published to a dashboard; see :doc:`/docs/software/dashboards/glass/command-based-widgets`.
 
 Advanced users seeking more flexibility may simply create a class that implements the ``Subsystem`` interface.
 

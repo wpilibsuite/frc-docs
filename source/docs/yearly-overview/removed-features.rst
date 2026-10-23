@@ -27,6 +27,10 @@ Config for Systemcore will be handled via the web interface.
 ## WPILib Standalone Utility
 Removed because of low use.
 
+## Dashboard APIs
+
+The SmartDashboard, Sendable, and SendableChooser APIs have been replaced by Telemetry, Tunables, and Selectable. See :doc:`/docs/software/telemetry/migration` for replacements for logging, tuning, custom classes, and autonomous selection.
+
 ## Hardware
 
 ### Relay

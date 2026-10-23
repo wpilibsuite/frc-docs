@@ -10,83 +10,68 @@ In the examples below, an elevator is drawn, with a rotational wrist on top of t
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
       :language: java
-      :lines: 43-46
-      :lineno-match:
+      :lines: 36-39,43-46
+      :linenos:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 57-60
+      :lines: 56-59
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/Mechanism2d/robot.py
       :language: python
-      :lines: 34-37
+      :lines: 36-39
       :lineno-match:
 
 
-Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has a three required parameters, a name, an initial length to draw (relative to the size of the ``Mechanism2d`` object), and an initial angle to draw the ligament in degrees. Ligament angles are relative to the parent ligament, and follow math notation - the same as :ref:`Rotation2d <docs/software/advanced-controls/geometry/pose:Rotation>` (counterclockwise-positive). A ligament based on the root with an angle of zero will point right. Two optional parameters let you change the width (also relative to the size of the Mechanism2d object) and the color. Call ``append()``/``Append()`` on a root node or ligament node to add another node to the figure. In Java, pass a constructed ``MechanismLigament2d`` object to add it. In C++, pass the construction parameters in order to construct and add a ligament.
+Each ``MechanismLigament2d`` object represents a stage of the mechanism. It has three required parameters, a name, an initial length to draw (relative to the size of the ``Mechanism2d`` object), and an initial angle to draw the ligament in degrees. Ligament angles are relative to the parent ligament, and follow math notation - the same as :ref:`Rotation2d <docs/software/advanced-controls/geometry/pose:Rotation>` (counterclockwise-positive). A ligament based on the root with an angle of zero will point right. Two optional parameters let you change the width (also relative to the size of the Mechanism2d object) and the color. Call ``append()``/``Append()`` on a root node or ligament node to add another node to the figure. In Java, pass a constructed ``MechanismLigament2d`` object to add it. In C++, pass the construction parameters in order to construct and add a ligament.
 
 .. tab-set-code::
 
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
       :language: java
       :lines: 48-52
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 61-67
+      :lines: 60-65
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/Mechanism2d/robot.py
-         :language: python
-         :lines: 39-46
-         :lineno-match:
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/Mechanism2d/robot.py
+      :language: python
+      :lines: 41-48
+      :lineno-match:
 
-Then, publish the ``Mechanism2d`` object to NetworkTables:
+## Updating and Logging the Mechanism
+
+To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()`` on the ``MechanismLigament2d`` object. When using sensor measurements for a ligament's length, add its minimum length to avoid an invisible, zero-length ligament. After updating the mechanism, log it through :doc:`Telemetry </docs/software/telemetry/telemetry>` in every periodic cycle:
 
 .. tab-set-code::
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
       :language: java
-      :lines: 54-55
+      :lines: 55-63
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-7/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
       :language: c++
-      :lines: 35-36
+      :lines: 34-42
       :lineno-match:
 
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/Mechanism2d/robot.py
+   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a7/examples/robot/Mechanism2d/robot.py
       :language: python
-      :lines: 48-49
+      :lines: 50-58
       :lineno-match:
 
-To manipulate a ligament angle or length, call ``setLength()`` or ``setAngle()`` on the ``MechanismLigament2d`` object. When manipulating ligament length based off of sensor measurements, make sure to add the minimum length to prevent 0-length (and therefore invisible) ligaments.
-
-.. tab-set-code::
-
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibjExamples/src/main/java/org/wpilib/examples/mechanism2d/Robot.java
-      :language: java
-      :lines: 58-63
-      :lineno-match:
-
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/wpilibsuite/allwpilib/v2027.0.0-alpha-6/wpilibcExamples/src/main/cpp/examples/Mechanism2d/cpp/Robot.cpp
-      :language: c++
-      :lines: 39-43
-      :lineno-match:
-
-   .. remoteliteralinclude:: https://raw.githubusercontent.com/robotpy/mostrobotpy/2027.0.0a6/examples/robot/Mechanism2d/robot.py
-      :language: python
-      :lines: 51-56
-      :lineno-match:
+Java uses ``org.wpilib.telemetry.Telemetry`` and C++ uses ``<wpi/telemetry/Telemetry.hpp>``. With the default backend, these examples produce ``/Telemetry/Mech2d``. ``Mechanism2d`` implements ``TelemetryLoggable``; changing a ligament does not publish the change until the mechanism is logged again.
 
 ## Viewing the Mechanism2d in Glass
 
-After sending the ``Mechanism2d`` instance over NetworkTables, the :guilabel:`Mechanism2d` widget can be added to Glass by selecting :guilabel:`NetworkTables` in the menu bar, choosing the table name that the instance was sent over, and then clicking on the :guilabel:`Field` button.
+After sending the ``Mechanism2d`` instance over NetworkTables, the :guilabel:`Mechanism2d` widget can be added to Glass by selecting :guilabel:`NetworkTables` in the menu bar, choosing :guilabel:`Telemetry`, and then clicking on :guilabel:`Mech2d`.
 
 .. image:: images/select-mechanism2d.png
 

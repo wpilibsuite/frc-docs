@@ -157,7 +157,7 @@ Using ``mult`` and ``per`` will store the resulting unit. Every call will return
 public void robotPeriodic() {
   // Feet.per(Millisecond) creates a new unit on the first loop,
   // which will be reused on every successive loop
-  SmartDashboard.putNumber("Speed", m_drivebase.getSpeed().in(Feet.per(Millisecond)));
+  Telemetry.log("Speed", m_drivebase.getSpeed().in(Feet.per(Millisecond)));
 }
 ```
 

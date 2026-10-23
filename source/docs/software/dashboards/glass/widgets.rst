@@ -1,6 +1,6 @@
 # Glass Widgets
 
-Specialized widgets are available for certain types that exist in robot code. These include objects that are manually sent over NetworkTables such as ``SendableChooser`` instances.
+Specialized widgets are available for certain types that exist in robot code. These include objects logged through :doc:`Telemetry </docs/software/telemetry/telemetry>` or published through :doc:`Tunables </docs/software/telemetry/tunables>`, such as ``Selectable`` instances.
 
 .. note:: Widget support in Glass is still in its infancy -- therefore, there are only a handful of widgets available. This list will grow as development work continues.
 
@@ -8,63 +8,58 @@ Specialized widgets are available for certain types that exist in robot code. Th
 
 ## Hardware Widgets
 
-Widgets for specific hardware (such as motor controllers) are usually available via LiveWindow. These can be accessed by selecting the :guilabel:`NetworkTables` menu option, clicking on :guilabel:`LiveWindow` and choosing the desired widget.
-
-.. image:: images/livewindow.png
-
-The list of hardware (sent over LiveWindow automatically) that has widgets is below:
-
-- ``DigitalInput``
-- ``DigitalOutput``
-- ``SpeedController``
-- ``Gyro``
+Hardware state must be logged explicitly through Telemetry; it is no longer automatically published through LiveWindow. For a hardware object that implements ``TelemetryLoggable``, log it periodically to expose its supported fields and widget type. Widgets appear under the corresponding path in the :guilabel:`NetworkTables` menu, normally under :guilabel:`Telemetry`.
 
 Here is an example of the widget for gyroscopes:
 
 .. image:: images/gyro.png
    :alt: Gyro widget with both text and dial visualizations of the current gyro angle. Current Gyro Angle in degrees is -60.9704.
 
-## Sendable Chooser Widget
+## Selectable Widget
 
-The :guilabel:`Sendable Chooser` widget represents a ``SendableChooser`` instance from robot code. It is often used to select autonomous modes. Like other dashboards, your ``SendableChooser`` instance simply needs to be sent using a NetworkTables API. The simplest is to use something like ``SmartDashboard``:
+The :guilabel:`Selectable` widget displays a :doc:`Selectable </docs/software/telemetry/selectable>` from robot code. Add named options and a default, then publish the selectable once during initialization:
 
 .. tab-set-code::
    ```java
-   SmartDashboard.putData("Auto Selector", m_selector);
+   import org.wpilib.tunable.Tunables;
+
+   Tunables.publish("Auto Selector", m_selector);
    ```
 
    ```c++
-   wpi::SmartDashboard::PutData("Auto Selector", &m_selector);
+   #include <wpi/tunables/Tunables.hpp>
+
+   wpi::tunables::Publish("Auto Selector", m_selector);
    ```
 
    ```python
-   from wpilib import SmartDashboard
-   SmartDashboard.put_data("Auto Selector", selector)
+   import tunables
+
+   tunables.publish("Auto Selector", self.selector)
    ```
 
-The :guilabel:`Sendable Chooser` widget will appear in the :guilabel:`NetworkTables` menu and underneath the main table name that the instance was sent over. From the example above, the main table name would be :guilabel:`SmartDashboard`.
-
-.. image:: images/sendable-chooser.png
+With the default backend, open :guilabel:`NetworkTables` -> :guilabel:`Tunables` -> :guilabel:`Auto Selector`. Robot code reads the chosen option with ``getSelected()`` / ``GetSelected()`` / ``get_selected()``. Use a current Glass version with Selectable support; the old SendableChooser widget uses a different protocol.
 
 ## PID Controller Widget
 
-The :guilabel:`PID Controller` widget allows you to quickly tune PID values for a certain controller. A ``PIDController`` instance must be sent using a NetworkTables API. The simplest is to use something like ``SmartDashboard``:
+The :guilabel:`PID Controller` widget allows you to quickly tune PID values for a certain controller. Publish the ``PIDController`` instance through Tunables once during initialization:
 
 .. tab-set-code::
    ```java
-   SmartDashboard.putData("Elevator PID Controller", m_elevatorPIDController);
+   Tunables.publish("Elevator PID Controller", m_elevatorPIDController);
    ```
 
    ```c++
-   wpi::SmartDashboard::PutData("Elevator PID Controller", &m_elevatorPIDController);
+   wpi::tunables::Publish("Elevator PID Controller", m_elevatorPIDController);
    ```
 
    ```python
-   from wpilib import SmartDashboard
-   SmartDashboard.put_data("Elevator PID Controller", elevatorPIDController)
+   import tunables
+
+   tunables.publish("Elevator PID Controller", self.elevator_pid_controller)
    ```
 
-This allows you to quickly tune P, I, and D values for various setpoints.
+Open the controller under :guilabel:`NetworkTables` -> :guilabel:`Tunables` to tune P, I, and D values for various setpoints. To display controller state without allowing edits, log the controller periodically through Telemetry instead.
 
 .. image:: images/pid.png
    :alt: PID widget for the Elevator PID Controller. P = 3.0, I = 0.001, D = 0.050, Setpoint = 0.0.
