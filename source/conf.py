@@ -95,6 +95,7 @@ versionwarning_messages = {
 versionwarning_admonition_type = "warning"
 versionwarning_banner_title = "Warning!"
 versionwarning_body_selector = 'article[role="main"]'
+versionwarning_stable_as_highest = True
 
 # List of languages that wpilib-docs supports
 localization_languages = [

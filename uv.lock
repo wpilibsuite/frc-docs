@@ -889,17 +889,6 @@ wheels = [
 ]
 
 [[package]]
-name = "modern-sphinx-version-warning"
-version = "1.1.6"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "sphinx" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/01/0e/6dc4547365b97e28d4936252716de8978d557ef46471b9d971da26e62af2/modern_sphinx_version_warning-1.1.6-py3-none-any.whl", hash = "sha256:59e7b47e7af929363f7395c1de88f305c09d93bdc2c874d9a654adbd74d788c2", size = 8780, upload-time = "2023-11-20T16:59:05.792Z" },
-]
-
-[[package]]
 name = "more-itertools"
 version = "10.8.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1786,6 +1775,14 @@ wheels = [
 ]
 
 [[package]]
+name = "sphinxext-versionwarning"
+version = "1.1.8"
+source = { git = "https://github.com/grahamsh-llk/sphinxext-versionwarning#a41fdbcdb4873669deafab40f44f8448ebcaaaf9" }
+dependencies = [
+    { name = "sphinx" },
+]
+
+[[package]]
 name = "standard-imghdr"
 version = "3.10.14"
 source = { registry = "https://pypi.org/simple" }
@@ -1864,7 +1861,6 @@ dependencies = [
     { name = "furo" },
     { name = "jsmin" },
     { name = "markdown2" },
-    { name = "modern-sphinx-version-warning" },
     { name = "sphinx" },
     { name = "sphinx-build-compatibility" },
     { name = "sphinx-contributors" },
@@ -1886,6 +1882,7 @@ dependencies = [
     { name = "sphinxext-rediraffe" },
     { name = "sphinxext-remoteliteralinclude" },
     { name = "sphinxext-toptranslators" },
+    { name = "sphinxext-versionwarning" },
 ]
 
 [package.metadata]
@@ -1898,7 +1895,6 @@ requires-dist = [
     { name = "furo", specifier = "==2025.12.19" },
     { name = "jsmin", specifier = "==3.0.1" },
     { name = "markdown2", specifier = "==2.5.5" },
-    { name = "modern-sphinx-version-warning", specifier = "==1.1.6" },
     { name = "sphinx", specifier = "==8.2.3" },
     { name = "sphinx-build-compatibility", git = "https://github.com/readthedocs/sphinx-build-compatibility?rev=4f304bd4562cdc96316f4fec82b264ca379d23e0" },
     { name = "sphinx-contributors", specifier = "==0.3.0" },
@@ -1920,6 +1916,7 @@ requires-dist = [
     { name = "sphinxext-rediraffe", specifier = "==0.3.0" },
     { name = "sphinxext-remoteliteralinclude", specifier = "==0.6.1" },
     { name = "sphinxext-toptranslators", specifier = "==0.1.3" },
+    { name = "sphinxext-versionwarning", git = "https://github.com/grahamsh-llk/sphinxext-versionwarning" },
 ]
 
 [[package]]
