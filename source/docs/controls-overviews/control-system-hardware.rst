@@ -60,6 +60,8 @@ The :ref:`CTRE Power Distribution Panel <docs/software/can-devices/power-distrib
 
 The [CTRE Power Distribution Panel 2.0](https://store.ctr-electronics.com/products/pdp-2) (PDP 2.0) is designed to distribute power from a 12VDC battery to various robot components. The PDP 2.0 features 24 40A channels and can accoommodate ATO breakers. The PDP 2.0 is designed to maximize efficiency.
 
+.. note:: The PDP 2.0 does not have buit in current logging and current logs will not be available in the :doc:`Log Viewer </docs/software/firstdriverstation/first-driver-station-log-viewer>`
+
 ## REV Power Distribution Hub
 
 .. image:: images/control-system-hardware/power-distribution-hub.png
@@ -75,6 +77,8 @@ The [REV Power Distribution Hub](https://docs.revrobotics.com/ion-control-system
   :width: 500
 
 The [AndyMark Power Distribution Board](https://andymark.com/am-5754) (AMPD) is designed to distribute power from a 12VDC battery to various robot components. The AMPD features 24 fully insulated 40A ports that work with ATO/ATC breakers. With toolless lever connectors and 22.5 degree angled outputs for clean wiring, the AMPD is designed to simplify robot wiring.
+
+.. note:: The AMPD does not have buit in current logging and current logs will not be available in the :doc:`Log Viewer </docs/software/firstdriverstation/first-driver-station-log-viewer>`
 
 ## CTRE Voltage Regulator Module
 
@@ -132,7 +136,7 @@ The [CTRE Power Distribution Panel Breakers](https://store.ctr-electronics.com/p
 
 The power supply for an FRC robot is a single 12V 18Ah Sealed Lead Acid (SLA) battery, capable of meeting the high current demands of an FRC robot. For more information, see the :ref:`Robot Battery page. <docs/hardware/hardware-basics/robot-battery:Robot Battery Basics>`
 
-.. note:: Multiple battery part numbers may be legal, consult the [FRC Manual](https://www.firstinspires.org/resource-library/frc/competition-manual-qa-system) for a complete list.
+.. note:: Multiple battery part numbers may be legal, consult the [FRC Manual](https://www.firstinspires.org/resources/library/frc/season-materials?view=calendar) for a complete list.
 
 ## Robot Signal Light
 
