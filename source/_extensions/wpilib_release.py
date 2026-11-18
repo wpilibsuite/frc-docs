@@ -33,12 +33,12 @@ class WpilibRelease(SphinxDirective):
         )
 
         def get_url_size(osname):
-            release_data = requests.get(f"{cf_folder}/{osname}/")
+            release_data = requests.get(f"{cf_folder}/")
             release_data.raise_for_status()
             soup = BeautifulSoup(release_data.text, "html.parser")
             file = str(soup.find_all("tr")[-1].contents[0].string)
             size = str(soup.find_all("tr")[-1].contents[2].string)
-            url_part = f"/{osname}/{file}"
+            url_part = f"{file}"
             return url_part, size
 
         win_download_url_part, win_size = get_url_size("Win64")
