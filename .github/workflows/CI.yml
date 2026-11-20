@@ -27,8 +27,8 @@ jobs:
     - name: Archive PDF
       uses: actions/upload-artifact@v7
       with:
-        name: wpilib-docs-pdf
-        path: build/latex/wpilib.pdf
+        name: frc-docs-pdf
+        path: build/latex/frc-docs.pdf
         if-no-files-found: error
         
   build-html:
