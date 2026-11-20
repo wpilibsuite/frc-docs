@@ -267,7 +267,7 @@ html_theme_options = {
         "color-background-hover": "#023160",
         "color-sidebar-link-text": "#acb1b9",
         "color-sidebar-caption-text": "#81868d",
-    }
+    },
 }
 
 html_sidebars = {
@@ -323,6 +323,7 @@ html_context = {
 # -- Options for latex generation --------------------------------------------
 
 latex_engine = "xelatex"
+latex_documents = [(master_doc, "frc-docs.tex", project, author, "manual")]
 
 # Disable xindy support
 # See: https://github.com/readthedocs/readthedocs.org/issues/5476
