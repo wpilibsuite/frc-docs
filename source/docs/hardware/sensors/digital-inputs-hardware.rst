@@ -1,6 +1,6 @@
 # Digital Inputs - Hardware
 
-.. note:: This section covers digital input hardware.  For a software guide to digital inputs, see :ref:`docs/software/hardware-apis/sensors/digital-inputs-software:Digital Inputs - Software`.
+.. note:: This section covers digital input hardware.  For a software guide to digital inputs, see `Digital Inputs - Software <https://docs.wpilib.org/en/stable/docs/software/hardware-apis/sensors/digital-inputs-software.html>`__.
 
 A [digital signal](https://en.wikipedia.org/wiki/Digital_signal) is a signal that can be in one of several discrete states.  In the vast majority of cases, the signal is the voltage in a wire, and there are only two states for a digital signal - high, or low (also denoted 1 and 0, or true and false, respectively).
 

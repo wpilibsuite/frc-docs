@@ -5,7 +5,7 @@ Once everything is installed, we're ready to create a robot program.  WPILib com
 * :ref:`create_java_cpp_project`
 * :ref:`create_python_project`
 
-.. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, :term:`PWM` refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless motor, but it's similar for brushed motor. There is an assumption that the user has already installed the required :doc:`vendordeps </docs/software/vscode-overview/3rd-party-libraries>` and configured the device(s) (update firmware, assign CAN IDs, etc.) according to the manufacturer documentation ([CTRE](https://docs.ctr-electronics.com/) / [REV](https://docs.revrobotics.com/brushless/spark-max/gs)).
+.. important:: This guide includes code examples that involve vendor hardware for the convenience of the user. In this document, `PWM <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PWM>`__ refers to the motor controller included in the KOP. The CTRE tab references the Talon FX motor controller (Falcon 500 motor), but usage is similar for TalonSRX and VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless motor, but it's similar for brushed motor. There is an assumption that the user has already installed the required `vendordeps <https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-libraries.html>`__ and configured the device(s) (update firmware, assign CAN IDs, etc.) according to the manufacturer documentation ([CTRE](https://docs.ctr-electronics.com/) / [REV](https://docs.revrobotics.com/brushless/spark-max/gs)).
 
 .. _create_java_cpp_project:
 
@@ -21,7 +21,7 @@ This will bring up the "WPILIb New Project Creator"
 .. image:: /docs/software/vscode-overview/images/creating-robot-program/new-project-creator.png
    :alt: The project type selector of the WPILib New Project Creator
 
-The **Project Type** chooses between an empty template project, or a :doc:`WPILib example project </docs/software/examples-tutorials/wpilib-examples>`. For this example, select :guilabel:`Example` and then choose :guilabel:`Next`.
+The **Project Type** chooses between an empty template project, or a `WPILib example project <https://docs.wpilib.org/en/stable/docs/software/examples-tutorials/wpilib-examples.html>`__. For this example, select :guilabel:`Example` and then choose :guilabel:`Next`.
 
 This will bring up the language and base selection window.
 
@@ -42,7 +42,7 @@ This will bring up the Project and Configuration window.
 2. **Project Name**: The name of the robot project.  This also specifies the name that the project folder will be given if the Create New Folder box is checked.
 3. **Create a New Folder**: If this is checked, a new folder will be created to hold the project within the previously-specified folder.  If it is *not* checked, the project will be located directly in the previously-specified folder.  An error will be thrown if the folder is not empty and this is not checked.
 4. **Team Number**: The team number for the project, which will be used for package names within the project and to locate the robot when deploying code.
-5. **Enable Desktop Support**: Enables unit test and simulation support (see :doc:`/docs/software/wpilib-tools/robot-simulation/introduction`). While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it. For this example, do not check this box.
+5. **Enable Desktop Support**: Enables unit test and simulation support (see `Introduction to Robot Simulation <https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/robot-simulation/introduction.html>`__). While WPILib supports this, third party software libraries may not. If libraries do not support desktop, then your code may not compile or may crash. It should be left unchecked unless unit testing or simulation is needed and all libraries support it. For this example, do not check this box.
 
 .. warning:: Creating projects on OneDrive is not supported as OneDrive's caching interferes with the build system. Some Windows installations put the Documents and Desktop folders on OneDrive by default.
 
@@ -546,7 +546,7 @@ Utility Mode is used for testing robot functionality or running other code that 
 
       .. note:: The run button in VS Code's debug view is not used to run robot code. Instead, use the :guilabel:`Deploy Robot Code` command as described above. The debug view's run button is used for running and debugging code on the local machine in simulation, which is not applicable for robot code that runs on Systemcore.
 
-      For more detailed instructions, see :ref:`Deploy Java/C++ code <docs/software/vscode-overview/deploying-robot-code:Building and Deploying Robot Code>`.
+      For more detailed instructions, see `Deploy Java/C++ code <https://docs.wpilib.org/en/stable/docs/software/vscode-overview/deploying-robot-code.html>`__.
 
    .. tab-item:: Python
 
@@ -575,4 +575,4 @@ Utility Mode is used for testing robot functionality or running other code that 
             python3 -m robotpy deploy
             ```
 
-      For more detailed instructions, see :doc:`Deploy Python code </docs/software/python/subcommands/deploy>`.
+      For more detailed instructions, see `Deploy Python code <https://docs.wpilib.org/en/stable/docs/software/python/subcommands/deploy.html>`__.

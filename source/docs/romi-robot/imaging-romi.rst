@@ -22,7 +22,7 @@ Be sure to download the Romi version and not the standard release of WPILibPi. T
 
 ### Imaging
 
-The procedure for installing the image is described here: :doc:`WPILibPi Installation</docs/software/vision-processing/wpilibpi/installing-the-image-to-your-microsd-card>`.
+The procedure for installing the image is described here: `WPILibPi Installation <https://docs.wpilib.org/en/stable/docs/software/vision-processing/wpilibpi/installing-the-image-to-your-microsd-card.html>`__.
 
 ### Wireless Network Setup
 

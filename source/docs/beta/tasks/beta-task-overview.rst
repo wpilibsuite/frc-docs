@@ -18,7 +18,7 @@ Task 1 - Install Software (Targeted Completion 10/28/2024)
 
 The purpose of Task 1 is to complete installation of the new Control System software. This task consists of 1 Objective
 
-1. Install the necessary software for your assigned Beta Test language (LabVIEW or VSCode + plugins, NI FRC Game Tools, and any vendor libraries using the :doc:`Dependency Manager </docs/software/vscode-overview/3rd-party-libraries>` e.g. CTRE Phoenix, REVLib, etc)
+1. Install the necessary software for your assigned Beta Test language (LabVIEW or VSCode + plugins, NI FRC Game Tools, and any vendor libraries using the `Dependency Manager <https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-libraries.html>`__ e.g. CTRE Phoenix, REVLib, etc)
 
 Task 2 - Basic Benchtop Test (Targeted Completion 11/4/2024)
 ------------------------------------------------------------
@@ -44,7 +44,7 @@ Note: Objectives in Task 4 may be completed in any order.
 
 The purpose of Task 4 is to write new code in order to test features and functionality of the new Control System software. While we have written up a number of ideas, please feel free to come up with your own and report on what you tried/are trying and how it went.
 
-1. Java: Use :doc:`Epilogue annotation logging </docs/software/telemetry/robot-telemetry-with-annotations>`
-2. Java: Use the re-written :doc:`Java units library </docs/software/basic-programming/java-units>`
-3. Java/C++: Utilize the new :doc:`Dependency Manager </docs/software/vscode-overview/3rd-party-libraries>` in Visual Studio Code
+1. Java: Use `Epilogue annotation logging <https://docs.wpilib.org/en/stable/docs/software/telemetry/robot-telemetry-with-annotations.html>`__
+2. Java: Use the re-written `Java units library <https://docs.wpilib.org/en/stable/docs/software/basic-programming/java-units.html>`__
+3. Java/C++: Utilize the new `Dependency Manager <https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-libraries.html>`__ in Visual Studio Code
 

@@ -23,7 +23,7 @@ sys.path.append(os.path.abspath("./frc-docs/source"))
 
 # -- Project information -----------------------------------------------------
 
-project = "WPILib Documentation"
+project = "FRC Documentation"
 copyright = "2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License"
 author = "WPILib"
 version = "2027"
@@ -245,7 +245,7 @@ html_theme = "furo"
 html_static_path = ["_static"]
 
 # Sidebar logo
-html_logo = "assets/wpilibDocsLogo.png"
+html_logo = "assets/first-robotics-competition-logo.png"
 
 # URL favicon
 html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
@@ -255,6 +255,11 @@ html_favicon = "assets/FIRSTicon_RGB_withTM.ico"
 html_baseurl = "https://docs.wpilib.org/en/stable/"
 
 html_theme_options = {
+    "announcement": (
+        "You’re on the new FRC Docs site. Please report any issues you encounter "
+        "during the transition on "
+        '<a href="https://github.com/wpilibsuite/frc-docs/issues">GitHub</a>.'
+    ),
     "light_css_variables": {
         "color-sidebar-background": "#003974",
         "color-sidebar-brand-text": "#ffffffcc",

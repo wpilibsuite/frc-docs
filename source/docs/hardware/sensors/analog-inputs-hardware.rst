@@ -1,6 +1,6 @@
 # Analog Inputs - Hardware
 
-.. note:: This section covers analog input hardware.  For a software guide to analog inputs, see :ref:`docs/software/hardware-apis/sensors/analog-inputs-software:Analog Inputs - Software`.
+.. note:: This section covers analog input hardware.  For a software guide to analog inputs, see `Analog Inputs - Software <https://docs.wpilib.org/en/stable/docs/software/hardware-apis/sensors/analog-inputs-software.html>`__.
 
 An [analog signal](https://en.wikipedia.org/wiki/Analog_signal) is a signal whose value can lie anywhere in a continuous interval.  This lies in stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, which can take only one of several discrete values.  The Systemcore's analog input ports allow the measurement of analog signals with values from 0V to 3.3V.
 

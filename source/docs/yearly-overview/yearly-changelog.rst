@@ -2,27 +2,27 @@
 
 # New for 2027
 
-The change from the roboRIO to Systemcore is the biggest control system update since the introduction of the cRIO. A number of improvements have been made to WPILib to take advantage of Systemcore. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories. There's more information about Systemcore in the :doc:`/docs/software/systemcore-info/systemcore-introduction`.
+The change from the roboRIO to Systemcore is the biggest control system update since the introduction of the cRIO. A number of improvements have been made to WPILib to take advantage of Systemcore. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for Java/C++ WPILib changes. This document only includes the most relevant changes for end users, the full list of changes can be viewed on the various [WPILib](https://github.com/wpilibsuite/) GitHub repositories. There's more information about Systemcore in the `Systemcore Introduction <https://docs.wpilib.org/en/stable/docs/software/systemcore-info/systemcore-introduction.html>`__.
 
 It's recommended to also review the list of :doc:`known issues <known-issues>`.
 
 ## Importing Projects from Previous Years
 
-Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2027 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2026 projects must be :doc:`imported </docs/software/vscode-overview/importing-last-years-robot-code>` to be compatible.
+Due to internal GradleRIO changes, it is necessary to update projects from previous years. After :doc:`Installing WPILib for 2027 </docs/zero-to-robot/step-2/wpilib-setup>`, any 2026 projects must be `imported <https://docs.wpilib.org/en/stable/docs/software/vscode-overview/importing-last-years-robot-code.html>`__ to be compatible.
 
 ## Major Changes (Java/C++/Python)
 
-In order to more closly track C++ compiler feature support, the supported Linux distribution has changed to only the latest Ubuntu LTS. See :ref:`Supported Operating Systems and Architectures <docs/software/what-is-wpilib:Platform Support>` for more information.
+In order to more closly track C++ compiler feature support, the supported Linux distribution has changed to only the latest Ubuntu LTS. See `Supported Operating Systems and Architectures <https://docs.wpilib.org/en/stable/docs/software/what-is-wpilib.html>`__ for more information.
 
 .. warning:: [Windows 10 support from Microsoft ended in October 2025](https://www.microsoft.com/en-us/windows/end-of-support). While we will not explicitly block Windows 10 from being used, future releases may inadvertently break compatibility with Windows 10. We will not postpone these changes in order to maintain Windows 10 compatibility, and Windows 10 support may break as a result.
 
 - Use Java 25 and C++ 23. Visual Studio 2026 on Windows and GCC 14.x on Linux are required for C++ teams for simulation.
 - Alpha 5: Add Commands v3 framework for Java. Documentation is in work. In the meantime, see the [Commands v3 Conference](https://www.chiefdelphi.com/t/wpilib-commands-v3-championship-conference/519702), [Design Document](https://github.com/wpilibsuite/allwpilib/blob/main/design-docs/commands-v3.md) and the port of the [Hatchbot example to Commands v3](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/org/wpilib/examples/hatchbotcmdv3).
-- Alpha 5: Add OpMode framework, similar to FTC. See :doc:`/docs/software/basic-programming/opmodes` for documentation.
+- Alpha 5: Add OpMode framework, similar to FTC. See `OpMode Framework <https://docs.wpilib.org/en/stable/docs/software/basic-programming/opmodes.html>`__ for documentation.
 - Alpha 6: Support for the [2027 FIRST Driver Station](https://wpilib.org/blog/the-2027-first-driver-station) bringing multi-platform support.
-- Alpha 5: Reorganize java packages from ``edu.wpi.first`` to ``org.wpilib`` and c++ namespaces from ``frc::`` to ``wpi::`` and create new subpackages for better organization. The :doc:`VS Code importer </docs/software/vscode-overview/importing-last-years-robot-code>` will attempt to update code for these changes as part of the import process.
+- Alpha 5: Reorganize java packages from ``edu.wpi.first`` to ``org.wpilib`` and c++ namespaces from ``frc::`` to ``wpi::`` and create new subpackages for better organization. The `VS Code importer <https://docs.wpilib.org/en/stable/docs/software/vscode-overview/importing-last-years-robot-code.html>`__ will attempt to update code for these changes as part of the import process.
 - Alpha 2: Systemcore has different hardware support. Support multiple CAN buses, Smart IO, onboard IMU, Expansion Hub. Removed relay, analog output, SPI and SPI IMUs (ADIS16448, ADIS16470, ADXL345, ADXRS450), analog gyro, DMA, built-in accelerometer, Digital Glitch Filter, interrupts, counter, ultrasonic, analog trigger, Nidec Brushless, Servo, Jaguar
-- Alpha 2: Removed Network Tables v3 support. See the :doc:`Network Tables v4 migration guide </docs/software/networktables/nt4-migration-guide>` for details on how to update your code from Network Tables v3 to v4. Users of pynetworktables will need to update to pyntcore.
+- Alpha 2: Removed Network Tables v3 support. See the `Network Tables v4 migration guide <https://docs.wpilib.org/en/stable/docs/software/networktables/nt4-migration-guide.html>`__ for details on how to update your code from Network Tables v3 to v4. Users of pynetworktables will need to update to pyntcore.
 - Alpha 6: Python functions and variables have been renamed to use snake_case instead of camelCase for consistency with Python naming conventions.
 - Alpha 6: Many of the simple examples were moved to snippets to de-clutter the VS Code examples. The snippets are available here: [Java](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/org/wpilib/snippets) / [C++](https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/snippets). We're thinking of ways to make these easier to discover.
 - Alpha 7: SmartDashboard, SendableChooser, and Sendable APIs have been replaced with Telemetry and Tunables APIs.  The new version of SendableChooser is called Selectable.  While wpilib-docs has not yet been updated, API documentation and initial migration guides from the 2026 APIs are available for [telemetry](https://github.com/wpilibsuite/allwpilib/blob/main/telemetry/doc/telemetry.md#migration-from-wpilib-2026) and [tunables](https://github.com/wpilibsuite/allwpilib/blob/main/tunables/doc/tunables.md#migration-from-wpilib-2026)
@@ -466,15 +466,15 @@ In order to more closly track C++ compiler feature support, the supported Linux 
 
 ## Shuffleboard
 
-.. warning:: Shuffleboard has been removed for 2027 due to its lack of a maintainer and resource utilization issues. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
+.. warning:: Shuffleboard has been removed for 2027 due to its lack of a maintainer and resource utilization issues. Users can find `additional modern dashboard options here <https://docs.wpilib.org/en/stable/docs/software/dashboards/dashboard-intro.html>`__
 
 ## SmartDashboard
 
-.. warning:: SmartDashboard has been removed for 2027 due to its usage of Network Tables v3. Users can find :doc:`additional modern dashboard options here </docs/software/dashboards/dashboard-intro>`
+.. warning:: SmartDashboard has been removed for 2027 due to its usage of Network Tables v3. Users can find `additional modern dashboard options here <https://docs.wpilib.org/en/stable/docs/software/dashboards/dashboard-intro.html>`__
 
 ## PathWeaver
 
-.. warning:: PathWeaver has been removed for 2027 due to its lack of swerve support and lack of a maintainer. Users may find :doc:`Choreo </docs/software/pathplanning/choreo/index>`, [PathPlanner](https://pathplanner.dev), or [Bline](https://www.chiefdelphi.com/t/introducing-bline-a-new-rapid-polyline-autonomous-path-planning-suite/509778) more useful. They have an intuitive user interface and swerve support.
+.. warning:: PathWeaver has been removed for 2027 due to its lack of swerve support and lack of a maintainer. Users may find `Choreo <https://docs.wpilib.org/en/stable/docs/software/pathplanning/choreo/index.html>`__, [PathPlanner](https://pathplanner.dev), or [Bline](https://www.chiefdelphi.com/t/introducing-bline-a-new-rapid-polyline-autonomous-path-planning-suite/509778) more useful. They have an intuitive user interface and swerve support.
 
 ## RobotBuilder
 

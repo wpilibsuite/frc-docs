@@ -10,18 +10,18 @@ The purpose of this task is to test any newly developed or heavily modified feat
 
 **All languages**
 
-- Use the new A-Stop functionality built into the :doc:`Driver Station's Practice mode </docs/software/driverstation/driver-station>`.
+- Use the new A-Stop functionality built into the `Driver Station's Practice mode <https://docs.wpilib.org/en/stable/docs/software/firstdriverstation/first-driver-station-introduction.html>`__.
 
 **LabVIEW**
 
 **Java**
 
-- Use :doc:`Epilogue annotation logging </docs/software/telemetry/robot-telemetry-with-annotations>`
-- Use the re-written :doc:`Java units library </docs/software/basic-programming/java-units>`
+- Use `Epilogue annotation logging <https://docs.wpilib.org/en/stable/docs/software/telemetry/robot-telemetry-with-annotations.html>`__
+- Use the re-written `Java units library <https://docs.wpilib.org/en/stable/docs/software/basic-programming/java-units.html>`__
 
 **Java/C++**
 
-- Utilize the new Vendor :doc:`Dependency Manager </docs/software/vscode-overview/3rd-party-libraries>` in Visual Studio Code
+- Utilize the new Vendor `Dependency Manager <https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-libraries.html>`__ in Visual Studio Code
 
 **Java/C++/Python**
 

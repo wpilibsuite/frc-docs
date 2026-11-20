@@ -20,10 +20,10 @@ Locate the following control system components and tools
 
 - Kit Materials:
 
-  - Power Distribution Hub (:term:`PDH`)
+  - Power Distribution Hub (`PDH <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PDH>`__)
   - roboRIO
   - Vivid Hosting VH-109 radio (may be already installed on Kitbot)
-  - Robot Signal Light (:term:`RSL`) (may be already installed on Kitbot)
+  - Robot Signal Light (`RSL <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-RSL>`__) (may be already installed on Kitbot)
   - 5x SPARK MAX
   - 120A Circuit breaker
   - 4x 40A Circuit breaker

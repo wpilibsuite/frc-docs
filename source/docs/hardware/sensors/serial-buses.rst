@@ -23,7 +23,7 @@ The roboRIO supports many basic types of serial communications:
 .. image:: images/serial-buses/i2c-pinout.png
    :alt: I2C roboRIO port pin specifications.
 
-To communicate to peripheral devices over :term:`I2C`, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
+To communicate to peripheral devices over `I2C <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-I2C>`__, each pin should be wired to its corresponding pin on the device.  I2C allows users to wire a "chain" of slave devices to a single port, so long as those devices have separate IDs set.
 
 ## USB Client
 
@@ -53,4 +53,4 @@ Several sensors primarily use the CAN bus. Some examples include:
 - [CANifier](https://store.ctr-electronics.com/canifier/)
 - Power monitoring sensors built into the :ref:`CTRE Power Distribution Panel (PDP) <docs/controls-overviews/control-system-hardware:CTRE Power Distribution Panel>` and the :ref:`REV Power Distribution Hub (PDH) <docs/controls-overviews/control-system-hardware:REV Power Distribution Hub>`
 
-More information about using devices connected to the CAN bus can be found in the article about :ref:`using can devices <docs/software/can-devices/using-can-devices:Using CAN Devices>`.
+More information about using devices connected to the CAN bus can be found in the article about `using can devices <https://docs.wpilib.org/en/stable/docs/software/can-devices/using-can-devices.html>`__.

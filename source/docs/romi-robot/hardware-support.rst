@@ -7,7 +7,7 @@ The Romi robot, having a different hardware architecture than a roboRIO, is comp
 In general, the Romi is compatible with the following:
 
 - Simple Digital Input/Output devices (e.g. bumper switches, single LEDs)
-- Standard RC-style :term:`PWM` output devices (e.g. servos, PWM based motor controllers)
+- Standard RC-style `PWM <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PWM>`__ output devices (e.g. servos, PWM based motor controllers)
 - Analog Input sensors (e.g distance sensors that report distance as a voltage)
 
 ## Incompatible Hardware

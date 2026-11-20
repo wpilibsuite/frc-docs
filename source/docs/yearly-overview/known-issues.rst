@@ -19,7 +19,7 @@ sudo defaults write com.apple.network.local-network AllowedEthernetLocalNetworkA
 sudo defaults write com.apple.network.local-network AllowedWiFiLocalNetworkAddresses -array "10.0.0.0/8"
 ```
 
-.. warning:: This also allows any program to access any network with the address in the range of ``10.x.x.x``, which may be undesirable if you connect to other networks in that range beside's the robot's network. If you only access a robot with a single team number, you can substitute ``10.TE.AM.0/24``` (:ref:`TE.AM IP Notation <docs/networking/networking-introduction/ip-configurations:TE.AM IP Address Notation>`). If you only access the robot's network over eithernet or WiFi, you can only run the appropriate command.
+.. warning:: This also allows any program to access any network with the address in the range of ``10.x.x.x``, which may be undesirable if you connect to other networks in that range beside's the robot's network. If you only access a robot with a single team number, you can substitute ``10.TE.AM.0/24``` (`TE.AM IP Notation <https://docs.wpilib.org/en/stable/docs/networking/networking-introduction/ip-configurations.html#te-am-ip-address-notation>`__). If you only access the robot's network over eithernet or WiFi, you can only run the appropriate command.
 
 ### Driver Station randomly disabled
 
@@ -27,12 +27,12 @@ sudo defaults write com.apple.network.local-network AllowedWiFiLocalNetworkAddre
 
 **Workaround:** There are multiple potential causes for tripping the safety mechanisms.
 
-.. note:: The safety mechanisms will *not* disable the robot when connected to the :term:`FMS`.
+.. note:: The safety mechanisms will *not* disable the robot when connected to the `FMS <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-FMS>`__.
 
 Some teams have seen this happen only when the robot is operated wirelessly, but not when operated via USB or ethernet tether. Some potential mitigations:
 
 1. Try relocating the robot radio to a better location (high in the robot and away from motors or large amounts of metal). Follow the `manufacturer's recommended mounting <https://frc-radio.vivid-hosting.net/getting-started/usage/mounting-your-radio>`__
-2. :doc:`Measure your robot's bandwidth </docs/networking/networking-introduction/measuring-bandwidth-usage>` and ensure you have margin under the 7 Mbps bandwidth limit
+2. `Measure your robot's bandwidth <https://docs.wpilib.org/en/stable/docs/networking/networking-introduction/measuring-bandwidth-usage.html>`__ and ensure you have margin under the 7 Mbps bandwidth limit
 3. See if the Wi-Fi environment is congested using a tool like [WiFi Analyzer](https://apps.microsoft.com/detail/9NBLGGH33N0N?hl=en-US&gl=US).
 4. Utilize the recommended :doc:`2 radio setup </docs/zero-to-robot/step-3/radio-programming>`.
    1. Ensure the DS Radio is mounted high, away from interference and humans walking between the DS radio and the robot.
@@ -43,7 +43,7 @@ Some teams have seen this happen due to software that is running on the driver s
 
 1. Reboot the driver station computer
 2. Close software that is running in the background
-3. Follow the :doc:`Driver Station Best Practices </docs/software/firstdriverstation/first-driver-station-best-practices>`
+3. Follow the `Driver Station Best Practices <https://docs.wpilib.org/en/stable/docs/software/firstdriverstation/first-driver-station-best-practices.html>`__
 
 While rare, this can be caused by robot code that oversaturates the Systemcore processor or network connection. If all other troubleshooting steps fail, you can try running with one of the WPILib example programs to see if the problem still occurs.
 

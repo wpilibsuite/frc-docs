@@ -8,11 +8,50 @@
 .. meta::
    :google-site-verification: POR_nG8b56eXGxmUIutST7jcA_Vl58ypSdJTzJ1g0zg
 
-# FIRST Control System
+# FIRST Robotics Competition Documentation
 
-Welcome to the *FIRST*\ |reg| Control System Documentation! This site contains everything you need to know for programming a competition robot using WPILib!
+Welcome to the *FIRST*\ |reg| Control System Documentation! This site contains everything you need to know for build and construct a FIRST competition robot.
+
+For *FIRST* Tech Challenge, visit the `FTC Docs <https://ftc-docs.firstinspires.org/en/latest/>`__.
 
 Community translations can be found in a variety of languages in the menu towards the bottom-right of the screen.
+
+.. rubric:: Find the Right Documentation
+
+.. grid:: 1 1 3 3
+   :gutter: 3
+
+   .. grid-item-card:: WPILib: Systemcore and Robot Programming
+      :link: https://docs.wpilib.org/en/latest/docs/zero-to-robot/introduction.html
+      :link-type: url
+      :class-card: sw-card-shared
+
+      Set up Systemcore, write robot code, and learn how to test and debug it.
+
+      +++
+      Browse WPILib Docs →
+
+   .. grid-item-card:: FTC Docs: Hardware and Setup and more
+      :link: https://ftc-docs.firstinspires.org/en/latest/
+      :link-type: url
+      :class-card: sw-card-ftc
+
+      Find FTC assembly and wiring guides, plus setup and programming help
+      for the REV control system. For Systemcore programming, use WPILib docs.
+
+      +++
+      Browse FTC Docs →
+
+   .. grid-item-card:: FRC Docs: Team, Hardware, and Vendor Resources
+      :link: docs/controls-overviews/control-system-hardware
+      :link-type: doc
+      :class-card: sw-card-frc
+
+      Find FRC hardware guides, assembly and wiring instructions, vendor
+      links, and team resources in FRC Docs. **You are here.**
+
+      +++
+      Browse FRC Docs →
 
 .. grid:: 1 2 2 2
    :gutter: 3
@@ -76,7 +115,7 @@ Community translations can be found in a variety of languages in the menu toward
 
          Go to Zero-to-Robot
 
-.. grid:: 1 2 2 2
+.. grid:: 1
    :gutter: 3
 
    .. grid-item-card::
@@ -98,68 +137,8 @@ Community translations can be found in a variety of languages in the menu toward
 
          Go to Hardware Overview
 
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Software Overview**
-
-      ^^^
-
-      An overview of the software components and tools available to teams.
-
-      +++
-
-      .. button-ref:: /docs/controls-overviews/control-system-software
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         Go to Software Overview
-
 .. grid:: 1 2 3 3
    :gutter: 3
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Programming Basics**
-
-      ^^^
-
-      Documentation that is useful throughout a team's programming process.
-
-      +++
-
-      .. button-ref:: stubs/programming-basics-stub
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View articles
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Advanced Programming**
-
-      ^^^
-
-      Documentation that is suited toward veteran teams. This includes content such as Path Planning and Kinematics.
-
-      +++
-
-      .. button-ref:: stubs/advanced-programming-stub
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View articles
 
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
@@ -213,82 +192,6 @@ Community translations can be found in a variety of languages in the menu toward
    .. grid-item-card::
       :class-header: sd-bg-info sd-text-white
 
-      **API Documentation**
-
-      ^^^
-
-      Java, C++, and Python class documentation.
-
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/beta/java/index.html
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         Java
-
-      .. button-link:: https://github.wpilib.org/allwpilib/docs/beta/cpp/index.html
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         C++
-
-      .. button-link:: https://robotpy.readthedocs.io/projects/robotpy/en/stable/
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         Python
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Software Tools**
-
-      ^^^
-
-      Essential tooling such as FIRST Driver Station, Dashboards, roboRIO Imaging Tool, and more.
-
-      +++
-
-      .. button-ref:: stubs/software-tools-stub
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View articles
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **Example Projects**
-
-      ^^^
-
-      This section showcases the available example projects that teams can reference in VS Code.
-
-      +++
-
-      .. button-ref:: docs/software/examples-tutorials/wpilib-examples
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View articles
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
       **Status Light Quick Reference**
 
       ^^^
@@ -298,26 +201,6 @@ Community translations can be found in a variety of languages in the menu toward
       +++
 
       .. button-ref:: docs/hardware/hardware-basics/status-lights-ref
-         :color: primary
-         :shadow:
-         :align: center
-         :expand:
-         :outline:
-
-         View article
-
-   .. grid-item-card::
-      :class-header: sd-bg-info sd-text-white
-
-      **3rd Party libraries**
-
-      ^^^
-
-      Tutorial on adding 3rd party libraries such as CTRE and REV to your robot project.
-
-      +++
-
-      .. button-ref:: docs/software/vscode-overview/3rd-party-libraries
          :color: primary
          :shadow:
          :align: center
@@ -336,80 +219,21 @@ Community translations can be found in a variety of languages in the menu toward
    docs/zero-to-robot/step-1/index
    docs/zero-to-robot/step-2/index
    docs/zero-to-robot/step-3/index
-   docs/zero-to-robot/step-4/index
+   Step 4: Programming your Robot <https://docs.wpilib.org/en/latest/docs/zero-to-robot/step-4/index.html>
 
 .. toctree::
    :maxdepth: 1
-   :caption: Control System Overviews
+   :caption: Yearly Overview
    :hidden:
 
-   docs/controls-overviews/control-system-hardware
-   docs/controls-overviews/control-system-software
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Programming Basics
-   :hidden:
-
-   docs/software/what-is-wpilib
    docs/yearly-overview/index
-   docs/software/vscode-overview/index
-   docs/software/dashboards/index
-   docs/software/telemetry/index
-   docs/software/python/index
-   docs/software/hardware-apis/index
-   docs/software/can-devices/index
-   docs/software/basic-programming/index
-   docs/software/support/support-resources
-   docs/software/frc-glossary
-
-.. toctree::
-   :maxdepth: 1
-   :caption: API Docs
-   :hidden:
-
-   WPILib Java API Docs <https://github.wpilib.org/allwpilib/docs/beta/java/index.html>
-   WPILib C++ API Docs <https://github.wpilib.org/allwpilib/docs/beta/cpp/index.html>
-   WPILib Python API Docs <https://robotpy.readthedocs.io/projects/robotpy/en/stable/>
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Software Tools
-   :hidden:
-
-   docs/software/firstdriverstation/index
-   docs/software/wpilib-tools/robot-simulation/index
-   docs/software/wpilib-tools/outlineviewer/index
-   docs/software/wpilib-tools/wpical/index
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Advanced Programming
-   :hidden:
-
-   docs/software/vision-processing/index
-   docs/software/commandbased/index
-   docs/software/kinematics-and-odometry/index
-   docs/software/networktables/index
-   docs/software/pathplanning/index
-   docs/software/systemcore-info/index
-   docs/software/advanced-gradlerio/index
-   docs/software/advanced-controls/index
-   docs/software/convenience-features/index
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Examples and Tutorials
-   :hidden:
-
-   docs/software/examples-tutorials/wpilib-examples
-   docs/software/examples-tutorials/third-party-examples
 
 .. toctree::
    :maxdepth: 1
    :caption: Hardware
    :hidden:
 
+   Hardware Overview <docs/controls-overviews/control-system-hardware>
    docs/hardware/hardware-basics/index
    docs/hardware/hardware-tutorials/index
    docs/hardware/sensors/index
@@ -421,14 +245,6 @@ Community translations can be found in a variety of languages in the menu toward
 
    docs/romi-robot/index
    docs/xrp-robot/index
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Robot Networking
-   :hidden:
-
-   docs/networking/networking-introduction/index
-   docs/networking/networking-utilities/index
 
 .. toctree::
    :maxdepth: 1

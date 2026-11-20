@@ -33,4 +33,4 @@ Then click on the correct binary for your OS and architecture to begin the downl
 
 ## 3rd Party Libraries/Software
 
-A directory of available 3rd party software that plugs in to WPILib can be found on :ref:`docs/software/vscode-overview/3rd-party-libraries:3rd Party Libraries`.
+A directory of available 3rd party software that plugs in to WPILib can be found on `3rd Party Libraries <https://docs.wpilib.org/en/stable/docs/software/vscode-overview/3rd-party-libraries.html>`__.

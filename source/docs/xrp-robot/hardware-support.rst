@@ -7,7 +7,7 @@ The XRP robot, having a different hardware architecture than a roboRIO, is compa
 In general, the XRP is compatible with the following:
 
 - Hobby DC motors with built-in encoders (6-pin connector)
-- Standard RC-style :term:`PWM` output devices (e.g. servos, PWM based motor controllers)
+- Standard RC-style `PWM <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PWM>`__ output devices (e.g. servos, PWM based motor controllers)
 - "Ping" style ultrasonic sensors (only when connected to the RANGE port)
 
 ## Incompatible Hardware

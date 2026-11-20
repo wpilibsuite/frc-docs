@@ -2,6 +2,27 @@
 	color: #FFF;
 }
 
+.sd-card.sw-card-shared {
+	--docs-card-accent: #2e7d32;
+}
+
+.sd-card.sw-card-ftc {
+	--docs-card-accent: #e07000;
+}
+
+.sd-card.sw-card-frc {
+	--docs-card-accent: #009cd7;
+}
+
+.sd-card:is(.sw-card-shared, .sw-card-ftc, .sw-card-frc) {
+	border-color: color-mix(in srgb, var(--docs-card-accent) 35%, transparent);
+	background: color-mix(in srgb, var(--docs-card-accent) 9%, var(--color-background-primary));
+}
+
+.sd-card:is(.sw-card-shared, .sw-card-ftc, .sw-card-frc):is(:hover, :focus-within) {
+	border-color: var(--docs-card-accent);
+}
+
 #link-bar li {
 	float: left;
 	padding: 15px;

@@ -33,7 +33,7 @@ The wheels have a diameter of 70mm (2.75"). They have a trackwidth of 141mm (5.5
 
 The encoders are connected directly to the motor output shaft and have 12 Counts Per Revolution (CPR). With the provided gear ratio, this nets 1440 counts per wheel revolution.
 
-The motor :term:`PWM` channels are listed in the table below.
+The motor `PWM <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PWM>`__ channels are listed in the table below.
 
 +-------------+--------------------------+
 | Channel     | Romi Hardware Component  |
@@ -88,7 +88,7 @@ The Romi 32U4 control board has 3 push buttons and 3 LEDs onboard that are expos
 | DIO 3       | Yellow LED (output only)             |
 +-------------+--------------------------------------+
 
-Writes to DIO 0, 4, 5, 6, and 7 will result in a :term:`no-op`.
+Writes to DIO 0, 4, 5, 6, and 7 will result in a `no-op <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-no-op>`__.
 
 ### Configurable GPIO Pins
 

@@ -133,7 +133,7 @@ Once you have installed Python, you can use pip to install RobotPy on your devel
 
 After installing the ``robotpy`` project on your computer, there are a variety of commands available that can be ran from the command line via the ``robotpy`` module.
 
-.. seealso:: :doc:`Documentation for robotpy subcommands </docs/software/python/subcommands/index>`
+.. seealso:: `Documentation for robotpy subcommands <https://docs.wpilib.org/en/stable/docs/software/python/subcommands/index.html>`__
 
 If you already have a RobotPy robot project, you can use that to download the pieces needed to run on the Systemcore. If you don't have a project, running this command in an empty directory will initialize a new robot project:
 
@@ -162,9 +162,9 @@ If you already have a RobotPy robot project, you can use that to download the pi
 
 This will create a ``robot.py`` and ``pyproject.toml`` file. The ``robot.py`` file contains a skeleton structure to help you get started writing your robot code. The ``pyproject.toml`` file should be customized and details the requirements needed to run your robot code, among other things.
 
-.. important:: The ``robotpy deploy`` command requires that you have written working robot code. The generated ``robot.py`` is just a starting point - you cannot deploy to the Systemcore until you have implemented your robot-specific code. See the :doc:`RobotPy Programming Guide </docs/software/python/index>` for information on writing robot code.
+.. important:: The ``robotpy deploy`` command requires that you have written working robot code. The generated ``robot.py`` is just a starting point - you cannot deploy to the Systemcore until you have implemented your robot-specific code. See the `RobotPy Programming Guide <https://docs.wpilib.org/en/stable/docs/software/python/index.html>`__ for information on writing robot code.
 
-.. seealso:: The default ``pyproject.toml`` created for you only contains the version of RobotPy installed on your computer. If you want to enable vendor packages or install other python packages from PyPI, see our :doc:`pyproject.toml documentation </docs/software/python/pyproject_toml>`
+.. seealso:: The default ``pyproject.toml`` created for you only contains the version of RobotPy installed on your computer. If you want to enable vendor packages or install other python packages from PyPI, see our `pyproject.toml documentation <https://docs.wpilib.org/en/stable/docs/software/python/pyproject_toml.html>`__
 
 Next run the ``robotpy sync`` subcommand, which will:
 
@@ -197,4 +197,4 @@ Next run the ``robotpy sync`` subcommand, which will:
       python3 -m robotpy sync
       ```
 
-When you deploy your code to the Systemcore, :doc:`the deploy subcommand </docs/software/python/subcommands/deploy>` will automatically install Python (if needed) and your robot project requirements on the Systemcore as part of the deploy process.
+When you deploy your code to the Systemcore, `the deploy subcommand <https://docs.wpilib.org/en/stable/docs/software/python/subcommands/deploy.html>`__ will automatically install Python (if needed) and your robot project requirements on the Systemcore as part of the deploy process.

@@ -8,7 +8,7 @@ This guide will show you how to do a basic setup for controlling your robot "at 
 
 ## Prerequisites
 
-The recommended setup requires: 2 VH-109 radios, 1 VH-117 :term:`PoE` Wall Adapter, and 1 Radio Heatsink.  Available [here](https://wcproducts.com/products/frc-radio).
+The recommended setup requires: 2 VH-109 radios, 1 VH-117 `PoE <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PoE>`__ Wall Adapter, and 1 Radio Heatsink.  Available [here](https://wcproducts.com/products/frc-radio).
 
 Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Setup Discussion` if you do not currently have this hardware.
 
@@ -20,7 +20,7 @@ Please see the :ref:`docs/zero-to-robot/step-3/radio-programming:Alternative Set
 
 1. Connect the radio directly to your computer using an Ethernet cable in the :guilabel:`DS` port.
 
-2. Ensure the radio has power either through the Weidmuller connectors or :term:`PoE`.
+2. Ensure the radio has power either through the Weidmuller connectors or `PoE <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PoE>`__.
 
 3. Open a web browser and navigate to :guilabel:`http://radio.local/`.  See :ref:`docs/zero-to-robot/step-3/radio-programming:Troubleshooting` if the connection doesn't work.
 
@@ -117,7 +117,7 @@ Disadvantages:
 - The 2.4GHz band is more prone to congestion and interference, especially in crowded environments.
 - Range and accessibility may be limited compared to the 6GHz band.
 
-### No VH-117 :term:`PoE` Wall Adapter
+### No VH-117 `PoE <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PoE>`__ Wall Adapter
 
 You can power the access point radio with a 12V wall plug connecting wires to the Weidmuller ports.  We recommend trying to find one with a [switch](https://a.co/d/cUsD25n) to simplify turning on and off the radio.  The primary concern will be cord length which will likely not be long enough to run from your wall outlet so you will need to bring the power closer with an extension cord.
 
@@ -133,9 +133,9 @@ Disconnect other network connections such as Wi-Fi.
 
 Download and use the [Network Assistant](https://frc-radio.vivid-hosting.net/miscellaneous/network-assistant-tool).  See the instructions below the download for how to use.
 
-Disable :doc:`firewalls </docs/networking/networking-introduction/windows-firewall-configuration>`.
+Disable `firewalls <https://docs.wpilib.org/en/stable/docs/networking/networking-introduction/windows-firewall-configuration.html>`__.
 
-Ensure an :ref:`mDNS responder <docs/networking/networking-introduction/networking-basics:mDNS - Providers>` is installed.
+Ensure an `mDNS responder <https://docs.wpilib.org/en/stable/docs/networking/networking-introduction/networking-basics.html#mdns-providers>`__ is installed.
 
 Set a [static ip address](https://www.trendnet.com/press/resource-library/how-to-set-static-ip-address) with these parameters:
 

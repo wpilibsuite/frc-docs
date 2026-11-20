@@ -2,7 +2,7 @@
 
 # Robot Battery Basics
 
-The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) non-spillable battery, capable of briefly supplying over 180A and arcing over 500A when fully charged. The Robot Battery assembly includes the :term:`COTS` battery, lead cables with contacts, and Anderson SB connector. Teams are encouraged to have multiple Robot Batteries.
+The power supply for an FRC\ |reg| robot is a single 12V 18Ah SLA (Sealed Lead Acid) non-spillable battery, capable of briefly supplying over 180A and arcing over 500A when fully charged. The Robot Battery assembly includes the `COTS <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-COTS>`__ battery, lead cables with contacts, and Anderson SB connector. Teams are encouraged to have multiple Robot Batteries.
 
 ## COTS Battery
 
@@ -97,7 +97,7 @@ If your battery charger has Maintenance Mode indicator, such as a GREEN LED, you
 
 When the robot is plugged in and connected to the driver station laptop, the battery voltage is displayed on the NI Driver Station software.
 
-After you finish a driving session, you can :doc:`review the battery voltage in the Log Viewer. </docs/software/firstdriverstation/first-driver-station-log-viewer>`
+After you finish a driving session, you can `review the battery voltage in the Log Viewer. <https://docs.wpilib.org/en/stable/docs/software/firstdriverstation/first-driver-station-log-viewer.html>`__
 
 Hand-held **Voltmeter** or **Multimeter**
 
@@ -147,7 +147,7 @@ Batteries need to be kept away from both extreme heat and cold. This generally m
 
 ## Battery Best Practices
 
-- Only use a charged battery for competition matches. If you are in a situation where you have run out of charged batteries, please ask a veteran team for help! Nobody wants to see a robot dead on the field (:ref:`brownout <docs/software/systemcore-info/roborio-brownouts:roboRIO Brownout and Understanding Current Draw>`) due to a bad or uncharged battery.
+- Only use a charged battery for competition matches. If you are in a situation where you have run out of charged batteries, please ask a veteran team for help! Nobody wants to see a robot dead on the field (`brownout <https://docs.wpilib.org/en/stable/docs/software/systemcore-info/roborio-brownouts.html>`__) due to a bad or uncharged battery.
 
 - Teams are strongly recommended to use properly rated tools and stringent quality control practices for crimping processes (ask local veteran teams or a commercial electrician for help), or use vendor-made Battery Leads.
 

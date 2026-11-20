@@ -10,16 +10,16 @@ Removed since NetworkTables 4 has been out for a few years and is a better proto
 All Java GUI tools have been removed due to lack of maintenance.
 
 ### Shuffleboard
-Use :doc:`/docs/software/dashboards/elastic` as a driver dashboard and use :doc:`/docs/software/dashboards/advantagescope` for debugging and data visualization.
+Use `Elastic <https://docs.wpilib.org/en/stable/docs/software/dashboards/elastic.html>`__ as a driver dashboard and use `AdvantageScope <https://docs.wpilib.org/en/stable/docs/software/dashboards/advantagescope.html>`__ for debugging and data visualization.
 
 ### SmartDashboard
-In addition to lack of maintenance, SmartDashboard uses the NT3 protocol, which has been removed, and SmartDashboard does not support modern platforms used in FRC. Instead, use :doc:`/docs/software/dashboards/elastic` as a driver dashboard and use :doc:`/docs/software/dashboards/advantagescope` for debugging and data visualization.
+In addition to lack of maintenance, SmartDashboard uses the NT3 protocol, which has been removed, and SmartDashboard does not support modern platforms used in FRC. Instead, use `Elastic <https://docs.wpilib.org/en/stable/docs/software/dashboards/elastic.html>`__ as a driver dashboard and use `AdvantageScope <https://docs.wpilib.org/en/stable/docs/software/dashboards/advantagescope.html>`__ for debugging and data visualization.
 
 ### RobotBuilder
 No replacement. There are many upcoming codegen projects however.
 
 ### PathWeaver
-PathWeaver has been removed for 2027 due to its lack of swerve support and lack of a maintainer. Use :doc:`/docs/software/pathplanning/choreo/index`, [PathPlanner](https://pathplanner.dev), or [Bline](https://www.chiefdelphi.com/t/introducing-bline-a-new-rapid-polyline-autonomous-path-planning-suite/509778) instead.
+PathWeaver has been removed for 2027 due to its lack of swerve support and lack of a maintainer. Use `Choreo <https://docs.wpilib.org/en/stable/docs/software/pathplanning/choreo/index.html>`__, [PathPlanner](https://pathplanner.dev), or [Bline](https://www.chiefdelphi.com/t/introducing-bline-a-new-rapid-polyline-autonomous-path-planning-suite/509778) instead.
 
 ## roboRIO Team Number Setter
 Config for Systemcore will be handled via the web interface.

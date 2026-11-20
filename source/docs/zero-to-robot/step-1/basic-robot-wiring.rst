@@ -54,19 +54,19 @@ Locate the following control system components and tools
 
 
 - Kit Materials:
-      - Power Distribution Hub (:term:`PDH`) / Power Distribution Panel (:term:`PDP`)
+      - Power Distribution Hub (`PDH <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PDH>`__) / Power Distribution Panel (`PDP <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PDP>`__)
       - roboRIO
-      - Pneumatics Hub (:term:`PH`) / Pneumatics Control Module (:term:`PCM`)
+      - Pneumatics Hub (`PH <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PH>`__) / Pneumatics Control Module (`PCM <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PCM>`__)
       - VH-109 radio
-      - Robot Signal Light (:term:`RSL`)
+      - Robot Signal Light (`RSL <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-RSL>`__)
       - 4x SPARK MAX or other motor controllers
-      - 2x :term:`PWM` y-cables
+      - 2x `PWM <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PWM>`__ y-cables
       - 120A Circuit breaker
       - 4x 40A Circuit breaker
       - 6 AWG (16 :math:`mm^2`) Red wire
       - 10 AWG (6 :math:`mm^2`) Red/Black wire
       - 18 AWG (1 :math:`mm^2`) Red/Black wire
-      - 22 AWG (0.5 :math:`mm^2`) Yellow/Green twisted :term:`CAN` cable
+      - 22 AWG (0.5 :math:`mm^2`) Yellow/Green twisted `CAN <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-CAN>`__ cable
       - 8x Pairs of 10-12 AWG (4 - 6 :math:`mm^2`) (Yellow) quick disconnect terminals (16x ring terminals if using integrated wire controllers)
       - 2x Anderson SB50 battery connectors
       - 6 AWG (16 :math:`mm^2`) Terminal lugs
@@ -373,7 +373,7 @@ After making the connection check to be sure that it is clean and secure:
 4. Cut and strip ~5/16" (~8 mm) from the end of the wire.
 5. Connect the wire to the VH-109 "12V" Weidmuller terminals.
 
-.. note:: The radio can additionally be powered by :term:`PoE` to create a more redundant connection.
+.. note:: The radio can additionally be powered by `PoE <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PoE>`__ to create a more redundant connection.
 
 .. warning:: If powering the radio this way, the roboRIO must be connected via a PoE injector, modified ethernet cable, or to one of the `AUX` ports of the VH-109 with the corresponding DIP switch in the off (default) position.
 
@@ -427,11 +427,11 @@ Requires: an Ethernet cable
 
 1. Connect an Ethernet cable from the RJ45 (Ethernet) socket of the roboRIO to the `RIO` port on the VH-109 Radio.
 
-.. note:: If using :term:`PoE` you may need a second Ethernet cable or longer power wires.
+.. note:: If using `PoE <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PoE>`__ you may need a second Ethernet cable or longer power wires.
 
 .. warning:: If the VH-109 is powered using the 12V input terminals, the roboRIO should be connected to the VH-109 through a PoE injector, a modified ethernet cable, or to one of the `AUX` ports on the VH-109 instead of the `RIO` port with the corresponding DIP switch in the off (default) position.
 
-.. warning:: DO NOT connect the Rev passive :term:`PoE` injector cable directly to the roboRIO. The roboRIO MUST connect to the socket end of the cable using an additional Ethernet cable as shown in the next step.
+.. warning:: DO NOT connect the Rev passive `PoE <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-PoE>`__ injector cable directly to the roboRIO. The roboRIO MUST connect to the socket end of the cable using an additional Ethernet cable as shown in the next step.
 
 ## CAN Devices
 
@@ -601,7 +601,7 @@ Requires: Wire stripper, 2 pin cable, Robot Signal Light, 18 AWG (1 :math:`mm^2`
 
 Requires: Wire stripper, wire crimper, phillips head screwdriver, wire connecting hardware
 
-For each :term:`CIM` motor:
+For each `CIM <https://docs.wpilib.org/en/stable/docs/software/frc-glossary.html#term-CIM>`__ motor:
 
 - Strip the ends of the red and black wires from the CIM
 
